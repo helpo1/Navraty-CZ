@@ -1,0 +1,45 @@
+
+instance PC_Hero(Npc_Default)
+{
+	name[0] = "";
+	guild = GIL_NONE;
+	id = 0;
+	voice = 15;
+	level = 0;
+	flags = 0;
+	npcType = npctype_main;
+	bodyStateInterruptableOverride = TRUE;
+	exp = 0;
+	exp_next = 500;
+	lp = 0;
+	attribute[ATR_STRENGTH] = 10;
+	aivar[REAL_STRENGTH] = 10;
+	HeroRealStr = 10;
+	attribute[ATR_DEXTERITY] = 10;
+	aivar[REAL_DEXTERITY] = 10;
+	HeroRealDex = 10;
+	attribute[ATR_MANA_MAX] = 10;
+	aivar[REAL_MANA_MAX] = 10;
+	HeroRealMaxMana = 10;
+	attribute[ATR_MANA] = 10;
+	attribute[ATR_HITPOINTS_MAX] = 100;
+	attribute[ATR_HITPOINTS] = 100;
+	aivar[AIV_Food] = FALSE;
+	Npc_SetTalentSkill(self,NPC_TALENT_STAMINA,10);
+	ATR_STAMINA[0] = 100;
+	ATR_STAMINA_MAX[0] = 10;
+	Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,5);
+	ATR_INTELLECT = 10;
+	ATR_INTELLECT_REAL = 10;
+	B_RaiseFightTalent(self,NPC_TALENT_1H,1);
+	B_RaiseFightTalent(self,NPC_TALENT_2H,1);
+	B_RaiseFightTalent(self,NPC_TALENT_BOW,1);
+	B_RaiseFightTalent(self,NPC_TALENT_CROSSBOW,1);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Pony",Face_N_Player,BODYTEX_NEW_PLAYER,ITAR_OLDOREARMOR);
+	Mdl_SetModelFatness(self,0);
+	mission[0] = 1;
+	mission[1] = 1;
+	mission[2] = 1;
+	mission[3] = 1;
+	mission[4] = 1;
+};

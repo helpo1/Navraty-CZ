@@ -1,0 +1,60 @@
+
+instance KDW_14040_Addon_Riordian_ADW(Npc_Default)
+{
+	name[0] = "Риордиан";
+	guild = GIL_KDW;
+	id = 14040;
+	voice = 10;
+	flags = 0;
+	aivar[93] = TRUE;
+	npcType = npctype_main;
+	aivar[AIV_IgnoresFakeGuild] = TRUE;
+	aivar[AIV_IgnoresArmor] = TRUE;
+	B_SetAttributesToChapter(self,5);
+	fight_tactic = FAI_HUMAN_MASTER;
+	B_CreateAmbientInv(self);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_P_NormalBart_Riordian,BodyTex_P,ITAR_KDW_H);
+	Mdl_SetModelFatness(self,0);
+	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
+	B_GiveNpcTalents(self);
+	B_SetFightSkills(self,30);
+	bodyStateInterruptableOverride = TRUE;
+	EquipItem(self,ItMW_Addon_Stab02_NPC);
+	aivar[AIV_MagicUser] = MAGIC_ALWAYS;
+	daily_routine = Rtn_Start_14040;
+};
+
+
+func void Rtn_Start_14040()
+{
+	TA_Study_WP(7,5,7,20,"ADW_ENTRANCE_PLATEAU_06A");
+	TA_Study_WP(7,20,8,25,"ADW_ENTRANCE_PLATEAU_10A");
+	TA_Study_WP(8,25,9,5,"ADW_ENTRANCE_PLATEAU_14A");
+	TA_Study_WP(9,5,10,45,"ADW_ENTRANCE_PLATEAU_06A");
+	TA_Study_WP(10,45,11,55,"ADW_ENTRANCE_PLATEAU_14A");
+	TA_Study_WP(11,55,12,5,"ADW_ENTRANCE_PLATEAU_10A");
+	TA_Study_WP(12,5,13,20,"ADW_ENTRANCE_PLATEAU_06A");
+	TA_Study_WP(13,20,14,25,"ADW_ENTRANCE_PLATEAU_14A");
+	TA_Study_WP(14,25,15,5,"ADW_ENTRANCE_PLATEAU_10A");
+	TA_Study_WP(15,5,16,45,"ADW_ENTRANCE_PLATEAU_06A");
+	TA_Study_WP(16,45,17,55,"ADW_ENTRANCE_PLATEAU_14A");
+	TA_Study_WP(17,55,18,5,"ADW_ENTRANCE_PLATEAU_10A");
+	TA_Study_WP(18,5,19,20,"ADW_ENTRANCE_PLATEAU_06A");
+	TA_Study_WP(19,20,20,25,"ADW_ENTRANCE_PLATEAU_10A");
+	TA_Study_WP(20,25,21,5,"ADW_ENTRANCE_PLATEAU_06A");
+	TA_Study_WP(21,5,22,0,"ADW_ENTRANCE_PLATEAU_10A");
+	TA_Sleep(22,0,7,5,"ADW_ENTRANCE_BUILDING2_05");
+};
+
+func void rtn_orcinvasion_14040()
+{
+	TA_Stand_ArmsCrossed(8,25,21,35,"ADW_PORTALTEMPEL_02");
+	TA_Stand_ArmsCrossed(21,35,8,25,"ADW_PORTALTEMPEL_02");
+};
+
+func void rtn_tot_14040()
+{
+	TA_Stand_WP(8,0,20,0,"TOT");
+	TA_Stand_WP(20,0,8,0,"TOT");
+};
+

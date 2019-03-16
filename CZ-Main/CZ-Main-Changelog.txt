@@ -1,0 +1,1017 @@
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\AI\AI_Intern\AI_Constants.d   */
+
+
+v1.00:
+
+const int SPL_COST_BELIARSRUNE_SUPER - upraveny požadavky na runu BD s duší Senyaka
+const int SPL_DAMAGE_SUPERBELIARSRUNE - upraveno poškození runy BD s duší Senyaka
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\AI\Magic\Spells\Spell_ArmyOfDarkness.d   */
+
+
+v1.00:
+
+func void Spell_Cast_ArmyOfDarkness - upraven typ vyvolávaných bytostí (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\AI\Monster\B_Monster\B_InitMonsterAttitudes.d   */
+
+
+v1.00:
+
+(7x) B_SetMonsterAttitude - opraveno vzájemné chování tvorů:
+
+- GIL_SKELETON,ATT_NEUTRAL,GIL_WOLF
+- GIL_SKELETON,ATT_NEUTRAL,GIL_SNAPPER
+- GIL_SKELETON_MAGE,ATT_NEUTRAL,GIL_WOLF
+- GIL_SKELETON_MAGE,ATT_NEUTRAL,GIL_SNAPPER
+- GIL_ZOMBIE,ATT_NEUTRAL,GIL_WOLF
+- GIL_ZOMBIE,ATT_NEUTRAL,GIL_SNAPPER
+- GIL_SNAPPER,ATT_NEUTRAL,GIL_ZOMBIE
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\AI\Monster\B_Monster\B_MM_AssessEnemy.d   */
+
+
+v1.00:
+
+if(Npc_IsInFightMode(other,FMODE_MAGIC) == TRUE) - upraveny neutrální kouzla (SPL_Light, SPL_TeleportXardas)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\AI\Monster\ZS_Monster\ZS_MM_Attack.d   */
+
+
+v1.00:
+
+tzv. "fix skeletov" - opraveno vyvolávání kostlivců u strážců elementů
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Items\IT_Melee_weapons.d   */
+
+
+v1.00:
+
+instance ItMw_Addon_Betty - opraven typ zbraně (ITEM_AXE -> ITEM_SWD)
+instance ITMW_1H_CREST - ITMW_1H_CREST (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Items\IT_Misk.d   */
+
+
+v1.00:
+
+instance ItAr_Pal_Helm - opraven název (Helma rytíře -> Helma paladina)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Items\IT_Potions.d   */
+
+
+v1.00:
+
+instance ItMi_HolyWater - opravena textura (ItFo_Water.3ds -> ItMi_HolyWater.3ds)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Items\IT_Ringe.d   */
+
+
+v1.00:
+
+instance ITRI_GUARDIANS_01 - upraveny výpisy
+instance ITRI_GUARDIANS_02 - upraveny výpisy
+instance ITRI_NARUS - upraveny výpisy
+instance ITRI_UDARGIFT - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Items\IT_Scrolls.d   */
+
+
+v1.00:
+
+instance ItSc_Windfist - opravena maximální spotřeba many (SPL_Cost_WindFist -> STEP_WindFist * 4)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Items\IT_Secrets.d   */
+
+
+v1.00:
+
+func void Use_ItMi_VatrasPurse - zamezeno nesplnitelnosti úkolu
+func void GoldPocket100 - upraven nalezený objem zlata (75 -> 100)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Items\MissionItems_1.d   */
+
+
+v1.00:
+
+instance ItMw_AlriksSword_Mis - opraven název (Meč -> Alrikův meč)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Items\MissionItems_2.d   */
+
+
+v1.00:
+
+func void UseBloodMIS - upraveny výpisy
+func void UseDiofant_Paper - opravena hádanka
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Items\MissionItems_6.d   */
+
+
+v1.00:
+
+func void Use_XardasNotfallBeutel - upraveny výpisy
+func void Use_RezeptFuerMegaTrank - opraven bonus po přečtení
+func void Use_Diary_BlackNovice - opraven bonus po přečtení
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Items\Tuning_Addon_BeliarsWeapons.d   */
+
+
+v1.00:
+
+const int DAMAGE_BELIARSUPERWEAPON_1H_EDGE - upraveno poškození BD s duší Senyaka
+const int DAMAGE_BELIARSUPERWEAPON_2H_EDGE - upraveno poškození BD s duší Senyaka
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_GiveTradeInv\B_GiveTradeInv.d   */
+
+
+v1.00:
+
+ItMi_ParlanRelic_MIS - zamezeno nesplnitelnosti úkolu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\B_ClearDeadTrader.d   */
+
+
+v1.00:
+
+(3x) ITMW_1H_CREST (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\B_Enter_NewWorld.d   */
+
+
+v1.00:
+
+VLK_41200_Bilgot - opraven waypoint (NW_BILGOT_01 -> NW_PASS_GATE_01)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\b_formnumberstring.d   */
+
+
+v1.00:
+
+func string b_formnumberstring - upraveny výpisy
+func void B_PlayerFindItem - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\b_gettime.d   */
+
+
+v1.00:
+
+(9x) ExitSession - zamezeno ukončení hry po použití cheatů
+if(PrologCount == 0) - upraveno vložení předmětu do hry (ITMW_1H_CREST)
+(2x) upraveny titulky - intro a úvodní (PrologCredits), závěrečné (ENDGAMECREDITS)
+func void EveryDayEconomicStuff - přidán Bilgot jako lovec (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\b_givealltobayguyoneitem.d   */
+
+
+v1.00:
+
+func void b_givealltobayguy - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\b_givebonusforelitemonster.d   */
+
+
+v1.00:
+
+ItWr_DexTrait - zamezeno nesplnitelnosti úkolu
+func void ZS_Dead - itmw_1h_Crest (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\B_GiveDeathInv.d   */
+
+
+v1.00:
+
+func int B_GiveInvItems_ExtraLoot - upraveny výpisy
+func void B_ClearNpcInventory - ITMW_1H_CREST (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\B_GiveInvItems.d   */
+
+
+v1.00:
+
+func int B_GiveInvItems - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\B_LogEntry.d   */
+
+
+v1.00:
+
+func void B_LogEntry - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\B_RemoveNpc.d   */
+
+
+v1.00:
+
+func void B_ClearRemoveNpc - ITMW_1H_CREST (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\B_TeachAttributePoints.d   */
+
+
+v1.00:
+
+func int B_TeachAttributePoints - dovysvětlení nejasné formulace
+func int b_teachattributepointstarinaks - dovysvětlení nejasné formulace
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\B_TeachFightTalentPercent.d   */
+
+
+v1.00:
+
+func int B_TeachFightTalentPercent - dovysvětlení nejasné formulace
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\B_TeachPlayerTalentRunes.d   */
+
+
+v1.00:
+
+(2x) Npc_IsDead(Kreol) - přidán náhradní obchodník se svitky temné magie
+(8x) opraven zápis do deníku (SPL_TELEKINESIS, SPL_AdanosBall, SPL_Extricate, SPL_Elevate)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\B_TeachPlayerTalentSmith.d   */
+
+
+v1.00:
+
+(3x) WEAPON_ITAR_OREARMOR - opraven zápis do deníku
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_Ass_125_Tiamant.d   */
+
+
+v1.00:
+
+DIA_Ass_125_Tiamant_Teach_2X2_15_25 - opraveno other/self
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_BAU_950_Lobart.d   */
+
+
+v1.00:
+
+instance DIA_Lobart_LobartMeal - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_BAU_970_Orlan.d   */
+
+
+v1.00:
+
+func void DIA_Orlan_RUESTUNG_Buy - opraveno ID předmětu (ITAR_Bau_L -> ITAR_Bau_M)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_BAU_984_Niclas.d   */
+
+
+v1.00:
+
+instance DIA_NICLAS_HIREDASSIST - úpravy dialogů (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
+instance DIA_NICLAS_HIREDASSIST_BILGOT - úpravy dialogů (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_Bdt_1013_Bandit_L.d   */
+
+
+v1.00:
+
+(4x) JessGoSld - opravena implementace proměnné
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_BDT_1074_Addon_Edgor.d   */
+
+
+v1.00:
+
+func void DIA_Addon_Edgor_TrainStart_GIFT - opraven zápis do deníku
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_DJG_712_Hokurn.d   */
+
+
+v1.00:
+
+(2x) RhetorikSkillValue - opraveno navýšení rétoriky nad maximum
+func void DIA_BDT_4568_KINJARTS_QuestAgain_IronOre - opraveno pořadí dialogů
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_DJG_714_Jan.d   */
+
+
+v1.00:
+
+func void DIA_Jan_DragonBlood_1 - upraveny výpisy
+func void DIA_Jan_DragonBlood_all - upraveny výpisy
+func void b_janarmorchoices - upraveny výpisy (B_BuildLearnString -> B_BuildLearnStringEx)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_hun_743_nix.d   */
+
+
+v1.00:
+
+func void dia_hun_743_nix_whosdogs_info - úpravy výpisů a dialogů
+DIA_HUN_743_Nix_ShadowFurDone_01_02 - opraveno other/self
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_KDF_500_Pyrokar.d   */
+
+
+v1.00:
+
+func void DIA_Pyrokar_GIVEINNOSEYE_wer - opraven zápis do deníku
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_KDF_501_Serpentes.d   */
+
+
+v1.00:
+
+func void DIA_Serpentes_MinenAnteileBringen_Info - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_KDW_14000_Addon_Saturas_ADW.d   */
+
+
+v1.00:
+
+func void DIA_Addon_Saturas_BeliarWeapGeben_Info - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_KDW_1402_Addon_Nefarius_NW.d   */
+
+
+v1.00:
+
+func void DIA_Addon_Nefarius_MissingOrnaments_Info - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_KDW_1404_Addon_Riordian_NW.d   */
+
+
+v1.00:
+
+func void DIA_Addon_Riordian_SaturasWantYou_Info - Saturas (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_MIL_312_Wulfgar.d   */
+
+
+v1.00:
+
+func int DIA_Wulfgar_Bandits_Condition - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_none_102_kreol.d   */
+
+
+v1.00:
+
+(6x) var int KREOL_ITEMSGIVEN_CHAPTER_... - upravena nabídka obchodníka
+func void dia_kreol_trade_info - upravena nabídka obchodníka
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_NOV_612_Babo.d   */
+
+
+v1.00:
+
+func void DIA_Babo_Kap3_HaveYourDocs_HereTheyAre - opravena chybějící odměna
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_orc_8524_bumshak.d   */
+
+
+v1.00:
+
+DIA_Orc_8524_Bumshak_Hello_2_Info_18_04A - 04A (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_orc_8550_urnazul.d   */
+
+
+v1.00:
+
+(2x) dia_orc_8550_urnazul_urhan_Ok - Ok (cyrilice -> latinka)
+(2x) dia_orc_8550_urnazul_urhankilldone_Ok - Ok (cyrilice -> latinka)
+(2x) DIA_GorkCampGuard_Hello_Ore - Ore (cyrilice -> latinka)
+
+func void DIA_GorkOrcBoss_WarWin_info - opravena chybějící odměna
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_orc_8551_leitenent.d   */
+
+
+v1.00:
+
+func int DIA_Orc_8551_Leitenent_DeadHead_condition - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_PAL_200_Hagen.d   */
+
+
+v1.00:
+
+func void dia_lord_hagen_oreismined_trade - přidán obtížnější skill check na rétoriku (ještě vyšší výkupní cena rudy)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_PIR_1354_Addon_Henry.d   */
+
+
+v1.00:
+
+func void DIA_Addon_Henry_Hello_Info - opraveno pořadí dialogů
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_pir_1397_addon_inextremo_charlotte.d   */
+
+
+v1.00:
+
+func void dia_addon_inextremo_charlotte_permjobpay_info - Charlotte (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_SLD_811_Wolf.d   */
+
+
+v1.00:
+
+func void DIA_Wolf_AboutCrawler_Info - opravena implementace proměnné (CanDoCrawlwerPlate)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_STRF_1107_Straefling.d   */
+
+
+v1.00:
+
+func void dia_strf_1107_fleenow_info - opraven odkaz na následující dialog (dia_strf_1107_fleenow_djg_lcr)
+func void dia_strf_1107_fleenow_info - přidána další možnost (ITAR_PAL_H_V1)
+(2x) opraveno ID předmětu (ItMw_Schwert -> ItMw_Schwert3)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_404_Lutero.d   */
+
+
+v1.00:
+
+func void dia_lutero_tradehelperdone_info - upraveny podmínky na zadání dalšího úkolu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_4108_Engor.d   */
+
+
+v1.00:
+
+func void DIA_Engor_BRINGMEAT_Info - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_4120_Bilgot.d   */
+
+
+v1.00:
+
+func void DIA_Bilgot_NW_finallyintower_info - úpravy výpisů a dialogů (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_412_Harad.d   */
+
+
+v1.00:
+
+func void DIA_Harad_SellBlades_Info - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_4132_Talbin_NW.d   */
+
+
+v1.00:
+
+instance DIA_TALBIN_RECRUITDT - zamezení možnosti poslat Talbina do tábora (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_413_Bosper.d   */
+
+
+v1.00:
+
+func void DIA_Bosper_SellBows_Info - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_418_Gritta.d   */
+
+
+v1.00:
+
+func void dia_gritta_angekommen_info - opraveno AIV_IgnoresArmor
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_438_Alrik.d   */
+
+
+v1.00:
+
+func int DIA_Alrik_askfordt_condition - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_439_Vatras.d   */
+
+
+v1.00:
+
+func int DIA_ADDON_VATRAS_LeeLetter_condition - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_444_Jack.d   */
+
+
+v1.00:
+
+DIA_Jack_SmokePipe_Done_01_02 - opraveno other/self
+DIA_Jack_SmokePipe_Done_01_04 - opraveno other/self
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_462_Thorben.d   */
+
+
+v1.00:
+
+func void dia_thorben_missgritta_help - opraveno AIV_IgnoresArmor
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_vlk_6110_nigel.d   */
+
+
+v1.00:
+
+DIA_Nigel_MoneyNew_01_07 - opraveno other/self
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_vlk_989_reinar.d   */
+
+
+v1.00:
+
+(2x) itmw_1h_Crest, dia_vlk_989_reinar_sellweapon_Crest (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialog_Mobsis\Goldhacken.d   */
+
+
+v1.00:
+
+func void PC_Goldhacken_Addon_Hour_Info - determinovanost těžby
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialog_Mobsis\MakeRune.d   */
+
+
+v1.00:
+
+func int B_CheckRuneSkill - upraveny výpisy
+(24x) - upraveny výpisy (PRINT_ProdItemsMissing -> PRINT_ProdItemsMissingCZMateh)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialog_Mobsis\PotionAlchemy.d   */
+
+
+v1.00:
+
+func int B_CheckAlchemySkill - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialog_Mobsis\PrayShrine.d   */
+
+
+v1.00:
+
+func void PC_PrayShrine_HEALSHRINE_Info - upraveny výpisy
+func void PC_PrayShrine_BlessSword_Info - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialog_Mobsis\SmithWeapon.d   */
+
+
+v1.00:
+
+func int B_CheckSmithSkill - upraveny výpisy
+(52x) - upraveny výpisy (PRINT_ProdItemsMissing -> PRINT_ProdItemsMissingCZMateh)
+func void PC_ItMw_ChiefRapier_06_Info - upraveny materiály potřebné pro výrobu (akceptování ITPO_POISON)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialog_Mobsis\TRINKFASS.d   */
+
+
+v1.00:
+
+FUNC VOID Trinkfass_S1 - opraven atribut (ATR_HITPOINTS_MAX -> ATR_MANA_MAX)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Events\evt_tpl_01_func_01.d   */
+
+
+v1.00:
+
+func void EVT_AV_TO_LOSTVALLEY_FUNC - upraveny podmínky vstupu (ItRu_BeliarSuperRune)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Log_Entries\LOG_Constants_Hoshi.d   */
+
+
+v1.00:
+
+const string Log_Text_Addon_TalentRune_Whirlwind - opraven zápis do deníku
+const string Log_Text_Addon_TalentRune_Icelance - opraven zápis do deníku
+const string LOG_TEXT_ADDON_TALENTRUNE_SUMSHOAL - opraven zápis do deníku
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Names.d   */
+
+
+v1.00:
+
+nový soubor
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\NPC\TohleVubecNeniRockefeller.d   */
+
+
+v1.00:
+
+nový soubor
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\NPC\VLK_4120_Bilgot.d   */
+
+
+v1.00:
+
+(4x) opraven waypoint (NW_BILGOT_01 -> NW_PASS_GATE_01)
+func void Rtn_InTower_41200 - upraveny rutiny (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Text.d   */
+
+
+v1.00:
+
+const string PRINT_ProdItemsMissingCZMateh - deklarace nové konstanty
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_Intern\Constants.d   */
+
+
+v1.00:
+
+const string TEXT_FONT_DEFAULT - opraven font (kvůli potížím s FPS)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\c_schasrareweapons.d   */
+
+
+v1.00:
+
+func int c_schasrareweapons - itmw_1h_Crest (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\makearrows_s1.d   */
+
+
+v1.00:
+
+(28x) - upraveny výpisy (PRINT_ProdItemsMissing -> PRINT_ProdItemsMissingCZMateh)
+func void PC_SMITHFIRE_ADDON_HOUR_XALL_info - upraveny výpisy
+instance PC_SMITHFIRE_ADDON_ORCWEAPON - opraveno neakceptování ITMW_2H_DRACONSWORD_02
+func void pc_orehacken_addon_hour_info - determinovanost těžby
+func void PC_IRONHACKEN_addon_hour_info - determinovanost těžby
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\print_percent_bar.d   */
+
+
+v1.00:
+
+func void print_campinfo - upraveny výpisy (DT_TOTAL_DAILY_PAYMENTS -> DT_TOTAL_DAILY_INCOME)
+func void print_campinfo - přidán Bilgot jako lovec (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\T_MAX_HP.d   */
+
+
+v1.00:
+
+var int BookBonus_162 - deklarace nové proměnné (kvůli opravě bonusu po přečtení)
+var int BookBonus_163 - deklarace nové proměnné (kvůli opravě bonusu po přečtení)
+const int BILGOTHUNTFOOD - deklarace nové konstanty (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
+
+var int RespFireGuard - kosmetické změny
+var int RespDarkGuard - kosmetické změny
+var int RespWaterGuard - kosmetické změny
+var int RespStoneGuard - kosmetické změny
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\use_bookstanddementordemon_s1.d   */
+
+
+v1.00:
+
+(12x) RhetorikSkillValue - opraveno navýšení rétoriky nad maximum
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\xardas_firstlock.d   */
+
+
+v1.00:
+
+func void dia_xardas_runen_6 - opraven název
+func int DIA_NONE_100_Xardas_WhyHere_condition - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
