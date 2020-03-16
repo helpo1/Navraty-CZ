@@ -11,7 +11,7 @@
 
 ## Odporúčaný postup inštalácie:
 1. vykonať *čistú* inštaláciu Gothic 2 Gold Edition (referenčná verzia: [GOG.com DE](https://www.gog.com/game/gothic_2_gold_edition))
-2. nainštalovať potrebný software priložený na [inštalačnom disku Návratov](https://drive.google.com/file/d/0B61ED7CddCGmSjJhTnYyTFlPaUE/view)
+2. nainštalovať potrebný software priložený na inštalačnom disku Návratov - [Google Drive](https://drive.google.com/file/d/1OymeXz9tHwRq0AQNCD3C8yp5-hvIHf7c/view) / [Yandex Disk](https://yadi.sk/d/nueDqvB43JL6Fx)
    - Microsoft Visual C++, DirectX - iba ak sa v systéme (konkrétne tieto verzie) ešte nenachádzajú
    - Report Version, PlayerKit
 3. nainštalovať Návraty (Russian Version Installation) a voliteľné súčasti:
@@ -63,6 +63,8 @@
 
 [**Gothicz.net**](http://forum.gothicz.net/viewtopic.php?f=358&t=22017) - hlavné centrum česko-slovenskej Gothic komunity
 
-[**Discord**](https://discord.gg/m6uTbZj) - všeobecný server o Návratoch a preklade; najrýchlejší spôsob bugtrackingu (okrem GitHubu) a kontaktovania autorov
+[**Discord - ThePreklad**](https://discord.gg/m6uTbZj) - všeobecný server o Návratoch a preklade; najrýchlejší spôsob bugtrackingu (okrem GitHubu) a kontaktovania autorov
+
+[**Discord - Gothicz.net**](https://discord.gg/uCybrpX) - všeobecný server česko-slovenskej Gothic komunity
 
 [**GitHub**](https://github.com/helpo1/Navraty-CZ) (tento repozitár) - download, komplexné informácie a zverejnené skripty pôvodnej (RU, read-only) aj preloženej (CZ) verzie; gramatické, štylistické a ďalšie chyby v texte (najmä dialógoch) môžete opravovať priamo tu, väčšie zmeny alebo zásahy do kódu publikujte len po verejnej diskusii a väčšinovom súhlase, najlepšie aj na (aspoň) jednom z ostatných dvoch vyššie uvedených uvedených miest
