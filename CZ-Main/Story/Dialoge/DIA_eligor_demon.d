@@ -43,7 +43,7 @@ func int dia_eligor_demon_hello_condition()
 func void dia_eligor_demon_hello_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_00");	//Už žádný démon nepřijde na tvoje zavolani, smrtelníku. Runa stratila silu.
+	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_00");	//Už žádný démon nepříjde na tvoje zavolani, smrtelníku. Runa stratila silu.
 	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_01");	//Ty sám znáš pravidla... (Vrčí)
 	AI_Output(other,self,"DIA_Eligor_Demon_Hello_01_02");	//Takže ty jsi mocný Eligor - pán legie démonů z Langu. Děláš na mě dojem!
 	AI_Output(other,self,"DIA_Eligor_Demon_Hello_01_03");	//Dovol mi se tě na něco zeptat - proč jsi sem ke mě došel?
