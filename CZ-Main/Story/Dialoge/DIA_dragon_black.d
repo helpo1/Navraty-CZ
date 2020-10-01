@@ -47,20 +47,20 @@ func int dia_dragon_black_hello_condition()
 func void dia_dragon_black_hello_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_00");	//Človek?!... (Vrčí) Myslel som, že som zničil všetkých úbohých človiečikov!
-	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_01");	//Ako vidíš, trochu si sa zmýlil. Ale myslím si, že to bola tvoja posledná chyba.
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_05");	//Arrrgkh... (Vrčí) Myslím tým že problémy sú s tebou spojené!... Nemohol by som si myslieť v žiadnom prípade, čo by mohlo byť naozaj smrtelné.
-	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_03");	//Tak to je, drak. Prišiel som sem aby som zrazil tvoju odpornú hlavu!
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_07");	//Je čas keď si ma dosiahol nejprve můj správny služobník - Dakat, neuspel... Velmi (vrčí) ma to trápi.
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_08");	//A ty - odvážny muž, ma chceš poraziť! A podla všetkých zvestí si pre mňa poriadny súper. Ale isto ti to ťažko pomůže!
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_09");	//... Natiahnem, (vrčí) tvoje srdce, zoberiem si tvoju dušu a maso ti dolámem na plátky!
-	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_10");	//Že ťa slina nezadrhne! Ty, kus hnoja. Tvoje vyhrážky ma nevystrašia.
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_14");	//Ur-Thrall! Pamatám si to... (vrčí) Aká škoda, že som sa nepostaral o zničenie toho slimáka.
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_00");	//Člověk?!... (Vrčí) Myslel jsem, že jsem zničil všechny ubohé lidi!
+	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_01");	//Jak vidíš, trochu ses zmýlil. Mám však dojem, že to byla tvá poslední chyba.
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_05");	//Arrrgh... (Vrčí) Chceš snad říct, že mne zrovna ty zbavíš mých starostí?! Pouhý smrtelník?
+	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_03");	//Přesně tak, draku. Přišel jsem, abych srazil tvou odpornou hlavu!
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_07");	//(Vrčí) Pokud ses dostal až ke mně, pak můj věrný služebník Dakat očividně selhal.
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_08");	//Hlupák jeden! Teď to musím dokončit sám!
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_09");	//Vyrvu ti srdce z těla, vezmu ti tvou duši a roztrhám tvé maso na malé kousky!
+	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_10");	//Uvidíme, kdo vytrhne čí srdce! Pozdravuje tě Ur-Thrall!
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_14");	//Ur-Thrall? Ach ano, pamatuju si toho slimáka. Copak sám se mě neodváží vyzvat? No, co už.
 
 	if(MEETURGROM == 4)
 	{
-		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_19");	//Vidím že si so mnou neskončíl mocný Ur-Grom!
-		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_20");	//Spňška toho patrí mne ako aj váha ich nešťastných ludí!
+		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_19");	//Vidím, že sis přivedl mocného Ur-Groma!
+		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_20");	//Jeho duše je moje, stejně tak jako všech těch odporných lidí!
 	};
 	if(Npc_HasItems(other,itrw_addon_magiccrossbow_shv) >= 1)
 	{
