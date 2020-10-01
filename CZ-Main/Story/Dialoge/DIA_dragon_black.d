@@ -65,13 +65,13 @@ func void dia_dragon_black_hello_info()
 	if(Npc_HasItems(other,itrw_addon_magiccrossbow_shv) >= 1)
 	{
 		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_21");	//Ó, ty jsi našel Exekutora - zbraň bojových duchů!
-		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_22");	//Vážně naivně věříš, že ti mě pomůže porazit?
+		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_22");	//Vážně naivně věříš, že ti pomůže mě porazit?
 	};
 
 	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_17");	//Dost už klábosení! Je čas začít mluvit skutky!
 	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_18");	//(Pohrdavě) Dostal jsem chuť na tvou krev, připrav sa na smrt, hrdino!
 	AI_PlayAni(self,"T_WARN");
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_23");	//MOJE ZUBY - MEČE! MOJE DRÁPY - KOPÍ! MÁ KŘÍDLA - HURIKÁNY! 
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_23");	//MOJE ZUBY - MEČE! MÉ DRÁPY - KOPÍ! MÁ KŘÍDLA - HURIKÁNY! 
 	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_24");	//JÁ SÁM JSEM PLAMENEM! JÁ JSEM... SMRT!
 	B_LogEntry(TOPIC_URNAZULRAGE,"Velký Stín - Azgalor, je tady! Oko hněvu probudilo černého draka a on přišel do Údolí stínů, veden voláním tohoto mocného artefaktu. Stalo se tak, jak jsem chtěl. Bylo to vše marné? Odpověď mi dá už jen můj meč...
 	AI_StopProcessInfos(self);
