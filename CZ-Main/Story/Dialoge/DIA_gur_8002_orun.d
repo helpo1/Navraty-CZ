@@ -133,7 +133,7 @@ func void dia_baalorun_pmschulden_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_MURDER),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_MURDERCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_MURDERCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_36");	//Přesněji jednu... záležitost.
+			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_36");	//Přesněji řečeno - jednu záležitost.
 			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_37");	//Všichni bratři v táboře už mají dost tvých krutých vražd.
 			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_38");	//Jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
@@ -148,9 +148,9 @@ func void dia_baalorun_pmschulden_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_ATTACK),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_ATTACKCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_ATTACKCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_40");	//Přesněji jednu... záležitost.
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_41");	//Všichni bratři v táboře už mají dost tvých neustálých rvaček.
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_42");	//Jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě..
+			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_40");	//Přesněji řečeno - jednu záležitost.
+			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_41");	//Všichni bratři v táboře už mají dost tvých neustálých šarvátekk.
+			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_42");	//Jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
@@ -163,15 +163,15 @@ func void dia_baalorun_pmschulden_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_THEFT),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_THEFTCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_THEFTCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_44");	//Přesněji jednu... záležitost.
+			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_44");	//Přesněji řečeno - jednu záležitost.
 			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_45");	//V našem táboře není místo pro zloděje!
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_46");	//Jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě..
+			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_46");	//Jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
 			};
 			B_ReadySpell(self,SPL_Whirlwind,SPL_Cost_Whirlwind);
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_47");	//Zemři ty bezvěrče!
+			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_47");	//Zemři, ty bezvěrče!
 		};
 		Log_CreateTopic(TOPIC_DIPLOM,LOG_NOTE);
 		B_LogEntry(TOPIC_DIPLOM,"Kvůli mým neustálým přestupkům je můj vztah s Bratrstvem zničený. Teď mě považují za zločince!");
@@ -183,7 +183,7 @@ func void dia_baalorun_pmschulden_info()
 	{
 		if(B_GetTotalPetzCounter(self) > BAALORUN_LASTPETZCOUNTER)
 		{
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_01");	//V poslední době děláš hodně problémů.
+			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_01");	//V poslední době působíš hodně problémů.
 			diff = B_GetTotalPetzCounter(self) - BAALORUN_LASTPETZCOUNTER;
 			if(diff > 0)
 			{
@@ -191,11 +191,11 @@ func void dia_baalorun_pmschulden_info()
 			};
 			if(BAALORUN_SCHULDEN < 1000)
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_03");	//Ale doufám, že nás za všechny odškodníš! Dokupy to činí...
+				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_03");	//Doufám, že nás za všechny odškodníš! Dokupy to činí...
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_04");	//Něco takového jsem od tebe nečekal. Suma je...
+				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_04");	//Něco takového jsem od tebe nečekal. Dokupy to činí...
 			};
 			AI_Output(other,self,"DIA_BaalOrun_PMAdd_15_00");	//Kolik?
 			if(BAALORUN_SCHULDEN <= 1000)
@@ -216,7 +216,7 @@ func void dia_baalorun_pmschulden_info()
 
 			if(BAALORUN_LASTPETZCRIME == CRIME_MURDER)
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_06");	//Z nějakého důvodu tě už nikdo neobviňuje z vraždy.
+				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_06");	//Z nějakého důvodu už tě nikdo neobviňuje z vraždy.
 				GLOBAL_PSICAMP_MURDER = GLOBAL_PSICAMP_MURDER - 1;
 				if(GLOBAL_PSICAMP_MURDER < 0)
 				{
@@ -234,7 +234,7 @@ func void dia_baalorun_pmschulden_info()
 			};
 			if((BAALORUN_LASTPETZCRIME == CRIME_ATTACK) || ((BAALORUN_LASTPETZCRIME > CRIME_ATTACK) && (B_GetGreatestPetzCrime(self) < CRIME_ATTACK)))
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_08");	//Není žádný další svědek toho, že ses účastnil rvačky.
+				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_08");	//Není žádný další svědek toho, že ses účastnil pranice.
 				GLOBAL_PSICAMP_ATTACK = GLOBAL_PSICAMP_ATTACK - 1;
 				if(GLOBAL_PSICAMP_ATTACK < 0)
 				{
@@ -243,7 +243,7 @@ func void dia_baalorun_pmschulden_info()
 			};
 			if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
 			{
-				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_09");	//Zdá se, že ti bratři odpustili všechno co jsi napáchal.
+				AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_09");	//Zdá se, že ti bratři odpustili všechno, co jsi napáchal.
 			};
 			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_10_10");	//Už se nezapleť do ničeho dalšího!
 			if(B_GetGreatestPetzCrime(self) == CRIME_NONE)
@@ -345,7 +345,7 @@ func void dia_baalorun_petzmaster_info()
 	BAALORUN_SCHULDEN = 0;
 	if(self.aivar[AIV_TalkedToPlayer] == FALSE)
 	{
-		AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_00");	//Hej, nováčku. Proč jsi nám tady nadělal problémy? Musíme to spolu vyřešit.
+		AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_00");	//Hej, novici. Proč nám tady působíš problémy? Musíme to spolu vyřešit.
 	};
 	temp1 = 0;
 	if(GLOBAL_PSICAMP_MURDER > 2)
@@ -367,45 +367,45 @@ func void dia_baalorun_petzmaster_info()
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_MURDER),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_MURDERCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_MURDERCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_48");	//Přesněji jednu... záležitost.
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_48");	//Přesněji řečeno - jednu záležitost.
 			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_49");	//Všichni bratři v táboře už mají dost tvých krutých vražd.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_50");	//A jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě...
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_50");	//Jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
 			};
 			B_ReadySpell(self,SPL_Whirlwind,SPL_Cost_Whirlwind);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_51");	//Zemři ty bezvěrče!
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_51");	//Zemři, ty bezvěrče!
 		}
 		else if(GLOBAL_PSICAMP_ATTACK > 5)
 		{
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_ATTACK),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_ATTACKCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_ATTACKCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_52");	//Přesněji jednu... záležitost.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_53");	//Všichni bratři v táboře už mají dost tvých neustálých rvaček.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_54");	//A jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě...
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_52");	//Přesněji řečeno - jednu záležitost.
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_53");	//Všichni bratři v táboře už mají dost tvých neustálých šarvátek.
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_54");	//Jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
 			};
 			B_ReadySpell(self,SPL_Whirlwind,SPL_Cost_Whirlwind);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_55");	//Zemři ty bezvěrče!
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_55");	//Zemři, ty bezvěrče!
 		}
 		else if(GLOBAL_PSICAMP_THEFT > 5)
 		{
 			tsettext1 = ConcatStrings(IntToString(GLOBAL_PSICAMP_THEFT),"");
 			tsettext2 = ConcatStrings(tsettext1,PRINT_THEFTCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_THEFTCOUNT_PSICAMP,tsettext2);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_56");	//Přesněji jednu... záležitost.
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_56");	//Přesněji řečeno - jednu záležitost.
 			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_57");	//V našem táboře není místo pro zloděje!
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_58");	//A jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě...
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_58");	//Jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
 				CreateInvItems(self,ItRu_Whirlwind,1);
 			};
 			B_ReadySpell(self,SPL_Whirlwind,SPL_Cost_Whirlwind);
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_59");	//Zemři ty bezvěrče!
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_08_59");	//Zemři, ty bezvěrče!
 		};
 		Log_CreateTopic(TOPIC_DIPLOM,LOG_NOTE);
 		B_LogEntry(TOPIC_DIPLOM,"Kvůli mým neustálým přestupkům je můj vztah s Bratrstvem zničený. Teď mě považují za zločince!");
@@ -429,7 +429,7 @@ func void dia_baalorun_petzmaster_info()
 		};
 		if(B_GetGreatestPetzCrime(self) == CRIME_THEFT)
 		{
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_09");	//Slyšel jsem, že jsi byl zapojený do krádeže?
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_09");	//Slyšel jsem, že jsi byl zapojen do krádeže?
 			if(PETZCOUNTER_PSICAMP_ATTACK > 0)
 			{
 				AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_10");	//Kromě ostatních nepříjemných záležitostí.
@@ -440,8 +440,8 @@ func void dia_baalorun_petzmaster_info()
 		};
 		if(B_GetGreatestPetzCrime(self) == CRIME_ATTACK)
 		{
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_13");	//Nikdo tady nemá rád rvačky - rozumíš? Pokud si chceš mávat pěstma - jdi do Khorinisu.
-			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_15");	//Musíš zaplatit za své zločiny! Možná pak na všechno zapomenu.
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_13");	//Nikdo tady nemá rád pranice - rozumíš? Pokud si chceš mávat pěstma - jdi do Khorinisu.
+			AI_Output(self,other,"DIA_BaalOrun_PetzMaster_10_15");	//Musíš zaplatit za své zločiny! Možná pak na vše zapomenu.
 			BAALORUN_SCHULDEN = B_GetTotalPetzCounter(self) * 750;
 		};
 		AI_Output(other,self,"DIA_BaalOrun_PetzMaster_15_18");	//Kolik?
@@ -624,26 +624,26 @@ func int dia_baalorun_aufgabe_condition()
 func void dia_baalorun_aufgabe_info()
 {
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_00");	//Počkej... Odkud máš bederní roušku novice našeho Bratrstva?
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_01");	//Vidím, že tvůj duch po něčem pátrá - pátráš po pravé víře. Cožpak necítíš ten zuřivý vnitřní plamen, ten, který ti v noci nedovolí spát?
+	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_01");	//Vidím, že tvůj duch po něčem pátrá - pátráš po pravé víře. Cožpak necítíš ten zuřivý vnitřní plamen - ten, který ti v noci nedovolí spát?
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_02");	//Vidím, že máš jisté pochybnosti - snaží se ti snad služebníci falešných bohů něco vnutit?
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_03");	//Avšak ty sám víš, odkud se ty pochybnosti vzaly. Všichni lhali!
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_04");	//Cožpak necítíš vnitřní touhu po svobodě? Den po dni se stává silnější, necítáš, jak je to vede tvou duši? Osvoboď ji!
-	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_05");	//Začal jsi se mnou mluvit. Takže pokud si dobře pamatuji, znamená to, že tě mohu oslovit i já?
+	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_04");	//Cožpak necítíš vnitřní touhu po svobodě? Den po dni se stává silnější, necítíš, jak vede tvou duši? Osvoboď ji!
+	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_05");	//Začal jsi se mnou mluvit. Takže pokud si dobře pamatuji, znamená to, že tě teď mohu oslovit i já?
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_06");	//Znáš naše pravidla. To je chvályhodné!
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_07");	//Ostatní naši bratři s tebou nebudou mluvit, pokud jim nedokážeš, že ti mohou důvěřovat.
+	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_07");	//Ostatní naši bratři s tebou mluvit nebudou, pokud jim nedokážeš, že ti mohou důvěřovat.
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_08");	//Oslovil jsem tě, abych ti dal šanci prokázat se.
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_09");	//Pokud se nám osvědčíš, budeš se pak moci přidat do našeho Bratrstva. Ovšem, pokud budeš chtít!
 	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_10");	//Jak se mohu prokázat?
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_11");	//Mám pro tebe jeden velmi delikátní úkol.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_12");	//Pokud jej splníš, tak si myslím, že to bude stačit na to, abychom ti důvěřovali.
+	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_12");	//Pokud jej splníš, tak by to mohlo stačit na to, abychom ti důvěřovali.
 	Info_ClearChoices(dia_baalorun_aufgabe);
-	Info_AddChoice(dia_baalorun_aufgabe,"Dobře. Co bych měl udělat?",dia_baalorun_aufgabe_yes);
+	Info_AddChoice(dia_baalorun_aufgabe,"Dobře. Co mám udělat?",dia_baalorun_aufgabe_yes);
 	Info_AddChoice(dia_baalorun_aufgabe,"Bohužel, teď na to nemám čas.",dia_baalorun_aufgabe_no);
 };
 
 func void dia_baalorun_aufgabe_no()
 {
-	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_13");	//Bohužel, nemám na to čas.
+	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_13");	//Bohužel, teď na to nemám čas.
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_14");	//(vzdech) Ach!
 	IDOLORAN_NO = TRUE;
 	Info_ClearChoices(dia_baalorun_aufgabe);
@@ -655,15 +655,15 @@ func void dia_baalorun_aufgabe_yes()
 	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_15");	//Dobře. Co mám udělat?
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_16");	//Dám ti jednu věc... Tady je balíček. Doručíš to jedné osobě.
 	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_17");	//Komu přesně?
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_18_01");	//Jeho jméno je Larius, je to hlava města Khorinisu. Tedy dokud jsou ve městě paladinové, tak vlastně ne.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_19");	//To je všechno. Jednoduše mu předej tento balíček - on se postará o všechno ostatní. Najdeš ho v městské radnici.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_22");	//Jakmile mu balíček předáš, dá ti něco pro mě naoplátku.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_23");	//Dones mi tu věc. Pokud to vše takto uděláš, získáš si naši důvěru.
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_24");	//A to nejdůležitější! Larius je velmi podezíravá osoba a pokud v něm vzbudíš podezření, ani tě nevyslechne.
+	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_18_01");	//Jeho jméno je Larius, je to hlava města Khorinisu. Tedy když jsou teď ve městě paladinové, tak v tuto chvíli vlastně ne.
+	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_19");	//To je vše. Jednoduše mu jej předej - on se postará o vše ostatní. Najdeš ho v městské radnici.
+	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_22");	//Jakmile mu balíček předáš, dá ti něco pro mě na oplátku.
+	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_23");	//Tu věc mi dones. Pokud to vše uděláš, získáš si naši důvěru.
+	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_24");	//A to nejdůležitější! Larius je velmi podezíravá osoba a pokud v něm vzbudíš sebemenší podezření, ani si tě nevyslechne.
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_25");	//Takže se ho proto pokus přesvědčit, že jsi přesně ten člověk, kterého jsem poslal.
 	if(PALGUARD == TRUE)
 	{
-		AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_26");	//A jak se mám dostat přes stráž u vstupu? Paladinové mě dovnitř nepustí!
+		AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_26");	//Jak se mám dostat přes stráž u vstupu? Paladinové mě dovnitř nepustí!
 		AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_27");	//No, zkus něco vymyslet. Možná že je nějaký způsob, jak se s Lariusem setkat mimo radnici.
 		AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_28");	//Tady, vezmi si ten balíček. A neztrať ho!
 	}
@@ -681,7 +681,7 @@ func void dia_baalorun_aufgabe_yes()
 	Log_SetTopicStatus(TOPIC_ORUNPACKET,LOG_Running);
 	MIS_ORUNPACKET = LOG_Running;
 	IDOLORAN_YES = TRUE;
-	B_LogEntry(TOPIC_ORUNPACKET,"Souhlasil jsem pomoci Orunovi s jednou delikátni záležitostí. Je velice důležité doručit zásilku městskému radnímu, Lariusovi. Zároveň se musím postarat o to, aby mi Larius dal něco nazpět, pro Baala Oruna.");
+	B_LogEntry(TOPIC_ORUNPACKET,"Souhlasil jsem pomoci Baalu Orunovi s jednou delikátní záležitostí. Je velice důležité doručit zásilku městskému radnímu, Lariusovi. Zároveň se musím postarat o to, aby mi Larius dal něco nazpět - něco pro Baala Oruna.");
 };
 
 
@@ -692,7 +692,7 @@ instance DIA_BAALORUN_ZUSTIMMUNG(C_Info)
 	condition = dia_baalorun_zustimmung_condition;
 	information = dia_baalorun_zustimmung_info;
 	permanent = FALSE;
-	description = "Doručil jsem zásilku Lariusovi.";
+	description = "Doručil jsem Lariusovi zásilku.";
 };
 
 
@@ -707,7 +707,7 @@ func int dia_baalorun_zustimmung_condition()
 func void dia_baalorun_zustimmung_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_BaalOrun_Zustimmung_01_00");	//Doručil jsem zásilku Lariusovi. Na oplátku mě požádal, abych ti předal tuto sumu.
+	AI_Output(other,self,"DIA_BaalOrun_Zustimmung_01_00");	//Doručil jsem Lariusovi zásilku. Na oplátku mě požádal, abych ti předal tuto sumu.
 	B_GiveInvItems(other,self,itmi_lariusgoldpocket,1);
 	if(hero.guild == GIL_NONE)
 	{
@@ -753,11 +753,11 @@ func void dia_baalorun_nozustimmung_info()
 	AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_01");	//Proč?
 	if(LARIUSCANCELPACKET > 1)
 	{
-		AI_Output(other,self,"DIA_BaalOrun_NoZustimmung_01_02");	//Odmítl si ji vzít, a pak ze mě jeho stráže málem nadělali sekanou!
+		AI_Output(other,self,"DIA_BaalOrun_NoZustimmung_01_02");	//Nejdřív si ji odmítl vzít, a pak ze mě jeho stráže málem nadělali sekanou!
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_BaalOrun_NoZustimmung_01_02A");	//Ehm... Takže to dopadlo tak, no...
+		AI_Output(other,self,"DIA_BaalOrun_NoZustimmung_01_02A");	//Ehm... Takže tak to dopadlo, no...
 	};
 
 	AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_03");	//A kde je můj balík?
@@ -766,7 +766,7 @@ func void dia_baalorun_nozustimmung_info()
 	{
 		AI_Output(other,self,"DIA_BaalOrun_NoZustimmung_01_04");	//Jistě, tady, vezmi si ho zpátky.
 		B_GiveInvItems(other,self,itmi_drogenpocket,1);
-		AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_05");	//Aspoň žes ho nestratil. Mýlil jsem se, když jsem TEBE pověřil takovýmto úkolem!
+		AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_05");	//Aspoň žes ho neztratil. Mýlil jsem se, když jsem TĚ pověřil takovýmto úkolem!
 		AI_Output(self,other,"DIA_BaalOrun_NoZustimmung_01_06");	//Moc jsi mne zklamal! Ztrať se mi z očí!
 		IDOLORAN_YES = FALSE;
 		IDOLORAN_NOFOREVER = TRUE;
@@ -849,16 +849,16 @@ func int dia_baalorun_joinsekta_condition()
 func void dia_baalorun_joinsekta_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_JoinSekta_01_00");	//Říkal jsi, že se k vám mohu přidat.
-	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_01");	//Teď když jsi nám pomohl a prokázal svou věrnost, máš právo se na to zeptat.
+	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_01");	//Teď, když jsi nám pomohl a prokázal svou věrnost, máš právo se zeptat.
 	AI_Output(other,self,"DIA_BaalOrun_JoinSekta_01_02");	//Pak mě tedy přijmi za novice Bratrstva!
 	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_03");	//Věřím, že jsi této cti hoden.
 	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_04");	//Můžeš se k nám kdykoliv připojit.
-	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_05");	//Ale pamatuj, jakmile jednou oblékneš roucho našeho Bratrstva, nemůžeš ji pak jednoduše odložit a zříct se naší víry.
-	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_06");	//Takže si to dobře rozmysli
+	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_05");	//Ale pamatuj, jakmile jednou oblékneš roucho novice Bratrstva, nemůžeš jej pak jednoduše odložit a zříct se naší víry.
+	AI_Output(self,other,"DIA_BaalOrun_JoinSekta_01_06");	//Takže si to dobře rozmysli.
 	Log_CreateTopic(TOPIC_PSICAMPJOIN,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PSICAMPJOIN,LOG_Running);
 	CANJOINPSI = TRUE;
-	B_LogEntry(TOPIC_PSICAMPJOIN,"Baal Orun souhlasil, aby mě přijali do Bratrstva.");
+	B_LogEntry(TOPIC_PSICAMPJOIN,"Baal Orun souhlasí, aby mne přijali do Bratrstva.");
 };
 
 
@@ -886,7 +886,7 @@ func void dia_baalorun_sektaadvantage_info()
 	AI_Output(other,self,"DIA_BaalOrun_SektaAdvantage_01_00");	//Co získám tím, když se k vám přidám?
 	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_01");	//Pochybuješ, zda si vybereš správně? Dovol mi ti něco vysvětlit.
 	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_02");	//I když naše Bratrstvo nemá takovou sílu a vliv jakou mělo ve dnech existence bariéry...
-	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_03");	//... naše moudrost a vědomosti, které nám v pravý čas poskytl Spáč, jsme nejen zachránili, ale také značně rozšířili!
+	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_03");	//... naši moudrost a vědomosti, které nám v pravý čas poskytl Spáč, jsme nejen zachránili, ale také značně rozšířili!
 	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_04");	//Možná se staneš jedním z vyvolených - Guru a budeš mít možnost poznat sílu prastaré magie, kterou nám ukázal Spáč.
 	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_05");	//Anebo můžeš získat největší čest - stát se templářem. Jenom největší válečníci mohou nosit tenhle titul!
 	AI_Output(self,other,"DIA_BaalOrun_SektaAdvantage_01_06");	//Pokud je to vůle osudu, můžeš dokonce spojit oba tituly - nejlepší z templářů také získá magické vědomosti.
@@ -926,17 +926,17 @@ func void dia_baalorun_tellabout_info()
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_08");	//... v naději, že zde najdeme pokoj a najdeme nový způsob poznání tohoto světa.
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_09");	//Z toho, co se nám stalo, jsme si vzali ponaučení. Nyní se snažíme pochopit pravou podstatu toho, co se právě děje, jiným způsobem.
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_10");	//Základem nového učení je odhalovat možnosti našeho vědomí prostřednictvím dlouhých meditací.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_11");	//Samozřejmě nám s meditacemi pomáha tráva z bažin.
+	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_11");	//Samozřejmě nám s meditacemi pomáhá tráva z bažin.
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_12");	//Tato rostlina nejen uvolňuje tělo a uklidňuje mysl, ale také pomáhá soustředit se na to, co je podstatné, a podporuje poznání pravdy.
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_13");	//Bohužel na těchto místech ji není snadné najít, než naopak v bažinách, kde původně bývalo naše Bratrstvo.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_14");	//Ale podařilo se nám vyřešit i tento problém a i přes tyto podmínky se ukázalo, že rostlina zakořenila i tady.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_15");	//Avšak ještě předtím, než se může začít kouřit, je potřebná důkladná příprava. Do toho jsme zapojili naše nové členy - novice.
+	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_14");	//Podařilo se nám vyřešit i tento problém a i přes tyto podmínky se ukázalo, že rostlina zakořenila i tady.
+	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_15");	//Avšak ještě předtím, než se rostlina může začít kouřit, je potřebná důkladná příprava. Do toho jsme zapojili naše nové členy - novice.
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_16");	//My - Guru, jsme v Bratrstvu nejvýše postavení. Duch tohoto tábora žije v nás. Jsme zdatnější v manipulaci s naším podvědomím a máme rozsáhlejší znalosti o pravdě.
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_17");	//Dále jsou tady templáři. Jejich sílu používáme v bitvách. Jsou známí svou nezdolnou statečností. Nechtěj se jim postavit do cesty!
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_18");	//Vede je Gor Na Kosh, nejlepší z templářů našeho Bratrstva.
 	AI_Output(other,self,"DIA_BaalOrun_TellAbout_01_19");	//A co Cor Angar?
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_20");	//Bohužel nevíme, kde je nebo co se s ním stalo. Když začalo šílenství během pádu bariéry - nebyl v táboře.
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_21");	//Možná, že je pořád naživu. Pravděpodobně ne. Pokud se však s ním setkáš, řekni mu, že je Bratrstvo stále naživu a potřebuje jeho pomoc.
+	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_20");	//Bohužel nevíme, kde je nebo co se s ním stalo. Když začalo šílenství během pádu bariéry - v táboře nebyl.
+	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_21");	//Možná, že je pořád naživu. Pravděpodobně ne. Pokud se s ním však setkáš, řekni mu, že Bratrstvo stále existuje a potřebuje jeho pomoc.
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_22");	//Ostatní naši bratři jsou novicové. Mnoho z nich můžeš potkat v našem táboře.
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_23");	//Ale jsou zde i tací, kteří se k nám přidali. Těch ale není mnoho.
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_24");	//Většinou je sem posílá Baal Parvez - je často ve městě a hledá nové zájemce.
@@ -946,7 +946,7 @@ func void dia_baalorun_tellabout_info()
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_28");	//Samozřejmě, nebude s tebou mluvit jen tak - nic o tobě neví a ani nic o tom, jakou cestu si zvolíš.
 	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_29");	//Jen mu předej tento dar - myslím, že udělá výjimku.
 	B_GiveInvItems(self,other,itmi_specialjoint,1);
-	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_30");	//Tady, vezmi si to. Myslím, že je to vše, co ti mohu říct o našem Bratrstvu.
+	AI_Output(self,other,"DIA_BaalOrun_TellAbout_01_30");	//Tady, vezmi si to. Myslím, že to je vše, co ti mohu říct o našem Bratrstvu.
 	AI_Output(other,self,"DIA_BaalOrun_TellAbout_01_31");	//Děkuji, mistře.
 	Log_CreateTopic(TOPIC_KORANGARMEET,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KORANGARMEET,LOG_Running);
@@ -986,7 +986,7 @@ func void dia_baalorun_tellkorangar_info()
 			AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_02");	//Je mrtvý!
 			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_03");	//(vyděšeně) Ach ne! To nemůže být pravda!
 			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_04");	//To je obrovská ztráta pro Bratrstvo i nás všechny...
-			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_05");	//Nebude snadné tuto ztrátu přijmout.
+			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_05");	//Smířit se s touto zprávou nebude snadné.
 		}
 		else
 		{
@@ -1076,7 +1076,7 @@ func void dia_baalorun_canjoinpsi_info()
 	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_01_02");	//Je to tvá konečná volba? Víš jistě, že jsi připraven přijmout naši víru?
 	Info_ClearChoices(dia_baalorun_canjoinpsi);
 	Info_AddChoice(dia_baalorun_canjoinpsi,"Rozmyslel jsem si to.",dia_baalorun_canjoinpsi_no);
-	Info_AddChoice(dia_baalorun_canjoinpsi,"Ano, jsem pripraven!",dia_baalorun_canjoinpsi_yes);
+	Info_AddChoice(dia_baalorun_canjoinpsi,"Ano, jsem připraven!",dia_baalorun_canjoinpsi_yes);
 };
 
 func void dia_baalorun_canjoinpsi_yes()
@@ -1096,7 +1096,7 @@ func void dia_baalorun_canjoinpsi_yes()
 	};
 
 	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_Yes_01_04");	//Teď jsi jedním z nás, bratře.
-	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_Yes_01_05");	//Jako novic Bratrstva, budeš muset vykonávat určité povinnosti v táboře.
+	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_Yes_01_05");	//Jako novic Bratrstva, budeš muset v táboře vykonávat určité povinnosti.
 	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_Yes_01_07");	//Taky můžeš přijít za mnou, když budeš potřebovat mou pomoc.
 	AI_Output(self,other,"DIA_BaalOrun_CanJoinPsi_Yes_01_08");	//Teď jdi a snaž se být užitečný ve jménu naší víry!
 	SLD_Aufnahme = LOG_OBSOLETE;
@@ -1154,7 +1154,7 @@ func int dia_baalorun_magicsymbols_condition()
 func void dia_baalorun_magicsymbols_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_MagicSymbols_01_00");	//Co jsou to za kresby na tělech všech členů Bratrstva?
-	AI_Output(self,other,"DIA_BaalOrun_MagicSymbols_01_01");	//To nejsou kresby, ale magické symboly, které mohou ochráňovat jejich majitele před kouzly!
+	AI_Output(self,other,"DIA_BaalOrun_MagicSymbols_01_01");	//To nejsou kresby, ale magické symboly, které mohou ochraňovat jejich majitele před kouzly!
 	AI_Output(self,other,"DIA_BaalOrun_MagicSymbols_01_03");	//A jelikož jsi teď jedním z nás - můžeš je nosit stejně jako tví bratři.
 	AI_Output(self,other,"DIA_BaalOrun_MagicSymbols_01_04");	//Jdi za novicem Viranem! Pomůže ti s tím.
 	CANMAKESYMBOLS = TRUE;
@@ -1185,13 +1185,13 @@ func void dia_baalorun_tellpaladinok_info()
 	if(Npc_KnowsInfo(other,dia_baalorun_tellpaladin))
 	{
 		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_00");	//Pomoz mi dostat se k lordu Hagenovi.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_01");	//No... Jako pro jednoho z našich noviců - pokusíme se ti pomoct.
+		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_01");	//No... Jelikož jsi jedním z našich noviců - pokusíme se ti pomoct.
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_02");	//Už jsi se setkal se starostou Khorinisu. Myslím si, že si tě také pamatuje.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_03");	//Domluvím se s ním, že ti dá povolení se s ním údajně setkat na radnici.
+		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_03");	//Domluvím se s ním, že ti dá povolení k fingovanému setkání se s ním na radnici.
 		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_04");	//Opravdu mě stráže pustí dovnitř?
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_05");	//Myslím, že ano. Nebudou pochybovat o slovu tak vysoce postaveného člověka jako je Larius, to by bylo hloupé.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_06");	//A pro úplnou důvěryhodnost - řeknu Lariusovi nějaké heslo...
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_07");	//...které ti umožní přístup na samotnou radnici. Takto stráž pochopí, že jsi osobou, kterou místodržící očekává.
+		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_06");	//A pro úplnou důvěryhodnost - řeknu Lariusovi nějaké heslo, ...
+		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_07");	//...které ti umožní přístup přímo na radnici. Takto stráž pochopí, že jsi osobou, kterou místodržící očekává.
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_08");	//Myslím, že slovo 'Y'Berion' celkem dobře postačí. Zapamatuj si to!
 		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_09");	//Pamatuju si mistra Y'Beriona - jméno takové osobnosti je těžké zapomenout.
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_10");	//Dobře. A teď jdi - mám ještě další věci na práci.
@@ -1200,17 +1200,17 @@ func void dia_baalorun_tellpaladinok_info()
 	{
 		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_11");	//Pomoz mi dostat se k lordu Hagenovi.
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_12");	//(udiveně) Proč je to pro tebe tak důležité?
-		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_13");	//Potřebuju naléhavě mluvit s vůdcem paladinů ve městě. Ale stráž mě nechce pustit k lordu Hagenovi!
+		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_13");	//Potřebuju naléhavě mluvit s vůdcem paladinů ve městě. Ale stráž mě k němu nechce pustit!
 		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_14");	//Můžeš mi s tím pomoct?
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_15");	//No... Jestli je to pro tebe tak naléhavé...
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_16");	//Jak jistě chápeš, Bratrstvo má jistý vliv a kontakty v nejvyšších městských kruzích.
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_17");	//Myslím, že určitě najdeme způsob jak ti pomoct.
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_18");	//Už jsi se setkal se starostou Khorinisu. Myslím si, že si tě také pamatuje.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_19");	//Domluvím se s ním, že ti dá povolení se s ním údajně setkat na radnici.
+		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_19");	//Domluvím se s ním, že ti dá povolení k fingovanému setkání se s ním na radnici.
 		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_20");	//Opravdu mě stráže pustí dovnitř?
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_21");	//Myslím, že ano. Nebudou pochybovat o slovu tak vysoce postaveného člověka jako je Larius, to by bylo hloupé.
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_22");	//A pro úplnou důvěryhodnost - řeknu Lariusovi nějaké heslo...
-		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_23");	//...které ti umožní přístup na samotnou radnici. Takto stráž pochopí, že jsi osobou, kterou místodržící očekává.
+		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_22");	//A pro úplnou důvěryhodnost - řeknu Lariusovi nějaké heslo, ...
+		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_23");	//...které ti umožní přístup přímo na radnici. Takto stráž pochopí, že jsi osobou, kterou místodržící očekává.
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_24");	//Myslím, že slovo 'Y'Berion' celkem dobře postačí. Zapamatuj si to!
 		AI_Output(other,self,"DIA_BaalOrun_TellPaladinOk_01_25");	//Pamatuju si mistra Y'Beriona - jméno takové osobnosti je těžké zapomenout.
 		AI_Output(self,other,"DIA_BaalOrun_TellPaladinOk_01_26");	//Dobře. A teď jdi - mám ještě další věci na práci.
@@ -1242,25 +1242,25 @@ func void dia_baalorun_paladinwatch_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_PaladinWatch_01_0A");	//Máš pro mě nějaký úkol?
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_00");	//Ach, ano! Když už se ptáš.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_01");	//Našel jsem pro tebe jednu extrémně důležitou úlohu.
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_01");	//Mám pro tebe jeden extrémně důležitý úkol.
 	AI_Output(other,self,"DIA_BaalOrun_PaladinWatch_01_02");	//Co mám udělat?
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_04");	//Už víš, že nedávno přišla do Khorinisu velká skupina paladinů.
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_04");	//Jistě víš, že nedávno připlula do Khorinisu velká skupina paladinů.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_05");	//Velí jim lord Hagen - jeden z nejvýše postavených paladinů jejich řádu.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_06");	//Jak si můžem domyslet, přítomnost tak významné osobnosti jako je lord Hagen - je velmi neobvyklá věc!
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_07");	//Velice pochybuju, že přítomnost paladinů ve městě je náhodná a myslím si, že musí být na tuto otázku nějaká rozumná odpověď.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_08");	//Podle samotných paladinů je důvodem jejich přítomnosti na ostrově důsledkem možného ohrožení Khorinisu útokem skřetů.
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_06");	//Jak si můžeme domyslet, přítomnost tak významné osobnosti jako je lord Hagen - je velice neobvyklé!
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_07");	//Pochybuju, že přítomnost paladinů ve městě je pouze náhoda a osobně si myslím, že na tuto otázku existuje rozumná odpověď.
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_08");	//Podle samotných paladinů je důvodem jejich přítomnosti důsledkem možného ohrožení Khorinisu útokem skřetů.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_09");	//Nicméně je zřejmé, že síly, které tu má lord Hagen, nestačí k zajištění řádné ochrany města v případě útoku.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_10");	//Lord Hagen to jistě ví, a pokud tomu tak je...
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_11");	//... pak paladinové na ostrově sledují úplně jiné cíle než ty, o kterých oni sami říkají.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_12");	//V souvislosti s touto nejasnou situací naše Bratrstvo nemůže stát stranou od událostí, které zde probíhají.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_13");	//Nakonec, jestliže invaze skřetů do Khorinisu opravdu není jen mýtus, ale realita... (zamyšleně)
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_14");	//... pak náš osud závisí na vývoji dalších událostí.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_15");	//Pro Bratrstvo by proto bylo nesmírně užitečné znát skutečnou příčinu příchodu paladinů na ostrově a získat informace o možné invazi skřetů do této části ostrova.
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_15");	//Pro Bratrstvo by bylo nesmírně užitečné znát skutečnou příčinu příchodu paladinů na ostrov a získat informace týkající se o možné invazi skřetů do této části ostrova.
 	AI_Output(other,self,"DIA_BaalOrun_PaladinWatch_01_16");	//Takže tomu rozumím tak, že chceš, abych se o tom dověděl víc?
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_17");	//Ano, to je přesně to, co po tobě chci.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_18");	//Odpovědi jsou pro mě velice důležité.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_19");	//Obzvlášť odpovědi na otázky od kterých závisí náš další osud.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_20");	//Chápu, že zjistit skutečné příčiny všeho co se děje nebude snadné. Ale nemáme jinou možnost.
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_19");	//Obzvlášť odpovědi na otázky ze kterých závisí náš další osud.
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_20");	//Chápu, že zjistit skutečné příčiny všeho, co se děje, nebude snadné. Ale nemáme jinou možnost.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_21");	//Rozuměj tomu tak, že kdo je připravený - ten je vyzbrojený!
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_22");	//Takže, zajímají mě tři otázky...
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_23");	//Za prvé - proč přijeli paladinové do Khorinisu.
@@ -1274,7 +1274,7 @@ func void dia_baalorun_paladinwatch_info()
 	Log_CreateTopic(TOPIC_PALADINWATCH,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PALADINWATCH,LOG_Running);
 	MIS_PALADINWATCH = LOG_Running;
-	B_LogEntry(TOPIC_PALADINWATCH,"Baal Orun se chce vědět, proč přišli paladinové na Khorinis. Obává se, že paladinové skrývají pravé důvody své přítomnosti. Baal Orun se také zajímá o situaci v Hornickém údolí, kde se pravděpodobně usadila armáda skřetů. Je pro mě nevyhnutné zjistit všechno o těhle věcech a informovat jej o tom.");
+	B_LogEntry(TOPIC_PALADINWATCH,"Baal Orun se chce vědět, proč paladinové přišli na Khorinis. Obává se, že paladinové skrývají pravé důvody své přítomnosti. Baal Orun se také zajímá o situaci v Hornickém údolí, kde se pravděpodobně usadila armáda skřetů. Je pro mě nevyhnutné zjistit všechno o těhle věcech a informovat jej o tom.");
 };
 
 
@@ -1381,7 +1381,7 @@ func void dia_baalorun_spybericht_info()
 		};
 		if((IDOLORANQUESTIONFIVE == TRUE) && (TELLORANQUESTIONFIVE == FALSE))
 		{
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_58");	//Doručil jsem mu ten dopis. Lord Hagen byl tím velice rozrušený!
+			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_58");	//Doručil jsem mu ten dopis. Lord Hagen jím byl velice rozrušený!
 			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_59");	//Nyní ho sužuje jedna věc - jak dostat své muže zpátky z údolí.
 			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_60");	//Dokud to neudělá, paladinové ostrov neopustí.
 			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_61");	//Takže v případě útoku skřetů - a to zřejmě nebude trvat dlouho, než se stane...
@@ -1441,8 +1441,8 @@ func void dia_baalorun_canbeguru_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_CanBeGuru_01_00");	//Jak se mohu stát Guru?
 	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_01");	//(překvapeně) Přeješ si spojit svou životní linii s posvátnou cestou Guru?
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_02");	//Mám obavy, že je ještě příliš brzo nad tím přemýšlet!
-	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_03");	//Kromě toho, aby ses mohl stát jedním z nás - nestačí jednoduše si to přát.
+	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_02");	//Mám obavy, že je ještě příliš brzy nad tím přemýšlet!
+	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_03");	//Kromě toho, aby ses mohl stát jedním z nás - nestačí si to jednoduše přát.
 	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_04");	//Nosit roucho Guru je největší čest, která může být udělena jenom vybraným bratřím!
 	AI_Output(self,other,"DIA_BaalOrun_CanBeGuru_01_05");	//A ty k nim nepatříš.
 	AI_Output(other,self,"DIA_BaalOrun_CanBeGuru_01_06");	//A co pro to můžu udělat?
@@ -1486,9 +1486,9 @@ func void dia_baalorun_fortunoback_info()
 	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_00");	//Slyšel jsem, že se do tábora vrátil jeden z původních noviců.
 	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_01");	//Myslím, že se jmenuje Fortuno.
 	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_02");	//Řekl mi, co jsi pro něj udělal...
-	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_03");	//Udělal jsi dobře, když jsi mu pomohl.
+	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_03");	//Konal jsi dobře, když jsi mu pomohl.
 	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_04");	//Teď už se o něj Bratrstvo postará!
-	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_05");	//Jeho duch oslábl a jeho sily jsou vyčerpané - ale to napravíme. Naše víra mu pomůže znovu najít sám sebe!
+	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_05");	//Jeho duch oslábl a jeho síly jsou vyčerpané - ale to už napravíme. Naše víra mu pomůže najít znovu sám sebe!
 	AI_Output(self,other,"DIA_BaalOrun_FortunoBack_01_06");	//Z mé strany ti chci jednoduše poděkovat.
 };
 
@@ -1517,7 +1517,7 @@ func void dia_baalorun_hammerback_info()
 	B_GivePlayerXP(100);
 	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_00");	//Gor Na Kosh mi řekl, že jsi mu přinesl Tarakotovo kladivo.
 	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_01");	//Jsem velice překvapen, že jsi to dokázal!
-	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_02");	//Bratrstvo toužilo už dlouho po tomto starodávném artefaktu.
+	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_02");	//Bratrstvo už dlouho toužilo po tomto starodávném artefaktu.
 	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_03");	//A teď, díky tobě, jej máme k dispozici!
 	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_04");	//Tvé skutky ti přidávají na cti.
 	AI_Output(self,other,"DIA_BaalOrun_HammerBack_01_05");	//Ve jménu našeho Bratrstva, přijmi mé poděkování!
@@ -1560,12 +1560,12 @@ func void dia_baalorun_sekteheilen_info()
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_12");	//Slyšel jsem, že v klášteře mágů Ohně mají lektvar, který dokáže vyléčit posedlost.
 	AI_Output(other,self,"DIA_BaalOrun_SekteHeilen_01_13");	//Pokusím se jej získat.
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_14");	//Ach, to by bylo skvělé!
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_15");	//Já bych se s tímto problémem vypořádal sám, ale všechen volný čas se starám o osud našich bratří.
+	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_15");	//Vypořádal bych se s tím problémem sám, ale všechen volný čas se starám o osud našich bratří.
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilen_01_16");	//Žádám tě - pospěš si s jeho hledáním.
 	Log_CreateTopic(TOPIC_SEKTEHEILEN,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SEKTEHEILEN,LOG_Running);
 	MIS_SEKTEHEILEN = LOG_Running;
-	B_LogEntry(TOPIC_SEKTEHEILEN,"Baal Orun je znepokojen tím, že se v Khorinisu objevili mágové v černých kápích. Jsou nějakým způsobem spojeni s Bratrstvem. S příchodem těchto mágů začali novici trpět silnými bolestmi hlavy. Orun se obává, že to jsou první známky posedlosti. Požádal mě, abych šel do kláštera k mágům Ohně, kde se nacházi lektvar proti posedlosti.");
+	B_LogEntry(TOPIC_SEKTEHEILEN,"Baal Orun je znepokojen tím, že se v Khorinisu objevili mágové v černých kápích. Jsou nějakým způsobem spojeni s Bratrstvem. S příchodem těchto mágů začali novici trpět silnými bolestmi hlavy. Baal Orun se obává, že to jsou první známky posedlosti. Požádal mě, abych šel do kláštera k mágům Ohně, kde se nacházi lektvar proti posedlosti.");
 	AI_StopProcessInfos(self);
 };
 
@@ -1592,7 +1592,7 @@ func int dia_baalorun_sekteheilengot_condition()
 func void dia_baalorun_sekteheilengot_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_SekteHeilenGot_01_00");	//Mám ten lektvar.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_01");	//Výborně! Nyní je třeba jej roznést všem novicům.
+	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_01");	//Výborně! Nyní je nutné jej roznést všem novicům.
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_02");	//Ale jenom jim! Gor Na Kosh a jeho templáři mají velmi silného ducha. Templáři a my - Guru, se nemáme čeho obávat.
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_03");	//Ujisti se, že se lektvar dostane každému.
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_04");	//Jakmile ho rozdáš - vrať se ke mne.
@@ -1658,15 +1658,15 @@ func void dia_baalorun_beguru_info()
 	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_03");	//Tvé činy mluví samy za sebe: jsi silný v duchu, věrný svému přesvědčení a rozumný ve svém jednání!
 	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_04");	//Jsem přesvědčen, že jsi hoden cti nosit roucho Guru a být přijat do našeho posvátného kruhu!
 	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_05");	//Poslední volba je však na tobě.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_06");	//Měl bys pochopit, že zvolením této cesty - ji už nemůžeš jednoduše odvrhnout.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_07");	//Také jsem si promluvil s Gor Na Koshem, mentorem templářů.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_08");	//Také si přeje vidět tě ve svých řadách!
+	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_06");	//Měl bys vědět, že pokud zvolíš tuto cestu - nemůžeš ji už jednoduše odvrhnout.
+	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_07");	//Také jsem si promluvil s Gor Na Koshem, vůdcem templářů.
+	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_08");	//Také by si přál vidět tě ve svých řadách!
 	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_09");	//Stát se templářem je nepochybně veliká čest, ale nedá se to porovnat se zasvěcením na Guru.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_10");	//Je to největší pocta, která může být udělena následovníkovi naší víry!
+	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_10");	//Je to nejvyšší pocta, která může být udělena následovníkovi naší víry!
 	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_11");	//Navíc tajemná magie kterou nám odhalil Spáč, je přístupná pouze pro Guru...
 	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_12");	//... a pouze my jsme schopni využít jejich neocenitelné znalosti.
 	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_13");	//Takže, předtím, než uděláš své konečné rozhodnutí, pečlivě promysli vše, co jsem ti řekl.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_14");	//A dej mi vědět, pokud budeš připraven přijmout zasvěcení do našeho Kruhu.
+	AI_Output(self,other,"DIA_BaalOrun_BeGuru_01_14");	//A dej mi vědět, jakmile budeš připraven přijmout zasvěcení do našeho Kruhu.
 	READYBEGURU = TRUE;
 };
 
@@ -1717,17 +1717,17 @@ func void dia_baalorun_beguruok_info()
 	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_01");	//Budiž!
 	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_02");	//Tímto tě přijímám do našeho svatého kruhu a přiděluji ti titul Guru!
 	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_03");	//Odteď, jsi jedním z nás!
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_04");	//Přijmi toto roucho, a nos jej jako symbol našeho Kruhu!
+	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_04");	//Přijmi toto roucho a nos jej jako symbol našeho Kruhu!
 	CreateInvItems(self,itar_gur_l,1);
 	B_GiveInvItems(self,other,itar_gur_l,1);
 	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_05");	//Nos jej s pýchou. Jenom málo lidí bylo takto poctěno!
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_06");	//Přijmi také tuto magickou hůl. Jenom pro nás - Guru, je dána čest nosit ji a disponovat její sílou!
+	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_06");	//Přijmi také tuto magickou hůl. Jenom nám - Guru, je dána čest ji nosit a disponovat její sílou!
 	CreateInvItems(self,ITMW_2H_G3_STAFFDRUID_01,1);
 	B_GiveInvItems(self,other,ITMW_2H_G3_STAFFDRUID_01,1);
 	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_07");	//Nezapomeň, že být Guru neznamená jenom být přijat do našeho Kruhu...
 	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_08");	//... je to znamení! Znamení tvého osudu a volby.
 	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_09");	//Buď věrný naší víře až do konce a snaž se být ve svých skutcích moudrý a rozvážný.
-	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_10");	//To je vše, co jsem ti chtěl říct, než budeš pokračovat v cestě!
+	AI_Output(self,other,"DIA_BaalOrun_BeGuruOk_01_10");	//To je vše, co jsem ti chtěl říct, než budeš na své cestě pokračovat!
 	AI_StopProcessInfos(self);
 };
 
@@ -1738,7 +1738,7 @@ instance DIA_BAALORUN_PRETEACH(C_Info)
 	condition = dia_baalorun_preteach_condition;
 	information = dia_baalorun_preteach_info;
 	permanent = FALSE;
-	description = "Mohu nyní poznat tajemství Spáčovy magie?";
+	description = "Prozradíš mi nyní tajemství Spáčovy magie?";
 };
 
 
@@ -1752,14 +1752,14 @@ func int dia_baalorun_preteach_condition()
 
 func void dia_baalorun_preteach_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_PreTeach_01_00");	//Mohu nyní poznat tajemství Spáčovy magie?
+	AI_Output(other,self,"DIA_BaalOrun_PreTeach_01_00");	//Prozradíš mi nyní tajemství Spáčovy magie?
 	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_01");	//Ano. Teď jsi připraven unést pravé vědění, které je vyhrazeno pouze pro Guru našeho Bratrstva.
 	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_02");	//Budeš-li potřebovat pomoc těm znalostem porozumět...
 	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_03");	//... mohu tě seznámit s kruhy magie, které jsou nezbytné pro používání magických run.
 	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_04");	//Baal Cadar ti pomůže zvýšit tvou magickou sílu.
 	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_05");	//Baal Namib tě naučí vytvářet runy se Spáčovou magií.
 	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_06");	//A Baal Tyon ti prodá nějaké magické svitky a potřebné ingredience pro výrobu run.
-	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_07");	//Po získání všech znalostí se bude ve tvých rukou soustředit obrovská síla!
+	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_07");	//Jakmile získáš potřebné znalosti, budeš ve svých rukou třímat obrovskou sílu!
 	AI_Output(self,other,"DIA_BaalOrun_PreTeach_01_08");	//Pamatuj si to a používej ji moudře.
 	BAALTYON_CANTRADE = TRUE;
 	BAALNAMIB_TEACHRUNES = TRUE;
@@ -1795,7 +1795,7 @@ func void dia_baalorun_explaincircles_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_EXPLAINCIRCLES_Info_15_01");	//Prosím, vysvětli mi smysl kruhů magie.
 	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_02");	//S radostí. Kruhy symbolizují tvé chápaní magie.
-	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_03");	//Určuje úroveň tvých vědomostí a schopností, zdatnosti učit se nové zaklínadla.
+	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_03");	//Určuje úroveň tvých vědomostí a schopností, zdatnosti učit se nová zaklínadla.
 	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_04");	//Musíš projít každým kruhem až do konce, než se můžeš připojit k dalšímu.
 	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_05");	//Bude potřeba spoustu hodin studia a spoustu nabytých zkušeností, aby ses dostal do vyšších kruhů magie.
 	AI_Output(self,other,"DIA_BaalOrun_EXPLAINCIRCLES_Info_14_06");	//Tvé úsilí bude vždy odměněno novými mocnými kouzly. V každém případě však kruhy magie znamenají mnohem víc.
@@ -1924,7 +1924,7 @@ func void DIA_BaalOrun_CIRCLE_4()
 		AI_Output(other,self,"DIA_BaalOrun_CIRCLE_15_04");	//Ano, jsem připraven.
 		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_22");	//Dokončil jsi první tři kruhy. Nadešel čas pochopit tajemství magie.
 		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_23");	//Základem runové magie je kámen. Magický kámen z magické rudy.
-		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_24");	//Jedná se o stejnou rudu, která se těží v dolech. V chrámech je obdařena magickými formulemi, a tak je transformována do nástroje naší síly.
+		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_24");	//Jedná se o stejnou rudu, která se těží v dolech. V chrámech je obdařena magickými formulemi, a ty jsou transformovány jako nástroje naší síly.
 		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_25");	//Nyní máš všechny vědomosti, které jsme shromáždili.
 		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_27");	//Nauč se kouzlo a objevíš tajemství moci.
 		AI_Output(self,other,"DIA_BaalOrun_CIRCLE_14_28");	//A ještě něco. Vstupem do čtvrtého kruhu si zasloužíš čest nosit vznešené roucho Guru!
@@ -2130,9 +2130,9 @@ func void dia_baalorun_gatherarmy_info()
 		AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_03");	//Poslouchej, brzy přijdou skřeti!
 		AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_04");	//Skřeti?! Hmm... Jak jsi na to přišel?
 	};
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_05");	//Přišel jsem s návrhem od Lorda Hagena, hlavy paladinského řádu.
+	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_05");	//Přišel jsem s návrhem od Lorda Hagena, vůdce paladinského řádu.
 	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_06");	//Ano? Co navrhuje?
-	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_07");	//Žádá vás o pomoc ve válce proti těmto tvorům.
+	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_07");	//Žádá Bratrstvo o pomoc ve válce proti těmto tvorům.
 	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_08");	//Takže se lord Hagen chce otevřeně postavit proti skřetům?
 	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_09");	//Přesně tak! Pravdou je, že pro otevřený boj zatím nemá dostatek lidí.
 	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_10");	//Věří, že bude mít šanci tuto bitvu vyhrát s pomocí Bratrstva.
@@ -2140,7 +2140,7 @@ func void dia_baalorun_gatherarmy_info()
 	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_12");	//Ale skřeti už převzali většinu ostrova! Ještě kousek a zaberou ho úplně.
 	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_13");	//Nikoho neušetří, všechny obyvatele zmasakrují. Je nepravděpodobné, že k Bratrstvu budou shovívaví.
 	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_14");	//(rozhodně) Dobře! Přesvědčil jsi mě o potřebě tohoto spojenectví.
-	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_15");	//Bratrstvo paladinům pomůže, protože se z toho stal náš společný problém.
+	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_15");	//Bratrstvo paladinům pomůže, jelikož je to náš společný problém.
 	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_16");	//Dobře, vyřídím to lordu Hagenovi. Kdy vyrazíte?
 	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_17");	//Tohle rozhodnutí není na mně. Myslím, že by bylo lepší, kdyby sis o tom promluvil s Gor Na Koshem.
 	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_18");	//On teď vede posvátný řád templářů.
@@ -2150,7 +2150,7 @@ func void dia_baalorun_gatherarmy_info()
 	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_22");	//Musíš však pochopit, že Guru je primárně duchovní mentor Bratrstva a ne jeho válečník.
 	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_23");	//Takže jdi za Gor Na Koshem a řekni mu má slova. Všechno ostatní rozhodne on sám.
 	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_24");	//Dobře, udělám to.
-	B_LogEntry(TOPIC_ORсGREATWAR,"Dokázal jsem Baala Oruna přesvědčit, že je nutné bojovat na straně paladinů. Teď si musím promluvit s Gor Na Koshem, vůdcem řádu templářů, a zjistit, kdy budou templáři připraveni vyrazit.");
+	B_LogEntry(TOPIC_ORсGREATWAR,"Dokázal jsem Baala Oruna přesvědčit, že je nutné bojovat na straně paladinů. Teď si musím promluvit s Gor Na Koshem, vůdcem templářů, a zjistit, kdy budou templáři připraveni vyrazit.");
 };
 
 
@@ -2174,9 +2174,9 @@ func int dia_baalorun_getship_condition()
 
 func void dia_baalorun_getship_info()
 {
-	AI_Output(other,self,"DIA_BaalOrun_GetShip_01_00");	//Musím se dostat na loď paladinů. Můžeš mi s tím pomocct?
+	AI_Output(other,self,"DIA_BaalOrun_GetShip_01_00");	//Musím se dostat na loď paladinů. Můžeš mi s tím pomoct?
 	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_01");	//Hmm... A proč se tam musíš dostat?
-	AI_Output(other,self,"DIA_BaalOrun_GetShip_01_02");	//Zjistil jsem, kde přebývá náš hlavní nepřítel. A potřebuji loď, abych se tam dostal.
+	AI_Output(other,self,"DIA_BaalOrun_GetShip_01_02");	//Zjistil jsem, kde přebývá náš hlavní nepřítel. Potřebuji loď, abych se tam dostal.
 	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_03");	//V tom případě vím, jak nejlépe postupovat.
 	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_04");	//Máme docela dobré vztahy s některými vlivnými lidmi ve městě.
 	AI_Output(self,other,"DIA_BaalOrun_GetShip_01_05");	//Jistě budou někteří z nich schopni tento problém vyřešit. Myslím, že bychom se na ně měli obrátit!
@@ -2189,7 +2189,7 @@ func void dia_baalorun_getship_info()
 	MIS_ORUNHELPSHIP = LOG_Running;
 	Log_CreateTopic(TOPIC_ORUNHELPSHIP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ORUNHELPSHIP,LOG_Running);
-	B_LogEntry(TOPIC_ORUNHELPSHIP,"Baal Orun slíbil, že mi pomůže s lodí. Bude to však stát velkou hromadou zlata! Měl bych se k němu vrátit za pár dní.");
+	B_LogEntry(TOPIC_ORUNHELPSHIP,"Baal Orun slíbil, že mi pomůže s lodí. Bude to však stát hodně zlata! Měl bych se k němu vrátit za pár dní.");
 };
 
 
@@ -2216,11 +2216,11 @@ func int dia_baalorun_getshipdone_condition()
 
 func void dia_baalorun_getshipdone_info()
 {
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_01_00");	//Přišel jsi akorát včas. Mám několik novinek ohledně tvě nedávné žádosti.
+	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_01_00");	//Přišel jsi akorát včas. Mám několik novinek ohledně tvé nedávné žádosti.
 	AI_Output(other,self,"DIA_BaalOrun_GetShipDone_01_01");	//Jaké?
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_01_02");	//Podařilo se mi pro tebe získat písemné povolení k přístupu na paladinskou loď.
+	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_01_02");	//Podařilo se mi získat písemné povolení k přístupu na paladinskou loď.
 	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_01_03");	//Nicméně, jak jsem již řekl, budeš za to muset zaplatit.
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_01_05");	//Pouze dvě tisíce zlatých. Tak co říkáš?
+	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_01_05");	//Pouze dva tisíce zlatých. Tak co říkáš?
 	Info_ClearChoices(dia_baalorun_getshipdone);
 	Info_AddChoice(dia_baalorun_getshipdone,"Teď nemám dost peněz.",dia_baalorun_getshipdone_paylater);
 	if(Npc_HasItems(other,ItMi_Gold) >= 2000)
@@ -2232,7 +2232,7 @@ func void dia_baalorun_getshipdone_info()
 func void dia_baalorun_getshipdone_paylater()
 {
 	AI_Output(other,self,"DIA_BaalOrun_GetShipDone_PayLater_01_00");	//Teď nemám dost peněz.
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_PayLater_01_01");	//Tak si o tom promluvíme až je budeš mít.
+	AI_Output(self,other,"DIA_BaalOrun_GetShipDone_PayLater_01_01");	//Tak si o tom promluvíme později.
 	AI_Output(other,self,"DIA_BaalOrun_GetShipDone_PayLater_01_02");	//Samozřejmě.
 	ORUNCANGIVEMEPASS = TRUE;
 	B_LogEntry(TOPIC_ORUNHELPSHIP,"Mám zaplatit dva tisíce zlatých Baalovi Orunovi, poté mi dá písemné povolení pro vstup na loď.");
@@ -2250,7 +2250,7 @@ func void dia_baalorun_getshipdone_money()
 	AI_Output(other,self,"DIA_BaalOrun_GetShipDone_Money_01_03");	//Tím si můžeš být jist.
 	MIS_ORUNHELPSHIP = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_ORUNHELPSHIP,LOG_SUCCESS);
-	B_LogEntry(TOPIC_ORUNHELPSHIP,"Baal Orun mi dal písemné povolení, což znamená že mohu vstoupit na palubu lodi paladinů.");
+	B_LogEntry(TOPIC_ORUNHELPSHIP,"Baal Orun mi dal písemné povolení, což znamená, že mohu vstoupit na palubu lodi paladinů.");
 	Info_ClearChoices(dia_baalorun_getshipdone);
 };
 
@@ -2289,7 +2289,7 @@ func void dia_baalorun_getshipdoneagain_info()
 func void dia_baalorun_getshipdoneagain_paylater()
 {
 	AI_Output(other,self,"DIA_BaalOrun_GetShipDoneAgain_PayLater_01_00");	//Nemám dost peněz.
-	AI_Output(self,other,"DIA_BaalOrun_GetShipDoneAgain_PayLater_01_01");	//Tak si o tom promluvíme až je budeš mít.
+	AI_Output(self,other,"DIA_BaalOrun_GetShipDoneAgain_PayLater_01_01");	//Tak si o tom promluvíme později.
 	Info_ClearChoices(dia_baalorun_getshipdoneagain);
 };
 
@@ -2304,7 +2304,7 @@ func void dia_baalorun_getshipdoneagain_money()
 	AI_Output(other,self,"DIA_BaalOrun_GetShipDoneAgain_Money_01_03");	//Tím si můžeš být jist.
 	MIS_ORUNHELPSHIP = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_ORUNHELPSHIP,LOG_SUCCESS);
-	B_LogEntry(TOPIC_ORUNHELPSHIP,"Baal Orun mi dal písemné povolení, což znamená že mohu vstoupit na palubu lodi paladinů.");
+	B_LogEntry(TOPIC_ORUNHELPSHIP,"Baal Orun mi dal písemné povolení, což znamená, že mohu vstoupit na palubu lodi paladinů.");
 	Info_ClearChoices(dia_baalorun_getshipdoneagain);
 };
 
@@ -2316,7 +2316,7 @@ instance DIA_BAALORUN_RUNEMAGICNOTWORK(C_Info)
 	condition = dia_baalorun_runemagicnotwork_condition;
 	information = dia_baalorun_runemagicnotwork_info;
 	permanent = FALSE;
-	description = "Jak to jde s vaší magií?";
+	description = "Jak to jde s magií?";
 };
 
 
@@ -2331,7 +2331,7 @@ func int dia_baalorun_runemagicnotwork_condition()
 func void dia_baalorun_runemagicnotwork_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_BaalOrun_RuneMagicNotWork_01_00");	//Jak to jde s vaší magií?
+	AI_Output(other,self,"DIA_BaalOrun_RuneMagicNotWork_01_00");	//Jak to jde s magií?
 	AI_Output(self,other,"DIA_BaalOrun_RuneMagicNotWork_01_01");	//Naše magické runy slábnou a už nejsou schopny kouzlit!
 	AI_Output(self,other,"DIA_BaalOrun_RuneMagicNotWork_01_02");	//My všichni jsme těmito okolnostmi velice znepokojeni, ale nemůžeme nic dělat.
 	AI_Output(self,other,"DIA_BaalOrun_RuneMagicNotWork_01_03");	//Všechno je to poněkud zvláštní.
