@@ -41,14 +41,14 @@ func int DIA_STRF_8121_Addon_Krow_PreHello_condition()
 
 func void DIA_STRF_8121_Addon_Krow_PreHello_info()
 {
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_00");	//(Ticho) Nová tvár v dole.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_01");	//Nemávam hostí často.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_PreHello_01_02");	//Nuž tu som.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_03");	//Je divné, že ťa skřeti nechali vojsť.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_04");	//Normálne sa sem dostávajú iba otroci.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_05");	//Ty ale s nimi máš očividne nejakú dohodu.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_PreHello_01_06");	//Povedzme, že máme nejaké spoločné záujmy.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_07");	//Nuž, to nie je moja starosť. Ja som len obyčajný služobník.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_00");	//(klidně) Á, nová tvář.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_01");	//Hosty tu nemíváme zrovna často. Ty jsi zde z vlastní svobodné vůle nebo jak, poutníku?
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_PreHello_01_02");	//Ano, z vlastního rozhodnutí.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_03");	//Je dost divné, že tě sem skřeti pustili.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_04");	//Obvykle jediní, kteří se sem dostanou, jsou otroci.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_05");	//Očividně jsi s nimi uzavřel nějakou dohodu.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_PreHello_01_06");	//Řekněme, že máme nějaké společné zájmy.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_PreHello_01_07");	//Nuže, nakonec to není moje věc. Jsem jen obyčejný otrok.
 };
 
 instance DIA_STRF_8121_Addon_Krow_HELLO(C_Info)
@@ -58,7 +58,7 @@ instance DIA_STRF_8121_Addon_Krow_HELLO(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_hello_condition;
 	information = DIA_STRF_8121_Addon_Krow_hello_info;
 	permanent = FALSE;
-	description = "Ako si sa sem dostal?";
+	description = "Jak jsi se sem dostal?";
 };
 
 func int DIA_STRF_8121_Addon_Krow_hello_condition()
@@ -68,15 +68,14 @@ func int DIA_STRF_8121_Addon_Krow_hello_condition()
 
 func void DIA_STRF_8121_Addon_Krow_hello_info()
 {
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Hello_01_00");	//Ako si sa sem dostal?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_01");	//Očividne som niečím rozhneval Innosa.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Hello_01_02");	//A čo si bol predtým?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_03");	//Bol som mág a slúžil som pod rudobaronmi.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Hello_01_04");	//Rozumieš mágii?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_05");	//Niečo málo. Samozrejme nie som tak dobrý v umení mágie ako hmm... mágové Ohně.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_06");	//Ale niečo som vedel urobiť. Až kým som nepadol do rúk skřetům.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_07");	//Bohužial za mnoho rokov tvrdej práce som vela pozabúdal.
-};
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Hello_01_00");	//Jak jsi se sem dostal?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_01");	//Pravděpodobně jsem něčím rozhněval Innose.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Hello_01_02");	//Kdo jsi byl předtím?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_03");	//Byl jsem mág a sloužil jsem rudobaronům.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Hello_01_04");	//Jsi v magii dobrý?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_05");	//Trochu. Samozřejmě v umění magie nejsem tak dobrý, jako...  mágové Ohně.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_06");	//Ale něco jsem uměl. Až do doby, než jsem spadl do spárů skřetů.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_07");	//Bohužel jsem za ta léta strávená v dole spoustu věcí zapomněl.
 
 instance DIA_STRF_8121_Addon_Krow_Help(C_Info)
 {
@@ -85,7 +84,7 @@ instance DIA_STRF_8121_Addon_Krow_Help(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Help_condition;
 	information = DIA_STRF_8121_Addon_Krow_Help_info;
 	permanent = FALSE;
-	description = "Si v poriadku?";
+	description = "Jsi v pořádku?";
 };
 
 func int DIA_STRF_8121_Addon_Krow_Help_condition()
@@ -95,22 +94,22 @@ func int DIA_STRF_8121_Addon_Krow_Help_condition()
 
 func void DIA_STRF_8121_Addon_Krow_Help_info()
 {
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_00");	//Si v poriadku?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_01");	//Viac menej. Ale cítil by som sa lepšie, ak by som mal so sebou svoj denník.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_02");	//Denník?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_03");	//Hej hej, zapisoval som si tam svoje myšlienky, pozorovania a tak ďalej.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_04");	//Ale keď ma chytili skřeti, tak mi ho spolu s ostatnými vecami vzali.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_05");	//Bol pre mňa velmi doležitý. Povedzme, že to bolo moje životné dielo.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_06");	//Máš potuchy, kde by mohol byť teraz?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_07");	//Asi ho majú stále skřeti. Ale myslím, že ti ho nedajú len tak.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_08");	//Kde si ho videl naposledy?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_09");	//U skřeta, ktorý ma prehladal. Myslím, že sa volal Kor Shack.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_10");	//To je aspoň niečo. Ak dostanem šancu, tak ti ho donesiem.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_11");	//Ďakujem cudzinec.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_00");	//Jsi v pořádku?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_01");	//Víceméně. Ale cítil bych se lépe, kdybych měl u sebe svůj deník.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_02");	//Deník?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_03");	//Ano. Zapisoval jsem si do něj své myšlenky, pozorovaní a podobně.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_04");	//Ale když mě zajali skřeti, tak mi ho vzali spolu s ostatními věcmi.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_05");	//Byl pro mne velmi důležitý. Řekněme, že byl mým životním dílem.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_06");	//Nemáš tušení, kde je teď?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_07");	//Nejspíš ho mají stále skřeti. Ale pochybuju, že ti ho dají jen tak.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_08");	//Kde jsi ho viděl naposledy?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_09");	//U skřeta, který mě prohledával. Myslím, že se jmenoval Kor Shak.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_10");	//Alespoň něco. Pokud se mi naskytne příležitost, vrátím ti tvůj deník.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_11");	//Děkuji, poutníku.
 	MIS_KrowBook = LOG_Running;
 	Log_CreateTopic(TOPIC_KrowBook,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KrowBook,LOG_Running);
-	B_LogEntry(TOPIC_KrowBook,"Skřeti vzali Crowovi jeho denník, ktorý by chcel zpět. Naposledy ho videl v rukách skřeta s menom Kor Shack.");
+	B_LogEntry(TOPIC_KrowBook,"Skřeti vzali Crowovi deník, který byl pro něj velmi cenný. Naposledy ho viděl v rukou skřeta jménem Kor Shak.");
 };
 
 instance DIA_STRF_8121_Addon_Krow_Book(C_Info)
@@ -120,7 +119,7 @@ instance DIA_STRF_8121_Addon_Krow_Book(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Book_condition;
 	information = DIA_STRF_8121_Addon_Krow_Book_info;
 	permanent = FALSE;
-	description = "Je toto tvoj denník?";
+	description = "Je to tvůj deník?";
 };
 
 func int DIA_STRF_8121_Addon_Krow_Book_condition()
@@ -134,18 +133,18 @@ func int DIA_STRF_8121_Addon_Krow_Book_condition()
 func void DIA_STRF_8121_Addon_Krow_Book_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_00");	//Je toto tvoj denník?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Book_01_01");	//Hej je to on, ako si ho získal?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_02");	//To nie je důležité.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_03");	//Zober si ho a poriadne schovaj. Ak ti ho skřeti zas zoberú, už tu nemusím byť.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_00");	//Je to tvůj deník?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Book_01_01");	//Ano, to je on! Jak jsi ho získal?
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_02");	//Na tom nezáleží.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_03");	//Jen si ho vem a pořádně uschovej, aby ti ho skřeti znovu nevzali.
 	B_GiveInvItems(other,self,ItWr_KrowBook,1);
 	Npc_RemoveInvItems(self,ItWr_KrowBook,1);
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Book_01_04");	//Samozrejme samozrejme, ďakujem.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_05");	//Niet zač.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Book_01_04");	//Určitě. Děkuji mockrát!
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Book_01_05");	//Nemáš za co.
 	RT_Respect = RT_Respect + 1;
 	MIS_KrowBook = LOG_Success;
 	Log_SetTopicStatus(TOPIC_KrowBook,LOG_Success);
-	B_LogEntry(TOPIC_KrowBook,"Vrátil som Crowovi jeho denník. Bol v siedmom nebi.");
+	B_LogEntry(TOPIC_KrowBook,"Vrátil jsem Crowovi jeho deník. Byl v sedmém nebi.");
 };
 
 instance DIA_STRF_8121_Addon_Krow_Paladin(C_Info)
@@ -155,7 +154,7 @@ instance DIA_STRF_8121_Addon_Krow_Paladin(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Paladin_condition;
 	information = DIA_STRF_8121_Addon_Krow_Paladin_info;
 	permanent = FALSE;
-	description = "Mám pre teba otázku.";
+	description = "Mám na tebe jeden dotaz.";
 };
 
 func int DIA_STRF_8121_Addon_Krow_Paladin_condition()
@@ -168,22 +167,22 @@ func int DIA_STRF_8121_Addon_Krow_Paladin_condition()
 
 func void DIA_STRF_8121_Addon_Krow_Paladin_info()
 {
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Paladin_01_00");	//Mám pre teba otázku.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_01");	//Dobre! Ak budem vedieť, odpoviem.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Paladin_01_02");	//Hladám tu paladina.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Paladin_01_00");	//Mám na tebe jeden dotaz.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_01");	//Dobře! Odpovím, budu-li znát odpověď.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Paladin_01_02");	//Hledám tady paladina.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_03");	//(šeptom) Shhh, tichšie! Možu nás počuť.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_04");	//Je nebezpečné baviť sa o takých veciach. A skřeti neodpúštajú.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Paladin_01_05");	//Ale predsa. Vieš o tom niečo?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_06");	//Hmmm... podla mňa nato ideš príliš priamo.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_07");	//Myslíš, že to budem rozoberať s niekým, ktomu neverím úplne?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_08");	//Koniec koncov, paktuješ so skřety. A to můj drahý nemám priaznivý vplyv na tvoju reputáciu medzi otrokmi.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_09");	//A my nemůžeme riskovať, pretože to může byť naša posledná šanca na útek odtialto.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_10");	//Takže keď sa zmení situácia, můžeme sa o tom porozprávať.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_03");	//(šeptem) Ticho, ne tak nahlas, příteli. Uslyší nás.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_04");	//Mluvit tady o takových věcech je velmi nebezpečné. Skřeti chyby neodpouští.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Paladin_01_05");	//Ale přece jen, víš o tom něco?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_06");	//Hmm...  (upřeně hledí) Jdeš na to příliš přímo...
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_07");	//Myslíš, že se o tom budu bavit s někým, komu nedůvěřuju?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_08");	//Koneckonců, paktuješ se se skřety. A to je, můj drahý příteli, velmi nepříznivé pro tvou reputaci s otroky.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_09");	//Nemůžeme takto riskovat, může to být naše poslední šance, jak se odtud dostat živí.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_10");	//K této konverzaci se vraťme až tehdy, jakmile se situace trochu změní.
 	MIS_TrustMe = LOG_Running;
 	Log_CreateTopic(TOPIC_TrustMe,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TrustMe,LOG_Running);
-	B_LogEntry(TOPIC_TrustMe,"Potrebujem získať důveru kopáčov, predtým, než sa dozviem niečo viac o zmiznutom paladinovi. Asi musím týmto ludom pomocť s ich problémami...");
+	B_LogEntry(TOPIC_TrustMe,"Pokud se chci dozvědět něco víc o ztraceném paladinovi, potřebuji získat důvěru otroků. Musím se jim pokusit pomoct s jejich problémy.");
 };
 
 instance DIA_STRF_8121_Addon_Krow_Respect(C_Info)
@@ -193,7 +192,7 @@ instance DIA_STRF_8121_Addon_Krow_Respect(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Respect_condition;
 	information = DIA_STRF_8121_Addon_Krow_Respect_info;
 	permanent = TRUE;
-	description = "Čo sa tu o mne hovorí?";
+	description = "Co se o mně říká?";
 };
 
 func int DIA_STRF_8121_Addon_Krow_Respect_condition()
@@ -206,49 +205,49 @@ func int DIA_STRF_8121_Addon_Krow_Respect_condition()
 
 func void DIA_STRF_8121_Addon_Krow_Respect_info()
 {
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_00");	//Čo sa tu o mne hovorí?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_01");	//Hmmm...(zamyslene)
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_00");	//Co se o mně říká?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_01");	//Hmm... (zamyšleně)
 
 	if(RT_Respect >= 8)
 	{
 		B_GivePlayerXP(250);
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_02");	//Zdá sa, že sa ti podarilo získať důveru ostatných cudzinec.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_03");	//Takže je čas aby sa stretol s tými, čo ich hladáš.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_04");	//Avšak, máme malý problém.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_05");	//Aký problém?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_06");	//Tu je vela stráží. Musíme ísť niekam, kde nás nebudú počuť.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_07");	//Nápady?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_08");	//Hmmm... (zamyslene) V jaskyni, kde maká Nuts zvykne byť len jeden strážca.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_09");	//Ak by sa ti ho podarilo nejako odlákať, získali by sme čas.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_10");	//Dobre, pokusím sa ho odtial dostať.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_11");	//Dobre! Počkám na tvoj signál.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_02");	//Zdá se, že se ti podařilo získat důvěru ostatních, poutníku.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_03");	//Je načase, aby ses setkal s těmi, které hledáš.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_04");	//Avšak, je tu jeden malý problém.
+		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_05");	//Jaký?
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_06");	//Je tu příliš mnoho stráží. Musíme najít místo, kde nás skřeti neuslyší.
+		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_07");	//Nějaké nápady?
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_08");	//Hmm... (zamyšleně) Napadá mě místo, kde pracuje Nuts, obvykle tam bývá pouze jeden strážný.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_09");	//Pokud by se ti nějakým způsobem podařilo odlákat jeho pozornost, měli bychom čas promluvit si s paladinem.
+		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_10");	//Dobrá, pokusím se ho odlákat.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_11");	//Dobře! Budu čekat na tvůj signál.
 		MIS_TrustMe = LOG_Success;
 		Log_SetTopicStatus(TOPIC_TrustMe,LOG_Success);
-		B_LogEntry(TOPIC_TrustMe,"Získal som důveru kopáčov.");
+		B_LogEntry(TOPIC_TrustMe,"Získal jsem si důvěru otroků.");
 		MIS_RemoveOrc = LOG_Running;
 		Log_CreateTopic(TOPIC_RemoveOrc,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_RemoveOrc,LOG_Running);
-		B_LogEntry_Quiet(TOPIC_RemoveOrc,"Potrebujem odlákať pozornosť skřetí stráže v jaskyni, kde maká Nuts. Potom si budem mocť pokecať s paladinom.");
+		B_LogEntry_Quiet(TOPIC_RemoveOrc,"Musím odlákat pozornost skřetí stráže v jeskyni, kde pracuje Nuts. Poté si můžeme promluvit s paladinem.");
 	}
 	else if(RT_Respect >= 6)
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_12");	//Už si skoro tam!
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_13");	//Mnoho z nás ti důveruje.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_14");	//Už len pár krokov.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_12");	//Už to skoro máš!
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_13");	//Mnoho z nás ti už důveřuje.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_14");	//Zbývá už jen pár věcí.
 	}
 	else if(RT_Respect >= 3)
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_15");	//Ludia ti začínajú trocha veriť.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_16");	//Musíš sa ale snažiť viac.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_15");	//Lidé ti už začínají důvěřovat.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_16");	//Stále však máš co na práci.
 	}
 	else if(RT_Respect >= 0)
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_17");	//Už si pomohol niekolkým z nás.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_18");	//Ale to nie je dosť. Musíš sa viac snažiť.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_17");	//Už jsi pomohl některým z nás.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_18");	//Ale je to pořád málo. Musíš se snažit víc.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_19");	//Nič kámo, nič.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_19");	//Obávám se, že zatím nic.
 	};
 };
 
@@ -260,7 +259,7 @@ instance DIA_STRF_8121_Addon_Krow_RemoveOrc(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_RemoveOrc_condition;
 	information = DIA_STRF_8121_Addon_Krow_RemoveOrc_info;
 	permanent = FALSE;
-	description = "Postaral som sa o stráž.";
+	description = "Postaral jsem se o stráž.";
 };
 
 func int DIA_STRF_8121_Addon_Krow_RemoveOrc_condition()
@@ -274,13 +273,13 @@ func int DIA_STRF_8121_Addon_Krow_RemoveOrc_condition()
 func void DIA_STRF_8121_Addon_Krow_RemoveOrc_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_RemoveOrc_01_00");	//Postaral som sa o stráž.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_RemoveOrc_01_00");	//Postaral jsem se o stráž.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_RemoveOrc_01_01");	//(Šeptom) Dobre, o zvyšok sa postarám ja.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_RemoveOrc_01_02");	//Ty choď do jaskyne a čakaj.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_RemoveOrc_01_01");	//(šeptem) Dobře, o zbytek se už postarám.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_RemoveOrc_01_02");	//Zatím se vrať do jeskyně a počkej tam.
 	MIS_RemoveOrc = LOG_Success;
 	Log_SetTopicStatus(TOPIC_RemoveOrc,LOG_Success);
-	B_LogEntry(TOPIC_RemoveOrc,"Povedal som Crowovi, že jaskyňa je prázdna. On sa postará, aby sa stretnutie uskutočnilo.");
+	B_LogEntry(TOPIC_RemoveOrc,"Řekl jsem Crowovi, že jeskyně je prázdná. Postará se o setkání s paladinem. Zatím mám jít do jeskyně a počkat tam.");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(STRF_8120_Addon_Gars,"Meet");
 	AI_Teleport(STRF_8120_Addon_Gars,"OM_LEVEL_02_BELIAR_04");
@@ -293,7 +292,7 @@ instance DIA_STRF_8121_Addon_Krow_Teleport(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Teleport_condition;
 	information = DIA_STRF_8121_Addon_Krow_Teleport_info;
 	permanent = FALSE;
-	description = "Počul som, že máš záujem o niečo s Nutsom.";
+	description = "Slyšel jsem, že tě zajímá Nutsova prastará tabulka.";
 };
 
 func int DIA_STRF_8121_Addon_Krow_Teleport_condition()
@@ -307,10 +306,10 @@ func int DIA_STRF_8121_Addon_Krow_Teleport_condition()
 func void DIA_STRF_8121_Addon_Krow_Teleport_info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_00");	//Počul som, že máš záujem o niečo s Nutsom.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_01");	//Hej, ale bohužial ho nikomu nedáva.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_02");	//Ale mne dal. Tu!
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_03");	//Pre neho to nie je. Dúfam, že to bolo v dobrej viere?
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_00");	//Slyšel jsem, že tě zajímá Nutsova prastará tabulka.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_01");	//Ano, ale bohužel ji nikomu nedává.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_02");	//Mi ji ale dal, tady je.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_03");	//To na něj moc nevypadá... Doufám, že ti ji dal z vlastní dobré vůle?
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_04");	//Myslíš, že to bolo z dobrej vůle?
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_05");	//Nuž, nie je jednoduché nájsť takú vzácnu vec.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_06");	//Okrem iného ma zaujímalo, čo je tam napísané.
