@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+func int dia_Orc_8572_UrHoshNar_OrcHolyPlaces_condition - upraveny podmínky dialogu
+
+*/
+
+
 
 instance DIA_ORC_8552_WATCHER_EXIT(C_Info)
 {
@@ -5153,7 +5164,7 @@ instance DIA_Orc_8572_UrHoshNar_OrcHolyPlaces(C_Info)
 
 func int dia_Orc_8572_UrHoshNar_OrcHolyPlaces_condition()
 {
-	if((MIS_HoshNarBooks == LOG_Success) && (MIS_HeroOrcJoin == LOG_Running))
+	if((MIS_HoshNarBooks == LOG_Success)) // && (MIS_HeroOrcJoin == LOG_Running))
 	{
 		return TRUE;
 	};

@@ -2,6 +2,12 @@
 
 /*
 
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+(2x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+
 v1.00:
 
 func void DIA_Addon_Saturas_BeliarWeapGeben_Info - upraveny výpisy
@@ -1398,7 +1404,7 @@ instance DIA_ADDON_SATURAS_ADW_TEACHFIRSTCIRCLE(C_Info)
 
 func int dia_addon_saturas_adw_teachfirstcircle_condition()
 {
-	if((hero.guild == GIL_KDW) && (Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) < 1) && (Saturas_Addon_TeachCircle == TRUE))
+	if((hero.guild == GIL_KDW) && (Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) < 1) && (CanLearnMagicCircleNext_ABCZ(1) == TRUE) && (Saturas_Addon_TeachCircle == TRUE))
 	{
 		return TRUE;
 	};
@@ -1448,23 +1454,23 @@ func void DIA_Addon_Saturas_ADW_CIRCLE_Info()
 	Info_ClearChoices(DIA_Addon_Saturas_ADW_CIRCLE);
 	Info_AddChoice(DIA_Addon_Saturas_ADW_CIRCLE,Dialog_Back,DIA_Addon_Saturas_ADW_CIRCLE_Back);
 
-	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1) && (Kapitel >= 2))
+	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1) && (CanLearnMagicCircleNext_ABCZ(2) == TRUE))
 	{
 		Info_AddChoice(DIA_Addon_Saturas_ADW_CIRCLE,"2. kruh magie (VB: 30)",DIA_Addon_Saturas_ADW_CIRCLE_2);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2) && (Kapitel >= 3))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2) && (CanLearnMagicCircleNext_ABCZ(3) == TRUE))
 	{
 		Info_AddChoice(DIA_Addon_Saturas_ADW_CIRCLE,"3. kruh magie (VB: 40)",DIA_Addon_Saturas_ADW_CIRCLE_3);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 3) && (MIS_ReadyforChapter4 == TRUE))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 3) && (CanLearnMagicCircleNext_ABCZ(4) == TRUE))
 	{
 		Info_AddChoice(DIA_Addon_Saturas_ADW_CIRCLE,"4. kruh magie (VB: 60)",DIA_Addon_Saturas_ADW_CIRCLE_4);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 4) && (Kapitel >= 5))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 4) && (CanLearnMagicCircleNext_ABCZ(5) == TRUE))
 	{
 		Info_AddChoice(DIA_Addon_Saturas_ADW_CIRCLE,"5. kruh magie (VB: 80)",DIA_Addon_Saturas_ADW_CIRCLE_5);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 5) && (Kapitel >= 5) && (MIS_DarkOrden == LOG_Success) && (MIS_JarCurse == LOG_Success) && (MIS_URNAZULRAGE == LOG_SUCCESS))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 5) && (CanLearnMagicCircleNext_ABCZ(6) == TRUE))
 	{
 		Info_AddChoice(DIA_Addon_Saturas_ADW_CIRCLE,"6. kruh magie (VB: 100)",DIA_Addon_Saturas_ADW_CIRCLE_6);
 	}
@@ -2395,7 +2401,7 @@ func void dia_addon_saturas_adw_gatherarmy_info()
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_GatherArmy_01_23");	//Musíme ale nejprve vykonat jednu důležitou věc.
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_GatherArmy_01_24");	//Nemůže to počkat?!
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_GatherArmy_01_25");	//Obávám se, že ne... (lítostivě) Osud téhle časti ostrova na tom závisí!
-	B_LogEntry(TOPIC_ORсGREATWAR,"Mágové Vody souhlasili, že lordu Hagenovi pomůžou. Musí však ještě před návratem na Khorinis dokončit jednu důležitou věc. Měl bych jim pomoci zrychlit tento proces.");
+	B_LogEntry(TOPIC_ORCGREATWAR,"Mágové Vody souhlasili, že lordu Hagenovi pomůžou. Musí však ještě před návratem na Khorinis dokončit jednu důležitou věc. Měl bych jim pomoci zrychlit tento proces.");
 };
 
 
@@ -2636,7 +2642,7 @@ func void dia_addon_saturas_adw_gatherarmydone_info()
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_GatherArmyDone_01_03");	//Řekni veliteli paladinů, že přijdeme hned, jakmile nám dá vědět.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_GatherArmyDone_01_04");	//Jen Adanos nám teď může pomoci!
 	KDW_JOINHAGEN = TRUE;
-	B_LogEntry(TOPIC_ORсGREATWAR,"Je potřebné informovat lorda Hagena, že mágové Vody čekají na jeho další rozkazy ohledně nadcházejícího boje se skřety.");
+	B_LogEntry(TOPIC_ORCGREATWAR,"Je potřebné informovat lorda Hagena, že mágové Vody čekají na jeho další rozkazy ohledně nadcházejícího boje se skřety.");
 };
 
 

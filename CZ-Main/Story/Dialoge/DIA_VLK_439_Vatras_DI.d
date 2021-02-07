@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+*/
+
+
 
 instance DIA_Vatras_DI_EXIT(C_Info)
 {
@@ -313,27 +324,27 @@ func void DIA_Vatras_DI_Talente_CIRCLES()
 {
 	Info_ClearChoices(DIA_Vatras_DI_Talente);
 	Info_AddChoice(DIA_Vatras_DI_Talente,Dialog_Back,DIA_Vatras_DI_Talente_BACK);
-	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 1)
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 1) && (CanLearnMagicCircleNext_ABCZ(1) == TRUE))
 	{
 		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("1. kruh magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,1)),DIA_Vatras_DI_Talente_Circle_1);
 	};
-	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 1)
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 1) && (CanLearnMagicCircleNext_ABCZ(2) == TRUE))
 	{
 		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("2. kruh magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,2)),DIA_Vatras_DI_Talente_Circle_2);
 	};
-	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 2)
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 2) && (CanLearnMagicCircleNext_ABCZ(3) == TRUE))
 	{
 		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("3. kruh magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,3)),DIA_Vatras_DI_Talente_Circle_3);
 	};
-	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 3)
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 3) && (CanLearnMagicCircleNext_ABCZ(4) == TRUE))
 	{
 		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("4. kruh magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,4)),DIA_Vatras_DI_Talente_Circle_4);
 	};
-	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 4)
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 4) && (CanLearnMagicCircleNext_ABCZ(5) == TRUE))
 	{
 		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("5. kruh magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,5)),DIA_Vatras_DI_Talente_Circle_5);
 	};
-	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5)
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5) && (CanLearnMagicCircleNext_ABCZ(6) == TRUE))
 	{
 		Info_AddChoice(DIA_Vatras_DI_Talente,B_BuildLearnString("6. kruh magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,6)),DIA_Vatras_DI_Talente_Circle_6);
 	};

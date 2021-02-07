@@ -1,3 +1,68 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+func void CZ_Recalculate_Needs - nová funkce
+(10x) CZ_Recalculate_Needs - přidání možnosti zapnout/vypnout hlad/žízeň/únavu / omezení spánku na nižších obtížnostech
+CZ_Settings_Diff_EnableSleepCap - přidání možnosti zapnout/vypnout omezení spánku
+PRIORATWORLD_ZEN - vypnuto omezení spánku v doupěti bratrstva Masyaf
+(2x) hitheal -  upraven výpočet obnovených HP za hodinu spánku
+
+*/
+
+
+
+func void CZ_Recalculate_Needs(var int hrs)
+{
+	
+	var int hrs_halved;
+	hrs_halved = (hrs + 1) / 2;
+	
+	if(CZ_Settings_Diff_EnableFatigue == TRUE)
+	{
+		Hero_Fatigue = Hero_Fatigue + hrs;
+		
+		if(Hero_Fatigue >= 10)
+		{
+			Hero_Fatigue = 10;
+		};
+	};
+	
+	if(CZ_Settings_Diff_EnableHunger == TRUE)
+	{
+		if(Hero_Hunger > hrs_halved)
+		{
+			Hero_Hunger -= hrs_halved;
+		}		
+		else
+		{
+			Hero_Hunger = FALSE;
+		};	
+	};
+	
+	if(CZ_Settings_Diff_EnableThirst == TRUE)
+	{
+		if(Hero_Thirst > hrs_halved)
+		{
+			Hero_Thirst -= hrs_halved;
+		}		
+		else
+		{
+			Hero_Thirst = FALSE;
+		};	
+	};
+	
+	if((CZ_Settings_Diff_EnableSleepCap == TRUE) && (CurrentLevel != PRIORATWORLD_ZEN))
+	{
+		DaySleepHour += hrs;
+	};
+	
+};
+
+
+
 func void sleepabit_s1()
 {
 	var C_Npc her;
@@ -115,7 +180,8 @@ func int pc_sleeptime_recover_condition()
 
 func void pc_sleeptime_recover_info()
 {
-	if(SleepDis == 24)
+	// if(SleepDis == 24)
+	if((CZ_Settings_Diff_EnableSleepCap == FALSE) || (CurrentLevel == PRIORATWORLD_ZEN))
 	{
 		Info_ClearChoices(pc_sleeptime_recover);
 		Info_AddChoice(pc_sleeptime_recover,"... 10 hodin",pc_sleeptime_recover_10);
@@ -219,7 +285,7 @@ func void pc_sleep_random(var int hour)
 	hit = hero.attribute[ATR_HITPOINTS];
 	hitmax = hero.attribute[ATR_HITPOINTS_MAX];
 	hitdelta = hitmax - hit;
-	hitheal = hitmax / SLEEPDIS;
+	hitheal = hitmax / 10;
 
 	if(hitheal <= 0)
 	{
@@ -319,7 +385,7 @@ func void pc_sleep_random(var int hour)
 			hit = hero.attribute[ATR_MANA];
 			hitmax = hero.attribute[ATR_MANA_MAX];
 			hitdelta = hitmax - hit;
-			hitheal = hitmax / SLEEPDIS;
+			hitheal = hitmax / 10;
 
 			if(hitheal <= 0)
 			{
@@ -351,34 +417,38 @@ func void pc_sleeptime_recover_1()
 
 	if(SC_IsObsessed == FALSE)
 	{
-		if(SBMODE == TRUE)
-		{
-			Hero_Fatigue = Hero_Fatigue + 1;
-
-			if(Hero_Fatigue >= 10)
+		/*
+			if(SBMODE == TRUE)
 			{
-				Hero_Fatigue = 10;
+				Hero_Fatigue = Hero_Fatigue + 1;
+
+				if(Hero_Fatigue >= 10)
+				{
+					Hero_Fatigue = 10;
+				};
+				if(Hero_Hunger > 1)
+				{
+					Hero_Hunger -= 1;
+				}		
+				else
+				{
+					Hero_Hunger = FALSE;
+				};	
+				if(Hero_Thirst > 1)
+				{
+					Hero_Thirst -= 1;
+				}		
+				else
+				{
+					Hero_Thirst = FALSE;
+				};	
+
+				DaySleepHour += 1;
 			};
-			if(Hero_Hunger > 1)
-			{
-				Hero_Hunger -= 1;
-			}		
-			else
-			{
-				Hero_Hunger = FALSE;
-			};	
-			if(Hero_Thirst > 1)
-			{
-				Hero_Thirst -= 1;
-			}		
-			else
-			{
-				Hero_Thirst = FALSE;
-			};	
-
-			DaySleepHour += 1;
-		};
-
+		*/
+		
+		CZ_Recalculate_Needs(1);
+		
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
 		bHour += 1;
@@ -415,34 +485,38 @@ func void pc_sleeptime_recover_2()
 
 	if(SC_IsObsessed == FALSE)
 	{
-		if(SBMODE == TRUE)
-		{
-			Hero_Fatigue = Hero_Fatigue + 2;
-
-			if(Hero_Fatigue >= 10)
+		/*
+			if(SBMODE == TRUE)
 			{
-				Hero_Fatigue = 10;
+				Hero_Fatigue = Hero_Fatigue + 2;
+
+				if(Hero_Fatigue >= 10)
+				{
+					Hero_Fatigue = 10;
+				};
+				if(Hero_Hunger > 1)
+				{
+					Hero_Hunger -= 1;
+				}		
+				else
+				{
+					Hero_Hunger = FALSE;
+				};	
+				if(Hero_Thirst > 1)
+				{
+					Hero_Thirst -= 1;
+				}		
+				else
+				{
+					Hero_Thirst = FALSE;
+				};	
+
+				DaySleepHour += 2;
 			};
-			if(Hero_Hunger > 1)
-			{
-				Hero_Hunger -= 1;
-			}		
-			else
-			{
-				Hero_Hunger = FALSE;
-			};	
-			if(Hero_Thirst > 1)
-			{
-				Hero_Thirst -= 1;
-			}		
-			else
-			{
-				Hero_Thirst = FALSE;
-			};	
-
-			DaySleepHour += 2;
-		};
-
+		*/
+		
+		CZ_Recalculate_Needs(2);
+		
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
 		bHour += 2;
@@ -479,34 +553,38 @@ func void pc_sleeptime_recover_3()
 
 	if(SC_IsObsessed == FALSE)
 	{
-		if(SBMODE == TRUE)
-		{
-			Hero_Fatigue = Hero_Fatigue + 3;
-
-			if(Hero_Fatigue >= 10)
+		/*
+			if(SBMODE == TRUE)
 			{
-				Hero_Fatigue = 10;
+				Hero_Fatigue = Hero_Fatigue + 3;
+
+				if(Hero_Fatigue >= 10)
+				{
+					Hero_Fatigue = 10;
+				};
+				if(Hero_Hunger > 2)
+				{
+					Hero_Hunger -= 2;
+				}		
+				else
+				{
+					Hero_Hunger = FALSE;
+				};	
+				if(Hero_Thirst > 2)
+				{
+					Hero_Thirst -= 2;
+				}		
+				else
+				{
+					Hero_Thirst = FALSE;
+				};	
+
+				DaySleepHour += 3;
 			};
-			if(Hero_Hunger > 2)
-			{
-				Hero_Hunger -= 2;
-			}		
-			else
-			{
-				Hero_Hunger = FALSE;
-			};	
-			if(Hero_Thirst > 2)
-			{
-				Hero_Thirst -= 2;
-			}		
-			else
-			{
-				Hero_Thirst = FALSE;
-			};	
-
-			DaySleepHour += 3;
-		};
-
+		*/
+		
+		CZ_Recalculate_Needs(3);
+		
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
 		bHour += 3;
@@ -543,34 +621,38 @@ func void pc_sleeptime_recover_4()
 
 	if(SC_IsObsessed == FALSE)
 	{
-		if(SBMODE == TRUE)
-		{
-			Hero_Fatigue = Hero_Fatigue + 4;
-
-			if(Hero_Fatigue >= 10)
+		/*
+			if(SBMODE == TRUE)
 			{
-				Hero_Fatigue = 10;
+				Hero_Fatigue = Hero_Fatigue + 4;
+
+				if(Hero_Fatigue >= 10)
+				{
+					Hero_Fatigue = 10;
+				};
+				if(Hero_Hunger > 2)
+				{
+					Hero_Hunger -= 2;
+				}		
+				else
+				{
+					Hero_Hunger = FALSE;
+				};	
+				if(Hero_Thirst > 2)
+				{
+					Hero_Thirst -= 2;
+				}		
+				else
+				{
+					Hero_Thirst = FALSE;
+				};	
+
+				DaySleepHour += 4;
 			};
-			if(Hero_Hunger > 2)
-			{
-				Hero_Hunger -= 2;
-			}		
-			else
-			{
-				Hero_Hunger = FALSE;
-			};	
-			if(Hero_Thirst > 2)
-			{
-				Hero_Thirst -= 2;
-			}		
-			else
-			{
-				Hero_Thirst = FALSE;
-			};	
-
-			DaySleepHour += 4;
-		};
-
+		*/
+		
+		CZ_Recalculate_Needs(4);
+		
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
 		bHour += 4;
@@ -607,34 +689,38 @@ func void pc_sleeptime_recover_5()
 
 	if(SC_IsObsessed == FALSE)
 	{
-		if(SBMODE == TRUE)
-		{
-			Hero_Fatigue = Hero_Fatigue + 5;
-
-			if(Hero_Fatigue >= 10)
+		/*
+			if(SBMODE == TRUE)
 			{
-				Hero_Fatigue = 10;
+				Hero_Fatigue = Hero_Fatigue + 5;
+
+				if(Hero_Fatigue >= 10)
+				{
+					Hero_Fatigue = 10;
+				};
+				if(Hero_Hunger > 3)
+				{
+					Hero_Hunger -= 3;
+				}		
+				else
+				{
+					Hero_Hunger = FALSE;
+				};	
+				if(Hero_Thirst > 3)
+				{
+					Hero_Thirst -= 3;
+				}		
+				else
+				{
+					Hero_Thirst = FALSE;
+				};	
+
+				DaySleepHour += 5;
 			};
-			if(Hero_Hunger > 3)
-			{
-				Hero_Hunger -= 3;
-			}		
-			else
-			{
-				Hero_Hunger = FALSE;
-			};	
-			if(Hero_Thirst > 3)
-			{
-				Hero_Thirst -= 3;
-			}		
-			else
-			{
-				Hero_Thirst = FALSE;
-			};	
-
-			DaySleepHour += 5;
-		};
-
+		*/
+		
+		CZ_Recalculate_Needs(5);
+		
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
 		bHour += 5;
@@ -671,34 +757,38 @@ func void pc_sleeptime_recover_6()
 
 	if(SC_IsObsessed == FALSE)
 	{
-		if(SBMODE == TRUE)
-		{
-			Hero_Fatigue = Hero_Fatigue + 6;
-
-			if(Hero_Fatigue >= 10)
+		/*
+			if(SBMODE == TRUE)
 			{
-				Hero_Fatigue = 10;
+				Hero_Fatigue = Hero_Fatigue + 6;
+
+				if(Hero_Fatigue >= 10)
+				{
+					Hero_Fatigue = 10;
+				};
+				if(Hero_Hunger > 3)
+				{
+					Hero_Hunger -= 3;
+				}		
+				else
+				{
+					Hero_Hunger = FALSE;
+				};	
+				if(Hero_Thirst > 3)
+				{
+					Hero_Thirst -= 3;
+				}		
+				else
+				{
+					Hero_Thirst = FALSE;
+				};	
+
+				DaySleepHour += 6;
 			};
-			if(Hero_Hunger > 3)
-			{
-				Hero_Hunger -= 3;
-			}		
-			else
-			{
-				Hero_Hunger = FALSE;
-			};	
-			if(Hero_Thirst > 3)
-			{
-				Hero_Thirst -= 3;
-			}		
-			else
-			{
-				Hero_Thirst = FALSE;
-			};	
-
-			DaySleepHour += 6;
-		};
-
+		*/
+		
+		CZ_Recalculate_Needs(6);
+		
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
 		bHour += 6;
@@ -735,34 +825,38 @@ func void pc_sleeptime_recover_7()
 
 	if(SC_IsObsessed == FALSE)
 	{
-		if(SBMODE == TRUE)
-		{
-			Hero_Fatigue = Hero_Fatigue + 7;
-
-			if(Hero_Fatigue >= 10)
+		/*
+			if(SBMODE == TRUE)
 			{
-				Hero_Fatigue = 10;
+				Hero_Fatigue = Hero_Fatigue + 7;
+
+				if(Hero_Fatigue >= 10)
+				{
+					Hero_Fatigue = 10;
+				};
+				if(Hero_Hunger > 4)
+				{
+					Hero_Hunger -= 4;
+				}		
+				else
+				{
+					Hero_Hunger = FALSE;
+				};	
+				if(Hero_Thirst > 4)
+				{
+					Hero_Thirst -= 4;
+				}		
+				else
+				{
+					Hero_Thirst = FALSE;
+				};	
+
+				DaySleepHour += 7;
 			};
-			if(Hero_Hunger > 4)
-			{
-				Hero_Hunger -= 4;
-			}		
-			else
-			{
-				Hero_Hunger = FALSE;
-			};	
-			if(Hero_Thirst > 4)
-			{
-				Hero_Thirst -= 4;
-			}		
-			else
-			{
-				Hero_Thirst = FALSE;
-			};	
-
-			DaySleepHour += 7;
-		};
-
+		*/
+		
+		CZ_Recalculate_Needs(7);
+		
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
 		bHour += 7;
@@ -799,34 +893,38 @@ func void pc_sleeptime_recover_8()
 
 	if(SC_IsObsessed == FALSE)
 	{
-		if(SBMODE == TRUE)
-		{
-			Hero_Fatigue = Hero_Fatigue + 8;
-
-			if(Hero_Fatigue >= 10)
+		/*
+			if(SBMODE == TRUE)
 			{
-				Hero_Fatigue = 10;
+				Hero_Fatigue = Hero_Fatigue + 8;
+
+				if(Hero_Fatigue >= 10)
+				{
+					Hero_Fatigue = 10;
+				};
+				if(Hero_Hunger > 4)
+				{
+					Hero_Hunger -= 4;
+				}		
+				else
+				{
+					Hero_Hunger = FALSE;
+				};	
+				if(Hero_Thirst > 4)
+				{
+					Hero_Thirst -= 4;
+				}		
+				else
+				{
+					Hero_Thirst = FALSE;
+				};	
+
+				DaySleepHour += 8;
 			};
-			if(Hero_Hunger > 4)
-			{
-				Hero_Hunger -= 4;
-			}		
-			else
-			{
-				Hero_Hunger = FALSE;
-			};	
-			if(Hero_Thirst > 4)
-			{
-				Hero_Thirst -= 4;
-			}		
-			else
-			{
-				Hero_Thirst = FALSE;
-			};	
-
-			DaySleepHour += 8;
-		};
-
+		*/
+		
+		CZ_Recalculate_Needs(8);
+		
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
 		bHour += 8;
@@ -863,34 +961,38 @@ func void pc_sleeptime_recover_9()
 
 	if(SC_IsObsessed == FALSE)
 	{
-		if(SBMODE == TRUE)
-		{
-			Hero_Fatigue = Hero_Fatigue + 9;
-
-			if(Hero_Fatigue >= 10)
+		/*
+			if(SBMODE == TRUE)
 			{
-				Hero_Fatigue = 10;
+				Hero_Fatigue = Hero_Fatigue + 9;
+
+				if(Hero_Fatigue >= 10)
+				{
+					Hero_Fatigue = 10;
+				};
+				if(Hero_Hunger > 5)
+				{
+					Hero_Hunger -= 5;
+				}		
+				else
+				{
+					Hero_Hunger = FALSE;
+				};	
+				if(Hero_Thirst > 5)
+				{
+					Hero_Thirst -= 5;
+				}		
+				else
+				{
+					Hero_Thirst = FALSE;
+				};	
+
+				DaySleepHour += 9;
 			};
-			if(Hero_Hunger > 5)
-			{
-				Hero_Hunger -= 5;
-			}		
-			else
-			{
-				Hero_Hunger = FALSE;
-			};	
-			if(Hero_Thirst > 5)
-			{
-				Hero_Thirst -= 5;
-			}		
-			else
-			{
-				Hero_Thirst = FALSE;
-			};	
-
-			DaySleepHour += 9;
-		};
-
+		*/
+		
+		CZ_Recalculate_Needs(9);
+		
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
 		bHour += 9;
@@ -927,34 +1029,38 @@ func void pc_sleeptime_recover_10()
 
 	if(SC_IsObsessed == FALSE)
 	{
-		if(SBMODE == TRUE)
-		{
-			Hero_Fatigue = Hero_Fatigue + 10;
-
-			if(Hero_Fatigue >= 10)
+		/*
+			if(SBMODE == TRUE)
 			{
-				Hero_Fatigue = 10;
+				Hero_Fatigue = Hero_Fatigue + 10;
+
+				if(Hero_Fatigue >= 10)
+				{
+					Hero_Fatigue = 10;
+				};
+				if(Hero_Hunger > 5)
+				{
+					Hero_Hunger -= 5;
+				}		
+				else
+				{
+					Hero_Hunger = FALSE;
+				};	
+				if(Hero_Thirst > 5)
+				{
+					Hero_Thirst -= 5;
+				}		
+				else
+				{
+					Hero_Thirst = FALSE;
+				};	
+
+				DaySleepHour += 10;
 			};
-			if(Hero_Hunger > 5)
-			{
-				Hero_Hunger -= 5;
-			}		
-			else
-			{
-				Hero_Hunger = FALSE;
-			};	
-			if(Hero_Thirst > 5)
-			{
-				Hero_Thirst -= 5;
-			}		
-			else
-			{
-				Hero_Thirst = FALSE;
-			};	
-
-			DaySleepHour += 10;
-		};
-
+		*/
+		
+		CZ_Recalculate_Needs(10);
+		
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
 		bHour += 10;

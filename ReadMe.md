@@ -5,7 +5,8 @@
 ---
 
 ## [Download:](https://github.com/helpo1/Navraty-CZ/releases)
-- [v1.00](https://github.com/helpo1/Navraty-CZ/releases/tag/v1.00) (aktuálna verzia)
+- **[v1.01](https://github.com/helpo1/Navraty-CZ/releases/tag/v1.01)** (aktuálna verzia)
+- [v1.00](https://github.com/helpo1/Navraty-CZ/releases/tag/v1.00)
 
 ---
 
@@ -56,6 +57,53 @@
 ##### Výrazný pokles FPS pri zapnutom zobrazovaní dodatočných informácií na obrazovke (kláves I)
 - zdroj - ikony pri niektorých štatistikách (karma, hlad/smäd/únava, šípy/šípky)
 - workaround - vypnúť zobrazovanie problémových štatistík, odložiť luk/kušu
+
+---
+
+### FAQ:
+
+##### Q: Po nainštalovaní češtiny sa namiesto znakov s diakritikou zobrazuje cyrilika
+- A: viď body **3.iv.)** a **5.iii.)** [odporúčaného postupu inštalácie](#odporúčaný-postup-inštalácie)
+  - pokiaľ už fonty z bodu 3.iv.) nainštalované sú, manuálne ich vymazať (súbor `(...)\Data\RET2_Font_High_Resolution.vdf`)
+
+##### Q: Po nainštalovaní češtiny nie sú preložené štatistiky, recepty atď. (záložky dostupné pod B/C)
+- A: viď bod **5.v.)** [odporúčaného postupu inštalácie](#odporúčaný-postup-inštalácie)
+
+---
+
+### Úpravy `Gothic.ini`
+Po prvom načítaní hry / spustení novej hry a úvodnom dialógu sa v súbore `(...)\System\Gothic.ini` vytvoria nové sekcie v nasledovnom tvare (uvedený príklad pre ťažkú obtiažnosť):
+
+```ini
+[CZ_SETTINGS_DIFF]         ; predvolené hodnoty          : (popis nastavenia)
+ApplyNewSettings=0         ; def:  0                     : aplikovať nastavenia z tohto súboru pri najbližšom načítaní hry
+HPPerLevel=0               ; def:  30 | 20 | 0  | 0      : počet získaných HP pri postupe na novú úroveň
+LPPerLevel=15              ; def:  25 | 20 | 15 | 10     : počet získaných LP pri postupe na novú úroveň
+XPMult=15                  ; def:  25 | 20 | 15 | 10     : koeficient získaných XP za porazených nepriateľov
+HungerPoolBase=496         ; def:  496                   : doba, po uplynutí ktorej sa zvýši hlad o 10% (~ v sekundách)
+HungerPoolLevelMult=5      ; def:  5                     :   bonus k ^ za každú úroveň
+ThirstPoolBase=616         ; def:  616                   : doba, po uplynutí ktorej sa zvýši smäd o 20% (~ v sekundách)
+ThirstPoolLevelMult=5      ; def:  5                     :   bonus k ^ za každú úroveň
+FatiguePoolBase=864        ; def:  864                   : doba, po uplynutí ktorej sa zvýši únava o 10% (~ v sekundách)
+FatiguePoolLevelMult=0     ; def:  0                     :   bonus k ^ za každú úroveň
+EnableHunger=1             ; def:  0 | 0 | 1 | 1         : zapnutie / vypnutie hladu
+EnableThirst=1             ; def:  0 | 0 | 1 | 1         : zapnutie / vypnutie smädu
+EnableFatigue=1            ; def:  0 | 0 | 1 | 1         : zapnutie / vypnutie únavy
+EnableSleepCap=1           ; def:  0 | 0 | 1 | 1         : zapnutie / vypnutie obmedzenia spánku na 10h/deň
+EnableTraps=1              ; def:  0 | 1 | 1 | 1         : zapnutie / vypnutie náhodných pascí (v truhlách, sarkofágoch a pod.)
+[CZ_SETTINGS_OTHER]
+OtherInitialized=1         ; def:  1                     : (interná premenná)
+OutputGDRPC=1              ; def:  1                     : zapnutie / vypnutie Discord integrácie cez Discord Rich Presence
+ShowAmmo=1                 ; def:  1                     : zapnutie / vypnutie indikátora munície
+```
+
+a vypíše sa text `Nastavena obtížnost: Lehká/Střední/Těžká/Legendární!`, prípadne `Inicializuji ostatní nastavení v Gothic.ini...`.
+
+Pokiaľ chce hráč zmeniť niektoré z nastavení obtiažnosti (sekcia `CZ_SETTINGS_DIFF`), je potrebné vypnúť hru, zmeniť príslušné hodnoty, **nastaviť `ApplyNewSettings=1`**, uložiť súbor a načítať uloženú hru. Úspešnú zmenu si je možné overiť zobrazením dvoch kontrolných hlásení po načítaní hry (tieto hlásenia sa v niektorých prípadoch môžu vypísať duplicitne; na ich účinok to nemá vplyv). Taktiež sa v štatistikách pri názve obtiažnosti zobrazí poznámka ` (upr.)`.
+
+Pri zmene nastavení v sekcii Ostatné (`CZ_SETTINGS_OTHER`) stačí vypnúť hru, zmeniť príslušné hodnoty a znovu zapnúť hru.
+
+Súbory potrebné pre integráciu so službou Discord sú nateraz dostupné len na vyžiadanie.
 
 ---
 

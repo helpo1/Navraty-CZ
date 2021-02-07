@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
 
 var int TOPIC_End_CavalornTheHut;
 var int TOPIC_End_RangerHelpKDF;
@@ -55,7 +66,7 @@ const string TOPIC_STURMCASTLE = "Útok na hrad";
 const string TOPIC_NATANDOLG = "Čestný dluh";
 const string TOPIC_RESCUEGAROND = "Paladinové v Hornickém údolí";
 const string TOPIC_HELPCREW = "Past";
-const string TOPIC_ORсGREATWAR = "Válka se skřety";
+const string TOPIC_ORCGREATWAR = "Válka se skřety";
 const string TOPIC_TROKARMISS = "Bartokův přítel";
 const string TOPIC_MOEBORED = "Vyděrač";
 const string TOPIC_XARDASTASKSFOUR = "Nekronomikon";

@@ -1,3 +1,96 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+func int CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+*/
+
+
+
+func int CanLearnMagicCircleNext_ABCZ(var int circle) {
+
+	if ((circle == 1) && (kapitel >= 1)) {
+		
+		return TRUE;
+		
+	};
+
+	if ((circle == 2) && (kapitel >= 2)) {
+		
+		return TRUE;
+		
+	};
+
+	if ((circle == 3) && (kapitel >= 3)) {
+		
+		return TRUE;
+		
+	};
+
+	if ((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR) 
+		// || (hero.guild == GIL_NDM) || (hero.guild == GIL_NDW) || (hero.guild == GIL_NOV)
+		) {
+
+		if ((circle == 4) && ((kapitel >= 4) || (MIS_ReadyforChapter4 == TRUE))) {
+			
+			return TRUE;
+			
+		};
+
+		if ((circle == 5) && (kapitel >= 5)) {
+			
+			return TRUE;
+			
+		};
+
+		if ((circle == 6) && ((kapitel >= 6)
+			|| ((kapitel >= 5) && (MIS_DarkOrden == LOG_Success) && (MIS_JarCurse == LOG_Success) && (MIS_URNAZULRAGE == LOG_SUCCESS)))
+		) {
+			
+			return TRUE;
+			
+		};
+
+		if ((circle == 2) && ((kapitel >= 1) && (hero.attribute[ATR_MANA_MAX] >= 200))) {
+			
+			return TRUE;
+			
+		};
+
+		if ((circle == 3) && ((kapitel >= 2) && (hero.attribute[ATR_MANA_MAX] >= 400))) {
+			
+			return TRUE;
+			
+		};
+
+		if ((circle == 4) && ((kapitel >= 3) && (hero.attribute[ATR_MANA_MAX] >= 600))) {
+			
+			return TRUE;
+			
+		};
+
+		if ((circle == 5) && ((kapitel >= 4) && (hero.attribute[ATR_MANA_MAX] >= 900))) {
+			
+			return TRUE;
+			
+		};
+
+		if ((circle == 6) && ((kapitel >= 4) && (hero.attribute[ATR_MANA_MAX] >= 1200))) {
+			
+			return TRUE;
+			
+		};
+
+	};
+
+	return FALSE;
+	
+};
+
+
 
 func int B_TeachMagicCircle(var C_Npc slf,var C_Npc oth,var int circle)
 {

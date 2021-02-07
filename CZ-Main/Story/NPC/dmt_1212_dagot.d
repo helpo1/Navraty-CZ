@@ -150,7 +150,7 @@ func void rtn_start_13003()
 
 instance DMT_13004_STONEMAGE(Npc_Default)
 {
-	name[0] = "Mág Temnoty";
+	name[0] = "Mág Kamene";
 	guild = GIL_DMT;
 	level = 500;
 	voice = 19;
@@ -181,7 +181,7 @@ func void rtn_start_13004()
 
 instance DMT_13005_STONEMAGE(Npc_Default)
 {
-	name[0] = "Mág Temnoty";
+	name[0] = "Mág Kamene";
 	guild = GIL_DMT;
 	level = 500;
 	voice = 19;
@@ -212,7 +212,7 @@ func void rtn_start_13005()
 
 instance DMT_13006_STONEMAGE(Npc_Default)
 {
-	name[0] = "Mág Temnoty";
+	name[0] = "Mág Kamene";
 	guild = GIL_DMT;
 	level = 500;
 	voice = 19;

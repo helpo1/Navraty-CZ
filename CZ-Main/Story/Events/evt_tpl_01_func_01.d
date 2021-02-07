@@ -2,6 +2,13 @@
 
 /*
 
+v1.01:
+
+CZ_Settings_Diff_XPMult - falešná konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+(6x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+
 v1.00:
 
 func void EVT_AV_TO_LOSTVALLEY_FUNC - upraveny podmínky vstupu (ItRu_BeliarSuperRune)
@@ -1474,7 +1481,8 @@ func void evt_li_teleport_frdc_func()
 
 		if(outter1.aivar[AIV_VictoryXPGiven] != TRUE)
 		{
-			permvaluexp = outter1.level * XP_PER_VICTORY;
+			// permvaluexp = outter1.level * XP_PER_VICTORY;
+			permvaluexp = outter1.level * CZ_Settings_Diff_XPMult;
 			outter1.aivar[AIV_VictoryXPGiven] = TRUE;
 			outter1.aivar[95] = TRUE;
 			b_giveplayerxpsemiquietwithbonus(permvaluexp,50);
@@ -1580,7 +1588,7 @@ func void evt_gader_02_func_s1()
 	if((MIS_GADERTEST == LOG_Running) && (PLACEGADERSTONNES == FALSE) && (GADERSTONE_TWO == FALSE))
 	{
 		B_GivePlayerXP(100);
-		B_LogEntry(TOPIC_GADERTEST,"Položil jsem magický kámen na oltář v chrámu Kněžích.");
+		B_LogEntry(TOPIC_GADERTEST,"Položil jsem magický kámen na oltář v chrámu kněží.");
 		GADERSTONE_TWO = TRUE;
 		RemoveStoneGader = TRUE;		
 	};
@@ -1605,7 +1613,7 @@ func void evt_gader_03_func_s1()
 	if((MIS_GADERTEST == LOG_Running) && (PLACEGADERSTONNES == FALSE) && (GADERSTONE_THREE == FALSE))
 	{
 		B_GivePlayerXP(100);
-		B_LogEntry(TOPIC_GADERTEST,"Položil jsem magický kámen na oltáři v knihovně vědců.");
+		B_LogEntry(TOPIC_GADERTEST,"Položil jsem magický kámen na oltáři v knihovně učenců.");
 		GADERSTONE_THREE = TRUE;
 		RemoveStoneGader = TRUE;		
 	};
@@ -2390,43 +2398,43 @@ func void evt_paladinnomoresafe_func()
 		if(MIS_RESCUEGAROND == LOG_Running)
 		{
 			B_GivePlayerXP(100);
-			B_LogEntry(TOPIC_RESCUEGAROND,"Dovedl jsem Garonda a jeho muže na místo, kde jsou skřeti.");
+			B_LogEntry(TOPIC_RESCUEGAROND,"Vyvedl jsem Garonda a jeho muže ze skřetího zajetí.");
 		};
 	};
 };
 
 func void evt_castelisdown_ok_func()
 {
-	if((EnterOW_Kapitel6 == TRUE) && (MIS_ORсGREATWAR == LOG_Running) && (CASTLEISDOWN == FALSE))
+	if((EnterOW_Kapitel6 == TRUE) && (MIS_ORCGREATWAR == LOG_Running) && (CASTLEISDOWN == FALSE))
 	{
 		CASTLEISDOWN = TRUE;
-		if(MIS_ORсGREATWAR == LOG_Running)
+		if(MIS_ORCGREATWAR == LOG_Running)
 		{
-			B_LogEntry(TOPIC_ORсGREATWAR,"Špatné zprávy - hrad v Hornickém údolí padl! Skřeti ho vzali útokem a dobili. Myslím, že tato zpráva moc lorda Hagena nepotěší.");
+			B_LogEntry(TOPIC_ORCGREATWAR,"Špatné zprávy - hrad v Hornickém údolí padl! Skřeti ho vzali útokem a dobyli. Myslím, že tato zpráva moc lorda Hagena nepotěší.");
 		};
 		if(MIS_RESCUEGAROND == LOG_Running)
 		{
-			B_LogEntry(TOPIC_RESCUEGAROND,"Hrad v Hornickém údolí padl! Skřeti ho vzali útokem a dobili. Myslím, že tato zpráva moc lorda Hagena nepotěší.");
+			B_LogEntry(TOPIC_RESCUEGAROND,"Hrad v Hornickém údolí padl! Skřeti ho vzali útokem a dobyli. Myslím, že tato zpráva moc lorda Hagena nepotěší.");
 		};
 		if(MIS_NEWSSURVIVERS == LOG_Running)
 		{
-			B_LogEntry(TOPIC_NEWSSURVIVERS,"Hrad v Hornickém údolí padl! Skřeti ho vzali útokem a dobili. Myslím, že tato zpráva paladiny velice nepotěší!");
+			B_LogEntry(TOPIC_NEWSSURVIVERS,"Hrad v Hornickém údolí padl! Skřeti ho vzali útokem a dobyli. Myslím, že tato zpráva paladiny velice nepotěší!");
 		};
 		if(MIS_STURMCASTLE == LOG_Running)
 		{
 			B_LogEntry(TOPIC_STURMCASTLE,"Vypadá to, bude hrad v Hornickém údolí dobře střežen. Dá se čekat velká bitva.");
 		};
 	};
-	if((EnterOW_Kapitel6 == TRUE) && (MIS_ORсGREATWAR == LOG_Running) && (CASTLEISDOWN == TRUE) && (NATATELLZAMOK == TRUE) && (PERMZAMOK == FALSE))
+	if((EnterOW_Kapitel6 == TRUE) && (MIS_ORCGREATWAR == LOG_Running) && (CASTLEISDOWN == TRUE) && (NATATELLZAMOK == TRUE) && (PERMZAMOK == FALSE))
 	{
 		PERMZAMOK = TRUE;
 		if(MIS_RESCUEGAROND == LOG_Running)
 		{
-			B_LogEntry(TOPIC_RESCUEGAROND,"Nyní mají orci plnou nadvládu nad hradem! Myslím, že tato zpráva moc lorda Hagena nepotěší.");
+			B_LogEntry(TOPIC_RESCUEGAROND,"Nyní mají skřeti plnou nadvládu nad hradem! Myslím, že tato zpráva moc lorda Hagena nepotěší.");
 		};
 		if(MIS_NEWSSURVIVERS == LOG_Running)
 		{
-			B_LogEntry(TOPIC_NEWSSURVIVERS,"Jak říkal Nathan, hrad v Hornickém údolí padl! Skřeti ho vzali útokem a dobili. Je třeba zjistit, co se stalo s Garondem a ostatními.");
+			B_LogEntry(TOPIC_NEWSSURVIVERS,"Jak říkal Nathan, hrad v Hornickém údolí padl! Skřeti ho vzali útokem a dobyli. Je třeba zjistit, co se stalo s Garondem a ostatními.");
 		};
 		if(MIS_STURMCASTLE == LOG_Running)
 		{
@@ -2457,7 +2465,7 @@ func void evt_orcchallange_done_func()
 
 func int evt_paladincaptured1_cond_func()
 {
-	if(MIS_ORсGREATWAR == LOG_Running)
+	if(MIS_ORCGREATWAR == LOG_Running)
 	{
 		if(OLDCAMDGATEOPEN_01 == TRUE)
 		{
@@ -2477,7 +2485,7 @@ func int evt_paladincaptured1_cond_func()
 
 func int evt_paladincaptured2_cond_func()
 {
-	if(MIS_ORсGREATWAR == LOG_Running)
+	if(MIS_ORCGREATWAR == LOG_Running)
 	{
 		if(OLDCAMDGATEOPEN_02 == TRUE)
 		{
@@ -2497,7 +2505,7 @@ func int evt_paladincaptured2_cond_func()
 
 func int evt_paladincaptured3_cond_func()
 {
-	if(MIS_ORсGREATWAR == LOG_Running)
+	if(MIS_ORCGREATWAR == LOG_Running)
 	{
 		if(OLDCAMDGATEOPEN_03 == TRUE)
 		{
@@ -6763,7 +6771,7 @@ func void EVT_LV_ACTIVATEFORTHBOSS_s1()
 	{
 		if(MIS_Miss_Brother == LOG_Running)
 		{
-			B_LogEntry(TOPIC_Miss_Brother,"Položil jsem srdce mocného ohnivého golema Fiorase na oltář věčného plamene a tím jsem otevřel průchod v hoře. Musím pokračovat dál... Ile'Sil na mě už jistě čeká.");
+			B_LogEntry(TOPIC_Miss_Brother,"Položil jsem srdce mocného ohnivého golema Fiarase na oltář věčného plamene a tím jsem otevřel průchod v hoře. Musím pokračovat dál... Ile'Sil na mě už jistě čeká.");
 			Wld_SendTrigger("EVT_FIREGOLEM");
 			Wld_SendTrigger("EVT_FIRECAVEDOOR_TRIGGER");
 			Wld_PlayEffect("spellFX_INCOVATION_FIRE",hero,hero,2,0,0,FALSE);

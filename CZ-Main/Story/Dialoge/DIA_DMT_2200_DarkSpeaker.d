@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+ItMi_Moleratlubric_MIS - vytvoření předmětu přesunuto ze 3. do 1. kapitoly
+
+*/
+
+
 
 instance DIA_DMT_2200_DarkSpeaker_Exit(C_Info)
 {
@@ -244,7 +255,7 @@ func void DIA_DMT_2200_DarkSpeaker_Hello_Quit()
 	};
 
 	CreateInvItems(Lester,ItMw_1h_Bau_Axe,1);
-	CreateInvItems(Ehnim,ItMi_Moleratlubric_MIS,1);
+	// CreateInvItems(Ehnim,ItMi_Moleratlubric_MIS,1);
 	ShrineIsObsessed_NW_TROLLAREA_PATH_37 = TRUE;
 	ShrineIsObsessed_NW_FARM1_CONNECT_XARDAS = TRUE;
 	ShrineIsObsessed_NW_TROLLAREA_PATH_66 = TRUE;

@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(19x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
 
 instance DIA_Andre_EXIT(C_Info)
 {
@@ -131,11 +142,11 @@ instance DIA_Andre_CantharFalle(C_Info)
 
 func int DIA_Andre_CantharFalle_Condition()
 {
-	if((MIS_Canthars_KomproBrief == LOG_Running) && (MIS_Canthars_KomproBrief_Day <= (Wld_GetDay() - 2)) && (Andre_CantharFalle == FALSE) && (MIS_ORсGREATWAR == FALSE))
+	if((MIS_Canthars_KomproBrief == LOG_Running) && (MIS_Canthars_KomproBrief_Day <= (Wld_GetDay() - 2)) && (Andre_CantharFalle == FALSE) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
-	if((Pablo_AndreMelden == TRUE) && !Npc_IsDead(Pablo) && (Andre_Steckbrief == FALSE) && (MIS_ORсGREATWAR == FALSE))
+	if((Pablo_AndreMelden == TRUE) && !Npc_IsDead(Pablo) && (Andre_Steckbrief == FALSE) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -173,7 +184,7 @@ instance DIA_Andre_PMSchulden(C_Info)
 
 func int DIA_Andre_PMSchulden_Condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (Andre_Schulden > 0) && (B_GetGreatestPetzCrime(self) <= Andre_LastPetzCrime) && (MIS_ORсGREATWAR == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (Andre_Schulden > 0) && (B_GetGreatestPetzCrime(self) <= Andre_LastPetzCrime) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -437,7 +448,7 @@ instance DIA_Andre_PETZMASTER(C_Info)
 
 func int DIA_Andre_PETZMASTER_Condition()
 {
-	if((B_GetGreatestPetzCrime(self) > Andre_LastPetzCrime) && (MIS_ORсGREATWAR == FALSE))
+	if((B_GetGreatestPetzCrime(self) > Andre_LastPetzCrime) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -654,7 +665,7 @@ instance DIA_ANDRE_KDFCANTHAR(C_Info)
 
 func int dia_andre_kdfcanthar_condition()
 {
-	if((Canthar_WiederRaus == TRUE) && (Npc_IsDead(Canthar) == FALSE) && Npc_KnowsInfo(other,dia_daron_canthar) && (other.guild == GIL_KDF) && (MIS_ORсGREATWAR == FALSE))
+	if((Canthar_WiederRaus == TRUE) && (Npc_IsDead(Canthar) == FALSE) && Npc_KnowsInfo(other,dia_daron_canthar) && (other.guild == GIL_KDF) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -1398,7 +1409,7 @@ instance DIA_Andre_DGRunning(C_Info)
 
 func int DIA_Andre_DGRunning_Condition()
 {
-	if((MIS_Andre_GuildOfThieves == LOG_Running) && (MIS_ORсGREATWAR == FALSE))
+	if((MIS_Andre_GuildOfThieves == LOG_Running) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -1936,7 +1947,7 @@ instance DIA_Andre_REDLIGHT_SUCCESS(C_Info)
 
 func int DIA_Andre_REDLIGHT_SUCCESS_Condition()
 {
-	if((MIS_Andre_REDLIGHT == LOG_Running) && (MIS_ORсGREATWAR == FALSE))
+	if((MIS_Andre_REDLIGHT == LOG_Running) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -1998,7 +2009,7 @@ instance DIA_Andre_HILFBAUERLOBART(C_Info)
 
 func int DIA_Andre_HILFBAUERLOBART_Condition()
 {
-	if((MIS_Andre_WAREHOUSE == LOG_SUCCESS) && (MIS_ORсGREATWAR == FALSE))
+	if((MIS_Andre_WAREHOUSE == LOG_SUCCESS) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -2100,7 +2111,7 @@ instance DIA_Addon_Andre_MissingPeople2(C_Info)
 
 func int DIA_Addon_Andre_MissingPeople2_Condition()
 {
-	if((MIS_Addon_Vatras_WhereAreMissingPeople == LOG_Running) && (other.guild != GIL_MIL) && (SCKnowsMissingPeopleAreInAddonWorld == FALSE) && (MIS_ORсGREATWAR == FALSE))
+	if((MIS_Addon_Vatras_WhereAreMissingPeople == LOG_Running) && (other.guild != GIL_MIL) && (SCKnowsMissingPeopleAreInAddonWorld == FALSE) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -2126,7 +2137,7 @@ instance DIA_Addon_Andre_ReturnedMissingPeople(C_Info)
 
 func int DIA_Addon_Andre_ReturnedMissingPeople_Condition()
 {
-	if((MissingPeopleReturnedHome == TRUE) && (MIS_Addon_Andre_MissingPeople == LOG_Running) && (MIS_ORсGREATWAR == FALSE))
+	if((MissingPeopleReturnedHome == TRUE) && (MIS_Addon_Andre_MissingPeople == LOG_Running) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -2173,7 +2184,7 @@ instance DIA_Andre_BerichtDrachen(C_Info)
 
 func int DIA_Andre_BerichtDrachen_Condition()
 {
-	if((EnterOW_Kapitel2 == TRUE) && (MIS_OLDWORLD != LOG_SUCCESS) && (MIS_ORсGREATWAR == FALSE))
+	if((EnterOW_Kapitel2 == TRUE) && (MIS_OLDWORLD != LOG_SUCCESS) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -2203,7 +2214,7 @@ instance DIA_Andre_BennetInPrison(C_Info)
 
 func int DIA_Andre_BennetInPrison_Condition()
 {
-	if((MIS_RescueBennet == LOG_Running) && (MIS_ORсGREATWAR == FALSE))
+	if((MIS_RescueBennet == LOG_Running) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -2315,7 +2326,7 @@ instance DIA_Andre_PERM(C_Info)
 
 func int DIA_Andre_PERM_Condition()
 {
-	if((other.guild != GIL_NONE) && (MIS_ORсGREATWAR == FALSE))
+	if((other.guild != GIL_NONE) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -2349,7 +2360,7 @@ instance DIA_Andre_BerichtDrachenTot(C_Info)
 
 func int DIA_Andre_BerichtDrachenTot_Condition()
 {
-	if((Kapitel == 5) && (MIS_ORсGREATWAR == FALSE))
+	if((Kapitel == 5) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -2441,7 +2452,7 @@ instance DIA_ANDRE_GUILDKILLNEWS(C_Info)
 
 func int dia_andre_guildkillnews_condition()
 {
-	if((MIS_GUILDKILL == LOG_Running) && (MIS_ORсGREATWAR == FALSE))
+	if((MIS_GUILDKILL == LOG_Running) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -2551,7 +2562,7 @@ instance DIA_ANDRE_SARAHTOGUILD(C_Info)
 
 func int dia_andre_sarahtoguild_condition()
 {
-	if((SARAHELPYOUANDFREE == TRUE) && (Sarah_Ausgeliefert == TRUE) && (MIS_SARAHTOGUILD == LOG_Running) && (MIS_ORсGREATWAR == FALSE))
+	if((SARAHELPYOUANDFREE == TRUE) && (Sarah_Ausgeliefert == TRUE) && (MIS_SARAHTOGUILD == LOG_Running) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -2632,7 +2643,7 @@ instance DIA_ANDRE_SARAHTOGUILDPAY(C_Info)
 
 func int dia_andre_sarahtoguildpay_condition()
 {
-	if((SARAHELPYOUANDFREE == TRUE) && (Sarah_Ausgeliefert == TRUE) && (SARASHULDEN > 0) && (SARAISFREE == FALSE) && (MIS_SARAHTOGUILD == LOG_Running) && (MIS_ORсGREATWAR == FALSE))
+	if((SARAHELPYOUANDFREE == TRUE) && (Sarah_Ausgeliefert == TRUE) && (SARASHULDEN > 0) && (SARAISFREE == FALSE) && (MIS_SARAHTOGUILD == LOG_Running) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -2675,7 +2686,7 @@ instance DIA_ANDRE_HANNAINPRISION(C_Info)
 
 func int dia_andre_hannainprision_condition()
 {
-	if((MIS_ABIGEILHELPHANNA == LOG_Running) && (KNOWSHANNAINPRISION == TRUE) && (MIS_ORсGREATWAR == FALSE))
+	if((MIS_ABIGEILHELPHANNA == LOG_Running) && (KNOWSHANNAINPRISION == TRUE) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -2716,7 +2727,7 @@ instance DIA_ANDRE_HANNAINPRISIONDONE(C_Info)
 
 func int dia_andre_hannainprisiondone_condition()
 {
-	if((MIS_ABIGEILHELPHANNA == LOG_Running) && (Npc_HasItems(other,itri_hakonmissring) >= 1) && (JOTELLSGASPAR == TRUE) && (MIS_ORсGREATWAR == FALSE))
+	if((MIS_ABIGEILHELPHANNA == LOG_Running) && (Npc_HasItems(other,itri_hakonmissring) >= 1) && (JOTELLSGASPAR == TRUE) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};

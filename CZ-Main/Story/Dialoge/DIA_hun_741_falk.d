@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
+
 instance DIA_HUN_741_FALK_EXIT(C_Info)
 {
 	npc = hun_741_falk;
@@ -2223,7 +2235,7 @@ func void dia_hun_741_falk_gatherarmyanswerdone_info()
 	MIS_HUNTERSARMOR = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HUNTERSARMOR,LOG_SUCCESS);
 	B_LogEntry(TOPIC_HUNTERSARMOR,"Donesl jsem nové lovecké zbroje a Falk byl spokojený.");
-	Log_AddEntry(TOPIC_ORсGREATWAR,"Lovci se rozhodli přidat k vojsku paladinů, jsem si jistý že tato zpráva potěší lorda Hagena.");
+	Log_AddEntry(TOPIC_ORCGREATWAR,"Lovci se rozhodli přidat k vojsku paladinů, jsem si jistý že tato zpráva potěší lorda Hagena.");
 };
 
 

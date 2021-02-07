@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(2x) CZ_Settings_Diff_XPMult - falešná konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+
+*/
+
+
 
 func void ZS_Unconscious()
 {
@@ -351,7 +362,8 @@ func void ZS_Unconscious()
 			{
 				if(SBMODE == TRUE)
 				{
-					permvaluexp = self.level * XP_PER_VICTORY;
+					// permvaluexp = self.level * XP_PER_VICTORY;
+					permvaluexp = self.level * CZ_Settings_Diff_XPMult;
 
 					if(BELIARCURSEYOU == TRUE)
 					{
@@ -364,7 +376,8 @@ func void ZS_Unconscious()
 				}
 				else
 				{
-					permvaluexp = self.level * XP_PER_VICTORY;
+					// permvaluexp = self.level * XP_PER_VICTORY;
+					permvaluexp = self.level * CZ_Settings_Diff_XPMult;
 				};
 				if(self.guild == GIL_MEATBUG)
 				{

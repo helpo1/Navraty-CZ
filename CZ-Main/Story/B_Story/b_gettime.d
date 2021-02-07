@@ -1,6 +1,29 @@
-﻿/* -------------------- CZ CHANGELOG -------------------- */
+/* -------------------- CZ CHANGELOG -------------------- */
 
 /*
+
+v1.01:
+
+(2x) bHFTStatus - přidání indikace hladu/žízně/únavy na nižších obtížnostech
+CZ_GDRPC_update - vystavení quasi-API pro Discord Rich Presence
+(4x) CZ_Settings_Diff_EnableHunger - přidání možnosti zapnout/vypnout hlad
+(4x) CZ_Settings_Diff_EnableThirst - přidání možnosti zapnout/vypnout žízeň
+(4x) CZ_Settings_Diff_EnableFatigue - přidání možnosti zapnout/vypnout únavu
+
+ShowAmmo - přidání možnosti vypnout indikátor munice
+GamblingAntiCheat_CZ - přidán anti-savescumming systém pro kostky (po vzoru Fallout: New Vegas)
+CloseFireCaveAgain_CZ - upraven přístup do Jeskyně Ohně (FIRECAVE_ZEN) po splnění úkolu Rituál Ohně (TOPIC_KELIOSTEST)
+(2x) odemčeny zlodějské úspěchy na nižších obtížnostech - PickPocketBonus, PickLockBonus
+(4x) SPL_DAMAGE_SUPERBELIARSRUNE - upraveno poškození runy BD s duší Senyaka
+
+(20x) CZ TELEPORTY - nově přidané teleporty
+upraveny titulky - dialog Xardas vs. Pyrokar (MageSpeech)
+(2x) CZ_Settings_Diff_HungerPoolBase, CZ_Settings_Diff_HungerPoolLevelMult - přidání možnosti upravit rychlost kumulace hladu
+(2x) CZ_Settings_Diff_ThirstPoolBase, CZ_Settings_Diff_ThirstPoolLevelMult - přidání možnosti upravit rychlost kumulace žízně
+(2x) CZ_Settings_Diff_FatiguePoolBase, CZ_Settings_Diff_FatiguePoolLevelMult - přidání možnosti upravit rychlost kumulace únavy
+
+CZ_Settings_Diff_Changed - přidání indikace úpravy obtížnosti z .ini souboru
+
 
 v1.00:
 
@@ -118,10 +141,12 @@ func void B_CheckMenuOption()
 	{
 		Menu_WriteInt("KEYSDEFAULT1","keyShowStatus",FALSE);
 	};
-	if((Menu_ReadInt("AST","bHFTStatus") == TRUE) && (SBMODE != TRUE))
-	{
-		Menu_WriteInt("AST","bHFTStatus",0);
-	};
+	/*
+		if((Menu_ReadInt("AST","bHFTStatus") == TRUE) && (SBMODE != TRUE))
+		{
+			Menu_WriteInt("AST","bHFTStatus",0);
+		};
+	*/
 	if(Menu_ReadInt("AST","bHideHelm") == 1)
 	{
 		Menu_WriteInt("AST","bHideHelm",0);
@@ -1908,6 +1933,12 @@ func void B_CheckAutoDismount()
 
 func void View_Current_Hour()
 {
+
+	if(Menu_ReadInt("CZ_SETTINGS_OTHER","OutputGDRPC") == TRUE)
+	{
+		CZ_GDRPC_update();
+	};
+
 	//-----------Obshchaya informatsiya---------------
 
 	if(Menu_ReadInt("AST","bShowKarma") == 1)
@@ -1915,14 +1946,27 @@ func void View_Current_Hour()
 		print_karma_innos(90,1);
 		print_karma_beliar(95,1);
 	};
-	if((Menu_ReadInt("AST","bHFTStatus") == 1) && (SBMODE == TRUE))
+	// if((Menu_ReadInt("AST","bHFTStatus") == 1) && (SBMODE == TRUE))
+	if(Menu_ReadInt("AST","bHFTStatus") == 1)
 	{
-		print_real_status_hunger(15,1);
-		print_real_status_thirs(18,1);
-		print_real_status_fatigue(21,1);
+		if(CZ_Settings_Diff_EnableHunger == TRUE)
+		{
+			print_real_status_hunger(15,1);
+		};
+		if(CZ_Settings_Diff_EnableThirst == TRUE)
+		{
+			print_real_status_thirs(18,1);
+		};
+		if(CZ_Settings_Diff_EnableFatigue == TRUE)
+		{
+			print_real_status_fatigue(21,1);
+		};
 	};
 
-	print_arrow_count(1,7);
+	if(Menu_ReadInt("CZ_SETTINGS_OTHER","ShowAmmo") == TRUE)
+	{
+		print_arrow_count(1,7);
+	};
 
 	//-----------Status-bary---------------
 
@@ -1992,6 +2036,11 @@ func void b_gettime()
 	var C_Npc Mage_Vat;
 
 	DayNow = Wld_GetDay();
+	
+	if(GamblingAntiCheat_CZ > 0)
+	{
+		GamblingAntiCheat_CZ -= 1;
+	};
 
 	if((Open_ITKE_PORTALTEMPELWALKTHROUGH_ADDON == TRUE) && (Open_ITKE_PORTALTEMPELWALKTHROUGH_ADDON_DONE == FALSE))
 	{
@@ -2102,6 +2151,12 @@ func void b_gettime()
 
 	if(CurrentLevel == NEWWORLD_ZEN)
 	{
+		if((NimrodDone == TRUE) && (OpenFireCaveAgain_CZ == TRUE) && (CloseFireCaveAgain_CZ == FALSE))
+		{
+			Wld_SendTrigger("EVT_FIRECAVEMOVE_TRG");
+			CloseFireCaveAgain_CZ = TRUE;
+		};
+	
 		Mage_Xar = Hlp_GetNpc(NONE_100_Xardas);
 		Mage_Pyr = Hlp_GetNpc(KDF_500_Pyrokar);
 		Mage_Vat = Hlp_GetNpc(VLK_439_Vatras);
@@ -3830,7 +3885,7 @@ func void b_gettime()
 		RankPoints = RankPoints + 10;
 		AI_NoticePrint(3000,4098,NAME_Addon_StreetFighterBonus);
 	};
-	if((PickPocketBonus == FALSE) && (PickPocketBonusCount >= 100) && ((SBMode == TRUE) || (RealMode[2] == TRUE)))
+	if((PickPocketBonus == FALSE) && (PickPocketBonusCount >= 100)) // && ((SBMode == TRUE) || (RealMode[2] == TRUE)))
 	{
 		Snd_Play("LevelUp");
 		B_GivePlayerXP(500);
@@ -3841,7 +3896,7 @@ func void b_gettime()
 		THIEF_REPUTATION = THIEF_REPUTATION + 15;
 		AI_NoticePrint(3000,4098,NAME_Addon_PickPocketBonus);
 	};
-	if((PickLockBonus == FALSE) && (TalentCount_PickLock[0] >= 100) && ((SBMode == TRUE) || (RealMode[2] == TRUE)))
+	if((PickLockBonus == FALSE) && (TalentCount_PickLock[0] >= 100)) // && ((SBMode == TRUE) || (RealMode[2] == TRUE)))
 	{
 		Snd_Play("LevelUp");
 		B_GivePlayerXP(500);
@@ -4038,7 +4093,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_BELIARSRUNE_04 = 600 + (ATR_INTELLECT / 2) + ((600 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 			SPL_DAMAGE_BELIARSRUNE_05 = 750 + (ATR_INTELLECT / 2) + ((750 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 			SPL_DAMAGE_BELIARSRUNE_06 = 1000 + (ATR_INTELLECT / 2) + ((1000 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
-			SPL_DAMAGE_SUPERBELIARSRUNE = 600 + (ATR_INTELLECT / 2) + ((600 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
+			SPL_DAMAGE_SUPERBELIARSRUNE = 1250 + (ATR_INTELLECT / 2) + ((1250 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
 
 			SPL_DAMAGE_DESTROYGUARDIANS = 1000 + (ATR_INTELLECT / 4) + ((1000 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_Damage_DESTROYUNDEAD = 1000 + (ATR_INTELLECT / 2) + ((1000 + (ATR_INTELLECT / 2)) * CountLearnSpell) / 100;
@@ -4101,7 +4156,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_BELIARSRUNE_04 = 600 + (ATR_INTELLECT / 4) + ((600 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_DAMAGE_BELIARSRUNE_05 = 750 + (ATR_INTELLECT / 4) + ((750 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_DAMAGE_BELIARSRUNE_06 = 1000 + (ATR_INTELLECT / 4) + ((1000 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
-			SPL_DAMAGE_SUPERBELIARSRUNE = 600 + (ATR_INTELLECT / 4) + ((600 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
+			SPL_DAMAGE_SUPERBELIARSRUNE = 1250 + (ATR_INTELLECT / 4) + ((1250 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 
 			SPL_DAMAGE_DESTROYGUARDIANS = 1000 + (ATR_INTELLECT / 4) + ((1000 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
 			SPL_Damage_DESTROYUNDEAD = 1000 + (ATR_INTELLECT / 4) + ((1000 + (ATR_INTELLECT / 4)) * CountLearnSpell) / 100;
@@ -4167,7 +4222,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_BELIARSRUNE_04 = 600 + (ATR_INTELLECT / 2);
 			SPL_DAMAGE_BELIARSRUNE_05 = 750 + (ATR_INTELLECT / 2);
 			SPL_DAMAGE_BELIARSRUNE_06 = 1000 + (ATR_INTELLECT / 2);
-			SPL_DAMAGE_SUPERBELIARSRUNE = 600 + (ATR_INTELLECT / 2);
+			SPL_DAMAGE_SUPERBELIARSRUNE = 1250 + (ATR_INTELLECT / 2);
 
 			SPL_DAMAGE_DESTROYGUARDIANS = 1000 + (ATR_INTELLECT / 4);
 			SPL_Damage_DESTROYUNDEAD = 1000 + (ATR_INTELLECT / 2);
@@ -4230,7 +4285,7 @@ func void B_DamageCalcRunes()
 			SPL_DAMAGE_BELIARSRUNE_04 = 600 + (ATR_INTELLECT / 4);
 			SPL_DAMAGE_BELIARSRUNE_05 = 750 + (ATR_INTELLECT / 4);
 			SPL_DAMAGE_BELIARSRUNE_06 = 1000 + (ATR_INTELLECT / 4);
-			SPL_DAMAGE_SUPERBELIARSRUNE = 600 + (ATR_INTELLECT / 4);
+			SPL_DAMAGE_SUPERBELIARSRUNE = 1250 + (ATR_INTELLECT / 4);
 
 			SPL_DAMAGE_DESTROYGUARDIANS = 1000 + (ATR_INTELLECT / 4);
 			SPL_Damage_DESTROYUNDEAD = 1000 + (ATR_INTELLECT / 4);
@@ -4436,7 +4491,28 @@ func void B_LOC_TeleportMe_NW()
 		{
 			LOC_BLACKTROLL_TP_OK = FALSE;
 			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","TP_BLACKTROLL");
+		}
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		else if(LOC_NW_DOWNTOWN_CZ_TP_OK == TRUE)
+		{
+			LOC_NW_DOWNTOWN_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","DOWNTOWN");
+		}
+		else if(LOC_NW_HAFEN_CZ_TP_OK == TRUE)
+		{
+			LOC_NW_HAFEN_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","HAFEN");
+		}
+		else if(LOC_NW_ATROS_CZ_TP_OK == TRUE)
+		{
+			LOC_NW_ATROS_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("NEWWORLD\NEWWORLD.ZEN","NW_CASTLEMINE_PATH_01");
 		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	};
 };
 
@@ -4483,7 +4559,33 @@ func void B_LOC_TeleportMe_OW()
 		{
 			LOC_PASSNW_TP_OK = FALSE;
 			Wld_ChangeLevel("OLDWORLD\OLDWORLD.ZEN","TP_PASSNW");
+		}
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		else if(LOC_OW_ORCCITY_CZ_TP_OK == TRUE)
+		{
+			LOC_OW_ORCCITY_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("OLDWORLD\OLDWORLD.ZEN","OW_ORCCITY_ENTRANCE");
+		}
+		else if(LOC_OW_SLEEPERTEMPLE_CZ_TP_OK == TRUE)
+		{
+			LOC_OW_SLEEPERTEMPLE_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("OLDWORLD\OLDWORLD.ZEN","WP_ORCTEMPLE_12");
+		}
+		else if(LOC_OW_DARRION_CZ_TP_OK == TRUE)
+		{
+			LOC_OW_DARRION_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("OLDWORLD\OLDWORLD.ZEN","WP_COAST_FOREST_120");
+		}
+		else if(LOC_OW_HIGHROCK_CZ_TP_OK == TRUE)
+		{
+			LOC_OW_HIGHROCK_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("OLDWORLD\OLDWORLD.ZEN","FP_PRAY_OW_19");
 		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	};
 };
 
@@ -4515,7 +4617,18 @@ func void B_LOC_TeleportMe_AV()
 		{
 			LOC_COMPLEX_TP_OK = FALSE;
 			Wld_ChangeLevel("ADDON\ADANOSVALLEY.ZEN","TP_COMPLEX");
+		}
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		else if(LOC_ADV_ERHAZIR_CZ_TP_OK == TRUE)
+		{
+			LOC_ADV_ERHAZIR_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("ADDON\ADANOSVALLEY.ZEN","RAVEN_HRAM");
 		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	};
 };
 
@@ -4544,9 +4657,115 @@ func void B_LOC_TeleportMe_ADW()
 		{
 			LOC_PIRATCAMP_TP_OK = FALSE;
 			Wld_ChangeLevel("ADDON\ADDONWORLD.ZEN","TP_PIRATCAMP");
+		}
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		else if(LOC_ADW_TELEPORTSQUARE_CZ_TP_OK == TRUE)
+		{
+			LOC_ADW_TELEPORTSQUARE_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("ADDON\ADDONWORLD.ZEN","ADW_ENTRANCE");
+		}
+		else if(LOC_ADW_GOLDDRAGON_CZ_TP_OK == TRUE)
+		{
+			LOC_ADW_GOLDDRAGON_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("ADDON\ADDONWORLD.ZEN","ADW_SATURAS_2_GOLDDRAGON");
+		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
+	};
+};
+
+
+
+/*     // ----- CZ TELEPORTY ----- \\     */
+
+func void B_LOC_TeleportMe_PF_CZ()
+{
+	if(CurrentLevel != PALADINFORT_ZEN)
+	{
+		if(LOC_PF_AZGAN_CZ_TP_OK == TRUE)
+		{
+			LOC_PF_AZGAN_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("NEWWORLD\PALADINFORT.ZEN","LGR_EINGANG_01");
 		};
 	};
 };
+
+func void B_LOC_TeleportMe_DG_CZ()
+{
+	if(CurrentLevel != DEADGROT_ZEN)
+	{
+		if(LOC_DG_CREOL_CZ_TP_OK == TRUE)
+		{
+			LOC_DG_CREOL_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("OLDWORLD\DEADGROT.ZEN","OW_FOGDUNGEON_09");
+		};
+	};
+};
+
+func void B_LOC_TeleportMe_OC_CZ()
+{
+	if(CurrentLevel != ORCCITY_ZEN)
+	{
+		if(LOC_OC_URTHRALL_CZ_TP_OK == TRUE)
+		{
+			LOC_OC_URTHRALL_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("OLDWORLD\ORCCITY.ZEN","ORC_CITY_47");
+		}
+		else if(LOC_OC_ARENA_CZ_TP_OK == TRUE)
+		{
+			LOC_OC_ARENA_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("OLDWORLD\ORCCITY.ZEN","ORC_CITY_43");
+		}
+		else if(LOC_OC_ORCMINE_CZ_TP_OK == TRUE)
+		{
+			LOC_OC_ORCMINE_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("OLDWORLD\ORCCITY.ZEN","ORC_CITY_25");
+		}
+		else if(LOC_OC_SHVENTRANCE_CZ_TP_OK == TRUE)
+		{
+			LOC_OC_SHVENTRANCE_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("OLDWORLD\ORCCITY.ZEN","ORC_CITY_50");
+		};
+	};
+};
+
+/*
+
+func void B_LOC_TeleportMe_SHV_CZ()
+{
+	if(CurrentLevel != SHVALLEY_ZEN)
+	{
+		if(LOC_SHV_OCPORTAL_CZ_TP_OK == TRUE)
+		{
+			LOC_SHV_OCPORTAL_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("SHVALLEY\SHVALLEY.ZEN","SV_START");
+		}
+		else if(LOC_SHV_HUMANCAMP_CZ_TP_OK == TRUE)
+		{
+			LOC_SHV_HUMANCAMP_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("SHVALLEY\SHVALLEY.ZEN","WP_CAMP_09");
+		}
+		else if(LOC_SHV_ORCCAMP_CZ_TP_OK == TRUE)
+		{
+			LOC_SHV_ORCCAMP_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("SHVALLEY\SHVALLEY.ZEN","FP_ROAM_ORCSHAMAN_01");
+		}
+		else if(LOC_SHV_AZGALOR_CZ_TP_OK == TRUE)
+		{
+			LOC_SHV_AZGALOR_CZ_TP_OK = FALSE;
+			Wld_ChangeLevel("SHVALLEY\SHVALLEY.ZEN","FP_ROAM_URGROM_01");
+		};
+	};
+};
+
+*/
+
+/*     \\ ----- CZ TELEPORTY ----- //     */
+
+
 
 func void B_TeleportMe_NW()
 {
@@ -4642,7 +4861,34 @@ func void B_TeleportMe_NW()
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
 			BLACKTROLL_TP_OK = FALSE;
+		}
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		else if(NW_DOWNTOWN_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"DOWNTOWN");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			NW_DOWNTOWN_CZ_TP_OK = FALSE;
+		}
+		else if(NW_HAFEN_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"HAFEN");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			NW_HAFEN_CZ_TP_OK = FALSE;
+		}
+		else if(NW_ATROS_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"NW_CASTLEMINE_PATH_01");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			NW_ATROS_CZ_TP_OK = FALSE;
 		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	};
 };
 
@@ -4705,7 +4951,41 @@ func void B_TeleportMe_OW()
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
 			PASSNW_TP_OK = FALSE;
+		}
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		else if(OW_ORCCITY_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"OW_ORCCITY_ENTRANCE");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			OW_ORCCITY_CZ_TP_OK = FALSE;
+		}
+		else if(OW_SLEEPERTEMPLE_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"WP_ORCTEMPLE_12");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			OW_SLEEPERTEMPLE_CZ_TP_OK = FALSE;
+		}
+		else if(OW_DARRION_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"WP_COAST_FOREST_120");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			OW_DARRION_CZ_TP_OK = FALSE;
+		}
+		else if(OW_HIGHROCK_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"FP_PRAY_OW_19");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			OW_HIGHROCK_CZ_TP_OK = FALSE;
 		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	};
 };
 
@@ -4747,7 +5027,20 @@ func void B_TeleportMe_AV()
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
 			COMPLEX_TP_OK = FALSE;
+		}
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		else if(ADV_ERHAZIR_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"RAVEN_HRAM");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			ADV_ERHAZIR_CZ_TP_OK = FALSE;
 		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	};
 };
 
@@ -4792,9 +5085,135 @@ func void B_TeleportMe_ADW()
 			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
 			Snd_Play("MFX_SLEEP_CAST");
 			PIRATCAMP_TP_OK = FALSE;
+		}
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		else if(ADW_TELEPORTSQUARE_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"ADW_ENTRANCE");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			ADW_TELEPORTSQUARE_CZ_TP_OK = FALSE;
+		}
+		else if(ADW_GOLDDRAGON_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"ADW_SATURAS_2_GOLDDRAGON");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			ADW_GOLDDRAGON_CZ_TP_OK = FALSE;
+		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
+	};
+};
+
+
+
+/*     // ----- CZ TELEPORTY ----- \\     */
+
+func void B_TeleportMe_PF_CZ()
+{
+	if(CurrentLevel == PALADINFORT_ZEN)
+	{
+		if(PF_AZGAN_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"LGR_EINGANG_01");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			PF_AZGAN_CZ_TP_OK = FALSE;
 		};
 	};
 };
+
+func void B_TeleportMe_DG_CZ()
+{
+	if(CurrentLevel == DEADGROT_ZEN)
+	{
+		if(DG_CREOL_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"OW_FOGDUNGEON_09");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			DG_CREOL_CZ_TP_OK = FALSE;
+		};
+	};
+};
+
+func void B_TeleportMe_OC_CZ()
+{
+	if(CurrentLevel == ORCCITY_ZEN)
+	{
+		if(OC_URTHRALL_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"ORC_CITY_47");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			OC_URTHRALL_CZ_TP_OK = FALSE;
+		}
+		else if(OC_ARENA_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"ORC_CITY_43");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			OC_ARENA_CZ_TP_OK = FALSE;
+		}
+		else if(OC_ORCMINE_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"ORC_CITY_25");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			OC_ORCMINE_CZ_TP_OK = FALSE;
+		}
+		else if(OC_SHVENTRANCE_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"ORC_CITY_50");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			OC_SHVENTRANCE_CZ_TP_OK = FALSE;
+		};
+	};
+};
+
+func void B_TeleportMe_SHV_CZ()
+{
+	if(CurrentLevel == SHVALLEY_ZEN)
+	{
+		if(SHV_OCPORTAL_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"SV_START");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			SHV_OCPORTAL_CZ_TP_OK = FALSE;
+		}
+		else if(SHV_HUMANCAMP_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"WP_CAMP_09");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			SHV_HUMANCAMP_CZ_TP_OK = FALSE;
+		}
+		else if(SHV_ORCCAMP_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"FP_ROAM_ORCSHAMAN_01");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			SHV_ORCCAMP_CZ_TP_OK = FALSE;
+		}
+		else if(SHV_AZGALOR_CZ_TP_OK == TRUE)
+		{
+			AI_Teleport(hero,"FP_ROAM_URGROM_01");
+			Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+			Snd_Play("MFX_SLEEP_CAST");
+			SHV_AZGALOR_CZ_TP_OK = FALSE;
+		};
+	};
+};
+
+/*     \\ ----- CZ TELEPORTY ----- //     */
+
+
 
 func void B_InitMunitionLoad()
 {
@@ -5219,7 +5638,7 @@ func void Hero_poisoned()
 		}
 		else if(PrologCount == 4)
 		{
-			AI_NoticePrint(500,7000,"Gothic 2 - Návraty 2.0a v66.2 - CZ v1.00");
+			AI_NoticePrint(500,7000,"Gothic 2 - Návraty 2.0a v66.2 - CZ v1.01");
 		}
 		else if(PrologCount == 13)
 		{
@@ -5326,15 +5745,15 @@ func void Hero_poisoned()
 		}
 		else if(PrologCount == 44)
 		{
-		PrintScreen("Je slabý a mnohé zapomněl.",-1,90,FONT_ScreenSmall,3);
+			PrintScreen("Je slabý a mnohé zapomněl.",-1,90,FONT_ScreenSmall,3);
 		}
 		else if(PrologCount == 47)
 		{
-		PrintScreen("Ale je naživu...",-1,90,FONT_ScreenSmall,3);
+			PrintScreen("Ale je naživu...",-1,90,FONT_ScreenSmall,3);
 		}
 		else if(PrologCount == 50)
 		{
-		PrintScreen("Je zpátky!",-1,90,FONT_ScreenSmall,3);
+			PrintScreen("Je zpátky!",-1,90,FONT_ScreenSmall,3);
 		};
 
 
@@ -5342,6 +5761,205 @@ func void Hero_poisoned()
 		PrologCount = PrologCount + 1;
 
 	};
+	
+	
+	if((MageSpeechStart == TRUE) && (MageSpeechEnd == FALSE) && (MageSpeechEndStop == FALSE))
+	{
+		if(MageSpeechCount == 1)
+		{
+			PrintScreen("X: Zdravím tě, mágu...",-1,90,FONT_ScreenSmall,3);
+		}
+		else if(MageSpeechCount == 4)
+		{
+			PrintScreen("P: Argh... Takže jsi přece jen měl tu drzost sem přijít!",-1,90,FONT_ScreenSmall,6);
+		}
+		else if(MageSpeechCount == 10)
+		{
+			PrintScreen("X: Byl jsem pozván. Přijít tady bylo mou povinností.",-1,90,FONT_ScreenSmall,6);
+		}
+		else if(MageSpeechCount == 16)
+		{
+			PrintScreen("X: A co se drzosti týče... Já měl odvahu jít na místa, na která by ses ty neosmělil ani ve svých nejhorších snech.",-1,90,FONT_ScreenSmall,10);
+		}
+		else if(MageSpeechCount == 27)
+		{
+			PrintScreen("P: Tvou nejdůležitější povinností kdysi bylo sloužit posvátnému Ohni...",-1,90,FONT_ScreenSmall,5);
+		}
+		else if(MageSpeechCount == 32)
+		{
+			PrintScreen("P: ... jenomže ses rozhodl, že to nemusíš dělat!",-1,90,FONT_ScreenSmall,4);
+		}
+		else if(MageSpeechCount == 36)
+		{
+			PrintScreen("P: Beztrestně jsi opustil Kruh Ohně - a proč? Abys šel studovat magii démonů!",-1,90,FONT_ScreenSmall,8);
+		}
+		else if(MageSpeechCount == 44)
+		{
+			PrintScreen("P: Styď se, hříšníku! Dnes mě Innos podrobil těžké zkoušce - setkání s tebou!",-1,90,FONT_ScreenSmall,7);
+		}
+		else if(MageSpeechCount == 51)
+		{
+			PrintScreen("P: A on sám ať mi je svědkem, že bych raději byl vhozen do podsvětí, než abych musel zažít to, co zažívám nyní...",-1,90,FONT_ScreenSmall,7);
+		}
+		else if(MageSpeechCount == 58)
+		{
+			PrintScreen("P: ... než abych viděl tvé nestoudné oči, opovážlivě hledící do těch mých, než abych viděl, jak služebník Innose tak rychle padl.",-1,90,FONT_ScreenSmall,8);
+		}
+		else if(MageSpeechCount == 66)
+		{
+			PrintScreen("P: Služebník, ve kterého oddanost Církvi a Svatému Plameni nikdo nepochyboval - od najprostšího novice až po samotného krále. Nikdo!",-1,90,FONT_ScreenSmall,9);
+		}
+		else if(MageSpeechCount == 76)
+		{
+			PrintScreen("X: Vše, co se stane v tomto světě je vůle bohů. Svůj osud si nevolíme my.",-1,90,FONT_ScreenSmall,8);
+		}
+		else if(MageSpeechCount == 85)
+		{
+			PrintScreen("P: O čem to mluvíš?!",-1,90,FONT_ScreenSmall,2);
+		}
+		else if(MageSpeechCount == 88)
+		{
+			PrintScreen("X: Toho odvážného muže, jenž porazil Spáče a zničil Bariéru...",-1,90,FONT_ScreenSmall,5);
+		}
+		else if(MageSpeechCount == 93)
+		{
+			PrintScreen("X: ... jsem celou dobu provázel a znalostmi, které mi byli dány Beliarem usměrňoval JÁ.",-1,90,FONT_ScreenSmall,8);
+		}
+		else if(MageSpeechCount == 101)
+		{
+			PrintScreen("X: To JÁ ho díky moci, kterou mi propůjčil Beliar vzkřísil z mrtvých, aby nás teď zachránil od draků.",-1,90,FONT_ScreenSmall,10);
+		}
+		else if(MageSpeechCount == 111)
+		{
+			PrintScreen("X: A teď jsem na jeho žádost přišel jako Beliarův vyslanec opravit artefakt, který pro boha Temnot představuje hrozbu.",-1,90,FONT_ScreenSmall,14);
+		}
+		else if(MageSpeechCount == 125)
+		{
+			PrintScreen("X: Který jiný temný mág by souhlasil, místo toho, aby tě proměnil v prach, hm?",-1,90,FONT_ScreenSmall,8);
+		}
+		else if(MageSpeechCount == 133)
+		{
+			PrintScreen("X: Rád si vyslechnu, co na to řekne ctihodný služebník Innose.",-1,90,FONT_ScreenSmall,5);
+		}
+		else if(MageSpeechCount == 140)
+		{
+			PrintScreen("P: Ani se neopovažuj vyslovit jméno našeho Pána svými špinavými rty, odpadlíku!",-1,90,FONT_ScreenSmall,5);
+		}
+		else if(MageSpeechCount == 146)
+		{
+			PrintScreen("X: Na nic víc než demagogii se nezmůžeš, arcimágu?",-1,90,FONT_ScreenSmall,8);
+		}
+		else if(MageSpeechCount == 155)
+		{
+			PrintScreen("X: Díky čímu odchodu z kláštera jsi získal místo opata, hm?",-1,90,FONT_ScreenSmall,6);
+		}
+		else if(MageSpeechCount == 161)
+		{
+			PrintScreen("X: Tys usedl na trůn v klášterním chrámu, kdežto já se vydal vytvořit Bariéru.",-1,90,FONT_ScreenSmall,6);
+		}
+		else if(MageSpeechCount == 168)
+		{
+			PrintScreen("P: Já byl proti vytvoření Bariéry! Vypuštění takového množství magické energie bylo od počátku obrovským rizikem! A měl jsem pravdu!",-1,90,FONT_ScreenSmall,11);
+		}
+		else if(MageSpeechCount == 179)
+		{
+			PrintScreen("P: Vy všichni jste uvízli pod kopulí. A pod ní povstalo i Zlo!",-1,90,FONT_ScreenSmall,5);
+		}
+		else if(MageSpeechCount == 184)
+		{
+			PrintScreen("X: Ach, Spáč se objevil již dávno předtím. My byli pouhými svědky jeho probuzení...",-1,90,FONT_ScreenSmall,9);
+		}
+		else if(MageSpeechCount == 193)
+		{
+			PrintScreen("P: Ano, ale vznik sekty, která ho probudila byla tvoje chyba! Nezastavil jsi je, když opouštěli Starý tábor.",-1,90,FONT_ScreenSmall,10);
+		}
+		else if(MageSpeechCount == 203)
+		{
+			PrintScreen("X: Přestaň s tím. Odešel jsem mnohem dříve, abych studoval pochybení, která se stala při rituálu vytvoření Bariéry.",-1,90,FONT_ScreenSmall,9);
+		}
+		else if(MageSpeechCount == 212)
+		{
+			PrintScreen("X: Mým úkolem nikdy nebylo dohlížet na skupinu pomatených trestanců.",-1,90,FONT_ScreenSmall,6);
+		}
+		else if(MageSpeechCount == 219)
+		{
+			PrintScreen("P: Alespoň v tomhle se kaješ... dobrá...",-1,90,FONT_ScreenSmall,3);
+		}
+		else if(MageSpeechCount == 222)
+		{
+			PrintScreen("X: (povzdech) O čem to mluvíš...",-1,90,FONT_ScreenSmall,3);
+		}
+		else if(MageSpeechCount == 225)
+		{
+			PrintScreen("X: Abych nalezl odpovědi, putoval jsem skrz nepřátelské skřetí území, zatímco ty... tys seděl na zadnici!",-1,90,FONT_ScreenSmall,8);
+		}
+		else if(MageSpeechCount == 233)
+		{
+			PrintScreen("X: To ty bys měl být zticha a stydět se!",-1,90,FONT_ScreenSmall,5);
+		}
+		else if(MageSpeechCount == 238)
+		{
+			PrintScreen("P: A já snad nic nedělal?! Dal jsem Vyvolenému dopis, ve kterém jsem popisoval nebezpečí, které představovala sekta z bažiny!",-1,90,FONT_ScreenSmall,8);
+		}
+		else if(MageSpeechCount == 246)
+		{
+			PrintScreen("X: Ha! To bylo dlouho poté, co mé stopy ve Starém táboře vychladly...",-1,90,FONT_ScreenSmall,7);
+		}
+		else if(MageSpeechCount == 253)
+		{
+			PrintScreen("X: ... a sektáři už s radostí očekávali rituál probuzení a hledali ohnisko. (ironicky) Opravdu díky.",-1,90,FONT_ScreenSmall,9);
+		}
+		else if(MageSpeechCount == 262)
+		{
+			PrintScreen("X: Tvou zprávu obdržel ten chudák Corristo - další stoupenec nicnedělání a čekání...",-1,90,FONT_ScreenSmall,8);
+		}
+		else if(MageSpeechCount == 270)
+		{
+			PrintScreen("X: ... který si užíval pohodlí na hradě po Gomezově pravici, hrál si na jeho dvořana...",-1,90,FONT_ScreenSmall,7);
+		}
+		else if(MageSpeechCount == 277)
+		{
+			PrintScreen("X: (znechuceně) ... a pak se nechal sprovodit ze světa meči jeho hrdlořezů.",-1,90,FONT_ScreenSmall,4);
+		}
+		else if(MageSpeechCount == 282)
+		{
+			PrintScreen("P: (rozčileně) To ty můžeš za smrt Corrista a zbytku našich bratří, ty!",-1,90,FONT_ScreenSmall,4);
+		}
+		else if(MageSpeechCount == 286)
+		{
+			PrintScreen("X: (s úšklebkem) Ne... Byli to dospělí lidé a ještě mnohem víc, než jen to - byli to mágové. Měli se o sebe postarat.",-1,90,FONT_ScreenSmall,10);
+		}
+		else if(MageSpeechCount == 296)
+		{
+			PrintScreen("X: Já odešel hledat řešení a oni zůstali. Proto je od boha Světla a Ohně stihnul trest.",-1,90,FONT_ScreenSmall,9);
+		}
+		else if(MageSpeechCount == 305)
+		{
+			PrintScreen("X: Oheň je čilý, divoký element a kněží Ohně musí být lidmi aktivními a rozhodnými, nikoliv nečinně posedávajícími.",-1,90,FONT_ScreenSmall,13);
+		}
+		else if(MageSpeechCount == 318)
+		{
+			PrintScreen("X: Takže... vykonej teď alespoň jeden skutek hoden té tvé třpytivé róby a přilož ruku k dílu...",-1,90,FONT_ScreenSmall,11);
+		}
+		else if(MageSpeechCount == 329)
+		{
+			PrintScreen("X: ... při opravě Oka... Oka tvého převzácného Pána, jehož jméno mi ani nedovolíš vyslovit!",-1,90,FONT_ScreenSmall,10);
+		}
+		else if(MageSpeechCount == 341)
+		{
+			PrintScreen("V: Chvála Adanovi. Tak tedy začněme...",-1,90,FONT_ScreenSmall,4);
+		// }
+		// else if(MageSpeechCount == 350)
+		// {
+		//	PrintScreen("TEST: FIN",-1,90,FONT_ScreenSmall,10);
+		};
+
+
+		MageSpeechCount = MageSpeechCount + 1;
+
+	};
+	
+	
 	if((ENDGAMECREDITS == TRUE) && (EpilogeGame == FALSE))
 	{
 		bManaBar = 0;
@@ -6872,13 +7490,15 @@ func void Hero_poisoned()
 			TempJointBonusCount = FALSE;
 		};
 	};
-	if((SBMODE == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (Hero_Hunger >= 1))
+	// if((SBMODE == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (Hero_Hunger >= 1))
+	if((CZ_Settings_Diff_EnableHunger == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (Hero_Hunger >= 1))
 	{
 		GLTempStatusHungerCount += 1;			
 
 		if(CurrentLevel == ORCMOUNTAIN_ZEN)
 		{
-			tmpHungerPool = 372 + (hero.level * 5);
+			// tmpHungerPool = 372 + (hero.level * 5);
+			tmpHungerPool = (CZ_Settings_Diff_HungerPoolBase * 3 / 4) + (hero.level * CZ_Settings_Diff_HungerPoolLevelMult);
 
 			if(GLTempStatusHungerCount >= tmpHungerPool)
 			{
@@ -6906,7 +7526,8 @@ func void Hero_poisoned()
 		}
 		else
 		{
-			tmpHungerPool = 496 + (hero.level * 5);
+			// tmpHungerPool = 496 + (hero.level * 5);
+			tmpHungerPool = CZ_Settings_Diff_HungerPoolBase + (hero.level * CZ_Settings_Diff_HungerPoolLevelMult);
 
 			if(GLTempStatusHungerCount >= tmpHungerPool)
 			{
@@ -6933,13 +7554,15 @@ func void Hero_poisoned()
 			};
 		};
 	};
-	if((SBMODE == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (Hero_Thirst >= 1))
+	// if((SBMODE == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (Hero_Thirst >= 1))
+	if((CZ_Settings_Diff_EnableThirst == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (Hero_Thirst >= 1))
 	{
 		GLTempStatusThirstCount += 1;
 
 		if(CurrentLevel == ADANOSVALLEY_ZEN)
 		{
-			tmpThirstPool = 462 + (hero.level * 5);
+			// tmpThirstPool = 462 + (hero.level * 5);
+			tmpThirstPool = (CZ_Settings_Diff_ThirstPoolBase * 3 / 4) + (hero.level * CZ_Settings_Diff_ThirstPoolLevelMult);
 
 			if(GLTempStatusThirstCount >= tmpThirstPool)
 			{
@@ -6961,13 +7584,14 @@ func void Hero_poisoned()
 						};
 					};
 	
-					AI_Print("Jsi hladový!");
+					AI_Print("Máš žízeň!");
 				};
 			};
 		}
 		else
 		{
-			tmpThirstPool = 616 + (hero.level * 5);
+			// tmpThirstPool = 616 + (hero.level * 5);
+			tmpThirstPool = CZ_Settings_Diff_ThirstPoolBase + (hero.level * CZ_Settings_Diff_ThirstPoolLevelMult);
 
 			if(GLTempStatusThirstCount >= tmpThirstPool)
 			{
@@ -6989,16 +7613,18 @@ func void Hero_poisoned()
 						};
 					};
 	
-					AI_Print("Jsi hladový!");
+					AI_Print("Máš žízeň!");
 				};
 			};
 		};
 	};
-	if((SBMODE == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (CanChangeItem == TRUE) && (Hero_Fatigue >= 1) && (C_BodyStateContains(hero,BS_SIT) == FALSE))
+	// if((SBMODE == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (CanChangeItem == TRUE) && (Hero_Fatigue >= 1) && (C_BodyStateContains(hero,BS_SIT) == FALSE))
+	if((CZ_Settings_Diff_EnableFatigue == TRUE) && (HEROTRANS == FALSE) && (PLAYER_MOBSI_PRODUCTION != MOBSI_SleepAbit) && (CanChangeItem == TRUE) && (Hero_Fatigue >= 1) && (C_BodyStateContains(hero,BS_SIT) == FALSE))
 	{
 		GLTempStatusFatigueCount += 1;
 
-		if(GLTempStatusFatigueCount >= 864)
+		// if(GLTempStatusFatigueCount >= 864)
+		if(GLTempStatusFatigueCount >= (CZ_Settings_Diff_FatiguePoolBase + (hero.level * CZ_Settings_Diff_FatiguePoolLevelMult)))
 		{
 			GLTempStatusFatigueCount = FALSE;
 
@@ -7026,7 +7652,8 @@ func void Hero_poisoned()
 	{
 		TempResetFatigue += 1;
 
-		if(TempResetFatigue >= 216)
+		// if(TempResetFatigue >= 216)
+		if(TempResetFatigue >= ((CZ_Settings_Diff_FatiguePoolBase + (hero.level * CZ_Settings_Diff_FatiguePoolLevelMult)) / 4))
 		{
 			Hero_Fatigue += 1;				
 
@@ -7374,7 +8001,8 @@ func void Hero_poisoned()
 
 		//--------------------------golod, zhazhda i utomlyayemost'---------------------------------------
 
-		if((Hero_Thirst == FALSE) && (SBMODE == TRUE))
+		// if((Hero_Thirst == FALSE) && (SBMODE == TRUE))
+		if((Hero_Thirst == FALSE) && (CZ_Settings_Diff_EnableThirst == TRUE))
 		{
 			TempThirstCount += 1;
 
@@ -7417,7 +8045,8 @@ func void Hero_poisoned()
 				};
 			};
 		};
-		if((Hero_Hunger == FALSE) && (SBMODE == TRUE))
+		// if((Hero_Hunger == FALSE) && (SBMODE == TRUE))
+		if((Hero_Hunger == FALSE) && (CZ_Settings_Diff_EnableHunger == TRUE))
 		{
 			TempHungerCount += 1;
 
@@ -7460,7 +8089,8 @@ func void Hero_poisoned()
 				};
 			};
 		};
-		if((Hero_Fatigue == FALSE) && (SBMODE == TRUE))
+		// if((Hero_Fatigue == FALSE) && (SBMODE == TRUE))
+		if((Hero_Fatigue == FALSE) && (CZ_Settings_Diff_EnableFatigue == TRUE))
 		{
 			TempFatigueCount += 1;
 
@@ -7479,6 +8109,20 @@ func void Hero_poisoned()
 				};
 			};
 		};
+		
+		if(CZ_Settings_Diff_EnableHunger == FALSE)
+		{
+			Hero_Hunger = 10;
+		};
+		if(CZ_Settings_Diff_EnableThirst == FALSE)
+		{
+			Hero_Thirst = 5;
+		};
+		if(CZ_Settings_Diff_EnableFatigue == FALSE)
+		{
+			Hero_Fatigue = 10;
+		};
+		
 		if((CurrentLevel == NEWWORLD_ZEN) && (NearFountainDone == FALSE))
 		{
 			if(Npc_GetDistToWP(hero,"NW_CITY_FOUNTAIN_01") <= 600)
@@ -7812,21 +8456,24 @@ func void Hero_poisoned()
 		};
 		if(CurrentLevel == NEWWORLD_ZEN)
 		{
-			if((XARDAS_TP_OK == TRUE) || (TOWN_TP_OK == TRUE) || (TAVERNE_TP_OK == TRUE) || (PSI_TP_OK == TRUE) || (PASSOW_TP_OK == TRUE) || (BIGFARM_TP_OK == TRUE) || (KLOSTER_TP_OK == TRUE) || (SAGITTA_TP_OK == TRUE) || (HUNT_TP_OK == TRUE) || (VINOCAVE_TP_OK == TRUE) || (SUNCIRCLE_TP_OK == TRUE) || (ADWRUINS_TP_OK == TRUE) || (BLACKTROLL_TP_OK == TRUE))
+			// CZ TELEPORTY
+			if((XARDAS_TP_OK == TRUE) || (TOWN_TP_OK == TRUE) || (TAVERNE_TP_OK == TRUE) || (PSI_TP_OK == TRUE) || (PASSOW_TP_OK == TRUE) || (BIGFARM_TP_OK == TRUE) || (KLOSTER_TP_OK == TRUE) || (SAGITTA_TP_OK == TRUE) || (HUNT_TP_OK == TRUE) || (VINOCAVE_TP_OK == TRUE) || (SUNCIRCLE_TP_OK == TRUE) || (ADWRUINS_TP_OK == TRUE) || (BLACKTROLL_TP_OK == TRUE) || (NW_DOWNTOWN_CZ_TP_OK == TRUE) || (NW_HAFEN_CZ_TP_OK == TRUE) || (NW_ATROS_CZ_TP_OK == TRUE))
 			{
 				B_TeleportMe_NW();
 			};
 		};
 		if(CurrentLevel == OLDWORLD_ZEN)
 		{
-			if((CASTLE_TP_OK == TRUE) || (ICE_TP_OK == TRUE) || (SKLEP_TP_OK == TRUE) || (DARKTOWER_TP_OK == TRUE) || (OLDFORT_TP_OK == TRUE) || (OLDPSI_TP_OK == TRUE) || (NETBEK_TP_OK == TRUE) || (PASSNW_TP_OK == TRUE))
+			// CZ TELEPORTY
+			if((CASTLE_TP_OK == TRUE) || (ICE_TP_OK == TRUE) || (SKLEP_TP_OK == TRUE) || (DARKTOWER_TP_OK == TRUE) || (OLDFORT_TP_OK == TRUE) || (OLDPSI_TP_OK == TRUE) || (NETBEK_TP_OK == TRUE) || (PASSNW_TP_OK == TRUE) || (OW_ORCCITY_CZ_TP_OK == TRUE) || (OW_SLEEPERTEMPLE_CZ_TP_OK == TRUE) || (OW_DARRION_CZ_TP_OK == TRUE) || (OW_HIGHROCK_CZ_TP_OK == TRUE))
 			{
 				B_TeleportMe_OW();
 			};
 		};
 		if(CurrentLevel == ADANOSVALLEY_ZEN)
 		{
-			if((TEARHRAM_TP_OK == TRUE) || (PYRAMIDE_TP_OK == TRUE) || (PASSAV_TP_OK == TRUE) || (LIFECIRCLE_TP_OK == TRUE) || (COMPLEX_TP_OK == TRUE))
+			// CZ TELEPORTY
+			if((TEARHRAM_TP_OK == TRUE) || (PYRAMIDE_TP_OK == TRUE) || (PASSAV_TP_OK == TRUE) || (LIFECIRCLE_TP_OK == TRUE) || (COMPLEX_TP_OK == TRUE) || (ADV_ERHAZIR_CZ_TP_OK == TRUE))
 			{
 				B_TeleportMe_AV();
 			};
@@ -7840,28 +8487,71 @@ func void Hero_poisoned()
 		};
 		if(CurrentLevel == ADDONWORLD_ZEN)
 		{
-			if((ADW_TP_OK == TRUE) || (PIRATCAMP_TP_OK == TRUE))
+			// CZ TELEPORTY
+			if((ADW_TP_OK == TRUE) || (PIRATCAMP_TP_OK == TRUE) || (ADW_TELEPORTSQUARE_CZ_TP_OK == TRUE) || (ADW_GOLDDRAGON_CZ_TP_OK == TRUE))
 			{
 				B_TeleportMe_ADW();
 			};
 		};
+
+
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		if(CurrentLevel == PALADINFORT_ZEN)
+		{
+			if(PF_AZGAN_CZ_TP_OK == TRUE)
+			{
+				B_TeleportMe_PF_CZ();
+			};
+		};
+		if(CurrentLevel == DEADGROT_ZEN)
+		{
+			if(DG_CREOL_CZ_TP_OK == TRUE)
+			{
+				B_TeleportMe_DG_CZ();
+			};
+		};
+		if(CurrentLevel == ORCCITY_ZEN)
+		{
+			if((OC_URTHRALL_CZ_TP_OK == TRUE) || (OC_ARENA_CZ_TP_OK == TRUE) || (OC_ORCMINE_CZ_TP_OK == TRUE) || (OC_SHVENTRANCE_CZ_TP_OK == TRUE))
+			{
+				B_TeleportMe_OC_CZ();
+			};
+		};
+
+		if(CurrentLevel == SHVALLEY_ZEN)
+		{
+			if((SHV_OCPORTAL_CZ_TP_OK == TRUE) || (SHV_HUMANCAMP_CZ_TP_OK == TRUE) || (SHV_ORCCAMP_CZ_TP_OK == TRUE) || (SHV_AZGALOR_CZ_TP_OK == TRUE))
+			{
+				B_TeleportMe_SHV_CZ();
+			};
+		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
+
+
 		if(CurrentLevel != NEWWORLD_ZEN)
 		{
-			if((LOC_XARDAS_TP_OK == TRUE) || (LOC_TOWN_TP_OK == TRUE) || (LOC_TAVERNE_TP_OK == TRUE) || (LOC_PSI_TP_OK == TRUE) || (LOC_PASSOW_TP_OK == TRUE) || (LOC_BIGFARM_TP_OK == TRUE) || (LOC_KLOSTER_TP_OK == TRUE) || (LOC_SAGITTA_TP_OK == TRUE) || (LOC_HUNT_TP_OK == TRUE) || (LOC_VINOCAVE_TP_OK == TRUE) || (LOC_SUNCIRCLE_TP_OK == TRUE) || (LOC_ADWRUINS_TP_OK == TRUE) || (LOC_BLACKTROLL_TP_OK == TRUE))
+			// CZ TELEPORTY
+			if((LOC_XARDAS_TP_OK == TRUE) || (LOC_TOWN_TP_OK == TRUE) || (LOC_TAVERNE_TP_OK == TRUE) || (LOC_PSI_TP_OK == TRUE) || (LOC_PASSOW_TP_OK == TRUE) || (LOC_BIGFARM_TP_OK == TRUE) || (LOC_KLOSTER_TP_OK == TRUE) || (LOC_SAGITTA_TP_OK == TRUE) || (LOC_HUNT_TP_OK == TRUE) || (LOC_VINOCAVE_TP_OK == TRUE) || (LOC_SUNCIRCLE_TP_OK == TRUE) || (LOC_ADWRUINS_TP_OK == TRUE) || (LOC_BLACKTROLL_TP_OK == TRUE) || (LOC_NW_DOWNTOWN_CZ_TP_OK == TRUE) || (LOC_NW_HAFEN_CZ_TP_OK == TRUE) || (LOC_NW_ATROS_CZ_TP_OK == TRUE))
 			{
 				B_LOC_TeleportMe_NW();
 			};
 		};
 		if(CurrentLevel != OLDWORLD_ZEN)
 		{
-			if((LOC_CASTLE_TP_OK == TRUE) || (LOC_ICE_TP_OK == TRUE) || (LOC_SKLEP_TP_OK == TRUE) || (LOC_DARKTOWER_TP_OK == TRUE) || (LOC_OLDFORT_TP_OK == TRUE) || (LOC_OLDPSI_TP_OK == TRUE) || (LOC_NETBEK_TP_OK == TRUE) || (LOC_PASSNW_TP_OK == TRUE))
+			// CZ TELEPORTY
+			if((LOC_CASTLE_TP_OK == TRUE) || (LOC_ICE_TP_OK == TRUE) || (LOC_SKLEP_TP_OK == TRUE) || (LOC_DARKTOWER_TP_OK == TRUE) || (LOC_OLDFORT_TP_OK == TRUE) || (LOC_OLDPSI_TP_OK == TRUE) || (LOC_NETBEK_TP_OK == TRUE) || (LOC_PASSNW_TP_OK == TRUE) || (LOC_OW_ORCCITY_CZ_TP_OK == TRUE) || (LOC_OW_SLEEPERTEMPLE_CZ_TP_OK == TRUE) || (LOC_OW_DARRION_CZ_TP_OK == TRUE) || (LOC_OW_HIGHROCK_CZ_TP_OK == TRUE))
 			{
 				B_LOC_TeleportMe_OW();
 			};
 		};
 		if(CurrentLevel != ADANOSVALLEY_ZEN)
 		{
-			if((LOC_TEARHRAM_TP_OK == TRUE) || (LOC_PYRAMIDE_TP_OK == TRUE) || (LOC_PASSAV_TP_OK == TRUE) || (LOC_LIFECIRCLE_TP_OK == TRUE) || (LOC_COMPLEX_TP_OK == TRUE))
+			// CZ TELEPORTY
+			if((LOC_TEARHRAM_TP_OK == TRUE) || (LOC_PYRAMIDE_TP_OK == TRUE) || (LOC_PASSAV_TP_OK == TRUE) || (LOC_LIFECIRCLE_TP_OK == TRUE) || (LOC_COMPLEX_TP_OK == TRUE) || (LOC_ADV_ERHAZIR_CZ_TP_OK == TRUE))
 			{
 				B_LOC_TeleportMe_AV();
 			};
@@ -7875,11 +8565,54 @@ func void Hero_poisoned()
 		};
 		if(CurrentLevel != ADDONWORLD_ZEN)
 		{
-			if((LOC_ADW_TP_OK == TRUE) || (LOC_PIRATCAMP_TP_OK == TRUE))
+			// CZ TELEPORTY
+			if((LOC_ADW_TP_OK == TRUE) || (LOC_PIRATCAMP_TP_OK == TRUE) || (LOC_ADW_TELEPORTSQUARE_CZ_TP_OK == TRUE) || (LOC_ADW_GOLDDRAGON_CZ_TP_OK == TRUE))
 			{
 				B_LOC_TeleportMe_ADW();
 			};
 		};
+
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		if(CurrentLevel != PALADINFORT_ZEN)
+		{
+			if(LOC_PF_AZGAN_CZ_TP_OK == TRUE)
+			{
+				B_LOC_TeleportMe_PF_CZ();
+			};
+		};
+		if(CurrentLevel != DEADGROT_ZEN)
+		{
+			if(LOC_DG_CREOL_CZ_TP_OK == TRUE)
+			{
+				B_LOC_TeleportMe_DG_CZ();
+			};
+		};
+		if(CurrentLevel != ORCCITY_ZEN)
+		{
+			if((LOC_OC_URTHRALL_CZ_TP_OK == TRUE) || (LOC_OC_ARENA_CZ_TP_OK == TRUE) || (LOC_OC_ORCMINE_CZ_TP_OK == TRUE) || (LOC_OC_SHVENTRANCE_CZ_TP_OK == TRUE))
+			{
+				B_LOC_TeleportMe_OC_CZ();
+			};
+		};
+
+		/*
+		
+		if(CurrentLevel != SHVALLEY_ZEN)
+		{
+			if((LOC_SHV_OCPORTAL_CZ_TP_OK == TRUE) || (LOC_SHV_HUMANCAMP_CZ_TP_OK == TRUE) || (LOC_SHV_ORCCAMP_CZ_TP_OK == TRUE) || (LOC_SHV_AZGALOR_CZ_TP_OK == TRUE))
+			{
+				B_LOC_TeleportMe_SHV_CZ();
+			};
+		};
+		
+		*/
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
+
+
 		if((hero.guild != CheckHeroGuild[1]) && (CheckHeroGuild[0] == TRUE))
 		{
 			CheckHeroGuild[1] = hero.guild;
@@ -13891,6 +14624,12 @@ func void RefreshStatusMenuData()
 	{	
 		sHardLvl = "Lehká";
 	};
+	
+	if(CZ_Settings_Diff_Changed == TRUE)
+	{
+		sHardLvl = ConcatStrings(sHardLvl," (upr.)");
+	};
+
 
 	sAllDay = IntToString(Wld_GetDay());
 

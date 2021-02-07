@@ -1,3 +1,17 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+func int DIA_Parlan_TEACH_MANA_Condition - upraveny podmínky dialogu
+(3x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+func int dia_parlan_pickpocket_condition - upraveny podmínky krádeže
+
+*/
+
+
+
 var int DIA_Parlan_WORK_perm;
 
 instance DIA_Parlan_Kap1_EXIT(C_Info)
@@ -1261,7 +1275,7 @@ func int DIA_Parlan_TEACH_MANA_Condition()
 {
 	if((other.guild == GIL_KDF) || (other.guild == GIL_PAL) || (other.guild == GIL_NOV))
 	{
-		if((Npc_KnowsInfo(hero,DIA_Parlan_LEARN) == TRUE) && ((Parlan_Sends == FALSE) || (VATRAS_TEACHREGENMANA == FALSE)))
+		if(((Npc_KnowsInfo(hero,DIA_Parlan_LEARN) == TRUE) || (other.guild == GIL_KDF)) && ((Parlan_Sends == FALSE) || (VATRAS_TEACHREGENMANA == FALSE)))
 		{
 			return TRUE;
 		};
@@ -1340,7 +1354,7 @@ func void DIA_Parlan_TEACH_MANA_1()
 
 	if((Kapitel >= 2) && (hero.guild == GIL_KDF) && (VATRAS_TEACHREGENMANA == FALSE))
 	{
-		Info_AddChoice(DIA_Parlan_TEACH_MANA,"Regenerace many (VB: 15, cena: 5000 zlatých)",DIA_Parlan_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_Parlan_TEACH_MANA,"Regenerace many (VB: 10, cena: 10000 zlatých)",DIA_Parlan_TEACH_MANA_Regen);
 	};
 };
 
@@ -1354,7 +1368,7 @@ func void DIA_Parlan_TEACH_MANA_5()
 
 	if((Kapitel >= 2) && (hero.guild == GIL_KDF) && (VATRAS_TEACHREGENMANA == FALSE))
 	{
-		Info_AddChoice(DIA_Parlan_TEACH_MANA,"Regenerace many (VB: 15, cena: 5000 zlatých)",DIA_Parlan_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_Parlan_TEACH_MANA,"Regenerace many (VB: 10, cena: 10000 zlatých)",DIA_Parlan_TEACH_MANA_Regen);
 	};
 };
 
@@ -1399,7 +1413,7 @@ instance DIA_Parlan_CIRCLE1(C_Info)
 
 func int DIA_Parlan_CIRCLE1_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Parlan_MAGE) && (other.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 0))
+	if(Npc_KnowsInfo(hero,DIA_Parlan_MAGE) && (other.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 0) && (CanLearnMagicCircleNext_ABCZ(1) == TRUE))
 	{
 		return TRUE;
 	};
@@ -1440,7 +1454,7 @@ func void DIA_Parlan_CIRCLE2_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_TECH_CIRCLE2_15_00");	//Nauč mě druhý kruh magie.
 
-	if(Kapitel >= 2)
+	if(CanLearnMagicCircleNext_ABCZ(2) == TRUE)
 	{
 		if(B_TeachMagicCircle(self,other,2))
 		{
@@ -1478,7 +1492,7 @@ func int DIA_Parlan_CIRCLE3_Condition()
 func void DIA_Parlan_CIRCLE3_Info()
 {
 	AI_Output(other,self,"DIA_Parlan_TECH_CIRCLE3_15_00");	//Nauč mě třetí kruh magie.
-	if(Kapitel >= 3)
+	if(CanLearnMagicCircleNext_ABCZ(3) == TRUE)
 	{
 		if(B_TeachMagicCircle(self,other,3))
 		{
@@ -1977,7 +1991,7 @@ instance DIA_PARLAN_PICKPOCKET(C_Info)
 
 func int dia_parlan_pickpocket_condition()
 {
-	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) >= 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && (MIS_XARDASNDMTASKSONE == LOG_Running))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_PICKPOCKET) >= 1) && (self.aivar[AIV_PlayerHasPickedMyPocket] == FALSE) && ((MIS_XARDASNDMTASKSONE == LOG_Running) || ((other.guild != GIL_KDF) && (Kapitel == 2))))
 	{
 		return TRUE;
 	};

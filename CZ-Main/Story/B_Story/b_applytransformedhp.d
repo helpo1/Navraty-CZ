@@ -1,3 +1,16 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(3x) CZ_Settings_Diff_HPPerLevel - konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+CZ_Settings_Diff_LPPerLevel - konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+
+*/
+
+
+
 func void B_Drunk()
 {
 	var int rand;
@@ -168,59 +181,77 @@ func void B_GivePlayerXP(var int add_xp)
 
 		if(hero.guild > GIL_SEPERATOR_HUM)
 		{
-			if(SBMODE == 1)
-			{
-				if(NoHPForLevel == FALSE)
+			
+			HEROTRANSFORMEDHP = HEROTRANSFORMEDHP + CZ_Settings_Diff_HPPerLevel;
+			
+			/*
+				if(SBMODE == 1)
 				{
-					HEROTRANSFORMEDHP = HEROTRANSFORMEDHP + 10;
+					if(NoHPForLevel == FALSE)
+					{
+						HEROTRANSFORMEDHP = HEROTRANSFORMEDHP + 10;
+					};
+				}
+				else if(SBMODE == 2)
+				{
+					HEROTRANSFORMEDHP = HEROTRANSFORMEDHP + 20;
+				}
+				else if(SBMODE == 4)
+				{
+					HEROTRANSFORMEDHP = HEROTRANSFORMEDHP + 30;
 				};
-			}
-			else if(SBMODE == 2)
-			{
-				HEROTRANSFORMEDHP = HEROTRANSFORMEDHP + 20;
-			}
-			else if(SBMODE == 4)
-			{
-				HEROTRANSFORMEDHP = HEROTRANSFORMEDHP + 30;
-			};
+			*/
+			
 		}
 		else
 		{
-			if(SBMODE == 1)
-			{
-				if(NoHPForLevel == FALSE)
+			
+			hero.attribute[ATR_HITPOINTS_MAX] = hero.attribute[ATR_HITPOINTS_MAX] + CZ_Settings_Diff_HPPerLevel;
+			hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] + CZ_Settings_Diff_HPPerLevel;
+			
+			/*
+				if(SBMODE == 1)
 				{
-					hero.attribute[ATR_HITPOINTS_MAX] = hero.attribute[ATR_HITPOINTS_MAX] + 10;
-					hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] + 10;
+					if(NoHPForLevel == FALSE)
+					{
+						hero.attribute[ATR_HITPOINTS_MAX] = hero.attribute[ATR_HITPOINTS_MAX] + 10;
+						hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] + 10;
+					};
+				}
+				else if(SBMODE == 2)
+				{
+					hero.attribute[ATR_HITPOINTS_MAX] = hero.attribute[ATR_HITPOINTS_MAX] + 20;
+					hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] + 20;
+				}
+				else if(SBMODE == 4)
+				{
+					hero.attribute[ATR_HITPOINTS_MAX] = hero.attribute[ATR_HITPOINTS_MAX] + 30;
+					hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] + 30;
 				};
+			*/
+			
+		};
+		
+		hero.lp = hero.lp + CZ_Settings_Diff_LPPerLevel;
+		
+		/*
+			if(RealMode[2] == TRUE)
+			{
+				hero.lp = hero.lp + 10;
+			}
+			else if(SBMODE == 1)
+			{
+				hero.lp = hero.lp + 15;
 			}
 			else if(SBMODE == 2)
 			{
-				hero.attribute[ATR_HITPOINTS_MAX] = hero.attribute[ATR_HITPOINTS_MAX] + 20;
-				hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] + 20;
+				hero.lp = hero.lp + 20;
 			}
 			else if(SBMODE == 4)
 			{
-				hero.attribute[ATR_HITPOINTS_MAX] = hero.attribute[ATR_HITPOINTS_MAX] + 30;
-				hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] + 30;
+				hero.lp = hero.lp + 25;
 			};
-		};
-		if(RealMode[2] == TRUE)
-		{
-			hero.lp = hero.lp + 10;
-		}
-		else if(SBMODE == 1)
-		{
-			hero.lp = hero.lp + 15;
-		}
-		else if(SBMODE == 2)
-		{
-			hero.lp = hero.lp + 20;
-		}
-		else if(SBMODE == 4)
-		{
-			hero.lp = hero.lp + 25;
-		};
+		*/
 
 		AI_NoticePrint(3000,4098,PRINT_LevelUp);
 		Snd_Play("LEVELUP_NEW");

@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+func int DIA_Matteo_Jewerly_Condition - upraveny podmínky dialogu
+
+*/
+
+
 
 instance DIA_Matteo_EXIT(C_Info)
 {
@@ -798,7 +809,7 @@ instance DIA_Matteo_Jewerly(C_Info)
 
 func int DIA_Matteo_Jewerly_Condition()
 {
-	if(Npc_KnowsInfo(hero,DIA_Matteo_WarumNichtBeiDir) == TRUE)
+	if((Npc_KnowsInfo(hero,DIA_Matteo_WarumNichtBeiDir) == TRUE) || (Player_IsApprentice > APP_NONE))
 	{
 		return TRUE;
 	};

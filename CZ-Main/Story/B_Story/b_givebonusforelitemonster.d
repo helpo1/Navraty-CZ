@@ -2,6 +2,13 @@
 
 /*
 
+v1.01:
+
+(2x) CZ_Settings_Diff_XPMult - falešná konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+(2x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+(4x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+
 v1.00:
 
 ItWr_DexTrait - zamezeno nesplnitelnosti úkolu
@@ -2361,7 +2368,8 @@ func void ZS_Dead()
 		{
 			if(SBMODE == TRUE)
 			{
-				permvaluexp = self.level * XP_PER_VICTORY;
+				// permvaluexp = self.level * XP_PER_VICTORY;
+				permvaluexp = self.level * CZ_Settings_Diff_XPMult;
 
 				if(BELIARCURSEYOU == TRUE)
 				{
@@ -2374,7 +2382,8 @@ func void ZS_Dead()
 			}
 			else
 			{
-				permvaluexp = self.level * XP_PER_VICTORY;
+				// permvaluexp = self.level * XP_PER_VICTORY;
+				permvaluexp = self.level * CZ_Settings_Diff_XPMult;
 			};
 			if((self.guild == GIL_MEATBUG) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Crait)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Rabbit)) || (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Rabbit_02)))
 			{
@@ -2654,9 +2663,9 @@ func void ZS_Dead()
 				B_GivePlayerXP(5000);
 				STOPBIGBATTLE = TRUE;
 				HUMANSWINSBB = TRUE;
-				MIS_ORсGREATWAR = LOG_SUCCESS;
-				Log_SetTopicStatus(TOPIC_ORсGREATWAR,LOG_SUCCESS);
-				B_LogEntry(TOPIC_ORсGREATWAR,"Vyhráli jsme bitvu - porazili jsme obrovskou armádu skřetů! Teď musíme osvobodit město a zabít skřety v okolí.");
+				MIS_ORCGREATWAR = LOG_SUCCESS;
+				Log_SetTopicStatus(TOPIC_ORCGREATWAR,LOG_SUCCESS);
+				B_LogEntry(TOPIC_ORCGREATWAR,"Vyhráli jsme bitvu - porazili jsme obrovskou armádu skřetů! Teď musíme osvobodit město a zabít skřety v okolí.");
 				Wld_SendTrigger("EVT_TRIGGER_ORCMARCH");
 				b_changehp(SLD_800_Lee);
 			};
@@ -2676,8 +2685,8 @@ func void ZS_Dead()
 			{
 				STOPBIGBATTLE = TRUE;
 				ORCSWINSBB = TRUE;
-				MIS_ORсGREATWAR = LOG_FAILED;
-				B_LogEntry_Failed(TOPIC_ORсGREATWAR);
+				MIS_ORCGREATWAR = LOG_FAILED;
+				B_LogEntry_Failed(TOPIC_ORCGREATWAR);
 				Wld_SendTrigger("EVT_TRIGGER_ORCMARCH");
 				b_orcsattackfarm();
 			};
@@ -3803,7 +3812,7 @@ func void ZS_Dead()
 			{
 				MIS_HORINISFREE = LOG_SUCCESS;
 				Log_SetTopicStatus(TOPIC_HORINISFREE,LOG_SUCCESS);
-				B_LogEntry(TOPIC_ORсGREATWAR,"Zabil jsem velitele skřetů, kteří vedli jednotky v Khorinisu. Skřeti už nebudou klást odpor, ztratily svý vůdce... měl bych je pozabíjet ještě ve městě.");
+				B_LogEntry(TOPIC_ORCGREATWAR,"Zabil jsem velitele skřetů, kteří vedli jednotky v Khorinisu. Skřeti už nebudou klást odpor, ztratily svý vůdce... měl bych je pozabíjet ještě ve městě.");
 			};
 			if((HORINISISFREE == TRUE) && (MONASTERYISFREE == TRUE) && (ELITEORKNWFLGISDEAD_23 == TRUE) && (ELITEORKNWFLGISDEAD_24 == TRUE) && (ELITEORKNWFLGISDEAD_25 == TRUE) && (ELITEORKNWFLGISDEAD_27 == TRUE) && (ELITEORKNWFLGISDEAD_28 == TRUE) && (ELITEORKNWFLGISDEAD_29 == TRUE) && (ELITEORKNWFLGISDEAD_30 == TRUE) && (ELITEORKNWFLGISDEAD_32 == TRUE) && (ELITEORKNWFLGISDEAD_36 == TRUE) && (SUPERELITEORKNWFLGISDEAD_03 == TRUE))
 			{
@@ -6527,7 +6536,7 @@ func void ZS_Dead()
 			KILLTARGET1 = TRUE;
 			if(MIS_KILLTARGET1 == LOG_Running)
 			{
-				B_LogEntry(TOPIC_KILLTARGET1,"Poslal jsem Lehmara na věčný odpočinek.");
+				B_LogEntry(TOPIC_KILLTARGET1,"Vyřídil jsem toho žvanila Luise.");
 			};
 		};
 		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(VLK_484_Lehmar))
@@ -7280,7 +7289,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Zabil jsem většinu duchů aniž bych si s nimi promluvil o Gomezovi. Rudobaron tak zůstane navěky proklet! A já už nikdy nezískám figurky pro Lutera! Je třeba vrátit se do města a informovat ho.");
+				B_LogEntry(TOPIC_RESCUEGOMEZ,"Duchové ve Starém dole Gomezovi odpustili! Nyní je třeba vrátit se na hrad a získat odpuštění od mágů Ohně!");
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{
@@ -7307,7 +7316,7 @@ func void ZS_Dead()
 			{
 				RESCUEGOMEZSTEPTWODONE = TRUE;
 				RESCUEGOMEZSTEPTHREE = TRUE;
-				B_LogEntry(TOPIC_RESCUEGOMEZ,"Zabil jsem většinu duchů aniž bych si s nimi promluvil o Gomezovi. Rudobaron tak zůstane navěky proklet! A já už nikdy nezískám figurky pro Lutera! Je třeba vrátit se do města a informovat ho.");
+				B_LogEntry(TOPIC_RESCUEGOMEZ,"Duchové ve Starém dole Gomezovi odpustili! Nyní je třeba vrátit se na hrad a získat odpuštění od mágů Ohně!");
 			};
 			if(GOMEZSOULNOCOUNT >= 6)
 			{

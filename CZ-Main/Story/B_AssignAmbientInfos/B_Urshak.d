@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(3x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
 
 instance DIA_Urshak_EXIT(C_Info)
 {
@@ -625,7 +636,7 @@ instance DIA_URSHAK_MEETINCASTLE(C_Info)
 
 func int dia_urshak_meetincastle_condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (MIS_ORсGREATWAR == LOG_Running) && (URSHAKBECOMESHAMAN == TRUE) && (PALADINATTACK == FALSE) && (URSHAK_SUCKED == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (MIS_ORCGREATWAR == LOG_Running) && (URSHAKBECOMESHAMAN == TRUE) && (PALADINATTACK == FALSE) && (URSHAK_SUCKED == FALSE))
 	{
 		return TRUE;
 	};
@@ -657,7 +668,7 @@ instance DIA_URSHAK_ORCSAVEPEOPLE(C_Info)
 
 func int dia_urshak_orcsavepeople_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_urshak_meetincastle) && (MIS_ORсGREATWAR == LOG_Running) && (URSHAKBECOMESHAMAN == TRUE) && (KNOWABOUTGAROND == TRUE))
+	if(Npc_KnowsInfo(hero,dia_urshak_meetincastle) && (MIS_ORCGREATWAR == LOG_Running) && (URSHAKBECOMESHAMAN == TRUE) && (KNOWABOUTGAROND == TRUE))
 	{
 		return TRUE;
 	};
@@ -698,7 +709,7 @@ instance DIA_URSHAK_HELPSAVEPEOPLE(C_Info)
 
 func int dia_urshak_helpsavepeople_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_urshak_meetincastle) && (MIS_ORсGREATWAR == LOG_Running) && (URSHAKBECOMESHAMAN == TRUE) && (KNOWABOUTGAROND == TRUE) && (CASTLEISFREE == FALSE) && (PALADINCASTELFREE == FALSE) && (BOGNARTALK == FALSE) && (MIS_STURMCASTLE == FALSE) && (ORCLEADERISDEAD == FALSE))
+	if(Npc_KnowsInfo(hero,dia_urshak_meetincastle) && (MIS_ORCGREATWAR == LOG_Running) && (URSHAKBECOMESHAMAN == TRUE) && (KNOWABOUTGAROND == TRUE) && (CASTLEISFREE == FALSE) && (PALADINCASTELFREE == FALSE) && (BOGNARTALK == FALSE) && (MIS_STURMCASTLE == FALSE) && (ORCLEADERISDEAD == FALSE))
 	{
 		return TRUE;
 	};

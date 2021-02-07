@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(3x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+*/
+
+
 
 var int taliasanteachmagicagree;
 var int taliasan_trade;
@@ -286,7 +297,7 @@ instance DIA_TALIASAN_FineFood(C_Info)
 	condition = DIA_TALIASAN_FineFood_condition;
 	information = DIA_TALIASAN_FineFood_info;
 	permanent = FALSE;
-	description = "Přál bych si vyzvednout odměnu.";
+	description = "Můžu ještě něco udělat, abych vám pomohl?";
 };
 
 func int DIA_TALIASAN_FineFood_condition()
@@ -1384,7 +1395,7 @@ func void dia_taliasan_teach_mana_info()
 
 	if((Kapitel >= 2) && (VATRAS_TEACHREGENMANA == FALSE))
 	{
-		Info_AddChoice(DIA_Taliasan_TEACH_MANA,"Regenerace many VB: 20, cena: 15000 zlatých)",DIA_Taliasan_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_Taliasan_TEACH_MANA,"Regenerace many (VB: 20, cena: 15000 zlatých)",DIA_Taliasan_TEACH_MANA_Regen);
 	};
 };
 
@@ -1445,7 +1456,7 @@ func void dia_taliasan_teach_mana_1()
 
 	if((Kapitel >= 2) && (VATRAS_TEACHREGENMANA == FALSE))
 	{
-		Info_AddChoice(DIA_Taliasan_TEACH_MANA,"Regenerace many (VB: 30, cena: 15000 zlatých)",DIA_Taliasan_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_Taliasan_TEACH_MANA,"Regenerace many (VB: 20, cena: 15000 zlatých)",DIA_Taliasan_TEACH_MANA_Regen);
 	};
 };
 
@@ -1459,7 +1470,7 @@ func void dia_taliasan_teach_mana_5()
 
 	if((Kapitel >= 2) && (VATRAS_TEACHREGENMANA == FALSE))
 	{
-		Info_AddChoice(DIA_Taliasan_TEACH_MANA,"Regenerace many (VB: 30, cena: 15000 zlatých)",DIA_Taliasan_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_Taliasan_TEACH_MANA,"Regenerace many (VB: 20, cena: 15000 zlatých)",DIA_Taliasan_TEACH_MANA_Regen);
 	};
 };
 
@@ -1485,19 +1496,19 @@ func void dia_taliasan_circle_info()
 {
 	AI_Output(other,self,"DIA_Taliasan_CIRCLE_15_00");	//Přál bych si vstoupit do dalšího kruhu.
 
-	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == FALSE) && (Kapitel >= 1))
+	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == FALSE) && (CanLearnMagicCircleNext_ABCZ(1) == TRUE))
 	{
 		Info_ClearChoices(DIA_Taliasan_CIRCLE);
 		Info_AddChoice(DIA_Taliasan_CIRCLE,Dialog_Back,DIA_Taliasan_CIRCLE_back);
 		Info_AddChoice(DIA_Taliasan_CIRCLE,"1. kruh magie (VB: 10, cena: 500 zlatých)",DIA_Taliasan_CIRCLE_1);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1) && (Kapitel >= 2))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1) && (CanLearnMagicCircleNext_ABCZ(2) == TRUE))
 	{
 		Info_ClearChoices(DIA_Taliasan_CIRCLE);
 		Info_AddChoice(DIA_Taliasan_CIRCLE,Dialog_Back,DIA_Taliasan_CIRCLE_back);
 		Info_AddChoice(DIA_Taliasan_CIRCLE,"2. kruh magie (VB: 20, cena: 1000 zlatých)",DIA_Taliasan_CIRCLE_2);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2) && (Kapitel >= 3))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2) && (CanLearnMagicCircleNext_ABCZ(3) == TRUE))
 	{	
 		Info_ClearChoices(DIA_Taliasan_CIRCLE);
 		Info_AddChoice(DIA_Taliasan_CIRCLE,Dialog_Back,DIA_Taliasan_CIRCLE_back);

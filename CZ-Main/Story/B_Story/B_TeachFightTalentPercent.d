@@ -196,7 +196,8 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 		if(FutTalentCost > NowTalentCost)
 		{
 			AI_PrintClr(PRINT_NoDoThis,177,58,17);
-			AI_PrintClr("(Pro dosažení dalšího intervalu navyšuj atribut nebo dovednost pouze po jednom bodu.)",177,58,17);
+			AI_PrintClr("(Pro dosažení dalšího intervalu navyšuj",177,58,17);
+			AI_PrintClr("atribut nebo dovednost pouze po jednom bodu.)",177,58,17);
 			return FALSE;
 		};
 	};

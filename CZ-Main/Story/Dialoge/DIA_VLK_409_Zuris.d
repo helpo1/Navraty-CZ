@@ -389,7 +389,7 @@ func void dia_zuris_tradeplace_ask()
 	Info_AddChoice(dia_zuris_tradeplace,"Mám starost o Joru.",dia_zuris_tradeplace_jora);
 	Info_AddChoice(dia_zuris_tradeplace,"Zajímá mě Jorovo místo.",dia_zuris_tradeplace_place);
 	Info_AddChoice(dia_zuris_tradeplace,"Prostě to začíná být zajímavé.",dia_zuris_tradeplace_interes);
-	Info_AddChoice(dia_zuris_tradeplace,"Lyutero has sent me to discuss with you this problem.",dia_zuris_tradeplace_luterozuris);
+	Info_AddChoice(dia_zuris_tradeplace,"Lutero mě poslal vyřešit tento problém.",dia_zuris_tradeplace_luterozuris);
 };
 
 func void dia_zuris_tradeplace_interes()

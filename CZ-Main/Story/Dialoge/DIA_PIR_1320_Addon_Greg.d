@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(3x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
+
 var int GregCanPray;
 var int FindPirate_01;
 var int FindPirate_02;
@@ -962,7 +974,7 @@ func void dia_addon_greg_gatherarmy_info()
 	Log_CreateTopic(TOPIC_PIRATENEEDSHIP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PIRATENEEDSHIP,LOG_Running);
 	B_LogEntry(TOPIC_PIRATENEEDSHIP,"Greg chce novou loď. Takže pokud chtějí paladinové pomoc od pirátů, budou muset dát Gregovi a jeho pirátům svou galéru. Měl bych to asi jít říct Hagenovi...");
-	Log_AddEntry(TOPIC_ORсGREATWAR,"Rozhodl jsem se, že promluvím s piráty o pomoci paladinům. Uvidím co na to řeknou.");
+	Log_AddEntry(TOPIC_ORCGREATWAR,"Rozhodl jsem se, že promluvím s piráty o pomoci paladinům. Uvidím co na to řeknou.");
 };
 
 
@@ -1114,7 +1126,7 @@ func void dia_addon_greg_gatherarmydoneextr_info()
 		MIS_PIRATENEEDSHIP = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_PIRATENEEDSHIP,LOG_SUCCESS);
 		B_LogEntry(TOPIC_PIRATENEEDSHIP,"Greg a jeho lidé přijali nabídku lorda Hagena.");
-		B_LogEntry_Quiet(TOPIC_ORсGREATWAR,"Greg a jeho posádka přijali nabídku lorda Hagena. Piráti se postaví na stranu paladinů.");
+		B_LogEntry_Quiet(TOPIC_ORCGREATWAR,"Greg a jeho posádka přijali nabídku lorda Hagena. Piráti se postaví na stranu paladinů.");
 	}
 	else
 	{
@@ -1130,7 +1142,7 @@ func void dia_addon_greg_gatherarmydoneextr_info()
 			PREGATHERALLONBIGFARM = TRUE;
 		};
 		B_LogEntry(TOPIC_PIRATENEEDSHIP,"Greg a jeho posádka odmítli nabídku lorda Hagena. Piráti se tedy nepostaví na stranu paladinů.");
-		B_LogEntry_Quiet(TOPIC_ORсGREATWAR,"Lord Hagen by neměl počítat s pomocí pirátů.");
+		B_LogEntry_Quiet(TOPIC_ORCGREATWAR,"Lord Hagen by neměl počítat s pomocí pirátů.");
 		AI_StopProcessInfos(self);
 	};
 };

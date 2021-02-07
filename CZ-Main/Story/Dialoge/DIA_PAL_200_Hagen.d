@@ -2,6 +2,11 @@
 
 /*
 
+v1.01:
+
+(8x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+
 v1.00:
 
 func void dia_lord_hagen_oreismined_trade - přidán obtížnější skill check na rétoriku (ještě vyšší výkupní cena rudy)
@@ -78,7 +83,7 @@ instance DIA_Hagen_PMSchulden(C_Info)
 
 func int DIA_Hagen_PMSchulden_Condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (Hagen_Schulden > 0) && (B_GetGreatestPetzCrime(self) <= Hagen_LastPetzCrime) && (MIS_ORсGREATWAR == FALSE))
+	if(Npc_IsInState(self,ZS_Talk) && (Hagen_Schulden > 0) && (B_GetGreatestPetzCrime(self) <= Hagen_LastPetzCrime) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -312,7 +317,7 @@ instance DIA_Hagen_PETZMASTER(C_Info)
 
 func int DIA_Hagen_PETZMASTER_Condition()
 {
-	if((B_GetGreatestPetzCrime(self) > Hagen_LastPetzCrime) && (MIS_ORсGREATWAR == FALSE))
+	if((B_GetGreatestPetzCrime(self) > Hagen_LastPetzCrime) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -1547,7 +1552,7 @@ instance DIA_Lord_Hagen_ANTIPALADINE(C_Info)
 
 func int DIA_Lord_Hagen_ANTIPALADINE_Condition()
 {
-	if(((TalkedTo_AntiPaladin == TRUE) || Npc_HasItems(other,ItRi_OrcEliteRing)) && (MIS_ReadyforChapter4 == TRUE) && (Hagen_SawOrcRing == FALSE) && (MIS_ORсGREATWAR == FALSE))
+	if(((TalkedTo_AntiPaladin == TRUE) || Npc_HasItems(other,ItRi_OrcEliteRing)) && (MIS_ReadyforChapter4 == TRUE) && (Hagen_SawOrcRing == FALSE) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -1760,7 +1765,7 @@ instance DIA_Lord_Hagen_AllDragonsDead(C_Info)
 
 func int DIA_Lord_Hagen_AllDragonsDead_Condition()
 {
-	if((Kapitel == 5) && (MIS_ORсGREATWAR == FALSE))
+	if((Kapitel == 5) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -1797,7 +1802,7 @@ instance DIA_Lord_Hagen_NeedShip(C_Info)
 
 func int DIA_Lord_Hagen_NeedShip_Condition()
 {
-	if((ItWr_SCReadsHallsofIrdorath == TRUE) && (MIS_ORсGREATWAR == FALSE))
+	if((ItWr_SCReadsHallsofIrdorath == TRUE) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -1834,7 +1839,7 @@ instance DIA_Lord_Hagen_GateOpen(C_Info)
 
 func int DIA_Lord_Hagen_GateOpen_Condition()
 {
-	if((MIS_OCGateOpen == TRUE) && Npc_KnowsInfo(other,DIA_Lord_Hagen_AllDragonsDead) && (MIS_ORсGREATWAR == FALSE))
+	if((MIS_OCGateOpen == TRUE) && Npc_KnowsInfo(other,DIA_Lord_Hagen_AllDragonsDead) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -1862,7 +1867,7 @@ instance DIA_Lord_Hagen_Perm5(C_Info)
 
 func int DIA_Lord_Hagen_Perm5_Condition()
 {
-	if(Npc_KnowsInfo(other,DIA_Lord_Hagen_AllDragonsDead) && (MIS_ORсGREATWAR == FALSE))
+	if(Npc_KnowsInfo(other,DIA_Lord_Hagen_AllDragonsDead) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};
@@ -1973,7 +1978,7 @@ instance DIA_LORD_HAGEN_MELHIOR(C_Info)
 
 func int dia_lord_hagen_melhior_condition()
 {
-	if((MELHIORPISSOFF == TRUE) && (MIS_ORсGREATWAR == FALSE))
+	if((MELHIORPISSOFF == TRUE) && (MIS_ORCGREATWAR == FALSE))
 	{
 		return TRUE;
 	};

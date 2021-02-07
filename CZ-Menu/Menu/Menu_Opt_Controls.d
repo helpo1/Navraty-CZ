@@ -2,6 +2,11 @@
 
 /*
 
+v1.01:
+
+instance MENU_ITEM_KEY_TURNACRO - dovysvětlení nejasné formulace
+
+
 v1.00:
 
 (23x) - upraveno pořadí a zarovnání možností
@@ -674,7 +679,7 @@ instance MENU_ITEM_INP_SPRINT(C_MENU_ITEM_DEF)
 
 instance MENU_ITEM_KEY_TURNACRO(C_MENU_ITEM_DEF)
 {
-	text[0] = "Zapnout režim úkroků";
+	text[0] = "Zapnout akrobacii";
 	text[1] = "";
 	posx = CTRL_SP1_1;
 	posy = CTRL_Y_START + (CTRL_Y_STEP * 20) + CTRL_GROUP2;

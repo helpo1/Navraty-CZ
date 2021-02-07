@@ -13,6 +13,17 @@ const int SPL_DAMAGE_SUPERBELIARSRUNE - upraveno poškození runy BD s duší Se
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\AI\Human\ZS_Human\ZS_Unconscious.d   */
+
+
+v1.01:
+
+(2x) CZ_Settings_Diff_XPMult - falešná konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\AI\Magic\Spells\Spell_ArmyOfDarkness.d   */
 
 
@@ -89,6 +100,12 @@ instance ItAr_Pal_Helm - opraven název (Helma rytíře -> Helma paladina)
 
 
 /*   (...)\Items\IT_Potions.d   */
+
+
+v1.01:
+
+func void ReuseFlask_CZ, (13x) ReuseFlask_CZ - přidána "recyklace" alchymistických lahviček (na žádost hráčů)
+func void ReuseBottle_CZ, (2x) ReuseBottle_CZ - přidána "recyklace" láhví (na žádost hráčů)
 
 
 v1.00:
@@ -184,12 +201,46 @@ const int DAMAGE_BELIARSUPERWEAPON_2H_EDGE - upraveno poškození BD s duší Se
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\B_AssignAmbientInfos\B_Urshak.d   */
+
+
+v1.01:
+
+(3x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\B_GiveTradeInv\B_GiveTradeInv.d   */
 
 
 v1.00:
 
 ItMi_ParlanRelic_MIS - zamezeno nesplnitelnosti úkolu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\b_applytransformedhp.d   */
+
+
+v1.01:
+
+(3x) CZ_Settings_Diff_HPPerLevel - konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+CZ_Settings_Diff_LPPerLevel - konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\b_checkadwinpresence.d   */
+
+
+v1.01:
+
+func void Use_ItWr_VatrasDiary - upraveny podmínky získání dovednosti vytvoření runy 'Blesk'
 
 
 ----------------------------------------------------------------------------------------------------
@@ -209,9 +260,26 @@ v1.00:
 /*   (...)\Story\B_Story\B_Enter_NewWorld.d   */
 
 
+v1.01:
+
+MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+
 v1.00:
 
 VLK_41200_Bilgot - opraven waypoint (NW_BILGOT_01 -> NW_PASS_GATE_01)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\b_enter_paladinfort_kapitel_1.d   */
+
+
+v1.01:
+
+MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
 
 
 ----------------------------------------------------------------------------------------------------
@@ -230,6 +298,29 @@ func void B_PlayerFindItem - upraveny výpisy
 
 
 /*   (...)\Story\B_Story\b_gettime.d   */
+
+
+v1.01:
+
+(2x) bHFTStatus - přidání indikace hladu/žízně/únavy na nižších obtížnostech
+CZ_GDRPC_update - vystavení quasi-API pro Discord Rich Presence
+(4x) CZ_Settings_Diff_EnableHunger - přidání možnosti zapnout/vypnout hlad
+(4x) CZ_Settings_Diff_EnableThirst - přidání možnosti zapnout/vypnout žízeň
+(4x) CZ_Settings_Diff_EnableFatigue - přidání možnosti zapnout/vypnout únavu
+
+ShowAmmo - přidání možnosti vypnout indikátor munice
+GamblingAntiCheat_CZ - přidán anti-savescumming systém pro kostky (po vzoru Fallout: New Vegas)
+CloseFireCaveAgain_CZ - upraven přístup do Jeskyně Ohně (FIRECAVE_ZEN) po splnění úkolu Rituál Ohně (TOPIC_KELIOSTEST)
+(2x) odemčeny zlodějské úspěchy na nižších obtížnostech - PickPocketBonus, PickLockBonus
+(4x) SPL_DAMAGE_SUPERBELIARSRUNE - upraveno poškození runy BD s duší Senyaka
+
+(20x) CZ TELEPORTY - nově přidané teleporty
+upraveny titulky - dialog Xardas vs. Pyrokar (MageSpeech)
+(2x) CZ_Settings_Diff_HungerPoolBase, CZ_Settings_Diff_HungerPoolLevelMult - přidání možnosti upravit rychlost kumulace hladu
+(2x) CZ_Settings_Diff_ThirstPoolBase, CZ_Settings_Diff_ThirstPoolLevelMult - přidání možnosti upravit rychlost kumulace žízně
+(2x) CZ_Settings_Diff_FatiguePoolBase, CZ_Settings_Diff_FatiguePoolLevelMult - přidání možnosti upravit rychlost kumulace únavy
+
+CZ_Settings_Diff_Changed - přidání indikace úpravy obtížnosti z .ini souboru
 
 
 v1.00:
@@ -255,6 +346,13 @@ func void b_givealltobayguy - upraveny výpisy
 
 
 /*   (...)\Story\B_Story\b_givebonusforelitemonster.d   */
+
+
+v1.01:
+
+(2x) CZ_Settings_Diff_XPMult - falešná konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+(2x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+(4x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
 
 
 v1.00:
@@ -290,6 +388,12 @@ func int B_GiveInvItems - upraveny výpisy
 
 
 /*   (...)\Story\B_Story\B_LogEntry.d   */
+
+
+v1.01:
+
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
 
 
 v1.00:
@@ -334,6 +438,17 @@ func int B_TeachFightTalentPercent - dovysvětlení nejasné formulace
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\B_Story\B_TeachMagicCircle.d   */
+
+
+v1.01:
+
+func int CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\B_Story\B_TeachPlayerTalentRunes.d   */
 
 
@@ -363,6 +478,17 @@ v1.00:
 v1.00:
 
 DIA_Ass_125_Tiamant_Teach_2X2_15_25 - opraveno other/self
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_BAU_913_Thekla.d   */
+
+
+v1.01:
+
+func int DIA_Thekla_Baker_Condition - upraveny podmínky dialogu
 
 
 ----------------------------------------------------------------------------------------------------
@@ -424,6 +550,17 @@ func void DIA_Addon_Edgor_TrainStart_GIFT - opraven zápis do deníku
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_DJG_708_Kurgan.d   */
+
+
+v1.01:
+
+(3x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_DJG_712_Hokurn.d   */
 
 
@@ -449,6 +586,84 @@ func void b_janarmorchoices - upraveny výpisy (B_BuildLearnString -> B_BuildLea
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_dmt_12120_dagot.d   */
+
+
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_dmt_12150_kelios.d   */
+
+
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_dmt_12200_wakon.d   */
+
+
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_dmt_12970_stonnos.d   */
+
+
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_DMT_2200_DarkSpeaker.d   */
+
+
+v1.01:
+
+ItMi_Moleratlubric_MIS - vytvoření předmětu přesunuto ze 3. do 1. kapitoly
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_gur_8002_orun.d   */
+
+
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_hun_741_falk.d   */
+
+
+v1.01:
+
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_hun_743_nix.d   */
 
 
@@ -461,7 +676,25 @@ DIA_HUN_743_Nix_ShadowFurDone_01_02 - opraveno other/self
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_hun_745_raffa.d   */
+
+
+v1.01:
+
+func void dia_hun_745_raffa_TrueShot_info - sjednoceny podmínky učení
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_KDF_500_Pyrokar.d   */
+
+
+v1.01:
+
+CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+(7x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
 
 
 v1.00:
@@ -483,7 +716,37 @@ func void DIA_Serpentes_MinenAnteileBringen_Info - upraveny výpisy
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_KDF_503_Karras.d   */
+
+
+v1.01:
+
+(2x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_KDF_504_Parlan.d   */
+
+
+v1.01:
+
+func int DIA_Parlan_TEACH_MANA_Condition - upraveny podmínky dialogu
+(3x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+func int dia_parlan_pickpocket_condition - upraveny podmínky krádeže
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_KDW_14000_Addon_Saturas_ADW.d   */
+
+
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+(2x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
 
 
 v1.00:
@@ -516,6 +779,17 @@ func void DIA_Addon_Riordian_SaturasWantYou_Info - Saturas (cyrilice -> latinka)
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_MIL_311_Andre.d   */
+
+
+v1.01:
+
+(19x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_MIL_312_Wulfgar.d   */
 
 
@@ -528,6 +802,11 @@ func int DIA_Wulfgar_Bandits_Condition - upraveny podmínky dialogu
 
 
 /*   (...)\Story\Dialoge\DIA_none_102_kreol.d   */
+
+
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
 
 
 v1.00:
@@ -587,12 +866,95 @@ func int DIA_Orc_8551_Leitenent_DeadHead_condition - upraveny podmínky dialogu
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_orc_8552_watcher.d   */
+
+
+v1.01:
+
+func int dia_Orc_8572_UrHoshNar_OrcHolyPlaces_condition - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_orc_8566_urhan.d   */
+
+
+v1.01:
+
+(5x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_pal_2000_hagen.d   */
+
+
+v1.01:
+
+(3x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+(4x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_PAL_200_Hagen.d   */
+
+
+v1.01:
+
+(8x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
 
 
 v1.00:
 
 func void dia_lord_hagen_oreismined_trade - přidán obtížnější skill check na rétoriku (ještě vyšší výkupní cena rudy)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_PAL_250_Garond.d   */
+
+
+v1.01:
+
+(4x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_pal_9168_natan.d   */
+
+
+v1.01:
+
+(5x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_PC_Mage_OW.d   */
+
+
+v1.01:
+
+CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_PIR_1320_Addon_Greg.d   */
+
+
+v1.01:
+
+(3x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
 
 
 ----------------------------------------------------------------------------------------------------
@@ -620,7 +982,45 @@ func void dia_addon_inextremo_charlotte_permjobpay_info - Charlotte (cyrilice ->
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_SLD_800_Lee.d   */
+
+
+v1.01:
+
+(2x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_sld_801_torlof_li.d   */
+
+
+v1.01:
+
+func int dia_torlof_li_bringfooddone_condition - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_SLD_802_Buster.d   */
+
+
+v1.01:
+
+(2x) CZ_Settings_Diff_XPMult - falešná konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_SLD_811_Wolf.d   */
+
+
+v1.01:
+
+(2x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
 
 
 v1.00:
@@ -639,6 +1039,17 @@ v1.00:
 func void dia_strf_1107_fleenow_info - opraven odkaz na následující dialog (dia_strf_1107_fleenow_djg_lcr)
 func void dia_strf_1107_fleenow_info - přidána další možnost (ITAR_PAL_H_V1)
 (2x) opraveno ID předmětu (ItMw_Schwert -> ItMw_Schwert3)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_tpl_8005_gornakosh.d   */
+
+
+v1.01:
+
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
 
 
 ----------------------------------------------------------------------------------------------------
@@ -710,12 +1121,34 @@ func void DIA_Bosper_SellBows_Info - upraveny výpisy
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_VLK_416_Matteo.d   */
+
+
+v1.01:
+
+func int DIA_Matteo_Jewerly_Condition - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_VLK_418_Gritta.d   */
 
 
 v1.00:
 
 func void dia_gritta_angekommen_info - opraveno AIV_IgnoresArmor
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_vlk_4250_jorgen_li.d   */
+
+
+v1.01:
+
+func int dia_jorgen_li_bringfooddone_condition - upraveny podmínky dialogu
 
 
 ----------------------------------------------------------------------------------------------------
@@ -743,6 +1176,28 @@ func int DIA_ADDON_VATRAS_LeeLetter_condition - upraveny podmínky dialogu
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_VLK_439_Vatras_DI.d   */
+
+
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_vlk_439_vatras_li.d   */
+
+
+v1.01:
+
+(3x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_VLK_444_Jack.d   */
 
 
@@ -750,6 +1205,17 @@ v1.00:
 
 DIA_Jack_SmokePipe_Done_01_02 - opraveno other/self
 DIA_Jack_SmokePipe_Done_01_04 - opraveno other/self
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_vlk_444_jack_li.d   */
+
+
+v1.01:
+
+func int dia_jack_li_bringfooddone_condition - upraveny podmínky dialogu
 
 
 ----------------------------------------------------------------------------------------------------
@@ -766,6 +1232,17 @@ func void dia_thorben_missgritta_help - opraveno AIV_IgnoresArmor
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_vlk_6027_taliasan.d   */
+
+
+v1.01:
+
+(3x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_vlk_6110_nigel.d   */
 
 
@@ -777,12 +1254,34 @@ DIA_Nigel_MoneyNew_01_07 - opraveno other/self
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_vlk_986_viper.d   */
+
+
+v1.01:
+
+func void dia_viper_CLEARMAGICOREMAKE_info - upraven přístup do Jeskyně Ohně (FIRECAVE_ZEN) po splnění úkolu Rituál Ohně (TOPIC_KELIOSTEST)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_vlk_989_reinar.d   */
 
 
 v1.00:
 
 (2x) itmw_1h_Crest, dia_vlk_989_reinar_sellweapon_Crest (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_xbs_7507_netbek.d   */
+
+
+v1.01:
+
+MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
 
 
 ----------------------------------------------------------------------------------------------------
@@ -858,12 +1357,42 @@ FUNC VOID Trinkfass_S1 - opraven atribut (ATR_HITPOINTS_MAX -> ATR_MANA_MAX)
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Events\B_Spawn_Skeleton.d   */
+
+
+v1.01:
+
+CZ_Settings_Diff_EnableTraps - přidání možnosti zapnout/vypnout pasti
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Events\evt_tpl_01_func_01.d   */
+
+
+v1.01:
+
+CZ_Settings_Diff_XPMult - falešná konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+(6x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
 
 
 v1.00:
 
 func void EVT_AV_TO_LOSTVALLEY_FUNC - upraveny podmínky vstupu (ItRu_BeliarSuperRune)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Log_Entries\B_CloseTopics_Yoly.d   */
+
+
+v1.01:
+
+(2x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+(2x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
 
 
 ----------------------------------------------------------------------------------------------------
@@ -888,6 +1417,17 @@ const string LOG_TEXT_ADDON_TALENTRUNE_SUMSHOAL - opraven zápis do deníku
 v1.00:
 
 nový soubor
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\NPC\BAU_944_Ehnim.d   */
+
+
+v1.01:
+
+ItMi_Moleratlubric_MIS - vytvoření předmětu přesunuto ze 3. do 1. kapitoly
 
 
 ----------------------------------------------------------------------------------------------------
@@ -949,7 +1489,34 @@ func int c_schasrareweapons - itmw_1h_Crest (cyrilice -> latinka)
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\_misk_\equipweapn.d   */
+
+
+v1.01:
+
+(13x) CZ TELEPORTY - nově přidané teleporty
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\InPlayGame.d   */
+
+
+v1.01:
+
+(2x) GamblingAntiCheat_CZ - přidán anti-savescumming systém pro kostky (po vzoru Fallout: New Vegas)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\_misk_\makearrows_s1.d   */
+
+
+v1.01:
+
+func void pc_MagicSmithWeapon_Nimrod_info - upraven přístup do Jeskyně Ohně (FIRECAVE_ZEN) po splnění úkolu Rituál Ohně (TOPIC_KELIOSTEST)
 
 
 v1.00:
@@ -959,6 +1526,21 @@ func void PC_SMITHFIRE_ADDON_HOUR_XALL_info - upraveny výpisy
 instance PC_SMITHFIRE_ADDON_ORCWEAPON - opraveno neakceptování ITMW_2H_DRACONSWORD_02
 func void pc_orehacken_addon_hour_info - determinovanost těžby
 func void PC_IRONHACKEN_addon_hour_info - determinovanost těžby
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\pc_sleep_delt.d   */
+
+
+v1.01:
+
+func void CZ_Recalculate_Needs - nová funkce
+(10x) CZ_Recalculate_Needs - přidání možnosti zapnout/vypnout hlad/žízeň/únavu / omezení spánku na nižších obtížnostech
+CZ_Settings_Diff_EnableSleepCap - přidání možnosti zapnout/vypnout omezení spánku
+PRIORATWORLD_ZEN - vypnuto omezení spánku v doupěti bratrstva Masyaf
+(2x) hitheal -  upraven výpočet obnovených HP za hodinu spánku
 
 
 ----------------------------------------------------------------------------------------------------
@@ -976,7 +1558,41 @@ func void print_campinfo - přidán Bilgot jako lovec (kvůli úpravám úkolů 
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\_misk_\startup_addon_part_adanostemple_01.d   */
+
+
+v1.01:
+
+(2x) CZ_Settings_Diff_Update - přidána aktualizace nastavení obtížnosti z / do .ini souboru
+(2x) CZ_Settings_Other_Init() - přidána inicializace ostatních nastavení z / do .ini souboru
+(2x) GamblingAntiCheat_CZ - přidán anti-savescumming systém pro kostky (po vzoru Fallout: New Vegas)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\TOPIC_End_CavalornTheHut.d   */
+
+
+v1.01:
+
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\_misk_\T_MAX_HP.d   */
+
+
+v1.01:
+
+var int MageSpeechCount - deklarace nové proměnné (kvůli titulkům dialogu Xardas vs. Pyrokar)
+(2x) CZ TELEPORTY - deklarace nových proměnných (kvůli nově přidaným teleportům)
+var int OpenFireCaveAgain_CZ - deklarace nové proměnné (kvůli úkolu Zbraň velkého lovce (TOPIC_TagNorGrHunWeap))
+var int CloseFireCaveAgain_CZ - deklarace nové proměnné (kvůli úkolu Zbraň velkého lovce (TOPIC_TagNorGrHunWeap))
+mis_orcgreatwar - mis_orcgreatwar (cyrilice -> latinka)
+CZ SETTINGS - deklarace nových proměnných (kvůli přidání nových nastavení)
 
 
 v1.00:
@@ -1008,10 +1624,31 @@ v1.00:
 /*   (...)\_misk_\xardas_firstlock.d   */
 
 
+v1.01:
+
+(4x) CZ_Settings_Diff_Init, CZ_Settings_Diff_Save - přidáno nastavení obtížnosti v .ini souboru
+(2x) Hero_Hunger - upraveny počáteční hodnoty hladu
+(2x) Hero_Thirst - upraveny počáteční hodnoty žízně
+(2x) Hero_Fatigue - upraveny počáteční hodnoty únavy
+(4x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+func void dia_xardas_canbenecromok_yes - sjednoceny podmínky přijetí k nekromantům
+
+
 v1.00:
 
 func void dia_xardas_runen_6 - opraven název
 func int DIA_NONE_100_Xardas_WhyHere_condition - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\_czfuncs.d   */
+
+
+v1.01:
+
+nový soubor
 
 
 ----------------------------------------------------------------------------------------------------

@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+*/
+
+
 
 instance DIA_MiltenOW_EXIT(C_Info)
 {
@@ -464,7 +475,7 @@ instance DIA_MiltenOW_TeachCircle2(C_Info)
 
 func int DIA_MiltenOW_TeachCircle2_Condition()
 {
-	if((other.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_MiltenOW_Lehren) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 2))
+	if((other.guild == GIL_KDF) && Npc_KnowsInfo(other,DIA_MiltenOW_Lehren) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 2) && (CanLearnMagicCircleNext_ABCZ(2) == TRUE))
 	{
 		return TRUE;
 	};

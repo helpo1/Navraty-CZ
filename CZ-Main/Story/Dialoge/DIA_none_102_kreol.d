@@ -2,6 +2,11 @@
 
 /*
 
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+
 v1.00:
 
 (6x) var int KREOL_ITEMSGIVEN_CHAPTER_... - upravena nabídka obchodníka
@@ -1224,27 +1229,27 @@ func void dia_kreol_circle_info()
 	Info_ClearChoices(DIA_Kreol_CIRCLE);
 	Info_AddChoice(DIA_Kreol_CIRCLE,Dialog_Back,DIA_Kreol_CIRCLE_Back);
 
-	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) < 1) && (Kapitel >= 1))
+	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) < 1) && (CanLearnMagicCircleNext_ABCZ(1) == TRUE))
 	{
 		Info_AddChoice(DIA_Kreol_CIRCLE,"1. kruh magie (VB: 20)",DIA_Kreol_CIRCLE_1);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1) && (Kapitel >= 2))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1) && (CanLearnMagicCircleNext_ABCZ(2) == TRUE))
 	{
 		Info_AddChoice(DIA_Kreol_CIRCLE,"2. kruh magie (VB: 30)",DIA_Kreol_CIRCLE_2);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2) && (Kapitel >= 3))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2) && (CanLearnMagicCircleNext_ABCZ(3) == TRUE))
 	{
 		Info_AddChoice(DIA_Kreol_CIRCLE,"3. kruh magie (VB: 40)",DIA_Kreol_CIRCLE_3);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 3) && (MIS_ReadyforChapter4 == TRUE))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 3) && (CanLearnMagicCircleNext_ABCZ(4) == TRUE))
 	{
 		Info_AddChoice(DIA_Kreol_CIRCLE,"4. kruh magie (VB: 60)",DIA_Kreol_CIRCLE_4);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 4) && (Kapitel >= 5))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 4) && (CanLearnMagicCircleNext_ABCZ(5) == TRUE))
 	{
 		Info_AddChoice(DIA_Kreol_CIRCLE,"5. kruh magie (VB: 80)",DIA_Kreol_CIRCLE_5);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 5) && (Kapitel >= 5) && (MIS_DarkOrden == LOG_Success) && (MIS_JarCurse == LOG_Success) && (MIS_URNAZULRAGE == LOG_SUCCESS))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 5) && (CanLearnMagicCircleNext_ABCZ(6) == TRUE))
 	{
 		Info_AddChoice(DIA_Kreol_CIRCLE,"6. kruh magie (VB: 100)",DIA_Kreol_CIRCLE_6);
 	}

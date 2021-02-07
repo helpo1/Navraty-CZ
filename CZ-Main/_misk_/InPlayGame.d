@@ -1,3 +1,16 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(2x) GamblingAntiCheat_CZ - přidán anti-savescumming systém pro kostky (po vzoru Fallout: New Vegas)
+
+*/
+
+
+
+var int GamblingAntiCheat_CZ;
 
 var int playerbone1;
 var int playerbone2;
@@ -3342,8 +3355,21 @@ func void pc_playpocker_endgame_info()
 
 func void playpocker(var int chosenstavka,var C_Npc enemy)
 {
-	STAVKA = chosenstavka;
-	POCKERENEMY = Hlp_GetNpc(enemy);
-	STARTPOCKERMATCH = 1;
-	AI_StopProcessInfos(self);
+	if (GamblingAntiCheat_CZ > 0)
+	{
+		var string AntiCheat_Text;
+		
+		AntiCheat_Text = ConcatStrings("Tvůj soupeř raději hledá nové kostky... (zbývá ", IntToString(GamblingAntiCheat_CZ));
+		AntiCheat_Text = ConcatStrings(AntiCheat_Text, "s)");
+		AI_Print(AntiCheat_Text);
+		
+		AI_StopProcessInfos(self);
+	}
+	else
+	{
+		STAVKA = chosenstavka;
+		POCKERENEMY = Hlp_GetNpc(enemy);
+		STARTPOCKERMATCH = 1;
+		AI_StopProcessInfos(self);
+	};
 };

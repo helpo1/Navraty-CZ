@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(5x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
 
 instance DIA_ORC_8566_URHAN_EXIT(C_Info)
 {
@@ -33,7 +44,7 @@ instance DIA_ORC_8566_URHAN_HELLO(C_Info)
 
 func int dia_orc_8566_urhan_hello_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && (MIS_STURMCASTLE == FALSE))
+	if((MIS_ORCGREATWAR == LOG_Running) && (MIS_STURMCASTLE == FALSE))
 	{
 		return TRUE;
 	};
@@ -66,7 +77,7 @@ instance DIA_ORC_8566_URHAN_WHOYOU(C_Info)
 
 func int dia_orc_8566_urhan_whoyou_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && (MIS_STURMCASTLE == FALSE))
+	if((MIS_ORCGREATWAR == LOG_Running) && (MIS_STURMCASTLE == FALSE))
 	{
 		return TRUE;
 	};
@@ -92,7 +103,7 @@ instance DIA_ORC_8566_URHAN_WHOLEADER(C_Info)
 
 func int dia_orc_8566_urhan_wholeader_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && (MIS_STURMCASTLE == FALSE) && Npc_KnowsInfo(hero,dia_orc_8566_urhan_whoyou))
+	if((MIS_ORCGREATWAR == LOG_Running) && (MIS_STURMCASTLE == FALSE) && Npc_KnowsInfo(hero,dia_orc_8566_urhan_whoyou))
 	{
 		return TRUE;
 	};
@@ -118,7 +129,7 @@ instance DIA_ORC_8566_URHAN_PALADINSAFE(C_Info)
 
 func int dia_orc_8566_urhan_paladinsafe_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && (KNOWABOUTGAROND == TRUE) && (URSHAKTELLPALADIN == FALSE) && Npc_KnowsInfo(hero,dia_orc_8566_urhan_whoyou))
+	if((MIS_ORCGREATWAR == LOG_Running) && (KNOWABOUTGAROND == TRUE) && (URSHAKTELLPALADIN == FALSE) && Npc_KnowsInfo(hero,dia_orc_8566_urhan_whoyou))
 	{
 		return TRUE;
 	};
@@ -144,7 +155,7 @@ instance DIA_ORC_8566_URHAN_PALADINCOST(C_Info)
 
 func int dia_orc_8566_urhan_paladincost_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && (KNOWABOUTGAROND == TRUE) && (MIS_STURMCASTLE == FALSE) && Npc_KnowsInfo(hero,dia_orc_8566_urhan_whoyou))
+	if((MIS_ORCGREATWAR == LOG_Running) && (KNOWABOUTGAROND == TRUE) && (MIS_STURMCASTLE == FALSE) && Npc_KnowsInfo(hero,dia_orc_8566_urhan_whoyou))
 	{
 		return TRUE;
 	};

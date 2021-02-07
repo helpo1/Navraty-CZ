@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(13x) CZ TELEPORTY - nově přidané teleporty
+
+*/
+
+
+
 var C_Item EQUIPWEAPN;
 
 func void B_PrintTeleportTooFarAway(var int level)
@@ -547,6 +559,36 @@ func void PC_TELEPORTLOCATION_ON_info()
 		};
 	};	
 
+
+
+	/*     // ----- CZ TELEPORTY ----- \\     */
+
+	if((CurrentLevel != PALADINFORT_ZEN) && (CurrentLevel != ITUSELDTOWER_ZEN) && (CurrentLevel != LOSTVALLEY_ZEN) && (CurrentLevel != DRAGONTEMPLE_ZEN) && (CurrentLevel != PASHALWORLD_ZEN) && (CurrentLevel != HAOSWORLD_ZEN) && (CurrentLevel != PRIORATWORLD_ZEN) && (CurrentLevel != DRAGONISLAND_ZEN) && (CurrentLevel != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
+	{
+		if((VarusMeet == TRUE))
+		{
+			Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do pevnosti Azgan",PC_TELEPORTLOCATION_ON_PALADINFORT_CZ);			
+		};
+	};
+	if((CurrentLevel != DEADGROT_ZEN) && (CurrentLevel != ITUSELDTOWER_ZEN) && (CurrentLevel != LOSTVALLEY_ZEN) && (CurrentLevel != DRAGONTEMPLE_ZEN) && (CurrentLevel != PASHALWORLD_ZEN) && (CurrentLevel != HAOSWORLD_ZEN) && (CurrentLevel != PRIORATWORLD_ZEN) && (CurrentLevel != DRAGONISLAND_ZEN) && (CurrentLevel != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
+	{
+		if((Npc_KnowsInfo(hero,DIA_KREOL_HELLO) == TRUE))
+		{
+			Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do Zamlžené věže",PC_TELEPORTLOCATION_ON_DEADGROT_CZ);			
+		};
+	};
+	if((CurrentLevel != ORCCITY_ZEN) && (CurrentLevel != ITUSELDTOWER_ZEN) && (CurrentLevel != LOSTVALLEY_ZEN) && (CurrentLevel != DRAGONTEMPLE_ZEN) && (CurrentLevel != PASHALWORLD_ZEN) && (CurrentLevel != HAOSWORLD_ZEN) && (CurrentLevel != PRIORATWORLD_ZEN) && (CurrentLevel != DRAGONISLAND_ZEN) && (CurrentLevel != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
+	{
+		if((PASSORKCHAMBER == TRUE) || (Npc_KnowsInfo(hero,DIA_Orc_8215_Kan_Hello) == TRUE) || (CanEnterOrcMine == TRUE) || (UrTrallOkShv == TRUE))
+		{
+			Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do skřetího města",PC_TELEPORTLOCATION_ON_ORCCITY_CZ);			
+		};
+	};
+
+	/*     \\ ----- CZ TELEPORTY ----- //     */
+
+
+
 	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
 };
 
@@ -567,6 +609,19 @@ func void PC_TELEPORTLOCATION_ON_ADW()
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... do tábora pirátů",PC_TELEPORTLOCATION_ON_PIRATCAMP);
 	};
+
+	/*     // ----- CZ TELEPORTY ----- \\     */
+
+	if(Npc_KnowsInfo(hero,DIA_Addon_Saturas_ADWStart) == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] na teleportační náměstí",PC_TELEPORTLOCATION_ON_ADW_TELEPORTSQUARE_CZ);			
+	};
+	if(DRAGONGOLDMEET == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] ke zlatému drakovi",PC_TELEPORTLOCATION_ON_ADW_GOLDDRAGON_CZ);			
+	};
+
+	/*     \\ ----- CZ TELEPORTY ----- //     */
 
 	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
 };
@@ -628,6 +683,23 @@ func void PC_TELEPORTLOCATION_ON_HOR()
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... ke Xardasově věži",PC_TELEPORTLOCATION_ON_XARDAS);
 	};
 
+	/*     // ----- CZ TELEPORTY ----- \\     */
+
+	if(Npc_KnowsInfo(hero,DIA_Lothar_Hallo) == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] k jižní bráně města Khorinis",PC_TELEPORTLOCATION_ON_NW_DOWNTOWN_CZ);			
+	};
+	if((Npc_KnowsInfo(hero,DIA_Lares_HALLO) == TRUE) == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do přístavu",PC_TELEPORTLOCATION_ON_NW_HAFEN_CZ);			
+	};
+	if(PasswordSet == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do tábora Atros",PC_TELEPORTLOCATION_ON_NW_ATROS_CZ);			
+	};
+
+	/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
 };
 
@@ -668,6 +740,27 @@ func void PC_TELEPORTLOCATION_ON_OW()
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... na hrad rudobaronů",PC_TELEPORTLOCATION_ON_CASTLE);
 	};
 
+	/*     // ----- CZ TELEPORTY ----- \\     */
+
+	if(Npc_KnowsInfo(hero,DIA_ORC_8552_WATCHER_HELLO) == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] ke skřetímu městu",PC_TELEPORTLOCATION_ON_OW_ORCCITY_CZ);			
+	};
+	if((ORCTEMPLEONETIME == TRUE) || (ORCTEMPLEGATEOPENED == TRUE))
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] ke Spáčovu chrámu",PC_TELEPORTLOCATION_ON_OW_SLEEPERTEMPLE_CZ);			
+	};
+	if(Npc_KnowsInfo(hero,XBS_7513_DARRION_HI) == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do Darrionovy kovárny",PC_TELEPORTLOCATION_ON_OW_DARRION_CZ);			
+	};
+	if(Npc_KnowsInfo(hero,DIA_NagShor_Hello) == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do skřetího klanu Vysoké skály",PC_TELEPORTLOCATION_ON_OW_HIGHROCK_CZ);			
+	};
+
+	/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
 };
 
@@ -696,6 +789,15 @@ func void PC_TELEPORTLOCATION_ON_AV()
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... k Oltáři slz",PC_TELEPORTLOCATION_ON_TEARHRAM);
 	};
 
+	/*     // ----- CZ TELEPORTY ----- \\     */
+
+	if(Npc_KnowsInfo(hero,DIA_Dragon_AV_HELLO) == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] k Er'Khazirově hrobce",PC_TELEPORTLOCATION_ON_ADV_ERHAZIR_CZ);			
+	};
+
+	/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
 };
 
@@ -710,6 +812,62 @@ func void PC_TELEPORTLOCATION_ON_ORM()
 
 	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
 };
+
+
+
+/*     // ----- CZ TELEPORTY ----- \\     */
+
+func void PC_TELEPORTLOCATION_ON_PALADINFORT_CZ()
+{
+	Info_ClearChoices(PC_TELEPORTLOCATION_ON);
+
+	if(VarusMeet == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do pevnosti Azgan",PC_TELEPORTLOCATION_ON_PF_AZGAN_CZ);
+	};
+	
+	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
+};
+
+func void PC_TELEPORTLOCATION_ON_DEADGROT_CZ()
+{
+	Info_ClearChoices(PC_TELEPORTLOCATION_ON);
+
+	if(Npc_KnowsInfo(hero,DIA_KREOL_HELLO) == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] k nekromantovi",PC_TELEPORTLOCATION_ON_DG_CREOL_CZ);
+	};
+	
+	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
+};
+
+func void PC_TELEPORTLOCATION_ON_ORCCITY_CZ()
+{
+	Info_ClearChoices(PC_TELEPORTLOCATION_ON);
+
+	if(PASSORKCHAMBER == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] ke skřetímu vůdci",PC_TELEPORTLOCATION_ON_OC_URTHRALL_CZ);
+	};
+	if(Npc_KnowsInfo(hero,DIA_Orc_8215_Kan_Hello) == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do skřetí arény",PC_TELEPORTLOCATION_ON_OC_ARENA_CZ);
+	};
+	if(CanEnterOrcMine == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do skřetího dolu",PC_TELEPORTLOCATION_ON_OC_ORCMINE_CZ);
+	};
+	if(UrTrallOkShv == TRUE)
+	{
+		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] k portálu do Údolí stínů",PC_TELEPORTLOCATION_ON_OC_SHVENTRANCE_CZ);
+	};
+	
+	Info_AddChoice(PC_TELEPORTLOCATION_ON,DIALOG_BACK,PC_TELEPORTLOCATION_ON_BACK);
+};
+
+/*     \\ ----- CZ TELEPORTY ----- //     */
+
+
 
 func void PC_TELEPORTLOCATION_ON_OLDHOUSE()
 {
@@ -1409,6 +1567,498 @@ func void PC_TELEPORTLOCATION_ON_COMPLEX()
 	};
 };
 
+
+
+/*     // ----- CZ TELEPORTY ----- \\     */
+
+func void PC_TELEPORTLOCATION_ON_ADV_ERHAZIR_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_ADV_ERHAZIR_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_ADW_TELEPORTSQUARE_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_ADW_TELEPORTSQUARE_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_ADW_GOLDDRAGON_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_ADW_GOLDDRAGON_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_NW_DOWNTOWN_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_NW_DOWNTOWN_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_NW_HAFEN_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_NW_HAFEN_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_NW_ATROS_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_NW_ATROS_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_PF_AZGAN_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_PF_AZGAN_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_DG_CREOL_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_DG_CREOL_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_OW_ORCCITY_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_OW_ORCCITY_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_OW_SLEEPERTEMPLE_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_OW_SLEEPERTEMPLE_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_OW_DARRION_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_OW_DARRION_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_OW_HIGHROCK_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_OW_HIGHROCK_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_OC_URTHRALL_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_OC_URTHRALL_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_OC_ARENA_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_OC_ARENA_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_OC_ORCMINE_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_OC_ORCMINE_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_OC_SHVENTRANCE_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_OC_SHVENTRANCE_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+/*
+
+func void PC_TELEPORTLOCATION_ON_SHV_OCPORTAL_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_SHV_OCPORTAL_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_SHV_HUMANCAMP_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_SHV_HUMANCAMP_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_SHV_ORCCAMP_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_SHV_ORCCAMP_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+func void PC_TELEPORTLOCATION_ON_SHV_AZGALOR_CZ()
+{
+	var string concatText;
+	var int tmpMissMana;
+
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	TeleportCheck = FALSE;
+
+	if(self.attribute[ATR_MANA] >= 40)
+	{
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 40;
+		LOC_SHV_AZGALOR_CZ_TP_OK = TRUE;
+	}
+	else
+	{
+		tmpMissMana = 40 - self.attribute[ATR_MANA];
+		concatText = ConcatStrings("Chybí ",IntToString(tmpMissMana));
+		concatText = ConcatStrings(concatText," bodů many...");
+		AI_PrintClr(concatText,177,58,17);
+	};
+};
+
+*/
+
+/*     \\ ----- CZ TELEPORTY ----- //     */
+
+
+
 instance PC_TELEPORT_ON(C_Info)
 {
 	npc = PC_Hero;
@@ -1485,6 +2135,24 @@ func void PC_TELEPORT_ON_info()
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... ke Xardasově věži",PC_TELEPORT_ON_XARDAS);
 		};
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		if(Npc_KnowsInfo(hero,DIA_Lothar_Hallo) == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] k jižní bráně města Khorinis",PC_TELEPORT_ON_NW_DOWNTOWN_CZ);			
+		};
+		if((Npc_KnowsInfo(hero,DIA_Lares_HALLO) == TRUE) == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] do přístavu",PC_TELEPORT_ON_NW_HAFEN_CZ);			
+		};
+		if(PasswordSet == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] do tábora Atros",PC_TELEPORT_ON_NW_ATROS_CZ);			
+		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	}
 	else if(CurrentLevel == ADDONWORLD_ZEN)
 	{
@@ -1496,6 +2164,20 @@ func void PC_TELEPORT_ON_info()
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... do tábora pirátů",PC_TELEPORT_ON_PIRATCAMP);
 		};
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		if(Npc_KnowsInfo(hero,DIA_Addon_Saturas_ADWStart) == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] na teleportační náměstí",PC_TELEPORT_ON_ADW_TELEPORTSQUARE_CZ);			
+		};
+		if(DRAGONGOLDMEET == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] ke zlatému drakovi",PC_TELEPORT_ON_ADW_GOLDDRAGON_CZ);			
+		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	}
 	else if(CurrentLevel == OLDWORLD_ZEN)
 	{
@@ -1531,6 +2213,28 @@ func void PC_TELEPORT_ON_info()
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... na hrad rudobaronů",PC_TELEPORT_ON_CASTLE);
 		};
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		if(Npc_KnowsInfo(hero,DIA_ORC_8552_WATCHER_HELLO) == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] ke skřetímu městu",PC_TELEPORT_ON_OW_ORCCITY_CZ);			
+		};
+		if((ORCTEMPLEONETIME == TRUE) || (ORCTEMPLEGATEOPENED == TRUE))
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] ke Spáčovu chrámu",PC_TELEPORT_ON_OW_SLEEPERTEMPLE_CZ);			
+		};
+		if(Npc_KnowsInfo(hero,XBS_7513_DARRION_HI) == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] do Darrionovy kovárny",PC_TELEPORT_ON_OW_DARRION_CZ);			
+		};
+		if(Npc_KnowsInfo(hero,DIA_NagShor_Hello) == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] do skřetího klanu Vysoké skály",PC_TELEPORT_ON_OW_HIGHROCK_CZ);			
+		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	}
 	else if(CurrentLevel == ADANOSVALLEY_ZEN)
 	{
@@ -1554,6 +2258,16 @@ func void PC_TELEPORT_ON_info()
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... k Oltáři slz",PC_TELEPORT_ON_TEARHRAM);
 		};
+
+		/*     // ----- CZ TELEPORTY ----- \\     */
+
+		if(Npc_KnowsInfo(hero,DIA_Dragon_AV_HELLO) == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] k Er'Khazirově hrobce",PC_TELEPORT_ON_ADV_ERHAZIR_CZ);			
+		};
+
+		/*     \\ ----- CZ TELEPORTY ----- //     */
+
 	}
 	else if(CurrentLevel == ORCMOUNTAIN_ZEN)
 	{
@@ -1561,8 +2275,69 @@ func void PC_TELEPORT_ON_info()
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... k runovému kameni",PC_TELEPORT_ON_ORCMOUNTAIN);
 		};
+	}
+
+
+
+	/*     // ----- CZ TELEPORTY ----- \\     */
+
+	else if(CurrentLevel == PALADINFORT_ZEN)
+	{
+		if(VarusMeet == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] do pevnosti Azgan",PC_TELEPORT_ON_PF_AZGAN_CZ);
+		};
+	}
+	else if(CurrentLevel == DEADGROT_ZEN)
+	{
+		if(Npc_KnowsInfo(hero,DIA_KREOL_HELLO) == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] k nekromantovi",PC_TELEPORT_ON_DG_CREOL_CZ);
+		};
+	}
+	else if(CurrentLevel == ORCCITY_ZEN)
+	{
+		if(PASSORKCHAMBER == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] ke skřetímu vůdci",PC_TELEPORT_ON_OC_URTHRALL_CZ);
+		};
+		if(Npc_KnowsInfo(hero,DIA_Orc_8215_Kan_Hello) == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] do skřetí arény",PC_TELEPORT_ON_OC_ARENA_CZ);
+		};
+		if(CanEnterOrcMine == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] do skřetího dolu",PC_TELEPORT_ON_OC_ORCMINE_CZ);
+		};
+		if(UrTrallOkShv == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] k portálu do Údolí stínů",PC_TELEPORT_ON_OC_SHVENTRANCE_CZ);
+		};
+	}
+	else if(CurrentLevel == SHVALLEY_ZEN)
+	{
+		if(UrTrallOkShv == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] k portálu do skřetího města",PC_TELEPORT_ON_SHV_OCPORTAL_CZ);
+		};
+		if(Npc_KnowsInfo(hero,DIA_DUGO_HELLO) == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] do tábora lidí",PC_TELEPORT_ON_SHV_HUMANCAMP_CZ);
+		};
+		if(FIRSTVANHAN == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] do tábora skřetů",PC_TELEPORT_ON_SHV_ORCCAMP_CZ);
+		};
+		if(READ_AZGOLOR == TRUE)
+		{
+			Info_AddChoice(PC_TELEPORT_ON,"... [!] ke svatyni Velikého Stínu",PC_TELEPORT_ON_SHV_AZGALOR_CZ);
+		};
 	};
-	
+
+	/*     \\ ----- CZ TELEPORTY ----- //     */
+
+
+
 	Info_AddChoice(PC_TELEPORT_ON,DIALOG_BACK,PC_TELEPORT_ON_BACK);
 };
 
@@ -1831,3 +2606,189 @@ func void PC_TELEPORT_ON_COMPLEX()
 	COMPLEX_TP_OK = TRUE;
 	TeleportCheck = FALSE;
 };
+
+
+
+/*     // ----- CZ TELEPORTY ----- \\     */
+	
+func void PC_TELEPORT_ON_ADV_ERHAZIR_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	ADV_ERHAZIR_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_ADW_TELEPORTSQUARE_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	ADW_TELEPORTSQUARE_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_ADW_GOLDDRAGON_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	ADW_GOLDDRAGON_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_NW_DOWNTOWN_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	NW_DOWNTOWN_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_NW_HAFEN_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	NW_HAFEN_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_NW_ATROS_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	NW_ATROS_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_PF_AZGAN_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	PF_AZGAN_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_DG_CREOL_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	DG_CREOL_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_OW_ORCCITY_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	OW_ORCCITY_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_OW_SLEEPERTEMPLE_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	OW_SLEEPERTEMPLE_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_OW_DARRION_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	OW_DARRION_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_OW_HIGHROCK_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	OW_HIGHROCK_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_OC_URTHRALL_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	OC_URTHRALL_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_OC_ARENA_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	OC_ARENA_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_OC_ORCMINE_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	OC_ORCMINE_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_OC_SHVENTRANCE_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	OC_SHVENTRANCE_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_SHV_OCPORTAL_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	SHV_OCPORTAL_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_SHV_HUMANCAMP_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	SHV_HUMANCAMP_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_SHV_ORCCAMP_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	SHV_ORCCAMP_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+func void PC_TELEPORT_ON_SHV_AZGALOR_CZ()
+{
+	AI_StopProcessInfos(self);
+	self.aivar[AIV_INVINCIBLE] = FALSE;
+	PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
+	SHV_AZGALOR_CZ_TP_OK = TRUE;
+	TeleportCheck = FALSE;
+};
+
+/*     \\ ----- CZ TELEPORTY ----- //     */

@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(2x) CZ_Settings_Diff_XPMult - falešná konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
+
+*/
+
+
 
 instance DIA_Buster_EXIT(C_Info)
 {
@@ -667,7 +678,8 @@ func void DIA_Buster_BringTrophyShadowbeast_Info()
 
 		if(BusterTrophyShadowbeastCount == 1)
 		{
-			XP_BringBusterTrophyShadowbeast = Shadowbeast.level * XP_PER_VICTORY;
+			// XP_BringBusterTrophyShadowbeast = Shadowbeast.level * XP_PER_VICTORY;
+			XP_BringBusterTrophyShadowbeast = Shadowbeast.level * CZ_Settings_Diff_XPMult;
 			BustersBusterTrophyShadowbeastOffer = Buster_Bonus + 100;
 			AI_Output(other,self,"DIA_Buster_BringTrophyShadowbeast_15_05");	//Přinesl jsem si roh stínové šelmy.
 			B_GivePlayerXP(XP_BringBusterTrophyShadowbeast);
@@ -681,7 +693,8 @@ func void DIA_Buster_BringTrophyShadowbeast_Info()
 		}
 		else if(BusterTrophyShadowbeastCount > 1)
 		{
-			XP_BringBusterTrophyShadowbeast = Shadowbeast.level * XP_PER_VICTORY;
+			// XP_BringBusterTrophyShadowbeast = Shadowbeast.level * XP_PER_VICTORY;
+			XP_BringBusterTrophyShadowbeast = Shadowbeast.level * CZ_Settings_Diff_XPMult;
 			BustersBusterTrophyShadowbeastOffer = Buster_Bonus + 100;
 			AI_Output(other,self,"DIA_Buster_BringTrophyShadowbeast_15_06");	//Přinesl jsem ti rohy stinové šelmy.
 			B_GiveInvItems(other,self,ItAt_ShadowHorn,BusterTrophyShadowbeastCount);

@@ -113,7 +113,7 @@ instance DIA_Carl_HelpPath(C_Info)
 	condition = DIA_Carl_HelpPath_Condition;
 	information = DIA_Carl_HelpPath_Info;
 	permanent = FALSE;
-	description = "Co víš o těch zlodějích?";
+	description = "Můžu pro tebe něco udělat?";
 };
 
 func int DIA_Carl_HelpPath_Condition()

@@ -241,7 +241,8 @@ func int B_TeachAttributePoints(var C_Npc slf,var C_Npc oth,var int attrib,var i
 		if(FutAtribCost > NowAtribCost)
 		{
 			AI_PrintClr(PRINT_NoDoThis,177,58,17);
-			AI_PrintClr("(Pro dosažení dalšího intervalu navyšuj atribut nebo dovednost pouze po jednom bodu.)",177,58,17);
+			AI_PrintClr("(Pro dosažení dalšího intervalu navyšuj",177,58,17);
+			AI_PrintClr("atribut nebo dovednost pouze po jednom bodu.)",177,58,17);
 			return FALSE;
 		};
 	};
@@ -395,7 +396,8 @@ func int b_teachattributepointstarinaks(var C_Npc slf,var C_Npc oth,var int attr
 		if(FutAtribCost > NowAtribCost)
 		{
 			AI_PrintClr(PRINT_NoDoThis,177,58,17);
-			AI_PrintClr("(Pro dosažení dalšího intervalu navyšuj atribut nebo dovednost pouze po jednom bodu.)",177,58,17);
+			AI_PrintClr("(Pro dosažení dalšího intervalu navyšuj",177,58,17);
+			AI_PrintClr("atribut nebo dovednost pouze po jednom bodu.)",177,58,17);
 			return FALSE;
 		};
 	};

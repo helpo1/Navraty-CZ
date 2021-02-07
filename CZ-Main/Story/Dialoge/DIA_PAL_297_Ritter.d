@@ -42,11 +42,11 @@ func void DIA_PAL_297_TRESPAS_Info()
 	AI_Output(other,self,"DIA_PAL_297_TRESPAS_15_00");	//Jak se vede?
 	if(Kapitel == 1)
 	{
-		AI_Output(self,other,"DIA_PAL_297_TRESPAS_04_01");	//Tato oblast je velmi nebezpečná, takže se vrať, než se ti něco stane.
+		AI_Output(self,other,"DIA_PAL_297_TRESPAS_04_01");	//Tato oblast je velmi nebezpečná - měl bys raději odejít, než se ti něco stane.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_PAL_297_TRESPAS_04_02");	//Velmi odvážné, vstoupit tam. Jen si sebou nezapomeň vzít dost léčivých lektvarů.
+		AI_Output(self,other,"DIA_PAL_297_TRESPAS_04_02");	//Jsi velice odvážný, pokud chceš jít do Hornického údolí. Jen si sebou nezapomeň vzít dost léčivých lektvarů.
 	};
 };
 

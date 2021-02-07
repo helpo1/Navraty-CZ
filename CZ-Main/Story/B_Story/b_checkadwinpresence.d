@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+func void Use_ItWr_VatrasDiary - upraveny podmínky získání dovednosti vytvoření runy 'Blesk'
+
+*/
+
+
+
 func void b_checkadwinpresence(var int level)
 {
 	if(level != CurrentLevel)
@@ -6048,7 +6060,7 @@ func void Use_ItWr_Fingersliste()
 
 instance ItWr_VatrasDiary(C_Item)
 {
-	name = "Vatrasův Deník";
+	name = "Vatrasův deník";
 	mainflag = ITEM_KAT_DOCS;
 	flags = ITEM_MISSION;
 	value = 5000;
@@ -6096,7 +6108,7 @@ func void Use_ItWr_VatrasDiary()
 		AI_Print("Inteligence + 1");
 		BookBonus_82 = TRUE;
 	};
-	if((PLAYER_TALENT_RUNES[SPL_Zap] == FALSE) && ((hero.guild == GIL_NOV) || (hero.guild == GIL_NDM) || (hero.guild == GIL_NDW) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_KDF) || (hero.guild == GIL_GUR)))
+	if((PLAYER_TALENT_RUNES[SPL_Zap] == FALSE) && (((hero.guild == GIL_NOV) || (hero.guild == GIL_NDM) || (hero.guild == GIL_NDW) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_KDF) || (hero.guild == GIL_GUR)) || (Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) >= 1)))
 	{
 		Npc_SetTalentSkill(hero,NPC_TALENT_RUNES,1);
 		PLAYER_TALENT_RUNES[SPL_Zap] = TRUE;

@@ -2,6 +2,11 @@
 
 /*
 
+v1.01:
+
+(2x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+
 v1.00:
 
 func void DIA_Wolf_AboutCrawler_Info - opravena implementace proměnné (CanDoCrawlwerPlate)
@@ -659,7 +664,7 @@ func void DIA_Wolf_PERMKAP3_Info()
 	if(Npc_IsDead(Bengar) && (DIA_Wolf_PERMKAP3_onetime == FALSE))
 	{
 		AI_Output(self,other,"DIA_Wolf_PERMKAP3_08_01");	//Můj zaměstnavatel je mrtvý! No, a já si vždycky přál mít vlastní statek.
-		if(MIS_ORсGREATWAR == LOG_Running)
+		if(MIS_ORCGREATWAR == LOG_Running)
 		{
 			AI_Output(self,other,"DIA_Wolf_PERMKAP3_08_03");	//S těmi skřety je to tu vo hubu!
 		};
@@ -670,7 +675,7 @@ func void DIA_Wolf_PERMKAP3_Info()
 	else
 	{
 		AI_Output(self,other,"DIA_Wolf_PERMKAP3_08_02");	//No jasně! Všude ticho jako v chrámu!.
-		if(MIS_ORсGREATWAR == LOG_Running)
+		if(MIS_ORCGREATWAR == LOG_Running)
 		{
 			AI_Output(self,other,"DIA_Wolf_PERMKAP3_08_04");	//Jen kdyby okolo nebyli skřeti!
 		};

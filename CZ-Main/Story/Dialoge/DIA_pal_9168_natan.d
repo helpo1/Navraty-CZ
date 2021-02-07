@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(5x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
 
 instance DIA_PAL_9168_NATAN_EXIT(C_Info)
 {
@@ -69,7 +80,7 @@ instance DIA_PAL_9168_NATAN_RESCUEGAROND(C_Info)
 
 func int dia_pal_9168_natan_rescuegarond_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && (ALLAWAYFROMCASTLE == FALSE))
+	if((MIS_ORCGREATWAR == LOG_Running) && (ALLAWAYFROMCASTLE == FALSE))
 	{
 		return TRUE;
 	};
@@ -161,7 +172,7 @@ instance DIA_PAL_9168_NATAN_WHOYOU(C_Info)
 
 func int dia_pal_9168_natan_whoyou_condition()
 {
-	if(MIS_ORсGREATWAR == LOG_Running)
+	if(MIS_ORCGREATWAR == LOG_Running)
 	{
 		return TRUE;
 	};
@@ -220,7 +231,7 @@ instance DIA_PAL_9168_NATAN_ZAMOK(C_Info)
 
 func int dia_pal_9168_natan_zamok_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && (CASTLEISFREE == FALSE) && (PALADINCASTELFREE == FALSE) && (CASTLEISDOWN == FALSE) && (KNOWABOUTGAROND == FALSE))
+	if((MIS_ORCGREATWAR == LOG_Running) && (CASTLEISFREE == FALSE) && (PALADINCASTELFREE == FALSE) && (CASTLEISDOWN == FALSE) && (KNOWABOUTGAROND == FALSE))
 	{
 		return TRUE;
 	};
@@ -386,7 +397,7 @@ instance DIA_PAL_9168_NATAN_ZAMOKKNOWN(C_Info)
 
 func int dia_pal_9168_natan_zamokknown_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && (CASTLEISFREE == FALSE) && (PALADINCASTELFREE == FALSE) && (CASTLEISDOWN == TRUE) && (NATATELLZAMOK == FALSE))
+	if((MIS_ORCGREATWAR == LOG_Running) && (CASTLEISFREE == FALSE) && (PALADINCASTELFREE == FALSE) && (CASTLEISDOWN == TRUE) && (NATATELLZAMOK == FALSE))
 	{
 		return TRUE;
 	};
@@ -591,7 +602,7 @@ instance DIA_PAL_9168_NATAN_HOWAROUND(C_Info)
 
 func int dia_pal_9168_natan_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && (Npc_KnowsInfo(hero,dia_pal_9168_natan_zamok) || Npc_KnowsInfo(hero,dia_pal_9168_natan_zamokknown)))
+	if((MIS_ORCGREATWAR == LOG_Running) && (Npc_KnowsInfo(hero,dia_pal_9168_natan_zamok) || Npc_KnowsInfo(hero,dia_pal_9168_natan_zamokknown)))
 	{
 		return TRUE;
 	};

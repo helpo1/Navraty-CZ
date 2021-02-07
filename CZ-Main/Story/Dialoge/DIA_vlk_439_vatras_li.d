@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(3x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+*/
+
+
 
 var int dia_addon_vatras_pissoffforevver_li_onetime;
 var int trd_vatli;
@@ -168,15 +179,15 @@ func void dia_vatras_li_talente_circles()
 {
 	Info_ClearChoices(dia_vatras_li_talente);
 	Info_AddChoice(dia_vatras_li_talente,Dialog_Back,dia_vatras_li_talente_back);
-	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 3)
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 3) && (CanLearnMagicCircleNext_ABCZ(4) == TRUE))
 	{
 		Info_AddChoice(dia_vatras_li_talente,B_BuildLearnString("4. kruh magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,4)),dia_vatras_li_talente_circle_4);
 	};
-	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 4)
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 4) && (CanLearnMagicCircleNext_ABCZ(5) == TRUE))
 	{
 		Info_AddChoice(dia_vatras_li_talente,B_BuildLearnString("5. kruh magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,5)),dia_vatras_li_talente_circle_5);
 	};
-	if(Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5)
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5) && (CanLearnMagicCircleNext_ABCZ(6) == TRUE))
 	{
 		Info_AddChoice(dia_vatras_li_talente,B_BuildLearnString("6. kruh magie",B_GetLearnCostTalent(other,NPC_TALENT_MAGE,6)),dia_vatras_li_talente_circle_6);
 	};

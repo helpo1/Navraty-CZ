@@ -4,6 +4,11 @@
 /*   (...)\Menu\Menu_Opt_Controls.d   */
 
 
+v1.01:
+
+instance MENU_ITEM_KEY_TURNACRO - dovysvětlení nejasné formulace
+
+
 v1.00:
 
 (23x) - upraveno pořadí a zarovnání možností

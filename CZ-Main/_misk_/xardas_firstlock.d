@@ -2,6 +2,16 @@
 
 /*
 
+v1.01:
+
+(4x) CZ_Settings_Diff_Init, CZ_Settings_Diff_Save - přidáno nastavení obtížnosti v .ini souboru
+(2x) Hero_Hunger - upraveny počáteční hodnoty hladu
+(2x) Hero_Thirst - upraveny počáteční hodnoty žízně
+(2x) Hero_Fatigue - upraveny počáteční hodnoty únavy
+(4x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+func void dia_xardas_canbenecromok_yes - sjednoceny podmínky přijetí k nekromantům
+
+
 v1.00:
 
 func void dia_xardas_runen_6 - opraven název
@@ -298,20 +308,20 @@ func void DIA_Xardas_FirstEXIT_Legend()
 	AI_Output(self,other,"DIA_Xardas_FirstEXIT_LastWordsMe_01_01");	//Pamatuj! Nesejde na tom, co jsi už vykonal předtím nebo kým jsi byl. Jde o to, co máš nyní před sebou...
 	GivePack = TRUE;
 	AI_StopProcessInfos(self);
-	XP_PER_VICTORY = 10;
-	NoHPForLevel = TRUE;
+	XP_PER_VICTORY = 10;	// deprecated
+	NoHPForLevel = TRUE;	// deprecated
 	SURPRISE = 0;
 	SBMODE = 1;
-	SLEEPDIS = 9;
+	SLEEPDIS = 9;	// deprecated
 	CheckStatusHero[0] = SBMODE;
 	CheckLevelOption[CH_XP_PER_VICTORY] = XP_PER_VICTORY;
 	CheckLevelOption[CH_SURPRISE] = SURPRISE;
 	CheckLevelOption[CH_SLEEPDIS] = SLEEPDIS;
-	TrapStatus = TRUE;
+	TrapStatus = TRUE;	// deprecated
 	CanChangeItem = TRUE;
-	Hero_Hunger = TRUE;
-	Hero_Thirst = TRUE;
-	Hero_Fatigue = TRUE;
+	Hero_Hunger = 10;
+	Hero_Thirst = 5;
+	Hero_Fatigue = 10;
 	StatusDayNow = Wld_GetDay();
 	AI_StopProcessInfos(self);
 	B_Kapitelwechsel(1,NEWWORLD_ZEN);
@@ -322,6 +332,9 @@ func void DIA_Xardas_FirstEXIT_Legend()
 	{
 		CheckRealMode[1] = TRUE;
 	};
+
+	CZ_Settings_Diff_Init();
+	CZ_Settings_Diff_Save();
 
 	Wld_InsertNpc(Oster,"NW_XARDAS_TOWER_WATERFALL_01");
 	Wld_InsertNpc(Oster,"NW_XARDAS_VALLEY_08");
@@ -353,20 +366,20 @@ func void DIA_Xardas_FirstEXIT_CantStopMe()
 	AI_StopProcessInfos(self);
 	Mob_CreateItems("XAR_CHEST",ItFo_Apple,3);
 	Mob_CreateItems("XAR_CHEST",ItMi_Gold,20);
-	XP_PER_VICTORY = 15;
-	NoHPForLevel = TRUE;
+	XP_PER_VICTORY = 15;	// deprecated
+	NoHPForLevel = TRUE;	// deprecated
 	SURPRISE = 0;
 	SBMODE = 1;
-	SLEEPDIS = 9;
+	SLEEPDIS = 9;	// deprecated
 	CheckStatusHero[0] = SBMODE;
 	CheckLevelOption[CH_XP_PER_VICTORY] = XP_PER_VICTORY;
 	CheckLevelOption[CH_SURPRISE] = SURPRISE;
 	CheckLevelOption[CH_SLEEPDIS] = SLEEPDIS;
-	TrapStatus = TRUE;
+	TrapStatus = TRUE;	// deprecated
 	CanChangeItem = TRUE;
-	Hero_Hunger = TRUE;
-	Hero_Thirst = TRUE;
-	Hero_Fatigue = TRUE;
+	Hero_Hunger = 10;
+	Hero_Thirst = 5;
+	Hero_Fatigue = 10;
 	StatusDayNow = Wld_GetDay();
 	hero.attribute[ATR_MANA_MAX] = 20;
 	hero.aivar[REAL_MANA_MAX] = 20;
@@ -379,6 +392,10 @@ func void DIA_Xardas_FirstEXIT_CantStopMe()
 	AI_StopProcessInfos(self);
 	B_Kapitelwechsel(1,NEWWORLD_ZEN);
 	Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
+
+	CZ_Settings_Diff_Init();
+	CZ_Settings_Diff_Save();
+
 	Wld_InsertNpc(Scavenger,"NW_XARDAS_PATH_FARM1_08_01");
 	Wld_InsertNpc(Scavenger,"NW_XARDAS_TOWER_WATERFALL_01");
 	Wld_InsertNpc(Scavenger,"NW_XARDAS_VALLEY_08");
@@ -414,15 +431,15 @@ func void DIA_Xardas_FirstEXIT_DontKnow()
 	AI_Output(self,other,"DIA_Xardas_FirstEXIT_LastWordsMe_01_01");	//Pamatuj! Nesejde na tom, co jsi už vykonal předtím nebo kým jsi byl. Jde o to, co máš nyní před sebou...
 	AI_Print(concatText);
 	AI_StopProcessInfos(self);
-	XP_PER_VICTORY = 20;
+	XP_PER_VICTORY = 20;	// deprecated
 	SBMODE = 2;
-	SLEEPDIS = 24;
+	SLEEPDIS = 24;	// deprecated
 	SURPRISE = 10;
 	CheckStatusHero[0] = SBMODE;
 	CheckLevelOption[CH_XP_PER_VICTORY] = XP_PER_VICTORY;
 	CheckLevelOption[CH_SURPRISE] = SURPRISE;
 	CheckLevelOption[CH_SLEEPDIS] = SLEEPDIS;
-	TrapStatus = TRUE;
+	TrapStatus = TRUE;	// deprecated
 	CanChangeItem = TRUE;
 	Mob_CreateItems("XAR_CHEST",ItFo_Apple,5);
 	Mob_CreateItems("XAR_CHEST",ItMi_Gold,200);
@@ -445,6 +462,10 @@ func void DIA_Xardas_FirstEXIT_DontKnow()
 	AI_StopProcessInfos(self);
 	B_Kapitelwechsel(1,NEWWORLD_ZEN);
 	Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
+
+	CZ_Settings_Diff_Init();
+	CZ_Settings_Diff_Save();
+
 	Wld_InsertNpc(Molerat,"NW_XARDAS_PATH_FARM1_08_01");
 	Wld_InsertNpc(Molerat,"NW_XARDAS_TOWER_WATERFALL_01");
 	Wld_InsertNpc(Molerat,"NW_XARDAS_VALLEY_08");
@@ -487,15 +508,15 @@ func void DIA_Xardas_FirstEXIT_NeedHelp()
 	AI_Output(self,other,"DIA_Xardas_FirstEXIT_NeedHelp_01_16");	//To se dozvíš, jakmile si s ním promluvíš a budeš pozorně poslouchat.
 	AI_Output(self,other,"DIA_Xardas_FirstEXIT_LastWordsMe_01_01");	//Pamatuj! Nesejde na tom, co jsi už vykonal předtím nebo kým jsi byl. Jde o to, co máš nyní před sebou...
 	AI_StopProcessInfos(self);
-	XP_PER_VICTORY = 25;
+	XP_PER_VICTORY = 25;	// deprecated
 	SBMODE = 4;
-	SLEEPDIS = 24;
+	SLEEPDIS = 24;	// deprecated
 	SURPRISE = 10;
 	CheckStatusHero[0] = SBMODE;
 	CheckLevelOption[CH_XP_PER_VICTORY] = XP_PER_VICTORY;
 	CheckLevelOption[CH_SURPRISE] = SURPRISE;
 	CheckLevelOption[CH_SLEEPDIS] = SLEEPDIS;
-	TrapStatus = FALSE;
+	TrapStatus = FALSE;	// deprecated
 	CanChangeItem = TRUE;
 	Mob_CreateItems("XAR_CHEST",ItMi_Gold,200);
 	hero.attribute[ATR_STRENGTH] = 30;
@@ -517,6 +538,10 @@ func void DIA_Xardas_FirstEXIT_NeedHelp()
 	AI_StopProcessInfos(self);
 	B_Kapitelwechsel(1,NEWWORLD_ZEN);
 	Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
+
+	CZ_Settings_Diff_Init();
+	CZ_Settings_Diff_Save();
+
 	Wld_InsertNpc(Rabbit,"NW_XARDAS_PATH_FARM1_08_01");
 	Wld_InsertNpc(Rabbit,"NW_XARDAS_TOWER_WATERFALL_01");
 	Wld_InsertNpc(Rabbit,"NW_XARDAS_VALLEY_08");
@@ -2474,19 +2499,19 @@ func void dia_xardas_circle_info()
 	Info_ClearChoices(DIA_Xardas_CIRCLE);
 	Info_AddChoice(DIA_Xardas_CIRCLE,Dialog_Back,DIA_Xardas_CIRCLE_Back);
 
-	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) < 1) && (Kapitel >= 1))
+	if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) < 1) && (CanLearnMagicCircleNext_ABCZ(1) == TRUE))
 	{
 		Info_AddChoice(DIA_Xardas_CIRCLE,"1. kruh magie (VB: 20)",DIA_Xardas_CIRCLE_1);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1) && (Kapitel >= 2))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 1) && (CanLearnMagicCircleNext_ABCZ(2) == TRUE))
 	{
 		Info_AddChoice(DIA_Xardas_CIRCLE,"2. kruh magie (VB: 30)",DIA_Xardas_CIRCLE_2);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2) && (Kapitel >= 3))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 2) && (CanLearnMagicCircleNext_ABCZ(3) == TRUE))
 	{
 		Info_AddChoice(DIA_Xardas_CIRCLE,"3. kruh magie (VB: 40)",DIA_Xardas_CIRCLE_3);
 	}
-	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 3) && (MIS_ReadyforChapter4 == TRUE))
+	else if((Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) == 3) && (CanLearnMagicCircleNext_ABCZ(4) == TRUE))
 	{
 		Info_AddChoice(DIA_Xardas_CIRCLE,"4. kruh magie (VB: 60)",DIA_Xardas_CIRCLE_4);
 	}
@@ -2677,7 +2702,7 @@ func void dia_xardas_teach_mana_1()
 
 	if((Kapitel >= 2) && (hero.guild == GIL_KDM) && (VATRAS_TEACHREGENMANA == FALSE))
 	{
-		Info_AddChoice(DIA_Xardas_TEACH_MANA,"Regenerace many (VB: 20)",DIA_Xardas_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_Xardas_TEACH_MANA,"Regenerace many (VB: 15)",DIA_Xardas_TEACH_MANA_Regen);
 	};
 };
 
@@ -2691,7 +2716,7 @@ func void dia_xardas_teach_mana_5()
 
 	if((Kapitel >= 2) && (hero.guild == GIL_KDM) && (VATRAS_TEACHREGENMANA == FALSE))
 	{
-		Info_AddChoice(DIA_Xardas_TEACH_MANA,"Regenerace many (VB: 20)",DIA_Xardas_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_Xardas_TEACH_MANA,"Regenerace many (VB: 15)",DIA_Xardas_TEACH_MANA_Regen);
 	};
 };
 
@@ -3484,51 +3509,59 @@ func void dia_xardas_canbenecromok_info()
 
 func void dia_xardas_canbenecromok_yes()
 {
-	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Xardas_CanBeNecromOk_Yes_01_00");	//Ano.
-	AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_01");	//Staniž se!
-	AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_02");	//Z moci mé svěřené Beliarem tě přijímám do řad Temného kultu.
-	AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_03");	//Nechť ti temnota ukáže cestu ke své duši.
-	AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_04");	//To je vše! Nyní jsi součástí temnoty a tvůj život je s ní neoddělitelně spojen.
-	AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_05");	//Musíš však pochopit, že to z tebe ještě nedělá mága.
-	AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_06");	//Cvič se a uč se a jednou se možná staneš velkým temným mágem.
-	AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_07");	//Mezitím přijmi toto roucho, jako znamení, že nyní patříš do našeho kruhu.
-	AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_08");	//A ještě jedna věc. Protože jsi nyní můj žák, vezmi si tento prsten.
-	B_GiveInvItems(self,other,ITRI_XARDASPLACE,1);
-	AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_09");	//Umožní ti dostat se do mé věže rychleji, než si dokážeš představit.
-
-	if(CanTeachTownMaster == FALSE)
+	if(hero.level >= 10)
 	{
-		CanTeachTownMaster = TRUE;
-		MIS_PathFromDown = LOG_SUCCESS;
-		Log_SetTopicStatus(TOPIC_PathFromDown,LOG_SUCCESS);
-	};
+		B_GivePlayerXP(200);
+		AI_Output(other,self,"DIA_Xardas_CanBeNecromOk_Yes_01_00");	//Ano.
+		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_01");	//Staniž se!
+		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_02");	//Z moci mé svěřené Beliarem tě přijímám do řad Temného kultu.
+		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_03");	//Nechť ti temnota ukáže cestu ke své duši.
+		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_04");	//To je vše! Nyní jsi součástí temnoty a tvůj život je s ní neoddělitelně spojen.
+		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_05");	//Musíš však pochopit, že to z tebe ještě nedělá mága.
+		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_06");	//Cvič se a uč se a jednou se možná staneš velkým temným mágem.
+		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_07");	//Mezitím přijmi toto roucho, jako znamení, že nyní patříš do našeho kruhu.
+		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_08");	//A ještě jedna věc. Protože jsi nyní můj žák, vezmi si tento prsten.
+		B_GiveInvItems(self,other,ITRI_XARDASPLACE,1);
+		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_09");	//Umožní ti dostat se do mé věže rychleji, než si dokážeš představit.
 
-	other.guild = GIL_NDM;
-	CheckHeroGuild[0] = TRUE;
-	Snd_Play("LEVELUP");
-	B_GiveInvItems(self,other,itar_ndm_l,1);
-	SLD_Aufnahme = LOG_OBSOLETE;
-	KDF_Aufnahme = LOG_OBSOLETE;
-	MIL_Aufnahme = LOG_OBSOLETE;
-	MIS_PSICAMPJOIN = LOG_OBSOLETE;
-	MIS_BECOMEKDW = LOG_OBSOLETE;
+		if(CanTeachTownMaster == FALSE)
+		{
+			CanTeachTownMaster = TRUE;
+			MIS_PathFromDown = LOG_SUCCESS;
+			Log_SetTopicStatus(TOPIC_PathFromDown,LOG_SUCCESS);
+		};
 
-	Log_SetTopicStatus(TOPIC_BecomeMIL,LOG_OBSOLETE);
-	Log_SetTopicStatus(TOPIC_BecomeSLD,LOG_OBSOLETE);
-	Log_SetTopicStatus(TOPIC_BecomeKdF,LOG_OBSOLETE);
-	Log_SetTopicStatus(TOPIC_PSICAMPJOIN,LOG_OBSOLETE);
-	Log_SetTopicStatus(TOPIC_BECOMEKDW,LOG_OBSOLETE);
+		other.guild = GIL_NDM;
+		CheckHeroGuild[0] = TRUE;
+		Snd_Play("LEVELUP");
+		B_GiveInvItems(self,other,itar_ndm_l,1);
+		SLD_Aufnahme = LOG_OBSOLETE;
+		KDF_Aufnahme = LOG_OBSOLETE;
+		MIL_Aufnahme = LOG_OBSOLETE;
+		MIS_PSICAMPJOIN = LOG_OBSOLETE;
+		MIS_BECOMEKDW = LOG_OBSOLETE;
 
-	if(MIS_SLDRESPEKT == LOG_Running)
+		Log_SetTopicStatus(TOPIC_BecomeMIL,LOG_OBSOLETE);
+		Log_SetTopicStatus(TOPIC_BecomeSLD,LOG_OBSOLETE);
+		Log_SetTopicStatus(TOPIC_BecomeKdF,LOG_OBSOLETE);
+		Log_SetTopicStatus(TOPIC_PSICAMPJOIN,LOG_OBSOLETE);
+		Log_SetTopicStatus(TOPIC_BECOMEKDW,LOG_OBSOLETE);
+
+		if(MIS_SLDRESPEKT == LOG_Running)
+		{
+			MIS_SLDRESPEKT = LOG_OBSOLETE;
+			Log_SetTopicStatus(TOPIC_SLDRespekt,LOG_OBSOLETE);
+		};
+
+		XARDAS_NDM = TRUE;
+		B_LogEntry(TOPIC_BECOMEKDM,"Xardas ze mě udělal novice Temnoty.");
+		Info_ClearChoices(dia_xardas_canbenecromok);
+	}
+	else
 	{
-		MIS_SLDRESPEKT = LOG_OBSOLETE;
-		Log_SetTopicStatus(TOPIC_SLDRespekt,LOG_OBSOLETE);
+		AI_Output(self,other,"DIA_Xardas_No_Level_00_01");	//Ale nejprve musíš získat zkušenosti - nemám čas vysvětlovat ti základní věci.
+		B_LogEntry(TOPIC_BECOMEKDM,"Pokud se chci stát žákem Xardase, potřebuji získat zkušenosti (potřebná úroveň hrdiny nejméně 10.");
 	};
-
-	XARDAS_NDM = TRUE;
-	B_LogEntry(TOPIC_BECOMEKDM,"Xardas ze mě udělal novice Temnoty.");
-	Info_ClearChoices(dia_xardas_canbenecromok);
 };
 
 func void dia_xardas_canbenecromok_no()

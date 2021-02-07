@@ -475,8 +475,8 @@ func void PC_Make_RuneBlank_Info()
 	Info_ClearChoices(PC_Make_RuneBlank);
 	Info_AddChoice(PC_Make_RuneBlank,Dialog_Back,PC_Make_RuneBlank_BACK);
 	Info_AddChoice(PC_Make_RuneBlank,"Obyčejný runový kámen (5 úlomků runového kamene)",PC_Make_RuneBlank_01);
-	Info_AddChoice(PC_Make_RuneBlank,"Starší runový kámen (10 úlomků runového kamene, 1 rudný ingot)",PC_Make_RuneBlank_02);
-	Info_AddChoice(PC_Make_RuneBlank,"Vyšší runový kámen (20 úlomků runového kamene, 2 rudný ingot)",PC_Make_RuneBlank_03);
+	Info_AddChoice(PC_Make_RuneBlank,"Starší runový kámen (10 úlomků runového kamene, 1 ingot magické rudy)",PC_Make_RuneBlank_02);
+	Info_AddChoice(PC_Make_RuneBlank,"Vyšší runový kámen (15 úlomků runového kamene, 2 ingoty magické rudy)",PC_Make_RuneBlank_03);
 
 	if(Npc_HasItems(hero,ItMi_RuneBlank) >= 1)
 	{

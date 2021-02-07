@@ -735,7 +735,7 @@ instance DIA_Mil_360_Miliz_PERM(C_Info)
 	condition = DIA_Mil_360_Miliz_PERM_Condition;
 	information = DIA_Mil_360_Miliz_PERM_Info;
 	permanent = TRUE;
-	description = "Jak se máš?";
+	description = "Jak to jde?";
 };
 
 func int DIA_Mil_360_Miliz_PERM_Condition()
@@ -748,8 +748,8 @@ func int DIA_Mil_360_Miliz_PERM_Condition()
 
 func void DIA_Mil_360_Miliz_PERM_Info()
 {
-	AI_Output(other,self,"DIA_Mil_360_Miliz_PERM_15_00");	//Jak se máš?
-	AI_Output(self,other,"DIA_Mil_360_Miliz_PERM_03_01");	//V pořádku příteli.
+	AI_Output(other,self,"DIA_Mil_360_Miliz_PERM_15_00");	//Jak to jde?
+	AI_Output(self,other,"DIA_Mil_360_Miliz_PERM_03_01");	//Vše je v pořádku, příteli.
 };
 
 instance DIA_Mil_361_Miliz_EXIT(C_Info)
@@ -793,7 +793,7 @@ func int DIA_Mil_361_Miliz_Hallo_Condition()
 func void DIA_Mil_361_Miliz_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Mil_309_Stadtwache_Hallo_15_00");	//Jak to jde?
-	AI_Output(self,other,"DIA_Mil_309_Stadtwache_Hallo_06_01");	//V pořádku! Ale musíme se mít na pozoru.
+	AI_Output(self,other,"DIA_Mil_309_Stadtwache_Hallo_06_01");	//Všechno je v pořádku! Ale musíme zůstat ostražití.
 };
 
 instance DIA_Mil_363_Miliz_EXIT(C_Info)

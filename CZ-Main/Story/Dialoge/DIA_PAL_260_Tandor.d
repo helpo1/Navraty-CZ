@@ -45,7 +45,7 @@ func int DIA_Tandor_Hallo_Condition()
 
 func void DIA_Tandor_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Tandor_Hallo_08_00");	//Ty jsi prošel průsmykem? Dobrá práce. Ztratili jsme team mnoho dobrých chlapů.
+	AI_Output(self,other,"DIA_Tandor_Hallo_08_00");	//Ty jsi prošel průsmykem? Dobrá práce. Ztratili jsme tam mnoho dobrých chlapů.
 	AI_Output(self,other,"DIA_Tandor_Hallo_08_01");	//Vím jaké to je. Doprovázel jsem průzkumnou jednotku.
 	AI_Output(self,other,"DIA_Tandor_Hallo_08_02");	//Máš dobrou zbraň? Jestli ne, jsem tvůj člověk - pár jich tu mám.
 	Log_CreateTopic(TOPIC_Trader_OC,LOG_NOTE);

@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+func int DIA_Thekla_Baker_Condition - upraveny podmínky dialogu
+
+*/
+
+
 
 instance DIA_Thekla_EXIT(C_Info)
 {
@@ -76,7 +87,7 @@ instance DIA_Thekla_Baker(C_Info)
 
 func int DIA_Thekla_Baker_Condition()
 {
-	if((Npc_KnowsInfo(other,DIA_Thekla_Lecker) == TRUE) && (BakerSee == TRUE))
+	if((Npc_KnowsInfo(other,DIA_Thekla_Lecker) == TRUE)) // && (BakerSee == TRUE))
 	{
 		return TRUE;
 	};

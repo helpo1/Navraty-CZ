@@ -29,7 +29,7 @@ func void DIA_Addon_Cronos_ADW_EXIT_Info()
 		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_05");	//Aspoň můžu doufat, že se vrátí v jednom kuse.
 		AI_Output(other,self,"DIA_Addon_Cronos_EscortToPirate_01_06");	//Nemůžu ti nic slíbit. Jsou to dost nebezpečná místa.
 		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_07");	//Nicméně se o to musíš pokusit. Je to pro nás všechny velmi důležité.
-		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_08");	//Můj muž se jmenuje Severin.
+		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_08");	//Můj muž se jmenuje Nort.
 		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_09");	//Najdeš ho nedaleko velkého chrámu, který je na druhé straně plošiny.
 		MIS_EscortToPirate = LOG_Running;
 		Log_CreateTopic(TOPIC_EscortToPirate,LOG_MISSION);
@@ -226,7 +226,7 @@ instance DIA_Addon_Cronos_Escort_Done(C_Info)
 	nr = 1;
 	condition = DIA_Addon_Cronos_Escort_Done_Condition;
 	information = DIA_Addon_Cronos_Escort_Done_Info;
-	description = "Přivedl jsem Severina do tábora pirátů.";
+	description = "Přivedl jsem Norta do tábora pirátů.";
 };
 
 func int DIA_Addon_Cronos_Escort_Done_Condition()
@@ -240,7 +240,7 @@ func int DIA_Addon_Cronos_Escort_Done_Condition()
 func void DIA_Addon_Cronos_Escort_Done_Info()
 {
 	KronosKnowEscort = TRUE;
-	AI_Output(other,self,"DIA_Addon_Cronos_Escort_Done_01_00");	//Přivedl jsem Severina do tábora pirátů.
+	AI_Output(other,self,"DIA_Addon_Cronos_Escort_Done_01_00");	//Přivedl jsem Norta do tábora pirátů.
 	AI_Output(self,other,"DIA_Addon_Cronos_Escort_Done_01_01");	//Dobře! Teď už jen musíme počkat na první dodávky.
 };
 
@@ -454,7 +454,7 @@ func void DIA_NDW_8161_Nort_InCamp_Info()
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	MIS_EscortToPirate = LOG_Success;
 	Log_SetTopicStatus(TOPIC_EscortToPirate,LOG_Success);
-	B_LogEntry(TOPIC_EscortToPirate,"Doprovodil jsem Severina do tábora pirátů.");
+	B_LogEntry(TOPIC_EscortToPirate,"Doprovodil jsem Norta do tábora pirátů.");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"PirateCamp");
 };

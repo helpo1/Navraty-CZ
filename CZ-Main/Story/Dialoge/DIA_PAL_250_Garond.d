@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(4x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
 
 instance DIA_garond_EXIT(C_Info)
 {
@@ -1951,7 +1962,7 @@ instance DIA_GAROND_CAPTURED(C_Info)
 
 func int dia_garond_captured_condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (MIS_ORсGREATWAR == LOG_Running))
+	if(Npc_IsInState(self,ZS_Talk) && (MIS_ORCGREATWAR == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -1996,7 +2007,7 @@ instance DIA_GAROND_ABOUTSLAVE(C_Info)
 
 func int DIA_GAROND_ABOUTSLAVE_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && (PALADINCASTELFREE == FALSE) && (CASTLEISFREE == FALSE))
+	if((MIS_ORCGREATWAR == LOG_Running) && (PALADINCASTELFREE == FALSE) && (CASTLEISFREE == FALSE))
 	{
 		return TRUE;
 	};
@@ -2023,7 +2034,7 @@ instance DIA_GAROND_FINDAWAY(C_Info)
 
 func int dia_garond_findaway_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && (PALADINCASTELFREE == FALSE) && (CASTLEISFREE == FALSE))
+	if((MIS_ORCGREATWAR == LOG_Running) && (PALADINCASTELFREE == FALSE) && (CASTLEISFREE == FALSE))
 	{
 		return TRUE;
 	};
@@ -2054,7 +2065,7 @@ instance DIA_GAROND_PALADINFREE(C_Info)
 
 func int dia_garond_paladinfree_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && ((CANFREEPALADIN == TRUE) || (CASTLEISFREE == TRUE)))
+	if((MIS_ORCGREATWAR == LOG_Running) && ((CANFREEPALADIN == TRUE) || (CASTLEISFREE == TRUE)))
 	{
 		return TRUE;
 	};

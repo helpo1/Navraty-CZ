@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(3x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
 
 instance DIA_Kurgan_EXIT(C_Info)
 {
@@ -261,7 +272,7 @@ instance DIA_KURGAN_THANKSFORHELP(C_Info)
 
 func int dia_kurgan_thanksforhelp_condition()
 {
-	if(MIS_ORсGREATWAR == LOG_Running)
+	if(MIS_ORCGREATWAR == LOG_Running)
 	{
 		return TRUE;
 	};
@@ -288,7 +299,7 @@ instance DIA_KURGAN_WHYHERE(C_Info)
 
 func int dia_kurgan_whyhere_condition()
 {
-	if(MIS_ORсGREATWAR == LOG_Running)
+	if(MIS_ORCGREATWAR == LOG_Running)
 	{
 		return TRUE;
 	};
@@ -316,7 +327,7 @@ instance DIA_KURGAN_HOWAROUND(C_Info)
 
 func int dia_kurgan_howaround_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && Npc_KnowsInfo(other,dia_kurgan_whyhere) && (DGJJOINPALADIN == FALSE))
+	if((MIS_ORCGREATWAR == LOG_Running) && Npc_KnowsInfo(other,dia_kurgan_whyhere) && (DGJJOINPALADIN == FALSE))
 	{
 		return TRUE;
 	};

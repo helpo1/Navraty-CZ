@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+func int dia_jack_li_bringfooddone_condition - upraveny podmínky dialogu
+
+*/
+
+
 
 instance DIA_JACK_LI_KAP3_EXIT(C_Info)
 {
@@ -879,7 +890,7 @@ instance DIA_JACK_LI_BRINGFOODDONE(C_Info)
 
 func int dia_jack_li_bringfooddone_condition()
 {
-	if((MIS_BRINGFOOD == LOG_Running) && (GORNTELLABOUTMEAT == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 24))
+	if((MIS_BRINGFOOD == LOG_Running) && (GORNTELLABOUTMEAT == TRUE) && ((Npc_HasItems(hero,ItFoMuttonRaw) >= 24) || (Npc_HasItems(hero,ItFoMutton) >= 24)))
 	{
 		return TRUE;
 	};

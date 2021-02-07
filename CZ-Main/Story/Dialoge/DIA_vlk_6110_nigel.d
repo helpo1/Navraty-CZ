@@ -196,7 +196,7 @@ func void dia_nigel_hallo_deal()
 	AI_Output(self,other,"DIA_Nigel_Hallo_Deal_01_05");	//A dá se na tom vydělat.
 	AI_Output(self,other,"DIA_Nigel_Hallo_Deal_01_06");	//Nicméně je to riziko, už jen kvůli těm lupičům!
 	AI_Output(other,self,"DIA_Nigel_Hallo_Deal_01_07");	//Hmm... A jaký bude můj podíl?
-	AI_Output(self,other,"DIA_Nigel_Hallo_Deal_01_08");	//Myslím, že bych ti mohl dát tisíc zlatých.
+	AI_Output(self,other,"DIA_Nigel_Hallo_Deal_01_08");	//Myslím, že bych ti mohl dát sto zlatých.
 	AI_Output(self,other,"DIA_Nigel_Hallo_Deal_01_09");	//To je dost, ne?
 	Info_ClearChoices(dia_nigel_hallo);
 	Info_AddChoice(dia_nigel_hallo,"Dohodnuto.",dia_nigel_hallo_dealyes);
@@ -227,7 +227,7 @@ func void dia_nigel_hallo_dealyes()
 	MIS_NIGELMATTER = LOG_Running;
 	Log_CreateTopic(TOPIC_NIGELMATTER,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_NIGELMATTER,LOG_Running);
-	B_LogEntry(TOPIC_NIGELMATTER,"Nigel mi udělal dobrou nabídku, když mu vrátím peníze. Je si jistý, že je dokáže investovat tak, že zaplatí dluh a ještě mi dá tisíc zlatých. Rozhodl jsem se s ním souhlasit a až najdu ty banidity, donesu jejich měšec Nigelovi.");
+	B_LogEntry(TOPIC_NIGELMATTER,"Nigel mi udělal dobrou nabídku, když mu vrátím peníze. Je si jistý, že je dokáže investovat tak, že zaplatí dluh a ještě mi dá sto zlatých. Rozhodl jsem se s ním souhlasit a až najdu ty banidity, donesu jejich měšec Nigelovi.");
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(bdt_6121_nigelband_01,"NW_CITY_TO_FOREST_04_08");
 	Wld_InsertNpc(bdt_6122_nigelband_02,"NW_CITY_TO_FOREST_04_09");
@@ -311,7 +311,7 @@ func void dia_nigel_moneynow_info()
 		AI_Output(self,other,"DIA_Nigel_MoneyNow_01_01");	//Jak jsme se dohodli.
 		AI_Output(self,other,"DIA_Nigel_MoneyNow_01_02");	//To je měšec, jenž jsi mi donesl...
 		B_GiveInvItems(self,other,itse_nigelpocket,1);
-		AI_Output(self,other,"DIA_Nigel_MoneyNow_01_0A");	//... a k němu ještě těchto tisíc zlatých!
+		AI_Output(self,other,"DIA_Nigel_MoneyNow_01_0A");	//... a k němu ještě těchto sto zlatých!
 		B_GiveInvItems(self,other,ItMi_Gold,100);
 		AI_Output(self,other,"DIA_Nigel_MoneyNow_01_03");	//Jsi spokojen?!
 		AI_Output(other,self,"DIA_Nigel_MoneyNow_01_04");	//Ano, jsi opravdu dobrý obchodník!

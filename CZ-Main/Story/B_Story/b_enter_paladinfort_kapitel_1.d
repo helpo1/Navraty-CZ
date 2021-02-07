@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
 
 func void b_enter_paladinfort_kapitel_1()
 {
@@ -232,7 +243,7 @@ func void b_enter_paladinfort()
 	{
 		b_enter_paladinfort_kapitel_6();
 	};
-	if((MIS_ORсGREATWAR == LOG_Running) && (PLACEPALADINSTOFORT == FALSE))
+	if((MIS_ORCGREATWAR == LOG_Running) && (PLACEPALADINSTOFORT == FALSE))
 	{
 		Wld_InsertNpc(pal_2000_hagen,"LGR_RATSHAUS_13_97");
 		Wld_InsertNpc(pal_2010_ingmar,"FP_INGMAR");

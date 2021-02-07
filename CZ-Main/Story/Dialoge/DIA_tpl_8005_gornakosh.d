@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
+
 var int CheckTadeNaKosh;
 
 func void B_GorNaKoshEquipWeapon(var C_Npc slf)
@@ -1295,7 +1307,7 @@ func void dia_gornakosh_gatherarmygo_info()
 	AI_Output(self,other,"DIA_GorNaKosh_GatherArmyGo_01_02");	//Ano, běž vyřídit mou odpověď lordu Hagenovi.
 	AI_Output(self,other,"DIA_GorNaKosh_GatherArmyGo_01_03");	//A zjisti kde má v plánu se skřety bojovat.
 	TPL_JOINHAGEN = TRUE;
-	B_LogEntry(TOPIC_ORсGREATWAR,"Bratrstvo se připojí k paladinům. Měl bych to říci lordu Hagenovi!");
+	B_LogEntry(TOPIC_ORCGREATWAR,"Bratrstvo se připojí k paladinům. Měl bych to říci lordu Hagenovi!");
 	AI_StopProcessInfos(self);
 	B_GorNaKoshEquipWeapon(self);
 };

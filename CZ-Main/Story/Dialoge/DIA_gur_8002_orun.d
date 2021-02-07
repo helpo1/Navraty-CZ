@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
 
 instance DIA_BAALORUN_EXIT(C_Info)
 {
@@ -1830,27 +1842,27 @@ func void dia_baalorun_circle_info()
 	Info_ClearChoices(DIA_BaalOrun_CIRCLE);
 	Info_AddChoice(DIA_BaalOrun_CIRCLE,Dialog_Back,DIA_BaalOrun_CIRCLE_Back);
 
-	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 1) && (Kapitel >= 1))
+	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) < 1) && (CanLearnMagicCircleNext_ABCZ(1) == TRUE))
 	{
 		Info_AddChoice(DIA_BaalOrun_CIRCLE,"1. kruh magie (VB: 20)",DIA_BaalOrun_CIRCLE_1);
 	}
-	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 1) && (Kapitel >= 2))
+	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 1) && (CanLearnMagicCircleNext_ABCZ(2) == TRUE))
 	{
 		Info_AddChoice(DIA_BaalOrun_CIRCLE,"2. kruh magie (VB: 30)",DIA_BaalOrun_CIRCLE_2);
 	}
-	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 2) && (Kapitel >= 3))
+	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 2) && (CanLearnMagicCircleNext_ABCZ(3) == TRUE))
 	{
 		Info_AddChoice(DIA_BaalOrun_CIRCLE,"3. kruh magie (VB: 40)",DIA_BaalOrun_CIRCLE_3);
 	}
-	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 3) && (MIS_ReadyforChapter4 == TRUE))
+	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 3) && (CanLearnMagicCircleNext_ABCZ(4) == TRUE))
 	{
 		Info_AddChoice(DIA_BaalOrun_CIRCLE,"4. kruh magie (VB: 60)",DIA_BaalOrun_CIRCLE_4);
 	}
-	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 4) && (Kapitel >= 5))
+	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 4) && (CanLearnMagicCircleNext_ABCZ(5) == TRUE))
 	{
 		Info_AddChoice(DIA_BaalOrun_CIRCLE,"5. kruh magie (VB: 80)",DIA_BaalOrun_CIRCLE_5);
 	}
-	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5) && (Kapitel >= 5) && (MIS_DarkOrden == LOG_Success) && (MIS_JarCurse == LOG_Success) && (MIS_URNAZULRAGE == LOG_SUCCESS))
+	else if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5) && (CanLearnMagicCircleNext_ABCZ(6) == TRUE))
 	{
 		Info_AddChoice(DIA_BaalOrun_CIRCLE,"6. kruh magie (VB: 100)",DIA_BaalOrun_CIRCLE_6);
 	}
@@ -2079,7 +2091,7 @@ func void dia_baalorun_teach_mana_1()
 
 	if((Kapitel >= 2) && (hero.guild == GIL_GUR) && (VATRAS_TEACHREGENMANA == FALSE))
 	{
-		Info_AddChoice(DIA_BaalOrun_TEACH_MANA,"Regenerace many (VB: 10, cena: 10000 zlatých)",DIA_BaalOrun_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_BaalOrun_TEACH_MANA,"Regenerace many (VB: 5, cena: 7500 zlatých)",DIA_BaalOrun_TEACH_MANA_Regen);
 	};
 };
 
@@ -2093,7 +2105,7 @@ func void dia_baalorun_teach_mana_5()
 
 	if((Kapitel >= 2) && (hero.guild == GIL_GUR) && (VATRAS_TEACHREGENMANA == FALSE))
 	{
-		Info_AddChoice(DIA_BaalOrun_TEACH_MANA,"Regenerace many (VB: 10, cena: 10000 zlatých)",DIA_BaalOrun_TEACH_MANA_Regen);
+		Info_AddChoice(DIA_BaalOrun_TEACH_MANA,"Regenerace many (VB: 5, cena: 7500 zlatých)",DIA_BaalOrun_TEACH_MANA_Regen);
 	};
 };
 
@@ -2150,7 +2162,7 @@ func void dia_baalorun_gatherarmy_info()
 	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_22");	//Musíš však pochopit, že Guru je primárně duchovní mentor Bratrstva a ne jeho válečník.
 	AI_Output(self,other,"DIA_BaalOrun_GatherArmy_01_23");	//Takže jdi za Gor Na Koshem a řekni mu moje slova. Všechno ostatní rozhodne on sám.
 	AI_Output(other,self,"DIA_BaalOrun_GatherArmy_01_24");	//Dobře, udělám to.
-	B_LogEntry(TOPIC_ORсGREATWAR,"Dokázal jsem Baala Oruna přesvědčit, že je nutné bojovat na straně paladinů. Teď si musím promluvit s Gor Na Koshem, učitelem kruhu templářů, a zjistit, kdy budou jeho vojáci připraveni vyrazit.");
+	B_LogEntry(TOPIC_ORCGREATWAR,"Dokázal jsem Baala Oruna přesvědčit, že je nutné bojovat na straně paladinů. Teď si musím promluvit s Gor Na Koshem, učitelem kruhu templářů, a zjistit, kdy budou jeho vojáci připraveni vyrazit.");
 };
 
 

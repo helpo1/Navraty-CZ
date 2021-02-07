@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+CZ_Settings_Diff_EnableTraps - přidání možnosti zapnout/vypnout pasti
+
+*/
+
+
 
 var int OpenChest_320;
 var int LvChest_LichKing_01;
@@ -496,7 +507,8 @@ func void Activate_Trap(var int ChestType,var int TrapType)
 	var int SpawnNecrom;
 	var int SBMODE_Damage;
 
-	if(TrapStatus == TRUE)
+	// if(TrapStatus == TRUE)
+	if(CZ_Settings_Diff_EnableTraps == TRUE)
 	{
 		if(hero.attribute[ATR_DEXTERITY] > 100)
 		{

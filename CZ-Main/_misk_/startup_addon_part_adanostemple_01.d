@@ -1,3 +1,16 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(2x) CZ_Settings_Diff_Update - přidána aktualizace nastavení obtížnosti z / do .ini souboru
+(2x) CZ_Settings_Other_Init() - přidána inicializace ostatních nastavení z / do .ini souboru
+(2x) GamblingAntiCheat_CZ - přidán anti-savescumming systém pro kostky (po vzoru Fallout: New Vegas)
+
+*/
+
+
 
 func void startup_addon_part_adanostemple_01()
 {
@@ -4399,6 +4412,10 @@ func void startup_global()
 	Game_InitGerman();
 	//Lego_Init(LeGo_FrameFunctions);
 	//init_once = 1;
+	
+	CZ_Settings_Diff_Update();
+	CZ_Settings_Other_Init();
+	GamblingAntiCheat_CZ = 300;
 };
 
 func void init_global()
@@ -4410,6 +4427,10 @@ func void init_global()
 	//	init_once = 1;
 	//	Lego_Init(LeGo_FrameFunctions);
 	//};  
+	
+	CZ_Settings_Diff_Update();
+	CZ_Settings_Other_Init();
+	GamblingAntiCheat_CZ = 300;
 };
 
 func void STARTUP_Testlevel()

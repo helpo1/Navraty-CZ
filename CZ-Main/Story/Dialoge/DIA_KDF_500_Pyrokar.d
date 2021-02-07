@@ -2,6 +2,13 @@
 
 /*
 
+v1.01:
+
+CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+(7x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+
 v1.00:
 
 func void DIA_Pyrokar_GIVEINNOSEYE_wer - opraven zápis do deníku
@@ -735,9 +742,9 @@ instance DIA_Pyrokar_TEACH(C_Info)
 
 func int DIA_Pyrokar_TEACH_Condition()
 {
-	if((hero.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5) && (Kapitel >= 5) && Npc_KnowsInfo(other,DIA_Pyrokar_Parlan))
+	if((hero.guild == GIL_KDF) && (Npc_GetTalentSkill(other,NPC_TALENT_MAGE) == 5) && Npc_KnowsInfo(other,DIA_Pyrokar_Parlan))
 	{
-		if((MIS_DarkOrden == LOG_Success) && (MIS_JarCurse == LOG_Success) && (MIS_URNAZULRAGE == LOG_SUCCESS))
+		if(CanLearnMagicCircleNext_ABCZ(6) == TRUE)
 		{
 			return TRUE;
 		};
@@ -2330,11 +2337,11 @@ func void dia_pyrokar_kapitelorcattack_what()
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_18");	//Poslední nadějí je pevnost Azgan, kde jsou zbylí paladinové.
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_19");	//Ale už delší dobu od nich nepřišla žádná zpráva. Takže situace je o to horší.
 	KAPITELORCATC = TRUE;
-	MIS_ORсGREATWAR = LOG_Running;
-	Log_CreateTopic(TOPIC_ORсGREATWAR,LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_ORсGREATWAR,LOG_Running);
-	B_LogEntry(TOPIC_ORсGREATWAR,"Pyrokar mi sdělil příšerné noviny - hned po našem odjezdu na Irdorath hordy skřetů zaútočili na Khorinis. Boj byl beznadějný a tak lord Hagen zavelil k ústupu do pevnosti Azgan. Město padlo a je teď plné skřetů...");
-	Log_AddEntry(TOPIC_ORсGREATWAR,"Mágové na tom také nejsou zrovna dobře - klášter už několik týdnů obléhají skřeti a nikdo neví jak dlouho ještě vydrží. Naštěstí aspoň zatím zůstala Onarova farma. Skřeti k ní sice ještě nedošli, ale rozbili poblíž tábor a pravděpodobně čekají na příležitost k útoku.");
+	MIS_ORCGREATWAR = LOG_Running;
+	Log_CreateTopic(TOPIC_ORCGREATWAR,LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_ORCGREATWAR,LOG_Running);
+	B_LogEntry(TOPIC_ORCGREATWAR,"Pyrokar mi sdělil příšerné noviny - hned po našem odjezdu na Irdorath hordy skřetů zaútočili na Khorinis. Boj byl beznadějný a tak lord Hagen zavelil k ústupu do pevnosti Azgan. Město padlo a je teď plné skřetů...");
+	Log_AddEntry(TOPIC_ORCGREATWAR,"Mágové na tom také nejsou zrovna dobře - klášter už několik týdnů obléhají skřeti a nikdo neví jak dlouho ještě vydrží. Naštěstí aspoň zatím zůstala Onarova farma. Skřeti k ní sice ještě nedošli, ale rozbili poblíž tábor a pravděpodobně čekají na příležitost k útoku.");
 	Info_ClearChoices(dia_pyrokar_kapitelorcattack);
 	Info_AddChoice(dia_pyrokar_kapitelorcattack,"Co teď budeme dělat?!",dia_pyrokar_kapitelorcattack_do);
 };
@@ -2419,8 +2426,8 @@ func void dia_pyrokar_kapitelorcattack_do()
 	Log_CreateTopic(TOPIC_HELPCREW,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HELPCREW,LOG_Running);
 	B_LogEntry(TOPIC_HELPCREW,"Pyrokar mi řekl, že bych měl pomoct ostatním členům posádky dostat se ze skřety obsazeného Khorinisu. Nejlepší bude použít runové kameny, ale ne na všechny se dostane, takže někteří se budou muset pokusit městem probojovat. Měl bych si tedy vážně promyslet, komu teleportační runu dám a komu ne.");
-	Log_AddEntry(TOPIC_ORсGREATWAR,"Očividně mám zase zachránit svět. Pyrokar si myslí, že já jediný jsem dostatečně silný. Doufám, že se nemýlí.");
-	Log_AddEntry(TOPIC_ORсGREATWAR,"Prvně bych měl jít do pevnosti Azgan. Musím promluvit s velitelem paladinů, lordem Hagenem, o stavu jeho jednotek. Paladinové jsou asi jediní na ostrově, kdo ještě dokáže vzdorovat skřetům.");
+	Log_AddEntry(TOPIC_ORCGREATWAR,"Očividně mám zase zachránit svět. Pyrokar si myslí, že já jediný jsem dostatečně silný. Doufám, že se nemýlí.");
+	Log_AddEntry(TOPIC_ORCGREATWAR,"Prvně bych měl jít do pevnosti Azgan. Musím promluvit s velitelem paladinů, lordem Hagenem, o stavu jeho jednotek. Paladinové jsou asi jediní na ostrově, kdo ještě dokáže vzdorovat skřetům.");
 	Info_ClearChoices(dia_pyrokar_kapitelorcattack);
 	Info_AddChoice(dia_pyrokar_kapitelorcattack,"... (KONEC)",dia_pyrokar_kapitelorcattack_away);
 };
@@ -2917,7 +2924,7 @@ func void dia_pyrokar_kdfanswer_info()
 	AI_Output(self,other,"DIA_Pyrokar_KDFAnswer_01_04");	//Nicméně, nesmíme zapomenout na náš hlavní problém - Strážce.
 	AI_Output(self,other,"DIA_Pyrokar_KDFAnswer_01_05");	//A proto musíš prvně vyřešit tenhle problém, jinak bude boj se skřety zbytečný.
 	KDF_JOINHAGEN = TRUE;
-	Log_AddEntry(TOPIC_ORсGREATWAR,"Mágové Ohně podpoří paladiny v boji proti skřetům.");
+	Log_AddEntry(TOPIC_ORCGREATWAR,"Mágové Ohně podpoří paladiny v boji proti skřetům.");
 };
 
 

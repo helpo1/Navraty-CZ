@@ -2238,7 +2238,7 @@ func void DIA_Vatras_Teach_1()
 
 	if((Kapitel >= 2) && (hero.guild == GIL_KDW) && (VATRAS_TEACHREGENMANA == FALSE))
 	{
-		Info_AddChoice(DIA_Vatras_Teach,"Regenerace many (VB: 5, cena: 15000 zlatých)",DIA_Vatras_Teach_RegenMana);
+		Info_AddChoice(DIA_Vatras_Teach,"Regenerace many (VB: 10, cena: 5000 zlatých)",DIA_Vatras_Teach_RegenMana);
 	};
 };
 
@@ -2252,7 +2252,7 @@ func void DIA_Vatras_Teach_5()
 
 	if((Kapitel >= 2) && (hero.guild == GIL_KDW) && (VATRAS_TEACHREGENMANA == FALSE))
 	{
-		Info_AddChoice(DIA_Vatras_Teach,"Regenerace many (VB: 5, cena: 15000 zlatých)",DIA_Vatras_Teach_RegenMana);
+		Info_AddChoice(DIA_Vatras_Teach,"Regenerace many (VB: 10, cena: 5000 zlatých)",DIA_Vatras_Teach_RegenMana);
 	};
 };
 

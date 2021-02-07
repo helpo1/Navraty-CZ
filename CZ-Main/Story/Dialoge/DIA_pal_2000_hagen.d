@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(3x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+(4x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
 
 instance DIA_PAL_2000_HAGEN_EXIT(C_Info)
 {
@@ -92,7 +104,7 @@ instance DIA_PAL_2000_HAGEN_WARSTART(C_Info)
 
 func int dia_pal_2000_hagen_warstart_condition()
 {
-	if((MIS_ORсGREATWAR == LOG_Running) && Npc_IsInState(self,ZS_Talk))
+	if((MIS_ORCGREATWAR == LOG_Running) && Npc_IsInState(self,ZS_Talk))
 	{
 		return TRUE;
 	};
@@ -226,7 +238,7 @@ instance DIA_PAL_2000_HAGEN_TELLFROMPYROKAR(C_Info)
 
 func int dia_pal_2000_hagen_tellfrompyrokar_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_pal_2000_hagen_warstart) && (MIS_ORсGREATWAR == LOG_Running))
+	if(Npc_KnowsInfo(hero,dia_pal_2000_hagen_warstart) && (MIS_ORCGREATWAR == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -254,7 +266,7 @@ func void dia_pal_2000_hagen_tellfrompyrokar_info()
 	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_19");	//Zřejmě tady zůstaneme. Musíme přeskupit armádu a pořádně se připravit na další boje.
 	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_20");	//Azgan je navíc prakticky nepřístupný, takže jsme tady v bezpečí.
 	AI_Output(self,other,"DIA_PAL_2000_Hagen_TellFromPyrokar_01_21");	//Pokud se tyhle stvůry pokusí nás napadnout, jednou věcí si můžeš být jistý - na téhle pevnosti si vylámou zuby.
-	B_LogEntry(TOPIC_ORсGREATWAR,"Poté, co v bitvě o Khorinis zemřela téměř třetina Hagenových paladinů, lord Hagen neplánuje okamžitý výpad proti skřetí invazi. Zatím je pro paladiny výhodnější zůstat v pevnosti. Azgan je téměř nedobytný a připraven odolávat jakýmkoli skřetím útokům.");
+	B_LogEntry(TOPIC_ORCGREATWAR,"Poté, co v bitvě o Khorinis zemřela téměř třetina Hagenových paladinů, lord Hagen neplánuje okamžitý výpad proti skřetí invazi. Zatím je pro paladiny výhodnější zůstat v pevnosti. Azgan je téměř nedobytný a připraven odolávat jakýmkoli skřetím útokům.");
 	TELLTOHAGENFORT = TRUE;
 };
 
@@ -272,7 +284,7 @@ instance DIA_PAL_2000_HAGEN_MAYJOINOTHERS(C_Info)
 
 func int dia_pal_2000_hagen_mayjoinothers_condition()
 {
-	if(Npc_KnowsInfo(hero,dia_pal_2000_hagen_tellfrompyrokar) && (MIS_ORсGREATWAR == LOG_Running))
+	if(Npc_KnowsInfo(hero,dia_pal_2000_hagen_tellfrompyrokar) && (MIS_ORCGREATWAR == LOG_Running))
 	{
 		return TRUE;
 	};
@@ -306,7 +318,7 @@ func void dia_pal_2000_hagen_mayjoinothers_info()
 	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_29");	//Dobře, dobře! Už jsi mě téměř přesvědčil. Potřebuji si to však celé ještě pořádně promyslet.
 	AI_Output(other,self,"DIA_PAL_2000_Hagen_MayJoinOthers_01_30");	//Ale přemýšlej rychle, moc času nám nezbývá.
 	AI_Output(self,other,"DIA_PAL_2000_Hagen_MayJoinOthers_01_31");	//Budu se snažit!
-	B_LogEntry(TOPIC_ORсGREATWAR,"Po dlouhé diskuzi s lordem Hagenem se mi ho povedlo přesvědčit, že jediný možný způsob, jak porazit skřety, je shromáždit pod paladinským velením všechny, kteří mohou bojovat - žoldáky, sektáře i všechny ostatní. Vůdce paladinů si vyhradil čas na promyšlení tohoto návrhu, ale nepochybuji, že se nakonec rozhodne správně.");
+	B_LogEntry(TOPIC_ORCGREATWAR,"Po dlouhé diskuzi s lordem Hagenem se mi ho povedlo přesvědčit, že jediný možný způsob, jak porazit skřety, je shromáždit pod paladinským velením všechny, kteří mohou bojovat - žoldáky, sektáře i všechny ostatní. Vůdce paladinů si vyhradil čas na promyšlení tohoto návrhu, ale nepochybuji, že se nakonec rozhodne správně.");
 };
 
 
@@ -350,7 +362,7 @@ func void dia_pal_2000_hagen_mayjoinothersagreed_info()
 		ALLFRACTIONS = 6;
 		HAGENOTHERSAGREED = TRUE;
 		HAGENCOUNTSTIME = Wld_GetDay();
-		B_LogEntry(TOPIC_ORсGREATWAR,"Lord Hagen souhlasil s mým návrhem svolat soubor dobrovolníků do armády paladinů. Uvidíme, jak se to povede.");
+		B_LogEntry(TOPIC_ORCGREATWAR,"Lord Hagen souhlasil s mým návrhem svolat soubor dobrovolníků do armády paladinů. Uvidíme, jak se to povede.");
 	}
 	else
 	{
@@ -550,7 +562,7 @@ func void dia_pal_2000_hagen_donejoinothersagreed_info()
 	AI_Output(self,other,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_06");	//Pokud víme, klášter je pořád obklíčen a skřeti by zřejmě mého posla nepřivítali s otevřenou náručí.
 	AI_Output(other,self,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_07");	//Myslím, že to zvládnu. Mám už nějaké zkušenosti s průniky do střežených oblastí.
 	AI_Output(self,other,"DIA_PAL_2000_Hagen_DoneJoinOthersAgreed_01_08");	//Dobrá, tak tedy jdi. Řekni Pyrokarovi, že zřídíme tábor nedaleko farmy a připomeň, ať si pospíší.
-	B_LogEntry(TOPIC_ORсGREATWAR,"Lord Hagen je teď připraven vyrazit se svými lidmi z pevnosti. Musím okamžitě vyrazit do kláštera a informovat mágy Ohně.");
+	B_LogEntry(TOPIC_ORCGREATWAR,"Lord Hagen je teď připraven vyrazit se svými lidmi z pevnosti. Musím okamžitě vyrazit do kláštera a informovat mágy Ohně.");
 	HAGENNOMORETIMEWAIT = TRUE;
 	OTH_JOINHAGEN = TRUE;
 };

@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+func void dia_viper_CLEARMAGICOREMAKE_info - upraven přístup do Jeskyně Ohně (FIRECAVE_ZEN) po splnění úkolu Rituál Ohně (TOPIC_KELIOSTEST)
+
+*/
+
+
 
 instance DIA_VIPER_EXIT(C_Info)
 {
@@ -613,6 +624,12 @@ func void dia_viper_CLEARMAGICOREMAKE_info()
 	AI_Output(other,self,"DIA_Viper_CLEARMAGICOREMAKE_01_13");	//Rozumím.
 	ClearPlayerRudoplav = TRUE;
 	B_LogEntry(TOPIC_TagNorGrHunWeap,"K výrobě ingotu z čisté magické rudy potřebuji sto kusů rudy, speciální tavící pec a nástroje ze stejného materiálu jako je ingot.");
+
+	if((KELIOSFIRETESTONETIME == TRUE) && (KELIOSFIRETESTFROMNW == TRUE))
+	{
+		Wld_SendTrigger("EVT_FIRECAVEMOVE_TRG");
+		OpenFireCaveAgain_CZ = TRUE;
+	};
 };
 
 instance DIA_VIPER_ASKMINEDATA(C_Info)

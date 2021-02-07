@@ -1583,7 +1583,7 @@ instance ItKe_DarkZhnez(C_Item)
 	visual = "ItKe_Key_01_Sky.3ds";
 	material = MAT_METAL;
 	description = name;
-	text[4] = "Klíč Temného Sekáče...";
+	text[4] = "Klíč Temného žence...";
 	text[5] = NAME_Value;
 	count[5] = value;
 	inv_animate = 1;

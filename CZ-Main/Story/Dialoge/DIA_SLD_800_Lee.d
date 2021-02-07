@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(2x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
 
 instance DIA_Lee_EXIT(C_Info)
 {
@@ -2380,7 +2391,7 @@ func void dia_lee_nw_whataboutpal_info()
 	Log_CreateTopic(TOPIC_OREWEAPONSLD,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_OREWEAPONSLD,LOG_Running);
 	B_LogEntry(TOPIC_OREWEAPONSLD,"Lee chce, abych získal od lorda Hagena rudné meče pro jeho žoldáky. Mohlo by to zvýšit šance proti skřetům.");
-	Log_AddEntry(TOPIC_ORсGREATWAR,"Doručil jsem Leemu Hagenovu nabídku na spojení vojska proti skřetům!");
+	Log_AddEntry(TOPIC_ORCGREATWAR,"Doručil jsem Leemu Hagenovu nabídku na spojení vojska proti skřetům!");
 };
 
 
@@ -2712,7 +2723,7 @@ func void dia_lee_nw_bigfightbegin_info()
 		b_changename(pal_91230_ritter," ");
 		b_changename(pal_91210_ritter," ");
 	};
-	B_LogEntry(TOPIC_ORсGREATWAR,"Hodina rozhřešení se skřety přišla! Nyní se rozhodne o osudu ostrova...");
+	B_LogEntry(TOPIC_ORCGREATWAR,"Hodina rozhřešení se skřety přišla! Nyní se rozhodne o osudu ostrova...");
 	LEESENTTOTROOPS = TRUE;
 	AI_StopProcessInfos(self);
 };

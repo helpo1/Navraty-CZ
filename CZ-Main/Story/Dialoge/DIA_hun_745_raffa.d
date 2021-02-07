@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+func void dia_hun_745_raffa_TrueShot_info - sjednoceny podmínky učení
+
+*/
+
+
 
 instance DIA_HUN_745_RAFFA_EXIT(C_Info)
 {
@@ -796,7 +807,7 @@ func void dia_hun_745_raffa_TrueShot_info()
 	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_05");	//Nicméně, existuje několik způsobů natažení, ve kterých budou tvoje střely prorážet všechny zbroje i kůže.
 	AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_06");	//A učit mě můžete?
 
- 	if((hero.attribute[ATR_DEXTERITY] >= 150) && (hero.HitChance[NPC_TALENT_BOW] >= 50))
+ 	if((hero.attribute[ATR_DEXTERITY] >= 125) && (hero.HitChance[NPC_TALENT_BOW] >= 50))
 	{
 		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_07");	//Zajímavé... Můžu ti to ukázat! Ale budeš muset mít nějaké zkušenosti se střelnými zbraňemi.
 		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_08");	//A zlato si taky neodpírávám.

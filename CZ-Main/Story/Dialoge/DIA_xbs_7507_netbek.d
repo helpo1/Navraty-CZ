@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
+
+*/
+
+
+
 var int NetBekIsDruid;
 
 instance DIA_NETBEK_EXIT(C_Info)
@@ -493,7 +505,7 @@ instance DIA_NETBEK_WHATHAPPENED(C_Info)
 
 func int dia_netbek_whathappened_condition()
 {
-	if(MIS_ORсGREATWAR == LOG_Running)
+	if(MIS_ORCGREATWAR == LOG_Running)
 	{
 		return TRUE;
 	};

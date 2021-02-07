@@ -2,6 +2,11 @@
 
 /*
 
+v1.01:
+
+func void pc_MagicSmithWeapon_Nimrod_info - upraven přístup do Jeskyně Ohně (FIRECAVE_ZEN) po splnění úkolu Rituál Ohně (TOPIC_KELIOSTEST)
+
+
 v1.00:
 
 (28x) - upraveny výpisy (PRINT_ProdItemsMissing -> PRINT_ProdItemsMissingCZMateh)
@@ -2754,6 +2759,13 @@ func void pc_MagicSmithWeapon_Nimrod_info()
 	};
 
 	b_endproductiondialog();
+	
+	if((OpenFireCaveAgain_CZ == TRUE) && (CloseFireCaveAgain_CZ == FALSE))
+	{
+		Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+		AI_Teleport(hero,"START_FIRECAVE");
+	};
+
 };
 
 

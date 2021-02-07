@@ -365,7 +365,7 @@ func void dia_xor_12205_terinaks_armor_dark()
 	Snd_Play("LevelUP");
 	PLAYER_TALENT_SMITH[34] = TRUE;
 	PLAYER_TALENT_SMITH_34 = TRUE;
-	B_LogEntry(TOPIC_ARMORTEACHER,"Materiály pro vykování RUDNÉ ZBROJE TEMNOTY: 10x rudný ingot, 2x černá ruda, 10x síra, 5x pryskyřice, 5x uhlí, černá perla a adamant.");
+	B_LogEntry(TOPIC_ARMORTEACHER,"Materiály pro vykování RUDNÉ ZBROJE TEMNOTY: 10x ingot magické rudy, 2x černá ruda, 10x síra, 5x pryskyřice, 5x uhlí, černá perla a adamant.");
 	Info_ClearChoices(dia_xor_12205_terinaks_armor);
 };
 
@@ -379,7 +379,7 @@ func void dia_xor_12205_terinaks_armor_light()
 	Snd_Play("LevelUP");
 	PLAYER_TALENT_SMITH[33] = TRUE;
 	PLAYER_TALENT_SMITH_33 = TRUE;
-	B_LogEntry(TOPIC_ARMORTEACHER,"Materiály pro vykování RUDNÉ ZBROJE SVĚTLA: 10x rudný ingot, 2x černá ruda, 10x síra, 5x pryskyřice, 5x křemen, akvamarín a adamant.");
+	B_LogEntry(TOPIC_ARMORTEACHER,"Materiály pro vykování RUDNÉ ZBROJE SVĚTLA: 10x ingot magické rudy, 2x černá ruda, 10x síra, 5x pryskyřice, 5x křemen, akvamarín a adamant.");
 	Info_ClearChoices(dia_xor_12205_terinaks_armor);
 };
 

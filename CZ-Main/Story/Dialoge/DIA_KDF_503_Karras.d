@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.01:
+
+(2x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
+
+*/
+
+
 
 instance DIA_Karras_KAP1_EXIT(C_Info)
 {
@@ -205,7 +216,7 @@ func int DIA_Karras_CIRCLE4_Condition()
 func void DIA_Karras_CIRCLE4_Info()
 {
 	AI_Output(other,self,"DIA_Karras_CIRCLE4_15_00");	//Chci umět čtvrtý kruh magie.
-	if(MIS_ReadyforChapter4 == TRUE)
+	if(CanLearnMagicCircleNext_ABCZ(4) == TRUE)
 	{
 		if(B_TeachMagicCircle(self,other,4))
 		{
@@ -241,7 +252,7 @@ func void DIA_Karras_CIRCLE5_Info()
 {
 	AI_Output(other,self,"DIA_Karras_CIRCLE5_15_00");	//Chci umět pátý kruh magie.
 
-	if(Kapitel >= 5)
+	if(CanLearnMagicCircleNext_ABCZ(5) == TRUE)
 	{
 		if(B_TeachMagicCircle(self,other,5))
 		{

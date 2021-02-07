@@ -2,12 +2,45 @@
 
 /*
 
+v1.01:
+
+func void ReuseFlask_CZ, (13x) ReuseFlask_CZ - přidána "recyklace" alchymistických lahviček (na žádost hráčů)
+func void ReuseBottle_CZ, (2x) ReuseBottle_CZ - přidána "recyklace" láhví (na žádost hráčů)
+
+
 v1.00:
 
 instance ItMi_HolyWater - opravena textura (ItFo_Water.3ds -> ItMi_HolyWater.3ds)
 
 */
 
+
+
+func void ReuseFlask_CZ(var int chance)
+{
+	var int random;
+
+	random = Hlp_Random(100);
+
+	if(random < chance)
+	{
+		CreateInvItems(hero,ItMi_Flask,1);
+	};
+	
+};
+
+func void ReuseBottle_CZ(var int chance)
+{
+	var int random;
+
+	random = Hlp_Random(100);
+
+	if(random < chance)
+	{
+		CreateInvItems(hero,ItMi_Bottle_Empty,1);
+	};
+	
+};
 
 
 
@@ -100,6 +133,7 @@ func void UseItPo_Mana_01()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 
 		if(SBMode == TRUE)
 		{
@@ -181,6 +215,7 @@ func void UseItPo_Mana_02()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 
 		if(SBMode == TRUE)
 		{
@@ -262,6 +297,7 @@ func void UseItPo_Mana_03()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 
 		if(SBMode == TRUE)
 		{
@@ -343,6 +379,7 @@ func void UseItPo_Health_01()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 
 		if(SBMode == TRUE)
 		{
@@ -424,6 +461,7 @@ func void UseItPo_Health_02()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 
 		if(SBMode == TRUE)
 		{
@@ -1217,6 +1255,7 @@ func void UseItPo_Speed()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 	};
 
 	Mdl_ApplyOverlayMdsTimed(self,"Humans_MageSprint.MDS",120000);
@@ -1252,6 +1291,7 @@ func void useitpo_speed_02()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 	};
 
 	Mdl_ApplyOverlayMdsTimed(self,"Humans_MageSprint.MDS",240000);
@@ -1288,6 +1328,7 @@ func void useitpo_speed_03()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 	};
 
 	Mdl_ApplyOverlayMdsTimed(self,"Humans_MageSprint.MDS",720000);
@@ -1322,6 +1363,7 @@ func void Use_ItPo_Stamina()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 
 		if(ATR_STAMINA[0] < (ATR_STAMINA_MAX[0] * 10))
 		{
@@ -2460,6 +2502,7 @@ func void useitpo_anpois()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 	};
 
 	POISONED = FALSE;
@@ -3048,6 +3091,7 @@ func void UseItPo_Health_03()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 
 		if(SBMode == TRUE)
 		{
@@ -3125,6 +3169,7 @@ func void UseItPo_Health_04()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 
 		if(SBMode == TRUE)
 		{
@@ -3191,6 +3236,7 @@ func void UseItPo_Mana_04()
 	if(self.id == 0)
 	{
 		Snd_Play3d(hero,"BOTTLE_OPEN");
+		ReuseFlask_CZ(20);
 
 		if(SBMode == TRUE)
 		{
@@ -3289,6 +3335,7 @@ func void Use_ItFo_AdanosWater()
 	if(Npc_IsPlayer(self))
 	{
 		Snd_Play("BLESSED_WEAPON");
+		ReuseBottle_CZ(20);
 		self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] + (self.attribute[ATR_HITPOINTS_MAX] / 2);
 
 		if(self.attribute[ATR_HITPOINTS] > self.attribute[ATR_HITPOINTS_MAX])
@@ -3470,6 +3517,8 @@ func void use_water_blessed()
 {
 	if(Npc_IsPlayer(self))
 	{
+		ReuseBottle_CZ(20);
+
 		if((SBMODE == TRUE) && (HolyRest == FALSE))
 		{
 			Hero_Fatigue = Hero_Fatigue + 3;
