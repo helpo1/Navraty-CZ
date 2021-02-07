@@ -47,33 +47,33 @@ func int dia_dragon_black_hello_condition()
 func void dia_dragon_black_hello_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_00");	//Človek?!... (Vrčí) Myslel som, že som zničil všetkých úbohých človiečikov!
-	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_01");	//Ako vidíš, trochu si sa zmýlil. Ale myslím si, že to bola tvoja posledná chyba.
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_05");	//Arrrgkh... (Vrčí) Myslím tým že problémy sú s tebou spojené!... Nemohol by som si myslieť v žiadnom prípade, čo by mohlo byť naozaj smrtelné.
-	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_03");	//Tak to je, drak. Prišiel som sem aby som zrazil tvoju odpornú hlavu!
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_07");	//Je čas keď si ma dosiahol nejprve můj správny služobník - Dakat, neuspel... Velmi (vrčí) ma to trápi.
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_08");	//A ty - odvážny muž, ma chceš poraziť! A podla všetkých zvestí si pre mňa poriadny súper. Ale isto ti to ťažko pomůže!
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_09");	//... Natiahnem, (vrčí) tvoje srdce, zoberiem si tvoju dušu a maso ti dolámem na plátky!
-	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_10");	//Že ťa slina nezadrhne! Ty, kus hnoja. Tvoje vyhrážky ma nevystrašia.
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_14");	//Ur-Thrall! Pamatám si to... (vrčí) Aká škoda, že som sa nepostaral o zničenie toho slimáka.
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_00");	//Člověk?!... (Vrčí) Myslel jsem, že jsem zničil všechny ubohé lidi!
+	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_01");	//Jak vidíš, trochu ses zmýlil. Mám však dojem, že to byla tvá poslední chyba.
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_05");	//Arrrgh... (Vrčí) Chceš snad říct, že mne zrovna ty zbavíš mých starostí?! Pouhý smrtelník?
+	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_03");	//Přesně tak, draku. Přišel jsem, abych srazil tvou odpornou hlavu!
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_07");	//(Vrčí) Pokud ses dostal až ke mně, pak můj věrný služebník Dakat očividně selhal.
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_08");	//Hlupák jeden! Teď to musím dokončit sám!
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_09");	//Vyrvu ti srdce z těla, vezmu ti duši a roztrhám tvé maso na malé kousky!
+	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_10");	//Uvidíme, kdo vytrhne čí srdce! Pozdravuje tě Ur-Thrall!
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_14");	//Ur-Thrall? Ach ano, pamatuju si toho slimáka. Copak sám se mě neodváží vyzvat? No, co už.
 
 	if(MEETURGROM == 4)
 	{
-		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_19");	//Vidím že si so mnou neskončíl mocný Ur-Grom!
-		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_20");	//Spňška toho patrí mne ako aj váha ich nešťastných ludí!
+		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_19");	//Vidím, že sis přivedl mocného Ur-Groma!
+		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_20");	//Jeho duše je moje, stejně tak jako všech těch odporných lidí!
 	};
 	if(Npc_HasItems(other,itrw_addon_magiccrossbow_shv) >= 1)
 	{
-		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_21");	//Vidím, že si tiež našiel Exekutor - zbraň bojového ducha, podhodenú mnou! Ha, ha, ha!...
-		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_22");	//Viditelne láskavo veríš, že ti pomůže ma premocť...
+		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_21");	//Ó, ty jsi našel Exekutora - zbraň bojových duchů!
+		AI_Output(self,other,"DIA_Dragon_Black_Hello_01_22");	//Vážně naivně věříš, že ti pomůže mě porazit?
 	};
 
-	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_17");	//Dobre, stačilo zbytočne strácať čas debatovaním. Je čas zapojiť aj povinnosť.
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_18");	//Je čas... (Vrčí) Už som si dlho nepochutil na čerstvom mase človeka, ako si ty. Priprav sa na smrť, hrdina!
+	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_17");	//Dost už klábosení! Je čas začít mluvit skutky!
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_18");	//(Pohrdavě) Dostal jsem chuť na tvou krev, připrav sa na smrt, hrdino!
 	AI_PlayAni(self,"T_WARN");
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_23");	//MOJE ZUBY - MEČE! PAZÚRY - KÓPIA! MÁ KRÍDLA - URAGÁNY! 
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_24");	//I - TENTO PLAMEN! TO - TO JE... SMRŤ!
-	B_LogEntry(TOPIC_URNAZULRAGE,"Velký Stín - Azgalor, je tu! Oko hněvu je oslabnuté čiernym drakom a on v Údolí stínů, viedol volanie tohto mocného artefaktu. Ja som ho však získal. Teraz, len můj meč vied odpovedať - či toto všetko bolo vyrobené?");
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_23");	//MOJE ZUBY - MEČE! MÉ DRÁPY - KOPÍ! MÁ KŘÍDLA - HURIKÁNY! 
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_24");	//JÁ SÁM JSEM PLAMENEM! JÁ JSEM... SMRT!
+	B_LogEntry(TOPIC_URNAZULRAGE,"Velký Stín - Azgalor, je tady! Oko hněvu probudilo černého draka a on přišel do Údolí stínů, veden voláním tohoto mocného artefaktu. Stalo se tak, jak jsem chtěl. Bylo to vše marné? Odpověď mi dá už jen můj meč...
 	AI_StopProcessInfos(self);
 	DragonTalk_Exit_Free = FALSE;
 	DRAGONBLACKMEET = TRUE;
