@@ -73,7 +73,7 @@ func void dia_dragon_black_hello_info()
 	AI_PlayAni(self,"T_WARN");
 	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_23");	//MOJE ZUBY - MEČE! MÉ DRÁPY - KOPÍ! MÁ KŘÍDLA - HURIKÁNY! 
 	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_24");	//JÁ SÁM JSEM PLAMENEM! JÁ JSEM... SMRT!
-	B_LogEntry(TOPIC_URNAZULRAGE,"Velký Stín - Azgalor, je tady! Oko hněvu probudilo černého draka a on přišel do Údolí stínů, veden voláním tohoto mocného artefaktu. Stalo se tak, jak jsem chtěl. Bylo to vše marné? Odpověď mi dá už jen můj meč...
+	B_LogEntry(TOPIC_URNAZULRAGE,"Velký Stín - Azgalor, je tady! Oko hněvu probudilo černého draka a on přišel do Údolí stínů, veden voláním tohoto mocného artefaktu. Stalo se tak, jak jsem chtěl. Bylo to vše marné? Odpověď mi dá už jen můj meč...");
 	AI_StopProcessInfos(self);
 	DragonTalk_Exit_Free = FALSE;
 	DRAGONBLACKMEET = TRUE;

@@ -76,6 +76,7 @@ func void DIA_STRF_8121_Addon_Krow_hello_info()
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_05");	//Trochu. Samozřejmě v umění magie nejsem tak dobrý, jako...  mágové Ohně.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_06");	//Ale něco jsem uměl. Až do doby, než jsem spadl do spárů skřetů.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_07");	//Bohužel jsem za ta léta strávená v dole spoustu věcí zapomněl.
+};
 
 instance DIA_STRF_8121_Addon_Krow_Help(C_Info)
 {
