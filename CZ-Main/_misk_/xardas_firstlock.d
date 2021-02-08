@@ -2,6 +2,11 @@
 
 /*
 
+v1.01a:
+
+(4x) CZ_Settings_Diff_Init - sloučeno s CZ_Settings_Diff_Save
+
+
 v1.01:
 
 (4x) CZ_Settings_Diff_Init, CZ_Settings_Diff_Save - přidáno nastavení obtížnosti v .ini souboru
@@ -334,7 +339,6 @@ func void DIA_Xardas_FirstEXIT_Legend()
 	};
 
 	CZ_Settings_Diff_Init();
-	CZ_Settings_Diff_Save();
 
 	Wld_InsertNpc(Oster,"NW_XARDAS_TOWER_WATERFALL_01");
 	Wld_InsertNpc(Oster,"NW_XARDAS_VALLEY_08");
@@ -394,7 +398,6 @@ func void DIA_Xardas_FirstEXIT_CantStopMe()
 	Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 
 	CZ_Settings_Diff_Init();
-	CZ_Settings_Diff_Save();
 
 	Wld_InsertNpc(Scavenger,"NW_XARDAS_PATH_FARM1_08_01");
 	Wld_InsertNpc(Scavenger,"NW_XARDAS_TOWER_WATERFALL_01");
@@ -464,7 +467,6 @@ func void DIA_Xardas_FirstEXIT_DontKnow()
 	Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 
 	CZ_Settings_Diff_Init();
-	CZ_Settings_Diff_Save();
 
 	Wld_InsertNpc(Molerat,"NW_XARDAS_PATH_FARM1_08_01");
 	Wld_InsertNpc(Molerat,"NW_XARDAS_TOWER_WATERFALL_01");
@@ -540,7 +542,6 @@ func void DIA_Xardas_FirstEXIT_NeedHelp()
 	Mdl_RemoveOverlayMds(hero,"PRE_START.MDS");
 
 	CZ_Settings_Diff_Init();
-	CZ_Settings_Diff_Save();
 
 	Wld_InsertNpc(Rabbit,"NW_XARDAS_PATH_FARM1_08_01");
 	Wld_InsertNpc(Rabbit,"NW_XARDAS_TOWER_WATERFALL_01");

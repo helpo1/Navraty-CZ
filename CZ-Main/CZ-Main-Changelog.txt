@@ -1624,6 +1624,11 @@ v1.00:
 /*   (...)\_misk_\xardas_firstlock.d   */
 
 
+v1.01a:
+
+(4x) CZ_Settings_Diff_Init - sloučeno s CZ_Settings_Diff_Save
+
+
 v1.01:
 
 (4x) CZ_Settings_Diff_Init, CZ_Settings_Diff_Save - přidáno nastavení obtížnosti v .ini souboru
@@ -1644,6 +1649,11 @@ func int DIA_NONE_100_Xardas_WhyHere_condition - upraveny podmínky dialogu
 
 
 /*   (...)\_misk_\_czfuncs.d   */
+
+
+v1.01a:
+
+(4x) CZ_Settings_Diff_Save, DiffInitialized - volání a inicializace integrovány do CZ_Settings_Diff_Init
 
 
 v1.01:
