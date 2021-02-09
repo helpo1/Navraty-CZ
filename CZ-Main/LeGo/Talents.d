@@ -33,15 +33,21 @@ func void TAL_SetValue(var c_npc npc, var int talent, var int value) {
 		npc.aivar[AIV_TALENT] = _TAL_CreateArray();
 	};
 	_TAL_CheckSize(npc.aivar[AIV_TALENT]);
+	if (talent >= _nrTalents) {
+		return;
+	};
 	MEM_ArrayWrite(getPtr(npc.aivar[AIV_TALENT]), talent, value);
 };
 
 func int TAL_GetValue(var c_npc npc, var int talent) {
 	if (!Hlp_IsValidNpc(npc)) { return -1; };
 	if (!npc.aivar[AIV_TALENT]) {
-		npc.aivar[AIV_TALENT] = _TAL_CreateArray();
+		return 0;
 	};
 	_TAL_CheckSize(npc.aivar[AIV_TALENT]);
+	if (talent >= _nrTalents) {
+		return 0;
+	};
 	MEM_ArrayRead(getPtr(npc.aivar[AIV_TALENT]), talent);
 };
 
@@ -66,7 +72,7 @@ func void Npc_FindByID_sub(var int node) {
 };
 
 func int Npc_FindByID(var int ID) { // GetByID would probably be too similar to GetID
-    ID_NpcPtr = -1;
+    ID_NpcPtr = 0;
     ID_Target = ID;
     
 	if (MEM_World.voblist_npcs) {

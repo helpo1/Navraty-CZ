@@ -91,6 +91,11 @@ const int BLOODSPLAT_DAM = 7;  // Schadensmultiplikator bzgl. der Texturgröße 
 const string Cursor_Texture   = "CURSOR.TGA"; // Genutzte Textur, LeGo stellt eine "CURSOR.TGA" bereit
 
 //========================================
+// Buffs
+//========================================
+const int Buffs_DisplayForHero = 1;
+
+//========================================
 // Interface
 //========================================
 const string Print_LineSeperator = "~"; // Sollte man lieber nicht ändern
@@ -112,7 +117,7 @@ const string PF_Font        = "FONT_OLD_10_WHITE.TGA"; //Verwendete Schriftart
 //========================================
 // Talents
 //========================================
-const int AIV_TALENT = 89; // Genutzte AI-Var
+const int AIV_TALENT = AIV_TALENT_INDEX; // Genutzte AI-Var
 
 //========================================
 // Dialoggestures
@@ -121,3 +126,9 @@ const int AIV_TALENT = 89; // Genutzte AI-Var
 //   DIAG_Prefix + AniName + DIAG_Suffix + ((rand() % (Max - (Min - 1))) + Min).ToString("00");
 const string DIAG_Prefix = "DG_";
 const string DIAG_Suffix = "_";
+
+//========================================
+// Buffs
+//========================================
+const int Buff_FadeOut = 1; // Deactivate fade-out by setting this to 0
+

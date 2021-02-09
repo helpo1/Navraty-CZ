@@ -6,6 +6,7 @@
 // [intern] Variablen
 //========================================
 var int Hero_LastHP; //Wird in Bloodsplats_Loop gesetzt.
+var int _B_HeroDamagePercFunc;
 
 //========================================
 // Spritzer auf den Bildschirm
@@ -80,14 +81,42 @@ func void Bloodsplats_Rage() {
 };
 
 //========================================
+// oCNpc::GetPerceptionFunc wrapper
+//========================================
+func int Npc_GetPercFunc(var C_Npc npc, var int type) {
+    var int npcPtr; npcPtr = _@(npc);
+
+    const int call = 0;
+    if (CALL_Begin(call)) {
+        CALL_IntParam(_@(type));
+        CALL_PutRetValTo(_@(funcID));
+        CALL__thiscall(_@(npcPtr), oCNpc__GetPerceptionFunc);
+        call = CALL_End();
+    };
+
+    var int funcID;
+    return +funcID;
+};
+
+//========================================
 // [intern] Perception für den Helden
 //========================================
 func void _B_HeroDamage() {
     var int currDam; currDam = Hero_LastHP - hero.attribute[ATR_Hitpoints];
     if(currDam) {
         Bloodsplat(currDam);
-        //Wld_StopEffect("HERO_HURT"); // Doesn't exist in G1 and seems to make no difference?
-        Wld_PlayEffect("HERO_HURT", hero, hero, 0, 0, 0, 0);
+        if (GOTHIC_BASE_VERSION == 2) {
+            // Call by string for Gothic 1 parsing compatibility
+            MEM_PushStringParam("HERO_HURT");
+            MEM_CallByString("WLD_STOPEFFECT");
+
+            // The effect flickers under Gothic 1
+			Wld_PlayEffect("HERO_HURT", hero, hero, 0, 0, 0, 0);
+		};
+    };
+
+    if (_B_HeroDamagePercFunc > -1) {
+        MEM_CallByID(_B_HeroDamagePercFunc);
     };
 };
 
@@ -95,6 +124,13 @@ func void _B_HeroDamage() {
 // [intern] FF Loop
 //========================================
 func void _Bloodsplats_Loop() {
-    Npc_PercEnable(pc_hero, PERC_ASSESSDAMAGE, _B_HeroDamage); //Deaktiviert sich manchmal grundlos, deshalb lieber reinkloppen
+    // Preserve possible previous function
+    var int funcID; funcID = Npc_GetPercFunc(hero, PERC_ASSESSDAMAGE);
+    if (funcID != MEM_GetFuncID(_B_HeroDamage)) {
+        _B_HeroDamagePercFunc = funcID;
+    };
+
+    // PC_Hero is empty on level change, use hero instead
+    Npc_PercEnable(hero, PERC_ASSESSDAMAGE, _B_HeroDamage); //Deaktiviert sich manchmal grundlos, deshalb lieber reinkloppen
     Hero_LastHP = hero.attribute[ATR_Hitpoints];
 };
