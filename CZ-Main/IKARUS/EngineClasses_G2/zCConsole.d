@@ -1,7 +1,6 @@
 const int zCON_MAX_EVAL = 15;
 const int zcon_address  = 11221088; //0xAB3860
 
-//NS: консоль
 class zCConsole {
     var int _vtbl;
     
@@ -9,7 +8,7 @@ class zCConsole {
     var string instr;    //zSTRING
     var string savemsg;  //zSTRING
     
-    //zCArray<zSTRING> lastcommand;	//NS: предыдущая команда
+    //zCArray<zSTRING> lastcommand;
         var int lastcommand_array;         //zString*
         var int lastcommand_numAlloc;      //int
         var int lastcommand_numInArray;    //int

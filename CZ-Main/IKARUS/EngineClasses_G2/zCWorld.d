@@ -1,4 +1,4 @@
-const int zCWorld_DIMENSION = 3; //еще бы
+const int zCWorld_DIMENSION = 3; //achwas
 const int zCWorld_VobHashTable_Offset = 600; //0x0258
 const int VOB_HASHTABLE_SIZE = 2048;
 
@@ -10,7 +10,7 @@ class oWorld {
 /*0x000C*/    var int    _zCObject_hashNext;
 /*0x0010*/    var string _zCObject_objectName;
       
-            //zCTree<zCVob>     globalVobTree;  //Каждый (?) Vob в мире указывается здесь.
+            //zCTree<zCVob>     globalVobTree;  //Jedes (?) Vob in der Welt ist hier drin.
 /*0x0024*/    var int globalVobTree_parent;     //zCTree<zCVob>* 
 /*0x0028*/    var int globalVobTree_firstChild; //zCTree<zCVob>* 
 /*0x002C*/    var int globalVobTree_next;       //zCTree<zCVob>* 
@@ -33,7 +33,7 @@ class oWorld {
                                                             zWLD_LOAD_MERGE_REPLACE_ROOT_VISUAL };
           */
             
-            //Поиск результатов трассировки лучей (Raytracing)...
+            //Ergebnisse einer Raytracing suche...
             //zTTraceRayReport  traceRayReport;
 /*0x0038*/      var int foundHit;               //zBOOL        
 /*0x003C*/      var int foundVob;               //zCVob*           
@@ -53,7 +53,7 @@ class oWorld {
             enum zTWld_RenderMode { zWLD_RENDER_MODE_VERT_LIGHT,        
                                     zWLD_RENDER_MODE_LIGHTMAPS  };  */
             
-            //Другие данные:
+            //Sonstige Daten:
 /*0x0060*/  var int ownerSession;      //zCSession*  
 /*0x0064*/  var int csPlayer;          //zCCSPlayer*    
 
@@ -90,14 +90,14 @@ class oWorld {
 /*0x00D8*/      var int perFrameCallbackList_numAlloc;   //int    
 /*0x00DC*/      var int perFrameCallbackList_numInArray; //int    
             
-            //Outdoor-контроллер интересен
-            //Есть ли у Outdoor-мира Indoor-контроллеры для порталов?
+            //Der Outdoorskycontroller ist der interessante
+            //Hat eine Outdoorwelt einen Indoorskycontroller für Portalräume?
 /*0x00E0*/  var int skyControlerIndoor;        //zCSkyControler*
 /*0x00E4*/  var int skyControlerOutdoor;       //zCSkyControler*
 /*0x00E8*/  var int activeSkyControler;        //zCSkyControler*
                                         
-            // зоны                    
-            //zCArray<zCZone*>          zoneGlobalList;     //Зоны по умолчанию находятся в начале списка
+            // zones                    
+            //zCArray<zCZone*>          zoneGlobalList;     //Defaut-Zonen sind am Anfang der Liste
 /*0x00EC*/     var int zoneGlobalList_array;      //zCZone**
 /*0x00F0*/     var int zoneGlobalList_numAlloc;   //int
 /*0x00F4*/     var int zoneGlobalList_numInArray; //int
@@ -114,10 +114,10 @@ class oWorld {
 /*0x0114*/     var int zoneLastClassList_compare;     //int (*Compare)(const void* ele1,const void* ele2)
         
 
-            //Три Handle-списка, каждый отсортирован по координате.
-            //Для определения активной зоны мира по пересечению с тремя массивами участков. (?)
+            //Drei Handle-Listen, jeweils nach einer Koordinate sortiert.
+            //Um aktive Zonen für eine Welt durch Schnittmenge dreier Array Abschnitte zu bestimmen. (?)
             //zCVobBBox3DSorter<zCZone> zoneBoxSorter
-/*0x0118*/          var int zoneBoxSorter_vtbl;     //таблица методов
+/*0x0118*/          var int zoneBoxSorter_vtbl;     //Methodentabelle
                 //zCArray<zTBoxSortHandle *>        handles;
 /*0x011C*/          var int zoneBoxSorter_handles_array;         //zTBoxSortHandle**
 /*0x0120*/          var int zoneBoxSorter_handles_numAlloc;      //int
@@ -140,10 +140,10 @@ class oWorld {
 /*0x0154*/          var int zoneBoxSorter_nodeList2_compare;       //int    (*Compare)(const void* ele1,const void* ele2)
 /*0x0158*/      var int zoneBoxSorter_sorted;                       //zBOOL
             
-            //Чтобы ограничить число текущих зон?
+            //Um die zur Zeit relevante Menge von Zonen einzugrenzen?
             
             //zCVobBBox3DSorter<zCZone>::zTBoxSortHandle    zoneActiveHandle;
-/*0x015C*/      var int zoneActiveHandle_vtbl;                  //Указатель на таблицу методов
+/*0x015C*/      var int zoneActiveHandle_vtbl;                  //Pointer to Method table
 /*0x0160*/      var int zoneActiveHandle_mySorter;              //zCBBox3DSorterBase*
                    //zTBBox3D bbox3D;
 /*0x0164*/          var int zoneActiveHandle_mins[3];           //zPOINT3
@@ -161,13 +161,13 @@ class oWorld {
 /*0x01A4*/  var int showZonesDebugInfo;                     //zBOOL
     
             //--------------------------------------
-            // Binary Space Partitioning Tree (BSP-дерево)
+            // Binary Space Partitioning Tree
             //--------------------------------------
     
-/*0x01A8*/  var int cbspTree;                               //zCCBspTree*   //"construction" напр. для чего?
-            //zCBspTree bspTree;                    //Дальше идет само bsp-дерево:
-/*0x01AC*/    var int bspTree_actNodePtr;           //zCBspNode* //интересно только при построении
-/*0x01B0*/    var int bspTree_actLeafPtr;           //zCBspLeaf* //интересно только при построении
+/*0x01A8*/  var int cbspTree;                               //zCCBspTree*   //"construction" Bsp. Was tut der?
+            //zCBspTree bspTree;                    //Hier der eigentliche bsp Tree:
+/*0x01AC*/    var int bspTree_actNodePtr;           //zCBspNode* //nur beim Aufbau interessant
+/*0x01B0*/    var int bspTree_actLeafPtr;           //zCBspLeaf* //nur beim Aufbau interessant
                  
 /*0x01B4*/    var int bspTree_bspRoot;              //zCBspBase*
 /*0x01B8*/    var int bspTree_mesh;                 //zCMesh*
@@ -178,16 +178,16 @@ class oWorld {
 /*0x01CC*/    var int bspTree_numLeafs;             //int           
 /*0x01D0*/    var int bspTree_numPolys;             //int           
               
-              //zCArray<zCVob*>         renderVobList;    //Рендер в последнем кадре
+              //zCArray<zCVob*>         renderVobList;    //Im letzten Frame gerendert
 /*0x01D4*/      var int bspTree_renderVobList_array;      //zCVob**
 /*0x01D8*/      var int bspTree_renderVobList_numAlloc;   //int
 /*0x01DC*/      var int bspTree_renderVobList_numInArray; //int
-              //zCArray<zCVobLight*>        renderLightList;        //Рендер в последнем кадре
+              //zCArray<zCVobLight*>        renderLightList;        //Im letzten Frame gerendert
 /*0x01E0*/      var int bspTree_renderLightList_array;      //zCVobLight**
 /*0x01E4*/      var int bspTree_renderLightList_numAlloc;   //int
 /*0x01E8*/      var int bspTree_renderLightList_numInArray; //int                                                   
 
-              //zCArray<zCBspSector*>       sectorList; //Рендер в последнем кадре
+              //zCArray<zCBspSector*>       sectorList; //im letzten Frame gerendert
 /*0x01EC*/      var int bspTree_sectorList_array;      //zCBspSector**
 /*0x01F0*/      var int bspTree_sectorList_numAlloc;   //int
 /*0x01F4*/      var int bspTree_sectorList_numInArray; //int                                                    
@@ -200,38 +200,38 @@ class oWorld {
 /*0x0204*/    var int bspTree_bspTreeMode;         //zTBspTreeMode    
 /*0x0208*/    var int bspTree_worldRenderMode;     //zTWld_RenderMode / int
 /*0x020C*/    var int bspTree_vobFarClipZ;         //zREAL                  
-/*0x0210*/    var int bspTree_vobFarPlane[4];       //zTPlane                       //zREAL     расстояние; //zPOINT3     нормаль;
+/*0x0210*/    var int bspTree_vobFarPlane[4];       //zTPlane                       //zREAL     distance; //zPOINT3     normal;
 /*0x0220*/    var int bspTree_vobFarPlaneSignbits; //int                         
 /*0x0224*/    var int bspTree_drawVobBBox3D;       //zBOOL                  
 /*0x0228*/    var int bspTree_leafsRendered;       //int                         
 /*0x022C*/    var int bspTree_vobsRendered;        //int                         
 /*0x0230*/    var int bspTree_m_bRenderedFirstTime;//zBOOL                  
 /*0x0234*/    var int bspTree_masterFrameCtr;      //zTFrameCtr         
-/*0x0238*/    var int bspTree_actPolyPtr;           //zCPolygon**   //интересно только при построении
+/*0x0238*/    var int bspTree_actPolyPtr;           //zCPolygon**   //nur beim Aufbau interessant
 /*0x023C*/    var int bspTree_compiled;            //zBOOL                  
                                                                     
-            //zCArray<zCVob*>               activeVobList;  //активные Vob'ы (физика / AI)
+            //zCArray<zCVob*>               activeVobList;  //aktive Vobs (Physik / AI)
 /*0x0240*/      var int activeVobList_array;      //zCVob**
 /*0x0244*/      var int activeVobList_numAlloc;   //int
 /*0x0248*/      var int activeVobList_numInArray; //int 
-            //zCArray<zCVob*>               walkList; // в каждом какдре сюда помещается копия activeVobList. После этого имеем доступ к каждому объекту в списке и обрабатываем его.
+            //zCArray<zCVob*>               walkList; // wird im jedem Frame als Kopie der activeVobList gesetzt. Dann bekommt jedes Objekt in der Liste die Gelegenheit seinen Kram zu erledigen.
 /*0x024C*/      var int walkList_array;      //zCVob**
 /*0x0250*/      var int walkList_numAlloc;   //int
 /*0x0254*/      var int walkList_numInArray; //int  
-            //zCArray<zCVob*>               vobHashTable[VOB_HASHTABLE_SIZE];               // для быстрого поиска VOB'а по имени
-                //Для "array", "numAlloc" и "numInArray" получается 3*VOB_HASHTABLE_SIZE слов.
-                //Лексер не поддерживает массивы такого размера, поэтому мое объявление семантически неверно.
-                //Если хотите работать с хэш-таблицей, используйте смещение.
-                //См. MEM_SearchVobByName для использования.
+            //zCArray<zCVob*>               vobHashTable[VOB_HASHTABLE_SIZE];               // for fast vob searching by name
+                //Mit "array", "numAlloc" und "numInArray" also 3*VOB_HASHTABLE_SIZE Wörter.
+                //Der Lexer erlaubt keine so großen Arrays, daher ist meine Deklaration semantischer Unsinn.
+                //Wer mit der Hashtabelle arbeiten will, muss selbst die Offsetrechnung betreiben.
+                //Siehe MEM_SearchVobByName für Benutzung.
 /*0x0258*/      var int vobHashTableStart[2048];
                 var int vobHashTableMiddle[2048];
                 var int vobHashTableEnd[2048];
 
-            var string worldFilename;   //zSTRING Путь к файлу текущей локации
-            var string worldName;       //zSTRING Имя файла текущей локации
+            var string worldFilename;   //zSTRING Pfad des aktuellen Levels
+            var string worldName;       //zSTRING Name des aktuellen Levels
     
-            //не проверял, но, надеюсь, это путь относительно программы.
-            //здесь сортируется, а как, я не знаю.
+            //nicht ausprobiert, aber hoffentlich ist der Name Programm.
+            //wie hier sortiert ist weiß ich nicht.
             var int voblist;            //zCListSort<zCVob>*
             var int voblist_npcs;       //zCListSort<oCNpc>*
             var int voblist_items;      //zCListSort<oCItem>*

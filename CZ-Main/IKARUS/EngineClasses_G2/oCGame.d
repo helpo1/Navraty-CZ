@@ -1,4 +1,4 @@
-//Статистика:
+//statics:
 
 class zCSession {
 	var int _vtbl;
@@ -39,9 +39,9 @@ class oCGame {
         GAME_VIEW_MAX
     }*/
 
-    //View - это канал, через который движок
-    //выводит информацию на экран.
-    //Например, субтитры в диалогах.
+    //Views sind Kanäle, über die die Engine
+    //Informationen anzeigen kann.
+    //Beispiel sind die normalen Dialoguntertitelboxen.
     var int array_view[GAME_VIEW_MAX];          //zCView*
     var int array_view_visible[GAME_VIEW_MAX];  //zBOOL
     var int array_view_enabled[GAME_VIEW_MAX];  //zBOOL
@@ -57,8 +57,8 @@ class oCGame {
     var int focusBar;               //oCViewStatusBar*
     var int showPlayerStatus;       //zBOOL
 
-    // Отладка
-    var int game_drawall;           //zBOOL   //"переключение на рабочий стол"
+    // Debugsachen
+    var int game_drawall;           //zBOOL   //"toggle Desktop"
     var int game_frameinfo;         //zBOOL
     var int game_showaniinfo;       //zBOOL
     var int game_showwaynet;        //zBOOL
@@ -71,23 +71,23 @@ class oCGame {
     var int showFreePoints;         //zBOOL
     var int showRoutineNpc;         //oCNpc*
 
-    // Информация об уровнях (локациях)
+    // Levelinfos
     var int loadNextLevel;          //zBOOL
     var string loadNextLevelName;   //zSTRING
     var string loadNextLevelStart;  //zSTRING
 
-    // Особенности для игрока
+    // Spielerspezifika
     var int startpos[3];            //zVEC3
-    var int gameInfo;               //oCGameInfo* //что-то на первый взгляд неинтересное
+    var int gameInfo;               //oCGameInfo* //etwas auf den ersten Blick uninteressantes
     var int pl_light;               //zCVobLight*
     var int pl_lightval;            //zREAL
 
-    // Таймер
+    // Timer
     var int wldTimer;               //oCWorldTimer*
-    var int timeStep;               //zREAL                               // допустИм отдельный кадр
+    var int timeStep;               //zREAL                               // Ermöglicht Einzelbildschaltung
     var int singleStep;             //zBOOL
 
-    // Ссылки на уникальные экземпляры классов
+    // Referenzen auf Einzelstückklassen.
     var int guilds;                 //oCGuilds*
     var int infoman;                //oCInfoManager*
     var int newsman;                //oCNewsManager*
@@ -96,20 +96,20 @@ class oCGame {
     var int portalman;              //oCPortalRoomManager*
     var int spawnman;               //oCSpawnManager*
 
-    //Разное
+    //Zeug
     var int music_delay;            //zREAL
     var int watchnpc;               //oCNpc*
 
-    //Короткая пауза сразу после загрузки,
-    //чтобы восстановить системные ресурсы.
+    //Kurz nachdem Laden kurze Pause, damit
+    //sich die Systemressourcen erholen.
     var int m_bWorldEntered;        //zBOOL
     var int m_fEnterWorldTimer;     //zREAL
 
-    //Понятно:
+    //Klar:
     var int initial_hour;           //int
     var int initial_minute;         //int
 
-    //Отладка:
+    //Debug:
     //zCArray<zCVob*>           debugInstances;
         var int debugInstances_array;       //zCVob**
         var int debugInstances_numAlloc;    //int
@@ -118,7 +118,7 @@ class oCGame {
     var int debugChannels;          //int
     var int debugAllInstances;      //zBOOL
 
-    //Расписания объектов ("Wld_SetObjectRoutine"), напр., фонари зажигаются только ночью
+    //Objektroutinen ("Wld_SetObjectRoutine"), z.B. Laternen: nur Nachts an
     /*
     typedef struct {
         zSTRING     objName;
@@ -136,12 +136,12 @@ class oCGame {
 
     var int currentObjectRoutine;                   //zCListSort<TObjectRoutine>*
 
-    //Полоска прогресса
+    //ProgressBar
     var int progressBar;                            //zCViewProgressBar*
 
-    //Не у каждой бочки в мире есть своя индивидуальная визуализация.
-    //Я думаю, все визуализации хранятся здесь,
-    //а VOB'ы содержат только копии указателей на них.
+    //Nicht jedes Fass in der Welt hat ein privates Visual.
+    //Ich schätze mal, dass alle benutzten Visuals hier gesammelt werden
+    //und Vobs nur Kopien der Referenzen halten.
 
     //zCArray   <zCVisual*>     visualList;
       var int visualList_array;         //zCVisual**
@@ -151,8 +151,8 @@ class oCGame {
 
 //######################################################
 //
-//	Game Manager: Заботится о загрузке, сохранении и т.п.
-//  игровых сессий (Game Sessions).
+//	Game Manager: Kümmert sich darum
+//  Game Sessions zu starten zu speichern usw.
 //
 //######################################################
 
@@ -198,5 +198,5 @@ class CGameManager
 	var int menu_save_savegame;     //oCMenuSavegame*
 	var int menu_load_savegame;	    //oCMenuSavegame*
 
-	var int	playTime;				//int  //редко (?) обновляется. Но как минимум, при сохранении и загрузке.
+	var int	playTime;				//int  //wird selten (?) aktualisiert. Mindestens aber beim Speichern und Laden.
 };

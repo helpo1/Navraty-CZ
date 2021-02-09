@@ -1,44 +1,43 @@
 //######################################################
 //
-//  Ядро скрипт-пакета "Ikarus"
-//      Автор      : Sektenspinner
-//      Соавтор    : Gottfried
-//	    Версия     : 1.2.0
-//      Перевод    : НастасьСанна /*NS*/
+//  Kern des Skriptpakets "Ikarus"
+//      Autor      : Sektenspinner
+//      Co-Autor   : Gottfried, mud-freak, Neconspictor
+//	    Version    : 1.2.2
 //
 //######################################################
 
 //************************************************
-// Содержание:
+// Content:
 //************************************************
 /*
-    ## Преамбула ##
-        -Проверка версии
-        -Функции ведения лога (предварительные) 
-        -Извлечение информации из стека парсера
+    ## Preamble ##
+        -Versioncheck
+        -Logging Functions (preliminary) 
+        -Parser Data Stack Hacking
         
-    ## Базовые операции чтения и записи ##
-        -Чтение/запсь целых чисел, строк, массивов, байт
+    ## Basic Read Write ##
+        -Read/Write of Integers, Strings, Arrays, Bytes
     
-    ## Основные функции, связанные с zCParser ##
-        -MEM_ReinitParser: Локализация структур данных парсера.
-        -Получение и назначение смещения инстанций (MEM_PtrToInst)
-        -Переходы (через MEM_StackPos)
-        -MEM_GetFuncID и иже с ним
-        -Оператор адреса _@ и иже с ним
-        -Доступ к статическим массивам
+    ## Basic zCParser related functions ##
+        -MEM_ReinitParser: Locate Parser data structures.
+        -Get and set instance offsets (e.g. MEM_PtrToInst)
+        -Jumps (via MEM_StackPos)
+        -MEM_GetFuncID and friends
+        -Address Operator _@ and friends
+        -Access static Arrays
         
-    ## Подготовка MEM_Alloc и MEM_Free ##
-        -Выделение и освобождение памяти с помощью строк
+    ## Preliminary MEM_Alloc and MEM_Free ##
+        -(De-)Allocation with Strings
         
-    ## Пакет CALL ##
-        -ASM: Запись и выпонение машинного кода
-        -CALL_Begin / End: Ускоренный режим пакета
-        -Проталкивание параметров в стек
-        -Извлечение результата из стека
-        -Соглашения о вызовах
+    ## CALL Package ##
+        -ASM: Bytecode Streams and their execution
+        -CALL_Begin / End: The faster Mode of the package
+        -Parameter pushing
+        -Result poping
+        -calling conventions
         
-    ## УТИЛИТЫ ##
+    ## UTILITY ##
         -MEM_SetShowDebug
         -MEM_Copy
         -MEM_Swap
@@ -46,19 +45,19 @@
         -MEM_Realloc
         -MEM_Compare
         
-    ## Утилиты Windows ##
+    ## Windows Utilities ##
         -LoadLibrary / GetProcAddress
         -VirtualProtect / MemoryProtectionOverride
         -MEM_MessageBox / MEM_InfoBox
         
-    ## Массивы ##
+    ## Arrays ##
         -Alloc / Clear / Free / Size / Read / Write
         -Insert / Push / Pop / Top
         -IndexOf / RemoveIndex / RemoveValue[Once]
         -Sort / Unique
         -ToString
         
-    ## Работа со строками ##
+    ## String Tools ##
         -GetCharAt / Length
         -Substring / Prefix
         -Compare
@@ -67,89 +66,89 @@
         -STR_Split
         -STR_Upper
         
-    ## Обработка функций, связаных с zCParser ##
+    ## Elaborate zCParser related functions ##
         -MEM_(Find/Get)ParserSymbol
         -MEM_Call[, ByID, ByString]
-        -Поиск функции по смещению в стеке
-        -Поиск текущей позиции в машинном стеке
+        -Find function by Stack Offset
+        -Locate current execution position on machine stack
             * MEM_GetCallerStackPos
             * MEM_SetCallerStackPos
         -Label / goto / while / repeat
-            * Разбиение функции на токены
-            * Трассировка расчета параметра
-            * Функция-заплатка (патч)
-            * Обработчик while
-            * Обработчик goto
-            * Обработчик repeat
+            * Split function into tokens
+            * Trace calculation of parameter
+            * patch function
+            * Handle first while
+            * Handle first goto
+            * Handle first repeat
             
-    ## Доступ к объектам меню ##
-        -Поиск меню и пунктов меню по строке текста
+    ## Access Menu Objects ##
+        -Find Menus and Menuitems by string
         
     ## zCObjects ##
-        -Часто используемые объекты (MEM_InitGlobalInst)
-        -Проверка соответствий (Hlp_Is_*)
-        -Поиск zCClassDef и имени класса объекта
-        -Создание и удаление vob'ов
+        -Commonly used objects (MEM_InitGlobalInst)
+        -Validity checks (Hlp_Is_*)
+        -Find zCClassDef and class name for object
+        -Create and delete vobs
             * MEM_InsertVob
             * MEM_DeleteVob
-        -Поиск объектов в хэш-таблице мира
-            * Расчет хэш-функции
-            * Поиск объекта по имени
-            * Правильное изменение имени объекта
-        -Запуск и отмена триггеров
+        -Locate Objects in the worlds Hash table
+            * Evaluate hash function
+            * Find Objects by name
+            * Properly change object name
+        -Send trigger and untrigger
         
-    ## Клавиатура ##
+    ## Keyboard interaction ##
         -MEM_KeyState
         -MEM_InsertKeyEvent
         
-    ## Чтение и запись Ini-параметров ##
-        -Чтение
-            * Настройки Готики
-            * Настройки мода
-            * Доступ к командной строке
-            * Получение клавиш управления
-        -Запись
-            * Настройки Готики
-            * Применение изменений и запись на диск
+    ## Read and Write Ini Values ##
+        -Reading
+            * In Gothic's configuration
+            * In the mod's configuration
+            * Get command line
+            * Get key assignment
+        -Writing
+            * in Gothic's configuration
+            * Apply changes and write to disk
             
-    ## Разметка и контроль времени исполнения ##
-        -Время исполнения
-            * Миллисекунды
-            * Счетчик производительности
-        -Тест производительности
+    ## Benchmarking and time measurement ##
+        -Time Measurement
+            * Milliseconds
+            * Performance Counter
+        -Benchmark
         
-    ## Ведение лога и отладка ##
-        -Отправка сообщений Info/Warning/Error в zSpy
-        -Трассиовка стека
-            * Вывод отдельной строки трассировки
-            * Вывод полной трассировки
-            * Обработчик исключительных ситуаций
-            * Установка обработчика
+    ## Logging and Debug ##
+        -Send Info/Warning/Error to zSpy
+        -Print the Stacktrace
+            * Print Stacktrace line
+            * Print full Stack Trace
+            * Exception handler
+            * Installing the exeption handler
             
-    ## Переработанные функции ##
-        -Ускоренная MEM_ReadInt / MEM_WriteInt
-        -Ускоренная MEM_Alloc and MEM_Free
+    ## Revised functions ##
+        -Faster MEM_ReadInt / MEM_WriteInt
+        -Faster MEM_Alloc and MEM_Free
         
     ## MEM_InitAll
 */
 
 //#################################################
 //
-//    Преамбула
+//    Preamble
 //
 //#################################################
 
 //----------------------------------------------
-//   Проверка версии
-//   Если ваш код зависит от изменений, введенных
-//   в определенной версии Икаруса,
-//   и вы хотите предоставить ваш код пользователям,
-//   у которых может быть старая версия, используйте:
+//   Versioncheck
+//   If your Code relies on fixes introduced in
+//   a certain version of Ikarus,
+//   and you want to give your code to users
+//   that may have old versions, use this:
 //----------------------------------------------
 
-const int IKARUS_VERSION = 10200; //по 2 цифры для главного и второстепенного номеров версий.
+const int IKARUS_VERSION = 10202; //2 digits for Major and Minor Revision number.
 
-/* возвращает 1, если версия Икакруса такая же или более новая */
+/* returns 1 if the version of Ikarus is the specified version or newer */
 func int MEM_CheckVersion(var int base, var int major, var int minor) {
     if (major > 99 || minor > 99) {
         return false;
@@ -159,16 +158,16 @@ func int MEM_CheckVersion(var int base, var int major, var int minor) {
 };
 
 //--------------------------------------
-//  Функции ведения лога
-//  MEM_SendToSpy пересмотрена в MEM_InitAll
-//  для более точного вывода
+//  Logging functions
+//  MEM_SendToSpy will be revised
+//  by MEM_InitAll to print neatly
 //--------------------------------------
 
-/* должно ли следующее сообщение выводиться в окне ошибки? */
+/* should the next message have an error box? */
 var int MEMINT_ForceErrorBox;
 
 func void MEM_SendToSpy(var int errorType, var string text) {
-    /* Реализация заменена в MEM_InitAll! */
+    /* Implementierung wird von MEM_InitAll ersetzt! */
     PrintDebug(ConcatStrings(text, "<<< (This is a preliminary printing variant, use MEM_InitAll to get neat 'Q:' prefixed messages.) >>>")); /* Q: is the Ikarus mark */
 };
 
@@ -214,7 +213,7 @@ func void MEM_Warn(var string warn) {
 func void MEM_Info(var string info) {
     if (zERR_ReportToZSpy > zERR_TYPE_INFO)
     && (zERR_PrintStackTrace > zERR_TYPE_INFO) {
-        return; //не теряем времени
+        return; //dont waste time
     };
     
     MEMINT_HandleError(zERR_TYPE_INFO, info);
@@ -225,7 +224,7 @@ func void MEM_AssertFail (var string assertFailText) {
     MEM_Error (assertFailText);
 };
 
-/* пользовательский канал */
+/* custom channel */
 
 func void MEM_Debug(var string message) {
     message = ConcatStrings(zERR_DEBUG_PREFIX, message);
@@ -244,7 +243,7 @@ func void MEM_Debug(var string message) {
 };
 
 //--------------------------------------
-//  Извлечение информации из стека парсера
+//  Parser Data Stack Hacking
 //--------------------------------------
 
 class MEMINT_HelperClass {};
@@ -255,7 +254,7 @@ func int MEMINT_StackPushInt (var int val) {
     return +val;
 };
 
-//Внимание: в стек проталкивается ссылка!
+//Vorsicht: Referenz wird gepusht!
 func string MEMINT_StackPushString (var string val) {
     return val;
 };
@@ -275,7 +274,7 @@ func void MEMINT_StackPushVar (var int adr) {
     MEMINT_StackPushInst (zPAR_TOK_PUSHVAR);
 };
 
-//Альтернативные формулировки:
+//Alternative Formulierungen:
 func int    MEMINT_PopInt() {};
 func string MEMINT_PopString() {};
 func int    MEMINT_StackPopInt() {};
@@ -293,12 +292,12 @@ INSTANCE MEM_HELPER_INST (C_NPC)
     name = MEM_HELPER_NAME;
     id = 42;
 
-    /* бессмертный: */
+    /* unsterblich: */
     flags = 2;
     attribute   [ATR_HITPOINTS_MAX] = 2;
     attribute   [ATR_HITPOINTS]     = 2;
 
-    /* любая визуализация: */
+    /* irgendein Visual: */
     Mdl_SetVisual           (self,  "Meatbug.mds");
 };
 
@@ -308,7 +307,7 @@ func void MEMINT_GetMemHelper() {
     MEM_Helper = Hlp_GetNpc (MEM_HELPER_INST);
 
     if (!Hlp_IsValidNpc (MEM_Helper)) {
-        //временно помещается в self
+        //self zwischenspeichern
         var C_NPC selfBak;
         selfBak = Hlp_GetNpc (self);
         Wld_InsertNpc (MEM_HELPER_INST, MEM_FARFARAWAY);
@@ -320,39 +319,39 @@ func void MEMINT_GetMemHelper() {
 //GOTHIC_BASE_VERSION == 1 ? g1Val : g2Val
 func int MEMINT_SwitchG1G2(var int g1Val, var int g2Val) {
     if (GOTHIC_BASE_VERSION == 1) {
-        return g1Val;
+        return +g1Val;
     } else {
-        return g2Val;
+        return +g2Val;
     };
 	
-	return g2Val;
+	return +g2Val;
 };
 
 //######################################################
 //
-//  Базовые операции чтения и записи
+//  Basic Read Write Operations
 //
 //######################################################
 
 //--------------------------------------
-// Чтение информации из стека парсера
+// Reading Parser-Data-Stack-Hacking
 //--------------------------------------
 
 func int MEM_ReadInt (var int address) {
-    /* Примечание: не вызовет ошибки, если Ikarus полностью
-     * запущен из MEM_InitAll. Эта функция будет заменена. */
-    if (address <= 0) {
-        MEM_Error (ConcatStrings ("MEM_ReadInt: Invalid address: ", IntToString (address)));
+    /* note: there will not be error handling once Ikarus is
+     * fully set up by MEM_InitAll. This function will be replaced. */
+    if (address == 0) {
+        MEM_Error ("MEM_ReadInt: address is NULL");
         return 0;
     };
     
     MEMINT_StackPushVar (address);
-    MEMINT_StackPushInt (MEMINT_StackPopInt()); //как int, а не как var из стека
+    MEMINT_StackPushInt (MEMINT_StackPopInt()); //als int nicht als var auf dem Stack
 };
 
 func string MEM_ReadString (var int address) {
-    if (address <= 0) {
-        MEM_Error (ConcatStrings ("MEM_ReadString: Invalid address: ", IntToString (address)));
+    if (address == 0) {
+        MEM_Error ("MEM_ReadString: address is NULL");
         return "";
     };
 
@@ -360,14 +359,14 @@ func string MEM_ReadString (var int address) {
 };
 
 //--------------------------------------
-// Присваивание
+// Assignments
 //--------------------------------------
 
-//Старый метод чтения используется только для загрузки новой системы.
+//Alte Lesemethode wird nur zum Bootstrap des neuen Systems gebraucht.
 func void MEMINT_OldWriteInt (var int address, var int val) {
     /* other = address - MEM_NpcID_Offset */
     MEM_Helper.enemy = address - MEM_NpcID_Offset;
-    /* res не нужен, но иначе в стеке будет мусор! */
+    /* res wird nicht gebraucht, müllt aber sonst den Stack zu! */
     var int res; res = Npc_GetTarget (MEM_Helper);
 
     /* *(other + oCNpc_idx_offset) = val */
@@ -375,75 +374,76 @@ func void MEMINT_OldWriteInt (var int address, var int val) {
 };
 
 func void MEMINT_PrepareAssignments() {
-    /* гарантирует, что MEMINT_Assign и MEMINT_StrAssign точно
-     * вызовут функцию zPAR_OP_IS или zPAR_TOK_ASSIGNSTR.
-     * Эта функция вызывается после старта Готики ровно один раз. */
+    /* sorgt dafür, dass MEMINT_Assign und MEMINT_StrAssign
+     * genau die Funktion von zPAR_OP_IS bzw. zPAR_TOK_ASSIGNSTR
+     * erfüllen.
+     * Diese Funktion wird nach Start von Gothic genau einmal aufgerufen. */
 
     var int symTab; var int MEMINT_Assign_Sym; var int MEMINT_Assign_StackPos; var int stackStart;
 
-    //Навигация в коде данных функций:
+    //Navigation zum Code dieser Funktionen:
     symTab                  = MEM_ReadInt (ContentParserAddress + zCParser_symtab_table_array_offset);
     stackStart              = MEM_ReadInt (ContentParserAddress + zCParser_stack_offset);
     MEMINT_Assign_Sym       = MEM_ReadInt (symTab + 4 * (MEMINT_AssignPredecessor + 1));
     MEMINT_Assign_StackPos  = MEM_ReadInt (MEMINT_Assign_Sym + zCParSymbol_content_offset);
 
-    //старый метод чтения использует NPC
+    //alte Lesemethode braucht Npc
     MEMINT_GetMemHelper();
     var C_NPC othBak;
     othBak = Hlp_GetNpc (other);
 
-    //Код переписывается. Внимание: Первый вызов будет также работать!
+    //Code überschreiben. Vorsicht: Der erste Aufruf soll auch klappen!
     MEMINT_OldWriteInt (stackStart + MEMINT_Assign_StackPos     , (zPAR_OP_IS          << 0) | (zPAR_TOK_RET       << 8) | (zPAR_TOK_RET << 16) | (zPAR_TOK_RET << 24));
     MEMINT_OldWriteInt (stackStart + MEMINT_Assign_StackPos +  4, (zPAR_TOK_RET        << 0) | (zPAR_OP_IS         << 8) | (zPAR_TOK_RET << 16) | (zPAR_TOK_RET << 24));
     MEMINT_OldWriteInt (stackStart + MEMINT_Assign_StackPos +  8, (zPAR_TOK_ASSIGNSTR  << 0) | (zPAR_TOK_RET       << 8) | (zPAR_TOK_RET << 16) | (zPAR_TOK_RET << 24));
     MEMINT_OldWriteInt (stackStart + MEMINT_Assign_StackPos + 12, (zPAR_TOK_RET        << 0) | (zPAR_TOK_ASSIGNSTR << 8) | (zPAR_TOK_RET << 16) | (zPAR_TOK_RET << 24));
 
-    //нужно почистить после старого метода чтения
+    //alte Lesemethode muss aufräumen
     MEM_Helper.enemy = 0;
     other = Hlp_GetNpc (othBak);
 };
 
 var MEMINT_HelperClass MEMINT_AssignPredecessor;
 func void MEMINT_Assign() {
-    /* Здесь должно быть:
+    /* Hier soll stehen:
      *  zPAR_OP_IS
      *  zPAR_TOK_RET
      *
-     * что я и записываю: */
+     * das schreibe ich da jetzt hin: */
 
-    MEMINT_PrepareAssignments (); //zPAR_TOK_CALL + 4 байта
+    MEMINT_PrepareAssignments (); //zPAR_TOK_CALL + 4 bytes
     return;                       //zPAR_TOK_RET
     return;                       //zPAR_TOK_RET
                                   //zPAR_TOK_RET
 
-    //В сумме: 8 байт
+    //Summe: 8 Bytes
 };
 
 func void MEMINT_StrAssign() {
-    /* Здесь должно быть:
+    /* Hier soll stehen:
      *  zPAR_TOK_ASSIGNSTR
      *  zPAR_TOK_RET
      *
-     * что я и записываю: */
+     * das schreibe ich da jetzt hin: */
 
-    MEMINT_PrepareAssignments (); //zPAR_TOK_CALL + 4 байта
+    MEMINT_PrepareAssignments (); //zPAR_TOK_CALL + 4 bytes
     return;                       //zPAR_TOK_RET
     return;                       //zPAR_TOK_RET
                                   //zPAR_TOK_RET
 
-    //В сумме: 8 байт
+    //Summe: 8 Bytes
 };
 
 //--------------------------------------
-// Операции записи
+// Schreiboperationen
 //--------------------------------------
 
 func void MEM_WriteInt (var int address, var int val) {
-    /* Примечание: не вызовет ошибки, если Ikarus полностью
-     * запущен из MEM_InitAll. Эта функция будет заменена. */
+    /* note: there will not be error handling once Ikarus is
+     * fully set up by MEM_InitAll. This function will be replaced. */
 
-    if (address <= 0) {
-        MEM_Error (ConcatStrings ("MEM_WriteInt: Invalid address: ", IntToString (address)));
+    if (address == 0) {
+        MEM_Error ("MEM_WriteInt: address is NULL");
         return;
     };
 
@@ -454,8 +454,8 @@ func void MEM_WriteInt (var int address, var int val) {
 };
 
 func void MEM_WriteString (var int address, var string val) {
-    if (address <= 0) {
-        MEM_Error (ConcatStrings ("MEM_WriteString: Invalid address: ", IntToString (address)));
+    if (address == 0) {
+        MEM_Error ("MEM_WriteString: address is NULL");
         return;
     };
 
@@ -466,7 +466,7 @@ func void MEM_WriteString (var int address, var string val) {
 };
 
 //------------------------------------------------
-//  Побайтный доступ
+//  Byte-Zugriff
 //------------------------------------------------
 
 func int MEM_ReadByte (var int adr) {
@@ -483,7 +483,7 @@ func void MEM_WriteByte (var int adr, var int val) {
 };
 
 //--------------------------------------
-// Доступ к массивам
+// Arrayzugriff
 //--------------------------------------
 
 func int MEM_ReadIntArray (var int arrayAddress, var int offset) {
@@ -501,7 +501,7 @@ func int MEM_ReadByteArray (var int arrayAddress, var int offset) {
 func void MEM_WriteByteArray (var int arrayAddress, var int offset, var int value) {
     MEM_WriteByte (arrayAddress + offset, value);
 };
-/* Теперь в LeGo добавлена:
+/* Zurzeit in LeGo drin.
 func string MEM_ReadStringArray (var int arrayAddress, var int offset) {
     return MEM_ReadString (arrayAddress + offset * sizeof_zString);
 };*/
@@ -512,12 +512,12 @@ func void MEM_WriteStringArray (var int arrayAddress, var int offset, var string
 
 //######################################################
 //
-//  Основные функции, связанные с zCParser
+//  Basic zCParser related functions
 //
 //######################################################
 
-//Устарело, используйте MEM_Parser!
-const int currParserAddress              = 0; //константа, чтобы верное значение сохранялось в процессе загрузки
+//Deprecated, use MEM_Parser instead!
+const int currParserAddress              = 0; //const to keep it valid through loading
 const int currSymbolTableAddress         = 0;
 const int currSymbolTableLength          = 0;
 const int currSortedSymbolTableAddress   = 0;
@@ -527,17 +527,17 @@ const int contentSymbolTableAddress      = 0;
 func void MEM_ReinitParser() {
     currParserAddress = ContentParserAddress;
     
-    //Таблица символов парсера:
+    //Die Symboltabelle im Parser:
     currSymbolTableAddress          = MEM_ReadInt (currParserAddress + zCParser_symtab_table_array_offset);
     currSymbolTableLength           = MEM_ReadInt (currParserAddress + zCParser_symtab_table_array_offset + 8);
     currSortedSymbolTableAddress    = MEM_ReadInt (currParserAddress + zCParser_sorted_symtab_table_array_offset);
     currParserStackAddress          = MEM_ReadInt (currParserAddress + zCParser_stack_offset);
 
-    //И еще таблица символов для данных:
+    //Die Contentsymboltabelle braucht man immer mal wieder:
     contentSymbolTableAddress       = MEM_ReadInt (ContentParserAddress + zCParser_symtab_table_array_offset);
 };
 
-//удалено, осталась заглушка
+//removed, but keep stub
 func void MEM_SetParser(var int ID) {
     if (!ID) {
         MEM_Warn("MEM_SetParser was removed in Ikarus Version 1.2 and should not be used any more.");
@@ -547,31 +547,26 @@ func void MEM_SetParser(var int ID) {
 };
 
 //************************************************
-// Получение и назначение смещения инстанций
+// Get and set instance offsets
 //************************************************
 
 //--------------------------------------
-// Получение инстанции из указателя
+// Instanz auf Pointer zeigen lassen
 //--------------------------------------
 
 var int MEM_AssignInstSuppressNullWarning;
 func void MEM_AssignInst (var int inst, var int ptr) {
     if (inst <= 0) {
-        /* Примечание: не может быть inst == 0,
-         * но, возможно, не создано ни одной инстанции 
-		 * после объявления класса. */
+        /* Anmerkung: inst == 0 kann auch nicht sein,
+         * da es keine Instance vor einer Klassendeklaration
+         * geben kann. */
         MEM_Error (ConcatStrings ("MEM_AssignInst: Invalid instance: ", IntToString (inst)));
         return;
     };
 
-    if (ptr <= 0) {
-        if (ptr < 0) {
-            MEM_Error (ConcatStrings ("MEM_AssignInst: Invalid pointer: ", IntToString (ptr)));
-            return;
-        } else if (!MEM_AssignInstSuppressNullWarning) {
-            /* Нулевая инстанция не даст ничего, кроме проблем. */
-            MEM_Warn ("MEM_AssignInst: ptr is NULL. Use MEM_AssignInstNull if that's what you want.");
-        };
+    if (ptr == 0 && !MEM_AssignInstSuppressNullWarning) {
+		/* Instanzen die Null sind, will man eigentlich nicht, die machen nur Ärger. */
+		MEM_Warn ("MEM_AssignInst: ptr is NULL. Use MEM_AssignInstNull if that's what you want.");
     };
 
     var int sym;
@@ -580,9 +575,9 @@ func void MEM_AssignInst (var int inst, var int ptr) {
 };
 
 func void MEM_AssignInstNull (var int inst) {
-    /* Обычно не требуется устанавливать инстанции в 0.
-     * Чаще всего это приводит к ошибкам. Поэтому выше выдается предупреждение.
-     * На случай, если такое все же потребуется, создана данная функция. */
+    /* Normalerweise will man Instanzen nicht zurück auf 0 setzen.
+     * Oft wird es ein Fehler sein. Daher wird oben eine Warnung ausgegeben.
+     * Um die nicht zu bekommen gibt es hier die explizite Funktion */
     MEM_AssignInstSuppressNullWarning = true;
     MEM_AssignInst (inst, 0);
     MEM_AssignInstSuppressNullWarning = false;
@@ -595,16 +590,10 @@ func MEMINT_HelperClass MEM_PtrToInst (var int ptr) {
         hlpOffsetPtr = MEM_ReadIntArray (currSymbolTableAddress, hlp) + zCParSymbol_offset_offset;
     };
     
-    if (ptr <= 0) {
-        if (ptr < 0) {
-            MEM_Error (ConcatStrings ("MEM_PtrToInst: Invalid pointer: ", IntToString (ptr)));
-            return;
-        } else if (!MEM_AssignInstSuppressNullWarning) {
-            /* Нулевая инстанция не даст ничего, кроме проблем.  */
-            MEM_Warn ("MEM_PtrToInst: ptr is NULL. Use MEM_NullToInst if that's what you want.");
-        };
-        
-        MEM_WriteInt(hlpOffsetPtr, 0);
+    if (ptr == 0 && !MEM_AssignInstSuppressNullWarning ) {
+		/* Instanzen die Null sind, will man eigentlich nicht, die machen nur Ärger. */
+		MEM_Warn ("MEM_PtrToInst: ptr is NULL. Use MEM_NullToInst if that's what you want.");
+		MEM_WriteInt(hlpOffsetPtr, 0);
     } else {
         MEM_WriteInt(hlpOffsetPtr, ptr);
     };
@@ -625,9 +614,9 @@ func MEMINT_HelperClass MEM_CpyInst (var int inst) {
 };
 
 //--------------------------------------
-// Устаревшая реликвия из времен,
-// когда был возможен прямой доступ
-// к парсерам menu/pfx/vfx
+// Deprecated relict from the time
+// when direct access to menu/pfx/vfx parsers
+// was possible
 //--------------------------------------
 
 func void MEM_AssignContentInst (var int inst, var int ptr) {
@@ -649,14 +638,14 @@ func void MEM_AssignContentInstNull (var int inst) {
 };
 
 //--------------------------------------
-// Получение смещения инстанции
+// Get offset of an instance
 //--------------------------------------
 
 func int MEM_InstToPtr(var int inst) {
     if (inst <= 0) {
-        /* Примечание: не может быть inst == 0,
-         * но, возможно, не создано ни одной инстанции 
-		 * после объявления класса. */
+        /* Anmerkung: inst == 0 kann auch nicht sein,
+         * da es keine Instance vor eine Klassendeklaration
+         * geben kann. */
         MEM_Error (ConcatStrings ("MEM_InstGetOffset: Invalid inst: ", IntToString (inst)));
         return 0;
     };
@@ -666,18 +655,18 @@ func int MEM_InstToPtr(var int inst) {
     return MEM_ReadInt (symb + zCParSymbol_offset_offset);
 };
 
-//Обратная совместимость
+//Abwärtskompatibilität
 func int MEM_InstGetOffset (var int inst) {
     return MEM_InstToPtr(inst);
 };
 
 //--------------------------------------
-// Басполезна. Только для обратной
-// совместимости. Google говорит, что
-// где-то использовалось у Lehona.
+// Unsinnig. Nur zur Abwärtskompatibilität
+// überhaupt noch drin. Google sagt,
+// Lehona hat es mal irgendwo benutzt.
 //--------------------------------------
 
-//Можно установить указатель currParserSymb на инстанцию inst.
+//Lässt currParserSymb auf das Symbol mit Instanz inst zeigen.
 INSTANCE currParserSymb (zCPar_Symbol);
 func void MEM_SetCurrParserSymb (var int inst) {
     if (inst <= 0) {
@@ -693,12 +682,12 @@ func void MEM_SetCurrParserSymb (var int inst) {
 };
 
 //************************************************
-//   Переходы
+//   Sprünge
 //************************************************
 
-/* Выглядит просто, да? Но его работа не столь
- * очевидна, как можно подумать.
- * Вот так, например, подействует:
+/* Es sieht einfach aus, gell? Aber das das funktioniert ist
+ * gar nicht so offensichtlich wie man glaubt.
+ * Das hier geht zum Beispiel:
 {
     label = MEM_StackPos.position;
 
@@ -707,7 +696,7 @@ func void MEM_SetCurrParserSymb (var int inst) {
     MEM_StackPos.position = label;
 };
 
- * А здесь гранзиозные планы пойдут крахом:
+ * Das hier geht grandios schief:
 
 {
     label = MEM_StackPos.position + 0;
@@ -717,8 +706,8 @@ func void MEM_SetCurrParserSymb (var int inst) {
     MEM_StackPos.position = label;
 };
 
- * Экспериментаторы, скорее всего, наткнутся на грабли.
- * Чистая случайность, что все так просто работает! */
+ * Wer Experimente macht, wird wahrscheinlich auf die Nase fallen.
+ * Es ist Zufall, dass es so einfach funktioniert! */
 
 class MEMINT_StackPos {
     var int position;
@@ -739,11 +728,11 @@ func void MEM_CallByOffset(var int offset) {
 };
 
 //************************************************
-//   Идея Gottfried'а: идентификатор (ID) функции
+//   Idee von Gottfried: ID einer Funktion
 //************************************************
 
 func int MEM_GetFuncID(var func fnc) {
-    var zCPar_Symbol symb; /* фиктивный символ с индексом indexOf(fnc)+1 */
+    var zCPar_Symbol symb; /* dummy symbol with index indexOf(fnc)+1 */
     symb = MEM_PtrToInst(MEM_ReadIntArray(contentSymbolTableAddress, symb - 1));
    
     var int res;
@@ -779,13 +768,13 @@ func void MEM_ReplaceFunc(var func f1, var func f2) {
     var int ptr;    ptr    = MEM_GetFuncPtr(f1);
     var int target; target = MEM_GetFuncOffset(f2);
     
-    /* тут, пожалуйста, на одном дыхании, а вдруг кто-то изменит то, что мне нужно. */
+    /* jetzt bitte in einem Rutsch, nicht, dass da einer was ersetzen will, was ich brauche. */
     MEM_WriteByte(ptr, zPAR_TOK_JUMP);
     MEM_WriteInt (ptr + 1, target);
 };
 
 //************************************************
-// Функции, которые помогут мне писать бинарный код
+// Functions that help me write Byte Code
 //************************************************
 
 var int MEMINT_OverrideFunc_Ptr;
@@ -808,14 +797,14 @@ func void MEMINT_OFTokPar(var int tok, var int param) {
 
 
 //************************************************
-// Новые операторы
+// New Operators
 //************************************************
 
 //--------------------------------------
-//  Оператор адреса
+//  Address Operator
 //--------------------------------------
 
-//Пустышки, которые будут заполнены позже:
+//Dummies that are filled later:
 func int MEM_GetIntAddress(var int i) {
     MEM_Error("MEM_GetIntAddress called before MEM_GetAddress_Init!");
     return 0;
@@ -833,7 +822,7 @@ func int MEM_GetStringAddress(var string s) {
 
 func int _@(var int i) {
     MEM_Error("_@ called before MEM_GetAddress_Init!");
-    i = i; i = i; i = i; i = i; i = i; i = i; /* немного места */
+    i = i; i = i; i = i; i = i; i = i; i = i; /* some space */
     return 0;
 };
 
@@ -867,7 +856,7 @@ func void MEM_GetAddress_Init() {
         MEMINT_GetAddress_Init(_@f);
         MEMINT_GetAddress_Init(_@s);
     
-        /* кое-что еще для _@ */
+        /* something else for _@ */
         MEMINT_InitOverideFunc(_@);
         /* push zPAR_TOK_PUSHINT     */ MEMINT_OFTokPar(zPAR_TOK_PUSHINST     , zPAR_TOK_PUSHINT                 );
         /* push int zPAR_TOK_PUSHINT */ MEMINT_OFTokPar(zPAR_TOK_PUSHINT      , zPAR_TOK_PUSHINT                 );
@@ -884,29 +873,29 @@ func void MEM_GetAddress_Init() {
     };
 };
 
-/****   обратная совместимость: ****/
+/****   downward compatiblity: ****/
 
-//псевдоним для обратной совметимости
+//alias for downward compatibility
 func void STR_GetAddressInit() {
     MEM_GetAddress_Init();
 };
 
-/* для обатной совместимости здесь гарантируется, что
- * STR_GetAddress будет работать и без инициализации, но в первый раз
- * она может вернуть адрес копии строки */
+/* for downward compatiblity there is a guarantee, that
+ * STR_GetAddress works ininitialised, but the first time
+ * may only return an address of a copy of the string */
  
 func int STR_GetAddress(var string str) {
-    str = str; //пропуск 11 байт
-    MEM_GetAddress_Init(); //перезаписываем 12 байт THIS-функции 
+    str = str; //waste 11 bytes
+    MEM_GetAddress_Init(); //will override 12 bytes of THIS function
     
     return STR_GetAddress(str);
 };
 
 //************************************************
-//	Доступ к статическим массивам
+//	Access static Arrays
 //************************************************
 
-//Рабочие
+//Workers
 func int  MEMINT_ReadStatArr(var int offset) {
     if (offset < 0) {
         MEM_Error("MEM_ReadStatArr: Offset < 0!");
@@ -928,7 +917,7 @@ func void MEMINT_WriteStatArr(var int offset, var int value) {
         return;
     };
     
-    /* выталкиваем только два первых, третий по-другому: */
+    /* pop only the first two, the third differently: */
     MEMINT_StackPopInst();
     MEMINT_StackPushInst(zPAR_TOK_PUSHINT);
     
@@ -966,7 +955,7 @@ func string MEMINT_ReadStatStringArr(var int offset) {
     return MEM_ReadString(adr);
 };
 
-//Заглушки
+//Stubs
 func void MEM_WriteStatArr (var int array, var int offset, var int value)  {
     MEM_Error ("MEM_WriteStatArr was called before MEM_InitStatArrs!");
 };
@@ -998,45 +987,45 @@ func void MEM_InitStatArrs() {
 
 //######################################################
 //
-//  Выделение памяти
+//  Speicher allozieren
 //
 //######################################################
 
 func int MEM_Alloc (var int amount) {
-    /* стока "AAAA" */
+    /* string mit AAAA holen */
     var int strPtr;
     var string str; str = "AAAA";
     
-    strPtr = _@s(str); //Адрес zStrings для символа str.
+    strPtr = _@s(str); //Adresse des zStrings im Symbol str.
 
     var zString zstr;
-    zstr = _^(strPtr); //zstr теперь указывает на str
+    zstr = _^(strPtr); //zstr zeigt jetzt auf str
 
-    /* Заполняем нулями, т.к. я хочу очистить память */
+    /* aus den As Nuller machen, weil ich genullten Speicher will */
     MEM_WriteInt (zstr.ptr, 0);
 
-    /* слепляем строку саму с собой для выделения достоточного пространства */
+    /* string mit sich selbst konkatenieren bis groß genug */
     var int size; size = 4;
 
-    //ВНИМАНИЕ! Цикл должен выполниться хотя бы раз.
-    //Иначе(скорее всего, точно не проверял) вернется статический адрес константы "AAAA"!
-    //И это действительно паршивая ошибка.
+    //VORSICHT! mindestens einmal muss die Schleife durchlaufen werden.
+    //sonst kommt (vermutlich, nicht genau überprüft) statisch die Adrese von der Parserkonstanten "AAAA" zurück!
+    //Und das ist ein richtig mieser Fehler.
     var int loopStart; loopStart = MEM_StackPos.position;
     /* do */
         str = ConcatStrings (str, str);
         size *= 2;
     /* while */  if (size < amount) {  MEM_StackPos.position = loopStart; };
 
-    /* Память выделена. Удаляем ссылку на строку. */
-    /* Внимание: ptr строки указывает на 1 байт после первого зарезервированного!
-     * Строки содержат счетчик ссылок! */
+    /* Speicher ist jetzt reserviert. Dem String die Referenz wieder wegnehmen. */
+    /* Vorsicht: ptr in Strings zeigt auf das Byte nach dem ersten Reservierten!
+     * Strings haben Referenzzähler! */
     var int res; res = zstr.ptr - 1;
     
     zstr.ptr = 0;
     zstr.len = 0;
     zstr.res = 0;
     
-    /* Глобальная строка ConcatStrings-String больше не должна ссылаться на нашу строку! */
+    /* Der globale ConcatStrings-String darf keine Referenz mehr auf unseren String haben! */
     
     //*(byte*)res == 1
     str = ConcatStrings("", "");
@@ -1046,18 +1035,18 @@ func int MEM_Alloc (var int amount) {
 };
 
 func void MEM_Free (var int ptr) {
-    /* нулевой указатель не освобождается */
+    /* keine Nuller freigeben */
     if (!ptr) {
         MEM_Warn ("MEM_Free: ptr is 0. Ignoring request.");
         return;
     };
     
-    /* Внимание: ptr строки указывает на 1 байт после первого зарезервированного!
-     * Строки содержат счетчик ссылок! Обнулить! */
+    /* Vorsicht: ptr in Strings zeigt auf das Byte nach dem ersten Reservierten!
+     * Strings haben Referenzzähler! Den Nullen! */
     
     MEM_WriteByte(ptr, 0); ptr += 1;
     
-    /* Получаем вспомогательные строки */
+    /* Hilfsstring holen */
     var int strPtr;
     var string str; str = "";
     
@@ -1066,7 +1055,7 @@ func void MEM_Free (var int ptr) {
     var zString zstr;
     zstr = _^(strPtr);
 
-    /* берем строку в памяти и особождаем память, присваивая строке "" */
+    /* dem String den Speicher geben und mit Zuweisung von "" an den String freigeben */
     zstr.ptr = ptr;
     zstr.len = 1;
     zstr.res = 1;
@@ -1076,11 +1065,11 @@ func void MEM_Free (var int ptr) {
 
 //#################################################
 //
-//    Пакет CALL
+//    CALL Package
 //
 //#################################################
 
-/* 1 байт */
+/* 1 Byte */
 const int ASMINT_OP_movImToECX   = 185;  //0xB9
 const int ASMINT_OP_movImToEDX   = 186;  //0xBA
 const int ASMINT_OP_pushIm       = 104;  //0x68
@@ -1089,15 +1078,22 @@ const int ASMINT_OP_retn         = 195;  //0xC3
 const int ASMINT_OP_nop          = 144;  //0x90
 const int ASMINT_OP_jmp          = 233;  //0xE9
 const int ASMINT_OP_PushEAX      =  80;  //0x50
+const int ASMINT_OP_pushECX      =  81;  //0x51
+const int ASMINT_OP_popEAX       =  88;  //0x58
+const int ASMINT_OP_popECX       =  89;  //0x59
 const int ASMINT_OP_pusha       = 96;    //0x60 //aus LeGo geklaut
 const int ASMINT_OP_popa        = 97;    //0x61 //aus LeGo geklaut
 const int ASMINT_OP_movMemToEAX = 161;   //0xA1 //aus LeGo geklaut
+const int ASMINT_OP_movALToMem   = 162;  //0xA2
 
-/* 2 байта */
+/* 2 Bytes */
 const int ASMINT_OP_movEAXToMem     =  1417; //0x0589
+const int ASMINT_OP_movEAXToAL      =   138; //0x008A
+const int ASMINT_OP_movCLToEAX      =  2184; //0x0888
 const int ASMINT_OP_floatStoreToMem =  7641; //0x1DD9
 const int ASMINT_OP_addImToESP      = 50307; //0xC483
 const int ASMINT_OP_movMemToECX     =  3467; //0x0D8B
+const int ASMINT_OP_movMemToCL      =  3466; //0x0D8A
 const int ASMINT_OP_movMemToEDX     =  5515; //0x158B
 const int ASMINT_OP_movECXtoEAX     = 49547; //0xC18B  aus LeGo geklaut
 const int ASMINT_OP_movESPtoEAX     = 50315; //0xC48B  aus LeGo geklaut
@@ -1107,10 +1103,10 @@ const int ASMINT_OP_movEBPtoEAX     = 50571; //0xC58B  aus LeGo geklaut
 const int ASMINT_OP_movEDItoEAX     = 51083; //0xC78B  aus LeGo geklaut
 const int ASMINT_OP_addImToEAX      = 49283; //0xC083  aus LeGo geklaut
 
-/* Регулировка:
-   Если особо не оговорено,
-   максимльный объем памяти, доступной Ассемблеру
-   будет равен этой величине. */
+/* Tuning:
+   If not specified differently,
+   there will be this much space available
+   for an Assembler sequence. */
 const int ASM_StandardStreamLength = 256;
 
 //************************************************
@@ -1118,16 +1114,16 @@ const int ASM_StandardStreamLength = 256;
 //************************************************
 
 /* -----------------
-/  ВНУТРЕННИЙ СТЕК
+/  INTERNAL STACK
 /  ----------------- */
 
-/* ASM требует сохранения данных в двух случаях:
- * 1.) При вызове функций движка требуется сохранить
- * адрес текущего исполняемого кода, поскольку
- * в вызове может снова использоваться ASM!
- * 2.) При вложенности функций в пакете CALL
- * требуется проталкивать и извлекать контекст.
- * 3.) Переполнение нежелательно и приводит к вылету.
+/* ASM needs to save data at two points:
+ * 1.) When calling an engine function it needs to store
+ * the address of the current run because the Call
+ * might use the ASM package again!
+ * 2.) When nesting the use of the Call package there
+ * needs to be a push and pop of the context.
+ * 3.) Overflows are unlikely and cause a crash.
  */
 
 const int ASMINT_InternalStack = 0;
@@ -1153,31 +1149,31 @@ func int ASMINT_Pop() {
 };
 
 /* -----------------
-/  Ядро ASM
+/  ASM Core
 /  ----------------- */
 
 const int ASMINT_CallTarget = 0;
 
-func void ASMINT_MyExternal() {};   /* Символ этой функции превратится во внешний символ */
-func void ASMINT_CallMyExternal() { /* вызывает что-то внешнее */
-    ExitGame(); /* изменится, поэтому и называется MyExternal */
+func void ASMINT_MyExternal() {};   /* the Symbol belonging to this function will become an external symbol */
+func void ASMINT_CallMyExternal() { /* calls some external */
+    ExitGame(); /* will be changed so that it calls MyExternal */
 };
 
 func void ASMINT_Init() {
-    /* раньше использовалось для установки указателя на вызываемую функцию. */
+    /* used later to set the pointer to the call-target. */
     if (!ASMINT_InternalStack) {
-        /* создаем массив для дальнейшего использования */
+        /* create an array for later use */
             ASMINT_InternalStack = MEM_Alloc(4 * ASMINT_InternalStackSize);
         
-        /* ищем ASMINT_MyExternal */
+        /* find ASMINT_MyExternal */
             ASMINT_CallTarget = MEM_ReadIntArray (currSymbolTableAddress, MEM_GetFuncID(ASMINT_MYEXTERNAL));
             var zCPar_Symbol symb; symb = _^(ASMINT_CallTarget);
-            ASMINT_CallTarget += zCParSymbol_content_offset; //сюда я впишу, что вызывать
+            ASMINT_CallTarget += zCParSymbol_content_offset; //this is where i will write what to call
     
-        /* превращаем ASMINT_MyExternal во внешний вызов */
+        /* turn ASMINT_MyExternal into an external */
             symb.bitfield = zPAR_TYPE_FUNC | zPAR_FLAG_EXTERNAL | zPAR_FLAG_CONST;
             
-        /* теперь ASM_CallMyExternal будет вызывать MyExternal вместо ExitGame */
+        /* have ASM_CallMyExternal call MyExternal instead of ExitGame */
             MEM_WriteInt(MEM_GetFuncPtr(ASMINT_CallMyExternal) + 1, MEM_GetFuncID(ASMINT_MyExternal));
     };
 };
@@ -1193,12 +1189,12 @@ func void ASM_Open(var int space) {
     };
     
     if (!space) {
-        space = ASM_StandardStreamLength; //размер по умолчанию
+        space = ASM_StandardStreamLength; //default size
     };
     
-    ASMINT_currRun = MEM_Alloc (space + 3); /* не тратим байты в конце буфера */
+    ASMINT_currRun = MEM_Alloc (space + 3); /* no byte fiddling at the end of the buffer */
     ASMINT_Length  = space;
-    ASMINT_cursor  = ASMINT_currRun; /* указатель на начало */
+    ASMINT_cursor  = ASMINT_currRun; /* pointing to the start */
 };
 
 func void ASM (var int data, var int length) {
@@ -1247,23 +1243,23 @@ func void ASM_RunOnce() {
     
     ASM (ASMINT_OP_retn, 1);
     
-    /* Сохраняем текущий код в массив кодов.
-     * Причина: При вызове из другой инстанции эта функция
-     * может выполнять свой собственный код */
+    /* Save this code in an array of codes.
+     * Reason: On calling it another instance of this function may be
+     * executing his own code */
     
     ASMINT_Push(ASMINT_currRun);
     
     MEM_WriteInt(ASMINT_CallTarget, ASMINT_currRun);
-    ASMINT_currRun = 0; //можно добавить еще код, пока это выполняется.
+    ASMINT_currRun = 0; //more Code can be build while this one is running.
     
     ASMINT_CallMyExternal();
     
-    /* Снова сбрасываем код */
-    MEM_Free(ASMINT_Pop()); //освобождаем память
+    /* Discard the code again */
+    MEM_Free(ASMINT_Pop()); //free the run
 };
 
 //************************************************
-//   Быстрые вызовы
+//   Faster Calls
 //************************************************
 
 const int CALLINT_CodeMode = 0;
@@ -1275,12 +1271,12 @@ const int CALLINT_RetValIsFloat = 0;
 const int CALLINT_PutRetValTo = 0;
 
 /* --------------------
-/  Проталкивание и извлечение из стека
+/  Push and Pop Context
 /  ----------------- */
 
-/* Эти функции можно использовать только в пакете CALL
- * Это потребовалось, поскольку многие базовые функции из библиотек
- * попытаются сделать вызовы, когда пользователь уже может в них нуждаться. */
+/* This will be used by the call package.
+ * It became nessessary as many basic library functions
+ * want to make use of CALL while the user might already need it. */
 
 func void ASMINT_PushContext() {
     ASMINT_Push(CALLINT_RetValStructSize);
@@ -1313,23 +1309,23 @@ func void ASMINT_PopContext() {
     CALLINT_RetValStructSize= ASMINT_Pop();
 };
     
-/* Есть два режима: простой режим, который обеспечивает
- * доступный вызов, который используется лишь раз. Все параметры
- * запрограммированы жестко.
- * Второй вариант выдает код, который можно использовать
- * более одного раза. Вместо параметров пользователь
- * указывает адрес, по которому их можно найти.
- * Дополнительно к выполнению кода, пользователь
- * получит адрес, который можно использовать,
- * чтобы повторить вызов. Это гораздо быстрее, чем
- * еще раз набирать тот же код. */
+/* There are two modes: The simple mode that produces a
+ * disposable call that is used only once. All parameters
+ * are hardcoded.
+ * The second version produces code that can be used
+ * more than once. Instead of the parameters the
+ * user specifies the address where the parameters are
+ * to be taken from. In addition to executing the code,
+ * the user will receive an address that he can use
+ * to repeat the call. This is much faster than
+ * rebuilding the call from scratch. */
  
-/* Получение указателя. Если указатель ненулевой,
- * соответствующий код выполняется и возвращается 0.
- * Если указатель равен нулю, текущий режим меняется
- * на повторяющийся, т.е. функции вызова ожидают
- * инструкций для построения повторяющегося кода. Этот режим
- * продолжается до ALL_End(). Таким образом, можно получить такой код:
+/* Receives a pointer. In case the pointer is non-zero,
+ * the code at this position is executed and 0 is returned.
+ * In case pointer is zero, the current mode is changed
+ * into recyclable mode, this means that the call functions
+ * expect instructions to build a recyclable call. This
+ * mode will continue until CALL_End(). This allows code like this:
  
 func int EngineFunc_Wrapper(var int this, var int param) {
     const int call = 0;
@@ -1342,9 +1338,9 @@ func int EngineFunc_Wrapper(var int this, var int param) {
 }; */
 
 func void CALL_Open() {
-    /* Проталкивает и пустой контекст, остается неясным как CALL_Close
-     * решает, надо извлекать данные или нет.
-     * Более того: Это выполняется только 1 раз. */
+    /* Push an empty context too, it is unclear how CALL_Close is
+     * supposed to decide whether to pop or not.
+     * Besides: This will only be executed the first time. */
     ASMINT_PushContext();
     CALLINT_CodeMode = CALLINT_CodeMode_Recyclable;
 };
@@ -1367,7 +1363,7 @@ func int CALL_Close() {
     
     var int ptr;
     ptr = ASM_Close();
-    ASMINT_PopContext(); /* извлекаем прежний контекст */
+    ASMINT_PopContext(); /* restore previous context */
     
     return ptr;
 };
@@ -1377,13 +1373,13 @@ func int CALL_End() {
     ptr = CALL_Close();
     
     ASMINT_Push(ptr);
-    ASM_Run(ptr); /* можно использовать CALL_End */
+    ASM_Run(ptr); /* may use CALL_End */
     return ASMINT_Pop();
 };
 
 //************************************************
-//   Набор кода для размещения параметров
-//   в машинном стеке.
+//   Build the code to lay parameters
+//   onto the machine stack.
 //************************************************
 
 /* int */
@@ -1410,11 +1406,11 @@ func void CALL_FloatParam (var int param) {
     CALL_IntParam (param);
 };
 
-//string: Проблема: Строка должна где-то существовать.
-//Чтобы измежать перегруженного кода, который позволил бы
-//освободить память строк после завершения, я взял 10 разных
-//статических строк. Маловероятно, что кто-то захочет
-//протолкнуть в машинный стек больше 10 строк за раз.
+//string: Problem: The strings have to exist somewhere.
+//To avoid ridiculously complicated code that needs to
+//free the strings afterwards, I take 10 different static
+//strings here. It is impropable that anyone ever wants
+//to push more than ten strings on the machine stack at once.
 func string CALLINT_PushString (var string str) {
     var int n; n += 1; if (n == 10) { n = 0; };
     if (n == 0) { var string s0; s0 = str; return s0; };
@@ -1442,7 +1438,7 @@ func void CALL_zStringPtrParam (var string param) {
         return;
     };
     
-    /* просто проталкиваем адрес в стек */
+    /* simply push the address onto the stack */
     CALL_IntParam (CALLINT_GetStringAddress(param));
 };
 
@@ -1453,35 +1449,35 @@ func void CALL_cStringPtrParam (var string param) {
         return;
     };
 
-    /* получаем указатель на данные и помещаем его в стек */
+    /* get the Pointer to the data and lay it on the stack */
     var zString str; str = _^(CALLINT_GetStringAddress(param));
     CALL_IntParam (str.ptr);
 };
 
-/* структура (не указатель на структуру, а сама структура) */
+/* struct (not a Pointer to a struct, but a struct as is) */
 func void CALL_StructParam (var int ptr, var int words) {
     if (CALLINT_CodeMode == CALLINT_CodeMode_Recyclable) {
-        CALL_IntParam (ptr + 4 * (words -1)); /* здесь я ожидаю последнее слово */
+        CALL_IntParam (ptr + 4 * (words -1)); /* this is where i expect the last word */
         CALL_StructParam (ptr, words - 1);
         return;
     };
 
-    /* структура целиком должна быть размещена в стеке,
-     * и ее нужно проталкивать в обратном порядке */
+    /* the struct as a whole has to be pushed onto the stack
+     * it has to be pushed in reverse order to lie correctly */
     if (words > 0) {
         CALL_IntParam (MEM_ReadIntArray (ptr, words - 1));
         CALL_StructParam (ptr, words - 1);
     };
 };
 
-/* переключатель: Если возвращаемое значение является структурой,
- * размером более 32 бит, пространство для возвращаеомго значения
- * должно быть выделено вызывающей стороной (т.е. нами).
- * Адрес выделенной памяти ожидается в стеке
- * как дополнительный параметр (проталкивается последним)
+/* switch: If the return value is a structure with a size
+ * larget than 32 bit, the space for the return value has
+ * to be allocated by the caller (this is us).
+ * The address to the allocated memory is expected on the stack
+ * as an additional parameter (pushed last)
  *
- * Предупреждение: Под вашей ответственностью остается освобождение 
- * памяти после того, как возвращаемое значение больше не нужно.
+ * Warning: It is in the your responsibility to free
+ * the memory, when the return value is not needed anymore.
  */
  
 func void CALL_RetValIsStruct (var int size) {
@@ -1493,15 +1489,15 @@ func void CALL_RetValIsStruct (var int size) {
     CALLINT_RetValStructSize = size;
 };
 
-/* особый случай CALL_RetValIsStruct
- * zString - это структура размером 20 байт. */
+/* a special case of CALL_RetValIsStruct
+ * a zString is a structure with the size of 20 bytes. */
 func void CALL_RetValIszString() {
     CALL_RetValIsStruct (sizeof_zString);
 };
 
-/* переключатель: если возвращаемое значение вещественное
- * (и поэтому находится наверху стека FPU вместо регистра EAX),
- * я должен об этом знать. */
+/* switch: If the return value is a float (and therefore
+ * lies on the top of the FPU stack instead of lying in eax
+ * I need to know that. */
 func void CALL_RetValIsFloat() {
     CALLINT_RetValIsFloat = true;
 };
@@ -1515,23 +1511,23 @@ func void CALL_PutRetValTo(var int adr) {
 };
 
 //************************************************
-//   Получение результата вызова
+//   Getting the result after a call
 //************************************************
 
-/* возвращает значение, которое записано туда при вызове */
+/* returns a value that is written to by the call */
 var int CALLINT_Result;
 
-/* если значение - это 32-битная константа, тут нечего делать */
+/* if the value some 32 bit constant, there is nothing to do */
 func int CALL_RetValAsInt  () { return +CALLINT_Result; };
 func int CALL_RetValAsFloat() { return +CALLINT_Result; };
 func int CALL_RetValAsPtr  () { return +CALLINT_Result; };
 
-/* для тех, кому лень самим использовать _^: */
+/* for those who are to lazy to use _^ themselves: */
 func MEMINT_HelperClass CALL_RetValAsStructPtr() {
     _^(CALLINT_Result);
 };
 
-/* лезем в стек парсера, чтобы получить указатель на zStrings */
+/* parser data stack hacking does the trick for pointer to zStrings */
 func string CALL_RetValAszStringPtr() {
     if (CALLINT_Result) {
         MEMINT_StackPushVar(CALLINT_Result);
@@ -1540,11 +1536,11 @@ func string CALL_RetValAszStringPtr() {
     };
 };
 
-/* zString - это очень особая структура, с той отличительной чертой,
- * что она использует простой тип данных. Никто добровольно не будет
- * использовать ее как указатель на память или инстанцию в Daedalus.
- * Эта функция копирует содержимое zString в строку Daedalus'а
- * и после этого освобождает zString. */
+/* A zString is merely a special case of a structure, with the difference,
+ * that it is used as a primitive datatype. Nobody will be willing
+ * to use it as a pointer to some memory or an instance in Daedalus.
+ * This function copies the contents of the zString into a
+ * daedalus string and frees the zString afterwards. */
 func string CALL_RetValAszString() {
     var string ret;
     if (CALLINT_Result) {
@@ -1563,7 +1559,7 @@ func string CALL_RetValAszString() {
 };
 
 //************************************************
-//   Вызовы
+//   The calls
 //************************************************
 
 func void CALLINT_makecall (var int adr, var int cleanStack) {
@@ -1572,11 +1568,11 @@ func void CALLINT_makecall (var int adr, var int cleanStack) {
         CALLINT_RetValStructSize = 0;
     };
 
-    /* выполенение вызова: */
+    /* make the call: */
     ASM_1 (ASMINT_OP_call);
-    ASM_4 (adr - ASM_Here() - 4); /* -4, потому что переход относительно инструкции _next_. */
+    ASM_4 (adr - ASM_Here() - 4); /* -4, because the jump is relative to the _next_ instruction. */
     
-    /* копируем результат в переменную daedalus'а */
+    /* copy the result into a daedalus variable */
     if (CALLINT_PutRetValTo != -1) {
         if (!CALLINT_RetValIsFloat) {
             ASM_2 (ASMINT_OP_movEAXToMem); /* mov CALLINT_Result eax */
@@ -1591,39 +1587,39 @@ func void CALLINT_makecall (var int adr, var int cleanStack) {
         };
     };
     
-    /* по умолчанию: возвращаемое значение не вещественное
-     * и размещется там, где должно по умолчанию */
-    CALLINT_RetValIsFloat = false; //в следующий раз придется установить заново.
+    /* default: return value is not a float
+     * and has default location */
+    CALLINT_RetValIsFloat = false; //fürs nächste mal muss neugeschaltet werden.
     CALLINT_PutRetValTo   = 0;
     
-    /* __cdecl должен очистить стек здесь: */
+    /* __cdecl has to clean the stack here: */
     if (cleanStack) {
         ASM_2 (ASMINT_OP_addImToESP);
         ASM_1 (CALLINT_numParams * 4);
     };
     
-    /* сбрасываем счетчик параметров */
+    /* reset Param Counter */
     CALLINT_numParams = 0;
     
-    /* запускаем набранный код, а потом удаляем его */
+    /* run the code that was build and discard it afterwards */
     if (CALLINT_CodeMode != CALLINT_CodeMode_Recyclable) {
         ASM_RunOnce();
     };
 };
 
-/* все параметры помещаются в стек (справа налево)
-   вызываемая функция очищает стек */
+/* all Parameters are passed on the stack (right to left)
+   callee cleans the stack */
 func void CALL__stdcall (var int adr) {
     CALLINT_makecall (adr, false);
 };
 
-/* все параметры помещаются в стек (справа налево)
-   вызывающая функция очищает стек */ 
+/* all Parameters are passed on the stack (right to left)
+   caller cleans the stack */ 
 func void CALL__cdecl (var int adr) {
     CALLINT_makecall (adr, true);
 };
 
-/* __stdcall, но с указателем на this в регистре ecx. */
+/* __stdcall but with a this pointer in ecx. */
 func void CALL__thiscall (var int this, var int adr) {
     /* this -> ecx */
     if (CALLINT_CodeMode == CALLINT_CodeMode_Recyclable) {
@@ -1636,7 +1632,7 @@ func void CALL__thiscall (var int this, var int adr) {
     CALL__stdcall (adr);
 };
 
-/* __stdcall, но с первыми двумя параметрами в ecx и edx. */
+/* __stdcall but with the first two parameters passed in ecx and edx. */
 func void CALL__fastcall (var int ecx, var int edx, var int adr) {
     if (CALLINT_CodeMode == CALLINT_CodeMode_Recyclable) {
         ASM_2(ASMINT_OP_movMemToEDX);
@@ -1651,25 +1647,25 @@ func void CALL__fastcall (var int ecx, var int edx, var int adr) {
 
 //#################################################
 //
-//    УТИЛИТЫ
+//    UTILITY
 //
 //#################################################
 
 //--------------------------------------
-// Включение отладочной информации
+// Debuginformationen anschalten
 //--------------------------------------
 
-/* Совет: сразу включите в Startup_Global и Init_Global
- * вывод отладочной информации.
- * Никакого вреда от этого не будет.
- * Перед релизом мода опять отключите. */
+/* Empfehlung: Sofort in Startup_Global und Init_Global
+ * die Debuginformationen anmachen.
+ * Schadet bestimmt nicht.
+ * Bei der Auslieferung der Mod wieder rausnehmen. */
 
 func void MEM_SetShowDebug (var int on) {
     MEM_WriteInt (showDebugAddress, on);
 };
 
 //----------------------------------
-//  Копирование области памяти
+//  Bereichskopieren
 //----------------------------------
 
 func void MEM_CopyBytes (var int src, var int dst, var int byteCount) {
@@ -1693,13 +1689,13 @@ func void MEM_CopyWords (var int src, var int dst, var int wordcount) {
     MEM_CopyBytes (src, dst, wordcount * 4);
 };
 
-//псевдоним, для обратной совместимости
+//alias, Abwärtskompatibilität
 func void MEM_Copy (var int src, var int dst, var int wordcount) {
     MEM_CopyBytes (src, dst, wordcount * 4);
 };
 
 //----------------------------------
-//  Swap (обмен байт памяти)
+//  Swappen (was auch immer ich mir dabei gedacht habe)
 //----------------------------------
 
 func void MEM_SwapBytes(var int src, var int dst, var int byteCount) {
@@ -1727,7 +1723,7 @@ func void MEM_SwapWords(var int src, var int dst, var int wordCount) {
 };
 
 //----------------------------------
-//  memset (очистка памяти)
+//  memset
 //----------------------------------
 
 func void MEM_Clear(var int ptr, var int size) {
@@ -1749,13 +1745,13 @@ func void MEM_Clear(var int ptr, var int size) {
 };
 
 //----------------------------------
-//  Realloc (перераспределение памяти)
+//  Realloc
 //----------------------------------
 
-/* Память копируется в новый массив */
+/* Speicher in ein neues Array kopieren */
 func int MEM_Realloc (var int ptr, var int oldsize, var int newsize) {
     if (!ptr) {
-        /* Жалоба? */
+        /* Meckern? */
         if (!oldsize) {
             MEM_Error ("MEM_Realloc: ptr is 0 but oldsize is not 0.");
         };
@@ -1775,7 +1771,7 @@ func int MEM_Realloc (var int ptr, var int oldsize, var int newsize) {
         CALL__cdecl(MEMINT_SwitchG1G2(realloc_G1, realloc_G2));
         
         call = CALL_End();
-    }; /* ptr теперь заполнен */
+    }; /* ptr is now filled */
     
     if (oldsize < newsize) {
         MEM_Clear(ptr + oldsize, newsize - oldsize);
@@ -1785,11 +1781,11 @@ func int MEM_Realloc (var int ptr, var int oldsize, var int newsize) {
 };
 
 //************************************************
-//   Compare Memory (сравнение участков памяти)
+//   Compare Memory
 //************************************************
 
-/* не смог найти memcmp с первого взгляда...
- * оставим все как есть. */
+/* couldnt find memcmp at first glance...
+ * left it as it is. */
  
 func int MEM_CompareBytes(var int ptr1, var int ptr2, var int byteCount) {
     if (byteCount < 0) {
@@ -1798,13 +1794,13 @@ func int MEM_CompareBytes(var int ptr1, var int ptr2, var int byteCount) {
     };
     
     if (byteCount == 0) {
-        //в этом случае адрес может быть неверным.
+        //in this case the addresses may be invalid.
         return 1;
     };
     
-    if (ptr1 <= 0)
-    || (ptr2 <= 0) {
-        MEM_Error ("MEM_CompareBytes: ptr1 or ptr2 is invalid (<= 0)");
+    if (ptr1 == 0)
+    || (ptr2 == 0) {
+        MEM_Error ("MEM_CompareBytes: ptr1 or ptr2 is Null");
         return 0;
     };
 
@@ -1832,12 +1828,12 @@ func int MEM_Compare(var int ptr0, var int ptr1, var int wordCount) {
 
 //#################################################
 //
-//     Утилиты Windows
+//    Windows Utilities
 //
 //#################################################
 
 //--------------------------------------
-//   Загрузка функций из внешних DLL
+//   Funktionen aus anderen DLLs laden
 //--------------------------------------
 
 /*  http://msdn.microsoft.com/en-us/library/ms684175%28v=vs.85%29.aspx */
@@ -1851,7 +1847,7 @@ func int LoadLibrary (var string lpFileName) {
             WinAPI__LoadLibrary = MEM_ReadInt (8192588); //0x7D024C
         };
     
-        CALL_PtrParam(_@s(lpFileName) + 8 /* смещение ptr */);
+        CALL_PtrParam(_@s(lpFileName) + 8 /* offset of ptr */);
         
         CALL_PutRetValTo(_@(ret));
         CALL__stdcall(WinAPI__LoadLibrary);
@@ -1875,7 +1871,7 @@ func int GetProcAddress (var int hModule, var string lpProcName) {
             WinAPI__GetProcAddress = MEM_ReadInt (8192260); //0x7D0104
         };
         
-        CALL_PtrParam(_@s(lpProcName) + 8 /* смещение ptr */);
+        CALL_PtrParam(_@s(lpProcName) + 8 /* offset of ptr */);
         CALL_PtrParam (_@(hModule));
         
         CALL_PutRetValTo(_@(ret));
@@ -1888,7 +1884,7 @@ func int GetProcAddress (var int hModule, var string lpProcName) {
     return +ret;
 };  
 
-//Простое применение этих двух функций.
+//einfache Anwendung der obigen beiden Funktionen.
 func int FindKernelDllFunction (var string name) {
     const int KERNEL32DLL = 0;
     if (!KERNEL32DLL) {
@@ -1899,7 +1895,7 @@ func int FindKernelDllFunction (var string name) {
 };
 
 //--------------------------------------
-//   Обход защиты от записи
+//   Schreibschutz umgehen
 //--------------------------------------
 
 const int PAGE_EXECUTE = 16; //0x10
@@ -1913,8 +1909,8 @@ const int PAGE_READWRITE = 4; //0x04
 const int PAGE_WRITECOPY = 8; //0x08
 
 /* http://msdn.microsoft.com/en-us/library/aa366898%28VS.85%29.aspx */
-/* Примечание: Я сделал так, чтобы lpflOldProtectPtr возвращала значение 
- * и игнорировала значение из VirtualProtect */
+/* Note: I made lpflOldProtectPtr the return value and ignored
+ * the return Value of VirtualProtect */
 func int VirtualProtect (var int lpAddress, var int dwSize, var int flNewProtect) {
     const int adr = 0;
     
@@ -1948,7 +1944,7 @@ func void MemoryProtectionOverride (var int address, var int size) {
 };
 
 //--------------------------------------
-//    Окно сообщения (MessageBox)
+//    Message Boxen
 //--------------------------------------
 
 const int MB_OK                = 0;
@@ -1964,7 +1960,7 @@ const int MB_ICONQUESTION      = 32; //0x20
 const int MB_ICONWARNING       = 48; //0x30
 const int MB_ICONINFORMATION   = 64; //0x40
 
-//синонимы:
+//alias:
     const int MB_ICONEXCLAMATION = MB_ICONWARNING;
     const int MB_ICONASTERISK    = MB_ICONINFORMATION;
     const int MB_ICONSTOP        = MB_ICONERROR;
@@ -1986,14 +1982,14 @@ const int IDTRYAGAIN = 10;
 const int IDCONTINUE = 11;
 
 func int MEM_MessageBox (var string txt, var string caption, var int type) {
-    /* Это сами функции */
+    /* Hier liegt die Funktion */
     const int WinAPI__MessageBox_G2 = 8079592; //0x7B48E8
     const int WinAPI__MessageBox_G1 = 7713298; //0x75B212
     
     const int MB_TASKMODAL     = 8192;    //0x2000
     
-    /* Параметры в обратном порядке */
-    CALL_IntParam (type | MB_TASKMODAL); //поверх других окон
+    /* Parameter in umgekehrter Reihenfolge */
+    CALL_IntParam (type | MB_TASKMODAL); //soll in den Vordergrund
     CALL_cStringPtrParam (caption);        
     CALL_cStringPtrParam (txt);            
     CALL_IntParam (0);                     
@@ -2010,7 +2006,7 @@ func void MEM_InfoBox (var string txt) {
 
 //#################################################################
 //
-//  Масивы
+//  Arrays
 //
 //#################################################################
 
@@ -2081,17 +2077,17 @@ func void MEM_ArrayInsert (var int zCArray_ptr, var int value) {
     array = _^(zCArray_ptr);
 
     if (!array.array) {
-        //Еще ни один массив не был создан. Создается впервые
-        array.numAlloc = 16; //начальное значение
+        //Noch gar kein Array angelegt. Erstmals anlegen
+        array.numAlloc = 16; //Startwert
         array.array = MEM_Alloc (array.numAlloc * 4);
     } else if (array.numInArray >= array.numAlloc) {
-        //нет свободного места
-        //давайте запросим вдвое больше (или я жадничаю? должно хватить):
+        //kein Platz mehr
+        //nehmen wir mal das doppelte (oder ist das zu gierig? sollte passen):
         array.numAlloc = 2 * array.numAlloc;
         array.array = MEM_Realloc (array.array, array.numInArray * 4, array.numAlloc * 4);
     };
 
-    //Теперь место должно быть:
+    //Jetzt muss Platz sein:
     MEM_WriteIntArray (array.array, array.numInArray, value);
     array.numInArray += 1;
 };
@@ -2177,7 +2173,7 @@ func void MEM_ArrayRemoveIndex (var int zCArray_ptr, var int index) {
         return;
     };
 
-    //Ставим последнее значение вместо удаленного
+    //letzten Wert in die Lücke schieben
     array.numInArray -= 1;
     MEM_WriteIntArray (array.array, index, MEM_ReadIntArray (array.array, array.numInArray));
 };
@@ -2195,16 +2191,16 @@ func void MEM_ArrayRemoveValue (var int zCArray_ptr, var int value) {
     var int i; i = 0;
     var int loop; loop = MEM_StackPos.position;
 
-    //уже закончился?
+    //schon durchgelaufen?
     /* while */ if (i < array.numInArray) {
         if (MEM_ReadIntArray (array.array, i) == value) {
-            //удаляем элемент
+            //dann element entfernen
             array.numInArray -= 1;
             MEM_WriteIntArray (array.array, i, MEM_ReadIntArray (array.array, array.numInArray));
 
-            //продолжаем искать?
+            //weitersuchen?
             if (MEMINT_ArrayRemoveValue_OnlyOnce) {
-                MEMINT_ArrayRemoveValue_OnlyOnce = 2; //управление
+                MEMINT_ArrayRemoveValue_OnlyOnce = 2; //geschafft
                 return;
             };
         } else {
@@ -2332,12 +2328,12 @@ func string MEM_ArrayToString (var int zCArray_ptr) {
 
 //######################################################
 //
-//  Работа со строками
+//  String Tools
 //
 //######################################################
 
 //--------------------------------------
-// Доступ к отдельному символу
+// Zugriff auf einzelnes Zeichen
 //--------------------------------------
 
 func int STR_GetCharAt (var string str, var int pos) {
@@ -2353,7 +2349,7 @@ func int STR_GetCharAt (var string str, var int pos) {
 };
 
 //--------------------------------------
-// Длина строки
+// Länge eines Strings
 //--------------------------------------
 
 func int STR_Len (var string str) {
@@ -2363,16 +2359,16 @@ func int STR_Len (var string str) {
 };
 
 //--------------------------------------
-// В и из char*
+// To and from char*
 //--------------------------------------
 
-/*  Осторожно, строки могут разделять буфер меджду собой!
+/*  Be aware that strings may share their buffers!
     var string s1; var string s2;
     s1 = "Hello"; s2 = s1;
     
-    Теперь в памяти существует единтсвенная копия "Hello" !
-    Реализуется через счетчик ссылок
-    в ptr-1.
+    Now only one copy of "Hello" exists in memory!
+    This is implemented by reference counting
+    in ptr-1.
  */
 
 func int STR_toChar (var string str) {
@@ -2404,7 +2400,7 @@ func string STR_FromChar(var int char) {
 };
 
 //************************************************
-// Подстрока / префикс
+// Substring / Prefix
 //************************************************
 
 func string STR_SubStr (var string str, var int start, var int count) {
@@ -2413,7 +2409,7 @@ func string STR_SubStr (var string str, var int start, var int count) {
         return "";
     };
 
-    /* Получение адреса двух строк, источника и целевой строки для копирования */
+    /* Hole Adressen von zwei Strings, Source und Destination (für Kopieroperation) */
     var zString zStrSrc;
     var zString zStrDst; var string dstStr; dstStr = "";
     
@@ -2426,8 +2422,8 @@ func string STR_SubStr (var string str, var int start, var int count) {
             return "";
             
         } else {
-            /* Начало выходит за границы строки. Конец в полном пролете. */
-            /* Осторожно! MEM_Warn сам использует STR_SubStr (но никогда не вызывает новых предупреждений) */
+            /* The start is in valid bounds. The End is shitty. */
+            /* Careful! MEM_Warn will use STR_SubStr (but will never use it in a way that would produce a warning) */
             var string saveStr; var int saveStart; var int saveCount;
             saveStr = str; saveStart = start; saveCount = count;
             MEM_Warn ("STR_SubStr: The end of the desired substring exceeds the end of the string.");
@@ -2436,7 +2432,7 @@ func string STR_SubStr (var string str, var int start, var int count) {
         };
     };
 
-    zStrDst.ptr = MEM_Alloc (count+2)+1; /* +1 для байта счетчика ссылок, +1 для нулевого байта */
+    zStrDst.ptr = MEM_Alloc (count+2)+1; /* +1 for reference counter byte, +1 for null byte */
     zStrDst.res = count;
 
     MEM_CopyBytes (zStrSrc.ptr + start, zStrDst.ptr, count);
@@ -2446,13 +2442,13 @@ func string STR_SubStr (var string str, var int start, var int count) {
     return dstStr;
 };
 
-//Для префикса строки:
+//Von früher:
 func string STR_Prefix (var string str, var int len) {
     return STR_SubStr(str, 0, len);
 };
 
 //************************************************
-// Сравнение строк
+// Compare Strings
 //************************************************
 
 const int STR_GREATER =  1;
@@ -2471,7 +2467,7 @@ func int STR_Compare(var string str1, var string str2) {
     
     var int n; if (len1 > len2) { n = len2; } else { n = len1; };
     
-    /* доступ к zString.ptr */
+    /* access zString.ptr */
     ptr1 = MEM_ReadInt(ptr1 + 8);
     ptr2 = MEM_ReadInt(ptr2 + 8);
     
@@ -2496,7 +2492,7 @@ func int STR_Compare(var string str1, var string str2) {
         call = CALL_End();
     };
     
-    /* В Готике возвращается -1, 0 или 1 */
+    /* Gothic's implementation returns -1, 0 or 1 */
     var int ret;
     
     if (ret == 0) {
@@ -2514,7 +2510,7 @@ func int STR_Compare(var string str1, var string str2) {
 // STR_ToInt
 //************************************************
 
-/* Кое-что еще от atol, так что я оставляю как есть */
+/* somewhat different from atol, therefore I will leave it as it is */
 
 func int STR_ToInt (var string str) {
     var int len;
@@ -2533,9 +2529,9 @@ func int STR_ToInt (var string str) {
         if (chr >= 48 /* 0 */) && (chr <= 57 /* 9 */) {
             res = res * 10 + (chr - 48);
         } else if (index == 0) {
-            //поддерживается знак в начале
+            //am Anfang sind Vorzeichen erlaubt
             if (chr == 43 /*+*/) {
-                /* игнорируем */
+                /* ignore */
             } else if (chr == 45 /*-*/) {
                 minus = true;
             } else {
@@ -2590,9 +2586,9 @@ func int STR_IndexOf(var string str, var string tok) {
 // STR_Split
 //************************************************
 
-/* оригинальный код от Gottfried */
+/* ursprünglicher Code von Gottfried */
 
-/* STRINT_SplitArray содержит следующее:
+/* STRINT_SplitArray enthält folgendes:
  *
  *    struct TStringInfo {
  *        int length;
@@ -2633,8 +2629,8 @@ func void STRINT_Split(var string Str, var string seperator) {
     };
     
     if (zStr.len == 0) {
-        //осторожно: нельзя считывать zStr.ptr, если zStr.len == 0!
-        //обработка без скучных расчетов приведет к плачевным результатам.
+        //careful: cannot read from zStr.ptr if zStr.len == 0!
+        //handling without lazy evaluation would be sucky.
         MEM_ArrayInsert(STRINT_SplitArray, 0);
         MEM_ArrayInsert(STRINT_SplitArray, MEM_Alloc(0));
         return;
@@ -2712,7 +2708,7 @@ func int STR_SplitCount(var string str, var string seperator) {
 };
 
 //************************************************
-//    Верхний регистр (Gottfried)
+//    Upper Case (Gottfried)
 //************************************************
 
 func string STR_Upper(var string str) {
@@ -2732,37 +2728,57 @@ func string STR_Upper(var string str) {
     return str;
 };
 
+func string STR_Lower(var string str) {
+    const int zSTRING__Lower_G1 = 4608640; //0x465280
+    const int zSTRING__Lower_G2 = 4631024; //0x46A9F0
+
+    var int ptr; ptr = _@s(str);
+
+    const int call = 0;
+    if (CALL_Begin(call)) {
+        CALL_PutRetValTo(0);
+        CALL__thiscall(_@(ptr), MEMINT_SwitchG1G2(zSTRING__Lower_G1, zSTRING__Lower_G2));
+
+        call = CALL_End();
+    };
+
+    return str;
+};
+
 //######################################################
 //
-//  Еще функции для работы с zCParser
+//  More elaborate zCParser related functions
 //
 //######################################################
 
 //--------------------------------------
-//   Получает указатель на 8Кб памяти.
-//   Кто угодно может записывать туда,
-//   никто не может быть уверен, что
-//   дригие оставят его нетронутым.
+//   Zeiger auf 8KB holen. Jeder darf drauf
+//   schreiben, niemand darf sich drauf
+//   verlassen, dass irgendjemand ihn
+//   unangetastet lässt.
 //
-//   Запрос, чтобы избежать временно
-//   меньшего MEM_Alloc .
+//   Zur Vermeidung temporärer kleiner
+//   MEM_Alloc anfragen.
 //--------------------------------------
 
-/* Не знаю, должен ли я был очистить...
- * Но почему бы и нет? */
- 
-//func int MEMINT_GetBuf_8K_Sub() {
-//    var int buf[2048];
-//    return buf;
-//};
+/* Weiß nicht ob ich das mit hätte reinnehmen sollen...
+ * Aber warum nicht? */
+
+/*
+	func int MEMINT_GetBuf_8K_Sub() {
+		var int buf[2048];
+		return buf;
+	};
+*/
+
 func int MEMINT_GetBuf_8K() {
-    //MEMINT_GetBuf_8K_Sub();
+    // MEMINT_GetBuf_8K_Sub();
     MEMINT_StackPopInst();
     MEMINT_StackPushInst(zPAR_TOK_PUSHINT);
 };
 
 //************************************************
-// Поиск символов
+// Search Symbols
 //************************************************
 
 func int MEM_FindParserSymbol (var string inst) {
@@ -2792,7 +2808,7 @@ func int MEM_GetSymbolIndex(var string inst) {
 
 func int MEM_GetParserSymbol (var string inst) {
     var int symID;
-    symID = MEM_FindParserSymbol (inst); //обновляет парсер (ReinitParser)
+    symID = MEM_FindParserSymbol (inst); //does ReinitParser
     
     if (symID == -1) {
         return 0;
@@ -2819,18 +2835,18 @@ func int MEM_GetSymbolByIndex(var int id) {
 //************************************************
 
 //--------------------------------------
-//  Передаем параметры,
-//  получаем результаты.
-//  Опять же ясно
+//  Parameter übergeben,
+//  Rückgabewerte verwenden.
+//  Nochmal explizit
 //--------------------------------------
 
-/* Небольшая вспомогательная функция,
- * не смущайтесь названием PushParam. */
+/* Kurze Hilfsfunktion, damit die Schnittstelle
+ * von PushParam nicht verwirrt. */
 func int MEMINT_PushIntParam(var int param) {
-    return +param; //в стек помещается переменная, не константа!
+    return +param; //kein Var pushen sondern Konstante!
 };
 
-/* Помещает параметр в стек */
+/* Werte auf den Stack schieben */
 func void MEM_PushIntParam (var int param) {
     MEMINT_PushIntParam (param);
 };
@@ -2839,9 +2855,9 @@ func void MEM_PushInstParam (var int inst) {
     MEMINT_StackPushInst(inst);
 };
 
-/* как CALLINT_PushString, но собственные статические строки
- * идут совершенно неверно, потому что STR_Compare постоянно
- * пытается поместить строку в стек! */
+/* wie MEMINT_PushString, aber eigene statische Strings
+ * ging nämlich schief, weil STR_Compare oft string auf den Stack
+ * schieben will! */
 func string MEMINT_PushStringParamSub (var string str) {
     var int n; n += 1; if (n == 10) { n = 0; };
     if (n == 0) { var string s0; s0 = str; return s0; };
@@ -2862,7 +2878,7 @@ func void MEM_PushStringParam (var string str) {
     MEMINT_PushStringParamSub(str);
 };
 
-/* Извлекаю значения из стека. */
+/* Werte vom Stack herunterholen. */
 func int    MEM_PopIntResult   () {};
 func string MEM_PopStringResult() {};
 func MEMINT_HelperClass MEM_PopInstResult() {};
@@ -2901,10 +2917,10 @@ func void MEM_CallByString (var string fnc) {
         return;
     };
 
-    /* Микрооптимизация: Если одна и та же функция дважды 
-     * вызывается из CallByString, не надо искать ее второй раз. */
+    /* Mikrooptimierung: Wird zweimal hintereinander die selbe Funktion
+     * mit CallByString aufgerufen, nicht nochmal neu suchen. */
     var int symbID;
-    var string cacheFunc; var int cacheSymbID;
+    const string cacheFunc = ""; const int cacheSymbID = 0;
 
     if (Hlp_StrCmp (cacheFunc, fnc)) {
         symbID = cacheSymbID;
@@ -2927,7 +2943,7 @@ func void MEM_Call(var func fnc) {
 };
 
 //************************************************
-//	Поиск функции по смещению в стеке
+//	Find function by Stack Offset
 //************************************************
 
 func int MEMINT_BuildFuncStartsArray() {
@@ -2946,14 +2962,14 @@ func int MEMINT_BuildFuncStartsArray() {
         if  (symb.bitfield & zPAR_FLAG_CONST)
         && !(symb.bitfield & zPAR_FLAG_EXTERNAL)
         && ((symb.bitfield & zCPar_Symbol_bitfield_type) == zPAR_TYPE_FUNC) {
-            /* проверка целостности */
+            /* check integrity */
             if (wasSorted && lastOffset > symb.content) {
                 wasSorted = 0;
                 MEM_Info("The functions in the symbol table do not seem to be sorted by stack-offset.");
             };
             
             lastOffset = symb.content;
-            MEM_ArrayInsert(array, symb.content); //смещение
+            MEM_ArrayInsert(array, symb.content); //offset
             MEM_ArrayInsert(array, i);            //id
         };
         
@@ -2979,10 +2995,19 @@ func int MEM_GetFuncIDByOffset(var int offset) {
         MEM_Error("MEM_GetFuncIDByOffset: Offset is not in valid bounds (0 <= offset < ParserStackSize).");
         return -1;
     };
+
+    /* Handle overwritten functions correctly that immediately jump into another function, e.g. MEM_ReadInt */
+    if (MEM_ReadByte(offset + currParserStackAddress) == zPAR_TOK_JUMP) {
+        var int target; target = MEM_ReadInt(offset + currParserStackAddress + 1);
+        // Only for targets within the code stack!
+        if (target >= 0) && (target < MEM_Parser.stack_stacksize) {
+            return MEM_GetFuncIDByOffset(target);
+        };
+    };
     
     var zCArray array; array = _^(funcStartsArray);
     
-    /* дихотомический поиск */
+    /* binary search */
     var int res;  res  = -1;
     var int low;  low  =  0;
     var int high; high = array.numInArray / 2 - 1;
@@ -2990,24 +3015,24 @@ func int MEM_GetFuncIDByOffset(var int offset) {
     var int loop; loop = MEM_StackPos.position;
     
     /* while (1) { */
-        /* всегда: array[low] <= offset <= array[high]
+        /* invariant: array[low] <= offset <= array[high]
                       low < high                          */
         
         var int med; med = (low + high) / 2; /* low <= med < high */
         var int medOffset; medOffset = MEM_ReadIntArray(array.array, 2*med);
         
         if (medOffset >= offset) {
-            high = med; /* идем дальше т.к. med < high */
+            high = med; /* progess because med < high */
         } else {
             if (low == med) {
-                /* возможно только, если low == high - 1 */
+                /* can only occur if low == high - 1 */
                 if (MEM_ReadIntArray(array.array, 2*high) <= offset) {
                     res = high;
                 } else {
                     res = low;
                 };
             } else {                
-                low = med; /* идем дальше т.к. low < med */
+                low = med; /* progress because low < med */
             };
         };
         
@@ -3024,10 +3049,10 @@ func int MEM_GetFuncIDByOffset(var int offset) {
 };
 
 //************************************************
-//   Поиск своего фрейма в стеке
+//   Den eigenene Stackframe finden
 //************************************************
 
-//Получение ESP, который указывает на текущий фрейм DoStack:
+//Get ESP that points (not too far) above the current DoStack Frame:
 func int MEMINT_GetESP() {
     var int ESP;
     
@@ -3040,17 +3065,17 @@ func int MEMINT_GetESP() {
         
         call = CALL_End();
         
-        if (CALL_Begin(call)) {}; //при первом вызове результат может отличаться!
+        if (CALL_Begin(call)) {}; //result may be different on first time!
     };
     return ESP;
 };
 
-//Проверяем и находим zCParser::DoStack, который сам находится в стеке
-//Возвращает позицию на одно слово выше возвращаемого адреса (обычно указвает на -1, часть SEH)
+//Check for and find zCParser::DoStack lying on itself on the Stack.
+//returns the position one word above the return address (usually points to -1, part of the SEH)
 func int MEMINT_IsFrameBoundary(var int ESP) {
     const int retAdr = 0;
     if (!retAdr) {
-        /* Если DoStack вызывает себя, то получим этот адрес в стеке:*/
+        /* Wenn DoStack sich selbst aufruft, steht diese Rücksprungaddresse auf dem Stack: */
         retAdr = MEMINT_SwitchG1G2(7246244 /* 0x6E91A4 */, 7939332 /*0x792504 */);
     };
 
@@ -3061,14 +3086,14 @@ func int MEMINT_IsFrameBoundary(var int ESP) {
 func int MEMINT_FindFrameBoundary(var int ESP, var int searchWordsMAX) {
     var int loop; loop = MEM_StackPos.position;
     
-    /* ничего не нашли */
+    /* didnt find anything */
     if (searchWordsMAX == 0) {
         return 0;
     };
     
     /* while */
         if (!MEMINT_IsFrameBoundary(ESP)) {
-            /* Меня интересует только начало фрейма */
+            /* I am only interested in frame starts */
             ESP += 4;
             searchWordsMAX -= 1;
             MEM_StackPos.position = loop;
@@ -3078,11 +3103,11 @@ func int MEMINT_FindFrameBoundary(var int ESP, var int searchWordsMAX) {
     return ESP;
 };
 
-//Теперь получаю свой собственный стековый фрейм!
+//Now get not only some Stack Frame, but my own!
 
-/* смещение на 2 фрейма, если вызываем сами себя  */
+/* offset of two frames when calling it self */
 const int MEMINT_DoStackFrameSize = 88;
-/* положение oldPopPos после вызова себя */
+/* location of oldPopPos after having called itself */
 const int MEMINT_DoStackPopPosOffset = MEMINT_DoStackFrameSize + MEMINT_DoStackFrameSize - 6 * 4;
 
 func int MEM_GetFrameBoundary() {
@@ -3090,12 +3115,12 @@ func int MEM_GetFrameBoundary() {
     var int   ESP; ESP = MEMINT_GetESP();
     
     if (!offset) {
-        /* Смещение зависит от выполнения CALL, но это константа.
-         * Лучше вычислить ее, чем выцарапывать при каждом запуске Готики */
+        /* Offset depends on implementation of CALL but is, apart from that, constant.
+         * Better calculate it from scratch at every start of gothic */
         
         var int realESP;
         realESP = ESP;
-        /* вход в безопасную область. При чтении из ESP следующее оказывается на пути:
+        /* get into a safe area. When reading the ESP the following was in the way:
             * MEMINT_GetESP
             * CALL_Begin
             * ASM_Run
@@ -3103,7 +3128,7 @@ func int MEM_GetFrameBoundary() {
             
         realESP += 4*MEMINT_DoStackFrameSize;
         
-        /* MEMINT_FindFrameBoundary заходит достаточно далеко, так что она считывает верные участки стека */
+        /* MEMINT_FindFrameBoundary goes deep enough so that it reads on valid stack parts */
         realESP = MEMINT_FindFrameBoundary(realESP, MEMINT_DoStackFrameSize);
         
         if (!realESP) {
@@ -3116,7 +3141,7 @@ func int MEM_GetFrameBoundary() {
         var int loop; loop = MEM_StackPos.position;
         
         var int popPos;
-        popPos = MEM_ReadIntArray(realESP-MEMINT_DoStackPopPosOffset, 0); /* для безопасности, используем функцию, которая накладывает другой слой стека */
+        popPos = MEM_ReadIntArray(realESP-MEMINT_DoStackPopPosOffset, 0); /* for safety, use a function that builds another stacklayer */
         realESP += MEMINT_DoStackFrameSize;
         
         if (MEM_GetFuncIDByOffset(popPos) != myID) {
@@ -3130,13 +3155,13 @@ func int MEM_GetFrameBoundary() {
 };
 
 //--------------------------------------
-//   Для чего это все было:
+//   What this is all about:
 //--------------------------------------
 
 func int MEM_GetCallerStackPos() {
-    /* получает границы своего фрейма, добавляет 1 фрейм (протому что это не про меня),
-     * и добавляет еще один фрейм (потому что это не про взывавшего меня),
-     * чтобы получить PopPos того, кто вызвал того, кто вызвал меня (my caller's caller) */
+    /* get my Frame Boundary, add 1 Frame (because this isnt about me)
+     * and add another frame (because its not about my caller)
+     * to get the PopPos of my caller's caller */
     return MEM_ReadInt(MEM_GetFrameBoundary() + 2*MEMINT_DoStackFrameSize - MEMINT_DoStackPopPosOffset);
 };
 
@@ -3149,10 +3174,10 @@ func void MEM_SetCallerStackPos(var int popPos) {
 //************************************************
 
 //--------------------------------------
-//    Разделение функции на токены
+//    Split function into tokens
 //--------------------------------------
 
-/* добавит -1, -1, endOfFunc после последнего токена */
+/* will append -1, -1, endOfFunc after the last token */
 func void MEMINT_TokenizeFunction(var int funcID, var int tokenArray, var int paramArray, var int posArr) {
     var int pos;
     var zCPar_Symbol symb;
@@ -3170,18 +3195,18 @@ func void MEMINT_TokenizeFunction(var int funcID, var int tokenArray, var int pa
     || (tok == zPAR_TOK_PUSHINT   || tok == zPAR_TOK_PUSHVAR)
     || (tok == zPAR_TOK_PUSHINST  || tok == zPAR_TOK_SETINSTANCE)
     || (tok == zPAR_TOK_JUMP      || tok == zPAR_TOK_JUMPF) {
-        /* берем один параметр */
+        /* take one parameter */
         param = MEM_ReadInt(pos); pos += 4;
     } else if (tok == zPAR_TOK_PUSH_ARRAYVAR) {
         param = MEM_ReadInt(pos); pos += 4;
-        pos += 1; //индекс массива.
+        pos += 1; //array index.
     } else if (tok > zPAR_TOK_SETINSTANCE) {
         var string err; err = ConcatStrings("MEMINT_TokenizeFunction: Invalid Token in function ", symb.name);
         err = ConcatStrings(err, ". Did you break it? This will probably cause more errors.");
         MEM_Error(err);
         return;
     } else {
-        /* очевидно, верный токен без параметров */
+        /* probably valid token without parameters */
         param = 0;
     };
     
@@ -3189,8 +3214,9 @@ func void MEMINT_TokenizeFunction(var int funcID, var int tokenArray, var int pa
     MEM_ArrayInsert(paramArray, param);
     
     if (tok == zPAR_TOK_RET) {
-        if (MEM_GetFuncIDByOffset(pos - currParserStackAddress) != funcID) {
-            /* отмечаем конец функции */
+        if (MEM_GetFuncIDByOffset(pos - currParserStackAddress) != funcID)
+        || (pos >= MEM_Parser.stack_stacklast) {
+            /* mark end of function */
             MEM_ArrayInsert(posArr, pos);
             MEM_ArrayInsert(tokenArray, -1);
             MEM_ArrayInsert(paramArray, -1);
@@ -3202,17 +3228,17 @@ func void MEMINT_TokenizeFunction(var int funcID, var int tokenArray, var int pa
 };
 
 //--------------------------------------
-//   Трассировка расчета аргумента
-//   возвращение к истокам
+//   Trace calculation of an argument
+//   back to its beginning
 //--------------------------------------
 
-//Вспомогательная функция: Трассировка истоков одного параметра:
+//Helperfunction: Trace the origin of one param:
 func int MEMINT_TraceParameter(var int pos, var int tokenArr, var int paramArr) {
-    /* декларация: tokenArr - это массив токенов парсера.
-     * pos - это индекс токена в этом массиве,
-     * где ожидается параметр.
-     * Я возвращаю индекс токена, с которого начинается
-     * вычисление этого параметра. */
+    /* assert: tokenArr is an array of parser tokens.
+     * pos is an index into this array, pointing to the token
+     * where a parameter is expected.
+     * I will return the index of the token where the calculation
+     * for this parameter starts. */
     
     var int paramsNeeded; paramsNeeded = 1;
     
@@ -3241,14 +3267,14 @@ func int MEMINT_TraceParameter(var int pos, var int tokenArr, var int paramArr) 
         };
         
         symb = _^(MEM_GetSymbolByIndex(symbID));
-        paramsNeeded += symb.bitfield & zCPar_Symbol_bitfield_ele; /* нужно вычислить параметры */
+        paramsNeeded += symb.bitfield & zCPar_Symbol_bitfield_ele; /* need to calculate the parameters */
         paramsNeeded -= symb.offset != 0; //!= 0 ==> return value!
     } else if (tok >= zPAR_OP_UNARY && tok <= zPAR_OP_MAX)
     || (tok == zPAR_TOK_SETINSTANCE) {
-        /* ничего, унарные операторы не "расходуют" параметры
-         * zPAR_TOK_SETINSTANCE тоже */
+        /* nothing, unary operators have no effective parameter consumption
+         * zPAR_TOK_SETINSTANCE does not either */
     } else if (tok <= zPAR_OP_HIGHER_EQ) {
-        paramsNeeded += 1; //бинарная операция, двое вошли, один вышел
+        paramsNeeded += 1; //binary operations, two in, one out.
     } else {
         MEM_Error("MEMINT_TraceParameter: Invalid token!");
     };
@@ -3256,10 +3282,10 @@ func int MEMINT_TraceParameter(var int pos, var int tokenArr, var int paramArr) 
     if (paramsNeeded == 0) {
         if (pos > 0) {
             if (MEM_ArrayRead(tokenArr, pos-1) == zPAR_TOK_SETINSTANCE) {
-                pos -= 1; //не забываем этот токен, это важно
+                pos -= 1; //dont forget this token, it is important
             };
         };
-        /* отлично, вот оно */
+        /* good, this is the point */
         return pos;
     };
     
@@ -3267,16 +3293,16 @@ func int MEMINT_TraceParameter(var int pos, var int tokenArr, var int paramArr) 
 };
 
 //--------------------------------------
-//  Функция-заплатка (патч):
-//    Сканирует функцию и заменяет вызовы
-//    label, goto и while на
-//    правильные токены, которые обрабатывают
-//    ситуацию как надо
+//  Patch function:
+//    Scan function and replace calls to
+//    label, goto and while with
+//    appropriate tokens that handle
+//    the situation correctly
 //--------------------------------------
 
-//Только для вывода
+//For printing only
 func string MEMINT_GetLabelName(var int labelValue) {
-    /* алхимия: константа - это индекс символа или просто константа? */
+    /* alchemy: is the constant a symbol index or a plain constant? */
     if (1000 < labelValue && labelValue < MEM_Parser.symtab_table_numInArray) {
         var zCPar_Symbol symb;
         symb = _^(MEM_ReadIntArray(contentSymbolTableAddress, labelValue));
@@ -3293,16 +3319,16 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
     var int size;
     
     MEMINT_TokenizeFunction(MEM_GetFuncIDByOffset(stackPos), tokenArr, paramArr, posArr);
-    size = MEM_ArraySize(posArr); /* все одного размера */
+    size = MEM_ArraySize(posArr); /* all have the same size */
     
-    /* ищем все label и goto */
+    /* find all Labels and gotos */
     var int labelFunc;   labelFunc   = MEM_GetFuncOffset(MEM_Label);
     var int labelsArr;   labelsArr   = MEM_ArrayCreate();
-    var int labelPosArr; labelPosArr = MEM_ArrayCreate(); /* позиция после label */
+    var int labelPosArr; labelPosArr = MEM_ArrayCreate(); /* position after the label */
     
     var int gotoFunc;    gotoFunc    = MEM_GetFuncOffset(MEM_Goto);
     var int gotoArr;     gotoArr     = MEM_ArrayCreate();
-    var int gotoPosArr;  gotoPosArr  = MEM_ArrayCreate(); /* позиция перед размещением параметра */
+    var int gotoPosArr;  gotoPosArr  = MEM_ArrayCreate(); /* position before the parameter push */
     
     var int usedLabels;  usedLabels  = MEM_ArrayCreate();
     
@@ -3323,7 +3349,7 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
         };
         
         if (type) {
-            /* декларация: i > 0 */
+            /* assert: i > 0 */
             var int labelValue;
             var int pushingTok;
             pushingTok = MEM_ArrayRead(tokenArr, i - 1);
@@ -3331,8 +3357,8 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
             if (pushingTok == zPAR_TOK_PUSHINT) {
                 labelValue = MEM_ArrayRead(paramArr, i - 1);
             } else if (pushingTok == zPAR_TOK_PUSHVAR) {
-                /* проверка синтаксиса гарантирует, что здесь размещено целое число */
-                labelValue = MEM_ArrayRead(paramArr, i - 1); /* это индекс символа */
+                /* the syntax check guarantees that an integer was pusht here */
+                labelValue = MEM_ArrayRead(paramArr, i - 1); /* this is a symbol index */
                 var zCPar_Symbol symb;
                 symb = _^(MEM_ReadIntArray(contentSymbolTableAddress, labelValue));
                 labelValue = symb.content;
@@ -3344,7 +3370,7 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
             
             if (type == label) {
                 MEM_ArrayPush(labelsArr,  labelValue);
-                MEM_ArrayPush(labelPosArr, MEM_ArrayRead(posArr, i+1)); /* примечание: Всегда возвращется после меня */
+                MEM_ArrayPush(labelPosArr, MEM_ArrayRead(posArr, i+1)); /* note: There is always a return after me */
             } else {
                 MEM_ArrayPush(gotoArr,    labelValue);
                 MEM_ArrayPush(gotoPosArr, MEM_ArrayRead(posArr, i-1));
@@ -3355,7 +3381,7 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
         MEM_StackPos.position = loop;
     };
     
-    /* выполянем все goto и jump */
+    /* make all gotos to jumps */
     i = 0;
     loop = MEM_StackPos.position;
     
@@ -3377,9 +3403,9 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
             labelPos = MEM_ArrayRead(labelPosArr, labelIndex);
         };
         
-        labelPos -= currParserStackAddress; /* относительно начала стека */
+        labelPos -= currParserStackAddress; /* relative to stack start */
         
-        /* перезаписываем размещение параметров и вызов MEM_Goto */
+        /* overwrite parameter push and call to MEM_Goto */
         MEM_WriteByte(gotoPos, zPAR_TOK_JUMP); gotoPos += 1;
         MEM_WriteInt (gotoPos, labelPos);      gotoPos += 4;
         MEM_WriteByte(gotoPos, zPAR_TOK_JUMP); gotoPos += 1;
@@ -3391,15 +3417,15 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
         MEM_StackPos.position = loop;
     };
     
-    /* проверка соответсвия: Все label использованы? label объявлена несколько раз? */
+    /* consistency check: All Labels used? Labels declared multiple times? */
     loop = MEM_StackPos.position;
     
     if (MEM_ArraySize(labelsArr)) {
         labelValue = MEM_ArrayRead(labelsArr, 0);
-        MEM_ArrayRemoveIndex(labelsArr, 0); /* отменяем этот вход */
+        MEM_ArrayRemoveIndex(labelsArr, 0); /* discard this entry */
         
         if (MEM_ArrayIndexOf(labelsArr, labelValue) != -1) {
-            /* все еще здесь? */
+            /* still in there? */
             var string error; error = "MEMINT_PrepareLoopsAndJumps: Label declared more than once: ";
             error = ConcatStrings(error, MEMINT_GetLabelName(labelValue));
             error = ConcatStrings(error, ".");
@@ -3420,7 +3446,7 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
     MEM_ArrayFree(gotoPosArr  );
     MEM_ArrayFree(usedLabels  );
     
-    /* Обработка while */
+    /* Handle while */
     var int whileOffset;  whileOffset  = MEM_GetFuncOffset(while);
     var int repeatOffset; repeatOffset = MEM_GetFuncOffset(repeat);
     var int endID;        endID        = MEM_FindParserSymbol("END");
@@ -3430,8 +3456,8 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
     var int loopType;   loopType   = -1; const int W = 0; const int R = 1;
     var int contTarget; contTarget = -1;
     
-    var int loopStack;    loopStack    = MEM_ArrayCreate(); /* содержит сохраненные данные вложенны циклах */
-    var int jumpEndStack; jumpEndStack = MEM_ArrayCreate(); /* позиция всех break и -1 как разделитель при вложенности */
+    var int loopStack;    loopStack    = MEM_ArrayCreate(); /* contains saved data when nesting loops */
+    var int jumpEndStack; jumpEndStack = MEM_ArrayCreate(); /* position of break statements and -1 as seperator for nesting */
     
     i = 0;
     loop = MEM_StackPos.position;
@@ -3449,10 +3475,10 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
             contTarget = MEM_ArrayRead(posArr, MEMINT_TraceParameter(i, tokenArr, paramArr));
             loopType   = W;
             
-            MEM_ArrayPush(jumpEndStack, -1); /* разделитель */
-            MEM_ArrayPush(jumpEndStack, pos+1); /* вставлем позицию конца цикла, как только ее узнаем */
+            MEM_ArrayPush(jumpEndStack, -1); /* seperator */
+            MEM_ArrayPush(jumpEndStack, pos+1); /* insert the end-Pos of the loop here, as soon as I know it */
         } else if (tok == zPAR_TOK_CALL && param == repeatOffset) {
-            /* для повторения мне нужен новый сегмент кода, чтобы туда перейти */
+            /* for repeat I need a new code segment to jump into */
             MEM_ArrayPush(loopStack, loopType);
             MEM_ArrayPush(loopStack, contTarget);
             
@@ -3460,28 +3486,28 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
             
             var int code; code = MEM_Alloc(30);
             
-            /* переход к новому коду */
+            /* jump to the new code */
             MEM_WriteByte(pos  , zPAR_TOK_JUMP);
             MEM_WriteInt (pos+1, code - currParserStackAddress);
             
-            /* создане MEMINT_RepeatData */
+            /* create a MEMINT_RepeatData */
             var int dataPtr;  dataPtr  = MEM_Alloc(8);
             var int entryFiddler; entryFiddler = MEM_GetFuncOffset(MEMINT_RepeatEntryFiddle);
             var int redoChecker;  redoChecker  = MEM_GetFuncOffset(MEMINT_RepeatRedoCheck  );
-            /* позволяю своему обработчику вхождений заполнить переменную нулями и запомнить границу */
+            /* let my entry handler fill the variable with 0 and remember the limit */
                 MEM_WriteByte(code, zPAR_TOK_PUSHINT   ); code += 1; MEM_WriteInt(code, dataPtr         ); code += 4;
                 MEM_WriteByte(code, zPAR_TOK_CALL      ); code += 1; MEM_WriteInt(code, entryFiddler    ); code += 4;
-            /* сразу после проверки правильности границ.
-             * здесь продолжается переход к */
+            /* directly after that check for valid bounds.
+             * this is where a continue jumps to */
                 contTarget = code;
                 MEM_WriteByte(code, zPAR_TOK_PUSHINT   ); code += 1; MEM_WriteInt(code, dataPtr         ); code += 4;
                 MEM_WriteByte(code, zPAR_TOK_CALL      ); code += 1; MEM_WriteInt(code, redoChecker     ); code += 4;
-            /* переход к концу, если так записано в redochecker */
+            /* jump to the end if the redochecker says so */
                 MEM_WriteByte(code, zPAR_TOK_JUMPF     ); code += 1;
-                MEM_ArrayPush(jumpEndStack, -1); /* разделитель */
-                MEM_ArrayPush(jumpEndStack, code); /* вставка позиции конца цикла, как только ее узнаем */
+                MEM_ArrayPush(jumpEndStack, -1); /* seperator */
+                MEM_ArrayPush(jumpEndStack, code); /* insert the end-Pos of the loop here, as soon as I know it */
                 code += 4;
-            /* Если я выбираю продолжить, безусловный переход обратно к коду: */
+            /* If i chose to continue, unconditional jump back to the code: */
                 MEM_WriteByte(code, zPAR_TOK_JUMP      ); code += 1; MEM_WriteInt(code, pos + 5 - currParserStackAddress); code += 4;
         } else if (tok == zPAR_TOK_PUSHVAR && param == endID) {
             if (loopType == -1) {
@@ -3493,11 +3519,11 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
             MEM_WriteByte(pos  , zPAR_TOK_JUMP);
             MEM_WriteInt (pos+1, contTarget - currParserStackAddress);
             
-            /* Теперь обарабатываем все break: */
+            /* handle all the breaks now: */
             var int brkLoop; brkLoop = MEM_StackPos.position;
             var int JmpEndPos; JmpEndPos   = MEM_ArrayPop(jumpEndStack);
             
-            if (JmpEndPos != -1) { /* предохранитель */
+            if (JmpEndPos != -1) { /* this is the guardian */
                 MEM_WriteInt (JmpEndPos, pos + 5 - currParserStackAddress);
                 MEM_StackPos.position = brkLoop;
             };
@@ -3509,7 +3535,7 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
                 MEM_Error("MEMINT_PrepareLoopsAndJumps: break found outside of loop!");
             } else {
                 MEM_WriteByte(pos, zPAR_TOK_JUMP);
-                MEM_ArrayPush(jumpEndStack, pos+1); /* вставляем адрес конца, как только его узнаем */
+                MEM_ArrayPush(jumpEndStack, pos+1); /* insert the end address here as soon as I know it */
             };
         } else if (tok == zPAR_TOK_PUSHVAR && param == continueID) {
             if (loopType == -1) {
@@ -3531,7 +3557,7 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
     MEM_ArrayFree(loopStack);
     MEM_ArrayFree(jumpEndStack);
     
-    /* очистка */
+    /* cleanup */
     
     MEM_ArrayFree(tokenArr);
     MEM_ArrayFree(paramArr);
@@ -3542,13 +3568,13 @@ func void MEMINT_PrepareLoopsAndJumps(var int stackPos) {
 //   while
 //--------------------------------------
 
-class C_Label {}; /* чтобы можно было объявить var C_Label lbl */
+class C_Label {}; /* so it is possible to declare var C_Label lbl */
 
 const int break = -42;
 const int continue = -23;
 const int end = -72;
 func void while(var int b) {
-    /* проверка соответствия */
+    /* consistency check */
     var int calledFrom; calledFrom = MEM_GetCallerStackPos() - 5;
     if (MEM_ReadByte(calledFrom +     currParserStackAddress) != zPAR_TOK_CALL)
     || (MEM_ReadInt (calledFrom + 1 + currParserStackAddress) != MEM_GetFuncOffset(while)) {
@@ -3557,19 +3583,19 @@ func void while(var int b) {
     };
     
     MEMINT_PrepareLoopsAndJumps(calledFrom);
-    b; /* снова помещаем в стек b */
+    b; /* repush b */
     
-    MEM_SetCallerStackPos(calledFrom); /* получаем позицию перед вызовом while, теперь там условный переход */
+    MEM_SetCallerStackPos(calledFrom); /* get before the call to while which is now a jumpf */
 };
 
 //--------------------------------------
 //   label / goto
 //--------------------------------------
 
-func void MEM_Label(var int lbl) {}; /* нечего делать */
+func void MEM_Label(var int lbl) {}; /* nothing to do */
 func void MEM_Goto (var int lbl) {
     var int calledFrom; calledFrom = MEM_GetCallerStackPos() - 5;
-    /* проверка соответствия */
+    /* consistency check */
     if (MEM_ReadByte(calledFrom +     currParserStackAddress) != zPAR_TOK_CALL)
     || (MEM_ReadInt (calledFrom + 1 + currParserStackAddress) != MEM_GetFuncOffset(MEM_Goto)) {
         MEM_Error("MEM_Goto: MEM_Goto was called in an unorthodox way! This cannot be handled.");
@@ -3577,7 +3603,7 @@ func void MEM_Goto (var int lbl) {
     };
     
     MEMINT_PrepareLoopsAndJumps(calledFrom);
-    MEM_SetCallerStackPos(calledFrom); /* получаем позицию перед вызовом MEM_Goto, тепреь там безусловный переход */
+    MEM_SetCallerStackPos(calledFrom); /* get before the call to MEM_Goto which is now a jump */
 };
 
 //--------------------------------------
@@ -3590,7 +3616,7 @@ func void Repeat(var int variable, var int limit) {
 func void MEMINT_Repeat() {
     var int calledFrom; calledFrom = MEM_GetCallerStackPos() - 5;
     
-    /* проверка соответствия */
+    /* consistency check */
     if (MEM_ReadByte(calledFrom +     currParserStackAddress) != zPAR_TOK_CALL)
     || (MEM_ReadInt (calledFrom + 1 + currParserStackAddress) != MEM_GetFuncOffset(repeat)) {
         MEM_Error("repeat: repeat was called in an unorthodox way! This cannot be handled.");
@@ -3599,7 +3625,7 @@ func void MEMINT_Repeat() {
     
     MEMINT_PrepareLoopsAndJumps(calledFrom);
     
-    /* Я оставил два параметра в стеке, можно приступать */
+    /* I left the two parameters on the stack, we can start */
     MEM_SetCallerStackPos(calledFrom);
 };
 
@@ -3625,9 +3651,9 @@ func void MEMINT_RepeatEntryFiddle(/* var int VAR */ var int limit, var int loop
     };
     
     var int varAdr; varAdr = MEMINT_StackPopInstAsInt();
-    MEM_WriteInt(varAdr, -1); //начинаем с 0 (сразу увеличивается на 1)
+    MEM_WriteInt(varAdr, -1); //starts with 0 (will be incremented immediately)
     
-    MEM_WriteInt(loopData  , varAdr); /* переменная */
+    MEM_WriteInt(loopData  , varAdr); /* the variable */
     MEM_WriteInt(loopData+4, limit);
 };
 
@@ -3645,18 +3671,17 @@ func int MEMINT_RepeatRedoCheck(var int loopData) {
 
 //######################################################
 //
-//  Доступ к объектам меню
+//  Access Menu Objects
 //
 //######################################################
 
 /*
-    К сожалению, одни меню при каждом вызове создаются
-	заново (из скриптов), а другие один раз создаются
-	в начале игры, а потом сохраняются в памяти. 
-	И в зависимости от того, что именно вы хотите сделать,
-	может возникнуть необходимость изменить скрипт меню
-	(через записанные переменные), или получить доступ
-	к меню, как объекту, и портить сам этот объект.
+    Leider werden manche Menüs jedesmal neu erzeugt (vom Script aus),
+    andere dagegen werden beim ersten mal nach dem Spielstart erzeugt und dann behalten.
+    Abhängig davon und von dem, was man eigentlich tun will, kann es nötig sein
+    in den Menüscripten Änderungen einzubringen (indem man
+    in den Variablen dort schreibt) oder es ist nötig sich das Menü
+    als Objekt zu holen und in dem fertigen Objekt selbst herumzuschmieren.
 */
 
 func int MEM_GetMenuByString (var string menuName) {
@@ -3668,8 +3693,8 @@ func int MEM_GetMenuByString (var string menuName) {
     var int loopStart; loopStart = MEM_StackPos.position;
 
     if (pos >= menus.numInArray) {
-        /* Просмотрели и ничего не нашли? */
-        /* Раздражающее предупреждение:
+        /* Liste durch und nichts gefunden? */
+        /* Warnung nervt:
             MEM_Warn (ConcatStrings ("MEM_GetMenuByString: No Menu with the following name found: ", menuName));
         */
         return 0;
@@ -3687,10 +3712,10 @@ func int MEM_GetMenuByString (var string menuName) {
 };
 
 //--------------------------------------
-// Доступ к пункту меню (MenuItem)
+// MenuItem Zugriff
 //--------------------------------------
 
-/* То же замечание, что и для меню */
+/* Selbe Bemerkung wie zu Menüs */
 
 func int MEM_GetMenuItemByString (var string menuItemName) {
     var zCArray menuItems;
@@ -3701,8 +3726,8 @@ func int MEM_GetMenuItemByString (var string menuItemName) {
     var int loopStart; loopStart = MEM_StackPos.position;
 
     if (pos >= menuItems.numInArray) {
-        /* Просмотрели и ничего не нашли? */
-        //Предупреждение убрано: очень раздражает.
+        /* Liste durch und nichts gefunden? */
+        //Warnung rausgenommen: Die nervt extrem.
         //MEM_Warn (ConcatStrings ("MEM_GetMenuItemByString: No Menu with the following name found: ", menuItemName));
         return 0;
     };
@@ -3725,7 +3750,7 @@ func int MEM_GetMenuItemByString (var string menuItemName) {
 //######################################################
 
 //************************************************
-//  Расположение некоторых часто используемых объектов
+//  Locate some commonly used objects
 //************************************************
 
 instance MEM_Game (oCGame);
@@ -3744,53 +3769,65 @@ instance MEM_GameManager (CGameManager);
 instance MEM_Parser(zCParser);
 
 func void MEM_InitGlobalInst() {
-    //Game:	//Игровая сессия
+    //Game:
     MEM_Game = _^(MEM_ReadInt (MEMINT_oGame_Pointer_Address));
 
-    //World:	//Мир (локация)
+    //World:
     MEM_World = _^(MEM_Game._zCSession_world);
 
-    //Vobtree:	//Дерево Vob'ов
+    //Vobtree:
     MEM_Vobtree = _^(MEM_Game._zCSession_world + 36); //+ 0x0024
 
-    //InfoManager:	//Список всех диалогов и парсер
-    MEM_InfoMan = _^(MEM_Game.infoman);
+    //InfoManager:
+    if (MEM_Game.infoman) {
+        MEM_InfoMan = _^(MEM_Game.infoman);
+    } else {
+        MEM_AssignInstNull (MEM_InfoMan);
+    };
 
-    //InformationManager	//Отображение диалогов
+    //InformationManager
     MEM_InformationMan = _^(MEMINT_oCInformationManager_Address);
 
-    //Waynet:	//Сеть путей
+    //Waynet:
     MEM_Waynet = _^(MEM_World.wayNet);
 
-    //Camera	//Камера
-    MEM_Camera = _^(MEM_Game._zCSession_camera);
+    //Camera
+    if (MEM_Game._zCSession_camera) {
+        MEM_Camera = _^(MEM_Game._zCSession_camera);
+    } else {
+        MEM_AssignInstNull (MEM_Camera);
+    };
 
-    //SkyController:	//Контроллер неба
+    //SkyController:
     if (MEM_World.skyControlerOutdoor) {
         MEM_SkyController = _^(MEM_World.skyControlerOutdoor);
     } else {
         MEM_AssignInstNull (MEM_SkyController);
     };
 
-    //Spawnmanager	//Вставка NPC в мир
-    MEM_SpawnManager = _^(MEM_Game.spawnman);
+    //Spawnmanager
+    if (MEM_Game.spawnman) {
+        MEM_SpawnManager = _^(MEM_Game.spawnman);
+    } else {
+        MEM_AssignInstNull (MEM_SpawnManager);
+    };
 
-    //zTimer:	//Таймер общего типа
+    //zTimer:
     MEM_Timer = _^(MEMINT_zTimer_Address);
 
-    //WorldTimer:	//Мировой таймер
+    //WorldTimer:
     MEM_WorldTimer = _^(MEM_Game.wldTimer);
     
-    //GameManager	//Управление игрой
-    MEM_GameMananger = _^(MEM_ReadInt(MEMINT_gameMan_Pointer_address)); /* Блин, опечатка! Сохранено, чтобы не нарушить код */
+    //GameManager
+    MEM_GameMananger = _^(MEM_ReadInt(MEMINT_gameMan_Pointer_address)); /* shit: Typo! Keep it as to not break code */
     MEM_GameManager  = _^(MEM_ReadInt(MEMINT_gameMan_Pointer_address));
     
-    //The Content Parser	//Парсер содержимого
+    //The Content Parser
     MEM_Parser = _^(contentParserAddress);
 };
 
 //************************************************
-// Проверка соответствий
+// Validity checks
 //************************************************
 
 func int Hlp_Is_oCMobFire (var int ptr) {
@@ -3809,10 +3846,16 @@ func int Hlp_Is_oCMob(var int ptr) {
     var int vtbl;
     vtbl = MEM_ReadInt (ptr);
 
-    /* Тупое обозначение, потому что Gothic Sourcer ругается на ||. */
+    /* Schreibweise so bescheuert, weil Gothic Sourcer bei || meckert. */
     return (vtbl == oCMob_vtbl)
         |  (vtbl == oCMobInter_vtbl)
+        |  (vtbl == oCMobSwitch_vtbl)
+        |  (vtbl == oCMobWheel_vtbl)
         |  (vtbl == oCMobContainer_vtbl)
+        |  (vtbl == oCMobLockable_vtbl)
+        |  (vtbl == oCMobLadder_vtbl)
+        |  (vtbl == oCMobFire_vtbl)
+        |  (vtbl == oCMobBed_vtbl)
         |  (vtbl == oCMobDoor_vtbl);
 };
 
@@ -3823,19 +3866,24 @@ func int Hlp_Is_oCMobInter(var int ptr) {
     vtbl = MEM_ReadInt (ptr);
 
     return (vtbl == oCMobInter_vtbl)
+         | (vtbl == oCMobSwitch_vtbl)
+         | (vtbl == oCMobWheel_vtbl)
          | (vtbl == oCMobContainer_vtbl)
+         | (vtbl == oCMobLockable_vtbl)
+         | (vtbl == oCMobLadder_vtbl)
+         | (vtbl == oCMobFire_vtbl)
+         | (vtbl == oCMobBed_vtbl)
          | (vtbl == oCMobDoor_vtbl);
 };
 
 func int Hlp_Is_oCMobLockable(var int ptr) {
     if (!ptr) { return 0; };
 
-    /* Есть ли запираемые объекты, кроме сундуков и дверей?
-     * но их все равно никто не использует => лень проверять. */
     var int vtbl;
     vtbl = MEM_ReadInt (ptr);
 
     return (vtbl == oCMobContainer_vtbl)
+         | (vtbl == oCMobLockable_vtbl)
          | (vtbl == oCMobDoor_vtbl);
 };
 
@@ -3847,6 +3895,26 @@ func int Hlp_Is_oCMobContainer(var int ptr) {
 func int Hlp_Is_oCMobDoor(var int ptr) {
     if (!ptr) { return 0; };
     return (MEM_ReadInt (ptr) == oCMobDoor_vtbl);
+};
+
+func int Hlp_Is_oCMobBed(var int ptr) {
+    if (!ptr) { return 0; };
+    return (MEM_ReadInt (ptr) == oCMobBed_vtbl);
+};
+
+func int Hlp_Is_oCMobSwitch(var int ptr) {
+    if (!ptr) { return 0; };
+    return (MEM_ReadInt (ptr) == oCMobSwitch_vtbl);
+};
+
+func int Hlp_Is_oCMobWheel(var int ptr) {
+    if (!ptr) { return 0; };
+    return (MEM_ReadInt (ptr) == oCMobWheel_vtbl);
+};
+
+func int Hlp_Is_oCMobLadder(var int ptr) {
+    if (!ptr) { return 0; };
+    return (MEM_ReadInt (ptr) == oCMobLadder_vtbl);
 };
 
 func int Hlp_Is_oCNpc (var int ptr) {
@@ -3865,7 +3933,7 @@ func int Hlp_Is_zCVobLight (var int ptr) {
 };
 
 //************************************************
-//   Поиск zCClassDef
+//   Find zCClassDef
 //************************************************
 
 func int MEM_GetClassDef (var int objPtr) {
@@ -3874,11 +3942,13 @@ func int MEM_GetClassDef (var int objPtr) {
         return 0;
     };
     
-    //obj._vtbl[0] содержит адрес виртуальной функции, которая
-    //возвращает classDef для класса объекта.
-    //Эта функция состоит из простого "mov eax" (1 байт), 
-	//адреса (который нам и нужен) (4 байта) и "retn" (1 байт).
-   
+    //In obj._vtbl[0] steht die Adresse der Funktion, die ClassDef zurückgibt.
+    //Diese Funktion besteht aus einem einfachen "mov eax" (1 byte), der Adresse (4 byte) und einem "retn" (1 byte).
+    
+    //obj._vtbl[0] contains the address of a virtual function that returns
+    //the classDef of the class of the object.
+    //This function contains of a single "mov" command (1 byte) that is followed by the address that is of interest here.
+    
     return MEM_ReadInt (1 + MEM_ReadInt (MEM_ReadInt (objPtr)));
 };
 
@@ -3887,18 +3957,18 @@ func string MEM_GetClassName (var int objPtr) {
     classDef = MEM_GetClassDef (objPtr);
     
     if (classDef) {
-        return MEM_ReadString (classDef); //первое совйство zCClassDef.
+        return MEM_ReadString (classDef); //gleich die erste Eigenschaft / first property of zCClassDef.
     };
     return "";
 };
 
 //************************************************
-//    Создание и удаление Vob'ов
+//    Create and delete Vobs
 //************************************************
 
-/* Спасибо Gottfried за открытие Wld_InsertObject! */
+/* Danke an Gottfried für die Entdeckung von Wld_InsertObject! */
 func int MEM_InsertVob(var string vis, var string wp) {
-    /* oCMob можно создавать в Готике */
+    /* oCMob von Gothic konstruieren lassen */
     const int oCNpc__player_G1 = 9288624; //0x8DBBB0
     const int oCNpc__player_G2 = 11216516; //0xAB2684
     
@@ -3907,26 +3977,26 @@ func int MEM_InsertVob(var string vis, var string wp) {
     
     var int wasInvalid; wasInvalid = 0;
     
-    /* Wld_InsertObject вылетает, если нет игрока!
-     * Например, если ее вызвать из Startup. */
+    /* Wld_InsertObject crashed wenn es keinen Player gibt!
+     * Das ist z.B. der Fall, wenn man dies hier aus der Startup aufruft. */
     if (!Hlp_Is_oCNpc(MEM_ReadInt(playerAdr))) {
         wasInvalid = 1;
         MEMINT_GetMemHelper();
         MEM_WriteInt(playerAdr, MEM_InstGetOffset(MEM_Helper));
-        var int oldWorld; oldWorld = MEM_Helper._zCVob_homeWorld; //игроку нужен "родной" мир.
+        var int oldWorld; oldWorld = MEM_Helper._zCVob_homeWorld; //player braucht auch Homeworld.
         MEM_Helper._zCVob_HomeWorld = MEM_InstGetOffset(MEM_World);
     };
     
     Wld_InsertObject(vis,wp);
     
-    /* снова недействителен */
+    /* wieder invalidieren */
     if (wasInvalid) {
         MEM_WriteInt(playerAdr, 0);
         MEM_Helper._zCVob_HomeWorld = oldWorld;
     };
     
-    /* Указатель на новый объект в дереве Vob'ов
-     * всегда первый в глобальном Vobtree */
+    /* Ein Pointer auf das neue Objekt findet sich im Vobtree
+     * stets als erstes Kind des globalen Vobtrees */
     var zCTree newTreeNode;
     newTreeNode = _^ (MEM_World.globalVobTree_firstChild);
     
@@ -3947,11 +4017,11 @@ func void MEM_DeleteVob(var int vobPtr) {
 };
 
 //************************************************
-// Хэширование
+// Hashing
 //************************************************
 
 //--------------------------------------
-//  Расчет хэш-функции
+//  Evaluate hash function
 //--------------------------------------
 
 func int MEM_GetBufferCRC32 (var int buf, var int buflen)
@@ -3989,7 +4059,7 @@ func int MEMINT_GetWorldHashBucket (var int hash) {
 };
 
 //--------------------------------------
-//   Поиск Vob'а в хэш-функции
+//   Find Vob in hash function
 //--------------------------------------
 
 func int MEM_SearchVobByName (var string str) {
@@ -4040,7 +4110,7 @@ func int MEM_SearchAllVobsByName (var string str) {
 };
 
 //--------------------------------------
-// Переименование Vob'а
+// Vob umbenennen
 //--------------------------------------
 
 func void MEM_RenameVob (var int vobPtr, var string newName) {
@@ -4133,48 +4203,48 @@ func void MEM_UntriggerVob (var int vobPtr) {
 
 //######################################################
 //
-//  Клавиатура
+//  Keyboard interaction
 //
 //######################################################
 
-//Возвращаемые значения
+//Rückgabewerte
 const int KEY_UP = 0;
 const int KEY_PRESSED = 1;
 const int KEY_HOLD = 2;
 const int KEY_RELEASED = 3;
 
 //--------------------------------------
-//  Основное: Нажата ли клавиша?
+//  Grundlage: Ist die Taste gedrückt?
 //--------------------------------------
 
-//Немного неловко, что метод, который проверяет наличие KEY_HOLD называется KeyPressed... :-(
-//но теперь это так, и я ничего не буду менять.
+//etwas ungeschickt, dass die Methode, die auf KEY_HOLD prüft KeyPressed heißt... :-(
+//aber jetzt ist es so und ich wills nicht ändern.
 
 func int MEM_KeyPressed(var int key) {
     return MEM_ReadInt (MEMINT_KeyEvent_Offset + key) & 255;
 };
 
 //--------------------------------------
-//  Основано на нем: Проверка,
-//  нажата ли клавиша впервые
-//  или удерживается.
+//  Darauf aufbauend: Erkennung
+//  wann das erste mal gedrückt
+//  und wann gehalten
 //--------------------------------------
 
-//Здесь я сохраняю состояния клавиш после предыдущего опроса:
-var int MEMINT_KeyState[1024]; //бОльшие значения - это кнопки джойстика и т.п.
+//Hier merke ich mir die Zustände seit der letzten Abfrage:
+var int MEMINT_KeyState[1024]; //lieber mal etwas mehr, gibt noch JoystickButtons usw.
 
 func int MEM_KeyState(var int key) {
     var int pressed;
     pressed = MEM_KeyPressed (key);
 
-    //Получаем адрес как Int:
+    //Adresse als Int runterholen:
     var int adr; adr = _@(MEMINT_KeyState);
     adr += 4 * key;
 
-    //Получаем текущее состояние:
+    //State holen:
     var int keyState; keyState = MEM_ReadInt(adr);
 
-    //Обработка состояния:
+    //State bearbeiten:
     if (keyState == KEY_UP) {
         if (pressed) {
             keyState = KEY_PRESSED;
@@ -4197,30 +4267,30 @@ func int MEM_KeyState(var int key) {
         };
     };
 
-    //Запоминаем новое состояние
+    //Neuen State merken
     MEM_WriteInt (adr, keyState);
-    return keyState; //возвращаем.
+    return keyState; //zurückgeben.
 };
 
 //--------------------------------------
-//  Имитация нажатия клавиши
+//  Key-Event einfügen
 //--------------------------------------
 
-/* Проблематично, возможно, будет найдено лучше решение.
- * Но многое уже можно сделать.
- * Примеры:
- *   -Открыть инвентарь.
- *   -Быстрое сохранение.
- *   -Открыть меню персонажа.
- *   -Переключение паузы (режим Marvin).
- *   -Открыть Log
- *   -Открыть клавное меню (ESC)
+/* Problematisch, vielleicht gibt es irgendwann eine bessere Lösung.
+ * Aber einiges kann man damit schon machen.
+ * Beispiel:
+ *   -Inventar öffnen.
+ *   -Quicksave
+ *   -Charaktermenü öffnen
+ *   -Pause togglen (Marvin Modus)
+ *   -Log-Öffnen
+ *   -Hauptmenü öffnen (ESC)
  *   ...
  *
- * Но в некторых случаях движок хочет, чтобы клавшиа "переключалась",
- * но эта ситуация обрабатывается по-другому и не затрагивается здесь.
- * Поэтому, например, нельзя закрыть инвентарь
- * с помощью этой функции. */
+ * An anderen Stellen will die Engine aber, dass der Key "getoggled"
+ * wurde, das wird anderweitig verwaltet und ist hiervon nicht betroffen.
+ * Daher kann man zum Beispiel das Inventar mit Hilfe dieser Funktion
+ * nicht wieder schließen. */
 
 func void MEM_InsertKeyEvent(var int key) {
     MEM_ArrayInsert (MEMINT_KeyBuffer_offset, key);
@@ -4228,7 +4298,7 @@ func void MEM_InsertKeyEvent(var int key) {
 
 //#################################################################
 //
-//  Доступ к zCOptions:
+//  zCOptions Access:
 //
 //#################################################################
 
@@ -4237,16 +4307,16 @@ var zCOptionSection MEMINT_OPT_Section;
 var zCOptionEntry MEMINT_OPT_Entry;
 
 //************************************************
-//  Чтение
+//  reading
 //************************************************
 
 //--------------------------------------
-//  чтение в zCOptions
+//  read in zCOptions
 //--------------------------------------
 
-/* Поиск всех вхождений в данный раздел */
+/* Search the current section for an entry */
 func int MEMINT_OPT_FindEntry(var string optname) {
-    //Число вхождений, кроме == 0 (потому что возможен только цикл с постусловием do-while, а не с предусловием while-do).
+    //Anzahl Einträge == 0 ausschließen (weil nur do-while schleife möglich, keine while-do).
     if (!MEMINT_OPT_Section.entryList_numInArray) {
         return FALSE;
     };
@@ -4266,12 +4336,12 @@ func int MEMINT_OPT_FindEntry(var string optname) {
         MEM_StackPos.position = loopStart;
     }; /* end while */
 
-    return FALSE; //ничего не найдено.
+    return FALSE; //nichts gefunden.
 };
 
-/* Поиск текущего множества параметров в секции */
+/* Search the current option set for a section */
 func int MEMINT_OPT_FindSection (var string sectname) {
-    //Число вхождений, кроме == 0 (потому что возможен только цикл с постусловием do-while, а не с предусловием while-do).
+    //Anzahl Sektionen == 0 ausschließen (weil nur do-while schleife möglich, keine while-do).
     if (!MEMINT_OPT_Set.sectionList_numInArray) {
         return FALSE;
     };
@@ -4292,11 +4362,11 @@ func int MEMINT_OPT_FindSection (var string sectname) {
         MEM_StackPos.position = loopStart;
     }; /* end while */
 
-    return FALSE; //ничего не найдено.
+    return FALSE; //nichts gefunden.
 };
 
 //--------------------------------------
-//  Поиск в Gothic.ini
+//  Search the Gothic.ini
 //--------------------------------------
 
 func string MEM_GetGothOpt (var string sectionname, var string optionname) {
@@ -4327,7 +4397,7 @@ func int MEM_GothOptExists (var string sectionname, var string optionname) {
 };
 
 //--------------------------------------
-//  Поиск в Mod.ini
+//  Search the Mod.ini
 //--------------------------------------
 
 func string MEM_GetModOpt (var string sectionname, var string optionname) {
@@ -4358,7 +4428,7 @@ func int MEM_ModOptExists (var string sectionname, var string optionname) {
 };
 
 //--------------------------------------
-//  Получение командной строки
+//  Get the command line
 //--------------------------------------
 
 func string MEM_GetCommandLine () {
@@ -4367,11 +4437,11 @@ func string MEM_GetCommandLine () {
 };
 
 //#####################################################
-//  Запись
+//  writing
 //#####################################################
 
-/* Настройки мода никогда не сохраняются на диск, поэтому 
- * нет отдельной функции для их записи */
+/* Mod configuration is never saved to disk, therefore
+ * there are no seperate functions for writing in it */
 
 func void MEM_SetGothOpt (var string section, var string option, var string value) {
     var int optSetPtr; optSetPtr = MEM_ReadInt (zoptions_Pointer_Address);
@@ -4401,12 +4471,12 @@ func void MEM_SetGothOpt (var string section, var string option, var string valu
     };
 
     MEMINT_OPT_Entry.varValue = value;
-    MEMINT_OPT_Entry.varValueTemp = value; /* не забываем временное значение */
+    MEMINT_OPT_Entry.varValueTemp = value; /* dont forget temp value */
 };
 
 //--------------------------------------
-// Применить изменения
-// и сохранить ini-файл на диск
+// Apply some changes
+// and write ini to disk
 //--------------------------------------
 
 func void MEM_ApplyGothOpt() {
@@ -4419,16 +4489,19 @@ func void MEM_ApplyGothOpt() {
 };
 
 //--------------------------------------
-//  Получение управляющих клавиш
+//  Get a key
 //--------------------------------------
 
 func int MEMINT_HexCharToInt(var int c) {
     const int ASCII_a = 97;
+    const int ASCII_A_ = 65;
     const int ASCII_0 = 48;
     if (c >= ASCII_0 && c < ASCII_0 + 10) {
         return c - ASCII_0;
     } else if (c >= ASCII_a && c < ASCII_a + 6) {
         return 10 + c - ASCII_a;
+    } else if (c >= ASCII_A_ && c < ASCII_A_ + 6) {
+        return 10 + c - ASCII_A_;
     } else {
         MEM_Error(ConcatStrings("Invalid Hex Char: ", IntToString(c)));
         return 0;
@@ -4463,9 +4536,9 @@ func int MEM_GetSecondaryKey(var string name) {
     var string raw;
     raw = MEM_GetGothOpt("KEYS", name);
     
-    /* Только когда задано 2 клавиши: */
+    /* Nur wenn auch zwei angegeben: */
     if (STR_Len(raw) < 8) {
-        return 0; //нет второй клавиши
+        return 0; //no secondary key
     };
     
     raw = STR_SubStr(raw, 4, 4);
@@ -4475,13 +4548,24 @@ func int MEM_GetSecondaryKey(var string name) {
 
 func string MEMINT_ByteToKeyHex(var int byte) {
     const int ASCII_0 = 48;
+    const int ASCII_A = 65;
     byte = byte & 255;
     
+    // Fix ASCII characters (A to F)
+    var int c1; c1 = (byte >> 4);
+    if (c1 >= 10) {
+        c1 += ASCII_A-ASCII_0-10;
+    };
+    var int c2; c2 = (byte & 15);
+    if (c2 >= 10) {
+        c2 += ASCII_A-ASCII_0-10;
+    };
+
     const int mem = 0;
     if (!mem) { mem = MEM_Alloc(3); };
     
-    MEM_WriteByte(mem    , (byte >>  4) + ASCII_0);
-    MEM_WriteByte(mem + 1, (byte &  15) + ASCII_0);
+    MEM_WriteByte(mem    , c1 + ASCII_0);
+    MEM_WriteByte(mem + 1, c2 + ASCII_0);
     return STR_FromChar(mem);
 };
 
@@ -4494,7 +4578,7 @@ func void MEM_SetKeys(var string name, var int primary, var int secondary) {
     
     MEM_SetGothOpt("KEYS", name, str);
     
-    /* Переназначение клавиш */
+    /* Rebind the keys */
     const int call = 0;
     if (CALL_Begin(call)) {
         var int zInputPtr;         zInputPtr         = MEMINT_SwitchG1G2(8834208, 9246288);
@@ -4517,12 +4601,12 @@ func void MEM_SetSecondaryKey(var string name, var int key) {
 
 //#################################################
 //
-// Измерение времени / Тест производительности / Ускорение
+//    Zeitmessung / Benchmark / Speedup
 //
 //#################################################
 
 //************************************************
-// Измерение времени выполнения
+// Time Measurement
 //************************************************
 
 func int MEM_GetSystemTime() {
@@ -4560,7 +4644,7 @@ func int MEM_GetPerformanceCounter() {
 };
 
 //************************************************
-// Тестирование производительности
+// Benchmark
 //************************************************
 
 func void MEMINT_Benchmark_Helper() {
@@ -4572,7 +4656,7 @@ func void MEMINT_Benchmark_Helper() {
     const int MEMINT_Benchmark_MMS = 2;
 
 func int MEMINT_Benchmark(var func f, var int times, var int unit) {
-    MEM_WriteInt(MEM_GetFuncPtr(MEMINT_Benchmark_Helper) + 1, //Вспомогательная функция вызывает...
+    MEM_WriteInt(MEM_GetFuncPtr(MEMINT_Benchmark_Helper) + 1, //the helper function should call...
                  MEM_GetFuncOffset(f)); //... f
     
     var int i; i = 0;
@@ -4600,8 +4684,8 @@ func int MEMINT_Benchmark(var func f, var int times, var int unit) {
             return pc;
         } else {
             if (pc > 2147483) {
-                /* нельзя умножить на 1000, т.к. число достаточно большое
-                 * Я немного потеряю, если сначала разделю. */
+                /* cannot multiply by 1000, but the number is large enough
+                 * I do not lose a lot if I divide first. */
                 return (pc / MEM_ReadInt(PC_TicksPerMS_Address)) * 1000;
             } else {
                 return (pc * 1000) / MEM_ReadInt(PC_TicksPerMS_Address);
@@ -4634,16 +4718,14 @@ func int MEM_BenchmarkPC_N(var func f, var int n) {
     return MEMINT_Benchmark(f, n, MEMINT_Benchmark_PC);
 };
 
-//NS: а где ускорение?
-
 //#################################################
 //
-//    Ведение лога и отладка
+//    Logging and Debug
 //
 //#################################################
 
 //************************************************
-//   SendToSpy (отправка сообщений в zSpy)
+//   SendToSpy
 //************************************************
 
 func void MEMINT_SendToSpy_Implementation(var int errorType, var string text) {
@@ -4657,16 +4739,17 @@ func void MEMINT_SendToSpy_Implementation(var int errorType, var string text) {
     var int old_ack_type; old_ack_type = zerr.ack_type;
     if (MEMINT_ForceErrorBox) {
         if (GOTHIC_BASE_VERSION == 1) {
-            /* Предупреждение "lost focus",
-             * которое выводится постоянно, пока
-             * я не снижу приоритет. */
+            /* There is a warning "lost focus",
+             * that will be printed constantly, unless
+             * I reduce its priority here */
+            MemoryProtectionOverride(/*0x4F55C2*/ 5199298, 1);
             MEM_WriteByte(5199298, 1);
         };
     
         zerr.ack_type = zERR_TYPE_WARN;
         
-        /* Нельзя включить окно Error Box, т.к.
-         * создание Error Box вызывает новые сообщения */
+        /* Cannot enable Error Box for Infos, because
+         * creating in Error Box creates Infos */
         if (errorType < zERR_TYPE_WARN) {
             errorType = zERR_TYPE_WARN;
         };
@@ -4685,14 +4768,14 @@ func void MEMINT_SendToSpy_Implementation(var int errorType, var string text) {
     
     const int call  = 0;
     if (CALL_Begin(call)) {
-        CALL_PtrParam(_@(null));  //char * функция
-        CALL_PtrParam(_@(null));  //char * файл
-        CALL_IntParam(_@(null));  //int строка
-        CALL_IntParam(_@(null));  //uint флаги
-        CALL_IntParam(_@(null));  //uint уровень (бесполезно?)
-        CALL_PtrParam(_@(ptr));   //zString * сообщение
-        CALL_PtrParam(_@(null));  //int ID ошибки (бесполезно)
-        CALL_PtrParam(_@(errorType)); //zERROR_TYPE тип ошибки
+        CALL_PtrParam(_@(null));  //char * function
+        CALL_PtrParam(_@(null));  //char * file
+        CALL_IntParam(_@(null));  //int line
+        CALL_IntParam(_@(null));  //uint flags
+        CALL_IntParam(_@(null));  //uint level (useless?)
+        CALL_PtrParam(_@(ptr));   //zString * message
+        CALL_PtrParam(_@(null));  //int errorID (useless)
+        CALL_PtrParam(_@(errorType)); //zERROR_TYPE errorType
         
         CALL_PutRetValTo(0);
         CALL__thiscall(_@(zerrPtr),
@@ -4705,14 +4788,14 @@ func void MEMINT_SendToSpy_Implementation(var int errorType, var string text) {
 };
 
 //************************************************
-//   Трассировка стека
+//   Print Stacktrace
 //************************************************
 
 //--------------------------------------
-//   Вывод одной строки трассировки
+//   Print one line of a stack trace
 //--------------------------------------
 
-//Милый Print
+//Pretty Print
 func void MEMINT_PrintStackTraceLine(var int popPos) {
     var int valid;
     
@@ -4731,7 +4814,7 @@ func void MEMINT_PrintStackTraceLine(var int popPos) {
     if (valid) {
         prt = ConcatStrings(prt, symb.name);
         
-        /* добавляем параметры */
+        /* include parameters */
         prt = ConcatStrings(prt, "(");
         
         var int loop;
@@ -4756,7 +4839,7 @@ func void MEMINT_PrintStackTraceLine(var int popPos) {
                 var zCPar_Symbol funcParm;
                 funcParm = _^(MEM_ReadIntArray (currSymbolTableAddress, param.content));
                 prt = ConcatStrings(prt, funcParm.name);
-                /* лень возвращаться по цепочке, когда он всего один */
+                /* too lazy to follow the chain back in case there is one */
             } else if ((param.bitfield & zCPar_Symbol_bitfield_type) == zPAR_TYPE_INSTANCE) {
                 prt = ConcatStrings(prt, "(instance)");
                 prt = ConcatStrings(prt, IntToString(param.offset));
@@ -4795,8 +4878,8 @@ func void MEMINT_PrintStackTraceLine(var int popPos) {
 };
 
 //--------------------------------------
-//   Вывод трассировки стека для 
-//   вызовов функций Daedalus
+//   Print Stack Trace when
+//   called from a daedalus function
 //--------------------------------------
 
 func void MEMINT_PrintStackTrace_Implementation() {
@@ -4804,24 +4887,22 @@ func void MEMINT_PrintStackTrace_Implementation() {
 
     var int ESP;
     ESP = MEMINT_FindFrameBoundary(MEMINT_GetESP(), -1);
-    /* на первый взгляд выглядит как граница фрейма.
-     * для MEMINT_FindFrameBoundary НЕ выглядит так 
-     * отсюда, потому что я нахожусь глубже в стеке: */
+    /* the first thing that looks like a frame boundary
+     * for MEMINT_FindFrameBoundary WILL NOT look like that
+     * from here, because I am further down in the stack: */
     ESP += MEMINT_DoStackFrameSize; 
     
-    /* очень неприятно: ??? в стековом фрейме функции находится не 
-     * текущий PopPos, который расположен во фрейме выше,
-     * с уровня, откуда вы собирались протолкнуть значение в стек: */
-	 /*NS: не уверена, что правильно перевела, но общий смысл такой:
-	   текущий PopPos узнаем не из фрейма текущей функции, а оттуда, где ее вызвали. Надо найти это место */
+    /* sehr ungünstig: Im Stackframe der Funktion steht gar nicht die
+     * aktuelle PopPos, die steht nur im Stackframe desjenigen obendrüber
+     * wo der sie eben grade pushen wollte: */
     var int passedMySelf; passedMySelf = 0;
     var int mySelf; mySelf = MEM_GetFuncID(MEMINT_PrintStackTrace_Implementation);
     
     var int loop; loop = MEM_StackPos.position;
     
     /* while */
-        /* Я нахожусь в начале DoStack Frame,
-         * здесь получаю вызванную функцию: */
+        /* I am at the start of a DoStack Frame,
+         * get the function that is called here: */
         var int popPos;
         popPos = MEM_ReadInt(ESP-MEMINT_DoStackPopPosOffset);
         
@@ -4833,9 +4914,9 @@ func void MEMINT_PrintStackTrace_Implementation() {
             passedMySelf = (funcID == mySelf);
         };
         
-        /* Есть ли другой DoStack, вызвавший меня? */
+        /* Is there another DoStack directly und me? */
         if (MEMINT_IsFrameBoundary(ESP)) {
-            /* продолжаем искать! */
+            /* go on searching! */
             ESP += MEMINT_DoStackFrameSize;
             MEM_StackPos.position = loop;
         };
@@ -4845,12 +4926,12 @@ func void MEMINT_PrintStackTrace_Implementation() {
 };
 
 //--------------------------------------
-//   Вывод трассировки стека при вызове
-//   обработчика исключений (SEH) из DoStack.
+//   Print Stack Trace when the SEH
+//   of DoStack is called.
 //--------------------------------------
 
-var int MEMINT_ExceptionHandlerESP; /* где начинать искать трассирувку? */
-var int MEMINT_TopPopPos;           /* PopPos для (вероятно, вылетевшей) инстанции DoStack. */
+var int MEMINT_ExceptionHandlerESP; /* where start looking for stacktrace? */
+var int MEMINT_TopPopPos;           /* the PopPos of the (probably crashed) DoStack Instance. */
 
 func void MEMINT_ExceptionHandler() {
     const int invoked_once = 0;
@@ -4864,9 +4945,9 @@ func void MEMINT_ExceptionHandler() {
         
         var int ESP; ESP = MEMINT_FindFrameBoundary(MEMINT_ExceptionHandlerESP, 500);
         
-        /* Здесь может не быть границы фрейма, если вылетела нижележащая функция */
+        /* There may not be a frame boundary if there is a crash in the bottommost function */
         if (ESP) {
-            /* примечание: первая должна обрабатываться иначе, и уже была обработана выше */
+            /* note: the first has to be handled differently and was handled above */
             ESP += MEMINT_DoStackFrameSize;
         
             var int loop; loop = MEM_StackPos.position;
@@ -4884,7 +4965,7 @@ func void MEMINT_ExceptionHandler() {
     };
 };
 
-/* Пробуем отловить исключения: */
+/* Try to catch exceptions: */
 func void MEMINT_SetupExceptionHandler() {
     const int call = 0;
     
@@ -4910,7 +4991,7 @@ func void MEMINT_SetupExceptionHandler() {
         CALL__thiscall(_@(contentParserAddress),
                       MEMINT_SwitchG1G2(zCParser__DoStack_G1, zCParser__DoStack_G2));
         
-        /* теперь переход к исходному обработчику (что бы он ни делал) */
+        /* now jump to the original handler (whatever that one is doing) */
         const int zCParser__DoStack_SEH_G1 = 8146176; //0x7C4D00
         const int zCParser__DoStack_SEH_G2 = 8562816; //0x82A880
         
@@ -4921,7 +5002,7 @@ func void MEMINT_SetupExceptionHandler() {
         
         call = CALL_Close();
         
-        /* устанавливаем обработчик исключений: */
+        /* install the exception handler: */
         const int zCParser__DoStack_SEH_Pusher_G1 = 7243266 + 1; //0x6E8602 + 1
         const int zCParser__DoStack_SEH_Pusher_G2 = 7936354 + 1; //0x791962 + 1
         
@@ -4936,7 +5017,7 @@ func void MEMINT_SetupExceptionHandler() {
 };
 
 //************************************************
-//   Установка функций вывода и SEH
+//   Setup Print Functions and SEH
 //************************************************
 
 func void MEMINT_ReplaceLoggingFunctions() {
@@ -4956,18 +5037,18 @@ func void MEMINT_ReplaceLoggingFunctions() {
 
 //#################################################
 //
-//          Переработаные функции
+//          Revised functions
 //
-//  С более проработанными функциями Икаруса
-//  становится возможным ускорить его базу.
+//  With the more elaborate functions of Ikarus
+//  it is possible to speed up the basis of Ikarus.
 //  
-//  Сохранил сходные имена, чтобы не смущать народ,
-//  если кто-то увидит их в стеке вызовов.
+//  Keep names simular, so they don't confuse people
+//  when they see them on the callstack.
 //
 //#################################################
  
 //************************************************
-//   Быстрые  чтение / Запись
+//   Faster  Read / Write
 //************************************************
  
 func void MEM_ReadInt_() {
@@ -4979,54 +5060,93 @@ func void MEM_WriteInt_() {
     var int i;
     i = i; i = i; i = i; i = i; i = i; i = i; i = i; i = i; i = i; i = i;
 };
- 
+
+func int MEM_ReadByte_(var int addr) {
+    const int call = 0;
+    if (CALL_Begin(call)) {
+        ASM_Open(15);
+        ASM_1(ASMINT_OP_pushEAX);
+        ASM_1(ASMINT_OP_movMemToEAX); ASM_4(_@(addr));
+        ASM_2(ASMINT_OP_movEAXToAL);
+        ASM_1(ASMINT_OP_movALToMem);  ASM_4(_@(ret));
+        ASM_1(ASMINT_OP_popEAX);
+        call = CALL_End();
+    };
+
+    var int ret;
+    return +ret;
+};
+
+func void MEM_WriteByte_(var int addr, var int val) {
+    if (val & ~255) {
+        MEM_Warn("MEM_WriteByte: Val out of range! Truncating to 8 bits.");
+    };
+
+    const int call = 0;
+    if (CALL_Begin(call)) {
+        ASM_Open(18);
+        ASM_1(ASMINT_OP_pushEAX);
+        ASM_1(ASMINT_OP_pushECX);
+        ASM_1(ASMINT_OP_movMemToEAX); ASM_4(_@(addr));
+        ASM_2(ASMINT_OP_movMemToCL);  ASM_4(_@(val));
+        ASM_2(ASMINT_OP_movCLToEAX);
+        ASM_1(ASMINT_OP_popECX);
+        ASM_1(ASMINT_OP_popEAX);
+        call = CALL_End();
+    };
+};
+
 func void MEMINT_InitFasterReadWrite() {
     var MEMINT_HelperClass symb;
 
     MEMINT_InitOverideFunc(MEM_ReadInt_);
     
-    /* Далее идет быстый вариант MEM_ReadInt */
+    /* The following is a fast rewrite of MEM_ReadInt */
     
-    //1. Чтобы ни было в стеке, извлекам из него RValue:
+    //1. whatever is on the stack, make an RValue out of it:
         MEMINT_OfTok(zPAR_OP_UN_PLUS);
-    //2. Меняем местами PUSHINST и PUSHVAR
+    //2. exchange PUSHINST with PUSHVAR
         MEMINT_OfTokPar(zPAR_TOK_PUSHINST, symb);                
         MEMINT_OfTok   (zPAR_TOK_ASSIGNINST); 
         MEMINT_OfTokPar(zPAR_TOK_PUSHINST, zPAR_TOK_PUSHVAR);    
-    //3. Возвращаем как RValue:
+    //3. Return as RValue:
         MEMINT_OfTok   (zPAR_OP_UN_PLUS);     
         MEMINT_OfTok   (zPAR_TOK_RET);        
     
     MEM_ReplaceFunc(MEM_ReadInt,    MEM_ReadInt_);
+
+    /* More secure MEM_ReadByte/MEM_WriteByte */
+    MEM_ReplaceFunc(MEM_ReadByte,   MEM_ReadByte_);
+    MEM_ReplaceFunc(MEM_WriteByte,  MEM_WriteByte_);
         
-    /* теперь быстрый вариант MEM_WriteInt */
+    /* now a faster rewrite of MEM_WriteInt */
     var int id; id  = MEM_GetFuncID(MEM_WriteInt);
     
     MEMINT_InitOverideFunc(MEM_WriteInt_);
     
-    //1. Временно сохраняем 2-й параметр:
+    //1. save the second paremter in temporary location:
         MEMINT_OfTokPar(zPAR_TOK_PUSHVAR, id + 2 /* [val] */);     
         MEMINT_OfTok   (zPAR_OP_IS);             
-    //2. Временно сохраняем 1-й параметр:
+    //2. save the first parameter in temporary location:
         MEMINT_OfTokPar(zPAR_TOK_PUSHVAR, id + 1 /* [adr] */);     
         MEMINT_OfTok   (zPAR_OP_IS);             
     
-    //3. Помещаем их в стек в обратном порядке:
+    //3. Push them in reverse order:
         MEMINT_OfTokPar(zPAR_TOK_PUSHVAR, id + 2 /* [val] */);     
         MEMINT_OfTokPar(zPAR_TOK_PUSHVAR, id + 1 /* [adr] */);     
         
-    //4. Получаем RValue из адреса:
+    //4. make an RValue out of the address:
         MEMINT_OfTok   (zPAR_OP_UN_PLUS);        
-    //5. Меняем местами PUSHINST и PUSHVAR
+    //5. exchange PUSHINST with PUSHVAR
         MEMINT_OfTokPar(zPAR_TOK_PUSHINST, symb);                   
         MEMINT_OfTok   (zPAR_TOK_ASSIGNINST);    
         MEMINT_OfTokPar(zPAR_TOK_PUSHINST, zPAR_TOK_PUSHVAR);       
-    //6. Присваиваем и возвращаем:
+    //6. Assign and return:
         MEMINT_OfTok   (zPAR_OP_IS);             
         MEMINT_OfTok   (zPAR_TOK_RET);
         
-    /* Осторожно, MEM_ReplaceFunc(MEM_WriteInt, MEM_WriteInt_);
-     * может работать неправильно, в итоге используем MEM_WriteInt */
+    /* Vorsicht, MEM_ReplaceFunc(MEM_WriteInt, MEM_WriteInt_);
+     * kann so nicht funktionieren, schließlich wird MEM_WriteInt dazu gebraucht */
     var int buf; buf = MEM_Alloc(5);
     MEM_WriteByte(buf    , zPAR_TOK_JUMP);
     MEM_WriteInt (buf + 1, MEM_GetFuncOffset(MEM_WriteInt_));
@@ -5045,7 +5165,7 @@ func void MEMINT_InitFasterPushInst() {
 };
 
 //************************************************
-//   Ускоренные MEM_Alloc, MEM_Free
+//   Faster MEM_Alloc, MEM_Free
 //************************************************
  
 func int MEM_Alloc_(var int ele) {
@@ -5068,7 +5188,7 @@ func int MEM_Alloc_(var int ele) {
 };
 
 func void MEM_Free_(var int ptr) {
-    /* нулевой указатель нельзя удалить */
+    /* keine Nuller freigeben */
     if (!ptr) {
         MEM_Warn ("MEM_Free: ptr is 0. Ignoring request.");
         return;
@@ -5089,7 +5209,7 @@ func void MEM_Free_(var int ptr) {
 };
 
 //************************************************
-//   Актуальная замена
+//   The actual replacement
 //************************************************
 
 func void MEMINT_ReplaceSlowFunctions() {
@@ -5097,12 +5217,12 @@ func void MEMINT_ReplaceSlowFunctions() {
     if (!init) {
         init = true;
         
-        /* следующая строка нужна для подготовки вызовов через СТАРУЮ 
-         * функцию MEM_Alloc. CALL нуждается в MEM_Alloc для подготовки
-         * вызовов, и поскольку НОВАЯ MEM_Alloc тоже нуждается в CALL, 
-         * так что это не лучшая идея ;-)
+        /* the following line is needed to set up the calls with the OLD
+         * MEM_Alloc function. Call needs MEM_Alloc for setting up
+         * the call, and since the NEW MEM_Alloc needs CALL
+         * this would certainly not be a good idea. ;-)
          *
-         * Даа, это сбивает с толку... */
+         * Wow this is confusing... */
          
         MEM_Free_(MEM_Alloc_(1));
         
@@ -5112,13 +5232,13 @@ func void MEMINT_ReplaceSlowFunctions() {
         MEMINT_InitFasterReadWrite();
         MEMINT_InitFasterPushInst();
         
-        MEM_ReplaceFunc(_^, MEM_PtrToInst); //так проще
+        MEM_ReplaceFunc(_^, MEM_PtrToInst); //forwarding so billiger
     };
 };
 
 //#################################################################
 //
-//  Инициализация всего
+//  Initialise everything
 //
 //#################################################################
 
@@ -5134,7 +5254,7 @@ func void MEMINT_VersionError() {
     } else {
         str = ConcatStrings(str, G2);
     };
-    str = ConcatStrings(str, ", da sie Funktionalitat aus dem Skriptpaket 'Ikarus' verwendet. Es ist wahrscheinlich, dass Gothic unmittelbar nach dieser Fehlermeldung absturzt. Die genannte Version von Gothic steht zum Beispiel auf worldofgothic.de zum Download bereit. Der merkwurdige Charakter dieser Fehlermeldung ist leider nicht zu vermeiden. ### This mod only works with ");
+    str = ConcatStrings(str, ", da sie Funktionalität aus dem Skriptpaket 'Ikarus' verwendet. Es ist wahrscheinlich, dass Gothic unmittelbar nach dieser Fehlermeldung abstürzt. Die genannte Version von Gothic steht zum Beispiel auf worldofgothic.de zum Download bereit. Der merkwürdige Charakter dieser Fehlermeldung ist leider nicht zu vermeiden. ### This mod only works with ");
     if (GOTHIC_BASE_VERSION == 1) {
         str = ConcatStrings(str, G1);
     } else {
@@ -5146,17 +5266,16 @@ func void MEMINT_VersionError() {
 };
 
 func int MEMINT_ReportVersionCheck() {
-    /* И в G1, и в G2 первая инструкция по адрес
-     * 0x401000 - это некоторая команда mov
-     * для перемещения каких-то данных
-     * откуда-то в раздел данных.
-     * Делаем такую проверку надежной */
+    /* In both G1 and G2 the first Instruction at address
+     * 0x401000 is some mov instruction moving some data
+     * from some location within the data section.
+     * This makes this check reliable */
     
     var int val; val = MEMINT_SwitchG1G2(-521402937, 504628679);
     var int ptr; ptr = 4198400; //0x401000
     
     if (MEM_ReadInt(ptr) != val) {
-        /* Сообщение об ошибке не работает под Готикой 1. Без понятия, как это исправить. */
+        /* Error-Message does not work for Gothic 1. I have no idea how to fix that. */
         MEMINT_VersionError();
         return false;
     };
@@ -5169,22 +5288,23 @@ func void MEM_InitAll() {
         return;
     };
 
-    MEM_ReinitParser(); /* ни от чего не зависит */
-    MEM_InitLabels(); /* зависит от MEM_ReinitParser */
-    MEM_InitGlobalInst(); /* зависит от MEM_ReinitParser */
+    MEM_ReinitParser(); /* depends on nothing */
+    MEM_InitLabels(); /* depends in MEM_ReinitParser */
+    MEM_InitGlobalInst(); /* depends on MEM_ReinitParser */
     
-    /* теперь можно использовать MEM_ReplaceFunc, MEM_GetFuncID */
-    MEM_GetAddress_Init(); /* зависит от MEM_ReinitParser и MEM_InitLabels */
-    /* теперь доступны лучшие операторы */
+    /* now I can use MEM_ReplaceFunc, MEM_GetFuncID */
+    MEM_GetAddress_Init(); /* depends on MEM_ReinitParser and MEM_InitLabels */
+    /* now the nicer operators are available */
     
-    MEM_InitStatArrs(); /* зависит от MEM_ReinitParser и MEM_InitLabels */
+    MEM_InitStatArrs(); /* depends on MEM_ReinitParser and MEM_InitLabels */
     ASMINT_Init();
     
     MEMINT_ReplaceLoggingFunctions();
     MEMINT_ReplaceSlowFunctions();
     MEM_InitRepeat();
     
-     /* Первый вызов занимает некоторое время.
-        Вызываем ее, чтобы потом не было задержки.*/
+     /* takes a wail the first time it is called.
+        call it to avoid delay later */
     var int dump; dump = MEM_GetFuncIDByOffset(0);
 };
+

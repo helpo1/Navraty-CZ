@@ -1,14 +1,14 @@
 /*
-//zCZone / zCZoneMusic - не очень интересный класс.
+//zCZone / zCZoneMusic sind relativ uninteressante Klassen.
 
-class zCZone / zCZoneMusic { //оба класса имеют одинаковое отображение в памяти
-    //[все из zVob....]
-    zCWorld             *world; //единственное новое свойство
+class zCZone / zCZoneMusic { //beide Klassen vom Speicherbild identisch
+    //[zVob Stuff....]
+    zCWorld             *world; //einzige neue Eigenschaft
 };
 */
 
 class zCZoneZFog {  
-//class zCZoneZFogDefault { //оба класса имеют одинаковое отображение в памяти
+//class zCZoneZFogDefault { //beide Klassen vom Speicherbild identisch
     //zCVob {
         //zCObject {
         var int    _vtbl;
@@ -56,7 +56,7 @@ class zCZoneZFog {
     //zCZone
         var int     _zCZone_world;      //zCWorld*
     
-    //zCZoneZFog, свойства известны из Спейсера
+    //zCZoneZFog, Eigenschaften aus dem Spacer bekanntrrun scripts
     
     var int fogRangeCenter;  //zREAL     
     var int innerRangePerc;  //zREAL     

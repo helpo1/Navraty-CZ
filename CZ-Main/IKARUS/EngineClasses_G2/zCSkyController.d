@@ -1,17 +1,17 @@
 //######################################################
 //
 //  Skycontroller
-//      Контроллер неба для outdoor-уровней наиболее
-//      спецефичен среди всех SkyController'ов.
+//      Der Outdoor Skycontroller ist der speziellste
+//      aller SkyController.
 //
-// Обновление: Неверно! Еще более специфичен
-// oCSkyControler_Barrier. Я описываю его здесь,
-// но не переименовываю, а добавляю свойства барьера
-// в конце.
+// Update: Falsch! Noch spezieller ist der 
+// oCSkyControler_Barrier. Ich werden diesen hier aber
+// nicht umbenennen sondern die Barrier Eigenschaften
+// einfach unten dran fügen.
 //######################################################
 
 
-class zCSkyController_Outdoor /* точнее oCSkyControler_Barrier */ {
+class zCSkyController_Outdoor /* eigentlich oCSkyControler_Barrier */ {
     //zCObject {
     var int    _vtbl;
     var int    _zCObject_refCtr;
@@ -27,8 +27,8 @@ class zCSkyController_Outdoor /* точнее oCSkyControler_Barrier */ {
         zTWEATHER_RAIN
     };*/
     
-    //Здесь приводится таблица цветов по времени суток для настройки освещения.
-    var int polyLightCLUTPtr;   //zCOLOR*  "colour look up table", см. ниже
+    //Es wird eine Tageszeitabhängige Lookuptable für Lichtwerte bereitgestellt.
+    var int polyLightCLUTPtr;   //zCOLOR*  "colour look up table", siehe unten
     
     var int cloudShadowScale;   //zREAL    
     var int m_bColorChanged;    //zBOOL    
@@ -49,16 +49,16 @@ class zCSkyController_Outdoor /* точнее oCSkyControler_Barrier */ {
     var int oldFovY;            //zREAL                      
     var int vobUnderwaterPFX;   //zCVob*                        
 
-    //Полигон экрана? Для затемнения? Но для этого есть камера...	//NS: возможно, для эффектов, когда смотрим "против солнца"?
+    //Screen Poly? Für Blenden? Dafür gibts doch die Kamera...
     var int scrPoly;            //zCPolygon*                   
     var int scrPolyMesh;        //zCMesh*                        
     var int scrPolyAlpha;       //int                               
     var int scrPolyColor;       //zCOLOR                          
     var int scrPolyAlphaFunc;   //zTRnd_AlphaBlendFunc
     
-    //далее: специфика Outdoor'а!
+    //ab hier: Outdoor spezifisch!
     var int initDone;           //zBOOL
-    var int masterTime;         //zREAL //Небо в Outdoor связано со временем
+    var int masterTime;         //zREAL //Outdoorsky hat eine Zeit
     var int masterTimeLast;     //zREAL
     
     //enum zESkyLayerMode { zSKY_MODE_POLY, zSKY_MODE_BOX };
@@ -97,13 +97,13 @@ class zCSkyController_Outdoor /* точнее oCSkyControler_Barrier */ {
         var int stateList_numAlloc;      //int
         var int stateList_numInArray;    //int
     
-    var int polyLightCLUT[256];     //zCOLOR //Таблица цветов для освещения. Зависит от времени суток.
-    /*  Зацикленная функция назначает интенсивность от 0 до 255 каждому цвету. Влияет только на статическое освещение.
-		polyLightCLUT обновляется контроллером неба регулярно, из различных предустановок для разного времени суток (красный вечером, голубой утром...).
-		Другими словами, в любой точке имеем линейную интерполяцию между черным и текущим светом солнца.
+    var int polyLightCLUT[256];     //zCOLOR //Farbtabelle für Beleuchtung. Abhängig von der Tageszeit
+    /*  Its basically a rolled function that maps an intensity between 0 and 255 to a certain colour. It affects static lighting only.
+		polyLightCLUT is updated regularly by the Sky Controller from certain presets for different parts of the day (red in the evening, blue in the morning...).
+		In other words: At any given point it is a linear interpolation between black and the current sunlight.
 	*/
 	
-    var int dayCounter;             //zREAL  //совершенно бесполезен
+    var int dayCounter;             //zREAL  //sehr nutzlos
     
     //zCArray<zVEC3> fogColorDayVariations;
         var int fogColorDayVariations_array;         //zVEC3*
@@ -123,7 +123,7 @@ class zCSkyController_Outdoor /* точнее oCSkyControler_Barrier */ {
     var int m_bLevelChanged;         //zBOOL
     var int m_bDarkSky;              //zBOOL //Oldworld
 
-    //туман (fog)
+    //fog
     var int resultFogScale;          //zREAL             
     var int heightFogMinY;           //zREAL             
     var int heightFogMaxY;           //zREAL             
@@ -161,17 +161,17 @@ class zCSkyController_Outdoor /* точнее oCSkyControler_Barrier */ {
 
     var int skyCloudLayerTex;        //zCTexture*    
 
-    // светила (planets)
-    //enum { NUM_PLANETS = 2 }; //Солнце:0, Луна:1
+    // planets
+    //enum { NUM_PLANETS = 2 }; //Sonne:0, Mond:1
     //zCSkyPlanet                   planets[NUM_PLANETS];
-        //Солнце:
+        //Sonne:
         var int Sun_mesh;        //zCMesh*
         var int Sun_color0[4];   //zVEC4     
         var int Sun_color1[4];   //zVEC4     
         var int Sun_size;        //zREAL     
         var int Sun_pos[3];      //zVEC3     
         var int Sun_rotAxis[3];  //zVEC3     
-        //Луна:
+        //Mond:
         var int Moon_mesh;        //zCMesh*
         var int Moon_color0[4];   //zVEC4    
         var int Moon_color1[4];   //zVEC4    
@@ -182,12 +182,12 @@ class zCSkyController_Outdoor /* точнее oCSkyControler_Barrier */ {
     var int m_bSunVisible;        //zBOOL
     var int m_fFadeScale;         //zREAL
                                 
-    // pfx для неба              
+    // sky-pfx                  
     var int vobSkyPFX;            //zCVob*  
     var int skyPFXTimer;          //zREAL    
 
-    // ветер
-    var int m_bIsMainControler;   //zBOOL //а существуют другие, кроме основного контроллера?
+    // wind
+    var int m_bIsMainControler;   //zBOOL //gibts überhaupt noch andere als den Hauptcontroller?
     
     var int m_bWindVec[3];        //zVEC3
 
@@ -204,20 +204,20 @@ class zCSkyController_Outdoor /* точнее oCSkyControler_Barrier */ {
         var int rainFX_camLocationHint;                 //zTCamLocationHint 
         var int rainFX_outdoorRainFXWeight;             //zREAL                      // 0..1
         var int rainFX_soundVolume;                     //zREAL                      // 0..1
-        var int rainFX_timerInsideSectorCantSeeOutside; //zREAL                      // мс
+        var int rainFX_timerInsideSectorCantSeeOutside; //zREAL                      // msec
         var int rainFX_timeStartRain;                   //zREAL                      
         var int rainFX_timeStopRain;                    //zREAL                      
         var int rainFX_renderLightning;                 //zBOOL                      
         var int rainFX_m_bRaining;                      //zBOOL                      
-        var int rainFX_m_iRainCtr;                      //int Сколько раз до этого шел дождь.
+        var int rainFX_m_iRainCtr;                      //int Anzahl der bisherigen Regenperioden.
     //} rainFX;
     
     var int barrier; 	//oCBarrier *
 	var int bFadeInOut; //zBOOL
 };
 
-/* В Gothic 2 отвечает за отображение молний при грозе
- * доступ можно получить через MEM_SkyController.barrier */
+/* Ist in Gothic 2 fürs Rendern von Wetter-Blitzen verantwortlich
+ * hier heran kommt man über MEM_SkyController.barrier */
  
 class oCBarrier {
 	var int skySphereMesh;             //zCMesh*    

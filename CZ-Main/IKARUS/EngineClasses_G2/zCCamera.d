@@ -1,27 +1,26 @@
 //--------------------------------------
-// Камера
+// Kamera
 //--------------------------------------
 
 const int NUM_FRUSTUM_PLANES = 6;
 
 class zCCamera {
-	//NS: плоскости отсечения
     //enum { CLIP_FLAGS_FULL        = 63, CLIP_FLAGS_FULL_WO_FAR    = 15 };
     //enum { NUM_FRUSTUM_PLANES_WO_FAR  =  4 };
     //enum { FRUSTUM_PLANE_FAR  =  4 };
 
     //zTPlane           frustumplanes   [NUM_FRUSTUM_PLANES];
         var int frustumplanes[24/*NUM_FRUSTUM_PLANES * sizeof (zTPlane)*/];         //zTPlane: { zREAL distance; zPOINT3 normal; }
-        var int signbits[/*NUM_FRUSTUM_PLANES в байтах*/ 2];   //zBYTE
+        var int signbits[/*NUM_FRUSTUM_PLANES als Bytes*/ 2];   //zBYTE
 
     //var int zTViewportData    vpData;
-        var int xmin;               //int           // верхняя правая
+        var int xmin;               //int           // oben rechts
         var int ymin;               //int         
         var int xdim;               //int           
         var int ydim;               //int         
-        var int xminFloat;          //zVALUE        // верхняя левая
+        var int xminFloat;          //zVALUE        // oben links
         var int yminFloat;          //zVALUE    
-        var int xmaxFloat;          //zVALUE        // нижняя правая
+        var int xmaxFloat;          //zVALUE        // unten rechts
         var int ymaxFloat;          //zVALUE    
         var int xdimFloat;          //zVALUE        
         var int ydimFloat;          //zVALUE    
@@ -32,7 +31,7 @@ class zCCamera {
     
     var int targetView;                         //zCViewBase
 
-    //Матрицы преобразования:
+    //Transformationsmatrizzen:
     var int camMatrix   [16];       //zMATRIX4
     var int camMatrixInv[16];       //zMATRIX4
 
@@ -42,7 +41,7 @@ class zCCamera {
     var int tremorOrigin[3];    //zVEC3
     var int tremorVelo;         //zREAL
 
-    //Матрицы преобразования:
+    // Transformation matrices
     var int trafoView   [16];   //zMATRIX4
     var int trafoViewInv[16];   //zMATRIX4
     var int trafoWorld  [16];   //zMATRIX4
@@ -78,7 +77,7 @@ class zCCamera {
     var int polyMesh;       //zCMesh*   
     var int polyMaterial;   //zCMaterial*
 
-    // Эффекты на экране:	//NS: гашение, окрашивание, текстура
+    // Screen-Effects
     var int screenFadeEnabled;         //zBOOL            
     var int screenFadeColor;           //zCOLOR          
     var string screenFadeTexture;      //zSTRING            
@@ -99,7 +98,7 @@ class zCCamera {
     var int cinemaScopeEnabled;             //zBOOL 
     var int cinemaScopeColor;               //zCOLOR
 
-    //не используется:
+    //ungenutzt:
     //enum zPROJECTION  { PERSPECTIVE, ORTHOGONAL };
     var int projection;     //zPROJECTION
     

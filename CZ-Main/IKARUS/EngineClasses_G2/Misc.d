@@ -1,8 +1,8 @@
 //--------------------------------------
-// Узел / Лист. Для Vobtree
+// Baum / Knoten. Für Vobtree
 //--------------------------------------
 
-//template <class T> //NS: шаблон для класса T (можно использовать любой класс)
+//template <class T> 
 class zCTree {
     var int parent;            //zCTree* 
     var int firstChild;        //zCTree* 
@@ -12,18 +12,18 @@ class zCTree {
 };
 
 //--------------------------------------
-// Списки, массивы. Часто используются.
+// Listen, Arrays. Treten oft auf.
 //--------------------------------------
 
 const int sizeof_zCArray = 12;
 
-/* zCArray является очень простой, но очень важной структурой данных. */
+/* zCArray ist eine sehr einfache und gleichzeitig sehr wichtige Datenstruktur. */
 
-//template <class T>
+//template <class T> 
 class zCArray {
-    var int array;              //T*        //Указатель на область памяти
-    var int numAlloc;           //int       //На сколько элементов выделить память?
-    var int numInArray;         //int       //Сколько элементов реально хранится
+    var int array;              //T*        //Zeiger auf Speicherbereich
+    var int numAlloc;           //int       //Für wieviele Elemente ist gerade Speicher reserviert?
+    var int numInArray;         //int       //Anzahl der Elemente in diesem Speicherbereich
 };
 
 //template <class T> 
@@ -31,13 +31,13 @@ class zCArraySort {
     var int array;              //T*
     var int numAlloc;           //int
     var int numInArray;         //int
-    var int compare;            //int (*Compare)(const T* ele1,const T* ele2); //NS: функция для сравнения двух элементов
+    var int compare;            //int (*Compare)(const T* ele1,const T* ele2);
 };
 
 //template <class T>
 class zList {
     var int compare;            //int (*Compare)(const T* ele1,const T* ele2);
-    var int count;              //Количество элементов
+    var int count;              //Anzahl Elemente
     var int last;               //T*
     var int wurzel;             //T*
 };
@@ -57,49 +57,48 @@ class zCListSort {
 
 //zMAT4
 class zMAT4 {
-    /* Матрица имеет следующий вид:
+    /* die Matrix hat folgende Gestalt:
      *
      *  x1  y1  z1  p1
      *  x2  y2  z2  p2
      *  x3  y3  z3  p3
      *
-     * Здесь x, y, z являются единичными векторами преобразования координат.
-     * Проще говоря: x, y, z - это три вектора, которые можно увидеть, 
-     * если выделить VOB (обычно вектор y направлен вверх).
-     * Если (a1, a2, a3) - координаты точки в локальной системе Vob'а,
-     * и M - матрица преобразования координат Vob'а в мировые координаты,
-     * то координаты точки в мировой системе = M * (a1, a2, a3, 1)^T.
-     * ("^T" означает транспонирование, т.е. вектор является столбцом).
-     * Четвертая строка матрицы не используется. */
-	//NS: последний столбец - координаты самого Vob'а в мире
+     * Dabei sind x, y, z die Bilder der Einheitsvektoren unter der Transformation.
+     * Andersgesagt: x, y, z sind die Vektoren, die im Spacer angezeigt werden, wenn man das
+     * Vob anklickt (davon ist y die Komponente die normalerweise nach oben zeigt).
+     * Ist ein Punkt im lokalen Koordinatensystem des Vobs an (a1, a2, a3), und liegt das
+     * Vob mit Transformationsmatrix M in der Welt dann ist der Punkt im
+     * Koordinatensystem der Welt an M * (a1, a2, a3, 1)^T.
+     * ("^T" soll nur bedeuten, dass der Vektor eigentlich senkrecht stehen muss).
+     * Die vierte Zeile der Matrix ist ungenutzt und sinnlos. */
     
-    /* Построчно */
+    /* Zeilenweise */
     var int v0[4]; //zREAL[4]
     var int v1[4]; //zREAL[4]
     var int v2[4]; //zREAL[4]
     var int v3[4]; //zREAL[4]
 };
 
-//другая запись, все числа в одном массиве:
+//andere Formulierung, wer lieber alles in einem array haben will:
 class zMATRIX4 {
     var int trafo[16]; //zREAL[16]
 };
 
 //------------------------------------------------
-//  zTPlane: Плоскость в пространстве
+//  zTPlane: Ebene im Raum
 //------------------------------------------------
 
 class zTPlane 
 {
-    var int distance;    //zREAL    //вероятно, расстояние до начала координат (а что еще?)
-    var int normal[3];   //zPOINT3  //вектор нормалей
+    var int distance;    //zREAL    //vermutlich Distanz zum Ursprung (was sonst?)
+    var int normal[3];   //zPOINT3  //normalenvektor
 };
 
 //------------------------------------------------
 //  zCPolygon
 //------------------------------------------------
 
-/* Значения для zCPolygon.portalPoly:
+/* Bedeutung von zCPolygon.portalPoly:
 
     enum zTPortalType   { zPORTAL_TYPE_NONE         = 0, 
                           zPORTAL_TYPE_SMALL        = 1, 
@@ -115,7 +114,7 @@ const int zCPolygon_bitfield_mustRelight            = ((1 <<  1) - 1) << 12;
 const int zCPolygon_bitfield_portalIndoorOutdoor    = ((1 <<  1) - 1) << 13;
 const int zCPolygon_bitfield_ghostOccluder          = ((1 <<  1) - 1) << 14;
 const int zCPolygon_bitfield_noDynLightNear         = ((1 <<  1) - 1) << 15;
-const int zCPolygon_bitfield_sectorIndex            = ((1 << 16) - 1) << 16; //только для indoor
+const int zCPolygon_bitfield_sectorIndex            = ((1 << 16) - 1) << 16; //indoor only
 
 class zCVertFeature {
     var int vertNormal[3];    //zPOINT3
@@ -127,7 +126,7 @@ class zCVertFeature {
 
 class zCPolygon 
 {
-/*0x0000*/    var int vertex;                 //zCVertex** //массив
+/*0x0000*/    var int vertex;                 //zCVertex** //array
 /*0x0004*/    var int lastTimeDrawn;          //int
     
               //zTPlane               polyPlane;
@@ -141,7 +140,7 @@ class zCPolygon
 /*0x0024*/    var int clipFeat;               //zCVertFeature **
 /*0x0028*/    var int numClipVert;            //int
 
-/*0x002C*/    var int feature;                //zCVertFeature ** //массив
+/*0x002C*/    var int feature;                //zCVertFeature ** //array
 /*0x0030*/    var int bitfield;
 };
 
@@ -247,7 +246,7 @@ class zTBBox3D {
 };
 
 //--------------------------------------
-// Порталы
+// Portalzeug
 //--------------------------------------
 
 class oCPortalRoom {
@@ -266,32 +265,32 @@ class oCPortalRoomManager {
         var int portals_array;      //oCPortalRoom**
         var int portals_numAlloc;   //int
         var int portals_numInArray; //int
-        var int portals_compare;    //int (*Compare)(const oCPortalRoom* ele1,const oCPortalRoom* ele2); //сортирует по именам порталов.
+        var int portals_compare;    //int (*Compare)(const oCPortalRoom* ele1,const oCPortalRoom* ele2); //sortiert nach Portalnamen.
 };
 
 //--------------------------------------
-// Таймер (техническая и игровая реализация)
+// Timer (technisch und spieltechnisch)
 //--------------------------------------
 
 class zCTimer {
-    var int factorMotion;        //zREAL        //не должно быть слишком маленьким. Иначе: замораживает высокий Framerate!
-    var int frameTimeFloat;      //zREAL [msec] //время между текущим и последним кадром, мс
-    var int totalTimeFloat;      //zREAL [msec] //общее время, мс
-    var int frameTimeFloatSecs;  //zREAL  [s]	//то же в сек.
-    var int totalTimeFloatSecs;  //zREAL  [s]	//то же в сек.
+    var int factorMotion;        //zREAL        //nicht zu klein machen. Sonst: Freeze bei hoher Framerate!
+    var int frameTimeFloat;      //zREAL [msec] //Zeit der zwischen diesem und dem letzten Frame verstrichen ist
+    var int totalTimeFloat;      //zREAL [msec] //gesamte Zeit
+    var int frameTimeFloatSecs;  //zREAL  [s]
+    var int totalTimeFloatSecs;  //zREAL  [s]
     var int lastTimer;           //zDWORD
-    var int frameTime;           //zDWORD [msec] /как целове число
+    var int frameTime;           //zDWORD [msec] //nochmal als Ganzahl
     var int totalTime;           //zDWORD [msec]
-    var int minFrameTime;        //zDWORD       //от "заморозки". Иначе частота кадров округляется до 0 и ничего не движется
+    var int minFrameTime;        //zDWORD       //antifreeze. Sonst wird die Framezeit auf 0 gerundet und nichts bewegt sich
           
-    var int forcedMaxFrameTime;  //zDWORD //кадр не может длиться больше этой величины (по времени). Чтобы избежать больших скачков во времени для объектов? Во всяком случае, вроде того, что игра будет замедляться, если она не совпадает с рендерингом.
+    var int forcedMaxFrameTime;  //zDWORD //länger als das darf ein Frame (in Spielzeit) nicht dauern. Um zu große Zeitsprünge für die Objekte zu vermeiden? Jedenfalls sort dies dafür, dass das Spiel langsamer läuft, wenn das Spiel mit rendern nicht hinterherkommt.
 };
 
 const int oCWorldTimer_TicksPerHour		  = 250000;
-const int oCWorldTimer_TicksPerMin_approx = 4167; //< 1 сек / день недопустимо
+const int oCWorldTimer_TicksPerMin_approx = 4167; //< 1 sec / Tag daneben
 
 class oCWorldTimer {
-    //250000 тактов (тиков) в час
+    //250000 Ticks pro Stunde
     var int worldTime;    //zREAL   
     var int day;          //int      
 };
@@ -300,14 +299,14 @@ class oCWorldTimer {
 // Spawnmanager
 //--------------------------------------
 
-/* Довольно бесполезный класс, 
- * но следующие три статических переменных очень интересны:
+/* Ausbeute der Klasse ist eher gering, aber folgende
+ * drei statischen Variablen sind sehr interessant:
 
      SPAWN_INSERTTIME_MAX_Address
      SPAWN_INSERTRANGE_Address   
      SPAWN_REMOVERANGE_Address   
 
- * Они объявлены в Ikarus_Const.d */
+ * Eingeführt sind sie in Ikarus_Const.d */
 
 class oTSpawnNode {
     var int npc;         //oCNpc *
@@ -323,13 +322,13 @@ class oCSpawnManager {
         
     var int spawningEnabled;        //zBOOL
     var int camPos[3];              //zVEC3
-    var int insertTime;             //zREAL //Время задержки Spawnmanager'а (из соображений производительности)
+    var int insertTime;             //zREAL //Verzögerungszeit des Spawnmanagers (Performancegründe)
 
-    var int spawnFlags; //были времена, когда не было защиты от копирования, и злобным пиратам приходилось бороться с ветхими бессмертными флагами. устарело.
+    var int spawnFlags; //war mal ne Kopierschutz Sache, böse Raubkopierer hatten mit gepimpten immortal Flags zu kämpfen. jetzt ungenutzt.
 };
 
 //--------------------------------------
-// zCOLOR (цвет)
+// zCOLOR
 //--------------------------------------
 
 const int zCOLOR_CHANNEL     = (1 << 8) - 1;
@@ -344,7 +343,7 @@ const int zCOLOR_BLUE  = zCOLOR_CHANNEL << zCOLOR_SHIFT_BLUE;
 const int zCOLOR_ALPHA = zCOLOR_CHANNEL << zCOLOR_SHIFT_ALPHA;
 
 //--------------------------------------
-// Освещение
+// Light
 //--------------------------------------
 const int zCVobLight_bitfield_isStatic       = ((1 << 1) - 1) <<  0;
 const int zCVobLight_bitfield_rangeAniSmooth = ((1 << 1) - 1) <<  1;
@@ -404,8 +403,8 @@ class zCVobLight {
       var int    _zCVob_m_poCollisionObjectClass;
       var int    _zCVob_m_poCollisionObject;
     
-	//VOB источника света может иметь различные цвета и диапазон освещения.
-    //Кроме того, есть анимированные источники!
+    //Ein Licht Vob kann verschiedene Farben und Reichweite haben.
+    //Schließlich gibt es animierte Lichter!
     
              //zCVobLightData    lightData;
                  //zCArray<zVALUE>       rangeAniScaleList; //zREAL ~ zVALUE
@@ -421,24 +420,24 @@ class zCVobLight {
 /*0x138*/        var int lensFlareFXNo;                              //int                  
 /*0x13C*/        var int lensFlareFX;                                //zCLensFlareFX*
                  
-/*0x140*/        var int lightColor;                                 //zCOLOR //Альфа-канал не учитывается
+/*0x140*/        var int lightColor;                                 //zCOLOR //Alphakanal hier irrelevant
 /*0x144*/        var int range;                                      //zVALUE
 /*0x148*/        var int rangeInv;                                   //zVALUE
 /*0x14C*/        var int rangeBackup;                                //zVALUE
                  
-                 //Данные для анимации источника
-                 //Задает диапазон анимации
+                 //Daten zur Lichtanimation
+                 //Zustand der Reichweitenanimation
 /*0x150*/        var int rangeAniActFrame;                           //zVALUE
 /*0x154*/        var int rangeAniFPS;                                //zVALUE
                  
-                 //Задает цвет анимации
+                 //Zustand der Farbanimation
 /*0x158*/        var int colorAniActFrame;                           //zVALUE                
 /*0x15C*/        var int colorAniFPS;                                //zVALUE                
                  
-                 // направленный свет? Я не знаю про такую возможность.
+                 // spotLights? Ich kenne das Feature nicht.
 /*0x160*/        var int spotConeAngleDeg;                           //zREAL
                  
-                 //Флаги объявлены выше
+                 //Siehe Auflistung oben
 /*0x164*/        var int bitfield;
         
     
@@ -460,13 +459,13 @@ class zCVobLight {
 };
 
 //--------------------------------------
-// Книга магии
+// Magie buch
 //--------------------------------------
 
-/* Mud-freak дополнил описания. Спасибо за это! */
+/* Beschreibungen ergänzt von Mud-freak. Danke dafür! */
 
-/* Используется в цикле для выбора игроком заклинания и
- * содержит отображение: заклинание <-> предмет <-> кнопка. */
+/* Genutzt um den Kreis über dem Spieler bei der Zauberauswahl anzuzeigen 
+ * außerdem für zuordnungen von Zaubern <-> Items <-> Tasten. */
 
 class oCMag_Book {
     //zCArray    <oCSpell*>   spells;
@@ -480,44 +479,44 @@ class oCMag_Book {
     
     var int wld;                //zCWorld*    
     var int owner;              //zCVob*      
-    var int model;              //zCModel*    //модель владельца (кажется, зарезервировано)
-    var int spellnr;            //int         //выбранное заклинание --> n+4 = слот/кнопка
-    var int MAG_HEIGHT;         //zREAL       //небольшое смещение, чтобы разместить заклинание над головой владельца (при выборе)
-    var int active;             //zBOOL       //не используется??
-    var int remove_all;         //zBOOL       //что-то внутреннее? --> Когда MagBook закрывается, если ранее выбранное знаклинание убрано, то устанавливается в 1, иначе в 0 (ВСЕ (включая ранее выбранное) заклинания возвращаются "на пояс")
-    var int in_movement;        //zBOOL       //текущий поворот заклинаний над головой игрока? --> и открытие/закрытие
-    var int show_handsymbol;    //zBOOL       //? --> PFX или заклинание в руке (соответствует выбранному или нет)
-    var int step;               //zREAL       //если в книге n заклинаний, то это число = 360/n 
-    var int action;             //int         //внутренняя --> 0 = никаких действий, 1 = вращение, 2 = открытие, 3 = закрытие
+    var int model;              //zCModel*    //model of the owner (seems to be kind of redundant)
+    var int spellnr;            //int         //selected spell --> n+4 = Slot/Taste
+    var int MAG_HEIGHT;         //zREAL       //some offset to shift the spell above the head of the owner (for spell choosing)
+    var int active;             //zBOOL       //unused??
+    var int remove_all;         //zBOOL       //some internal stuff? --> Beim Schließen des MagBooks, wenn ein vorher gezogene Zauber weggesteckt wird auf 1, sonst auf 0 (ALLE (vorher gezogener einbegriffen) Spells wieder zurück "in die Hüfte")
+    var int in_movement;        //zBOOL       //currently rotating the spells above the player head? --> und öffnen oder schließen
+    var int show_handsymbol;    //zBOOL       //? --> PFX bzw. Spell in der Hand (vergleichbar mit gezogen oder nicht)
+    var int step;               //zREAL       //if n spells are in the mag book this is 360/n 
+    var int action;             //int         //internal --> 0 = keine Aktion, 1 = drehen, 2 = öffnen, 3 = schließen
     var int UNUSED;             //int         //
-    var int open;               //zBOOL       //текущее отображение магической книги (круг над головой игрока)?
-    var int open_delay_timer;   //zREAL       //используется как время задержки, прежде чем руна превратится в pfx --> 2000 msec
-    var int show_particles;     //zBOOL       //текущее отображение заклинания над головой игрока как pfx?
-    var int targetdir;          //zREAL       //для поворота книги, когда игрок нажимает влево или вправо --> на сколько градусов поворот; Обычно задается поворот направо (как 360/n), но налево будет ((360/n)-1)*-1 (отрицательное и на 1 градус меньше)
-    var int t1;                 //zREAL       // - " -  --> "Keyframes": FLOATNULL = начало действия, FLOATEINS = конец действия
-    var int targetpos[3];       //zVEC3       //для вытаскивания заклинания (с пояса) и чтобы убрать его обратно. --> с позиции...
-    var int startpos[3];        //zVEC3       // - " -  --> ... на позицию (в итоге, т.о., startpos и targetpos меняются местами)
+    var int open;               //zBOOL       //currently showing mag book (cirlce above player head)?
+    var int open_delay_timer;   //zREAL       //used for delaying the time until the rune turns into a pfx --> 2000 msec
+    var int show_particles;     //zBOOL       //currently rendering the spell above the player head as a pfx?
+    var int targetdir;          //zREAL       //used for turning the spellbook over time when player pressed "left" or "right" --> um wieviel Grad drehen; Ist nach rechts wie die Eigenschaft step (also 360/n), aber nach links ((360/n)-1)*-1 (negativ und ein Grad weniger)
+    var int t1;                 //zREAL       // - " -  --> "Keyframes": FLOATNULL = Die Eigenschaft action startet, FLOATEINS = Die Eigenschaft action endet
+    var int targetpos[3];       //zVEC3       //used for popping out the magbook (from the hips) and closing it again. --> von Position
+    var int startpos[3];        //zVEC3       // - " -  --> nach Position (auch beim Schließen, d.h. startpos und targetpos werden ausgetauscht)
 
-    var int nextRegister;       //int         //не уверен. Что-то для связи с клавишами? --> Кажется, это значение никогда не меняется
-    var int keys;               //int         //флаги. Если флаг n из {0, 1, ..., 9} задействован, то уставанавливается флаг & (1 << n).  --> Определяет, есть ли заклинание в слоте (на кнопке) n+4, т.е. фактически задействовано n = 6 (число флагов), а не 9
+    var int nextRegister;       //int         //not sure. Something with key assignment? --> Dieser Wert scheint sich nie zu ändern
+    var int keys;               //int         //bitfield. If key n \in {0, 1, ..., 9} is used, keys & (1 << n) is true.  --> zeigt, ob ein Zauber im Slot (Taste) n+4 angelegt ist, hört also eigentlich bei n = 6 (Anzahl der Tasten für die Zauber) auf (nicht bei 9)
 };
 
 //--------------------------------------
-// Строки
+// String
 //--------------------------------------
 
 /*
-    Отображение строки в памяти.
-    Gothic достаточно хорошо оперирует со строками, так что этот класс вряд ли понадобится.
-    Я использовал только как внутрениий, чтобы выделять память.
+    Speicherlayout eines Strings.
+    Gothic geht eigentlich ganz gut mit Strings um, man braucht diese Klasse nicht.
+    Ich habe sie nur intern gebraucht um Speicher zu allozieren.
 */
 
 class zString {
     var int _vtbl;
-    var int _allocater; //всегда 0
-    var int ptr; //указатель на данные
-    var int len; //длинна строки
-    var int res; //зарезервировано байт
+    var int _allocater; //immer 0
+    var int ptr; //pointer zu den Daten
+    var int len; //Länge des Strings
+    var int res; //Anzahl allozierter Bytes
 };
 
 const int sizeof_zString = 20;
@@ -526,46 +525,48 @@ const int sizeof_zString = 20;
 // zCClassDef
 //--------------------------------------
 
-/* Для каждого (производного от zCObject) класса,
- * есть "управляющий объект" типа zCClassDef.
- * Он инкапсулирует некоторую полезную информацию 
- * обо всех объектах этого класса.
- * С помощью MEM_GetClassDef (var int objPtr)
- * можно пределить, к какому классу относится объект.
- * Это значит, что если передать VOB, то
- * вы получите zCClassDef для класса zCVob.
+/* Für jede (von zCObject abgeleitete) Klasse gibt es
+ * ein "Verwaltungsobjekt" vom Typ zCClassDef.
+ * Dieses kapselt einige nützliche Informationen zu der
+ * Gesamtheit der Objekte dieser Klasse.
+ * Mit MEM_GetClassDef (var int objPtr) kann das
+ * zu einem Objekt gehörige zCClassDef Objekt bestimmt
+ * werden. Das heißt für ein übergebenes Vob, bekäme
+ * man zCClassDef für die Klasse zCVob.
  */
+
+const int zCClassDef_bitfield_archiveVersion    = ((1 << 16) - 1) <<  0; //zWORD
+const int zCClassDef_bitfield_archiveVersionSum = ((1 << 16) - 1) << 16; //zWORD
 
 class zCClassDef {
     var string className;            //zSTRING
     var string baseClassName;        //zSTRING
     var string scriptClassName;      //zSTRING
-    var int baseClassDef;            //zCClassDef* //класс-предок
+    var int baseClassDef;            //zCClassDef* //davon abgeleitet
     
-    var int createNewInstance;       //zCObject* ( *) (void) //Указатель на функцию, зависящую от класса
-    var int createNewInstanceBackup; //zCObject* ( *) (void) //Указатель на функцию, зависящую от класса
+    var int createNewInstance;       //zCObject* ( *) (void) //Pointer auf klassenspezifische Funktion
+    var int createNewInstanceBackup; //zCObject* ( *) (void) //Pointer auf klassenspezifische Funktion
     
     /*
     enum zTClassFlags {
-        zCLASS_FLAG_SHARED_OBJECTS      = 1<<0, //Использовать несколько объектов (например, визуализацию)
-        zCLASS_FLAG_TRANSIENT           = 1<<1, //Временный, не сохраняется.
-        zCLASS_FLAG_RESOURCE            = 1<<2, //без понятия / не важно, наверное
+        zCLASS_FLAG_SHARED_OBJECTS      = 1<<0, //Mehrfach benutzt Objekte (wie Visuals zum Beispiel)
+        zCLASS_FLAG_TRANSIENT           = 1<<1, //Flüchtig, soll nicht gespeichert werden.
+        zCLASS_FLAG_RESOURCE            = 1<<2, //keine Ahnung / vermutlich irrelevant
     };*/
     
-    var int classFlags;              //zDWORD //см. выше
-    var int classSize;               //zDWORD //размер в байтах
+    var int classFlags;              //zDWORD //siehe enum
+    var int classSize;               //zDWORD //Größe in Bytes
     
-    var int numLivingObjects;        //Число объектов этого класса
-    var int numCtorCalled;           //Сколько раз вызывался конструктор
+    var int numLivingObjects;        //Anzahl Objekte von dieser Klasse
+    var int numCtorCalled;           //Konstruktor wurde sooft aufgerufen
     
-    var int hashTable;               //zCObject** //Хэш-таблица размером 1024. Объекты ассоциируются с zCObject.hashNext, если более одного объекта хэшируется одним значением.
-    //zCArray<zCObject*> objectList;    //все именованые (!) объекты относятся именно (!) к этому классу (!) //Пояснения к (!): 1.) Неименованных здесь нет. 2.) Объекты дочерних классов не считаются. 3.) Это свойство может быть очень полезна.
+    var int hashTable;               //zCObject** //Hashtabelle der Größe 1024. Objekte sind mit zCObject.hashNext verknüpft, falls mehrere auf den selben Wert hashen.
+    //zCArray<zCObject*> objectList;    //alle benannten (!) Objekte von genau (!) dieser Klasse (!) //Ausrufezeichenanmerkungen: 1.) unbenannte sind nicht drin 2.) Objekte von Unterklassen sind nicht drin 3.) diese Eigenschaft kann sehr nützlich sein.
         var int objectList_array;       //zCObject**
         var int objectList_numAlloc;    //int
         var int objectList_numInArray;  //int
     
-    var int archiveVersion;          //zWORD //вероятно, не используется
-    var int archiveVersionSum;       //zWORD //вероятно, не используется
+    var int bitfield;
 };      
 
 //--------------------------------------

@@ -1,5 +1,5 @@
 //--------------------------------------
-// Обычный Mob
+// Normales Mob
 //--------------------------------------
 
 const int oCMob_bitfield_hitp           = ((1 << 12) - 1) <<  0;
@@ -56,8 +56,8 @@ class oCMob {
       var int    _zCVob_m_poCollisionObjectClass;
       var int    _zCVob_m_poCollisionObject;
     
-    //Свойства Mob'а:
-    var string name;                //zSTRING Символьное имя, напр. "MOBNAME_DOOR"
+    //Mobeigenschaften:
+    var string name;                //zSTRING Symbolischer Name, z.B. "MOBNAME_DOOR"
     
     var int bitfield;
 
@@ -69,7 +69,7 @@ class oCMob {
     var int owner;                  //int
     var int ownerGuild;             //int
                                     
-    var int focusNameIndex;         //int //Индекс символа парсера, содержащего имя, напр. индекс символа MOBNAME_DOOR Index des Parsersymbols, dass den Namen enthдlt, zum Beispiel Index des Symbols MOBNAME_DOOR.
+    var int focusNameIndex;         //int //Index des Parsersymbols, dass den Namen enthält, zum Beispiel Index des Symbols MOBNAME_DOOR.
 
     //zCList<zCVob>     ignoreVobList;
         var int ignoreVobList_data;     //zCVob*
@@ -77,7 +77,7 @@ class oCMob {
 };
 
 //--------------------------------------
-// Mobinter	(интерактивный)
+// Mobinter
 //--------------------------------------
 
 const int oCMobInter_bitfield_npcsMax       = ((1 << 8) -1) <<  0;
@@ -146,32 +146,32 @@ class oCMobInter {
     //oCMobInter:
     
     
-    //Оптимальная позиция, это, наверное, та, в которой ГГ использует Mob. Но я не занимаюсь анимацией, так что разбираюсь в этом слабо.
-    //zCList<TMobOptPos>    optimalPosList; // Список всех оптимальных позиций
+    //Optimale Positionen sind wohl die, zu denen der Held bei der Benutzung hinploppt. Ich bin aber kein Animierer, hab wenig Ahnung davon.
+    //zCList<TMobOptPos>    optimalPosList; // List of all Optimal Positions
       var int optimalPosList_data;      //TMobOptPos*
       var int optimalPosList_next;      //zCList<TMobOptPos>*
     
-    //известные свойства:
+    //wohlbekannte Eigenschaften:
     var string triggerTarget;               //zSTRING
     var string useWithItem;                 //zSTRING
     var string sceme;                       //zSTRING
     var string conditionFunc;               //zSTRING
     var string onStateFuncName;             //zSTRING
     
-    //Состояния Mob'а
+    //Zustand des Mobs
     var int state;                          //int
     var int state_num;                      //int
-    var int state_target;                   //int Состояние "работаем с" ?
+    var int state_target;                   //int Zustand auf den gerade "hingearbeitet wird" ?
     
     var int rewind;                         //zBOOL
 
     var int mobStateAni;                    //int / zTModelAniID
     var int npcStateAni;                    //int / zTModelAniID
     
-    var int bitfield; //см. выше
+    var int bitfield; //siehe oben
     var int tmpStateChanged;                //zBOOL
     
-    var int Direction;                      //TMobInterDirection "Направление, в котором используется Mob????", (0 = нет, 1 = вверх, 2 = вниз)
+    var int Direction;                      //TMobInterDirection "Richtung in die das Mob benutzt wird????", (0 = none, 1 = up, 2 = down)
     
     var int onInterruptReturnToSlotPos;     //zBOOL
     
@@ -182,7 +182,7 @@ class oCMobInter {
 };
 
 //--------------------------------------
-// Lockable (запираемый)
+// Lockable
 //--------------------------------------
 
 const int oCMobLockable_bitfield_locked     = ((1 <<  1) - 1) << 0;
@@ -275,12 +275,12 @@ class oCMobLockable
     
     var int bitfield;
     
-    var string keyInstance;     // zSTRING //Имя инстанции клавиши
-    var string pickLockStr;     // zSTRING //комбинация "вправо-влево" (LR)
+    var string keyInstance;     // zSTRING //Schlüsselinstanzname
+    var string pickLockStr;     // zSTRING //linksrechtscombo
 };
 
 //--------------------------------------
-// Door (дверь)
+// Door
 //--------------------------------------
 
 class oCMobDoor
@@ -375,7 +375,7 @@ class oCMobDoor
 };
 
 //--------------------------------------
-// Container (контейнер)
+// Container
 //--------------------------------------
 
 class oCMobContainer
@@ -466,10 +466,10 @@ class oCMobContainer
       var string _oCMobLockable_pickLockStr;
     
     //oCMobContainer
-    var string contains;                //zSTRING //Скриптовые инстанции предметов. НЕ текущее содержимое! Только первоначальный список!
+    var string contains;                //zSTRING //Scriptinstanzen der Items. Nicht aktuelle gehalten! Original Spacereinstellung!
     
     var int items;                      //oCItemContainer*
-    //zCListSort<oCItem>    containList; //должен содержать правильные данные
+    //zCListSort<oCItem>    containList; //sollte die richtigen Daten beinhalten
       var int containList_compareFunc;          //int (*Compare)(oCItem *ele1,oCItem *ele2);
       var int containList_data;                 //oCItem*           
       var int containList_next;                 //zCListSort<oCItem>*
@@ -557,8 +557,8 @@ class oCMobFire {
       var int _oCMobInter_timerEnd;
 	
 	//oCMobFire
-	var string fireSlot;		//zSTRING: напр.: "BIP01 FIRE"
-	var string fireVobtreeName; //zSTRING: напр.: "FIRETREE_MEDIUM.ZEN"
+	var string fireSlot;		//zSTRING: z.B: "BIP01 FIRE"
+	var string fireVobtreeName; //zSTRING: z.B. "FIRETREE_MEDIUM.ZEN"
 	
 	var int fireVobtree;		//zCVob*
 };

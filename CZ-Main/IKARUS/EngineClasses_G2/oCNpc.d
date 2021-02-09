@@ -1,6 +1,6 @@
 //#################################################################
 //
-//  C_NPC от Nico
+//  Nicos C_NPC
 //
 //#################################################################
 
@@ -10,7 +10,7 @@
 //                                                                            //
 ////////////////////////////////////////////////////////////////////////////////
 
-//ЗАМЕТКА: константы битовой маски: BitCount   FirstBit
+//NOTE: Bit field mask consts:     BitCount    FirstBit
 const int zCObject_hashIndex = ((1 << 16) - 1) << 0;
 
 class zCObject
@@ -49,7 +49,7 @@ const int zCVob_bitfield4_dontWriteIntoArchive      = ((1 << 1) - 1) <<  4;
 const int zCVob_bitfield4_bIsInWater                = ((1 << 1) - 1) <<  5;
 const int zCVob_bitfield4_bIsAmbientVob             = ((1 << 1) - 1) <<  6;
 
-//Смещение для координат X, Y, Z в массиве trafoObjToWorld:
+//Offsets der X, Y, Z Positionen im trafoObjToWorld Array:
 const int zCVob_trafoObjToWorld_X =  3;
 const int zCVob_trafoObjToWorld_Y =  7;
 const int zCVob_trafoObjToWorld_Z = 11;
@@ -107,7 +107,8 @@ class zCVob
   var int    bitfield[5];               // 0x0104 zCVob_bitfieldX_Xxx
   var int    m_poCollisionObjectClass;  // 0x0118 zCCollisionObjectDef*
   var int    m_poCollisionObject;       // 0x011C zCCollisionObject*
-};                                      // 0x0120
+};
+// const int sizeof_zCVob = 288;           // 0x0120
 
 ////////////////////////////////////////////////////////////////////////////////
 //                                                                            //
@@ -153,7 +154,7 @@ const int oCNpc_oTRobustTrace_bitfield_isObstVobSmall       = ((1 << 1) - 1) << 
 const int oCNpc_oTRobustTrace_bitfield_targetVisible        = ((1 << 1) - 1) << 7;
 const int oCNpc_oTRobustTrace_bitfield_useChasmChecks       = ((1 << 1) - 1) << 8;
 
-//Старой системе записи/чтения нужны эти смещения:
+//Das alte Lese/Schreibsystem benötigt diese Offsets
 const int MEM_NpcID_Offset   = 288; //0x120
 const int MEM_NpcName_Offset = 292; //0x124
 
@@ -207,6 +208,12 @@ class oCNpc
 //}
   var int    idx;                                                       // 0x0120 int
   var string name;                                                      // 0x0124 zSTRING[5]
+/*
+	  var string name_1;
+	  var string name_2;
+	  var string name_3;
+	  var string name_4;
+*/
   var int    vars[20];
   var string slot;                                                      // 0x0188 zSTRING
   var string effect;                                                    // 0x019C zSTRING
@@ -219,6 +226,7 @@ class oCNpc
   var int    damagetype;                                                // 0x022C int
   var int    guild;                                                     // 0x0230 int
   var int    level;                                                     // 0x0234 int
+  // var func   mission[5];                                                // 0x0238 int[NPC_MIS_MAX]
   var int    mission[5];                                                // 0x0238 int[NPC_MIS_MAX]
   var int    fighttactic;                                               // 0x024C int
   var int    fmode;                                                     // 0x0250 int
@@ -510,14 +518,45 @@ class oCNpc
   var int    soundVob;                                                  // 0x09F0 zCVob*
   var int    soundPosition[3];                                          // 0x09F4 zVEC3
   var int    playerGroup;                                               // 0x0A00 zCPlayerGroup*
-};                                                                      // 0x0A04
+};
+const int sizeof_oCNpc = 2564;                                          // 0x0A04
 
 //************************************************
-//   Навыки выглядят так:
+//   Talente sehen so aus:
 //************************************************
 
 class oCNpcTalent {
-	var int m_talent;  //int //какой талант? какая-то констната из Constants.d (напр.: NPC_TALENT_1H)
+	//zCObject {
+	var int    _vtbl;
+	var int    _zCObject_refCtr;
+	var int    _zCObject_hashIndex;
+	var int    _zCObject_hashNext;
+	var string _zCObject_objectName;
+	//}
+	var int m_talent;  //int //welches Talent? selbe Konstanten wie in Constants.d (z.B: NPC_TALENT_1H)
 	var int m_skill;   //int				
 	var int m_value;   //int				
 };
+
+////////////////////////////////////////////////////////////////////////////////
+//                                                                            //
+//                                   oCNews                                   //
+//                                                                            //
+////////////////////////////////////////////////////////////////////////////////
+
+class oCNews {
+    var int    _vtbl;         // 0x0000
+    var int    told;          // 0x0004 zBOOL
+    var int    spread_time;   // 0x0008 zREAL
+    var int    spreadType;    // 0x000C oTNewsSpreadType
+    var int    news_id;       // 0x0010 int
+    var int    gossip;        // 0x0014 zBOOL
+    var int    mNpcWitness;   // 0x0018 oCNpc*
+    var int    mNpcOffender;  // 0x001C oCNpc*
+    var int    mNpcVictim;    // 0x0020 oCNpc*
+    var string witnessName;   // 0x0024 zSTRING
+    var string offenderName;  // 0x0038 zSTRING
+    var string victimName;    // 0x004C zSTRING
+    var int    guildvictim;   // 0x0060 zBOOL
+};
+const int sizeof_oCNews = 100;  // 0x0064

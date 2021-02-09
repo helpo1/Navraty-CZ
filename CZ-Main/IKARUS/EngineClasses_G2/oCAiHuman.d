@@ -1,14 +1,15 @@
 //######################################################
 //
-//  Нет никаких гарантий относительно этих двух классов.
-//  oCAniCtrl_Human показалась мне совершенно бесполезной 
-//  так что я не стал тратить на нее много сил.
-//  zCAIPlayer более значим и, как минимум, 
-//  свойства из "Species.d" будут интересны
-//  для модостроителей. Например, можно сделать заклинание
-//  "хождения по воде" или заставить игрока подниматься
-//  по отвесным стенам.
-//  Пользуйтесь на свой страх и риск.
+//  Keine Garantie auf diese beiden Klassen.
+//  Besonders oCAniCtrl_Human erschien mir im
+//  nachhinein eher nutzlos
+//  daher habe ich wenig Anstrengung in sie gesteckt.
+//  zCAIPlayer müsste aber noch stimmen und 
+//  zumindest die "Species.d" Eigenschaften sind
+//  für Modder interessant. Zum Beispiel könnte man
+//  einen "Wasserläufer" Zauber bauen oder
+//  machen, dass der Spieler steile Wände hochkommt.
+//  Nutzung auf eigene Gefahr.
 //
 //######################################################
 
@@ -24,7 +25,7 @@ class zCAIPlayer {
 
     // Config
     //struct zTConfig {
-        //Касается величин, заданных в Species.d.
+        //Ungefähr das, was auch in der Species.d festgelegt wird.
         
         var int zMV_MIN_SPACE_MOVE_FORWARD;     //zREAL 
         var int zMV_DETECT_CHASM_SCAN_AT;       //zREAL
@@ -47,21 +48,21 @@ class zCAIPlayer {
     /*
     
     //
-	Если кто-то взбирается в гору, это еще не значит что такой NPC будет
-	наклонен под тем же углом, что и поверхность под ним. По крайней мере, не все NPC.
-	Здесь приведены константы, которые позволяют управлять этим.
+    Nur weil es gerade einen Berg heraufgeht, heißt das nicht, dass die Npcs genauso schiefstehen
+    wie der Untergrund schief ist. Zumindest ist das nicht bei allen Npcs so.
+    Dieses enum einhaltet die Konstanten, die für die Verschiedenen möglichkeiten stehen.
     
     enum zTSurfaceAlignMode {                       
-        zMV_SURFACE_ALIGN_NONE  = 0,                // нет выравнивания (напр., человек)
-        zMV_SURFACE_ALIGN_NORMAL= 1,                // напр., мракорис
-        zMV_SURFACE_ALIGN_HIGH  = 2,                // напр., мясные жуки, которые всеми ногами стоят на земле.
+        zMV_SURFACE_ALIGN_NONE  = 0,                // kein Alignment (z.B. Menschen)
+        zMV_SURFACE_ALIGN_NORMAL= 1,                // wie z.B. bei Schattenläufern
+        zMV_SURFACE_ALIGN_HIGH  = 2,                // Meatbugs sind z.B. mit allen Beinen am Boden festgeklebt.
     }; */                                               
     
     /*
-    //Структура с информацией о споcобностях NPC взбираться
+    //Struktur mit Infos zu erreichbaren Kletterkanten.
    struct zTLedgeInfo{
-        zVEC3 point;            // Позиция для хватания
-        zVEC3 normal;           // вектор нормалей, по которым нужно выравнивать NPC
+        zVEC3 point;            // Position zum anpacken
+        zVEC3 normal;           // ein Normalenvektor an dem sich die Figur ausrichten muss
         zVEC3 cont;
         zREAL maxMoveForward;
 
@@ -70,7 +71,7 @@ class zCAIPlayer {
     */
 
     /*
-    enum zTMovementState {                          // следить, чтобы соответсвовало bitfield!
+    enum zTMovementState {                          // keep in sync with bitfield!
         zMV_STATE_STAND         = 0,                
         zMV_STATE_FLY           = 1,                
         zMV_STATE_SWIM          = 2,                
@@ -86,7 +87,7 @@ class zCAIPlayer {
     var int headY;                  //zREAL                        
     var int aboveFloor;             //zREAL                        
     
-    var int waterLevel;             //int //0: мелко, 1: по колено, 2: уже плывет
+    var int waterLevel;             //int //0: niedrig genug, 1: schon am Waten, 2: am Schwimmen
     
     var int velocityLen2;           //zREAL                        
     var int velocity[3];            //zVEC3                        
@@ -99,7 +100,7 @@ class zCAIPlayer {
     var int modelHeadNode;          //zCModelNodeInst*     
 
     /*
-    struct {    // 27 бит
+    struct {    // 27 Bit
         zUINT8          zMV_DO_SURFACE_ALIGN            : 2;    // zTSurfaceAlignMode
         zUINT8          zMV_DO_DETECT_WALK_STOP_CHASM   : 1;
         zUINT8          zMV_DO_WALL_SLIDING             : 1;
@@ -113,15 +114,15 @@ class zCAIPlayer {
         zUINT8          modelAnisInPlace                : 1;
         zTMovementState oldState                        : 3;
         zTMovementState state                           : 3;
-        zUINT8          oldWaterLevel                   : 2; //содержит 0, 1 или 2, как написано выше
+        zUINT8          oldWaterLevel                   : 2; //wieder 0, 1 oder 2 mit oben genannten Bedeutungen
         zCCollObjectCharacter::zEConfigState m_eCollObjectState     : 4;
         zCCollObjectCharacter::zEConfigState m_eCollObjectStateOld  : 4;
     };*/
     
-    var int bitfield[3]; //см. структуру выше.
+    var int bitfield[3]; //Zur Bedeutung siehe obenstehende Struktur.
     
     
-    //Эффекты кровотечения
+    //Bluteffekte
     /*
     struct zTBloodVobTrack {
         zCVob           *bloodVob;
@@ -137,14 +138,14 @@ class zCAIPlayer {
     var int bleedingLastPos[3];    //zVEC3
     var int bleedingNextDist;   //zREAL
     
-    // Эффекты шлейфа от оружия
+    // Weapon Trail effects
     var int weaponTrailVob;     //zCVob*
     
-    // Эффект кругов на воде
+    // WaterRing effects
     var int waterRingVob;       //zCVob*
     var int waterRingTimer;     //zREAL
     
-    // Автоповорот
+    // autoRolling
     var int autoRollPos;         //zREAL      
     var int autoRollPosDest;     //zREAL      
     var int autoRollSpeed;       //zREAL      
@@ -230,13 +231,13 @@ class oCAniCtrl_Human {
     
     var int actionMode;                      //int                       
     
-    // Переключатели оружия
+    // Waffen toggeln
     var int wmode;                           //int                       
     var int wmode_last;                      //int                       
     var int wmode_selected;                  //int                       
     var int changeweapon;                    //zBOOL                    
     
-    // Режим перемещения     
+    // Walkmode     
     var int walkmode;                        //int                       
     var int nextwalkmode;                    //int                       
     var int lastRunWalkSneak;                //int                       
@@ -245,11 +246,11 @@ class oCAniCtrl_Human {
     var int defaultSurfaceAlign;             //int                       
     var int autoRollDirection;               //zREAL                    
     
-    // Движения головы
+    // Kopfbewegungen
     var int lookTargetx;                     //zREAL                    
     var int lookTargety;                     //zREAL                    
     
-    // Сражение        
+    // Fight        
     var int distance;                           //int                        
     var int hitpos[3];                          //zVEC3                 
     var string limbname;                        //zSTRING                 
@@ -265,7 +266,7 @@ class oCAniCtrl_Human {
         zUINT8          hitGraphical                    : 1;
         zUINT8          canDoCollisionFX                : 1;
     };*/
-    var int bitfield; //см. структуру в комментариях выше   
+    var int bitfield; //so wie im Struct im Kommentar   
     
     var int comboNr;           //int                  
     var int comboMax;          //int                  
@@ -286,7 +287,7 @@ class oCAniCtrl_Human {
     //oTComboInfo comboInfo[ANI_MAX_HIT]; //ANI_MAX_HIT = 10
     var int comboInfo[60];
 
-    // Регулировка боевки
+    // Kampfsystem - Tuning
     var int anioffset_lastper;  //zREAL                  
     var int anioffset_thisper;  //zREAL                  
     var int anioffset;          //zREAL                  
@@ -294,7 +295,7 @@ class oCAniCtrl_Human {
 
     // *****************************************************************************************
 
-    // Нормальный режим
+    // Normal
     /*zTModelAniID*/        var int s_dead1; var int s_dead2;
     /*zTModelAniID*/        var int s_hang;  var int t_hang_2_stand;
 
@@ -311,7 +312,7 @@ class oCAniCtrl_Human {
 
     /*zTModelAniID*/        var int t_jumpb             [ANI_NUM];
 
-    // Переходы
+    // Transitions
     /*zTModelAniID*/        var int t_run_2_walk        [ANI_NUM];var int t_walk_2_run      [ANI_NUM];
                         var int t_run_2_sneak       [ANI_NUM];var int t_sneak_2_run     [ANI_NUM];
 
@@ -428,8 +429,8 @@ class oCAniCtrl_Human {
     
     var int dummyLastVar;
     
-    //Поскольку oCAIHuman (подкласс) добавляет не так уж много, здесь я бросил даже говорить об этом:
-    //Во всяком случае, у меня нет причин думать, что он будет хоть чем-то полезен.
+    //Da oCAIHuman (eine Unterklasse) nicht mehr viel zusätzlich enthält, hier einfach mal drangeklatscht:
+    //Ich habe sowieso nicht den Eindruck, dass diese Eigenschaften sehr nüztlich sind.
     
     //zCList<zCVob>     ignoreVobList;
         var int oCAIHuman_ignoreVobList_data; //zCVob*

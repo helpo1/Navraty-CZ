@@ -44,58 +44,58 @@ class oCItem {
   var int    _zCVob_m_poCollisionObjectClass;
   var int    _zCVob_m_poCollisionObject;
   
-// Для всех Items
+// Für alle Items
 	VAR INT		id								;				
 	VAR STRING  name,nameID						;
 	VAR INT		hp,hp_max						;
 
-	VAR INT     mainflag,flags					;		//	основной флаг и другие флаги
+	VAR INT     mainflag,flags					;		//	Hauptflag und weitere Flags
 	VAR INT		weight,value					;			
 															
-	// для оружия								
-	VAR INT		damageType						;		//	тип урона
+	// Für Waffen								
+	VAR INT		damageType						;		//	Welche Schadensarten
 	VAR	INT		damageTotal						;
 	VAR INT		damage			[DAM_INDEX_MAX]	;
 
-	// для брони
+	// Für Rüstungen
 	VAR INT		wear							;
 	VAR INT		protection		[PROT_INDEX_MAX];
 
-	// для пищи
-	VAR INT		nutrition						;		//	питательность - увеличение HP-Steigerung
+	// Für Nahrung
+	VAR INT		nutrition						;		//	HP-Steigerung bei Nahrung
 
-	// Необходимые атрибуты для использования
+	// Benötigte Attribute zum Benutzen des Items
 	VAR INT		cond_atr		[3]				;
 	VAR INT		cond_value		[3]				;
 
-	// Атрибуты, которые изменяет Item
+	// Attribute, die bei anlegen des Items verändert werden
 	VAR INT		change_atr		[3]				;
 	VAR INT		change_value	[3]				;
 
-	// Функции парсера
-	VAR int 	magic							;		//	Функция парсера для "управления магией"
-	VAR int 	on_equip						;		//	Функция парсера, когда Item надевается.
-	VAR int 	on_unequip						;		//	Функция парсера, когда Item снимается.
+	// Parserfunktionen
+	VAR int 	magic							;		//	Parserfunktion zum "Magie Header"
+	VAR int 	on_equip						;		//	Parserfunktion, wenn Item equipped wird.
+	VAR int 	on_unequip						;		//	Parserfunktion, wenn Item unequipped wird.
 	VAR int 	on_state		[4]				;		//	
 															
-	// Владелец									
-	VAR int 	owner							;		//	Владелец : имя инстанции
-	VAR INT		ownerGuild						;		//	Владелец : гильдия
-	VAR INT		disguiseGuild					;		//	Ложная гильдия при переодевании
+	// Besitzer									
+	VAR int 	owner							;		//	Besitzer : Instanz-Name
+	VAR INT		ownerGuild						;		//	Besitzer : Gilde
+	VAR INT		disguiseGuild					;		//	Zur Schau getragene Gilde durch Verkleidung
 
-	// 3DS-модель
+	// Die 3DS-Datei
 	VAR STRING	visual							;
 
-	// Изменение меша NSC при надевании предмета
-	VAR STRING  visual_change					;		//	Файл ASC
-	VAR STRING  effect;								//	Инстанция эффекта
+	// Veränderung des NSC-Meshes beim Anlegen dieses Gegenstandes
+	VAR STRING  visual_change					;		//	ASC - File
+	VAR STRING  effect;								//	Effekt Instanz
 
 	VAR INT		visual_skin						;
 	
 	VAR STRING 	scemeName						;
 	VAR INT		material						;	
-	// VAR STRING	pfx								;		//	PFX для магического оружия
-	VAR INT		munition						;		//	Инстанция заряда
+	// VAR STRING	pfx								;		//	Magic Weapon PFX
+	VAR INT		munition						;		//	Instance of Munition
 															
 	var int 	spell							;			
 	var int		range							;			
@@ -106,18 +106,18 @@ class oCItem {
 	VAR STRING	text			[ITM_TEXT_MAX]	;
 	VAR INT		count			[ITM_TEXT_MAX]	;
 	
-	// отображение в инвентаре, учитывается, только если не равно 0
-	var int	    inv_zbias;								//  насколько далеко сдвинут предмет на плоскости (целочисленная шкала 100=1)
-	var	int		inv_rotx;								//  поворот по оси x в градусах
-	var int 	inv_roty;								//  поворот по оси y в градусах
-	var int 	inv_rotz;								//  поворот по оси z в градусах
-	var int 	inv_animate;							//  item должен поворачиваться в инвентаре
+	// inventory darstellungs geschichten, wird nur benutzt, falls von 0 abweichend
+	var int	    inv_zbias;								//  wie weit ist das item im inventory richtung far plane verschoben (integer scale 100=1)
+	var	int		inv_rotx;								//  wieviel grad um die x achse ist das item im inv gedreht
+	var int 	inv_roty;								//  wieviel grad um die y achse ist das item im inv gedreht
+	var int 	inv_rotz;								//  wieviel grad um die z achse ist das item im inv gedreht
+	var int 	inv_animate;							//  soll das item in inv rotiert werden
 
-	var int amount;							//int Сколько предметов (в слоте)
-	var int instanz;						//int индекс символа
+	var int amount;							//int Wieviele Items sind das (Itemstapel)
+	var int instanz;						//int Symbolindex
 	var int c_manipulation;					//int ?
 	var int last_manipulation;				//zREAL ?
 	var int magic_value;					//int ?
 	var int effectVob;						//oCVisualFX*
-	var int next;							//oCItem* наверное, для односвязных списков
+	var int next;							//oCItem* sind wohl einfach verkettete Listen.
 };				

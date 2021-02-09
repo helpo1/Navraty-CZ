@@ -1,5 +1,5 @@
 class zCVobWaypoint {
-    //Обычный Vob (используется как вспомогательный объект)
+    //Ein ganz gewöhnliches Vob (wird als Hilfsvob verwendet)
     //zCVob {
         //zCObject {
         var int    _vtbl;
@@ -55,9 +55,9 @@ class zCWaypoint {
         var string _zCObject_objectName;
     //}
     
-    // Поиск кратчайшего пути по zCWaynet
-    // Эти свойства лучше не использовать,
-    // здесь содержатся A* (промежуточные) результаты.
+    // Kürzeste Weg Suche durch das zCWaynet
+    // Diese Eigenschaften besser nicht nutzen,
+    // es sind A* (Zwischen-) Ergebnisse.
     var int routeCtr;                       //int                 
     var int curCost;                        //int                 
     var int estCost;                        //int                 
@@ -65,42 +65,42 @@ class zCWaypoint {
     var int curList;                        //int                 
     var int parent;                         //zCWay*            
     
-    //Другие данные
+    //Sonstige Daten
     var int waterDepth;                     //int          
     var int underWater;                     //zBOOL 
       
-    var int pos[3];                         //zVEC3   // Позиция Waypoint'а
-    var int dir[3];                         //zVEC3   // вектор направления
+    var int pos[3];                         //zVEC3   // Position dieses Waypoints
+    var int dir[3];                         //zVEC3   // AtVector
     var string name;                        //zSTRING   
 
-    // Связанный VOB в мире
+    // dazugehöriger Vob in dér Welt
     var int wpvob;                          //zCVobWaypoint*
     
-    // Список связанных путей ( Ways )
+    // Liste der hier beginnenden Wege ( Ways )
     //zCList <zCWay>    wayList;
         var int wayList_data;               //zCWay*
         var int wayList_next;               //zCList<zCWay>*
 };
 
-class oCWay { //Подкласс zCWay.
-    var int _vtbl;                  //указатель на таблицу методов
+class oCWay { //Unterklasse von zCWay.
+    var int _vtbl;                  //Zeiger auf Methodentabelle
 
-    // Поиск кратчайшего пути по zCWaynet
-    // Эти свойства лучше не использовать,
-    // здесь содержатся A* (промежуточные) результаты.
+    // Kürzeste Weg Suche durch das zCWaynet
+    // Diese Eigenschaften besser nicht nutzen,
+    // es sind A* (Zwischen-) Ergebnisse.
     var int cost;                   //int
     var int usedCtr;                //int
 
-    //Другие свойства
+    //Sonstige Eigenschaften
     var int chasmDepth;             //zREAL
     var int chasm;                  //zBOOL
     var int jump;                   //zBOOL
 
-    //Два WP на концах
+    //die beiden anschließenden Wegpunkte
     var int left;                   //zCWaypoint*
     var int right;                  //zCWaypoint*
     
-    //Объект на пути?
+    //Objekte im Weg?
     var int ladder;                 //oCMobLadder*
     var int door;                   //oCMobDoor*     
 };
@@ -116,12 +116,12 @@ class zCWayNet {
     
     var int world;                          //zCWorld*
 
-    //zCListSort    <zCWaypoint>        wplist;     // Все WP в сетке
+    //zCListSort    <zCWaypoint>        wplist;     // Alle Waypoints   im Netz
         var int wplist_compareFunc;         //int (*Compare)(zCWaypoint *ele1,zCWaypoint *ele2);
         var int wplist_data;                //zCWaypoint*
         var int wplist_next;                //zCListSort<zCWaypoint>*
         
-    //zCList        <zCWay>     waylist;    // Все пути в сетке
+    //zCList        <zCWay>     waylist;    // Alle Ways        im Netz
         var int waylist_data;               //zCWay*
         var int waylist_next;               //zCList<zCWay>*
 
@@ -136,6 +136,8 @@ class zCWayNet {
 };
 
 class zCRoute {
+    var int _vtbl;
+
 	//var int wayList;   //zCList <zCWay>	
         var int wayList_data; //zCWay*
         var int wayList_next; //zCList<zCWay>*

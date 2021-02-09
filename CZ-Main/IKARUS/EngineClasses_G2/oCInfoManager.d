@@ -1,33 +1,32 @@
 class oCInfoChoice
 {
     var string Text    ;   //zSTRING 
-    var int Function;      //int     //индекс символа    
+    var int Function;      //int     //symbolindex    
 };
 
 //----------------------------------
 //  oCInfo
 //----------------------------------
 
-/* ВНИМАНИЕ!!!
+/* Große Vorsicht!
 
-В отличие от C_NPC и C_ITEM, C_INFO указывает 
-НЕ на увеличенную область памяти, а просто на себя.
-То, что возвращает MEM_InstGetOffset, применительно к C_INFO
-возвращают НЕ адрес ограничивающего объект oCInfo, 
-а адрес содержащегося в нем C_INFO.
-Чтобы получить oCInfo, нужно вычесть 4 + 4 + 20 = 28 байт! */
+Im Gegensatz zu C_NPC und C_ITEM zeigt eine C_INFO nicht auf den vergrößerten
+Speicherbereich, sondern tatsächlich auf sich selbst.
+MEM_InstGetOffset liefert also, auf eine C_INFO angewendet NICHT die Adresse
+des umrahmenden oCInfo Objekts sondern die Adresse der enthaltenen C_INFO zurück.
+Um an die oCInfo zu kommen müssen 4 + 4 + 20 = 28 abgezogen werden! */
 
 const int oCInfo_C_INFO_Offset = 28;
 
 class oCInfo {
-    //Внимание: Только "name" и "told" попадают в сохранение!
+    //Achtung: Nur "name" und "told" wandert in ein Savegame!
     
-    var int _vtbl;                  //таблица методов
+    var int _vtbl;                  //Methodentabelle
 
     var int next;                   //oCInfo*
     var string name;                //zSTRING
 
-    //Известно:
+    //Wohlbekannt:
     //struct Tpd {
         var int npc         ;       //int
         var int nr          ;       //int
@@ -39,25 +38,25 @@ class oCInfo {
         var int permanent   ;       //zBOOL   
     //} pd;
 
-    var int told        ;           //zBOOL  //уже произнесен (то, что возвращает Npc_KnowsInfo)
-    var int _instance   ;           //int    //индекс символа oCInfo в парсере.
+    var int told        ;           //zBOOL  //schonmal abgespielt (das was Npc_KnowsInfo abfragt)
+    var int _instance   ;           //int    //symbolindex der oCInfo im Parser.
     
-    //Варианты выбора:
+    //Choices:
     //zCList< oCInfoChoice > listChoices;
         var int listChoices_data;   //oCInfoChoice*
         var int listChoices_next;   //zCList< oCInfoChoice >*
 };
 
 class oCInfoManager {
-    var int _vtbl;                  //Указатель на таблицу методов                                           
+    var int _vtbl;                  //Zeiger auf Methodentabelle                                            
     
-    //Список всех oCInfos. Отсортирован по ...? Вам придется сами проверить.
+    //Liste aller oCInfos. Geordnet nach...? Müsste man mal nachschauen.
     //zCListSort< oCInfo > infoList;    
         var int infoList_compare;   //int (*Compare)(oCInfo *ele1,oCInfo *ele2);
         var int infoList_data;      //oCInfo*
         var int infoList_next;      //zCListSort< oCInfo >*
         
-    //Парсер.
+    //Parser.
     var int p;                      //zCParser*
 };
 
@@ -75,9 +74,9 @@ class oCInformationManager
     zTInfoMgrMode; */
 
     var string LastMethod           ;  //zSTRING                         
-    var int DlgStatus               ;  //zCViewDialogChoice*    //это View. Вероятно, просто отображение на экране
-    var int DlgTrade                ;  //oCViewDialogTrade*     //это View. Вероятно, просто отображение на экране
-    var int DlgChoice               ;  //zCViewDialogChoice*    //это View. Вероятно, просто отображение на экране
+    var int DlgStatus               ;  //zCViewDialogChoice*    //das sind Views. Das heißt vermutlich nur Anzeige
+    var int DlgTrade                ;  //oCViewDialogTrade*     //das sind Views. Das heißt vermutlich nur Anzeige
+    var int DlgChoice               ;  //zCViewDialogChoice*    //das sind Views. Das heißt vermutlich nur Anzeige
     var int Npc                     ;  //oCNpc*                       
     var int Player                  ;  //oCNpc*                       
     var int Info                    ;  //oCInfo*                         

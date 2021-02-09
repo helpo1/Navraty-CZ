@@ -1,9 +1,9 @@
-/* адрес указателя, ссылающегося на текущую MusicZone.
-   слабо тестировалось, чаще всего было ранво нулю, не знаю почему. */
+/* address of the pointer that points to the current MusicZone.
+   poorly tested, was null most of the time, don't know why. */
 const int oCZoneMusic__s_musiczone_Address = 10111524; //0x9A4A24 //oCZoneMusic*
 
 class oCZoneMusic {  
-//class oCZoneMusicDefault { //оба класса отображаются в памяти одинаково
+//class oCZoneMusicDefault { //beide Klassen vom Speicherbild identisch
     //zCVob {
         //zCObject {
         var int    _vtbl;

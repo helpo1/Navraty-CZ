@@ -56,10 +56,10 @@ class zCTrigger {
     var int    _zCVob_m_poCollisionObject;
     
     //zCTriggerBase
-    //Свойства должны быть в целом понятны
+    //Eigenschaften sollten weitgehend klar sein
     var string triggerTarget;       //zSTRING
     
-    var int bitfield; //см. выше
+    var int bitfield; //siehe oben
     /*
     struct {
         zUINT8          reactToOnTrigger: 1;
@@ -80,7 +80,7 @@ class zCTrigger {
     var int retriggerWaitSec;    //zREAL
     var int damageThreshold;     //zREAL
     var int fireDelaySec;        //zREAL
-    var int nextTimeTriggerable; //zREAL  //см. свойство retriggerWaitSec
+    var int nextTimeTriggerable; //zREAL  //vgl. Eigenschaft retriggerWaitSec
     var int savedOtherVob;       //zCVob*
     var int countCanBeActivated; //zSWORD
 };
@@ -276,7 +276,7 @@ class zCMover {
     var int    _zCTrigger_countCanBeActivated;
     
     /*
-    Ключевые кадры
+    Keyframes
     struct zTMov_Keyframe {
         zPOINT3     pos;
         zCQuat      quat;
@@ -288,7 +288,7 @@ class zCMover {
         var int keyframeList_numAlloc;      //int
         var int keyframeList_numInArray;    //int
     
-    // внутреннее
+    // internals
     var int actKeyPosDelta[3];              //zVEC3
     var int actKeyframeF;                   //zREAL
     var int actKeyframe;                    //int    
@@ -350,7 +350,7 @@ class zCMover {
                             } */
     var int speedType;                          //zTSpeedType
 
-    // звук                                    
+    // sound                                    
     var string soundOpenStart;                  //zSTRING
     var string soundOpenEnd;                    //zSTRING
     var string soundMoving;                     //zSTRING

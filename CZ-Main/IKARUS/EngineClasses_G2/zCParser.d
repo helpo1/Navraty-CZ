@@ -2,7 +2,7 @@
 //
 //  1.) zCParser
 //  2.) zCPar_Symbol
-//  3.) Токены парсера
+//  3.) Parser Tokens
 //
 //#################################################################
 
@@ -10,7 +10,7 @@
 //      1.) zCParser
 //************************************
 
-//Смещения свойств:
+//Offsets von Eigenschaften
 const int zCParser_symtab_table_array_offset        = 24; //0x18
 const int zCParser_sorted_symtab_table_array_offset = 36; //0x24
 const int zCParser_stack_offset                     = 72; //0x48
@@ -20,12 +20,12 @@ class zCParser {
     var int msgfunc;                                    //void (__cdecl * msgfunc)( zSTRING );
     
     // *** Vars ***
-    //zCArray <zCPar_File *>    file;                   // Список используемых файлов
+    //zCArray <zCPar_File *>    file;                   // Liste von eingebundenen Files
         var int file_array;                             //0x0004 zCPar_File**
         var int file_numAlloc;                          //0x0008 int
         var int file_numInArray;                        //0x000C int
     
-    //zCPar_SymbolTable     symtab;                     // Таблица символов 
+    //zCPar_SymbolTable     symtab;                     // Symboltable 
         var int symtab_preAllocatedSymbols;             //0x0010 zCPar_Symbol*
         var int symtab_nextPreAllocated;                //0x0014 int
         
@@ -43,25 +43,25 @@ class zCParser {
         var int lastsym;                                //0x0034 zCPar_Symbol*
         var int firstsym;                               //0x0038 zCPar_Symbol*
     
-    //zCPar_StringTable     stringtab;                  // Все строки
+    //zCPar_StringTable     stringtab;                  // Alle Strings
         //zCArray <zSTRING *> array;
             var int stringtab_array_array;              //0x003C zString**
             var int stringtab_array_numAlloc;           //0x0040 int
             var int stringtab_array_numInArray;         //0x0044 int
     
-    //zCPar_Stack               stack;                  //Область памяти, в которой располагается код
-        var int stack_stack;                            //0x0048 zBYTE*  // начало стека
-        var int stack_stackptr;                         //0x004C zBYTE* oder zWORD* oder int* //текущая позиция в стеке
+    //zCPar_Stack               stack;                  //Der Speicherbereich in dem der Code liegt
+        var int stack_stack;                            //0x0048 zBYTE*  // Stackbeginn
+        var int stack_stackptr;                         //0x004C zBYTE* oder zWORD* oder int* //aktuelle Stackposition
         var int stack_stacklast;                        //0x0050 zBYTE* oder zWORD* oder int*
-        var int stack_stacksize;                        //0x0054 int //Размер стека в байтах
+        var int stack_stacksize;                        //0x0054 int //Stackgroesse in Bytes
     
-    //zCPar_DataStack           datastack;              //Стек данных
-        var int datastack_stack[/*zMAX_SYM_DATASTACK*/ 2048];     //0x0058 //очень мало. Но при правильном использовании, это не важно.
+    //zCPar_DataStack           datastack;              //Daten-Stack
+        var int datastack_stack[/*zMAX_SYM_DATASTACK*/ 2048];     //0x0058 //sehr klein. Bei korrekter Nutzung aber egal.
         var int datastack_sptr;                                   //0x085C int
     
     var int _self;                                      //zCPar_Symbol*
     
-    //Дальше неинтересно, используется непосредственно при парсинге:
+    //Ab hier uninteressant, passiert beim Parsen selbst:
     var string fname;                                   //zSTRING
     var string mainfile;                                //zString
     var int compiled;                                   //zBOOL                 
@@ -99,7 +99,7 @@ class zCParser {
     var int treenode;                                   //zCPar_TreeNode*
     var int win_code;                                   //zCView*
     var int debugmode;                                  //zBOOL
-    var int curfuncnr;                                  //int  //текущая функция
+    var int curfuncnr;                                  //int  //Aktuelle Funktion
     var int labelcount;                                 //int
     var int labelpos;                                   //int*
     
@@ -117,9 +117,9 @@ class zCParser {
 //
 //######################################################
 
-const int zCPar_Symbol_bitfield_ele         = ((1 << 12) - 1) <<  0; //число элементов (для массивов)
-const int zCPar_Symbol_bitfield_type        = ((1 <<  4) - 1) << 12; //см. список enum ниже
-const int zCPar_Symbol_bitfield_flags       = ((1 <<  6) - 1) << 16; //см. список enum ниже
+const int zCPar_Symbol_bitfield_ele         = ((1 << 12) - 1) <<  0; //anzahl elemente (bei arrays)
+const int zCPar_Symbol_bitfield_type        = ((1 <<  4) - 1) << 12; //siehe enum unten
+const int zCPar_Symbol_bitfield_flags       = ((1 <<  6) - 1) << 16; //siehe enum unten
 const int zCPar_Symbol_bitfield_space       = ((1 <<  1) - 1) << 22;
 
 /*
@@ -150,31 +150,31 @@ const int zCParSymbol_content_offset                = 24; //0x18
 const int zCParSymbol_offset_offset                 = 28; //0x1C
 
 class zCPar_Symbol {
-    var string name;                        //0x0000 zSTRING        //Имя символа из скриптов
-    var int next;                           //0x0014 zCPar_Symbol*  //Видимо, объединяет символы. Выглядит бесполезным, когда есть таблица символов.
+    var string name;                        //0x0000 zSTRING        //Name des Symbols, so wie im Script
+    var int next;                           //0x0014 zCPar_Symbol*  //Scheinbar sind die Symbole verkettet. Erscheint mir nutzlos, es gibt ja die Symboltabelle.
     
-    //Значение символа: указатель или простой тип
-    var int content;                        //0x0018 void* или int* или float* или zSTRING* или int или float. Для функций/инстанций/прототипов: указатель стека. В остальных случаях: данные или указатель на данные.
-    var int offset;                         //0x001C Смещение полей классов // Адреса инстанций // Возвращаемые значения функций
+    //Inhalt des Symbols, Pointer oder Primitiver Typ
+    var int content;                        //0x0018 void* oder int* oder float* oder zSTRING* oder int oder float. Bei Funktionen / Instanzen / Prototypen: Stackpointer. Sonst Daten oder Datenpointer.
+    var int offset;                         //0x001C Offset bei Klassenvariablen // Adresse bei Instanzen // Rückgabewert bei Funktionen
     
-    var int bitfield;                       //0x0020 см. выше
+    var int bitfield;                       //0x0020 siehe oben
     var int filenr;                         //0x0024
     var int line;                           //0x0028
     var int line_anz;                       //0x002C
     var int pos_beg;                        //0x0030
     var int pos_anz;                        //0x0034
     
-    var int parent;                         //0x0038 zCPar_Symbol*  // ссылка на предка
+    var int parent;                         //0x0038 zCPar_Symbol*  // Parent-Verweis
 };
 
 //----------------------------------
-//  3.) Токены парсера
+//  3.) Parser Tokens
 //----------------------------------
 
-/* Операторы берут два значения из стека данных, и выполняют вычисления. 
- * Результат помещается обратно в стек данных. */
+/* Operatoren nehmen zwei Werte vom Datenstack und verrechnen sie.
+ * Das Ergebnis schieben sie auf den Datenstack. */
         
-//Обычные операторы:
+//Gewöhnliche Operatoren
 const int zPAR_OP_PLUS      = 0;            //"+" 0x00
 const int zPAR_OP_MINUS     = 1;            //"-" 0x01
 const int zPAR_OP_MUL       = 2;            //"*" 0x02
@@ -185,10 +185,10 @@ const int zPAR_OP_AND       = 6;            //"&" 0x06
 const int zPAR_OP_LOWER     = 7;            //"<" 0x07
 const int zPAR_OP_HIGHER    = 8;            //">" 0x08
 
-//Исключение:
-const int zPAR_OP_IS        = 9;            //"=" 0x09 //получает i1, i2 из стека и назначает i1 = i2. i1 должен быть ссылкой.
+//Ausnahme:
+const int zPAR_OP_IS        = 9;            //"=" 0x09 //hole i1, i2 vom Datenstack und setze i1 = i2. i1 muss hier eine Referenz sein.
                                                   
-//Операторы из двух символов                     
+//Operatoren aus zwei Zeichen                     
 const int zPAR_OP_LOG_OR        = 11;       //"||"0x0B
 const int zPAR_OP_LOG_AND       = 12;       //"&&"0x0C
 const int zPAR_OP_SHIFTL        = 13;       //"<<"0x0D
@@ -202,8 +202,8 @@ const int zPAR_OP_ISMINUS       = 20;       //"-="0x14
 const int zPAR_OP_ISMUL         = 21;       //"*="0x15
 const int zPAR_OP_ISDIV         = 22;       //"/="0x16
 
-/* Унарные операторы, разумеется, берут только одно значение из стека.
-   Результат также помещается в стек. */
+/* Unäre Operatoren nehmen natürlich nur einen Wert vom Datenstack.
+   Sie schieben ebenfalls das Ergebnis auf den Datenstack. */
 const int zPAR_OP_UNARY         = 30;             
 const int zPAR_OP_UN_PLUS       = 30;       //"+" 0x1E
 const int zPAR_OP_UN_MINUS      = 31;       //"-" 0x1F
@@ -211,7 +211,7 @@ const int zPAR_OP_UN_NOT        = 32;       //"!" 0x20
 const int zPAR_OP_UN_NEG        = 33;       //"~" 0x21
 const int zPAR_OP_MAX           = 33;           
 
-//Здесь: Остальные токены (для парсинга)
+//Jetzt: Andere Tokens (zum Parsen)
 const int zPAR_TOK_BRACKETON    = 40;
 const int zPAR_TOK_BRACKETOFF   = 41;   
 const int zPAR_TOK_SEMIKOLON    = 42;
@@ -223,30 +223,30 @@ const int zPAR_TOK_FLOAT        = 51;
 const int zPAR_TOK_VAR          = 52;           
 const int zPAR_TOK_OPERATOR     = 53;
 
-/* Еще команды (не забывайте, операторы - тоже команды)
- * Некоторые команды всегда требут параметр после себя.
- * Другие команды состоят только из своего токена. */
+/* Weitere Befehle (Nicht vergessen: Operatoren sind auch Befehle!)
+ * Manchen Befehlen folgt immer ein Parameter nach.
+ * Anderen Befehle bestehen nur aus dem Befehlstoken */
 const int zPAR_TOK_RET          = 60; //0x3C    //return
-const int zPAR_TOK_CALL         = 61; //0x3D    //функция вызова. Параметр: цель вызова, 4 байта адреса в стеке
-const int zPAR_TOK_CALLEXTERN   = 62; //0x3E    //внешний вызов. Параметр: внешний символ, 4 байта
-const int zPAR_TOK_POPINT       = 63; //0x3F    //не исп.
-const int zPAR_TOK_PUSHINT      = 64; //0x40    //помещает целую константу в стек данных. Параметр: контанта, 4 байта
-const int zPAR_TOK_PUSHVAR      = 65; //0x41    //помещает переменную в стек данных. Параметр: индекс символа переменной, 4 байта
-const int zPAR_TOK_PUSHSTR      = 66; //0x42    //не исп.
-const int zPAR_TOK_PUSHINST     = 67; //0x43    //помещает инстанцию в стек данных. Параметр: индекс символа инстанции, 4 байта
-const int zPAR_TOK_PUSHINDEX    = 68; //0x44    //не исп.
-const int zPAR_TOK_POPVAR       = 69; //0x45    //не исп.
-const int zPAR_TOK_ASSIGNSTR    = 70; //0x46    //Присваивание. Берет v1, v2 из стека и назначает v1 = v2
-const int zPAR_TOK_ASSIGNSTRP   = 71; //0x47    //Присваивание. Берет v1, v2 из стека и назначает v1 = v2
-const int zPAR_TOK_ASSIGNFUNC   = 72; //0x48    //Присваивание. Берет v1, v2 из стека и назначает v1 = v2
-const int zPAR_TOK_ASSIGNFLOAT  = 73; //0x49    //Присваивание. Берет v1, v2 из стека и назначает v1 = v2
-const int zPAR_TOK_ASSIGNINST   = 74; //0x4A    //Присваивание. Берет v1, v2 из стека и назначает v1 = v2
-const int zPAR_TOK_JUMP         = 75; //0x4B    //Безусловный переход в стеке парсера. Параметр: метка для перехода, 4 байта
-const int zPAR_TOK_JUMPF        = 76; //0x4C    //Получает b из стека и осуществляет переход, если b == 0. Параметр: метка перехода, 4 байта (читай: "jump if false". Для условий "if")
+const int zPAR_TOK_CALL         = 61; //0x3D    //rufe Funktion auf. Es folgen 4 byte Callziel (Stackadresse)
+const int zPAR_TOK_CALLEXTERN   = 62; //0x3E    //rufe External auf. Es folgen 4 byte Symbol der External
+const int zPAR_TOK_POPINT       = 63; //0x3F    //ungenutzt
+const int zPAR_TOK_PUSHINT      = 64; //0x40    //schiebe Integer Konstante auf den Datenstack. Es folgt die Integerkonstante (4 byte)
+const int zPAR_TOK_PUSHVAR      = 65; //0x41    //schiebe Variable auf den Datenstack. Es folt der Symbolindex der Variable (4 byte)
+const int zPAR_TOK_PUSHSTR      = 66; //0x42    //ungenutzt
+const int zPAR_TOK_PUSHINST     = 67; //0x43    //schiebe Instanz auf den Datenstack. Es folgen die 4 byte Symbolindex der Instanz
+const int zPAR_TOK_PUSHINDEX    = 68; //0x44    //ungenutzt
+const int zPAR_TOK_POPVAR       = 69; //0x45    //ungenutzt
+const int zPAR_TOK_ASSIGNSTR    = 70; //0x46    //Zuweisung. Hole v1, v2 vom Stack und setze v1 = v2
+const int zPAR_TOK_ASSIGNSTRP   = 71; //0x47    //Zuweisung. Hole v1, v2 vom Stack und setze v1 = v2
+const int zPAR_TOK_ASSIGNFUNC   = 72; //0x48    //Zuweisung. Hole v1, v2 vom Stack und setze v1 = v2
+const int zPAR_TOK_ASSIGNFLOAT  = 73; //0x49    //Zuweisung. Hole v1, v2 vom Stack und setze v1 = v2
+const int zPAR_TOK_ASSIGNINST   = 74; //0x4A    //Zuweisung. Hole v1, v2 vom Stack und setze v1 = v2
+const int zPAR_TOK_JUMP         = 75; //0x4B    //Springe im Parserstack. Es folgen 4 byte Sprungziel
+const int zPAR_TOK_JUMPF        = 76; //0x4C    //Hole b vom Datenstack und springe, falls b == 0 ist. Es folgen 4 byte Sprungziel (lies: "jump if false". Für "if"-Bedingungen)
 
-const int zPAR_TOK_SETINSTANCE  = 80; //0x50    //Параметр: индекс символа, 4 байта. Трудно объяснить. Грубо говоря: "назначить текущую инстанцию"
+const int zPAR_TOK_SETINSTANCE  = 80; //0x50    //Es folgen 4 byte Symbolindex. Umständlich zu erklären. So grob: "Setze aktuelle Instanz."
 
-//Разные внутренние команды. Наверное, лишь немногие актуальны.
+//Irgendwelche Internas. Wahrscheinlich nur bedingt relevant.
 const int zPAR_TOK_SKIP         = 90;
 const int zPAR_TOK_LABEL        = 91;
 const int zPAR_TOK_FUNC         = 92;
@@ -257,13 +257,13 @@ const int zPAR_TOK_INSTANCE     = 96;
 const int zPAR_TOK_INSTANCEEND  = 97;
 const int zPAR_TOK_NEWSTRING    = 98;
 
-//Для размещения в стеке массивов.
-const int zPAR_TOK_FLAGARRAY      = zPAR_TOK_VAR | 128; //не использовать!
-const int zPAR_TOK_PUSH_ARRAYVAR  = zPAR_TOK_FLAGARRAY + zPAR_TOK_PUSHVAR; //Берет 4-байтный символ из стека. Берет 1 байт индекса массива из стека. Помещает соответствующий элемент массива в символ стека.
+//Für Pushen von Arraywerten.
+const int zPAR_TOK_FLAGARRAY      = zPAR_TOK_VAR | 128; //nicht nutzen!
+const int zPAR_TOK_PUSH_ARRAYVAR  = zPAR_TOK_FLAGARRAY + zPAR_TOK_PUSHVAR; //Hole 4 Byte Symbolindex vom Stack. Hole 1 Byte Arrayindex vom Stack. Schiebe Adresse des entsprechenden Arrayelements im Symbol auf den Stack.
 
-/* См. также этот пост:
+/* Siehe auch diesen Beitrag:
  * http://forum.worldofplayers.de/forum/showthread.php?p=13086904&#post13086904
- * где я рассматриваю, как научиться понимать парсер. */
+ * indem ich vorschlage, wie man den Parser verstehen lernen könnte. */
  
 const string PARSER_TOKEN_NAMES[246] = {
     "zPAR_OP_PLUS          ",

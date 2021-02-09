@@ -68,8 +68,8 @@ class zCMenu {
         var int m_listItems_numInArray;//int
     
     //[oCMenu_Status_only]
-    //oCMenu_Status это подкласс, который дополнительно содержит свойства:
-    //Чтобы не создавать отдельный класс ради этих свойств, см. ниже:
+    //oCMenu_Status ist eine Unterklasse und hat zusätzlich diese Eigenschaften:
+    //Hab mir gespart dafür nochmal eine Extraklasse zu schreiben, für diese Eigenschaften, siehe unten:
     
     //zCArray <oSMenuInfoAttribute> m_listAttributes;   
         var int m_listAttributes_array;     //oSMenuInfoAttribute*
@@ -87,7 +87,7 @@ class zCMenu {
     //[/oCMenu_Status_only]
 };
 
-//Спасибо Nico за следующие три класса:
+//Danke an Nico für die folgenden drei Klassen:
 class oSMenuInfoAttribute {
     var string Name;
     var string Description;
@@ -110,12 +110,12 @@ class oSMenuInfoArmor {
 
 //#################################################################
 //
-//  zCView: Основа для большинства отображаемых элементов
+//  zCView: Basis für viele Anzeigeelemente
 //
 //#################################################################
 
 //------------------------------------------------
-//  Строка текста для zCView:
+//  Textzeile von zCView:
 //------------------------------------------------
 
 class zCViewText {
@@ -124,33 +124,34 @@ class zCViewText {
 	var int posx;
 	var int posy;
 	
-	var string text;	//zSTRING //Ключевое свойство.
+	var string text;	//zSTRING //Die Entscheidende Eigenschaft.
 	var int font;		//zCFont*
-	var int timer;		//zREAL //оставшееся время для PrintScreen, в течение которого текст будет отображаться?
-	var int inPrintWin; //zBOOL //вероятно, для отображения через "Print", чтобы поднимать текст вверх.
+	var int timer;		//zREAL //übrige Zeit für PrintScreen anzeigen die nur eine bestimmte Zeit dauern?
+	var int inPrintWin; //zBOOL //vermutlich für anzeigen mit "Print", die nach oben weggeschoben werden.
 
 	var int color;		//zCOLOR
 	var int timed;		//zBOOL
-	var int colored;	//zBOOL		//звучит интересно. Возможно, вы начнете с этого.
+	var int colored;	//zBOOL		//klingt interessant. Vielleicht kann man hiermit was anfangen.
 };
 
-//См. константы адресов для доступа к глобальному экрану zCView.
+//siehe Konstanten für Adresse vom globalen zCView screen.
 
-/* zCViews инкапсулирует двумерные объекты, отображаемые на экране.
- * Например, текст или пункты меню.
+/* zCViews kapseln zweidimensionale Objekte auf dem Bildschirm.
+ * Dazu zählen zum Beispiel Texte oder Menüelemente.
  * 
- * Для пунктов меню:
- * -Каждый пункт меню генерируется при первом обращении к нему. После этого он сохраняется до выхода из Готики.
- * -Каждый пункт меню сохраняет свой текст в zCMenuItem.m_listLines.
- * -Если в пункте меню должно что-то отображаться, он создает внутреннее окно "InnerWindow" и сохраняет ссылку на него в zCMenuItem.m_pInnerWindow.
- * -Каждое InnerWindow - это тоже zCView, и оно получает копию текста для отображения в пункте меню.
- * -Само InnerWindow сохраняет все свои строки текста (обычно одну) в zCView.textLines. "Нулевой" элемент такого списка всегда пуст.
- * -Текст из InnerWindow перерисовывается в каждом кадре. Как только пункт меню решает, что он больше не должен отображаться, InnerWindow уничтожается.
+ * Bei Menüelemente verhält es sich so:
+ * -Ein Menüelement wird generiert, wenn es das erste mal gebraucht wird. Es lebt dann bis zum beenden von Gothic.
+ * -Ein Menüelement speichert den Text, der zu ihm gehört in zCMenuItem.m_listLines.
+ * -Sobald ein Menüelement etwas anzeigen muss, erzeugt es ein "InnerWindow" um speichert sich eine Referenz
+ *  auf dieses InnerWindow in zCMenuItem.m_pInnerWindow.
+ * -Das InnerWindow ist ein zCView und bekommt eine Kopie des anzuzeigenden Textes vom Menüelement.
+ * -Das InnerWindow speichert sich alle Textzeilen (meistens eine) in zCView.textLines. Das "nullte" Element von solchen Liste bleibt stets leer.
+ * -Der Text wird vom InnerWindow dann in jedem Frame gezeichnet. Sobald das Menüitem entscheidet, dass es nichts mehr anzeigen muss wird das InnerWindow zerstört.
  */
 
 class zCView {
     var int _vtbl;
-    var int _zCInputCallBack_vtbl; //Еще одна _vtbl, т.к. zCView является наследником двух классов.
+    var int _zCInputCallBack_vtbl; //Noch eine _vtbl, weil zCView von zwei Klassen erbt.
     
     /*
     enum zEViewFX
@@ -183,7 +184,7 @@ class zCView {
     var int color;                  //zCOLOR b, g, r, a
     var int alpha;                  //int
 
-    // Дочерние zCView
+    // Childs
     //zList <zCView>            childs
         var int childs_compare;        //(*Compare)(zCView *ele1,zCView *ele2)
         var int childs_count;          //int
@@ -193,29 +194,29 @@ class zCView {
     var int owner;              //zCView*
     var int backTex;            //zCTexture*
 
-    //В меню часто используются виртуальные координаты.
+    //Das Menüzeug nutzt oft virtuelle Koordinaten.
     var int vposx;              //int
     var int vposy;              //int
     var int vsizex;             //int
     var int vsizey;             //int
     
-    //А это "реальные" координаты в пикселях
+    //Aber auch "echt" Pixelpositionen
     var int pposx;              //int
     var int pposy;              //int
     var int psizex;             //int
     var int psizey;             //int
 
-    //Шрифт
+    //Font
     var int font;               //zCFont*
     var int fontColor;          //zCOLOR
     
-    //Текстовое окно:
+    //Das Textfenster:
     var int px1;                //int
     var int py1;                //int
     var int px2;                //int
     var int py2;                //int
     
-    var int winx;               //int // Координаты в Text-Win
+    var int winx;               //int // Position in Text-Win
     var int winy;               //int
     
     //zCList <zCViewText>       textLines;
@@ -319,7 +320,7 @@ class zCMenuItem {
     var int zCView_posOpenClose_0[2];
     var int zCView_posOpenClose_1[2];
     
-    //Parser Start	//начало парсера
+    //Parser Start
     
     var string m_parFontName;                            //zSTRING 
     var string m_parText            [MAX_USERSTRINGS];   //zSTRING 
@@ -348,7 +349,7 @@ class zCMenuItem {
     var string m_parHideIfOptionSet;                     //zSTRING  
     var int m_parHideOnValue;                            //int      
     
-    //Parser End	//конец парсера
+    //Parser End
     
     var int m_iRefCtr;                //int                      
     var int m_pInnerWindow;           //zCView*               
@@ -385,14 +386,14 @@ class zCMenuItem {
 
 //#################################################################
 //
-//  Тоже zCView, но с отличиями:
+//  Auch ein zCView, aber ein anderes:
 //
 //#################################################################
 
 class oCViewStatusBar
 {
     var int zCView__vtbl;
-    var int _zCInputCallBack_vtbl;
+    var int zCInputCallBack_vtbl;    // Previously _zCInputCallBack_vtbl !
     var int zCView_m_bFillZ;    
     var int zCView_next;        
     var int zCView_viewID;      
@@ -463,17 +464,17 @@ class oCViewStatusBar
 
 //#################################################################
 //
-//  Вероятно, довольно бесполезный, сначала я думал этот класс
-//  окажется более важным. Все важные элементы,
-//  такие как меню персонажа, отображаются в обычных
-//  zCMenuItems. zCMenuItemText (без исключений) используется
-//  для прямоугольников выделения (в настройках: выбор [да|нет])
+//  Vermutlich ziemlich nutzlos, ich dachte zunächst die Klasse
+//  wäre wichtiger. Alles entscheidende spielt sich
+//  zumindest was das Charaktermenü angeht in den gewöhnlichen
+//  zCMenuItems ab. zCMenuItemText wird (nicht ausschließlich)
+//  für Auswahlboxen benutzt (In den Einstellungen: [ja|nein]-Box)
 //
 //#################################################################
 
 class zCMenuItemText {
 	var int zCView__vtbl;
-    var int _zCInputCallBack_vtbl;
+    var int zCInputCallBack_vtbl;    // Previously _zCInputCallBack_vtbl !
     var int zCView_m_bFillZ;    
     var int zCView_next;        
     var int zCView_viewID;      
@@ -592,7 +593,7 @@ class zCMenuItemText {
     var int m_mode; //siehe enum
 
 	var string m_fullText;		//zSTRING
-	var int	m_numOptions;	    //int //Относится к меню со списком выбора, где можно, например выбрать "вкл." или "выкл."
+	var int	m_numOptions;	    //int //Relevant für Options-Menüitems wo man zum Beispiel zwischen "aus" und "an" wählen kann.
 
 	var int m_topLine;          //int		 
 	var int m_viewLines;        //int		 

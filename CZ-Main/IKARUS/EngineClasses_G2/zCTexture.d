@@ -88,7 +88,7 @@ class zCTex_D3D {
       var int _zCTexture_numAniFrames[3];
       var int _zCTexture_bitfield;
     
-    var int xtex_textureflag; //обычно равно 0xDEADFACE
+    var int xtex_textureflag; //tends to be 0xDEADFACE
     var int bitfield;
 
     //zCTextureInfo xtex_texinfo
