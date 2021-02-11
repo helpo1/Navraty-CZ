@@ -300,6 +300,11 @@ func void B_PlayerFindItem - upraveny výpisy
 /*   (...)\Story\B_Story\b_gettime.d   */
 
 
+v1.02:
+
+CZ_GDRPC_update - volání přesunuto do obecnější funkce
+
+
 v1.01:
 
 (2x) bHFTStatus - přidání indikace hladu/žízně/únavy na nižších obtížnostech
@@ -1561,10 +1566,16 @@ func void print_campinfo - přidán Bilgot jako lovec (kvůli úpravám úkolů 
 /*   (...)\_misk_\startup_addon_part_adanostemple_01.d   */
 
 
+v1.02:
+
+startup_global - odstraněna zbytečná volání některých funkcí a resetování proměnných
+init_global - přidána inicializace balíčku LeGo a modulů EnhancedInfoManager / PickLockHelper z AF Script Packetu
+
+
 v1.01:
 
 (2x) CZ_Settings_Diff_Update - přidána aktualizace nastavení obtížnosti z / do .ini souboru
-(2x) CZ_Settings_Other_Init() - přidána inicializace ostatních nastavení z / do .ini souboru
+(2x) CZ_Settings_Other_Init - přidána inicializace ostatních nastavení z / do .ini souboru
 (2x) GamblingAntiCheat_CZ - přidán anti-savescumming systém pro kostky (po vzoru Fallout: New Vegas)
 
 

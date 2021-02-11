@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+CZ_GDRPC_update - volání přesunuto do obecnější funkce
+
+
 v1.01:
 
 (2x) bHFTStatus - přidání indikace hladu/žízně/únavy na nižších obtížnostech
@@ -1933,11 +1938,6 @@ func void B_CheckAutoDismount()
 
 func void View_Current_Hour()
 {
-
-	if(Menu_ReadInt("CZ_SETTINGS_OTHER","OutputGDRPC") == TRUE)
-	{
-		CZ_GDRPC_update();
-	};
 
 	//-----------Obshchaya informatsiya---------------
 
@@ -16020,6 +16020,11 @@ func void GamePaused()
 	var int curmaxstam;
 	var int daynow;
 	var string concatText;
+
+	if(Menu_ReadInt("CZ_SETTINGS_OTHER","OutputGDRPC") == TRUE)
+	{
+		CZ_GDRPC_update();
+	};
 
 	if((MoreInfoOnScreen == TRUE) && (bHeroIsInCutscene == FALSE) && (HeroTrans == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (OptionCheck == FALSE) && (ShakoIsOn[0] == FALSE) && (HeroNotMobsi == FALSE) && (HeroIsDead == FALSE) && (CaptureCheat == TRUE) && (ENDGAMECREDITS == FALSE))
 	{

@@ -2,10 +2,16 @@
 
 /*
 
+v1.02:
+
+startup_global - odstraněna zbytečná volání některých funkcí a resetování proměnných
+init_global - přidána inicializace balíčku LeGo a modulů EnhancedInfoManager / PickLockHelper z AF Script Packetu
+
+
 v1.01:
 
 (2x) CZ_Settings_Diff_Update - přidána aktualizace nastavení obtížnosti z / do .ini souboru
-(2x) CZ_Settings_Other_Init() - přidána inicializace ostatních nastavení z / do .ini souboru
+(2x) CZ_Settings_Other_Init - přidána inicializace ostatních nastavení z / do .ini souboru
 (2x) GamblingAntiCheat_CZ - přidán anti-savescumming systém pro kostky (po vzoru Fallout: New Vegas)
 
 */
@@ -4412,21 +4418,24 @@ func void startup_global()
 	Game_InitGerman();
 	//Lego_Init(LeGo_FrameFunctions);
 	//init_once = 1;
-	
-	CZ_Settings_Diff_Update();
-	CZ_Settings_Other_Init();
-	GamblingAntiCheat_CZ = 300;
 };
 
 func void init_global()
 {
 	Game_InitGerman();
 
-	//if (!init_once)
-	//{
-	//	init_once = 1;
-	//	Lego_Init(LeGo_FrameFunctions);
-	//};  
+	if (!init_once)
+	{
+		init_once = 1;
+		Lego_Init(0);
+	};  
+	
+	InfoManagerNumKeysControls = TRUE;
+	InfoManagerNumKeysNumbers = TRUE;
+	InfoManagerSpinnerIndicatorAnimation = FALSE;
+	G12_EnhancedInfoManager_Init();
+	
+	G12_PickLockHelper_Init();
 	
 	CZ_Settings_Diff_Update();
 	CZ_Settings_Other_Init();
