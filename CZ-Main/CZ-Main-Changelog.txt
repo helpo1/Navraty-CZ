@@ -1662,6 +1662,13 @@ func int DIA_NONE_100_Xardas_WhyHere_condition - upraveny podmínky dialogu
 /*   (...)\_misk_\_czfuncs.d   */
 
 
+v1.02:
+
+ShowSkillChecks - deklarace nového .ini nastavení
+(20x) const int CZ_SKILL - deklarace nových konstant (kvůli skill checkům)
+CZ_SkillCheckPrefix, CZ_SkillCheckCondition - nové funkce
+
+
 v1.01a:
 
 (4x) CZ_Settings_Diff_Save, DiffInitialized - volání a inicializace integrovány do CZ_Settings_Diff_Init
