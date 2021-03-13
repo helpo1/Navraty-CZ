@@ -1,0 +1,3 @@
+[submodule "CZ-Main/AF-Script-Packet"]
+	path = CZ-Main/AF-Script-Packet
+	url = https://github.com/auronen/AF-Script-Packet
