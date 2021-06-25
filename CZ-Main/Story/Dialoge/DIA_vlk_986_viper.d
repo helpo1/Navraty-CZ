@@ -219,7 +219,7 @@ func void dia_viper_gettreasure_info()
 		AI_Output(other,self,"DIA_Viper_GetTreasure_01_09");	//Nedostal se z údolí a skřeti udělali své.
 		AI_Output(self,other,"DIA_Viper_GetTreasure_01_10");	//Chudák, chudák Aleph... Kdo by si to pomyslel (smutný)!
 		AI_Output(other,self,"DIA_Viper_GetTreasure_01_11");	//Vzal jsem si jeho díl.
-		AI_Output(self,other,"DIA_Viper_GetTreasure_01_12");	//Když je Aleph mrtví, nejsem proti. Zasloužíš si to!
+		AI_Output(self,other,"DIA_Viper_GetTreasure_01_12");	//Když je Aleph mrtvý, nejsem proti. Zasloužíš si to!
 
 		if(SNIPSGETNUGGETS == TRUE)
 		{
