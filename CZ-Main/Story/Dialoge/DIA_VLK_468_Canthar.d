@@ -143,7 +143,7 @@ func void DIA_Canthar_Hallo_Info()
 		AI_Output(other,self,"DIA_Canthar_Hallo_15_02");	//Možná.
 		AI_Output(self,other,"DIA_Canthar_Hallo_09_03");	//Hm! (odfrkne) Vypadáš jako uprchlík. Všichni uprchlíci chtějí do města.
 		AI_Output(self,other,"DIA_Canthar_Hallo_09_04");	//Možná že jsi dokonce bývalý trestanec z Hornického údolí.
-		AI_Output(self,other,"DIA_Canthar_Hallo_09_05");	//Je mi jedno odkud jsi. Ale věřím, že pro tebe mám velmi zajímavou nabídku...
+		AI_Output(self,other,"DIA_Canthar_Hallo_09_05");	//Je mi jedno odkud jsi, ale věřím, že pro tebe mám velmi zajímavou nabídku...
 		Canthar_GotMe = TRUE;
 	}
 	else if(Hlp_IsItem(itm,ITAR_Bau_L) || Hlp_IsItem(itm,ITAR_Bau_M))
@@ -151,7 +151,7 @@ func void DIA_Canthar_Hallo_Info()
 		AI_Output(self,other,"DIA_Canthar_HelloArmor_09_06");	//Jak jde práce, rolníku?
 		Info_ClearChoices(DIA_Canthar_Hallo);
 		Info_AddChoice(DIA_Canthar_Hallo,"Vypadám snad jako rolník?",DIA_Canthar_Hallo_NoBauer);
-		Info_AddChoice(DIA_Canthar_Hallo,"Nemůžu se stěžovat.",DIA_Canthar_Hallo_Bauer);
+		Info_AddChoice(DIA_Canthar_Hallo,"Nemůžu si stěžovat.",DIA_Canthar_Hallo_Bauer);
 	}
 	else
 	{
@@ -218,7 +218,7 @@ func void DIA_Canthar_WhatOffer_Info()
 		Info_ClearChoices(DIA_Canthar_WhatOffer);
 		Info_AddChoice(DIA_Canthar_WhatOffer,"Ne, nech si ten papír pro sebe.",DIA_Canthar_WhatOffer_No);
 		Info_AddChoice(DIA_Canthar_WhatOffer,"Co za to chceš?",DIA_Canthar_WhatOffer_Price);
-		Info_AddChoice(DIA_Canthar_WhatOffer,"A jak ty se dostaneš do města?",DIA_Canthar_WhatOffer_HowYouIn);
+		Info_AddChoice(DIA_Canthar_WhatOffer,"A jak se ty dostaneš do města?",DIA_Canthar_WhatOffer_HowYouIn);
 		Info_AddChoice(DIA_Canthar_WhatOffer,"V čem je háček?",DIA_Canthar_WhatOffer_Strings);
 	}
 	else
@@ -247,9 +247,9 @@ func void DIA_Canthar_WhatOffer_Price()
 	AI_Output(self,other,"DIA_Canthar_WhatOffer_Price_09_01");	//JÁ VĚDĚL, že ty jsi ten pravý!
 	AI_Output(self,other,"DIA_Canthar_WhatOffer_Price_09_02");	//Takže poslouchej. Dostaneš teď ode mě tu propustku.
 	AI_Output(other,self,"DIA_Canthar_WhatOffer_Price_15_03");	//Jen tak?
-	AI_Output(self,other,"DIA_Canthar_WhatOffer_Price_09_04");	//Jen tak. ALE: až tě potkám ve městě, budeš mi dlužit jednu laskavost.
+	AI_Output(self,other,"DIA_Canthar_WhatOffer_Price_09_04");	//Jen tak. ALE až tě potkám ve městě, budeš mi dlužit jednu laskavost.
 	AI_Output(self,other,"DIA_Canthar_WhatOffer_Price_09_05");	//Dohodnuto?
-	Info_AddChoice(DIA_Canthar_WhatOffer,"Jasně - dej to sem.",DIA_Canthar_WhatOffer_Ok);
+	Info_AddChoice(DIA_Canthar_WhatOffer,"Jasně, dej to sem.",DIA_Canthar_WhatOffer_Ok);
 };
 
 func void DIA_Canthar_WhatOffer_Ok()
@@ -258,8 +258,8 @@ func void DIA_Canthar_WhatOffer_Ok()
 	AI_Output(self,other,"DIA_Canthar_WhatOffer_Ok_09_01");	//Tady ji máš. Ale dej si pozor, je to velice cenný papír.
 	CreateInvItems(self,ItWr_Passierschein,1);
 	B_GiveInvItems(self,other,ItWr_Passierschein,1);
-	AI_Output(self,other,"DIA_Canthar_WhatOffer_Ok_09_02");	//Ještě něco: Ať tě ani nenapadne mě podrazit!
-	AI_Output(self,other,"DIA_Canthar_WhatOffer_Ok_09_03");	//Jakožto obchodník mím docela velký vliv ve městě - nelíbilo by se ti to.
+	AI_Output(self,other,"DIA_Canthar_WhatOffer_Ok_09_02");	//Ještě něco. Ať tě ani nenapadne mě podrazit!
+	AI_Output(self,other,"DIA_Canthar_WhatOffer_Ok_09_03");	//Jakožto obchodník mám docela velký vliv ve městě, nelíbilo by se ti to.
 	Canthar_Gefallen = TRUE;
 	Info_ClearChoices(DIA_Canthar_WhatOffer);
 	Log_CreateTopic(TOPIC_City,LOG_MISSION);
@@ -528,7 +528,7 @@ func void DIA_Canthar_Again_Info()
 
 	if(MIS_Canthars_KomproBrief == LOG_FAILED)
 	{
-		AI_Output(other,self,"DIA_Canthar_Again_15_01");	//Jakt to, že nejsi ve vězení?
+		AI_Output(other,self,"DIA_Canthar_Again_15_01");	//Jak to, že nejsi ve vězení?
 		AI_Output(self,other,"DIA_Canthar_Again_09_02");	//Pustili mě. Já ti říkal, že mám ve městě značný vliv.
 	}
 	else if(MIS_Canthars_KomproBrief == LOG_Running)
@@ -680,7 +680,7 @@ func void dia_canthar_killnow_info()
 	AI_Output(other,self,"DIA_Canthar_KillNow_01_02");	//Brzy zemřeš.
 	AI_Output(self,other,"DIA_Canthar_KillNow_01_03");	//Cože?! (směje se) Proč si to myslíš?
 	AI_Output(self,other,"DIA_Canthar_KillNow_01_05");	//Co jsi zač, nějaký věštec? (směje se)
-	AI_Output(other,self,"DIA_Canthar_KillNow_01_12");	//Ne nedělám, Canthare. Někteří lidé si přejí tvou smrt.
+	AI_Output(other,self,"DIA_Canthar_KillNow_01_12");	//Ne, nejsem Canthare. Někteří lidé si přejí tvou smrt.
 	AI_Output(self,other,"DIA_Canthar_KillNow_01_15");	//Zatraceně! (vyděšeně) Co to má znamenat? Stráže!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_ReactToWeapon,0);
