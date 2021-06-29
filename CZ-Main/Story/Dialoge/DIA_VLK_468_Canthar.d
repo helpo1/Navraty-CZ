@@ -237,7 +237,7 @@ func void DIA_Canthar_WhatOffer_Strings()
 
 func void DIA_Canthar_WhatOffer_HowYouIn()
 {
-	AI_Output(other,self,"DIA_Canthar_WhatOffer_HowYouIn_15_00");	//A jak ty se dostaneš do města?
+	AI_Output(other,self,"DIA_Canthar_WhatOffer_HowYouIn_15_00");	//A jak se ty dostaneš do města?
 	AI_Output(self,other,"DIA_Canthar_WhatOffer_HowYouIn_09_01");	//Stráže mě znají. Prostě řeknu, že jsem svou propustku ztratil.
 };
 
