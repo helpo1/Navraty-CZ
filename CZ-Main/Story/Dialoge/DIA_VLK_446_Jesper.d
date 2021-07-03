@@ -188,7 +188,7 @@ func int DIA_Jesper_Bezahlen_Condition()
 func void DIA_Jesper_Bezahlen_Info()
 {
 	AI_Output(other,self,"DIA_Jesper_Bezahlen_15_00");	//Můžeš mě něčemu naučit?
-	AI_Output(self,other,"DIA_Jesper_Bezahlen_09_01");	//Jasně, ukážu ti, jak se plížit - pro tebe zadarmo.
+	AI_Output(self,other,"DIA_Jesper_Bezahlen_09_01");	//Jasně. Ukážu ti, jak se plížit - pro tebe zadarmo.
 	Jesper_TeachSneak = TRUE;
 };
 
@@ -372,13 +372,13 @@ func void DIA_Jesper_Quest_info()
 {
 	AI_Output(self,other,"DIA_Jesper_Quest_01_00");	//Chlape, měl bys udělat další dobrý skutek.
 	AI_Output(other,self,"DIA_Jesper_Quest_01_01");	//Co bys potřeboval?
-	AI_Output(self,other,"DIA_Jesper_Quest_01_02");	//Vyběhni nahoru po schodech a řekni těm muzikantům aby zahrali něco veselého.
+	AI_Output(self,other,"DIA_Jesper_Quest_01_02");	//Vyběhni nahoru po schodech a řekni těm muzikantům aby zahráli něco veselého.
 	AI_Output(self,other,"DIA_Jesper_Quest_01_03");	//Nebo tady brzo umřu úzkostí.
 	AI_Output(other,self,"DIA_Jesper_Quest_01_04");	//Neboj, nenechám tě umřít.
 	MIS_JESPERMUSIC = LOG_Running;
 	Log_CreateTopic(TOPIC_JESPERMUSIC,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_JESPERMUSIC,LOG_Running);
-	B_LogEntry(TOPIC_JESPERMUSIC,"Jesper po mě chce abych šel nahoru a řekl těm muzikantům aby zahráli něco veselého. Měl bych si pospíšit, než skončí představení.");
+	B_LogEntry(TOPIC_JESPERMUSIC,"Jesper po mě chce, abych šel nahoru a řekl těm muzikantům, aby zahráli něco veselého. Měl bych si pospíšit, než skončí představení.");
 };
 
 instance DIA_Jesper_Quest_Done(C_Info)
@@ -411,7 +411,7 @@ func void DIA_Jesper_Quest_Done_info()
 	MIS_JESPERMUSIC = LOG_SUCCESS;
 	IS_INEXTREMO_PLAYING = FALSE;
 	Log_SetTopicStatus(TOPIC_JESPERMUSIC,LOG_SUCCESS);
-	B_LogEntry(TOPIC_JESPERMUSIC,"Jesperovi se líbí hudba co se teď hraje na náměstí.");
+	B_LogEntry(TOPIC_JESPERMUSIC,"Jesperovi se líbí hudba, co se teď hraje na náměstí.");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Dance");
 };
@@ -769,7 +769,7 @@ func void DIA_Jesper_TRADE_DHT_6()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Jesper_TRADE_DHT_5_01_03");	//Za prvé, chci vidět moje zlato kamaráde.
+			AI_Output(self,other,"DIA_Jesper_TRADE_DHT_5_01_03");	//Za prvé chci vidět moje zlato kamaráde.
 		};
 	}
 	else
