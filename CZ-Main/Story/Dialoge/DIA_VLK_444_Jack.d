@@ -856,7 +856,7 @@ instance DIA_Jack_DiscoverLH(C_Info)
 	nr = 5;
 	condition = DIA_Jack_DiscoverLH_Condition;
 	information = DIA_Jack_DiscoverLH_Info;
-	description = "Počul si už o pirátovi menom Kelevra?";
+	description = "Slyšel si už o pirátovi se jménem Kelevra?";
 };
 
 func int DIA_Jack_DiscoverLH_Condition()
@@ -870,12 +870,12 @@ func int DIA_Jack_DiscoverLH_Condition()
 func void DIA_Jack_DiscoverLH_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Jack_DiscoverLH_01_00");	//Počul si už o pirátovi menom Kelevra?
-	AI_Output(self,other,"DIA_Jack_DiscoverLH_01_01");	//Ešte som o ňom nepočul.
-	AI_Output(self,other,"DIA_Jack_DiscoverLH_01_02");	//A celkovo s pirátmi sa snažím nemať nič spoločné.
-	AI_Output(other,self,"DIA_Jack_DiscoverLH_01_03");	//Chápem.
+	AI_Output(other,self,"DIA_Jack_DiscoverLH_01_00");	//Slyšel si už o pirátovi se jménem Kelevra?
+	AI_Output(self,other,"DIA_Jack_DiscoverLH_01_01");	//Ještě jsem o něm neslyšel.
+	AI_Output(self,other,"DIA_Jack_DiscoverLH_01_02");	//A celkově se snažím nemít s piráty nic společného.
+	AI_Output(other,self,"DIA_Jack_DiscoverLH_01_03");	//Chápu.
 	CanGoGreg = TRUE;
-	B_LogEntry(TOPIC_HauntedLighthouse,"Jack o Kelevrovi nič nevie. Možno by som sa mal spýtať samotných pirátov?");
+	B_LogEntry(TOPIC_HauntedLighthouse,"Jack o Kelevrovi nic neví. Možná bych se měl zeptat samotných pirátů?");
 };
 
 instance DIA_Jack_GotPirate(C_Info)
@@ -884,7 +884,7 @@ instance DIA_Jack_GotPirate(C_Info)
 	nr = 5;
 	condition = DIA_Jack_GotPirate_Condition;
 	information = DIA_Jack_GotPirate_Info;
-	description = "Ahoj Jack.";
+	description = "Ahoj Jacku.";
 };
 
 func int DIA_Jack_GotPirate_Condition()
@@ -898,15 +898,15 @@ func int DIA_Jack_GotPirate_Condition()
 func void DIA_Jack_GotPirate_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Jack_GotPirate_01_00");	//Alebo ti mám hovoriť Kelevra?
-	AI_Output(self,other,"DIA_Jack_GotPirate_01_01");	//Čo?
-	AI_Output(other,self,"DIA_Jack_GotPirate_01_02");	//Neskúšaj to poprieť. Greg mi všetko povedal.
-	AI_Output(self,other,"DIA_Jack_GotPirate_01_03");	//Zatraceně! ... Och... A čo?
-	AI_Output(other,self,"DIA_Jack_GotPirate_01_04");	//Vyzerá to, že nie si úplne obyčajný muž ako vyzeráš.
-	AI_Output(self,other,"DIA_Jack_GotPirate_01_05");	//O čo ti ide?
-	AI_Output(other,self,"DIA_Jack_GotPirate_01_06");	//Myslím, že vieš kam tým smerujem. Nakoniec, bol si to ty, kto zabil Stefana aj napriek tomu, že ti zachránil život.
-	AI_Output(self,other,"DIA_Jack_GotPirate_01_07");	//Bodaj by si zhorel v plameňoch Beliara! Odkial to všetko vieš? To ti povedal Greg?
-	AI_Output(other,self,"DIA_Jack_GotPirate_01_08");	//Povedal mi to správca, ktorého si zabil len preto, že ti nechcel dať loď.
+	AI_Output(other,self,"DIA_Jack_GotPirate_01_00");	//Nebo ti mám říkat Kelevra?
+	AI_Output(self,other,"DIA_Jack_GotPirate_01_01");	//Co?
+	AI_Output(other,self,"DIA_Jack_GotPirate_01_02");	//Nezkoušej to popřít. Greg mi všechno pověděl.
+	AI_Output(self,other,"DIA_Jack_GotPirate_01_03");	//Zatraceně! ... Och... A co?
+	AI_Output(other,self,"DIA_Jack_GotPirate_01_04");	//Vypadá to, že nejsi úplně obyčejný muž, jak vypadáš.
+	AI_Output(self,other,"DIA_Jack_GotPirate_01_05");	//O co ti jde?
+	AI_Output(other,self,"DIA_Jack_GotPirate_01_06");	//Myslím, že vím kam tím směřujeme. Nakonec, byl si to ty, kdo zabil Štěpána, i když ti zachránil život.
+	AI_Output(self,other,"DIA_Jack_GotPirate_01_07");	//Jen aby si zhořel v plamenech Beliara! Odkud to všechno víš? To ti pověděl Greg?
+	AI_Output(other,self,"DIA_Jack_GotPirate_01_08");	//Pověděl mi to správce, kterého si zabil jen proto, že ti nechtěl dát loď.
 	AI_Output(self,other,"DIA_Jack_GotPirate_01_09");	//Áno, zabil som ho! Tak čo teraz? Zabiješ ma? Do toho! Ešte teraz mi to nedáva spať.
 	AI_Output(self,other,"DIA_Jack_GotPirate_01_10");	//Po tom, ako sa to stalo som skončil s pirátstvom a usadil som sa na pobreží a začal som pracovať ako správca majáku.
 	AI_Output(other,self,"DIA_Jack_GotPirate_01_11");	//Ja ťa nezabijem. Mám lepší nápad. Pomožeš mi zdvihnúť kliatbu z majáku.
