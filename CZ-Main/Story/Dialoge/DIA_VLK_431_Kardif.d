@@ -408,8 +408,8 @@ func void DIA_Addon_Kardif_MissingPeople_Info()
 		AI_Output(self,other,"DIA_Addon_Kardif_MissingPeople_14_02");	//Byli to lidé tady odtud z přístavu. Měl by ses tu projí a poptat se jich.
 		AI_Output(self,other,"DIA_Addon_Kardif_MissingPeople_14_03");	//Někteří popisovali nějaké případy v dolní čtvrti.
 		AI_Output(self,other,"DIA_Addon_Kardif_MissingPeople_14_04");	//Víc by ti poradil asi Coragon.
-		AI_Output(self,other,"DIA_Addon_Kardif_MissingPeople_14_05");	//Má hospodu v dolní čtvti, bude-li mít čas, určitě ti něco zajímavýho poví.
-		AI_Output(self,other,"DIA_Addon_Kardif_MissingPeople_14_06");	//Ještě je tu taky rybář Halvor, ten by také mohl něco vědět a řek bych, že se s tebou o to rád podělí.
+		AI_Output(self,other,"DIA_Addon_Kardif_MissingPeople_14_05");	//Má hospodu v dolní čtvti, bude-li mít čas. Určitě ti něco zajímavýho poví.
+		AI_Output(self,other,"DIA_Addon_Kardif_MissingPeople_14_06");	//Ještě je tu taky rybář Halvor, ten by také mohl něco vědět a řekl bych, že se s tebou o to rád podělí.
 		Log_CreateTopic(TOPIC_Addon_WhoStolePeople,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_Addon_WhoStolePeople,LOG_Running);
 		B_LogEntry(TOPIC_Addon_WhoStolePeople,"Kardif si myslí, že hospodský Coragon nebo přístavní rybář Halvor by mohli o hledaných lidech vědět víc.");
@@ -855,10 +855,10 @@ func void dia_kardif_permjob_info()
 {
 	AI_Output(other,self,"DIA_Kardif_PermJob_01_00");	//Máš pro mě nějakou práci?
 	AI_Output(self,other,"DIA_Kardif_PermJob_01_05");	//Opravdu by se mi teď hodil člověk na místo vyhazovače v mojí krčmě.
-	AI_Output(self,other,"DIA_Kardif_PermJob_01_06");	//Je to taková prašivá práce ale jsem za to ochotný zaplatit spusty peněz!
+	AI_Output(self,other,"DIA_Kardif_PermJob_01_06");	//Je to taková prašivá práce, ale jsem za to ochotný zaplatit spustu peněz!
 	AI_Output(self,other,"DIA_Kardif_PermJob_01_09");	//Gayvern žádné problémy nedělá, ale jsou tu i jiní.
 	AI_Output(self,other,"DIA_Kardif_PermJob_01_10");	//Jenže když se na tebe dívám...(zklamaně) stěží bych tě nazval drsňákem.
-	AI_Output(other,self,"DIA_Kardif_PermJob_01_12");	//Co musím udělat, abych vás přesvědčil o opaku?
+	AI_Output(other,self,"DIA_Kardif_PermJob_01_12");	//Co musím udělat, abych Vás přesvědčil o opaku?
 	AI_Output(self,other,"DIA_Kardif_PermJob_01_13");	//Hmmm...(zadumaně) Je to dobrá otázka! No, alespoň...
 	AI_Output(self,other,"DIA_Kardif_PermJob_01_14");	//Řekni mi, viděl jsi toho chlápka který stojí u vchodu do mé krčmy?
 	AI_Output(other,self,"DIA_Kardif_PermJob_01_15");	//Jo, myslíš Moea.
@@ -871,7 +871,7 @@ func void dia_kardif_permjob_info()
 	if(MOEISBEATEN == TRUE)
 	{
 		B_GivePlayerXP(200);
-		AI_Output(other,self,"DIA_Kardif_PermJob_01_22");	//Tak jsem si s ním povyrazil! Ukázalo se že je to slaboch.
+		AI_Output(other,self,"DIA_Kardif_PermJob_01_22");	//Tak jsem si s ním povyrazil! Ukázalo se, že je to slaboch.
 		AI_Output(self,other,"DIA_Kardif_PermJob_01_25");	//Ha, ha...(smích) No, pokud ano, pak stačí jít a říct mu že jestli ho tu někdy uvidím - dostane ještě více!
 		B_LogEntry(TOPIC_MOEBORED,"Slíbil jsem Kardifovi, že naučím Moea dobrým mravům.");
 	}
@@ -927,7 +927,7 @@ func void dia_kardif_permjobdone_info()
 		KARDIFPAYDAY = Wld_GetDay();
 		MIS_MOEBORED = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_MOEBORED,LOG_SUCCESS);
-		B_LogEntry(TOPIC_MOEBORED,"Kardif mi dal práci. Platí deset zlatcýh na den. Prostě se mám sem tam zastavit u něj, jestli nejsou potíže a vybrat si plat...");
+		B_LogEntry(TOPIC_MOEBORED,"Kardif mi dal práci. Platí deset zlatých na den. Prostě se mám sem tam zastavit u něj, jestli nejsou potíže a vybrat si plat...");
 		AI_StopProcessInfos(self);
 	}
 	else if(MOEBEATME == TRUE)
@@ -1031,11 +1031,11 @@ func int dia_kardif_buymeat_condition()
 func void dia_kardif_buymeat_info()
 {
 	AI_Output(other,self,"DIA_Kardif_BuyMeat_01_00");	//Mohl bych něco zařídit?
-	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_01");	//No, pokud chceš vydělat trochu víc, jdi na lov a přines mi nějaké syrové maso.
+	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_01");	//No, pokud chceš vydělat trochu víc. Jdi na lov a přines mi nějaké syrové maso.
 	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_02");	//A v poslední době jsem v krčmě měl hodně návštěvníků. Tady není nikdy dost!
 	AI_Output(other,self,"DIA_Kardif_BuyMeat_01_03");	//Jak moc jich budete potřebovat?
-	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_04");	//(zamyšleně) Asi každý den dvacet kusů.
-	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_05");	//Ale ne víc! Jinak nemám kam je uložit, a nakonec se to prostě zkazí.
+	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_04");	//(zamyšleně) Každý den asi dvacet kusů.
+	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_05");	//Ale ne víc! Jinak je nemám kam uložit, a nakonec se to prostě zkazí.
 	AI_Output(other,self,"DIA_Kardif_BuyMeat_01_06");	//Dobře. Co o mém platu?
 	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_07");	//Za každou várku jsem ochoten zaplatit sto mincí. Je mi líto, víc si nemůžu dovolit.
 	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_08");	//Stejně je to dvakrát víc než od jakéhokoliv obchodníka na náměstí.
@@ -1070,8 +1070,8 @@ func void DIA_Kardif_SellMeat_info()
 
 	if(KardifBuyMeatDay < Wld_GetDay())
 	{
-		AI_Output(self,other,"DIA_Kardif_SellMeat_01_01");	//Ano? Máte něco?
-		AI_Output(other,self,"DIA_KARDIF_SellMeat_01_02");	//Jistě, jak jste si přáli - dvacet kousků čerstvého masa.
+		AI_Output(self,other,"DIA_Kardif_SellMeat_01_01");	//Ano? Máš něco?
+		AI_Output(other,self,"DIA_KARDIF_SellMeat_01_02");	//Jistě, jak sis přál - dvacet kousků čerstvého masa.
 		B_GiveInvItems(other,self,ItFoMuttonRaw,20);
 		Npc_RemoveInvItems(self,ItFoMuttonRaw,20);
 		AI_Output(self,other,"DIA_KARDIF_SellMeat_01_03");	//Excelentní. Pro dnešek to bude stačit.
