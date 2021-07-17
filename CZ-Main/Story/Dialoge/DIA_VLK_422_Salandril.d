@@ -227,7 +227,7 @@ func int DIA_Salandril_KLOSTER_Condition()
 func void DIA_Salandril_KLOSTER_Info()
 {
 	AI_Output(other,self,"DIA_Salandril_KLOSTER_15_00");	//Teď se vyprav do kláštera - budeš souzen.
-	AI_Output(self,other,"DIA_Salandril_KLOSTER_13_01");	//Cože? To jako abych zvednul zadek? Houby s octem! Ti mizerní mágové proti mne nemají jediný důkaz!
+	AI_Output(self,other,"DIA_Salandril_KLOSTER_13_01");	//Cože? To jako abych zvednul zadek? Houby s octem! Ti mizerní mágové proti mně nemají jediný důkaz!
 
 	if((hero.guild == GIL_KDF) && (SC_KnowsProspektorSalandril == TRUE))
 	{
@@ -249,7 +249,7 @@ instance DIA_Salandril_GehinsKloster(C_Info)
 	nr = 2;
 	condition = DIA_Salandril_GehinsKloster_Condition;
 	information = DIA_Salandril_GehinsKloster_Info;
-	description = "Tak půjdeš teď do toho kláštera, nebo chceš ještě jednu?";
+	description = "Tak půjdeš do toho kláštera, nebo chceš ještě jednu?";
 };
 
 func int DIA_Salandril_GehinsKloster_Condition()
@@ -262,7 +262,7 @@ func int DIA_Salandril_GehinsKloster_Condition()
 
 func void DIA_Salandril_GehinsKloster_Info()
 {
-	AI_Output(other,self,"DIA_Salandril_GehinsKloster_15_00");	//Tak půjdeš teď do toho kláštera, nebo chceš ještě jednu?
+	AI_Output(other,self,"DIA_Salandril_GehinsKloster_15_00");	//Tak půjdeš do toho kláštera, nebo chceš ještě jednu?
 	AI_Output(self,other,"DIA_Salandril_GehinsKloster_13_01");	//Toho budeš litovat. Jo, ksakru, půjdu do toho pitomýho kláštera, ale nemysli si, že je to vyřízené.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"KlosterUrteil");
@@ -441,7 +441,7 @@ func void dia_salandril_taliasanletter_info()
 	AI_Output(other,self,"DIA_Salandril_TaliasanLetter_01_14");	//Mno, kvůli Lariusovi.
 	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_20");	//Asi máš pravdu... (zaskočen) Dobrá, napíši to doporučení.
 	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_21");	//Ale budu za to chtít menší službu.
-	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_24");	//Nic nemožného. Prostě mi seženeš jednu věc a já ti dám ten dopis.
+	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_24");	//Nic nemožného. Prostě mi seženeš jeden lektvar a já ti dám ten dopis.
 	AI_Output(other,self,"DIA_Salandril_TaliasanLetter_01_32");	//A?
 	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_33");	//Údajně tento lektvar skřeti používají ke zvýšení síly a vytrvalosti.
 	AI_Output(self,other,"DIA_Salandril_TaliasanLetter_01_34");	//Takže se k němu dostaneš asi jen u skřeta...
@@ -481,7 +481,7 @@ func void dia_salandril_givepotion_info()
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Salandril_GivePotion_01_00");	//Mám ten skřetí lektvar.
 	AI_Output(self,other,"DIA_Salandril_GivePotion_01_01");	//Opravdu?!... Ukaž!
-	AI_Output(other,self,"DIA_Salandril_GivePotion_01_02");	//Tady! Patřil jednomu skřetů.
+	AI_Output(other,self,"DIA_Salandril_GivePotion_01_02");	//Tady! Patřil jednomu skřetovi.
 	B_GiveInvItems(other,self,itpo_xorcpotion,1);
 	Npc_RemoveInvItems(self,itpo_xorcpotion,1);
 	AI_Output(self,other,"DIA_Salandril_GivePotion_01_03");	//Bezva! Nyní můžu studovat jeho strukturu!
@@ -491,7 +491,7 @@ func void dia_salandril_givepotion_info()
 	AI_Output(self,other,"DIA_Salandril_GivePotion_01_09");	//Nádhera! A teď odpusť, jdu studovat ten elixír!
 	MIS_SALANDRILHELP = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_SALANDRILHELP,LOG_SUCCESS);
-	B_LogEntry(TOPIC_SALANDRILHELP,"Donesl jsem Salandrilovi ten lektvar a on mi dal dopis s doporučením Gallahada.");
+	B_LogEntry(TOPIC_SALANDRILHELP,"Donesl jsem Salandrilovi ten lektvar a on mi dal dopis s doporučením pro Gallahada.");
 	AI_StopProcessInfos(self);
 };
 
@@ -516,15 +516,15 @@ func int dia_salandril_orcrum_condition()
 func void dia_salandril_orcrum_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Salandril_ORCRUM_01_00");	//Podívej co mám. Nejaký skřetí dryák.
+	AI_Output(other,self,"DIA_Salandril_ORCRUM_01_00");	//Podívej co mám. Nějaký skřetí dryák.
 	B_GiveInvItems(other,self,itfo_addon_orcrum,1);
 	Npc_RemoveInvItems(self,itfo_addon_orcrum,1);
-	AI_Output(self,other,"DIA_Salandril_ORCRUM_01_01");	//Také niečo som ešte nevidel. Nechaj mi ho tu a vráť sa za pár dní. Potrebujem čas na to aby som zistil čo to je.
+	AI_Output(self,other,"DIA_Salandril_ORCRUM_01_01");	//Něco takového jsem ještě neviděl. Nechej mi ho tu a vrať se za pár dní. Potřebuji čas na to, abych zjistil, co to je.
 	ORCRUMDAY = Wld_GetDay();
 	MIS_SALANDRILRESECH = LOG_Running;
 	Log_CreateTopic(TOPIC_SALANDRILRESECH,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SALANDRILRESECH,LOG_Running);
-	B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril sa snaží zistiť, na čo by ten skřetí dryák mohol byť. Mám sa vrátiť za pár dní.");
+	B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril sa snaží zjistiť, na co by ten skřetí dryák mohl být. Mám se vrátiť za pár dní.");
 };
 
 
@@ -535,7 +535,7 @@ instance DIA_SALANDRIL_ORCRUM2(C_Info)
 	condition = dia_salandril_orcrum2_condition;
 	information = dia_salandril_orcrum2_info;
 	permanent = FALSE;
-	description = "Tak na čo si prišiel?";
+	description = "Tak na co si přišel?";
 };
 
 func int dia_salandril_orcrum2_condition()
