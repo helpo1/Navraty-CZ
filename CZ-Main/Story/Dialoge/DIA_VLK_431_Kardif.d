@@ -1123,7 +1123,7 @@ func void DIA_VLK_431_Kardif_Game_info()
 	KardifPlayResult = 200;
 	Menu_WriteInt("AST","SysTimer01",0);
 	Log_CreateTopic(TOPIC_GameList,LOG_NOTE);
-	B_LogEntry(TOPIC_GameList,"Vypadá to, že s Kardiffem si můžu zahrát kostky. Asi bych toho mohl využít.");
+	B_LogEntry(TOPIC_GameList,"Vypadá to, že si s Kardiffem můžu zahrát kostky. Asi bych toho mohl využít.");
 };
 
 instance DIA_VLK_431_Kardif_WhatOth(C_Info)
@@ -1132,7 +1132,7 @@ instance DIA_VLK_431_Kardif_WhatOth(C_Info)
 	nr = 3;
 	condition = DIA_VLK_431_Kardif_WhatOth_condition;
 	information = DIA_VLK_431_Kardif_WhatOth_info;
-	description = "Neznáš někoho dalšího s kým bych si mohl zahrát?";
+	description = "Neznáš někoho dalšího, s kým bych si mohl zahrát?";
 };
 
 func int DIA_VLK_431_Kardif_WhatOth_condition()
@@ -1145,14 +1145,14 @@ func int DIA_VLK_431_Kardif_WhatOth_condition()
 
 func void DIA_VLK_431_Kardif_WhatOth_info()
 {
-	AI_Output(other,self,"DIA_VLK_431_Kardif_WhatOth_01_00");	//Neznáš někoho dalšího s kým bych si mohl zahrát?
+	AI_Output(other,self,"DIA_VLK_431_Kardif_WhatOth_01_00");	//Neznáš někoho dalšího, s kým bych si mohl zahrát?
 	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_01");	//Hmm... Takových není mnoho.
 	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_02");	//Jeden takový by mohl být alchymista Salandril. Najdeš ho v horní části města.
 	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_03");	//Krom něho je tu ještě Orlan - majitel hostince 'U Mrtvé harpyje'. Ten je vcelku dobrý.
 	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_04");	//Měl by si vidět, jak obírá své zákazníky i o poslední peníz. Dokonce i já se bojím s ním hrát.
 	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_05");	//Poslední z nich - Raul, žoldák z Onarovy farmy. On je fakt profesionál.
 	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_06");	//Nedoporučujem ti to s ním ani zkoušet, protože se ti může stát, že ti nezůstanou ani nohavice.
-	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_07");	//A to je všetko.
+	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_07");	//A to je všechno.
 	GameOtherPlayers = TRUE;
 	B_LogEntry(TOPIC_GameList,"Je tu víc hráčů, se kterými můžu hrát: Salandril, Orlan a Raul.");
 };
@@ -1212,16 +1212,16 @@ func void DIA_VLK_431_Kardif_GamePlay_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_VLK_431_Kardif_GamePlay_01_04");	//Naposledy si u mňa prehral vcelku dosť velkú čistku alebo si si myslel, že som na to zabudol?
-		AI_Output(self,other,"DIA_VLK_431_Kardif_GamePlay_01_05");	//Takže pokial ma nevyplatíš, nič sa hrať nebude.
+		AI_Output(self,other,"DIA_VLK_431_Kardif_GamePlay_01_04");	//Naposledy jsi u mě prohrál vcelku dost velkou částku nebo sis myslel, že jsem na to zapoměl?
+		AI_Output(self,other,"DIA_VLK_431_Kardif_GamePlay_01_05");	//Takže pokud mi nezaplatíš, nic se hrát nebude.
 		Info_ClearChoices(DIA_VLK_431_Kardif_GamePlay);
 
 		if(Npc_HasItems(other,ItMi_Gold) >= CheckLastSum)
 		{
-			Info_AddChoice(DIA_VLK_431_Kardif_GamePlay,"Tu sú tvoje prachy.",DIA_VLK_431_Kardif_GamePlay_Here);
+			Info_AddChoice(DIA_VLK_431_Kardif_GamePlay,"Tu jsou tvoje prachy.",DIA_VLK_431_Kardif_GamePlay_Here);
 		};
 
-		Info_AddChoice(DIA_VLK_431_Kardif_GamePlay,"Nemám dosť peňazí.",DIA_VLK_431_Kardif_GamePlay_No);
+		Info_AddChoice(DIA_VLK_431_Kardif_GamePlay,"Nemám dost peněz.",DIA_VLK_431_Kardif_GamePlay_No);
 	};
 };
 
@@ -1230,15 +1230,15 @@ func void DIA_VLK_431_Kardif_GamePlay_Here()
 	Snd_Play("Geldbeutel");
 	Npc_RemoveInvItems(hero,ItMi_Gold,CheckLastSum);
 	KardifPlayResult = CheckLastGame;
-	AI_Output(other,self,"DIA_VLK_431_Kardif_GamePlay_Here_01_01");	//Tu sú tvoje prachy.
-	AI_Output(self,other,"DIA_VLK_431_Kardif_GamePlay_Here_01_02");	//Dobre. Teraz možeš hrať...
+	AI_Output(other,self,"DIA_VLK_431_Kardif_GamePlay_Here_01_01");	//Tu jsou tvoje prachy.
+	AI_Output(self,other,"DIA_VLK_431_Kardif_GamePlay_Here_01_02");	//Dobře. Teď můžeme hrát...
 	PlayPocker(1,self);
 };
 
 func void DIA_VLK_431_Kardif_GamePlay_No()
 {
-	AI_Output(other,self,"DIA_VLK_431_Kardif_GamePlay_No_01_01");	//Nemám dosť peňazí.
-	AI_Output(self,other,"DIA_VLK_431_Kardif_GamePlay_No_01_02");	//Tak ich zožeň...
+	AI_Output(other,self,"DIA_VLK_431_Kardif_GamePlay_No_01_01");	//Nemám dost peněz.
+	AI_Output(self,other,"DIA_VLK_431_Kardif_GamePlay_No_01_02");	//Tak je sežeň...
 	Info_ClearChoices(DIA_VLK_431_Kardif_GamePlay);
 };
 
@@ -1264,12 +1264,12 @@ func void DIA_VLK_431_Kardif_GameEnd_info()
 {
 	if(KardifLost == TRUE)
 	{
-		AI_Output(self,other,"DIA_VLK_431_Kardif_GameEnd_00");	//Zatracene! Očividne toto nie je moj deň.
+		AI_Output(self,other,"DIA_VLK_431_Kardif_GameEnd_00");	//Zatraceně! Očividně toto není můj den.
 		KardifLost = FALSE;
 	}
 	else if(KardifWon == TRUE)
 	{
-		AI_Output(self,other,"DIA_VLK_431_Kardif_GameEnd_01");	//Vyzerá to, že šťastena je na mojej strane. Ale ak chceš, možeš to skúsiť znovu.
+		AI_Output(self,other,"DIA_VLK_431_Kardif_GameEnd_01");	//Vypadá to, že štěstěna je na mojí straně. Ale jak chceš, můžeš to zkusit znovu.
 		KardifWon = FALSE;
 	};
 
@@ -1282,7 +1282,7 @@ instance DIA_Kardif_DiscoverLH(C_Info)
 	nr = 5;
 	condition = DIA_Kardif_DiscoverLH_Condition;
 	information = DIA_Kardif_DiscoverLH_Info;
-	description = "Potrebujem poradiť.";
+	description = "Potřebuji poradit.";
 };
 
 func int DIA_Kardif_DiscoverLH_Condition()
@@ -1296,12 +1296,12 @@ func int DIA_Kardif_DiscoverLH_Condition()
 func void DIA_Kardif_DiscoverLH_Info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Kardif_DiscoverLH_01_00");	//Potrebujem poradiť.
-	AI_Output(self,other,"DIA_Kardif_DiscoverLH_01_01");	//Vždy rád pomožem, hlavne keď už si za to zaplatil.
-	AI_Output(other,self,"DIA_Kardif_DiscoverLH_01_02");	//Nevieš náhodou o niekom tu v prístave, kto by vedel niečo o pirátoch?
-	AI_Output(self,other,"DIA_Kardif_DiscoverLH_01_03");	//O pirátoch? Och, chlape, to neviem... Hmm... (zamyslene) Obávam sa, že nikto. Ale skús si pokecať s Jackom.
-	AI_Output(self,other,"DIA_Kardif_DiscoverLH_01_04");	//Je to starý námorník, videl toho vela, a pravdepodobne sa stretol aj s pirátmi.
-	AI_Output(other,self,"DIA_Kardif_DiscoverLH_01_05");	//ďakujem.
+	AI_Output(other,self,"DIA_Kardif_DiscoverLH_01_00");	//Potřebuji poradit.
+	AI_Output(self,other,"DIA_Kardif_DiscoverLH_01_01");	//Vždy rád pomůžu, hlavně když už si za to zaplatil.
+	AI_Output(other,self,"DIA_Kardif_DiscoverLH_01_02");	//Nevíš náhodou o někom tu v přístavu, kdo by věděl něco o pirátech?
+	AI_Output(self,other,"DIA_Kardif_DiscoverLH_01_03");	//O pirátech? Och, chlape, to nevím... Hmm... (zamyšleně) Obávam se, že nikdo. Ale zkus si pokecat s Jackem.
+	AI_Output(self,other,"DIA_Kardif_DiscoverLH_01_04");	//Je to starý námořník. Viděl toho hodně, a pravděpodobně se střetl i s piráty.
+	AI_Output(other,self,"DIA_Kardif_DiscoverLH_01_05");	//Děkuji.
 	KnowStoryDLH = TRUE;
-	B_LogEntry(TOPIC_HauntedLighthouse,"Kardiff povedal, že by som si mal o pirátoch pohovoriť s Jackom.");
+	B_LogEntry(TOPIC_HauntedLighthouse,"Kardiff mi pověděl, že bych si měl o pirátech popovídat s Jackem.");
 };
