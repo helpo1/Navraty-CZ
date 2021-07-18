@@ -549,13 +549,13 @@ func int dia_salandril_orcrum2_condition()
 func void dia_salandril_orcrum2_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Salandril_ORCRUM2_01_00");	//Tak na čo si prišiel?
-	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_01");	//Dryáku bolo strašne málo, takže mi vyšlo iba na základné testy.
-	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_02");	//Ale je jasné, že má zaujímavé a unikátne vlastnosti, ktoré odhalí len ďalší výskum.
-	AI_Output(other,self,"DIA_Salandril_ORCRUM2_01_04");	//Takže chceš aby som ti toho dryáku priniesol viac?
-	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_05");	//Pochopil si správne. Ak mi donesieš ďalších 10 flašiek, tak budem pokračovať vo výskume.
+	AI_Output(other,self,"DIA_Salandril_ORCRUM2_01_00");	//Tak na co si přišel?
+	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_01");	//Dryáku bylo strašně málo, takže jsem byl schopný udělat jen základní testy.
+	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_02");	//Ale je jasné, že má zajímavé a unikátní vlastnosti, které odhalí len další výzkum.
+	AI_Output(other,self,"DIA_Salandril_ORCRUM2_01_04");	//Takže chceš, abych ti toho dryáku přinesl víc?
+	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_05");	//Pochopil jsi to správně. Pokud mi doneseš dalších 10 flašek, tak budu pokračovat ve výzkumu.
 	SALFIRST = TRUE;
-	B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril chce aby som mu doniesol 10 flašiek toho skřetího dryáku.");
+	B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril chce, abych mu donesl 10 flašek toho skřetího dryáku.");
 };
 
 
@@ -566,7 +566,7 @@ instance DIA_SALANDRIL_ORCRUM3(C_Info)
 	condition = dia_salandril_orcrum3_condition;
 	information = dia_salandril_orcrum3_info;
 	permanent = FALSE;
-	description = "Mám tých 10 flaší.";
+	description = "Mám těch 10 flašek.";
 };
 
 func int dia_salandril_orcrum3_condition()
@@ -580,13 +580,13 @@ func int dia_salandril_orcrum3_condition()
 func void dia_salandril_orcrum3_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Salandril_ORCRUM3_01_00");	//Mám tých 10 flaší.
+	AI_Output(other,self,"DIA_Salandril_ORCRUM3_01_00");	//Mám těch 10 flašek.
 	B_GiveInvItems(other,self,itfo_addon_orcrum,10);
 	Npc_RemoveInvItems(self,itfo_addon_orcrum,10);
-	AI_Output(self,other,"DIA_Salandril_ORCRUM3_01_01");	//Perfektné. Takže moj výskum može pokračovať.
-	AI_Output(self,other,"DIA_Salandril_ORCRUM3_01_03");	//Vrát sa neskor a možno o tom dryáku budem vedieť viac.
+	AI_Output(self,other,"DIA_Salandril_ORCRUM3_01_01");	//Perfektní. Takže můj výzkum může pokračovat.
+	AI_Output(self,other,"DIA_Salandril_ORCRUM3_01_03");	//Vrať se později a možná o tom dryáku budu vědet víc.
 	SALANDRILRESECHPOTION = Wld_GetDay();
-	B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril dostal tých 10 flaší na výskum. Mám sa staviť neskor.");
+	B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril dostal těch 10 flašek na výzkum. Mám se zastavit později.");
 };
 
 
@@ -597,7 +597,7 @@ instance DIA_SALANDRIL_ORCRUM4(C_Info)
 	condition = dia_salandril_orcrum4_condition;
 	information = dia_salandril_orcrum4_info;
 	permanent = TRUE;
-	description = "Niečo nové?";
+	description = "Něco nového?";
 };
 
 func int dia_salandril_orcrum4_condition()
@@ -610,23 +610,23 @@ func int dia_salandril_orcrum4_condition()
 
 func void dia_salandril_orcrum4_info()
 {
-	AI_Output(other,self,"DIA_Salandril_ORCRUM4_01_00");	//Niečo nové?
+	AI_Output(other,self,"DIA_Salandril_ORCRUM4_01_00");	//Něco nového?
 
 	if((Kapitel >= 2) && (SALANDRILRESECHPOTION <= (Wld_GetDay() - 2)))
 	{
 		B_GivePlayerXP(250);
-		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_01");	//Podaril sa mi objav...
-		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_02");	//Dokážem vytvoriť z pomocou toho skřetího dryáku zaujímavý lektvar.
-		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_03");	//Na jeden lektvar potrebujem 10 flaší toho skřetího dryáku a 300 zlatých. A to už máš aj zo zlavou.
+		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_01");	//Mám objev...
+		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_02");	//Dokážu vytvořit s pomocí toho skřetího dryáku zajímavý lektvar.
+		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_03");	//Na jeden lektvar potřebuji 10 flašek toho skřetího dryáku a 300 zlatých. A to už máš i se slevou.
 		CanMakeSimpleOrcPotion = TRUE;
 		MIS_SALANDRILRESECH = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_SALANDRILRESECH,LOG_SUCCESS);
-		B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril mi dokáže vyrobiť nejaký nový lektvar, bude potrebovať 10 flaší toho skřetího dryáku a 300 zlatých.");
+		B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril mi dokáže vyrobit nějaký nový lektvar, bude potřebovat 10 flašek toho skřetího dryáku a 300 zlatých.");
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_09");	//Ešte som neskončil s pokusmi. Vráť sa za pár dní.
+		AI_Output(self,other,"DIA_Salandril_ORCRUM4_01_09");	//Ještě jsem neskončil s pokusy. Vrať se za pár dní.
 	};
 };
 
@@ -637,7 +637,7 @@ instance DIA_SALANDRIL_ORCRUM5(C_Info)
 	condition = dia_salandril_orcrum5_condition;
 	information = dia_salandril_orcrum5_info;
 	permanent = FALSE;
-	description = "Uvar mi lektvar. (cena: 300 zlatých)";
+	description = "Uvař mi lektvar. (cena: 300 zlatých)";
 };
 
 func int dia_salandril_orcrum5_condition()
@@ -650,20 +650,20 @@ func int dia_salandril_orcrum5_condition()
 
 func void dia_salandril_orcrum5_info()
 {
-	AI_Output(other,self,"DIA_Salandril_ORCRUM51_01_00");	//Uvar mi lektvar.
+	AI_Output(other,self,"DIA_Salandril_ORCRUM51_01_00");	//Uvař mi lektvar.
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 300)
 	{
 		B_GiveInvItems(other,self,itfo_addon_orcrum,10);
 		Npc_RemoveInvItems(self,itfo_addon_orcrum,10);
 		Npc_RemoveInvItems(other,ItMi_Gold,300);
-		AI_Output(self,other,"DIA_Salandril_ORCRUM51_01_01");	//Takže si sa rozhodol ho skúsiť. Výborne! Príď zajtra, lektvar bude pripravený.
+		AI_Output(self,other,"DIA_Salandril_ORCRUM51_01_01");	//Takže jsi se rozhodl ho zkusit. Výborně! Přijď zítra, lektvar bude připravený.
 		ORCRUMDAY4 = Wld_GetDay();
 	}
 	else
 	{
 		AI_Print(Print_NotEnoughGold);
-		AI_Output(self,other,"DIA_Salandril_ORCRUM51_03_90");	//Nemáš dosť zlata!
+		AI_Output(self,other,"DIA_Salandril_ORCRUM51_03_90");	//Nemáš dost zlata!
 		AI_StopProcessInfos(self);
 	};
 };
@@ -675,7 +675,7 @@ instance DIA_SALANDRIL_ORCRUM6(C_Info)
 	condition = dia_salandril_orcrum6_condition;
 	information = dia_salandril_orcrum6_info;
 	permanent = FALSE;
-	description = "Je moj lektvar pripravený?";
+	description = "Je můj lektvar připravený?";
 };
 
 func int dia_salandril_orcrum6_condition()
@@ -692,10 +692,10 @@ func int dia_salandril_orcrum6_condition()
 
 func void dia_salandril_orcrum6_info()
 {
-	AI_Output(other,self,"DIA_Salandril_ORCRUM6_01_00");	//Je moj lektvar pripravený?
-	AI_Output(self,other,"DIA_Salandril_ORCRUM6_01_01");	//Áno. Tu je.
+	AI_Output(other,self,"DIA_Salandril_ORCRUM6_01_00");	//Je můj lektvar připravený?
+	AI_Output(self,other,"DIA_Salandril_ORCRUM6_01_01");	//Ano. Tu je.
 	B_GiveInvItems(self,other,itfo_addon_orcrumsal,1);
-	AI_Output(self,other,"DIA_Salandril_ORCRUM6_01_02");	//Jeho efekt može byť vcelku nečakaný. Neodpovedám za následky.
+	AI_Output(self,other,"DIA_Salandril_ORCRUM6_01_02");	//Jeho efekt může být vcelku nečekaný. Nezodpovídám za následky.
 	SalPotionOneTime = TRUE;
 };
 
@@ -706,7 +706,7 @@ instance DIA_SALANDRIL_MyBrew(C_Info)
 	condition = dia_salandril_MyBrew_condition;
 	information = dia_salandril_MyBrew_info;
 	permanent = FALSE;
-	description = "Mohol by si sa pozrieť na jeden alchemistický recept?";
+	description = "Mohl bys se podívat na jeden alchemistický recept?";
 };
 
 func int dia_salandril_MyBrew_condition()
@@ -720,23 +720,23 @@ func int dia_salandril_MyBrew_condition()
 func void dia_salandril_MyBrew_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Salandril_MyBrew_01_00");	//Mohol by si sa pozrieť na jeden alchemistický recept?
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_01");	//Samozrejme! Ukáž mi ho.
+	AI_Output(other,self,"DIA_Salandril_MyBrew_01_00");	//Mohl bys se podívat na jeden alchemistický recept?
+	AI_Output(self,other,"DIA_Salandril_MyBrew_01_01");	//Samozřejmě! Ukaž mi ho.
 	AI_Output(other,self,"DIA_Salandril_MyBrew_01_02");	//Tu je.
 	B_GiveInvItems(other,self,ItWr_ConstRecept,1);
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_03");	//Takže, čo to tu máme...
+	AI_Output(self,other,"DIA_Salandril_MyBrew_01_03");	//Takže, co to tu máme...
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_04");	//Hmm... Čo za kokota toto napísal?
+	AI_Output(self,other,"DIA_Salandril_MyBrew_01_04");	//Hmm... Co za kokota toto napsal?
 	AI_Output(other,self,"DIA_Salandril_MyBrew_01_05");	//Cože?!
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_06");	//Prísady toho lektvaru sú nespojitelné.
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_07");	//Navyše niektoré z nich sa ani v alchémii nepoužívajú. Totálna blbost!
+	AI_Output(self,other,"DIA_Salandril_MyBrew_01_06");	//Přísady toho lektvaru jsou nespojitelné.
+	AI_Output(self,other,"DIA_Salandril_MyBrew_01_07");	//Navíc některé z nich se ani v alchemii nepoužívají. Totální blbost!
 	B_GiveInvItems(self,other,ItWr_ConstRecept,1);
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_08");	//Takže kto to napísal?
-	AI_Output(other,self,"DIA_Salandril_MyBrew_01_09");	//Bude lepšie ak ti to nepoviem.
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_10");	//Dobre, nechceš - tak mi to nehovor... (pochechtávanie) Ale ten kto to písal by mal jednoznačne zmeniť zamestnanie.
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_11");	//Ako alchymista je nanic.
+	AI_Output(self,other,"DIA_Salandril_MyBrew_01_08");	//Takže kdo to napsal?
+	AI_Output(other,self,"DIA_Salandril_MyBrew_01_09");	//Bude lepší, když ti to nepovím.
+	AI_Output(self,other,"DIA_Salandril_MyBrew_01_10");	//Dobře, nechceš - tak mi to neříkej... (pochechtávání) Ale ten, kdo to psal, by měl jednoznačne změnit zaměstnání.
+	AI_Output(self,other,"DIA_Salandril_MyBrew_01_11");	//Jako alchymista je nanic.
 	KnowFakeRecept = TRUE;
-	B_LogEntry(TOPIC_MyBrew,"Ukázal som Salandrilovi Constantinov recept. Vyzerá to, že sa so mnou pokúšal podvést, lebo pre skutočného alchymistu je úplne na nič.");
+	B_LogEntry(TOPIC_MyBrew,"Ukázal jsem Salandrilovi Constantinův recept. Vypadá to, že se mě pokusil podvést, protože pro skutečného alchymistu je úplně na nic.");
 };
 
 instance DIA_SALANDRIL_PureElixir(C_Info)
@@ -746,7 +746,7 @@ instance DIA_SALANDRIL_PureElixir(C_Info)
 	condition = dia_salandril_PureElixir_condition;
 	information = dia_salandril_PureElixir_info;
 	permanent = FALSE;
-	description = "Vatras si chce objednať nejaké lektvary čistej magickej sily.";
+	description = "Vatras si chce objednat nějaké lektvary čisté magické síly.";
 };
 
 func int dia_salandril_PureElixir_condition()
@@ -759,21 +759,21 @@ func int dia_salandril_PureElixir_condition()
 
 func void dia_salandril_PureElixir_info()
 {
-	AI_Output(other,self,"DIA_Salandril_PureElixir_01_00");	//Vatras si chce objednať nejaké lektvary čistej magickej sily.
-	AI_Output(other,self,"DIA_Salandril_PureElixir_01_01");	//Tu je 200 zlatých ktoré máš ako zálohu za prácu.
+	AI_Output(other,self,"DIA_Salandril_PureElixir_01_00");	//Vatras si chce objednat nějaké lektvary čisté magické sily.
+	AI_Output(other,self,"DIA_Salandril_PureElixir_01_01");	//Tu je 200 zlatých, které máš jako zálohu za práci.
 	B_GiveInvItems(other,self,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,ItMi_Gold,200);
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_02");	//Samozrejme je pre mňa velkou poctou splniť túto objednávku.
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_03");	//Ale formulka tohto lektvaru je príliš komplexná, takže budem potrebovať aspoň týždeň.
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_04");	//Určite by som nechcel nechať Vatrasa tak dlho čakať, ale inak to nejde.
-	AI_Output(other,self,"DIA_Salandril_PureElixir_01_05");	//Dobre, poviem mu to.
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_06");	//Eh, počkaj chvílu... (nervózne) Myslím, že tu ešte zopár tých lektvarov mám.
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_07");	//Ach áno, tu sú. Zopár lektvarov, aby mu náhodou nedošli.
+	AI_Output(self,other,"DIA_Salandril_PureElixir_01_02");	//Samozřejmě je pro mě velkou poctou splnit tuto objednávku.
+	AI_Output(self,other,"DIA_Salandril_PureElixir_01_03");	//Ale formule tohoto lektvaru je příliš komplexní, takže budu potřebovat aspoň týden.
+	AI_Output(self,other,"DIA_Salandril_PureElixir_01_04");	//Určitě bych nechtěl nechat Vatrase tak dlouho čekat, ale jinak to nejde.
+	AI_Output(other,self,"DIA_Salandril_PureElixir_01_05");	//Dobře, povím mu to.
+	AI_Output(self,other,"DIA_Salandril_PureElixir_01_06");	//Eh, počkej chvilku... (nervózně) Myslím, že tu ješte pár těch lektvarů mám.
+	AI_Output(self,other,"DIA_Salandril_PureElixir_01_07");	//Ach ano, tu jsou. Pár lektvarů, aby mu náhodou nedošly.
 	B_GiveInvItems(self,other,ItPo_Mana_Addon_04,2);
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_08");	//Daj mu ich a pozdravuj ho. Nezabudni.
-	AI_Output(other,self,"DIA_Salandril_PureElixir_01_09");	//Samozrejme.
+	AI_Output(self,other,"DIA_Salandril_PureElixir_01_08");	//Dej mu je a pozdravuj ho. Nezapomeň.
+	AI_Output(other,self,"DIA_Salandril_PureElixir_01_09");	//Samozřejmě.
 	SalandrilPureElixir = TRUE;
-	B_LogEntry(TOPIC_VatrasPotion,"Salandril zobral Vatrasovu objednávku, ale kým sa lektary uvaria potrvá to aspoň týždeň. Takže mi dal pár lektvarov zo zásoby pre Vatrasa.");
+	B_LogEntry(TOPIC_VatrasPotion,"Salandril přijmul Vatrasovu objednávku, ale než se lektary uvaří, potrvá to aspoň týden. Takže mi dal pár lektvarů ze zásoby pro Vatrase.");
 };
 
 //------------------------------------------kosti-------------------------------------
