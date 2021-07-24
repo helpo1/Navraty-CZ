@@ -315,7 +315,7 @@ func int DIA_Jesper_Tuer_Condition()
 func void DIA_Jesper_Tuer_Info()
 {
 	AI_Output(other,self,"DIA_Jesper_Tuer_15_00");	//Co je za těmi zamčenými dveřmi?
-	AI_Output(self,other,"DIA_Jesper_Tuer_09_01");	//(chechtá se) Je za nima Ta truhla - truhla mistra zámečníka.
+	AI_Output(self,other,"DIA_Jesper_Tuer_09_01");	//(chechtá se) Je za nima TA truhla - truhla mistra zámečníka.
 	AI_Output(self,other,"DIA_Jesper_Tuer_09_02");	//Opatřil ji tak neuvěřitelně složitým zámkem, že ji ještě nikdo nedokázal otevřít.
 	AI_Output(self,other,"DIA_Jesper_Tuer_09_03");	//Bohužel byl zatčen - hodili ho skrz bariéru, kde asi vypustil duši.
 	AI_Output(self,other,"DIA_Jesper_Tuer_09_04");	//Ale jestli se chceš pokusit tu truhlu otevřít, tady je klíč od pokoje.
