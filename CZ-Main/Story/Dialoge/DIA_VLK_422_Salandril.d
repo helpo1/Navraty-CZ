@@ -403,7 +403,7 @@ func int dia_salandril_receptfortyon_condition()
 func void dia_salandril_receptfortyon_info()
 {
 	AI_Output(other,self,"DIA_Salandril_ReceptForTyon_01_00");	//Mám otázku. Slyšel jsem o jednom velmi zvláštním lektvaru.
-	AI_Output(other,self,"DIA_Salandril_ReceptForTyon_01_02");	//Je schopen ovlivnit vědomí člověka, neslyšel jsi o tom?
+	AI_Output(other,self,"DIA_Salandril_ReceptForTyon_01_02");	//Je schopen ovlivnit vědomí člověka. Neslyšel jsi o tom?
 	AI_Output(self,other,"DIA_Salandril_ReceptForTyon_01_03");	//Ne... O takových lektvarech slyším poprvé!
 	AI_Output(self,other,"DIA_Salandril_ReceptForTyon_01_05");	//Nuuu... Zkus se zeptat ostatních alchymistů ve městě.
 };
@@ -524,7 +524,7 @@ func void dia_salandril_orcrum_info()
 	MIS_SALANDRILRESECH = LOG_Running;
 	Log_CreateTopic(TOPIC_SALANDRILRESECH,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SALANDRILRESECH,LOG_Running);
-	B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril sa snaží zjistiť, na co by ten skřetí dryák mohl být. Mám se vrátiť za pár dní.");
+	B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril se snaží zjistiť, na co by ten skřetí dryák mohl být. Mám se vrátiť za pár dní.");
 };
 
 
@@ -535,7 +535,7 @@ instance DIA_SALANDRIL_ORCRUM2(C_Info)
 	condition = dia_salandril_orcrum2_condition;
 	information = dia_salandril_orcrum2_info;
 	permanent = FALSE;
-	description = "Tak na co si přišel?";
+	description = "Tak na co jsi přišel?";
 };
 
 func int dia_salandril_orcrum2_condition()
@@ -549,9 +549,9 @@ func int dia_salandril_orcrum2_condition()
 func void dia_salandril_orcrum2_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Salandril_ORCRUM2_01_00");	//Tak na co si přišel?
+	AI_Output(other,self,"DIA_Salandril_ORCRUM2_01_00");	//Tak na co jsi přišel?
 	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_01");	//Dryáku bylo strašně málo, takže jsem byl schopný udělat jen základní testy.
-	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_02");	//Ale je jasné, že má zajímavé a unikátní vlastnosti, které odhalí len další výzkum.
+	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_02");	//Ale je jasné, že má zajímavé a unikátní vlastnosti, které odhalí jen další výzkum.
 	AI_Output(other,self,"DIA_Salandril_ORCRUM2_01_04");	//Takže chceš, abych ti toho dryáku přinesl víc?
 	AI_Output(self,other,"DIA_Salandril_ORCRUM2_01_05");	//Pochopil jsi to správně. Pokud mi doneseš dalších 10 flašek, tak budu pokračovat ve výzkumu.
 	SALFIRST = TRUE;
@@ -584,7 +584,7 @@ func void dia_salandril_orcrum3_info()
 	B_GiveInvItems(other,self,itfo_addon_orcrum,10);
 	Npc_RemoveInvItems(self,itfo_addon_orcrum,10);
 	AI_Output(self,other,"DIA_Salandril_ORCRUM3_01_01");	//Perfektní. Takže můj výzkum může pokračovat.
-	AI_Output(self,other,"DIA_Salandril_ORCRUM3_01_03");	//Vrať se později a možná o tom dryáku budu vědet víc.
+	AI_Output(self,other,"DIA_Salandril_ORCRUM3_01_03");	//Vrať se později a možná o tom dryáku budu vědět víc.
 	SALANDRILRESECHPOTION = Wld_GetDay();
 	B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril dostal těch 10 flašek na výzkum. Mám se zastavit později.");
 };
@@ -773,7 +773,7 @@ func void dia_salandril_PureElixir_info()
 	AI_Output(self,other,"DIA_Salandril_PureElixir_01_08");	//Dej mu je a pozdravuj ho. Nezapomeň.
 	AI_Output(other,self,"DIA_Salandril_PureElixir_01_09");	//Samozřejmě.
 	SalandrilPureElixir = TRUE;
-	B_LogEntry(TOPIC_VatrasPotion,"Salandril přijmul Vatrasovu objednávku, ale než se lektary uvaří, potrvá to aspoň týden. Takže mi dal pár lektvarů ze zásoby pro Vatrase.");
+	B_LogEntry(TOPIC_VatrasPotion,"Salandril přijmul Vatrasovu objednávku, ale než se lektary uvaří, potrvá to aspoň týden. Takže mi dal pár lektvarů do zásoby pro Vatrase.");
 };
 
 //------------------------------------------kosti-------------------------------------
@@ -784,7 +784,7 @@ instance DIA_VLK_422_Salandril_Game(C_Info)
 	nr = 3;
 	condition = DIA_VLK_422_Salandril_Game_condition;
 	information = DIA_VLK_422_Salandril_Game_info;
-	description = "Kardif hovoril, že hráš kocky.";
+	description = "Kardif říkal, že hraješ kostky.";
 };
 
 func int DIA_VLK_422_Salandril_Game_condition()
@@ -797,12 +797,12 @@ func int DIA_VLK_422_Salandril_Game_condition()
 
 func void DIA_VLK_422_Salandril_Game_info()
 {
- 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_00"); //Kardif hovoril, že hráš kocky.
- 	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_01"); //Áno, to má pravdu. Ale nie s kýmkolvek!
- 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_02"); //A so mnou by si si zahral?
- 	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_03"); //S tebou? Niekto ťa na to nahovoril?
- 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_04"); //Poďme hrať a možno to zistíš.
- 	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_05"); //Dobre. Ako myslíš.
+ 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_00"); //Kardif říkal, že hraješ kostky.
+ 	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_01"); //Ano, to má pravdu. Ale ne s kýmkoliv!
+ 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_02"); //A se mnou by jsi si zahrál?
+ 	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_03"); //S tebou? Někdo tě na to nalákal?
+ 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_04"); //Pojďme hrát a možná to zjistíš.
+ 	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_05"); //Dobře. Jak myslíš.
 	SalandrilPlayResult = 250;
 	Menu_WriteInt("AST","SysTimer02",0);
 };
@@ -814,7 +814,7 @@ instance DIA_VLK_422_Salandril_GamePlay(C_Info)
 	condition = DIA_VLK_422_Salandril_GamePlay_condition;
 	information = DIA_VLK_422_Salandril_GamePlay_info;
 	permanent = TRUE;
-	description = "Poďme hrať kocky!";
+	description = "Pojďme hrát kostky!";
 };
 
 func int DIA_VLK_422_Salandril_GamePlay_condition()
@@ -837,41 +837,41 @@ func void DIA_VLK_422_Salandril_GamePlay_info()
 		CheckLastSum = CheckLastGame - SalandrilPlayResult;
 	};
 
-	AI_Output(other,self,"DIA_VLK_422_Salandril_GamePlay_01_00");	//Poďme hrať kocky!
+	AI_Output(other,self,"DIA_VLK_422_Salandril_GamePlay_01_00");	//Pojďme hrát kostky!
 
 	if(SalandrilPlayResult >= CheckLastGame)
 	{
 		if((SalandrilPlayResult > 0) && (SalandrilDayFlag == FALSE))
 		{
-			AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_01");	//Poďme teda na to!
+			AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_01");	//Pojďme teda na to!
 			PlayPocker(1,self);
 		}
 		else
 		{
 			if(SalandrilDayFlag == FALSE)
 			{
-				AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_02");	//Nie, stačilo! Už mi skoro nič nezostalo. 
+				AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_02");	//Ne, stačilo! Už mi skoro nic nezůstalo. 
 				SalandrilDayPlay = Wld_GetDay();
 				SalandrilDayFlag = TRUE;
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_03");	//Zabudni.
+				AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_03");	//Ani náhodou.
 			};
 		};
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_04");	//Naposledy si mi nedal moju výhru.
-		AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_05");	//No tak, ja čakám!
+		AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_04");	//Naposledy jsi mi nedal mojí výhru.
+		AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_01_05");	//No tak, já čekám!
 		Info_ClearChoices(DIA_VLK_422_Salandril_GamePlay);
 
 		if(Npc_HasItems(other,ItMi_Gold) >= CheckLastSum)
 		{
-			Info_AddChoice(DIA_VLK_422_Salandril_GamePlay,"Tu sú tvoje peniaze.",DIA_VLK_422_Salandril_GamePlay_Here);
+			Info_AddChoice(DIA_VLK_422_Salandril_GamePlay,"Tu jsou tvoje peníze.",DIA_VLK_422_Salandril_GamePlay_Here);
 		};
 
-		Info_AddChoice(DIA_VLK_422_Salandril_GamePlay,"Nemám tolko.",DIA_VLK_422_Salandril_GamePlay_No);
+		Info_AddChoice(DIA_VLK_422_Salandril_GamePlay,"Nemám tolik.",DIA_VLK_422_Salandril_GamePlay_No);
 	};
 };
 
@@ -880,15 +880,15 @@ func void DIA_VLK_422_Salandril_GamePlay_Here()
 	Snd_Play("Geldbeutel");
 	Npc_RemoveInvItems(hero,ItMi_Gold,CheckLastSum);
 	SalandrilPlayResult = CheckLastGame;
-	AI_Output(other,self,"DIA_VLK_422_Salandril_GamePlay_Here_01_01");	//Tu sú tvoje peniaze.
-	AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_Here_01_02");	//Dobre. Teraz možeš hrať...
+	AI_Output(other,self,"DIA_VLK_422_Salandril_GamePlay_Here_01_01");	//Tu jsou tvoje peníze.
+	AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_Here_01_02");	//Dobře. Teď můžeme hrát...
 	PlayPocker(1,self);
 };
 
 func void DIA_VLK_422_Salandril_GamePlay_No()
 {
-	AI_Output(other,self,"DIA_VLK_422_Salandril_GamePlay_No_01_01");	//Nemám tolko.
-	AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_No_01_02");	//To nie je moj problém.
+	AI_Output(other,self,"DIA_VLK_422_Salandril_GamePlay_No_01_01");	//Nemám tolik.
+	AI_Output(self,other,"DIA_VLK_422_Salandril_GamePlay_No_01_02");	//To není můj problém.
 	Info_ClearChoices(DIA_VLK_422_Salandril_GamePlay);
 };
 
@@ -914,12 +914,12 @@ func void DIA_VLK_422_Salandril_GameEnd_info()
 {
 	if(SalandrilLost == TRUE)
 	{
-		AI_Output(self,other,"DIA_VLK_422_Salandril_GameEnd_00");	//Ako si to dokázal? To nie je možné.
+		AI_Output(self,other,"DIA_VLK_422_Salandril_GameEnd_00");	//Jak jsi to dokázal? To není možné.
 		SalandrilLost = FALSE;
 	}
 	else if(SalandrilWon == TRUE)
 	{
-		AI_Output(self,other,"DIA_VLK_422_Salandril_GameEnd_01");	//Tentokrát stála šťastena na mojej strane.
+		AI_Output(self,other,"DIA_VLK_422_Salandril_GameEnd_01");	//Tentokrát stála štěstěna na mojí straně.
 		SalandrilWon = FALSE;
 	};
 
@@ -946,24 +946,24 @@ func int DIA_Fernando_Minental_Condition()
 
 func void DIA_Fernando_Minental_Info()
 {
-	AI_Output(self,other,"DIA_Fernando_Minental_14_00");	//Hej ty - počkaj chvílu. Teba poslali do Hornického údolí, že?
+	AI_Output(self,other,"DIA_Fernando_Minental_14_00");	//Hej ty - počkej chvíli. Tebe poslali do Hornického údolí, že?
 	AI_Output(other,self,"DIA_Fernando_Minental_15_01");	//A?
-	AI_Output(self,other,"DIA_Fernando_Minental_14_02");	//Mám pre teba návrh. Ty mi povieš, čo sa deje z rudou a ja ti dám...
+	AI_Output(self,other,"DIA_Fernando_Minental_14_02");	//Mám pro tebe návrh. Ty mi povíš, co se děje s rudou a já ti dám...
 
 	if((other.guild == GIL_KDF) || (other.guild == GIL_GUR) || (other.guild == GIL_KDM) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Fernando_Minental_14_03");	//... runový kameň.
+		AI_Output(self,other,"DIA_Fernando_Minental_14_03");	//... runový kámen.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Fernando_Minental_14_04");	//... prsteň, čo ti zvýši výdrž.
+		AI_Output(self,other,"DIA_Fernando_Minental_14_04");	//... prsten, co ti zvýší výdrž.
 	};
 
-	AI_Output(other,self,"DIA_Fernando_Minental_15_05");	//Uvidím čo sa dá robiť.
+	AI_Output(other,self,"DIA_Fernando_Minental_15_05");	//Uvidím, co se dá udělat.
 	MIS_SalandrilOre = LOG_Running;
 	Log_CreateTopic(TOPIC_Fernando,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Fernando,LOG_Running);
-	B_LogEntry(TOPIC_Fernando,"Salandril chce vedieť čo sa deje v Hornickém údolí.");
+	B_LogEntry(TOPIC_Fernando,"Salandril chce vědet, co se děje v Hornickém údolí.");
 };
 
 instance DIA_Fernando_Success(C_Info)
@@ -973,7 +973,7 @@ instance DIA_Fernando_Success(C_Info)
 	condition = DIA_Fernando_Success_Condition;
 	information = DIA_Fernando_Success_Info;
 	permanent = FALSE;
-	description = "Bol som v Hornickém údolí.";
+	description = "Byl jsem v Hornickém údolí.";
 };
 
 func int DIA_Fernando_Success_Condition()
@@ -987,25 +987,25 @@ func int DIA_Fernando_Success_Condition()
 func void DIA_Fernando_Success_Info()
 {
 	B_GivePlayerXP(XP_Ambient);
-	AI_Output(other,self,"DIA_Fernando_Success_15_00");	//Bol som v Hornickém údolí.
-	AI_Output(self,other,"DIA_Fernando_Success_14_01");	//A? Ako to tam vyzerá?
-	AI_Output(other,self,"DIA_Fernando_Success_15_02");	//Doly sú vyťažené, bolo možné vyťažiť len pár bedein rudy. Je nepreavdepodobné, že sa to vyplatilo.
-	AI_Output(self,other,"DIA_Fernando_Success_14_03");	//To nie je možné! Som totálne v prdeli...
-	AI_Output(other,self,"DIA_Fernando_Success_15_04");	//A naša dohoda?
+	AI_Output(other,self,"DIA_Fernando_Success_15_00");	//Byl jsem v Hornickém údolí.
+	AI_Output(self,other,"DIA_Fernando_Success_14_01");	//A? Jak to tam vypadá?
+	AI_Output(other,self,"DIA_Fernando_Success_15_02");	//Doly jsou vytěžené. Bylo možné vytěžit jen pár beden rudy. Je nepravděpodobné, že se to vyplatilo.
+	AI_Output(self,other,"DIA_Fernando_Success_14_03");	//To není možné! Jsem totálně v prdeli...
+	AI_Output(other,self,"DIA_Fernando_Success_15_04");	//A naše dohoda?
 	AI_Output(self,other,"DIA_Fernando_Success_14_05");	//Nuže...
 
 	if((other.guild == GIL_KDF) || (other.guild == GIL_GUR) || (other.guild == GIL_KDM) || (other.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Fernando_Minental_14_06");	//Tu, zober si tento runový kameň.
+		AI_Output(self,other,"DIA_Fernando_Minental_14_06");	//Tu, seber si tento runový kámen.
 		B_GiveInvItems(self,other,ItMi_RuneBlank,1);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Fernando_Minental_14_07");	//Tu máš svoj prsteň.
+		AI_Output(self,other,"DIA_Fernando_Minental_14_07");	//Tu máš svůj prsten.
 		B_GiveInvItems(self,other,ItRi_Hp_02,1);
 	};
 
 	MIS_SalandrilOre = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_Fernando,LOG_SUCCESS);
-	B_LogEntry(TOPIC_Fernando,"Salandril nebol zo situácie v údolí zrovna nadšený. Je divné, že ho tie správy tak zobrali.");
+	B_LogEntry(TOPIC_Fernando,"Salandril nebyl ze situace v údolí zrovna nadšený. Je divné, že ho ty zprávy tak zasáhly.");
 };
