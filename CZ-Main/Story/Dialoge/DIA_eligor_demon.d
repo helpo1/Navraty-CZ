@@ -57,7 +57,7 @@ func void dia_eligor_demon_hello_info()
 	AI_Output(other,self,"DIA_Eligor_Demon_Hello_01_11");	//Není to trochu moc za vyvolání démona?!
 	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_12");	//Je to jen nabídka. Máš právo se rozhodnout jak chceš.
 	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_13");	//Přemyšlej o tom - pak můžeš používát mou legii démonů tolikrát, kolikrát jen budeš chtít.
-	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_14");	//Ale pamatuj si: Nabizím pouze jednou - takže si dobře rozmysli, co mi odpovíš.
+	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_14");	//Ale pamatuj si: Nabízím pouze jednou - takže si dobře rozmysli, co mi odpovíš.
 	AI_Output(self,other,"DIA_Eligor_Demon_Hello_01_15");	//Takže, jaké je tvé rozhodnutí?
 	Info_ClearChoices(dia_eligor_demon_hello);
 	Info_AddChoice(dia_eligor_demon_hello,"Dobře, beru to!",dia_eligor_demon_hello_ok);
@@ -207,7 +207,7 @@ func void DIA_Eligor_Demon_OW_Hello_Health()
 	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_Health_01_02");	//Doufám, že nyní nelituješ svého rozhodnutí.
 	AI_Output(other,self,"DIA_Eligor_Demon_OW_Hello_Health_01_03");	//Co se stalo, stalo se.
 	AI_Output(self,other,"DIA_Eligor_Demon_OW_Hello_Health_01_04");	//Jak říkáš, smrtelníku. Naše setkání je u konce... Sbohem.
-	B_LogEntry(TOPIC_SLEEPERBACK,"Eligor ode mne požadoval, část mé životní síly. Neměl jsem na výběr. Musel jsem se obětovat, abych získal jeho artefakt!");
+	B_LogEntry(TOPIC_SLEEPERBACK,"Eligor ode mne požadoval část mé životní síly. Neměl jsem na výběr. Musel jsem se obětovat, abych získal jeho artefakt!");
 	AI_StopProcessInfos(self);
 	ELIGOR_OW_TALK = TRUE;
 	self.start_aistate = zs_mm_rtn_demonrest;
@@ -262,12 +262,12 @@ func void DIA_Skeleton_Stefan_Hello_info()
 	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_02");	//Nelhali ti - je to pravda. Nyní mi odpověz na mou otázku.
 	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_03");	//Hledám Stefana, strážce tohoto majáku. Byl zde zabit před mnoha lety.
 	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_04");	//A co od něj chceš?
-	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_05");	//Chci odstránit kletbu, která zužuje toto místo, a proto potřebuju vědět, co přesně se tu stalo.
+	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_05");	//Chci odstranit kletbu, která zužuje toto místo, a proto potřebuju vědět, co přesně se tu stalo.
 	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_06");	//Jsem překvapen tvým konáním, smrtelníku. Obvykle se žijící lidé snaží tomuto místu vyhýbat.
 	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_07");	//A ty jsi tu přišel a říkáš, že mi chceš nabídnout pomoc.
 	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_08");	//Takže ty jsi Stefan? Pověz mi tedy, proč jsi byl zabit?
 	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_09");	//Za mou milost a soucit k lidem. To byl celý problém.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_10");	//Jednou jsem pomohl člověku v nesnázích. Za to sa mi odvděčil tím, že mne zabil.
+	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_10");	//Jednou jsem pomohl člověku v nesnázích. Za to se mi odvděčil tím, že mne zabil.
 	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_11");	//Kdo to byl?
 	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_12");	//Neznám jeho skutečné jméno. Chtěl, abych mu říkal Kelevra.
 	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_13");	//Kelevra? Nejspíš je to jeho přezdívka. Možná dokonce pirátská.
@@ -275,7 +275,7 @@ func void DIA_Skeleton_Stefan_Hello_info()
 	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_15");	//Jak se dostal k majáku?
 	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_16");	//V ten den byla na moři silná bouře. Vyšplhal jsem na horní část majáku, abych doplnil palivo do ohně a pak jsem uviděl, jak se jeho tělo vyplavilo k pobřeží.
 	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_17");	//Zřejmě se jeho loď potopila. Zvedl jsem jeho téměř bezvládné tělo a odnesl jej k majáku.
-	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_18");	//Trvalo dlouho, než se mu vrátilo vědomí. Několikrát jsem musel jít do města pro léky, jelikož měl horečku. Ale nakonec sa jeho stav zlepšil.
+	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_18");	//Trvalo dlouho, než se mu vrátilo vědomí. Několikrát jsem musel jít do města pro léky, jelikož měl horečku. Ale nakonec se jeho stav zlepšil.
 	AI_Output(other,self,"DIA_Skeleton_Stefan_Hello_01_19");	//A co se pak stalo?
 	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_20");	//Jednoho dne mi řekl, že odchází a potřebuje mou loď.
 	AI_Output(self,other,"DIA_Skeleton_Stefan_Hello_01_21");	//Ale já mu ji dát nemohl, sám jsem ji potřeboval. A tak jsem mu nabídl, že ho zavezu do Khorinisu.
