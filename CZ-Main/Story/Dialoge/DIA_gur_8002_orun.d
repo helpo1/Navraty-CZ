@@ -161,7 +161,7 @@ func void dia_baalorun_pmschulden_info()
 			tsettext2 = ConcatStrings(tsettext1,PRINT_ATTACKCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_ATTACKCOUNT_PSICAMP,tsettext2);
 			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_40");	//Přesněji řečeno - jednu záležitost.
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_41");	//Všichni bratři v táboře už mají dost tvých neustálých šarvátekk.
+			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_41");	//Všichni bratři v táboře už mají dost tvých neustálých šarvátek.
 			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_42");	//Jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
@@ -289,7 +289,7 @@ func void dia_baalorun_pmschulden_info()
 			Info_ClearChoices(dia_baalorun_pmschulden);
 			Info_ClearChoices(dia_baalorun_petzmaster);
 			Info_AddChoice(dia_baalorun_pmschulden,"Nemám dost zlata!",dia_baalorun_petzmaster_paylater);
-			Info_AddChoice(dia_baalorun_pmschulden,"Kolik to mám zaplatit?",dia_baalorun_pmschulden_howmuchagain);
+			Info_AddChoice(dia_baalorun_pmschulden,"Kolik mám zaplatit?",dia_baalorun_pmschulden_howmuchagain);
 			if(Npc_HasItems(other,ItMi_Gold) >= BAALORUN_SCHULDEN)
 			{
 				Info_AddChoice(dia_baalorun_pmschulden,"Chci to zaplatit.",dia_baalorun_petzmaster_paynow);
@@ -303,7 +303,7 @@ func void dia_baalorun_pmschulden_howmuchagain()
 	var string concatText1;
 	var string concatText2;
 	var string concattextschulden;
-	AI_Output(other,self,"DIA_BaalOrun_PMSchulden_HowMuchAgain_15_00");	//Kolik to mám zaplatit?
+	AI_Output(other,self,"DIA_BaalOrun_PMSchulden_HowMuchAgain_15_00");	//Kolik mám zaplatit?
 	if(BAALORUN_SCHULDEN <= 1000)
 	{
 		B_Say_Gold(self,other,BAALORUN_SCHULDEN);
@@ -318,7 +318,7 @@ func void dia_baalorun_pmschulden_howmuchagain()
 	Info_ClearChoices(dia_baalorun_pmschulden);
 	Info_ClearChoices(dia_baalorun_petzmaster);
 	Info_AddChoice(dia_baalorun_pmschulden,"Nemám dost zlata!",dia_baalorun_petzmaster_paylater);
-	Info_AddChoice(dia_baalorun_pmschulden,"Kolik to mám zaplatit?",dia_baalorun_pmschulden_howmuchagain);
+	Info_AddChoice(dia_baalorun_pmschulden,"Kolik mám zaplatit?",dia_baalorun_pmschulden_howmuchagain);
 	if(Npc_HasItems(other,ItMi_Gold) >= BAALORUN_SCHULDEN)
 	{
 		Info_AddChoice(dia_baalorun_pmschulden,"Chci to zaplatit.",dia_baalorun_petzmaster_paynow);
@@ -494,7 +494,7 @@ func void dia_baalorun_petzmaster_paynow()
 func void dia_baalorun_petzmaster_paylater()
 {
 	AI_Output(other,self,"DIA_BaalOrun_PetzMaster_PayLater_15_00");	//Nemám dostatek zlata!
-	AI_Output(self,other,"DIA_BaalOrun_PetzMaster_PayLater_10_01");	//Tak si jej rychle sežeň!
+	AI_Output(self,other,"DIA_BaalOrun_PetzMaster_PayLater_10_01");	//Tak si je rychle sežeň!
 	AI_Output(self,other,"DIA_BaalOrun_PetzMaster_PayLater_10_02");	//Nedělej už další problémy - kvůli tomu tady nejsme.
 	BAALORUN_LASTPETZCOUNTER = B_GetTotalPetzCounter(self);
 	BAALORUN_LASTPETZCRIME = B_GetGreatestPetzCrime(self);
@@ -639,7 +639,7 @@ func void dia_baalorun_aufgabe_info()
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_01");	//Vidím, že tvůj duch po něčem pátrá - pátráš po pravé víře. Cožpak necítíš ten zuřivý vnitřní plamen - ten, který ti v noci nedovolí spát?
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_02");	//Vidím, že máš jisté pochybnosti - snaží se ti snad služebníci falešných bohů něco vnutit?
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_03");	//Avšak ty sám víš, odkud se ty pochybnosti vzaly. Všichni lhali!
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_04");	//Cožpak necítíš vnitřní touhu po svobodě? Den po dni se stává silnější, necítíš, jak vede tvou duši? Osvoboď ji!
+	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_04");	//Cožpak necítíš vnitřní touhu po svobodě? Den po dni se stává silnější. Necítíš, jak vede tvou duši? Osvoboď ji!
 	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_05");	//Začal jsi se mnou mluvit. Takže pokud si dobře pamatuji, znamená to, že tě teď mohu oslovit i já?
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_06");	//Znáš naše pravidla. To je chvályhodné!
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_07");	//Ostatní naši bratři s tebou mluvit nebudou, pokud jim nedokážeš, že ti mohou důvěřovat.
@@ -1005,7 +1005,7 @@ func void dia_baalorun_tellkorangar_info()
 			AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_06");	//Je v pořádku - živý a zdravý. Potkal jsem ho v Hornickém údolí.
 			AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_07");	//Řekl jsem mu o našem Bratrstvu a myslím si, že se k nám co nevidět připojí.
 			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_08");	//To jsou výborné zprávy!
-			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_09");	//Všichni bratři očakávají jeho návrat!
+			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_09");	//Všichni bratři očekávají jeho návrat!
 			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_10");	//Tady - vezmi si to jako odměnu za tvou práci.
 			B_GiveInvItems(self,other,ItMi_Gold,200);
 			ANGARCANBACK = TRUE;
