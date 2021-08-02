@@ -1053,7 +1053,7 @@ func void dia_baalorun_tellpaladin_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_00");	//Mám jeden problém.
 	AI_Output(self,other,"DIA_BaalOrun_TellPaladin_01_01");	//Jaký problém?
-	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_02");	//Potřebuju naléhavě mluvit s vůdcem paladinů ve městě. Ale stráž mě nechce pustit k lordu Hagenovi!
+	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_02");	//Potřebuju naléhavě mluvit s vůdcem paladinů ve městě, ale stráž mě nechce pustit k lordu Hagenovi!
 	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_03");	//Můžeš mi s tím pomoct?
 	AI_Output(self,other,"DIA_BaalOrun_TellPaladin_01_04");	//(udiveně) Proč je to pro tebe tak důležité?
 	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_05");	//Mám pro něj jednu velmi důležitou zprávu.
@@ -1258,7 +1258,7 @@ func void dia_baalorun_paladinwatch_info()
 	AI_Output(other,self,"DIA_BaalOrun_PaladinWatch_01_02");	//Co mám udělat?
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_04");	//Jistě víš, že nedávno připlula do Khorinisu velká skupina paladinů.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_05");	//Velí jim lord Hagen - jeden z nejvýše postavených paladinů jejich řádu.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_06");	//Jak si můžeme domyslet, přítomnost tak významné osobnosti jako je lord Hagen - je velice neobvyklé!
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_06");	//Jak si můžeme domyslet, přítomnost tak významné osobnosti jako je lord Hagen - je velice neobvyklá!
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_07");	//Pochybuju, že přítomnost paladinů ve městě je pouze náhoda a osobně si myslím, že na tuto otázku existuje rozumná odpověď.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_08");	//Podle samotných paladinů je důvodem jejich přítomnosti důsledkem možného ohrožení Khorinisu útokem skřetů.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_09");	//Nicméně je zřejmé, že síly, které tu má lord Hagen, nestačí k zajištění řádné ochrany města v případě útoku.
@@ -1271,7 +1271,7 @@ func void dia_baalorun_paladinwatch_info()
 	AI_Output(other,self,"DIA_BaalOrun_PaladinWatch_01_16");	//Takže tomu rozumím tak, že chceš, abych se o tom dověděl víc?
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_17");	//Ano, to je přesně to, co po tobě chci.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_18");	//Odpovědi jsou pro mě velice důležité.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_19");	//Obzvlášť odpovědi na otázky ze kterých závisí náš další osud.
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_19");	//Obzvlášť odpovědi na otázky na kterých závisí náš další osud.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_20");	//Chápu, že zjistit skutečné příčiny všeho, co se děje, nebude snadné. Ale nemáme jinou možnost.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_21");	//Rozuměj tomu tak, že kdo je připravený - ten je vyzbrojený!
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_22");	//Takže, zajímají mě tři otázky...
@@ -1286,7 +1286,7 @@ func void dia_baalorun_paladinwatch_info()
 	Log_CreateTopic(TOPIC_PALADINWATCH,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PALADINWATCH,LOG_Running);
 	MIS_PALADINWATCH = LOG_Running;
-	B_LogEntry(TOPIC_PALADINWATCH,"Baal Orun se chce vědět, proč paladinové přišli na Khorinis. Obává se, že paladinové skrývají pravé důvody své přítomnosti. Baal Orun se také zajímá o situaci v Hornickém údolí, kde se pravděpodobně usadila armáda skřetů. Je pro mě nevyhnutné zjistit všechno o těhle věcech a informovat jej o tom.");
+	B_LogEntry(TOPIC_PALADINWATCH,"Baal Orun chce vědět, proč paladinové přišli na Khorinis. Obává se, že paladinové skrývají pravé důvody své přítomnosti. Baal Orun se také zajímá o situaci v Hornickém údolí, kde se pravděpodobně usadila armáda skřetů. Je zapotřebí zjistit všechno o těchto věcech a informovat jej o tom.");
 };
 
 
@@ -1326,7 +1326,7 @@ func void dia_baalorun_spybericht_info()
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_07");	//Vypadá to, že hlavním důvodem jejich příchodu je magická ruda.
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_08");	//Bez dostatku zbraní z magické rudy nebude mít královská armáda nejmenší šanci ve válce proti skřetům.
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_09");	//Skupina, kterou lord Hagen poslal do Hornického údolí, měla zjistit, jaké jsou možnosti těžby rudy na ostrově.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_10");	//Poté se paladinové meli vrátit zpět na pevninu.
+		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_10");	//Poté se paladinové měli vrátit zpět na pevninu.
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_11");	//Ta skupina, která měla objasnit situaci s rudou, se usadila ve starém hradě rudobaronů...
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_12");	//Zdá se, že jejich situace je velice špatná!
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_15");	//Kromě toho, skřeti obklopili paladiny ze všech stran a zároveň obklíčili a obléhají hrad.
@@ -1365,7 +1365,7 @@ func void dia_baalorun_spybericht_info()
 			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_40");	//Vypadá to, že hlavním důvodem jejich příchodu je magická ruda.
 			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_41");	//Bez dostatku zbraní z magické rudy nebude mít královská armáda nejmenší šanci ve válce proti skřetům.
 			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_42");	//Skupina, kterou lord Hagen poslal do Hornického údolí, měla zjistit, jaké jsou možnosti těžby rudy na ostrově.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_43");	//Poté se paladinové meli vrátit zpět na pevninu.
+			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_43");	//Poté se paladinové měli vrátit zpět na pevninu.
 			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_44");	//(znepokojeně) Máš ještě nějaké novinky?
 			TELLORANQUESTIONTWO = TRUE;
 			countnews = countnews + 1;
@@ -1607,7 +1607,7 @@ func void dia_baalorun_sekteheilengot_info()
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_01");	//Výborně! Nyní je nutné jej roznést všem novicům.
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_02");	//Ale jenom jim! Gor Na Kosh a jeho templáři mají velmi silného ducha. Templáři a my - Guru, se nemáme čeho obávat.
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_03");	//Ujisti se, že se lektvar dostane každému.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_04");	//Jakmile ho rozdáš - vrať se ke mne.
+	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_04");	//Jakmile ho rozdáš - vrať se ke mně.
 	B_LogEntry(TOPIC_SEKTEHEILEN,"Mám lektvar. Teď už ho jen rozdat všem bratrům!");
 	SEKTEHEILENCOUNT = 0;
 };
