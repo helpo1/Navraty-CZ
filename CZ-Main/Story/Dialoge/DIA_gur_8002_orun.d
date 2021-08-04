@@ -2372,7 +2372,7 @@ func int DIA_BaalOrun_MAXROBE_condition()
 func void DIA_BaalOrun_MAXROBE_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_MAXROBE_01_00");	//Co takhle lepší oblečení?
-	AI_Output(self,other,"DIA_BaalOrun_MAXROBE_01_01");	//Jelikož ovládáš všech šest kruhů magie, jsi nyní hoden nosit nejvyšší roucho Guru.
+	AI_Output(self,other,"DIA_BaalOrun_MAXROBE_01_01");	//Jelikož ovládáš všech šest kruhů magie, jsi nyní hoden nosit roucho nejvyššího Guru.
 	AI_Output(self,other,"DIA_BaalOrun_MAXROBE_01_02");	//Budeš však za to muset zaplatit. Výrobní náklady nejsou levné, takže by se nám hodil nějaký drobný příspěvek.
 	LastRobeGUR = TRUE;
 };
