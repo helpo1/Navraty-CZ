@@ -98,7 +98,7 @@ func void DIA_STRF_8121_Addon_Krow_Help_info()
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_00");	//Jsi v pořádku?
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_01");	//Víceméně. Ale cítil bych se lépe, kdybych měl u sebe svůj deník.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_02");	//Deník?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_03");	//Ano. Zapisoval jsem si do něj své myšlenky, pozorovaní a podobně.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_03");	//Ano. Zapisoval jsem si do něj své myšlenky, pozorování a podobně.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_04");	//Ale když mě zajali skřeti, tak mi ho vzali spolu s ostatními věcmi.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_05");	//Byl pro mne velmi důležitý. Řekněme, že byl mým životním dílem.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_06");	//Nemáš tušení, kde je teď?
@@ -218,7 +218,7 @@ func void DIA_STRF_8121_Addon_Krow_Respect_info()
 		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_05");	//Jaký?
 		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_06");	//Je tu příliš mnoho stráží. Musíme najít místo, kde nás skřeti neuslyší.
 		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_07");	//Nějaké nápady?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_08");	//Hmm... (zamyšleně) Napadá mě místo, kde pracuje Nuts, obvykle tam bývá pouze jeden strážný.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_08");	//Hmm... (zamyšleně) Napadá mě místo, kde pracuje Nuts. Obvykle tam bývá pouze jeden strážný.
 		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_09");	//Pokud by se ti nějakým způsobem podařilo odlákat jeho pozornost, měli bychom čas promluvit si s paladinem.
 		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_10");	//Dobrá, pokusím se ho odlákat.
 		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_11");	//Dobře! Budu čekat na tvůj signál.
@@ -437,7 +437,7 @@ func void DIA_STRF_8121_Addon_Krow_Teleport_Focus_info()
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_03");	//Uhm, kde jsi ho získal?
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_04");	//Řekněme, že jsem ho našel hluboko dole.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_05");	//Našel jsi portál, je to tak?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_06");	//Jop.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_06");	//Ano.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_07");	//Nebylo těžké to uhádnout, díky těmto šutrům portály fungují.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_08");	//Ale vypadá to, že tento vyrobili kdesi na kontinentě. Asi Vengard...
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_09");	//Jak to víš?
@@ -447,11 +447,11 @@ func void DIA_STRF_8121_Addon_Krow_Teleport_Focus_info()
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_13");	//Myslím, že to neví ani skřeti.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_14");	//Jich se stejně nikdo ptát nebude.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_15");	//Samo sebou. Můžeš tím ohniskem aktivovat portál?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_16");	//Samozřejme, jsem zkušený mág... ale teď to asi nebude nejlepší nápad.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_16");	//Samozřejmě, jsem zkušený mág... ale teď to asi nebude nejlepší nápad.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_17");	//Skřeti si toho všimnou a buď ho rozbijí nebo začnou strážit.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_18");	//V každém případě se k němu nedostaneme.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_19");	//Takže bude lepší držet to v tajnosti.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_20");	//Konec konců, ten portál je reálna šance dostat se odtud.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_20");	//Konec konců, ten portál je reálná šance dostat se odtud.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_21");	//Běž za Wenzelem. On ti poví, co dělat dál.
 	MIS_MineTeleport = LOG_Success;
 	Log_SetTopicStatus(TOPIC_MineTeleport,LOG_Success);
