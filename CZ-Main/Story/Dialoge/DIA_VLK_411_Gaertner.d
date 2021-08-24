@@ -255,9 +255,9 @@ func int DIA_Gaertner_HelpThings_condition()
 func void DIA_Gaertner_HelpThings_info()
 {
 	AI_Output(other,self,"DIA_Gaertner_HelpThings_01_00");	//Mohu ti nějak pomoct?
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_01");	//Jasně, bracho. Jak sis možná všiml, jsem tady celý den a nemůžu nikam odejít.
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_01");	//Jasně, brácho. Jak sis možná všiml, jsem tady celý den a nemůžu nikam odejít.
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_02");	//Hlídají mě, dokonce mě nepustí ani za tento plot.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_03");	//Takže můj život postrádá i těch nejzákladnejších potěšení.
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_03");	//Takže můj život postrádá i těch nejzákladnějších potěšení.
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_04");	//Nicméně, pokud bys mi mohl donést jen pár láhví kořalky a trochu trávy...
 	AI_Output(other,self,"DIA_Gaertner_HelpThings_01_05");	//Chápu. Kolik toho chceš?
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_06");	//(Zamyšleně) Myslím, že tři láhve a pět stébel bude stačit. Více zde i tak neschovám.
@@ -297,7 +297,7 @@ func void DIA_Gaertner_HelpThings_Done_info()
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_02");	//Jak se ti můžu odvděčit?
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_03");	//Poslouchej... jednou, při sekání trávy jsem při vchodu do radnice našel tento klíč.
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_04");	//Vypadá to, že ho ztratil jeden z paladinů.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_05");	//Jak mám být upřímný, nevím jakou truhlu otevře...
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_05");	//Abych byl upřímný, nevím jakou truhlu otevře...
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_06");	//... ale určitě tam bude něco, co má hodnotu.
 	B_GiveInvItems(self,other,ItKe_PaladinTruhe,1);
 	MIS_GaertnerHive = LOG_Success;
