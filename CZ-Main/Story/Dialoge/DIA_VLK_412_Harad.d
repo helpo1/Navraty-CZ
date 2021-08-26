@@ -115,7 +115,7 @@ func void DIA_Harad_Arbeit_Info()
 	AI_Output(self,other,"DIA_Harad_Arbeit_12_03");	//Umíš něco?
 	AI_Output(other,self,"DIA_Harad_Arbeit_15_04");	//Jestli máš na mysli kovářství...
 	AI_Output(self,other,"DIA_Harad_Arbeit_12_05");	//Ne, to jsem zrovna nemyslel.
-	AI_Output(self,other,"DIA_Harad_Arbeit_12_06");	//Dřív nebo později skřeti celé tohle město obklíčí a pak budou něco platní pouze ti, kteří je dokáží ubránit.
+	AI_Output(self,other,"DIA_Harad_Arbeit_12_06");	//Dřív nebo později skřeti celé tohle město obklíčí a pak budou něco platní pouze ti, kteří ho dokáží ubránit.
 	if(other.guild == GIL_NONE)
 	{
 		AI_Output(self,other,"DIA_Harad_Arbeit_12_07");	//A já si do učení nevezmu žádného budižkničemu, který při první známce potíží uteče z města se ženami a ostatními poseroutky, místo aby zůstal tady a bránil pevnost.
@@ -344,24 +344,24 @@ func void DIA_Harad_OrcWar_Info()
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_01");	//Bylo to už dávno... (zamyšleně) Byl jsem ještě kluk jako ty.
 	AI_Output(other,self,"DIA_Harad_OrcWar_01_02");	//Možná bys mi mohl říct něco víc?
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_03");	//(vážně) Chceš to slyšet? No, dobře.
-	AI_Output(self,other,"DIA_Harad_OrcWar_01_04");	//...(kašle) sloužil jsem v královské armádě a střežil horský průsmyk vedoucí z Nordmaru v Myrtane.
+	AI_Output(self,other,"DIA_Harad_OrcWar_01_04");	//...(kašle) Sloužil jsem v královské armádě a střežil horský průsmyk vedoucí z Nordmaru v Myrtaně.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_05");	//Skřetí útoky pro nás byly zcela běžné.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_06");	//To je pochopitelné. Koneckonců, průsmyk byl nesmírně důležitým strategickým bodem.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_07");	//Otevíral průchod nejen do Myrtany, ale také do hlavního města království - Vengard!
-	AI_Output(self,other,"DIA_Harad_OrcWar_01_08");	//Z tohoto důvodu, skřeti podnikali opakované pokusy o vyhnání nás z pevnosti.
+	AI_Output(self,other,"DIA_Harad_OrcWar_01_08");	//Z tohoto důvodu skřeti podnikali opakované pokusy o vyhnání nás z pevnosti.
 	AI_Output(other,self,"DIA_Harad_OrcWar_01_09");	//Zdá se, že se jim to nepodařilo...
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_10");	//Ano, máš pravdu... (smích) Všechno se to v podstatě scvrkáválo na drobné potyčky na okraji průsmyku.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_11");	//To trvalo velmi dlouhou dobu... (zamyšleně) Až na rozhodující okamžik!
 	AI_Output(other,self,"DIA_Harad_OrcWar_01_12");	//Co tím myslíš?
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_13");	//Mluvím o bitvě, která je známá po celém světě jako - 'Bitva o sněžnou horu'.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_14");	//Měl jsem možnost účastnit se jí, a právě tam se ze mě stal opravdový muž!
-	AI_Output(other,self,"DIA_Harad_OrcWar_01_15");	//Řekni mi, jak to bylo.
+	AI_Output(other,self,"DIA_Harad_OrcWar_01_15");	//Řekni mi. Jaké to bylo.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_16");	//Bylo to peklo, člověče... (vážně) Skřeti byli dobře připraveni k boji!
-	AI_Output(self,other,"DIA_Harad_OrcWar_01_17");	//Stáli jsme proti alespoň dvou tisícům skřetům.
+	AI_Output(self,other,"DIA_Harad_OrcWar_01_17");	//Stáli jsme proti alespoň dvou tisícům skřetů.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_18");	//A oporou jejich armád byli elitní černí skřeti, to je vzácnost.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_19");	//První dva dny jsme byli pod palbou jejich obrovských katapultů. A za úsvitu třetího dne zaútočili!
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_20");	//Nebudu ti popisovat hrůzy boje, ale přežili jsme jen díky naší odvaze a statečnosti.
-	AI_Output(self,other,"DIA_Harad_OrcWar_01_21");	//Hmmm... (kašel) Malá četa paladinů, nám prišla na pomoc.
+	AI_Output(self,other,"DIA_Harad_OrcWar_01_21");	//Hmmm... (kašel) Malá četa paladinů nám přišla na pomoc.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_22");	//S jejich pomocí jsme večer byli schopni zatlačit skřety přicházející z Nordmaru.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_23");	//A tak skončila tato velká bitva!
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_24");	//Protože jsem měl jen můj meč, kterým jsem bojoval celý tento den.
@@ -376,13 +376,13 @@ func void DIA_Harad_OrcWar_Info()
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_33");	//Ale pokud ho opravdu chceš, přines mi amulet skřetího válečníka.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_34");	//Pak budu vědět, že můj meč dostal odvážný a statečný chlap!
 	AI_Output(other,self,"DIA_Harad_OrcWar_01_35");	//Jaký to je amulet?
-	AI_Output(self,other,"DIA_Harad_OrcWar_01_36");	//Obvykle ho nosí skřetí elitní válečníci. Tím sa odlišují od zbytku válečníků.
+	AI_Output(self,other,"DIA_Harad_OrcWar_01_36");	//Obvykle ho nosí skřetí elitní válečníci. Tím se odlišují od zbytku válečníků.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_37");	//Získej ho! A pak dostaneš odměnu.
 	AI_Output(other,self,"DIA_Harad_OrcWar_01_38");	//Dobře, zkusím to.
 	MIS_HaradOrcWar = LOG_Running;
 	Log_CreateTopic(TOPIC_HaradOrcWar,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HaradOrcWar,LOG_Running);
-	B_LogEntry(TOPIC_HaradOrcWar,"Harad mi řekl o památné bitvě se skřety, která se konala na zasněženém horském průsmyku mezi Nordmarem a Myrtanou. Bojoval v ní a zabil mnoho skřetů. Jako vzpomínku na tuto bitvu si stále uchovává svůj meč, kterým bojoval v ten osudný den a nazval ho Zabiják skřetů. Když mu přinesu amulet elitného skřetího válečníka, je ochotný mi svůj meč dát.");
+	B_LogEntry(TOPIC_HaradOrcWar,"Harad mi řekl o památné bitvě se skřety, která se konala na zasněženém horském průsmyku mezi Nordmarem a Myrtanou. Bojoval v ní a zabil mnoho skřetů. Jako vzpomínku na tuto bitvu si stále uchovává svůj meč, kterým bojoval v ten osudný den a nazval ho Skřetobij. Když mu přinesu amulet elitného skřetího válečníka, je ochotný mi svůj meč dát.");
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(OrcElite_Roam_Harad,"NW_FOREST_PATH_12");
 };
@@ -408,22 +408,22 @@ func int DIA_Harad_OrcWar_Done_Condition()
 func void DIA_Harad_OrcWar_Done_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Harad_OrcWar_Done_01_00");	//Přinesl jsem ti amulet elitní skřeta.
+	AI_Output(other,self,"DIA_Harad_OrcWar_Done_01_00");	//Přinesl jsem ti amulet elitního skřeta.
 	AI_Output(self,other,"DIA_Harad_OrcWar_Done_01_01");	//Opravdu?! Neuvěřím, dokud ho neuvidím na vlastní oči.
 	AI_Output(other,self,"DIA_Harad_OrcWar_Done_01_02");	//Tady, podívej se.
 	B_GiveInvItems(other,self,ItMi_BlackOrcTalisman,1);
 	Npc_RemoveInvItems(self,ItMi_BlackOrcTalisman,1);
-	AI_Output(self,other,"DIA_Harad_OrcWar_Done_01_03");	//(díva se) Jo, člověče zdá sa, že je to on...
+	AI_Output(self,other,"DIA_Harad_OrcWar_Done_01_03");	//(dívá se) Jo, člověče zdá se, že je to on...
 	AI_Output(self,other,"DIA_Harad_OrcWar_Done_01_04");	//I když... je to už mnoho let... ale ano, je to on!
 	AI_Output(other,self,"DIA_Harad_OrcWar_Done_01_05");	//No, vidíš? Já bych ti nelhal.
 	AI_Output(self,other,"DIA_Harad_OrcWar_Done_01_06");	//Dobře, dobře... (respekt) Odpusť starému muži... Jsem na tebe hrdý!
-	AI_Output(self,other,"DIA_Harad_OrcWar_Done_01_07");	//Jen pár lidi v dnešní době, je schopno vyrovnat se s elitním skřetem. Ale ty jsi to dokázal!
+	AI_Output(self,other,"DIA_Harad_OrcWar_Done_01_07");	//Jen pár lidí v dnešní době je schopno se vypořádat s elitním skřetem. Ale ty jsi to dokázal!
 	AI_Output(self,other,"DIA_Harad_OrcWar_Done_01_08");	//A proto, tady je můj starý meč! Nyní je tvůj...
 	AI_Output(other,self,"DIA_Harad_OrcWar_Done_01_09");	//Děkuji.
 	B_GiveInvItems(self,other,ITMW_1H_SWORD_ORCSLAYER_01,1);
 	MIS_HaradOrcWar = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HaradOrcWar,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HaradOrcWar,"Donesl jsem Haradovi amulet elitního skřeta a on, jak slíbil, dal mi svůj meč.");
+	B_LogEntry(TOPIC_HaradOrcWar,"Donesl jsem Haradovi amulet elitního skřeta a on, jak slíbil, mi dal svůj meč.");
 };
 
 var int Harad_StartGuild;
@@ -597,7 +597,7 @@ func void DIA_Harad_LEHRLING_OK()
 	B_GiveInvItems(self,other,itar_smith_nov,1);
 	AI_Output(self,other,"DIA_Harad_LEHRLING_OK_12_04D");	//A tohle kladivo máš jako nástroj.
 	B_GiveInvItems(self,other,ItMw_1H_Mace_L_04,1);
-	AI_Output(self,other,"DIA_Harad_LEHRLING_OK_12_04E");	//No, a pár kousků oceli. Zo začátku to bude stačit.
+	AI_Output(self,other,"DIA_Harad_LEHRLING_OK_12_04E");	//No, a pár kousků oceli. Ze začátku to bude stačit.
 	Player_IsApprentice = APP_Harad;
 	Npc_ExchangeRoutine(Lothar,"START");
 	CreateInvItems(VLK_407_Hakon,itmiswordblade_1,2);
@@ -731,17 +731,17 @@ func void DIA_Harad_AlsLehrling_Info()
 	}
 	else if((other.guild == GIL_KDW) && (Harad_KDWKommentar == FALSE))
 	{
-		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_10");	//Och, ty si sa dal na cestu mága jako Vatras! Jen neber kladivo do ruky v tomhle rouchu, jinak umřu smíchy.
+		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_10");	//Och, ty jsi se dal na cestu mága jako Vatras! Jen neber kladivo do ruky v tomhle rouchu, jinak umřu smíchy.
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_11");	//Ok. Je to tvoja volba. Volba mého studenta!
 		Harad_KDWKommentar = TRUE;
 	}
 	else if((Harad_SEKKommentar == FALSE) && ((other.guild == GIL_TPL) || (other.guild == GIL_GUR) || (other.guild == GIL_SEK)))
 	{
-		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_12");	//Takže si podlehl kouzlu drogy z bažin? Jo, silné tělo nemusí vždy znamenať aj silného ducha.
+		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_12");	//Takže si podlehl kouzlu drogy z bažin? Jo, silné tělo nemusí vždy znamenať i silného ducha.
 
 		if(other.guild == GIL_TPL)
 		{
-			AI_Output(self,other,"DIA_Harad_AlsLehrling_12_13");	//Jsi ve zbroji a s mečem. To mi dělá radost. Takže si navázal na kovářské řemeslo.
+			AI_Output(self,other,"DIA_Harad_AlsLehrling_12_13");	//Jsi ve zbroji a s mečem. To mi dělá radost. Takže jsi navázal na kovářské řemeslo.
 		};
 
 		Harad_SEKKommentar = TRUE;
