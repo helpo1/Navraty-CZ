@@ -1547,11 +1547,11 @@ func int dia_harad_armorcanteach_condition()
 func void dia_harad_armorcanteach_info()
 {
 	AI_Output(other,self,"DIA_Harad_ArmorCanTeach_01_00");	//Rozumíš kování zbrojí?
-	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_01");	//Né, že jim rozumím! Já je vyrábím, dítě! Samozřejmě, ale jen paladinům a jen z rozkazu lorda Hagena.
+	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_01");	//Ne, že jim rozumím! Já je vyrábím, dítě! Samozřejmě, ale jen paladinům a jen z rozkazu lorda Hagena.
 	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_03A");	//A taky jsem řekl, že je vyrábím pouze na zakázku lorda Hagena. A já jsem žádný rozkaz nedostal. Poslouchal jsi mě dobře?!
 	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_04");	//Ale protože byste je měli dostat všichni - můžu ti ukázat, jak vylepšit zbroj, za použití magické rudy.
 	AI_Output(other,self,"DIA_Harad_ArmorCanTeach_01_05");	//Magické rudy?!
-	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_06");	//Jo, chlape, magické rudy. s její pomocí rytířská zbroj dostane opravdu kolosální trvanlivost a bude spolehlivě nesrovnatelná proti většině jiných zbrojí.
+	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_06");	//Jo, chlape, magické rudy. S její pomocí rytířská zbroj dostane opravdu kolosální trvanlivost a bude spolehlivě nesrovnatelná proti většině jiných zbrojí.
 	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_07");	//Ale rudná zbroj rytíře je to nejlepší, co jsem viděl!
 	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_08");	//Ale abys takovou mohl udělat, musíš se NAUČIT ji udělat!
 	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_09");	//Výrobní technika je velmi složitá a nedá se naučit koukáním přes rameno.
@@ -1585,9 +1585,9 @@ func void b_harad_teacharmor_1()
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
 		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_02");	//... A tak! Pro začátek si ověř, jestli máš vše potřebné.
-		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_03");	//... Vezmi kousek magické rudy, rožžhav surovou ocel a zpracuj tyto dva kovy. Vznikne lepší materiál, než ze dvou stejných kovů.
+		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_03");	//... Vezmi kousek magické rudy, rozžhav surovou ocel a zpracuj tyto dva kovy. Vznikne lepší materiál, než ze dvou stejných kovů.
 		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_04");	//... Dále přidej slitinu ve správném poměru, ale hlavně to nemíchej až nakonec!
-		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_05");	//... Poté pomocí formovacích desek udělej ze slitiny rudy a ocely pláty, které díky ocelovým úchytkám připevníš k povrchu již hotové zbroje.
+		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_05");	//... Poté pomocí formovacích desek udělej ze slitiny rudy a oceli pláty, které díky ocelovým úchytkám připevníš k povrchu již hotové zbroje.
 		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_06");	//... Tady tohle, vidíš jak to vypadá... (ukazuje)... Plát pevně sedí na zbroji a je s ní praktycky spojený.
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
@@ -1669,7 +1669,7 @@ func void dia_harad_armorteach_info()
 	else
 	{
 		AI_Output(self,other,"DIA_Harad_ArmorTeach_01_02");	//Ale teď už bude večer!... (naštvaný)
-		AI_Output(self,other,"DIA_Harad_ArmorTeach_01_03");	//Přijď ráno a začneme s tvím tréninkem.
+		AI_Output(self,other,"DIA_Harad_ArmorTeach_01_03");	//Přijď ráno a začneme s tvým tréninkem.
 	};
 };
 
@@ -1741,7 +1741,7 @@ func void dia_harad_tellsmarduk_info()
 	AI_Output(other,self,"DIA_Harad_TellsMarduk_01_00");	//Jak je možno vylepšit rudnou zbroj paladina?
 	AI_Output(self,other,"DIA_Harad_TellsMarduk_01_01");	//Já už ji vylepšit nedokážu, to by dokázali jen mí mistři v Nordmaru...
 	AI_Output(self,other,"DIA_Harad_TellsMarduk_01_02");	//Ale slyšel jsem, že mágové Ohně dokážou posvětit rudu a tím jí dají božskou podstatu. Něco jako posvěcení rudného meče.
-	AI_Output(self,other,"DIA_Harad_TellsMarduk_01_03");	//Samozřejmě to jsou jen keci - ale kdo ví, kdo ví...
+	AI_Output(self,other,"DIA_Harad_TellsMarduk_01_03");	//Samozřejmě to jsou jen kecy - ale kdo ví, kdo ví...
 	Log_CreateTopic(TOPIC_MAGICINNOSARMOR,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MAGICINNOSARMOR,LOG_Running);
 	B_LogEntry(TOPIC_MAGICINNOSARMOR,"Harad mi řekl, že mágové Ohně by byli schopni rudě na mé zbroji dát božskou podstatu a to jejím posvěcením...");
@@ -1755,7 +1755,7 @@ instance DIA_HARAD_SARAHELPSTHREE(C_Info)
 	condition = dia_harad_sarahelpsthree_condition;
 	information = dia_harad_sarahelpsthree_info;
 	permanent = TRUE;
-	description = "Chci zaplatit Sařin dluh.";
+	description = "Chci zaplatit Sářin dluh.";
 };
 
 
@@ -1769,7 +1769,7 @@ func int dia_harad_sarahelpsthree_condition()
 
 func void dia_harad_sarahelpsthree_info()
 {
-	AI_Output(other,self,"DIA_Harad_SaraHelpsThree_01_00");	//Chci zaplatit Sařin dluh.
+	AI_Output(other,self,"DIA_Harad_SaraHelpsThree_01_00");	//Chci zaplatit Sářin dluh.
 	if(HAKONTOSARADOBT == FALSE)
 	{
 		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_01");	//CO?! TY?!... (udiveně) dluh Sáry?!
@@ -1792,7 +1792,7 @@ func void dia_harad_sarahelpsthree_info()
 		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_16");	//Vrazím do tě meč!
 		B_GiveInvItems(self,other,ItMw_Schwert4,1);
 		SARADOBTPAYED = TRUE;
-		B_LogEntry(TOPIC_SARAHELPSTHREE,"Zaplatil jsem Haradovi Sařin dluh.");
+		B_LogEntry(TOPIC_SARAHELPSTHREE,"Zaplatil jsem Haradovi Sářin dluh.");
 	}
 	else
 	{
@@ -1825,7 +1825,7 @@ func void dia_harad_aboutswbl_info()
 	AI_Output(other,self,"DIA_Harad_aboutswbl_01_00");	//Odkud bereš ocelové ingoty?
 	AI_Output(self,other,"DIA_Harad_aboutswbl_01_01");	//Nyní je těžké je sehnat - v Hornickém údolí je stále těžší dobývat rudu a tavit ingoty.
 	AI_Output(self,other,"DIA_Harad_aboutswbl_01_02");	//Můžeš to zkusit u obchodníků, nebo sám odlévat ingoty z rudy.
-	AI_Output(self,other,"DIA_Harad_aboutswbl_01_03");	//Nicméně musíš nejprve vytěžit nějakou rudu a pak najít někoho kdo rozumí tavení.
+	AI_Output(self,other,"DIA_Harad_aboutswbl_01_03");	//Nicméně musíš nejprve vytěžit nějakou rudu a pak najít někoho, kdo rozumí tavení.
 	AI_Output(self,other,"DIA_Harad_aboutswbl_01_04");	//Můžeš se pokusit najít učitele z bývalé trestanecké kolonie, ale nevím jestli v Khorinisu někoho seženeš.
 	ABOUTSWBL = TRUE;
 	Log_CreateTopic(TOPIC_STEELDRAW,LOG_NOTE);
@@ -1855,8 +1855,8 @@ func void DIA_Harad_PrioratBlade_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Harad_PrioratBlade_01_01");	//Jsi zkušený kovář?
-	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_02");	//(Vážně) No, to záleží, ako sa to veme...
-	AI_Output(other,self,"DIA_Harad_PrioratBlade_01_03");	//Skus se podívat na tuto čepel. Myslím, že by si o tom mohol vedieť viac...
+	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_02");	//(Vážně) No, to záleží, jak se to vezme...
+	AI_Output(other,self,"DIA_Harad_PrioratBlade_01_03");	//Zkus se podívat na tuto čepel. Myslím, že by si o tom mohl vědět víc...
 	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_04");	//No, uvidíme.
 	AI_Output(other,self,"DIA_Harad_PrioratBlade_01_05");	//To je ono.
 	CreateInvItems(self,ItMw_1H_AssBlade_View,1);
@@ -1869,9 +1869,9 @@ func void DIA_Harad_PrioratBlade_info()
 	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_06");	//(Vážně) No, mohu ti říci jednu věc - tato zbraň není vyrobena zde v Khorinisu!
 	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_07");	//Toto není práce ledajakého kováře, ale skutečného mistra zbrojíra!
 	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_08");	//A takyto mistr, pokud je mi známo, na ostrově nikdy nebyl!
-	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_09");	//Viac ti nemohu říci.
-	AI_Output(other,self,"DIA_Harad_PrioratBlade_01_10");	//To je v pořádku řekl jsi mi dost...
-	B_LogEntry(TOPIC_PrioratStart,"Harad mi řekl pouze to, že meč byl vykovaný velmi zkušeným zbrojírom. Ale taký prý na ostrově nikdy nebyl...");
+	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_09");	//Víc ti nemohu říci.
+	AI_Output(other,self,"DIA_Harad_PrioratBlade_01_10");	//To je v pořádku, řekl jsi mi dost...
+	B_LogEntry(TOPIC_PrioratStart,"Harad mi řekl pouze to, že meč byl vykovaný velmi zkušeným zbrojířem. Ale taký prý na ostrově nikdy nebyl...");
 };
 
 instance DIA_Harad_DoCrossBow(C_Info)
