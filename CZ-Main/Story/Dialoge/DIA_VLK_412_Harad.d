@@ -873,7 +873,7 @@ instance DIA_Harad_MiscWeap(C_Info)
 	condition = DIA_Harad_MiscWeap_Condition;
 	information = DIA_Harad_MiscWeap_Info;
 	permanent = FALSE;
-	description = "Co kromě vykovaných zbraní ti jeste mohu prodat?";
+	description = "Co kromě vykovaných zbraní ti ještě mohu prodat?";
 };
 
 func int DIA_Harad_MiscWeap_Condition()
@@ -886,11 +886,11 @@ func int DIA_Harad_MiscWeap_Condition()
 
 func void DIA_Harad_MiscWeap_Info()
 {
-	AI_Output(other,self,"DIA_Harad_MiscWeap_01_00");	//Co kromě vykovaných zbraní ti jeste mohu prodat?
+	AI_Output(other,self,"DIA_Harad_MiscWeap_01_00");	//Co kromě vykovaných zbraní ti ještě mohu prodat?
 	AI_Output(self,other,"DIA_Harad_MiscWeap_01_01");	//Pokud najdeš staré rezavé meče, pak je přines ke mně.
-	AI_Output(other,self,"DIA_Harad_MiscWeap_01_02");	//Prečo?
-	AI_Output(self,other,"DIA_Harad_MiscWeap_01_03");	//Túto zbraň aj tak draho nepredáš, ale dá sa z nej ešte použiť ocel.
-	AI_Output(self,other,"DIA_Harad_MiscWeap_01_04");	//Koneckonců, ocel mala vždy svoju cenu. Zejména s ohledem na současný stav věcí.
+	AI_Output(other,self,"DIA_Harad_MiscWeap_01_02");	//Proč?
+	AI_Output(self,other,"DIA_Harad_MiscWeap_01_03");	//Tuto zbraň i tak draze neprodáš, ale dá se z něj ještě použít ocel.
+	AI_Output(self,other,"DIA_Harad_MiscWeap_01_04");	//Koneckonců, ocel měla vždy svojí cenu. Zejména s ohledem na současný stav věcí.
 	B_LogEntry(TOPIC_CityTrader,"Harad kupuje rezavé zbraně.");
 	HaradBuyMiscWeap = TRUE;
 };
@@ -903,7 +903,7 @@ instance DIA_Harad_HaradBuyMiscWeap(C_Info)
 	condition = DIA_Harad_HaradBuyMiscWeap_Condition;
 	information = DIA_Harad_HaradBuyMiscWeap_Info;
 	permanent = TRUE;
-	description = "Priniesol som ti hrdzavé zbrane.";
+	description = "Přinesl jsem ti zrezivělé zbraně.";
 };
 
 func int DIA_Harad_HaradBuyMiscWeap_Condition()
@@ -926,10 +926,10 @@ func void DIA_Harad_HaradBuyMiscWeap_Info()
 
 	price_all = 2;
 	
-	AI_Output(other,self,"DIA_Harad_HaradBuyMiscWeap_01_00");	//Priniesol som ti hrdzavé zbrane.
-	AI_Output(self,other,"DIA_Harad_HaradBuyMiscWeap_01_01");	//Dobrý!
-	AI_Output(self,other,"DIA_Harad_HaradBuyMiscWeap_01_02");	//Vzhladom na to, že nemajú takmer žiadnu cenu, dám ti presne dve zlaté za ostrie.
-	AI_Output(self,other,"DIA_Harad_HaradBuyMiscWeap_01_03");	//Pozrime sa, čo máš...
+	AI_Output(other,self,"DIA_Harad_HaradBuyMiscWeap_01_00");	//Přinesl jsem ti zrezivělé zbraně.
+	AI_Output(self,other,"DIA_Harad_HaradBuyMiscWeap_01_01");	//Dobře!
+	AI_Output(self,other,"DIA_Harad_HaradBuyMiscWeap_01_02");	//Vzhledem na to, že nemají skoro žádnou cenu, dám ti přesně dvě zlaté za ostří.
+	AI_Output(self,other,"DIA_Harad_HaradBuyMiscWeap_01_03");	//Tak se podívejme, co tady máš...
 
 	misc_01 = Npc_HasItems(other,ItMw_1h_MISC_Sword);
 	misc_02 = Npc_HasItems(other,ITMW_1H_MISC_GSWORD);
@@ -944,8 +944,8 @@ func void DIA_Harad_HaradBuyMiscWeap_Info()
 	Npc_RemoveInvItems(hero,ItMw_2H_Sword_M_01,Npc_HasItems(hero,ItMw_2H_Sword_M_01));
 
 	AI_PlayAni(self,"T_YES");
-	AI_Output(self,other,"DIA_Harad_HaradBuyMiscWeap_01_04");	//No, dobre.
-	AI_Output(self,other,"DIA_Harad_HaradBuyMiscWeap_01_05");	//Vezmem si všetky! A tady je tvoje zlato.
+	AI_Output(self,other,"DIA_Harad_HaradBuyMiscWeap_01_04");	//No, dobře.
+	AI_Output(self,other,"DIA_Harad_HaradBuyMiscWeap_01_05");	//Vezmu si všechny! A tady je tvoje zlato.
 	B_GiveInvItems(self,other,ItMi_Gold,misc_all * price_all);
 	AI_Output(self,other,"DIA_Harad_HaradBuyMiscWeap_01_06");	//Pokud najdeš nějaké další, přines mi je.
 };
@@ -1151,7 +1151,7 @@ func void DIA_Harad_TeachSmith_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bennet_ArmorTeach_01_02");	//Pro dnešek už jsem s prací v kovárně skončil...
+		AI_Output(self,other,"DIA_Bennet_ArmorTeach_01_02");	//Pro dnešek jsem už s prací v kovárně skončil...
 		AI_Output(self,other,"DIA_Bennet_ArmorTeach_01_03");	//Přijď zítra ráno, pak si o tom můžeme promluvit.
 	};
 };
