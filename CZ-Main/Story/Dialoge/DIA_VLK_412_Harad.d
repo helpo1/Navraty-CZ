@@ -296,7 +296,7 @@ func void DIA_Harad_OrcSuccess_Info()
 
 	if(Harad_HakonMission == TRUE)
 	{
-		AI_Output(self,other,"DIA_Harad_OrcSuccess_12_02");	//Tak tys to PŘECE dokázal! Tos tedy fakt dobrý!
+		AI_Output(self,other,"DIA_Harad_OrcSuccess_12_02");	//Tak tys to PŘECE dokázal! To jsi tedy fakt dobrý!
 	};
 	AI_Output(self,other,"DIA_Harad_OrcSuccess_12_03");	//Takovou zbraň už jsem neměl v ruce, ani nepamatuju - naposledy, když jsem sloužil jako voják ve skřetí válce.
 	AI_Output(self,other,"DIA_Harad_OrcSuccess_12_04");	//To byly krušné časy, to ti povím.
@@ -365,7 +365,7 @@ func void DIA_Harad_OrcWar_Info()
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_22");	//S jejich pomocí jsme večer byli schopni zatlačit skřety přicházející z Nordmaru.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_23");	//A tak skončila tato velká bitva!
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_24");	//Protože jsem měl jen můj meč, kterým jsem bojoval celý tento den.
-	AI_Output(self,other,"DIA_Harad_OrcWar_01_25");	//Nechal jsem jsi ho jako připomínku toho, již je zapotřebí odvahy a statečnosti lidí!
+	AI_Output(self,other,"DIA_Harad_OrcWar_01_25");	//Nechal jsem si ho jako připomínku toho, již je zapotřebí odvahy a statečnosti lidí!
 	AI_Output(other,self,"DIA_Harad_OrcWar_01_26");	//A co je to za meč?
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_27");	//Dal jsem mu jméno - 'Skřetobij'! Hodný svého jména.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_28");	//Zabil jsem s ním tak tucet skřetů...
@@ -382,7 +382,7 @@ func void DIA_Harad_OrcWar_Info()
 	MIS_HaradOrcWar = LOG_Running;
 	Log_CreateTopic(TOPIC_HaradOrcWar,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HaradOrcWar,LOG_Running);
-	B_LogEntry(TOPIC_HaradOrcWar,"Harad mi řekl o památné bitvě se skřety, která se konala na zasněženém horském průsmyku mezi Nordmarem a Myrtanou. Bojoval v ní a zabil mnoho skřetů. Jako vzpomínku na tuto bitvu si stále uchovává svůj meč, kterým bojoval v ten osudný den a nazval ho Skřetobij. Když mu přinesu amulet elitného skřetího válečníka, je ochotný mi svůj meč dát.");
+	B_LogEntry(TOPIC_HaradOrcWar,"Harad mi řekl o památné bitvě se skřety, která se konala na zasněženém horském průsmyku mezi Nordmarem a Myrtanou. Bojoval v ní a zabil mnoho skřetů. Jako vzpomínku na tuto bitvu si stále uchovává svůj meč, se kterým bojoval v ten osudný den a nazval ho Skřetobij. Když mu přinesu amulet elitného skřetího válečníka, je ochotný mi svůj meč dát.");
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(OrcElite_Roam_Harad,"NW_FOREST_PATH_12");
 };
@@ -435,7 +435,7 @@ instance DIA_Harad_LEHRLING(C_Info)
 	condition = DIA_Harad_LEHRLING_Condition;
 	information = DIA_Harad_LEHRLING_Info;
 	permanent = TRUE;
-	description = "Kdy můžu jako tvůj učedník začít?";
+	description = "Kdy můžu začít jako tvůj učedník?";
 };
 
 
@@ -451,7 +451,7 @@ func void DIA_Harad_LEHRLING_Info()
 {
 	var int stimmen;
 	stimmen = 0;
-	AI_Output(other,self,"DIA_Harad_LEHRLING_15_00");	//Kdy můžu jako tvůj učedník začít?
+	AI_Output(other,self,"DIA_Harad_LEHRLING_15_00");	//Kdy můžu začít jako tvůj učedník?
 
 	if((MIS_Harad_Orc == LOG_SUCCESS) || ((MIS_HakonBandits == LOG_SUCCESS) && (Harad_HakonMission == TRUE)))
 	{
@@ -560,7 +560,7 @@ func void DIA_Harad_LEHRLING_Info()
 		else
 		{
 			AI_Output(self,other,"DIA_Harad_LEHRLING_12_26");	//Potřebuješ doporučení alespoň od čtyř mistrů, jinak tě nikdo v dolní čtvrti do učení nepřijme.
-			AI_Output(self,other,"DIA_Harad_LEHRLING_12_27");	//Měl by sis proto promluvit se všemi, které jsi ještě nepřesvědčil.
+			AI_Output(self,other,"DIA_Harad_LEHRLING_12_27");	//Měl bys proto promluvit se všemi, které jsi ještě nepřesvědčil.
 		};
 	}
 	else
@@ -737,7 +737,7 @@ func void DIA_Harad_AlsLehrling_Info()
 	}
 	else if((Harad_SEKKommentar == FALSE) && ((other.guild == GIL_TPL) || (other.guild == GIL_GUR) || (other.guild == GIL_SEK)))
 	{
-		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_12");	//Takže si podlehl kouzlu drogy z bažin? Jo, silné tělo nemusí vždy znamenať i silného ducha.
+		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_12");	//Takže si podlehl kouzlu drogy z bažin? Jo, silné tělo nemusí vždy znamenat i silného ducha.
 
 		if(other.guild == GIL_TPL)
 		{
@@ -1598,7 +1598,7 @@ func void b_harad_teacharmor_1()
 
 func void b_harad_teacharmor_2()
 {
-	AI_Output(self,other,"DIA_Harad_TeachArmor_2_01_01");	//Jestli se skutečně chopíš této možnosti, budeš moci vytvářet nejlepši zbroje světa.
+	AI_Output(self,other,"DIA_Harad_TeachArmor_2_01_01");	//Jestli se skutečně chopíš této možnosti, budeš moci vytvářet nejlepší zbroje světa.
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
 		AI_SetWalkMode(self,NPC_WALK);
@@ -1614,7 +1614,7 @@ func void b_harad_teacharmor_2()
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Harad_TeachArmor_2_01_08");	//... Je to připravené! Zde je celé tajmeství. Teď už víš dost o výrobě těžké rudné zbroje paladina.
-		AI_Output(self,other,"DIA_Harad_TeachArmor_2_01_09");	//Už tě nemohu víc naučit. Doufám že znalosti co jsem ti předal ti pomohou s tvojím posláním.
+		AI_Output(self,other,"DIA_Harad_TeachArmor_2_01_09");	//Už tě nemohu víc naučit. Doufám, že znalosti co jsem ti předal ti pomohou s tvojím posláním.
 		HARADTELLSMARDUK_P2 = TRUE;
 	};
 };
@@ -1789,7 +1789,7 @@ func void dia_harad_sarahelpsthree_info()
 		Npc_RemoveInvItems(other,ItMi_Gold,2000);
 		AI_Output(other,self,"DIA_Harad_SaraHelpsThree_01_09");	//Tady.
 		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_10");	//Nemožné!... (udiveně) Jseš opravdu rozhodnut to udělat?!
-		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_16");	//Vrazím do tě meč!
+		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_16");	//Jestli ano, tak si vezmi jako poděkování tento meč. Jeden z mých nejlepších!
 		B_GiveInvItems(self,other,ItMw_Schwert4,1);
 		SARADOBTPAYED = TRUE;
 		B_LogEntry(TOPIC_SARAHELPSTHREE,"Zaplatil jsem Haradovi Sářin dluh.");
@@ -1867,11 +1867,11 @@ func void DIA_Harad_PrioratBlade_info()
 	AI_RemoveWeapon(self);
 	AI_UnequipWeapons(self);
 	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_06");	//(Vážně) No, mohu ti říci jednu věc - tato zbraň není vyrobena zde v Khorinisu!
-	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_07");	//Toto není práce ledajakého kováře, ale skutečného mistra zbrojíra!
-	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_08");	//A takyto mistr, pokud je mi známo, na ostrově nikdy nebyl!
+	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_07");	//Toto není práce ledajakého kováře, ale skutečného mistra zbrojíře!
+	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_08");	//A takový mistr, pokud je mi známo, na ostrově nikdy nebyl!
 	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_09");	//Víc ti nemohu říci.
 	AI_Output(other,self,"DIA_Harad_PrioratBlade_01_10");	//To je v pořádku, řekl jsi mi dost...
-	B_LogEntry(TOPIC_PrioratStart,"Harad mi řekl pouze to, že meč byl vykovaný velmi zkušeným zbrojířem. Ale taký prý na ostrově nikdy nebyl...");
+	B_LogEntry(TOPIC_PrioratStart,"Harad mi řekl pouze to, že meč byl vykovaný velmi zkušeným zbrojířem. Ale takový prý na ostrově nikdy nebyl...");
 };
 
 instance DIA_Harad_DoCrossBow(C_Info)
