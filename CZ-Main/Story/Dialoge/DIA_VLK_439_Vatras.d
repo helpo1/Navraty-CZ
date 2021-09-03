@@ -1535,7 +1535,7 @@ func void dia_addon_vatras_cangoportaltwo_info()
 
 	if((SC_IsRanger == FALSE) && (hero.guild == GIL_NDW))
 	{
-		AI_Output(self,other,"DIA_Addon_Vatras_CanGoPortal_15_05");	//Jako náš novic nemusíš vztoupit do 'Kruhu'.
+		AI_Output(self,other,"DIA_Addon_Vatras_CanGoPortal_15_05");	//Jako náš novic nemusíš vstoupit do 'Kruhu'.
 		AI_Output(self,other,"DIA_Addon_Vatras_CanGoPortal_15_06");	//Naši Bratři to přijmou.
 		CreateInvItems(self,ItRi_Ranger_Addon,1);
 		B_GiveInvItems(self,other,ItRi_Ranger_Addon,1);
@@ -1546,7 +1546,7 @@ func void dia_addon_vatras_cangoportaltwo_info()
 	Log_SetTopicStatus(TOPIC_Addon_Sklaven,LOG_Running);
 	B_GivePlayerXP(100);
 	B_LogEntry_Quiet(TOPIC_Addon_Sklaven,"Mám zjistit proč Raven unáší občany Khorinisu.");
-	B_LogEntry(TOPIC_Addon_KDW,"Vatras mě poslal, s dopisem, za Saturasem. Měl bych teď jít s ostatními mágy Vody skrze portál a najít bývalého rudobarona Ravena.");
+	B_LogEntry(TOPIC_Addon_KDW,"Vatras mě poslal s dopisem za Saturasem. Měl bych teď jít s ostatními mágy Vody skrze portál a najít bývalého rudobarona Ravena.");
 	CANGOTOPORTAL = TRUE;
 
 	if((Lares_TakeFirstMissionFromVatras == TRUE) || (SC_IsRanger == TRUE) || (hero.guild == GIL_NDW))
@@ -1631,7 +1631,7 @@ func void DIA_Addon_Vatras_MissingPeople_Report()
 	};
 	if(((Elvrich_GoesBack2Thorben == TRUE) || (Elvrich_SCKnowsPirats == TRUE) || (SC_KnowsDexterAsKidnapper == TRUE)) && (MISSINGPEOPLEINFO[2] == FALSE))
 	{
-		AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Report_15_02");	//Taky jsem se doslechl, že jsou za to odpovědní banditi.
+		AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Report_15_02");	//Taky jsem se doslechl, že jsou za to zodpovědní banditi.
 		Vatras_MissingPeopleReports = Vatras_MissingPeopleReports + 1;
 		MISSINGPEOPLEINFO[2] = TRUE;
 	};
@@ -1679,14 +1679,14 @@ func void DIA_Addon_Vatras_MissingPeople_Report()
 	};
 	if(Vatras_MissingPeopleReports != 0)
 	{
-		AI_Output(self,other,"DIA_Addon_Vatras_MissingPeople_Report_05_12");	//Myslím, že jsi na dobré cestě. Drž se ji.
+		AI_Output(self,other,"DIA_Addon_Vatras_MissingPeople_Report_05_12");	//Myslím, že jsi na dobré cestě. Drž se jí.
 		XP_Vatras_MissingPeopleReports = XP_Addon_Vatras_MissingPeopleReport * Vatras_MissingPeopleReports;
 		B_GivePlayerXP(XP_Vatras_MissingPeopleReports);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Addon_Vatras_MissingPeople_Report_05_13");	//Co jsi zjistil?
-		AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Report_15_14");	//Bohužel, zatím nic směrodátného.
+		AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Report_15_14");	//Bohužel zatím nic směrodátného.
 	};
 };
 
@@ -1819,7 +1819,7 @@ func void DIA_Addon_Vatras_Waffen_Success()
 	else
 	{
 		AI_Output(other,self,"DIA_Addon_Vatras_CaughtFernando_15_09");	//Ještě ne.
-		AI_Output(self,other,"DIA_Addon_Vatras_CaughtFernando_05_10");	//Tak pospěš a zprav ho o tom! Toto musí být okamžitě zastaveno.
+		AI_Output(self,other,"DIA_Addon_Vatras_CaughtFernando_05_10");	//Tak pospěš a řekni mu o tom! Toto musí být okamžitě zastaveno.
 	};
 };
 
@@ -1958,9 +1958,9 @@ func int DIA_Addon_Vatras_GuildHelp_Condition()
 
 func void DIA_Addon_Vatras_GuildHelp_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Vatras_GuildHelp_15_00");	//Lares se zmínil že mi pomužeš přidat se k mágum Ohně.
-	AI_Output(self,other,"DIA_Addon_Vatras_GuildHelp_05_01");	//To je tá volba? Cesta Ohně?
-	AI_Output(other,self,"DIA_Addon_Vatras_GuildHelp_15_02");	//Jo, hodlám se stát mágem Ohně.
+	AI_Output(other,self,"DIA_Addon_Vatras_GuildHelp_15_00");	//Lares se zmínil, že mi pomůžeš přidat se k mágům Ohně.
+	AI_Output(self,other,"DIA_Addon_Vatras_GuildHelp_05_01");	//To je tvá volba? Cesta Ohně?
+	AI_Output(other,self,"DIA_Addon_Vatras_GuildHelp_15_02");	//Jo. Hodlám se stát mágem Ohně.
 	AI_Output(self,other,"DIA_Addon_Vatras_GuildHelp_05_03");	//Pokud si dobře pamatuji, nepřestali přijímat novice. Proč chceš tedy mou pomoc?
 	if(SC_KnowsKlosterTribut == TRUE)
 	{
