@@ -2304,7 +2304,7 @@ func void DIA_Vatras_GODS_ADANOS()
 {
 	AI_Output(other,self,"DIA_Vatras_GODS_ADANOS_15_00");	//Řekni mi něco o Adanovi.
 	AI_Output(self,other,"DIA_Vatras_GODS_ADANOS_05_01");	//Adanos je bůh středu. Vymezuje právo a je strážcem rovnováhy mezi Innosem a Beliarem.
-	AI_Output(self,other,"DIA_Vatras_GODS_ADANOS_05_02");	//Ovládá sílu přeměn, jeho darem je voda všech oceánů, jezer a řek.
+	AI_Output(self,other,"DIA_Vatras_GODS_ADANOS_05_02");	//Ovládá sílu přeměn. Jeho darem je voda všech oceánů, jezer a řek.
 	AI_Output(self,other,"DIA_Vatras_GODS_ADANOS_05_03");	//Jeho kněží jsou mágové Vody, stejně jako já jsem služebníkem a knězem Adanovým.
 	Info_ClearChoices(DIA_Vatras_GODS);
 	Info_AddChoice(DIA_Vatras_GODS,Dialog_Back,DIA_Vatras_GODS_BACK);
@@ -2891,11 +2891,11 @@ func void DIA_Vatras_AUGEGEHEILT_Info()
 		MIS_ADW_NEWSVATRAS = LOG_Running;
 		Log_CreateTopic(TOPIC_ADW_NEWSVATRAS,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_ADW_NEWSVATRAS,LOG_Running);
-		Log_AddEntry(TOPIC_ADW_NEWSVATRAS,"Vatras dlouhý čas neslyšel nic a mázích v Jharkendaru, měl bych se tam podívat.");
+		Log_AddEntry(TOPIC_ADW_NEWSVATRAS,"Vatras dlouhý čas neslyšel nic a mázích v Jharkendaru. Měl bych se tam podívat.");
 		YARKENDARTROUBLE = TRUE;
 	};
 	AI_Output(self,other,"DIA_Vatras_AUGEGEHEILT_05_02");	//Doufám, že se ještě uvidíme, až dokončíš svou misi. 
-	B_LogEntry(TOPIC_INNOSEYE,"Oko je již v pořádku. Pyrokar mi je vydá a pak půjdu lovit draky.");
+	B_LogEntry(TOPIC_INNOSEYE,"Oko je již v pořádku. Pyrokar mi ho vydá a pak půjdu lovit draky.");
 	AI_StopProcessInfos(self);
 	RitualInnosEyeRuns = LOG_SUCCESS;
 	MIS_RitualInnosEyeRepair = LOG_SUCCESS;
