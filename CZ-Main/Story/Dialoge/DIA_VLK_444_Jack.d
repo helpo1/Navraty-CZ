@@ -856,7 +856,7 @@ instance DIA_Jack_DiscoverLH(C_Info)
 	nr = 5;
 	condition = DIA_Jack_DiscoverLH_Condition;
 	information = DIA_Jack_DiscoverLH_Info;
-	description = "Slyšel jsi už o pirátovi se jménem Kelevra?";
+	description = "Slyšel jsi už o pirátovi jménem Kelevra?";
 };
 
 func int DIA_Jack_DiscoverLH_Condition()
@@ -870,7 +870,7 @@ func int DIA_Jack_DiscoverLH_Condition()
 func void DIA_Jack_DiscoverLH_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Jack_DiscoverLH_01_00");	//Slyšel jsi už o pirátovi se jménem Kelevra?
+	AI_Output(other,self,"DIA_Jack_DiscoverLH_01_00");	//Slyšel jsi už o pirátovi jménem Kelevra?
 	AI_Output(self,other,"DIA_Jack_DiscoverLH_01_01");	//Ještě jsem o něm neslyšel.
 	AI_Output(self,other,"DIA_Jack_DiscoverLH_01_02");	//A celkově se snažím nemít s piráty nic společného.
 	AI_Output(other,self,"DIA_Jack_DiscoverLH_01_03");	//Chápu.
@@ -884,7 +884,7 @@ instance DIA_Jack_GotPirate(C_Info)
 	nr = 5;
 	condition = DIA_Jack_GotPirate_Condition;
 	information = DIA_Jack_GotPirate_Info;
-	description = "Ahoj Jacku.";
+	description = "Ahoj, Jacku. Nebo ti snad mám říkat Kelevra?";
 };
 
 func int DIA_Jack_GotPirate_Condition()
@@ -898,20 +898,20 @@ func int DIA_Jack_GotPirate_Condition()
 func void DIA_Jack_GotPirate_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Jack_GotPirate_01_00");	//Nebo ti mám říkat Kelevra?
+	AI_Output(other,self,"DIA_Jack_GotPirate_01_00");	//Ahoj, Jacku. Nebo ti snad mám říkat Kelevra?
 	AI_Output(self,other,"DIA_Jack_GotPirate_01_01");	//Co?
-	AI_Output(other,self,"DIA_Jack_GotPirate_01_02");	//Nezkoušej to popřít. Greg mi všechno pověděl.
+	AI_Output(other,self,"DIA_Jack_GotPirate_01_02");	//Nezkoušej to popřít. Greg mi všechno řekl.
 	AI_Output(self,other,"DIA_Jack_GotPirate_01_03");	//Zatraceně! ... Och... A co?
 	AI_Output(other,self,"DIA_Jack_GotPirate_01_04");	//Vypadá to, že nejsi úplně obyčejný muž, jak vypadáš.
 	AI_Output(self,other,"DIA_Jack_GotPirate_01_05");	//O co ti jde?
-	AI_Output(other,self,"DIA_Jack_GotPirate_01_06");	//Myslím, že vím, kam tím směřujeme. Nakonec, byl jsi to ty, kdo zabil Štěpána, i když ti zachránil život.
-	AI_Output(self,other,"DIA_Jack_GotPirate_01_07");	//Jen aby jsi zhořel v plamenech Beliara! Odkud to všechno víš? To ti pověděl Greg?
-	AI_Output(other,self,"DIA_Jack_GotPirate_01_08");	//Pověděl mi to správce, kterého jsi zabil jen proto, že ti nechtěl dát loď.
+	AI_Output(other,self,"DIA_Jack_GotPirate_01_06");	//Myslím, že vím, kam tím směřujeme. Nakonec, byl jsi to ty, kdo zabil Stefana, i když ti zachránil život.
+	AI_Output(self,other,"DIA_Jack_GotPirate_01_07");	//Kéž bys uhořel v Beliarových plamenech! Odkud to všechno víš? To ti řekl Greg?
+	AI_Output(other,self,"DIA_Jack_GotPirate_01_08");	//Řekl mi to správce, kterého jsi zabil jen proto, že ti nechtěl dát loď.
 	AI_Output(self,other,"DIA_Jack_GotPirate_01_09");	//Ano, zabil jsem ho! Tak co teď? Zabiješ mě? Do toho! Ještě teď mi to nedává spát.
 	AI_Output(self,other,"DIA_Jack_GotPirate_01_10");	//Po tom, co se to stalo, jsem skončil s pirátstvím a usadil jsem se na pobřeží a začal jsem pracovat jako správce majáku.
-	AI_Output(other,self,"DIA_Jack_GotPirate_01_11");	//Já tě nezabiju. Mám lepší nápad. Pomůžeš mi zlomit kletbu z majáku.
+	AI_Output(other,self,"DIA_Jack_GotPirate_01_11");	//Já tě nezabiju. Mám lepší nápad. Pomůžeš mi prolomit kletbu majáku.
 	AI_Output(self,other,"DIA_Jack_GotPirate_01_12");	//Já?! A co bych měl jako podle tebe udělat? Jít tam zemřít?
-	AI_Output(other,self,"DIA_Jack_GotPirate_01_13");	//To hádam nebude nutné. Stačí když požádáš ducha o odpuštění a mělo by to oslabit kletbu.
+	AI_Output(other,self,"DIA_Jack_GotPirate_01_13");	//To hádam nebude nutné. Stačí, když požádáš ducha o odpuštění - to by mělo kletbu oslabit.
 	AI_Output(other,self,"DIA_Jack_GotPirate_01_14");	//Ale v jedné věci máš pravdu. Budeš tam muset jít.
 	AI_Output(self,other,"DIA_Jack_GotPirate_01_15");	//Tak to mě rovnou zabij! Vyjde to na stejno.
 	AI_Output(self,other,"DIA_Jack_GotPirate_01_16");	//Jenom... Před tím, než půjdu, nechej mě si zařídit pár věcí tady na pláži. Nevím, jestli se odtamtud vrátím, anebo ne.
@@ -921,7 +921,7 @@ func void DIA_Jack_GotPirate_Info()
 	AI_Output(self,other,"DIA_Jack_GotPirate_01_20");	//V jazyce asasínů to znamená Zlý pes. Neptej se, jak jsem ho dostal.
 	JackGoLH = TRUE;
 	JackGoLHDay = Wld_GetDay();
-	B_LogEntry(TOPIC_HauntedLighthouse,"Jack se přiznal. Teď s ním půjdů zkusit zlomit kletbu z majáku.");
+	B_LogEntry(TOPIC_HauntedLighthouse,"Jack se přiznal. Teď s ním půjdů zkusit prolomit kletbu majáku.");
 	AI_StopProcessInfos(self);
 };
 
@@ -951,7 +951,7 @@ func void DIA_Jack_OnLH_Info()
 	AI_Output(self,other,"DIA_Jack_OnLH_01_03");	//Jak si přeješ.
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
 	JackMeetLHGhost = TRUE;
-	B_LogEntry(TOPIC_HauntedLighthouse,"Setkal jsme se s Jackem u majáku a spolu jsme se vydali za Štěpánovým duchem.");
+	B_LogEntry(TOPIC_HauntedLighthouse,"Setkal jsme se s Jackem u majáku a spolu jsme se vydali za Stefanovým duchem.");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FollowLH");
 };
