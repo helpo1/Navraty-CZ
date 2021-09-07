@@ -320,7 +320,7 @@ func int DIA_Engrom_Goblins_Condition()
 func void DIA_Engrom_Goblins_Info()
 {
 	AI_Output(other,self,"DIA_Engrom_Goblins_01_01");	//Vypadá to, že tě něco trápí.
-	AI_Output(self,other,"DIA_Engrom_Goblins_01_02");	//To ti goblini. (nervónzně) Prokletí goblini.
+	AI_Output(self,other,"DIA_Engrom_Goblins_01_02");	//To ti goblini. (nervózně) Prokletí goblini.
 	AI_Output(other,self,"DIA_Engrom_Goblins_01_03");	//O čem to mluvíš?
 	AI_Output(self,other,"DIA_Engrom_Goblins_01_04");	//Chlape, mluvím o goblinech, kteří se usadili v jeskyni pod náma.
 	AI_Output(self,other,"DIA_Engrom_Goblins_01_05");	//Dohánějí mě k šílenství více než všichni ti skřeti okolo hradu.
@@ -330,7 +330,7 @@ func void DIA_Engrom_Goblins_Info()
 	AI_Output(self,other,"DIA_Engrom_Goblins_01_09");	//Problém je, že se na ně nemůžu odhodlat.
 	AI_Output(self,other,"DIA_Engrom_Goblins_01_10");	//Příliš se bojím výšek na to abych skočil a jít dokola je hotová sebevražda.
 	AI_Output(other,self,"DIA_Engrom_Goblins_01_11");	//Chápu. Radši tu budeš sedět a časem se scvokneš. Dobrá volba!
-	AI_Output(self,other,"DIA_Engrom_Goblins_01_12");	//Velmi vtipné. (Zatrpkle) Nemáš potuchy, co za strašné zvuky v noci vycházejí z té jeskyně.
+	AI_Output(self,other,"DIA_Engrom_Goblins_01_12");	//Velmi vtipné. (zatrpkle) Nemáš potuchy, co za strašné zvuky v noci vycházejí z té jeskyně.
 	AI_Output(self,other,"DIA_Engrom_Goblins_01_13");	//Jinak bych ti to ani neříkal.
 	AI_Output(other,self,"DIA_Engrom_Goblins_01_14");	//Dobře! Jestli půjdu okolo, zkusím se o ty tvé gobliny postarat.
 	AI_Output(self,other,"DIA_Engrom_Goblins_01_15");	//Udělej mi laskavost! Věř mi, nezůstanu ti nic dlužný.
