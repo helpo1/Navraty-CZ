@@ -73,7 +73,7 @@ func void DIA_STRF_8121_Addon_Krow_hello_info()
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Hello_01_02");	//Kdo jsi byl předtím?
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_03");	//Byl jsem mág a sloužil jsem rudobaronům.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Hello_01_04");	//Jsi v magii dobrý?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_05");	//Trochu. Samozřejmě v umění magie nejsem tak dobrý, jako...  mágové Ohně.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_05");	//Trochu. Samozřejmě v umění magie nejsem tak dobrý jako...  mágové Ohně.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_06");	//Ale něco jsem uměl. Až do doby, než jsem spadl do spárů skřetů.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Hello_01_07");	//Bohužel jsem za ta léta strávená v dole spoustu věcí zapomněl.
 };
@@ -98,7 +98,7 @@ func void DIA_STRF_8121_Addon_Krow_Help_info()
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_00");	//Jsi v pořádku?
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_01");	//Víceméně. Ale cítil bych se lépe, kdybych měl u sebe svůj deník.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_02");	//Deník?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_03");	//Ano. Zapisoval jsem si do něj své myšlenky, pozorovaní a podobně.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_03");	//Ano. Zapisoval jsem si do něj své myšlenky, pozorování a podobně.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_04");	//Ale když mě zajali skřeti, tak mi ho vzali spolu s ostatními věcmi.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Help_01_05");	//Byl pro mne velmi důležitý. Řekněme, že byl mým životním dílem.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Help_01_06");	//Nemáš tušení, kde je teď?
@@ -176,7 +176,7 @@ func void DIA_STRF_8121_Addon_Krow_Paladin_info()
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_04");	//Mluvit tady o takových věcech je velmi nebezpečné. Skřeti chyby neodpouští.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Paladin_01_05");	//Ale přece jen, víš o tom něco?
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_06");	//Hmm...  (upřeně hledí) Jdeš na to příliš přímo...
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_07");	//Myslíš, že se o tom budu bavit s někým, komu nedůvěřuju?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_07");	//Myslíš, že se o tom budu bavit s někým, komu nedůvěřuji?
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_08");	//Koneckonců, paktuješ se se skřety. A to je, můj drahý příteli, velmi nepříznivé pro tvou reputaci s otroky.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_09");	//Nemůžeme takto riskovat, může to být naše poslední šance, jak se odtud dostat živí.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Paladin_01_10");	//K této konverzaci se vraťme až tehdy, jakmile se situace trochu změní.
@@ -218,7 +218,7 @@ func void DIA_STRF_8121_Addon_Krow_Respect_info()
 		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_05");	//Jaký?
 		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_06");	//Je tu příliš mnoho stráží. Musíme najít místo, kde nás skřeti neuslyší.
 		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_07");	//Nějaké nápady?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_08");	//Hmm... (zamyšleně) Napadá mě místo, kde pracuje Nuts, obvykle tam bývá pouze jeden strážný.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_08");	//Hmm... (zamyšleně) Napadá mě místo, kde pracuje Nuts. Obvykle tam bývá pouze jeden strážný.
 		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_09");	//Pokud by se ti nějakým způsobem podařilo odlákat jeho pozornost, měli bychom čas promluvit si s paladinem.
 		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Respect_01_10");	//Dobrá, pokusím se ho odlákat.
 		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_11");	//Dobře! Budu čekat na tvůj signál.
@@ -311,55 +311,55 @@ func void DIA_STRF_8121_Addon_Krow_Teleport_info()
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_01");	//Ano, ale bohužel ji nikomu nedává.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_02");	//Mi ji ale dal, tady je.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_03");	//To na něj moc nevypadá... Doufám, že ti ji dal z vlastní dobré vůle?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_04");	//Myslíš, že to bolo z dobrej vůle?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_05");	//Nuž, nie je jednoduché nájsť takú vzácnu vec.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_06");	//Okrem iného ma zaujímalo, čo je tam napísané.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_07");	//Tak sa nato pozri ak chceš. Nuts to aj tak nevie prečítať.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_08");	//Nuž, čo to tu máme...
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_04");	//Myslíš, že to bylo z dobré vůle?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_05");	//Co už, není jednoduché najít takovou vzácnu věc.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_06");	//Krom toho mě zajímalo, co je tam napsané.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_07");	//Tak se na to podívej, pokud chceš. Nuts stejně neví jak to přečíst.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_08");	//Co už, co to tu máme...
 	B_GiveInvItems(other,self,ItWr_OldTextMine,1);
 	Npc_RemoveInvItems(self,ItWr_OldTextMine,1);
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_09");	//Hmmm, očividne je to napísané v staromirtanskom dialekte.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_10");	//V týchto krajoch ho už dávno nikto neovláda.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_11");	//A čo ty?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_12");	//Len málo... a potrebujem svoj starý denník.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_13");	//V ňom som mal nejaké zápisky ohladom jazyka.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_14");	//Tak sa doň pozri.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_09");	//Hmmm, očividně je to napsané v staromirtánském dialektě.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_10");	//V těchto krajích ho už dávno nikdo neovládá.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_11");	//A co ty?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_12");	//Málo... ale potřebujem svůj starý deník.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_13");	//V něm jsem měl nějaké zápisky ohledněm jazyka.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_14");	//Tak se do něj podívej.
 
 	if(MIS_KrowBook == LOG_Success)
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_15");	//Samozrejme. Moment... (číta) No takže.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_15");	//Samozřejmě. Moment... (čte) Takže.
 		B_UseFakeScroll();
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_16");	//Hmmm... (zamyslene) Toto je velmi zaujímavé.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_16");	//Hmmm... (zamyšleně) Tohle je velmi zajímavé.
 		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_17");	//No?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_18");	//Podla tohoto záznamu kedysi v dole existoval magický portál.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_19");	//Nie je jasné, kto ho používal, ale můžeš sa vďaka nemu premiestniť z jednej časti ostrova na druhú.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_20");	//Naozaj zaujímavé. A kde by mohol byť?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_21");	//To tu už nie je. Ale čo ja viem, také miesto nie je vo vrchných častiach dolu.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_22");	//Si si istý?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_23");	//Úplne. Nič tu ani nepripomína portál.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_24");	//A navyše, ak by ho skřeti našli, isto by ich zaujímal.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_18");	//Podle tohoto záznamu kdysi v dole existoval magický portál.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_19");	//Není jasné, kdo ho používal, ale můžeš se díky němu přemístit z jedné části ostrova na druhou.
+		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_20");	//Opravdu zajímavé. A kde by mohl být?
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_21");	//To tu už není. Ale co já vím, takové místo není ve vrchních částech dolu.
+		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_22");	//Jsi si jistý?
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_23");	//Úplně. Nic tu ani nepřipomíná portál.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_24");	//A navíc, pokud by ho skřeti našli, jistě by je zajímal.
 		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_25");	//Tak kde je potom?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_26");	//Možno hlboko dole. Kto vie?
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_27");	//Chápem. Je tam ešte niečo?
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_28");	//Nie, to bolo všetko.
-		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_29");	//V tom prípade si to nechaj.
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_30");	//Ďakujem.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_26");	//Možná hluboko dole. Kdo ví?
+		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_27");	//Chápu. Je tam ještě něco?
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_28");	//Ne, to bylo všechno.
+		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_29");	//V tom případě si to nechej.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_30");	//Děkuji.
 		MIS_MineTeleport = LOG_Running;
 		Log_CreateTopic(TOPIC_MineTeleport,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_MineTeleport,LOG_Running);
-		B_LogEntry_Quiet(TOPIC_MineTeleport,"Kdesi je tu magický portál, ktorý umožňuje presun z jednej časti ostrova na druhú. Asi je niekto hlboko. Tak tvrdí Crow.");
+		B_LogEntry_Quiet(TOPIC_MineTeleport,"Někde je tu magický portál, který umožňuje přesun z jedné části ostrova na druhou. Asi je někde hluboko. Tak tvrdí Crow.");
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_31");	//Bohužial mi ho vzali skřeti v deň keď ma zajali.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_31");	//Bohužel mi ho vzali skřeti v den kdy mě zajali.
 
 		if(MIS_KrowBook == LOG_Running)
 		{
-			AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_32");	//Ale o tom sme sa už bavili.
-			AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_33");	//Samozrejme, máš pravdu.
+			AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_32");	//Ale o tom jsme se už bavili.
+			AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_33");	//Samozřejmě, máš pravdu.
 		};
 
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_34");	//Akokolvek to je, bez neho ti nepomůžu.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_01_34");	//Jakkoliv to je, bez něj ti nepomůžu.
 		AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_01_35");	//Uhm.
 	};
 };
@@ -371,7 +371,7 @@ instance DIA_STRF_8121_Addon_Krow_Teleport_Again(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Teleport_Again_condition;
 	information = DIA_STRF_8121_Addon_Krow_Teleport_Again_info;
 	permanent = FALSE;
-	description = "Teraz máš denník.";
+	description = "Teď máš deník.";
 };
 
 func int DIA_STRF_8121_Addon_Krow_Teleport_Again_condition()
@@ -384,28 +384,28 @@ func int DIA_STRF_8121_Addon_Krow_Teleport_Again_condition()
 
 func void DIA_STRF_8121_Addon_Krow_Teleport_Again_info()
 {
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_00");	//Teraz máš denník, můžeš to prečítať?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_01");	//Samozrejme! Moment... (číta) Nuž pozrime sa.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_00");	//Teď máš deník, můžeš to přečíst?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_01");	//Samozřejmě! Moment... (čte) Tak se na to podíváme.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_02");	//Hmmm... (zamyslene) Toto je velmi zaujímavé.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_02");	//Hmmm... (zamyšleně) Tohle je velmi zajímavé.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_03");	//No?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_04");	//Podla tohoto záznamu kedysi v dole existoval magický portál.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_05");	//Nie je jasné, kto ho používal, ale můžeš sa vďaka nemu premiestniť z jednej časti ostrova na druhú.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_06");	//Naozaj zaujímavé. A kde by mohol byť?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_07");	//To tu už nie je. Ale čo ja viem, také miesto nie je vo vrchných častiach dolu.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_08");	//Si si istý?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_09");	//Úplne. Nič tu ani nepripomína portál.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_10");	//A navyše, ak by ho skřeti našli, isto by ich zaujímal.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_04");	//Podle tohoto záznamu kdysi v dole existoval magický portál.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_05");	//Není jasné, kdo ho používal, ale můžeš se díky němu přemístit z jedné části ostrova na druhou.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_06");	//Opravdu zajímavé. A kde by mohl být?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_07");	//To tu už není. Ale co já vím, takové místo není ve vrchních částech dolu.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_08");	//Jsi si jistý?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_09");	//Úplně. Nic tu ani nepřipomíná portál.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_10");	//A navíc, pokud by ho skřeti našli, jistě by je zajímal.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_11");	//Tak kde je potom?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_12");	//Možno hlboko dole. Kto vie?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_13");	//Chápem. Je tam ešte niečo?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_14");	//Nie, to bolo všetko.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_15");	//V tom prípade si to nechaj.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_16");	//Ďakujem.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_12");	//Možná hluboko dole. Kdo ví?
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_13");	//Chápu. Je tam ještě něco?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_14");	//Ne, to bylo všechno.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_15");	//V tom případě si to nechej.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Again_01_16");	//Děkuji.
 	MIS_MineTeleport = LOG_Running;
 	Log_CreateTopic(TOPIC_MineTeleport,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MineTeleport,LOG_Running);
-		B_LogEntry_Quiet(TOPIC_MineTeleport,"Kdesi je tu magický portál, ktorý umožňuje presun z jednej časti ostrova na druhú. Asi je niekto hlboko. Tak tvrdí Crow.");
+		B_LogEntry_Quiet(TOPIC_MineTeleport,"Někde je tu magický portál, který umožňuje přesun z jedné části ostrova na druhou. Asi je někde hluboko. Tak tvrdí Crow.");
 };
 
 instance DIA_STRF_8121_Addon_Krow_Teleport_Focus(C_Info)
@@ -415,7 +415,7 @@ instance DIA_STRF_8121_Addon_Krow_Teleport_Focus(C_Info)
 	condition = DIA_STRF_8121_Addon_Krow_Teleport_Focus_condition;
 	information = DIA_STRF_8121_Addon_Krow_Teleport_Focus_info;
 	permanent = FALSE;
-	description = "Můžeš sa mrknúť na tento šuter?";
+	description = "Můžeš se mrknout na tento šutr?";
 };
 
 func int DIA_STRF_8121_Addon_Krow_Teleport_Focus_condition()
@@ -429,31 +429,31 @@ func int DIA_STRF_8121_Addon_Krow_Teleport_Focus_condition()
 func void DIA_STRF_8121_Addon_Krow_Teleport_Focus_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_00");	//Můžeš sa mrknúť na tento šuter?
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_00");	//Můžeš sa mrknout na tento šutr?
 	B_GiveInvItems(other,self,ItMi_PortalCrystal,1);
 	Npc_RemoveInvItems(self,ItMi_PortalCrystal,1);
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_01");	//Hmmm... (zaujato) Hej, prednedávnom som držal niečo takéto.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_02");	//Wenzel povedal, že mu pripomína niečo magické.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_03");	//Uhm, kde si ho získal?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_04");	//Povedzme, že som ho našiel hlboko dole.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_05");	//Našiel si portál, je to tak?
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_06");	//Jop.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_07");	//Nebolo ťažké to uhádnu, vďaka týmto šutrom portály fungujú.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_08");	//Avšak vyzerá, že tento vyrobili kdesi na kontinente. Asi Vengard...
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_09");	//Ako vieš?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_10");	//Vidíš? To je značka rádu mágov Ohně. Také veci si človek nepletie.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_11");	//Hovoríš, že tento portál vedie na kontinent?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_12");	//Dosť možno. Ale som zmatený, čo robí v škreťom dole.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_13");	//Myslím, že to nevedia ani skřeti.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_14");	//Nuž ich sa aj tak nikto pýtať nebude.
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_15");	//Samo sebou. Můžeš tým ohniskom aktivovať portál?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_16");	//Samozrejme, som nejaký mág... ale teraz to asi nebude najlepší nápad.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_17");	//Skřeti si to všimnú a buď ho rozbijú alebo začnú strážiť.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_18");	//V každom prípade sa k nemu nedostaneme.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_19");	//Takže bude lepšie držať to v tajnosti.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_20");	//Koniec koncov, ten portál je reálna šanca dostať sa odtialto.
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_21");	//Bež za Wenzelom. On ti povie, čo ďalej.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_01");	//Hmmm... (zaujatě) Ano, přednedávnem jsem držel něco takového.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_02");	//Wenzel povídal, že mu připomíná něco magického.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_03");	//Uhm, kde jsi ho získal?
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_04");	//Řekněme, že jsem ho našel hluboko dole.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_05");	//Našel jsi portál, je to tak?
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_06");	//Ano.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_07");	//Nebylo těžké to uhádnout, díky těmto šutrům portály fungují.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_08");	//Ale vypadá to, že tento vyrobili kdesi na kontinentě. Asi Vengard...
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_09");	//Jak to víš?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_10");	//Vidíš? To je značka řádu mágů Ohně. Takové věci si člověk nezplete.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_11");	//Říkáš, že tento portál vede na kontinent?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_12");	//Pravděpodobně. Ale nevím, co dělá ve škřetím dole.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_13");	//Myslím, že to neví ani skřeti.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_14");	//Jich se stejně nikdo ptát nebude.
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_15");	//Samo sebou. Můžeš tím ohniskem aktivovat portál?
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_16");	//Samozřejmě, jsem zkušený mág... ale teď to asi nebude nejlepší nápad.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_17");	//Skřeti si toho všimnou a buď ho rozbijí nebo začnou strážit.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_18");	//V každém případě se k němu nedostaneme.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_19");	//Takže bude lepší držet to v tajnosti.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_20");	//Konec konců, ten portál je reálná šance dostat se odtud.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_21");	//Běž za Wenzelem. On ti poví, co dělat dál.
 	MIS_MineTeleport = LOG_Success;
 	Log_SetTopicStatus(TOPIC_MineTeleport,LOG_Success);
-	B_LogEntry_Quiet(TOPIC_MineTeleport,"Šuter čo som našiel dole je magickým ohniskom. S ním můžeme aktitovať portál. Podla Crowa ho vyrobili vo Vengarde a je dosť možné, že vedie na kontinent.");
+	B_LogEntry_Quiet(TOPIC_MineTeleport,"Šutr co jsem našel dole je magické ohnisko. S ním můžeme aktitovat portál. Podle Crowa ho vyrobili ve Vengardě a je dost možné, že vede na kontinent.");
 };

@@ -188,7 +188,7 @@ func int DIA_Jesper_Bezahlen_Condition()
 func void DIA_Jesper_Bezahlen_Info()
 {
 	AI_Output(other,self,"DIA_Jesper_Bezahlen_15_00");	//Můžeš mě něčemu naučit?
-	AI_Output(self,other,"DIA_Jesper_Bezahlen_09_01");	//Jasně, ukážu ti, jak se plížit - pro tebe zadarmo.
+	AI_Output(self,other,"DIA_Jesper_Bezahlen_09_01");	//Jasně. Ukážu ti, jak se plížit - pro tebe zadarmo.
 	Jesper_TeachSneak = TRUE;
 };
 
@@ -315,7 +315,7 @@ func int DIA_Jesper_Tuer_Condition()
 func void DIA_Jesper_Tuer_Info()
 {
 	AI_Output(other,self,"DIA_Jesper_Tuer_15_00");	//Co je za těmi zamčenými dveřmi?
-	AI_Output(self,other,"DIA_Jesper_Tuer_09_01");	//(chechtá se) Je za nima ta truhla - truhla mistra zámečníka.
+	AI_Output(self,other,"DIA_Jesper_Tuer_09_01");	//(chechtá se) Je za nima TA truhla - truhla mistra zámečníka.
 	AI_Output(self,other,"DIA_Jesper_Tuer_09_02");	//Opatřil ji tak neuvěřitelně složitým zámkem, že ji ještě nikdo nedokázal otevřít.
 	AI_Output(self,other,"DIA_Jesper_Tuer_09_03");	//Bohužel byl zatčen - hodili ho skrz bariéru, kde asi vypustil duši.
 	AI_Output(self,other,"DIA_Jesper_Tuer_09_04");	//Ale jestli se chceš pokusit tu truhlu otevřít, tady je klíč od pokoje.
@@ -372,13 +372,13 @@ func void DIA_Jesper_Quest_info()
 {
 	AI_Output(self,other,"DIA_Jesper_Quest_01_00");	//Chlape, měl bys udělat další dobrý skutek.
 	AI_Output(other,self,"DIA_Jesper_Quest_01_01");	//Co bys potřeboval?
-	AI_Output(self,other,"DIA_Jesper_Quest_01_02");	//Vyběhni nahoru po schodech a řekni těm muzikantům aby zahrali něco veselého.
+	AI_Output(self,other,"DIA_Jesper_Quest_01_02");	//Vyběhni nahoru po schodech a řekni těm muzikantům aby zahráli něco veselého.
 	AI_Output(self,other,"DIA_Jesper_Quest_01_03");	//Nebo tady brzo umřu úzkostí.
 	AI_Output(other,self,"DIA_Jesper_Quest_01_04");	//Neboj, nenechám tě umřít.
 	MIS_JESPERMUSIC = LOG_Running;
 	Log_CreateTopic(TOPIC_JESPERMUSIC,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_JESPERMUSIC,LOG_Running);
-	B_LogEntry(TOPIC_JESPERMUSIC,"Jesper po mě chce abych šel nahoru řekl těm muzikantům aby zahrali něco veselého. Měl bych si pospíšit, než skončí představení.");
+	B_LogEntry(TOPIC_JESPERMUSIC,"Jesper po mě chce, abych šel nahoru a řekl těm muzikantům, aby zahráli něco veselého. Měl bych si pospíšit, než skončí představení.");
 };
 
 instance DIA_Jesper_Quest_Done(C_Info)
@@ -404,14 +404,14 @@ func void DIA_Jesper_Quest_Done_info()
 	B_GivePlayerXP(XP_JesperTruhe);
 	AI_Output(other,self,"DIA_Jesper_Quest_Done_01_01");	//Tak jak se ti líbí hudba?
 	AI_Output(self,other,"DIA_Jesper_Quest_Done_01_02");	//Díky chlape... To jsem potřeboval!
-	AI_Output(self,other,"DIA_Jesper_Quest_Done_01_03");	//Tady, vem si tyhle paklíče, budou se ti hodit.
+	AI_Output(self,other,"DIA_Jesper_Quest_Done_01_03");	//Tady, vem si tyhle paklíče. Budou se ti hodit.
 	B_GiveInvItems(self,other,ItKE_lockpick,5);
 	THIEF_REPUTATION = THIEF_REPUTATION + 1;
 	JesperDanceDay = Wld_GetDay();
 	MIS_JESPERMUSIC = LOG_SUCCESS;
 	IS_INEXTREMO_PLAYING = FALSE;
 	Log_SetTopicStatus(TOPIC_JESPERMUSIC,LOG_SUCCESS);
-	B_LogEntry(TOPIC_JESPERMUSIC,"Jesperovi se teď líbí hudba co se hrá na náměstí.");
+	B_LogEntry(TOPIC_JESPERMUSIC,"Jesperovi se líbí hudba, co se teď hraje na náměstí.");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Dance");
 };
@@ -441,7 +441,7 @@ func int DIA_Jesper_Quest_StopDance_condition()
 func void DIA_Jesper_Quest_StopDance_info()
 {
 	AI_Output(other,self,"DIA_Jesper_Quest_StopDance_01_00");	//Hej, si v pohodě? Nikdo nehrál už dlouhou dobu a si celý pobledlý.
-	AI_Output(self,other,"DIA_Jesper_Quest_StopDance_01_01");	//No jasně... (těžké dýchání) Ani jsem si to nevšim.
+	AI_Output(self,other,"DIA_Jesper_Quest_StopDance_01_01");	//No jasně... (těžké dýchání) Ani jsem si toho nevšim.
 	AI_Output(self,other,"DIA_Jesper_Quest_StopDance_01_02");	//Myslím, že bych se měl vrátit do práce.
 	AI_Output(self,other,"DIA_Jesper_Quest_StopDance_01_03");	//Nemáš náhodou s sebou krýgl piva?
 	JesperCalm = TRUE;
@@ -497,7 +497,7 @@ func void DIA_Jesper_Armor_Info()
 {
 	AI_Output(other,self,"DIA_Jesper_Armor_01_00");	//Kde mohu najít nějakou dobrou zbroj?
 	AI_Output(self,other,"DIA_Jesper_Armor_01_01");	//Hmm... (sarkasticky) Když už jsi jeden z nás, myslím, že bych ti s tím mohl pomoci.
-	AI_Output(self,other,"DIA_Jesper_Armor_01_02");	//Mám zopár věcí, které by tě mohli zajímat.
+	AI_Output(self,other,"DIA_Jesper_Armor_01_02");	//Mám pár věcí, které by tě mohly zajímat.
 	AI_Output(self,other,"DIA_Jesper_Armor_01_03");	//Ale jak už určitě víš, všechno má svou cenu.
 	AI_Output(self,other,"DIA_Jesper_Armor_01_04");	//Zadarmo nic nedostaneš.
 	Jesper_Armor = TRUE;
@@ -769,7 +769,7 @@ func void DIA_Jesper_TRADE_DHT_6()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Jesper_TRADE_DHT_5_01_03");	//Za prvé, chci vidět moje zlato kamaráde.
+			AI_Output(self,other,"DIA_Jesper_TRADE_DHT_5_01_03");	//Za prvé chci vidět moje zlato kamaráde.
 		};
 	}
 	else

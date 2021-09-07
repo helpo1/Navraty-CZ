@@ -757,7 +757,7 @@ func void DIA_Addon_Vatras_GuildBypass_Other_info()
 	B_GivePlayerXP(50);
 	AI_Output(other,self,"DIA_Addon_Vatras_GuildBypass_Other_15_00");	//Jaké jsou další vlivné gildy?
 	AI_Output(self,other,"DIA_Addon_Vatras_GuildBypass_Other_15_01");	//No, první jsme my - mágové Vody. Není nás mnoho, ale náš řád má velký vliv na Khorinisu.
-	AI_Output(self,other,"DIA_Addon_Vatras_GuildBypass_Other_15_02");	//Dále jsem slyšel, že se na ostrově usadilo Bratrstvo Spáče.
+	AI_Output(self,other,"DIA_Addon_Vatras_GuildBypass_Other_15_02");	//Dále jsem slyšel, že se na ostrově usídlilo Bratrstvo Spáče.
 	AI_Output(other,self,"DIA_Addon_Vatras_GuildBypass_Other_15_03");	//A dál?
 	AI_Output(self,other,"DIA_Addon_Vatras_GuildBypass_Other_15_04");	//Také jsou tu následovníci Beliara.
 	AI_Output(self,other,"DIA_Addon_Vatras_GuildBypass_Other_15_05");	//Na to by ses měl zeptat Xardase.
@@ -790,7 +790,7 @@ func void dia_addon_vatras_guildbypasskdw_info()
 	{
 		AI_Output(self,other,"DIA_Addon_Vatras_GuildBypassKDW_15_01");	//Bojím se, že tady na ostrově bychom ti nemohli poskytnout potřebný trénink.
 		AI_Output(self,other,"DIA_Addon_Vatras_GuildBypassKDW_15_02");	//Avšak za nějakých zvláštních okolností bys k nám mohl.
-		AI_Output(self,other,"DIA_Addon_Vatras_GuildBypassKDW_15_03");	//Ale prvně musíš prokázat odvahu a udělat něco, pro Adana!
+		AI_Output(self,other,"DIA_Addon_Vatras_GuildBypassKDW_15_03");	//Ale prvně musíš prokázat odvahu a udělat něco pro Adana!
 		AI_Output(self,other,"DIA_Addon_Vatras_GuildBypassKDW_15_04");	//A kromě toho bys měl udržovat rovnováhu mezi božstvy.
 		AI_Output(self,other,"DIA_Addon_Vatras_GuildBypassKDW_15_05");	//Jenom tehdy se můžeš vydat naší cestou.
 		MIS_BECOMEKDW = LOG_Running;
@@ -829,7 +829,7 @@ func void DIA_ADDON_VATRAS_HRAM_info()
 	AI_Output(other,self,"DIA_ADDON_VATRAS_HRAM_01_00");	//A kde mají mágové Vody svůj chrám?
 	AI_Output(self,other,"DIA_ADDON_VATRAS_HRAM_01_01");	//Naneštěstí nemáme žádný.
 	AI_Output(self,other,"DIA_ADDON_VATRAS_HRAM_01_02");	//Avšak v dávných časech bylo postaveno mnoho velkolepých svatyň a chrámů! 
-	AI_Output(self,other,"DIA_ADDON_VATRAS_HRAM_01_03");	//Pozůstatky těchto staveb je stále možné vidět ve světe.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_HRAM_01_03");	//Pozůstatky těchto staveb je stále možné vidět ve světě.
 	AI_Output(other,self,"DIA_ADDON_VATRAS_HRAM_01_04");	//A na tomhle ostrově?
 	AI_Output(self,other,"DIA_ADDON_VATRAS_HRAM_01_05");	//Podle toho co víme tu kdysi sídlila vyspělá civilizace, která uctívala Adana.
 	AI_Output(self,other,"DIA_ADDON_VATRAS_HRAM_01_06");	//Ale než se sem dostali osadníci z Myrtany, tak tu zbyly jenom malé části budov na severo-východě ostrova.
@@ -860,7 +860,7 @@ func void DIA_ADDON_VATRAS_HOWBE_info()
 	AI_Output(other,self,"DIA_ADDON_VATRAS_HOWBE_01_02");	//Se Saturasem? Tím Saturasem, který vedl kruh Vody v Hornickém údolí?
 	AI_Output(self,other,"DIA_ADDON_VATRAS_HOWBE_01_03");	//On je... Teď je s ostatními mágy Vody ve vykopávkách.
 	AI_Output(self,other,"DIA_ADDON_VATRAS_HOWBE_01_04");	//Pokus se získat si jeho důvěru a možná z tebe udělá novice.
-	AI_Output(self,other,"DIA_ADDON_VATRAS_HOWBE_01_05");	//Pak budeš mít šanci se vyjádřit či se k nám chceš přidat.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_HOWBE_01_05");	//Pak budeš mít šanci se vyjádřit jestli se k nám chceš přidat.
 	AI_Output(other,self,"DIA_ADDON_VATRAS_HOWBE_01_06");	//Dobře, chápu.
 	B_LogEntry(TOPIC_BECOMEKDW,"Pokud se chci přidat k mágúm Vody, měl bych si pohovořit se Saturasem... Nemyslím si ale že bude zrovna šťastný že mě vidí potom co jsem udělal s jejich rudou v Novém táboře.");
 };
@@ -912,7 +912,7 @@ func int DIA_ADDON_VATRAS_LobartMeal_condition()
 func void DIA_ADDON_VATRAS_LobartMeal_info()
 {
 	AI_Output(other,self,"DIA_ADDON_VATRAS_LobartMeal_01_00");	//Co bych měl udělat?
-	AI_Output(self,other,"DIA_ADDON_VATRAS_LobartMeal_01_01");	//Půjdeš na Lobartovu farmu vyzdvihnout nějaké jídlo.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_LobartMeal_01_01");	//Půjdeš na Lobartovu farmu vyzvednout nějaké jídlo.
 	AI_Output(self,other,"DIA_ADDON_VATRAS_LobartMeal_01_02");	//Já ho potom rozdám chudým a potřebným.
 	AI_Output(self,other,"DIA_ADDON_VATRAS_LobartMeal_01_03");	//Tady máš 300 zlatých. Dej je Lobartovi za to jídlo.
 	B_GiveInvItems(self,other,ItMi_VatrasPurse,1);
@@ -921,7 +921,7 @@ func void DIA_ADDON_VATRAS_LobartMeal_info()
 	MIS_LobartMeal = LOG_Running;
 	Log_CreateTopic(TOPIC_LobartMeal,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_LobartMeal,LOG_Running);
-	B_LogEntry(TOPIC_LobartMeal,"Vatras mě požádal abych se zastavil na Lobratově farmě a vyzdvihl odtamtud jídlo pro chudé.");	
+	B_LogEntry(TOPIC_LobartMeal,"Vatras mě požádal abych se zastavil na Lobratově farmě a vyzvednul odtamtud jídlo pro chudé.");	
 };
 
 instance DIA_ADDON_VATRAS_LobartMeal_Done(C_Info)
@@ -981,10 +981,10 @@ func void DIA_ADDON_VATRAS_PureElixir_info()
 {
 	AI_Output(other,self,"DIA_ADDON_VATRAS_PureElixir_01_00");	//Ještě něco?
 	AI_Output(self,other,"DIA_ADDON_VATRAS_PureElixir_01_01");	//Dobře že se ptáš. Právě mi došly elixíry čisté magické moci.
-	AI_Output(self,other,"DIA_ADDON_VATRAS_PureElixir_01_02");	//Je nezbytné abys šel za alchemistou Salandrilem a objednáš mi nové.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_PureElixir_01_02");	//Je nezbytné abys šel za alchymistou Salandrilem a objednáš mi nové.
 	AI_Output(self,other,"DIA_ADDON_VATRAS_PureElixir_01_03");	//Vem si těchto 200 zlatých jako platbu předem za jeho práci.
 	B_GiveInvItems(self,other,ItMi_Gold,200);
-	AI_Output(self,other,"DIA_ADDON_VATRAS_PureElixir_01_04");	//Zbytek dostane když mi udelá mé elixíry.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_PureElixir_01_04");	//Zbytek dostane když mi udělá mé elixíry.
 	MIS_VatrasPotion = LOG_Running;
 	Log_CreateTopic(TOPIC_VatrasPotion,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_VatrasPotion,LOG_Running);
@@ -1051,7 +1051,7 @@ instance DIA_ADDON_VATRAS_ShadowBeast(C_Info)
 	condition = DIA_ADDON_VATRAS_ShadowBeast_condition;
 	information = DIA_ADDON_VATRAS_ShadowBeast_info;
 	permanent = FALSE;
-	description = "Na co potřebuješ tolik elixírú many?";
+	description = "Na co vlastně potřebuješ tolik elixírů many?";
 };
 
 func int DIA_ADDON_VATRAS_ShadowBeast_condition()
@@ -1064,27 +1064,27 @@ func int DIA_ADDON_VATRAS_ShadowBeast_condition()
 
 func void DIA_ADDON_VATRAS_ShadowBeast_info()
 {
-	AI_Output(other,self,"DIA_ADDON_VATRAS_ShadowBeast_01_00");	//Na co vlastně potřebuješ tolik elixírú many?
+	AI_Output(other,self,"DIA_ADDON_VATRAS_ShadowBeast_01_00");	//Na co vlastně potřebuješ tolik elixírů many?
 
 	if(VatrasPotionTruth == TRUE)
 	{
-		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_01");	//Víš, že každý den pomáhám raněným a chorým lidem.
-		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_02");	//Tak to si vyžaduje dost magické energie.
+		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_01");	//Víš, že každý den pomáhám raněným a nemocným lidem.
+		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_02");	//A to vyžaduje hodně magické energie.
 		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_03");	//Někdy tak moc, že se musím uchýlit k používání léčivých lektvarů.
 		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_04");	//Ale ty nedokážou vždy pomoci.
 		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_05");	//Například včera zamnou přišel jeden muž...
-		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_06");	//Nejaké prokleté zvíře ho zmrzačilo tak moc, že ledva stál na nohou.
+		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_06");	//Nějaké prokleté zvíře ho zmrzačilo tak moc, že sotva stál na nohou.
 		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_07");	//Musel jsem použít magii abych zachránil jeho život.
 		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_08");	//Po takových případech se cítím úplně zničený.
 		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_09");	//A přesně tehdy přijdou vhod mana elixíry.
 		AI_Output(other,self,"DIA_ADDON_VATRAS_ShadowBeast_01_10");	//Aha. A jaký druh zvířete ho tak moc zmrzačilo?
 		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_12");	//Podle jeho slov to byla obrovská stínová šelma! Vypadá to, že ho napadla někde poblíž majáku.
-		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_13");	//Bylo by dobré, kdyby se o to zvíře někdo postaral dříve než napadne někoho dalšího.
-		AI_Output(other,self,"DIA_ADDON_VATRAS_ShadowBeast_01_14");	//Možná je ve městě nejaký lovec stínových šelem?
+		AI_Output(self,other,"DIA_ADDON_VATRAS_ShadowBeast_01_13");	//Bylo by dobré, kdyby se o to zvíře někdo postaral dříve, než napadne někoho dalšího.
+		AI_Output(other,self,"DIA_ADDON_VATRAS_ShadowBeast_01_14");	//Možná je ve městě nějaký lovec stínových šelem?
 		MIS_VatrasBeast = LOG_Running;
 		Log_CreateTopic(TOPIC_VatrasBeast,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_VatrasBeast,LOG_Running);
-		B_LogEntry(TOPIC_VatrasBeast,"Vatras mi řekl že při majáku vyčíní obrovská stínová šelma. Myslí si, že by se o to zvíře měl někdo postarat dříve než napadne někoho dalšího. Neřekl, že bych to měl udělat já! I když se to snažil naznačit...");	
+		B_LogEntry(TOPIC_VatrasBeast,"Vatras mi řekl, že někde u majáku se nachází obrovská stínová šelma. Myslí si, že by se o to zvíře měl někdo postarat dříve, než napadne někoho dalšího. Neřekl, že bych to měl udělat já! I když se to snažil naznačit...");	
 	}
 	else
 	{
@@ -1146,12 +1146,12 @@ func int DIA_ADDON_VATRAS_MagicBook_condition()
 func void DIA_ADDON_VATRAS_MagicBook_info()
 {
 	AI_Output(other,self,"DIA_ADDON_VATRAS_MagicBook_01_00");	//Máš pro mě něco dalšího?
-	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_01");	//Hmmm... Nejsem si jistý, či ti mohu s tímhle důvěrovat.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_01");	//Hmmm... Nejsem si jistý, jestli ti mohu s tímhle důvěřovat.
 	AI_Output(other,self,"DIA_ADDON_VATRAS_MagicBook_01_02");	//O co se jedná?
 	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_03");	//Nooo...(šeptá) Nedávno jsem byl okraden!
-	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_04");	//Vůbec mě netrápí že ukradli všechno zlato co dokázali najít v domě.
-	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_05");	//Ale oni sebou sebrali i můj deník, kde jsem měl zapsané jak vytvářet runy.
-	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_06");	//Ten deník byl pro mě neocenitelný.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_04");	//Vůbec mě netrápí, že ukradli všechno zlato co dokázali najít v domě.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_05");	//Ale oni sebrali i můj deník, kde jsem měl zapsané jak vytvářet runy.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_06");	//Ten deník byl pro mě nedocenitelný.
 	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_08");	//Požádal jsem o pomoc lorda Andreho, ale jeho domobrana nebyla velmi nápomocná...
 	AI_Output(other,self,"DIA_ADDON_VATRAS_MagicBook_01_09");	//Když to nedokázali oni, mohl bych to zkusit já?
 	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_10");	//Můžeš to zkusit synu, ale vypadá to, že svůj deník už nikdy neuvidím.
@@ -1168,7 +1168,7 @@ instance DIA_ADDON_VATRAS_MagicBook_Done(C_Info)
 	condition = DIA_ADDON_VATRAS_MagicBook_Done_condition;
 	information = DIA_ADDON_VATRAS_MagicBook_Done_info;
 	permanent = FALSE;
-	description = "Našel jsem tvůj denník.";
+	description = "Našel jsem tvůj deník.";
 };
 
 func int DIA_ADDON_VATRAS_MagicBook_Done_condition()
@@ -1187,7 +1187,7 @@ func void DIA_ADDON_VATRAS_MagicBook_Done_info()
 	Npc_RemoveInvItems(self,ItWr_VatrasDiary,1);
 	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_Done_01_01");	//Díky synu... Doufám, že jsem ti nezpůsobil žádné potíže.
 	AI_Output(other,self,"DIA_ADDON_VATRAS_MagicBook_Done_01_02");	//Ne, všechno v pořádku.
-	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_Done_01_03");	//Tak tady máš nejaké magické svitky za svou námahu.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_Done_01_03");	//Tak tady máš nějaké magické svitky za svou námahu.
 	B_GiveInvItemsManyThings(self,other);
 	CreateInvItems(other,ItSc_IceCube,1);
 	CreateInvItems(other,ITSC_SUMSHOAL,2);
@@ -1247,14 +1247,14 @@ func int DIA_ADDON_VATRAS_LeeLetter_condition()
 func void DIA_ADDON_VATRAS_LeeLetter_info()
 {
 	AI_Output(other,self,"DIA_ADDON_VATRAS_LeeLetter_01_00");	//Neměl bys pro mě nějakou další práci?
-	AI_Output(self,other,"DIA_ADDON_VATRAS_LeeLetter_01_01");	//Potřeboval bych abys doručil tenhle dopis vůdci žoldáků - Leemu.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_LeeLetter_01_01");	//Potřeboval bych, abys doručil tenhle dopis vůdci žoldáků - Leemu.
 	B_GiveInvItems(self,other,ItWr_VatrasLee,1);
 	AI_Output(self,other,"DIA_ADDON_VATRAS_LeeLetter_01_02");	//Je to velmi naléhavé! Musíš si pospíšit!
 	AI_Output(other,self,"DIA_ADDON_VATRAS_LeeLetter_01_03");	//Udělám, co bude možné.
 	MIS_LeeLetter = LOG_Running;
 	Log_CreateTopic(TOPIC_LeeLetter,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_LeeLetter,LOG_Running);
-	B_LogEntry(TOPIC_LeeLetter,"Dostal jsem od Vatrasa dopis pro Leeho, říkal, že je nezbytné aby ho dostal co nejdřív.");	
+	B_LogEntry(TOPIC_LeeLetter,"Dostal jsem od Vatrase dopis pro Leeho. Říkal, že je nezbytné aby ho dostal co nejdřív.");	
 };
 
 instance DIA_ADDON_VATRAS_LeeLetterDone(C_Info)
@@ -1281,7 +1281,7 @@ func void DIA_ADDON_VATRAS_LeeLetterDone_info()
 	AI_Output(other,self,"DIA_ADDON_VATRAS_LeeLetterDone_01_00");	//Doručil jsem tvůj dopis.
 	AI_Output(self,other,"DIA_ADDON_VATRAS_LeeLetterDone_01_01");	//Nooo... Doufám, že jsi s tím neměl žádné potíže.
 	AI_Output(other,self,"DIA_ADDON_VATRAS_LeeLetterDone_01_02");	//Ne ani ne. 
-	AI_Output(self,other,"DIA_ADDON_VATRAS_LeeLetterDone_01_03");	//To jsem rád! Tady vem si tohle zlato za svojí námahu.
+	AI_Output(self,other,"DIA_ADDON_VATRAS_LeeLetterDone_01_03");	//To jsem rád! Tady, vem si tohle zlato za svojí námahu.
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 };
 
@@ -1312,7 +1312,7 @@ func void DIA_Addon_Vatras_NowRanger_Info()
 		if((MIS_OLDWORLD != LOG_SUCCESS) && (Kapitel >= 2))
 		{
 			AI_Output(other,self,"DIA_Addon_Vatras_NowRanger_15_02");	//Ano.
-			AI_Output(other,self,"DIA_Addon_Vatras_NowRanger_15_03");	//Ale, řekl mi, že mám jít do Hornického údolí a přinést důkaz sých tvrzení!
+			AI_Output(other,self,"DIA_Addon_Vatras_NowRanger_15_03");	//Ale, řekl mi, že mám jít do Hornického údolí a přinést důkaz svých tvrzení!
 			AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_04");	//Musíš se rozhodnout, co dál.
 			AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_05");	//Doručení zprávy bylo důležité pro mě. Teď je na něm, aby si pospíšil, nebo počkal na tvůj důkaz.
 			AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_06");	//Co se týče tebe...
@@ -1320,8 +1320,8 @@ func void DIA_Addon_Vatras_NowRanger_Info()
 		else if(MIS_Addon_Nefarius_BringMissingOrnaments == LOG_SUCCESS)
 		{
 			AI_Output(other,self,"DIA_Addon_Vatras_NowRanger_15_15");	//Ne. Ještě ne.
-			AI_Output(other,self,"DIA_Addon_Vatras_NowRanger_05_18");	//Ale našel jsem chybějící části ornamenty na aktivaci portálu.
-			AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_17");	//Ano... To si zalouží respekt, ale stále máš nejaké nedokončené věci.
+			AI_Output(other,self,"DIA_Addon_Vatras_NowRanger_05_18");	//Ale našel jsem chybějící ornamenty na aktivaci portálu.
+			AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_17");	//Ano... To si zalouží respekt, ale stále máš nějaké nedokončené věci.
 			AI_Output(self,other,"DIA_Addon_Vatras_HowToJoin_WhatsGreat_05_08");	//Pohovoř si s lordem Hagenem!
 			AI_Output(self,other,"DIA_Addon_Vatras_HowToJoin_WhatsGreat_05_07");	//Tohle je záležitost nesmírného významu.
 		}
@@ -1337,11 +1337,11 @@ func void DIA_Addon_Vatras_NowRanger_Info()
 		{
 			AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_10");	//Jsem velmi potěšen tím, že jsi prvním mágem Ohně, který se k nám přidal.
 		};
-		AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_11");	//Nechť tě Adanos ochraňuje. Nyní běž a setkej se svými bratry.
+		AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_11");	//Nechť tě Adanos ochraňuje. Nyní běž a setkej se se svými bratry.
 		AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_12");	//Čekají tě v hostinci 'U Mrtvé harpyje' na přijímací rituál.
-		AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_13");	//Předpokladám, že ten hostinec znáš. Procházíš kolem něj po cestě na Onarův statek.
-		AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_14");	//Nezapomeň si nasadit prsten, tak mohou bratři poznat, že jsi jeden z nich.
-		B_LogEntry(TOPIC_Addon_RingOfWater,"Teď patřím ke 'Kruhu Vody' a mám se setkat s naši partou v hostinci 'U Mrtvé harpyje'.");
+		AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_13");	//Předpokládám, že ten hostinec znáš. Procházíš kolem něj po cestě na Onarův statek.
+		AI_Output(self,other,"DIA_Addon_Vatras_NowRanger_05_14");	//Nezapomeň si nasadit prsten. Tak mohou bratři poznat, že jsi jeden z nich.
+		B_LogEntry(TOPIC_Addon_RingOfWater,"Teď patřím ke 'Kruhu Vody' a mám se setkat s naší partou v hostinci 'U Mrtvé harpyje'.");
 		SC_IsRanger = TRUE;
 		Lares_CanBringScToPlaces = TRUE;
 		MIS_Addon_Lares_ComeToRangerMeeting = LOG_Running;
@@ -1535,7 +1535,7 @@ func void dia_addon_vatras_cangoportaltwo_info()
 
 	if((SC_IsRanger == FALSE) && (hero.guild == GIL_NDW))
 	{
-		AI_Output(self,other,"DIA_Addon_Vatras_CanGoPortal_15_05");	//Jako náš novic nemusíš vztoupit do 'Kruhu'.
+		AI_Output(self,other,"DIA_Addon_Vatras_CanGoPortal_15_05");	//Jako náš novic nemusíš vstoupit do 'Kruhu'.
 		AI_Output(self,other,"DIA_Addon_Vatras_CanGoPortal_15_06");	//Naši Bratři to přijmou.
 		CreateInvItems(self,ItRi_Ranger_Addon,1);
 		B_GiveInvItems(self,other,ItRi_Ranger_Addon,1);
@@ -1546,7 +1546,7 @@ func void dia_addon_vatras_cangoportaltwo_info()
 	Log_SetTopicStatus(TOPIC_Addon_Sklaven,LOG_Running);
 	B_GivePlayerXP(100);
 	B_LogEntry_Quiet(TOPIC_Addon_Sklaven,"Mám zjistit proč Raven unáší občany Khorinisu.");
-	B_LogEntry(TOPIC_Addon_KDW,"Vatras mě poslal, s dopisem, za Saturasem. Měl bych teď jít s ostatními mágy Vody skrze portál a najít bývalého rudobarona Ravena.");
+	B_LogEntry(TOPIC_Addon_KDW,"Vatras mě poslal s dopisem za Saturasem. Měl bych teď jít s ostatními mágy Vody skrze portál a najít bývalého rudobarona Ravena.");
 	CANGOTOPORTAL = TRUE;
 
 	if((Lares_TakeFirstMissionFromVatras == TRUE) || (SC_IsRanger == TRUE) || (hero.guild == GIL_NDW))
@@ -1631,7 +1631,7 @@ func void DIA_Addon_Vatras_MissingPeople_Report()
 	};
 	if(((Elvrich_GoesBack2Thorben == TRUE) || (Elvrich_SCKnowsPirats == TRUE) || (SC_KnowsDexterAsKidnapper == TRUE)) && (MISSINGPEOPLEINFO[2] == FALSE))
 	{
-		AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Report_15_02");	//Taky jsem se doslechl, že jsou za to odpovědní banditi.
+		AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Report_15_02");	//Taky jsem se doslechl, že jsou za to zodpovědní banditi.
 		Vatras_MissingPeopleReports = Vatras_MissingPeopleReports + 1;
 		MISSINGPEOPLEINFO[2] = TRUE;
 	};
@@ -1679,14 +1679,14 @@ func void DIA_Addon_Vatras_MissingPeople_Report()
 	};
 	if(Vatras_MissingPeopleReports != 0)
 	{
-		AI_Output(self,other,"DIA_Addon_Vatras_MissingPeople_Report_05_12");	//Myslím, že jsi na dobré cestě. Drž se ji.
+		AI_Output(self,other,"DIA_Addon_Vatras_MissingPeople_Report_05_12");	//Myslím, že jsi na dobré cestě. Drž se jí.
 		XP_Vatras_MissingPeopleReports = XP_Addon_Vatras_MissingPeopleReport * Vatras_MissingPeopleReports;
 		B_GivePlayerXP(XP_Vatras_MissingPeopleReports);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Addon_Vatras_MissingPeople_Report_05_13");	//Co jsi zjistil?
-		AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Report_15_14");	//Bohužel, zatím nic směrodátného.
+		AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Report_15_14");	//Bohužel zatím nic směrodátného.
 	};
 };
 
@@ -1819,7 +1819,7 @@ func void DIA_Addon_Vatras_Waffen_Success()
 	else
 	{
 		AI_Output(other,self,"DIA_Addon_Vatras_CaughtFernando_15_09");	//Ještě ne.
-		AI_Output(self,other,"DIA_Addon_Vatras_CaughtFernando_05_10");	//Tak pospěš a zprav ho o tom! Toto musí být okamžitě zastaveno.
+		AI_Output(self,other,"DIA_Addon_Vatras_CaughtFernando_05_10");	//Tak pospěš a řekni mu o tom! Toto musí být okamžitě zastaveno.
 	};
 };
 
@@ -1958,9 +1958,9 @@ func int DIA_Addon_Vatras_GuildHelp_Condition()
 
 func void DIA_Addon_Vatras_GuildHelp_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Vatras_GuildHelp_15_00");	//Lares se zmínil že mi pomužeš přidat se k mágum Ohně.
-	AI_Output(self,other,"DIA_Addon_Vatras_GuildHelp_05_01");	//To je tá volba? Cesta Ohně?
-	AI_Output(other,self,"DIA_Addon_Vatras_GuildHelp_15_02");	//Jo, hodlám se stát mágem Ohně.
+	AI_Output(other,self,"DIA_Addon_Vatras_GuildHelp_15_00");	//Lares se zmínil, že mi pomůžeš přidat se k mágům Ohně.
+	AI_Output(self,other,"DIA_Addon_Vatras_GuildHelp_05_01");	//To je tvá volba? Cesta Ohně?
+	AI_Output(other,self,"DIA_Addon_Vatras_GuildHelp_15_02");	//Jo. Hodlám se stát mágem Ohně.
 	AI_Output(self,other,"DIA_Addon_Vatras_GuildHelp_05_03");	//Pokud si dobře pamatuji, nepřestali přijímat novice. Proč chceš tedy mou pomoc?
 	if(SC_KnowsKlosterTribut == TRUE)
 	{
@@ -2304,7 +2304,7 @@ func void DIA_Vatras_GODS_ADANOS()
 {
 	AI_Output(other,self,"DIA_Vatras_GODS_ADANOS_15_00");	//Řekni mi něco o Adanovi.
 	AI_Output(self,other,"DIA_Vatras_GODS_ADANOS_05_01");	//Adanos je bůh středu. Vymezuje právo a je strážcem rovnováhy mezi Innosem a Beliarem.
-	AI_Output(self,other,"DIA_Vatras_GODS_ADANOS_05_02");	//Ovládá sílu přeměn, jeho darem je voda všech oceánů, jezer a řek.
+	AI_Output(self,other,"DIA_Vatras_GODS_ADANOS_05_02");	//Ovládá sílu přeměn. Jeho darem je voda všech oceánů, jezer a řek.
 	AI_Output(self,other,"DIA_Vatras_GODS_ADANOS_05_03");	//Jeho kněží jsou mágové Vody, stejně jako já jsem služebníkem a knězem Adanovým.
 	Info_ClearChoices(DIA_Vatras_GODS);
 	Info_AddChoice(DIA_Vatras_GODS,Dialog_Back,DIA_Vatras_GODS_BACK);
@@ -2891,11 +2891,11 @@ func void DIA_Vatras_AUGEGEHEILT_Info()
 		MIS_ADW_NEWSVATRAS = LOG_Running;
 		Log_CreateTopic(TOPIC_ADW_NEWSVATRAS,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_ADW_NEWSVATRAS,LOG_Running);
-		Log_AddEntry(TOPIC_ADW_NEWSVATRAS,"Vatras dlouhý čas neslyšel nic a mázích v Jharkendaru, měl bych se tam podívat.");
+		Log_AddEntry(TOPIC_ADW_NEWSVATRAS,"Vatras dlouhý čas neslyšel nic a mázích v Jharkendaru. Měl bych se tam podívat.");
 		YARKENDARTROUBLE = TRUE;
 	};
 	AI_Output(self,other,"DIA_Vatras_AUGEGEHEILT_05_02");	//Doufám, že se ještě uvidíme, až dokončíš svou misi. 
-	B_LogEntry(TOPIC_INNOSEYE,"Oko je již v pořádku. Pyrokar mi je vydá a pak půjdu lovit draky.");
+	B_LogEntry(TOPIC_INNOSEYE,"Oko je již v pořádku. Pyrokar mi ho vydá a pak půjdu lovit draky.");
 	AI_StopProcessInfos(self);
 	RitualInnosEyeRuns = LOG_SUCCESS;
 	MIS_RitualInnosEyeRepair = LOG_SUCCESS;
@@ -2934,7 +2934,7 @@ func void dia_vatras_newsforvatras_info()
 	AI_Output(self,other,"DIA_Vatras_NewsForVatras_01_01");	//Ano? Co o tom víš?
 	AI_Output(other,self,"DIA_Vatras_NewsForVatras_01_02");	//Skřeti obsadili údolí. Saturas a ostatní se ukryli u portálu.
 	AI_Output(other,self,"DIA_Vatras_NewsForVatras_01_03");	//Bojí se, že by se skřeti dostali portálem do Khorinisu a chtějí ho bránit.
-	AI_Output(other,self,"DIA_Vatras_NewsForVatras_01_06");	//Teď už je to vpořádku. Vyřešil jsem to!... Skřeti určitě brzy opustí údolí.
+	AI_Output(other,self,"DIA_Vatras_NewsForVatras_01_06");	//Teď už je to v pořádku. Vyřešil jsem to!... Skřeti určitě brzy opustí údolí.
 	AI_Output(other,self,"DIA_Vatras_NewsForVatras_01_07");	//Ostatní zůstanou tam.
 	AI_Output(self,other,"DIA_Vatras_NewsForVatras_01_08");	//Adanos ti žehnej, synu. Máš opravdu dobré zprávy.
 	B_GiveInvItems(self,other,ItMi_Gold,500);
@@ -3271,7 +3271,7 @@ func void dia_addon_vatras_prayforgomez_ok()
 	{
 		RESCUEGOMEZSTEPONEDONE = TRUE;
 		RESCUEGOMEZSTEPTWO = TRUE;
-		Log_AddEntry(TOPIC_RESCUEGOMEZ,"Získal jsem pro Gomeze odpuštění od všech třech bohů! Nyní bych měl navštívit Starý důl.");
+		Log_AddEntry(TOPIC_RESCUEGOMEZ,"Získal jsem pro Gomeze odpuštění od všech tří bohů! Nyní bych měl navštívit Starý důl.");
 	};
 	AI_StopProcessInfos(self);
 };
@@ -3439,7 +3439,7 @@ func int dia_addon_vatras_afterbigbattle_condition()
 func void dia_addon_vatras_afterbigbattle_info()
 {
 	AI_Output(other,self,"DIA_Addon_Vatras_AfterBigBattle_01_00");	//Jsi v pořádku?!
-	AI_Output(self,other,"DIA_Addon_Vatras_AfterBigBattle_01_01");	//Jsem vpořádku můj synu...
+	AI_Output(self,other,"DIA_Addon_Vatras_AfterBigBattle_01_01");	//Jsem v pořádku můj synu...
 	AI_Output(self,other,"DIA_Addon_Vatras_AfterBigBattle_01_02");	//Jak vidíš, bohužel to není možné říci o všech.
 	AI_Output(self,other,"DIA_Addon_Vatras_AfterBigBattle_01_03");	//Tolik jsme jich ztratili... (smutný) A ti budou ztraceni navždy!
 	AI_Output(self,other,"DIA_Addon_Vatras_AfterBigBattle_01_04");	//Nejtěžší je to vše sledovat.
@@ -3503,7 +3503,7 @@ func void DIA_Vatras_JarCurse_Info()
 	AI_Output(other,self,"DIA_Vatras_JarCurse_01_01");	//Co jsi chtěl?
 	AI_Output(self,other,"DIA_Vatras_JarCurse_01_02");	//Vypadá to, že jsou před námi temné časy. A proto jsem nucen tě požádat o pomoc.
 	AI_Output(other,self,"DIA_Vatras_JarCurse_01_03");	//Poslouchám.
-	AI_Output(self,other,"DIA_Vatras_JarCurse_01_04");	//Nedávno jsem zaslech chýry, že nedaleko pyramid bylo vidět pár nemrtvých.
+	AI_Output(self,other,"DIA_Vatras_JarCurse_01_04");	//Nedávno jsem zaslech zvěsti, že nedaleko pyramid bylo vidět pár nemrtvých.
 	AI_Output(self,other,"DIA_Vatras_JarCurse_01_05");	//Ale nebyli to obyčejní nemrtví s jakými jsme se setkali doposud.
 	AI_Output(self,other,"DIA_Vatras_JarCurse_01_06");	//Už jsem poslal Myxira a jednoho z našich bratrů aby se na to podívali.
 	AI_Output(self,other,"DIA_Vatras_JarCurse_01_07");	//Ale stále jsem od nich nedostal žádné zprávy.
@@ -3525,7 +3525,7 @@ func void DIA_Vatras_JarCurse_Yes()
 	MIS_JarCurse = LOG_Running;
 	Log_CreateTopic(TOPIC_JarCurse,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_JarCurse,LOG_Running);
-	B_LogEntry(TOPIC_JarCurse,"Vatras mě poslal zkontrolovat situaci v pyramidach a zjistit co se tam děje.");	
+	B_LogEntry(TOPIC_JarCurse,"Vatras mě poslal zkontrolovat situaci v pyramidách a zjistit co se tam děje.");	
 	AI_StopProcessInfos(self);
 	B_KillNpc(pal_188_ritter);
 	B_KillNpc(pal_189_ritter);
@@ -3596,7 +3596,7 @@ func void DIA_Vatras_JarCurseDone_info()
 {
 	B_GivePlayerXP(250);
 	AI_Output(other,self,"DIA_Vatras_JarCurseDone_01_01");	//Myxir se vrátil do města.
-	AI_Output(self,other,"DIA_Vatras_JarCurseDone_01_02");	//Ano, já vím. Všechno mi povědel.
+	AI_Output(self,other,"DIA_Vatras_JarCurseDone_01_02");	//Ano, já vím. Všechno mi pověděl.
 	AI_Output(self,other,"DIA_Vatras_JarCurseDone_01_03");	//Doufám, že už jsi byl za Saturasem.
 
 	if(MeetSaturasOkPortal == TRUE)
@@ -3660,7 +3660,7 @@ func int DIA_Vatras_MAXROBE_Buy_condition()
 
 func void DIA_Vatras_MAXROBE_Buy_info()
 {
-	AI_Output(other,self,"DIA_Vatras_MAXROBE_Buy_01_00");	//Koupit roucho arcimága Vody!
+	AI_Output(other,self,"DIA_Vatras_MAXROBE_Buy_01_00");	//Koupím roucho arcimága Vody!
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 20000)
 	{
@@ -3701,15 +3701,15 @@ func void DIA_Vatras_WolfAndMan_info()
 	B_GivePlayerXP(250);
 	AI_Output(other,self,"DIA_Vatras_WolfAndMan_01_00");	//Mám pro tebe velmi neobyčejný případ.
 	AI_Output(self,other,"DIA_Vatras_WolfAndMan_01_01");	//Poslouchám.
-	AI_Output(other,self,"DIA_Vatras_WolfAndMan_01_02");	//Jeden člověk by skutočně potřeboval tvou pomoc! Teda není to přesně člověk...
-	AI_Output(self,other,"DIA_Vatras_WolfAndMan_01_03");	//Hovoříš v hádankách synu.
+	AI_Output(other,self,"DIA_Vatras_WolfAndMan_01_02");	//Jeden člověk by skutečně potřeboval tvou pomoc! Teda není to přesně člověk...
+	AI_Output(self,other,"DIA_Vatras_WolfAndMan_01_03");	//Hovoříš v hádankách, synu.
 	AI_Output(other,self,"DIA_Vatras_WolfAndMan_01_04");	//No, je to muž, ale má tělo zvířete!
 	AI_Output(other,self,"DIA_Vatras_WolfAndMan_01_05");	//Používal kouzlo proměny, ale nezvládl se proměnit zpět.
-	AI_Output(self,other,"DIA_Vatras_WolfAndMan_01_06");	//A ty chceš abych ti pomohol proměnit ho zpět.
+	AI_Output(self,other,"DIA_Vatras_WolfAndMan_01_06");	//A ty chceš abych ti pomohl proměnit ho zpět.
 	AI_Output(other,self,"DIA_Vatras_WolfAndMan_01_07");	//Ano!
 	AI_Output(self,other,"DIA_Vatras_WolfAndMan_01_08");	//Promiň, nechci tě zklamat, ale myslím, že tady už nikdo nepomůže.
 	AI_Output(self,other,"DIA_Vatras_WolfAndMan_01_09");	//Takovéhle věci jdou mimo nás. Ani nejsilnější mágové světa by mu nedokázali pomoct.
-	AI_Output(self,other,"DIA_Vatras_WolfAndMan_01_10");	//Jediné, co jsem schopen udělat je navrátit mu jeho lidské vědomí.
+	AI_Output(self,other,"DIA_Vatras_WolfAndMan_01_10");	//Jediné, co jsem schopen udělat, je navrátit mu jeho lidské vědomí.
 	AI_Output(self,other,"DIA_Vatras_WolfAndMan_01_11");	//Zůstane v těle zvířete, ale bude myslet a hovořit jako člověk.
 	AI_Output(other,self,"DIA_Vatras_WolfAndMan_01_12");	//Tak udělej aspoň to.
 	AI_Output(self,other,"DIA_Vatras_WolfAndMan_01_13");	//Počkej chvíli...
@@ -3728,7 +3728,7 @@ instance DIA_ADDON_VATRAS_WISP(C_Info)
 	nr = 5;
 	condition = dia_addon_vatras_wisp_condition;
 	information = dia_addon_vatras_wisp_info;
-	description = "Mohol by si mi pomocť v mojom hladaní?";
+	description = "Mohl bys mi pomoct v mém pátrání?";
 };
 
 func int dia_addon_vatras_wisp_condition()
@@ -3741,44 +3741,44 @@ func int dia_addon_vatras_wisp_condition()
 
 func void dia_addon_vatras_wisp_info()
 {
-	AI_Output(other,self,"DIA_Addon_Vatras_Waffen_WISP_15_00");	//Mohol by si mi pomocť v mojom hladaní?
-	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_01");	//Si velmi neodbytný chlapče. Ale skutočne ti možem dať niečo, čo by ti malo pomocť s tvojou úlohou.
-	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_02");	//Dám ti tento amulet. Budeš ho potrebovať.
+	AI_Output(other,self,"DIA_Addon_Vatras_Waffen_WISP_15_00");	//Mohl bys mi pomoct v mém pátrání?
+	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_01");	//Jsi velmi neodbytný chlapče. Ale skutečně ti můžu dát něco, co by ti mělo pomoct s tvým úkolem.
+	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_02");	//Dám ti tento amulet. Budeš ho potřebovat.
 	B_GiveInvItems(self,other,ItAm_Addon_WispDetector,1);
-	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_03");	//Toto je amulet hladacej bludičky.
-	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_04");	//Velmi vzácna vec! Bludička, čo žije v tomto amulete má špeciálne schopnosti.
-	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_05");	//Pomože ti v hladaní vecí, čo by si bez nej nenašiel.
+	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_03");	//Toto je amulet hledající bludičky.
+	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_04");	//Velmi vzácna věc! Bludička, co žije v tomto amuletě má speciální schopnosti.
+	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_05");	//Pomůže ti v hledání věcí, co by si bez něj nenašel.
 	//AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_06");	//Chtoby vyzvat' ogon'ka, prosto naden' amulet.
 	//AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_07");	//Yesli ogonek poteryayet svoyu silu ili poteryayetsya, snimi amulet i naden' yego snova, i ogonek vernetsya.
-	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_10");	//Nechaj si ho, nikdy ťa nezklame.
+	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_10");	//Nechej si ho, nikdy tě nezklame.
 	Info_ClearChoices(dia_addon_vatras_wisp);
-	Info_AddChoice(dia_addon_vatras_wisp,"Vďaka. Určite ho využijem.",dia_addon_vatras_wisp_thanks);
-	Info_AddChoice(dia_addon_vatras_wisp,"A čo ešte tá bludička dokáže?",dia_addon_vatras_wisp_morewisp);
-	Info_AddChoice(dia_addon_vatras_wisp,"Hladať bludičku v amulete?",dia_addon_vatras_wisp_amulett);
+	Info_AddChoice(dia_addon_vatras_wisp,"Díky. Určite ho využiju.",dia_addon_vatras_wisp_thanks);
+	Info_AddChoice(dia_addon_vatras_wisp,"A co ještě ta bludička dokáže?",dia_addon_vatras_wisp_morewisp);
+	Info_AddChoice(dia_addon_vatras_wisp,"Hledací bludička v amuletě?",dia_addon_vatras_wisp_amulett);
 	SC_GotWisp = TRUE;
 };
 
 func void dia_addon_vatras_wisp_thanks()
 {
-	AI_Output(other,self,"DIA_Addon_Vatras_Waffen_Thanks_15_00");	//Vďaka. Určite ho využijem.
+	AI_Output(other,self,"DIA_Addon_Vatras_Waffen_Thanks_15_00");	//Díky. Určitě ho využiju.
 	Info_ClearChoices(dia_addon_vatras_wisp);
 };
 
 func void dia_addon_vatras_wisp_morewisp()
 {
-	AI_Output(other,self,"DIA_Addon_Vatras_Waffen_MoreWISP_15_00");	//A čo ešte tá bludička dokáže?
-	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_MoreWISP_05_02");	//Myslím, že Riordian vie ako tieto veci trénovať. Je to jeden z nás a práve cestuje zo Saturasom.
-	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_MoreWISP_05_03");	//Možno ti povie viac.
+	AI_Output(other,self,"DIA_Addon_Vatras_Waffen_MoreWISP_15_00");	//A co ještě ta bludička dokáže?
+	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_MoreWISP_05_02");	//Myslím, že Riordian ví jak tyto věci trénovat. Je to jeden z nás a právě cestuje se Saturasem.
+	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_MoreWISP_05_03");	//Možná ti poví víc.
 };
 
 func void dia_addon_vatras_wisp_amulett()
 {
-	AI_Output(other,self,"DIA_Addon_Vatras_WISPDETECTOR_was_15_00");	//Hladacia bludička v amulete?
-	AI_Output(self,other,"DIA_Addon_Vatras_WISPDETECTOR_was_05_01");	//Hladacie bludičky sú úžasné tvory. Sú celé tvorené magickou energiou.
-	AI_Output(self,other,"DIA_Addon_Vatras_WISPDETECTOR_was_05_02");	//Sú spojené s magickou rudou tohto sveta. Dáva im silu.
-	AI_Output(self,other,"DIA_Addon_Vatras_WISPDETECTOR_was_05_03");	//Neprekvapuje ma, že si o nich ešte nepočul. Ukazujú sa iba luďom, čo majú zo sebou magickú rudu.
-	AI_Output(self,other,"DIA_Addon_Vatras_WISPDETECTOR_was_05_04");	//Bludičky boli silou vypudené zo svojich zemí.
-	AI_Output(self,other,"DIA_Addon_Vatras_WISPDETECTOR_was_05_05");	//Nemožeme týmto nešťastným tvorom pomocť. Mal by si sa od nich držať ďalej.
+	AI_Output(other,self,"DIA_Addon_Vatras_WISPDETECTOR_was_15_00");	//Hledací bludička v amuletě?
+	AI_Output(self,other,"DIA_Addon_Vatras_WISPDETECTOR_was_05_01");	//Hledací bludičky jsou úžasné stvoření. Jsou celé tvořené magickou energií.
+	AI_Output(self,other,"DIA_Addon_Vatras_WISPDETECTOR_was_05_02");	//Jsou spojené s magickou rudou z tohoto světa. Dává jim sílu.
+	AI_Output(self,other,"DIA_Addon_Vatras_WISPDETECTOR_was_05_03");	//Nepřekvapuje mě, že jsi o nich ještě neslyšel. Ukazují se pouze lidem, co u sebe mají magickou rudu.
+	AI_Output(self,other,"DIA_Addon_Vatras_WISPDETECTOR_was_05_04");	//Bludičky byly silou vypuzené ze svých zemí.
+	AI_Output(self,other,"DIA_Addon_Vatras_WISPDETECTOR_was_05_05");	//Nemůžeme těmto nešťastným tvorům pomoct. Měl bys se od nich držet daleko.
 };
 
 var int VatrasInspectRing;
@@ -3791,7 +3791,7 @@ instance DIA_Addon_Vatras_DarkWeb(C_Info)
 	condition = DIA_Addon_Vatras_DarkWeb_Condition;
 	information = DIA_Addon_Vatras_DarkWeb_Info;
 	permanent = FALSE;
-	description = "Mohol by si sa pozrieť na tento prsteň?";
+	description = "Mohl bys se podívat na tento prsten?";
 };
 
 func int DIA_Addon_Vatras_DarkWeb_Condition()
@@ -3805,18 +3805,18 @@ func int DIA_Addon_Vatras_DarkWeb_Condition()
 func void DIA_Addon_Vatras_DarkWeb_Info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_01_01");	//Mohol by si sa pozrieť na tento prsteň?
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_01_02");	//Samozrejme. Ukáž ho sem.
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_01_01");	//Mohl bys se podívat na tento prsten?
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_01_02");	//Samozřejmě. Ukaž mi ho.
 	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_01_03");	//Tu je.
 	B_GiveInvItems(other,self,ItMi_LotarRing,1);
 	Npc_RemoveInvItems(self,ItMi_LotarRing,1);
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_01_04");	//Na pohled vyzerá ako obyčajný strieborný prsteň. Aj keď...
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_01_05");	//Vidíš tú slabú magickú auru, ktorá z neho vyžaruje? Pravdepodobne následok nejakej mágie, čo naň posobila.
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_01_06");	//A pokial dokážem povedať, vcelku silná! Iba ona by dokázala nechať magický otlačok na tomto prsteni.
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_01_07");	//A čo to je za mágiu?
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_01_08");	//Ešte neviem. Potrebujem čas na preštudovanie všetkých možností. Nechaj mi ho a vráť sa zajtra.
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_01_04");	//Na první pohled vypadá jako obyčejný stříbrný prsten. I když...
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_01_05");	//Vidíš tu slabou magickou auru, která z něho vyzařuje? Pravděpodobně následek nějaké magie, co na něj působila.
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_01_06");	//A pokud se nemýlím, vcelku silná! Jen ona by dokázala nechat magický otisk na tomto prstenu.
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_01_07");	//A co je to za magii?
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_01_08");	//Ještě nevím. Potřebuji čas na prostudování všech možností. Nechej mi ho a vrať se zítra.
 	VatrasInspectRing = Wld_GetDay();
-	B_LogEntry(TOPIC_DarkWeb,"Vatras potrebuje na preskúmanie prsteňa viac Času. Mám sa vrátiť zajtra.");
+	B_LogEntry(TOPIC_DarkWeb,"Vatras potřebuje na prozkoumání prstenu víc času. Mám se vrátit zítra.");
 	AI_StopProcessInfos(self);
 };
 
@@ -3827,7 +3827,7 @@ instance DIA_Addon_Vatras_DarkWeb_Done(C_Info)
 	condition = DIA_Addon_Vatras_DarkWeb_Done_Condition;
 	information = DIA_Addon_Vatras_DarkWeb_Done_Info;
 	permanent = FALSE;
-	description = "Zistil si niečo?";
+	description = "Zjistil si něco?";
 };
 
 func int DIA_Addon_Vatras_DarkWeb_Done_Condition()
@@ -3845,20 +3845,20 @@ func int DIA_Addon_Vatras_DarkWeb_Done_Condition()
 func void DIA_Addon_Vatras_DarkWeb_Done_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_01");	//Zistil si niečo?
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_02");	//Dokonca viac ako som dúfal. Ale najprv mám pre teba jedno otázočku - a síce, odkial ten prsteň máš?
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_03");	//Patril paladinovi Lotharovi ktorý bol nedávno zabitý. Našiel som ho kúsok od miesta činu.
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_04");	//Tak to vysvetluje mnoho. Táto mágia nie je nič iné ako Beliarova čierna mágia.
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_05");	//A taká silná, že už samotný kontakt s ňou je nebezpečný. Ten kto ju použil je pravdepodobne silný mág.
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_06");	//Čokolvek čo by ti pomohlo ho nájšt?
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_07");	//Čo máš za lubom?
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_08");	//Lord Hagen by chcel vrahovu hlavu na striebornom podnose a nezastaví sa pred ničím, kým ju nedostane.
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_09");	//Uvedomuješ si vobec čomu sa budeš musieť postaviť?
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_10");	//Úplne. Takže mi pomožeš?
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_11");	//Dobre. Ale na to budem potrebovať nejakú vec, ktorá tomu mágovi patrila. Bez toho budú všetky moje pokusy zistiť jeho polohu zbytočné.
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_12");	//Skúsim niečo nájsť.
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_01");	//Zjistil si něco?
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_02");	//Dokonce víc, než jsem doufal. Ale nejdřív mám pro tebe jednu otázku - a sice, odkud ten prsten máš?
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_03");	//Patřil paladinovi Lotharovi, který byl nedávno zabitý. Našel jsem ho kousek od místa činu.
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_04");	//Tak to vysvětluje mnoho. Tato magie není nic jiného, než Beliarova černá magie.
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_05");	//A tak silná, že už samotný kontakt s ní je nebezpečný. Ten, kdo jí použil, je pravděpodobně silný mág.
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_06");	//Cokoliv, co by ti pomohlo ho najít?
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_07");	//Co máš za lubem?
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_08");	//Lord Hagen by chtěl vrahovu hlavu na stříbrném podnose a nezastaví se před ničím, dokud jí nedostane.
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_09");	//Uvědomuješ si vůbec, čemu se budeš muset postavit?
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_10");	//Úplně. Takže mi pomůžeš?
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Done_01_11");	//Dobře. Ale na to budu potřebovat nějakou věc, která tomu mágovi patřila. Bez toho budou všechny moje pokusy zjistit jeho polohu zbytečné.
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Done_01_12");	//Zkusím něco najít.
 
-	B_LogEntry(TOPIC_DarkWeb,"Magický otlačok na prsteni očividne zanechal nejaký mocný mág. Aby sme ho našli Vatras potebuje nejakú jeho vec alebo aspoň vec, ktorej sa ten mág dotkol.");
+	B_LogEntry(TOPIC_DarkWeb,"Magický otisk na prstenu očividně zanechal nějaký mocný mág. Abych ho našel, Vatras potřebuje nějakou jeho věc anebo aspoň věc, které se ten mág dotknul.");
 	AI_StopProcessInfos(self);
 };
 
@@ -3869,7 +3869,7 @@ instance DIA_Addon_Vatras_DarkWeb_Wait(C_Info)
 	condition = DIA_Addon_Vatras_DarkWeb_Wait_Condition;
 	information = DIA_Addon_Vatras_DarkWeb_Wait_Info;
 	permanent = FALSE;
-	description = "Mám magický zvitok, ktorý Lotharov vrah použil.";
+	description = "Mám magický svitek, který použil Lotharův vrah.";
 };
 
 func int DIA_Addon_Vatras_DarkWeb_Wait_Condition()
@@ -3883,14 +3883,14 @@ func int DIA_Addon_Vatras_DarkWeb_Wait_Condition()
 func void DIA_Addon_Vatras_DarkWeb_Wait_Info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Wait_01_01");	//Mám magický zvitok, ktorý Lotharov vrah použil. Bude to stačiť?
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Wait_01_01");	//Mám magický svitok, který použil Lotharův vrah. Bude to stačit?
 	B_GiveInvItems(other,self,ItMi_DarkScroll,1);
 	Npc_RemoveInvItems(self,ItMi_DarkScroll,1);
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Wait_01_02");	//Už teraz z neho cítim jeho mágiu.
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Wait_01_03");	//Teraz sa musím pripraviť. Ty si zatial odpočiň.
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Wait_01_04");	//Nebude to trvať viac ako deň.
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Wait_01_02");	//Už teď z něho cítím jeho mágii.
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Wait_01_03");	//Teď se musím připravit. Ty si zatím odpočiň.
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Wait_01_04");	//Nebude to trvat víc jak den.
 	VatrasInspectScroll = Wld_GetDay();
-	B_LogEntry(TOPIC_DarkWeb,"Dal som magický zvitok Vatrasovi. Teraz musím len počkať kým sa Vatras pripraví. Takže zajtra.");
+	B_LogEntry(TOPIC_DarkWeb,"Dal jsem magický svitek Vatrasovi. Teď musím jen počkat, než se Vatras připraví a to zabere asi den.");
 	AI_StopProcessInfos(self);
 };
 
@@ -3901,7 +3901,7 @@ instance DIA_Addon_Vatras_DarkWeb_Ready(C_Info)
 	condition = DIA_Addon_Vatras_DarkWeb_Ready_Condition;
 	information = DIA_Addon_Vatras_DarkWeb_Ready_Info;
 	permanent = FALSE;
-	description = "Prípravy hotové?";
+	description = "Přípravy hotové?";
 };
 
 func int DIA_Addon_Vatras_DarkWeb_Ready_Condition()
@@ -3918,13 +3918,13 @@ func int DIA_Addon_Vatras_DarkWeb_Ready_Condition()
 
 func void DIA_Addon_Vatras_DarkWeb_Ready_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Ready_01_01");	//Prípravy hotové?
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Ready_01_02");	//Áno. Zober si túto magickú runu.
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Ready_01_01");	//Přípravy hotové?
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Ready_01_02");	//Ano. Seber si tuto magickou runu.
 	B_GiveInvItems(self,other,ItMi_Darktransfer,1);
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Ready_01_03");	//Použi ju a prenesie ťa na miesto, kde nájdeš odpovede na svoje otázky.
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Ready_01_04");	//Ale byť tebou sa predtým poriadne pripravím. To čo ťa tam bude čakať može byť nad tvoje sily.
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Ready_01_05");	//Vďaka.
-	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Ready_01_06");	//Nech ťa Adanos ochraňuje.
-	B_LogEntry(TOPIC_DarkWeb,"Vatras mi dal runu, ktorá ma vezme za Lotharovým vrahom. Mal by som sa poriadne pripraviť než sa tam vydám.");
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Ready_01_03");	//Použij ji a přenese tě na místo, kde najdeš odpovědi na svoje otázky.
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Ready_01_04");	//Ale být tebou se předtím pořádně připravím. To co tě tam bude čekat, může být nad tvoje síly.
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Ready_01_05");	//Díky.
+	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Ready_01_06");	//Nech tě Adanos ochraňuje.
+	B_LogEntry(TOPIC_DarkWeb,"Vatras mi dal runu, která mě vezme za Lotharovým vrahem. Měl bych se pořádně připravit, než se tam vydám.");
 	AI_StopProcessInfos(self);
 };

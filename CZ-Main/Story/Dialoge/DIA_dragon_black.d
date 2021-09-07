@@ -69,7 +69,7 @@ func void dia_dragon_black_hello_info()
 	};
 
 	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_17");	//Dost už klábosení! Je čas začít mluvit skutky!
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_18");	//(Pohrdavě) Dostal jsem chuť na tvou krev, připrav sa na smrt, hrdino!
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_18");	//(Pohrdavě) Dostal jsem chuť na tvou krev, připrav se na smrt, hrdino!
 	AI_PlayAni(self,"T_WARN");
 	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_23");	//MOJE ZUBY - MEČE! MÉ DRÁPY - KOPÍ! MÁ KŘÍDLA - HURIKÁNY! 
 	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_24");	//JÁ SÁM JSEM PLAMENEM! JÁ JSEM... SMRT!

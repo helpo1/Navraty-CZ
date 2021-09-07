@@ -161,7 +161,7 @@ func void dia_baalorun_pmschulden_info()
 			tsettext2 = ConcatStrings(tsettext1,PRINT_ATTACKCOUNT2_PSICAMP);
 			tsettext3 = ConcatStrings(PRINT_ATTACKCOUNT_PSICAMP,tsettext2);
 			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_40");	//Přesněji řečeno - jednu záležitost.
-			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_41");	//Všichni bratři v táboře už mají dost tvých neustálých šarvátekk.
+			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_41");	//Všichni bratři v táboře už mají dost tvých neustálých šarvátek.
 			AI_Output(self,other,"DIA_BaalOrun_PMSchulden_08_42");	//Jediný způsob, jak potrestat tvé nekonečné přestupky, je zabít tě...
 			if(Npc_HasItems(self,ItRu_Whirlwind) == 0)
 			{
@@ -289,7 +289,7 @@ func void dia_baalorun_pmschulden_info()
 			Info_ClearChoices(dia_baalorun_pmschulden);
 			Info_ClearChoices(dia_baalorun_petzmaster);
 			Info_AddChoice(dia_baalorun_pmschulden,"Nemám dost zlata!",dia_baalorun_petzmaster_paylater);
-			Info_AddChoice(dia_baalorun_pmschulden,"Kolik to mám zaplatit?",dia_baalorun_pmschulden_howmuchagain);
+			Info_AddChoice(dia_baalorun_pmschulden,"Kolik mám zaplatit?",dia_baalorun_pmschulden_howmuchagain);
 			if(Npc_HasItems(other,ItMi_Gold) >= BAALORUN_SCHULDEN)
 			{
 				Info_AddChoice(dia_baalorun_pmschulden,"Chci to zaplatit.",dia_baalorun_petzmaster_paynow);
@@ -303,7 +303,7 @@ func void dia_baalorun_pmschulden_howmuchagain()
 	var string concatText1;
 	var string concatText2;
 	var string concattextschulden;
-	AI_Output(other,self,"DIA_BaalOrun_PMSchulden_HowMuchAgain_15_00");	//Kolik to mám zaplatit?
+	AI_Output(other,self,"DIA_BaalOrun_PMSchulden_HowMuchAgain_15_00");	//Kolik mám zaplatit?
 	if(BAALORUN_SCHULDEN <= 1000)
 	{
 		B_Say_Gold(self,other,BAALORUN_SCHULDEN);
@@ -318,7 +318,7 @@ func void dia_baalorun_pmschulden_howmuchagain()
 	Info_ClearChoices(dia_baalorun_pmschulden);
 	Info_ClearChoices(dia_baalorun_petzmaster);
 	Info_AddChoice(dia_baalorun_pmschulden,"Nemám dost zlata!",dia_baalorun_petzmaster_paylater);
-	Info_AddChoice(dia_baalorun_pmschulden,"Kolik to mám zaplatit?",dia_baalorun_pmschulden_howmuchagain);
+	Info_AddChoice(dia_baalorun_pmschulden,"Kolik mám zaplatit?",dia_baalorun_pmschulden_howmuchagain);
 	if(Npc_HasItems(other,ItMi_Gold) >= BAALORUN_SCHULDEN)
 	{
 		Info_AddChoice(dia_baalorun_pmschulden,"Chci to zaplatit.",dia_baalorun_petzmaster_paynow);
@@ -494,7 +494,7 @@ func void dia_baalorun_petzmaster_paynow()
 func void dia_baalorun_petzmaster_paylater()
 {
 	AI_Output(other,self,"DIA_BaalOrun_PetzMaster_PayLater_15_00");	//Nemám dostatek zlata!
-	AI_Output(self,other,"DIA_BaalOrun_PetzMaster_PayLater_10_01");	//Tak si jej rychle sežeň!
+	AI_Output(self,other,"DIA_BaalOrun_PetzMaster_PayLater_10_01");	//Tak si je rychle sežeň!
 	AI_Output(self,other,"DIA_BaalOrun_PetzMaster_PayLater_10_02");	//Nedělej už další problémy - kvůli tomu tady nejsme.
 	BAALORUN_LASTPETZCOUNTER = B_GetTotalPetzCounter(self);
 	BAALORUN_LASTPETZCRIME = B_GetGreatestPetzCrime(self);
@@ -639,7 +639,7 @@ func void dia_baalorun_aufgabe_info()
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_01");	//Vidím, že tvůj duch po něčem pátrá - pátráš po pravé víře. Cožpak necítíš ten zuřivý vnitřní plamen - ten, který ti v noci nedovolí spát?
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_02");	//Vidím, že máš jisté pochybnosti - snaží se ti snad služebníci falešných bohů něco vnutit?
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_03");	//Avšak ty sám víš, odkud se ty pochybnosti vzaly. Všichni lhali!
-	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_04");	//Cožpak necítíš vnitřní touhu po svobodě? Den po dni se stává silnější, necítíš, jak vede tvou duši? Osvoboď ji!
+	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_04");	//Cožpak necítíš vnitřní touhu po svobodě? Den po dni se stává silnější. Necítíš, jak vede tvou duši? Osvoboď ji!
 	AI_Output(other,self,"DIA_BaalOrun_Aufgabe_01_05");	//Začal jsi se mnou mluvit. Takže pokud si dobře pamatuji, znamená to, že tě teď mohu oslovit i já?
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_06");	//Znáš naše pravidla. To je chvályhodné!
 	AI_Output(self,other,"DIA_BaalOrun_Aufgabe_01_07");	//Ostatní naši bratři s tebou mluvit nebudou, pokud jim nedokážeš, že ti mohou důvěřovat.
@@ -1005,7 +1005,7 @@ func void dia_baalorun_tellkorangar_info()
 			AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_06");	//Je v pořádku - živý a zdravý. Potkal jsem ho v Hornickém údolí.
 			AI_Output(other,self,"DIA_BaalOrun_TellKorAngar_01_07");	//Řekl jsem mu o našem Bratrstvu a myslím si, že se k nám co nevidět připojí.
 			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_08");	//To jsou výborné zprávy!
-			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_09");	//Všichni bratři očakávají jeho návrat!
+			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_09");	//Všichni bratři očekávají jeho návrat!
 			AI_Output(self,other,"DIA_BaalOrun_TellKorAngar_01_10");	//Tady - vezmi si to jako odměnu za tvou práci.
 			B_GiveInvItems(self,other,ItMi_Gold,200);
 			ANGARCANBACK = TRUE;
@@ -1053,7 +1053,7 @@ func void dia_baalorun_tellpaladin_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_00");	//Mám jeden problém.
 	AI_Output(self,other,"DIA_BaalOrun_TellPaladin_01_01");	//Jaký problém?
-	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_02");	//Potřebuju naléhavě mluvit s vůdcem paladinů ve městě. Ale stráž mě nechce pustit k lordu Hagenovi!
+	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_02");	//Potřebuju naléhavě mluvit s vůdcem paladinů ve městě, ale stráž mě nechce pustit k lordu Hagenovi!
 	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_03");	//Můžeš mi s tím pomoct?
 	AI_Output(self,other,"DIA_BaalOrun_TellPaladin_01_04");	//(udiveně) Proč je to pro tebe tak důležité?
 	AI_Output(other,self,"DIA_BaalOrun_TellPaladin_01_05");	//Mám pro něj jednu velmi důležitou zprávu.
@@ -1258,7 +1258,7 @@ func void dia_baalorun_paladinwatch_info()
 	AI_Output(other,self,"DIA_BaalOrun_PaladinWatch_01_02");	//Co mám udělat?
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_04");	//Jistě víš, že nedávno připlula do Khorinisu velká skupina paladinů.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_05");	//Velí jim lord Hagen - jeden z nejvýše postavených paladinů jejich řádu.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_06");	//Jak si můžeme domyslet, přítomnost tak významné osobnosti jako je lord Hagen - je velice neobvyklé!
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_06");	//Jak si můžeme domyslet, přítomnost tak významné osobnosti jako je lord Hagen - je velice neobvyklá!
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_07");	//Pochybuju, že přítomnost paladinů ve městě je pouze náhoda a osobně si myslím, že na tuto otázku existuje rozumná odpověď.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_08");	//Podle samotných paladinů je důvodem jejich přítomnosti důsledkem možného ohrožení Khorinisu útokem skřetů.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_09");	//Nicméně je zřejmé, že síly, které tu má lord Hagen, nestačí k zajištění řádné ochrany města v případě útoku.
@@ -1271,7 +1271,7 @@ func void dia_baalorun_paladinwatch_info()
 	AI_Output(other,self,"DIA_BaalOrun_PaladinWatch_01_16");	//Takže tomu rozumím tak, že chceš, abych se o tom dověděl víc?
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_17");	//Ano, to je přesně to, co po tobě chci.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_18");	//Odpovědi jsou pro mě velice důležité.
-	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_19");	//Obzvlášť odpovědi na otázky ze kterých závisí náš další osud.
+	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_19");	//Obzvlášť odpovědi na otázky na kterých závisí náš další osud.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_20");	//Chápu, že zjistit skutečné příčiny všeho, co se děje, nebude snadné. Ale nemáme jinou možnost.
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_21");	//Rozuměj tomu tak, že kdo je připravený - ten je vyzbrojený!
 	AI_Output(self,other,"DIA_BaalOrun_PaladinWatch_01_22");	//Takže, zajímají mě tři otázky...
@@ -1286,7 +1286,7 @@ func void dia_baalorun_paladinwatch_info()
 	Log_CreateTopic(TOPIC_PALADINWATCH,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PALADINWATCH,LOG_Running);
 	MIS_PALADINWATCH = LOG_Running;
-	B_LogEntry(TOPIC_PALADINWATCH,"Baal Orun se chce vědět, proč paladinové přišli na Khorinis. Obává se, že paladinové skrývají pravé důvody své přítomnosti. Baal Orun se také zajímá o situaci v Hornickém údolí, kde se pravděpodobně usadila armáda skřetů. Je pro mě nevyhnutné zjistit všechno o těhle věcech a informovat jej o tom.");
+	B_LogEntry(TOPIC_PALADINWATCH,"Baal Orun chce vědět, proč paladinové přišli na Khorinis. Obává se, že paladinové skrývají pravé důvody své přítomnosti. Baal Orun se také zajímá o situaci v Hornickém údolí, kde se pravděpodobně usadila armáda skřetů. Je zapotřebí zjistit všechno o těchto věcech a informovat jej o tom.");
 };
 
 
@@ -1326,7 +1326,7 @@ func void dia_baalorun_spybericht_info()
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_07");	//Vypadá to, že hlavním důvodem jejich příchodu je magická ruda.
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_08");	//Bez dostatku zbraní z magické rudy nebude mít královská armáda nejmenší šanci ve válce proti skřetům.
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_09");	//Skupina, kterou lord Hagen poslal do Hornického údolí, měla zjistit, jaké jsou možnosti těžby rudy na ostrově.
-		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_10");	//Poté se paladinové meli vrátit zpět na pevninu.
+		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_10");	//Poté se paladinové měli vrátit zpět na pevninu.
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_11");	//Ta skupina, která měla objasnit situaci s rudou, se usadila ve starém hradě rudobaronů...
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_12");	//Zdá se, že jejich situace je velice špatná!
 		AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_15");	//Kromě toho, skřeti obklopili paladiny ze všech stran a zároveň obklíčili a obléhají hrad.
@@ -1365,7 +1365,7 @@ func void dia_baalorun_spybericht_info()
 			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_40");	//Vypadá to, že hlavním důvodem jejich příchodu je magická ruda.
 			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_41");	//Bez dostatku zbraní z magické rudy nebude mít královská armáda nejmenší šanci ve válce proti skřetům.
 			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_42");	//Skupina, kterou lord Hagen poslal do Hornického údolí, měla zjistit, jaké jsou možnosti těžby rudy na ostrově.
-			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_43");	//Poté se paladinové meli vrátit zpět na pevninu.
+			AI_Output(other,self,"DIA_BaalOrun_SpyBericht_01_43");	//Poté se paladinové měli vrátit zpět na pevninu.
 			AI_Output(self,other,"DIA_BaalOrun_SpyBericht_01_44");	//(znepokojeně) Máš ještě nějaké novinky?
 			TELLORANQUESTIONTWO = TRUE;
 			countnews = countnews + 1;
@@ -1607,7 +1607,7 @@ func void dia_baalorun_sekteheilengot_info()
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_01");	//Výborně! Nyní je nutné jej roznést všem novicům.
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_02");	//Ale jenom jim! Gor Na Kosh a jeho templáři mají velmi silného ducha. Templáři a my - Guru, se nemáme čeho obávat.
 	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_03");	//Ujisti se, že se lektvar dostane každému.
-	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_04");	//Jakmile ho rozdáš - vrať se ke mne.
+	AI_Output(self,other,"DIA_BaalOrun_SekteHeilenGot_01_04");	//Jakmile ho rozdáš - vrať se ke mně.
 	B_LogEntry(TOPIC_SEKTEHEILEN,"Mám lektvar. Teď už ho jen rozdat všem bratrům!");
 	SEKTEHEILENCOUNT = 0;
 };
@@ -2372,7 +2372,7 @@ func int DIA_BaalOrun_MAXROBE_condition()
 func void DIA_BaalOrun_MAXROBE_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_MAXROBE_01_00");	//Co takhle lepší oblečení?
-	AI_Output(self,other,"DIA_BaalOrun_MAXROBE_01_01");	//Jelikož ovládáš všech šest kruhů magie, jsi nyní hoden nosit nejvyšší roucho Guru.
+	AI_Output(self,other,"DIA_BaalOrun_MAXROBE_01_01");	//Jelikož ovládáš všech šest kruhů magie, jsi nyní hoden nosit roucho nejvyššího Guru.
 	AI_Output(self,other,"DIA_BaalOrun_MAXROBE_01_02");	//Budeš však za to muset zaplatit. Výrobní náklady nejsou levné, takže by se nám hodil nějaký drobný příspěvek.
 	LastRobeGUR = TRUE;
 };

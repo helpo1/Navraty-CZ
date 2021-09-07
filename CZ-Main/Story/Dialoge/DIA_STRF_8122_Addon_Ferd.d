@@ -39,7 +39,7 @@ func int DIA_STRF_8122_Addon_Ferd_PreHello_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_PreHello_info()
 {
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_PreHello_01_00");	//Tak ako je?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_PreHello_01_00");	//Hej, jak to jde?
 };
 
 instance DIA_STRF_8122_Addon_Ferd_AfterHello(C_Info)
@@ -49,7 +49,7 @@ instance DIA_STRF_8122_Addon_Ferd_AfterHello(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_AfterHello_condition;
 	information = DIA_STRF_8122_Addon_Ferd_AfterHello_info;
 	permanent = FALSE;
-	description = "Hej, ako to ide?";
+	description = "Hej, jak to jde?";
 };
 
 func int DIA_STRF_8122_Addon_Ferd_AfterHello_condition()
@@ -59,14 +59,14 @@ func int DIA_STRF_8122_Addon_Ferd_AfterHello_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_AfterHello_info()
 {
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_00");	//Hej, ako to ide?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_01");	//Tvoje otázky sú ako to čo tu kopem.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_02");	//Totálne sprostosti! Áno, a ešte niečo?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_03");	//Deň a noc a jediné čo robím je, že kopem v tomto zatraceným dole.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_04");	//A za desať rokov tu tie sračky budem kopať stále.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_05");	//Teda pokial do vtedy nechcípnem. (úsmev)
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_06");	//Hneď mi bolo jasné, že ty budeš optimista!
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_07");	//Pokial tu zostaneš so mnou, stane sa z teba to isté ako zo mňa.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_00");	//Hej, jak to jde?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_01");	//Tvoje otázky jsou jako to, co tu kopu.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_02");	//Totální sprostosta! Ještě něco?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_03");	//Den a noc a jediné co dělám, je, že kopu v tomto zatraceným dole.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_04");	//A za deset roků tu ty sračky budu kopat stále.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_05");	//Teda pokud do té doby nechcípnu. (úsměv)
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_06");	//Hned mi bylo jasné, že ty budeš optimista!
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_AfterHello_01_07");	//Pokud tu zůstaneš se mnou, stane se z tebe to samé jako ze mne.
 };
 
 instance DIA_STRF_8122_Addon_Ferd_HELLO(C_Info)
@@ -76,7 +76,7 @@ instance DIA_STRF_8122_Addon_Ferd_HELLO(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_hello_condition;
 	information = DIA_STRF_8122_Addon_Ferd_hello_info;
 	permanent = FALSE;
-	description = "Už si tu asi dlhú dobu, čo?";
+	description = "Už jsi tu asi dlouhou dobu, co?";
 };
 
 func int DIA_STRF_8122_Addon_Ferd_hello_condition()
@@ -89,11 +89,11 @@ func int DIA_STRF_8122_Addon_Ferd_hello_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_hello_info()
 {
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Hello_01_00");	//Už si tu asi dlhú dobu, čo?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Hello_01_01");	//Dlhšie ako si dokážeš predstaviť.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Hello_01_02");	//A to je ako dlho?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Hello_01_03");	//Počuj chlape... Pokial sa tak nudíš, tak bež otravovať niekoho iného, dobre?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Hello_01_04");	//Ja musím pracovať, inak ma skřeti stiahnu z kože.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Hello_01_00");	//Už jsi tu asi dlouhou dobu, co?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Hello_01_01");	//Déle než si dokážeš představit.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Hello_01_02");	//A to je jak dlouho?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Hello_01_03");	//Poslouchej chlape... Pokud se tak nudíš, tak běž otravovat někoho jiného, dobře?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Hello_01_04");	//Já musím pracovat, jinak mě skřeti stáhnou z kůže.
 	AI_StopProcessInfos(self);
 };
 
@@ -104,7 +104,7 @@ instance DIA_STRF_8122_Addon_Ferd_Escape(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_Escape_condition;
 	information = DIA_STRF_8122_Addon_Ferd_Escape_info;
 	permanent = FALSE;
-	description = "Čo vieš o úteku otrokov?";
+	description = "Co víš o útěku otroků?";
 };
 
 func int DIA_STRF_8122_Addon_Ferd_Escape_condition()
@@ -117,29 +117,29 @@ func int DIA_STRF_8122_Addon_Ferd_Escape_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_Escape_info()
 {
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_00");	//Čo vieš o úteku otrokov?
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_00");	//Co víš o útěku otroků?
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_01");	//Čo ti hrabe? Alebo cheš aby ťa skřeti počuli?
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_02");	//Čo sa bojíš?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_03");	//Počúvaj, ja viem, že život v tomto dole nie je žiadna sranda, ale pokial ťa život omrzel, bež sa zabiť sám a mňa nechaj na pokoji.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_04");	//Tak povieš mi to alebo nie?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_05");	//Sakra... Ty mi nedáš pokoj čo?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_06");	//Poviem ti všetko čo viem, ale ty mi za to spravíš takú malú službičku.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_01");	//Zbláznil ses? A nebo chceš aby tě skřeti slyšeli?
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_02");	//Proč se bojíš?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_03");	//Poslouchej, já vím, že život v tomto dole není žádná sranda, ale pokud tě život omrzel, bež se zabít sám a mě nechej na pokoji.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_04");	//Tak povíš mi to nebo ne?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_05");	//Sakra... Ty mi nedáš pokoj, co?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_06");	//Povím ti všechno co vím, ale ty mi za to pro mě uděláš takovou malou službičku.
 	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_07");	//A to je?
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_08");	//Pre začiatok mi dones pár liečivých lektvarov. Pať by mohlo stačiť.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_09");	//Naposledy som mal smolu a uvolnený kameň mi zletel priamo na ruku a odvtedy s ňou mám problémy.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_10");	//Asi som dostal infekciu a ár dní dozadu sa mi tam objavil aj hnis. Pokial všeko pojde doprdele ako doteraz, tak o tú ruku prídem.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_11");	//Nehovoriac o tom, že ledva zvládam kvótu. Našťastie sú tí skřeti tupý a ešte si to nevšimli.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_12");	//Pre začiatok? Takže ešte budeš niečo chieť?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_13");	//Done mi tie lektvary a ostatnom si pohovoríme potom.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_14");	//Alebo ťa ten útek otrokov už nezujíma?
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_15");	//Dobre, ukludni sa! Skúsim ti nejaké zohnať.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_16");	//Tak šup šup, prv než tu chcípnem.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_08");	//Pro začátek mi dones pár léčivých lektvarů. Pět by mohlo stačit.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_09");	//Naposledy jsem měl smůlu a uvolněný kámen mi spadl přímo na ruku a od té doby s ní mám problémy.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_10");	//Asi jsem dostal infekci a pár dní dozadu se mi tam objevil i hnis. Pokud všechno půjde doprdele jako tehdy, tak o tu ruku příjdu.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_11");	//Nehledě na to, že sotva zvládám kvótu. Naštěstí jsou ti skřeti tupí a ještě si toho nevšimli.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_12");	//Pro začátek? Takže budeš ještě něco chtít?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_13");	//Dones mi ty lektvary a ostatní si povíme potom.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_14");	//A nebo tě ten útěk otroků už nezajímá?
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Escape_01_15");	//Dobře, uklidni se! Zkusím ti nějaké sehnat.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Escape_01_16");	//Tak šup šup, než tu chcípnu.
 	MIS_FerdPotions = LOG_Running;
 	Log_CreateTopic(TOPIC_FerdPotions,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FerdPotions,LOG_Running);
-	B_LogEntry(TOPIC_FerdPotions,"Ferd po mne chce liečivé lektvary. Dosť si zranil ruku a nechce aby si to skřeti všimli.");
+	B_LogEntry(TOPIC_FerdPotions,"Ferd po mně chce léčivé lektvary. Dost si zranil ruku a nechce aby si toho skřeti všimli.");
 };
 
 instance DIA_STRF_8122_Addon_Ferd_Potions(C_Info)
@@ -149,7 +149,7 @@ instance DIA_STRF_8122_Addon_Ferd_Potions(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_Potions_condition;
 	information = DIA_STRF_8122_Addon_Ferd_Potions_info;
 	permanent = FALSE;
-	description = "Tu máš ti lektvary.";
+	description = "Tu máš ty lektvary.";
 };
 
 func int DIA_STRF_8122_Addon_Ferd_Potions_condition()
@@ -163,36 +163,36 @@ func int DIA_STRF_8122_Addon_Ferd_Potions_condition()
 func void DIA_STRF_8122_Addon_Ferd_Potions_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_00");	//Tu máš ti lektvary.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_00");	//Tu máš ty lektvary.
 	B_GiveInvItems(other,self,ItPo_Health_03,5);
 	Npc_RemoveInvItems(self,ItPo_Health_03,4);
 	AI_PlayAni(self,"T_SEARCH");
 	B_UseItem(self,ItPo_Health_03);
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_01");	//Mmm... Sakra načase kámo. A bolesť je preč!
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_02");	//Ale ako som povedal, to nie je všetko.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_03");	//Počúvam.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_04");	//Potrebujem aby si našiel moj prsteň.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_05");	//Aký prsteň?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_06");	//Obyčajný strieborný prsteň. Nič špeciálne.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_07");	//Ale dal mi ho moj otec.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_08");	//Aha. Takže rodinné dedičstvo?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_09");	//Jo jo, to si zatraceně uhádol. Len vďaka nemu som prežil celé tie podělané roky tu v tomto dole.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_10");	//Keď sa naň pozriem, tak si spomeniem, aké to bolo keď všetko bolo inak. Rodina... (zasnene) A tak...
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_11");	//Ale akonáhle ho ten podělaný Vakur Shak zbadal, tak si ulil pre seba.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_12");	//Kto to je ten Vakur Shak?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_13");	//Jeden z nadriadených skřetů. Chamtivý bastard.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_14");	//Chceš aby som ti od nich ten prsteň vyjednal?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_15");	//Je mi jedno ako to urobíš. Ale vidím, že si tu vykračuješ so zbraňou.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_16");	//Takže by ťa aspoň mal vypočuť.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_17");	//Uvidím, čo sa dá robiť.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_01");	//Mmm... Sakra načase kámo. A bolest je pryč!
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_02");	//Ale jak jsem říkal, to není všechno.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_03");	//Poslouchám.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_04");	//Potřebuji abys našel můj prsten.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_05");	//Jaký prsten?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_06");	//Obyčejný stříbrný prsten. Nic speciálního.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_07");	//Ale dal mi ho můj otec.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_08");	//Aha. Takže rodinné dědictví?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_09");	//Jo jo, to si zatraceně uhádl. Jen díky němu jsem přežil celé ty podělané roky tu v tomto dole.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_10");	//Když se na něj podívám, tak si vzpomenu, jaké to bylo, když všechno bylo jinak. Rodina... (zasněne) A tak...
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_11");	//Ale jakmile ho ten podělaný Vakur Shak zahlédl, tak ho sebral pro sebe.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_12");	//Kdo to je ten Vakur Shak?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_13");	//Jeden z nadřazených skřetů. Chamtivý bastard.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_14");	//Chceš abych ti od nich ten prsten vyjednal?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_15");	//Je mi jedno, jak to uděláš. Ale vidím, že si tu vykračuješ se zbraní.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Potions_01_16");	//Takže by tě aspoň měl vyslechnout.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Potions_01_17");	//Uvidím, co se dá dělat.
 	RT_Respect = RT_Respect + 1;
 	MIS_FerdPotions = LOG_Success;
 	Log_SetTopicStatus(TOPIC_FerdPotions,LOG_Success);
-	B_LogEntry(TOPIC_FerdPotions,"Doniesol som Ferdymu tie lektvary.");
+	B_LogEntry(TOPIC_FerdPotions,"Donesl jsem Ferdymu ty lektvary.");
 	MIS_FerdRing = LOG_Running;
 	Log_CreateTopic(TOPIC_FerdRing,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FerdRing,LOG_Running);
-	B_LogEntry(TOPIC_FerdRing,"Ferd chce aby som mu vrátil jeho rodinný prsteň, ktorý mu zobral Vakur Shak - Vyšší strážca otrokov.");
+	B_LogEntry(TOPIC_FerdRing,"Ferd chce aby jsem mu vrátil jeho rodinný prsten, který mu sebral Vakur Shak - Vyšší strážce otroků.");
 };
 
 instance DIA_STRF_8122_Addon_Ferd_Ring(C_Info)
@@ -202,7 +202,7 @@ instance DIA_STRF_8122_Addon_Ferd_Ring(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_Ring_condition;
 	information = DIA_STRF_8122_Addon_Ferd_Ring_info;
 	permanent = FALSE;
-	description = "Je toto tvoj prsteň?";
+	description = "Je to tvůj prsten?";
 };
 
 func int DIA_STRF_8122_Addon_Ferd_Ring_condition()
@@ -216,21 +216,21 @@ func int DIA_STRF_8122_Addon_Ferd_Ring_condition()
 func void DIA_STRF_8122_Addon_Ferd_Ring_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_00");	//Je toto tvoj prsteň?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_00");	//Je to tvůj prsten?
 	B_GiveInvItems(other,self,ItRi_Ferd,1);
 	Npc_RemoveInvItems(self,ItRi_Ferd,1);
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_01");	//Áno.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Ring_01_02");	//Získať ho nebola žiadna sranda.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_03");	//Takči tal, konečne mám svoj milášek spať.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_04");	//Vďaka.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Ring_01_05");	//Len si daj pozor, aby ti ho zasa nešlohli.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Ring_01_06");	//Nabudúce ti ho už nevráti.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_01");	//Ano.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Ring_01_02");	//Získat ho nebyla žádná sranda.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_03");	//Tak či onak, konečně ho mám zpět. Můj milášek.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_04");	//Díky.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Ring_01_05");	//Jen si dej pozor, aby ti ho zase nešlohli.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Ring_01_06");	//Příště ti ho už nevrátí.
 	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Ring_01_07");	//Tak to si sakra píš.
 	RT_Respect = RT_Respect + 1;
 	MIS_FerdRing = LOG_Success;
 	Log_CreateTopic(TOPIC_FerdRing,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FerdRing,LOG_Success);
-	B_LogEntry(TOPIC_FerdRing,"Vrátil som Ferdymu jeho prsteň.");
+	B_LogEntry(TOPIC_FerdRing,"Vrátil jsem Ferdymu jeho prsten.");
 };
 
 instance DIA_STRF_8122_Addon_Ferd_EscapeTell(C_Info)
@@ -240,7 +240,7 @@ instance DIA_STRF_8122_Addon_Ferd_EscapeTell(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_EscapeTell_condition;
 	information = DIA_STRF_8122_Addon_Ferd_EscapeTell_info;
 	permanent = FALSE;
-	description = "Tak čo naša dohoda?";
+	description = "Tak co naše dohoda?";
 };
 
 func int DIA_STRF_8122_Addon_Ferd_EscapeTell_condition()
@@ -254,25 +254,25 @@ func int DIA_STRF_8122_Addon_Ferd_EscapeTell_condition()
 func void DIA_STRF_8122_Addon_Ferd_EscapeTell_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_00");	//Tak čo naša dohoda?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_01");	//Ja svoje slovo držím.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_02");	//Stalo sa to pár rokov dozadu... (zamyslene) Otrok menom Bargo naplánocal útek.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_03");	//Mal naplánovanú vzburu.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_04");	//A kým by bol všade zmatok mal sa nepozorovane prešmyknúť okolo stráží.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_05");	//Vo vybraný deň sa otroci vzbúrili, zabili pár stráží a namierili si to k východu.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_06");	//Ale skřeti to mali vymyslené. Zablokovali všetky východy z dolu okrem jedného.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_07");	//Takže rebelovia nemali na výber a museli ísť len tam.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_08");	//A, ako už asi vieš, tam na nich čakali elitné skřetí odiely, ktoré ich rozprášili na 50 odtieňov sračiek.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_09");	//Takže ďalej ti to už nemusím vysvetlovať...
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_10");	//Samozrejme, nikto to neprežil.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_11");	//Mnoho ludí stratilo svoje životy kvoli Bargovi.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_12");	//A čos a stalo Bragovi?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_13");	//Keď si uvedomil, že jeho plán sa totálne podělal, tak sa skúsil schovať.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_14");	//Ale skřeti ho našli. A potom mu poodsekávali končatiny a jeho hlavu narazili na kol na výstrahu ostatným.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_15");	//Ešte teraz si pamatám ten krik.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_16");	//Odvtedy už sa nikto neodvážil skúšať ujsť.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_17");	//Smutný príbeh.
-	B_LogEntry(TOPIC_EscapeMine,"Ferd mi povedal, ako to bolo s tým útekom otrokov.");
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_00");	//Tak co naša dohoda?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_01");	//Já svoje slovo držím.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_02");	//Stalo se to pár roků dozadu... (zamyšleně) Otrok se jménem Bargo naplánoval útěk.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_03");	//Měl naplánovanou vzpouru.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_04");	//Když byl všude zmatek, měl se nepozorovaně přešmyknout okolo stráží.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_05");	//Ve vybraný den se otroci vzbouřili, zabili pár stráží a namířili si to k východu.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_06");	//Ale skřeti to měli vymyšlené. Zablokovali všechny východy z dolu krom jednoho.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_07");	//Takže rebelové neměli na výběr a museli jít jen tam.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_08");	//A, jak už asi víš, tam na ně čekali elitní skřetí oddíly, které je rozprášily na 50 odstínů sraček.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_09");	//Takže dále ti to už nemusím vysvětlovat...
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_10");	//Samozřejmě, nikdo to nepřežil.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_11");	//Mnoho lidí ztratilo svoje životy kvůli Bargovi.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_12");	//A co se stalo Bargovi?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_13");	//Když si uvědomil, že jeho plán se totálně podělal, tak se zkusil schovat.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_14");	//Ale skřeti ho našli. A potom mu poodsekávali končetiny a jeho hlavu narazili na kůl na výstrahu ostatním.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_15");	//Ještě teď si pamatuji ten křik.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_16");	//Od té doby se už nikdo neodvážil zkusit utéct.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_EscapeTell_01_17");	//Smutný příběh.
+	B_LogEntry(TOPIC_EscapeMine,"Ferd mi pověděl, jak to bylo s tím útěkem otroků.");
 };
 
 instance DIA_STRF_8122_Addon_Ferd_NoEscape(C_Info)
@@ -282,7 +282,7 @@ instance DIA_STRF_8122_Addon_Ferd_NoEscape(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_NoEscape_condition;
 	information = DIA_STRF_8122_Addon_Ferd_NoEscape_info;
 	permanent = FALSE;
-	description = "Nikdy sa z tohto dolu nedostaneš.";
+	description = "Nikdy se z tohoto dolu nedostaneš.";
 };
 
 func int DIA_STRF_8122_Addon_Ferd_NoEscape_condition()
@@ -295,14 +295,14 @@ func int DIA_STRF_8122_Addon_Ferd_NoEscape_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_NoEscape_info()
 {
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_00");	//Nikdy sa z tohto dolu nedostaneš.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_01");	//Ty tomu veríš ha?
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_02");	//Nie. Ja len, že hlavná šachta vedie do Skřetího mesta.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_03");	//A tam už nebudú len obyčajné stráže.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_05");	//To si nedokážem ani predstaviť.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_06");	//Tak teraz už vieš.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_07");	//Tak to aby sme všetci prijali svoj zatracený osud he?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_08");	//Pravdepodobne tu zostaneme kopať do konca sveta.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_00");	//Nikdy se z tohto dolu nedostaneš.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_01");	//Ty tomu věříš, ha?
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_02");	//Ne. Já chci jen říct, že hlavní šachta vede do Skřetího města.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_03");	//A tam už nebudou jen obyčejné stráže.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_05");	//To si nedokážu ani představit.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_06");	//Tak teď už víš.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_07");	//Tak to abychom všechni přijali svůj zatracený osud, he?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_NoEscape_01_08");	//Pravděpodobně tu zůstaneme kopat do konca světa.
 };
 
 instance DIA_STRF_8122_Addon_Ferd_Bunt(C_Info)
@@ -312,7 +312,7 @@ instance DIA_STRF_8122_Addon_Ferd_Bunt(C_Info)
 	condition = DIA_STRF_8122_Addon_Ferd_Bunt_condition;
 	information = DIA_STRF_8122_Addon_Ferd_Bunt_info;
 	permanent = FALSE;
-	description = "Čo by vyvolalo ďalšiu vzburu?";
+	description = "Co by vyvolalo další vzpouru?";
 };
 
 func int DIA_STRF_8122_Addon_Ferd_Bunt_condition()
@@ -325,31 +325,31 @@ func int DIA_STRF_8122_Addon_Ferd_Bunt_condition()
 
 func void DIA_STRF_8122_Addon_Ferd_Bunt_info()
 {
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_00");	//Čo by vyvolalo ďalšiu vzburu?
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_00");	//Co by vyvolalo další vzpouru?
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_01");	//Tak to je sakra nemožné... Ludia si serú do gatí len sa na nich nejaký skřet pozrie.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_02");	//Nemajú ani vieru ani silu.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_03");	//Potrebujete len silného vodcu.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_04");	//Jasné. že ma to nenapadlo skor! Poďme nasledovať ďalšieho kokota do záhuby... Ale teraz vážne.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_05");	//Tu sú hlavne len obyčajní kopáči, čo už po rokoch kopania ani nevedia kolko majú vajec.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_06");	//Počul som, že tu medzi vami je paladin.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_01");	//Tak to je sakra nemožné... Lidi si serou do gatí, jen co se na ně nějaký skřet podívá.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_02");	//Nemají ani víru ani sílu.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_03");	//Potřebujete jen silného vůdce.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_04");	//Jasně. Že mě to nenapadlo dřív! Pojďme následovat dalšího kokota do záhuby... Ale teď vážně.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_05");	//Tu jsou hlavně jen obyčejní kopáči, co už po rocích kopání ani nevědí, kolík mají vajec.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_06");	//Slyšel jsem, že tu mezi vámi je paladin.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_07");	//Paladin? Tu? Si robíš prdel nie?
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_08");	//Ani ja som to nevedel, preto som tu.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_09");	//To sú mi novinky...
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_10");	//Aj keby to bola pravda, tak je velmi nepradepodobné, že by sa len tak ukázal.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_11");	//Skřeti by poriadne zmalovali ak by zistili, kto to je.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_12");	//A ty nemáš tušenie, kto by to mohol byť?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_13");	//A ako? Šak si mi to teraz povedal...
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_14");	//A kto by to mohol vedieť?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_07");	//Paladin? Tu? Si děláš prdel, ne?
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_08");	//Ani já jsem to nevěděl, proto jsem tu.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_09");	//To jsou mi novinky...
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_10");	//I kdyby to byla pravda, tak je velmi nepraděpodobné, že by se jen tak ukázal.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_11");	//Skřeti by ho pořádně zmalovali, pokud by zjistili, kdo to je.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_12");	//A ty nemáš tušení, kdo by to mohl být?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_13");	//A jak? Však jsi mi to teď řekl...
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_14");	//A kdo by to mohl vědět?
 	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_15");	//Tak to je zatraceně dobrá otázka.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_16");	//Ale ak by som ho mal začať hladať, skúsil by som pokecať s Crowom.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_17");	//Je to niekto špeciálny?
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_18");	//Nie. Proste je z nás najmenší kokot. Kedysi bol mág alebo možno alchymista.
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_19");	//Už som zabudol, kto si to má sakra pamatať...
-	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_20");	//Možno sa niečo dozvieš.
-	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_21");	//Dobre, to urobím.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_16");	//Ale kdybych ho měl začít hledat, zkusil bych pokecat s Crowem.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_17");	//Je to někdo speciální?
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_18");	//Ne. Prostě je z nás nejmenší kokot. Kdysi byl mág nebo možná alchymista.
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_19");	//Už jsem to zapoměl. Kdo si to má sakra pamatovat...
+	AI_Output(self,other,"DIA_STRF_8122_Addon_Ferd_Bunt_01_20");	//Možná se něco dozvíš.
+	AI_Output(other,self,"DIA_STRF_8122_Addon_Ferd_Bunt_01_21");	//Dobře, to udělám.
 	AskKrow = TRUE;
-	B_LogEntry(TOPIC_LostPaladins,"Ferd netuší kto by mohol byť ten paladin. Ale vraj by som mal pokecať s Crowom.");
+	B_LogEntry(TOPIC_LostPaladins,"Ferd netuší, kdo by mohl být paladin. Ale prý bych měl pokecat s Crowem.");
 };

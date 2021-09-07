@@ -75,7 +75,7 @@ func int DIA_Gaertner_Job_Condition()
 func void DIA_Gaertner_Job_Info()
 {
 	AI_Output(other,self,"DIA_Gaertner_Job_15_00");	//Co tady děláš?
-	AI_Output(self,other,"DIA_Gaertner_Job_09_01");	//To tím myslíš? Jsem zahradník, starám se o zahradu.
+	AI_Output(self,other,"DIA_Gaertner_Job_09_01");	//Co tím myslíš? Jsem zahradník. Starám se o zahradu.
 	AI_Output(other,self,"DIA_Gaertner_Job_15_02");	//Jsi tu asi hodně často, ne?
 	AI_Output(self,other,"DIA_Gaertner_Job_09_03");	//Ano, ani mi to nevadí. Mám tohle místo rád.
 	AI_Output(self,other,"DIA_Gaertner_Job_09_04");	//Jinak by mě poslali do trestanecké kolonie, protože jsem udělal nějaké špatné věci.
@@ -104,7 +104,7 @@ func int DIA_Gaertner_Escape_Condition()
 func void DIA_Gaertner_Escape_Info()
 {
 	AI_Output(other,self,"DIA_Gaertner_Escape_01_00");	//Snažil ses utéct?
-	AI_Output(self,other,"DIA_Gaertner_Escape_01_01");	//Zprvu jsem o tom přemýšlel... Ale pak jsem sem od toho upustil.
+	AI_Output(self,other,"DIA_Gaertner_Escape_01_01");	//Zprvu jsem o tom přemýšlel... Ale pak jsem od toho upustil.
 	AI_Output(self,other,"DIA_Gaertner_Escape_01_02");	//Za prvé, všechny stráže mě znají osobně, a nemůžu ani opustit horní čtvrt.
 	AI_Output(self,other,"DIA_Gaertner_Escape_01_03");	//Za druhé, s přihlédnutím na všechny tyto zvěsti o skřetech, raději zůstanu v blízkosti paladinů.
 	AI_Output(self,other,"DIA_Gaertner_Escape_01_04");	//A za třetí, nikam se mi ani nechce!
@@ -228,7 +228,7 @@ func int DIA_Gaertner_Sign_Condition()
 func void DIA_Gaertner_Sign_Info()
 {
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Gaertner_Sign_09_00");	//Takže ty jsi jeden z nás... Měl bych pro tebe nějaké použivatelné informace...
+	AI_Output(self,other,"DIA_Gaertner_Sign_09_00");	//Takže ty jsi jeden z nás... Měl bych pro tebe nějaké použitelné informace...
 	AI_Output(self,other,"DIA_Gaertner_Sign_09_01");	//Některé domy tady mají spínače, za kterými je dutý prostor.
 	AI_Output(self,other,"DIA_Gaertner_Sign_09_02");	//Lidé tam střeží své cennosti.
 	THIEF_REPUTATION = THIEF_REPUTATION + 1;
@@ -241,7 +241,7 @@ instance DIA_Gaertner_HelpThings(C_Info)
 	condition = DIA_Gaertner_HelpThings_condition;
 	information = DIA_Gaertner_HelpThings_info;
 	permanent = FALSE;
-	description = "Mohu ti neako pomoci?";
+	description = "Mohu ti nějak pomoct?";
 };
 
 func int DIA_Gaertner_HelpThings_condition()
@@ -254,10 +254,10 @@ func int DIA_Gaertner_HelpThings_condition()
 
 func void DIA_Gaertner_HelpThings_info()
 {
-	AI_Output(other,self,"DIA_Gaertner_HelpThings_01_00");	//Mohu ti neako pomoci?
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_01");	//Jasné, bracho. Jak sis možná všiml, som tady celý den a nemužu nikam odist.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_02");	//Hlídájí mě, dokonce mě nepustí ani za tento plot.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_03");	//Takže můj život postrádá i těch nejzákladnejších potěšení.
+	AI_Output(other,self,"DIA_Gaertner_HelpThings_01_00");	//Mohu ti nějak pomoct?
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_01");	//Jasně, brácho. Jak sis možná všiml, jsem tady celý den a nemůžu nikam odejít.
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_02");	//Hlídají mě, dokonce mě nepustí ani za tento plot.
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_03");	//Takže můj život postrádá i těch nejzákladnějších potěšení.
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_04");	//Nicméně, pokud bys mi mohl donést jen pár láhví kořalky a trochu trávy...
 	AI_Output(other,self,"DIA_Gaertner_HelpThings_01_05");	//Chápu. Kolik toho chceš?
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_06");	//(Zamyšleně) Myslím, že tři láhve a pět stébel bude stačit. Více zde i tak neschovám.
@@ -293,16 +293,16 @@ func void DIA_Gaertner_HelpThings_Done_info()
 	B_GiveInvItemsManyThings(other,self);
 	Npc_RemoveInvItems(hero,ItFo_Booze,3);
 	Npc_RemoveInvItems(hero,ItMi_Joint,5);
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_01");	//(Nedočkavo) Konečne. No, teď jsem tvým dlužníkem, kámo.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_02");	//Ako sa ti můžu odvďačiť?
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_03");	//Počúvaj... raz, pri kosení trávy som pri vchode do radnice našiel tento klúč.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_04");	//Vyzerá to, že ho stratil jeden z paladinů.
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_05");	//Ak mám být upřímný, nevím jakú truhlu otevře...
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_06");	//... ale určitě tam bude něco čo má hodnotu.
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_01");	//(Nedočkavě) Konečně. No, teď jsem tvým dlužníkem, kámo.
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_02");	//Jak se ti můžu odvděčit?
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_03");	//Poslouchej... jednou, při sekání trávy jsem při vchodu do radnice našel tento klíč.
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_04");	//Vypadá to, že ho ztratil jeden z paladinů.
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_05");	//Abych byl upřímný, nevím jakou truhlu otevře...
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_06");	//... ale určitě tam bude něco, co má hodnotu.
 	B_GiveInvItems(self,other,ItKe_PaladinTruhe,1);
 	MIS_GaertnerHive = LOG_Success;
 	Log_SetTopicStatus(TOPIC_GaertnerHive,LOG_Success);
-	B_LogEntry(TOPIC_GaertnerHive,"Přinesl jsem zahradníkovi kořalku a za to mi dal podivný klíč. Zdá se, že patrí k neaké truhle.");
+	B_LogEntry(TOPIC_GaertnerHive,"Přinesl jsem zahradníkovi kořalku a za to mi dal podivný klíč. Zdá se, že patří k nějaké truhle.");
 };
 
 instance DIA_GAERTNER_ENTERHALL(C_Info)
@@ -312,7 +312,7 @@ instance DIA_GAERTNER_ENTERHALL(C_Info)
 	condition = dia_gaertner_enterhall_condition;
 	information = dia_gaertner_enterhall_info;
 	permanent = FALSE;
-	description = "Nevíš jak bych se mohl dostat na radnici?";
+	description = "Nevíš, jak bych se mohl dostat na radnici?";
 };
 
 func int dia_gaertner_enterhall_condition()
@@ -325,7 +325,7 @@ func int dia_gaertner_enterhall_condition()
 
 func void dia_gaertner_enterhall_info()
 {
-	AI_Output(other,self,"DIA_Gaertner_EnterHall_01_00");	//Nevíš jak bych se mohl dostat na radnici?
+	AI_Output(other,self,"DIA_Gaertner_EnterHall_01_00");	//Nevíš, jak bych se mohl dostat na radnici?
 	AI_Output(self,other,"DIA_Gaertner_EnterHall_01_01");	//A proč se tam potřebuješ dostat?
 	AI_Output(other,self,"DIA_Gaertner_EnterHall_01_02");	//Musím se urgentně setkat s místodržícím města - Lariusem. Mám s ním důležité jednání.
 	AI_Output(self,other,"DIA_Gaertner_EnterHall_01_03");	//Ha! Tak na to zapomeň, chlape. Paladinové dovnitř nikoho nepustí.

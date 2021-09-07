@@ -71,7 +71,7 @@ func void DIA_Hanna_Armor_Info()
 	AI_Output(self,other,"DIA_Hanna_Armor_01_03");	//Ale nemysli si, že to bude zadarmo.
 	AI_Output(self,other,"DIA_Hanna_Armor_01_04");	//Budeš za to muset zaplatit. A to přesně 100 zlatých.
 	AI_Output(other,self,"DIA_Hanna_Armor_01_05");	//Aha, no tak to jsem nečekal.
-	B_LogEntry(TOPIC_PathFromDown,"Hanna mi může prodat lehký oděv občana, ale pouze za 100 zlatých.");
+	B_LogEntry(TOPIC_PathFromDown,"Hanna mi může prodat lehký oděv občana, ale za 100 zlatých.");
 };
 
 instance DIA_Hanna_Armor_Dis(C_Info)
@@ -98,7 +98,7 @@ func void DIA_Hanna_Armor_Dis_Info()
 
 	if(HannaTakeBuh == TRUE)
 	{
-		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_01");	//Hmm...(Pťemýšlivě) Dobťe. Pťeci jen jsi mi pomohl vyťešit problém s Lehmarem.
+		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_01");	//Hmm...(Přemýšlivě) Dobře. Přeci jen jsi mi pomohl vyřešit problém s Lehmarem.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_02");	//Takže ti to dám zadarmo.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_03");	//Na, vezmi si to.
 		AI_Output(other,self,"DIA_Hanna_Armor_Dis_01_04");	//Díky.
@@ -107,7 +107,7 @@ func void DIA_Hanna_Armor_Dis_Info()
 	}
 	else if(IS_LOVCACH == TRUE)
 	{
-		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_05");	//Hmm...(Pťemýšlivě) Dobťe. Přeci jenom jsi jedním z nás.
+		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_05");	//Hmm...(Přemýšlivě) Dobře. Přeci jenom jsi jedním z nás.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_06");	//Měli bychom držet pospolu.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_07");	//Takže ti to prodám za polovinu ceny.
 		AI_Output(other,self,"DIA_Hanna_Armor_Dis_01_08");	//Díky.
@@ -149,13 +149,13 @@ func void DIA_Hanna_LEATHER_Info()
 		{
 			B_GiveInvItems(other,self,ItMi_Gold,50);
 			Npc_RemoveInvItems(self,ItMi_Gold,50);
-			AI_Output(self,other,"DIA_Hanna_LEATHER_09_01");	//Dobťe...(usmívá se) Tady, vem si to.
+			AI_Output(self,other,"DIA_Hanna_LEATHER_09_01");	//Dobře...(usmívá se) Tady, vem si to.
 			B_GiveInvItems(self,other,ITAR_Vlk_L,1);
 			Hanna_LeatherBought = TRUE;
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Hanna_LEATHER_09_02");	//Bohužel, nemáš dostatek zlata.
+			AI_Output(self,other,"DIA_Hanna_LEATHER_09_02");	//Bohužel nemáš dostatek zlata.
 		};
 	}
 	else
@@ -164,13 +164,13 @@ func void DIA_Hanna_LEATHER_Info()
 		{
 			B_GiveInvItems(other,self,ItMi_Gold,100);
 			Npc_RemoveInvItems(self,ItMi_Gold,100);
-			AI_Output(self,other,"DIA_Hanna_LEATHER_09_01");	//Dobťe...(usmívá se) Tady, vem si to.
+			AI_Output(self,other,"DIA_Hanna_LEATHER_09_01");	//Dobře...(usmívá se) Tady, vem si to.
 			B_GiveInvItems(self,other,ITAR_Vlk_L,1);
 			Hanna_LeatherBought = TRUE;
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Hanna_LEATHER_09_02");	//Bohužel, nemáš dostatek zlata.
+			AI_Output(self,other,"DIA_Hanna_LEATHER_09_02");	//Bohužel nemáš dostatek zlata.
 		};
 	};
 };
@@ -239,7 +239,7 @@ func void DIA_Hanna_WhyPay_Info()
 	AI_Output(self,other,"DIA_Hanna_Add_17_15");	//A taky si možná chtějí na svou stranu naklonit potulné kupce.
 	AI_Output(self,other,"DIA_Hanna_Add_17_16");	//Teď, když se farmáři bouří, je naše zásobování závislé hlavně na obchodnících.
 	AI_Output(self,other,"DIA_Hanna_Add_17_17");	//A kromě toho bych řekla, že taky chtějí ve městě trochu pozvednout morálku.
-	AI_Output(self,other,"DIA_Hanna_Add_17_18");	//Lord Andre dokonce nařídil, aby v šibeniční uličce nalévali jedno pivo zdarma.
+	AI_Output(self,other,"DIA_Hanna_Add_17_18");	//Lord Andre dokonce nařídil, aby v šibeniční uličce denně nalévali jedno pivo zdarma.
 };
 
 
@@ -302,7 +302,7 @@ func void DIA_Hanna_City_Back()
 func void DIA_Hanna_City_Buy()
 {
 	AI_Output(other,self,"DIA_Hanna_City_Buy_15_00");	//Kde bych si tu mohl něco nakoupit?
-	AI_Output(self,other,"DIA_Hanna_City_Buy_17_01");	//Přímo naproti dveřím je tržiště, tam bys měl najít všechno, co potřebuješ.
+	AI_Output(self,other,"DIA_Hanna_City_Buy_17_01");	//Přímo naproti dveřím je tržiště. Tam bys měl najít všechno, co potřebuješ.
 	AI_Output(self,other,"DIA_Hanna_City_Buy_17_02");	//Na druhé straně města najdeš pár řemeslnických krámků. Většina z nich leží poblíž druhé městské brány.
 	AI_Output(self,other,"DIA_Hanna_City_Buy_17_03");	//V přístavu také můžeš zajít k rybáři. Jeho obchod se nachází přímo v přístavu, najdeš to snadno.
 };
@@ -310,7 +310,7 @@ func void DIA_Hanna_City_Buy()
 func void DIA_Hanna_City_City()
 {
 	AI_Output(other,self,"DIA_Hanna_City_City_15_00");	//Pověz mi něco o městě.
-	AI_Output(self,other,"DIA_Hanna_City_City_17_01");	//Khorinis je jedním z nejbohatších měst v království, i když teď to tak nevypadá.
+	AI_Output(self,other,"DIA_Hanna_City_City_17_01");	//Khorinis je jedním z nejbohatších měst v království, i když to teď tak nevypadá.
 	AI_Output(self,other,"DIA_Hanna_City_City_17_02");	//Ale od té doby, co začaly ty problémy se skřety, se obchod téměř zastavil. Král totiž naverboval do armády celou kupeckou flotilu.
 	AI_Output(self,other,"DIA_Hanna_City_City_17_03");	//To znamená, že do přístavu teď žádné lodi neplují a zásoby zboží se rapidně tenčí. Spousta zdejších obyvatel se proto bojí, co bude dál.
 	AI_Output(self,other,"DIA_Hanna_City_City_17_04");	//Nikdo neví přesně, co nám budoucnost přinese. Vlastně nemůžeme dělat nic jiného, než tu sedět a čekat, co se stane. Nezdá se, že bychom mohli něco změnit.
@@ -436,7 +436,7 @@ func void DIA_Hanna_AnyNews_Yes_Reward_OK()
 func void DIA_Hanna_AnyNews_Yes_Reward_BeNice()
 {
 	AI_Output(other,self,"DIA_Hanna_AnyNews_Yes_Reward_BeNice_15_00");	//Mohla by ses ke mně chovat o něco hezčeji... Chci říct, jelikož jsi žena...
-	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_Reward_BeNice_17_01");	//No tedy, ty prase! Já... zmiz odsud! Ty nevychovaný hulváte!
+	AI_Output(self,other,"DIA_Hanna_AnyNews_Yes_Reward_BeNice_17_01");	//No teda, ty prase! Já... zmiz odsud! Ty nevychovaný hulváte!
 	MIS_HannaRetrieveLetter = LOG_FAILED;
 	AI_StopProcessInfos(self);
 };
@@ -695,7 +695,7 @@ func void DIA_Hanna_BuyStones_Stones()
 	AI_Output(self,other,"DIA_Hanna_BuyStones_01_04");	//Tady to je, tvoje odměna.
 	B_GiveInvItems(self,other,ItMi_Gold,misc_all);
 	AI_Output(self,other,"DIA_Hanna_BuyStones_01_05");	//A věř mi, tohle je mnohem víc než bys kdy dostal od jiných zdejších obchodníků.
-	AI_Output(self,other,"DIA_Hanna_BuyStones_01_06");	//Pokukd budeš mít něco dalšího na prodej, víš, kde mě najdeš.
+	AI_Output(self,other,"DIA_Hanna_BuyStones_01_06");	//Pokud budeš mít něco dalšího na prodej, víš kde mě najdeš.
 	Info_ClearChoices(DIA_Hanna_BuyStones);
 };
 
@@ -717,12 +717,12 @@ func void DIA_Hanna_BuyStones_Chests()
 	Npc_RemoveInvItems(other,ITMI_CHEST_EMPTYGOLD,Npc_HasItems(other,ITMI_CHEST_EMPTYGOLD));
 	Npc_RemoveInvItems(other,ITMI_JEWELERYCHEST_EMPTY,Npc_HasItems(other,ITMI_JEWELERYCHEST_EMPTY));
 	AI_PlayAni(self,"T_YES");
-	AI_Output(self,other,"DIA_Hanna_BuyStones_01_02");	//Hmmm... Jo, můj drahý. Myslím že si vezmu všechno.
+	AI_Output(self,other,"DIA_Hanna_BuyStones_01_02");	//Hmmm... Jo můj drahý. Myslím, že si vezmu všechno.
 	AI_Output(other,self,"DIA_Hanna_BuyStones_01_03");	//A peníze?
-	AI_Output(self,other,"DIA_Hanna_BuyStones_01_04");	//Neboj. Zde je vaše odměna.
+	AI_Output(self,other,"DIA_Hanna_BuyStones_01_04");	//Neboj. Zde je tvá odměna.
 	B_GiveInvItems(self,other,ItMi_Gold,misc_all);
-	AI_Output(self,other,"DIA_Hanna_BuyStones_01_05");	//Věřte mi: Je to mnohem víc, než kolik byste si odnesl od obchodníků v této oblasti.
-	AI_Output(self,other,"DIA_Hanna_BuyStones_01_06");	//Pokud máte na prodej další věci - víte kde mě najít.
+	AI_Output(self,other,"DIA_Hanna_BuyStones_01_05");	//A věř mi, tohle je mnohem víc než bys kdy dostal od jiných zdejších obchodníků.
+	AI_Output(self,other,"DIA_Hanna_BuyStones_01_06");	//Pokud budeš mít něco dalšího na prodej, víš kde mě najdeš.
 	Info_ClearChoices(DIA_Hanna_BuyStones);
 };
 
@@ -846,7 +846,7 @@ func void dia_hanna_isfree_info()
 	AI_Output(self,other,"DIA_Hanna_IsFree_01_00");	//Díky za pomoc.
 	AI_Output(self,other,"DIA_Hanna_IsFree_01_01");	//Jsem tvá dlužnice!
 	AI_Output(other,self,"DIA_Hanna_IsFree_01_02");	//To nestojí za řeč.
-	AI_Output(self,other,"DIA_Hanna_IsFree_01_03");	//Ale ano. Zasloužíš odměnu za tvou práci.
+	AI_Output(self,other,"DIA_Hanna_IsFree_01_03");	//Ale ano. Zasloužíš si odměnu za tvou práci.
 	B_GiveInvItems(self,other,ItSe_HannasBeutel,1);
 	AI_Output(other,self,"DIA_Hanna_Add_15_49");	//Co jsi mi to dala?
 	AI_Output(self,other,"DIA_Hanna_Add_17_48");	//To je klíč k bráně, vedoucí k pokladu.
@@ -894,7 +894,7 @@ instance DIA_Hanna_HauntedLH(C_Info)
 	condition = DIA_Hanna_HauntedLH_condition;
 	information = DIA_Hanna_HauntedLH_info;
 	permanent = FALSE;
-	description = "Nepoznáš náhodou niekoho menom Stefan?";
+	description = "Neznáš náhodou někoho se jménem Stefan?";
 };
 
 func int DIA_Hanna_HauntedLH_condition()
@@ -908,27 +908,27 @@ func int DIA_Hanna_HauntedLH_condition()
 func void DIA_Hanna_HauntedLH_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_00");	//Nepoznáš náhodou niekoho menom Stefan?
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_01");	//Stefan? Prečo sa pýtaš?
-	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_02");	//Našiel som tento strieborný prsteň. Je na ňom nápis 'Stefanovi od Ha ...'. Tak som si myslel...
+	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_00");	//Neznáš náhodou někoho se jménem Stefan?
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_01");	//Stefan? Proč se ptáš?
+	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_02");	//Našel jsem tento stříbrný prsten. Je na něm nápis 'Stefanovi od Ha ...'. Tak jsem si myslel...
 	B_GiveInvItems(other,self,ItMi_StafanRing,1);
 	Npc_RemoveInvItems(self,ItMi_StafanRing,1);
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_03");	//Och... To bolo tak dávno a predsa na to nemožem zabudnúť.
-	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_04");	//Takže ho poznávaš?
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_05");	//Samozrejme, pretože to ja som ho Stefanovi dala.
-	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_06");	//A kto to bol ten Stefan?
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_07");	//Pracoval v majáku ako jeho správca. Keď bol mladší, často som tam chodievala.
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_08");	//Dalo by sa povedať, že sme si boli celkom blízky. A potom... ho niekto zabil.
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_09");	//Nedokážem si predstaviť, prečo by to niekto robil. Stefan bol milý a slušný človek. Neublížil by ani muche.
-	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_10");	//Našiel som jeho pozostatky v majáku. Prečo nebol pochovaný?
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_11");	//Pravdepodobne preto, lebo ho nikto nemal rád, okrem mňa.
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_12");	//Potom niekto začal šíriť klebety, že na majáku sa začali zjavovať duchovia. A odvtedy sa tomu miestu každý vyhýba.
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_13");	//Navyše je to skvelé miesto na ukrytie tajomstva. Pokial vieš čo myslím.
-	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_14");	//Možno. A Stefan nič neskrýval?
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_15");	//Tesne pred vraždou sa mi začal vyhýbať. Povedal, že mal nejaké doležité veci na práci v majáku.
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_16");	//Najprv som si myslela, že ma už nemiluje. Ale neskor som zistila, že sa dostal do nejakých problémov a nechcel ma do toho zaťahovať.
-	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_17");	//Nevadilo by ti ak by som si ten prsteň nechala? Pripomína mi časy, keď so m bola šťastná.
-	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_18");	//Nie, kludne si ho nechaj.
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_03");	//Och... To bylo tak dávno a přece na to nemůžu zapomenout.
+	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_04");	//Takže ho znáš?
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_05");	//Samozřejmě, protože to já jsem ho Stefanovi dala.
+	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_06");	//A kdo to byl ten Stefan?
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_07");	//Pracoval v majáku jako jeho správce. Když byl mladší, často jsem tam chodívala.
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_08");	//Dalo by se říct, že jsme si byli celkem blízcí. A potom... ho někdo zabil.
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_09");	//Nedokážu si představit, proč by to někdo dělal. Stefan byl milý a slušný člověk. Neublížil by ani mouše.
+	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_10");	//Našel jsem jeho pozůstatky v majáku. Proč nebyl pochovaný?
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_11");	//Pravděpodobně protože ho nikdo neměl rád, krom mě.
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_12");	//Potom někdo začal šírit drby, že na majáku se začali zjevovat duchové. A od té doby se tomu místu každý vyhýbá.
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_13");	//Navíc je to skvělé místo na ukrytí tajemství. Pokud víš co myslím.
+	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_14");	//Možná. A Stefan nic neskrýval?
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_15");	//Těsně před vraždou se mi začal vyhýbat. Říkal, že měl nějaké důležité věci na práci v majáku.
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_16");	//Nejdřív jsem si myslela, že mě už nemiluje. Ale později jsem zjistila, že se dostal do nějakých problémů a nechtěl mě do toho zatahovat.
+	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_17");	//Nevadilo by ti, když bych si ten prsten nechala? Připomíná mi časy, když jsem byla šťastná.
+	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_18");	//Ne, klidně si ho nechej.
 	KnowStefan = TRUE;
-	B_LogEntry(TOPIC_HauntedLighthouse,"Prsteň patril dávnemu Hanninmu priatelovi. Očividne ho niekto zavraždil v majáku.");
+	B_LogEntry(TOPIC_HauntedLighthouse,"Prsten patřil dávnému příteli Hannah. Očividně ho někdo zavraždil v majáku.");
 };

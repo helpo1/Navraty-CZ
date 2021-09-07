@@ -47,8 +47,8 @@ func void DIA_Engrom_HALLO_Info()
 	AI_Output(other,self,"DIA_Engrom_HALLO_15_00");	//Jak se vede?
 	AI_Output(self,other,"DIA_Engrom_HALLO_12_01");	//Naprd.
 	AI_Output(other,self,"DIA_Engrom_HALLO_15_02");	//Hmmm...
-	AI_Output(self,other,"DIA_Engrom_HALLO_12_03");	//Co mužu říct. Celé dny nemužem koukat na nic jiného než na tuhle zatracenou řeku.
-	AI_Output(self,other,"DIA_Engrom_HALLO_12_04");	//Nalevo se flákají skřeti, napravo banditi a kazdý den jím akorát číhavčí maso. Víš, už mi to všecko leze krkem.
+	AI_Output(self,other,"DIA_Engrom_HALLO_12_03");	//Co můžu říct? Celé dny nemůžeme koukat na nic jiného, než na tuhle zatracenou řeku.
+	AI_Output(self,other,"DIA_Engrom_HALLO_12_04");	//Nalevo se flákají skřeti, napravo banditi a každý den jím akorát číhavčí maso. Víš, už mi to všechno leze krkem.
 };
 
 
@@ -73,13 +73,13 @@ func int DIA_Engrom_WhatAboutLeaving_Condition()
 func void DIA_Engrom_WhatAboutLeaving_Info()
 {
 	AI_Output(other,self,"DIA_Engrom_WhatAboutLeaving_15_00");	//A nikdy jsi nepřemýšlel, že odtud odjedeš?
-	AI_Output(self,other,"DIA_Engrom_WhatAboutLeaving_12_01");	//No jasne, to přeci není vubec žádný problém!
-	AI_Output(self,other,"DIA_Engrom_WhatAboutLeaving_12_02");	//Nejdřív se prosekám tlupami skřetů, pozdravím všecky ty ostatní příšery, co tu všude procházejí, a pak proste projdu prusmykem!
+	AI_Output(self,other,"DIA_Engrom_WhatAboutLeaving_12_01");	//No jasně, to přece není vůbec žádný problém!
+	AI_Output(self,other,"DIA_Engrom_WhatAboutLeaving_12_02");	//Nejdřív se prosekám tlupami skřetů, pozdravím všechny ty ostatní příšery, co tu všude procházejí, a pak prostě projdu průsmykem!
 	AI_Output(self,other,"DIA_Engrom_WhatAboutLeaving_12_03");	//To by přece zvládlo i malé dítě.
 	AI_Output(other,self,"DIA_Engrom_WhatAboutLeaving_15_04");	//Já se sem ale taky dostal.
-	AI_Output(self,other,"DIA_Engrom_WhatAboutLeaving_12_05");	//Chceš mi nakukat, žes proste prošel prusmykem?
-	AI_Output(other,self,"DIA_Engrom_WhatAboutLeaving_15_06");	//V podstate jo!
-	AI_Output(self,other,"DIA_Engrom_WhatAboutLeaving_12_07");	//Tak to jsi mel teda kliku. Dokud tu bude všechno vzhuru nohama, ani se odsud nehnu.
+	AI_Output(self,other,"DIA_Engrom_WhatAboutLeaving_12_05");	//Chceš mi nakukat, žes prostě prošel průsmykem?
+	AI_Output(other,self,"DIA_Engrom_WhatAboutLeaving_15_06");	//V podstatě ano!
+	AI_Output(self,other,"DIA_Engrom_WhatAboutLeaving_12_07");	//Tak to jsi měl teda kliku. Dokud tu bude všechno vzhůru nohama, ani se odsud nehnu.
 };
 
 
@@ -306,7 +306,7 @@ instance DIA_Engrom_Goblins(C_Info)
 	condition = DIA_Engrom_Goblins_Condition;
 	information = DIA_Engrom_Goblins_Info;
 	permanent = FALSE;
-	description = "Vyzerá, že tě něco trápí.";
+	description = "Vypadá to, že tě něco trápí.";
 };
 
 func int DIA_Engrom_Goblins_Condition()
@@ -319,25 +319,25 @@ func int DIA_Engrom_Goblins_Condition()
 
 func void DIA_Engrom_Goblins_Info()
 {
-	AI_Output(other,self,"DIA_Engrom_Goblins_01_01");	//Vyzerá, že tě něco trápí.
-	AI_Output(self,other,"DIA_Engrom_Goblins_01_02");	//To ti goblini. (nervónze) Prokletí goblini.
+	AI_Output(other,self,"DIA_Engrom_Goblins_01_01");	//Vypadá to, že tě něco trápí.
+	AI_Output(self,other,"DIA_Engrom_Goblins_01_02");	//To ti goblini. (nervónzně) Prokletí goblini.
 	AI_Output(other,self,"DIA_Engrom_Goblins_01_03");	//O čem to mluvíš?
-	AI_Output(self,other,"DIA_Engrom_Goblins_01_04");	//Chlape, mluvím o goblinech, který jse usadili v jeskyni pod náma.
-	AI_Output(self,other,"DIA_Engrom_Goblins_01_05");	//Dohánějí me k šílenství více než všetci ti skřeti okolo hradu.
-	AI_Output(other,self,"DIA_Engrom_Goblins_01_06");	//A ty by si se jich chtěl zbavit.
-	AI_Output(self,other,"DIA_Engrom_Goblins_01_07");	//Och, to by bolo dokonalé! Ale...
-	AI_Output(other,self,"DIA_Engrom_Goblins_01_08");	//Nejaký problém?
-	AI_Output(self,other,"DIA_Engrom_Goblins_01_09");	//Problém je, že se na ne nemužu odhodlat.
-	AI_Output(self,other,"DIA_Engrom_Goblins_01_10");	//Príliš jse bojím výšek nato abych skočil a jít dokola je hotová sebevražda.
-	AI_Output(other,self,"DIA_Engrom_Goblins_01_11");	//Chápu. Radši tu budeš sedeť a časem se scvokneš. Dobrá volba!
-	AI_Output(self,other,"DIA_Engrom_Goblins_01_12");	//Velmi vtipné. (Zatrpklo) Nemáš potuchy, co za strašné zvuky v noci vychádzajú z té jeskyně.
-	AI_Output(self,other,"DIA_Engrom_Goblins_01_13");	//Jinak bych ti to ani nespomínal.
-	AI_Output(other,self,"DIA_Engrom_Goblins_01_14");	//Dobře! Jestli pujdu okolo skusím se o ty tvé gobliny postarat.
-	AI_Output(self,other,"DIA_Engrom_Goblins_01_15");	//Urob mi laskavost! Veř mi, nezustanu ti nic dlžný.
+	AI_Output(self,other,"DIA_Engrom_Goblins_01_04");	//Chlape, mluvím o goblinech, kteří se usadili v jeskyni pod náma.
+	AI_Output(self,other,"DIA_Engrom_Goblins_01_05");	//Dohánějí mě k šílenství více než všichni ti skřeti okolo hradu.
+	AI_Output(other,self,"DIA_Engrom_Goblins_01_06");	//A ty bys se jich chtěl zbavit.
+	AI_Output(self,other,"DIA_Engrom_Goblins_01_07");	//Och, to by bylo dokonalé! Ale...
+	AI_Output(other,self,"DIA_Engrom_Goblins_01_08");	//Nějaký problém?
+	AI_Output(self,other,"DIA_Engrom_Goblins_01_09");	//Problém je, že se na ně nemůžu odhodlat.
+	AI_Output(self,other,"DIA_Engrom_Goblins_01_10");	//Příliš se bojím výšek na to abych skočil a jít dokola je hotová sebevražda.
+	AI_Output(other,self,"DIA_Engrom_Goblins_01_11");	//Chápu. Radši tu budeš sedět a časem se scvokneš. Dobrá volba!
+	AI_Output(self,other,"DIA_Engrom_Goblins_01_12");	//Velmi vtipné. (Zatrpkle) Nemáš potuchy, co za strašné zvuky v noci vycházejí z té jeskyně.
+	AI_Output(self,other,"DIA_Engrom_Goblins_01_13");	//Jinak bych ti to ani neříkal.
+	AI_Output(other,self,"DIA_Engrom_Goblins_01_14");	//Dobře! Jestli půjdu okolo, zkusím se o ty tvé gobliny postarat.
+	AI_Output(self,other,"DIA_Engrom_Goblins_01_15");	//Udělej mi laskavost! Věř mi, nezůstanu ti nic dlužný.
 	MIS_EngromGoblins = LOG_Running;
 	Log_CreateTopic(TOPIC_EngromGoblins,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_EngromGoblins,LOG_Running);
-	B_LogEntry(TOPIC_EngromGoblins,"Lovec Engrom pomaly ale jistě šílí díky goblinum, který se usadili v jeskyni poblíž. Byl by vděčný kdybych se o ně postaral.");
+	B_LogEntry(TOPIC_EngromGoblins,"Lovec Engrom pomalu ale jistě šílí díky goblinům, kteří se usadili v jeskyni poblíž. Byl by vděčný, kdybych se o ně postaral.");
 };
 
 
@@ -363,12 +363,12 @@ func void DIA_Engrom_Goblins_Done_Info()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Engrom_Goblins_Done_01_01");	//Dneska si užiješ tichou noc.
-	AI_Output(self,other,"DIA_Engrom_Goblins_Done_01_02");	//Díky ti kámo, konečne se pořádne vyspím.
-	AI_Output(self,other,"DIA_Engrom_Goblins_Done_01_03");	//Vem si tuhle kuži ze stínové šelmy. 
+	AI_Output(self,other,"DIA_Engrom_Goblins_Done_01_02");	//Díky ti kámo, konečne se pořádně vyspím.
+	AI_Output(self,other,"DIA_Engrom_Goblins_Done_01_03");	//Vem si tuhle kůži ze stínové šelmy. 
 	B_GiveInvItems(self,other,ItAt_ShadowFur,1);
-	AI_Output(self,other,"DIA_Engrom_Goblins_Done_01_04");	//To je vše, co ti mužu nabídnout.
+	AI_Output(self,other,"DIA_Engrom_Goblins_Done_01_04");	//To je vše, co ti můžu nabídnout.
 	AI_Output(other,self,"DIA_Engrom_Goblins_Done_01_05");	//V pořádku, to stačí.
 	MIS_EngromGoblins = LOG_Success;
 	Log_SetTopicStatus(TOPIC_EngromGoblins,LOG_Success);
-	B_LogEntry(TOPIC_EngromGoblins,"Řekl jsem Engromovi, že už muže klindě spávat. Jako podekování mi dal kuži ze stínové šelmy.");
+	B_LogEntry(TOPIC_EngromGoblins,"Řekl jsem Engromovi, že už může klidně spát. Jako poděkování mi dal kůži ze stínové šelmy.");
 };

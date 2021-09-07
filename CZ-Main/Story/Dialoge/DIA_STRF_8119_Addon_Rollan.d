@@ -75,7 +75,7 @@ func void DIA_STRF_8119_Addon_Rollan_Who_info()
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Who_01_04");	//Jsou to pořádní chlápci! Jen se něco pokazí a už vytahují sekyry.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Who_01_05");	//V nejlepším případě to skončí pár zlomenými žebry.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Who_01_06");	//Pokud je opravdu hodně rozlobíš, tak tě pošlou na nižší úroveň dolu.
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Who_01_07");	//A to je jistá smrt! Odtamtud se nidko nevrátil...
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Who_01_07");	//A to je jistá smrt! Odtamtud se nikdo nevrátil...
 };
 
 instance DIA_STRF_8119_Addon_Rollan_Time(C_Info)
@@ -100,7 +100,7 @@ func void DIA_STRF_8119_Addon_Rollan_Time_info()
 {
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_Time_01_00");	//Pracuješ v dole dlouho?
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Time_01_01");	//Těžko říct... (škrábe se na zátylku) Mám-li být upřímný, ztratil jsem pojem o čase.
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Time_01_02");	//Tady běží čas úplně jinak, než na povrchu!
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Time_01_02");	//Tady běží čas úplně jinak než na povrchu!
 };
 
 instance DIA_STRF_8119_Addon_Rollan_LowLevel(C_Info)
@@ -128,7 +128,7 @@ func void DIA_STRF_8119_Addon_Rollan_LowLevel_info()
 	AI_PlayAni(self,"T_SEARCH");
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_02");	//Jak vím, tak dolní část dolu skřeti uzavřeli.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_03");	//Nikdo tam už dlouho nepracuje.
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_04");	//Ale každý, kdo se něčím proviní, toho spustí výtahem dolů.
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_04");	//Ale každý, kdo se něčím proviní, spustí výtahem dolů.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_05");	//Jakmile se výtah vrátí zpět, už je prázdný.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_06");	//Pouze kaluže krve! Brrr...
 	AI_PlayAni(self,"T_SEARCH");
@@ -158,7 +158,7 @@ func void DIA_STRF_8119_Addon_Rollan_TellMore_info()
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_TellMore_01_00");	//Můžeš mi povědět více o tomto dole?
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_TellMore_01_01");	//Jasně. Ale nejdřív mi dones něco k jídlu.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_TellMore_01_02");	//Už jsem skoro zapomněl, jak chutná normální jídlo.
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_TellMore_01_03");	//To, co tu mají skřeti, není zrovna bůhvíco čo tu majú skřeti nie je zrovna bůhví co. Obzvláště ty podivné hřiby...
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_TellMore_01_03");	//To, co tu mají skřeti, není zrovna bůhvíco. Obzvláště ty podivné hřiby...
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_TellMore_01_04");	//A co bys rád?
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_TellMore_01_05");	//Noo... Kousek masa, sýr a nějaké to víno na spláchnutí.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_TellMore_01_06");	//To by pro začátek mohlo stačit.
@@ -166,7 +166,7 @@ func void DIA_STRF_8119_Addon_Rollan_TellMore_info()
 	MIS_RollanFood = LOG_Running;
 	Log_CreateTopic(TOPIC_RollanFood,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RollanFood,LOG_Running);
-	B_LogEntry(TOPIC_RollanFood,"Roland chce něco k jídlu. Pokud mu donesu kus masa, sýr a láhev vína, řekne mi více o tomto dole.");
+	B_LogEntry(TOPIC_RollanFood,"Rolland chce něco k jídlu. Pokud mu donesu kus masa, sýr a láhev vína, řekne mi více o tomto dole.");
 };
 
 instance DIA_STRF_8119_Addon_Rollan_RollanFood(C_Info)
@@ -263,7 +263,7 @@ func void DIA_STRF_8119_Addon_Rollan_AboutMine_info()
 
 	if(CountMineAll == FALSE)
 	{
-		AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_01_01");	//Co by jsi chtěl vědět?
+		AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_01_01");	//Co bys chtěl vědět?
 		Info_ClearChoices(DIA_STRF_8119_Addon_Rollan_AboutMine);
 		Info_AddChoice(DIA_STRF_8119_Addon_Rollan_AboutMine,Dialog_Back,DIA_STRF_8119_Addon_Rollan_AboutMine_Back);
 
@@ -274,7 +274,7 @@ func void DIA_STRF_8119_Addon_Rollan_AboutMine_info()
 		};
 		if(RolTellHowMany == FALSE)
 		{
-			Info_AddChoice(DIA_STRF_8119_Addon_Rollan_AboutMine,"Je tu hodně skřetů?",DIA_STRF_8119_Addon_Rollan_AboutMine_HowMany);
+			Info_AddChoice(DIA_STRF_8119_Addon_Rollan_AboutMine,"Kolik je tu skřetů?",DIA_STRF_8119_Addon_Rollan_AboutMine_HowMany);
 		};
 		if(RolTellSlaves == FALSE)
 		{
@@ -320,7 +320,7 @@ func void DIA_STRF_8119_Addon_Rollan_AboutMine_Chief()
 
 func void DIA_STRF_8119_Addon_Rollan_AboutMine_HowMany()
 {
-	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_HowMany_01_01");	//Je tu hodně skřetů?
+	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_HowMany_01_01");	//Kolik je tu skřetů?
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_HowMany_01_02");	//Kámo... (kroutí hlavou) To snad nemyslíš vážně.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_HowMany_01_03");	//Samozřejmě jsem je nepočítal, ale věřím, že nejméně dva tucty.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_HowMany_01_04");	//Pokud ne více...
@@ -336,9 +336,9 @@ func void DIA_STRF_8119_Addon_Rollan_AboutMine_HowMany()
 func void DIA_STRF_8119_Addon_Rollan_AboutMine_Slaves()
 {
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_Slaves_01_01");	//Kolik je tu otroků, jako ty?
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Slaves_01_02");	//Říká se, že bývalo hodně. Dokud se skřeti drželi na uzdě.
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Slaves_01_02");	//Říká se, že jich tu bývalo hodně, dokud se skřeti drželi na uzdě.
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_Slaves_01_03");	//Co se stalo?
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Slaves_01_04");	//To všechno Ar Dagar! Ten bastard zavedl tak šílené kvóty na těžbu, že to spoustu otroků nezvládlo.
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Slaves_01_04");	//To všechno Ar Dagar! Ten bastard zavedl tak šílené kvóty na těžbu, že to spousta otroků nezvládla.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Slaves_01_05");	//Myslím, že nás více než padesát nebude. Bohužel se číslo každým dnem snižuje.
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_Slaves_01_06");	//Chápu.
 	RolTellSlaves = TRUE;
@@ -361,12 +361,12 @@ func void DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin()
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_07");	//Takže dokud ti většina z nás nevěří, nemá smysl se na něco takového ptát.
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_08");	//Jak si získám vaši důvěru?
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_09");	//Jak, jak... Zeptej se kluků kolem, jestli nepotřebují s něčím pomoct.
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_10");	//Dokáž, že na čí straně jsi a že je na tebe spoleh!
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_10");	//Dokáž, na čí straně jsi a že je na tebe spoleh!
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_11");	//Pak už to půjde samo.
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_12");	//Ano, vím, co tím myslíš.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_13");	//To je dobře, teď už se o tom bavit nebudem.
 	RolTellPal = TRUE;
-	B_LogEntry(TOPIC_LostPaladins,"Dokud si nezískám důvěru Pokým som si nezískal u otrokov doveru, tak možem na paladina zabudnúť.");
+	B_LogEntry(TOPIC_LostPaladins,"Dokud si nezískám u otroků důvěru, tak můžu na paladina rovnou zapomenout.");
 
 	if((RolTellChief == TRUE) && (RolTellPal == TRUE) && (RolTellSlaves == TRUE) && (RolTellHowMany == TRUE) && (MIS_LowLevel != FALSE) && (MIS_EscapeMine != FALSE))
 	{
@@ -376,7 +376,7 @@ func void DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin()
 
 func void DIA_STRF_8119_Addon_Rollan_AboutMine_LowLev()
 {
-	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_LowLev_01_01");	//Co je v té dolní časti dolu?
+	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_LowLev_01_01");	//Co je v té dolní části dolu?
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_LowLev_01_02");	//Moc ti o tom nepovím, vlastně skoro vůbec neopouštím svou žílu.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_LowLev_01_03");	//Zkus se zeptat Hildura, on by měl vědět víc.
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_LowLev_01_04");	//Kdo je Hildur?
