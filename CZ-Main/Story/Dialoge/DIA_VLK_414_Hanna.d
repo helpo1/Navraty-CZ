@@ -98,7 +98,7 @@ func void DIA_Hanna_Armor_Dis_Info()
 
 	if(HannaTakeBuh == TRUE)
 	{
-		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_01");	//Hmm...(Přemýšlivě) Dobře. Přeci jen jsi mi pomohl vyřešit problém s Lehmarem.
+		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_01");	//Hmm...(přemýšlivě) Dobře. Přeci jen jsi mi pomohl vyřešit problém s Lehmarem.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_02");	//Takže ti to dám zadarmo.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_03");	//Na, vezmi si to.
 		AI_Output(other,self,"DIA_Hanna_Armor_Dis_01_04");	//Díky.
@@ -107,7 +107,7 @@ func void DIA_Hanna_Armor_Dis_Info()
 	}
 	else if(IS_LOVCACH == TRUE)
 	{
-		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_05");	//Hmm...(Přemýšlivě) Dobře. Přeci jenom jsi jedním z nás.
+		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_05");	//Hmm...(přemýšlivě) Dobře. Přeci jenom jsi jedním z nás.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_06");	//Měli bychom držet pospolu.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_07");	//Takže ti to prodám za polovinu ceny.
 		AI_Output(other,self,"DIA_Hanna_Armor_Dis_01_08");	//Díky.
@@ -894,7 +894,7 @@ instance DIA_Hanna_HauntedLH(C_Info)
 	condition = DIA_Hanna_HauntedLH_condition;
 	information = DIA_Hanna_HauntedLH_info;
 	permanent = FALSE;
-	description = "Neznáš náhodou někoho se jménem Stefan?";
+	description = "Neznáš náhodou někoho jménem Stefan?";
 };
 
 func int DIA_Hanna_HauntedLH_condition()
@@ -908,7 +908,7 @@ func int DIA_Hanna_HauntedLH_condition()
 func void DIA_Hanna_HauntedLH_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_00");	//Neznáš náhodou někoho se jménem Stefan?
+	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_00");	//Neznáš náhodou někoho jménem Stefan?
 	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_01");	//Stefan? Proč se ptáš?
 	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_02");	//Našel jsem tento stříbrný prsten. Je na něm nápis 'Stefanovi od Ha ...'. Tak jsem si myslel...
 	B_GiveInvItems(other,self,ItMi_StafanRing,1);
@@ -920,7 +920,7 @@ func void DIA_Hanna_HauntedLH_info()
 	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_07");	//Pracoval v majáku jako jeho správce. Když byl mladší, často jsem tam chodívala.
 	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_08");	//Dalo by se říct, že jsme si byli celkem blízcí. A potom... ho někdo zabil.
 	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_09");	//Nedokážu si představit, proč by to někdo dělal. Stefan byl milý a slušný člověk. Neublížil by ani mouše.
-	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_10");	//Našel jsem jeho pozůstatky v majáku. Proč nebyl pochovaný?
+	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_10");	//Našel jsem jeho pozůstatky v majáku. Proč nebyl pohřben?
 	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_11");	//Pravděpodobně protože ho nikdo neměl rád, krom mě.
 	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_12");	//Potom někdo začal šírit drby, že na majáku se začali zjevovat duchové. A od té doby se tomu místu každý vyhýbá.
 	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_13");	//Navíc je to skvělé místo na ukrytí tajemství. Pokud víš co myslím.
@@ -930,5 +930,5 @@ func void DIA_Hanna_HauntedLH_info()
 	AI_Output(self,other,"DIA_Hanna_HauntedLH_01_17");	//Nevadilo by ti, když bych si ten prsten nechala? Připomíná mi časy, když jsem byla šťastná.
 	AI_Output(other,self,"DIA_Hanna_HauntedLH_01_18");	//Ne, klidně si ho nechej.
 	KnowStefan = TRUE;
-	B_LogEntry(TOPIC_HauntedLighthouse,"Prsten patřil dávnému příteli Hannah. Očividně ho někdo zavraždil v majáku.");
+	B_LogEntry(TOPIC_HauntedLighthouse,"Ten prsten darovala ještě před lety Hanna svému příteli, kterého pak zjevně někdo zavraždil v majáku.");
 };
