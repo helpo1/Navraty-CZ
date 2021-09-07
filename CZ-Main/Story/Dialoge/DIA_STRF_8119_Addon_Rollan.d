@@ -128,7 +128,7 @@ func void DIA_STRF_8119_Addon_Rollan_LowLevel_info()
 	AI_PlayAni(self,"T_SEARCH");
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_02");	//Jak vím, tak dolní část dolu skřeti uzavřeli.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_03");	//Nikdo tam už dlouho nepracuje.
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_04");	//Ale každý, kdo se něčím proviní, spustí výtahem dolů.
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_04");	//Ale každého, kdo se něčím proviní, spustí výtahem dolů.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_05");	//Jakmile se výtah vrátí zpět, už je prázdný.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_06");	//Pouze kaluže krve! Brrr...
 	AI_PlayAni(self,"T_SEARCH");
