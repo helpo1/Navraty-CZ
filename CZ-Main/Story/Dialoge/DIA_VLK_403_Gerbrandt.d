@@ -684,7 +684,7 @@ func void dia_gerbrandt_worksfordone_ok()
 	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_00");	//Bohužel ano.
 	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_Ok_04_01");	//(zmateně) CO?
 	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_02");	//Pochopil, že jsem někdo jiný.
-	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_03");	//Vyhrožoval mi a donutil mě říci tvé jméno.
+	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_03");	//Vyhrožoval mi a chtěl mě donutit prozradit tvé jméno.
 	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_04");	//Ale nakonec toho nechal a dohodli jsme se.
 	AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_Ok_04_06");	//Takže se nemusíš obávat.
 	AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_Ok_04_07");	//Ach!... (chytání u srdce) Ty... Jsi mě opravdu překvapil!

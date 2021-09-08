@@ -455,7 +455,7 @@ func void dia_pal_9168_natan_zamokknown_ulumulu()
 	MIS_NEWSSURVIVERS = LOG_Running;
 	Log_CreateTopic(TOPIC_NEWSSURVIVERS,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_NEWSSURVIVERS,LOG_Running);
-	B_LogEntry(TOPIC_NEWSSURVIVERS,"Neddaleko od průchodu do Hornického údolí jsem potkal nevelkou skupinu paladinů vedenou paladinem Nathanem. Řekl mi, že pevnost padla.");
+	B_LogEntry(TOPIC_NEWSSURVIVERS,"Nedaleko od průchodu do Hornického údolí jsem potkal nevelkou skupinu paladinů vedenou paladinem Nathanem. Řekl mi, že pevnost padla.");
 	Log_AddEntry(TOPIC_NEWSSURVIVERS,"Nathan si myslí, že všichni obránci padli. Měl bych to prověřit.");
 	AI_StopProcessInfos(self);
 };

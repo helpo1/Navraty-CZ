@@ -465,7 +465,7 @@ func void dia_ignaz_plantsfromtaliasan_go()
 	AI_Output(self,other,"DIA_Ignaz_PlantsFromTaliasan_Go_01_02");	//Dokonce ti za tvou pomoc trochu zaplatím.
 	AI_Output(self,other,"DIA_Ignaz_PlantsFromTaliasan_Go_01_04");	//Vidíš, předběhl jsem tě. Co takhle 100 zlatých?
 	Info_ClearChoices(dia_ignaz_plantsfromtaliasan);
-	Info_AddChoice(dia_ignaz_plantsfromtaliasan,"To je málo.",dia_ignaz_plantsfromtaliasan_no);
+	Info_AddChoice(dia_ignaz_plantsfromtaliasan,"To je málo, nebudu tím ztrácet čas.",dia_ignaz_plantsfromtaliasan_no);
 	Info_AddChoice(dia_ignaz_plantsfromtaliasan,"Dohodnuto!",dia_ignaz_plantsfromtaliasan_yes);
 };
 

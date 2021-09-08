@@ -1561,7 +1561,7 @@ func void DIA_Cassia_MagicBook_info()
 
 	if(RhetorikSkillValue[1] >= 15)
 	{
-		Info_AddChoice(DIA_Cassia_MagicBook,"Slyšel jsem nějaké chýry...",DIA_Cassia_MagicBook_Rumors);
+		Info_AddChoice(DIA_Cassia_MagicBook,"Slyšel jsem nějaké zvěsti...",DIA_Cassia_MagicBook_Rumors);
 	};
 };
 
@@ -1601,7 +1601,7 @@ func void DIA_Cassia_MagicBook_Stolen()
 func void DIA_Cassia_MagicBook_Rumors()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Cassia_MagicBook_Rumors_01_01");	//Slyšel jsem nějaké chýry...
+	AI_Output(other,self,"DIA_Cassia_MagicBook_Rumors_01_01");	//Slyšel jsem nějaké zvěsti...
 	AI_Output(other,self,"DIA_Cassia_MagicBook_Rumors_01_02");	//Chtěli vědět jěstli to daný řemeslník zvládl úplně sám.
 	AI_Output(self,other,"DIA_Cassia_MagicBook_Rumors_01_03");	//No, není to tajemství... (usmívá se) Samozřejmě že to byl Ramirez! Jedině on by to zvládl.
 	AI_Output(self,other,"DIA_Cassia_MagicBook_Rumors_01_04");	//Takže mu můžeš jít pogratulovat i za mě.
@@ -1639,7 +1639,7 @@ func void DIA_Cassia_RichStones_Info()
 {
 	AI_Output(other,self,"DIA_Cassia_RichStones_01_00");	//Něco nového?
 	AI_Output(self,other,"DIA_Cassia_RichStones_01_01");	//Ano. Dobře že si přišel.
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_02");	//Nedávno jsme začuli chýry, že paladinové sebou přinesli kopu drahých kamenů.
+	AI_Output(self,other,"DIA_Cassia_RichStones_01_02");	//Nedávno jsme uslyšeli zvěsti, že paladinové sebou přinesli kopu drahých kamenů.
 	AI_Output(self,other,"DIA_Cassia_RichStones_01_03");	//Ale nás zajímá jenom jeden - obrovský rubín, velký skoro jako pěst.
 	AI_Output(other,self,"DIA_Cassia_RichStones_01_04");	//Jak o něm víš?
 	AI_Output(self,other,"DIA_Cassia_RichStones_01_05");	//Máme své zdroje...
