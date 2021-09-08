@@ -58,7 +58,7 @@ func void DIA_NagShor_Hello_UrShak()
 {
 	AI_Output(other,self,"DIA_NagShor_Hello_UrShak_01_01");	//Posílá mě šaman Ur-Shak!
 	AI_Output(other,self,"DIA_NagShor_Hello_UrShak_01_02");	//Řekl, že zde najdu nějaké odpovědi na mé otázky.
-	AI_Output(self,other,"DIA_NagShor_Hello_UrShak_01_03");	//Posílat tě Ur-Shak?! Hmmm...(zamyšleně) To velké překvapení!
+	AI_Output(self,other,"DIA_NagShor_Hello_UrShak_01_03");	//Posílat tě Ur-Shak?! Hmmm... (zamyšleně) To velké překvapení!
 	AI_Output(other,self,"DIA_NagShor_Hello_UrShak_01_04");	//Proč?!
 	AI_Output(self,other,"DIA_NagShor_Hello_UrShak_01_05");	//Arrgh!... Protože skřeti nemají rádi lidi!
 	AI_Output(self,other,"DIA_NagShor_Hello_UrShak_01_06");	//Skřeti vždy bojovat s lidi. Lidi vždy nepřátelé skřetů!
@@ -103,7 +103,7 @@ func void DIA_NagShor_Hello_None()
 {
 	AI_Output(other,self,"DIA_NagShor_Hello_None_01_01");	//Nevím.
 	AI_Output(self,other,"DIA_NagShor_Hello_None_01_02");	//Člověk neví co tu? Hloupá člověk!
-	AI_Output(self,other,"DIA_NagShor_Hello_None_01_03");	//Člověk mě moc rozesmát...(směje se) Nikdy jsem nevidět takový hlupák!
+	AI_Output(self,other,"DIA_NagShor_Hello_None_01_03");	//Člověk mě moc rozesmát... (směje se) Nikdy jsem nevidět takový hlupák!
 	AI_Output(self,other,"DIA_NagShor_Hello_None_01_04");	//Jestli člověk nemá co říct, já taky nemluvit!
 	AI_Output(self,other,"DIA_NagShor_Hello_None_01_05");	//Raději jít!... Skřet nadále smát...
 	NagShorFirstMeet = TRUE;
@@ -150,7 +150,7 @@ func void DIA_NagShor_HelloAgain_UrShak()
 {
 	AI_Output(other,self,"DIA_NagShor_HelloAgain_UrShak_01_01");	//Posílá mě šaman Ur-Shak!
 	AI_Output(other,self,"DIA_NagShor_HelloAgain_UrShak_01_02");	//Řekl, že zde najdu nějaké odpovědi na mé otázky.
-	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrShak_01_03");	//Posílat tě Ur-Shak?! Hmmm...(zamyšleně) To velké překvapení!
+	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrShak_01_03");	//Posílat tě Ur-Shak?! Hmmm... (zamyšleně) To velké překvapení!
 	AI_Output(other,self,"DIA_NagShor_HelloAgain_UrShak_01_04");	//Proč?!
 	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrShak_01_05");	//Arrgh!... Protože skřeti nemají rádi lidi!
 	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrShak_01_06");	//Skřeti vždy bojovat s lidi. Lidi vždy nepřátelé skřetů!
@@ -191,7 +191,7 @@ func void DIA_NagShor_HelloAgain_UrKarras()
 func void DIA_NagShor_HelloAgain_None()
 {
 	AI_Output(other,self,"DIA_NagShor_HelloAgain_None_01_01");	//Nemám tušení.
-	AI_Output(self,other,"DIA_NagShor_HelloAgain_None_01_02");	//Ha ha ha! Člověk moc legrační...(směje se) Jak hloupá člověk!
+	AI_Output(self,other,"DIA_NagShor_HelloAgain_None_01_02");	//Ha ha ha! Člověk moc legrační... (směje se) Jak hloupá člověk!
 	AI_Output(self,other,"DIA_NagShor_HelloAgain_None_01_03");	//Raději jít!... Skřet nadále smát...
 	AI_StopProcessInfos(self);
 };

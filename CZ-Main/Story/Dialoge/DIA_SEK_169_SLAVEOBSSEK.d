@@ -91,7 +91,7 @@ func void dia_SEK_169_SLAVEOBSSEK_REBELS_info()
 	AI_PlayAni(self,"T_SEARCH");
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_09");	//(překvapeně) Takže ty jsi...
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_10");	//Není potřeba dalších slov. Myslím, že to všichni chápete.
-	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_11");	//Jestli je to tak...(zmateně) Pak ti asi můžem důvěřovat.
+	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_11");	//Jestli je to tak... (zmateně) Pak ti asi můžem důvěřovat.
 	B_LogEntry(TOPIC_RebelSlave,"Vyslechl jsem Mariuse. Vyslechl jsem ho a opravdu organizoval povstání, rozhodl jsem se mu s tím pomoci. Ale vyvstává otázka - co říct Osairovi?");
 	RebelsTrust = TRUE;
 };
@@ -117,10 +117,10 @@ func int dia_SEK_169_SLAVEOBSSEK_RebelsTrust_condition()
 func void dia_SEK_169_SLAVEOBSSEK_RebelsTrust_info()
 {
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_01_01");	//Řekni mi co jsi vymyslel.
-	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_01_02");	//V první řadě potřebujeme zbraně...(tiše) To je nejdůležitější.
+	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_01_02");	//V první řadě potřebujeme zbraně... (tiše) To je nejdůležitější.
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_01_03");	//Bez nich nemáme šanci proti dobře vycvičeným vojákům Masyafu.
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_01_04");	//Podle mého názoru, vám zbraně nepomůžou. Jeden z bojovníků Masyafu vás lehce přemůže všechny.
-	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_01_05");	//Ach...(povzdech) Je to tak, v tomdle ti musím dát za pravdu!
+	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_01_05");	//Ach... (povzdech) Je to tak, v tomdle ti musím dát za pravdu!
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_01_06");	//Ale beze zbraní se nikdo z otroků proti stínům nepostaví.
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_01_07");	//A bez toho je i samotná myšlenka na útěk absurdní.
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_01_08");	//Jestli máme mít šanci uspět, tak jedině společnými silami!
@@ -169,7 +169,7 @@ func void dia_SEK_169_SLAVEOBSSEK_OsairNeed_info()
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_11");	//To nedokážu rozhodnout, co ti na to mám říct...
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_12");	//A tobě se to nezdá, jako příliš krutý trest za jeho čin?
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_13");	//No jestli se tak strachuješ o jeho osud, mohu Osairovi předhodit tebe. A pak...
-	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_14");	//Dobře, dobře...(rozčíleně) Nemusíš dál pokračovat. 
+	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_14");	//Dobře, dobře... (rozčíleně) Nemusíš dál pokračovat. 
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_15");	//Dobrá, vezmu si to na svědomí, jelikož náš úkol je mnohem důležitější.
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_16");	//Bude to pro nás snžší, když si Osair bude myslet, že zabil organizátora vzpoury.
 	BetrayFound = TRUE;
@@ -199,7 +199,7 @@ func void dia_SEK_169_SLAVEOBSSEK_RebelsTrust_Done_info()
 	B_GivePlayerXP(300);
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_Done_01_01");	//Tady jsou tři svazky zbraní.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_Done_01_02");	//Ticho, ticho...(šeptem) podávej rychle.
+	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_Done_01_02");	//Ticho, ticho... (šeptem) podávej rychle.
 	B_GiveInvItems(other,self,ItSe_Weapon_Sack,3);
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_RebelsTrust_Done_01_03");	//Schovám to na bezpečném místě dokud nebudem připravení.
 	AI_PlayAni(self,"T_SEARCH");

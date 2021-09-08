@@ -329,7 +329,7 @@ func void dia_gornakosh_testok_info()
 	AI_Output(other,self,"DIA_GorNaKosh_TestOk_01_00");	//Získal jsem to kladivo!
 	B_GiveInvItems(other,self,itmi_taracothammer,1);
 	Npc_RemoveInvItems(self,itmi_taracothammer,Npc_HasItems(self,itmi_taracothammer));
-	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_02");	//Nemožné! To... (udiveně)... To je skutečně Tarakotovo kladivo!
+	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_02");	//Nemožné! To... (udiveně) To je skutečně Tarakotovo kladivo!
 	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_03");	//Excelentí práce! Abych řekl pravdu, nemyslel jsem si, že se ti to povede.
 	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_06");	//Prošel jsi mou zkouškou a dokázal svou sílu a vytrvalost. Zasloužíš si velkou úctu!
 	AI_Output(self,other,"DIA_GorNaKosh_TestOk_01_07");	//Kromě toho jsi poskytl neocenitelné služby Bratrstvu.

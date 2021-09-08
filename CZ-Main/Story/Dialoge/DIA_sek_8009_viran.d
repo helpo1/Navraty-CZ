@@ -79,7 +79,7 @@ func void dia_viran_magicsymbols_info()
 
 	if(VIRANFIRSTTALKSYMBOLS == FALSE)
 	{
-		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_01");	//(Podrážděně) Co chceš? Mluv rychle nemám čas.
+		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_01");	//(podrážděně) Co chceš? Mluv rychle nemám čas.
 		AI_Output(other,self,"DIA_Viran_MagicSymbols_01_02");	//Orun mi řekl, že mi můžeš vytetovat magické symboly na tělo.
 		AI_Output(other,self,"DIA_Viran_MagicSymbols_01_03");	//Jako jeden z členů Bratrstva už můžu symboly nosit.
 		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_04");	//A tohle to je ta prosba. Samozřejmě ti pomůžu. Nebude to trvat ani moc času.
@@ -88,9 +88,9 @@ func void dia_viran_magicsymbols_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_06");	//(Mrzutě) Co zase chceš?
+		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_06");	//(mrzutě) Co zase chceš?
 		AI_Output(other,self,"DIA_Viran_MagicSymbols_01_07");	//Nakonec jsem se rozhodl si symboly nechat vytetovat. Pomůžeš mi?
-		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_08");	//Dobře... (pochybovačně)Jseš si opravdu jistý?
+		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_08");	//Dobře... (pochybovačně) Jseš si opravdu jistý?
 	};
 	Info_ClearChoices(dia_viran_magicsymbols);
 	Info_AddChoice(dia_viran_magicsymbols,"Ano,samozřejmě!",dia_viran_magicsymbols_yes);
@@ -139,7 +139,7 @@ func int DIA_Viran_Bold_condition()
 func void DIA_Viran_Bold_info()
 {
 	AI_Output(other,self,"DIA_Viran_Bold_01_00");	//Vyhol mě na pleš.
-	AI_Output(self,other,"DIA_Viran_MagicSymbols_01_08");	//Dobře...(překvapeně) Jseš si tím jistý?
+	AI_Output(self,other,"DIA_Viran_MagicSymbols_01_08");	//Dobře... (překvapeně) Jseš si tím jistý?
 	Info_ClearChoices(DIA_Viran_Bold);
 	Info_AddChoice(DIA_Viran_Bold,"Jo, dělej!",DIA_Viran_Bold_Yes);
 	Info_AddChoice(DIA_Viran_Bold,"Ne, to není pro mě.",DIA_Viran_Bold_No);
@@ -252,7 +252,7 @@ func int dia_viran_howthings_condition()
 func void dia_viran_howthings_info()
 {
 	AI_Output(other,self,"DIA_Viran_HowThings_01_00");	//A jak jde příprava obrany?
-	AI_Output(self,other,"DIA_Viran_HowThings_01_01");	//Šla by líp kdybys mě nezdržoval od práce! (Naštvaně)
+	AI_Output(self,other,"DIA_Viran_HowThings_01_01");	//Šla by líp kdybys mě nezdržoval od práce! (naštvaně)
 };
 
 
@@ -346,10 +346,10 @@ func void dia_viran_bringsteel_info()
 	if((countsteel >= 1) && (countsteel <= 3))
 	{
 		B_GiveInvItems(other,self,ItMiSwordraw,countsteel);
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_02");	//(zklamaně)To je všechno?
+		AI_Output(self,other,"DIA_Viran_BringSteel_01_02");	//(zklamaně) To je všechno?
 		AI_Output(self,other,"DIA_Viran_BringSteel_01_03");	//To ale nebude stačit ani na pořádný meč!
 		AI_Output(other,self,"DIA_Viran_BringSteel_01_04");	//Co má odměna?
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_05");	//Ach ano tvoje odměna... (Zlomyslně)
+		AI_Output(self,other,"DIA_Viran_BringSteel_01_05");	//Ach ano tvoje odměna... (zlomyslně)
 		AI_Output(self,other,"DIA_Viran_BringSteel_01_06");	//Tady, víc nezasloužíš!
 		if(countsteel == 1)
 		{
@@ -368,7 +368,7 @@ func void dia_viran_bringsteel_info()
 		AI_Output(self,other,"DIA_Viran_BringSteel_01_07");	//To není špatné ale upřímně jsem čekal více...
 		AI_Output(self,other,"DIA_Viran_BringSteel_01_08");	//Ale lepší něco než nic...
 		AI_Output(other,self,"DIA_Viran_BringSteel_01_09");	//Co má odměna?
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_10");	//Ach ano tvoje odměna... (Povzdech)
+		AI_Output(self,other,"DIA_Viran_BringSteel_01_10");	//Ach ano tvoje odměna... (povzdech)
 		AI_Output(self,other,"DIA_Viran_BringSteel_01_11");	//Tady, víc nezasloužíš!
 		B_GiveInvItems(self,other,ItMw_Schwert,1);
 	}
@@ -397,7 +397,7 @@ func void dia_viran_bringsteel_info()
 	{
 		B_GivePlayerXP(1000);
 		B_GiveInvItems(other,self,ItMiSwordraw,countsteel);
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_22");	//Já... nevěřím svým očím!(Překvapeně)
+		AI_Output(self,other,"DIA_Viran_BringSteel_01_22");	//Já... nevěřím svým očím! (překvapeně)
 		AI_Output(self,other,"DIA_Viran_BringSteel_01_23");	//To je mnohem víc než v kolik jsem mohl kdy doufat!
 		AI_Output(other,self,"DIA_Viran_BringSteel_01_24");	//Mám naději, že tomu bude odpovídat i má odměna?
 		AI_Output(self,other,"DIA_Viran_BringSteel_01_25");	//Samozřejmě! Hned ti vyrovnám náklady. A ještě něco přihodím!

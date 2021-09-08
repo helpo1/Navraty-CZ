@@ -782,7 +782,7 @@ func void DIA_Babo_Kap3_Unhappy_Info()
 func void DIA_Babo_Kap3_Unhappy_Lament()
 {
 	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_Lament_15_00");	//Tak přestaň fňukat.
-	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_Lament_03_01");	//Já... (strach)... Neříkej to mágům.
+	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_Lament_03_01");	//Já... (strach) Neříkej to mágům.
 	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_Lament_03_02");	//Nechci být potrestán.
 	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_Lament_15_03");	//Budu o tom přemýšlet.
 	Info_ClearChoices(DIA_Babo_Kap3_Unhappy);

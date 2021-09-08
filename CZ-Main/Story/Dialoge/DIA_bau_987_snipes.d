@@ -104,7 +104,7 @@ func void dia_snipes_hallo_answer4()
 	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_17");	//A co ta ruda?
 	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_18");	//Hmm... To Viper ti o ní řekl?
 	AI_Output(other,self,"DIA_Snipes_HALLO_Answer4_01_19");	//No, kdo jiný! A taky mluvil o tom, jak jste unikli smrti, když se Starý důl zavalil.
-	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_20");	//Hmm... Hm... (zamyšleně)... Abych byl upřímný, taky bych rád věděl, kde ta ruda je!
+	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_20");	//Hmm... Hm... (zamyšleně) Abych byl upřímný, taky bych rád věděl, kde ta ruda je!
 	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_22");	//Jak říkám. Ve skutečnosti vím o té rudě prakticky tolik, kolik ví i Viper.
 	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_24");	//To bylo tak, Viper chtěl sledovat, jestli nás někdo nepronásleduje - já s Alephem jsme šli dál.
 	AI_Output(self,other,"DIA_Snipes_HALLO_Answer4_01_2A");	//O něco později jsme narazili na jednu jeskyni a shodli jsme se, že by to bylo dobré místo, kde schovat naši rudu.
@@ -399,7 +399,7 @@ func void dia_snipes_learnabouterzhunt_ERZWORK()
 				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_03");	//Pak začnete zpracovávat rudnu žílu.
 				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_04");	//Není třeba trafiť na okraj žíly, ani přesně do středu... Stačí jeden silný úder a pak poněkud slabší.
 				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_05");	//Takto narušíš strukturu a dalším úderom určitě nějaký kus rudy získaš.
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_06");	//A to opakuješ znovu a znovu - ak sa nudíš. (Směje se)
+				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_06");	//A to opakuješ znovu a znovu - ak sa nudíš. (směje se)
 				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_07");	//To je hlavní věc, kterou potřebujete vědět o těžbě rudy.
 				AI_Output(other,self,"DIA_SNIPES_LearnAboutErzHunt_01_08");	//Dík!
 				GRIMESTEACHMOREORE = TRUE;

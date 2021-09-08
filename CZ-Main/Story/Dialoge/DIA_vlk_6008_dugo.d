@@ -39,7 +39,7 @@ func int dia_dugo_hello_condition()
 
 func void dia_dugo_hello_info()
 {
-	AI_Output(self,other,"DIA_Dugo_Hello_01_00");	//Nevěřím vlastním očím! Odkud...? (překvapeně)... Jak ses sem dostal?!
+	AI_Output(self,other,"DIA_Dugo_Hello_01_00");	//Nevěřím vlastním očím! Odkud...? (překvapeně) Jak ses sem dostal?!
 	AI_Output(other,self,"DIA_Dugo_Hello_01_01");	//Prošel jsem skrz portál nad pyramidou. Proč tě to tak udivuje?
 	AI_Output(self,other,"DIA_Dugo_Hello_01_03");	//Za celý čas jsi první, co se zatoulal do těchhle bohem zapomenutých končin...
 };
@@ -100,7 +100,7 @@ func void dia_dugo_hello_three_info()
 {
 	AI_Output(other,self,"DIA_Dugo_Hello_Three_01_15");	//Řekni mi o tomhle údolí.
 	AI_Output(self,other,"DIA_Dugo_Hello_Three_01_00");	//Néže by toho bylo mnoho co říct...
-	AI_Output(self,other,"DIA_Dugo_Hello_Three_01_01");	//(povzdechne si)... Kdysi dávno bylo jedno krásné se zelenými loukami a zelenými lesy pod krásnými horami.
+	AI_Output(self,other,"DIA_Dugo_Hello_Three_01_01");	//(povzdechne si) Kdysi dávno bylo jedno krásné se zelenými loukami a zelenými lesy pod krásnými horami.
 	AI_Output(self,other,"DIA_Dugo_Hello_Three_01_02");	//Teď už zbyly jenom vzpomínky.
 	AI_Output(self,other,"DIA_Dugo_Hello_Three_01_03");	//Zůstala jenom spálená zem pokrytá sazí. Všechno je poznačené bolestí a strachem.
 	AI_Output(self,other,"DIA_Dugo_Hello_Three_01_04");	//Věř mi, nic kromě smrti tu nenajdeš.

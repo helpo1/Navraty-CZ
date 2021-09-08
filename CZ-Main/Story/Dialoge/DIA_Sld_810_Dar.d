@@ -59,7 +59,7 @@ func void DIA_Dar_Hallo_Ja()
 	AI_Output(other,self,"DIA_Dar_Hallo_Ja_15_02");	//Kde jsi tenhle matroš sehnal?
 	CreateInvItem(self,ItMi_Joint);
 	B_UseItem(self,ItMi_Joint);
-	AI_Output(self,other,"DIA_Dar_Hallo_Ja_03_03");	//Mám své zdroje...(kření se)
+	AI_Output(self,other,"DIA_Dar_Hallo_Ja_03_03");	//Mám své zdroje... (kření se)
 	Info_ClearChoices(DIA_Dar_Hallo);
 };
 
@@ -155,7 +155,7 @@ func int DIA_Dar_DuDieb_Condition()
 func void DIA_Dar_DuDieb_Info()
 {
 	AI_Output(other,self,"DIA_Dar_DuDieb_15_00");	//Cipher mi řekl, že mu někdo ukradnul jeho balíček trávy.
-	AI_Output(self,other,"DIA_Dar_DuDieb_03_01");	//...(směje se)
+	AI_Output(self,other,"DIA_Dar_DuDieb_03_01");	//... (směje se)
 	AI_Output(other,self,"DIA_Dar_DuDieb_15_02");	//Nevíš o tom něco?
 	AI_Output(self,other,"DIA_Dar_DuDieb_03_03");	//(velmi krátce) Ne.
 	Dar_Verdacht = TRUE;

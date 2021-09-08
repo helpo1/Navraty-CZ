@@ -47,7 +47,7 @@ func void dia_vlk_6150_ortego_hello_info()
 	AI_Output(self,other,"DIA_VLK_6150_Ortego_Hello_01_02");	//Na tebe... Na koho jiného? I když jsem si tě představoval trochu jinak.
 	AI_Output(self,other,"DIA_VLK_6150_Ortego_Hello_01_03");	//Ale lepší otázka - donesl jsi moje peníze?
 	AI_Output(other,self,"DIA_VLK_6150_Ortego_Hello_01_04");	//Jaké peníze?
-	AI_Output(self,other,"DIA_VLK_6150_Ortego_Hello_01_05");	//Nerozumíš...(naštvaně) Máš mě za idiota?
+	AI_Output(self,other,"DIA_VLK_6150_Ortego_Hello_01_05");	//Nerozumíš... (naštvaně) Máš mě za idiota?
 	AI_Output(self,other,"DIA_VLK_6150_Ortego_Hello_01_06");	//Ty peníze, cos mi slíbil, za vraždu toho starého ubohého alchymisty.
 	AI_Output(self,other,"DIA_VLK_6150_Ortego_Hello_01_07");	//(směje se) Ten ubožák nestihl ani pípnout, jak rychle byl mrtvý!
 	AI_Output(self,other,"DIA_VLK_6150_Ortego_Hello_01_08");	//A teď čekám na svoje zlato, které jsi mi slíbil v dopise.

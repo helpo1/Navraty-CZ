@@ -290,7 +290,7 @@ func void dia_xor_12205_terinaks_battlewin_info()
 	AI_Output(other,self,"DIA_XOR_12205_Terinaks_BattleWin_01_00");	//Vyhrál jsem.
 	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_01");	//Dobrá, je vidět, že sis z mých lekcí něco odnesl.
 	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_03");	//Porazit Asgarda v čestném boji může jen Asgard, takže jsi dokázal, že jsi hoden být jedním z nás!
-	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_05");	//Není nutné děkovat (smích)! Zasloužil sis to.
+	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_05");	//Není nutné děkovat! (smích) Zasloužil sis to.
 	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_06");	//Jako výraz uznání přijmi tento meč, meč Asgarda!
 	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_07");	//Tuto zbraň může užívat jen člen našeho svatého Kruhu.
 	AI_Output(self,other,"DIA_XOR_12205_Terinaks_BattleWin_01_08");	//Stane se tvou součástí a bude představovat moudrost Tvůrců ve světě!

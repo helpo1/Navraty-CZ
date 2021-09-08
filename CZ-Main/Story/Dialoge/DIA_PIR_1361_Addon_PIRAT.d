@@ -111,7 +111,7 @@ func void DIA_Addon_SawPirate_ComeOn_Info()
 	}
 	else if(!Npc_IsDead(HammerPirate) && (SawPirate_ComeOn_Once == FALSE))
 	{
-		AI_Output(self,other,"DIA_Addon_SawPirate_ComeOn_09_02");	//(Pro sebe) Proč se nezeptal ostatních...
+		AI_Output(self,other,"DIA_Addon_SawPirate_ComeOn_09_02");	//(pro sebe) Proč se nezeptal ostatních...
 		SawPirate_ComeOn_Once = TRUE;
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"FOLLOW");

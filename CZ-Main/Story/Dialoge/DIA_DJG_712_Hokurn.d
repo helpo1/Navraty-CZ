@@ -890,7 +890,7 @@ func void DIA_Hokurn_NW_PashalQuest_Info()
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_03");   //Je to smutný obraz, bohužel a nezmění ze dne na den.
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_04");   //Zajímavé věci hledej za hranicema našeho chlívku, tady nic nenajdeš.
    AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_05");   //A ty víš kde mám hledat?
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_06");   //(Sarkasticky) No, jak jsem ti řek. Vím, že nic nevím, ale něco jsem slyšel.
+   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_06");   //(sarkasticky) No, jak jsem ti řek. Vím, že nic nevím, ale něco jsem slyšel.
    AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_07");   //Slyšel a co?
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_08");   //No... (zaváhal) Je to docela starý příběh. A já nevím - jestli je to pravda, nebo ne.
    AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_09");   //Rád si to poslechnu.
@@ -907,7 +907,7 @@ func void DIA_Hokurn_NW_PashalQuest_Info()
    AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_20");   //Ano, neobyčejný příběh. A jak se jmenoval ten vypravěč?
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_21");   //Nevím jak se jmenoval, akorát si pamatuju,že byl pořád zhulenej. 
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_22");   //A když byl celej zahalenej v kouřu, začal mlátit hlavou o zeď, jako by jí chtěl prorazit.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_23");   //Ano, byl to zábavnej chlapec...(zasměje se)
+   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_23");   //Ano, byl to zábavnej chlapec... (zasměje se)
    AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_24");   //A kde je teď, nevíš?
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_25");   //Nemám tušení. Od té doby se už u nás v táboře neobjevil. 
    AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_26");   //No, díky za příběh.
@@ -1021,9 +1021,9 @@ func void DIA_SEK_4567_Unicorn_HasSmoke_info()
 {
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HasSmoke_01_00");   //U mě se povaluje spousta trávy z bažin. Máš zájem?
    AI_PlayAni(self,"T_SEARCH");
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_01");   //Hmm...(pokašlává) S tím jsi měl začít! Máš jí hodně?
+   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_01");   //Hmm... (pokašlává) S tím jsi měl začít! Máš jí hodně?
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HasSmoke_01_02");   //Nu, ne tak docela.
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_03");   //Dobře, to nevadí...(nervózně) Vemu si všechnu! V poslední době je těžké jí zde sehnat.
+   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_03");   //Dobře, to nevadí... (nervózně) Vemu si všechnu! V poslední době je těžké jí zde sehnat.
    B_GiveInvItems(other,self,ItMi_Joint,Npc_HasItems(other,ItMi_Joint));
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HasSmoke_01_04");   //Vážně, nevydává Talas novou dávku každý den?
    AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_05");   //Vydává, ale bohužel to pro mně není dost. Pořád potřebuju kouřit.
@@ -1055,14 +1055,14 @@ func void DIA_SEK_4567_Unicorn_HeyYou_info()
 {
    B_GivePlayerXP(200);
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_00");   //Hej, ty nejseš te týpek, co nabízel trávu v Novém táboře?
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_01");   //No, ano...(pokašlává) To bylo něco! Nicméně, dlouho jsem tam nepobyl.
+   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_01");   //No, ano... (pokašlává) To bylo něco! Nicméně, dlouho jsem tam nepobyl.
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_02");   //Proč?
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_03");   //No...(provinile) Vykouřil jsem všechnu trávu, co jsem dostal k prodeji.
+   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_03");   //No... (provinile) Vykouřil jsem všechnu trávu, co jsem dostal k prodeji.
    AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_04");   //Proto mě Baal Isidro a Kagan poslali zpátky do našeho tábora. 
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_05");   //No na tom nezáleží. Mě zajímá něco jiného.
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_06");   //Někteří lidé si pamatují, že jsi jim vyprávěl o podivném magickém artefaktu.
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_07");   //Údajně může být použit k ovládnutí celého světa.
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_08");   //Hmm...(zmateně) Opravdu?! No, možná něco takového proběhlo... co neuděláš pro dobrej špek trávy.
+   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_08");   //Hmm... (zmateně) Opravdu?! No, možná něco takového proběhlo... co neuděláš pro dobrej špek trávy.
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_09");   //Vzpomínáš si na to?
    AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_10");   //Skoro ne. Pamatuju si jen příběh, který jsem sám slyšel.
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_11");   //Kde?
@@ -1156,7 +1156,7 @@ func void DIA_BDT_4568_KINJARTS_Quest_info()
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_01_06");   //Opravdu, možná mě to sám povíš?
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_07");   //(ušklíbá se) No, jestli chceš slyšet o starých časech, tak bys měl vědět, že všechno něco stojí.
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_01_08"); //Rudu, jako obvykle?
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_09"); //Jak jsi to uhod...(smějě se) Ale neboj, nebudu si účtovat přemrštěné ceny, jako místní obchodníci.
+   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_09"); //Jak jsi to uhod... (smějě se) Ale neboj, nebudu si účtovat přemrštěné ceny, jako místní obchodníci.
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_10"); //Tak poslouchej, tři kusy rudy mě budou bohatě stačit.
    Info_ClearChoices(DIA_BDT_4568_KINJARTS_Quest);
    Info_AddChoice(DIA_BDT_4568_KINJARTS_Quest,"Popřemýšlím nad tvým návrhem.",DIA_BDT_4568_KINJARTS_Quest_Back);
@@ -1438,7 +1438,7 @@ func void DIA_KDF_4569_AlexOne_HELLO_info()
 {
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_HELLO_01_00");   //Hej! Co tady děláš?
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_HELLO_01_01");   //Chtěl jsem se tě zeptat na stejnou otázku.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_HELLO_01_02");   //(Pohrdavě) Moje práce se tě netýká.
+   AI_Output(self,other,"DIA_KDF_4569_AlexOne_HELLO_01_02");   //(pohrdavě) Moje práce se tě netýká.
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_HELLO_01_03");   //Je příliš důležitá, než abych o ni vykládal prvnímu koho potkám!
 };
 
@@ -1476,7 +1476,7 @@ func void DIA_KDF_4569_AlexOne_WhoYou_info()
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_11");   //Mágové Ohně byli proti a tak je nechal jednoduše zabít.
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_12");   //O Innos... Je to pravda?
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_13");   //O tom nepochybuj. Nyní v hradě Starého tábora sídlí paladinové, ale hrad je obléhán skřety.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_14");   //Jak je to možné?! (Odevzdaně) pravda, nebyl jsem ve Starém táboře už několik let.
+   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_14");   //Jak je to možné?! (odevzdaně) pravda, nebyl jsem ve Starém táboře už několik let.
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_15");   //Za tu dobu se mohlo hodně změnit! Ale co jsem slyšel od tebe, mě zlomilo srdce.
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_16");   //Drž se příteli! To není ta nejhorší věc, co se v poslední době udála.
 };
@@ -1545,7 +1545,7 @@ func void DIA_KDF_4569_AlexOne_WhatDeal_info()
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_10");   //Samotný artefakt, se mě nalézt nepodařilo.
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_11");   //Ale jsem si jistý, že jsem našel něco, co mě k němu může dovést.
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_12");   //A co je to?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_13");   //Na druhé straně jezera pod námi se nachází opuštěná krypta...(vážně)
+   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_13");   //Na druhé straně jezera pod námi se nachází opuštěná krypta... (vážně)
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_14");   //A lze předpokládat, že právě tam se nachází ten artefakt!
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_15");   //Nebo aspoň něco, co nám pomůže určit jeho přesnou polohu.
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_16");   //Co se tam může nacházet?
@@ -1604,7 +1604,7 @@ func void DIA_VLK_4570_Avabul_HELLO_info()
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_03");   //Ale věř mi, nebudeš ji potřebovat! Díváš se smrti do tváře, ty ubohý červe...
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_04");   //Hej ne tak rychle, krasavice! Odpověz alespoň na jednu mojí otázku.
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_05");   //Co?! A tobě ještě zbylo tolik drzosti, žádat po mě odpovědi?
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_06");   //I když...(zamyšleně) Proč ne?
+   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_06");   //I když... (zamyšleně) Proč ne?
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_07");   //Aspoň budu mít to potěšení vidět jak škemráš o svůj ubohý život.
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_08");   //Mýlíš se, chtěl jsem se zeptat na něco jiného.
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_09");   //Opravdu?! A na co?
@@ -1613,7 +1613,7 @@ func void DIA_VLK_4570_Avabul_HELLO_info()
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_12");   //Ty, ač jsi nekromant a myslíš si že jsi velký a mocný mág.
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_13");   //Doufáš, že ti povím kde ho máš hledat!
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_14");   //Něco na ten způsob.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_15");   //Velmi naivní...(směje se) Řekni mi, proč bys ho potřeboval, smrtelníku?
+   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_15");   //Velmi naivní... (směje se) Řekni mi, proč bys ho potřeboval, smrtelníku?
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_16");   //Opravdu si myslíš, že dokážeš zvládnout moc tohoto předmětu?
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_17");   //No, to sám nevím. 
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_18");   //Nevíš co?!
@@ -1948,7 +1948,7 @@ func void DIA_DMT_4572_Trazege_HELLO_info()
 	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_04");   //Prošel jsem jeho zkouškou a dokázal, že jsem toho hoden.
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_05");   //Hoden?! A co jsi udělal, hrdino?
 	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_06");   //Zabil jsem Beliarova vyvoleného! Je to málo?
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_07");   //Hmmm...(nedbale) Po pravdě řečeno, není to zas tak působivé.
+	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_07");   //Hmmm... (nedbale) Po pravdě řečeno, není to zas tak působivé.
 	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_08");   //Proč?
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_09");   //Už jsem si zvykl na to, že jeho vyvolení nežíjí dlouho na tomto světě.
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_10");   //Vždycky se najde někdo, kdo je trvale pošle zpět ke svému pánovi do říše temnoty!
@@ -2384,7 +2384,7 @@ func int DIA_KDW_4573_Oddler_WorkDo_condition()
 func void DIA_KDW_4573_Oddler_WorkDo_info()
 {
 	AI_Output(other,self,"DIA_KDW_4573_Oddler_WorkDo_01_00");   //Mohu ti sehnat nějaké nástroje.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_WorkDo_01_01");   //Opravdu? (překvapeně): No, tak to asi vaši pomoc neodmítnu.
+	AI_Output(self,other,"DIA_KDW_4573_Oddler_WorkDo_01_01");   //Opravdu? (překvapeně) No, tak to asi vaši pomoc neodmítnu.
 	AI_Output(self,other,"DIA_KDW_4573_Oddler_WorkDo_01_02");   //Potřebuji kladivo, pilu a nový krumpáč. Abych opracoval kameny.
 	AI_Output(self,other,"DIA_KDW_4573_Oddler_WorkDo_01_03");   //Pokud se ti podaří tohle všechno získat, byl bych ti velmi vděčný.
 	AI_Output(other,self,"DIA_KDW_4573_Oddler_WorkDo_01_04");   //Souhlasím.
@@ -2506,11 +2506,11 @@ func int DIA_VLK_5570_Avabul_HELLO_condition()
 
 func void DIA_VLK_5570_Avabul_HELLO_info()
 {
-	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_00");   //Smrtelníku...(chmurně) máš artefakt, který hledá můj pán
+	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_00");   //Smrtelníku... (chmurně) máš artefakt, který hledá můj pán
 	AI_Output(other,self,"DIA_VLK_5570_Avabul_HELLO_01_01");   //Obávám se, že tě zklamu.
 	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_02");   //Co jsi říkal?!
 	AI_Output(other,self,"DIA_VLK_5570_Avabul_HELLO_01_03");   //Co jsi ohluchla? Řekl jsem, že ho nemám. Jeho součesný majitel se s ním nechtěl rozloučit.
-	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_04");   //To mě nezajímá...(povíšeně) Měl jsi ho přinést byla to součást naší dohody...
+	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_04");   //To mě nezajímá... (povýšeně) Měl jsi ho přinést byla to součást naší dohody...
 	AI_Output(other,self,"DIA_VLK_5570_Avabul_HELLO_01_05");   //Tak to si ty a tvůj hostitel budete muset nechat zajít chuť. Artefakt zůstane uvnitř tohoto chrámu, takže zapomeň na naší dohodu.
 	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_06");   //(pro sebe) Jak se opovažuješ? Bídný červe! Nyní zemřeš pro svou drzost.
 	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_07");   //A až se to stane, budu si hrát s tvojí duší, jako s loutkou.

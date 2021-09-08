@@ -287,7 +287,7 @@ func void dia_fighter_nach_djg_nw_escape_info()
 		AI_Output(self,other,"DIA_Fighter_nach_DJG_NW_Escape_01_04");	//Jak pro mě, tak pro tebe je to možné! Každopádně ne všichni to dokázali.
 		if((COUNTCAPTURED > 0) && (COUNTKILLERS == 0))
 		{
-			AI_Output(self,other,"DIA_Fighter_nach_DJG_NW_Escape_01_05");	//Mnoho z našich padlo do zajetí.(smutně) Co s nimi teď skřeti udělají to ví jen Innos!
+			AI_Output(self,other,"DIA_Fighter_nach_DJG_NW_Escape_01_05");	//Mnoho z našich padlo do zajetí. (smutně) Co s nimi teď skřeti udělají to ví jen Innos!
 			B_LogEntry(TOPIC_HELPCREW,"Na Onarově farmě jsem potkal Gorna zdravého a v pořádku, to jsou dobré zprávy!");
 			Log_AddEntry(TOPIC_HELPCREW,"Pravdy nebylo dosaženo bez následků! Řekl mi, že hodně mužů bylo zajato skřety při pokusu prorazit přes město. Doufám, že jsou stále naživu!");
 		}
@@ -541,7 +541,7 @@ func int dia_fighter_nach_djg_nw_whatdonow_condition()
 func void dia_fighter_nach_djg_nw_whatdonow_info()
 {
 	AI_Output(other,self,"DIA_Fighter_nach_DJG_NW_WhatDoNow_01_00");	//Jaké jsou plány?
-	AI_Output(self,other,"DIA_Fighter_nach_DJG_NW_WhatDoNow_01_01");	//Potom všem... (jistě)stejně nemám místo, kam bych šel.
+	AI_Output(self,other,"DIA_Fighter_nach_DJG_NW_WhatDoNow_01_01");	//Potom všem... (jistě) Stejně nemám místo, kam bych šel.
 };
 
 
@@ -568,7 +568,7 @@ func void dia_fighter_nach_djg_nw_travelonbigland_info()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Fighter_nach_DJG_NW_TravelOnBigLand_01_00");	//Pluji na pevninu. Jdeš se mnou?
-	AI_Output(self,other,"DIA_Fighter_nach_DJG_NW_TravelOnBigLand_01_01");	//Samozřejmě (směje se)a už se neptej!
+	AI_Output(self,other,"DIA_Fighter_nach_DJG_NW_TravelOnBigLand_01_01");	//(směje se) Samozřejmě... a už se neptej!
 	AI_Output(other,self,"DIA_Fighter_nach_DJG_NW_TravelOnBigLand_01_02");	//Tvrdí se, že je to tam teď zaplavené skřety.
 	AI_Output(self,other,"DIA_Fighter_nach_DJG_NW_TravelOnBigLand_01_03");	//A co je pro mě rozhodující... že tady bych se stejně jen nudil!
 	AI_Output(other,self,"DIA_Fighter_nach_DJG_NW_TravelOnBigLand_01_04");	//Dobře, tak pojď na loď.

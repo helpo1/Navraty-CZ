@@ -645,7 +645,7 @@ func void dia_dmt_12150_kelios_giveeligorrune_info()
 	AI_Output(self,other,"DIA_DMT_12150_Kelios_GiveEligorRune_01_06");	//První věc ohledně elementů, které bys měl porozumět je to, že každý z nich je základem veškerých pevných látek na zemi.
 	AI_Output(self,other,"DIA_DMT_12150_Kelios_GiveEligorRune_01_07");	//A tyto bytosti jsou zcela podřízeny svým tvůrcům. My Strážci jsme taky předmětem této síly!
 	AI_Output(other,self,"DIA_DMT_12150_Kelios_GiveEligorRune_01_08");	//A mohu ji zvládnout?
-	AI_Output(self,other,"DIA_DMT_12150_Kelios_GiveEligorRune_01_09");	//No ano...(zamyšleně)... Pravda o těchto tvorech je... Dobrá...(potichu)... vezmi si runu, a nevyzrazuj o nás NIC...
+	AI_Output(self,other,"DIA_DMT_12150_Kelios_GiveEligorRune_01_09");	//No ano... (zamyšleně) Pravda o těchto tvorech je... Dobrá... (potichu) Vezmi si runu, a nevyzrazuj o nás NIC...
 	CreateInvItems(self,itru_eligordemons,1);
 	B_GiveInvItems(self,other,itru_eligordemons,1);
 	AI_Output(other,self,"DIA_DMT_12150_Kelios_GiveEligorRune_01_10");	//Co je to za runu?!

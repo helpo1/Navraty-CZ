@@ -175,7 +175,7 @@ func void DIA_Addon_Nefarius_AncientRune_Done_Info()
 		AI_Output(other,self,"DIA_Addon_Nefarius_AncientRune_Done_01_02");	//Zdá se, že hledáš důkaz toho, že Stavitelé používali magické runy.
 		AI_Output(other,self,"DIA_Addon_Nefarius_AncientRune_Done_01_03");	//Našel jsem jednu z těchto run!
 		B_GiveInvItems(other,self,ItRu_SummonGuardian,1);
-		AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_Done_01_04");	//(Překvapeně) Neuvěřitelné! Kde jsi ji našel?
+		AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_Done_01_04");	//(překvapeně) Neuvěřitelné! Kde jsi ji našel?
 		AI_Output(other,self,"DIA_Addon_Nefarius_AncientRune_Done_01_05");	//V Adanově chrámu. Zdá se, že byla používána k vyvolání kamenných strážců.
 		AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_Done_01_06");	//Hmmm. (podívá se) S největší pravděpodobností.
 		AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_Done_01_07");	//A zdá se, že princip jejího použití je stejný jako run, které používáme my.
@@ -195,7 +195,7 @@ func void DIA_Addon_Nefarius_AncientRune_Done_Info()
 		AI_Output(other,self,"DIA_Addon_Nefarius_AncientRune_Done_01_13");	//Našel jsem jednu z těchto run!
 		B_GiveInvItems(other,self,ItMi_AncientRuneStone,1);
 		Npc_RemoveInvItems(self,ItMi_AncientRuneStone,1);
-		AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_Done_01_14");	//(Překvapeně) Neuvěřitelné! Kde jsi ji našel?
+		AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_Done_01_14");	//(překvapeně) Neuvěřitelné! Kde jsi ji našel?
 		AI_Output(other,self,"DIA_Addon_Nefarius_AncientRune_Done_01_15");	//V Adanově chrámu. Zdá se, že byla používána k vyvolání kamenných strážců.
 		AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_Done_01_16");	//Hmmm. (podívá se) S největší pravděpodobností. Nicméně, já v ní necítím teď žádnou magii.
 		AI_Output(other,self,"DIA_Addon_Nefarius_AncientRune_Done_01_17");	//Musel jsem použít magii runy pro své vlastní účely.
@@ -231,7 +231,7 @@ func void DIA_Addon_Nefarius_AncientRune_Ext_Info()
 	B_GivePlayerXP(250);
 	AI_Output(other,self,"DIA_Addon_Nefarius_AncientRune_Ext_01_00");	//Zůstal mě runový kámen Stavitelů.
 	AI_Output(other,self,"DIA_Addon_Nefarius_AncientRune_Ext_01_01");	//Avšak je zbaven kouzla. Potřebuješ ho?
-	AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_Ext_01_02");	//Můžeš ho dát mně. (Zamyšleně) Možná se může k něčemu hodit.
+	AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_Ext_01_02");	//Můžeš ho dát mně. (zamyšleně) Možná se může k něčemu hodit.
 	AI_Output(other,self,"DIA_Addon_Nefarius_AncientRune_Ext_01_03");	//Dobrá. Tady je.
 	B_GiveInvItems(other,self,ItMi_AncientRuneStone,1);
 	Npc_RemoveInvItems(self,ItMi_AncientRuneStone,1);

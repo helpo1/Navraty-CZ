@@ -784,7 +784,7 @@ func void DIA_Sagitta_HEALRANDOLPH_geld()
 func void DIA_Sagitta_HEALRANDOLPH_no()
 {
 	AI_Output(other,self,"DIA_Sagitta_HEALRANDOLPH_no_15_00");	//Pff. Za takové nesmysly utrácet nebudu.
-	AI_Output(self,other,"DIA_Sagitta_HEALRANDOLPH_no_17_01");	//(Smích) Nedal ti peníze, co? To je celý on!
+	AI_Output(self,other,"DIA_Sagitta_HEALRANDOLPH_no_17_01");	//(smích) Nedal ti peníze, co? To je celý on!
 	Info_ClearChoices(DIA_Sagitta_HEALRANDOLPH);
 };
 
@@ -985,7 +985,7 @@ func void dia_sagitta_claw_info()
 	AI_Output(self,other,"DIA_Sagitta_Claw_01_12");	//Ale říkáš že rána je vážná - bude potřebovat silný léčivý lektvar.
 	AI_Output(self,other,"DIA_Sagitta_Claw_01_13");	//Nemohu slíbit že to pomůže.
 	AI_Output(other,self,"DIA_Sagitta_Claw_01_14");	//Samozřejmě, dostanu tedy ten lektvar?
-	AI_Output(self,other,"DIA_Sagitta_Claw_01_15");	//Bohužel ho nemám (smutně). Ale můžu ho namíchat
+	AI_Output(self,other,"DIA_Sagitta_Claw_01_15");	//(smutně) Bohužel ho nemám. Ale můžu ho namíchat.
 	AI_Output(self,other,"DIA_Sagitta_Claw_01_16");	//Ovšem budu potřebovat správné ingredience.
 	AI_Output(other,self,"DIA_Sagitta_Claw_01_17");	//Jaké?
 	AI_Output(self,other,"DIA_Sagitta_Claw_01_18");	//Královský šťovík, lesní bobuli, dvě trávy z bažin a léčivý kořen.
@@ -1031,7 +1031,7 @@ func void dia_sagitta_clawdone_info()
 	AI_AlignToWP(self);
 	AI_LookAtNpc(other,self);
 	AI_UseMob(self,"LAB",1);
-	AI_Output(self,other,"DIA_Sagitta_ClawDone_01_04");	//...(mumlá si pro sebe)
+	AI_Output(self,other,"DIA_Sagitta_ClawDone_01_04");	//... (mumlá si pro sebe)
 	AI_UseMob(self,"LAB",-1);
 	AI_GotoNpc(self,hero);
 	AI_TurnToNPC(self,other);
@@ -1039,12 +1039,12 @@ func void dia_sagitta_clawdone_info()
 	AI_Output(self,other,"DIA_Sagitta_ClawDone_01_05");	//A je to. Lék je připraven.
 	B_GiveInvItems(self,other,itpo_sagittaclawpotion,1);
 	AI_Output(other,self,"DIA_Sagitta_ClawDone_01_06");	//A co teď?
-	AI_Output(self,other,"DIA_Sagitta_ClawDone_01_07");	//(Vážně) Teď mě poslouchej. 
+	AI_Output(self,other,"DIA_Sagitta_ClawDone_01_07");	//(vážně) Teď mě poslouchej. 
 	AI_Output(self,other,"DIA_Sagitta_ClawDone_01_08");	//Umyj rány Tlamě a poté použij tento lektvar.
 	AI_Output(other,self,"DIA_Sagitta_ClawDone_01_09");	//To je vše?
 	AI_Output(self,other,"DIA_Sagitta_ClawDone_01_10");	//Ano, to je vše. Vážně doufám, že to pomůže.
 	AI_Output(other,self,"DIA_Sagitta_ClawDone_01_11");	//Dobře, děkuju ti.
-	AI_Output(self,other,"DIA_Sagitta_ClawDone_01_12");	//(S úsměvem) Rádo se stalo.
+	AI_Output(self,other,"DIA_Sagitta_ClawDone_01_12");	//(s úsměvem) Rádo se stalo.
 	SAGITTAHELPSCLAW = TRUE;
 	B_LogEntry(TOPIC_RECOVERDOG,"Sagitta mi dala lék pro vlčici Tlamu. Nyní ho musím odnést do tábora lovců.");
 };

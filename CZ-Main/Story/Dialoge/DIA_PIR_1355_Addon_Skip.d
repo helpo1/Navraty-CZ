@@ -274,7 +274,7 @@ func int DIA_Addon_Skip_ArmorPrice_Condition()
 func void DIA_Addon_Skip_ArmorPrice_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Skip_ArmorPrice_15_00");	//Potřebuji zbroj banditů.
-	AI_Output(self,other,"DIA_Addon_Skip_ArmorPrice_08_01");	//Ty tam chceš jít? Asi si se úplně zbláznil!
+	AI_Output(self,other,"DIA_Addon_Skip_ArmorPrice_08_01");	//Ty tam chceš jít? Asi ses úplně zbláznil!
 	AI_Output(self,other,"DIA_Addon_Skip_ArmorPrice_08_02");	//Jakmile zjistí, že nejsi jeden z nich, je s tebou ámen!
 	AI_Output(other,self,"DIA_Addon_Skip_ArmorPrice_15_02");	//Nějaký nápad, kde mohu najít takovou zbroj?
 	AI_Output(self,other,"DIA_Addon_Skip_ArmorPrice_08_03");	//(povzdech) Ty si prostě nedáš říct, že? Dobrá. Měli jsme jedno.

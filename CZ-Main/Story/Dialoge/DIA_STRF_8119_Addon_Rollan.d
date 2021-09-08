@@ -68,7 +68,7 @@ func int DIA_STRF_8119_Addon_Rollan_Who_condition()
 func void DIA_STRF_8119_Addon_Rollan_Who_info()
 {
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_Who_01_00");	//Hledám tady jednoho paladina.
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Who_01_01");	//(Překvapeně) Paladina?
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Who_01_01");	//(překvapeně) Paladina?
 	AI_PlayAni(self,"T_SEARCH");
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Who_01_02");	//Na tvém místě bych byl s takovými slovy opatrný!
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_Who_01_03");	//Pokud skřeti něco takového uslyší, tak se zrovna zvláštní rituál konat nebude.
@@ -128,7 +128,7 @@ func void DIA_STRF_8119_Addon_Rollan_LowLevel_info()
 	AI_PlayAni(self,"T_SEARCH");
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_02");	//Jak vím, tak dolní část dolu skřeti uzavřeli.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_03");	//Nikdo tam už dlouho nepracuje.
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_04");	//Ale každý, kdo se něčím proviní, spustí výtahem dolů.
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_04");	//Ale každého, kdo se něčím proviní, spustí výtahem dolů.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_05");	//Jakmile se výtah vrátí zpět, už je prázdný.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_LowLevel_01_06");	//Pouze kaluže krve! Brrr...
 	AI_PlayAni(self,"T_SEARCH");
@@ -403,7 +403,7 @@ func void DIA_STRF_8119_Addon_Rollan_AboutMine_Escape()
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_07");	//Navíc, nemáme žádné zbraně. Pokud teda nečekáš, že na jejich sekery naběhneme s pěstmi.
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_08");	//Už se někdo pokusil o útěk?
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_09");	//Hmm... (zamyšleně) Vzpomínám si, že někdo se už o útěk pokoušel.
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_10");	//Ale to by jsi se měl zeptat spíše Ferda. On to tehdá viděl na vlastní oči.
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_10");	//Ale to bys se měl zeptat spíše Ferda. On to tehdá viděl na vlastní oči.
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_11");	//Dobře, promluvím si s ním.
 	MIS_EscapeMine = LOG_Running;
 	Log_CreateTopic(TOPIC_EscapeMine,LOG_MISSION);

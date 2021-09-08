@@ -124,13 +124,13 @@ func void DIA_Garvell_HelpPath_Info()
 	AI_Output(other,self,"DIA_Garvell_HelpPath_01_00");	//Co kdybych ti pomohl urychlit stavbu té lodě?
 	AI_Output(self,other,"DIA_Garvell_HelpPath_01_01");	//Nebránil bych se pomoci...
 	AI_Output(self,other,"DIA_Garvell_HelpPath_01_02");	//Například dvě nová kladiva a pila by mi fakt přišli vhod.
-	AI_Output(self,other,"DIA_Garvell_HelpPath_01_03");	//A ještě by se mi zišla smůla, kterou natíráme spoje lodě.
+	AI_Output(self,other,"DIA_Garvell_HelpPath_01_03");	//A ještě by se mi zišla pryskyřice, kterou natíráme spoje lodě.
 	AI_Output(self,other,"DIA_Garvell_HelpPath_01_04");	//Jestli mi to všechno seženeš, odměna tě nemine.
 	AI_Output(other,self,"DIA_Garvell_HelpPath_01_05");	//Ok, seženu ti to.
 	MIS_GarvellTools = LOG_Running;
 	Log_CreateTopic(TOPIC_GarvellTools,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_GarvellTools,LOG_Running);
-	B_LogEntry(TOPIC_GarvellTools,"Garvell chce nové nástroje - dvě kladiva a pilu. Taky by chtěl smůlu na spoje lodě.");
+	B_LogEntry(TOPIC_GarvellTools,"Garvell chce nové nástroje - dvě kladiva a pilu. Taky by chtěl pryskyřici na spoje lodě.");
 };
 
 instance DIA_Garvell_HelpPath_Done(C_Info)

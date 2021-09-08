@@ -219,7 +219,7 @@ func void DIA_Addon_Logan_Why_Info()
 	AI_Output(self,other,"DIA_Addon_Logan_Why_10_03");	//Mimochodem můžu ti ukázat, jak vyvrhnou zvířata.
 	AI_Output(self,other,"DIA_Addon_Logan_Why_10_04");	//Ale nemysli si, že tě Franco hned pošle do tábora jen proto, že jsme si tu trochu zablbli s močálovýma žralokama.
 	AI_Output(self,other,"DIA_Addon_Logan_Why_10_05");	//Jsou tady lidé, kteří čekají dost dlouho, aby se tam dostali.
-	AI_Output(self,other,"DIA_Addon_Logan_Why_10_06");	//A další, kdo je na řadě jsem já... (zavrčí)... tak se netrap...
+	AI_Output(self,other,"DIA_Addon_Logan_Why_10_06");	//A další, kdo je na řadě jsem já... (zavrčí) Tak se netrap...
 	Log_CreateTopic(Topic_Addon_BDT_Teacher,LOG_NOTE);
 	B_LogEntry(Topic_Addon_BDT_Teacher,"Logan mě může naučit stahování kůže a vydělávání drápů a zubů.");
 };

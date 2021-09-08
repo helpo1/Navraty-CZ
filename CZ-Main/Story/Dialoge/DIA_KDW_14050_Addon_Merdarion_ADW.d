@@ -158,11 +158,11 @@ func void DIA_Addon_Merdarion_ADW_PortalDone_Info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PortalDone_01_00");	//Měl jsi pravdu o tom portálu.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PortalDone_01_01");	//Opravdu... (se zájmem), a kam vede?
+	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PortalDone_01_01");	//Opravdu... (se zájmem) A kam vede?
 	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PortalDone_01_02");	//Podle všeho se to místo nazývalo plošina Pradávných.
 	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PortalDone_01_03");	//V zápiscích Stavitelů se praví, že se jedná o posvátné dědictví Adana.
 	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PortalDone_01_04");	//Tam on poprvé vstoupil do světa lidí a promluvil k nim.
-	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PortalDone_01_05");	//Ó bohovéi! (V úžasu) Nemůžu uvěřit! Je to... Je to prostě, neuvěřitelné.
+	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PortalDone_01_05");	//Ó bohovéi! (v úžasu) Nemůžu uvěřit! Je to... Je to prostě, neuvěřitelné.
 	AI_Output(other,self,"DIA_Addon_Merdarion_ADW_PortalDone_01_06");	//Tak se pojď sám, podívat na to místo.
 	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PortalDone_01_07");	//Moc rád bych se na to místo podíval, ale sužují mě jakési neblahé předtuchy. 
 	AI_Output(self,other,"DIA_Addon_Merdarion_ADW_PortalDone_01_08");	//Pokud Stavitelé toto místo skryli, pak možná, pak by naše přítomnost mohla způsobit nepředvídatelné následky.
@@ -480,13 +480,13 @@ func void DIA_Addon_Merdarion_AncientAltar_Info()
 	};
 
 	AI_Output(other,self,"DIA_Addon_Merdarion_AncientAltar_01_06");	//Saturas řekl, že s jejich pomocí je možné vrátit magii Pradávným oltářů.
-	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_07");	//(Zamyšleně) V tomto případě, je nebudeš potřebovat
+	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_07");	//(zamyšleně) V tomto případě, je nebudeš potřebovat
 	AI_Output(other,self,"DIA_Addon_Merdarion_AncientAltar_01_08");	//A z jakého důvodu?
 	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_09");	//Protože tyto ohniskové kameny, nejsou vhodné pro tyto účely.
 	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_10");	//S největší pravděpodobností, potřebuješ speciální krystaly, které samy v sobě ukládají magickou energii.
 	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_11");	//Ale takové jsem tady neviděl.
 	AI_Output(other,self,"DIA_Addon_Merdarion_AncientAltar_01_12");	//A kdybych ti našel takové krystaly, můžeš z nich udělat ohniskové kameny?
-	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_13");	//(Zamyšleně) Proč ne. Stačí jim dát správný tvar a připevnit do rámu.
+	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_13");	//(zamyšleně) Proč ne. Stačí jim dát správný tvar a připevnit do rámu.
 	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_14");	//Jelikož nestabilní krystalová struktura snadno zničí sama sebe!
 	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_15");	//Proto, když takové najdeš, přines mi je. 
 	AI_Output(self,other,"DIA_Addon_Merdarion_AncientAltar_01_16");	//A já ti s tím problémem pomůžu.
@@ -516,7 +516,7 @@ func void DIA_Addon_Merdarion_MakeUnitor_Info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_Addon_Merdarion_MakeUnitor_01_00");	//Mám pro tebe kus magického krystalu.
-	AI_Output(self,other,"DIA_Addon_Merdarion_MakeUnitor_01_01");	//Opravdu? (Překvapeně) Podívám se na něj.
+	AI_Output(self,other,"DIA_Addon_Merdarion_MakeUnitor_01_01");	//Opravdu? (překvapeně) Podívám se na něj.
 	AI_Output(other,self,"DIA_Addon_Merdarion_MakeUnitor_01_02");	//Tady je.
 	B_GiveInvItems(other,self,ItMi_UnSharp_MagicCrystal,1);
 	Npc_RemoveInvItems(self,ItMi_UnSharp_MagicCrystal,1);

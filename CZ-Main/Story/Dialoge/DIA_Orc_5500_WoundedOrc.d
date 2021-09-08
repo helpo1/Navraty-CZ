@@ -95,7 +95,7 @@ func void DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two()
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_02");	//No v žádném případě ti nemohu dovolit zůstat v Khorinisu, tak co mám s tebou dělat?
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_03");	//Ur-Karras neví.
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_04");	//Hmmm. Dovol mi aspoň podívat se na tvoje rány.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_05");	//Chrrrr...(lapá po dechu) Dobře, podívej, člověče.
+	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_05");	//Chrrrr... (lapá po dechu) Dobře, podívej, člověče.
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_06");	//Ano, to jsou vážná zranení. Vypadá to, žes byl pokousán nějakým hrozným tvorem.
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_07");	//Existuje nějaký způsob, který by ti pomohl vyléčit se?
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_08");	//Ur-Karras si myslí, že jen jeho bratři - mluvící s duchy, by mohly pomoci. Ale bratři být daleko v údolí...
@@ -145,7 +145,7 @@ func void DIA_Orc_5500_WoundedOrc_HaveCure_info()
 	B_GivePlayerXP(250);	
 	Npc_RemoveInvItems(other,ItSc_OrcHeal,1);
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_01");	//Zjistil jsem, jak tě postavit na nohy.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_02");	//Doufám, že říkáš pravdu...(plive krev) Ur-Karras cítí, že brzy zemře.
+	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_02");	//Doufám, že říkáš pravdu... (plive krev) Ur-Karras cítí, že brzy zemře.
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_03");	//Jen vydrž, skřete. Myslím, že ti to pomůže.
 	B_HeroUseFakeScroll();
 	AI_PlayAni(other,"T_PRACTICEMAGIC5");
@@ -160,7 +160,7 @@ func void DIA_Orc_5500_WoundedOrc_HaveCure_info()
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_10");	//Tak co? Myslím, že teď by ses měl cítit zcela v pořádku.
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_11");	//Ur-Karras se cítit velmi zdravě! (obdivně) Člověk musí být velký šaman, když mohl vyléčit Ur-Karras!
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_12");	//No, když chceš, můžeš mi tak říkat.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_13");	//Ur-Karras děkovat člověku...(s uznáním) On tohle nikdy neříkat, no nyní si vážit člověk.
+	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_13");	//Ur-Karras děkovat člověku... (s uznáním) On tohle nikdy neříkat, no nyní si vážit člověk.
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_14");	//Hej, nech si ty komplimenty! Teď, když jsi zpátky na nohách, můžeš opustit Khorinis.
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_15");	//A bude lepší, když to uděláš co nejdříve.
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_HaveCure_18_16");	//Člověk pomohl Ur-Karras, a on teď může jít ke svým bratřím v údolí...

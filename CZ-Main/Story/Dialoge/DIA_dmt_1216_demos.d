@@ -60,7 +60,7 @@ func void dmt_1216_demos_hello_test()
 	Wld_PlayEffect("FX_EarthQuake",self,self,0,0,0,FALSE);
 	Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
-	AI_Output(self,other,"DMT_1216_Demos_Hello_08");	//Dobře!(zdvořile) poslouchej pozorně.
+	AI_Output(self,other,"DMT_1216_Demos_Hello_08");	//Dobře! (zdvořile) poslouchej pozorně.
 	AI_Output(self,other,"DMT_1216_Demos_Hello_09");	//Pro splnění mé zkoušky budeš muset jít na místo jménem Gades!
 	AI_Output(other,self,"DMT_1216_Demos_Hello_10");	//Gades?!
 	AI_Output(self,other,"DMT_1216_Demos_Hello_11");	//To jméno vznilko v době, kdy lidé přicházeli na tento svět.
@@ -116,10 +116,10 @@ func void dmt_1216_demos_test_info()
 	AI_Output(other,self,"DMT_1216_Demos_Test_02");	//Zde, mistře.
 	B_GiveInvItems(other,self,itmi_idol_02,1);
 	Npc_RemoveInvItems(self,itmi_idol_02,1);
-	AI_Output(self,other,"DMT_1216_Demos_Test_03");	//Hmmm... (zkoumavě)Ano, to je on!
+	AI_Output(self,other,"DMT_1216_Demos_Test_03");	//Hmmm... (zkoumavě) Ano, to je on!
 	AI_Output(self,other,"DMT_1216_Demos_Test_04");	//Tvar temnot, třetí esence Temného boha - nyní je u spolehlivých majitelů.
 	AI_Output(other,self,"DMT_1216_Demos_Test_05");	//Třetí esence?!
-	AI_Output(self,other,"DMT_1216_Demos_Test_08");	//Ano, nepřeslechl ses (smích)!
+	AI_Output(self,other,"DMT_1216_Demos_Test_08");	//(směje se) Ano, nepřeslechl ses!
 	AI_Output(self,other,"DMT_1216_Demos_Test_09");	//Měl bys vědět pravdu o něčem pro co jsi riskoval život.
 	AI_Output(other,self,"DMT_1216_Demos_Test_10");	//S potěšením si vyslechnu tvůj příběh.
 	AI_Output(self,other,"DMT_1216_Demos_Test_11");	//Dobrá, slyšel jsi někdy o Irdorathských síních?!
@@ -132,7 +132,7 @@ func void dmt_1216_demos_test_info()
 	else
 	{
 		AI_Output(other,self,"DMT_1216_Demos_Test_15");	//Ne. Slyším o nich po prvé.
-		AI_Output(self,other,"DMT_1216_Demos_Test_16");	//(silný)Nevadí, hlavní je, že jsou i jiné - síně zvířat!
+		AI_Output(self,other,"DMT_1216_Demos_Test_16");	//(silný) Nevadí, hlavní je, že jsou i jiné - síně zvířat!
 		AI_Output(self,other,"DMT_1216_Demos_Test_17");	//Místa magie Temného boha...
 	};
 	AI_Output(self,other,"DMT_1216_Demos_Test_18");	//Jsou tu vlastně čtyři chrámy!
@@ -142,7 +142,7 @@ func void dmt_1216_demos_test_info()
 	AI_Output(other,self,"DMT_1216_Demos_Test_22");	//Znamená to, že existují čtyři takové artefakty?!
 	AI_Output(self,other,"DMT_1216_Demos_Test_23");	//Ano, jsou jen čtyři... A jeden z nich máš právě v ruce.
 	AI_Output(other,self,"DMT_1216_Demos_Test_24");	//A kde můžu najít ostatní tři?!
-	AI_Output(self,other,"DMT_1216_Demos_Test_25");	//(směje se)Myslím, že to nepotřebuješ vědět.
+	AI_Output(self,other,"DMT_1216_Demos_Test_25");	//(směje se) Myslím, že to nepotřebuješ vědět.
 	AI_Output(other,self,"DMT_1216_Demos_Test_26");	//Ale proč?!
 	AI_Output(self,other,"DMT_1216_Demos_Test_27");	//I kdybys je zázračně našel, nedokázal bys použít jejich sílu.
 	AI_Output(self,other,"DMT_1216_Demos_Test_28");	//Ani Strážci to nedokáží, natož pouhý smrtelník!

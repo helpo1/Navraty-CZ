@@ -153,7 +153,7 @@ func void dia_orc_8550_urnazul_Psicamp_info()
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Psicamp_01_01");	//Chci s tebou mluvit o chrámu v bažinách.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Psicamp_01_02");	//(podrážděně) Co člověk chce říci Ur-Thrall?!
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Psicamp_01_03");	//Veliký šaman Ur-Hosh-Nar tam nedávno vyslal malý oddíl.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Psicamp_01_04");	//KROTOK YABAR!...(vztekle) Neposlouchal mě! Je velmi hloupý, když tak učinil.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Psicamp_01_04");	//KROTOK YABAR!... (vztekle) Neposlouchal mě! Je velmi hloupý, když tak učinil.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Psicamp_01_05");	//Možná. Ale teď už je pozdě naříkat.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Psicamp_01_06");	//Starší Tor Dal, vedoucí oddílu, ztratil téměř všechny své vojáky.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Psicamp_01_07");	//(vztekle) Jak se to stalo?!
@@ -309,7 +309,7 @@ func void DIA_Orc_8550_UrNazul_AboutIronMine_W4()
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W4_01_02");	//(smích) Co může obyčejný otrok vědět o dracích?!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W4_01_03");	//Ur-Thrall myslí, že člověk mluví nesmysly. Hodně ho rozesmát!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W4_01_04");	//Ale pustit člověka k železnému dolu nemůže.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W4_01_05");	//Jenom by si otrokům odváděl pozornost od práce!
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W4_01_05");	//Jenom bys otrokům odváděl pozornost od práce!
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMine_W4_01_06");	//Když myslíš...
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMine);
 };
@@ -318,7 +318,7 @@ func void DIA_Orc_8550_UrNazul_AboutIronMine_W5()
 {
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMine_W5_01_01");	//Chci je jen trochu utěšit.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W5_01_02");	//(smích) Člověk být příliš dobrý pokud to chce udělat.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W5_01_03");	//Ale Ur-Thrall říci ne! Jenom by si otrokům odváděl pozornost od práce!
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W5_01_03");	//Ale Ur-Thrall říci ne! Jenom bys otrokům odváděl pozornost od práce!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W5_01_04");	//A oni pak vytěží méně železné rudy.
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMine);
 };
@@ -456,7 +456,7 @@ func void DIA_Orc_8550_UrNazul_AboutIronMineMore_W4()
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W4_01_02");	//(smích) Co může obyčejný otrok vědět o dracích?!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W4_01_03");	//Ur-Thrall myslí, že člověk mluví nesmysly. Hodně ho rozesmát!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W4_01_04");	//Ale pustit člověka k železnému dolu nemůže.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W4_01_05");	//Jenom by si otrokům odváděl pozornost od práce!
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W4_01_05");	//Jenom bys otrokům odváděl pozornost od práce!
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W4_01_06");	//Když myslíš...
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMineMore);
 };
@@ -465,7 +465,7 @@ func void DIA_Orc_8550_UrNazul_AboutIronMineMore_W5()
 {
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W5_01_01");	//Chci je jen trochu utěšit.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W5_01_02");	//(smích) Člověk být příliš dobrý pokud to chce udělat.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W5_01_03");	//Ale Ur-Thrall říci ne! Jenom by si otrokům odváděl pozornost od práce!
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W5_01_03");	//Ale Ur-Thrall říci ne! Jenom bys otrokům odváděl pozornost od práce!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W5_01_04");	//A oni pak vytěží méně železné rudy.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W5_01_05");	//Aha.
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMineMore);
@@ -685,14 +685,14 @@ func void DIA_Orc_8550_UrNazul_Muritan_Info()
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_Info_01_06");	//Zdá se mi, že máš spoustu nepřátel, náčelníku. A kdo že to je?
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_07");	//(vážně) Říkat mu Nag-Dumgar. Kdysi byl stejným skřetem jako §Ur-Thrall.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_Info_01_08");	//Nikdy jsem neslyšel tohoto jméno. Můžeš mi o něm něco říct?
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_09");	//...(zamyšleně) Před mnoha zimy, bratři postavili Spáčův chrám.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_09");	//... (zamyšleně) Před mnoha zimy, bratři postavili Spáčův chrám.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_10");	//Nag-Dumgar být vůdcem klanu, jehož šamani přivolat zlého démona.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_11");	//Nicméně, jak člověk pravděpodobně již ví, ten démon ovládl skřety a všechny je zabít.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_Info_01_12");	//Ano, já vím, co se stalo v chrámu. Ale co Nag-Dumgar?
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_13");	//Když se to dovědel, Nag-Dumgar vzít spoustu vojáků a jít do chrámu, aby zabil démona.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_14");	//Ale k nezdaru! Všichni jeho vojáci umřít, a jen on sám nějak zůstat naživu.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_15");	//Po návratu Nag-Dumgar dát příkaz k utěsnění vstupu do chrámu, aby zlý démon nemohl útéct.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_16");	//...(zamyšleně) Ale Nag-Dumgar se výrazně změnit poté, co šel do chrámu.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_16");	//... (zamyšleně) Ale Nag-Dumgar se výrazně změnit poté, co šel do chrámu.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_17");	//Začít ho neustále popadat nějaká nekonečnou žízeň po krvi!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_18");	//Nag-Dumgar začal přinášet bratry k oběti, říkat, že tak chránit klan před hněvem a prokletím zlého démona.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_Info_01_19");	//A to jak? Nemyslím, že skřetům by se to líbilo.
@@ -825,7 +825,7 @@ func void DIA_Orc_8550_UrNazul_Muritan_Dagger_Yes()
 {
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_Dagger_Yes_01_00");	//Můžu toho démona zabít já sám?
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Dagger_Yes_01_01");	//(překvapeně) Člověk chce bojovat s Nag-Dumgar?!
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Dagger_Yes_01_03");	//Ur-Thrall obdivovat odvahu člověka... (s uznáním), ale musí ho varovat, protože Nag-Dumgar být velmi silný a nebezpečný!
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Dagger_Yes_01_03");	//Ur-Thrall obdivovat odvahu člověka... (s uznáním) ale musí ho varovat, protože Nag-Dumgar být velmi silný a nebezpečný!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Dagger_Yes_01_04");	//Člověk si musí uvědomit, že nesmí udělat žádnou chybu, jinak může mnoho bratrů přijít o život.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_Dagger_Yes_01_05");	//Rozumím, budu se snažit aby k tomu nedošlo.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Dagger_Yes_01_06");	//No... (zamyšleně) Ur-Thrall vidět, že člověk mít velkou důvěru ve své schopnosti!
@@ -1184,7 +1184,7 @@ func void dia_orc_8550_urnazul_urhan_info()
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_01_08");	//To je všechno pekné, jen zatím nevíš, že ten tvuj generál te chce zabít a sám se stát vudcem.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_09");	//Co?! Hag-Tar chtít smrt Ur-Thrall?
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_01_10");	//Ano, přesně tak! Chce to udělat aby se stal vůdcem místo tebe.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_11");	//KHATAG BAT NAR!...(výhružně) Jestli člověk lže - člověk zemřít. Pomalu zemřít. Být hodně bolesti.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_11");	//KHATAG BAT NAR!... (výhružně) Jestli člověk lže - člověk zemřít. Pomalu zemřít. Být hodně bolesti.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_01_12");	//Říkám pravdu. Hag-Tar mě vyzval abych tě zabil, a za odměnu slíbil propustit zajaté paladiny.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_01_16");	//Pokud si nevěříš zeptej se Ur-Shaka, on může potvrdit moje slova.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_17");	//Ríkat syn ducha a říkat člověk, to značit pravda. Ur-Thrall věřit.
@@ -1212,7 +1212,7 @@ func void dia_orc_8550_urnazul_urhan_killyou()
 
 func void dia_orc_8550_urnazul_urhan_helpyou()
 {
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_HelpYou_01_03");	//Mám k tomu své důvody. Chci, aby si osvobodil paladiny, které Hag-Tar zajal v pevnosti.
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_HelpYou_01_03");	//Mám k tomu své důvody. Chci, abys osvobodil paladiny, které Hag-Tar zajal v pevnosti.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_HelpYou_01_04");	//KHROTOK YABART! (vztekle) Ne! Lidé být nepřátel! Nepřátel prohrát - musí zemřít.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_HelpYou_01_05");	//Vůdče, životy několika lidí výměnou za tvůj.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_HelpYou_01_06");	//Hag-Tar údeří, když ne dnes, tak zítra. Pokud to neudělám já, pak některý ze skřetů.
@@ -1291,7 +1291,7 @@ func void dia_orc_8550_urnazul_urhankilldone_info()
 func void dia_orc_8550_urnazul_urhankilldone_no()
 {
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHanKillDone_No_01_01");	//Proč? Nechám si ho pro sebe, je to užitečná věc.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHanKillDone_No_01_02");	//Cože?!...(vztekle) Drzý člověk! CHROTOK YABART!
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHanKillDone_No_01_02");	//Cože?!... (vztekle) Drzý člověk! CHROTOK YABART!
 	if(MIS_NEWSSURVIVERS == LOG_Running)
 	{
 		B_LogEntry(TOPIC_NEWSSURVIVERS,"Obávám se, že teď budou skřeti jen stěží souhlasit aby vydali Garonda a jeho muže.");
@@ -1369,7 +1369,7 @@ func void dia_ORC_7550_GORKAR_nohifirst_info()
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_NoHiFirst_01_01");	//KUTAR GOR DAR DRAK!
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_NoHiFirst_01_02");	//KRAT BUR ŠAR DIR?
 		AI_Output(other,self,"DIA_Orc_7550_GorKar_NoHiFirst_01_03");	//Um... Co to říkáš?
-		AI_Output(self,other,"DIA_Orc_7550_GorKar_NoHiFirst_01_04");	//MORRA TUP DUR...(zavrtí hlavou) GORKAR STAR KAR OR...
+		AI_Output(self,other,"DIA_Orc_7550_GorKar_NoHiFirst_01_04");	//MORRA TUP DUR... (zavrtí hlavou) GORKAR STAR KAR OR...
 		GorKarFM = TRUE;
 	}
 	else
@@ -1420,12 +1420,12 @@ func void dia_ORC_7550_GORKAR_hifirst_info()
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_06");	//Morra mít pravdu! Gor-Kar nikdy nepotkat člověk, který by rozumět jeho řeči.
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_07");	//Ale ještě víc překvapen, že člověk nosit skřetí zbroj. Gor-Kar nejdřív myslet, že člověk být skřet. Kdo ho vzít Morra?!
 		AI_Output(other,self,"DIA_Orc_7550_GorKar_HiFirst_01_08");	//Dal mi ho Ur-Thrall, vůdce skretího klanu. Slyšel jsi o něm?
-		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_09");	//GRAT, GRAT...(přikývne) Gor-Kar znát velký vůdce Ur-Thrall!
+		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_09");	//GRAT, GRAT... (přikývne) Gor-Kar znát velký vůdce Ur-Thrall!
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_10");	//On žít hluboko v hoře a být velmi silný válečník.
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_11");	//Nicméně, Gor-Kar nechápe, proč by velký vůdce dát člověk taková zbroj.
 		AI_Output(other,self,"DIA_Orc_7550_GorKar_HiFirst_01_12");	//Je to dlouhý příběh, skřete. Ale ve zkratce, pomáhal jsem Ur-Thrallovi s jednou velmi delikátní záležitostí.
 		AI_Output(other,self,"DIA_Orc_7550_GorKar_HiFirst_01_14");	//A jako projev své úcty a vděčnosti mi dal tuto zbroj.
-		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_15");	//NUR DAR...(zmatenost) Gor-Kar nikdy takové neslyšet!
+		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_15");	//NUR DAR... (zmatenost) Gor-Kar nikdy takové neslyšet!
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_16");	//Lidé vždy být nepřítel, a bratři jich vždy zabít a pak jíst.
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_17");	//Ale jestli sám velký vůdce pod horou respektovat člověk, Gor-Kar nezabije Morra.
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_18");	//Pokud on neudělat nic špatného.
@@ -1460,7 +1460,7 @@ func void dia_ORC_7550_GORKAR_NoArmor_info()
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_NoArmor_01_01");	//A kdybych neměl tuhle zbroj?
 	AI_Output(self,other,"DIA_Orc_7550_GorKar_NoArmor_01_02");	//Pak Gor-Kar zabít Morra... (rozzlobeně) Všechny lidé mají být jeho nepřítelem!
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_NoArmor_01_03");	//Takže se mnou opravdu mluvíš jen kvůli němu?
-	AI_Output(self,other,"DIA_Orc_7550_GorKar_NoArmor_01_04");	//CHAR RA?...(zavrtí hlavou) Ne! Gor-Kar jen přemýšlet, kdo být ten Morra a proč nosit zbroj skřetů.
+	AI_Output(self,other,"DIA_Orc_7550_GorKar_NoArmor_01_04");	//CHAR RA?... (zavrtí hlavou) Ne! Gor-Kar jen přemýšlet, kdo být ten Morra a proč nosit zbroj skřetů.
 	AI_Output(self,other,"DIA_Orc_7550_GorKar_NoArmor_01_05");	//Pokud by to Gor-Kar nezajímat, pancíř nezachránit člověk před smrtí.
 	AI_Output(self,other,"DIA_Orc_7550_GorKar_NoArmor_01_06");	//Ostatní bratři také zabít Morra, když ho uvidět!
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_NoArmor_01_07");	//Takže jsem měl prostě štěstí.
@@ -1486,7 +1486,7 @@ func int dia_ORC_7550_GORKAR_Ulumulu_condition()
 func void dia_ORC_7550_GORKAR_Ulumulu_info()
 {
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_Ulumulu_01_01");	//Mám Ulu-Mulu.
-	AI_Output(self,other,"DIA_Orc_7550_GorKar_Ulumulu_01_02");	//GOR AKH, KUTU...(s údivem) Co to být?!
+	AI_Output(self,other,"DIA_Orc_7550_GorKar_Ulumulu_01_02");	//GOR AKH, KUTU... (s údivem) Co to být?!
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_Ulumulu_01_03");	//Cože?! Copak ty nevíš?
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_Ulumulu_01_04");	//Je to znamení skřetí sily! Jeho majitele se skřeti obvykle nedotýkají.
 	AI_Output(self,other,"DIA_Orc_7550_GorKar_Ulumulu_01_05");	//Gor-Kar neví co za věc člověk ukazovat.
@@ -1581,7 +1581,7 @@ func void dia_ORC_7550_GORKAR_TrailOrcCamp_info()
 	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_02");	//Co chtít člověk učit od Gor-Kar?
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_03");	//Hledám tu jistou skupinku lidí. Poslední dobou byli v malé pevnosti nedaleko odtud.
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_04");	//Víš o tom něco?
-	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_05");	//GRAT TAR...(zavrtí hlavou) Gor-Kar neznát! Nevidět tady lidi už dlouhou dobu.
+	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_05");	//GRAT TAR... (zavrtí hlavou) Gor-Kar neznát! Nevidět tady lidi už dlouhou dobu.
 	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_06");	//Pokud o nich někdo může vědět, být jedine Grum Lok.
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_07");	//Grum Lok? Kdo je to?
 	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_08");	//Být vůdce klanu, nejsilnější válečník z bratrů Gor-Kar!

@@ -45,9 +45,9 @@ func void dmt_121200_dagot_truestory_info()
 	B_GivePlayerXP(200);
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_01_01");	//Takže jak vidím zvolil jsi Beliara. To je opravdu impozantní.
 	AI_Output(other,self,"DMT_121200_Dagot_TrueStory_01_02");	//Strážce Dagoth?
-	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_01_03");	//Jistě by tě zajímalo co tu dělám...(potichu), ale myslím že ty to víš, že takovéhle věci se nedějí jen tak.
+	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_01_03");	//Jistě by tě zajímalo co tu dělám... (potichu) Ale myslím že ty to víš, že takovéhle věci se nedějí jen tak.
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_01_04");	//Zvláště v případě že se to předpokládá předem.
-	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_01_06");	//A mnohem více...(jemně)... Smysl tvé existence je již dlouhou dobu vepsán v obvodu života. A změnit to není v silách nikoho.
+	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_01_06");	//A mnohem více... (jemně) Smysl tvé existence je již dlouhou dobu vepsán v obvodu života. A změnit to není v silách nikoho.
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_01_07");	//Ale teď myslím, že je čas, kdy musíme zasáhnout do běhu událostí, jak situace vyžaduje.
 	AI_Output(other,self,"DMT_121200_Dagot_TrueStory_01_08");	//Co tím myslíš?
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_01_09");	//Myslím že tvůj úděl na tomto světě je být hrdinou. Svět potřebuje hrdiny jako ty.
@@ -86,7 +86,7 @@ func void dmt_121200_dagot_truestory_whatplan()
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_15");	//A všechny kteří jimi byli vytvořeni... Nikdo neunikne hněvu tvůrců.
 	AI_Output(other,self,"DMT_121200_Dagot_TrueStory_WhatPlan_01_16");	//Ale to je šílenství! Nemyslím si že se bohové jen tak nechají!
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_17");	//A co mám dělat? Oni o tom nevědí! A stejně jsou teď příliš slabí aby nám mohli vzdorovat.
-	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_18");	//A mimochodem v téhle hře jsi i ty...(smích)... Ty jsi o tom nevěděl.
+	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_18");	//A mimochodem v téhle hře jsi i ty... (smích) Ty jsi o tom nevěděl.
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_20");	//O tomhle nemůžeš pochybovat! Tohle je tvůj osud který ti byl zvolen.
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_21");	//Nebudu ti vysvětlovat skrytý význam tohoto jednání, protože brzo pochopíš...
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_22");	//'A člověk zabil bestii, jež pak vstoupila do Beliarova panství.'... Známá to slova proroctví.
@@ -95,7 +95,7 @@ func void dmt_121200_dagot_truestory_whatplan()
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_25");	//A to je jen část toho co jsme my... Strážci! Co se stalo a co se bude dít.
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_26");	//Stejně jako zničení tohoto světa tak jeho znovuzrození v podobě Stvořitele.
 	AI_Output(other,self,"DMT_121200_Dagot_TrueStory_WhatPlan_01_27");	//Chápu a co Innos?!
-	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_28");	//Ach ano, bůh Ohně, světla a lidí! O tom můžu říct...(arogantně)... jeho víra v lidi... jeho slabost. Kdyby se na lid tolik nespoléhal, byl by lepší! (výsměšně)
+	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_28");	//Ach ano, bůh Ohně, světla a lidí! O tom můžu říct... (arogantně) Jeho víra v lidi... jeho slabost. Kdyby se na lid tolik nespoléhal, byl by lepší! (výsměšně)
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_29");	//O něj neměj obavy. Tohle věděli i Skřeti.
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_30");	//Jsem si jistý že brzy nebude nikdo kdo by se mu klaněl.
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_WhatPlan_01_31");	//A pak bude jeho osud zpečetěn... (smích)
@@ -122,7 +122,7 @@ func void dmt_121200_dagot_truestory_askme()
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_AskMe_01_02");	//(potichu) Smrt klepe, a volá svým rozechvělým hlasem...
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_AskMe_01_03");	//V opačném případě to není možné! Tvá cesta končí zde.
 	AI_Output(other,self,"DMT_121200_Dagot_TrueStory_AskMe_01_04");	//Takže Strážci mě chtějí zabít. To ale nebude snadné.
-	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_AskMe_01_05");	//O tom nepochybuji...(falešně)
+	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_AskMe_01_05");	//O tom nepochybuji... (falešně)
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_AskMe_01_06");	//Nicméně nevíš jak jsme silní a mocní takže nemáš v tomto boji šanci.
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_AskMe_01_07");	//Je lepší přijmout svůj osud.
 	AI_Output(other,self,"DMT_121200_Dagot_TrueStory_AskMe_01_08");	//Uvidíme...
@@ -138,8 +138,8 @@ func void dmt_121200_dagot_truestory_askme()
 func void dmt_121200_dagot_truestory_xardas()
 {
 	AI_Output(other,self,"DMT_121200_Dagot_TrueStory_Xardas_01_01");	//A co temný mág Xardas?
-	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_Xardas_01_02");	//Ach ano... On je... je jiný... Slouží Beliarovi, ale nežijee s ostatními temnými mágy ve Varantu. Nepodléhá představenému temných mágů. Myslí si, že je něco víc.(křičí) Tenhle mág si o sobě myslí že se rovná bohům!
-	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_Xardas_01_03");	//Není podivné, že se pořád motá kolem? Neměl by žít na jednom místě jako ostatní temní mágové? (potichu)Ne, on nás zradil, a za to zaplatí...
+	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_Xardas_01_02");	//Ach ano... On je... je jiný... Slouží Beliarovi, ale nežijee s ostatními temnými mágy ve Varantu. Nepodléhá představenému temných mágů. Myslí si, že je něco víc. (křičí) Tenhle mág si o sobě myslí že se rovná bohům!
+	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_Xardas_01_03");	//Není podivné, že se pořád motá kolem? Neměl by žít na jednom místě jako ostatní temní mágové? (potichu) Ne, on nás zradil, a za to zaplatí...
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_Xardas_01_04");	//Ale nemůžeme pochybovat že bude stvořiteli potrestán.
 	AI_Output(self,other,"DMT_121200_Dagot_TrueStory_Xardas_01_05");	//Nikdo neunikne trestu stvořitelů!
 	B_LogEntry(TOPIC_GUARDIANS,"Strážce Dagoth pronesl pár slov o temném mágu Xardasovi. Zdá se že si uvědomil že Strážci jednají ve spěchu. Stále je záhadou co dělal Xardas v síních Temnoty.");

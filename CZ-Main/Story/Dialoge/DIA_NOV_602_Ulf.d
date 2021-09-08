@@ -83,7 +83,7 @@ func void DIA_Ulf_Wirte_Info()
 {
 	AI_Output(other,self,"DIA_Ulf_Wirte_15_00");	//Komu jsi nesl to víno?
 	AI_Output(self,other,"DIA_Ulf_Wirte_03_01");	//Hospodskému tady za pultem.
-	AI_Output(self,other,"DIA_Ulf_Wirte_03_02");	//A ještě Coragonovi a Kardiffovi.
+	AI_Output(self,other,"DIA_Ulf_Wirte_03_02");	//A ještě Coragonovi a Kardifovi.
 };
 
 

@@ -40,7 +40,7 @@ func int DIA_Talamon_NoEnter_PissOff_Condition()
 
 func void DIA_Talamon_NoEnter_PissOff_Info()
 {
-	AI_Output(self,other,"DIA_Talamon_NoEnter_PissOff_01_00");	//Hmm...(naštvaně)
+	AI_Output(self,other,"DIA_Talamon_NoEnter_PissOff_01_00");	//Hmm... (naštvaně)
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuildEnemy,0);
 };
@@ -79,11 +79,11 @@ func void DIA_KDF_507_Talamon_FirstWarn_Info()
 		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_03");	//Z úst Nejvyšší rady promlouvá Innos sám.
 		AI_Output(other,self,"DIA_KDF_507_Talamon_FirstWarn_01_04");	//Ano, ano hlas boží - omluví všechno. No podle mně z tebe udělali obětního beránka - nebo osla.
 		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_05");	//Nejsem oprávněn s tebou diskutovat na toto téma.
-		AI_Output(other,self,"DIA_KDF_507_Talamon_FirstWarn_01_06");	//Tvoji bratři sedí nahoře v chrámu a rozdávají odpustky(požehnání). Zatím co ty tu obrůstáš pavučinou a přitom jsi taky vyšší mág.
-		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_07");	//Ano, čert to vem!...(mimo sebe) No skoro jsi to trefil: no ne že já obrůstám pavučinou a uvadám zde, ale ti, kteří by toho tolik mohli udělat, díky své moudrosti - vrůstají do svých trůnů.
+		AI_Output(other,self,"DIA_KDF_507_Talamon_FirstWarn_01_06");	//Tvoji bratři sedí nahoře v chrámu a rozdávají odpustky a požehnání. Zatím co ty tu obrůstáš pavučinou a přitom jsi taky vyšší mág.
+		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_07");	//Ano, čert to vem!... (mimo sebe) No skoro jsi to trefil: no ne že já obrůstám pavučinou a uvadám zde, ale ti, kteří by toho tolik mohli udělat, díky své moudrosti - vrůstají do svých trůnů.
 		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_04_08");	//Já že stojím jak nerozbitná skála, ale dřív nebo později vyjdu, abych se podíval na jejich nestydaté, prosebné tváře, až si uvědomí, že nic beze mě nemůžou.
 		AI_Output(other,self,"DIA_KDF_507_Talamon_FirstWarn_01_09");	//Nic nemůžou? V jakém smyslu?
-		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_10");	//...(vzpamatoval se), o čem jsi to mluvil, můj synu?
+		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_10");	//(vzpamatoval se) O čem jsi to mluvil, můj synu?
 		AI_Output(other,self,"DIA_KDF_507_Talamon_FirstWarn_01_11");	//Nu, o vyšších mázích, kteří si dříve nebo později uvědomí...
 		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_12");	//Jsi zdráv? Jestli ne, tak zajdi za mistrem Neorasem, on je alchymista. On je v protilehé části sklepení.
 		AI_Output(self,other,"DIA_KDF_507_Talamon_FirstWarn_01_13");	//Zde je vstup uzavřen, odejdi!
@@ -222,7 +222,7 @@ func void DIA_Talamon_IgaranzNew_DemonHeart_info()
 	AI_Output(other,self,"DIA_Talamon_IgaranzNew_DemonHeart_01_01");	//Novic Igaraz mě požádal, abych ti předal toto srdce.
 	B_GiveInvItems(other,self,ItAt_DemonHeart,1);
 	Npc_RemoveInvItem(self,ItAt_DemonHeart);
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_02");	//(Překvapeně) Doufám, že jsi mu s tím úkolem nepomáhal?
+	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_02");	//(překvapeně) Doufám, že jsi mu s tím úkolem nepomáhal?
 	AI_Output(other,self,"DIA_Talamon_IgaranzNew_DemonHeart_01_03");	//Ne, jen jsem souhlasil, že ti to srdce předám.
 	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_04");	//No, dobře. Jednou složil mojí zkoušku, tak může od této chvíle nosit roucho mága Ohně!
 	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_05");	//Zde, předej mu to.

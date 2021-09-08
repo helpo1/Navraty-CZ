@@ -157,7 +157,7 @@ func void DIA_DJG_715_Ferros_OldCamp_Price()
 	{
 		AI_Output(other,self,"DIA_DJG_715_Ferros_OldCamp_Price_New_15_00");	//Tak tohle neudělám!
 		AI_Output(other,self,"DIA_DJG_715_Ferros_OldCamp_Price_New_15_01");	//Kromě toho, nevypadáš zrovna na chlapa co nemá peníze.
-		AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_Price_New_15_02");	//Ale já opravdu nemám peníze...(naštvaně)
+		AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_Price_New_15_02");	//Ale já opravdu nemám peníze... (naštvaně)
 		AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_Price_New_15_03");	//Jedinou věc, co ti můžu dát jako odměnu - je rodinej prsten!
 		AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_Price_New_15_04");	//Poslední věc, kterou jsem ještě neprodal...
 		FerrosRing = TRUE;
@@ -241,12 +241,12 @@ func void B_Ferros_FerrosAnySword_Yes1()
 {
 	AI_Output(other,self,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_15_00");		//Jo, vezmi si ho.
 	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_00");		//Díky kámo! Máš to u mě.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_01");		//Peníze, jak víš, já nemám...(naštvaně) 
+	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_01");		//Peníze, jak víš, já nemám... (naštvaně) 
 	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_02");		//Na oplátku ti ukážu pár triků, které ti v boji umožní lépe využívat svou sílu.
 
 	if(RhetorikSkillValue[1] >= 50)
 	{
-		AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_03");	//Poslouchej pozorně...(vážně) 
+		AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_03");	//Poslouchej pozorně... (vážně) 
 		AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_04");	//Když chceš zasadit ránu mečem, použivej nejen sílu paže, ale také sílu celého těla.
 		AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_05");	//Je nutné se pořádně zapřít v nohách, stáhnout ramena k lopatkám a narovnat paže.
 		B_RaiseAttribute_Bonus(hero,ATR_STRENGTH,1);

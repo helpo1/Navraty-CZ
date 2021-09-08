@@ -708,7 +708,7 @@ func void DIA_NONE_1801_Fingers_Hi_Info()
 	AI_Output(self,other,"DIA_NONE_1801_Fingers_Hi_01_01");	//Kdo jsi? (hrubě) Počkej. Myslím, že poznávám toji tvář...
 	AI_Output(self,other,"DIA_NONE_1801_Fingers_Hi_01_02");	//No, ano, vzpomínám si! Ty jsi ten kluk, kterého jsem učil řemeslu zlodějů ve Starém táboře.
 	AI_Output(other,self,"DIA_NONE_1801_Fingers_Hi_01_03");	//Fingers! Myslel jsem, že jsi mrtvý.
-	AI_Output(self,other,"DIA_NONE_1801_Fingers_Hi_01_04");	//(Se smíchem) není to tak lehký, starý příteli, aby mě někdo poslal na onen svět.
+	AI_Output(self,other,"DIA_NONE_1801_Fingers_Hi_01_04");	//(se smíchem) není to tak lehký, starý příteli, aby mě někdo poslal na onen svět.
 	AI_Output(other,self,"DIA_NONE_1801_Fingers_Hi_01_05");	//Jak ses sem dostal?
 	AI_Output(self,other,"DIA_NONE_1801_Fingers_Hi_01_06");	//Ani sám nevím... Připlul asi - jak jinak? Přes moře.
 	AI_Output(other,self,"DIA_NONE_1801_Fingers_Hi_01_07");	//Nic si nepamatuješ?
@@ -968,7 +968,7 @@ func void DIA_NONE_1801_Fingers_Master_Finish_Info()
 	AI_Output(other,self,"DIA_NONE_1801_Fingers_Master_Finish_01_05");	//Vypadá to, že se věci pohnuly k lepšímu?
 	AI_Output(self,other,"DIA_NONE_1801_Fingers_Master_Finish_01_06");	//(usmívá se) Tak to je! Nemohu říct, že jsem nejšťastnější.
 	AI_Output(self,other,"DIA_NONE_1801_Fingers_Master_Finish_01_07");	//Ale tady se dobře najím a můžu si i něco vypít!
-	AI_Output(self,other,"DIA_NONE_1801_Fingers_Master_Finish_01_08");	//A to je určitě lepší, než viset s provazem kolem krku! (Směje se)
+	AI_Output(self,other,"DIA_NONE_1801_Fingers_Master_Finish_01_08");	//A to je určitě lepší, než viset s provazem kolem krku! (směje se)
 	THIEF_REPUTATION = THIEF_REPUTATION + 15;
 
 	if(MIS_FingersOpenDoor == LOG_Running)

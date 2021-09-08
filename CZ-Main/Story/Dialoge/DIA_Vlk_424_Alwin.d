@@ -317,7 +317,7 @@ func void DIA_Alwin_Endlos_Info()
 	}
 	else if(Kapitel <= 2)
 	{
-		AI_Output(self,other,"DIA_Alwin_Endlos_12_02");	//Ovce se jen cpou a jsou čím dál tím tlustší. Stejně jako moje žena. HAHAHA (hlasitě se směje).
+		AI_Output(self,other,"DIA_Alwin_Endlos_12_02");	//Ovce se jen cpou a jsou čím dál tím tlustší. Stejně jako moje žena. HAHAHA. (hlasitě se směje)
 	}
 	else if(Kapitel == 3)
 	{

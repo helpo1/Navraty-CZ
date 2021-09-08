@@ -499,7 +499,7 @@ func void DIA_Addon_Finn_Again_Info()
 
 func void DIA_Addon_Finn_Again_Exit()
 {
-	AI_Output(other,self,"DIA_Addon_Finn_Again_Exit_15_00");	//Hmm...(Uznale) V pořádku...
+	AI_Output(other,self,"DIA_Addon_Finn_Again_Exit_15_00");	//Hmm... (uznale) V pořádku...
 	Info_ClearChoices(DIA_Addon_Finn_Again);
 };
 

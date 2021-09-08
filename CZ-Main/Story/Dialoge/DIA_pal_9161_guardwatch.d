@@ -42,7 +42,7 @@ func int dia_pal_9161_guardwatch_hallo_condition()
 
 func void dia_pal_9161_guardwatch_hallo_info()
 {
-	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_Hallo_01_00");	//Stůj!...(hrozivě)Ani o krok dál!
+	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_Hallo_01_00");	//Stůj! (hrozivě) Ani o krok dál!
 	if(PYROKARSENTTOHAGEN == TRUE)
 	{
 		AI_Output(other,self,"DIA_Pal_9161_GuardWatch_Hallo_01_26");	//Nech mě slečinko! Mám naléhavou zprávu pro lorda Varuse jsem mág Ohně, služebínk boha Innose, tvého pána.
@@ -166,7 +166,7 @@ func void dia_pal_9161_guardwatch_hallonotattack_info()
 		AI_Output(other,self,"DIA_Pal_9161_GuardWatch_HalloNotAttack_01_11");	//Mám pro něho příkaz od velitele paladinů.
 		AI_Output(self,other,"DIA_Pal_9161_GuardWatch_HalloNotAttack_01_12");	//Příkaz od samotného lorda Hagena?!
 		AI_Output(other,self,"DIA_Pal_9161_GuardWatch_HalloNotAttack_01_13");	//Samozřejmě, ještě mě chceš zadržovat nebo můžu projít?
-		AI_Output(self,other,"DIA_Pal_9161_GuardWatch_HalloNotAttack_01_14");	//Hmm...(zadumaně) můžeš vejít!
+		AI_Output(self,other,"DIA_Pal_9161_GuardWatch_HalloNotAttack_01_14");	//Hmm... (zadumaně) můžeš vejít!
 		AI_Output(self,other,"DIA_Pal_9161_GuardWatch_HalloNotAttack_01_15");	//Ale pamatuj jestli budeš lorda Varuse obtěžovat tak...
 		AI_Output(self,other,"DIA_Pal_9161_GuardWatch_HalloNotAttack_01_16");	//... já budu první kdo tě naučí slušnému chování. Rozumíš?
 		GRANTTOVARUS = TRUE;
@@ -291,7 +291,7 @@ func void dia_pal_9161_guardwatch_missgold_info()
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_06");	//No... no, během jedné noční služby na východní zdi pevnosti, jsem omylem upustil svůj měšec.
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_07");	//Zpočátku jsem chtěl jít dolů a sebrat ho, ale pak jsem si uvědomil, že nemůžu kvůli takové maličkosti, opustit svoje místo!
 	AI_Output(other,self,"DIA_Pal_9161_GuardWatch_MissGold_01_08");	//A v čem je problém mohl jsi ho sebrat po službě.
-	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_09");	//To je pravda, ale já prostě na to nemám čas (podrážděně).
+	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_09");	//To je pravda, ale já prostě na to nemám čas. (podrážděně)
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_10");	//Z křoví vylezla nějaká potvora, vytrhla mě měšec a zdrhla směrem k pláži.
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_11");	//Vystřelil jsem po ní z kuše, ale byla moc velká tma.
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_12");	//Byl jsem rozčílenej- ale zjistil jsem, že je to k ničemu.
@@ -300,7 +300,7 @@ func void dia_pal_9161_guardwatch_missgold_info()
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_15");	//Kromě několika zlatých, jsem tam měl prsten. Moc pro mě znamenal!
 	AI_Output(other,self,"DIA_Pal_9161_GuardWatch_MissGold_01_16");	//Co to je za prsten?
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_17");	//Je to můj milášek! Daroval mi ho lord Hagen, po bitvě se skřety v pustinách Varantu.
-	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_18");	//Byli jsme pořád spolu nikdy jsme se nerozdělili! Až do toho večera...(lítostivě)
+	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_18");	//Byli jsme pořád spolu nikdy jsme se nerozdělili! Až do toho večera... (lítostivě)
 	AI_Output(other,self,"DIA_Pal_9161_GuardWatch_MissGold_01_19");	//Rozumím. A jak já ti mohu pomoct?
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_20");	//Pochopitelně. Stačí když najdeš můj měšec a doneseš mě ho.
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_21");	//Nezáleží mi na měšci ani na zlaťácích, jde mi jen o miláška.
@@ -373,7 +373,7 @@ func int dia_pal_9161_guardwatch_raynehelp_condition()
 func void dia_pal_9161_guardwatch_raynehelp_info()
 {
 	AI_Output(other,self,"DIA_Pal_9161_GuardWatch_RayneHelp_01_00");	//Mohl bys pomoci Rayneovi ve skladě?
-	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_RayneHelp_01_01");	//A jak si to představuješ? (Podrážděně) Teď si odšlápnu svoji šichtu a pak půjdu pomáhat tomu chudákovi!
+	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_RayneHelp_01_01");	//A jak si to představuješ? (podrážděně) Teď si odšlápnu svoji šichtu a pak půjdu pomáhat tomu chudákovi!
 	HELPCOUNTRAYNE = HELPCOUNTRAYNE + 1;
 	if((HELPCOUNTRAYNE > 10) && (MAYTALKVARUSRAYNE == FALSE) && (MIS_RAYNEHELP == LOG_Running))
 	{

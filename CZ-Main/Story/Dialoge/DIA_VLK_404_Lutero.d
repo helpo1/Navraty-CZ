@@ -298,7 +298,7 @@ func void dia_lutero_taliasanletter_info()
 	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_20");	//Od koho?
 	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_21");	//Od Lehmara a jak si již jistě pochopil, je potřeba vykonat jistou povinnost vůči němu.
 	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_22");	//Takže chceš abych ho zabil?
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_23");	//Cože! (ztratí řeč)... Ne, to není na pořadu dne!
+	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_23");	//Cože! (ztratí řeč) Ne, to není na pořadu dne!
 	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_24");	//Mám lepší nápad! Když jsem vzal peníze, nechal jsem si napsat dlužní úpis.
 	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_01_25");	//A já bych byl rád kdyby se tento kousek papíru, tak nějak... ztratil. Zmizel!
 	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_01_26");	//Pokud to tedy dobře chápu, chceš po mně abych ten úpis ukradl?
@@ -325,7 +325,7 @@ func void dia_lutero_taliasanletter_no()
 	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_No_01_02");	//Jen doufám, že náš rozhovor zůstane mezi námi.
 	if(MEMBERTRADEGUILD == FALSE)
 	{
-		AI_Output(self,other,"DIA_Lutero_TaliasanLetter_No_01_03");	//V opačném případě se postarám o to, abys přišel o jazyk...(Hněvá se)
+		AI_Output(self,other,"DIA_Lutero_TaliasanLetter_No_01_03");	//V opačném případě se postarám o to, abys přišel o jazyk... (hněvá se)
 		AI_Output(self,other,"DIA_Lutero_TaliasanLetter_No_01_04");	//A teď vypadni! Nemám pro tebe žádnou práci.
 	};
 	AI_StopProcessInfos(self);
@@ -335,7 +335,7 @@ func void dia_lutero_taliasanletter_ok()
 {
 	AI_Output(other,self,"DIA_Lutero_TaliasanLetter_Ok_01_00");	//Ano, bez problému.
 	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_Ok_01_01");	//Skvěle! Vrať se až budeš mít můj úpis.
-	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_Ok_01_02");	//Já mezitím napíšu dopis, který tak zajímá (Mumlá) Tebe!
+	AI_Output(self,other,"DIA_Lutero_TaliasanLetter_Ok_01_02");	//Já mezitím napíšu dopis, který tak zajímá (mumlá) Tebe!
 	AI_StopProcessInfos(self);
 	MIS_LUTEROHELP = LOG_Running;
 	Log_CreateTopic(TOPIC_LUTEROHELP,LOG_MISSION);
@@ -429,7 +429,7 @@ func void dia_lutero_nigelletter_info()
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_11");	//Hoho! Teď je mi víceméně jasný důvod jeho zdvořilosti.
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_12");	//Řeknu to upřímně, chápu ho. Pověst je vskutku pro nás obchodníka jedna z nejdůležitějších věcí!
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_14");	//Samozřejmě! Bez reputace se s vámi nikdo nebude ani bavit!
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_15");	//Eh... dobře! Znamená to, že Nigel za tebe ručí a žádá mě o přijetí tvé osoby do našeho cechu.(Zamyšleně)
+		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_15");	//Eh... dobře! Znamená to, že Nigel za tebe ručí a žádá mě o přijetí tvé osoby do našeho cechu. (zamyšleně)
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_16");	//No... Nevidím žádný důvod, proč bych Nigelovu požadavku nevyšel vstříc.
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_17");	//Ale závěrečné rozhodnutí je pouze na tobě.
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_18");	//Co myslíš? Chtěl bys zkusit dát se cestou obchodu?
@@ -453,7 +453,7 @@ func void dia_lutero_nigelletter_info()
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_28");	//Hoho! Teď je mi víceméně jasný důvod jeho zdvořilosti.
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_29");	//Řeknu to upřímně, chápu ho. Pověst je vskutku pro nás obchodníka jedna z nejdůležitějších věcí!
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_31");	//Samozřejmě! Bez reputace se s vámi nikdo nebude ani bavit!
-		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_32");	//Eh... dobře! Znamená to, že Erol za tebe ručí a žádá mě o přijetí tvé osoby do našeho cechu.(Zamyšleně)
+		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_32");	//Eh... dobře! Znamená to, že Erol za tebe ručí a žádá mě o přijetí tvé osoby do našeho cechu. (zamyšleně)
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_33");	//No... Nevidím žádný důvod, proč bych Erolovu požadavku nevyšel vstříc.
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_34");	//Ale závěrečné rozhodnutí je pouze na tobě.
 		AI_Output(self,other,"DIA_Lutero_NigelLetter_01_35");	//Co myslíš? Chtěl by ses stát obchodníkem?
@@ -619,7 +619,7 @@ func void dia_lutero_jorahelp_info()
 	AI_Output(other,self,"DIA_Lutero_JoraHelp_01_16");	//Dobře, takže co mám udělat?
 	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_17");	//Nuže... Vlastně ani nevím co bych ti měl poradit.
 	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_18");	//Můžeš se s ním zkusit ze začátku domluvit. Možná se ti podaří ho nějak přesvědčit.
-	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_19");	//(Sarkasticky) Chápeš co tím myslím?
+	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_19");	//(sarkasticky) Chápeš co tím myslím?
 	AI_Output(other,self,"DIA_Lutero_JoraHelp_01_20");	//Hmm... Myslíš, že to pomůže?
 	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_21");	//Možná! Případně ti to dá představu o celé situaci.
 	AI_Output(self,other,"DIA_Lutero_JoraHelp_01_22");	//Nezapomeň, že to děláš ve svém vlastním zájmu! Takže si to nestěžuj.
@@ -815,7 +815,7 @@ func void dia_lutero_jorahelpdo_info()
 		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_159");	//Zdá se, že máte se Zurisem podobné verze.
 		AI_Output(other,self,"DIA_Lutero_JoraHelpDo_01_160");	//On mi ovšem sdělil, že jsi porušil smlouvu zvýšením cen lektvarů!
 		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_161");	//To se plete! Bylo to přesně naopak!
-		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_163");	//...(Přeruší) Okradli mě zloději a sebrali mi elixír, který jsem slíbil Zurisovi.
+		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_163");	//... (přeruší) Okradli mě zloději a sebrali mi elixír, který jsem slíbil Zurisovi.
 		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_165");	//A já neměl co bych mu prodal.
 		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_167");	//Zburcoval jsem městské stráže, aby mi pomohly najít ty zloděje.
 		AI_Output(self,other,"DIA_Lutero_JoraHelpDo_01_168");	//Bohužel jejich hledání nepřineslo žádné výsledky.
@@ -952,7 +952,7 @@ func void dia_lutero_jorahelpdo_eleksirinfo()
 	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_12");	//Za pár dnů byl obratem poslán do kolonie.
 	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_14");	//Jak se jmenoval?
 	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_15");	//Asi Grimes, nejsem si po takové době příliš jistý.
-	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_16");	//Aha... (To jméno mi zní povědomě)
+	AI_Output(other,self,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_16");	//Aha... (to jméno mi zní povědomě)
 	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_18");	//Nemyslím si, že se ti podaří tento problém vyřešit, i když, můžeš to alespoň zkusit.
 	AI_Output(self,other,"DIA_Lutero_JoraHelpDo_EleksirInfo_01_24");	//Dobrá tedy - hodně štěstí!
 	B_LogEntry(TOPIC_JORAHELP,"Lutero mi dokázal povědět něco málo o osudu ukradeného lektvaru. Zmínil se o malém detailu, který by mi mohl pomoci lektvar najít. Osoba jménem Grimes by o něm mohla něco vědět. Ztratil se mu onehdá z dohledu, když ho hodily stráže do kolonie. Doufám, že u něj se dozvím něco víc o osudu lektvaru Eligorův plamen.");
@@ -1118,7 +1118,7 @@ func void dia_lutero_churchdealdo_info()
 			AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_27");	//Co to znamená?
 			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_28");	//Znamená to, že již nejsi nadále členem cechu!
 			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_29");	//Pro lidi jako ty tu nemáme místo!
-			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_31");	//...(Přeruší) Vypadni! Nemáme se již nadále o čem bavit!
+			AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_31");	//... (přeruší) Vypadni! Nemáme se již nadále o čem bavit!
 			MIS_CHURCHDEAL = LOG_FAILED;
 			Log_SetTopicStatus(TOPIC_CHURCHDEAL,LOG_OBSOLETE);
 			MIS_TRADEGUILD = LOG_FAILED;
@@ -1204,7 +1204,7 @@ func void dia_lutero_churchdealdo_info()
 				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_78");	//Myslel jsem si, že jsi schopen usmlouvat cenu za víno.
 				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_79");	//No dobře!
 				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_80");	//Hlavní je, že jsi vyřídil mou objednávku. To ostatní není tak důležité.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_81");	//Nakonec, můžeme to kompenzovat se zákazníky (zlomyslně).
+				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_81");	//Nakonec, můžeme to kompenzovat se zákazníky. (zlomyslně)
 			}
 			else if(GORAXCURRENTPRICE == 500)
 			{
@@ -1217,7 +1217,7 @@ func void dia_lutero_churchdealdo_info()
 				AI_Output(other,self,"DIA_Lutero_ChurchDealDo_01_84");	//Vlezl jsem se do pěti set.
 				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_87");	//To mě trochu překvapuje.
 				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_88");	//Poslal jsem tě tam, protože jsem si myslel, že jsi lepší.
-				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_91");	//Nakonec, můžeme to kompenzovat se zákazníky (zlomyslně).
+				AI_Output(self,other,"DIA_Lutero_ChurchDealDo_01_91");	//Nakonec, můžeme to kompenzovat se zákazníky. (zlomyslně)
 			}
 			else if(GORAXCURRENTPRICE > 400)
 			{
@@ -1385,7 +1385,7 @@ func void dia_lutero_rarethingsdo_info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_Lutero_RareThingsDo_01_00");	//Přinesl jsem ty nordmarské figurky!
-	AI_Output(self,other,"DIA_Lutero_RareThingsDo_01_01");	//Všechny tři? Ukaž... (Mysteriózně)
+	AI_Output(self,other,"DIA_Lutero_RareThingsDo_01_01");	//Všechny tři? Ukaž... (mysteriózně)
 	B_GiveInvItems(other,self,itmi_innosmramorstatue,3);
 	Npc_RemoveInvItems(self,itmi_innosmramorstatue,3);
 	AI_Output(self,other,"DIA_Lutero_RareThingsDo_01_03");	//Neskutečné!... Taková nádhera!
@@ -1544,7 +1544,7 @@ func void dia_lutero_missbrendido_info()
 		if(BENCHELISDEAD == TRUE)
 		{
 			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_16");	//Je mrtvý.
-			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_19");	//CO?! Ale... co se stalo?!... (Nervózně)
+			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_19");	//CO?! Ale... co se stalo?!... (nervózně)
 			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_20");	//Benchel nebyl jen pomocník - byl přítel.
 			AI_Output(other,self,"DIA_Lutero_MissBrendiDo_01_22");	//Je to škoda.
 			AI_Output(self,other,"DIA_Lutero_MissBrendiDo_01_24");	//Jak jen budu obchodovat bez jeho pomoci?!
@@ -1680,7 +1680,7 @@ func void dia_lutero_tradehelperdone_info()
 		if((SARAISDEAD == TRUE) || ((SARAFLEE == FALSE) && (Sarah_Ausgeliefert == FALSE)))
 		{
 			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_57");	//Máš pro mě něco dalšího?
-			AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_58");	//Hmm...(Přěmýšlivě ) V blízké době asi ne, můžeš se zatím věnovat svým záležitostem.
+			AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_58");	//Hmm... (přěmýšlivě) V blízké době asi ne, můžeš se zatím věnovat svým záležitostem.
 			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_59");	//OK, jak chceš.
 			NEXTQUESTSARAHTOGUILD = TRUE;
 			MIS_TRADEGUILD = LOG_SUCCESS;
@@ -1762,7 +1762,7 @@ func void dia_lutero_tradehelperdone_info()
 		if((SARAISDEAD == TRUE) || ((SARAFLEE == FALSE) && (Sarah_Ausgeliefert == FALSE)))
 		{
 			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_60");	//Máš pro mě něco dalšího?
-			AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_61");	//Hmm...(Přěmýšlivě ) V blízké době asi ne, můžeš se zatím věnovat svým záležitostem.
+			AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_61");	//Hmm... (přěmýšlivě) V blízké době asi ne, můžeš se zatím věnovat svým záležitostem.
 			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_62");	//OK, jak chceš.
 			NEXTQUESTSARAHTOGUILD = TRUE;
 			MIS_TRADEGUILD = LOG_SUCCESS;
@@ -1846,7 +1846,7 @@ func void dia_lutero_tradehelperdone_info()
 		if((SARAISDEAD == TRUE) || ((SARAFLEE == FALSE) && (Sarah_Ausgeliefert == FALSE)))
 		{
 			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_63");	//Máš pro mě něco dalšího?
-			AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_64");	//Hmm...(Přěmýšlivě ) V blízké době asi ne, můžeš se zatím věnovat svým záležitostem.
+			AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_64");	//Hmm... (přěmýšlivě) V blízké době asi ne, můžeš se zatím věnovat svým záležitostem.
 			AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_65");	//OK, jak chceš.
 			NEXTQUESTSARAHTOGUILD = TRUE;
 			MIS_TRADEGUILD = LOG_SUCCESS;
@@ -1877,7 +1877,7 @@ func void dia_lutero_tradehelperdone_info()
 				else
 				{
 					AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_63");	//Máš pro mě něco dalšího?
-					AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_64");	//Hmm...(Přěmýšlivě ) V blízké době asi ne, můžeš se zatím věnovat svým záležitostem.
+					AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_64");	//Hmm... (přěmýšlivě) V blízké době asi ne, můžeš se zatím věnovat svým záležitostem.
 					AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_65");	//OK, jak chceš.
 					NEXTQUESTSARAHTOGUILD = TRUE;
 					MIS_TRADEGUILD = LOG_SUCCESS;
@@ -1889,7 +1889,7 @@ func void dia_lutero_tradehelperdone_info()
 			else
 			{
 				AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_63");	//Máš pro mě něco dalšího?
-				AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_64");	//Hmm...(Přěmýšlivě ) V blízké době asi ne, můžeš se zatím věnovat svým záležitostem.
+				AI_Output(self,other,"DIA_Lutero_TradeHelperDone_01_64");	//Hmm... (přěmýšlivě) V blízké době asi ne, můžeš se zatím věnovat svým záležitostem.
 				AI_Output(other,self,"DIA_Lutero_TradeHelperDone_01_65");	//OK, jak chceš.
 				NEXTQUESTSARAHTOGUILD = TRUE;
 				MIS_TRADEGUILD = LOG_SUCCESS;
@@ -1957,7 +1957,7 @@ func void dia_lutero_sarahtoguild_info()
 	{
 		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_07");	//Zlé jazyky by mohly říci, že je to tvá chyba.
 		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_08");	//A co se stalo?!
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_09");	//Někdo ji obvinil, že Onarovi prodávala zbraně (úsměv)!
+		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_09");	//Někdo ji obvinil, že Onarovi prodávala zbraně! (úsměv)
 		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_10");	//Dobře znám Sarah a vím, že by to neudělala.
 		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_13");	//Domobrana ji dala do cely - ne zrovna nejlepší místo pro mladou ženu.
 		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_14");	//A proto jí chci pomoci.
@@ -2063,7 +2063,7 @@ func void dia_lutero_sarahtoguild_EX_info()
 	{
 		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_07");	//Zlé jazyky by mohly říci, že je to tvá chyba.
 		AI_Output(other,self,"DIA_Lutero_SarahToGuild_01_08");	//A co se stalo?!
-		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_09");	//Někdo ji obvinil, že Onarovi prodávala zbraně (úsměv)!
+		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_09");	//Někdo ji obvinil, že Onarovi prodávala zbraně! (úsměv)
 		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_10");	//Dobře znám Sarah a vím, že by to neudělala.
 		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_13");	//Domobrana ji dala do cely - ne zrovna nejlepší místo pro mladou ženu.
 		AI_Output(self,other,"DIA_Lutero_SarahToGuild_01_14");	//A proto jí chci pomoci.

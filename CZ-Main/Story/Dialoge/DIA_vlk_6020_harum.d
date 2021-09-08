@@ -77,7 +77,7 @@ func void dia_harum_hello_info()
 	AI_Output(self,other,"DIA_Harum_Hello_01_48");	//Proč myslíš?!... (zmateně)
 	AI_Output(other,self,"DIA_Harum_Hello_01_49");	//Protože jsem tu proto, abych zničil jisté zlo...
 	AI_Output(other,self,"DIA_Harum_Hello_01_50");	//Slyšel jsem, že v údolí žije mocný černý drak. Říká ti něco jméno Azgalor?
-	AI_Output(self,other,"DIA_Harum_Hello_01_51");	//(V hrůze)... Azgalor?! Legendy o tomto stvoření leží daleko v dětství tohoto sveta.
+	AI_Output(self,other,"DIA_Harum_Hello_01_51");	//(v hrůze) Azgalor?! Legendy o tomto stvoření leží daleko v dětství tohoto sveta.
 	AI_Output(self,other,"DIA_Harum_Hello_01_52");	//V knize Kalidroma je podobné stvoření zmíněno.
 	AI_Output(self,other,"DIA_Harum_Hello_01_53");	//Ale nikdo ho zde nikdy neviděl. Ale spíše je pravdepodobné, že nikdo nepřežil setkání s ním.
 	AI_Output(self,other,"DIA_Harum_Hello_01_54");	//Ale nemůžu ti přesně povedet, jestli je to opravdu jenom mýtus.
@@ -377,7 +377,7 @@ func void dia_harum_seekazgolor_info()
 	AI_Output(other,self,"DIA_Harum_SeekAzgolor_01_01");	//Můžeš se podívat na tuhle knihu?
 	AI_Output(self,other,"DIA_Harum_SeekAzgolor_01_02");	//Ukaž... (dívá se) Zajímavé, velice zajímavé!
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Harum_SeekAzgolor_01_03");	//Divná kniha a stejně tak jazyk (dívá se). Připomíná skřetí jazyk, ale je trochu jiný.
+	AI_Output(self,other,"DIA_Harum_SeekAzgolor_01_03");	//Divná kniha a stejně tak jazyk. (dívá se) Připomíná skřetí jazyk, ale je trochu jiný.
 	AI_Output(self,other,"DIA_Harum_SeekAzgolor_01_04");	//Hmm... Bojím se, že ti nemůžu pomoci.
 	B_LogEntry(TOPIC_URNAZULRAGE,"Elvais nebyl schopen přeložit knihu, kterou jsem v ruinách našel, ale dokázal identifikovat skřetí jazyk. Měl bych se podívat po nejakém skřetovi.");
 	SEEKAZGOLOR = FALSE;

@@ -155,7 +155,7 @@ func void dia_hun_741_falk_news_info()
 		AI_Output(self,other,"DIA_HUN_741_Falk_News_01_01");	//Poslední dobou se tady nic zvláštního nestalo.
 		AI_Output(self,other,"DIA_HUN_741_Falk_News_01_02");	//Tedy kromě toho, že do našeho tábora přišel nový lovec.
 		AI_Output(other,self,"DIA_HUN_741_Falk_News_01_03");	//Myslíš mě?
-		AI_Output(self,other,"DIA_HUN_741_Falk_News_01_04");	//Jasne že tebe... Koho jiného (směje se)!
+		AI_Output(self,other,"DIA_HUN_741_Falk_News_01_04");	//Jasne že tebe... Koho jiného! (směje se)
 	}
 	else if((Kapitel == 2) && (MIS_INSORCWARRIOR == FALSE))
 	{
@@ -363,7 +363,7 @@ func void dia_hun_741_falk_camp_info()
 	AI_Output(other,self,"DIA_HUN_741_Falk_Camp_01_90");	//Přinesl jsem ty kůže stínové šelmy.
 	B_GiveInvItems(other,self,ItAt_ShadowFur,3);
 	Npc_RemoveInvItems(self,ItAt_ShadowFur,3);
-	AI_Output(self,other,"DIA_HUN_741_Falk_Camp_01_03");	//To není možné...(překvapeně) Ty se neztratíš. Kdo by si to pomyslel.
+	AI_Output(self,other,"DIA_HUN_741_Falk_Camp_01_03");	//To není možné... (překvapeně) Ty se neztratíš. Kdo by si to pomyslel.
 	AI_Output(other,self,"DIA_HUN_741_Falk_Join_01_03");	//Takže jsi mi lhal, nebo mě bereš?
 	AI_Output(self,other,"DIA_HUN_741_Falk_Join_01_04");	//Nelhal. Chovej se jako doma - teď je to i tvůj tábor.
 
@@ -2097,7 +2097,7 @@ func void dia_hun_741_falk_hunterchallangedone_info()
 	Npc_RemoveInvItems(self,itat_slokersfur,1);
 	AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_05");	//Neuveřitelné! Mé oči tomu nemohou uveřit!... (úplně zmateně) Ale jak se ti to zvíře podařilo vystopovat?!
 	AI_Output(other,self,"DIA_HUN_741_Falk_HChDone_01_06");	//Bylo to docela jednoduché. No, teď už vážne musíš uznat, že já jsem nejlepší lovec v táboře?!
-	AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_07");	//(Povzdech) Jo, nevyšlo mi to. Jsi ten nejlepší, chlape!
+	AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_07");	//(povzdech) Jo, nevyšlo mi to. Jsi ten nejlepší, chlape!
 
 	if((hero.attribute[ATR_DEXTERITY] > hero.attribute[ATR_STRENGTH]) && (hero.guild != GIL_KDF) && (hero.guild != GIL_KDW) && (hero.guild != GIL_KDM) && (hero.guild != GIL_NDM) && (hero.guild != GIL_NDW) && (hero.guild != GIL_NOV) && (hero.guild != GIL_GUR))
 	{
@@ -2314,7 +2314,7 @@ func void DIA_HUN_741_Falk_IshiCurrat_info()
 	AI_Output(other,self,"DIA_HUN_741_Falk_IshiCurrat_01_09");	//... a?
 	AI_Output(self,other,"DIA_HUN_741_Falk_IshiCurrat_01_10");	//Možná si tu trofej vezmu. Nevadí?
 	AI_Output(other,self,"DIA_HUN_741_Falk_IshiCurrat_01_11");	//No, to všechno závisí na tom, co mi dáš na oplátku.
-	AI_Output(self,other,"DIA_HUN_741_Falk_IshiCurrat_01_12");	//Pravda (smích). Tady, mám velmi vzácný magický lektvar.
+	AI_Output(self,other,"DIA_HUN_741_Falk_IshiCurrat_01_12");	//Pravda. (smích) Tady, mám velmi vzácný magický lektvar.
 	AI_Output(self,other,"DIA_HUN_741_Falk_IshiCurrat_01_13");	//Avšak neznám jeho vlastnosti. Ale myslím že nemá nižší hodnotu, než ta tvoje věcička.
 	AI_Output(self,other,"DIA_HUN_741_Falk_IshiCurrat_01_14");	//No tak, plácnem si?
 	AI_Output(other,self,"DIA_HUN_741_Falk_IshiCurrat_01_15");	//Dobře, vezmi si to.

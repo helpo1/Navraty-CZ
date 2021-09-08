@@ -448,7 +448,7 @@ func void dia_jorgen_li_awaydone_info()
 		{
 			AI_Output(self,other,"DIA_Jorgen_LI_AwayDone_01_11");	//Všichni ne... Přece je tu nenecháme!
 			AI_Output(other,self,"DIA_Jorgen_LI_AwayDone_01_12");	//A kdo chybí?!
-			AI_Output(self,other,"DIA_Jorgen_LI_AwayDone_01_13");	//...(rozhlíží se)...
+			AI_Output(self,other,"DIA_Jorgen_LI_AwayDone_01_13");	//... (rozhlíží se) ...
 			if((Gorn_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_fighter_li) == FALSE) && (GORNLIHERE == TRUE) && (GORNLIONBOARD == FALSE))
 			{
 				AI_Output(self,other,"DIA_Jorgen_LI_AwayDone_01_14");	//... Gorn
@@ -878,7 +878,7 @@ func void dia_jorgen_li_wheregolddone_info()
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGoldDone_01_15");	//Eh, dobře! S ostatními z posádky jsme ho shodili z paluby...
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGoldDone_01_16");	//Ale to proto, že život je nám milejší!
 	AI_Output(other,self,"DIA_Jorgen_LI_WhereGoldDone_01_17");	//To jsi ho jen tak vyhodil?!
-	AI_Output(self,other,"DIA_Jorgen_LI_WhereGoldDone_01_18");	//Jo, ale loď se tak kymácela, že kdyby se převrhla, bylo by po nás (vážně).
+	AI_Output(self,other,"DIA_Jorgen_LI_WhereGoldDone_01_18");	//Jo, ale loď se tak kymácela, že kdyby se převrhla, bylo by po nás. (vážně)
 	AI_Output(other,self,"DIA_Jorgen_LI_WhereGoldDone_01_19");	//Ale bylo nutné vyhodit VŠECHNO zlato?!
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGoldDone_01_20");	//Promiň, ale na to jsme vážně nemysleli!
 	AI_Output(other,self,"DIA_Jorgen_LI_WhereGoldDone_01_21");	//No, to je jedno - zlato prostě není.
@@ -1090,7 +1090,7 @@ func void dia_jorgen_li_findmagicorecave_info()
 		AI_Output(other,self,"DIA_Jorgen_LI_FindMagicOreCave_01_11");	//A co mám zatraceně dělat, abys mi uveřil?!
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_12");	//No, musel bych kus rudy vidět, abych zhodnotil její kvalitu!
 		AI_Output(other,self,"DIA_Jorgen_LI_FindMagicOreCave_01_13");	//Tak pojď se mnou, ukážu ti ty jeskyně.
-		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_14");	//Chlape, na to teď absolutně nemám čas (úsměv).
+		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_14");	//Chlape, na to teď absolutně nemám čas. (úsměv)
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_15");	//Ještě jsem nedokončil opravy lodi!
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_16");	//Prostě mi přines malý kousek rudy a já ti řeknu, jestli je to opravdu ruda.
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_17");	//Pak nám bude jasné, co to je.
@@ -1287,12 +1287,12 @@ func void dia_jorgen_li_changecourse_sell()
 func void dia_jorgen_li_changecourse_here()
 {
 	AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourse_Here_01_01");	//Mohli bychom začít těžit.
-	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Here_01_02");	//Hmmm... (Zadumaně) Nemyslím si, že to je dobrý nápad.
+	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Here_01_02");	//Hmmm... (zadumaně) Nemyslím si, že to je dobrý nápad.
 	AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourse_Here_01_03");	//Proč?!
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Here_01_04");	//Ano, protože i kdybychom zde od rána do večera kopali s krumpáčem v ruce - nic z toho mít nebudem.
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Here_01_05");	//Těžba dostatečného množství rudy vyžaduje roky tvrdé práce...
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Here_01_06");	//Mimo to, nechce se mi na tomto ostrově strávit zbytek svýho života.
-	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Here_01_07");	//A rád bych se ještě někdy pořádně nažral!... (Ukřičeně)
+	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Here_01_07");	//A rád bych se ještě někdy pořádně nažral!... (ukřičeně)
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Here_01_08");	//Bude lepší, když na to prostě zapomeneš.
 };
 

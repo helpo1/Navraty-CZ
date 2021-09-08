@@ -209,7 +209,7 @@ func void dia_Ass_128_Nrozas_NrozasToOsair_info()
 	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_00");	//Co to je? Aha, dopis od mistra Osaira.
 	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_01");	//Dobře, dej ho sem. Podíváme se, co se v něm píše.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_02");	//Hmmm...(zamyšleně) On věří, že s tím budu souhlasit? No dobře...
+	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_02");	//Hmmm... (zamyšleně) On věří, že s tím budu souhlasit? No dobře...
 	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_03");	//Jakmile pošle svého člověka pro další otrávené šipky, tak mu to připomenu.
 	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_04");	//Co se týče tebe, dobře jsi pracoval.
 	AI_Output(self,other,"DIA_Ass_128_Nrozas_NrozasToOsair_01_05");	//Jestli budeš i nadále splňovat moje pokyny, budu přemýšlet o tvém novicovském osudu.
@@ -570,7 +570,7 @@ func void dia_Ass_128_Nrozas_Poison_Done_info()
 			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_37");	//Nemám ho.
 			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_38");	//Jak to?! A kde je?
 			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_39");	//Nepamatuju si, kam jsem ho dal.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_40");	//Hmmm...(zuří) Děláš ze mě hlupáka?
+			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_40");	//Hmmm... (zuří) Děláš ze mě hlupáka?
 			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_41");	//Tohle ti jen tak neprojde...
 			B_LogEntry(TOPIC_PW_PoisonNrozas,"Mistr Nrozas je rozzuřený. Nevrátil jsem mu jed, protože ho nemám. Teď mi zbývá jen bojovat s celým bratrstvem.");
 			PlayerIsPrioratFakeTemp = TRUE;
@@ -654,7 +654,7 @@ func void dia_Ass_128_Nrozas_Poison_NoDone_info()
 		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_NoDone_01_07");	//Nemám ho.
 		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_NoDone_01_08");	//Jak to?! A kde je?
 		AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_NoDone_01_09");	//Nepamatuju si, kam jsem ho dal.
-		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_NoDone_01_10");	//Hmmm...(rozhněvaně) Děláš si ze mě blázny?
+		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_NoDone_01_10");	//Hmmm... (rozhněvaně) Děláš si ze mě blázny?
 		AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_NoDone_01_11");	//Noo, to ti tak lehko neprojde...
 		B_LogEntry(TOPIC_PW_PoisonNrozas,"Mistr Nrozas je rozzuřený. Nevrátil jsem mu jed, protože ho nemám. Teď mi zbývá jen bojovat s celým bratrstvem.");
 		PlayerIsPrioratFakeTemp = TRUE;

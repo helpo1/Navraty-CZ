@@ -375,7 +375,7 @@ func void DIA_Sekob_DMT_Info()
 	};
 	if((other.guild == GIL_NDM) || (other.guild == GIL_KDM))
 	{
-		AI_Output(self,other,"DIA_Sekob_DMT_01_04C");	//(třesoucím hlasem)... Prosím tě, temný mágu!
+		AI_Output(self,other,"DIA_Sekob_DMT_01_04C");	//(třesoucím hlasem) ... Prosím tě, temný mágu!
 	};
 	AI_Output(self,other,"DIA_Sekob_DMT_01_05");	//Ti chlápkové říkali, že něco hledají. Ale určitě ne v mém domě.
 	AI_Output(self,other,"DIA_Sekob_DMT_01_06");	//Prosím, pomoz mi. Zařiď, ať vypadnou.

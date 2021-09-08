@@ -104,7 +104,7 @@ func void DIA_Onar_PERM_Info()
 	};
 	if((other.guild == GIL_NDM) || (other.guild == GIL_KDM))
 	{
-		AI_Output(self,other,"DIA_Onar_PERM_14_09");	//(Chvějící se hlas) ... A-ano, v pořádku.
+		AI_Output(self,other,"DIA_Onar_PERM_14_09");	//(chvějící se hlas) ... A-ano, v pořádku.
 	};
 };
 
@@ -790,7 +790,7 @@ func void dia_onar_onarbusiness_info()
 func void dia_onar_onarbusiness_gold()
 {
 	AI_Output(other,self,"DIA_Onar_OnarBusiness_Gold_01_01");	//Ty opravdu nemáš zájem o hory zlata?!
-	AI_Output(self,other,"DIA_Onar_OnarBusiness_Gold_01_02");	//(Vztekle) Takže, ty drzej zmetku. Ty si fakt myslíš, že skočím na všechno, jako pes na kost?!
+	AI_Output(self,other,"DIA_Onar_OnarBusiness_Gold_01_02");	//(vztekle) Takže, ty drzej zmetku. Ty si fakt myslíš, že skočím na všechno, jako pes na kost?!
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Gold_01_03");	//Já mám tolik zlata, o čem by se tomu tvému Luterovi ani nezdálo!
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Gold_01_04");	//Já mám tolik zlata, že bych si moh' koupit celé město i s těma darmožroutama, s tou paladinskou sebrankou! Tím si mužeš bejt jistej!
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Gold_01_05");	//A teď se kliď z mé farmy! A už sem ani nepáchni!
@@ -846,7 +846,7 @@ func void dia_onar_onarbusiness_forget()
 func void dia_onar_onarbusiness_paladin()
 {
 	AI_Output(other,self,"DIA_Onar_OnarBusiness_Paladin_01_01");	//Jsou to potraviny pro paladiny.
-	AI_Output(self,other,"DIA_Onar_OnarBusiness_Paladin_01_02");	//CO?! (Naštvaně) No on se snad zbláznil...
+	AI_Output(self,other,"DIA_Onar_OnarBusiness_Paladin_01_02");	//CO?! (naštvaně) No on se snad zbláznil...
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Paladin_01_03");	//A on si ještě myslí, že mu něco prodám?!
 	AI_Output(other,self,"DIA_Onar_OnarBusiness_Paladin_01_04");	//A co na to ty?
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Paladin_01_05");	//Víš, já doteď nepřežil proto, abych prodával jídlo nepříteli...
@@ -920,7 +920,7 @@ func void dia_onar_onarbusiness_secret()
 	AI_Output(other,self,"DIA_Onar_OnarBusiness_Secret_01_03");	//Pokud by paladinové nebo městská domobrana přišli na to, že s tebou obchoduje, dřív nebo později by ho zavřeli.
 	AI_Output(other,self,"DIA_Onar_OnarBusiness_Secret_01_04");	//Proto nedal příležitost jakýmkoliv drbům. Poslal mě.
 	AI_Output(other,self,"DIA_Onar_OnarBusiness_Secret_01_05");	//A tobě se to nezdá?
-	AI_Output(self,other,"DIA_Onar_OnarBusiness_Secret_01_06");	//Hmmm... (Zamyšleně) ano, něco mi nesedí...
+	AI_Output(self,other,"DIA_Onar_OnarBusiness_Secret_01_06");	//Hmmm... (zamyšleně) ano, něco mi nesedí...
 	AI_Output(other,self,"DIA_Onar_OnarBusiness_Secret_01_07");	//A to?
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Secret_01_08");	//No, vždycky pro mě bylo zvykem, mluvit s pánem a ne se psem, uvázaným na jeho řetězu... (s opovržením)
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Secret_01_09");	//Další poskok, který představuje nebezpečí a také je velice nespolehlivý!
@@ -985,10 +985,10 @@ func void dia_onar_orcs_info()
 	AI_Output(other,self,"DIA_Onar_Orcs_01_00");	//Jaká je situace?
 	AI_Output(self,other,"DIA_Onar_Orcs_01_01");	//Co je s tebou?!
 	AI_Output(other,self,"DIA_Onar_Orcs_01_02");	//Skřeti! Nemáš strach, že by zavítali i sem, na farmu?
-	AI_Output(self,other,"DIA_Onar_Orcs_01_03");	//Možná... (Nervózně) A i kdyby, proč bych měl děsit své lidi?
+	AI_Output(self,other,"DIA_Onar_Orcs_01_03");	//Možná... (nervózně) A i kdyby, proč bych měl děsit své lidi?
 	AI_Output(self,other,"DIA_Onar_Orcs_01_04");	//Snad si nemyslíš, že své lidi platím jen tak pro nic za nic.
 	AI_Output(other,self,"DIA_Onar_Orcs_01_05");	//Ale skřeti jsou mnohem silnější, než žoldáci! Nemyslím si, že je v jejich silách zastavit celou armádu těchto zlých potvor.
-	AI_Output(self,other,"DIA_Onar_Orcs_01_06");	//Pak by to znamenalo, že přišel konec... (S úsměvem) Avšak v tom případě tu nebudu sedět a čekat na vlastní smrt!
+	AI_Output(self,other,"DIA_Onar_Orcs_01_06");	//Pak by to znamenalo, že přišel konec... (s úsměvem) Avšak v tom případě tu nebudu sedět a čekat na vlastní smrt!
 	AI_Output(self,other,"DIA_Onar_Orcs_01_07");	//Kdybych měl náhodou přesto zemřít, stane se tak zde, na polích mých předků.
 	AI_Output(self,other,"DIA_Onar_Orcs_01_08");	//Věřím, že se skřetům nepostavíme s holýma rukama!
 };
@@ -1016,7 +1016,7 @@ func int dia_onar_paladinhere_condition()
 func void dia_onar_paladinhere_info()
 {
 	AI_Output(other,self,"DIA_Onar_PaladinHere_01_00");	//Paladinové lorda Hagena chtějí zisk z farmy.
-	AI_Output(self,other,"DIA_Onar_PaladinHere_01_01");	//Ano, vím o tom... (Podrážděně) Abych řekl pravdu, je to poprvé v mém životě, kdy z toho mám alespoň trochu radost.
+	AI_Output(self,other,"DIA_Onar_PaladinHere_01_01");	//Ano, vím o tom... (podrážděně) Abych řekl pravdu, je to poprvé v mém životě, kdy z toho mám alespoň trochu radost.
 	AI_Output(self,other,"DIA_Onar_PaladinHere_01_02");	//S jejich pomocí bude mnohem pravděpodobnější, že se nám podaří odrazit útoky skřetů.
 	AI_Output(self,other,"DIA_Onar_PaladinHere_01_03");	//Bylo by však nejlepší, kdyby se to stalo co nejdřív.
 	AI_Output(other,self,"DIA_Onar_PaladinHere_01_04");	//Proč takový spěch?!
@@ -1025,7 +1025,7 @@ func void dia_onar_paladinhere_info()
 	AI_Output(other,self,"DIA_Onar_PaladinHere_01_07");	//Věřím, že tvé stodoly mají dost na to, aby nakrmily o dost víc lidí.
 	AI_Output(other,self,"DIA_Onar_PaladinHere_01_08");	//Tak si nestěžuj! Je lepší děkovat za to, že je někdo ochoten za tebe položit svůj život!
 	AI_Output(other,self,"DIA_Onar_PaladinHere_01_09");	//Je ti to jasné?
-	AI_Output(self,other,"DIA_Onar_PaladinHere_01_10");	//Hmmm... (Kousavě)
+	AI_Output(self,other,"DIA_Onar_PaladinHere_01_10");	//Hmmm... (kousavě)
 	AI_Output(other,self,"DIA_Onar_PaladinHere_01_11");	//Dobře, vidím, že mi rozumíš...
 };
 
@@ -1060,7 +1060,7 @@ func void dia_onar_tower_app_good_info()
 	AI_Output(other,self,"DIA_Onar_Tower_App_Good_15_07");	//Chtěl bych žít ve věži.
 	AI_Output(self,other,"DIA_Onar_Tower_App_Good_14_08");	//Tak to ty. To tys promlouval k mým lidem? První Lee a pak Maria...
 	AI_Output(self,other,"DIA_Onar_Tower_App_Good_14_09");	//Přiznávám, že z toho, co mi řekli, jsem byl unešen.
-	AI_Output(self,other,"DIA_Onar_Tower_App_Good_14_10");	//(Rozhodnutě) Ale to nestačí na celou věž.
+	AI_Output(self,other,"DIA_Onar_Tower_App_Good_14_10");	//(rozhodnutě) Ale to nestačí na celou věž.
 	AI_Output(self,other,"DIA_Onar_Tower_App_Good_14_11");	//Můžeš v ní žít, pokud jseš ochotnej zaplatit nájem. Sto zlatých na každý den. Souhlasíš?
 	Info_ClearChoices(dia_onar_tower_app_good);
 	Info_AddChoice(dia_onar_tower_app_good,"Sto zlatých - příliš vysoká cena.(smlouvat)",dia_onar_tower_app_good_maybe);

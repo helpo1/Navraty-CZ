@@ -174,7 +174,7 @@ func void dia_caine_sentplantstocadarok_info()
 {
 	B_GivePlayerXP(50);
 	AI_Output(other,self,"DIA_Caine_SentPlantsToCadarOk_01_00");	//Odnesl jsem mu drogu.
-	AI_Output(self,other,"DIA_Caine_SentPlantsToCadarOk_01_01");	//A?... (Se zájmem)
+	AI_Output(self,other,"DIA_Caine_SentPlantsToCadarOk_01_01");	//A?... (se zájmem)
 	AI_Output(other,self,"DIA_Caine_SentPlantsToCadarOk_01_02");	//Baal Cadar ke mně začal mluvit a dal mi úkol.
 	AI_Output(self,other,"DIA_Caine_SentPlantsToCadarOk_01_03");	//Vidíš! Co jsem říkal? Pokračuj takhle dál a zachvíli budeš jedním z nás!
 };
@@ -203,7 +203,7 @@ func int dia_caine_howwork_condition()
 func void dia_caine_howwork_info()
 {
 	AI_Output(other,self,"DIA_Caine_HowWork_01_00");	//Jak pokračuje sklizeň?
-	AI_Output(self,other,"DIA_Caine_HowWork_01_01");	//Velmi dobře.(smích) Jsem si jistý že Guru pro tebe najde časem mnohem lepší práci.
+	AI_Output(self,other,"DIA_Caine_HowWork_01_01");	//Velmi dobře. (smích) Jsem si jistý že Guru pro tebe najde časem mnohem lepší práci.
 	AI_Output(self,other,"DIA_Caine_HowWork_01_02");	//A já aspoň nemusím sbírat sklizeň sám.
 };
 

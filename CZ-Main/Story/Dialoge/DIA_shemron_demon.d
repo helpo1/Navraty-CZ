@@ -51,7 +51,7 @@ func void dia_shemron_demon_hello_info()
 	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_01");	//Tím, že si sem přišel, i když to ještě nevíš ses dostal do pasti...
 	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_02");	//Ale brzy na to přijdeš... (hrozivě)
 	AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_03");	//Kdo jsi stvůro z temnoty?! Jen další posluhovač Beliara?
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_04");	//Hloupý smrtelníku!...(směje se) Můj tvůrce není Temný bůh!
+	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_04");	//Hloupý smrtelníku!... (směje se) Můj tvůrce není Temný bůh!
 	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_06");	//Já - Shemron, pátý démon Eligorovy legie, věrný ochránce Strážců božské Temnoty, jejichž moudrost vládne noci!
 	self.name[0] = CZ_NAME_Monster_DemonLord_Shemron;
 	SHEMRONKNOWS = TRUE;
@@ -82,7 +82,7 @@ func void dia_shemron_demon_hello_info()
 		if(Npc_HasItems(other,itri_guardians_01) >= 1)
 		{
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_26");	//Mám tento prsten. Dal mi ho Strážce Dagoth při našem prvním setkání.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_27");	//...(vrčí) Prsten Baalův!... Jenom Strážce ti mohl dát takovouto věc.
+			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_27");	//... (vrčí) Prsten Baalův!... Jenom Strážce ti mohl dát takovouto věc.
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_28");	//Nyní už mi věříš?
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_29");	//Ano. Tento důkaz je dostatečný!
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_30");	//Ušetřím tvůj život, člověče. Ale to, co jsi vzal - zůstává zde.
@@ -99,7 +99,7 @@ func void dia_shemron_demon_hello_info()
 		else if(Npc_HasItems(other,itri_guardians_02) >= 1)
 		{
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_33");	//Mám tento prsten stoupence posvátného kruhu. Strážce Stonnos mi ho dal při mém zasvěcení.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_34");	//...(vrčí) Prsten elementů!... Jenom Strážce ti mohl dát takovouto věc.
+			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_34");	//... (vrčí) Prsten elementů!... Jenom Strážce ti mohl dát takovouto věc.
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_35");	//Nyní už mi věříš?
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_36");	//Ano. Tento důkaz je dostatečný!
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_37");	//Ušetřím tvůj život, člověče. Ale to, co jsi vzal - zůstává zde.
@@ -116,7 +116,7 @@ func void dia_shemron_demon_hello_info()
 		else if(Npc_HasItems(other,itri_narus) >= 1)
 		{
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_40");	//Mám tento prsten. Dal mi ho Strážce Wakon při našem prvním setkání.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_41");	//...(vrčí) Prsten vody!... Jenom Strážce ti mohl dát takovouto věc.
+			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_41");	//... (vrčí) Prsten vody!... Jenom Strážce ti mohl dát takovouto věc.
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_42");	//Nyní už mi věříš?
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_43");	//Ano. Tento důkaz je dostatečný!
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_44");	//Ušetřím tvůj život, člověče. Ale to, co jsi vzal - zůstává zde.
@@ -154,7 +154,7 @@ func void dia_shemron_demon_hello_info()
 func void dia_shemron_demon_hello_stonnos()
 {
 	AI_Output(other,self,"DIA_Shemron_Demon_Hello_Stonnos_01_01");	//Tento element je pro Strážce Stonnose velmi důležitý a já mám v plánu mu ho doručit za každou cenu.
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_Stonnos_01_03");	//Stonnos?! Hmmm...(vrčí) Jestliže je tomu tak, tak boj není na místě člověče.
+	AI_Output(self,other,"DIA_Shemron_Demon_Hello_Stonnos_01_03");	//Stonnos?! Hmmm... (vrčí) Jestliže je tomu tak, tak boj není na místě člověče.
 	AI_Output(self,other,"DIA_Shemron_Demon_Hello_Stonnos_01_04");	//Pokud vše, co říkáš je pravda a byl jsi sem poslán vrchním Strážcem Stonnosem - Nebudu ti nadále bránit v jeho vlastnictví!
 	AI_Output(self,other,"DIA_Shemron_Demon_Hello_Stonnos_01_05");	//Můžeš odejít i s elementem a pokračovat ve své cestě!
 	GIVESHEPHRESHEMRONBACK = TRUE;

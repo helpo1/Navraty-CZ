@@ -312,7 +312,7 @@ func void DIA_Addon_Thorus_Gefangene_Info()
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Gefangene_12_01");	//Mmh, jejich práce skončila! Co já vím, tak teď dolují zlato.
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Gefangene_15_02");	//A pokud se pokusí o útěk?
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Gefangene_12_03");	//Bloodwyn za nimi pošle své stráže. Ale nevěřím, že jsou dost šílení, aby se pokusili o útěk.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Gefangene_12_04");	//Jestliže...(Zamyšleně)
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Gefangene_12_04");	//Jestliže... (zamyšleně)
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Gefangene_15_05");	//Jestliže co?
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Gefangene_12_06");	//... je někdo jiný nebude podporovat. Ale vím, že nikdo není tak blbý, aby to udělal... v každém případě, dokud je tu Bloodwyn!
 	B_Say(other,self,"$VERSTEHE");
@@ -423,7 +423,7 @@ func int DIA_Addon_Thorus_Raventot_Condition()
 func void DIA_Addon_Thorus_Raventot_Info()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Raventot_15_98");	//Dokázal jsem to. Raven je mrtev!
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_99");	//Co tím myslíš? (Překvapeně) Ačkoliv Beliarova moc byl s ním! Bez ní nám bude každému líp!
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_99");	//Co tím myslíš? (překvapeně) Ačkoliv Beliarova moc byl s ním! Bez ní nám bude každému líp!
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_02");	//Co teď budeš dělat?
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Raventot_15_97");	//Znáš mě.
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_04");	//(směje se) Ano, jsi stále na cestě? Přeji dobrou cestu!

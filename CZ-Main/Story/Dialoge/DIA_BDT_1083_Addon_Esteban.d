@@ -143,7 +143,7 @@ func void DIA_Addon_Esteban_Rot_Info()
 	AI_Output(other,self,"DIA_Addon_Esteban_Rot_15_00");	//Dej mi jeden z těch červených kamenů.
 	AI_Output(self,other,"DIA_Addon_Esteban_Rot_07_01");	//Jistě, ale nebude to zadarmo.
 	AI_Output(self,other,"DIA_Addon_Esteban_Rot_07_02");	//Obvykle sice beru slušnou sumu zlata abych se nechal přesvědčit.
-	AI_Output(self,other,"DIA_Addon_Esteban_Rot_07_03");	//(uznale)A co tvoje kopáčské schopnosti?!
+	AI_Output(self,other,"DIA_Addon_Esteban_Rot_07_03");	//(uznale) A co tvoje kopáčské schopnosti?!
 	if(Hero_HackChance > 25)
 	{
 		AI_Output(self,other,"DIA_Addon_Esteban_Rot_07_04");	//Už znáš pár triků, že?

@@ -78,7 +78,7 @@ func void dia_fisk_nw_hi_info()
 	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_00");	//Nevěřím svým očím! Fisku, jak ses sem dostal?
 	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_01");	//Divná otázka od někoho, kdo mizí z místa na místo.
 	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_03");	//A jak ses dostal přes stráže?!
-	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_04");	//No, dohodnout se umím vždy... Učinil jsem nabídku, kterou nemohli odmítnout...(směje se)
+	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_04");	//No, dohodnout se umím vždy... Učinil jsem nabídku, kterou nemohli odmítnout... (směje se)
 	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_05");	//... a myslím, že mě chápeš...
 
 	if(other.guild == GIL_KDF)
@@ -99,11 +99,11 @@ func void dia_fisk_nw_hi_info()
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Fisk_NW_Hi_01_0B");	//... Bandita se může stát nekromantem! Zajímavé...(udiveně)
+		AI_Output(self,other,"DIA_Fisk_NW_Hi_01_0B");	//... Bandita se může stát nekromantem! Zajímavé... (udiveně)
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
-		AI_Output(self,other,"DIA_Fisk_NW_Hi_01_0C");	//... Ty jsi stihl vstoupit do sekty? Zajímavé...(udiveně)
+		AI_Output(self,other,"DIA_Fisk_NW_Hi_01_0C");	//... Ty jsi stihl vstoupit do sekty? Zajímavé... (udiveně)
 	};
 
 	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_09");	//Není to tak jednoduché... V těch bažinách... Už tehdy jsem nebyl bandita...

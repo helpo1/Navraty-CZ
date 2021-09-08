@@ -260,7 +260,7 @@ func void DIA_Gaertner_HelpThings_info()
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_03");	//Takže můj život postrádá i těch nejzákladnějších potěšení.
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_04");	//Nicméně, pokud bys mi mohl donést jen pár láhví kořalky a trochu trávy...
 	AI_Output(other,self,"DIA_Gaertner_HelpThings_01_05");	//Chápu. Kolik toho chceš?
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_06");	//(Zamyšleně) Myslím, že tři láhve a pět stébel bude stačit. Více zde i tak neschovám.
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_01_06");	//(zamyšleně) Myslím, že tři láhve a pět stébel bude stačit. Více zde i tak neschovám.
 	AI_Output(other,self,"DIA_Gaertner_HelpThings_01_07");	//Ok, donesu ti je.
 	MIS_GaertnerHive = LOG_Running;
 	Log_CreateTopic(TOPIC_GaertnerHive,LOG_MISSION);
@@ -293,7 +293,7 @@ func void DIA_Gaertner_HelpThings_Done_info()
 	B_GiveInvItemsManyThings(other,self);
 	Npc_RemoveInvItems(hero,ItFo_Booze,3);
 	Npc_RemoveInvItems(hero,ItMi_Joint,5);
-	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_01");	//(Nedočkavě) Konečně. No, teď jsem tvým dlužníkem, kámo.
+	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_01");	//(nedočkavě) Konečně. No, teď jsem tvým dlužníkem, kámo.
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_02");	//Jak se ti můžu odvděčit?
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_03");	//Poslouchej... jednou, při sekání trávy jsem při vchodu do radnice našel tento klíč.
 	AI_Output(self,other,"DIA_Gaertner_HelpThings_Done_01_04");	//Vypadá to, že ho ztratil jeden z paladinů.

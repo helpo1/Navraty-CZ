@@ -43,7 +43,7 @@ func int DIA_Neoras_NoEnter_PissOff_Condition()
 
 func void DIA_Neoras_NoEnter_PissOff_Info()
 {
-	AI_Output(self,other,"DIA_Neoras_NoEnter_PissOff_01_00");	//Hmm...(naštvaně)
+	AI_Output(self,other,"DIA_Neoras_NoEnter_PissOff_01_00");	//Hmm... (naštvaně)
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuildEnemy,0);
 };
@@ -925,7 +925,7 @@ func void dia_neoras_receptfortyon_info()
 	{
 		AI_Output(other,self,"DIA_Neoras_ReceptForTyon_01_00");	//Hledám recept na jeden velmi zajímavý lektvar.
 		AI_Output(other,self,"DIA_Neoras_ReceptForTyon_01_03");	//Říká se, že je schopný ovlivnit a rozšířit vědomí osoby, která ho užije. Slyšel jsi někdy o něčem podobném?
-		AI_Output(self,other,"DIA_Neoras_ReceptForTyon_01_04");	//Hmm...(nedůvěřivě) A proč se o to zajímá někdo jako ty?
+		AI_Output(self,other,"DIA_Neoras_ReceptForTyon_01_04");	//Hmm... (nedůvěřivě) A proč se o to zajímá někdo jako ty?
 		Info_ClearChoices(dia_neoras_receptfortyon);
 		Info_AddChoice(dia_neoras_receptfortyon,"Tento recept je pro mne nesmírně důležitý!",dia_neoras_receptfortyon_wants);
 		Info_AddChoice(dia_neoras_receptfortyon,"Chtěl bych se naučit více o jeho vlastnostech.",dia_neoras_receptfortyon_alchimik);
@@ -1062,7 +1062,7 @@ func void dia_neoras_receptforkdf_info()
 			AI_Output(self,other,"DIA_Neoras_ReceptForKDF_01_12");	//Na alchymistickém stolíku pak postupně přidáváš všechno do soli.
 			AI_Output(self,other,"DIA_Neoras_ReceptForKDF_01_13");	//Je velice důležité přidávat je tam v správném pořadí!
 			AI_Output(self,other,"DIA_Neoras_ReceptForKDF_01_14");	//Potom, co tam přidáš všechny ingredience, směs přivedeš do varu...
-			AI_Output(self,other,"DIA_Neoras_ReceptForKDF_01_15");	//Jako já teď... (ukazuje)... Ještě pak trochu a...
+			AI_Output(self,other,"DIA_Neoras_ReceptForKDF_01_15");	//Jako já teď... (ukazuje) Ještě pak trochu a...
 			AI_UseMob(self,"LAB",-1);
 			B_TurnToNpc(self,other);
 			AI_Output(self,other,"DIA_Neoras_ReceptForKDF_01_16");	//To je všechno! Mocný elixír Amun-Su je hotový!
@@ -1119,7 +1119,7 @@ func void dia_neoras_receptforkdfagain_info()
 			AI_Output(self,other,"DIA_Neoras_ReceptForKDFAgain_01_05");	//Na alchymistickém stolíku pak postupně přidáváš všechno do soli.
 			AI_Output(self,other,"DIA_Neoras_ReceptForKDFAgain_01_06");	//Je velice důležité přidávat je tam v správném pořadí!
 			AI_Output(self,other,"DIA_Neoras_ReceptForKDFAgain_01_07");	//Potom, co tam přidáš všechny ingredience, směs přivedeš do varu...
-			AI_Output(self,other,"DIA_Neoras_ReceptForKDFAgain_01_08");	//Jako já teď... (ukazuje)... Ještě pak trochu a...
+			AI_Output(self,other,"DIA_Neoras_ReceptForKDFAgain_01_08");	//Jako já teď... (ukazuje) Ještě pak trochu a...
 			AI_UseMob(self,"LAB",-1);
 			B_TurnToNpc(self,other);
 			AI_Output(self,other,"DIA_Neoras_ReceptForKDFAgain_01_09");	//To je všechno! Mocný elixír Amun-Su je hotový!
@@ -1262,7 +1262,7 @@ func void DIA_neoras_LOKIPOTION_Info()
 		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_10");	//Tak mě řekni, jak tu rostlinu můžu získat?
 		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_11");	//Nebo možná bych měl využít svého postavení paladina...
 		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_12");	//... A to vyžadují ku prospěchu věci ve jménu Innose?
-		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_13");	//Dobře, dobře...(zmateně) Opravdu, ji tak potřebuješ!
+		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_13");	//Dobře, dobře... (zmateně) Opravdu, ji tak potřebuješ!
 		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_14");	//Dobře, dám ti ji jen tak.
 		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_15");	//Tady, vem si ji. Doufám, že ji opravdu použiješ k dobrým účelům.
 		B_GiveInvItems(self,other,ItPl_CactusFlower,1);
@@ -1278,7 +1278,7 @@ func void DIA_neoras_LOKIPOTION_Info()
 		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_20");	//Věřte mi, tvůj elixír není tak důležitý, ve srovnání s tím, jak může být prospěšná, pokud mi ji přenecháš.
 		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_21");	//Pečlivě přemýšlej nad tím, co jsem ti řek.
 		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_22");	//Jinak budu nucen požádat o pomoc Pyrokara a další vyšší mágy Ohně.
-		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_23");	//Hmmm... (zamyšleně): No, no, no... Dám ti ji... a jenom tak.
+		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_23");	//Hmmm... (zamyšleně) No, no, no... Dám ti ji... a jenom tak.
 		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_24");	//Tady ji máš. Doufám, že v budoucnu toho nebudu litovat.
 		B_GiveInvItems(self,other,ItPl_CactusFlower,1);
 		B_LogEntry(TOPIC_PrioratStart,"Využil jsem svého postavení mága Ohně a přesvědčíl Neorase aby mi ji dal. Je čas vrátit se k Baalu Tyonovi.");

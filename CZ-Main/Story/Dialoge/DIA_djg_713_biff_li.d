@@ -102,7 +102,7 @@ func int dia_biff_li_missmygold_condition()
 func void dia_biff_li_missmygold_info()
 {
 	AI_Output(other,self,"DIA_Biff_LI_MissMyGold_01_01");	//Nevíš náhodou něco o tom kde - je moje zlato?
-	AI_Output(self,other,"DIA_Biff_LI_MissMyGold_01_02");	//Hele...(reptání) Já myslím na hodně věcí, ale na okradení TEBE fakt ne!
+	AI_Output(self,other,"DIA_Biff_LI_MissMyGold_01_02");	//Hele... (reptání) Já myslím na hodně věcí, ale na okradení TEBE fakt ne!
 	B_LogEntry(TOPIC_MISSMYGOLD,"Biff mi asi o mém zlatě nic neřekne.");
 };
 

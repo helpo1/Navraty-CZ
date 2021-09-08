@@ -518,7 +518,7 @@ func void dia_netbek_whathappened_info()
 	AI_Output(self,other,"DIA_Netbek_WhatHappened_01_03");	//Je jisté, že už to nezkusí!
 	AI_Output(self,other,"DIA_Netbek_WhatHappened_01_05");	//Jednoduše se rozhlédni a uvidíš.
 	AI_Output(other,self,"DIA_Netbek_WhatHappened_01_06");	//On...
-	AI_Output(self,other,"DIA_Netbek_WhatHappened_01_07");	//Samozřejmě, jestli ti to není jasné (smích).
+	AI_Output(self,other,"DIA_Netbek_WhatHappened_01_07");	//Samozřejmě, jestli ti to není jasné. (smích)
 };
 
 instance DIA_NETBEK_GUARDIANSKNOW(C_Info)
@@ -626,7 +626,7 @@ func void DIA_NETBEK_HOWGETBLESSED_info()
 	AI_Output(other,self,"DIA_NETBEK_HOWGETBLESSED_01_01");	//Myslíte že mi bohové propůjčí svou sílu?
 	AI_Output(self,other,"DIA_NETBEK_HOWGETBLESSED_01_02");	//Věř mi, že nemají jinou možnost!
 	AI_Output(self,other,"DIA_NETBEK_HOWGETBLESSED_01_03");	//Není nikdo, s výjimkou tebe kdo by byl schopen ustát, tobě jsou ochotni svěřit moc.
-	AI_Output(self,other,"DIA_NETBEK_HOWGETBLESSED_01_04");	//(Vážně) Nicméně předtím než to uděláš, bohové budou chtít opět být přesvědčeni o správnosti svého rozhodnutí.
+	AI_Output(self,other,"DIA_NETBEK_HOWGETBLESSED_01_04");	//(vážně) Nicméně předtím než to uděláš, bohové budou chtít opět být přesvědčeni o správnosti svého rozhodnutí.
 	AI_Output(self,other,"DIA_NETBEK_HOWGETBLESSED_01_05");	//Osud světa závisí na jejich volbě, a teď nemají žádný prostor pro chyby. Stejně jako ty!
 	AI_Output(other,self,"DIA_NETBEK_HOWGETBLESSED_01_07");	//To chápu. Ale co tentokrát ode mě budou potřebovat?
 	AI_Output(self,other,"DIA_NETBEK_HOWGETBLESSED_01_08");	//Jsem si jistý že ti to poví.
@@ -658,7 +658,7 @@ func void DIA_NETBEK_TITANS_info()
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_NETBEK_TITANS_01_01");	//Zdá se, že Strážci sponzorují i skřety.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_01_02");	//Víš o tom něco?
-	AI_Output(self,other,"DIA_NETBEK_TITANS_01_03");	//Hmmm...(zaraženě) V poslední době jsme se opět museli s nimi vypořádat.
+	AI_Output(self,other,"DIA_NETBEK_TITANS_01_03");	//Hmmm... (zaraženě) V poslední době jsme se opět museli s nimi vypořádat.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_01_04");	//Myslím, že byli obklopeni nějakou velmi silnou ochrannou aurou.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_01_05");	//Po pravdě řečeno, nevím co to spojuje.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_01_06");	//Jedině díky bohu se mi podařilo přežít.
@@ -669,7 +669,7 @@ func void DIA_NETBEK_TITANS_info()
 	AI_Output(other,self,"DIA_NETBEK_TITANS_01_11");	//Koneckonců, váš bůh vás nemůže pořád všechny chránit!
 	AI_Output(self,other,"DIA_NETBEK_TITANS_01_12");	//Ano, máte pravdu. On není tak silný jako ostatní bohové tohoto světa.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_01_13");	//Tak mi alespoň pomoz najít toto starobylé zlo! Pokud nejsme schopni více.
-	AI_Output(self,other,"DIA_NETBEK_TITANS_01_14");	//Chystám se ho požádat, aby pomohl... (vážně), ale bude to trvat nějakou dobu.
+	AI_Output(self,other,"DIA_NETBEK_TITANS_01_14");	//Chystám se ho požádat, aby pomohl... (vážně) Ale bude to trvat nějakou dobu.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_01_15");	//Jenže čas nemáme! Takže pospíchej a kontaktuj svého přítele.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_01_16");	//Vrať se zítra. Pokusím se zjistit, co způsobilo silné kouzlo skřetů.
 	NetBekWaitDay = Wld_GetDay();
@@ -746,14 +746,14 @@ func void DIA_NETBEK_TITANS_Sleeper_info()
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_01_07");	//Co tím myslíš?
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_01_08");	//Myslím, že se do tohoto světa vrací zlo které bylo kdysi vypuzeno.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_01_09");	//Myslíš Spáče?
-	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_01_10");	//Ano...(smutně) Mluvím o něm.
+	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_01_10");	//Ano... (smutně) Mluvím o něm.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_01_11");	//Nechci na to myslet, ale každý den jsou mé obavy větší.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_01_12");	//Pak bychom měli okamžitě zkontrolovat chrámové skřety! Možná máš pravdu.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_01_13");	//Co tím myslíš?
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_01_14");	//Ten temný čaroděj, kterého jsem zabil v chrámu. Řekl mi před svou smrtí, že se mu podařilo dokončit rituál.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_01_15");	//Samozřejmě jsem tomu přílišnou vážnost nedal.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_01_16");	//Ale zdá se že ten mág mluvil pravdu!
-	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_01_17");	//Pokud ano... (v zoufalství), pak se vydej do chrámu co NEJDŘÍVE!
+	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_01_17");	//Pokud ano... (v zoufalství) Pak se vydej do chrámu co NEJDŘÍVE!
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_01_18");	//Ještě není příliš pozdě!
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_01_19");	//Návrat Spáče by mohlo ve světě mít příliš negativních změn!
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_01_20");	//Navíc, vzhledem k hrozbě Strážců se svět může zhroutit přes noc!
@@ -852,7 +852,7 @@ func void DIA_NETBEK_TITANS_Sleeper_Dead_Prize()
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_02");	//Můj bůh ti dal životní sílu!
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_03");	//To vám pomůže v budoucnu s větší jistotou čelit nepřátelům a nebezpečí tohoto světa.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_04");	//Děkuji! Víte, dokonce jsem se nějak začal cítit lépe.
-	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_05");	//(Usmívá se) Nepochybuji.
+	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_05");	//(usmívá se) Nepochybuji.
 	Info_ClearChoices(DIA_NETBEK_TITANS_Sleeper_Dead);
 };
 

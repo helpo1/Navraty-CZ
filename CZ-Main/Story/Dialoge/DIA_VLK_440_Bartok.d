@@ -67,17 +67,17 @@ func int DIA_Bartok_Jaeger_Condition()
 func void DIA_Bartok_Jaeger_Info()
 {
 	AI_Output(other,self,"DIA_Bartok_Jager_15_00");	//Kde najdu ty ostatní lovce?
-	AI_Output(self,other,"DIA_Bartok_Jager_01_01");	//Tady ve městě je rozhodně nenajdeš... (Usměje se) Tady jsme zústali jen já a můj přítel Trokar.
+	AI_Output(self,other,"DIA_Bartok_Jager_01_01");	//Tady ve městě je rozhodně nenajdeš... (usměje se) Tady jsme zústali jen já a můj přítel Trokar.
 	AI_Output(self,other,"DIA_Bartok_Jager_01_02");	//Zbytek odešel do tábora poblíž Onarovy farmy, někde v půli cesty od hostince.
 	AI_Output(other,self,"DIA_Bartok_Jager_01_03");	//Co je to za tábor?!
 	AI_Output(self,other,"DIA_Bartok_Jager_01_04");	//Říkáme tomu tábor Svobodných lovců! Sám jsem ho byl několikrát navštívit... 
 	AI_Output(other,self,"DIA_Bartok_Jager_01_05");	//Jaké to tam je?
 	AI_Output(self,other,"DIA_Bartok_Jager_01_06");	//Abych řekl pravdu, tak je to dobré místo, velice přívětivé.
 	AI_Output(other,self,"DIA_Bartok_Jager_01_07");	//Potom bude nezbytné abych tábor navštívil také.
-	AI_Output(self,other,"DIA_Bartok_Jager_01_08");	//Můžeš to zkusit (Usměje se) Možná se jednou staneš jedním z nich!
+	AI_Output(self,other,"DIA_Bartok_Jager_01_08");	//Můžeš to zkusit (usměje se) Možná se jednou staneš jedním z nich!
 	AI_Output(self,other,"DIA_Bartok_Jager_01_09");	//Věř mi, od chlapů v táboře se mají ještě hodně co učit.
 	AI_Output(other,self,"DIA_Bartok_Jager_01_10");	//Co mám teda udělat?
-	AI_Output(self,other,"DIA_Bartok_Jager_01_11");	//Hmmm (Zamyslí se) Opravdu nevím.
+	AI_Output(self,other,"DIA_Bartok_Jager_01_11");	//Hmmm (zamyslí se) Opravdu nevím.
 	AI_Output(self,other,"DIA_Bartok_Jager_01_12");	//Ale myslím, že pro začátek by sis mohl sehnat nějakou loveckou zbroj.
 	AI_Output(self,other,"DIA_Bartok_Jager_01_13");	//V těch hadrech co máš právě na sobě by tě měli chlapi tak akorát za nějakého žebráka.
 	AI_Output(self,other,"DIA_Bartok_Jager_01_14");	//A nikdo se s tebou vůbec nezačne ani bavit.

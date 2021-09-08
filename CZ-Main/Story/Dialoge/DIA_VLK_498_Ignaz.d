@@ -693,13 +693,13 @@ func int DIA_Ignaz_Werewolf_Condition()
 func void DIA_Ignaz_Werewolf_Info()
 {
 	AI_Output(other,self,"DIA_Ignaz_Werewolf_01_00");	//Máte pro mě nějakou jinou práci?
-	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_01");	//Možná...(vydechujíc) Nicméně, to je velmi nebezpečné.
+	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_01");	//Možná... (vydechujíc) Nicméně, to je velmi nebezpečné.
 	AI_Output(other,self,"DIA_Ignaz_Werewolf_01_02");	//Pane co mám dělat?
 	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_03");	//Mám zájem o sekci alchymie transformování do různých zvířat.
 	AI_Output(other,self,"DIA_Ignaz_Werewolf_01_04");	//Co tím myslíš?
 	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_05");	//Když jsme u toho, myslím zvláštní magické svitky které transformují muže do chňapavců, vlků a dalších zvířat.
 	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_06");	//Účinky těchto kouzel jsou pro člověka zcela neškodné a časem odchází.
-	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_07");	//(Zaváhal) Alespoň jsem si to myslel až do nedávné doby.
+	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_07");	//(zaváhal) Alespoň jsem si to myslel až do nedávné doby.
 	AI_Output(other,self,"DIA_Ignaz_Werewolf_01_08");	//Co se stalo?
 	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_09");	//Jak to bylo hrozné nedorozumění, při mém posledním pokusu.
 	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_10");	//Možná jsem udělal někde chybu ve vzorci. Nebo z nějakého jiného důvodu.
@@ -716,7 +716,7 @@ func void DIA_Ignaz_Werewolf_Info()
 	AI_Output(other,self,"DIA_Ignaz_Werewolf_01_21");	//A vám nevadí, že ho?
 	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_22");	//Z toho všeho mám kámen v duši... Ale nevidím žádný jiný způsob, jak tuto situaci napravit.
 	AI_Output(other,self,"DIA_Ignaz_Werewolf_01_23");	//Dobře, udělám to. Kde k útoku došlo?
-	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_24");	//(Zamyšleně) Myslím, že někde poblíž východní brány města.
+	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_24");	//(zamyšleně) Myslím, že někde poblíž východní brány města.
 	AI_Output(self,other,"DIA_Ignaz_Werewolf_01_25");	//Zkus se zeptat stráže.
 	MIS_WolfAndMan = LOG_Running;
 	Log_CreateTopic(TOPIC_WolfAndMan,LOG_MISSION);

@@ -591,7 +591,7 @@ func void dia_jora_bengargoods_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Jora_BengarGoods_01_00");	//Mám tu balíček od Bengara.
-	AI_Output(self,other,"DIA_Jora_BengarGoods_01_01");	//Už jsem se nemohl dočkat!... (Potěšeně)
+	AI_Output(self,other,"DIA_Jora_BengarGoods_01_01");	//Už jsem se nemohl dočkat!... (potěšeně)
 	B_GiveInvItems(other,self,itmi_bengarpacket,1);
 	Npc_RemoveInvItems(self,itmi_bengarpacket,1);
 	AI_Output(self,other,"DIA_Jora_BengarGoods_01_02");	//Takže je tu vše...

@@ -498,7 +498,7 @@ func void DIA_Addon_Lares_GetRangerArmor_weapons()
 	CreateInvItems(self,ItMw_RangerStaff_Addon,1);
 	B_GiveInvItems(self,other,ItMw_RangerStaff_Addon,1);
 	AI_Output(other,self,"DIA_Addon_Lares_GetRangerArmor_weapons_09_03");	//A co nějaká lepší zbroj?
-	AI_Output(self,other,"DIA_Addon_Lares_GetRangerArmor_weapons_09_04");	//Tahle zbroj, co jsem ti dal je dobrá. Spolehlivě tě ochrání, nosíme ji všichni. Ale pokud bys chtěl lepší...(přemýšlí)
+	AI_Output(self,other,"DIA_Addon_Lares_GetRangerArmor_weapons_09_04");	//Tahle zbroj, co jsem ti dal je dobrá. Spolehlivě tě ochrání, nosíme ji všichni. Ale pokud bys chtěl lepší... (přemýšlí)
 	AI_Output(self,other,"DIA_Addon_Lares_GetRangerArmor_weapons_09_05");	//V Khorinisu, mezi čtvrtí mistrů a přístavem je jeden z našich členů, jmenuje se Carl.
 	AI_Output(self,other,"DIA_Addon_Lares_GetRangerArmor_weapons_09_06");	//Je to kovář. Už ses s ním pravděpodobně setkal, promluv si o tom s ním. Možná ti s tím pomůže.
 	RANGERCARL = TRUE;
@@ -812,7 +812,7 @@ func void DIA_Addon_Lares_PeopleMissing_MIL()
 func void DIA_Addon_Lares_PeopleMissing_Success()
 {
 	AI_Output(other,self,"DIA_Addon_Lares_PeopleMissing_Success_15_00");	//Vím, kde zmizelí lidé jsou.
-	AI_Output(self,other,"DIA_Addon_Lares_PeopleMissing_Success_09_01");	//(Překvapeně) Opravdu?!
+	AI_Output(self,other,"DIA_Addon_Lares_PeopleMissing_Success_09_01");	//(překvapeně) Opravdu?!
 	AI_Output(other,self,"DIA_Addon_Lares_PeopleMissing_Success_15_02");	//Bývalý rudobaron RAVEN je unesl.
 	AI_Output(self,other,"DIA_Addon_Lares_PeopleMissing_Success_09_03");	//Jsi si jistý? Musíme je tedy nějak zachránit.
 	AI_Output(other,self,"DIA_Addon_Lares_PeopleMissing_Success_15_04");	//Pracuji na tom.
@@ -1281,7 +1281,7 @@ func void DIA_Lares_OtherGuild_Info()
 		if(Lares_WorkForLee == TRUE)
 		{
 			AI_Output(self,other,"DIA_Lares_OtherGuild_09_04");	//(starostlivě) Nepráskneš mě kvůli mojí spolupráci s Leem?
-			AI_Output(other,self,"DIA_Lares_OtherGuild_15_05");	//Vždyť mě znáš...(přátelsky)
+			AI_Output(other,self,"DIA_Lares_OtherGuild_15_05");	//Vždyť mě znáš... (přátelsky)
 		};
 	}
 	else if((other.guild == GIL_KDF) || (other.guild == GIL_NOV))
@@ -1302,7 +1302,7 @@ func void DIA_Lares_OtherGuild_Info()
 	}
 	else if((other.guild == GIL_NDM) || (other.guild == GIL_KDM))
 	{
-		AI_Output(self,other,"DIA_Addon_Lares_OtherGuild_09_12");	//Přidal ses k mágům Temnoty?!... (Podezíravě)
+		AI_Output(self,other,"DIA_Addon_Lares_OtherGuild_09_12");	//Přidal ses k mágům Temnoty?!... (podezíravě)
 		AI_Output(self,other,"DIA_Lares_OtherGuild_09_13");	//Někdy, prostě nerozumím tvým záměrům. A to je většinou děláš pořád.
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
@@ -2397,7 +2397,7 @@ func void dia_addon_lares_nw_kapitelorcattack_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Lares_NW_KapitelOrcAttack_01_06");	//To nevím, ale pro začátek bychom se měli trochu zamyslet... (Přemýšlí nahlas) jak bychom se tak mohli dostat z této pasti...?
+		AI_Output(self,other,"DIA_Addon_Lares_NW_KapitelOrcAttack_01_06");	//To nevím, ale pro začátek bychom se měli trochu zamyslet... (přemýšlí nahlas) jak bychom se tak mohli dostat z této pasti...?
 		AI_Output(self,other,"DIA_Addon_Lares_NW_KapitelOrcAttack_01_07");	//Pokud máme na výběr, a jakože nejspíš nemáme. Bude nutné se odsud dostat bojem, jiné východisko nevidím...
 		Info_ClearChoices(dia_addon_lares_nw_kapitelorcattack);
 
@@ -2414,7 +2414,7 @@ func void dia_addon_lares_nw_kapitelorcattack_farm()
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Addon_Lares_NW_KapitelOrcAttack_Farm_01_01");	//Počkej chvíli. Má tady u sebe teleportační runu na Onarovu farmu.
 	AI_Output(other,self,"DIA_Addon_Lares_NW_KapitelOrcAttack_Farm_01_02");	//Takže, jestli chceš, můžeš ji použít.
-	AI_Output(self,other,"DIA_Addon_Lares_NW_KapitelOrcAttack_Farm_01_03");	//Runa?! Hmmm... (Zamyslí se) No, nevím co na to... Možná bych mohl...?!
+	AI_Output(self,other,"DIA_Addon_Lares_NW_KapitelOrcAttack_Farm_01_03");	//Runa?! Hmmm... (zamyslí se) No, nevím co na to... Možná bych mohl...?!
 	AI_Output(other,self,"DIA_Addon_Lares_NW_KapitelOrcAttack_Farm_01_05");	//A krom toho, otevřený boj se skřety přes ulice města, to je celkem šílenej plán.
 	AI_Output(other,self,"DIA_Addon_Lares_NW_KapitelOrcAttack_Farm_01_06");	//Skřeti z tebe nadělají sekanou, než bys vůbec dosáhl čtvrti mistrů.
 	AI_Output(self,other,"DIA_Addon_Lares_NW_KapitelOrcAttack_Farm_01_09");	//Dobrá... (skepticky) Dej ji sem, použiju ji.
@@ -2491,16 +2491,16 @@ func void dia_vlk_449_lares_yourfree_info()
 {
 	AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_08");	//Ještě pořád jsem ti nechyběl?!
 	AI_Output(other,self,"DIA_VLK_449_Lares_YourFree_01_00");	//Jak jinak to říct... jsi volný!
-	AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_01");	//Hmmm... (Překvapeně) chceš mi říct, že je město čistý?!
+	AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_01");	//Hmmm... (překvapeně) chceš mi říct, že je město čistý?!
 	AI_Output(other,self,"DIA_VLK_449_Lares_YourFree_01_02");	//Ano je.
 	if(COUNTCAPTURED > 1)
 	{
-		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_03");	//Tak to je skvělé kámo...(radostně) A to už jsme si mysleli, že je tohle náš konec!
+		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_03");	//Tak to je skvělé kámo... (radostně) A to už jsme si mysleli, že je tohle náš konec!
 		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_04");	//Tak už otevřy ty mříže, ať už se můžem nadýchat čerstvého vzduchu.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_05");	//Tak to je skvělé kámo...(radostně) A to už jsme si mysleli, že je tohle můj konec!
+		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_05");	//Tak to je skvělé kámo... (radostně) A to už jsme si mysleli, že je tohle můj konec!
 		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_06");	//Tak už otevřy ty mříže, ať už se můžu nadýchat čerstvého vzduchu.
 	};
 	CAPTUREDMANSISFREE = TRUE;
@@ -2529,7 +2529,7 @@ func int dia_vlk_449_lares_opengatenow_condition()
 
 func void dia_vlk_449_lares_opengatenow_info()
 {
-	AI_Output(self,other,"DIA_VLK_449_Lares_OpenGateNow_01_00");	//Pustíš mě už konečně?!...(nervózně) nebo mě tady necháš hnít celou věčnost?!
+	AI_Output(self,other,"DIA_VLK_449_Lares_OpenGateNow_01_00");	//Pustíš mě už konečně?!... (nervózně) nebo mě tady necháš hnít celou věčnost?!
 	AI_StopProcessInfos(self);
 };
 
@@ -2557,7 +2557,7 @@ func void dia_vlk_449_lares_goonorkshunt_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_VLK_449_Lares_GoOnOrksHunt_01_00");	//Nechceš se jít pobavit?
-	AI_Output(self,other,"DIA_VLK_449_Lares_GoOnOrksHunt_01_01");	//Hmmm... (Lstivě) Chceš snad něčím pomoct?!
+	AI_Output(self,other,"DIA_VLK_449_Lares_GoOnOrksHunt_01_01");	//Hmmm... (lstivě) Chceš snad něčím pomoct?!
 	AI_Output(other,self,"DIA_VLK_449_Lares_GoOnOrksHunt_01_02");	//Nic zvláštního! Prostě si to jít vyřídt účty s pár skřety.
 	AI_Output(self,other,"DIA_VLK_449_Lares_GoOnOrksHunt_01_03");	//Tak to jo! Jdu s tebou kámo.
 	LARESJOINMEHUNT = TRUE;

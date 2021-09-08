@@ -40,7 +40,7 @@ func void DIA_Addon_Riordian_HelloADW_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Riordian_HelloADW_15_00");	//Čekal jsi něco takového?
 	AI_Output(self,other,"DIA_Addon_Riordian_HelloADW_10_01");	//Ne. Jsem ohromený, jak velké muselo být toto město.
-	AI_Output(self,other,"DIA_Addon_Riordian_HelloADW_10_02");	//Většina budov je pochovaná pod kamením a zemí, ale ruiny, které přežily dlouhé věky, jsou roztroušené po celé krajině.
+	AI_Output(self,other,"DIA_Addon_Riordian_HelloADW_10_02");	//Většina budov je pohřbená pod kamením a zemí, ale ruiny, které přežily dlouhé věky, jsou roztroušené po celé krajině.
 	AI_Output(self,other,"DIA_Addon_Riordian_HelloADW_10_03");	//Žilo tady tisíce lidí.
 };
 

@@ -52,7 +52,7 @@ func void dia_emnol_hello_info()
 	AI_Output(other,self,"DIA_Emnol_Hello_01_07");	//A co v táboře děláš?
 	AI_Output(self,other,"DIA_Emnol_Hello_01_08");	//Jako všichni, obyčejně lovím. A jinak jsem v jeskyni.
 	AI_Output(other,self,"DIA_Emnol_Hello_01_10");	//Řekni, nezahlédl jsi tady draka?
-	AI_Output(self,other,"DIA_Emnol_Hello_01_11");	//...(vystrašeně) Žertuješ, kámo! Nikdy jsem takové monstrum neviděl...
+	AI_Output(self,other,"DIA_Emnol_Hello_01_11");	//... (vystrašeně) Žertuješ, kámo! Nikdy jsem takové monstrum neviděl...
 	AI_Output(other,self,"DIA_Emnol_Hello_01_12");	//Fajn, promiň, že jsem se ptal.
 	MEETEMNOL = TRUE;
 };

@@ -344,7 +344,7 @@ func void DIA_Harad_OrcWar_Info()
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_01");	//Bylo to už dávno... (zamyšleně) Byl jsem ještě kluk jako ty.
 	AI_Output(other,self,"DIA_Harad_OrcWar_01_02");	//Možná bys mi mohl říct něco víc?
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_03");	//(vážně) Chceš to slyšet? No, dobře.
-	AI_Output(self,other,"DIA_Harad_OrcWar_01_04");	//...(kašle) Sloužil jsem v královské armádě a střežil horský průsmyk vedoucí z Nordmaru v Myrtaně.
+	AI_Output(self,other,"DIA_Harad_OrcWar_01_04");	//... (kašle) Sloužil jsem v královské armádě a střežil horský průsmyk vedoucí z Nordmaru v Myrtaně.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_05");	//Skřetí útoky pro nás byly zcela běžné.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_06");	//To je pochopitelné. Koneckonců, průsmyk byl nesmírně důležitým strategickým bodem.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_07");	//Otevíral průchod nejen do Myrtany, ale také do hlavního města království - Vengard!
@@ -355,7 +355,7 @@ func void DIA_Harad_OrcWar_Info()
 	AI_Output(other,self,"DIA_Harad_OrcWar_01_12");	//Co tím myslíš?
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_13");	//Mluvím o bitvě, která je známá po celém světě jako - 'Bitva o sněžnou horu'.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_14");	//Měl jsem možnost účastnit se jí, a právě tam se ze mě stal opravdový muž!
-	AI_Output(other,self,"DIA_Harad_OrcWar_01_15");	//Řekni mi. Jaké to bylo.
+	AI_Output(other,self,"DIA_Harad_OrcWar_01_15");	//Řekni mi, jaké to bylo.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_16");	//Bylo to peklo, člověče... (vážně) Skřeti byli dobře připraveni k boji!
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_17");	//Stáli jsme proti alespoň dvou tisícům skřetů.
 	AI_Output(self,other,"DIA_Harad_OrcWar_01_18");	//A oporou jejich armád byli elitní černí skřeti, to je vzácnost.
@@ -731,7 +731,7 @@ func void DIA_Harad_AlsLehrling_Info()
 	}
 	else if((other.guild == GIL_KDW) && (Harad_KDWKommentar == FALSE))
 	{
-		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_10");	//Och, ty jsi se dal na cestu mága jako Vatras! Jen neber kladivo do ruky v tomhle rouchu, jinak umřu smíchy.
+		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_10");	//Och, ty ses dal na cestu mága jako Vatras! Jen neber kladivo do ruky v tomhle rouchu, jinak umřu smíchy.
 		AI_Output(self,other,"DIA_Harad_AlsLehrling_12_11");	//Ok. Je to tvoja volba. Volba mého studenta!
 		Harad_KDWKommentar = TRUE;
 	}
@@ -889,7 +889,7 @@ func void DIA_Harad_MiscWeap_Info()
 	AI_Output(other,self,"DIA_Harad_MiscWeap_01_00");	//Co kromě vykovaných zbraní ti ještě mohu prodat?
 	AI_Output(self,other,"DIA_Harad_MiscWeap_01_01");	//Pokud najdeš staré rezavé meče, pak je přines ke mně.
 	AI_Output(other,self,"DIA_Harad_MiscWeap_01_02");	//Proč?
-	AI_Output(self,other,"DIA_Harad_MiscWeap_01_03");	//Tuto zbraň i tak draze neprodáš, ale dá se z něj ještě použít ocel.
+	AI_Output(self,other,"DIA_Harad_MiscWeap_01_03");	//Takovou zbraň už stejně moc dobře neprodáš, ale ocel z ní se dá ještě pořád použít.
 	AI_Output(self,other,"DIA_Harad_MiscWeap_01_04");	//Koneckonců, ocel měla vždy svojí cenu. Zejména s ohledem na současný stav věcí.
 	B_LogEntry(TOPIC_CityTrader,"Harad kupuje rezavé zbraně.");
 	HaradBuyMiscWeap = TRUE;
@@ -1586,9 +1586,9 @@ func void b_harad_teacharmor_1()
 		AI_UseMob(self,"BSANVIL",5);
 		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_02");	//... A tak! Pro začátek si ověř, jestli máš vše potřebné.
 		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_03");	//... Vezmi kousek magické rudy, rozžhav surovou ocel a zpracuj tyto dva kovy. Vznikne lepší materiál, než ze dvou stejných kovů.
-		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_04");	//... Dále přidej slitinu ve správném poměru, ale hlavně to nemíchej až nakonec!
+		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_04");	//... Dále přidej do slitiny všechny potřebné ingredience ve správných množstvích, ale pozor, ať si je nespleteš!
 		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_05");	//... Poté pomocí formovacích desek udělej ze slitiny rudy a oceli pláty, které díky ocelovým úchytkám připevníš k povrchu již hotové zbroje.
-		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_06");	//... Tady tohle, vidíš jak to vypadá... (ukazuje)... Plát pevně sedí na zbroji a je s ní praktycky spojený.
+		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_06");	//... Tady tohle, vidíš jak to vypadá... (ukazuje) Plát pevně sedí na zbroji a je s ní prakticky spojený.
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Harad_TeachArmor_1_01_07");	//... To je vše. Nyní bys měl být schopný to vytvořit.
@@ -1609,7 +1609,7 @@ func void b_harad_teacharmor_2()
 		AI_Output(self,other,"DIA_Harad_TeachArmor_2_01_03");	//... Pak vem kus rudy a místo stejnorodé slitiny ocel-ocel vem roztavenou rudu a udělej slitinu ruda-ocel.
 		AI_Output(self,other,"DIA_Harad_TeachArmor_2_01_04");	//... Pak je třeba vytvořený plát pečlivě prokovat se zbytkem zbroje...
 		AI_Output(self,other,"DIA_Harad_TeachArmor_2_01_05");	//... a za druhé, konečná forma plátu, prokovaná s první částí zbroje je velmi důležitá...
-		AI_Output(self,other,"DIA_Harad_TeachArmor_2_01_06");	//... Tak tady... Vidíš... (ukazuje)... Posílí to trvanlivost kovu!
+		AI_Output(self,other,"DIA_Harad_TeachArmor_2_01_06");	//... Tak tady... Vidíš... (ukazuje) Posílí to trvanlivost kovu!
 		AI_Output(self,other,"DIA_Harad_TeachArmor_2_01_07");	//... Vyžaduje to trochu více úsilí.
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
@@ -1755,7 +1755,7 @@ instance DIA_HARAD_SARAHELPSTHREE(C_Info)
 	condition = dia_harad_sarahelpsthree_condition;
 	information = dia_harad_sarahelpsthree_info;
 	permanent = TRUE;
-	description = "Chci zaplatit Sářin dluh.";
+	description = "Chci za Sarah zaplatit její dluh.";
 };
 
 
@@ -1769,12 +1769,12 @@ func int dia_harad_sarahelpsthree_condition()
 
 func void dia_harad_sarahelpsthree_info()
 {
-	AI_Output(other,self,"DIA_Harad_SaraHelpsThree_01_00");	//Chci zaplatit Sářin dluh.
+	AI_Output(other,self,"DIA_Harad_SaraHelpsThree_01_00");	//Chci za Sarah zaplatit její dluh.
 	if(HAKONTOSARADOBT == FALSE)
 	{
-		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_01");	//CO?! TY?!... (udiveně) dluh Sáry?!
+		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_01");	//Cože? Ty? ... (udiveně) Za Sarah?
 		AI_Output(other,self,"DIA_Harad_SaraHelpsThree_01_02");	//Měla zaplatit za poslední dodávku zbraní... Nebo jsi zapomněl?
-		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_03");	//Já nezapomněl nic!... (naštvaný) pouze mě udivuje, že chceš zaplatit její dluh. Jak to?!
+		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_03");	//(naštvaně) Já na nic nezapomněl!... Pouze mě udivuje, že chceš zaplatit její dluh. Jak to?!
 		HAKONTOSARADOBT = TRUE;
 	}
 	else
@@ -1792,7 +1792,7 @@ func void dia_harad_sarahelpsthree_info()
 		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_16");	//Jestli ano, tak si vezmi jako poděkování tento meč. Jeden z mých nejlepších!
 		B_GiveInvItems(self,other,ItMw_Schwert4,1);
 		SARADOBTPAYED = TRUE;
-		B_LogEntry(TOPIC_SARAHELPSTHREE,"Zaplatil jsem Haradovi Sářin dluh.");
+		B_LogEntry(TOPIC_SARAHELPSTHREE,"Zaplatil jsem Haradovi Sařin dluh.");
 	}
 	else
 	{
@@ -1855,8 +1855,8 @@ func void DIA_Harad_PrioratBlade_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Harad_PrioratBlade_01_01");	//Jsi zkušený kovář?
-	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_02");	//(Vážně) No, to záleží, jak se to vezme...
-	AI_Output(other,self,"DIA_Harad_PrioratBlade_01_03");	//Zkus se podívat na tuto čepel. Myslím, že by si o tom mohl vědět víc...
+	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_02");	//(vážně) No, to záleží, jak se to vezme...
+	AI_Output(other,self,"DIA_Harad_PrioratBlade_01_03");	//Zkus se podívat na tuto čepel. Myslím, že bys o tom mohl vědět víc...
 	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_04");	//No, uvidíme.
 	AI_Output(other,self,"DIA_Harad_PrioratBlade_01_05");	//To je ono.
 	CreateInvItems(self,ItMw_1H_AssBlade_View,1);
@@ -1866,7 +1866,7 @@ func void DIA_Harad_PrioratBlade_info()
 	AI_PlayAni(self,"T_1HSINSPECT");
 	AI_RemoveWeapon(self);
 	AI_UnequipWeapons(self);
-	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_06");	//(Vážně) No, mohu ti říci jednu věc - tato zbraň není vyrobena zde v Khorinisu!
+	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_06");	//(vážně) No, mohu ti říci jednu věc - tato zbraň není vyrobena zde v Khorinisu!
 	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_07");	//Toto není práce ledajakého kováře, ale skutečného mistra zbrojíře!
 	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_08");	//A takový mistr, pokud je mi známo, na ostrově nikdy nebyl!
 	AI_Output(self,other,"DIA_Harad_PrioratBlade_01_09");	//Víc ti nemohu říci.

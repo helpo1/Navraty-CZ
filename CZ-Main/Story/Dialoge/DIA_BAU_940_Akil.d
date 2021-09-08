@@ -55,7 +55,7 @@ func int DIA_Akil_Hallo_Condition()
 func void DIA_Akil_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Akil_Hallo_15_00");	//Problémy?
-	AI_Output(self,other,"DIA_Akil_Hallo_13_01");	//(Nervózně) ... Eh... ne, ne... Všechno je v pořádku. Bude... Bude lepší, když půjdeš pryč.
+	AI_Output(self,other,"DIA_Akil_Hallo_13_01");	//(nervózně) ... Eh... ne, ne... Všechno je v pořádku. Bude... Bude lepší, když půjdeš pryč.
 	AI_Output(other,self,"DIA_Akil_Hallo_15_02");	//Opravdu?
 	AI_Output(self,other,"DIA_Akil_Hallo_13_03");	//Eh... jo, jo... Všechno v pohodě. Ty... eh... Já... Teď s tebou nemůžu mluvit.
 	Log_CreateTopic(TOPIC_AkilsSLDStillthere,LOG_MISSION);
@@ -125,7 +125,7 @@ func void DIA_Akil_NachKampf_Info()
 		AI_Output(self,other,"DIA_Akil_NachKampf_13_04");	//Byli to žoldáci z Onarovy farmy. Ti bastardi se zabývají jen tím, koho oloupit nebo zabít.
 	};
 	AI_Output(self,other,"DIA_Akil_NachKampf_13_05");	//Už jsem se bál nejhoršího...
-	AI_Output(self,other,"DIA_Akil_NachKampf_13_06");	//(Hluboký nádech)... No, díky Innosovi, že na to nedošlo. Řekni mi, co pro tebe můžu udělat?
+	AI_Output(self,other,"DIA_Akil_NachKampf_13_06");	//(hluboký nádech) ... No, díky Innosovi, že na to nedošlo. Řekni mi, co pro tebe můžu udělat?
 	Info_ClearChoices(DIA_Akil_NachKampf);
 	Info_AddChoice(DIA_Akil_NachKampf,"Nic, hlavně, že jste všichni v pořádku.",DIA_Akil_NachKampf_Ehre);
 	Info_AddChoice(DIA_Akil_NachKampf,"Co takhle trochu zlata?",DIA_Akil_NachKampf_Gold);
@@ -770,7 +770,7 @@ func void DIA_Akil_Werewolf_Info()
 	AI_Output(self,other,"DIA_Akil_Werewolf_01_05");	//Otočil jsem se a šel se podívat co se stalo. Ale ve skutečnosti jsem nic neviděl, protože už byla tma.
 	AI_Output(self,other,"DIA_Akil_Werewolf_01_06");	//Pak jsem utíkal do domu, abych přivolal pomoc.
 	AI_Output(self,other,"DIA_Akil_Werewolf_01_07");	//Ale když jsme se vrátili - ani šelma, ani rolník, nikde nic nebylo.
-	AI_Output(self,other,"DIA_Akil_Werewolf_01_08");	//Našli jsme kus roztrhané látky a kaluž krve...(pokrčí rameny) To je vše.
+	AI_Output(self,other,"DIA_Akil_Werewolf_01_08");	//Našli jsme kus roztrhané látky a kaluž krve... (pokrčí rameny) To je vše.
 	AI_Output(other,self,"DIA_Akil_Werewolf_01_09");	//A kde jste to našli?
 	AI_Output(self,other,"DIA_Akil_Werewolf_01_10");	//Tady, přímo pod mostem, být tebou tak bych tam nechodil. Nikdy nevíš...
 	B_LogEntry(TOPIC_WolfAndMan,"Akil uvedl, že jednoho z jeho rolníků napadlo obrovské zvíře. Stalo se to v blízkosti Orlanova hostince - pod mostem.");

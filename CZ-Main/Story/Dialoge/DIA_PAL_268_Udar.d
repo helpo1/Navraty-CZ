@@ -125,7 +125,7 @@ func int DIA_Udar_ImGood_Condition()
 func void DIA_Udar_ImGood_Info()
 {
 	AI_Output(other,self,"DIA_Udar_ImGood_15_00");	//Ty jsi nejlepší.
-	AI_Output(self,other,"DIA_Udar_ImGood_09_01");	//(Smích) Jasně.
+	AI_Output(self,other,"DIA_Udar_ImGood_09_01");	//(smích) Jasně.
 	AI_Output(self,other,"DIA_Udar_ImGood_09_02");	//Tak dobrá. Zkusím tě něco naučit.
 	Udar_TeachPlayer = TRUE;
 	B_LogEntry(TOPIC_Teacher_OC,"Udar mě může učit střílet z kuše.");
@@ -314,7 +314,7 @@ func void DIA_Udar_Kap4WiederDa_Info()
 		AI_Output(self,other,"DIA_Udar_Kap4WiederDa_09_02");	//Přišli drakobijci a chvástaj se, že sejmou draky.
 		AI_Output(self,other,"DIA_Udar_Kap4WiederDa_09_03");	//Ale já ti můžu říct, že tihle hoši by měli problém se starým chňapavcem...
 	};
-	AI_Output(self,other,"DIA_Udar_Kap4WiederDa_09_04");	//Mnozí z nás si ale myslí, že díky nim se odsud dostaneme živí.(posměšně)
+	AI_Output(self,other,"DIA_Udar_Kap4WiederDa_09_04");	//Mnozí z nás si ale myslí, že díky nim se odsud dostaneme živí. (posměšně)
 };
 
 
@@ -539,7 +539,7 @@ func void dia_udar_captured_info()
 		AI_Output(self,other,"DIA_Udar_Captured_01_13");	//Ale on mě neposlouchal. Přidal se k této výpravě, aby dostal šanci zplatit svůj dluh...
 		AI_Output(self,other,"DIA_Udar_Captured_01_15");	//Ty ho také znáš?!
 		AI_Output(other,self,"DIA_Udar_Captured_01_16");	//Ano. Právě dorazil do Hornického údolí.
-		AI_Output(self,other,"DIA_Udar_Captured_01_17");	//Opravdu? (Smutně) Doufám, že nedělá nic hloupého.
+		AI_Output(self,other,"DIA_Udar_Captured_01_17");	//Opravdu? (smutně) Doufám, že nedělá nic hloupého.
 		B_LogEntry(TOPIC_NATANDOLG,"Ptal jsem se Udara na paladina Nathana a on potvrdil, že skutečně zachránil tomuto chlapovi život. Nicméně byl velmi zarmoucen, když zjistil, že Nathan přišel do údolí. Jak řekl Udar, Nathan je moc zbrklý. Jen musíme doufat, že Nathan neudělá nějakou hloupost!");
 		UDARKNOWSNATAN = TRUE;
 		AI_StopProcessInfos(self);

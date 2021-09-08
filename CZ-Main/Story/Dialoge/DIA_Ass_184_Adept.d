@@ -124,7 +124,7 @@ func void dia_Ass_184_Adept_GiveLetter_info()
 {
 	AI_Output(other,self,"DIA_Ass_184_Adept_GiveLetter_01_01");	//Co tady děláš?
 	AI_Output(other,self,"DIA_Ass_184_Adept_GiveLetter_01_02");	//Nemáš náhodou být na cestě k chrámu, abys mistru Tiamantovi předal dopis?
-	AI_Output(self,other,"DIA_Ass_184_Adept_GiveLetter_01_03");	//Taky to tak je...(váhavě) Ale rozhodl jsem se, že se tu trochu pomodlím.
+	AI_Output(self,other,"DIA_Ass_184_Adept_GiveLetter_01_03");	//Taky to tak je... (váhavě) Ale rozhodl jsem se, že se tu trochu pomodlím.
 	AI_Output(other,self,"DIA_Ass_184_Adept_GiveLetter_01_04");	//To je pochopitelné. Ale jestli se to mistr Osair dozví, tak ten z tebe sedře kůži zaživa.
 	AI_Output(self,other,"DIA_Ass_184_Adept_GiveLetter_01_05");	//(nervózně) Jistě, máš pravdu. Okamžitě jdu do chrámu. 
 	AI_Output(other,self,"DIA_Ass_184_Adept_GiveLetter_01_06");	//Počkej! Ten dopis pro mistra Tiamanta - máš ho?

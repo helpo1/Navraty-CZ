@@ -77,7 +77,7 @@ func int DIA_Abuyin_Hallo_Condition()
 
 func void DIA_Abuyin_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Abuyin_Hallo_13_00");	//(přemítá)... Zvláštní. Připadáš mi povědomý, cizinče...
+	AI_Output(self,other,"DIA_Addon_Abuyin_Hallo_13_00");	//(přemítá) Zvláštní. Připadáš mi povědomý, cizinče...
 	AI_Output(self,other,"DIA_Addon_Abuyin_Hallo_13_01");	//No... nesmírné jsou tajemství času a vesmíru... Á, omluv mou nezdvořilost, synu trpělivosti. Ještě jsem tě ani nepřivítal...
 	AI_Output(self,other,"DIA_Addon_Abuyin_Hallo_13_02");	//Vítej, příteli. Sedni si na koberec a vychutnej si vodní dýmku.
 };
@@ -497,11 +497,11 @@ func void DIA_Abuyin_Zukunft_Trance()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_Zukunft_Trance_13_00");	//(V transu)... Skřeti... hlídají vstup... stará chodba... Hornické údolí...
-	AI_Output(self,other,"DIA_Abuyin_Zukunft_Trance_13_01");	//(V transu)... Muž v zářivé zbroji... mág... je s ním tvůj přítel... čeká na tebe...
-	AI_Output(self,other,"DIA_Abuyin_Zukunft_Trance_13_02");	//(V transu)... Oheň! Útok... mocná stvoření... plameny... mnoho... jich zemře...
-	AI_Output(self,other,"DIA_Addon_Abuyin_Zukunft_Trance_13_00");	//(v tranzu)... co je to... Město... ruiny... Quarhodron v Jharkendaru...
-	AI_Output(self,other,"DIA_Addon_Abuyin_Zukunft_Trance_13_01");	//(v tranzu)... nazývá se... Quarhodron v Jharkendaru!
+	AI_Output(self,other,"DIA_Abuyin_Zukunft_Trance_13_00");	//(v transu) ... Skřeti... hlídají vstup... stará chodba... Hornické údolí...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft_Trance_13_01");	//(v transu) ... Muž v zářivé zbroji... mág... je s ním tvůj přítel... čeká na tebe...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft_Trance_13_02");	//(v transu) ... Oheň! Útok... mocná stvoření... plameny... mnoho... jich zemře...
+	AI_Output(self,other,"DIA_Addon_Abuyin_Zukunft_Trance_13_00");	//(v tranzu) ... co je to... Město... ruiny... Quarhodron v Jharkendaru...
+	AI_Output(self,other,"DIA_Addon_Abuyin_Zukunft_Trance_13_01");	//(v tranzu) ... nazývá se... Quarhodron v Jharkendaru!
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_Zukunft_Trance_13_03");	//... Je mi líto, ale vize je u konce. Už tu není nic, co bych mohl spatřit.
 	DIA_Abuyin_Zukunft_permanent = TRUE;
@@ -617,9 +617,9 @@ func void DIA_Abuyin_Zukunft2_Trance()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_Zukunft2_Trance_13_00");	//(V transu)... Žoldák... bude tě potřebovat... strašná vražda... Oko...
-	AI_Output(self,other,"DIA_Abuyin_Zukunft2_Trance_13_01");	//(V transu)... zlověstní stoupenci... přicházejí... hledají tebe... strážce padne...
-	AI_Output(self,other,"DIA_Abuyin_Zukunft2_Trance_13_02");	//(V transu)... ale tři se spojí... jedině pak získáš, co ti náleží...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft2_Trance_13_00");	//(v transu) ... Žoldák... bude tě potřebovat... strašná vražda... Oko...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft2_Trance_13_01");	//(v transu) ... zlověstní stoupenci... přicházejí... hledají tebe... strážce padne...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft2_Trance_13_02");	//(v transu) ... ale tři se spojí... jedině pak získáš, co ti náleží...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_Zukunft2_Trance_13_03");	//To je vše. Není nic, co bych ještě mohl spatřit.
 	DIA_Abuyin_Zukunft2_permanent = TRUE;
@@ -695,9 +695,9 @@ func void DIA_Abuyin_Zukunft3_Trance()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_Zukunft3_Trance_13_00");	//(V transu)... musíš donutit... co není osud nikoho jiného, pouze tvůj...
-	AI_Output(self,other,"DIA_Abuyin_Zukunft3_Trance_13_01");	//(V transu)... přes sníh a oheň... přes led a plameny...
-	AI_Output(self,other,"DIA_Abuyin_Zukunft3_Trance_13_02");	//(V transu)... Muži v podivné zbroji... bažiny... ještěrani... čekají na tebe...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft3_Trance_13_00");	//(v transu) ... musíš donutit... co není osud nikoho jiného, pouze tvůj...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft3_Trance_13_01");	//(v transu) ... přes sníh a oheň... přes led a plameny...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft3_Trance_13_02");	//(v transu) ... Muži v podivné zbroji... bažiny... ještěrani... čekají na tebe...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_Zukunft3_Trance_13_03");	//To je vše. Není nic, co bych ještě mohl spatřit.
 	DIA_Abuyin_Zukunft3_permanent = TRUE;
@@ -773,9 +773,9 @@ func void DIA_Abuyin_Zukunft4_Trance()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_Zukunft4_Trance_13_00");	//(V transu)... místo vědomostí... jiná země... temné místo široko daleko...
-	AI_Output(self,other,"DIA_Abuyin_Zukunft4_Trance_13_01");	//(V transu)... udatní společníci... musíš zvolit...
-	AI_Output(self,other,"DIA_Abuyin_Zukunft4_Trance_13_02");	//(V transu)... chrám... leží osamocen v Adanově říši... skrytý v mlze...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft4_Trance_13_00");	//(v transu) ... místo vědomostí... jiná země... temné místo široko daleko...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft4_Trance_13_01");	//(v transu) ... udatní společníci... musíš zvolit...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft4_Trance_13_02");	//(v transu) ... chrám... leží osamocen v Adanově říši... skrytý v mlze...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_Zukunft4_Trance_13_03");	//To je vše. Není nic, co bych ještě mohl spatřit.
 	DIA_Abuyin_Zukunft4_permanent = TRUE;
@@ -851,9 +851,9 @@ func void DIA_Abuyin_Zukunft5_Trance()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_Zukunft5_Trance_13_00");	//(V transu)... Temnota pohltí zemi... zlo zvítězí...
-	AI_Output(self,other,"DIA_Abuyin_Zukunft5_Trance_13_01");	//(V transu)... král prohraje válku se skřety...
-	AI_Output(self,other,"DIA_Abuyin_Zukunft5_Trance_13_02");	//(V transu)... vrátíš se, ale nenalezneš klidu...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft5_Trance_13_00");	//(v transu) ... Temnota pohltí zemi... zlo zvítězí...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft5_Trance_13_01");	//(v transu) ... král prohraje válku se skřety...
+	AI_Output(self,other,"DIA_Abuyin_Zukunft5_Trance_13_02");	//(v transu) ... vrátíš se, ale nenalezneš klidu...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_Zukunft5_Trance_13_03");	//To je vše. Není nic, co bych ještě mohl spatřit.
 	DIA_Abuyin_Zukunft5_permanent = TRUE;
@@ -967,7 +967,7 @@ func void dia_abuyin_findmeguardians_dagot()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Dagot_01_00");	//... (snaží se soustředit)... Poslouchej mě, poutníku!
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Dagot_01_00");	//... (snaží se soustředit) ... Poslouchej mě, poutníku!
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Dagot_01_01");	//... Jdi dlouhou cestu a tam se pomodli k Innosovi - Jedině tak najdeš to, co hledáš...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Dagot_01_02");	//To je vše! Doufám, že to bude stačit k tomu, abys pochopil co dělat.
@@ -978,7 +978,7 @@ func void dia_abuyin_findmeguardians_morius()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Morius_01_00");	//... (snaží se soustředit)... Poslouchej mě, poutníku!
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Morius_01_00");	//... (snaží se soustředit) ... Poslouchej mě, poutníku!
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Morius_01_01");	//... Kamenná pevnost od nikud, ti zjeví klíč k porozumění...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Morius_01_02");	//To je vše! Doufám, že to bude stačit k tomu, abys pochopil co dělat.
@@ -989,7 +989,7 @@ func void dia_abuyin_findmeguardians_tegon()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Tegon_01_00");	//... (snaží se soustředit)... Poslouchej mě, poutníku!
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Tegon_01_00");	//... (snaží se soustředit) ... Poslouchej mě, poutníku!
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Tegon_01_01");	//... Po cestě přes temný les, kudy bys šel s přítelem, po horské cestě kolem podivného tábora. Cíl tvé cesty leží na náhorní plošině vysoko v horách.
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Tegon_01_02");	//To je vše! Doufám, že to bude stačit k tomu, abys pochopil co dělat.
@@ -1000,7 +1000,7 @@ func void dia_abuyin_findmeguardians_kelios()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Kelios_01_00");	//... (snaží se soustředit)... Poslouchej mě, poutníku!
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Kelios_01_00");	//... (snaží se soustředit) ... Poslouchej mě, poutníku!
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Kelios_01_01");	//... Občas jen z výšky můžeš spatřit město...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Kelios_01_02");	//To je vše! Doufám, že to bude stačit k tomu, abys pochopil co dělat.
@@ -1011,7 +1011,7 @@ func void dia_abuyin_findmeguardians_demos()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Demos_01_00");	//... (snaží se soustředit)... Poslouchej mě, poutníku!
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Demos_01_00");	//... (snaží se soustředit) ... Poslouchej mě, poutníku!
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Demos_01_01");	//... Řeka... Vodopád... Most... Vrata... A pak strach a smrt...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Demos_01_02");	//To je vše! Doufám, že to bude stačit k tomu, abys pochopil co dělat.
@@ -1022,7 +1022,7 @@ func void dia_abuyin_findmeguardians_farion()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Farion_01_00");	//... (snaží se soustředit)... Poslouchej mě, poutníku!
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Farion_01_00");	//... (snaží se soustředit) ... Poslouchej mě, poutníku!
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Farion_01_01");	//... Hledej zdroje záchrany - a budeš oceněn...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Farion_01_02");	//To je vše! Doufám, že to bude stačit k tomu, abys pochopil co dělat.
@@ -1033,7 +1033,7 @@ func void dia_abuyin_findmeguardians_gader()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Gader_01_00");	//... (snaží se soustředit)... Poslouchej mě, poutníku!
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Gader_01_00");	//... (snaží se soustředit) ... Poslouchej mě, poutníku!
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Gader_01_01");	//... Dlouhá cesta k magickému kruhu hluboko v horách...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Gader_01_02");	//To je vše! Doufám, že to bude stačit k tomu, abys pochopil co dělat.
@@ -1044,7 +1044,7 @@ func void dia_abuyin_findmeguardians_narus()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Narus_01_00");	//... (snaží se soustředit)... Poslouchej mě, poutníku!
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Narus_01_00");	//... (snaží se soustředit) ... Poslouchej mě, poutníku!
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Narus_01_01");	//... Náhorní plošina... Farma... Voda... Hodně vody, padající dolů...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Narus_01_02");	//To je vše! Doufám, že to bude stačit k tomu, abys pochopil co dělat.
@@ -1055,7 +1055,7 @@ func void dia_abuyin_findmeguardians_wakon()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Wakon_01_00");	//... (snaží se soustředit)... Poslouchej mě, poutníku!
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Wakon_01_00");	//... (snaží se soustředit) ... Poslouchej mě, poutníku!
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Wakon_01_01");	//... V polích na křižovatce dvou cest, najdeš co hledáš...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Wakon_01_02");	//To je vše! Doufám, že to bude stačit k tomu, abys pochopil co dělat.
@@ -1066,7 +1066,7 @@ func void dia_abuyin_findmeguardians_stonnos()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Stonnos_01_00");	//... (snaží se soustředit)... Poslouchej mě, poutníku!
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Stonnos_01_00");	//... (snaží se soustředit) ... Poslouchej mě, poutníku!
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Stonnos_01_01");	//... Kruh z magických kamenů tě volá, synu hledej a objevuj...
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_Stonnos_01_02");	//To je vše! Doufám, že to bude stačit k tomu, abys pochopil co dělat.
@@ -1078,10 +1078,10 @@ func void dia_abuyin_findmeguardians_noone()
 {
 	AI_PlayAni(self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",self,self,0,0,0,FALSE);
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_NoOne_01_00");	//... (snaží se soustředit)... Ne...
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_NoOne_01_00");	//... (snaží se soustředit) ... Ne...
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_NoOne_01_01");	//... To je nemožné!
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
-	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_NoOne_01_02");	//Odpusť... (Lítostivě) Ale mé vize jsou plné mlhy!
+	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_NoOne_01_02");	//Odpusť... (lítostivě) Ale mé vize jsou plné mlhy!
 	AI_Output(self,other,"DIA_Abuyin_FindMeGuardians_NoOne_01_03");	//Nemůžu ti sdělit nic nového.
 	AI_Output(other,self,"DIA_Abuyin_FindMeGuardians_NoOne_01_04");	//Chápu.
 	Info_ClearChoices(dia_abuyin_findmeguardians);

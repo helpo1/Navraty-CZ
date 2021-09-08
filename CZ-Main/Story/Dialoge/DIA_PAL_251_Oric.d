@@ -75,8 +75,8 @@ func void DIA_Oric_Bruder_Info()
 {
 	AI_Output(other,self,"DIA_Oric_Bruder_15_00");	//Mám pro tebe zprávu.
 	AI_Output(self,other,"DIA_Oric_Bruder_11_01");	//Jakou zprávu?
-	AI_Output(other,self,"DIA_Oric_Bruder_15_02");	//Tvůj bratr je mrtev. Zemřel u průchodu do Hor. údolí.
-	AI_Output(self,other,"DIA_Oric_Bruder_11_03");	//(chmurně)... můj bratr...
+	AI_Output(other,self,"DIA_Oric_Bruder_15_02");	//Tvůj bratr je mrtev. Zemřel u průchodu do Hornického údolí.
+	AI_Output(self,other,"DIA_Oric_Bruder_11_03");	//(chmurně) ... můj bratr...
 	AI_Output(self,other,"DIA_Oric_Bruder_11_04");	//Innos mě těžce zkouší... Ale on zemřel v jeho službách...
 	AI_Output(self,other,"DIA_Oric_Bruder_11_05");	//Tato zpráva je jako šíp, který protíná srdce. Budu hledat sílu v modlitbě.
 	OricBruder = TRUE;
@@ -509,7 +509,7 @@ func void dia_oric_canhelpagain_info()
 	AI_Output(other,self,"DIA_Oric_CanHelpAgain_01_00");	//Máš pro mě nějaké pokyny?
 	AI_Output(self,other,"DIA_Oric_CanHelpAgain_01_01");	//Ano, ale jen blázen by ho dokázal realizovat.
 	AI_Output(other,self,"DIA_Oric_CanHelpAgain_01_02");	//Výborně, v čen je problém?
-	AI_Output(self,other,"DIA_Oric_CanHelpAgain_01_04");	//(Smích) Pokud je mi známo, nedaleko od hradu se utábořilo několika skřetích velitelů.
+	AI_Output(self,other,"DIA_Oric_CanHelpAgain_01_04");	//(smích) Pokud je mi známo, nedaleko od hradu se utábořilo několika skřetích velitelů.
 	AI_Output(self,other,"DIA_Oric_CanHelpAgain_01_05");	//Když byl Hosh-Pak na živu, zodpovídali se jemu. Nyní otěže celé chlupaté hordy, která obléhá hrad, mají ve svých rukách.
 	AI_Output(self,other,"DIA_Oric_CanHelpAgain_01_09");	//Bylo by hezké, kdyby je stihnul stejný osud jako jejich vůdce.
 	Info_ClearChoices(dia_oric_canhelpagain);
@@ -521,7 +521,7 @@ func void dia_oric_canhelp_nosorry()
 {
 	AI_Output(other,self,"DIA_Oric_CanHelp_NoSorry_01_01");	//Je to příliš riskantní! Nesouhlasím.
 	AI_Output(self,other,"DIA_Oric_CanHelp_NoSorry_01_02");	//Hmmm. No, to je tvoje rozhodnutí.
-	AI_Output(self,other,"DIA_Oric_CanHelp_NoSorry_01_05");	//(Se smutným úsměvem) Musím najít jiného šílenece. I když pochybuji, že se tady někdo takový najde.
+	AI_Output(self,other,"DIA_Oric_CanHelp_NoSorry_01_05");	//(se smutným úsměvem) Musím najít jiného šílenece. I když pochybuji, že se tady někdo takový najde.
 	Info_ClearChoices(dia_oric_canhelpagain);
 };
 

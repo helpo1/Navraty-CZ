@@ -72,10 +72,10 @@ func void DIA_TPL_8104_TEMPLER_AboutMe_info()
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_04");	//Později se sám postaral o můj výcvik. A nyní jsem jedním z nich!
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_05");	//A proč se ptáš?
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_AboutMe_01_06");	//Prostě si nepamatuju, že bych tě viděl v bejvalém táboře Bratrstva Spáče.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_07");	//Přirozeně! Nemůžeš si na mě pamatovat...(smích) Ve starém táboře jsem byl jenom novic co pomáhal Guru zpracovávat trávu z bažin. 
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_07");	//Přirozeně! Nemůžeš si na mě pamatovat... (smích) Ve starém táboře jsem byl jenom novic co pomáhal Guru zpracovávat trávu z bažin. 
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_08");	//Ale já si tě pamatuju dobře. Ty jsi ten, co přimesl Cor Kalomovi výměšek z důlních červů. Nebo ne?
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_AboutMe_01_09");	//Ano, tak to bylo.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_10");	//Takže se nepletu...(smích) mám výbornou paměť na lidi! Obzvlášť když šlo o naše Bratrstvo.
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_10");	//Takže se nepletu... (smích) mám výbornou paměť na lidi! Obzvlášť když šlo o naše Bratrstvo.
 };
 
 instance DIA_TPL_8104_TEMPLER_WhatDo(C_Info)
@@ -99,7 +99,7 @@ func int DIA_TPL_8104_TEMPLER_WhatDo_condition()
 func void DIA_TPL_8104_TEMPLER_WhatDo_info()
 {
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_WhatDo_01_00");	//Není tady celkem nuda?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_WhatDo_01_01");	//Je to tak, kamaráde...(smutně) zde, tady na té samotě, je těžké se něčím zabavit.
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_WhatDo_01_01");	//Je to tak, kamaráde... (smutně) zde, tady na té samotě, je těžké se něčím zabavit.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_WhatDo_01_02");	//Nicméně, nemůžem polevit v pozornosti, je zde příliš nebezpečných věcí. 
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_WhatDo_01_03");	//Jakákoliv nepozornost by nás mohla stát příliš!
 };
@@ -125,10 +125,10 @@ func int DIA_TPL_8104_TEMPLER_HowReady_condition()
 func void DIA_TPL_8104_TEMPLER_HowReady_info()
 {
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_HowReady_01_00");	//Myslíš si, že tvoji lidé jsou dobře připraveni?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_HowReady_01_01");	//Hmmm...(arogantně) Pokud je mě známo, Gor Na Toth osobně vybral ty, kteří sem byli posláni.
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_HowReady_01_01");	//Hmmm... (arogantně) Pokud je mě známo, Gor Na Toth osobně vybral ty, kteří sem byli posláni.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_HowReady_01_02");	//Doufám, že nebudeš pochybovat o schopnostech našich učitelů.
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_HowReady_01_03");	//Není v tom nic osobního. Nicméně, když se budem muset vypořádat s útokem tak chci mít jistotu, že tvoji lidé jsou na to připraveni.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_HowReady_01_05");	//Jsou připraveni...(klidně) Možná nejsou excelentní v zacházení se zbraní, ale jejich odhodlání a morálka to hravě nahradí.
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_HowReady_01_05");	//Jsou připraveni... (klidně) Možná nejsou excelentní v zacházení se zbraní, ale jejich odhodlání a morálka to hravě nahradí.
 };
 
 
@@ -155,10 +155,10 @@ func void DIA_TPL_8104_TEMPLER_LetsTrain_info()
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_LetsTrain_01_00");	//A co taklhle, malé cvičení s mečem?
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_01");	//Co máš na mysli?
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_LetsTrain_01_02");	//Myslím, že tvým vojákům by neškodilo trochu tréningu ve volné chvíli.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_03");	//Hmmm...(zamyšleně) To skutečně není špatnej nápad! Myslím, že by ses jich měl zeptat sám.
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_03");	//Hmmm... (zamyšleně) To skutečně není špatnej nápad! Myslím, že by ses jich měl zeptat sám.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_04");	//Otázkou však zůstává - kdo se bude věnovat jejich tréningu?
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_LetsTrain_01_05");	//A co ty?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_06");	//No...(zmateně) Jsem celkem dobrej s obouručním mečem, ale jako učitel nemám žádné zkušenosti.
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_06");	//No... (zmateně) Jsem celkem dobrej s obouručním mečem, ale jako učitel nemám žádné zkušenosti.
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_LetsTrain_01_07");	//A co tvůj názor na Gor Na Totha?
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_08");	//Můj učitel? Pokud vím, tak prohlásil, že mě chybí soustředění v boji.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_01_09");	//Ale lepší bude, když s ním promluvíš sám.
@@ -191,7 +191,7 @@ func void DIA_TPL_8104_TEMPLER_LetsTrain_Done_info()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_00");	//Gor Na Toth souhlasil, že můžeš trénovat.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_01");	//Hmm...(překvapeně) Znamená to, že si cení mých bojových dovedností.
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_01");	//Hmm... (překvapeně) Znamená to, že si cení mých bojových dovedností.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_02");	//Dobře, tak zítra můžem začít.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_LetsTrain_Done_01_03");	//Tady, vezmi si tenhle svitek jako poděkování za tvoje úsilí. 
 	B_GiveInvItems(self,other,ITSC_TRFMEATBUG,1);
@@ -228,7 +228,7 @@ func int DIA_TPL_8104_TEMPLER_TrainDay_condition()
 func void DIA_TPL_8104_TEMPLER_TrainDay_info()
 {
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_TrainDay_01_00");	//Jak jde výuka?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_TrainDay_01_01");	//Jak vidíš...(usmívá se) Jednoduše, neztrácíme čas.
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_TrainDay_01_01");	//Jak vidíš... (usmívá se) Jednoduše, neztrácíme čas.
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_TrainDay_01_02");	//Rozumím, A proč netrénují všichni?
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_TrainDay_01_03");	//No, někdo taky musí chránit sběrače trávy.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_TrainDay_01_04");	//Takže ti co mají volno trénují a ostatní hlídaj tábor.
@@ -255,7 +255,7 @@ func int DIA_TPL_8104_TEMPLER_Relax_condition()
 func void DIA_TPL_8104_TEMPLER_Relax_info()
 {
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_Relax_01_00");	//Vypadáš trochu unaveně.
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_01");	//(Zachmuřeně) Vážně? Možná máš pravdu.
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_01");	//(zachmuřeně) Vážně? Možná máš pravdu.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_02");	//Právě ta zatracená nejistota strašně vyčerpává. A nervy už máme taky na pochodu.
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_Relax_01_03");	//Potřebuješ si jen trochu odpočinout.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_04");	//Ach člověče... to by bylo řešení, ale jak to udělat? 
@@ -344,7 +344,7 @@ func int DIA_TPL_8104_TEMPLER_GetFurs_condition()
 func void DIA_TPL_8104_TEMPLER_GetFurs_info()
 {
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_01_00");	//Můžu vám ještě s něčím poct?
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_01");	//Hmmm...(zamyšleně) Domnívám se, že bys nám mohl sehnat pár ovčích kůží.
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_01");	//Hmmm... (zamyšleně) Domnívám se, že bys nám mohl sehnat pár ovčích kůží.
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_01_02");	//A to proč?
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_03");	//No v noci je tu celkem chladno, když musíš spát na zemi.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_04");	//Pár ovčích kožešin by jim ulevilo, při už tak skromném odpočinku.
@@ -387,7 +387,7 @@ func void DIA_TPL_8104_TEMPLER_GetFurs_Done_info()
 		B_GivePlayerXP(500);
 		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_02");	//Tady je pár kůží stínovky. Doufám že to bude stačit?
 		B_GiveInvItems(other,self,ItAt_ShadowFur,2);
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_03");	//Hmmm...(překvapeně) Pro mě jsou to jen kůže, až na to, že jsou výborně dílensky zpracované!
+		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_03");	//Hmmm... (překvapeně) Pro mě jsou to jen kůže, až na to, že jsou výborně dílensky zpracované!
 		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_04");	//Teď aspoň moji muži nebudou v noci mrznout.
 		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_05");	//Zajmalo by mě, kde jsi je získal? Byl jsi na lovu těchto zvířat?!
 		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_06");	//Já ne, to ten lovec, kterého jste viděli v blízkosti tábora. On loví v těchto krajích
@@ -414,7 +414,7 @@ func void DIA_TPL_8104_TEMPLER_GetFurs_Done_info()
 		B_GivePlayerXP(250);
 		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_09");	//Tady je pár ovčích kůží, doufám že to bude stačit?
 		B_GiveInvItems(other,self,ItAt_SheepFur,2);
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_10");	//Samozřejmě, příteli...(spokojeně) Teď aspoň moji muži nebudou v noci mrznout.
+		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_10");	//Samozřejmě, příteli... (spokojeně) Teď aspoň moji muži nebudou v noci mrznout.
 		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_11");	//Vezmi si tohle zlato jako projev vděčnosti. Promiň, ale víc toho nemáme.
 		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_12");	//Díky.
 		B_GiveInvItems(self,other,ItMi_Gold,200);

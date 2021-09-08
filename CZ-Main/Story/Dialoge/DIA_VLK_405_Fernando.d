@@ -270,7 +270,7 @@ func void dia_fernando_taliasanletter_info()
 	AI_Output(other,self,"DIA_Fernando_TaliasanLetter_01_10");	//Nejlepší bude napsat dopis.
 	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_11");	//CO?! Gallahada?!... Toho šarlatána?
 	AI_Output(other,self,"DIA_Fernando_TaliasanLetter_01_17");	//A co s tím máš za problém?
-	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_22");	//Eh...(smutný)... No neměli jsme žádný spor, ale...
+	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_22");	//Eh... (smutný) No neměli jsme žádný spor, ale...
 	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_23");	//... Chtěl jsem si od něj koupit jednu knihu. Už tomu bude déle.
 	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_24");	//Velmi jsem ji potřeboval, ale on mi ji nechtěl prodat a já nevím proč!
 	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_25");	//Stále dokola jsem ho prosil a on stále dokola odmítal.
@@ -308,7 +308,7 @@ func void dia_fernando_gotbook_info()
 {
 	B_GivePlayerXP(250);
 	AI_Output(other,self,"DIA_Fernando_GotBook_01_00");	//Mám tu knihu.
-	AI_Output(self,other,"DIA_Fernando_GotBook_01_01");	//Ano?!... (nedůvěřivý)... Ukaž mi ji...
+	AI_Output(self,other,"DIA_Fernando_GotBook_01_01");	//Ano?!... (nedůvěřivý) Ukaž mi ji...
 	B_GiveInvItems(other,self,itwr_rhetorikbook,1);
 	B_UseItem(self,itwr_rhetorikbook);
 	AI_Output(self,other,"DIA_Fernando_GotBook_01_02");	//Hmmm... Opravdu ona! Jak jsi to dokázal.

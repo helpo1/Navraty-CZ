@@ -60,7 +60,7 @@ func void DIA_Addon_Ramon_FirstWarn_Info()
 		AI_Output(self,other,"DIA_Addon_Ramon_FirstWarn_07_04");	//Na to zapomeň. Zabil jsi Franca - teď jsi velitel. Tak dělej svou práci.
 		AI_Output(other,self,"DIA_Addon_Ramon_FirstWarn_15_05");	//Pokud jsem velitel, tak rozhodnu, kdo je další na řadě.
 		AI_Output(other,self,"DIA_Addon_Ramon_FirstWarn_15_06");	//A rozhodl jsem, že JÁ jsem další.
-		AI_Output(self,other,"DIA_Addon_Ramon_FirstWarn_07_07");	//(směšně )Není to tak jednoduché. NIKOHO jsem se neptal, takže NIKDO nevstoupí.
+		AI_Output(self,other,"DIA_Addon_Ramon_FirstWarn_07_07");	//(směšně) Není to tak jednoduché. NIKOHO jsem se neptal, takže NIKDO nevstoupí.
 		AI_Output(other,self,"DIA_Addon_Ramon_FirstWarn_15_08");	//Thorus může poslat nového vůdce lovcům, potom pro mě bude volno uvnitř.
 		AI_Output(self,other,"DIA_Addon_Ramon_FirstWarn_07_09");	//(směšně) Ty se nevzdáš, co? Ok, tak pohni zadkem a pojď dovnitř.
 		AI_Output(self,other,"DIA_Addon_Ramon_FirstWarn_07_10");	//Thorus zajistí, aby lovci nebyli bez vůdce.

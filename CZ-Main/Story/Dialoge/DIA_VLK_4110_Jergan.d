@@ -414,7 +414,7 @@ func void DIA_Jergan_Venzel_Info()
 	AI_Output(self,other,"DIA_Jergan_Venzel_01_09");	//Vypadalo to, že smerem k té velké hoře. Na severovýchod.
 	AI_Output(self,other,"DIA_Jergan_Venzel_01_10");	//Myslím si, že tam mají malý tábor.
 	AI_Output(self,other,"DIA_Jergan_Venzel_01_11");	//Ale na tvém místě bych to neoveřoval.
-	AI_Output(other,self,"DIA_Jergan_Venzel_01_12");	//(Ironicky) A kdo jiný, když ne já?
+	AI_Output(other,self,"DIA_Jergan_Venzel_01_12");	//(ironicky) A kdo jiný, když ne já?
 	HintVenzelOrcs_02 = TRUE;
 	B_LogEntry(TOPIC_LostPaladins,"Průzkumník Jergan nedávno videl skřety jak vedou malou skupinu zajatců. Podle Jergana tam paladin nebyl. Také si myslí, že skřeti šli směrem k velké hoře na severovýchod údolí. Myslím, že je čas promluvit si s Garondem.");
 };

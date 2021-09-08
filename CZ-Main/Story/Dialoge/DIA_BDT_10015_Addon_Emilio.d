@@ -253,8 +253,8 @@ func int DIA_Addon_Emilio_Jetzt_Condition()
 func void DIA_Addon_Emilio_Jetzt_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Emilio_Jetzt_15_00");	//Proč nejsi v dole?
-	AI_Output(self,other,"DIA_Addon_Emilio_Jetzt_10_01");	//(Nejistě) Byl jsem v dole dost dlouho. Nyní si potřebuji pár dnů odpočinout.
-	AI_Output(self,other,"DIA_Addon_Emilio_Jetzt_10_02");	//(Povzdechne si) Tedy dokud nedostanu další červený kámen.
+	AI_Output(self,other,"DIA_Addon_Emilio_Jetzt_10_01");	//(nejistě) Byl jsem v dole dost dlouho. Nyní si potřebuji pár dnů odpočinout.
+	AI_Output(self,other,"DIA_Addon_Emilio_Jetzt_10_02");	//(povzdechne si) Tedy dokud nedostanu další červený kámen.
 };
 
 

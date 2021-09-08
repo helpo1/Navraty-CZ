@@ -256,7 +256,7 @@ func void dia_pir_6136_abigeil_missweapondone_info()
 	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeaponDone_01_01");	//Opravdu? Je to opravdu on?!
 	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeaponDone_01_04");	//Chytej.
 	B_GiveInvItems(other,self,itmw_abigeilspage,1);
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeaponDone_01_05");	//Hmm?...(podívá se na meč)
+	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeaponDone_01_05");	//Hmm?... (podívá se na meč)
 	Info_ClearChoices(dia_pir_6136_abigeil_missweapondone);
 	Info_AddChoice(dia_pir_6136_abigeil_missweapondone,"Tak?",dia_pir_6136_abigeil_missweapondone_give);
 };

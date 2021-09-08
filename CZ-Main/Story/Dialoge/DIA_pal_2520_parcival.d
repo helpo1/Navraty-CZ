@@ -41,9 +41,9 @@ func void dia_pal_2520_parcival_perm_info()
 {
 	AI_Output(other,self,"DIA_PAL_2520_Parcival_Perm_01_00");	//Co říkáš?
 	AI_Output(self,other,"DIA_PAL_2520_Parcival_Perm_01_01");	//Co můžu říci? Bylo by mnohem lepší, kdyby tu nebylo tolik skřetů.
-	AI_Output(self,other,"DIA_PAL_2520_Parcival_Perm_01_02");	//Už mi začinají lézt na nervy! (naštvaně)Vždycky když zabijeme pár skřetů přijdou nakonec vždy další!
+	AI_Output(self,other,"DIA_PAL_2520_Parcival_Perm_01_02");	//Už mi začinají lézt na nervy! (naštvaně) Vždycky když zabijeme pár skřetů přijdou nakonec vždy další!
 	AI_Output(other,self,"DIA_PAL_2520_Parcival_Perm_01_03");	//Válečníkova ruka je znavená?
-	AI_Output(self,other,"DIA_PAL_2520_Parcival_Perm_01_04");	//Ha...(sarkasticky)Jsi nějakej chytrej co?
+	AI_Output(self,other,"DIA_PAL_2520_Parcival_Perm_01_04");	//Ha... (sarkasticky) Jsi nějakej chytrej co?
 	AI_Output(self,other,"DIA_PAL_2520_Parcival_Perm_01_05");	//Neboj se je tu dost skřetů i pro tebe. Pak uvidíme jak nám pomůžeš ty chytráku!
 	AI_Output(other,self,"DIA_PAL_2520_Parcival_Perm_01_06");	//Myslím že to zase nějak zvládnu.
 	AI_Output(self,other,"DIA_PAL_2520_Parcival_Perm_01_07");	//No, ano, ano...

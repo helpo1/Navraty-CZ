@@ -146,7 +146,7 @@ func void DIA_Dobar_NEWS_Info()
 		if(Npc_IsDead(Parlaf) == FALSE)
 		{
 			B_TurnToNpc(self,Parlaf);
-			AI_Output(self,other,"DIA_Dobar_NEWS_08_03");	//(Volá) Hej, Parlafe - udělej ty zbraně krásné a ostré, aby si jich skřeti všimli!
+			AI_Output(self,other,"DIA_Dobar_NEWS_08_03");	//(volá) Hej, Parlafe - udělej ty zbraně krásné a ostré, aby si jich skřeti všimli!
 			B_TurnToNpc(self,other);
 		};
 		Dobar_einmalig = TRUE;

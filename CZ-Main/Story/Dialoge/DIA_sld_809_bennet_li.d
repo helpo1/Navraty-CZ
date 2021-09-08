@@ -244,7 +244,7 @@ func void dia_bennet_li_missmygold_info()
 	AI_Output(self,other,"DIA_Bennet_LI_MissMyGold_01_02");	//(otráveně) Co zas...
 	AI_Output(self,other,"DIA_Bennet_LI_MissMyGold_01_03");	//Pohni, nudí mě to.
 	AI_Output(other,self,"DIA_Bennet_LI_MissMyGold_01_04");	//Nevíš kam zmizelo mé zlato?
-	AI_Output(self,other,"DIA_Bennet_LI_MissMyGold_01_05");	//Chlape...(otráveně) Celé dny jsem jen v kovárně.
+	AI_Output(self,other,"DIA_Bennet_LI_MissMyGold_01_05");	//Chlape... (otráveně) Celé dny jsem jen v kovárně.
 	AI_Output(self,other,"DIA_Bennet_LI_MissMyGold_01_06");	//Nemám páru kde je.
 	B_LogEntry(TOPIC_MISSMYGOLD,"Bennet neví, kam mé zlato zmizelo.");
 };

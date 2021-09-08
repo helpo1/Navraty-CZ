@@ -459,7 +459,7 @@ func void dia_pal_207_girion_yourfree_info()
 {
 	AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_08");	//Co tady děláš?!
 	AI_Output(other,self,"DIA_Pal_207_Girion_YourFree_01_00");	//Můžeš jít!
-	AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_01");	//(Překvapeně) Takže jsi zabil všechny skřety ve městě?!
+	AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_01");	//(překvapeně) Takže jsi zabil všechny skřety ve městě?!
 	AI_Output(other,self,"DIA_Pal_207_Girion_YourFree_01_02");	//Ano, přesně tak.
 	if(COUNTCAPTURED > 1)
 	{

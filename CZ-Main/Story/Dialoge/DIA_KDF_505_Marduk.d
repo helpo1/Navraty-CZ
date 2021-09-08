@@ -44,7 +44,7 @@ func int DIA_Marduk_NoEnter_PissOff_Condition()
 
 func void DIA_Marduk_NoEnter_PissOff_Info()
 {
-	AI_Output(self,other,"DIA_Marduk_NoEnter_PissOff_01_00");	//Hmm...(naštvanř)
+	AI_Output(self,other,"DIA_Marduk_NoEnter_PissOff_01_00");	//Hmm... (naštvanř)
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuildEnemy,0);
 };

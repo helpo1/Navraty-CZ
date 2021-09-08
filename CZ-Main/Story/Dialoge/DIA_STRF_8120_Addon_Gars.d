@@ -41,7 +41,7 @@ func void DIA_STRF_8120_Addon_Gars_PreHello_info()
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_PreHello_01_00");	//(mrzutě) A máme tu dalšího skřetího nohsleda.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_PreHello_01_01");	//A jak jsi na to přišel?
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_PreHello_01_03");	//Na to by přišel každej blbec! Myslíš, že by tě jinak skřeti nechali tady volně poflakovat.
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_PreHello_01_04");	//No, tak co...(nasraně) Co ode mně chceš?
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_PreHello_01_04");	//No, tak co... (nasraně) Co ode mně chceš?
 };
 
 instance DIA_STRF_8120_Addon_Gars_HELLO(C_Info)
@@ -84,7 +84,7 @@ func int DIA_STRF_8120_Addon_Gars_NoOrc_condition()
 func void DIA_STRF_8120_Addon_Gars_NoOrc_info()
 {
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_NoOrc_01_00");	//To se mýlíš! Nepracuju pro skřety.
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_NoOrc_01_01");	//Hmmm...(posměšně) To by mohl říci každý! Já jsem zvyklej věřit činnům, ne slovům.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_NoOrc_01_01");	//Hmmm... (posměšně) To by mohl říci každý! Já jsem zvyklej věřit činnům, ne slovům.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_NoOrc_01_02");	//Jestli chceš aby ti lidi věřili, tak to musíš nejprve dokázat!
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_NoOrc_01_03");	//Planým řečem a slibům tady už nikdo nevěří.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_NoOrc_01_04");	//A jak vás mám přesvědčit?
@@ -123,7 +123,7 @@ func void DIA_STRF_8120_Addon_Gars_ArDagarKey_info()
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_ArDagarKey_01_00");	//Potřebuješ klíč.
 	B_GiveInvItems(other,self,ItKe_ArDagar,1);
 	Npc_RemoveInvItems(self,ItKe_ArDagar,1);
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_ArDagarKey_01_01");	//Hmmm...(váhavě) To je jiná věc, příteli!
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_ArDagarKey_01_01");	//Hmmm... (váhavě) To je jiná věc, příteli!
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_ArDagarKey_01_02");	//Teď už věřím, že jsi náš člověk.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_ArDagarKey_01_03");	//A proč jsi ho potřeboval?
 	AI_PlayAni(self,"T_SEARCH");
@@ -161,7 +161,7 @@ func int DIA_STRF_8120_Addon_Gars_Paladin_condition()
 func void DIA_STRF_8120_Addon_Gars_Paladin_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Paladin_01_00");	//Hej...(drsně) To ty ses chtěl se mnou setkat?
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Paladin_01_00");	//Hej... (drsně) To ty ses chtěl se mnou setkat?
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_Paladin_01_01");	//Ano, to jsem byl já. Jestli jsi opravdu paladin.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Paladin_01_02");	//To jsem! Říkají mě Wenzel.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_Paladin_01_03");	//Wenzel?! Vypadá to, že jsem se nemýlil.
@@ -307,10 +307,10 @@ func int DIA_STRF_8120_Addon_Gars_GetOut_condition()
 func void DIA_STRF_8120_Addon_Gars_GetOut_info()
 {
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_GetOut_01_00");	//Potřebuju tě nějakým způsobem odsud dostat!
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_GetOut_01_01");	//Zajímavé...(s úšklebkem) A jak to chceš udělat?
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_GetOut_01_01");	//Zajímavé... (s úšklebkem) A jak to chceš udělat?
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_GetOut_01_02");	//Myslíš, že mě skřeti jen tak propustí?!
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_GetOut_01_03");	//Ne, samozřejmě! Ale jsem si jistý, že něco vymyslím.
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_GetOut_01_04");	//Poslouchej mě, příteli...(vážně) Jsem vážně poctěn tím, že jsi kvůli mě podstoupil tak dlouhou cestu.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_GetOut_01_04");	//Poslouchej mě, příteli... (vážně) Jsem vážně poctěn tím, že jsi kvůli mě podstoupil tak dlouhou cestu.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_GetOut_01_05");	//Ale v tomdle dole jsou i ostatní vězni! Nemůžeme je tady jen tak ponechat jejich osudu.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_GetOut_01_06");	//Když zjistili, že je mezi nima paladin, tak získali naději, že se mohou zachránit.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_GetOut_01_07");	//Proto jsem teď odpovědný za jejich životy. Takže buďto půjdem všichni, nebo nikdo!
@@ -350,7 +350,7 @@ func void DIA_STRF_8120_Addon_Gars_Teleport_info()
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Teleport_01_01");	//Portál? Jak jsi na něco takového přišel?!
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_Teleport_01_02");	//Crow přeložil starou tabulku, kterou Nuts našel v dole.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_Teleport_01_03");	//Píše se tam o jeho existenci.
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Teleport_01_04");	//Hmmm...(zamyšleně) Já bych do toho nevkládal tolik nadějí.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Teleport_01_04");	//Hmmm... (zamyšleně) Já bych do toho nevkládal tolik nadějí.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Teleport_01_05");	//Ani nevíme kdo to psal!
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_Teleport_01_06");	//Ale jestli je to pravda, tak je to šance na záchranu.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Teleport_01_07");	//To máš pravdu, příteli. V tom ti nebudu oponovat.
@@ -358,7 +358,7 @@ func void DIA_STRF_8120_Addon_Gars_Teleport_info()
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Teleport_01_09");	//Jestli portál opravdu existuje, tak se určitě nachází v nižších patrech dolu.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Teleport_01_10");	//A tam skřeti nikoho nepouští. Povídá se, že se tam usídlilo strašné zlo.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_Teleport_01_11");	//Takže, nejdřív vám budu muset vyčistit cestu.
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Teleport_01_12");	//To jsi dobře pochopil...(vážně) Ale chápeš, že je to jen na tobě.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Teleport_01_12");	//To jsi dobře pochopil... (vážně) Ale chápeš, že je to jen na tobě.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Teleport_01_13");	//Nemůžem riskovat životy ostatních lidí.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_Teleport_01_14");	//Na to si asi budu muset zvyknout.
 	B_LogEntry_Quiet(TOPIC_MineTeleport,"Řekl jsem o portálu Wenzelovi. Podle jeho názoru, je portál umístěn v nižších patrech dolu. Teď se tam jen nějak dostat.");	
@@ -389,7 +389,7 @@ func void DIA_STRF_8120_Addon_Gars_TeleportFind_info()
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_TeleportFind_01_01");	//Tak co jsi zjistil?
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_TeleportFind_01_02");	//Vypadá to, že se mě opravdu podařilo najít něco jako magický portál.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_TeleportFind_01_03");	//A u něho tenhle podivný kámen.
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_TeleportFind_01_04");	//Hmmm...(zamyšleně) Tento předmět velmi připomíná ohniskový kámen, který obvykle používají mágové.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_TeleportFind_01_04");	//Hmmm... (zamyšleně) Tento předmět velmi připomíná ohniskový kámen, který obvykle používají mágové.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_TeleportFind_01_05");	//Zkus ho odnést Crowovi! Možná ti o něm něco řekne.
 	B_LogEntry_Quiet(TOPIC_MineTeleport,"Řekl jsem Wenzelovi, že jsem v dole objevil něco vzdáleně připomínající portál a podivný kámen. Podle Wenzela ten předmět vypadá jako ohniskový kámen. Doporučil mě abych ho zanesl Crowovi.");	
 	SendPortalKrow = TRUE;
@@ -424,9 +424,9 @@ func void DIA_STRF_8120_Addon_Gars_NeedWeapons_info()
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_NeedWeapons_01_06");	//(překvapeně) Na pevninu? Věříš tomu?
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_NeedWeapons_01_07");	//Na samotném ohnisku je signatura královského řádu mágů Ohně.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_NeedWeapons_01_08");	//Podle toho soudím, že by to tak mohlo být.
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_NeedWeapons_01_09");	//Znamená to, na Myrtanu...(zamyšleně) Už jsem si myslel, že ji více neuvidím.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_NeedWeapons_01_09");	//Znamená to, na Myrtanu... (zamyšleně) Už jsem si myslel, že ji více neuvidím.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_NeedWeapons_01_10");	//Tobě se stýská?
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_NeedWeapons_01_11");	//Ne, jakby mohlo...(nostalgicky) Vždyť se tam nachází můj domov. Zrovna tak, jako mnohých těch, co jsem přišli s lordem Hagenem.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_NeedWeapons_01_11");	//Ne, jakby mohlo... (nostalgicky) Vždyť se tam nachází můj domov. Zrovna tak, jako mnohých těch, co jsem přišli s lordem Hagenem.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_NeedWeapons_01_12");	//No dobře, je pěkné si zavzpomínat, ale na to teď nemáme čas.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_NeedWeapons_01_13");	//Crow říkal, že budeš vědět, co dělat dál.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_NeedWeapons_01_14");	//Je to jednoduché. Vezmu si organizaci lidí na sebe.
@@ -521,10 +521,10 @@ func int DIA_STRF_8120_Addon_Gars_Food_condition()
 func void DIA_STRF_8120_Addon_Gars_Food_info()
 {
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_Food_01_00");	//Kolk jídla budepotřeba?
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Food_01_01");	//Hmm, popřemýšlím...(vážně) Tak 20 láhví vody a 50 kusů masa by mohlo stačit.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Food_01_01");	//Hmm, popřemýšlím... (vážně) Tak 20 láhví vody a 50 kusů masa by mohlo stačit.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Food_01_02");	//Ale pečeného. Nechci aby v klíčovej moment někdo z lidí dostal křeče do žaludku.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_Food_01_03");	//A není to málo?
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Food_01_04");	//Ne, je to tak akorát...(přísně) Pro začátek nám to bude stačit. Kromě toho velký náklad by nás zpomaloval.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Food_01_04");	//Ne, je to tak akorát... (přísně) Pro začátek nám to bude stačit. Kromě toho velký náklad by nás zpomaloval.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Food_01_05");	//No a ostatní je už v rukách Innose!
 	MIS_GarsFood = LOG_Running;
 	Log_CreateTopic(TOPIC_GarsFood,LOG_MISSION);
@@ -620,7 +620,7 @@ func void DIA_STRF_8120_Addon_Gars_ArmorDone_info()
 	B_GiveInvItemsManyThings(other,self);
 	Npc_RemoveInvItems(other,ItMw_1H_Blessed_Venzel,1);
 	Npc_RemoveInvItems(other,ITAR_PAL_H_V2_VENZEL,1);
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_ArmorDone_01_01");	//Hmmm...(s respektem) Po pravdě řečeno, nedoufal jsem, že si s tím vším poradíš.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_ArmorDone_01_01");	//Hmmm... (s respektem) Po pravdě řečeno, nedoufal jsem, že si s tím vším poradíš.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_ArmorDone_01_02");	//Nebylo to složité. Přece jsi mě popsal, kde je mám hledat.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_ArmorDone_01_03");	//Tak to jsem se strachoval zbytečně.
 	MIS_GarsArmor = LOG_Success;
@@ -650,10 +650,10 @@ func void DIA_STRF_8120_Addon_Gars_Buy_info()
 {
 	B_GivePlayerXP(2000);
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_Buy_01_00");	//Nic víc nepotřebuješ?
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Buy_01_01");	//Myslím, že ne...(vážně) Vše potřebné k útěku, už je zařízené.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Buy_01_01");	//Myslím, že ne... (vážně) Vše potřebné k útěku, už je zařízené.
 	AI_Output(other,self,"DIA_STRF_8120_Addon_Gars_Buy_01_02");	//Dobře, tak co dál?
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Buy_01_03");	//Teď už jen vyčkáme na vhodný okamžik a co nejdřív odsud vypadnem.
-	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Buy_01_04");	//Víš...(zamyšleně) Přemýšlel jsem, že už se možná neuvidíme.
+	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Buy_01_04");	//Víš... (zamyšleně) Přemýšlel jsem, že už se možná neuvidíme.
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Buy_01_05");	//Proto bych ti chtěl poděkovat, za tvoji pomoc!
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Buy_01_06");	//Pro všechny z nás byla nedocenitelná. 
 	AI_Output(self,other,"DIA_STRF_8120_Addon_Gars_Buy_01_07");	//Zachránil jsi mnoho lidských životů, což je cenější než vše ostatní.
@@ -755,7 +755,7 @@ func void DIA_STRF_8146_Hart_About_info()
 	AI_Output(self,other,"DIA_STRF_8146_Hart_About_01_13");	//Ten náčelník se jmenoval Ur Kahn. Přivedl mě sem do skřetího města a udělal ze mně válečníka v aréně.
 	AI_Output(self,other,"DIA_STRF_8146_Hart_About_01_14");	//A teď do konce svých dnů jsem povinen splácet mu svůj dluh.
 	AI_Output(other,self,"DIA_STRF_8146_Hart_About_01_15");	//A co mu dlužíš?
-	AI_Output(self,other,"DIA_STRF_8146_Hart_About_01_16");	//Jak co? Svůj život...(směje se) Jenom ten, příteli!
+	AI_Output(self,other,"DIA_STRF_8146_Hart_About_01_16");	//Jak co? Svůj život... (směje se) Jenom ten, příteli!
 	AI_Output(other,self,"DIA_STRF_8146_Hart_About_01_17");	//Jasně.
 };
 
@@ -867,10 +867,10 @@ func void DIA_STRF_8146_Hart_Help_info()
 	AI_Output(self,other,"DIA_STRF_8146_Hart_Help_01_02");	//Ty skřetí zbraně jsou trochu těžké pro někoho jako jsem já.
 	AI_Output(self,other,"DIA_STRF_8146_Hart_Help_01_03");	//Sice jsem se je už naučil používat, ale s našima zbraněma dovedu bojovat o poznání lépe.
 	AI_Output(other,self,"DIA_STRF_8146_Hart_Help_01_04");	//Jakou zbraň bys potřeboval?
-	AI_Output(self,other,"DIA_STRF_8146_Hart_Help_01_05");	//Ach...(nostalgicky) Kdybys mi tak mohl přinést můj starý meč.
+	AI_Output(self,other,"DIA_STRF_8146_Hart_Help_01_05");	//Ach... (nostalgicky) Kdybys mi tak mohl přinést můj starý meč.
 	AI_Output(self,other,"DIA_STRF_8146_Hart_Help_01_06");	//Ukázal bych těm bestiím, jak dokážou bojovat lidi!
 	AI_Output(other,self,"DIA_STRF_8146_Hart_Help_01_07");	//A kde ho mám hledat?
-	AI_Output(self,other,"DIA_STRF_8146_Hart_Help_01_08");	//Nedokážu říct, příteli...(smutně) Ten den jsem nechal svůj meč místnímu kováři, aby mě ho trochu nabrousil.
+	AI_Output(self,other,"DIA_STRF_8146_Hart_Help_01_08");	//Nedokážu říct, příteli... (smutně) Ten den jsem nechal svůj meč místnímu kováři, aby mě ho trochu nabrousil.
 	AI_Output(self,other,"DIA_STRF_8146_Hart_Help_01_10");	//A pak jsem se ocitl tady! Co se stalo s mým mečem to ví jen Beliar
 	AI_Output(self,other,"DIA_STRF_8146_Hart_Help_01_11");	//Možná že je pořád na hradě, a taky je možné že už si ho někdo přivlastnil.
 	AI_Output(self,other,"DIA_STRF_8146_Hart_Help_01_12");	//Byl to opravdu prvotřídní meč!

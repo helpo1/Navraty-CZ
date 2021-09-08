@@ -603,7 +603,7 @@ func void DIA_Addon_Samuel_RiordanRezept_Just()
 	AI_Output(self,other,"DIA_Addon_Samuel_RiordanRezept_Just_01_02");	//Je to pro mě příliš výnosné, než abych to vykládal každému koho potkám.
 	AI_Output(self,other,"DIA_Addon_Samuel_RiordanRezept_Just_01_03");	//Takže zábavu si choď radší hledat jinde.
 	AI_Output(other,self,"DIA_Addon_Samuel_RiordanRezept_Just_01_04");	//Mohl bych ti zaplatit!
-	AI_Output(self,other,"DIA_Addon_Samuel_RiordanRezept_Just_01_05");	//(Zamyšleně) Dobře. Nicméně, bude tě to stát nejméně dva tisíce zlatých.
+	AI_Output(self,other,"DIA_Addon_Samuel_RiordanRezept_Just_01_05");	//(zamyšleně) Dobře. Nicméně, bude tě to stát nejméně dva tisíce zlatých.
 	AI_Output(self,other,"DIA_Addon_Samuel_RiordanRezept_Just_01_06");	//A ve tvěm případě, vyjednávat se mnou nemá smysl.
 	AI_Output(other,self,"DIA_Addon_Samuel_RiordanRezept_Just_01_07");	//Achjo.
 	RezeptCost = 2000;

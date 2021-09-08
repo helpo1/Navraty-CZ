@@ -586,7 +586,7 @@ func int DIA_Addon_Snaf_TeachCook_Condition()
 func void DIA_Addon_Snaf_TeachCook_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Snaf_TeachCook_01_00");	//Sám si vaříš polévku?
-	AI_Output(self,other,"DIA_Addon_Snaf_TeachCook_01_01");	//Samozřejmě. (Naštvaně) Myslíš, že bych někomu svěřil její přípravu!
+	AI_Output(self,other,"DIA_Addon_Snaf_TeachCook_01_01");	//Samozřejmě. (naštvaně) Myslíš, že bych někomu svěřil její přípravu!
 	AI_Output(other,self,"DIA_Addon_Snaf_TeachCook_01_02");	//Můžeš mě to naučit?
 	AI_Output(self,other,"DIA_Addon_Snaf_TeachCook_01_03");	//Vaření? Hmmm... No, kvůli starým časům, proč ne.
 	AI_Output(self,other,"DIA_Addon_Snaf_TeachCook_01_04");	//Ale nebude to zadarmo.

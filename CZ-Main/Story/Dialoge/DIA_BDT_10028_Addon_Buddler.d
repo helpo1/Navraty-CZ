@@ -43,7 +43,7 @@ func void DIA_Addon_10028_Buddler_Hi_Info()
 	if(Sklaven_Flucht == FALSE)
 	{
 		AI_Output(self,other,"DIA_Addon_BDT_10028_Buddler_Hi_12_01");	//Dobře. Nemusim nic dělat protože vše dělají otroci.
-		AI_Output(self,other,"DIA_Addon_BDT_10028_Buddler_Hi_12_02");	//A toho zlata co vykutají.(směje)
+		AI_Output(self,other,"DIA_Addon_BDT_10028_Buddler_Hi_12_02");	//A toho zlata co vykutají. (směje)
 	}
 	else
 	{

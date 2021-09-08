@@ -703,7 +703,7 @@ func void dia_baalnamib_PrioratNews_info()
 		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_13");	//Podle něj, ve městě nikdo nováčky z tábora neviděl. 
 		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_14");	//A je o tom přesvědčen?
 		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_15");	//Absolutně. Městská ztráž by to nenechala bez povšimnutí.
-		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_16");	//Dobře...(zamyšleně) Ještě nějaké novinky?
+		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_16");	//Dobře... (zamyšleně) Ještě nějaké novinky?
 		PsiCamp_04_Done = TRUE;
 	};
 	if((PsiCamp_03_Ok == TRUE) && (PsiCamp_03_Done == FALSE))
@@ -713,7 +713,7 @@ func void dia_baalnamib_PrioratNews_info()
 			AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_17");	//Asi se ti to nebude moc líbit, ale tábor templáře Hanise byl napaden.
 			AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_18");	//Co?! No kdo to mohl udělat, hlavně proč?
 			AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_19");	//To já nevím.
-			AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_20");	//O bože...(netrpělivě) A co je s Hanisem?
+			AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_20");	//O bože... (netrpělivě) A co je s Hanisem?
 			AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_21");	//Byl se statečně, dokonce jednoho z útočníků zranil. Ale byl smrtelně zraněn a už se mě ho nepodařilo zachránit.
 			AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_23");	//Před tím než zemřel, mi řekl že útočníci unesli všechny sběrače trávy.
 		}
@@ -836,7 +836,7 @@ func void dia_baalnamib_PrioratNews_Blade_info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_BaalNamib_PrioratNews_Blade_01_01");	//Mám u sebe tenhle meč.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_02");	//Dobře...(se zájmem) Ukaž, podívám se na něj.
+	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_02");	//Dobře... (se zájmem) Ukaž, podívám se na něj.
 	AI_Output(other,self,"DIA_BaalNamib_PrioratNews_Blade_01_03");	//Tady je.
 	CreateInvItems(self,ItMw_1H_AssBlade_View,1);
 	AI_UnequipWeapons(self);
@@ -845,7 +845,7 @@ func void dia_baalnamib_PrioratNews_Blade_info()
 	AI_PlayAni(self,"T_1HSINSPECT");
 	AI_RemoveWeapon(self);
 	AI_UnequipWeapons(self);
-	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_04");	//Ano, je to velmi starý meč...(zvědavě) Nikdy jsem neviděl podobný meč.
+	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_04");	//Ano, je to velmi starý meč... (zvědavě) Nikdy jsem neviděl podobný meč.
 	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_05");	//Vezmi si ho zpět a zkus o něm něco zjistit.
 	Npc_RemoveInvItems(self,ItMw_1H_AssBlade_View,Npc_HasItems(self,ItMw_1H_AssBlade_View));
 	AI_EquipBestMeleeWeapon(self);
@@ -889,7 +889,7 @@ func void dia_baalnamib_ShadowKnown_info()
 	AI_Output(other,self,"DIA_BaalNamib_ShadowKnown_01_01");	//Potřebuju zjistit, kdo zaůtočil na tábor sběračů trávy.
 	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_02");	//Opravdu?!
 	AI_Output(other,self,"DIA_BaalNamib_ShadowKnown_01_03");	//Byli to členové prastarého řádu zabijáků, kteří si říkají stínové Masyafu!
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_04");	//Hmm...(zamyšleně) Myslím, že vím o kom mluvíš. 
+	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_04");	//Hmm... (zamyšleně) Myslím, že vím o kom mluvíš. 
 	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_05");	//Ale pokud je mi známo, jejich bratrstvo se vždy staralo jen o svoji domovinu - Varant.
 	AI_Output(other,self,"DIA_BaalNamib_ShadowKnown_01_06");	//Máš pravdu tak to taky do nedávna bylo.
 	AI_Output(other,self,"DIA_BaalNamib_ShadowKnown_01_07");	//Ale meč, který jsem našel u jednoho útočníka, mluví o něčem jiném. 
@@ -967,7 +967,7 @@ func void dia_baalnamib_AssStopAttack_info()
 		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_06");	//Bohužel, s tak nebezpečným nepřítelem se to dalo čekat.
 		AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_07");	//Jsem si jistý že templáři Gor Na Totha protivníka nepodcenili.
 		AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_08");	//Všichni bojovali až do konce! Gor Na Toth na ně může být hrdý.
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_09");	//Nepochybuji o tom...(vážně) Ale teď se vrať k tomu napadení.
+		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_09");	//Nepochybuji o tom... (vážně) Ale teď se vrať k tomu napadení.
 	};
 
 	AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_10");	//Podařilo se ti ještě něco zjistit o těch útočnících?
@@ -981,7 +981,7 @@ func void dia_baalnamib_AssStopAttack_info()
 		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_12");	//Podej mi ho, ať se na něj podívám.
 		AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_13");	//Tady je.
 		B_GiveInvItems(other,self,ItAm_MasiafKey,1);
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_14");	//Ano...(zamyšleně) zvláštní věc. 
+		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_14");	//Ano... (zamyšleně) zvláštní věc. 
 		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_15");	//Doufám, že ti nebude vadit když si ho ponechám. 
 		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_16");	//Možná se mě podaří zjitit víc podrobností o tom amuletu.
 
@@ -1040,11 +1040,11 @@ func void dia_baalnamib_MasiafAmulet_info()
 	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_01");	//Něco bych pro tebe měl.
 	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_02");	//Co konkrétně?
 	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_03");	//Zvláštní amulet, který jsem našelu jednoho z útočníků.
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_04");	//Hmm...(se zájmem) Podej mi ho, ať se podívám.
+	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_04");	//Hmm... (se zájmem) Podej mi ho, ať se podívám.
 	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_05");	//Tady je.
 	B_GiveInvItems(other,self,ItAm_MasiafKey,1);
 	Npc_RemoveInvItems(self,ItAm_MasiafKey,Npc_HasItems(self,ItAm_MasiafKey));
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_06");	//Ano...(zamyšleně) zvláštní věc. 
+	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_06");	//Ano... (zamyšleně) zvláštní věc. 
 	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_07");	//Doufám, že ti nebude vadit když si ho ponechám. 
 	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_08");	//Možná se mě podaří zjitit víc podrobností o tom amuletu.
 
@@ -1246,6 +1246,6 @@ func void dia_baalnamib_Assasins_DoneHram_info()
 	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneHram_01_04");	//Co tím chceš říci?
 	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneHram_01_05");	//Nyní je průchod zavalen kameny a mnozí z těch co byli v zajetí zůstali stále v údolí.
 	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneHram_01_06");	//Bez vaší pomoci se od tamtud nedokážou dostat.
-	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneHram_01_07");	//Rozumím ti...(vážně) Hned tam pošlu templáře aby se o ty sutiny postarali.
+	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneHram_01_07");	//Rozumím ti... (vážně) Hned tam pošlu templáře aby se o ty sutiny postarali.
 	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneHram_01_08");	//Pomůžeme našim bratrům, nemůžeme je ponechat jejich osudu!
 };

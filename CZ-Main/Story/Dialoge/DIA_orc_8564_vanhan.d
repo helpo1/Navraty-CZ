@@ -48,7 +48,7 @@ func void dia_orc_8564_vanhan_hello_info()
 	AI_Output(self,other,"DIA_Orc_8564_VanHan_Hello_01_02");	//NOR KHATAG BAR KER DARAN!
 	AI_Output(other,self,"DIA_Orc_8564_VanHan_Hello_01_03");	//Nerozumím... Co to říkáš?
 	AI_Output(self,other,"DIA_Orc_8564_VanHan_Hello_01_04");	//BER TOGAN URHAN BOGOT!... Proč člověk rušit Ur-Han, proč sem přijít?
-	AI_Output(other,self,"DIA_Orc_8564_VanHan_Hello_01_05");	//...(Takže Emnol měl pravdu, ze všech se staly duchové!)
+	AI_Output(other,self,"DIA_Orc_8564_VanHan_Hello_01_05");	//... (takže Emnol měl pravdu, ze všech se staly duchové!)
 	AI_Output(other,self,"DIA_Orc_8564_VanHan_Hello_01_06");	//Přišel jsem si promluvit se skřety - mám otázky.
 	AI_Output(self,other,"DIA_Orc_8564_VanHan_Hello_01_07");	//NOKAN BADAR!... Proč skřeti mluvit s člověkem o jeho otázce?!
 	if(Npc_HasItems(hero,itmw_2h_orcprestige) >= 1)
@@ -239,13 +239,13 @@ func void dia_orc_8564_vanhan_azgalorbook_info()
 	AI_Output(other,self,"DIA_Orc_8564_VanHan_AzgalorBook_01_01");	//Můžeš přečíst tuto knihu?
 	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_02");	//Dát knihu Ur-Han...
 	B_GiveInvItems(other,self,itwr_azgolor,1);
-	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_03");	//...(zkoumá knihu)
+	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_03");	//... (zkoumá knihu)
 	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_04");	//Starobylý jazyk - jazyk démona... Ur-Han znát jazyk, vykouzlit KRAKTAR TEKAN.
 	AI_Output(other,self,"DIA_Orc_8564_VanHan_AzgalorBook_01_05");	//O čem se tam píše?
-	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_06");	//...(dívá se do knihy)
+	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_06");	//... (dívá se do knihy)
 	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_07");	//Kniha psát co je potřeba pro DAKH BAR FATGAR a jak navrátit magie.
 	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_09");	//Počkat, hned to říct.
-	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_10");	//...(listuje v knize)
+	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_10");	//... (listuje v knize)
 	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_11");	//Pro navrácení magie člověk mít BLADAR, KHORKAN a SOLFAG.
 	AI_Output(other,self,"DIA_Orc_8564_VanHan_AzgalorBook_01_12");	//Nerozumím ti ani slovo. Co je BLADAR?
 	AI_Output(self,other,"DIA_Orc_8564_VanHan_AzgalorBook_01_13");	//Být krev bratra, krev skřeta.

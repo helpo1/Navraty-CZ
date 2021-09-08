@@ -77,7 +77,7 @@ func int dia_baalparvez_notalk_sleeper_condition()
 func void dia_baalparvez_notalk_sleeper_info()
 {
 	AI_Output(other,self,"DIA_BaalParvez_NoTalk_Sleeper_01_00");	//Spáč s tebou!
-	AI_Output(self,other,"DIA_BaalParvez_NoTalk_Sleeper_01_01");	//(Povzdech)
+	AI_Output(self,other,"DIA_BaalParvez_NoTalk_Sleeper_01_01");	//(povzdech)
 	AI_StopProcessInfos(self);
 };
 
@@ -105,7 +105,7 @@ func int dia_baalparvez_notalk_imp_condition()
 func void dia_baalparvez_notalk_imp_info()
 {
 	AI_Output(other,self,"DIA_BaalParvez_NoTalk_Imp_01_00");	//Všechno v pořádku, příteli?
-	AI_Output(self,other,"DIA_BaalParvez_NoTalk_Sleeper_01_01");	//(Povzdech)
+	AI_Output(self,other,"DIA_BaalParvez_NoTalk_Sleeper_01_01");	//(povzdech)
 	AI_StopProcessInfos(self);
 };
 
@@ -173,7 +173,7 @@ func void dia_baalparvez_specialjointok_info()
 	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_02");	//Něco pro nás udělal... V rukou držel meč a sestupoval po širokém schodištir. Tady vize končí.
 	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_03");	//Byl ti podobný. Kdo jsi? Co chceš?
 	AI_Output(other,self,"DIA_BaalParvez_SpecialJointOk_01_04");	//Chci se přidat k Bratrstvu a žádám o souhlas, mistře.
-	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_05");	//Přeješ si být tedy novicem Bratrstva? Hmm... (vytrvale hledí)... Kdo tě ke mně poslal?
+	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_05");	//Přeješ si být tedy novicem Bratrstva? Hmm... (vytrvale hledí) Kdo tě ke mně poslal?
 	AI_Output(other,self,"DIA_BaalParvez_SpecialJointOk_01_06");	//Poslal mě Baal Orun. Řekl mi, že potřebuju váš souhlas.
 	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_07");	//Takže Baal Orun tě ke mně poslal... Nicméně, musíš mi prokázat, že jsi hoden nosit roušku novice.
 	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_08");	//Udělej mi laskavost - prokaž nám svou loajalitu a poté budeš mít můj souhlas.
@@ -324,7 +324,7 @@ func void DIA_BaalParvez_PrioratStart_info()
 {
 	B_GivePlayerXP(150);
 	AI_Output(other,self,"DIA_BaalParvez_PrioratStart_01_00");	//Poslal mě Baal Namib.
-	AI_Output(self,other,"DIA_BaalParvez_PrioratStart_01_01");	//(Povzdech)
+	AI_Output(self,other,"DIA_BaalParvez_PrioratStart_01_01");	//(povzdech)
 	AI_Output(other,self,"DIA_BaalParvez_PrioratStart_01_02");	//Jde o ty ztracené novice. Nevíš o tom něco?
 	AI_Output(self,other,"DIA_BaalParvez_PrioratStart_01_03");	//No jelikož víš o tom co se děje, tak ti zřejmě Baal Namib důvěřuje.
 	AI_Output(self,other,"DIA_BaalParvez_PrioratStart_01_04");	//Chceš li znát odpvěď na svoji otázku, tak ti můžu říc jen tolik, ve městě nejsou.

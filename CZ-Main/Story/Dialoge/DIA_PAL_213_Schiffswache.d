@@ -223,7 +223,7 @@ func int DIA_Pal_213_Schiffswache_IAmKDF3_Condition()
 func void DIA_Pal_213_Schiffswache_IAmKDF3_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF3_15_00");	//Opravdu chceš napadnout mága Ohně?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF3_01_01");	//Ne, nikdy bych nenapadl mága (nervózní).
+	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF3_01_01");	//Ne, nikdy bych nenapadl mága. (nervózní)
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF3_15_02");	//Takže co uděláš když vejdu na palubu?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF3_01_03");	//(schlíple) Nic, pane.
 };
@@ -456,9 +456,9 @@ func int dia_pal_213_schiffswache_iamkdm_condition()
 func void dia_pal_213_schiffswache_iamkdm_info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_15_00");	//Paladine, víš vůbec komu sloužím?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_01");	//Myslím, že ano! Jsi nekromant - služebník Beliara!... (S opovržením)
+	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_01");	//Myslím, že ano! Jsi nekromant - služebník Beliara!... (s opovržením)
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_02");	//A co myslíš že udělá, jesti se opvážíš pozvednout svůj meč proti jeho služebníkovi.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_03");	//Co, zabije mě? (Směje se)
+	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_03");	//Co, zabije mě? (směje se)
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_04");	//Toho se nebojím, nekromante! Přísahal jsem položit život za Innose!
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_05");	//Takže jsi připraven ztratit duši pro jeho slávu?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_06");	//Cože?!
@@ -471,8 +471,8 @@ func void dia_pal_213_schiffswache_iamkdm_info()
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_13");	//A ani tvůj ubohý bůh ti pak nepomůže!
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_14");	//Ne!... (nervózně) Jen to ne!
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_15");	//Tak mě jednoduše pusť na loď než Beliar pošle své služebníky pro tvou duši.
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_16");	//(skrze zuby)... Jdi.
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_17");	//Správně! Tak je hodnej...(poplácání po tváři)
+	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_16");	//(skrze zuby) Jdi.
+	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_17");	//Správně! Tak je hodnej... (poplácání po tváři)
 
 	if(RhetorikSkillValue[1] < 100)
 	{
@@ -695,7 +695,7 @@ func void DIA_Pal_213_Schiffswache_Rats_Info()
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_09");	//Můžeš se o ně postarat... prosím... (žadoní)
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_Rats_01_10");	//A proč se o to nepostaráš sám?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_11");	//Už jsem ti říkal, že jsem tu na stráži. A opustit stráž... Innos mě chraň!
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_12");	//Na druhou stranu. (Vážně): Pro tebe to nebude problém.
+	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_12");	//Na druhou stranu. (vážně) Pro tebe to nebude problém.
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_Rats_01_13");	//Dobře, jdu se kouknout do podpalubí.
 	MIS_SchiffswacheRats = LOG_Running;
 	Log_CreateTopic(TOPIC_SchiffswacheRats,LOG_MISSION);

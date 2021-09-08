@@ -524,7 +524,7 @@ func void dia_salandril_orcrum_info()
 	MIS_SALANDRILRESECH = LOG_Running;
 	Log_CreateTopic(TOPIC_SALANDRILRESECH,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SALANDRILRESECH,LOG_Running);
-	B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril se snaží zjistiť, na co by ten skřetí dryák mohl být. Mám se vrátiť za pár dní.");
+	B_LogEntry(TOPIC_SALANDRILRESECH,"Salandril se snaží zjistit, na co by ten skřetí dryák mohl být. Mám se vrátit za pár dní.");
 };
 
 
@@ -657,7 +657,7 @@ func void dia_salandril_orcrum5_info()
 		B_GiveInvItems(other,self,itfo_addon_orcrum,10);
 		Npc_RemoveInvItems(self,itfo_addon_orcrum,10);
 		Npc_RemoveInvItems(other,ItMi_Gold,300);
-		AI_Output(self,other,"DIA_Salandril_ORCRUM51_01_01");	//Takže jsi se rozhodl ho zkusit. Výborně! Přijď zítra, lektvar bude připravený.
+		AI_Output(self,other,"DIA_Salandril_ORCRUM51_01_01");	//Takže ses rozhodl ho zkusit. Výborně! Přijď zítra, lektvar bude připravený.
 		ORCRUMDAY4 = Wld_GetDay();
 	}
 	else
@@ -706,7 +706,7 @@ instance DIA_SALANDRIL_MyBrew(C_Info)
 	condition = dia_salandril_MyBrew_condition;
 	information = dia_salandril_MyBrew_info;
 	permanent = FALSE;
-	description = "Mohl bys se podívat na jeden alchemistický recept?";
+	description = "Mohl by ses podívat na jeden alchemistický recept?";
 };
 
 func int dia_salandril_MyBrew_condition()
@@ -726,10 +726,10 @@ func void dia_salandril_MyBrew_info()
 	B_GiveInvItems(other,self,ItWr_ConstRecept,1);
 	AI_Output(self,other,"DIA_Salandril_MyBrew_01_03");	//Takže, co to tu máme...
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_04");	//Hmm... Co za kokota toto napsal?
+	AI_Output(self,other,"DIA_Salandril_MyBrew_01_04");	//Hmm... Co za blázna toto napsal?
 	AI_Output(other,self,"DIA_Salandril_MyBrew_01_05");	//Cože?!
 	AI_Output(self,other,"DIA_Salandril_MyBrew_01_06");	//Přísady toho lektvaru jsou nespojitelné.
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_07");	//Navíc některé z nich se ani v alchemii nepoužívají. Totální blbost!
+	AI_Output(self,other,"DIA_Salandril_MyBrew_01_07");	//Navíc některé z nich se ani v alchymii nepoužívají. Totální blbost!
 	B_GiveInvItems(self,other,ItWr_ConstRecept,1);
 	AI_Output(self,other,"DIA_Salandril_MyBrew_01_08");	//Takže kdo to napsal?
 	AI_Output(other,self,"DIA_Salandril_MyBrew_01_09");	//Bude lepší, když ti to nepovím.
@@ -773,7 +773,7 @@ func void dia_salandril_PureElixir_info()
 	AI_Output(self,other,"DIA_Salandril_PureElixir_01_08");	//Dej mu je a pozdravuj ho. Nezapomeň.
 	AI_Output(other,self,"DIA_Salandril_PureElixir_01_09");	//Samozřejmě.
 	SalandrilPureElixir = TRUE;
-	B_LogEntry(TOPIC_VatrasPotion,"Salandril přijmul Vatrasovu objednávku, ale než se lektary uvaří, potrvá to aspoň týden. Takže mi dal pár lektvarů do zásoby pro Vatrase.");
+	B_LogEntry(TOPIC_VatrasPotion,"Salandril přijal Vatrasovu objednávku, ale než se lektary uvaří, potrvá to aspoň týden. Takže mi dal pár lektvarů do zásoby pro Vatrase.");
 };
 
 //------------------------------------------kosti-------------------------------------
@@ -799,7 +799,7 @@ func void DIA_VLK_422_Salandril_Game_info()
 {
  	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_00"); //Kardif říkal, že hraješ kostky.
  	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_01"); //Ano, to má pravdu. Ale ne s kýmkoliv!
- 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_02"); //A se mnou by jsi si zahrál?
+ 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_02"); //A se mnou by sis zahrál?
  	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_03"); //S tebou? Někdo tě na to nalákal?
  	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_04"); //Pojďme hrát a možná to zjistíš.
  	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_05"); //Dobře. Jak myslíš.

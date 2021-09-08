@@ -42,17 +42,17 @@ func int dia_xardas_goblin_hello_condition()
 
 func void dia_xardas_goblin_hello_info()
 {
-	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_01_00");	//(Smutně) Počkej člověče a prohoď pár slov s nešťastným skřítkem.
+	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_01_00");	//(smutně) Počkej člověče a prohoď pár slov s nešťastným skřítkem.
 	AI_Output(other,self,"DIA_Xardas_Goblin_Hello_01_01");	//CO! Mluvící goblin!
 	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_01_02");	//Díváš se na mě jako na pytel sraček!
 	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_01_03");	//Ještě nikdy jsi neviděl goblina, co rozumí lidem?
 	AI_Output(other,self,"DIA_Xardas_Goblin_Hello_01_04");	//Ne, to ne. Jak se ti povedlo naučit se mluvit? Není to zvláštní?
 	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_01_05");	//Ani ne. Přesněji řečeno mě to naučil jeden mág.
-	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_01_06");	//(Smutně) Ale, kde je hodně znalostí, je i dost smutku a bolesti...
+	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_01_06");	//(smutně) Ale, kde je hodně znalostí, je i dost smutku a bolesti...
 	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_01_07");	//Poslouchej! Pomoz mi, muži, chátrajícímu goblinovi.
 	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_01_08");	//Udělej pro mě něco a dostaneš magický obsah této truhly.
 	AI_Output(other,self,"DIA_Xardas_Goblin_Hello_01_09");	//To je tvá truhla? A co mi brání, abych si to prostě nevzal?
-	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_01_10");	//(Militaristicky) Možná mám málo ve své výšce, ale o to více je v mích spárech!
+	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_01_10");	//(militaristicky) Možná mám málo ve své výšce, ale o to více je v mích spárech!
 	Info_ClearChoices(dia_xardas_goblin_hello);
 	Info_AddChoice(dia_xardas_goblin_hello,"Dobrá, jak ti pomůžu?",dia_xardas_goblin_hello_ok);
 	Info_AddChoice(dia_xardas_goblin_hello,"Opravdu? Tak sleduj.",dia_xardas_goblin_hello_no);

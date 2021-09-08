@@ -293,7 +293,7 @@ func void DIA_Addon_Snaf_NW_TeachCookDone_MeatMeal()
 	if(Npc_HasItems(hero,ItMi_Gold) >= 250)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,250);
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_01");	//Je to můj vlastní recept. (Hrdě) Nic v přebytku.
+		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_01");	//Je to můj vlastní recept. (hrdě) Nic v přebytku.
 		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_02");	//Jen trocha masa a mastných hub.
 		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_MeatMeal_01_03");	//Naházíš všechno do hrnce, vaříš - a ten nejchutnější pokrm světa co jsem kdy ochutnal je hotový.
 		AI_Print("Naučeno: Vaření - 'Masové ragú'");

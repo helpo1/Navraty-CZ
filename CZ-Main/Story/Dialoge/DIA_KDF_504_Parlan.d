@@ -42,7 +42,7 @@ var int Parlan_Hammer;
 
 func void B_Parlan_HAMMER()
 {
-	AI_Output(self,other,"DIA_Parlan_HAMMER_05_00");	//(přísně)... Počkej minutu, synu.
+	AI_Output(self,other,"DIA_Parlan_HAMMER_05_00");	//(přísně) Počkej minutu, synu.
 	AI_Output(self,other,"DIA_Parlan_HAMMER_05_01");	//Povídá se, že se 'ztratil' jeden významný artefakt ze svatyně.
 	AI_Output(self,other,"DIA_Parlan_HAMMER_05_02");	//Nechci o tom vědět víc – jenom očekávám, že bude zpět na místě.
 	Parlan_Hammer = TRUE;
@@ -537,7 +537,7 @@ func int DIA_Parlan_NoEnter_Condition()
 func void DIA_Parlan_NoEnter_Info()
 {
 	AI_GotoNpc(self,other);
-	AI_Output(self,other,"DIA_Parlan_NoEnter_01_00");	//Stůj! (Vztekle) Ještě jsem tě tu neviděl.
+	AI_Output(self,other,"DIA_Parlan_NoEnter_01_00");	//Stůj! (vztekle) Ještě jsem tě tu neviděl.
 	AI_Output(self,other,"DIA_Parlan_NoEnter_01_01");	//Jak se ti sem podařilo dostat?
 	Info_ClearChoices(DIA_Parlan_NoEnter);
 	Info_AddChoice(DIA_Parlan_NoEnter,"Přelezl jsem přes stěnu.",DIA_Parlan_NoEnter_UpWall);
@@ -556,7 +556,7 @@ func void DIA_Parlan_NoEnter_UpWall()
 	AI_Output(self,other,"DIA_Parlan_NoEnter_UpWall_01_01");	//Hmmm... (rozlobeně) Ano, přelez! A to pro tebe není dobrý.
 	AI_Output(self,other,"DIA_Parlan_NoEnter_UpWall_01_02");	//Víš, co je to za místo?!
 	AI_Output(other,self,"DIA_Parlan_NoEnter_UpWall_01_03");	//A co?
-	AI_Output(self,other,"DIA_Parlan_NoEnter_UpWall_01_04");	//Je to klášter mágů Ohně! (Zuřivě) Svaté místo samotného Innose!
+	AI_Output(self,other,"DIA_Parlan_NoEnter_UpWall_01_04");	//Je to klášter mágů Ohně! (zuřivě) Svaté místo samotného Innose!
 	AI_Output(self,other,"DIA_Parlan_NoEnter_UpWall_01_05");	//Pouze mágové a novici zde mohou být.
 	AI_Output(self,other,"DIA_Parlan_NoEnter_UpWall_01_06");	//Promiň, ale nedáváš mě na vybranou!
 	AI_Output(self,other,"DIA_Parlan_NoEnter_UpWall_01_07");	//Za tuto svatokrádež budeš muset zaplatit svým životem.
@@ -571,7 +571,7 @@ func void DIA_Parlan_NoEnter_Mount()
 	AI_Output(self,other,"DIA_Parlan_NoEnter_Mount_01_01");	//Co?! (vztekle) Co to říkáš za nesmysl!
 	AI_Output(self,other,"DIA_Parlan_NoEnter_Mount_01_02");	//Víš, co je to za místo?!
 	AI_Output(other,self,"DIA_Parlan_NoEnter_Mount_01_03");	//A co?
-	AI_Output(self,other,"DIA_Parlan_NoEnter_Mount_01_04");	//Je to klášter mágů Ohně! (Zuřivě) Svaté místo samotného Innose!
+	AI_Output(self,other,"DIA_Parlan_NoEnter_Mount_01_04");	//Je to klášter mágů Ohně! (zuřivě) Svaté místo samotného Innose!
 	AI_Output(self,other,"DIA_Parlan_NoEnter_Mount_01_05");	//Pouze mágové a novici zde mohou být.
 	AI_Output(self,other,"DIA_Parlan_NoEnter_Mount_01_06");	//Promiň, ale nedáváš mě na vybranou!
 	AI_Output(self,other,"DIA_Parlan_NoEnter_Mount_01_07");	//Za tuto svatokrádež budeš muset zaplatit svým životem.
@@ -583,10 +583,10 @@ func void DIA_Parlan_NoEnter_Mount()
 func void DIA_Parlan_NoEnter_Pedro()
 {
 	AI_Output(other,self,"DIA_Parlan_NoEnter_Pedro_01_00");	//Novic Pedro mě pustil.
-	AI_Output(self,other,"DIA_Parlan_NoEnter_Pedro_01_01");	//Co?!...(rozhněvaně) Lžeš mě! To on nemohl udělat.
+	AI_Output(self,other,"DIA_Parlan_NoEnter_Pedro_01_01");	//Co?!... (rozhněvaně) Lžeš mě! To on nemohl udělat.
 	AI_Output(self,other,"DIA_Parlan_NoEnter_Pedro_01_02");	//Kromě toho jsem tě neviděl projít přes hlavní bránu kláštera.
 	AI_Output(other,self,"DIA_Parlan_NoEnter_Pedro_01_03");	//No, a co z toho?
-	AI_Output(self,other,"DIA_Parlan_NoEnter_Pedro_01_04");	//Je to klášter mágů Ohně! (Zuřivě) Svaté místo samotného Innose!
+	AI_Output(self,other,"DIA_Parlan_NoEnter_Pedro_01_04");	//Je to klášter mágů Ohně! (zuřivě) Svaté místo samotného Innose!
 	AI_Output(self,other,"DIA_Parlan_NoEnter_Pedro_01_05");	//Pouze mágové a novici zde mohou být.
 	AI_Output(self,other,"DIA_Parlan_NoEnter_Pedro_01_06");	//Promiň, ale nedáváš mě na vybranou!
 	AI_Output(self,other,"DIA_Parlan_NoEnter_Pedro_01_07");	//Za tuto svatokrádež budeš muset zaplatit svým životem.
@@ -600,7 +600,7 @@ func void DIA_Parlan_NoEnter_NoKill()
 	AI_Output(other,self,"DIA_Parlan_NoEnter_NoKill_01_00");	//A co je to za místo?
 	AI_Output(self,other,"DIA_Parlan_NoEnter_NoKill_01_01");	//Co?! (vztekle) Děláš si srandu?!
 	AI_Output(other,self,"DIA_Parlan_NoEnter_NoKill_01_02");	//Ale já nemám nejmenší tušení, kam jsem se dostal.
-	AI_Output(self,other,"DIA_Parlan_NoEnter_NoKill_01_03");	//Je to klášter mágů Ohně! (Zuřivě) Svaté místo samotného Innose!
+	AI_Output(self,other,"DIA_Parlan_NoEnter_NoKill_01_03");	//Je to klášter mágů Ohně! (zuřivě) Svaté místo samotného Innose!
 	AI_Output(self,other,"DIA_Parlan_NoEnter_NoKill_01_04");	//Pouze mágové a novici zde mohou být.
 	AI_Output(other,self,"DIA_Parlan_NoEnter_NoKill_01_05");	//Innosův klášter?!
 	AI_Output(other,self,"DIA_Parlan_NoEnter_NoKill_01_06");	//Pak si zasloužím pouze smrt, mistře!
@@ -1812,7 +1812,7 @@ func int DIA_Parlan_DontDisturb_Condition()
 
 func void DIA_Parlan_DontDisturb_Info()
 {
-	AI_Output(self,other,"DIA_Parlan_DontDisturb_05_00");	//(výhružně)... Ještě jednou – nech mé novice na pokoji!
+	AI_Output(self,other,"DIA_Parlan_DontDisturb_05_00");	//(výhružně) Ještě jednou – nech mé novice na pokoji!
 	AI_Output(self,other,"DIA_Parlan_DontDisturb_05_01");	//Mají pozdvihnout svého ducha fyzickou prací a připravit se na život v kláštere.
 	AI_Output(self,other,"DIA_Parlan_DontDisturb_05_02");	//Nebudu tolerovat zásahy do jejich práce!
 	Parlan_DontTalkToNovice = LOG_Running;

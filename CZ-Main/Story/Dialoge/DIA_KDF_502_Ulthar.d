@@ -43,7 +43,7 @@ func int DIA_Ulthar_NoEnter_PissOff_Condition()
 
 func void DIA_Ulthar_NoEnter_PissOff_Info()
 {
-	AI_Output(self,other,"DIA_Ulthar_NoEnter_PissOff_01_00");	//Hmm...(naštvaně)
+	AI_Output(self,other,"DIA_Ulthar_NoEnter_PissOff_01_00");	//Hmm... (naštvaně)
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuildEnemy,0);
 };
@@ -310,7 +310,7 @@ func void DIA_Ulthar_SCHREINEVERGIFTET_Info()
 {
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL) || (hero.guild == GIL_KDF) || (hero.guild == GIL_KDW))
 	{
-		AI_Output(self,other,"DIA_Ulthar_SCHREINEVERGIFTET_05_00");	//Ještě jedna věc... (Vážně) Některé z oltářů zasvěcených Innosovi byly znesvěcené. Ztratili jejich sílu!
+		AI_Output(self,other,"DIA_Ulthar_SCHREINEVERGIFTET_05_00");	//Ještě jedna věc... (vážně) Některé z oltářů zasvěcených Innosovi byly znesvěcené. Ztratili jejich sílu!
 		AI_Output(other,self,"DIA_Ulthar_SCHREINEVERGIFTET_15_01");	//Aha. A co teď?
 		AI_Output(self,other,"DIA_Ulthar_SCHREINEVERGIFTET_05_02");	//Měl bys je očistit, aby se situace ještě nezhoršila.
 		CreateInvItems(self,ItMi_UltharsHolyWater_Mis,1);

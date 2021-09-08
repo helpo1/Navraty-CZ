@@ -73,7 +73,7 @@ func void DIA_Lehmar_LemarTheft_Info()
 	AI_Output(other,self,"DIA_Lehmar_LemarTheft_01_04");	//A co s nima děláš potom? Prodáváš je?
 	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_05");	//Některé prodám, některé zůstanou u mě.
 	AI_Output(other,self,"DIA_Lehmar_LemarTheft_01_06");	//Možná, pokud mi dovolíš, bych se podíval na to, co máš vystaveno k prodeji?
-	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_07");	//Hmmm...(zamyšleně) Já nevím! Ty mi nepřípadáš jako bohatý člověk.
+	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_07");	//Hmmm... (zamyšleně) Já nevím! Ty mi nepřípadáš jako bohatý člověk.
 	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_08");	//A všechny ty věci jsou dost drahé!
 	AI_Output(other,self,"DIA_Lehmar_LemarTheft_01_09");	//Já mám peníze.
 	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_10");	//Dokaž to! Například, kolik máš teď u sebe?
@@ -82,7 +82,7 @@ func void DIA_Lehmar_LemarTheft_Info()
 	if(Npc_HasItems(hero,ItMi_Gold) >= 1000)
 	{
 		B_GivePlayerXP(300);
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_12");	//Hmmm...(překvapeně) Jsem ohromen! Máš tady víc než tisíc zlatých.
+		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_12");	//Hmmm... (překvapeně) Jsem ohromen! Máš tady víc než tisíc zlatých.
 		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_13");	//Vypadá to, že jsi opravdu bohatý! I když ty to nemůžeš říct.
 		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_14");	//(iniciativně) Dobře, tak já ti ukážu část mého zboží.
 		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_15");	//Věřím, že tě bude velice zajímat!
@@ -222,7 +222,7 @@ func void DIA_Lehmar_Relic_Info()
 	AI_Output(self,other,"DIA_Lehmar_Relic_01_00");	//Věděl jsem, že bude mít o to zájem!
 	AI_Output(self,other,"DIA_Lehmar_Relic_01_01");	//Dal to sem do zálohy jeden z mágu Ohně.
 	AI_Output(self,other,"DIA_Lehmar_Relic_01_02");	//Bohužel, ukázalo se, že mě je úplně k ničemu.
-	AI_Output(self,other,"DIA_Lehmar_Relic_01_03");	//Proto jsem rád, že se jí konečně zbavím...(docela) výhodná koupě!
+	AI_Output(self,other,"DIA_Lehmar_Relic_01_03");	//Proto jsem rád, že se jí konečně zbavím... (docela) výhodná koupě!
 	AI_StopProcessInfos(self);
 };
 
@@ -696,7 +696,7 @@ func void dia_lehmar_killnow_info()
 
 	AI_Output(self,other,"DIA_Lehmar_KillNow_01_18");	//Neměl si s tou prácičkou souhlasit chlape! Je to na tebe příliš moc... (šklebí se)
 	Info_ClearChoices(dia_lehmar_killnow);
-	Info_AddChoice(dia_lehmar_killnow,"...(Ještě uvidíme!)",dia_lehmar_killnow_figth);
+	Info_AddChoice(dia_lehmar_killnow,"... (Ještě uvidíme!)",dia_lehmar_killnow_figth);
 };
 
 func void dia_lehmar_killnow_figth()
@@ -717,7 +717,7 @@ instance DIA_Lehmar_Job(C_Info)
 	condition = DIA_Lehmar_Job_Condition;
 	information = DIA_Lehmar_Job_Info;
 	permanent = FALSE;
-	description = "A ty by si pro mě nenašel nějakou práci?";
+	description = "A ty bys pro mě nenašel nějakou práci?";
 };
 
 func int DIA_Lehmar_Job_Condition()
@@ -730,7 +730,7 @@ func int DIA_Lehmar_Job_Condition()
 
 func void DIA_Lehmar_Job_Info()
 {
-	AI_Output(other,self,"DIA_Lehmar_Job_01_00");	//A ty by si pro mě nenašel nějakou práci?
+	AI_Output(other,self,"DIA_Lehmar_Job_01_00");	//A ty bys pro mě nenašel nějakou práci?
 	AI_Output(self,other,"DIA_Lehmar_Job_01_01");	//Chceš pracovat pro mě? (zamyšleně) Hmm... no dobře tedy.
 	AI_Output(self,other,"DIA_Lehmar_Job_01_02");	//Mám tráble s jedním člověkem.
 	AI_Output(other,self,"DIA_Lehmar_Job_01_03");	//Co ti provedl?
@@ -777,7 +777,7 @@ func void DIA_Lehmar_Job_Done_Info()
 	AI_Output(other,self,"DIA_Lehmar_Job_Done_01_02");	//Ukázalo se, že je u sebe neměl. Zato, měl u sebe velký balík trávy z bažin.
 	AI_Output(self,other,"DIA_Lehmar_Job_Done_01_03");	//A co jsi udělal?
 	AI_Output(other,self,"DIA_Lehmar_Job_Done_01_04");	//Zabil jsem ho. Jak si mi příkázal!
-	AI_Output(self,other,"DIA_Lehmar_Job_Done_01_05");	//Výborně. Dobře si si poradil s mým úkolem.
+	AI_Output(self,other,"DIA_Lehmar_Job_Done_01_05");	//Výborně. Dobře sis poradil s mým úkolem.
 	AI_Output(self,other,"DIA_Lehmar_Job_Done_01_06");	//Trávu si můžeš nechat u sebe - jako odměnu!
 	AI_Output(self,other,"DIA_Lehmar_Job_Done_01_07");	//A teď padej! Mám lepší věci na práci.
 	MIS_LehmarDebt = LOG_Success;

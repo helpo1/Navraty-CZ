@@ -42,7 +42,7 @@ func int DIA_Orc_8570_TagNor_PreHello_condition()
 
 func void DIA_Orc_8570_TagNor_PreHello_info()
 {
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_PreHello_01_01");	//MORA KAR TUK...(podrážděně) HRAK DURAN?
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_PreHello_01_01");	//MORA KAR TUK... (podrážděně) HRAK DURAN?
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_PreHello_01_02");	//Co říkáš?!
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_PreHello_01_03");	//BEŠ MORA! HAD KUD SAD...
 	AI_StopProcessInfos(self);
@@ -916,7 +916,7 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Hide()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_10");	//KHROTAK NAK!...(šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_10");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_11");	//No jo, samozřejmě.
 	AI_StopProcessInfos(self);
 };
@@ -956,7 +956,7 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Str()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_06");	//KHROTAK NAK!...(šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_06");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_07");	//No jo, samozřejmě.
 	AI_StopProcessInfos(self);
 };
@@ -997,7 +997,7 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Dex()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_06");	//KHROTAK NAK!...(šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_06");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_07");	//No jo, samozřejmě.
 	AI_StopProcessInfos(self);
 };
@@ -1038,7 +1038,7 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Hlth()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_06");	//KHROTAK NAK!...(šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_06");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_07");	//No jo, samozřejmě.
 	AI_StopProcessInfos(self);
 };

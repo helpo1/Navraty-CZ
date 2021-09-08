@@ -77,7 +77,7 @@ func void DIA_Babera_WIESIEHTSAUS_Info()
 func void DIA_Babera_WIESIEHTSAUS_Vielleicht()
 {
 	AI_Output(other,self,"DIA_Babera_WIESIEHTSAUS_Vielleicht_15_00");	//Možná že jo.
-	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Vielleicht_16_01");	//Tak to by si si měl promluvit s naším farmářem, Sekobem. Možná by se u něho nějaká práce pro tebe našla.
+	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Vielleicht_16_01");	//Tak to by sis měl promluvit s naším farmářem, Sekobem. Možná by se u něho nějaká práce pro tebe našla.
 	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Vielleicht_16_02");	//Nebo se můžeš zkusit podívat po práci na Onarově farmě. Najdeš jí na konci tady té cesty.
 	AI_Output(self,other,"DIA_Babera_WIESIEHTSAUS_Vielleicht_16_03");	//Hlavně nebuď drzý na žoldáky. Nemají rádi cizince.
 	Info_ClearChoices(DIA_Babera_WIESIEHTSAUS);

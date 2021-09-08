@@ -135,7 +135,7 @@ func void DIA_Cord_WannaJoin_Info()
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_Cord_WannaJoin_15_06");	//Noooo...(zamyšleně)
+		AI_Output(other,self,"DIA_Cord_WannaJoin_15_06");	//Noooo... (zamyšleně)
 	};
 	AI_Output(self,other,"DIA_Cord_WannaJoin_14_07");	//A umíš ovládat obouruční zbraně?
 
@@ -263,7 +263,7 @@ func void DIA_Addon_Cord_YouAreRanger_waffe()
 
 	if(Cord_SC_Dreist == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Cord_Add_14_03");	//Opravdu?...(výhružně)
+		AI_Output(self,other,"DIA_Addon_Cord_Add_14_03");	//Opravdu?... (výhružně)
 		AI_Output(self,other,"DIA_Addon_Cord_Add_14_02");	//(zubí se) Tak schválně, zkus to!
 		Cord_SC_Dreist = TRUE;
 	}
@@ -307,7 +307,7 @@ func void DIA_Addon_Cord_YouAreRanger_kampf()
 func void DIA_Addon_Cord_YouAreRanger_SLDAufnahme()
 {
 	AI_Output(other,self,"DIA_Addon_Cord_YouAreRanger_SLDAufnahme_15_00");	//Mohl bys mi pomoct dostat se k žoldákům.
-	AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_SLDAufnahme_14_01");	//Ha, ha, ha...(směje se) Ááá, to bude sranda. Dobrá, zkusím to. Co dál?
+	AI_Output(self,other,"DIA_Addon_Cord_YouAreRanger_SLDAufnahme_14_01");	//Ha, ha, ha... (směje se) Ááá, to bude sranda. Dobrá, zkusím to. Co dál?
 	Cord_RangerHelp_GetSLD = TRUE;
 
 	if(DIA_Addon_Cord_YouAreRanger_SCGotOffer == FALSE)
@@ -888,7 +888,7 @@ func int DIA_Loa_Hello_Condition()
 func void DIA_Loa_Hello_Info()
 {
 	AI_Output(other,self,"DIA_Loa_Hello_01_01");	//Tvoje tvář se mě zdá povědomá.
-	AI_Output(self,other,"DIA_Loa_Hello_01_02");	//Hmm...(uznale) Ano, máš pravdu, také si na tebe vzpomínám.
+	AI_Output(self,other,"DIA_Loa_Hello_01_02");	//Hmm... (uznale) Ano, máš pravdu, také si na tebe vzpomínám.
 	AI_Output(self,other,"DIA_Loa_Hello_01_03");	//Ach ano, teď jsem si vzpomněla.
 	Info_ClearChoices(DIA_Loa_Hello);
 	Info_AddChoice(DIA_Loa_Hello,"Mhm... nepovídej!",DIA_Loa_Hello_Later);
@@ -927,7 +927,7 @@ func int DIA_Loa_MineTale_Condition()
 func void DIA_Loa_MineTale_Info()
 {
 	AI_Output(other,self,"DIA_Loa_MineTale_01_01");	//Taky jsi byla v Hornickém údolí?
-	AI_Output(self,other,"DIA_Loa_MineTale_01_02");	//Ano...(smutně) Bohužel, jsem se tam taky dostala. 
+	AI_Output(self,other,"DIA_Loa_MineTale_01_02");	//Ano... (smutně) Bohužel, jsem se tam taky dostala. 
 	AI_Output(self,other,"DIA_Loa_MineTale_01_03");	//Ale to už je dávno! A nemá cenu na to vzpomínat.
 };
 
@@ -1184,7 +1184,7 @@ func void DIA_Loa_Give_Pearl_Info()
 func void DIA_Loa_Give_Pearl_No()
 {
 	AI_Output(other,self,"DIA_Loa_Give_Pearl_No_01_01");	//To nemohu přijmout! Myslím, že by pro tebe bylo velmi těžké se s ním rozloučit.
-	AI_Output(self,other,"DIA_Loa_Give_Pearl_No_01_02");	//Máš pravdu...(povzdech) Je pro mne velmi cenný jako památka! Bohužel nemám nic jiného abych ti poděkovala.
+	AI_Output(self,other,"DIA_Loa_Give_Pearl_No_01_02");	//Máš pravdu... (povzdech) Je pro mne velmi cenný jako památka! Bohužel nemám nic jiného abych ti poděkovala.
 	AI_Output(other,self,"DIA_Loa_Give_Pearl_No_01_03");	//To není nutné. Nech si prsten u sebe.
 	AI_Output(self,other,"DIA_Loa_Give_Pearl_No_01_04");	//No dobrá, ať je po tvém.
 	LoaBonus_02 = TRUE;
@@ -1227,7 +1227,7 @@ func void DIA_Loa_Give_Stihi_Info()
 	AI_Output(other,self,"DIA_Loa_Give_Stihi_01_03");	//Ne, jen jsem myslel, že bys mohla mít zájem, se na to podívat.
 	B_GiveInvItems(other,self,MYRTANAS_LYRIK,1);
 	Npc_RemoveInvItems(self,MYRTANAS_LYRIK,1);
-	AI_Output(self,other,"DIA_Loa_Give_Stihi_01_04");	//Hmm...(čte) Docela zajímavá knížka! Není to tak krásně napsané, ale je to mnohem lepší než poslouchat plkání opilých žoldáků.
+	AI_Output(self,other,"DIA_Loa_Give_Stihi_01_04");	//Hmm... (čte) Docela zajímavá knížka! Není to tak krásně napsané, ale je to mnohem lepší než poslouchat plkání opilých žoldáků.
 	AI_Output(other,self,"DIA_Loa_Give_Stihi_01_05");	//Můžeš si ji ponechat.
 	AI_Output(self,other,"DIA_Loa_Give_Stihi_01_06");	//Opravdu? Pak s radostí přímám váš dar.
 	AI_Output(self,other,"DIA_Loa_Give_Stihi_01_07");	//To jistě rozzáří mé nudné večery strávené na této farmě. Děkuji!
@@ -1241,7 +1241,7 @@ func void DIA_Loa_Give_Stihi_Info()
 func void DIA_Loa_Give_Stihi_No()
 {
 	AI_Output(other,self,"DIA_Loa_Give_Stihi_No_01_01");	//Užij si ji!
-	AI_Output(self,other,"DIA_Loa_Give_Stihi_No_01_02");	//Děkuji...(smích) 
+	AI_Output(self,other,"DIA_Loa_Give_Stihi_No_01_02");	//Děkuji... (smích) 
 	LoaBonus_03 = TRUE;
 	Info_ClearChoices(DIA_Loa_Give_Stihi);
 };
@@ -1313,13 +1313,13 @@ func void DIA_Loa_ComeLH_Info()
 {
 	B_GivePlayerXP(250);
 	AI_Output(other,self,"DIA_Loa_ComeLH_01_01");	//Tak jsem tady.
-	AI_Output(self,other,"DIA_Loa_ComeLH_01_02");	//Vidím, a dokonce včas...(s úsměvem)
+	AI_Output(self,other,"DIA_Loa_ComeLH_01_02");	//Vidím, a dokonce včas... (s úsměvem)
 	AI_Output(other,self,"DIA_Loa_ComeLH_01_03");	//Když o to žádá taková žena jako ty, nemohl jsem tě nechat čekat.
-	AI_Output(self,other,"DIA_Loa_ComeLH_01_04");	//Nepochybně...(směje se) I když, úplně jistá jsem si nebyla.
+	AI_Output(self,other,"DIA_Loa_ComeLH_01_04");	//Nepochybně... (směje se) I když, úplně jistá jsem si nebyla.
 	AI_Output(other,self,"DIA_Loa_ComeLH_01_05");	//Přišel jsem nebo ne?
-	AI_Output(self,other,"DIA_Loa_ComeLH_01_06");	//Ano...(něžně) Kdyby ne, o hodně bys přišel.
+	AI_Output(self,other,"DIA_Loa_ComeLH_01_06");	//Ano... (něžně) Kdyby ne, o hodně bys přišel.
 	AI_Output(other,self,"DIA_Loa_ComeLH_01_07");	//Hmmm... Například?
-	AI_Output(self,other,"DIA_Loa_ComeLH_01_08");	//Jako například...(zamyšleně) Máš příležitost obdivovat některé krásy, které se ti otvírají při pohledu z výšky majáku. 
+	AI_Output(self,other,"DIA_Loa_ComeLH_01_08");	//Jako například... (zamyšleně) Máš příležitost obdivovat některé krásy, které se ti otvírají při pohledu z výšky majáku. 
 	AI_Output(self,other,"DIA_Loa_ComeLH_01_09");	//Mimochodem, se ti líbí výhled?
 	LoaTellInLH = TRUE;
 	Info_ClearChoices(DIA_Loa_ComeLH);
@@ -1331,7 +1331,7 @@ func void DIA_Loa_ComeLH_Info()
 func void DIA_Loa_ComeLH_S_03()
 {
 	AI_Output(other,self,"DIA_Loa_ComeLH_S_03_01");	//Impozantní!
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_03_02");	//Máš pravdu...(povzdech) Je zde velmi krásně! Často sem chodívám koukat se na hvězdy a moře...
+	AI_Output(self,other,"DIA_Loa_ComeLH_S_03_02");	//Máš pravdu... (povzdech) Je zde velmi krásně! Často sem chodívám koukat se na hvězdy a moře...
 	AI_Output(self,other,"DIA_Loa_ComeLH_S_03_03");	//Je v nich něco zvláštního, co uklidní tvůj vnitřní svět. 
 	AI_Output(self,other,"DIA_Loa_ComeLH_S_03_04");	//Tak uklidňujícího, že zapomínáš na strasti a problémy tohoto světa.
 	AI_Output(self,other,"DIA_Loa_ComeLH_S_03_05");	//O čem přemýšlíš?
@@ -1350,7 +1350,7 @@ func void DIA_Loa_ComeLH_S_02()
 	AI_Output(other,self,"DIA_Loa_ComeLH_S_02_05");	//A proč ne. Koneckonců, každý má vlastní ideu o kráse!
 	AI_Output(self,other,"DIA_Loa_ComeLH_S_02_06");	//A ty věříš, že po tomhle se ti vrhnu kolem krku. 
 	AI_Output(other,self,"DIA_Loa_ComeLH_S_02_07");	//To je krásná představa.
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_02_08");	//Ó, Innosi...(zavrtí hlavou) Jsi jako ostatní muži, myslíš jen na jedinou věc.
+	AI_Output(self,other,"DIA_Loa_ComeLH_S_02_08");	//Ó, Innosi... (zavrtí hlavou) Jsi jako ostatní muži, myslíš jen na jedinou věc.
 	AI_Output(self,other,"DIA_Loa_ComeLH_S_02_09");	//Myslíš také na něco jiného?
 	Info_ClearChoices(DIA_Loa_ComeLH);
 	Info_AddChoice(DIA_Loa_ComeLH,"Obvykle, mám jasnější mysl.",DIA_Loa_ComeLH_H_03);
@@ -1364,7 +1364,7 @@ func void DIA_Loa_ComeLH_S_01()
 	AI_Output(self,other,"DIA_Loa_ComeLH_S_01_02");	//O čem mluvíš?!
 	AI_Output(other,self,"DIA_Loa_ComeLH_S_01_03");	//Myslím, že jsi mě sem nepozvala jeno kvůli tomu krásnému výhledu.
 	AI_Output(other,self,"DIA_Loa_ComeLH_S_01_04");	//Tak pojď, pomůžu ti sundat šaty.
-	AI_Output(self,other,"DIA_Loa_ComeLH_S_01_05");	//Co?!...(vztekle) 
+	AI_Output(self,other,"DIA_Loa_ComeLH_S_01_05");	//Co?!... (vztekle) 
 	AI_Output(other,self,"DIA_Loa_ComeLH_S_01_06");	//Slyšelas! Nebo jsem se nevyjádřil jasně?
 	AI_ReadyMeleeWeapon(self);
 	AI_Output(self,other,"DIA_Loa_ComeLH_S_01_07");	//Opovaž se mě dotknout, ty parchante!
@@ -1388,7 +1388,7 @@ func void DIA_Loa_ComeLH_M_01()
 	AI_Output(self,other,"DIA_Loa_ComeLH_M_01_08");	//Protože na to prostě nevypadáš...
 	AI_Output(other,self,"DIA_Loa_ComeLH_M_01_09");	//... Neotesaný rváč! To znám.
 	AI_Output(other,self,"DIA_Loa_ComeLH_M_01_10");	//Na druhou stranu je příjemné vědět, že ve mě někdo vidí něco víc než rváče.
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_01_11");	//Jak ti jen rozumím...(povzdechne si) 
+	AI_Output(self,other,"DIA_Loa_ComeLH_M_01_11");	//Jak ti jen rozumím... (povzdechne si) 
 	AI_Output(self,other,"DIA_Loa_ComeLH_M_01_12");	//Víš, nestává se často abych potkala někoho jako jsi ty.
 	AI_Output(self,other,"DIA_Loa_ComeLH_M_01_13");	//Většina těch, které jsem potkala ve mě viděli jenom jedno. A vůbec je nezajímalo, co skutečně cítím.
 	Info_ClearChoices(DIA_Loa_ComeLH);
@@ -1403,7 +1403,7 @@ func void DIA_Loa_ComeLH_M_02()
 	AI_Output(self,other,"DIA_Loa_ComeLH_M_02_04");	//Jak to myslíš?!
 	AI_Output(other,self,"DIA_Loa_ComeLH_M_02_05");	//Tak, že přichází důležitá chvíle.
 	AI_Output(other,self,"DIA_Loa_ComeLH_M_02_06");	//Jsem si jistý, že jsi mě sem nepozvala jenom kvůli tomu krásnému výhledu.
-	AI_Output(self,other,"DIA_Loa_ComeLH_M_02_07");	//Ach, ano...(směje se) Samozřejmě! Co jiného jsem mohla od tebe v této situaci očekávat. 
+	AI_Output(self,other,"DIA_Loa_ComeLH_M_02_07");	//Ach, ano... (směje se) Samozřejmě! Co jiného jsem mohla od tebe v této situaci očekávat. 
 	AI_Output(self,other,"DIA_Loa_ComeLH_M_02_08");	//Ale obávám se, že nemám co nabídnout.
 	AI_Output(other,self,"DIA_Loa_ComeLH_M_02_09");	//Jseš si jistá?
 	AI_Output(self,other,"DIA_Loa_ComeLH_M_02_10");	//O tom nepochybuj. Takže, možná bude lepší volbou bordel!
@@ -1440,11 +1440,11 @@ func void DIA_Loa_ComeLH_H_03()
 	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_09");	//Že existují i jiné věci, které tě naplňují a umožňují ti vidět mnohem víc než se na první pohled zdá.
 	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_10");	//Ale v tuhle chvíli nedokážu myslet na nic jiného, jenom na tebe.
 	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_11");	//Takže se omlouvám, jestli jsem nenaplnil tvé očekávání. Ale pravda je lepší nežli sladké lži.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_12");	//Hmmm...(zasní se) Zní to jako vyznání lásky.
+	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_12");	//Hmmm... (zasní se) Zní to jako vyznání lásky.
 	AI_Output(other,self,"DIA_Loa_ComeLH_H_03_13");	//Něco na ten způsob.
 	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_14");	//Víš, taky se mě moc líbíš.
 	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_15");	//Ale myslím, že to ještě není důvod ti podlehnout.
-	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_16");	//A proto je asi lepší ukončit tento rozhovor...(klidně) Možná budeme mít jednou příležitost se k němu vrátit.
+	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_16");	//A proto je asi lepší ukončit tento rozhovor... (klidně) Možná budeme mít jednou příležitost se k němu vrátit.
 	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_17");	//Ale ne teď...
 	AI_Output(self,other,"DIA_Loa_ComeLH_H_03_18");	//Už svítá... Musím se vrátit! Hodně štěstí.
 	AI_StopProcessInfos(self);
@@ -1488,11 +1488,11 @@ func void DIA_Loa_ComeLH_F_01()
 	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_08");	//Že existují i jiné věci, které tě naplňují a umožňují ti vidět mnohem víc než se na první pohled zdá.
 	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_09");	//Ale v tuhle chvíli nedokážu myslet na nic jiného, jenom na tebe.
 	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_10");	//Takže se omlouvám, jestli jsem nenaplnil tvé očekávání. Ale pravda je lepší nežli sladké lži.
-	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_11");	//Hmmm...(zasní se) Zní to jako vyznání lásky.
+	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_11");	//Hmmm... (zasní se) Zní to jako vyznání lásky.
 	AI_Output(other,self,"DIA_Loa_ComeLH_F_01_12");	//A také to je.
 	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_13");	//Víš, taky se mě moc líbíš.
 	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_14");	//Ale myslím, že to ještě není důvod ti podlehnout.
-	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_15");	//A proto je asi lepší ukončit tento rozhovor...(klidně) Možná budeme mít jednou příležitost se k němu vrátit.
+	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_15");	//A proto je asi lepší ukončit tento rozhovor... (klidně) Možná budeme mít jednou příležitost se k němu vrátit.
 	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_16");	//Ale ne teď... Tím spíš, že už svítá.
 	AI_Output(self,other,"DIA_Loa_ComeLH_F_01_17");	//A já už stejně musím jít... Opatruj se!
 
@@ -1626,7 +1626,7 @@ func void DIA_Loa_EpicQuest_Info()
 	AI_Output(self,other,"DIA_Loa_EpicQuest_01_14");	//Myslím, že právě přepadli další Gomezovu karavanu a vraceli se do Nového tábora.
 	AI_Output(self,other,"DIA_Loa_EpicQuest_01_15");	//Ošetřili mě a vzali s sebou. A tak jsem tam žila, dokud nepadla bariéra.
 	AI_Output(self,other,"DIA_Loa_EpicQuest_01_16");	//A pak Lee se svýma lidma sem přišel a začal pracovat pro Onara. No a já s nima.
-	AI_Output(self,other,"DIA_Loa_EpicQuest_01_17");	//(Usmívá se) A to je můj příběh.
+	AI_Output(self,other,"DIA_Loa_EpicQuest_01_17");	//(usmívá se) A to je můj příběh.
 	LoaEpicStory = TRUE;
 };
 
@@ -1781,7 +1781,7 @@ func void DIA_Loa_PartyInPlace_Info()
 	AI_Output(self,other,"DIA_Loa_PartyInPlace_01_01");	//A jsme tady. Líbí se ti tu?
 	AI_Output(other,self,"DIA_Loa_PartyInPlace_01_02");	//Hezké místo.
 	AI_Output(self,other,"DIA_Loa_PartyInPlace_01_03");	//Věděla jsem, že se ti tu bude líbit. Tak tu zůstanem.
-	AI_Output(self,other,"DIA_Loa_PartyInPlace_01_04");	//No...(s úsměvem) A co to víno, o kterém jsi mluvil?
+	AI_Output(self,other,"DIA_Loa_PartyInPlace_01_04");	//No... (s úsměvem) A co to víno, o kterém jsi mluvil?
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	B_LogEntry(TOPIC_LoaSecret,"Došli jsme k místu, které našla Loa, teď se určitě uvolní...");
 	Info_ClearChoices(DIA_Loa_PartyInPlace);
@@ -1802,7 +1802,7 @@ func void DIA_Loa_PartyInPlace_Done()
 	Npc_RemoveInvItems(other,ItMi_LoaWine,Npc_HasItems(other,ItMi_LoaWine));
 	Npc_RemoveInvItems(other,ItMi_LoaPartyFood,Npc_HasItems(other,ItMi_LoaPartyFood));
 	Info_ClearChoices(DIA_Loa_PartyInPlace);
-	Info_AddChoice(DIA_Loa_PartyInPlace,"...(pokračování)",DIA_Loa_PartyInPlace_Exit);
+	Info_AddChoice(DIA_Loa_PartyInPlace,"... (pokračování)",DIA_Loa_PartyInPlace_Exit);
 };
 
 func void DIA_Loa_PartyInPlace_Exit()
@@ -1816,7 +1816,7 @@ func void DIA_Loa_PartyInPlace_Exit()
 	AI_Output(self,other,"DIA_Loa_PartyTalk_01_02");	//No... řekla jsem mu ať najde nějakého koně a pak přijde!
 	AI_Output(self,other,"DIA_Loa_PartyTalk_01_03");	//Takže odešel. Pravděpodobně ho ještě teď hledá... (výbuchne smíchy)
 	AI_Output(other,self,"DIA_Loa_PartyTalk_01_04");	//Ha, velmi zábavný příbeh.
-	AI_Output(self,other,"DIA_Loa_PartyTalk_01_05");	//Víš...(zamyšleně) Jsem moc ráda, že jsi přišel s tím nápadem na piknik.
+	AI_Output(self,other,"DIA_Loa_PartyTalk_01_05");	//Víš... (zamyšleně) Jsem moc ráda, že jsi přišel s tím nápadem na piknik.
 	AI_Output(self,other,"DIA_Loa_PartyTalk_01_06");	//Uprostřed této šedé a zoufalé rutiny života. Bylo to jako bych znovu vdechla život. Moc ti děkuju!
 	AI_Output(other,self,"DIA_Loa_PartyTalk_01_07");	//Nemáš zač. Ačkoliv stále si myslím, že tě něco trápí.
 	AI_Output(self,other,"DIA_Loa_PartyTalk_01_08");	//Ale, vzpomněla jsem si jak jsem ráda trávila čas v lese, uživala si to ticho a ten klid.
@@ -1844,10 +1844,10 @@ func int DIA_Loa_PartyTalk_Ext_Condition()
 func void DIA_Loa_PartyTalk_Ext_Info()
 {
 	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_01");	//Takže, co se ti vlastně stalo?
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_02");	//...(váhavě) Nechci o tom mluvit... Ale chci se ti svěřit.
+	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_02");	//... (váhavě) Nechci o tom mluvit... Ale chci se ti svěřit.
 	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_03");	//Je to kvůli němu, že jsem přišla o své příbuzné a můj život visel na vlásku.
 	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_04");	//Kdo je ten parchant?
-	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_05");	//No...(vzdychne si) Nevím ti jistě. Bylo mi kolem deseti let když se to stalo. Nikdy nezapomenu jeho jméno. Rotgrif!
+	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_05");	//No... (vzdychne si) Nevím ti jistě. Bylo mi kolem deseti let když se to stalo. Nikdy nezapomenu jeho jméno. Rotgrif!
 	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_06");	//A pokaždé když řeknu jeho jméno se cítím strašně. Když si jenom pomyslím, že tenhle chlap chodí v klidu po svobodě...
 	AI_Output(other,self,"DIA_Loa_PartyTalk_Ext_01_07");	//Jde to jednoduše napravit. Nemyslím si, že najít toho hajzla bude problém. Kde jsi ho naposledy viděla?
 	AI_Output(self,other,"DIA_Loa_PartyTalk_Ext_01_08");	//V Drakii. Bylo mi řečeno, že se tam usadil a slouží místnímu baronovi. Nemohla jsem to prověřit. 
@@ -1984,7 +1984,7 @@ func void DIA_Loa_GoDrakia_Info()
 	AI_Output(other,self,"DIA_Loa_GoDrakia_01_01");	//Chystám se do Drakie, půjdeš se mnou?
 	AI_Output(self,other,"DIA_Loa_GoDrakia_01_02");	//Do Drakie?! Děláš si srandu? Jak se tam chceš dostat?
 	AI_Output(other,self,"DIA_Loa_GoDrakia_01_03");	//Piráti mě pomůžou. Za několik dnů tak chtějí vyplout.
-	AI_Output(self,other,"DIA_Loa_GoDrakia_01_04");	//Piráti?! Hmmm...(překvapeně) Nemyslela jsem si, že s nima máš nějaké kšefty.
+	AI_Output(self,other,"DIA_Loa_GoDrakia_01_04");	//Piráti?! Hmmm... (překvapeně) Nemyslela jsem si, že s nima máš nějaké kšefty.
 	AI_Output(self,other,"DIA_Loa_GoDrakia_01_05");	//Nicméně, pokud vím tak nemají žádnou loď. Tu poslední potopili paladinové, kteří přijeli před nedávnem do Khorinisu.
 	AI_Output(other,self,"DIA_Loa_GoDrakia_01_06");	//Koukám, že jsi dobře informovaná. Na obyčejnou žoldačku.
 	AI_Output(self,other,"DIA_Loa_GoDrakia_01_07");	//Není to nic těžkého. Stačí poslouchat.

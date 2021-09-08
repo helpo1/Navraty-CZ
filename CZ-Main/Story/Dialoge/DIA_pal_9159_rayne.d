@@ -73,7 +73,7 @@ func void dia_pal_9159_rayne_skladwatch_info()
 	AI_Output(other,self,"DIA_Pal_9159_Rayne_SkladWatch_01_00");	//Nic se neztratilo?
 	if(MIS_RAYNEHELP == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladWatch_01_01");	//Teď, když mám asistenta, nemusím se ničeho obávat. (Směje se)
+		AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladWatch_01_01");	//Teď, když mám asistenta, nemusím se ničeho obávat. (směje se)
 		AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladWatch_01_02");	//Všechno je v úplném pořádku!
 	}
 	else
@@ -107,7 +107,7 @@ func void dia_pal_9159_rayne_skladgoods_info()
 {
 	AI_Output(other,self,"DIA_Pal_9159_Rayne_SkladGoods_01_00");	//A co tady v tom skladě hlídáš.
 	AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladGoods_01_03");	//Hmmm... Zbraně, oblečení, zbroje, jídlo, víno...
-	AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladGoods_01_05");	//Aha!... (podezřívavě)Ty se o to nějak zajímáš...
+	AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladGoods_01_05");	//Aha!... (podezřívavě) Ty se o to nějak zajímáš...
 	AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladGoods_01_06");	//I kdyby ses rozkrájel - stejně z toho nic nedostaneš. 
 	AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladGoods_01_08");	//Klíč má jen lord Varus.
 	AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladGoods_01_10");	//Takže na to můžeš zapomenout.

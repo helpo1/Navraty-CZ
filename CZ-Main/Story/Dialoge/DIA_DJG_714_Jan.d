@@ -635,8 +635,8 @@ func void DIA_Jan_DragonBlood_Info()
 	Info_AddChoice(DIA_Jan_DragonBlood,Dialog_Back,DIA_Jan_DragonBlood_BACK);
 	if(Npc_HasItems(other,ItAt_DragonBlood) >= 1)
 	{
-		Info_AddChoice(DIA_Jan_DragonBlood,"(Všechnu)",DIA_Jan_DragonBlood_all);
-		Info_AddChoice(DIA_Jan_DragonBlood,"(Jednu dávku)",DIA_Jan_DragonBlood_1);
+		Info_AddChoice(DIA_Jan_DragonBlood,"(všechnu)",DIA_Jan_DragonBlood_all);
+		Info_AddChoice(DIA_Jan_DragonBlood,"(jednu dávku)",DIA_Jan_DragonBlood_1);
 	};
 };
 
@@ -664,8 +664,8 @@ func void DIA_Jan_DragonBlood_1()
 	Info_AddChoice(DIA_Jan_DragonBlood,Dialog_Back,DIA_Jan_DragonBlood_BACK);
 	if(Npc_HasItems(other,ItAt_DragonBlood) >= 1)
 	{
-		Info_AddChoice(DIA_Jan_DragonBlood,"(Všechnu)",DIA_Jan_DragonBlood_all);
-		Info_AddChoice(DIA_Jan_DragonBlood,"(Jednu dávku)",DIA_Jan_DragonBlood_1);
+		Info_AddChoice(DIA_Jan_DragonBlood,"(všechnu)",DIA_Jan_DragonBlood_all);
+		Info_AddChoice(DIA_Jan_DragonBlood,"(jednu dávku)",DIA_Jan_DragonBlood_1);
 	};
 	BloodLeft = IntToString(Npc_HasItems(other,ItAt_DragonBlood));
 	// BloodText = ConcatStrings(BloodLeft,PRINT_NumberLeft);
@@ -693,8 +693,8 @@ func void DIA_Jan_DragonBlood_all()
 	Info_AddChoice(DIA_Jan_DragonBlood,Dialog_Back,DIA_Jan_DragonBlood_BACK);
 	if(Npc_HasItems(other,ItAt_DragonBlood) >= 1)
 	{
-		Info_AddChoice(DIA_Jan_DragonBlood,"(Všechnu)",DIA_Jan_DragonBlood_all);
-		Info_AddChoice(DIA_Jan_DragonBlood,"(Jednu dávku)",DIA_Jan_DragonBlood_1);
+		Info_AddChoice(DIA_Jan_DragonBlood,"(všechnu)",DIA_Jan_DragonBlood_all);
+		Info_AddChoice(DIA_Jan_DragonBlood,"(jednu dávku)",DIA_Jan_DragonBlood_1);
 	};
 	BloodLeft = IntToString(Npc_HasItems(other,ItAt_DragonBlood));
 	// BloodText = ConcatStrings(BloodLeft,PRINT_NumberLeft);

@@ -113,7 +113,7 @@ func int DIA_Wolf_WannaJoin_Condition()
 func void DIA_Wolf_WannaJoin_Info()
 {
 	AI_Output(other,self,"DIA_Wolf_WannaJoin_15_00");	//Přišel jsem se k vám přidat.
-	AI_Output(self,other,"DIA_Wolf_WannaJoin_New_08_01");	//Hmm...(zamyšleně) Chceš se k nám přidat? To je dobře!
+	AI_Output(self,other,"DIA_Wolf_WannaJoin_New_08_01");	//Hmm... (zamyšleně) Chceš se k nám přidat? To je dobře!
 	AI_Output(self,other,"DIA_Wolf_WannaJoin_New_08_02");	//Ale nepočítej s tím, že tě takhle snadno přijmou i ostatní.
 	AI_Output(other,self,"DIA_Wolf_WannaJoin_New_08_03");	//A co ty?
 	AI_Output(self,other,"DIA_Wolf_WannaJoin_New_08_04");	//Jestli na mě chceš udělat dojem - tref všechny tři terče na střelnici.
@@ -147,7 +147,7 @@ func void DIA_Wolf_WannaJoin_Done_Info()
 {
 	B_GivePlayerXP(150);
 	AI_Output(other,self,"DIA_Wolf_WannaJoin_Done_15_00");	//Udělal jsem, co jsi chtěl. Přimluvíš se teď za mě?
-	AI_Output(self,other,"DIA_Wolf_WannaJoin_Done_08_01");	//Proč ne...(přátelsky) Potřebujem takový lidi, jako jsi ty!
+	AI_Output(self,other,"DIA_Wolf_WannaJoin_Done_08_01");	//Proč ne... (přátelsky) Potřebujem takový lidi, jako jsi ty!
 	AI_Output(self,other,"DIA_Wolf_WannaJoin_08_02");	//Ale nepočítej s tím, že tě takhle snadno přijmou i ostatní.
 	AI_Output(self,other,"DIA_Wolf_WannaJoin_08_03");	//Poslední dobou sem přišla všelijaká sebranka. A mezi těma staršíma, ne všichni si tě budou pamatovat.
 	AI_Output(self,other,"DIA_Wolf_WannaJoin_08_04");	//Sám jsem tě málem nepoznal, vypadáš strašně sešle.
@@ -1010,7 +1010,7 @@ func int dia_wolf_aboutcrawleragain_condition()
 func void dia_wolf_aboutcrawleragain_info()
 {
 	AI_Output(other,self,"DIA_Wolf_AboutCrawlerAgain_01_00");	//Potřebuji další zbroj z důlního červa.
-	AI_Output(self,other,"DIA_Wolf_AboutCrawlerAgain_01_01");	//To jich potřebuješ tolik? (překvapeně)No, mě je to jedno, ale znáš pravidla - nejdříve mi musíš přinést jejich krunýře.
+	AI_Output(self,other,"DIA_Wolf_AboutCrawlerAgain_01_01");	//To jich potřebuješ tolik? (překvapeně) No, mě je to jedno, ale znáš pravidla - nejdříve mi musíš přinést jejich krunýře.
 	AI_Output(self,other,"DIA_Wolf_AboutCrawlerAgain_01_02");	//Pak ti ji udělám.
 };
 
@@ -1239,7 +1239,7 @@ func int dia_sld_811_wolf_opengatenow_condition()
 
 func void dia_sld_811_wolf_opengatenow_info()
 {
-	AI_Output(self,other,"DIA_SLD_811_Wolf_OpenGateNow_01_00");	//No tak, kamaráde...(prosí) Pusť mě ven!
+	AI_Output(self,other,"DIA_SLD_811_Wolf_OpenGateNow_01_00");	//No tak, kamaráde... (prosí) Pusť mě ven!
 	AI_StopProcessInfos(self);
 };
 
@@ -1266,18 +1266,18 @@ func int dia_wolf_nw_wolfnotcaptured_condition()
 func void dia_wolf_nw_wolfnotcaptured_info()
 {
 	AI_Output(other,self,"DIA_Wolf_NW_WolfNotCaptured_01_00");	//Mám pro tebe prácičku.
-	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCaptured_01_01");	//Prácičku?! Hmm...(se zájmem) O co jde?
+	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCaptured_01_01");	//Prácičku?! Hmm... (se zájmem) O co jde?
 	AI_Output(other,self,"DIA_Wolf_NW_WolfNotCaptured_01_02");	//Nezbytně potřebuji zbroje z důlního červa.
 	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCaptured_01_03");	//Dobrá, přines další pláty a ještě jednu bych ti udělal.
 	AI_Output(other,self,"DIA_Wolf_NW_WolfNotCaptured_01_04");	//Ale já potřebuji alespoň deset...
 	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCaptured_01_05");	//Deset?!... (udiveně) Ale na co tolik?
 	AI_Output(other,self,"DIA_Wolf_NW_WolfNotCaptured_01_06");	//To je na dlouho. Uděláš to pro mě?
-	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCaptured_01_07");	//Hmm...(zamyšleně) No, tak asi ano, ale potřebuji materiál a hlavně hodně času.
+	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCaptured_01_07");	//Hmm... (zamyšleně) No, tak asi ano, ale potřebuji materiál a hlavně hodně času.
 	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCaptured_01_09");	//Alespoň jeden měsíc.
 	AI_Output(other,self,"DIA_Wolf_NW_WolfNotCaptured_01_10");	//To je moc, potřebuji je rychle.
 	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCaptured_01_11");	//V tom případě... Ti nemohu pomoci!
 	AI_Output(other,self,"DIA_Wolf_NW_WolfNotCaptured_01_12");	//Nemůžeš mě alepoň naučit, jak se dělají?
-	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCaptured_01_13");	//Naučit tě to?! Hmm...(zamyšleně) Dobrá ale toto tajemství bude velmi drahé!
+	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCaptured_01_13");	//Naučit tě to?! Hmm... (zamyšleně) Dobrá ale toto tajemství bude velmi drahé!
 	AI_Output(other,self,"DIA_Wolf_NW_WolfNotCaptured_01_14");	//Kolik?
 	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCaptured_01_15");	//Alespoň 5000 a podělím se o něj.
 	B_LogEntry(TOPIC_HUNTERSARMOR,"Wolfovi by výroba zbrojí trvala celý měsíc! Požádal jsem ho, jestli by mě to nenaučil. Souhlasil, ale chce 5000 zlatých!");
@@ -1398,7 +1398,7 @@ func void dia_wolf_nw_wolfcaptured_info()
 	AI_Output(self,other,"DIA_Wolf_NW_WolfCaptured_01_02");	//Nevím, proč mě nezabili. K čemu jim jsem?
 	AI_Output(self,other,"DIA_Wolf_NW_WolfCaptured_01_04");	//Jaktože si tady?
 	AI_Output(other,self,"DIA_Wolf_NW_WolfCaptured_01_05");	//Mám pro tebe práci.
-	AI_Output(self,other,"DIA_Wolf_NW_WolfCaptured_01_06");	//Práci?! Hmm...(se zájmem) O co jde?
+	AI_Output(self,other,"DIA_Wolf_NW_WolfCaptured_01_06");	//Práci?! Hmm... (se zájmem) O co jde?
 	AI_Output(self,other,"DIA_Wolf_NW_WolfCaptured_01_07");	//O co přesně jde?
 	AI_Output(other,self,"DIA_Wolf_NW_WolfCaptured_01_08");	//Potřebuji další zbroj z červů.
 	AI_Output(self,other,"DIA_Wolf_NW_WolfCaptured_01_09");	//Aha... Ale jak ji mohu udělat zde?!
@@ -1501,7 +1501,7 @@ func void DIA_Wolf_CaracustPlate_Ready_Info()
 	{
 		AI_Output(self,other,"DIA_Wolf_CaracustPlate_Ready_01_02");	//Je hotový! Tady ho máš.
 		B_GiveInvItems(self,other,ItAr_Shield_Caracust,1);
-		AI_Output(self,other,"DIA_Wolf_CaracustPlate_Ready_01_03");	//Podle mě - se to celkem povedlo...(zvažuje) Nade vší pochybnost, samozřejmě, musíš ho prověřit v boji!
+		AI_Output(self,other,"DIA_Wolf_CaracustPlate_Ready_01_03");	//Podle mě - se to celkem povedlo... (zvažuje) Nade vší pochybnost, samozřejmě, musíš ho prověřit v boji!
 		AI_Output(other,self,"DIA_Wolf_CaracustPlate_Ready_01_04");	//Paráda, co jsem dlužen za práci?
 		AI_Output(self,other,"DIA_Wolf_CaracustPlate_Ready_01_05");	//Ne - peníze od tebe za tu práci nechci. 
 		AI_Output(self,other,"DIA_Wolf_CaracustPlate_Ready_01_06");	//Stačí, že jsem strávil čas něčím užitečným, když jsem to pro tebe vyráběl.

@@ -397,7 +397,7 @@ func void DIA_NONE_ADDON_1159_Rhademes_Near_Info()
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Near_01_05");	//Pak by stál za to pokus?
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Near_01_06");	//Mám spoustu času přemýšlet o tom. Ale pokud mě nebude poslouchat?
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Near_01_07");	//No, aspoň to bude lepší, než se donekonečna hádat.
-	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Near_01_08");	//(zamyšleně): Ano, možná máš pravdu.
+	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Near_01_08");	//(zamyšleně) Ano, možná máš pravdu.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Near_01_09");	//Nicméně, zatímco starověká kletba z mých lidí neopadne. Nepodívá se mi do očí.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Near_01_10");	//Koneckonců byl jsem příčinou všech našich neštěstí.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Near_01_11");	//A tuhle situaci potřebuji já vyřešit.
@@ -474,7 +474,7 @@ func int DIA_NONE_ADDON_1159_Rhademes_SeekFathDone_Condition()
 func void DIA_NONE_ADDON_1159_Rhademes_SeekFathDone_Info()
 {
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_SeekFathDone_01_00");	//A co ti pomůže si vzpomenout?
-	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_SeekFathDone_01_01");	//(Povzdech) Prokletí mých lidí mi nedává možnost se vrátit do minulosti.
+	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_SeekFathDone_01_01");	//(povzdech) Prokletí mých lidí mi nedává možnost se vrátit do minulosti.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_SeekFathDone_01_02");	//Kéž bych mohl se toho zbavit, pak možná by se mi obnovily vzpomínky.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_SeekFathDone_01_03");	//Co můžu udělat?
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_SeekFathDone_01_04");	//Nevím... (studeně) Adanos neslyší moje modlitby, bez ohledu na to jak moc jsem se na něho upínal.
@@ -513,7 +513,7 @@ func void DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_Info()
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_04");	//Už vím. Ale kde to přesně je?
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_05");	//Podívejte se na to v posvátných zemích Adana. To je tam, kde můj otec shromažďuje svou armádu, která se pomstí lidem.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_06");	//A přesněji? Tahle země je rozsáhlá.
-	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_07");	//Hmmm...(zamyšleně) V blízkosti toho místa je obrovský balvan.
+	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_07");	//Hmmm... (zamyšleně) V blízkosti toho místa je obrovský balvan.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_08");	//Pokud si vzpomínám, z něj byl kdysi nádherný výhled na téměř celé údolí.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_09");	//No, alespoň něco. Jinak bych musel asi věčnost putovat v divočině.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_10");	//Počkej, to není všechno...

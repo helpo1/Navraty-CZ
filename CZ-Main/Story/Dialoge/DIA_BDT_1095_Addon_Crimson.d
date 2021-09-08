@@ -138,7 +138,7 @@ func void DIA_Addon_Crimson_Feilsch_Info()
 
 	if(RhetorikSkillValue[1] >= 40)
 	{
-		AI_Output(self,other,"DIA_Addon_Crimson_Feilsch_10_50");	//Hmm...(zavrtí hlavou) Ty víš jak ukecat lidi co?
+		AI_Output(self,other,"DIA_Addon_Crimson_Feilsch_10_50");	//Hmm... (zavrtí hlavou) Ty víš jak ukecat lidi co?
 		AI_Output(self,other,"DIA_Addon_Crimson_Feilsch_10_51");	//Dobře dám ti deset zlatých za jeden nuget. Jsi štastný?
 		AI_Output(other,self,"DIA_Addon_Crimson_Feilsch_10_52");	//Samozřejmě.
 		CrimsonMoreGold = TRUE;

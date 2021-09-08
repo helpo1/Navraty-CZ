@@ -160,7 +160,7 @@ func int dia_lares_li_findmagicorecave_condition()
 func void dia_lares_li_findmagicorecave_info()
 {
 	AI_Output(other,self,"DIA_Lares_LI_FindMagicOreCave_01_01");	//Našel jsem jeskyni s nalezištěm magické rudy.
-	AI_Output(self,other,"DIA_Lares_LI_FindMagicOreCave_01_02");	//Opravdu?!... (Překvapeně) V tom případě by sis o tom měl promluvit s našim kapitánem.
+	AI_Output(self,other,"DIA_Lares_LI_FindMagicOreCave_01_02");	//Opravdu?!... (překvapeně) V tom případě by sis o tom měl promluvit s našim kapitánem.
 	AI_Output(self,other,"DIA_Lares_LI_FindMagicOreCave_01_03");	//Myslím, že rád uslyší tuto novinku.
 	GOTOORECAPITAN = TRUE;
 };

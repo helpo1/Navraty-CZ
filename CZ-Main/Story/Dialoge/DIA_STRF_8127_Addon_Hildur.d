@@ -70,7 +70,7 @@ func void DIA_STRF_8127_Addon_Hildur_HowLong_Info()
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_01");	//Déle, než si dokážeš představit.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_02");	//Byl jsem zde v dobách, kdy celé údolí ovládali rudobaroni.
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowLong_01_03");	//Jak ses dostal ke skřetům?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_04");	//To je dlouhá historie...(zamyšleně) Jednou jsem doprovázel náklad rudy ze starého dolu.
+	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_04");	//To je dlouhá historie... (zamyšleně) Jednou jsem doprovázel náklad rudy ze starého dolu.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_05");	//Když už jsem se skoro dostali k hradu, náhle na nás zaůtočili skřeti.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_06");	//Většinu stráží tenkrát zabili, a mě a ještě několik dalších odvlekli s sebou.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_07");	//Když skřeti zjistili, že jsem celkem dobrý v tavení rudy tak mě dali sem k peci abych odléval ingoty.
@@ -210,7 +210,7 @@ func int DIA_STRF_8127_Addon_Hildur_Work_Condition()
 func void DIA_STRF_8127_Addon_Hildur_Work_Info()
 {
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_Work_01_00");	//Máš pro mě nějakou práci?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Work_01_01");	//Hmm...(zamyšleně) Velmi bys mi pomohl, kdybys mi někde sehnal uhlí.
+	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Work_01_01");	//Hmm... (zamyšleně) Velmi bys mi pomohl, kdybys mi někde sehnal uhlí.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Work_01_02");	//Tadle pec už je velmi stará a mě vždycky trvá strašně dlouho, než v ní rozdělám oheň.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Work_01_03");	//A obyčejné uhlí tady neseženeš! 
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_Work_01_04");	//A kolik ho potřebuješ?
@@ -278,11 +278,11 @@ func int DIA_STRF_8127_Addon_Hildur_LowLevel_Condition()
 func void DIA_STRF_8127_Addon_Hildur_LowLevel_Info()
 {
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_00");	//Co víš o spodní části dolu?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_01");	//Hmm...(udiveně) A proč se na to ptáš?!
+	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_01");	//Hmm... (udiveně) A proč se na to ptáš?!
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_02");	//Podle toho co říkal Rolland, tak něco víš.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_03");	//Aha, takže to ti nakukal Rolland? Ten jeden žvanil!
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_04");	//Znamená to, že měl pravdu. Možná mě teď povíš, co víš o spodní části dolu?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_05");	//Ach! No, dobře...(povzdechne si) Víš nerad o tom mluvím.
+	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_05");	//Ach! No, dobře... (povzdechne si) Víš nerad o tom mluvím.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_06");	//Po pravdě, dřív se v spodní části také těžila ruda.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_07");	//Ale ne železná, ale magická! Byla tam velmi bohatá žíla.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_08");	//A všechno šlo lhce do doby, než skřeti vykopali něco co neměli.
@@ -320,7 +320,7 @@ func int DIA_STRF_8127_Addon_Hildur_Perm_Condition()
 func void DIA_STRF_8127_Addon_Hildur_Perm_Info()
 {
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_Perm_01_00");	//Jak to jde?
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Perm_01_01");	//Všechno při starém...(povzdech) celý den jen odlévám ocelové ingoty.
+	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Perm_01_01");	//Všechno při starém... (povzdech) celý den jen odlévám ocelové ingoty.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_Perm_01_02");	//Ale lepší než s krumpáčem v dole.
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_Perm_01_03");	//To jsi trefil.
 };	

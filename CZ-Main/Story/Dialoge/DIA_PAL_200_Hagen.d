@@ -3288,7 +3288,7 @@ func void DIA_Lord_Hagen_DarkOrden_Ginnok_info()
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkOrden_Ginnok_01_26");	//Ve své slepé, fanatické víře nedělal rozdíly - ženy, děti, starci...
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkOrden_Ginnok_01_27");	//Nakonec ve svém šílenství pozvedl meč i proti samotnému králi!
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkOrden_Ginnok_01_28");	//Rhobar neměl jinou možnost, než ho dát popravit.
-	AI_Output(self,other,"DIA_Lord_Hagen_DarkOrden_Ginnok_01_29");	//V tajnosti byl pochován na tomhle ostrově.
+	AI_Output(self,other,"DIA_Lord_Hagen_DarkOrden_Ginnok_01_29");	//V tajnosti byl pohřben na tomhle ostrově.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkOrden_Ginnok_01_30");	//Daleko od krále a od všech, kteří se ho předtím obávali!
 	AI_Output(other,self,"DIA_Lord_Hagen_DarkOrden_Ginnok_01_31");	//Zajímavý příběh, cos mi řekl.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkOrden_Ginnok_01_32");	//(zamyšleně) Podle mého názoru Ginnoka zřejmě posedli nějaké temné síly.
@@ -3627,7 +3627,7 @@ func void dia_lord_hagen_oreismined_info()
 
 	if(RhetorikSkillValue[1] >= 50)
 	{
-		Info_AddChoice(dia_lord_hagen_oreismined,"...(Smlouvat)",dia_lord_hagen_oreismined_trade);
+		Info_AddChoice(dia_lord_hagen_oreismined,"... (Smlouvat)",dia_lord_hagen_oreismined_trade);
 	};
 };
 

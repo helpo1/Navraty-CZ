@@ -144,7 +144,7 @@ instance DIA_Addon_Halvor_Job(C_Info)
 	nr = 1;
 	condition = DIA_Addon_Halvor_Job_Condition;
 	information = DIA_Addon_Halvor_Job_Info;
-	description = "Neměl by si pro mně nejakou práci?";
+	description = "Neměl bys pro mně nejakou práci?";
 };
 
 func int DIA_Addon_Halvor_Job_Condition()
@@ -157,7 +157,7 @@ func int DIA_Addon_Halvor_Job_Condition()
 
 func void DIA_Addon_Halvor_Job_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Halvor_Job_01_00");	//Neměl by si pro mně nejakou práci?
+	AI_Output(other,self,"DIA_Addon_Halvor_Job_01_00");	//Neměl bys pro mně nejakou práci?
 	AI_Output(self,other,"DIA_Addon_Halvor_Job_01_01");	//Ano, něco bych pro tebe asi měl. Právě bych potřeboval nejaké ústřice.
 	AI_Output(self,other,"DIA_Addon_Halvor_Job_01_02");	//Je to delikatesa, je o ně velký zájem.
 	AI_Output(self,other,"DIA_Addon_Halvor_Job_01_03");	//Takže pokud mi chceš pomoct, běž na pláž a sežeň mi zhruba tucet.
@@ -579,12 +579,12 @@ func void dia_halvor_nekro_fear_info()
 	Betrayal_Halvor = FALSE;
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_01");	//Víš, tak jsem přemýšlel, jak bys asi vypadal jako kostlivec?
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_02");	//Mě by se celkem hodil kostlivej sluha.
-	AI_Output(self,other,"DIA_Halvor_NEKRO_FEAR_00_03");	//Co, zbláznil jsi?!...(v panice) To nemůžeš udělat! ZAVOLÁM STRÁŽE!
+	AI_Output(self,other,"DIA_Halvor_NEKRO_FEAR_00_03");	//Co, zbláznil jsi?!... (v panice) To nemůžeš udělat! ZAVOLÁM STRÁŽE!
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_04");	//Tak zavolej, až budeš mrzká zombie a přijdou paladinové, zbude z tebe jenom prach.
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_05");	//Přemýšlej o tom!
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_06");	//Ale je tu i jiná možnost. Budeš ode mě skupovat odcizené věci, zlato a stříbro a já tě nechám být.
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_07");	//Jak ses rozhodnul, Halvore?
-	AI_Output(self,other,"DIA_Halvor_NEKRO_FEAR_00_08");	//Noo...(zaváhá) Dobře, řekněme, že jsme se dohodli.
+	AI_Output(self,other,"DIA_Halvor_NEKRO_FEAR_00_08");	//Noo... (zaváhá) Dobře, řekněme, že jsme se dohodli.
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_09");	//To je dobře.
 	B_LogEntry(Topic_Diebesgilde,"Halvor měl smrtelný strach a souhlasil s pokračováním naší spolupráce. Asi se vyplatí být nekromantem a zaklínačem démonů...");
 };
@@ -615,7 +615,7 @@ func void DIA_HALVOR_Betrayal_Down_info()
 	AI_Output(self,other,"DIA_HALVOR_Betrayal_Down_00_04");	//Proto také souhlasím s pokračováním našich obchodních vztahů.
 	AI_Output(self,other,"DIA_HALVOR_Betrayal_Down_00_05");	//No pokud víš, co tím myslím.
 	AI_Output(other,self,"DIA_HALVOR_Betrayal_Down_00_06");	//Rozumím.
-	AI_Output(self,other,"DIA_HALVOR_Betrayal_Down_00_07");	//V pořádku...(usmívá se) Tak jestli něco, tak dej vědět!
+	AI_Output(self,other,"DIA_HALVOR_Betrayal_Down_00_07");	//V pořádku... (usmívá se) Tak jestli něco, tak dej vědět!
 	AI_Output(other,self,"DIA_HALVOR_Betrayal_Down_00_08");	//Samozřejmě.
 	Betrayal_Halvor = FALSE;
 	B_LogEntry(Topic_Diebesgilde,"Halvor byl potěšen, že jsem zabil Asmala! Nyní chce obnovit naše obchodní vztahy.");

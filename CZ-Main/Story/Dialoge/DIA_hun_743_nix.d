@@ -197,7 +197,7 @@ func void dia_hun_743_nix_recoverdogbring_info()
 	AI_Output(other,self,"DIA_HUN_743_Nix_RecoverDogBring_01_00");	//Přinesl jsem medicínu pro tvou vlčici.
 	if(CLAWTIMER < (daynow - 3))
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_01");	//Ach člověče...(smutně) Děkuji.
+		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_01");	//Ach člověče... (smutně) Děkuji.
 		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_02");	//Ale bohužel, přišel jsi pozdě. Tlama už není mezi námi.
 		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_03");	//Zemřela a nebyl jsem vůbec schopný ji pomoci.
 		AI_StopProcessInfos(self);
@@ -784,7 +784,7 @@ func void dia_hun_743_nix_shadowfurdone_info()
 	AI_Output(other,self,"DIA_HUN_743_Nix_ShadowFurDone_01_00");	//Tady je ta kůže stínové šelmy, kterou jsi chtěl.
 	B_GiveInvItems(other,self,ItAt_ShadowFur,1);
 	Npc_RemoveInvItems(self,ItAt_ShadowFur,1);
-	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFurDone_01_01");	//Výborně (obdiv). Myslím, že to s touto šelmou byla celkem fuška, že?
+	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFurDone_01_01");	//Výborně. (obdiv) Myslím, že to s touto šelmou byla celkem fuška, že?
 	AI_Output(other,self,"DIA_HUN_743_Nix_ShadowFurDone_01_02");	//Docela dost.
 	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFurDone_01_03");	//Dobré! Vezmi si tohle zlato, zasloužíš si ho.
 	B_GiveInvItems(self,other,ItMi_Gold,250);

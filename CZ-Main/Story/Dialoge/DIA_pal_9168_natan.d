@@ -91,7 +91,7 @@ func void dia_pal_9168_natan_rescuegarond_info()
 	AI_Output(self,other,"DIA_Pal_9168_Natan_RescueGarond_01_01");	//STÁT!... Jeden krok zpět!
 	AI_Output(self,other,"DIA_Pal_9168_Natan_RescueGarond_01_03");	//Protože dle postavení skřetů se k něčemu chystají!
 	AI_Output(self,other,"DIA_Pal_9168_Natan_RescueGarond_01_04");	//A pokud nechceš spáchat sebevraždu, věř mi a raději zůstaň zde.
-	AI_Output(self,other,"DIA_Pal_9168_Natan_RescueGarond_01_05");	//Já tě neznám... (Agresivně) Kdo jsi, jak ses sem dostal a co tu děláš?!
+	AI_Output(self,other,"DIA_Pal_9168_Natan_RescueGarond_01_05");	//Já tě neznám... (agresivně) Kdo jsi, jak ses sem dostal a co tu děláš?!
 	MEETNATAN = TRUE;
 	Info_ClearChoices(dia_pal_9168_natan_rescuegarond);
 	if((MIS_RESCUEGAROND == LOG_Running) || (MIS_RESCUEGAROND == LOG_SUCCESS))
@@ -191,7 +191,7 @@ func void dia_pal_9168_natan_whoyou_info()
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_13");	//Před několika lety mě zachránil život v jedné z ledových pustin Nordmaru na misi pro krále.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_14");	//Složil jsem posvátný slib Innosovi, že mu to oplatím.
 		AI_Output(other,self,"DIA_Pal_9168_Natan_WhoYou_01_15");	//Takže ti zachránil život? Jak k tomu došlo?!
-		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_16");	//Byli jsme posláni do jednoho údolí, kde žije muž, který pro království vyrábí výbušné šípy, při vstupu do jednoho údolí nás obklíčili skřeti...(pamatuju) ty svině byli všude.
+		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_16");	//Byli jsme posláni do jednoho údolí, kde žije muž, který pro království vyrábí výbušné šípy, při vstupu do jednoho údolí nás obklíčili skřeti... (pamatuju) ty svině byli všude.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_21");	//Když pomalu bylo jasné, že skřetů je příliš mnoho, najednou kolem mě padli dva skřeti a z prsou jim trčela šipka do kuše.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_22");	//A pak se Udar s mečem vrhl mezi nepřátele kolem mě a zuřivě máchal kolem sebe, abych se stihl zvednout ze země... (s úžasem)
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_25");	//A my jsme využili příležitost!... Naše skupina unikla, i když se zančnými ztrátami.
@@ -314,7 +314,7 @@ func void dia_pal_9168_natan_zamok_noway()
 			AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_NoWay_01_10");	//A jak to víš?!
 		};
 		AI_Output(other,self,"DIA_Pal_9168_Natan_Zamok_NoWay_01_11");	//Věř mi, je to tak!. Tak co, budem bojovat bez nich!
-		AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_NoWay_01_12");	//Ano,škoda...(rozrušený)budeme simuset poct sami.
+		AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_NoWay_01_12");	//Ano,škoda... (rozrušený) budeme simuset poct sami.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_NoWay_01_13");	//Myslím, že bychom měli začít s útokem! Dej vědět až budeš připravený.
 		AI_Output(other,self,"DIA_Pal_9168_Natan_Zamok_NoWay_01_14");	//Dobře.
 		PALADINREADYATTACK = TRUE;
@@ -361,7 +361,7 @@ func int dia_pal_9168_natan_newssurvivers_condition()
 func void dia_pal_9168_natan_newssurvivers_info()
 {
 	AI_Output(other,self,"DIA_Pal_9168_Natan_NewsSurvivers_01_01");	//Byl jsem v pevnosti.
-	AI_Output(self,other,"DIA_Pal_9168_Natan_NewsSurvivers_01_02");	//Opravdu?!...(napjatě)A co jsi zjistil?!
+	AI_Output(self,other,"DIA_Pal_9168_Natan_NewsSurvivers_01_02");	//Opravdu?!... (napjatě) A co jsi zjistil?!
 	AI_Output(other,self,"DIA_Pal_9168_Natan_NewsSurvivers_01_03");	//Garond s pár paladinama jsou naživu.
 	AI_Output(self,other,"DIA_Pal_9168_Natan_NewsSurvivers_01_07");	//Nejdříve bychom měli osvobodit Garonda a jeho muže!
 	AI_Output(self,other,"DIA_Pal_9168_Natan_NewsSurvivers_01_08");	//Nevíme, jak dlouho je ty kreatury budou potřebovat.
@@ -370,7 +370,7 @@ func void dia_pal_9168_natan_newssurvivers_info()
 		B_GivePlayerXP(200);
 		AI_Output(other,self,"DIA_Pal_9168_Natan_NewsSurvivers_01_10");	//Mimochodem, mezi paladiny které skřeti vězní je i váš přítel Udar! On také padl do zajetí.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_NewsSurvivers_01_11");	//Udar je v pevnosti?! Jo! Takže ho ještě mohu zachránit.
-		AI_Output(self,other,"DIA_Pal_9168_Natan_NewsSurvivers_01_12");	//Prokletí skřeti!... (rozlobeně)Tak jednoduše je z toho vyjít nenechám.
+		AI_Output(self,other,"DIA_Pal_9168_Natan_NewsSurvivers_01_12");	//Prokletí skřeti!... (rozlobeně) Tak jednoduše je z toho vyjít nenechám.
 		AI_Output(other,self,"DIA_Pal_9168_Natan_NewsSurvivers_01_13");	//Myslím, že máš šanci zplatit Udarovi dluh.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_NewsSurvivers_01_14");	//Bez pochyby! Při první šanci to udělám.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_NewsSurvivers_01_15");	//Díky, že jsi mi to řekl. Teď mě nic nezastaví na cestě k pevnosti!

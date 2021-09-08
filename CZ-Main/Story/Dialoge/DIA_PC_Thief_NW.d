@@ -823,8 +823,8 @@ func void dia_diegonw_nw_gatherarmy_info()
 	AI_Output(self,other,"DIA_DiegoNW_NW_GatherArmy_01_04");	//To je jistě dobrá zpráva, nicméně myslím, že tak užitečné zase ne.
 	AI_Output(self,other,"DIA_DiegoNW_NW_GatherArmy_01_05");	//Prostě se může stát, že nebudeme mít dost sil k zastavení nestvůr z Hornického údolí.
 	AI_Output(other,self,"DIA_DiegoNW_NW_GatherArmy_01_06");	//To ano, ale pokud budeme jednotní, situace se může vyvinout v náš prospěch.
-	AI_Output(self,other,"DIA_DiegoNW_NW_GatherArmy_01_08");	//Hmm... Pokud je to tak, máš pravdu. Pomůžu ti pozvednout iluzi výhry (úsměv).
-	AI_Output(self,other,"DIA_DiegoNW_NW_GatherArmy_01_09");	//Nicměně tvé nepochopitelné plány by mohly iluzi proměnit ve skutečnost (úsměv).
+	AI_Output(self,other,"DIA_DiegoNW_NW_GatherArmy_01_08");	//Hmm... Pokud je to tak, máš pravdu. Pomůžu ti pozvednout iluzi výhry. (úsměv)
+	AI_Output(self,other,"DIA_DiegoNW_NW_GatherArmy_01_09");	//Nicměně tvé nepochopitelné plány by mohly iluzi proměnit ve skutečnost. (úsměv)
 	OTH_JOINHAGEN = TRUE;
 	if(MIS_OLDGUARDGOWAR == LOG_SUCCESS)
 	{
@@ -961,7 +961,7 @@ func int dia_diegonw_nw_soonbattlenow_condition()
 func void dia_diegonw_nw_soonbattlenow_info()
 {
 	AI_Output(other,self,"DIA_DiegoNW_NW_SoonBattleNow_01_00");	//Nervózní?
-	AI_Output(self,other,"DIA_DiegoNW_NW_SoonBattleNow_01_01");	//Ne... Jen mě dostává ta nejistota (úsměv).
+	AI_Output(self,other,"DIA_DiegoNW_NW_SoonBattleNow_01_01");	//Ne... Jen mě dostává ta nejistota. (úsměv)
 	AI_Output(self,other,"DIA_DiegoNW_NW_SoonBattleNow_01_02");	//Možná, že skřeti již brzy pohnou svíma prdelema a půjdou na nás!
 	AI_Output(other,self,"DIA_DiegoNW_NW_SoonBattleNow_01_03");	//Věřím, že to brzo zjistíme.
 	AI_Output(self,other,"DIA_DiegoNW_NW_SoonBattleNow_01_04");	//To doufám příteli, byl bych rád!

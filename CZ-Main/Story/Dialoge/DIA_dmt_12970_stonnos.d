@@ -698,7 +698,7 @@ func void dia_dmt_12970_stonnos_giveeligorrune_info()
 	AI_Output(self,other,"DIA_DMT_12970_Stonnos_GiveEligorRune_01_06");	//Božský původ dokáže čerpat energii Stvořitele! Musíš pochopit, že každá příšera tohoto světa byla stvořena určitým bohem.
 	AI_Output(self,other,"DIA_DMT_12970_Stonnos_GiveEligorRune_01_07");	//A tyto bytosti jsou zcela podřízeny svým tvůrcům. My Strážci jsme taky předmětem této síly!
 	AI_Output(other,self,"DIA_DMT_12970_Stonnos_GiveEligorRune_01_08");	//A mohu ji zvládnout?
-	AI_Output(self,other,"DIA_DMT_12970_Stonnos_GiveEligorRune_01_09");	//No ano...(zamyšleně)... Pravda o těchto tvorech je... Dobrá...(potichu)... Na, vem si tuto runu! Chrání magii o které neví nikdo kromě nás.
+	AI_Output(self,other,"DIA_DMT_12970_Stonnos_GiveEligorRune_01_09");	//No ano... (zamyšleně) Pravda o těchto tvorech je... Dobrá... (potichu) Na, vem si tuto runu! Chrání magii o které neví nikdo kromě nás.
 	CreateInvItems(self,itru_eligordemons,1);
 	B_GiveInvItems(self,other,itru_eligordemons,1);
 	AI_Output(other,self,"DIA_DMT_12970_Stonnos_GiveEligorRune_01_10");	//Co je to za runu?!

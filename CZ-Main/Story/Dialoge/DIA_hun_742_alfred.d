@@ -268,7 +268,7 @@ func int dia_hun_742_alfred_respect_condition()
 func void dia_hun_742_alfred_respect_info()
 {
 	AI_Output(other,self,"DIA_HUN_742_Respect_01_00");	//Chci vyzvat Falka!
-	AI_Output(self,other,"DIA_HUN_742_Respect_01_01");	//Opravdu? Zajímavé, z tvé strany (smích).
+	AI_Output(self,other,"DIA_HUN_742_Respect_01_01");	//Opravdu? Zajímavé, z tvé strany. (smích)
 	AI_Output(self,other,"DIA_HUN_742_Respect_01_02");	//Falk - to je nejlepší lovec, jakého jsem kdy potkal.
 	AI_Output(self,other,"DIA_HUN_742_Respect_01_03");	//Nemyslím si, že máš moc šancí vyhrát.
 	AI_Output(other,self,"DIA_HUN_742_Respect_01_04");	//Ale stejne to zkusím.

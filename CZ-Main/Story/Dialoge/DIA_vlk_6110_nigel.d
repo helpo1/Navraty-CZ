@@ -102,7 +102,7 @@ func void dia_nigel_hallo_info()
 	AI_Output(other,self,"DIA_Nigel_Hallo_01_09");	//Jednoduše tě můžu podříznout! A vypadá to, že to bys nechtěl.
 	AI_Output(self,other,"DIA_Nigel_Hallo_01_12");	//A ty myslíš, že se bojím?! (nervózně)
 	AI_Output(other,self,"DIA_Nigel_Hallo_01_15");	//A riskneš to?!
-	AI_Output(self,other,"DIA_Nigel_Hallo_01_16");	//...(přemýšlí)
+	AI_Output(self,other,"DIA_Nigel_Hallo_01_16");	//... (přemýšlí)
 	AI_Output(other,self,"DIA_Nigel_Hallo_01_17");	//Vidím strach ve tvých očích.
 	AI_Output(self,other,"DIA_Nigel_Hallo_01_18");	//Ale já ty peníze nemám!... (naříká)
 	Info_ClearChoices(dia_nigel_hallo);
@@ -113,7 +113,7 @@ func void dia_nigel_hallo_info()
 func void dia_nigel_hallo_kill()
 {
 	AI_Output(other,self,"DIA_Nigel_Hallo_Kill_01_00");	//Tak mám důvod tě zabít! Prostě jsi mi nedal jinou šanci.
-	AI_Output(self,other,"DIA_Nigel_Hallo_Kill_01_01");	//Ty... Takhle jednat nemůžeš!... (panicky)... Jsem nevinen!
+	AI_Output(self,other,"DIA_Nigel_Hallo_Kill_01_01");	//Ty... Takhle jednat nemůžeš!... (panicky) Jsem nevinen!
 	AI_Output(other,self,"DIA_Nigel_Hallo_Kill_01_02");	//To říkej jinejm.
 	AI_Output(self,other,"DIA_Nigel_Hallo_Kill_01_03");	//Zrada!... Zrada!... (ubrečeně)
 	AI_StopProcessInfos(self);
@@ -143,7 +143,7 @@ func void dia_nigel_hallo_notrust()
 	AI_Output(self,other,"DIA_Nigel_Hallo_NoTrust_01_01");	//Ale já říkám jen čistou pravdu!
 	AI_Output(other,self,"DIA_Nigel_Hallo_NoTrust_01_02");	//Zajímají mě ty prachy, a ty nemáš.
 	AI_Output(other,self,"DIA_Nigel_Hallo_NoTrust_01_03");	//To jsou tvé problémy, ne mé. Prachy nevrátíš? Vrátíš život.	
-	AI_Output(self,other,"DIA_Nigel_Hallo_Kill_01_01");	//To nemůžeš!(Panicky) Já... jsem nevinen!
+	AI_Output(self,other,"DIA_Nigel_Hallo_Kill_01_01");	//To nemůžeš! (panicky) Já... jsem nevinen!
 	AI_Output(other,self,"DIA_Nigel_Hallo_Kill_01_02");	//Když to říkáš.	
 	AI_Output(self,other,"DIA_Nigel_Hallo_Kill_01_03");	//Zrada!
 	AI_StopProcessInfos(self);
@@ -208,7 +208,7 @@ func void dia_nigel_hallo_dealbad()
 	AI_Output(other,self,"DIA_Nigel_Hallo_DealBad_01_00");	//Příliš málo! Nebudu ztrácet čas na takové maličkosti.
 	AI_Output(self,other,"DIA_Nigel_Hallo_NoDeal_01_01");	//Jak myslíš, je to tvoje věc. Pokud si to ale rozmyslíš, víš kde mě najdeš.
 	AI_Output(other,self,"DIA_Nigel_Hallo_NoDeal_01_02");	//To si asi nerozmyslím, ale věř mi, že na tebe nezapomenu, zvlášť pokud zjistím, že jsi mi lhal!
-	AI_Output(self,other,"DIA_Nigel_Hallo_NoDeal_01_03");	//(Nervozně) Proč bych lhal?
+	AI_Output(self,other,"DIA_Nigel_Hallo_NoDeal_01_03");	//(nervozně) Proč bych lhal?
 	AI_Output(self,other,"DIA_Nigel_Hallo_NoDeal_01_06");	//Doufám, že se vrátíte zlato...
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(bdt_6121_nigelband_01,"NW_CITY_TO_FOREST_04_08");
@@ -393,7 +393,7 @@ func void dia_nigel_money_new_info()
 {
 	AI_Output(other,self,"DIA_Nigel_MoneyNew_01_01");	//Víš kdo jsem? Však víš, ten kdo ti zachránil život!
 	AI_Output(other,self,"DIA_Nigel_MoneyNew_01_02");	//Myslím že ses mi s těmi 100 zlatými právě vysmál?!
-	AI_Output(self,other,"DIA_Nigel_MoneyNew_01_03");	//Ne, tos špatně pochopil...(nervozně) Vážně, jsem ti velice zavázán!
+	AI_Output(self,other,"DIA_Nigel_MoneyNew_01_03");	//Ne, tos špatně pochopil... (nervozně) Vážně, jsem ti velice zavázán!
 	AI_Output(self,other,"DIA_Nigel_MoneyNew_01_04");	//Pro obchodníka je vždy obtížné se rozloučit se zlaťáky.
 	AI_Output(other,self,"DIA_Nigel_MoneyNew_01_05");	//Myslím, že teď nemáš na výběr.
 	AI_Output(self,other,"DIA_Nigel_MoneyNew_01_06");	//Ano, samozřejmě... (nervózně) A je to! Doufám, že tohle bude stačit.

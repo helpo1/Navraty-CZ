@@ -1690,7 +1690,7 @@ func void DIA_Garond_DobarOut_Done_Info()
 	else if(ParlafOnPlaceDead == TRUE)
 	{
 		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_06");	//Schoval se v jeskyni nedaleko hradu, bohužel než jsem se k němu stihl dostat, zemřel už hlady.
-		AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_07");	//(Sarkasticky) Cože, tam není jídlo lepší než tady? Zatracení fňukalové...
+		AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_07");	//(sarkasticky) Cože, tam není jídlo lepší než tady? Zatracení fňukalové...
 		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_08");	//Není na místě urážet mrtvé.
 		AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_09");	//Och, Innosi. VŠICHNI jsme na půl mrtví! Čekáš, že projevím lítost za zbabělého dezertéra?
 		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_10");	//Nic vám nevnucuju.
