@@ -31,7 +31,7 @@ func void b_preach_parvez(var int satz)
 	};
 	if(satz == 7)
 	{
-		AI_Output(self,self,"DIA_Parvez_PREACH_05_07");	//Mocný alchymista proto připravil elixír z čelistí důlních červů. Díky tomu byla schopnost Bratrstva dostačující pro volání.
+		AI_Output(self,self,"DIA_Parvez_PREACH_05_07");	//Mocný alchymista proto připravil elixír z kusadel důlních červů. Díky tomu byla schopnost Bratrstva dostačující pro volání.
 	};
 	if(satz == 8)
 	{

@@ -1806,7 +1806,7 @@ func void B_NoticeBoard()
 	};
 	if(CurrentLevel == FREEMINELAGER_ZEN)
 	{
-		AI_NoticePrint(500,7000,"Horský průchod");
+		AI_NoticePrint(500,7000,"Průsmyk k Novému dolu");
 	};
 	if(CurrentLevel == DEMONSTOWER_ZEN)
 	{
