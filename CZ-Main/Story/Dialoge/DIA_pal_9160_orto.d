@@ -44,11 +44,11 @@ func void dia_pal_9160_orto_matter_info()
 
 	if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_02");	//Jasně, že jo. Je to dlouho, co jsem viděl někoho nového. Hlavně ne žoldáka (opovržlivě).
+		AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_02");	//Jasně, že jo. Je to dlouho, co jsem viděl někoho nového. Hlavně ne žoldáka. (opovržlivě)
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_03");	//Jasně, že jo. Je to dlouho, co jsem viděl někoho nového. Hlavně ne nekromanta (s obavou).
+		AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_03");	//Jasně, že jo. Je to dlouho, co jsem viděl někoho nového. Hlavně ne nekromanta. (s obavou)
 	};
 
 	AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_04");	//Je zajímavé, co přivedlo do pevnosti paladinů někoho, jako jsi ty?
@@ -115,7 +115,7 @@ func void DIA_Pal_9160_Orto_Map_info()
 {
 	B_GivePlayerXP(300);
 	AI_Output(other,self,"DIA_Pal_9160_Orto_Map_01_00");	//A ty jsi kormidelník 'Esmeraldy'?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Map_01_01");	//Ano, je to tak... (Překvapeně) I když nevím, kde ses to dozvěděl?
+	AI_Output(self,other,"DIA_Pal_9160_Orto_Map_01_01");	//Ano, je to tak... (překvapeně) I když nevím, kde ses to dozvěděl?
 	AI_Output(other,self,"DIA_Pal_9160_Orto_Map_01_02");	//Řekl mě to sám lord Hagen.
 	AI_Output(self,other,"DIA_Pal_9160_Orto_Map_01_03");	//No, to je pochopitelné! A proč jsi o tom začal mluvit?
 	AI_Output(other,self,"DIA_Pal_9160_Orto_Map_01_04");	//Potřebuju mapu, která by ukazovala cestu z ostrova na pevninu.
@@ -179,7 +179,7 @@ func void dia_pal_9160_orto_HOWWAY_info()
 	AI_Output(other,self,"DIA_Pal_9160_Orto_HOWWAY_01_02");	//A proč jste prostě nepřišli po souši?
 	AI_Output(self,other,"DIA_Pal_9160_Orto_HOWWAY_01_03");	//Cesta po moři je mnohem kratší. Navíc vstup do pevnosti se nachází hned vedle Onarovi farmy s jeho žoldákama.
 	AI_Output(other,self,"DIA_Pal_9160_Orto_HOWWAY_01_04");	//Máte z nich snad strach?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HOWWAY_01_05");	//Ne, samozřejmě. (Se smíchem) Královské paladiny jen stěží vyděsí obyčejní žoldáci!
+	AI_Output(self,other,"DIA_Pal_9160_Orto_HOWWAY_01_05");	//Ne, samozřejmě. (se smíchem) Královské paladiny jen stěží vyděsí obyčejní žoldáci!
 	AI_Output(self,other,"DIA_Pal_9160_Orto_HOWWAY_01_06");	//Ale teď není vhodná doba bojovat s nima v otevřeném konfliktu.
 	AI_Output(self,other,"DIA_Pal_9160_Orto_HOWWAY_01_07");	//Navíc, dokud se nevyjasní situace v Hornickém údolí, je nepravděpodobné, že dá lord Varus pokyn k útoku.
 };
@@ -248,7 +248,7 @@ func void dia_pal_9160_orto_how_info()
 		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_03");	//Všechno je jednoduše úžasné, příteli!
 		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_04");	//Nikdy mě nenapdalo, že lov je taková zajímavá práce.
 		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_05");	//A je to lepší, než sedět pod borovicí a nudit se.
-		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_06");	//Díky, že jsi přesvědšil Varuse! Jsem ti opravdu vděčný!...(směje se)
+		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_06");	//Díky, že jsi přesvědšil Varuse! Jsem ti opravdu vděčný!... (směje se)
 	};
 };
 
@@ -309,7 +309,7 @@ func void dia_pal_9160_orto_hunt_ok()
 func void dia_pal_9160_orto_hunt_no()
 {
 	AI_Output(other,self,"DIA_Pal_9160_Orto_Hunt_No_01_00");	//Jenom jsem si z tebe vystřelil.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_No_01_01");	//Pán je vtipálek (podrážděně)... Ale vlastně ti to nemůžu mít za zlé...
+	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_No_01_01");	//Pán je vtipálek... (podrážděně) Ale vlastně ti to nemůžu mít za zlé...
 	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_No_01_02");	//Nakonec je pravda, že to nejsou tvé problémy.
 	AI_Output(self,other,"DIA_Pal_9160_Orto_Hunt_No_01_03");	//Takže na to jednoduše zapomeneme...
 	Info_ClearChoices(dia_pal_9160_orto_hunt);
@@ -342,7 +342,7 @@ func void dia_pal_9160_orto_huntdone_info()
 	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_01_02");	//Myslíš to vážně?!... (udiveně)
 	AI_Output(other,self,"DIA_Pal_9160_Orto_HuntDone_01_03");	//Jasně že jo! Můžete na lov.
 	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_01_04");	//Ou, díky chlape! Nevím, jak bych ti dostatečně poděkoval!
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_01_05");	//No, možná mě něco napadlo...(směje se)
+	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_01_05");	//No, možná mě něco napadlo... (směje se)
 	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_01_06");	//Můžu ti ukázat, jak správně používat svou sílu v boji.
 	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_01_07");	//Myslím, že se ti to bude hodit!
 	MIS_ORTOHUNT = LOG_SUCCESS;

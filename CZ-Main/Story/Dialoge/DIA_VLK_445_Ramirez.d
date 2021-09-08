@@ -482,7 +482,7 @@ func void dia_ramirez_guildkill_info()
 	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_07");	//Na Šibeničním náměstí se zeptej jednoho z trúbadůrů. Jmenuje se Gillian.
 	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_08");	//On by to mohl pomoci s tvým hledáním.
 	AI_Output(other,self,"DIA_Ramirez_GuildKill_01_09");	//To je vše co víš?
-	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_10");	//Jo!... (Nervózně)
+	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_10");	//Jo!... (nervózně)
 	B_LogEntry(TOPIC_GUILDKILL,"Ramirez mi řekl, že o cechu vrahů se můžu dozvědět od trúbadůra Gilliana na Šibeničním náměstí...");
 };
 
@@ -915,7 +915,7 @@ func int DIA_Ramirez_TellAboutFingers_condition()
 func void DIA_Ramirez_TellAboutFingers_info()
 {
 	AI_Output(other,self,"DIA_Ramirez_TellAboutFingers_01_01");	//Je tu prý lepší meč, nežli ten o kterém jsi mi řekl naposled?
-	AI_Output(self,other,"DIA_Ramirez_TellAboutFingers_01_02");	//Hmmm...(přemýšlí) O něčem takovém jsem slyšel, prý patřil mistru Fingersovi.
+	AI_Output(self,other,"DIA_Ramirez_TellAboutFingers_01_02");	//Hmmm... (přemýšlí) O něčem takovém jsem slyšel, prý patřil mistru Fingersovi.
 	AI_Output(self,other,"DIA_Ramirez_TellAboutFingers_01_03");	//Byla to prý skutečně krásná a nebezpečná zbraň. Ale jestli opravdu existuje, to nemůžu s jistotou říct.
 	AI_Output(self,other,"DIA_Ramirez_TellAboutFingers_01_04");	//A pokud o tom opravdu někdo ví, tak jen Fingers.
 	AI_Output(self,other,"DIA_Ramirez_TellAboutFingers_01_05");	//Ale neslyšel jsem o něm od té doby, co odešel hnít do kolonie.
@@ -1018,7 +1018,7 @@ func void DIA_Ramirez_MagicBook_info()
 	AI_Output(other,self,"DIA_Ramirez_MagicBook_01_02");	//Hledám jednu věc, která mu patřila.
 	AI_Output(self,other,"DIA_Ramirez_MagicBook_01_03");	//A co přesně to má být?
 	AI_Output(other,self,"DIA_Ramirez_MagicBook_01_04");	//Něco jako kniha, nebo deník.
-	AI_Output(self,other,"DIA_Ramirez_MagicBook_01_05");	//Hmm...(zamyšleně) Och, už si vzpomínám. Všiml jsem si toho při odchodu.
+	AI_Output(self,other,"DIA_Ramirez_MagicBook_01_05");	//Hmm... (zamyšleně) Och, už si vzpomínám. Všiml jsem si toho při odchodu.
 	AI_Output(self,other,"DIA_Ramirez_MagicBook_01_06");	//A rozhodl se, že by to mohlo mít nějakou hodnotu.
 	AI_Output(self,other,"DIA_Ramirez_MagicBook_01_07");	//Ale jak se později ukázalo, byl to jen bezcenný kus papíru.
 	AI_Output(other,self,"DIA_Ramirez_MagicBook_01_08");	//Takže tu knihu máš pořád u sebe?

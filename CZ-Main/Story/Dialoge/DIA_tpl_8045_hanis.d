@@ -138,7 +138,7 @@ func void dia_hanis_giveplant_info()
 		AI_Output(self,other,"DIA_Hanis_GivePlant_01_03");	//To je skvělé, alespoň nemusím jít sám. Měl jsem strach nechat sběrače osamotě.
 		B_GiveInvItems(self,other,ItPl_SwampHerb,100);
 		AI_Output(self,other,"DIA_Hanis_GivePlant_01_04");	//Nezapomeň navštívit ostatní sběrače. Tedy pokud jsi je ještě nenavštívil.
-		AI_Output(self,other,"DIA_Hanis_GivePlant_01_05");	//Nebo si budou myslet, že jsi snad část z drogy někde prodal, nebo snad vykouřil...(s úsměvem)
+		AI_Output(self,other,"DIA_Hanis_GivePlant_01_05");	//Nebo si budou myslet, že jsi snad část z drogy někde prodal, nebo snad vykouřil... (s úsměvem)
 		FIRSTGROUPSEK = TRUE;
 	}
 	else

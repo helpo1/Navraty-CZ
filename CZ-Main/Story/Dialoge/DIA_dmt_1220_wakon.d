@@ -49,7 +49,7 @@ func void dmt_1220_wakon_hello_info()
 	AI_Output(self,other,"DMT_1220_Wakon_Hello_05");	//Jedině když ho podstoupíš, přijmeme tě.
 	AI_Output(other,self,"DMT_1220_Wakon_Hello_06");	//Já vím, mistře.
 	AI_Output(self,other,"DMT_1220_Wakon_Hello_07");	//Dobrá, ale nemyslím si, že bude jednoduchý.
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_08");	//(mocně)Pak neztrácejme čas, jsi připraven?!
+	AI_Output(self,other,"DMT_1220_Wakon_Hello_08");	//(mocně) Pak neztrácejme čas, jsi připraven?!
 	Info_ClearChoices(dmt_1220_wakon_hello);
 	Info_AddChoice(dmt_1220_wakon_hello,"Ano, mistře - jsem.",dmt_1220_wakon_hello_test);
 };
@@ -81,7 +81,7 @@ func void dmt_1220_wakon_hello_test()
 	AI_Output(self,other,"DMT_1220_Wakon_Hello_30");	//Měl bys pochopit, že neděláme věci, které by mohly změnit chod času.
 	AI_Output(self,other,"DMT_1220_Wakon_Hello_31");	//Mohla by se poničit rovnováha tohoto světa!
 	AI_Output(self,other,"DMT_1220_Wakon_Hello_32");	//Z toho důvodu užíváme smrtelníky!
-	AI_Output(self,other,"DMT_1220_Wakon_Hello_34");	//Jdi do Gades a uvolni zajatce z vězení.(velitelsky)Počkám tu na tebe.
+	AI_Output(self,other,"DMT_1220_Wakon_Hello_34");	//Jdi do Gades a uvolni zajatce z vězení. (velitelsky) Počkám tu na tebe.
 	AI_StopProcessInfos(self);
 	MIS_WAKONTEST = LOG_Running;
 	Log_CreateTopic(TOPIC_WAKONTEST,LOG_MISSION);

@@ -265,7 +265,7 @@ func void dia_vlk_6134_valeran_hire_info()
 	AI_Output(other,self,"DIA_VLK_6134_Valeran_Hire_01_04");	//Práce spočívá v tom, dělat pro něj různou těžkou práci a pomáhat mu vést obchod.
 	AI_Output(self,other,"DIA_VLK_6134_Valeran_Hire_01_05");	//A co je to za obchodníka?
 	AI_Output(other,self,"DIA_VLK_6134_Valeran_Hire_01_06");	//Jmenuje se Lutero. Znáš ho?
-	AI_Output(self,other,"DIA_VLK_6134_Valeran_Hire_01_07");	//Lutero?! Samozřejmě...(směje se) Kdo by ho neznal.
+	AI_Output(self,other,"DIA_VLK_6134_Valeran_Hire_01_07");	//Lutero?! Samozřejmě... (směje se) Kdo by ho neznal.
 	AI_Output(self,other,"DIA_VLK_6134_Valeran_Hire_01_08");	//Počkej ale... (udiveně) On ale měl pomocníka!
 	AI_Output(self,other,"DIA_VLK_6134_Valeran_Hire_01_09");	//Zdá se, že se jmenoval Benchel, pokud mě paměť nešálí.
 	AI_Output(other,self,"DIA_VLK_6134_Valeran_Hire_01_10");	//Ano, máš pravdu! Ale on už u Lutera nepracuje.
@@ -465,13 +465,13 @@ func void dia_vlk_6134_valeran_recrdt_info()
 	AI_Output(self,other,"DIA_VLK_6134_VALERAN_RecrDT_01_02");	//Nechápu proč jsem tolik let strávil studiem obchodu a financí?
 	AI_Output(self,other,"DIA_VLK_6134_VALERAN_RecrDT_01_03");	//Byl jsem nejlepší a teď nemůžu sehnat práci, místo toho tady sedím bez práce s pár zlatýma v kapse.
 	AI_Output(other,self,"DIA_VLK_6134_VALERAN_RecrDT_01_04");	//A co bys říkal nato, kdybych ti sehnal práci?
-	AI_Output(self,other,"DIA_VLK_6134_VALERAN_RecrDT_01_05");	//(Překvapeně) Práci? Kde? Děláš si srandu?
+	AI_Output(self,other,"DIA_VLK_6134_VALERAN_RecrDT_01_05");	//(překvapeně) Práci? Kde? Děláš si srandu?
 	AI_Output(other,self,"DIA_VLK_6134_VALERAN_RecrDT_01_06");	//Ani trochu. Pro své nové sídlo potřebuju správce co by se mě staral o obchod v době mé nepřítomnosti.
 	AI_Output(other,self,"DIA_VLK_6134_VALERAN_RecrDT_01_07");	//Jedná se o starou tvrz vedle Onarovy farmy, ve které chci vybudovat malý tábor. Ubytování a strava je na můj účet.
 	AI_Output(self,other,"DIA_VLK_6134_VALERAN_RecrDT_01_08");	//Ó, Innosi, já musím snít! Věř mi, nenajdeš nikoho lepšího, kdo si poradí s financemi, než jsem já!
 	AI_Output(self,other,"DIA_VLK_6134_VALERAN_RecrDT_01_09");	//Já souhlasím, kdy mám nastoupit?
 	AI_Output(other,self,"DIA_VLK_6134_VALERAN_RecrDT_01_10");	//Můžeš nastoupit hned. A jaký by sis představoval plat?
-	AI_Output(self,other,"DIA_VLK_6134_VALERAN_RecrDT_01_11");	//(Zamyšleně) Fernando mi platil 80 zlatých na den, ale pro tebe jsem ochoten pracovat za padesát!
+	AI_Output(self,other,"DIA_VLK_6134_VALERAN_RecrDT_01_11");	//(zamyšleně) Fernando mi platil 80 zlatých na den, ale pro tebe jsem ochoten pracovat za padesát!
 	Info_ClearChoices(dia_vlk_6134_valeran_recrdt);
 	Info_AddChoice(dia_vlk_6134_valeran_recrdt,"Padesát zlatých? To zní rozumně. Jsi přijat.",dia_vlk_6134_valeran_recrdt_yes);
 

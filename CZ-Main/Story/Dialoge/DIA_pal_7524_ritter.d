@@ -72,7 +72,7 @@ func void dia_pal_7524_trespass_info()
 {
 	AI_Output(self,other,"DIA_PAL_7524_TRESPASS_01_00");	//STÁT! Ve jménu Innose, KDO JSI?!
 	AI_Output(other,self,"DIA_PAL_7524_TRESPASS_01_01");	//Bez obav, přicházím z hradu.
-	AI_Output(self,other,"DIA_PAL_7524_TRESPASS_01_02");	//Ano? (Pochybovačně): Dobře, pojď dál.
+	AI_Output(self,other,"DIA_PAL_7524_TRESPASS_01_02");	//Ano? (pochybovačně) Dobře, pojď dál.
 	AI_Output(self,other,"DIA_PAL_7524_TRESPASS_01_03");	//Jen nedělej potíže - máme jich dost.
 };
 

@@ -40,7 +40,7 @@ func void dia_shrat_noforever_info()
 {
 	AI_Output(other,self,"DIA_Shrat_NoForever_01_00");	//Co tady děláš?
 	AI_Output(self,other,"DIA_Shrat_NoForever_01_01");	//Jako kdyby to nebylo zřejmé. My sbíráme drogu a naši bratři v táboře ji kouří.
-	AI_Output(self,other,"DIA_Shrat_NoForever_01_02");	//Víš jak moc se v Bratrstvu kouří?! (smích)... MOC!
+	AI_Output(self,other,"DIA_Shrat_NoForever_01_02");	//Víš jak moc se v Bratrstvu kouří?! (smích) MOC!
 
 	MeetLobartPsiCamp = TRUE;
 
@@ -109,7 +109,7 @@ func void dia_shrat_hello_info()
 	AI_Output(other,self,"DIA_Shrat_Hello_01_00");	//Počkej, já tě znám!
 	AI_Output(other,self,"DIA_Shrat_Hello_01_01");	//Ty jsi ten chlápek, který byl schovaný v chatrči hluboko v bažině.
 	AI_Output(self,other,"DIA_Shrat_Hello_01_02");	//Hmmm... Správně! Už jsme se potkali?!
-	AI_Output(self,other,"DIA_Shrat_Hello_01_03");	//Ale, počkej!... Možná? (podrobně si tě prohlíží)...
+	AI_Output(self,other,"DIA_Shrat_Hello_01_03");	//Ale, počkej!... Možná? (podrobně si tě prohlíží)
 	AI_Output(self,other,"DIA_Shrat_Hello_01_04");	//Ach, ano! Teď už si vzpomínám. Ty jsi ten chlap, co nám donesl vejce královny důlních červů!
 	AI_Output(other,self,"DIA_Shrat_Hello_01_05");	//Ano, teď už si na vše vzpomínám!
 	AI_Output(self,other,"DIA_Shrat_Hello_01_06");	//Neber si to osobně, v poslední době se stalo tolik věcí a já si to prostě všechno nemůžu pamatovat.
@@ -173,7 +173,7 @@ func void dia_shrat_PrioratStart_info()
 	AI_Output(other,self,"dia_shrat_PrioratStart_01_07");	//Slyšel jsi něco o zmizelých novicích?
 	AI_Output(self,other,"dia_shrat_PrioratStart_01_08");	//Cože? (zděšeně) Kolk našich noviců zmizelo?
 	AI_Output(other,self,"dia_shrat_PrioratStart_01_09");	//Ale to není nic vážného.
-	AI_Output(self,other,"dia_shrat_PrioratStart_01_10");	//... no jestli je to tak...(zmateně) Myslel jsem, že se stalo něco špatného.
+	AI_Output(self,other,"dia_shrat_PrioratStart_01_10");	//... no jestli je to tak... (zmateně) Myslel jsem, že se stalo něco špatného.
 	AI_Output(self,other,"dia_shrat_PrioratStart_01_11");	//Nic o tom nevím.
 	PsiCamp_02_Ok = TRUE;
 	B_LogEntry(TOPIC_PrioratStart,"V táboře u města se nic neděje. O zmizelých novicích nikdo nic neví.");

@@ -1000,7 +1000,7 @@ func int DIA_NONE_1813_Ilesil_OpenHramHint_Condition()
 func void DIA_NONE_1813_Ilesil_OpenHramHint_Info()
 {
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramHint_15_01");	//Vidítš ty staré pulpity umístěné po celém chrámovém nádvoří? Na každém z nich jsou divné nápisy.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_15_02");	//(Zamyšleně) Možná je to stopa, která pomůže otevřít vchod do chrámu. Pověz mi, co je v nich napsáno?
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_15_02");	//(zamyšleně) Možná je to stopa, která pomůže otevřít vchod do chrámu. Pověz mi, co je v nich napsáno?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_15_03");	//A to přesně, do posledního slova. V opačném případě nepochopíme jejich přesný význam.
 	Info_ClearChoices(DIA_NONE_1813_Ilesil_OpenHramHint);
 
@@ -1048,7 +1048,7 @@ func void DIA_NONE_1813_Ilesil_OpenHramHint_Yes()
 {
 	PlayVideo("RET2_BlackScreen.bik");
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_01");	//To je všechno, co tam bylo napsáno.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_02");	//(Zamyšleně) Pradávní dokázali dobře skrýt pravý význam slov.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_02");	//(zamyšleně) Pradávní dokázali dobře skrýt pravý význam slov.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_03");	//Trvalo by ti věčnost rozluštit tuo hádanku. Ale já ti s tím pomůžu.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_04");	//To by bylo dobrý.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_05");	//Jinak každý z těchto kamenných přepínačů označuje jednu světovou stranu.

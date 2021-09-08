@@ -44,7 +44,7 @@ func void dia_pal_2510_oric_perm_info()
 	if(ORICNEWSNW == FALSE)
 	{
 		AI_Output(other,self,"DIA_PAL_2510_Oric_Perm_01_00");	//Nějaké novinky?
-		AI_Output(self,other,"DIA_PAL_2510_Oric_Perm_01_01");	//Jo chlape...(směje se) A dobré. Jsme ještě všichni naživu!
+		AI_Output(self,other,"DIA_PAL_2510_Oric_Perm_01_01");	//Jo chlape... (směje se) A dobré. Jsme ještě všichni naživu!
 		AI_Output(self,other,"DIA_PAL_2510_Oric_Perm_01_02");	//Abych řekl pravdu, nečekal jsem, že přežijeme takto dlouho.
 		AI_Output(other,self,"DIA_PAL_2510_Oric_Perm_01_03");	//A jak vidíš stalo se!
 		AI_Output(self,other,"DIA_PAL_2510_Oric_Perm_01_04");	//No dokud budeme mít štěstí! Doufám že nás v budoucnu neopustí.

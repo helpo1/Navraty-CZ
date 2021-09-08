@@ -108,12 +108,12 @@ func void dia_dmt1298_hello_video()
 func void dia_dmt1298_hello_sleeper()
 {
 	AI_Output(other,self,"DIA_DMT1298_Hello_sleeper_01_00");	//Proč ses zde ve skutečnosti objevil?
-	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_01");	//A tobě to opravdu nedojde, že? (Posměšně) Hlupáku!
+	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_01");	//A tobě to opravdu nedojde, že? (posměšně) Hlupáku!
 	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_02");	//Potom, co jsi zabránil jednomu z nejsilnějších démonů ve vesmíru, přijít na tento svět!
 	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_03");	//Ale díky mě, se vrátí zpátky do tohoto chrámu.
 	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_04");	//A pak budete litovat, že jste se vůbec narodili!
 	AI_Output(other,self,"DIA_DMT1298_Hello_sleeper_01_05");	//Ty, co... znovu jsi vyvolal Spáče?!
-	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_06");	//No konečně sis to uvědomil hlupáku...(sarkasticky)
+	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_06");	//No konečně sis to uvědomil hlupáku... (sarkasticky)
 	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_07");	//Už jsem dokončil rituál přivolání - nyní už nic nebrání v jeho návratu!
 	AI_Output(self,other,"DIA_DMT1298_Hello_sleeper_01_08");	//A teď to vyřídím s tebou, červe! Aby ses nepletl do cesty mému pánu.
 	MIS_SleeperBack = LOG_Running;

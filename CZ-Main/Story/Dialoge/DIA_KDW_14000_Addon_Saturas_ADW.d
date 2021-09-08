@@ -355,7 +355,7 @@ func void DIA_Addon_Saturas_LanceChange_Eremit_Info()
 	AI_Output(other,self,"DIA_Addon_Saturas_LanceChange_Eremit_01_02");	//Jmenuje se Eremit. Je to poustevník a žíje hluboko v údolí.
 	AI_Output(self,other,"DIA_Addon_Saturas_LanceChange_Eremit_01_03");	//Myslíš si, že pro nás může být užitečný?
 	AI_Output(other,self,"DIA_Addon_Saturas_LanceChange_Eremit_01_04");	//Ovšem! Kromě toho, ví něco o kultuře Stavitelů, také umí číst starodávné tabulky.
-	AI_Output(self,other,"DIA_Addon_Saturas_LanceChange_Eremit_01_05");	//Opravdu? Hmmm... (zamyšleně): No, můj synu. V tom případě souhlasím aby se k nám přidal.
+	AI_Output(self,other,"DIA_Addon_Saturas_LanceChange_Eremit_01_05");	//Opravdu? Hmmm... (zamyšleně) No, můj synu. V tom případě souhlasím aby se k nám přidal.
 	MIS_LanceChange = LOG_Success;
 	Log_SetTopicStatus(TOPIC_LanceChange,LOG_Success);
 	B_LogEntry(TOPIC_LanceChange,"Saturas souhlasil s přijetím Eremita jako asistenta mágů. Je nutné ho o tom informovat.");
@@ -2706,7 +2706,7 @@ func void dia_addon_saturas_adw_ADANOSVALLEY_info()
 	B_GivePlayerXP(150);
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_ADANOSVALLEY_01_01");	//Co mi můžeš říci o této starověké tabulce?
 	B_GiveInvItems(other,self,ItWr_CroneAdanos,1);
-	AI_Output(self,other,"DIA_Addon_Saturas_ADW_ADANOSVALLEY_01_02");	//(Překvapeně) Je jiná než ty tabulky, které jsme našli předtím.
+	AI_Output(self,other,"DIA_Addon_Saturas_ADW_ADANOSVALLEY_01_02");	//(překvapeně) Je jiná než ty tabulky, které jsme našli předtím.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_ADANOSVALLEY_01_03");	//Kde jsi ji získal?
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_ADANOSVALLEY_01_04");	//V jedné vnitřní svatyni Adanova chrámu.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_ADANOSVALLEY_01_05");	//Zdá se, že má velkou hodnotu, pokud byla ukryta právě tam.
@@ -2849,7 +2849,7 @@ func void dia_addon_saturas_adw_Tree_info()
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_Tree_01_17");	//Pokud si vzpomínám, všichni žili v lesích Myrtany, na pevnině. Avšak stále existuje nějaká šance.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_Tree_01_18");	//Jestli mě paměť neklame, tak jeden z mágů kteří přišli na tento ostrov vztyčit magickou bariéru, ovládal umění druidů.
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_Tree_01_19");	//A kdo to byl?
-	AI_Output(self,other,"DIA_Addon_Saturas_ADW_Tree_01_20");	//(S nechutí) Xardas! V té době často experimentoval s různou magií a taky s něčím co připomínalo magii druidů.
+	AI_Output(self,other,"DIA_Addon_Saturas_ADW_Tree_01_20");	//(s nechutí) Xardas! V té době často experimentoval s různou magií a taky s něčím co připomínalo magii druidů.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_Tree_01_21");	//Víc ti už v téhle záležitosti nemůžu pomoci.
 	XarDruid = TRUE;
 
@@ -2887,7 +2887,7 @@ func void dia_addon_saturas_adw_JarCurse_info()
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_JarCurse_01_01");	//Je všechno v pořádku?
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurse_01_02");	//Ne, jak Vidíš. Zdá se, že znesvěcení Adanova chrámu mělo dalekosáhlé důsledky!
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_JarCurse_01_03");	//Co tím myslíš?
-	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurse_01_04");	//(Rozčileně) Jsi snad slepý? Obrovské armády nemrtvých vtrhly do země!
+	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurse_01_04");	//(rozčileně) Jsi snad slepý? Obrovské armády nemrtvých vtrhly do země!
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurse_01_05");	//Nějaká nám neznámá pradávná moc je přiměla povstat z mrtvých.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurse_01_06");	//A teď jsou připraveni obrátit svůj hněv proti všem, kdo se odváží postavit se jim do cesty.
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_JarCurse_01_07");	//Myslíš, že na tom všem nese vinu Raven?
@@ -2946,7 +2946,7 @@ func void dia_addon_saturas_adw_JarCurseDo_info()
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_JarCurseDo_01_01");	//Co budeme dělat?
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurseDo_01_02");	//Modlit se k Adanovi... aby nás všechny ušetřil!
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_JarCurseDo_01_03");	//A teď vážně?
-	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurseDo_01_04");	//(Zamyšleně) Já nevím. Ale mám podezření, že všichni tito nemrtví nejsou jen nemyslící stádo.
+	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurseDo_01_04");	//(zamyšleně) Já nevím. Ale mám podezření, že všichni tito nemrtví nejsou jen nemyslící stádo.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurseDo_01_06");	//Řídí je nějaká zlá vůle! Ale čí?
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_JarCurseDo_01_07");	//Máš na mysli něco konkrétního?
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurseDo_01_08");	//Jako u každého národa mají i Stavitelé své vůdce a šéfy. Ty, které respektovali a ctili.

@@ -312,7 +312,7 @@ func void DIA_Rod_Wette_Yes()
 	{
 		Rod_WetteAngenommen = TRUE;
 		AI_Output(other,self,"DIA_Rod_Wette_Yes_15_02");	//Tady jsou!
-		AI_Output(self,other,"DIA_Rod_Wette_Yes_06_03");	//V pořádku, podíváme se tedy jak si silnej...(škodolibě) 
+		AI_Output(self,other,"DIA_Rod_Wette_Yes_06_03");	//V pořádku, podíváme se tedy jak si silnej... (škodolibě) 
 		B_GiveInvItems(self,other,ItMw_2h_Rod,1);
 
 		if(other.attribute[ATR_STRENGTH] >= 30)
@@ -333,7 +333,7 @@ func void DIA_Rod_Wette_Yes()
 			AI_EquipBestMeleeWeapon(hero);
 			AI_ReadyMeleeWeapon(hero);
 			AI_Output(other,self,"DIA_Rod_Wette_Yes_15_04");	//Tak co říkáš na mojí sílu?!
-			AI_Output(self,other,"DIA_Rod_Wette_Yes_06_05");	//Vypadá to že...(zmatený) Tys mě porazil?
+			AI_Output(self,other,"DIA_Rod_Wette_Yes_06_05");	//Vypadá to že... (zmatený) Tys mě porazil?
 			AI_RemoveWeapon(hero);
 			AI_UnequipWeapons(hero);
 			AI_Output(self,other,"DIA_Rod_Wette_Yes_06_06");	//Tohle sem vůbec nečekal. Opravdu nevypadáš na to, že máš v sobě tolik síly.
@@ -488,7 +488,7 @@ func void DIA_Rod_Quest_Info()
 	AI_Output(other,self,"DIA_Rod_Quest_01_04");	//A mohl bys me naučit jak s ním zacházet?
 	AI_Output(self,other,"DIA_Rod_Quest_01_05");	//Samozřejmě. Pro začátek mi dones nejméně tucet láhví kořalky.
 	AI_Output(other,self,"DIA_Rod_Quest_01_06");	//Hmm... Jseš si jistý?
-	AI_Output(self,other,"DIA_Rod_Quest_01_07");	//O tom není pochyb...(směje se) Přines mi pití - a já ti ukážu jak zacházet s obouručákem.
+	AI_Output(self,other,"DIA_Rod_Quest_01_07");	//O tom není pochyb... (směje se) Přines mi pití - a já ti ukážu jak zacházet s obouručákem.
 	MIS_RodRing = LOG_Running;
 	Log_CreateTopic(TOPIC_RodRing,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RodRing,LOG_Running);
@@ -519,7 +519,7 @@ func void DIA_Rod_Quest_Done_Info()
 	AI_Output(other,self,"DIA_Rod_Quest_Done_01_01");	//Tady je tvoje kořalka!
 	B_GiveInvItems(other,self,ItFo_Booze,12);
 	Npc_RemoveInvItems(self,ItFo_Booze,12);
-	AI_Output(self,other,"DIA_Rod_Quest_Done_01_02");	//Hmm...(uznale) Ano, to je ona!
+	AI_Output(self,other,"DIA_Rod_Quest_Done_01_02");	//Hmm... (uznale) Ano, to je ona!
 	AI_Output(self,other,"DIA_Rod_Quest_Done_01_03");	//Konečně se mi bude líp travit čas, tady na farmě!
 	AI_Output(other,self,"DIA_Rod_Quest_Done_01_04");	//A co školení?
 	AI_Output(self,other,"DIA_Rod_Quest_Done_01_05");	//Samozřejmě! Jak se slíbil.

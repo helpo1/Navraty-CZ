@@ -169,7 +169,7 @@ func void DIA_Carl_HelpPath_Done_Info()
 	AI_Output(other,self,"DIA_Carl_HelpPath_Done_01_02");	//Samozřejmě, tady. A co moje doporučení?
 	B_GiveInvItems(other,self,ItMi_Coal,5);
 	Npc_RemoveInvItems(self,ItMi_Coal,5);
-	AI_Output(self,other,"DIA_Carl_HelpPath_Done_01_03");	//Nemusíš mít strach...(usmívá se) jak jsme se dohodli!
+	AI_Output(self,other,"DIA_Carl_HelpPath_Done_01_03");	//Nemusíš mít strach... (usmívá se) jak jsme se dohodli!
 	AI_Output(self,other,"DIA_Carl_HelpPath_Done_01_04");	//Jestli se mě na tebe někdo zeptá, tak uslyší jen samou chválu.
 	MIS_CarlCoal = LOG_Success;
 	Log_SetTopicStatus(TOPIC_CarlCoal,LOG_Success);
@@ -636,7 +636,7 @@ func void DIA_Carl_FatherNews_Info()
 	AI_PlayAni(self,"T_SIT_2_STAND");
 	AI_Output(self,other,"DIA_Carl_FatherNews_01_04");	//Co je s ním, všechno mě pověz!
 	AI_Output(other,self,"DIA_Carl_FatherNews_01_05");	//Je stále na živu, ale drží ho v zajetí skřeti.
-	AI_Output(self,other,"DIA_Carl_FatherNews_01_06");	//Proklatě...(naštvaně) a to má být dobrá zpráva.
+	AI_Output(self,other,"DIA_Carl_FatherNews_01_06");	//Proklatě... (naštvaně) a to má být dobrá zpráva.
 	AI_Output(self,other,"DIA_Carl_FatherNews_01_07");	//No, aspoň je ještě naděje, že se opět shledáme.
 	AI_Output(self,other,"DIA_Carl_FatherNews_01_08");	//Teď se budu modlit každý den, ať ho Innos ochrání.
 	AI_Output(self,other,"DIA_Carl_FatherNews_01_09");	//Děkuji ti z celého srdce! Potěšil jsi staříka...

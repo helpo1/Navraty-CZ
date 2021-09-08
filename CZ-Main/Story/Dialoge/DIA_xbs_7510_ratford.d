@@ -42,7 +42,7 @@ func int dia_ratford_hallo_condition()
 
 func void dia_ratford_hallo_info()
 {
-	AI_Output(self,other,"DIA_Ratford_Hallo_01_00");	//Na všechny otázky se zeptej Draxe... (mrzutě)	
+	AI_Output(self,other,"DIA_Ratford_Hallo_01_00");	//Na všechny otázky se zeptej Draxe... (mrzutě)
 	AI_Output(self,other,"DIA_Ratford_Hallo_01_01");	//To on je ten ukecaný!
 	AI_Output(other,self,"DIA_Ratford_Hallo_15_00");	//Hmmm...
 	AI_StopProcessInfos(self);
@@ -78,7 +78,7 @@ func void dia_ratford_fisk_info()
 		AI_Output(other,self,"DIA_Ratford_Fisk_15_07");	//No jen... jak to jen... říct...
 		AI_Output(self,other,"DIA_Ratford_Fisk_01_10");	//CO?!... Tak se už vymáčkni! (podrážděně)
 		AI_Output(other,self,"DIA_Ratford_Fisk_15_08");	//No, zemřel.
-		AI_Output(self,other,"DIA_Ratford_Fisk_01_11");	//Sakra!...(naštvaně)
+		AI_Output(self,other,"DIA_Ratford_Fisk_01_11");	//Sakra!... (naštvaně)
 		AI_Output(other,self,"DIA_Ratford_Fisk_15_09");	//Co, špatné zprávy?
 		AI_Output(self,other,"DIA_Ratford_Fisk_01_13");	//Jen trochu. Dobrá, není to důležité. Zapomeň na to...
 	}
@@ -347,6 +347,6 @@ func int DIA_Ratford_Drakar_Perm_condition()
 func void DIA_Ratford_Drakar_Perm_info()
 {
 	AI_Output(other,self,"DIA_Ratford_Drakar_Perm_01_00");	//Jak probíhají opravy?
-	AI_Output(self,other,"DIA_Ratford_Drakar_Perm_01_01");	//Dělám co můžu...(pokrčí rameny) Tady to není tak jednoduchý!
+	AI_Output(self,other,"DIA_Ratford_Drakar_Perm_01_01");	//Dělám co můžu... (pokrčí rameny) Tady to není tak jednoduchý!
 	AI_Output(other,self,"DIA_Ratford_Drakar_Perm_01_02");	//Rozumím.
 };

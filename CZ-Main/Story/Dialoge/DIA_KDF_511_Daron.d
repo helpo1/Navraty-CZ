@@ -450,7 +450,7 @@ func void DIA_Addon_Daron_FoundStatue_Info()
 	AI_Output(self,other,"DIA_Addon_Daron_FoundStatue_10_04");	//Dones to do kláštera, synu.
 	if(other.guild == GIL_NONE)
 	{
-		AI_Output(self,other,"DIA_Addon_Daron_FoundStatue_10_05");	//(Uznale) Můžeš být vpuštěn dovnitř jestli zasvětíš zbytek svého života klášteru.
+		AI_Output(self,other,"DIA_Addon_Daron_FoundStatue_10_05");	//(uznale) Můžeš být vpuštěn dovnitř jestli zasvětíš zbytek svého života klášteru.
 		AI_Output(self,other,"DIA_Addon_Daron_FoundStatue_10_06");	//Ale jsem si jistý; když jsi řádně splnil MŮJ požadavek, jsi už připraven, nemám pravdu?
 	};
 	AI_Output(self,other,"DIA_Addon_Daron_FoundStatue_10_07");	//Innos s tebou, synu!

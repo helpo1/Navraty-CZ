@@ -438,7 +438,7 @@ func void DIA_Jarvis_ShieldTeach_Info()
 		AI_Output(self,other,"DIA_Jarvis_ShieldTeach_01_02");	//Není to zas tak jednoduchá záležitost, jak se může na první pohled zdát.
 		AI_Output(self,other,"DIA_Jarvis_ShieldTeach_01_03");	//Ale když aspoň trochu pochopíš, základní principy, tak se to naučíš - a opravdu to stojí za to!
 		AI_Output(other,self,"DIA_Jarvis_ShieldTeach_01_04");	//Zní to skvěle. Kdy začneme?
-		AI_Output(self,other,"DIA_Jarvis_ShieldTeach_01_05");	//(Zasměje se) Ne tak rychle, kamaráde! Za prvé, budeš mi muset zaplatit.
+		AI_Output(self,other,"DIA_Jarvis_ShieldTeach_01_05");	//(zasměje se) Ne tak rychle, kamaráde! Za prvé, budeš mi muset zaplatit.
 		AI_Output(self,other,"DIA_Jarvis_ShieldTeach_01_06");	//Nejsem charita, z dobroty srdce, se tvým učitelem nestanu.
 		AI_Output(self,other,"DIA_Jarvis_ShieldTeach_01_07");	//A musíš mít nějaké zkušenosti, jinak bude můj výcvik zbytečný. 
 		AI_Output(other,self,"DIA_Jarvis_ShieldTeach_01_08");	//Pochopil jsem, tak už nezdržuj.

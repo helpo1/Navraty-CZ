@@ -407,7 +407,7 @@ func void dia_grom_respect_info()
 	AI_Output(self,other,"DIA_Grom_Respect_01_10");	//Hmm... (zamyšleně) No, nic složitého - můžeš mi prostě přinést nějakou vzácnou loveckou trofej.
 	AI_Output(self,other,"DIA_Grom_Respect_01_11");	//Pokud jsi dobrý lovec, jak si myslíš, tak ti to nedá moc práce.
 	AI_Output(other,self,"DIA_Grom_Respect_01_12");	//A jakou trofej chceš?
-	AI_Output(self,other,"DIA_Grom_Respect_01_13");	//Už jsem řekl - vzácnou. Například, co bych tak chtěl... (zamyšleně)... Velké vejce důlního červa.
+	AI_Output(self,other,"DIA_Grom_Respect_01_13");	//Už jsem řekl - vzácnou. Například, co bych tak chtěl... (zamyšleně) Velké vejce důlního červa.
 	AI_Output(self,other,"DIA_Grom_Respect_01_14");	//Toto vejce jen tak někde nenajdeš a setkání s důlními červy - určitě není příjemné.
 	AI_Output(other,self,"DIA_Grom_Respect_01_15");	//Dobrá, přijímám.
 	B_LogEntry(TOPIC_HUNTERSWORK,"Podporu Groma získám tím, když mu donesu vejce důlního červa.");

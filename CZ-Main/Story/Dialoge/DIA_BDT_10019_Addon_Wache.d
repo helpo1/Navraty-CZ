@@ -48,14 +48,14 @@ func void DIA_Addon_10019_Wache_Hi_Info()
 func void B_Say_Wache_kaputt()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10019_Wache_kaputt_15_00");	//Proč zemřeli?
-	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_kaputt_06_01");	//(Směje se) Měl jsi mě zastavit.
+	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_kaputt_06_01");	//(směje se) Měl jsi mě zastavit.
 	Info_ClearChoices(DIA_Addon_BDT_10019_Wache_Hi);
 };
 
 func void DIA_Addon_BDT_10019_Wache_Hi_Raven()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10019_Wache_Hi_Raven_15_00");	//Vlastně hledám Ravena.
-	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_Raven_06_01");	//(Vyhružně) Hele, opovaž se vstoupit do chrámu a budeš tuhej jako tihle.
+	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_Raven_06_01");	//(vyhružně) Hele, opovaž se vstoupit do chrámu a budeš tuhej jako tihle.
 	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_Raven_06_02");	//Radši se odplaz zpátky do dolu.
 	B_Say_Wache_kaputt();
 	Info_ClearChoices(DIA_Addon_BDT_10019_Wache_Hi);

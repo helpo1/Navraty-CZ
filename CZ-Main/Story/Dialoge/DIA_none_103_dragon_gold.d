@@ -102,8 +102,8 @@ func void dia_dragon_gold_whocreate_info()
 	AI_Output(other,self,"DIA_Dragon_Gold_WhoCreate_01_17");	//Ve jedné z nich jsem taky našel ten artefakt.
 	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_18");	//Ale říkal jsi, že jsi potkal nějaké lidi, ne?!
 	AI_Output(other,self,"DIA_Dragon_Gold_WhoCreate_01_20");	//Na tom místě byli jen banditi, kteří se tam vydali pro zlato.
-	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_27");	//...(strašlivé vrčení)... Dráp?!... (strašlivé vrčení)
-	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_28");	//Pokud je to tak... tak mě neposlouchali (strašlivé vrčení)... Oni ho nezničili, blázni!
+	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_27");	//... (strašlivé vrčení) Dráp?!... (strašlivé vrčení)
+	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_28");	//Pokud je to tak... tak mě neposlouchali... (strašlivé vrčení) Oni ho nezničili, blázni!
 	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_29");	//Teď mi začíná být vše jasné...
 	AI_Output(self,other,"DIA_Dragon_Gold_WhoCreate_01_31");	//... Zlo již bylo vypuštěno na svobodu a provede svůj plán... (vrčení)
 	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Ashtar je překvapen zprávou o záhubě Stavitelů, ale ještě více ho zaskočila existence Beliarova drápu, který měl být podle Ashtara zničen.");
@@ -136,13 +136,13 @@ func void dia_dragon_gold_ADANOSVALLEY_info()
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_04");	//(vrčení) Kamenné tabulky?! To jsi mě pobavil, muži.
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_05");	//To čemu říkáš kamenná tabulka je magický svitek!
 	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_06");	//Takže to je magický svitek Stavitelů?
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_07");	//Ano...(vrčí) Ale soudě podle jazyka ve kterým je psán - spadá až do doby těsně po vzniku světa.
+	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_07");	//Ano... (vrčí) Ale soudě podle jazyka ve kterým je psán - spadá až do doby těsně po vzniku světa.
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_08");	//Ale necítím v něm ani kapku magie.
 	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_09");	//Můžeš mi přeložit co je tam napsáno?
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_10");	//(vrčí) Jistě.
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_11");	//Podle textu je tohle vyvolání...
 	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_12");	//... Čeho?
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_13");	//...(vrčí) Vyvolání starověkého Adanova strážce!
+	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_13");	//... (vrčí) Vyvolání starověkého Adanova strážce!
 	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_14");	//Zajímavé! Co je to za gardu?
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_15");	//Rozumím tomu tak že je to tvor co kdysi střežil Adanův chrám.
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_16");	//Nicméně, pokud je mi známo, jejich čas již dávno odezněl.
@@ -345,7 +345,7 @@ func void dia_dragon_gold_aboutclaw_info()
 	AI_Output(other,self,"DIA_Dragon_Gold_AboutClaw_01_27");	//Hmm... A můžeš si být opravdu jistý, že Senyak je na svobodě?
 	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_28");	//Je nemožné to říci, ale myslím, že bychom se to mohli dozvědět z Drápu.
 	AI_Output(other,self,"DIA_Dragon_Gold_AboutClaw_01_34");	//A když ti přinesu Dráp, můžeš mi to říct?
-	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_37");	//Ó, Adane. Přines Dráp... (vrčení)... A odpovím na tvé otázky.
+	AI_Output(self,other,"DIA_Dragon_Gold_AboutClaw_01_37");	//Ó, Adane. Přines Dráp... (vrčení) A odpovím na tvé otázky.
 	TASKFINDCLAW = TRUE;
 	B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Ashtar mi řekl o hrozbě, v podobě duše Senyaka, která se skrývá v Drápu. Měl bych mu ho přinést, aby se ujistil, že démonova duše je stále v mečí.");
 };
@@ -392,7 +392,7 @@ func void dia_dragon_gold_whatman_info()
 			AI_ReadyMeleeWeapon(other);
 		};
 		AI_Output(other,self,"DIA_Dragon_Gold_WhatMan_01_06");	//Tady...!
-		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_09");	//...(vrčí úzkostí)... Můžu!
+		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_09");	//(vrčí úzkostí) ... Můžu!
 		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_21");	//Krystaly jsou matné a necítím Senyakovu energii... (vrčení)
 		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_11");	//To znamená jediné - Senyak uprchl!
 		if(C_ScHasEquippedBeliarsWeapon() == TRUE)
@@ -480,14 +480,14 @@ func void dia_dragon_gold_destroywaytwo_info()
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_01");	//Ano, je ještě jeden... (vrčení)
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_03");	//Druhý způsob zpočívá v tom, že bude znovu uvězněn.
 	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_06");	//A jak můžu chytit Senyakovu duši?
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_07");	//...(vrčení)... Opakujeme starou chybu...
+	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_07");	//(vrčení) ... Opakujeme starou chybu...
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_09");	//K zajmutí duše slouží jedna prastará věc.
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_11");	//Je to runa. Jmenuje se - Mora Ulartu! V jazyce prastarých to znamená bludiště duší.
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_12");	//Měl bys ji použít na Senyaka.
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_13");	//Je snažší o tom mluvit, než ho zabít...
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_16");	//Ne, vůbec ne. Je nutno duši umístit zpět do krystalů.
 	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_17");	//Může být krystal v Drápu použit?
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_18");	//Hmm... (vrčení)... Ano, ale meč není na spolehlivém místě.
+	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_18");	//Hmm... (vrčení) Ano, ale meč není na spolehlivém místě.
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_19");	//Ačkoli je to bezpodmínečné, alespoň se meči vrátí část jeho síly!
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_21");	//Jeden omyl a Senyakova duše je na svobodě.
 	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_1W");	//Dobře. A co je to kouzlo, o kterém jsi mluvil?
@@ -499,7 +499,7 @@ func void dia_dragon_gold_destroywaytwo_info()
 			if(KREOL_MYTEACHER == TRUE)
 			{
 				AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_22");	//Hmm... Myslím, že někoho takového znám.
-				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_23");	//...(vrčení)
+				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_23");	//... (vrčení)
 				AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_24");	//A až najdu kouzlo, kde mám hledat Senyaka?
 				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_25");	//První najdi bludiště Duší a až potom se budeme bavit o tvém setkání se Senyakem... (vrčení)
 				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_27");	//Rychle, potřebujeme každou minutu!
@@ -509,7 +509,7 @@ func void dia_dragon_gold_destroywaytwo_info()
 			else
 			{
 				AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_28");	//Hmm... Tak tu může být problém...
-				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_23");	//...(vrčení)
+				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_23");	//... (vrčení)
 				AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_24");	//A až najdu kouzlo, kde mám hledat Senyaka?
 				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_25");	//První najdi bludiště Duší a až potom se budeme bavit o tvém setkání se Senyakem... (vrčení)
 				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_27");	//Rychle, potřebujeme každou minutu!
@@ -603,7 +603,7 @@ func void dia_dragon_gold_clawdestroy_yes()
 	Snd_Play("DEM_WARN");
 	AI_PlayAni(self,"T_SURPRISE_CCW");
 	AI_PlayAni(self,"T_SURPRISE_CW");
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_23");	//...(vrčení)
+	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_23");	//... (vrčení)
 	AI_Output(self,other,"DIA_Dragon_Gold_ClawDestroy_Yes_01_01");	//To je vše. Dráp je zničen!
 	AI_Output(self,other,"DIA_Dragon_Gold_ClawDestroy_Yes_01_02");	//Svět kvůli nemu už nikdy nebude trpět... (vrčení)
 	DESTROYCLAW = TRUE;
@@ -826,7 +826,7 @@ func void dia_dragon_gold_haveoneorall_giveheart()
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_57");	//To je vše, co máš udělat... (vrčení)
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_58");	//Můj čas nadešel...
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_59");	//Cítím, jak mě opouští má síla...
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_61");	//...(vrčí z bolesti)
+	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_61");	//... (vrčí z bolesti)
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_62");	//Jdi člověče a pamatuj, co jsem ti řekl.
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Dead_01_00");	//Ach, teď mě nech!... (umírající)
 	Info_ClearChoices(dia_dragon_gold_haveoneorall);
@@ -882,14 +882,14 @@ func int dia_Dragon_AV_hello_condition()
 func void dia_Dragon_AV_Hello_info()
 {
 	B_GivePlayerXP(2000);
-	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_00");	//Konečně jsi tady!...(vrčení) Čekal jsem tě!
+	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_00");	//Konečně jsi tady!... (vrčení) Čekal jsem tě!
 	AI_Output(other,self,"DIA_Dragon_AV_Hello_01_01");	//Ty na mě čekáš?! Jak to mám chápat?
-	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_02");	//Arrgh!...(vrčení) TY jsi ten kterého si Adanos vyvolil!
+	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_02");	//Arrgh!... (vrčení) TY jsi ten kterého si Adanos vyvolil!
 	AI_Output(other,self,"DIA_Dragon_AV_Hello_01_03");	//Myslíš, jak to?! 
 	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_04");	//Nosíš jeho symboli moci a navíc ses dostal na toto místo.
 	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_05");	//A to může znamenat jediné - Adanos si tě vybral!
 	AI_Output(other,self,"DIA_Dragon_AV_Hello_01_06");	//No dobře! Co teď?
-	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_07");	//Arrgh...(vrčení) Nyní je čas abys splnil svoje povinnosti!
+	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_07");	//Arrgh... (vrčení) Nyní je čas abys splnil svoje povinnosti!
 	AI_Output(other,self,"DIA_Dragon_AV_Hello_01_08");	//Jaké další povinnosti?!
 	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_09");	//Zničit zlo které nedočkavě vyčkává až se dostane ven.
 	AI_Output(self,other,"DIA_Dragon_AV_Hello_01_10");	//Zlo, které jsem tady střežil staletí!
@@ -913,23 +913,23 @@ func int dia_Dragon_AV_Evil_condition()
 func void dia_Dragon_AV_Evil_info()
 {
 	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_00");	//Jaké zlo?
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_01");	//Jedná se o prastaré a nebezpečné...(vrčení) Zlo, stvořené jedním z Adanových vlastních bratrů!
+	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_01");	//Jedná se o prastaré a nebezpečné... (vrčení) Zlo, stvořené jedním z Adanových vlastních bratrů!
 	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_02");	//Myslíš Innose nebo Beliara?!
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_03");	//Beliara!...(vrčení) Jen on je schopen něčeho takového.
+	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_03");	//Beliara!... (vrčení) Jen on je schopen něčeho takového.
 	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_04");	//Dobře. Jak špatně to vypadá?
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_05");	//Po ty tisíce let své existence přijalo celou řadu forem a tvarů.
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_06");	//Jak teď vypadá, nevím! Ale stále ho cítím... Myslím že tam pořád je.
 	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_07");	//Kde je?!
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_08");	//Arrgh...(vrčení) V chrámu za mnou!
+	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_08");	//Arrgh... (vrčení) V chrámu za mnou!
 	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_09");	//Říkáte, že bych musel jít do chrámu a zničit to zlo?
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_12");	//To je...(vrčení)
+	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_12");	//To je... (vrčení)
 	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_13");	//No řekněme že souhlasím. A jak mám porazit to tvoje zlo?!
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_14");	//Netuším...(vrčení) Prostě jen strážce, nic víc!
+	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_14");	//Netuším... (vrčení) Prostě jen strážce, nic víc!
 	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_15");	//Dobré skutky! No, abychom si rozuměli. Jak se tam dostanu?
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_17");	//Otevřu dveře chrámu jakmile mi řekneš že si připraven.
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_18");	//Ale chci tě varovat...(vrčení) S výjimkou mě, chrám je stále střežen nesmrtelnými strážci!
+	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_18");	//Ale chci tě varovat... (vrčení) S výjimkou mě, chrám je stále střežen nesmrtelnými strážci!
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_19");	//Čas strávený vevnitř, pod vlivem mocného zla je přemněnil na strašlivá monstra.
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_20");	//V minulosti by se neodvážili zaútočit ani Adanovi vyvolení ale teď...(vrčení)
+	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_20");	//V minulosti by se neodvážili zaútočit ani Adanovi vyvolení ale teď... (vrčení)
 	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_21");	//Domnívám se že mi nebudou chtít ublížit?
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_22");	//Nyní jsou zlý, budou bránit svého pána dokud nezemřou!
 };
@@ -957,7 +957,7 @@ func int dia_Dragon_AV_OpenHram_condition()
 func void dia_Dragon_AV_OpenHram_info()
 {
 	AI_Output(other,self,"DIA_Dragon_AV_OpenHram_01_00");	//Otevři dveře chrámu!
-	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_01_01");	//Připravil ses na tu bitvu?...(vrčení)
+	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_01_01");	//Připravil ses na tu bitvu?... (vrčení)
 	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_01_02");	//Pokud se ti to nepodaří, zlo vypukne znovu a nebudu schopen ho zastavit.
 	Info_ClearChoices(DIA_Dragon_AV_OpenHram);
 	Info_AddChoice(DIA_Dragon_AV_OpenHram,"Ne, počkej.",DIA_Dragon_AV_OpenHram_No);
@@ -967,7 +967,7 @@ func void dia_Dragon_AV_OpenHram_info()
 func void DIA_Dragon_AV_OpenHram_No()
 {
 	AI_Output(other,self,"DIA_Dragon_AV_OpenHram_No_01_00");	//Ne, počkej.
-	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_No_01_01");	//Tvoje nerozhodnost před bojem mě trochu děsí...(vrčení)
+	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_No_01_01");	//Tvoje nerozhodnost před bojem mě trochu děsí... (vrčení)
 	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_No_01_02");	//Ale je lepší se před bitvou pořádně připravit, souboj bude velmi náročný.
 	Info_ClearChoices(DIA_Dragon_AV_OpenHram);
 };
@@ -975,7 +975,7 @@ func void DIA_Dragon_AV_OpenHram_No()
 func void DIA_Dragon_AV_OpenHram_Yes()
 {
 	AI_Output(other,self,"DIA_Dragon_AV_OpenHram_Yes_01_00");	//Otevři už!
-	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_Yes_01_01");	//Brána je otevřena...(vrčení) Hodně štěstí v boji! Nechť tě provází Adanos.
+	AI_Output(self,other,"DIA_Dragon_AV_OpenHram_Yes_01_01");	//Brána je otevřena... (vrčení) Hodně štěstí v boji! Nechť tě provází Adanos.
 	AI_StopProcessInfos(self);
 
 	Wld_PlayEffect("SPELLFX_THUNDERSTORM_RAIN_NOCOL",hero,hero,0,0,0,FALSE);

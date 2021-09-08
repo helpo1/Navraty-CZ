@@ -105,7 +105,7 @@ func void DIA_Addon_Wache_02_Attentat_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Wache_02_Attentat_15_00");	//Co víš o tom pokusu o vraždu?
 	AI_Output(self,other,"DIA_Addon_Wache_02_Attentat_13_01");	//Co já o tom vím (směje se) Zlomil jsem mu nohy.
-	AI_Output(self,other,"DIA_Addon_Wache_02_Attentat_13_02");	//(Výhruzně) Udělám to každýmu kdo se pokusí zautočit na Estebana...
+	AI_Output(self,other,"DIA_Addon_Wache_02_Attentat_13_02");	//(výhruzně) Udělám to každýmu kdo se pokusí zautočit na Estebana...
 };
 
 

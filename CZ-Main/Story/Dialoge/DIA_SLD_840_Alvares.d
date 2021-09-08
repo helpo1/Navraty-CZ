@@ -297,7 +297,7 @@ func void DIA_Kharim_Hello_NoOne()
 func void DIA_Kharim_Hello_NoThree()
 {
 	AI_Output(other,self,"DIA_Kharim_Hello_NoThree_01_00");	//Řekl jsem, že tvůj ksicht je k nerozeznání od tvé prdele!
-	AI_Output(self,other,"DIA_Kharim_Hello_NoThree_01_01");	//(Zamyšleně): Na něco si vzpomínám, ale ne to se nestalo.
+	AI_Output(self,other,"DIA_Kharim_Hello_NoThree_01_01");	//(zamyšleně) Na něco si vzpomínám, ale ne to se nestalo.
 	AI_Output(self,other,"DIA_Kharim_Hello_NoThree_01_02");	//Věř mi, pleteš se příteli.
 	AI_Output(self,other,"DIA_Kharim_Hello_NoThree_01_03");	//Tak to jsme se sotva znali. Promiň!
 	KharimPissOff = TRUE;
@@ -307,7 +307,7 @@ func void DIA_Kharim_Hello_NoThree()
 func void DIA_Kharim_Hello_NoFour()
 {
 	AI_Output(other,self,"DIA_Kharim_Hello_NoFour_01_00");	//Řekl jsem něco o tých ručičkách.
-	AI_Output(self,other,"DIA_Kharim_Hello_NoFour_01_01");	//(Zamyšleně): Na něco si vzpomínám.
+	AI_Output(self,other,"DIA_Kharim_Hello_NoFour_01_01");	//(zamyšleně) Na něco si vzpomínám.
 	AI_Output(self,other,"DIA_Kharim_Hello_NoFour_01_02");	//Věř mi, pleteš se příteli.
 	AI_Output(self,other,"DIA_Kharim_Hello_NoFour_01_03");	//Tak to jsme se sotva znali. Promiň!
 	KharimPissOff = TRUE;
@@ -321,12 +321,12 @@ func void DIA_Kharim_Hello_Ok()
 	AI_ReadyMeleeWeapon(self);
 	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_01");	//Co?! Zopakuj to!
 	AI_Output(other,self,"DIA_Kharim_Hello_Ok_01_02");	//Soudě podle tvé reakce, není pochyb o tom že se známe. 
-	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_03");	//O ano...(šklebí se) Teď už si na tebe vzpomínám!
+	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_03");	//O ano... (šklebí se) Teď už si na tebe vzpomínám!
 	AI_RemoveWeapon(self);
 	AI_Output(other,self,"DIA_Kharim_Hello_Ok_01_04");	//A ten souboj nás rozsoudil.
 	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_05");	//Samozřejmě. A jak to vždycky bývá, ten horší zůstal ležet.
 	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_06");	//Dobře! Necháme minulost - minulostí...
-	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_07");	//(Usmívá se) A mimochodem - Jsem také rád, že tě vidím, kamaráde!
+	AI_Output(self,other,"DIA_Kharim_Hello_Ok_01_07");	//(usmívá se) A mimochodem - Jsem také rád, že tě vidím, kamaráde!
 	Info_ClearChoices(DIA_Kharim_Hello);
 };
 
@@ -556,7 +556,7 @@ func void DIA_Roscoe_Hello_Info()
 	AI_Output(other,self,"DIA_Roscoe_Hello_01_00");	//Hej! Jak se máš, Roscoe?
 	AI_Output(self,other,"DIA_Roscoe_Hello_01_01");	//(nedůvěřivě) A my se jako známe?
 	AI_Output(other,self,"DIA_Roscoe_Hello_01_02");	//Co tě praštil trol, že si nevzpomínáš. 
-	AI_Output(self,other,"DIA_Roscoe_Hello_01_03");	//Ach, no ano...(zírá) teď už si na tebe vzpomínám.
+	AI_Output(self,other,"DIA_Roscoe_Hello_01_03");	//Ach, no ano... (zírá) teď už si na tebe vzpomínám.
 	AI_Output(self,other,"DIA_Roscoe_Hello_01_04");	//Ty jsi ten mladík, co se tak vehementně snažil dostat v Novém táboře k Laresovi.
 	AI_Output(other,self,"DIA_Roscoe_Hello_01_05");	//Ještě pro něj pracuješ?
 	AI_Output(self,other,"DIA_Roscoe_Hello_01_06");	//Samozřejmě! Byl jsem jeho osobní strážce v kolonii a vždycky jsme spolu dobře vycházeli.
@@ -584,7 +584,7 @@ func int DIA_Roscoe_WhatDo_Condition()
 func void DIA_Roscoe_WhatDo_Info()
 {
 	AI_Output(other,self,"DIA_Roscoe_WhatDo_01_00");	//A co tady děláš?
-	AI_Output(self,other,"DIA_Roscoe_WhatDo_01_01");	//No tak...(zaváhá) sleduju vše co se děje kolem.
+	AI_Output(self,other,"DIA_Roscoe_WhatDo_01_01");	//No tak... (zaváhá) sleduju vše co se děje kolem.
 	AI_Output(other,self,"DIA_Roscoe_WhatDo_01_02");	//Proč?
 	AI_Output(self,other,"DIA_Roscoe_WhatDo_01_03");	//(ušklíbá se) Ty vole, vidíš tímle místem prochází všechny cesty, vedoucí do Hornického údolí a do středu ostrova.
 	AI_Output(self,other,"DIA_Roscoe_WhatDo_01_04");	//Zde mám přehled o paladinech a městské stráži, odkud a kam mají namířeno.
@@ -623,7 +623,7 @@ func void DIA_Roscoe_News_Info()
 		AI_Output(self,other,"DIA_Roscoe_News_01_02");	//Ne tak docela. Pořád tady pobíhají ty maníci v černých róbách.
 		AI_Output(self,other,"DIA_Roscoe_News_01_03");	//Zjevně někoho hledají. Ale já nevím koho!
 		AI_Output(other,self,"DIA_Roscoe_News_01_04");	//A prošlo jich tudy hodně?
-		AI_Output(self,other,"DIA_Roscoe_News_01_05");	//Viděl jsem jen jednoho. (Nervózně) Myslím, že šel ke starému hřbitovu, který se nachází nedaleko odtud, v lese.
+		AI_Output(self,other,"DIA_Roscoe_News_01_05");	//Viděl jsem jen jednoho. (nervózně) Myslím, že šel ke starému hřbitovu, který se nachází nedaleko odtud, v lese.
 		AI_Output(self,other,"DIA_Roscoe_News_01_06");	//Snažím se držet dál od toho místa.
 		AI_Output(self,other,"DIA_Roscoe_News_01_07");	//Mám z těch lidí husí kůži, pokud to ovšem jsou lidé.
 		MIS_RoscoeMage = LOG_Running;

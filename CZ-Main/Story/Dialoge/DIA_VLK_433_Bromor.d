@@ -253,7 +253,7 @@ func void DIA_Bromor_Pay_Info()
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,50))
 	{
-		AI_Output(self,other,"DIA_Bromor_Pay_07_01");	//Fajn (zašklebí se). Na následujících pár hodin nejspíš nikdy v životě nezapomeneš.
+		AI_Output(self,other,"DIA_Bromor_Pay_07_01");	//Fajn. (zašklebí se) Na následujících pár hodin nejspíš nikdy v životě nezapomeneš.
 		AI_Output(self,other,"DIA_Bromor_Pay_07_02");	//Vyjdi s Nadjou po schodech nahoru a užij si to!
 
 		if(DIA_Bromor_Pay_OneTime == FALSE)
@@ -294,7 +294,7 @@ func int DIA_Bromor_DOPE_Condition()
 func void DIA_Bromor_DOPE_Info()
 {
 	AI_Output(other,self,"DIA_Bromor_DOPE_15_00");	//Můžu tu dostat i nějaké 'zvláštní' zboží?
-	AI_Output(self,other,"DIA_Bromor_DOPE_07_01");	//Jasně, všechny holky jsou zvláštní (zašklebí se).
+	AI_Output(self,other,"DIA_Bromor_DOPE_07_01");	//Jasně, všechny holky jsou zvláštní. (zašklebí se)
 	AI_Output(self,other,"DIA_Bromor_DOPE_07_02");	//Jestli máš dost zlata, můžeš jít s Nadjou nahoru.
 };
 
@@ -482,7 +482,7 @@ func void DIA_Bromor_AskForWoman_Yes()
 	AI_Output(other,self,"DIA_Bromor_AskForWoman_Yes_01_01");	//Máš velmi zvláštní počty!
 	AI_Output(self,other,"DIA_Bromor_AskForWoman_Yes_01_02");	//(nechápavě) Vážně?
 	AI_Output(other,self,"DIA_Bromor_AskForWoman_Yes_01_03");	//Já jsem napočítal 1000 zlatých.
-	AI_Output(self,other,"DIA_Bromor_AskForWoman_Yes_01_04");	//Ach, ano...(nevinně) Úplně jsem zapomněl zmínit malou daň pro stráže.
+	AI_Output(self,other,"DIA_Bromor_AskForWoman_Yes_01_04");	//Ach, ano... (nevinně) Úplně jsem zapomněl zmínit malou daň pro stráže.
 	AI_Output(self,other,"DIA_Bromor_AskForWoman_Yes_01_05");	//Nikdy nevíš, můžou se vyskytnout nějaký problémy.
 	AI_Output(other,self,"DIA_Bromor_AskForWoman_Yes_01_06");	//Se strážema si to vyřiď sám. Mě obírat nebudou.
 	AI_Output(other,self,"DIA_Bromor_AskForWoman_Yes_01_07");	//Tak co, dám ti přesně 1000 zlatých a dívka půjde se mnou.

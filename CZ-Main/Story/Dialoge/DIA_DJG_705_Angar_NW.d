@@ -280,7 +280,7 @@ func void dia_angar_nw_kapitelorcattack_psicamp()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Angar_NW_KapitelOrcAttack_PsiCamp_01_01");	//Podle toho, kolik je tu skřetů, myslím, že máš pravdu.
-	AI_Output(other,self,"DIA_Angar_NW_KapitelOrcAttack_PsiCamp_01_02");	//Nicméně mám u sebe tuhle runu teleportace do Bratrstva. Měl by si ji použít.
+	AI_Output(other,self,"DIA_Angar_NW_KapitelOrcAttack_PsiCamp_01_02");	//Nicméně mám u sebe tuhle runu teleportace do Bratrstva. Měl bys ji použít.
 	AI_Output(self,other,"DIA_Angar_NW_KapitelOrcAttack_PsiCamp_01_03");	//Ty máš teleportáční runu?! Hmmm... (zamyšleně)
 	AI_Output(self,other,"DIA_Angar_NW_KapitelOrcAttack_PsiCamp_01_05");	//No, tak to samozřejmě děkuji. Ale abych ti řekl pravdu - tak jako voják bych dal přednost ukázat, že se těch hajzlů nebojím.
 	AI_Output(other,self,"DIA_Angar_NW_KapitelOrcAttack_PsiCamp_01_06");	//Nikdo nepochybuje o tvé odvaze, Angare! Ale myslím, a ty bys tomu měl rozumět, že šance na to, že se probiješ je nulová. A plížit se neumíš.

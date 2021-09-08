@@ -673,7 +673,7 @@ func void DIA_Ingmar_CanTeachShield_Info()
 	if(hero.HitChance[NPC_TALENT_1H] >= 50)
 	{
 		AI_Output(other,self,"DIA_Ingmar_CanTeachShield_01_09");	//Ovládám je dobře.
-		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_10");	//(Povzdechne si) Dobře, dobře. Tady máš.
+		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_10");	//(povzdechne si) Dobře, dobře. Tady máš.
 		B_GiveInvItems(self,other,ItAr_Shield_07,1);
 		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_11");	//Doufám, že ti dobře poslouží v boji.
 	}
@@ -711,7 +711,7 @@ func void DIA_Ingmar_CanTeachShield_Perm_Info()
 	{
 		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_Perm_01_01");	//A co tvoje umění boje s jednoručními zbraněmi?
 		AI_Output(other,self,"DIA_Ingmar_CanTeachShield_Perm_01_02");	//Ovládám je dobře.
-		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_Perm_01_03");	//(Povzdechne si) Dobře, dobře. Tady máš.
+		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_Perm_01_03");	//(povzdechne si) Dobře, dobře. Tady máš.
 		B_GiveInvItems(self,other,ItAr_Shield_07,1);
 		AI_Output(self,other,"DIA_Ingmar_CanTeachShield_Perm_01_04");	//Doufám, že ti dobře poslouží v boji.
 		GetPalShield = TRUE;

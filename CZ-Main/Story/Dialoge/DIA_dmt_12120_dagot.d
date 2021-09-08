@@ -716,12 +716,12 @@ func int dia_dmt_12120_dagot_giveeligorrune_condition()
 func void dia_dmt_12120_dagot_giveeligorrune_info()
 {
 	AI_Output(other,self,"DIA_DMT_12120_Dagot_GiveEligorRune_01_01");	//To je vše co se můžu naučit?
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_02");	//(vážně)A co ještě chceš vědět?
+	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_02");	//(vážně) A co ještě chceš vědět?
 	AI_Output(other,self,"DIA_DMT_12120_Dagot_GiveEligorRune_01_03");	//Očekával jsem toho více! To je vše co vy Strážci mi můžete nabídnout?
 	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_06");	//Ano protože božský původ dokáže čerpat energii Stvořitele! Musíš pochopit, že každá příšera tohoto světa byla stvořena určitým bohem.
 	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_07");	//A tyto bytosti jsou zcela podřízeny svým tvůrcům. My Strážci jsme taky předmětem této síly!
 	AI_Output(other,self,"DIA_DMT_12120_Dagot_GiveEligorRune_01_08");	//A mohu ji zvládnout?
-	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_09");	//No ano...(zamyšleně)... Pravda o těchto tvorech je... Dobrá...(potichu)... vezmi si runu, a nevyzraď o nás NIC...
+	AI_Output(self,other,"DIA_DMT_12120_Dagot_GiveEligorRune_01_09");	//No ano... (zamyšleně) Pravda o těchto tvorech je... Dobrá... (potichu) Vezmi si runu, a nevyzraď o nás NIC...
 	CreateInvItems(self,itru_eligordemons,1);
 	B_GiveInvItems(self,other,itru_eligordemons,1);
 	AI_Output(other,self,"DIA_DMT_12120_Dagot_GiveEligorRune_01_10");	//Jaký druh runy?

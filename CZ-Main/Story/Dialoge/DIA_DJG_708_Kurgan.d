@@ -424,7 +424,7 @@ func void dia_kurgan_dgjjoinpaladin_coward()
 func void dia_kurgan_dgjjoinpaladin_orcs()
 {
 	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_00");	//Myslím, že bych měl skřetům říct o vašem táboře.
-	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_01");	//Cože?!... (Vyděšeně) Ale to přece neuděláš!
+	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_01");	//Cože?!... (vyděšeně) Ale to přece neuděláš!
 	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_02");	//Věř mi, že to udělám!
 	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_03");	//Tak jo, zmetku! A potom si myslíš, že bych chtěl pomoci někomu jako jsi ty?!
 	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_Orcs_01_05");	//Arrgh, zatraceně!... Dobrá, pomůžeme paladinům!

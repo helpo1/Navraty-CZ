@@ -799,7 +799,7 @@ func void DIA_VLK_422_Salandril_Game_info()
 {
  	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_00"); //Kardif říkal, že hraješ kostky.
  	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_01"); //Ano, to má pravdu. Ale ne s kýmkoliv!
- 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_02"); //A se mnou by jsi si zahrál?
+ 	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_02"); //A se mnou by sis zahrál?
  	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_03"); //S tebou? Někdo tě na to nalákal?
  	AI_Output(other,self,"DIA_VLK_422_Salandril_Game_01_04"); //Pojďme hrát a možná to zjistíš.
  	AI_Output(self,other,"DIA_VLK_422_Salandril_Game_01_05"); //Dobře. Jak myslíš.

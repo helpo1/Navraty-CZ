@@ -431,7 +431,7 @@ func void DIA_Pal_9158_Varus_MissKey_info()
 	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_07");	//To není tak jednoduché. (mrzutě) Zámek od dveří je hodně složitý.
 	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_08");	//A rozbít dveře jen tak nemůžeme.
 	AI_Output(other,self,"DIA_Pal_9158_Varus_MissKey_01_09");	//A čirou náhodou, nemáte někoho, kdo se vyzná v páčení zámků? 
-	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_10");	//Jak jsi bystrý...(hrozivě) My jsme paladinové! A ne zloději.
+	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_10");	//Jak jsi bystrý... (hrozivě) My jsme paladinové! A ne zloději.
 	AI_Output(self,other,"DIA_Pal_9158_Varus_MissKey_01_11");	//A bez mistra zámků se zřejmě neobejdeme.
 	MIS_FingersOpenDoor = LOG_Running;
 	Log_CreateTopic(Topic_FingersOpenDoor,LOG_MISSION);

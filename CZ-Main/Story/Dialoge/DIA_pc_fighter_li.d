@@ -323,7 +323,7 @@ func void dia_gorn_li_bringfoodbeginend_missgold()
 	AI_Output(self,other,"DIA_Gorn_LI_BringFoodBeginEnd_MissGold_00_02");	//Já o tom přece nic nevím, co chceš slyšet?!
 	AI_Output(other,self,"DIA_Gorn_LI_BringFoodBeginEnd_MissGold_00_05");	//Dobrá, tak kdo z chlapů o tom něco ví?!
 	AI_Output(self,other,"DIA_Gorn_LI_BringFoodBeginEnd_MissGold_00_06");	//To přesně nevím! Ale vím, že kapitán má přehled o všem co se tu děje.
-	AI_Output(self,other,"DIA_Gorn_LI_BringFoodBeginEnd_MissGold_00_07");	//Nemyslím, že by se tu zabýval prací, takže má čas vše sledovat a vím, čím by si z něj dostal odpověď.
+	AI_Output(self,other,"DIA_Gorn_LI_BringFoodBeginEnd_MissGold_00_07");	//Nemyslím, že by se tu zabýval prací, takže má čas vše sledovat a vím, čím bys z něj dostal odpověď.
 	AI_Output(self,other,"DIA_Gorn_LI_BringFoodBeginEnd_MissGold_00_09");	//V průběhu bouře ztratil kompas a teď mluví jen o něm.
 	AI_Output(self,other,"DIA_Gorn_LI_BringFoodBeginEnd_MissGold_00_10");	//Byl tím velmi otřesen - ten kousek měl pro něj velkou hodnotu!
 	AI_Output(self,other,"DIA_Gorn_LI_BringFoodBeginEnd_MissGold_00_15");	//To je vše.
@@ -501,7 +501,7 @@ func int dia_fighter_li_findmagicorecave_condition()
 func void dia_fighter_li_findmagicorecave_info()
 {
 	AI_Output(other,self,"DIA_Fighter_LI_FindMagicOreCave_01_01");	//Našel jsem jeskyni s ložiskem magické rudy.
-	AI_Output(self,other,"DIA_Fighter_LI_FindMagicOreCave_01_02");	//Opravdu? Měl by si to říci kapitánovi.
+	AI_Output(self,other,"DIA_Fighter_LI_FindMagicOreCave_01_02");	//Opravdu? Měl bys to říci kapitánovi.
 	AI_Output(self,other,"DIA_Fighter_LI_FindMagicOreCave_01_03");	//Myslím, že by to měl slyšet.
 	GOTOORECAPITAN = TRUE;
 };

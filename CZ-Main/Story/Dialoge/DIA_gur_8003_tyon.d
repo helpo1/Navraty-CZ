@@ -180,7 +180,7 @@ func void dia_baaltyon_gotrecept_info()
 		Npc_RemoveInvItems(self,itwr_tyonrecept,1);
 	};
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_BaalTyon_GotRecept_01_02");	//Mmm... Ano! To musí být on! Podivné indgredience... (Prozkoumává recept)
+	AI_Output(self,other,"DIA_BaalTyon_GotRecept_01_02");	//Mmm... Ano! To musí být on! Podivné indgredience... (prozkoumává recept)
 	AI_Output(other,self,"DIA_BaalTyon_GotRecept_01_03");	//Mistře, mohu dostat vaše svolení se vstupem do Bratrstva?
 	AI_Output(self,other,"DIA_BaalTyon_GotRecept_01_04");	//(neposlouchá) abych to namíchal, potřebuju velmi vzácné věci...
 	AI_Output(self,other,"DIA_BaalTyon_GotRecept_01_05");	//Obávám se, že toho tady nemám ani polovinu z toho, co bych potřeboval.
@@ -762,14 +762,14 @@ func void dia_baaltyon_LOKIPOTION_info()
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_05");	//Proč ho potřebuješ?
 	AI_Output(other,self,"DIA_BaalTyon_LOKIPOTION_01_06");	//Není pro mě, ale pro jednoho novice.
 	AI_Output(other,self,"DIA_BaalTyon_LOKIPOTION_01_07");	//Je třeba obnovit jeho paměť, je to velmi důležité.
-	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_08");	//Chápu. (Vážně) No, tak poslouchej a zapamatuj si co potřebujem...
+	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_08");	//Chápu. (vážně) No, tak poslouchej a zapamatuj si co potřebujem...
 	AI_Output(other,self,"DIA_BaalTyon_LOKIPOTION_01_09");	//Poslouchám...
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_10");	//Takže, nejprve je potřeba svazek bažinné trávy. Tři stonky by měli stačit.
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_11");	//Pak budu potřebovat jeden elixír ducha, královský šťovík, dvě léčivé rostliny, pět čelistí důlního červa, vodu...
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_12");	//... a nakonec, poslední složkou na mém seznamu - kaktusový květ!
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_13");	//Jsem si jistý, že nebudeš mít problém to všechno sehnat. No, možná s výjimkou posledního komponentu.
 	AI_Output(other,self,"DIA_BaalTyon_LOKIPOTION_01_14");	//Na to jsem se chtěl zeptat - kde ho najít?
-	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_15");	//Dobrá otázka. (Zamyšleně) Problémem je, že tato rostlina roste pouze při vysokých teplotách a v suchém podnebí.
+	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_15");	//Dobrá otázka. (zamyšleně) Problémem je, že tato rostlina roste pouze při vysokých teplotách a v suchém podnebí.
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_16");	//Slyšel jsem, že v poušti Varant tato rostlina není taková rarita.
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_17");	//Ale samozřejmě, dostat se tam teď není možné.
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_18");	//Takže zkus ho hledat na ostrově... Nevím.

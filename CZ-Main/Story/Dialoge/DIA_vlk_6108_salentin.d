@@ -68,13 +68,13 @@ func int dia_salentin_bauernaufstand_condition()
 func void dia_salentin_bauernaufstand_info()
 {
 	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_00");	//Kdo jsi?
-	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_01");	//COŽE?! Ty jsi stále tady!... (nervózně).
+	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_01");	//COŽE?! Ty jsi stále tady!... (nervózně)
 	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_03");	//Nebojte se! Jsem tady služebně.
 	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_04");	//A co je to za práci, že tě sem dostala?
 	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_05");	//Hledám jeden amulet. Přesněji - amulet Triramar. Víš o nem neco?
 	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_06");	//Jaké Triramar? Co to je?
 	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_08");	//Potřebuji ho a bez něj neodejdu.
-	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_09");	//(Smích) Ty odsud už stejně nikam neodejdeš!
+	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_09");	//(smích) Ty odsud už stejně nikam neodejdeš!
 	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_10");	//Jediný způsob, jak se dostat z tohoto ostrova - je použít magický portál v kapli na severu, ale ta je střežena paladiny.
 	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_11");	//Ale nemyslím si, že tě odsud pustí živího.
 	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_12");	//Ano chlapče, chytil ses!
@@ -224,7 +224,7 @@ func void dia_salentin_canpass_yes()
 {
 	AI_Output(other,self,"DIA_Salentin_CanPass_Yes_01_00");	//Myslím, že mě můžeš být užitečnej.
 	AI_Output(other,self,"DIA_Salentin_CanPass_Yes_01_01");	//Vzhledem k tomu, že ti věří - využiju tě abych se dostal k nim do tábora.
-	AI_Output(self,other,"DIA_Salentin_CanPass_Yes_01_02");	//(Opatrně) To znamená? Co máš za lubem?
+	AI_Output(self,other,"DIA_Salentin_CanPass_Yes_01_02");	//(opatrně) To znamená? Co máš za lubem?
 	Info_ClearChoices(dia_salentin_canpass);
 	if(ZIGOSMAGICISON == TRUE)
 	{
@@ -243,7 +243,7 @@ func void dia_salentin_canpass_use()
 	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_01");	//Beliare, pane temnoty! Dej mi svou sílu, převzít tvar člověka.
 	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_02");	//Teď dokončím to proč jsem tady!
 	AI_PlayAni(other,"T_MAGRUN_2_HEASHOOT");
-	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_03");	//O Innos! Kdo jsi? (V panice) Ty sloužíš Beliarovi?!
+	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_03");	//O Innos! Kdo jsi? (v panice) Ty sloužíš Beliarovi?!
 	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_04");	//A co je to za magii?! Innos, co se se mnou děje! Neee...
 	USESALENTINAMULET = TRUE;
 	Info_ClearChoices(dia_salentin_canpass);
@@ -303,7 +303,7 @@ func void dia_salentin_canpassagain_yes()
 {
 	AI_Output(other,self,"DIA_Salentin_CanPass_Yes_01_00");	//Myslím, že mě můžeš být užitečnej.
 	AI_Output(other,self,"DIA_Salentin_CanPass_Yes_01_01");	//Vzhledem k tomu, že ti věří - využiju tě abych se dostal k nim do tábora.
-	AI_Output(self,other,"DIA_Salentin_CanPass_Yes_01_02");	//(Opatrně) To znamená? Co máš za lubem?
+	AI_Output(self,other,"DIA_Salentin_CanPass_Yes_01_02");	//(opatrně) To znamená? Co máš za lubem?
 	Info_ClearChoices(dia_salentin_canpassagain);
 	if(ZIGOSMAGICISON == TRUE)
 	{
@@ -322,7 +322,7 @@ func void dia_salentin_canpassagain_use()
 	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_01");	//Beliare, pane temnoty! Dej mi svou sílu, převzít tvar člověka.
 	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_02");	//Teď dokončím to proč jsem tady!
 	AI_PlayAni(other,"T_MAGRUN_2_HEASHOOT");
-	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_03");	//O Innos! Kdo jsi? (V panice) Ty sloužíš Beliarovi?!
+	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_03");	//O Innos! Kdo jsi? (v panice) Ty sloužíš Beliarovi?!
 	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_04");	//A co je to za magii?! Innos, co se se mnou děje! Neéé...
 	USESALENTINAMULET = TRUE;
 	Info_ClearChoices(dia_salentin_canpassagain);

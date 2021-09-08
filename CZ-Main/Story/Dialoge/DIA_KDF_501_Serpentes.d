@@ -52,7 +52,7 @@ func int DIA_Serpentes_NoEnter_PissOff_Condition()
 
 func void DIA_Serpentes_NoEnter_PissOff_Info()
 {
-	AI_Output(self,other,"DIA_Serpentes_NoEnter_PissOff_01_00");	//Hmmm...(naštvaně)
+	AI_Output(self,other,"DIA_Serpentes_NoEnter_PissOff_01_00");	//Hmmm... (naštvaně)
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuildEnemy,0);
 };

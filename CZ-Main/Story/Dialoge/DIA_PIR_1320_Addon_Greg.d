@@ -35,7 +35,7 @@ func void DIA_Addon_Greg_EXIT_Info()
 	{
 		AI_Output(self,other,"DIA_Addon_Greg_Pray_01_00");	//Počjek chvilku, mám ještě jednu otázku.
 		AI_Output(other,self,"DIA_Addon_Greg_Pray_01_01");	//Jakou?
-		AI_Output(self,other,"DIA_Addon_Greg_Pray_01_02");	//(Povzdechne si) Víš, nikdy jsem nebyl věřící.
+		AI_Output(self,other,"DIA_Addon_Greg_Pray_01_02");	//(povzdechne si) Víš, nikdy jsem nebyl věřící.
 		AI_Output(self,other,"DIA_Addon_Greg_Pray_01_03");	//Ale ten případ s prstenem mě donutil přemýšlet.
 		AI_Output(self,other,"DIA_Addon_Greg_Pray_01_04");	//Takže. Mohl bys jít do kláštera a požádat někoho, aby se za mě a ostatní pomodlil?
 		AI_Output(self,other,"DIA_Addon_Greg_Pray_01_05");	//Věř mi, dobře se ti odvděčím.
@@ -1178,7 +1178,7 @@ func void dia_addon_greg_DOOMRING_info()
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_09");	//Vypadá to, že je v tom prstenu nějaké mocné prokletí.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_10");	//Obávám se, že kdybych ti ho dal, nedopadne to se mnou dobře.
 	AI_Output(other,self,"DIA_Addon_Greg_DOOMRING_01_11");	//Jak se to stalo?
-	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_12");	//To bylo tak...(drbe se na hlavě)
+	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_12");	//To bylo tak... (drbe se na hlavě)
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_13");	//Jednou jsme vydrancovali velký obchodní konvoj někde u města Bakaresh.
 	AI_Output(other,self,"DIA_Addon_Greg_DOOMRING_01_14");	//Bakaresh?
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_15");	//Je to jedno z hlavních měst asasínů, nachází se ve východní části Varantu.
@@ -1199,10 +1199,10 @@ func void dia_addon_greg_DOOMRING_info()
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_30");	//Ale to ještě není všechno, můj příteli... (smutně) Tohle byla ještě procházka růžovým sadem v porovnání s tím, co nás čekalo dál.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_32");	//Budeš se smát, ale zdá se mi, že se od nás od té doby odvrátilo štěstí.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_33");	//Všechny naše další nájezdy skončili zklamáním.
-	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_34");	//Každý obchodník jako kdyby plul bez nákladu...(vrtí hlavou)
+	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_34");	//Každý obchodník jako kdyby plul bez nákladu... (vrtí hlavou)
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_35");	//... hodnota zboží byla taková, že to ani nestačilo na pokrytí nákladů.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_36");	//A poslední kapka byla, jak jsme přišel o svoji loď, když jsme na otevřeném moři narazily na paladinskou galéru! Beliar aby je spral...
-	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_37");	//(Nervózně) Ale nejhorší věc, kterí se děje, je to, že v noci ve snech se mě zjevují duchové těch, kteří zůstali v jeskyni.
+	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_37");	//(nervózně) Ale nejhorší věc, kterí se děje, je to, že v noci ve snech se mě zjevují duchové těch, kteří zůstali v jeskyni.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_38");	//Tyhle noční můry má už dlouho a jsou každou noc horší.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_39");	//Pak mi došlo, že je to všechno kvůli tomu prstenu.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_40");	//Snažil jsem se ho zbavit, ale nešlo to!
@@ -1269,11 +1269,11 @@ func void dia_addon_greg_NOMORECURSE_info()
 	AI_Output(other,self,"DIA_Addon_Greg_NOMORECURSE_01_01");	//Zkus si sundat ten prsten.
 	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_02");	//Co?! To neudělám!
 	AI_Output(other,self,"DIA_Addon_Greg_NOMORECURSE_01_03");	//Hned ho sundej! Teda pokud se chceš zbavit svého prokletí.
-	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_04");	//Hele kámo...(výhružně). Jestli se pleteš, tak nebudeš mít ode mě klid v tomnto životě.
+	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_04");	//Hele kámo... (výhružně) Jestli se pleteš, tak nebudeš mít ode mě klid v tomnto životě.
 	AI_Output(other,self,"DIA_Addon_Greg_NOMORECURSE_01_05");	//Sundej ho.
-	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_06");	//(Sundává prsten)
+	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_06");	//(sundává prsten)
 	AI_Output(other,self,"DIA_Addon_Greg_NOMORECURSE_01_07");	//No, jak se cítíš?
-	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_08");	//(Překvapeně) Zdá se, že máš pravdu. Prsten už není prokletý.
+	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_08");	//(překvapeně) Zdá se, že máš pravdu. Prsten už není prokletý.
 	AI_Output(other,self,"DIA_Addon_Greg_NOMORECURSE_01_09");	//Vidíš, obavy byly zbytečné.
 	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_10");	//Chtěl bych vidět tebe na mém místě.
 	AI_Output(other,self,"DIA_Addon_Greg_NOMORECURSE_01_11");	//No dobře, dej mi ten prsten.
@@ -1310,7 +1310,7 @@ func void dia_addon_greg_PiratePray_Done_info()
 	if(MIS_PiratePray == LOG_Success)
 	{
 		AI_Output(other,self,"DIA_Addon_Greg_PiratePray_Done_01_02");	//Ano, budou se modlit za tebe a tvou posádku.
-		AI_Output(self,other,"DIA_Addon_Greg_PiratePray_Done_01_03");	//(Radostně) Výborně, chlape. Myslím, že tohle kluky trochu rozveselí.
+		AI_Output(self,other,"DIA_Addon_Greg_PiratePray_Done_01_03");	//(radostně) Výborně, chlape. Myslím, že tohle kluky trochu rozveselí.
 		AI_Output(self,other,"DIA_Addon_Greg_PiratePray_Done_01_04");	//Pravděpodobně z tebe vytáhli soustu zlata, že?
 		AI_Output(other,self,"DIA_Addon_Greg_PiratePray_Done_01_05");	//Nemůžu říct, že to bylo zrovna levné.
 		AI_Output(self,other,"DIA_Addon_Greg_PiratePray_Done_01_06");	//(zasměje se) Co od nich taky čekat. Vidím, že jsi lepší, než ti zazobanci.
@@ -1393,7 +1393,7 @@ func void dia_addon_greg_PirateDeal_info()
 	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_01_09");	//To dává smysl. Dobře, dobře, můžu o tom uvažovat.
 	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_01_10");	//Co z téhle dohody získáme?
 	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_01_11");	//To mi řekni ty. Za jakých podmínek bys souhlasil s poskytováním všeho potřebného mágům?
-	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_01_12");	//Hmmm...(zamyšleně) Musím si to promyslet.
+	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_01_12");	//Hmmm... (zamyšleně) Musím si to promyslet.
 	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_01_13");	//Jak dlouho to bude trvat?
 	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_01_14");	//Vrať se zítra, musím to probrat se zbytkem bandy. Pak se uvidí.
 	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_01_15");	//Dobrá.
@@ -1499,7 +1499,7 @@ func void dia_addon_greg_PirateDeal_Done_info()
 		B_GivePlayerXP(Xp_Temp);
 		B_GiveInvItems(other,self,ItMi_Gold,PirateDealCost);
 		Npc_RemoveInvItems(self,ItMi_Gold,PirateDealCost);
-		AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_Done_01_01");	//(Dychtivě) Výborně, můžeš vzkázat svým čarodějům, že jsme uzavřeli dohodu a poskytneme jim vše potřebné.
+		AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_Done_01_01");	//(dychtivě) Výborně, můžeš vzkázat svým čarodějům, že jsme uzavřeli dohodu a poskytneme jim vše potřebné.
 		AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_Done_01_02");	//Nyní musíme jen dojednat jaké zásoby máme poslat.
 		AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_Done_01_03");	//Ať sem pošlou jednoho z jejich lidí. Necítil bych se u nich dobře.
 		AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_Done_01_04");	//S ním to všechno vyřeším.
@@ -1729,7 +1729,7 @@ func int DIA_Addon_Greg_OldRumors_Condition()
 func void DIA_Addon_Greg_OldRumors_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Greg_OldRumors_01_00");	//Potkal jsem Lou.
-	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_01");	//Jakou Lou...(podrážděně)
+	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_01");	//Jakou Lou... (podrážděně)
 	AI_Output(other,self,"DIA_Addon_Greg_OldRumors_01_02");	//No, holka. Co přišla s prosbou jestli jí vezmem na Drakiu!
 	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_03");	//S prosbou?! Baliáre vem si jí! Znám ji. Je jako vzteklá vlčice a vloupala se mi do domu!
 	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_04");	//Začala na mě ječet, že když jí nevezmu na loď tak mi udělá ze života peklo.

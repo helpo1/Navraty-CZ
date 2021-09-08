@@ -44,7 +44,7 @@ func void dia_djg_7120_hokurn_perm_info()
 	AI_Output(other,self,"DIA_DJG_7120_Hokurn_Perm_01_00");	//Co budeš dělat ty?
 	AI_Output(self,other,"DIA_DJG_7120_Hokurn_Perm_01_01");	//Sedět a čekat jak se situace vyvine bude to nejlepší... (povzdech) Nic jiného nepřipadá v úvahu!
 	AI_Output(self,other,"DIA_DJG_7120_Hokurn_Perm_01_02");	//I když myslím že to nebude trvat dlouho. Věřím, že ty zelené kůže tu nebudou navěky!
-	AI_Output(self,other,"DIA_DJG_7120_Hokurn_Perm_01_03");	//Prokletí skřeti! (vztekle)Jak já je nenávidím!
+	AI_Output(self,other,"DIA_DJG_7120_Hokurn_Perm_01_03");	//Prokletí skřeti! (vztekle) Jak já je nenávidím!
 };
 
 

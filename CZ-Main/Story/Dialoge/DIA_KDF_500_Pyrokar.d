@@ -62,7 +62,7 @@ func int DIA_Pyrokar_NoEnter_PissOff_Condition()
 
 func void DIA_Pyrokar_NoEnter_PissOff_Info()
 {
-	AI_Output(self,other,"DIA_Pyrokar_NoEnter_PissOff_01_00");	//Hmm...(naštvaně)
+	AI_Output(self,other,"DIA_Pyrokar_NoEnter_PissOff_01_00");	//Hmm... (naštvaně)
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuildEnemy,0);
 };
@@ -2327,7 +2327,7 @@ func void dia_pyrokar_kapitelorcattack_what()
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_05");	//Ani si nedokážeme představit, co se tam dělo... Ani se nebojovalo, prostě masakr.
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_07");	//Lord Hagen a jeho lidé dělali co mohli... (sklíčeně) statečně bojovali do posledního dechu, ale obrovská početní přesila skřetů byla prostě příliš velká.
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_08");	//Těch pár co přežilo uteklo do pevnosti Azgan a skřeti nakonec ovládli celé město.
-	AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_What_01_09");	//Hmm...(zničeně) Situace je vážně kritická!
+	AI_Output(other,self,"DIA_Pyrokar_KapitelOrcAttack_What_01_09");	//Hmm... (zničeně) Situace je vážně kritická!
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_12");	//A to je jen malá část toho hororu, který skřeti způsobili.
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_13");	//Klášter Ohně je už delší dobu obléhán a jen Innos ví, jak dlouho to ještě vydrží.
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_What_01_14");	//Všechny cesty jsou hlídány Urukskými jednotkami a většina farem je prostě zlikvidována.
@@ -2353,7 +2353,7 @@ func void dia_pyrokar_kapitelorcattack_do()
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_07");	//Myslím, že bys měl prvně zajít za lordem Hagenem!
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_11");	//Takže se vydej co nejdříve do pevnosti Azgan a zjisti jak jsou na tom.
 	B_GiveInvItems(self,other,itwr_pyrorderfort,1);
-	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_12");	//A ještě jedna věc... (vážně).
+	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_12");	//A ještě jedna věc... (vážně)
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_13");	//Jak jsi již zjistil, město je plné skřetů, takže bude extrémně složíté se z něj dostat.
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_15");	//Jsem si ale jistý, že TY to nějak zvládneš.
 	AI_Output(self,other,"DIA_Pyrokar_KapitelOrcAttack_Do_01_16");	//Ale tvá posádka je v pasti.
@@ -2766,7 +2766,7 @@ func void dia_pyrokar_whatdousnot_info()
 		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_08");	//To znamená, že jejich moc není neomezená, tak jak se může zdát.
 		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_09");	//Když Strážci opustí Síně Temnot, aby oslabili bohy, tak se jejich síla nemůže ani zdaleka měřit moci bohů.
 		AI_Output(other,self,"DIA_Pyrokar_WhatDoUsNot_01_10");	//Takže bohové je mohou zničit?
-		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_11");	//(vážně)To je ten problém, nemohou. Za normálních okolností by mohli, ale teď je jiná situace.
+		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_11");	//(vážně) To je ten problém, nemohou. Za normálních okolností by mohli, ale teď je jiná situace.
 		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_12");	//Zdá se, že brzy padnou vinou vlastní neprozíravosti, takže na jejich pomoc se spolehnout nemůžeme.
 		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_17");	//(vážně) Třeba najdeš nějaké řešení toho všeho.
 		AI_Output(self,other,"DIA_Pyrokar_WhatDoUsNot_01_18");	//To, že zrovna tebe si Strážci přejí zabit znamená, že jsi pro ně velká hrozba.
@@ -2807,7 +2807,7 @@ func void DIA_PYROKAR_ORCSECRET_info()
 	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_01");	//Lee mě poslal...
 	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_02");	//V posledním střetnutí se skřety, si všiml, že někteří z nich byli téměř nezranitelní.
 	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_04");	//To mu dělá velké starosti, protože lidé by v takovém případě neměli šanci proti skřetům v nadcházející bitvě.
-	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_05");	//(Zamyšleně)... Myslím, že všechny ty odkazy jsou jeden velký řetěz!
+	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_05");	//(zamyšleně) Myslím, že všechny ty odkazy jsou jeden velký řetěz!
 	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_06");	//Určitě tam nebyli bez zásahu Strážců.
 	AI_Output(other,self,"DIA_PYROKAR_ORCSECRET_01_07");	//Dokuď je nezníčíme, všechny naše akce jsou bezvýznamné?
 	AI_Output(self,other,"DIA_PYROKAR_ORCSECRET_01_08");	//Obávám se, že ano.
@@ -2892,7 +2892,7 @@ func void dia_pyrokar_telltohagenfort_info()
 	AI_Output(self,other,"DIA_Pyrokar_TellToHagenFort_01_01");	//A co říkal? Jak hodnotí tuhle situaci?
 	AI_Output(other,self,"DIA_Pyrokar_TellToHagenFort_01_02");	//Myslí si, že situace by nemohla být horší! Když bránili město proti skřetům tak měli obrovské ztráty.
 	AI_Output(other,self,"DIA_Pyrokar_TellToHagenFort_01_03");	//Proto zůstane v pevnosti, dokud nevymyslí nějaký plán na protiútok.
-	AI_Output(self,other,"DIA_Pyrokar_TellToHagenFort_01_12");	//(Zoufale) No dobře. Doufám, že si toho je vědom. Ostatně je to vůdce paladinů, snad to nějak vyřeší.
+	AI_Output(self,other,"DIA_Pyrokar_TellToHagenFort_01_12");	//(zoufale) No dobře. Doufám, že si toho je vědom. Ostatně je to vůdce paladinů, snad to nějak vyřeší.
 };
 
 
@@ -3839,7 +3839,7 @@ func void DIA_Pyrokar_PiratePray_Gold_Three()
 	B_GivePlayerXP(300);
 	B_GiveInvItems(other,self,ItMi_Gold,3000);
 	AI_Output(other,self,"DIA_Pyrokar_PiratePray_Gold_Three_01_00");		//Tři tisíce zlatých.
-	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_Three_01_01");		//Co...(respekt) srdečně děkuji za tento velkorysý dar, můj synu!
+	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_Three_01_01");		//Co... (respekt) srdečně děkuji za tento velkorysý dar, můj synu!
 	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_Three_01_02");		//Zařídím hodinu modliteb za očištění duše těchto lidí a to okamžitě.
 	GregBonusPray = 3;
 	B_LogEntry(TOPIC_PiratePray,"Pyrokar se bude modlit za duše mužů Grega.");
@@ -4046,7 +4046,7 @@ func void dia_pyrokar_DarkOrden_SLK_info()
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_11");		//Ale zdá se, že naše akce přiměly nepřítele bojovat ještě s větším zápalem, aby si na nás vybil zuřivost.
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_12");		//Pokud to takhle půjde dále, město padne. A za ním celý ostrov!
 	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_SLK_01_13");		//Pak co můžeme teď dělat?
-	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_14");		//(Depresivně) Zdá se mi, že jsme jednali správným směrem. Nicméně, stále něco chybí.
+	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_14");		//(depresivně) Zdá se mi, že jsme jednali správným směrem. Nicméně, stále něco chybí.
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_15");		//Něco, co se skrývá před našim zrakem a znemožňuje nám ukončit situaci.
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_16");		//Takže jediná věc, která mě teď napadá, je zajít do města a promluvit si se samotným lordem Hagenem.
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_17");		//Koneckonců, on je hlavou řádu paladinů. A určitě nám může řict více o těch lidech.

@@ -142,7 +142,7 @@ func void dia_nash_hello_valley_info()
 	if(NASHREADYTEACH == TRUE)
 	{
 		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_06");	//Pamatuju si, že jeden z lovců, Karrok, mi řekl o divném podzemním komlexu... Jestli je to krypta nebo chrám...
-		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_07");	//... si nepamatuju... Jenom vím, že říkal, že je to východně od tábora... (přemýšlí)... Je to dlouho.
+		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_07");	//... si nepamatuju... Jenom vím, že říkal, že je to východně od tábora... (přemýšlí) Je to dlouho.
 		AI_Output(other,self,"DIA_Nash_Hello_Valley_01_08");	//Kde je teď Karrok?
 		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_09");	//Bohužel se nevrátil z lovu.
 		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_10");	//Každýmu vyprávěl, jak se do toho chrámu ještě vrátí.

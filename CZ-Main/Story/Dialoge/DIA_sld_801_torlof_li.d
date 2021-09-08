@@ -167,7 +167,7 @@ func void dia_torlof_li_storm_info()
 {
 	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_01");	//Konečně jsi přišel k sobě. Jak se cítíš?
 	AI_Output(other,self,"DIA_Torlof_LI_Storm_01_02");	//Hlavu mám jako kdyby mě po ní někdo praštil trámem.
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_03");	//Ano...(směje se) Něco podobného se opravdu stalo příteli!
+	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_03");	//Ano... (směje se) Něco podobného se opravdu stalo příteli!
 	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_08");	//Během bouře jsi mi pomohl vyrovnat kormidlo a vše vypadalo dobře, ale pak nás jedna vlna doslova srazila!
 	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_09");	//Tebe odhodila a hlavou si narazil do dřevřného zábradlí.
 	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_13");	//Sakra (vážnř) Ta bouře by nás brzy poslala na onen svět!
@@ -204,7 +204,7 @@ func int dia_torlof_li_repair_condition()
 func void dia_torlof_li_repair_info()
 {
 	AI_Output(other,self,"DIA_Torlof_LI_Repair_01_01");	//Můžu nějak pomoct s opravou?
-	AI_Output(self,other,"DIA_Torlof_LI_Repair_01_02");	//Ty?! Hmm...(přemýšlí) To nevím.
+	AI_Output(self,other,"DIA_Torlof_LI_Repair_01_02");	//Ty?! Hmm... (přemýšlí) To nevím.
 	AI_Output(self,other,"DIA_Torlof_LI_Repair_01_03");	//Pro začátek musíme prozkoumat škody. A pak vymyslet jak to všechno opravit.
 	AI_Output(self,other,"DIA_Torlof_LI_Repair_01_04");	//Takže teď pomoc nepotřebuji, stav se pak...
 	AI_Output(other,self,"DIA_Torlof_LI_Repair_01_05");	//Dobrá.
@@ -251,7 +251,7 @@ func void dia_torlof_li_repairhelp_info()
 	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_13");	//Takže budeme muset najít náhradu.
 	AI_Output(other,self,"DIA_Torlof_LI_RepairHelp_01_14");	//Ale kde seženeme nové?
 	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_15");	//To je to, co musíš udělat. Najít a přinést náhradu. Bude stačit jakékoli ozubené kolo!
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_17");	//Jiný způsob není...(smutně) Jinak tady budeme trčet hodně dlouho!
+	AI_Output(self,other,"DIA_Torlof_LI_RepairHelp_01_17");	//Jiný způsob není... (smutně) Jinak tady budeme trčet hodně dlouho!
 	AI_Output(other,self,"DIA_Torlof_LI_RepairHelp_01_18");	//Uvidím, co se dá dělat.
 	B_LogEntry(TOPIC_REPAIRSHIP,"Torlof mě požádal o pomoc při opravě kormidla. Porušilo se hřídel ozubených kol - upadl jí zub a loď je takhle neovladatelná. Musím najít jakoukoliv ozubenou hřídel a přinést ji kapitánovi.");
 };
@@ -289,7 +289,7 @@ func void dia_torlof_li_repairhelpdone_info()
 	AI_Output(other,self,"DIA_Torlof_LI_RepairHelpDone_01_05");	//V jedné malé pyramidě, kterou jsem našel ve středu ostrova.
 	AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_06");	//To vůbec není špatné! Určitě to nebyla ztráta času.
 	AI_Output(other,self,"DIA_Torlof_LI_RepairHelpDone_01_07");	//Pomůže opravit kormidlo?
-	AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_08");	//Hmm...(zamyšleně) Uvidíme.
+	AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_08");	//Hmm... (zamyšleně) Uvidíme.
 	AI_SetWalkMode(self,NPC_WALK);
 	AI_GotoWP(self,"SHIP_EXTRO");
 	AI_AlignToWP(self);
@@ -618,13 +618,13 @@ func void dia_torlof_li_islandprogress_info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_00");	//Podívej se, našel sem tuto tabulku.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_01");	//Hmm...(překvapeně) Zajímavý kousek!
+	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_01");	//Hmm... (překvapeně) Zajímavý kousek!
 	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_03");	//Ukazuje nějaký podivný druh symbolů.
 	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_05");	//(se zájmem) Podívám se pořádně.
 	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_06");	//Tady je.
 	B_GiveInvItems(other,self,itwr_lostislandmap,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_07");	//Hmm...(zamyšleně) Je to všechno nějak divný.
+	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_07");	//Hmm... (zamyšleně) Je to všechno nějak divný.
 	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_08");	//(váhavě) Ačkoliv, když se na to podívám z úhlu, vypadá to jako...
 	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_10");	//Nejsem si jistý, ale ta kamenná tabulka se podobá mapě.
 	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_11");	//Mapě?!
@@ -637,7 +637,7 @@ func void dia_torlof_li_islandprogress_info()
 	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_21");	//Bez něj nemůžu určit naši polohu
 	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_22");	//Dobře! Pokusím se ho najít.
 	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_23");	//Zkus to, ale nemyslím si, že na tomhle ostrově něco takového bude.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_24");	//Ale možná budeš mít zase štěstí jako vždy...(směje se) A podaěí se ti ho najít!
+	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_24");	//Ale možná budeš mít zase štěstí jako vždy... (směje se) A podaěí se ti ho najít!
 	CAPNEEDSEXTANT = TRUE;
 	B_LogEntry(TOPIC_LOSTISLAND,"Ukázal jsem Torlofovi kamennou tabulku, kterou jsem našel na ostrově. Když jsme ji blíže prozkoumali, zjistil, že to může být mapa. Nicméně bez sextantu nemůže určit přesnou naši polohu. Proto ho musím někde na ostrově najít.");
 };
@@ -705,7 +705,7 @@ func void dia_torlof_li_search_info()
 	B_GivePlayerXP(300);
 	AI_Output(self,other,"DIA_Torlof_LI_Search_01_00");	//Dobře že jsi tu, mám ty výpočty.
 	AI_Output(other,self,"DIA_Torlof_LI_Search_01_01");	//Jak to vypadá?
-	AI_Output(self,other,"DIA_Torlof_LI_Search_01_04");	//Hmm...(zamyšleně) Ty symboly opravdu něco znamenají!
+	AI_Output(self,other,"DIA_Torlof_LI_Search_01_04");	//Hmm... (zamyšleně) Ty symboly opravdu něco znamenají!
 	AI_Output(self,other,"DIA_Torlof_LI_Search_01_05");	//Ověřil sem si na mapě naši minulou polohu a určil novou. Udělal jsem malé odchylky kvůli bouřce...
 	AI_Output(self,other,"DIA_Torlof_LI_Search_01_06");	//A pak jsem vypočital čiselné údaje které byly namalováný na zadní straně kamenné tabulky kterou si našel.
 	AI_Output(other,self,"DIA_Torlof_LI_Search_01_08");	//A co tím myslíš?
@@ -742,7 +742,7 @@ func int dia_torlof_li_aboutisland_condition()
 func void dia_torlof_li_aboutisland_info()
 {
 	AI_Output(other,self,"DIA_Torlof_LI_AboutIsland_01_01");	//Může být na ostrově někdo živý?
-	AI_Output(self,other,"DIA_Torlof_LI_AboutIsland_01_02");	//Těžko...(pochybuje) Pravděpodobně je ostrov neobydlen.
+	AI_Output(self,other,"DIA_Torlof_LI_AboutIsland_01_02");	//Těžko... (pochybuje) Pravděpodobně je ostrov neobydlen.
 	AI_Output(self,other,"DIA_Torlof_LI_AboutIsland_01_05");	//Když si to logicky vezmeš.
 	AI_Output(self,other,"DIA_Torlof_LI_AboutIsland_01_06");	//Kdyby tu někdo byl, už bychom o něm věděli.
 	AI_Output(self,other,"DIA_Torlof_LI_AboutIsland_01_07");	//Kromě pár ještěrů na pobřeží jsme ale nikoho neviděli.
@@ -772,7 +772,7 @@ func void dia_torlof_li_whereguys_info()
 {
 	AI_Output(other,self,"DIA_Torlof_LI_WhereGuys_01_01");	//Kde jsou ostatní chlapi?!
 	AI_Output(self,other,"DIA_Torlof_LI_WhereGuys_01_02");	//Většina chlapů šla na břeh, jakmile sme ztrozkotali tady na tom ostrově.
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGuys_01_04");	//No...(váhavě) Chtěli prozkoumat pobřeží ostrov
+	AI_Output(self,other,"DIA_Torlof_LI_WhereGuys_01_04");	//No... (váhavě) Chtěli prozkoumat pobřeží ostrov
 };
 
 
@@ -830,14 +830,14 @@ func void dia_torlof_li_misscompas_info()
 {
 	B_GivePlayerXP(150);
 	AI_Output(other,self,"DIA_Torlof_LI_MissCompas_01_01");	//Gorn říkal, že jsi ztratil svůj kompas
-	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_02");	//Ano...(zklamaně)
+	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_02");	//Ano... (zklamaně)
 	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_04");	//V průběhu bouře mi asi vypadl z kapsy.
 	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_05");	//Ale nejsem si jistý, kde je...
-	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_07");	//Eh...(smutně) Byl to dar na památku od jednoho velmi starého přítele.
+	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_07");	//Eh... (smutně) Byl to dar na památku od jednoho velmi starého přítele.
 	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_08");	//Vždy jsem věřil, že mi nosí štěstí!
 	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_09");	//Ale tentokrát se ode mne odvrátil.
 	AI_Output(other,self,"DIA_Torlof_LI_MissCompas_01_10");	//Hledal jsi ho?!
-	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_11");	//Jasně že hledal...(smutně) Na všech palubách, ale prostě tu není!
+	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_11");	//Jasně že hledal... (smutně) Na všech palubách, ale prostě tu není!
 	B_LogEntry(TOPIC_MISSMYGOLD,"Zeptal jsem se Torlofa na jeho kompas. Byl mu velmi cenný a ještě ho nenašel. Měl bych se po něm podívat.");
 };
 
@@ -872,8 +872,8 @@ func void dia_torlof_li_wheregolddone_info()
 	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_09");	//Co tím naznačuješ příteli?
 	AI_Output(other,self,"DIA_Torlof_LI_WhereGoldDone_01_12");	//Na tvém místě bych řekl pravdu.
 	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_13");	//Pravdu?! Hmmm... (zmatený) Ale...
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_15");	//Ach, jo! Jak to říct...(váhavě) Posádka ho musela vyhodit přes palubu.
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_18");	//Tak to je...(vážně) Loď byla přetížena, bylo by z nás žrádlo pro ryby.
+	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_15");	//Ach, jo! Jak to říct... (váhavě) Posádka ho musela vyhodit přes palubu.
+	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_18");	//Tak to je... (vážně) Loď byla přetížena, bylo by z nás žrádlo pro ryby.
 	AI_Output(other,self,"DIA_Torlof_LI_WhereGoldDone_01_19");	//Opravdu bylo nutné vyhodit všechno zlato?!
 	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_27");	//Ano bohužel. Ale stále budeš mít šanci stát se bohatý!
 	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_28");	//Raději bys měl děkovat Innosovi, že žijeme! To je mnohem důležitější.
@@ -974,7 +974,7 @@ func void dia_torlof_li_bringfooddoneext_info()
 	Info_ClearChoices(dia_torlof_li_bringfooddoneext);
 	if(GORNTELLABOUTMEAT == TRUE)
 	{
-		Info_AddChoice(dia_torlof_li_bringfooddoneext,"(Tady, ber 14 pečeného masa a jablek)",dia_torlof_li_bringfooddoneext_fifty);
+		Info_AddChoice(dia_torlof_li_bringfooddoneext,"Tady, ber. (dát 14 kusů pečeného masa a jablek)",dia_torlof_li_bringfooddoneext_fifty);
 	};
 	Info_AddChoice(dia_torlof_li_bringfooddoneext,"Tady, ber.",dia_torlof_li_bringfooddoneext_sixty);
 };
@@ -987,7 +987,7 @@ func void dia_torlof_li_bringfooddoneext_fifty()
 	B_GiveInvItems(other,self,ItFo_Apple,20);
 	Npc_RemoveInvItems(self,ItFoMutton,14);
 	Npc_RemoveInvItems(self,ItFo_Apple,20);
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_01");	//Hmmm...(zamyšleně) A co ostatní?!
+	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_01");	//Hmmm... (zamyšleně) A co ostatní?!
 	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_02");	//Zdá se mi, že jsi měl více masa.
 	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_13");	//No, nic už to neřešme.
 	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Fifty_01_14");	//Ale díky!
@@ -1044,9 +1044,9 @@ func void dia_torlof_li_findmagicorecave_info()
 	{
 		B_GivePlayerXP(1000);
 		AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCave_01_03");	//Našel jsem ložisko magické rudy.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_04");	//Opravdu? (udiveně)?
+		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_04");	//Opravdu? (udiveně)
 		AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCave_01_05");	//Celý ostrov je jí naplněný.
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_06");	//Hmm...(překvapeně) To jsou dost neobvyklé novinky.
+		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_06");	//Hmm... (překvapeně) To jsou dost neobvyklé novinky.
 		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_07");	//Magická ruda je velmi vzácná. Hlavně v tak obrovském množství.
 		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_08");	//Co já vím, tak jediná velká ložiska jsou v Nordmaru a Khorinisu.
 		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_09");	//Jestli máš pravdu, je to opravdu nádhera!
@@ -1062,7 +1062,7 @@ func void dia_torlof_li_findmagicorecave_info()
 		B_GivePlayerXP(500);
 		AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCave_01_19");	//V jedné jeskyni na ostrově je ložisko rudy.
 		AI_Output(other,self,"DIA_Torlof_LI_FindMagicOreCave_01_20");	//Pravděpodobně jsou tu ukryty ještě větší zásoby!
-		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_21");	//Hmm...(překvapeně) To jsou dost neobvyklé novinky.
+		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_21");	//Hmm... (překvapeně) To jsou dost neobvyklé novinky.
 		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_22");	//Magická ruda je velmi vzácná! Hlavně v tak obrovském množství.
 		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_23");	//Já myslel, že jediná velká ložiska jsou v Nordmaru a na Khorinisu.
 		AI_Output(self,other,"DIA_Torlof_LI_FindMagicOreCave_01_24");	//Tohle je opravdu velký objev!
@@ -1165,7 +1165,7 @@ func int dia_torlof_li_changecourse_condition()
 func void dia_torlof_li_changecourse_info()
 {
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_01_01");	//Co budeme dělat teď?
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_01_02");	//Hmm...(zmateně) Ještě nevím!
+	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_01_02");	//Hmm... (zmateně) Ještě nevím!
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_01_03");	//Bylo by dobré zajistit rudu.
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_01_04");	//Na kontinentu by za ni byla hromada zlata!
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_01_07");	//Naše loď je už tak plná krabic a ruda taky váží hodně!
@@ -1183,12 +1183,12 @@ func void dia_torlof_li_changecourse_info()
 func void dia_torlof_li_changecourse_paladin()
 {
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Paladin_01_01");	//Mohli bychom o tom říci Hagenovi!
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_02");	//Co?!(naštvaně) Dát rudu paladinům?!
+	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_02");	//Co?! (naštvaně) Dát rudu paladinům?!
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Paladin_01_03");	//Potřebujou ji více než mi. S ní budou mít větší šanci vyhrát válku.
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_04");	//A co?! Možná že už ju prohráli!
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_07");	//Eh...(naštvaně) Ať je po tvém.
+	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_07");	//Eh... (naštvaně) Ať je po tvém.
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_08");	//Pak se tedy vrátíme na Khorinis.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_09");	//Nemyslím, že ta myšlenka chlapi nadchne...(pochybuje)
+	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_09");	//Nemyslím, že ta myšlenka chlapi nadchne... (pochybuje)
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Paladin_01_10");	//Vysvětlím jim to!
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_11");	//Když to říkáš! Pak dej vědět co na to ěekli...
 	MIS_CHANGECOURSE = LOG_Running;
@@ -1203,13 +1203,13 @@ func void dia_torlof_li_changecourse_sell()
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Sell_01_01");	//Můžeme prodat ostrov i s rudou!
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_02");	//A kdo by ho chtěl?
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Sell_01_04");	//Nevím... Co paladinové?
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_05");	//Hmm...(zamyšleně) To není špatný nápad!
+	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_05");	//Hmm... (zamyšleně) To není špatný nápad!
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_06");	//Vzhledem k jejich situaci by to měli přijmout.
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_07");	//Kdo z paladinů by ale mohl přijmout naše podmínky?
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Sell_01_08");	//Možná lord Hagen.
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_10");	//S největší pravděpodobností by to mohl být on.
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_11");	//Můžeme se vrátit na Khorinis.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_12");	//Ale nevím co na to řeknou chlapi...(nejistě)
+	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_12");	//Ale nevím co na to řeknou chlapi... (nejistě)
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Sell_01_13");	//Já je přesvědčím!
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Sell_01_14");	//Dobrá, na tebe dají...
 	MIS_CHANGECOURSE = LOG_Running;
@@ -1222,7 +1222,7 @@ func void dia_torlof_li_changecourse_sell()
 func void dia_torlof_li_changecourse_here()
 {
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Here_01_01");	//Zůstaneme zde a budeme těžit.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Here_01_02");	//Hmm...(zamyšleně) To není dobrý nápad.
+	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Here_01_02");	//Hmm... (zamyšleně) To není dobrý nápad.
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Here_01_05");	//Vyžadovalo by to kopat od rána do noci a byli bychom tu celé věky.
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Here_01_06");	//Kromě toho nechci tu strávit zbytek života.
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Here_01_07");	//(mrzutě) A ty snad taky ne!
@@ -1257,7 +1257,7 @@ func void dia_torlof_li_changecoursedone_info()
 	{
 		B_GivePlayerXP(500);
 		AI_Output(other,self,"DIA_Torlof_LI_ChangeCourseDone_01_03");	//Většina chce jít pomoci paladinům.
-		AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_05");	//No, dobře...(smutně) Tak rozhodla většina...
+		AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_05");	//No, dobře... (smutně) Tak rozhodla většina...
 		AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_06");	//Jen doufám že to lordu Hagenovi upravdu pomůže.
 		B_LogEntry(TOPIC_CHANGECOURSE,"Dohodli jsme se pro rozhodnutí říci o rudě paladinům.");
 		LIGOFORFREE = TRUE;

@@ -76,7 +76,7 @@ func void dia_joru_hello_info()
 
 	if(PSI_TALK == TRUE)
 	{
-		AI_Output(self,other,"DIA_Joru_Hello_11_01");	//Nevybral sis zrovna nejvhodnější čas. Templáři se připravují na boj a my novicové ve dne i v noci pracujeme(unaveně)
+		AI_Output(self,other,"DIA_Joru_Hello_11_01");	//Nevybral sis zrovna nejvhodnější čas. Templáři se připravují na boj a my novicové ve dne i v noci pracujeme. (unaveně)
 		AI_Output(self,other,"DIA_Joru_Hello_11_02");	//Nemám čas na vykecávání. Tak mě nevyrušuj. Teda v případě že nechceš zrovna něco koupit.
 		Log_CreateTopic(TOPIC_TRADERPSI,LOG_NOTE);
 		B_LogEntry(TOPIC_TRADERPSI,"Kovář Joru vyrábí zbraně a taky je prodává. Většinu času sedí ve své kovárně.");

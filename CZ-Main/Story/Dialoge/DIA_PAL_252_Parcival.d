@@ -277,7 +277,7 @@ func void DIA_Parcival_ALLESKLAR_Info()
 	}
 	else if(Parcival_BRAVE_LaberCount > 6)
 	{
-		AI_Output(self,other,"DIA_Parcival_ALLESKLAR_13_03");	//(Smích) Teď už vím co jsi zač! Ne, můj příteli, tentokrát ne.
+		AI_Output(self,other,"DIA_Parcival_ALLESKLAR_13_03");	//(smích) Teď už vím co jsi zač! Ne, můj příteli, tentokrát ne.
 	}
 	else
 	{
@@ -676,7 +676,7 @@ func int DIA_Parcival_Kill_Arbaleters_condition()
 func void DIA_Parcival_Kill_Arbaleters_info()
 {
 	AI_Output(other,self,"DIA_Parcival_Kill_Arbaleters_01_00");	//Máte pro mě nějaké rozkazy?.
-	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_01");	//(Uznale) Podařilo se ti dostat až do hradu. Takže, opravdu za něco stojíš.
+	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_01");	//(uznale) Podařilo se ti dostat až do hradu. Takže, opravdu za něco stojíš.
 	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_02");	//Ale chci tě předem upozornit, že se jedná o velmi obtížnou a nebezpečnou záležitost!
 	AI_Output(other,self,"DIA_Parcival_Kill_Arbaleters_01_03");	//A já myslel že už mám obtížné věci za sebou.
 	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_04");	//Tak už to je, že musíš nést břímně, které by nikdo z mých lidí neunes.

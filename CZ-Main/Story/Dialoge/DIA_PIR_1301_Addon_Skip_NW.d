@@ -96,7 +96,7 @@ func int DIA_Addon_Skip_NW_WerBistDu_Condition()
 func void DIA_Addon_Skip_NW_WerBistDu_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Skip_NW_WerBistDu_15_00");	//Kdo jsi?
-	AI_Output(self,other,"DIA_Addon_Skip_NW_WerBistDu_08_01");	//Nevím, co ti je do toho. Ale... pokud to chceš opravdu vědět, moje jméno je Skip (hrdě). Zazvonil nějaký zvonec?
+	AI_Output(self,other,"DIA_Addon_Skip_NW_WerBistDu_08_01");	//Nevím, co ti je do toho. Ale... pokud to chceš opravdu vědět, moje jméno je Skip. (hrdě) Zazvonil nějaký zvonec?
 	AI_Output(other,self,"DIA_Addon_Skip_NW_WerBistDu_15_02");	//(jako kdyby nepochopil) Kdo?
 	AI_Output(self,other,"DIA_Addon_Skip_NW_WerBistDu_08_03");	//Neříkej mi, že jsi neslyšel jméno Skip. Bože, odkud vlastně jsi?
 	AI_Output(self,other,"DIA_Addon_Skip_NW_WerBistDu_08_04");	//Jsem jeden z nejhledanějších kriminálníků v Khorinisu. Já a mí hoši jsme se plavili těmito vodami okolo tohoto ostrůvku po mnoho let.

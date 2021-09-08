@@ -102,7 +102,7 @@ func void DIA_Torlof_Probe_Info()
 	if(Npc_KnowsInfo(other,DIA_Lee_OtherSld))
 	{
 		AI_Output(other,self,"DIA_Torlof_Probe_15_02");	//Řekl, že mi pomůžeš.
-		AI_Output(self,other,"DIA_Torlof_Probe_01_03");	//Dobrá...(vzdychne si) Fajn! Než se k nám budeš moci přidat, musíš udělat dvě věci.
+		AI_Output(self,other,"DIA_Torlof_Probe_01_03");	//Dobrá... (vzdychne si) Fajn! Než se k nám budeš moci přidat, musíš udělat dvě věci.
 		AI_Output(self,other,"DIA_Torlof_Probe_01_04");	//Za prvé - musíš prokázat, že budeš schopný zvládnout úkoly, které budeš jako žoldák dostávat. Sám tě ozkouším.
 		AI_Output(self,other,"DIA_Torlof_Probe_01_05");	//A za druhé: musíš si vysloužit respekt ostatních žoldáků.
 		Torlof_Go = TRUE;
@@ -1086,7 +1086,7 @@ func int DIA_Torlof_BEMYCAPTAIN_Condition()
 func void DIA_Torlof_BEMYCAPTAIN_Info()
 {
 	AI_Output(other,self,"DIA_Torlof_BEMYCAPTAIN_15_00");	//Ty jsi námořník?
-	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_01_01");	//Konečně tě to trklo?! (přkvapeně)Jo, ksakru, jsem námořník! Proč se ptáš?
+	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_01_01");	//Konečně tě to trklo?! (přkvapeně) Jo, ksakru, jsem námořník! Proč se ptáš?
 	AI_Output(other,self,"DIA_Torlof_BEMYCAPTAIN_15_02");	//Hodily by se mi tvoje schopnosti. Potřebuji se dostat na jeden ostrov.
 	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_01_03");	//(zasměje se) Na ostrov? Vždyť ani nemáš loď, natož posádku, která by ji řídila!
 	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_01_04");	//Ne, chlapče! Jestli chceš využít mých služeb jako kapitána a učitele síly, musíš mi nejdřív dokázat, že víš, o čem mluvíš.
@@ -1100,7 +1100,7 @@ func void DIA_Torlof_BEMYCAPTAIN_Info()
 func void dia_torlof_bemycaptain_no()
 {
 	AI_Output(other,self,"DIA_Torlof_BEMYCAPTAIN_No_01_00");	//Aha. Promiň, že jsem rušil.
-	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_No_01_01");	//Tak tak (směje se). Už mě neruš.
+	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_No_01_01");	//Tak tak. (směje se) Už mě neruš.
 	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_01_08");	//Jdi!
 	AI_StopProcessInfos(self);
 };
@@ -1607,9 +1607,9 @@ func void dia_sld_801_torlof_travelonbigland_info()
 		AI_Output(other,self,"DIA_SLD_801_Torlof_TravelOnBigLand_01_04");	//Ano. Není čas na zdržování.
 		AI_Output(self,other,"DIA_SLD_801_Torlof_TravelOnBigLand_01_05");	//Dobrá. Naše cesta začíná.
 		AI_TurnToNPC(self,DiegoNW);
-		AI_Output(self,other,"DIA_SLD_801_Torlof_TravelOnBigLand_01_06");	//...(řve) Hej vy suchozemské krysy! Na místa!
-		AI_Output(self,other,"DIA_SLD_801_Torlof_TravelOnBigLand_01_07");	//...(řve) Zvednout kotvu, napnout plachty!
-		AI_Output(self,other,"DIA_SLD_801_Torlof_TravelOnBigLand_01_08");	//...(řev) Pohněte kostrou!
+		AI_Output(self,other,"DIA_SLD_801_Torlof_TravelOnBigLand_01_06");	//... (řve) Hej vy suchozemské krysy! Na místa!
+		AI_Output(self,other,"DIA_SLD_801_Torlof_TravelOnBigLand_01_07");	//... (řve) Zvednout kotvu, napnout plachty!
+		AI_Output(self,other,"DIA_SLD_801_Torlof_TravelOnBigLand_01_08");	//... (řev) Pohněte kostrou!
 		ALLSAYGOODBUY = TRUE;
 		MIS_SALETOBIGLAND = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_SALETOBIGLAND,LOG_SUCCESS);

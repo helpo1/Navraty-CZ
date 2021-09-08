@@ -38,7 +38,7 @@ func int DIA_Addon_Eremit_Hello_Condition()
 
 func void DIA_Addon_Eremit_Hello_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Eremit_Add_15_00");	//(Překvapeně) Co tady děláš?
+	AI_Output(other,self,"DIA_Addon_Eremit_Add_15_00");	//(překvapeně) Co tady děláš?
 	AI_Output(self,other,"DIA_Addon_Eremit_Add_04_00");	//Co tu dělám?! A co TY tu k čertu děláš?
 	AI_Output(self,other,"DIA_Addon_Eremit_Add_04_01");	//Šel jsem co do nejodlehlejší části ostrova, abych měl klid!
 	AI_Output(self,other,"DIA_Addon_Eremit_Add_04_02");	//Občanská válka, útočící banditi, hordy skřetů skoro na prahu...

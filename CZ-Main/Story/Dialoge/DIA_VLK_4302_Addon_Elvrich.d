@@ -490,7 +490,7 @@ func void dia_addon_elvrich_elvrichgrittadone_info()
 	AI_Output(other,self,"DIA_Addon_Elvrich_ElvrichGrittaDone_01_02");	//Tak to jsem rád!
 	AI_Output(self,other,"DIA_Addon_Elvrich_ElvrichGrittaDone_01_03");	//Díky!
 	AI_Output(self,other,"DIA_Addon_Elvrich_ElvrichGrittaDone_01_04");	//Nikdy nezapomenu, co jsi pro mě udělal a proto ti chci poděkovat!
-	AI_Output(self,other,"DIA_Addon_Elvrich_ElvrichGrittaDone_01_05");	//Pokud by si někdy potřeboval nějaké nové paklíče, neváhej a přijď za mnou.
+	AI_Output(self,other,"DIA_Addon_Elvrich_ElvrichGrittaDone_01_05");	//Pokud bys někdy potřeboval nějaké nové paklíče, neváhej a přijď za mnou.
 	AI_Output(self,other,"DIA_Addon_Elvrich_ElvrichGrittaDone_01_06");	//Vždy ti jich pár dám, a to zcela zadarmo!
 	ELVRICHGIVEKEYLOCK = TRUE;
 };

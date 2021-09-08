@@ -1148,7 +1148,7 @@ func void DIA_ADDON_VATRAS_MagicBook_info()
 	AI_Output(other,self,"DIA_ADDON_VATRAS_MagicBook_01_00");	//Máš pro mě něco dalšího?
 	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_01");	//Hmmm... Nejsem si jistý, jestli ti mohu s tímhle důvěřovat.
 	AI_Output(other,self,"DIA_ADDON_VATRAS_MagicBook_01_02");	//O co se jedná?
-	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_03");	//Nooo...(šeptá) Nedávno jsem byl okraden!
+	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_03");	//Nooo... (šeptá) Nedávno jsem byl okraden!
 	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_04");	//Vůbec mě netrápí, že ukradli všechno zlato co dokázali najít v domě.
 	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_05");	//Ale oni sebrali i můj deník, kde jsem měl zapsané jak vytvářet runy.
 	AI_Output(self,other,"DIA_ADDON_VATRAS_MagicBook_01_06");	//Ten deník byl pro mě nedocenitelný.
@@ -3570,7 +3570,7 @@ func void DIA_Vatras_JarCurse_Yes()
 func void DIA_Vatras_JarCurse_No()
 {
 	AI_Output(other,self,"DIA_Vatras_JarCurse_No_01_01");	//Promiň, ale nemám na to teď čas.
-	AI_Output(self,other,"DIA_Vatras_JarCurse_No_01_02");	//Škoda...(Zklamaně) Ale aspoň jsi mě vyslyšel.
+	AI_Output(self,other,"DIA_Vatras_JarCurse_No_01_02");	//Škoda... (zklamaně) Ale aspoň jsi mě vyslyšel.
 	AI_StopProcessInfos(self);
 };
 
@@ -3747,7 +3747,7 @@ func void dia_addon_vatras_wisp_info()
 	B_GiveInvItems(self,other,ItAm_Addon_WispDetector,1);
 	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_03");	//Toto je amulet hledající bludičky.
 	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_04");	//Velmi vzácna věc! Bludička, co žije v tomto amuletě má speciální schopnosti.
-	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_05");	//Pomůže ti v hledání věcí, co by si bez něj nenašel.
+	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_05");	//Pomůže ti v hledání věcí, co bys bez ní nenašel.
 	//AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_06");	//Chtoby vyzvat' ogon'ka, prosto naden' amulet.
 	//AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_07");	//Yesli ogonek poteryayet svoyu silu ili poteryayetsya, snimi amulet i naden' yego snova, i ogonek vernetsya.
 	AI_Output(self,other,"DIA_Addon_Vatras_Waffen_WISP_05_10");	//Nechej si ho, nikdy tě nezklame.

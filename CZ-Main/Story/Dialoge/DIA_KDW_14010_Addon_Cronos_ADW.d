@@ -124,14 +124,14 @@ func int DIA_Addon_Cronos_NeedFood_Condition()
 func void DIA_Addon_Cronos_NeedFood_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Cronos_NeedFood_01_00");	//Je něco, co tě trápí?
-	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_01");	//(Reptání) To si piš. Samozřejmě!
+	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_01");	//(reptání) To si piš. Samozřejmě!
 	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_02");	//Zatímco ostatní mágové zkoumají kulturu Stavitelů, musím se starat o naléhavější záležitosti.
 	AI_Output(other,self,"DIA_Addon_Cronos_NeedFood_01_03");	//O co přesně?
 	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_04");	//Jsem zodpovědný za zásobování této expedice! Proviant, lektvary, zbraně, svítilny - je to všechno na mě.
 	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_05");	//Saturas má v plánu zůstat tady ještě velmi dlouho a naše zásoby vystačí sotva na pár týdnů.
 	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_06");	//A teď si lámu hlavu nad tím, jak zajistit, abychom měli vše, co potřebujeme.
 	AI_Output(other,self,"DIA_Addon_Cronos_NeedFood_01_07");	//Co potřebuješ?
-	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_08");	//(Zamyšleně) Do začátku zásoby! Ty věci se shání velmi špatně.
+	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_08");	//(zamyšleně) Do začátku zásoby! Ty věci se shání velmi špatně.
 	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_09");	//V této části ostrova na mrchožrouta nenarazíš. Samé krvavé mouchy a jiné nepoživatelné potvory.
 	AI_Output(other,self,"DIA_Addon_Cronos_NeedFood_01_10");	//Možná bych vám s tím mohl pomoct? V lovu se opravdu vyznám.
 	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_11");	//Doufal jsem, že to řekneš! Potom, pokud je to možné, přines mi alespoň padesát kusů masa.

@@ -152,7 +152,7 @@ func int DIA_Edda_TeachCook_Condition()
 func void DIA_Edda_TeachCook_Info()
 {
 	AI_Output(other,self,"DIA_Edda_TeachCook_01_00");	//Naučila bys mě vařit polévku?
-	AI_Output(self,other,"DIA_Edda_TeachCook_01_01");	//Hmmm...(přemýšlí) Vzhledem k tomu to bude těžší! Ale jsem připravena vám pomoci v případě několika zlatých mincí.
+	AI_Output(self,other,"DIA_Edda_TeachCook_01_01");	//Hmmm... (přemýšlí) Vzhledem k tomu to bude těžší! Ale jsem připravena vám pomoci v případě několika zlatých mincí.
 	EddaTeachCook = TRUE;
 	Log_CreateTopic(TOPIC_COOK,LOG_NOTE);
 	B_LogEntry(TOPIC_COOK,"Edda mě může naučit, jak vařit polévky.");
@@ -236,7 +236,7 @@ func void DIA_Edda_TeachCookDone_fish()
 	if(Npc_HasItems(hero,ItMi_Gold) >= 50)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,50);
-		AI_Output(self,other,"DIA_Edda_TeachCookDone_fish_01_01");	//Je to jednoduché. (Zasměje se) Vezmi rybu, očisti ji, šup s ní na váhu a pak do hrnce s vodou.
+		AI_Output(self,other,"DIA_Edda_TeachCookDone_fish_01_01");	//Je to jednoduché. (zasměje se) Vezmi rybu, očisti ji, šup s ní na váhu a pak do hrnce s vodou.
 		AI_Output(self,other,"DIA_Edda_TeachCookDone_fish_01_02");	//Vaříš jí asi deset minut, a tvoje polévka je hotová!
 		AI_Print("Naučeno: Vaření - 'Rybí polévka'");
 		B_LogEntry(TOPIC_COOK,"Ingredience pro RYBÍ POLÉVKU: ryba.");
@@ -517,7 +517,7 @@ func void DIA_EDDA_UHA_SBORNAY_info()
 	AI_Output(self,other,"DIA_EDDA_UHA_SBORNAY_01_01");	//Myslím, že vím, o čem mluvíš. Ano, ale je poměrně složitá na přípravu.
 	AI_Output(self,other,"DIA_EDDA_UHA_SBORNAY_01_02");	//Jestli mi dodáš všechny ingredience - tak ti tu polévku uvařím.
 	AI_Output(other,self,"DIA_EDDA_UHA_SBORNAY_01_03");	//Co k tomu potřebuješ?
-	AI_Output(self,other,"DIA_EDDA_UHA_SBORNAY_01_04");	//Hmm...(zamyšleně) Zapamatuj si! Pro začátek budeme potřebovat ryby, asi tak deset.
+	AI_Output(self,other,"DIA_EDDA_UHA_SBORNAY_01_04");	//Hmm... (zamyšleně) Zapamatuj si! Pro začátek budeme potřebovat ryby, asi tak deset.
 	AI_Output(self,other,"DIA_EDDA_UHA_SBORNAY_01_05");	//Dále budu potřebovat sýr, pět rostlin modrého bezu, červený pepř a co je nejdůležitější - rum!
 	AI_Output(other,self,"DIA_EDDA_UHA_SBORNAY_01_06");	//Rum?!
 	AI_Output(self,other,"DIA_EDDA_UHA_SBORNAY_01_07");	//Ano, pčesně tak! A žádnou levnou kořalku, jestli chceš abych uvařila pořádnou polévku a ne nějaké pomeje.

@@ -168,9 +168,9 @@ func void DIA_Coragon_FixBeer_Info()
 	AI_Output(self,other,"DIA_Coragon_FixBeer_01_03");	//Potom všem přece nejsou kompletní idioti aby platili.
 	AI_Output(self,other,"DIA_Coragon_FixBeer_01_04");	//Tak, můžeš něco zkusit. U Beliara nežertuješ?
 	AI_Output(self,other,"DIA_Coragon_FixBeer_01_05");	//Pokud se zvýší počet návštěvníků mé hospody, jsem připraven vyklopit tři...
-	AI_Output(self,other,"DIA_Coragon_FixBeer_01_06");	//...(zamyšleně) Ne! Dva sudy piva.
+	AI_Output(self,other,"DIA_Coragon_FixBeer_01_06");	//... (zamyšleně) Ne! Dva sudy piva.
 	AI_Output(other,self,"DIA_Coragon_FixBeer_01_07");	//Souhlasím! Pak už můžete začít připravovat svoje pivo.
-	AI_Output(self,other,"DIA_Coragon_FixBeer_01_08");	//Ty...(zamyšleně) Ach, šílený...
+	AI_Output(self,other,"DIA_Coragon_FixBeer_01_08");	//Ty... (zamyšleně) Ach, šílený...
 	MIS_CoragonFixBeer = LOG_Running;
 	Log_CreateTopic(TOPIC_CoragonFixBeer,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_CoragonFixBeer,LOG_Running);
@@ -200,16 +200,16 @@ func void DIA_Coragon_FixBeer_Done_Info()
 {
 	B_GivePlayerXP(250);
 	AI_Output(other,self,"DIA_Coragon_FixBeer_Done_01_00");	//Jak se máte?
-	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_01");	//(Překvapen) A jak jsi to udělal?
+	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_01");	//(překvapen) A jak jsi to udělal?
 	AI_Output(other,self,"DIA_Coragon_FixBeer_Done_01_02");	//Co?
 	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_03");	//Má hospoda je přeplněná samými návštěvníky!
 	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_04");	//Je pravda, že jsem zjistil že hospodský má nyní problémy s domobranou. A nikdo tam nechodí!
 	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_05");	//A do čeho se to namočil ten starý pytel kostí?
 	AI_Output(other,self,"DIA_Coragon_FixBeer_Done_01_06");	//Neřeš. Nebavme se o ztrátách.
-	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_07");	//Ok. (Povzdech) musím přiznat, že i já jsem ztratil! A jak bylo slíbeno, dlužím dva sudy piva.
+	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_07");	//Ok. (povzdech) musím přiznat, že i já jsem ztratil! A jak bylo slíbeno, dlužím dva sudy piva.
 	AI_Output(other,self,"DIA_Coragon_FixBeer_Done_01_08");	//Nepotřebuji je. Radši je vem panu Martinovi do přístavu.
 	AI_Output(other,self,"DIA_Coragon_FixBeer_Done_01_09");	//Myslím že na ně čeká.
-	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_10");	//No, jak myslíš. (Sarkasticky) Prohnanej kojote!
+	AI_Output(self,other,"DIA_Coragon_FixBeer_Done_01_10");	//No, jak myslíš. (sarkasticky) Prohnanej kojote!
 	MIS_CoragonFixBeer = LOG_Success;
 	Log_SetTopicStatus(TOPIC_CoragonFixBeer,LOG_Success);
 	B_LogEntry(TOPIC_CoragonFixBeer,"Coragon byl překvapen, že jeho hospoda je nyní plná návštěvníků, musel mi dát dva sudy piva které jsem namířil Martinovi do skladů.");
@@ -541,7 +541,7 @@ func void dia_coragon_tradering_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Coragon_TradeRing_01_01");	//Něco zajímavého?
-	AI_Output(self,other,"DIA_Coragon_TradeRing_01_02");	//(naštvaně)To teda jo!
+	AI_Output(self,other,"DIA_Coragon_TradeRing_01_02");	//(naštvaně) To teda jo!
 	AI_Output(self,other,"DIA_Coragon_TradeRing_01_03");	//Poslední dobou mi lidi místo zlata chtějí za jídlo vnutit nějaké haraburdí.
 	AI_Output(other,self,"DIA_Coragon_TradeRing_01_04");	//Co tím myslíš?
 	AI_Output(self,other,"DIA_Coragon_TradeRing_01_05");	//Například minule mi nějaký chlap dal prsten místo zlata.

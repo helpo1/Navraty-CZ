@@ -161,7 +161,7 @@ func void DIA_MiltenOW_Pashal_Info()
 	AI_Output(other,self,"DIA_MiltenOW_Pashal_01_00");	//Chtěl bych se tě na něco zeptat.
 	AI_Output(self,other,"DIA_MiltenOW_Pashal_01_01");	//Na co?
 	AI_Output(other,self,"DIA_MiltenOW_Pashal_01_02");	//Už si někdy slyšel o jednom magickém artefaktu, který absorboval veškerou moc tohoto světa?
-	AI_Output(self,other,"DIA_MiltenOW_Pashal_01_03");	//Hmmm...(zamyšleně) Ano! Vzpomínám si... můj mistr ze Starého tábora se jednou zmínil.
+	AI_Output(self,other,"DIA_MiltenOW_Pashal_01_03");	//Hmmm... (zamyšleně) Ano! Vzpomínám si... můj mistr ze Starého tábora se jednou zmínil.
 	AI_Output(self,other,"DIA_MiltenOW_Pashal_01_04");	//Měl dokonce plán, použít ten artefakt ke zničení magické bariéry!
 	AI_Output(self,other,"DIA_MiltenOW_Pashal_01_05");	//Protože se ten artefakt nikdy nenašel, tak zůstaly jenom slova.
 	AI_Output(other,self,"DIA_MiltenOW_Pashal_01_06");	//Co konkrétně bys mi mohl říct?

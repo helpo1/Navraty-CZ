@@ -852,7 +852,7 @@ func void dia_strf_1107_perm_ok()
 	Log_SetTopicStatus(TOPIC_OCCOOKFLEE,LOG_Running);
 	B_LogEntry(TOPIC_OCCOOKFLEE,"Kuchár Cliff na hrade rudobaronov v údolí sa stade chce dostat prec.");
 	B_LogEntry(TOPIC_OCCOOKFLEE,"Slúbil, že mi povie kde je klúc od truhly so zopár kúskami rudy.");
-	AI_Output(self,other,"DIA_STRF_1107_PERM_01_16");	//Bolo to spůsobené... (široko sa usmieva).
+	AI_Output(self,other,"DIA_STRF_1107_PERM_01_16");	//Bolo to spůsobené... (široko sa usmieva)
 	AI_Output(self,other,"DIA_STRF_1107_PERM_01_17");	//Teraz pocúvaj. Oblecenie, ktoré pre paladinov nevyzerá podozrivé je pre mna na hrade nevyhnutné.
 	AI_Output(self,other,"DIA_STRF_1107_PERM_01_18");	//A nejaká zbran!
 	B_LogEntry(TOPIC_OCCOOKFLEE,"Cliff hovorí, že šaty ktoré nie sú na hrade povolené a nejaká zbran sú prenho důležité.");
@@ -999,7 +999,7 @@ func void dia_strf_1107_fleenow_info()
 
 func void dia_strf_1107_fleenow_back()
 {
-	AI_Output(self,other,"DIA_STRF_1107_FleeNow_01_05");	//A tu je problém. Príprava... (Povzdech)
+	AI_Output(self,other,"DIA_STRF_1107_FleeNow_01_05");	//A tu je problém. Príprava... (povzdech)
 	AI_StopProcessInfos(self);
 };
 
@@ -1263,7 +1263,7 @@ func void dia_strf_1107_arrivedbase_info()
 	AI_Output(self,other,"DIA_STRF_1107_ArrivedBase_01_04");	//Tam tiež leží truhla s rudou - je na vrchu plošiny vysokej veže.
 	AI_Output(self,other,"DIA_STRF_1107_ArrivedBase_01_05");	//Ako sa dostat cez izbu na druhom podlaží hradu je už tvoja starost.
 	AI_Output(self,other,"DIA_STRF_1107_ArrivedBase_01_06");	//Opovážil som sa povedat, že nemám klúc od truhly s rudou. A to bola pravda!
-	AI_Output(self,other,"DIA_STRF_1107_ArrivedBase_01_07");	//V každom prípade, si si ho úplne zaslúžil.
+	AI_Output(self,other,"DIA_STRF_1107_ArrivedBase_01_07");	//V každom prípade, sis ho úplne zaslúžil.
 	AI_Output(self,other,"DIA_STRF_1107_ArrivedBase_01_08");	//Vdaka, priatelu.
 	AI_Output(self,other,"DIA_STRF_1107_ArrivedBase_01_09");	//Řekl že tam najdu něco velmi hodnotného.
 	B_GiveInvItems(self,other,itke_nc_cookchest,1);

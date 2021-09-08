@@ -485,7 +485,7 @@ func void DIA_Ass_170_Adept_Hunt()
 func void DIA_Ass_170_Adept_NarugFind()
 {
 	AI_Output(other,self,"DIA_Ass_170_Adept_NarugFind_01_01");	//Našel jsem tvého přítele Naruga.
-	AI_Output(self,other,"DIA_Ass_170_Adept_NarugFind_01_02");	//Hmmm...(chladně) A kde se loudá ten flákač?
+	AI_Output(self,other,"DIA_Ass_170_Adept_NarugFind_01_02");	//Hmmm... (chladně) A kde se loudá ten flákač?
 	AI_Output(other,self,"DIA_Ass_170_Adept_NarugFind_01_03");	//Nedaleko odsud, v lese. A řekl mi, ať ti vzkážu, že tě čeká.
 	AI_Output(other,self,"DIA_Ass_170_Adept_NarugFind_01_04");	//Vypadá to, že něco vymyslel. 
 	AI_Output(self,other,"DIA_Ass_170_Adept_NarugFind_01_05");	//Opravdu? A co asi mohl ten hlupák vymyslet?

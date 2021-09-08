@@ -548,7 +548,7 @@ func void dia_Ass_125_Tiamant_HelpWithAssair_info()
 	AI_Output(other,self,"DIA_Ass_125_Tiamant_HelpWithAssair_01_02");	//O co jde, mistře?
 	AI_Output(self,other,"DIA_Ass_125_Tiamant_HelpWithAssair_01_03");	//Jde o to, že mistr Osair stále neposlal do dolu nové otroky.
 	AI_Output(self,other,"DIA_Ass_125_Tiamant_HelpWithAssair_01_04");	//Taková situace je nepřípustná, potřebujeme rudu.
-	AI_Output(self,other,"DIA_Ass_125_Tiamant_HelpWithAssair_01_05");	//A jako by to samo o sobě nestačilo (smutně). Sám mistr Haniar Slepý se v tom šťourá. Nechci vypadat jako idiot!
+	AI_Output(self,other,"DIA_Ass_125_Tiamant_HelpWithAssair_01_05");	//A jako by to samo o sobě nestačilo. (smutně) Sám mistr Haniar Slepý se v tom šťourá. Nechci vypadat jako idiot!
 	AI_Output(other,self,"DIA_Ass_125_Tiamant_HelpWithAssair_01_06");	//Rozumím, mistře.
 	AI_Output(self,other,"DIA_Ass_125_Tiamant_HelpWithAssair_01_07");	//Dobře. Ale pospěš si, jde o velmi naléhavou záležitost.
 	TiamantSendsToOsair = TRUE;
@@ -629,7 +629,7 @@ func void DIA_Ass_125_Tiamant_Teach_BACK()
 	};
 	if(other.attribute[ATR_STRENGTH] > Tiamant_MerkeSTR)
 	{
-		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_BACK_Add_09_00");	//(Spokojeně) Skvěle. Zesílil jsi.
+		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_BACK_Add_09_00");	//(spokojeně) Skvěle. Zesílil jsi.
 	};
 	Info_ClearChoices(DIA_Ass_125_Tiamant_Teach);
 };
@@ -863,7 +863,7 @@ func void DIA_Ass_125_Tiamant_Teach_2X2_Info()
 		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_02");	//Hmmm... (uznale) Vskutku, zdá se, že bys mohl zvládnout umění boje s dvojicí mečů.
 		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_03");	//Tvé schopnosti mne opravdu ohromují. Zasloužíš si respekt.
 		AI_Output(other,self,"DIA_Ass_125_Tiamant_Teach_2X2_15_04");	//Pak mne to nauč!
-		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_05");	//(Důležitě) Dobře, pozorně poslouchej.
+		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_05");	//(důležitě) Dobře, pozorně poslouchej.
 		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_06");	//Boj s dvojicí zbraní leží především v dokonalé rovnováze a koordinaci.
 		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_07");	//A to se vztahuje na vše: na tvé tělo, tvé pohyby...
 		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_08");	//Ale popořádku! Nejprve musíš pochopit jednu věc. Ne každá zbraň se hodí pro tento styl boje.

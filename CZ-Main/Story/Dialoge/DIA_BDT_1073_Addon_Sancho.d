@@ -74,7 +74,7 @@ func int DIA_Addon_Sancho_HI_Condition()
 
 func void DIA_Addon_Sancho_HI_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Sancho_HI_06_00");	//Do prdele, další nováček.(směje se) Taky kvůli zlatu, co?
+	AI_Output(self,other,"DIA_Addon_Sancho_HI_06_00");	//Do prdele, další nováček. (směje se) Taky kvůli zlatu, co?
 	AI_Output(other,self,"DIA_Addon_Sancho_HI_15_01");	//Zlato?
 	AI_Output(self,other,"DIA_Addon_Sancho_HI_06_02");	//(směje se) Nedělej si ze mě srandu!
 	AI_Output(self,other,"DIA_Addon_Sancho_HI_06_03");	//Všichni nováčči, kteří sem přišli se chtějí dostat do dolu.

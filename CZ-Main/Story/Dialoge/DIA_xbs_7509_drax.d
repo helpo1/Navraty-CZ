@@ -127,7 +127,7 @@ func void dia_drax_hallo_info()
 			Npc_RemoveInvItems(self,ITMI_RAVENGOLDRING,1);
 			AI_Output(self,other,"DIA_Drax_Hallo_01_12");	//Aaa, tak ten hajzl to kopil, díky bratře.
 			AI_Output(other,self,"DIA_Drax_RavenRing_15_00");	//Tak a co za ten prsten dostanu?
-			AI_Output(self,other,"DIA_Drax_RavenRing_01_01");	//Myslíš za problémy které jsi s tím měl...(smích) No, proč ne? Pro dobrého člověka všechno.
+			AI_Output(self,other,"DIA_Drax_RavenRing_01_01");	//Myslíš za problémy které jsi s tím měl... (smích) No, proč ne? Pro dobrého člověka všechno.
 			AI_Output(self,other,"DIA_Drax_RavenRing_01_02");	//Samozřejmě, jen Innos ví jak se ti odvděčit - předpokládám že by to mělo stát za to.
 			B_GiveInvItems(self,other,ItWr_DexStonePlate3_Addon,1);
 			AI_Output(self,other,"DIA_Drax_RavenRing_01_03");	//Na vezmi si tuto starodávnou kamennou tabulku, stejně nevím co s ní.
@@ -353,7 +353,7 @@ func int DIA_Drax_Sail_condition()
 func void DIA_Drax_Sail_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_Drax_Sail_01_01");	//Hej, příteli...(usmívá se) Ratford mě vyprávě, co zamýšlíš?.
+	AI_Output(self,other,"DIA_Drax_Sail_01_01");	//Hej, příteli... (usmívá se) Ratford mě vyprávě, co zamýšlíš?.
 	AI_Output(self,other,"DIA_Drax_Sail_01_02");	//Myslí, že je to nejlepší zpráva od tý doby co jsem se ocitl za bariérou.
 	AI_Output(self,other,"DIA_Drax_Sail_01_03");	//Rád bych se vrátil zpět na pevninu! 
 	AI_Output(self,other,"DIA_Drax_Sail_01_04");	//Říká se, že pro něko mazaného jako jsem já je tam dost práce. 

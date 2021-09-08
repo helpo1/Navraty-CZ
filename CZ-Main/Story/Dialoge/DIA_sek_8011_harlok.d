@@ -184,7 +184,7 @@ func void dia_harlok_harwr_info()
 {
 	AI_Output(other,self,"DIA_Harlok_HarWr_01_00");	//Chtěl bych se přidat do vašeho tábora. Můžeš mi nějak pomoci?
 	AI_Output(self,other,"DIA_Harlok_HarWr_01_01");	//Tak ty by ses se k nám chtěl přidat? Moudré rozhodnutí!
-	AI_Output(self,other,"DIA_Harlok_HarWr_01_02");	//Jistěže bych ti mohl pomoci... (přemýšlí), samozřejmě, pokud mi prokážeš jednu malou službičku.
+	AI_Output(self,other,"DIA_Harlok_HarWr_01_02");	//Jistěže bych ti mohl pomoci... (přemýšlí) samozřejmě, pokud mi prokážeš jednu malou službičku.
 	AI_Output(self,other,"DIA_Harlok_HarWr_01_04");	//Řekni mi, mluvil jsi už s Talasem?
 	Info_ClearChoices(dia_harlok_harwr);
 	Info_AddChoice(dia_harlok_harwr,"Ne.",dia_harlok_harwr_nein);
@@ -249,7 +249,7 @@ func void dia_harlok_jointsrunning_info()
 		AI_Output(other,self,"DIA_Harlok_JointsRunning_07_09");	//Jaký?
 		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_10");	//Mám u sebe jeden svitek Spánku. Myslím, že bych ti ho mohl prodat.
 		AI_Output(other,self,"DIA_Harlok_JointsRunning_07_11");	//Kolik za něj chceš?
-		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_12");	//No, řekněme... (přemýšlí)... Vzhledem k tomu, jak moc bude pro tebe užitečné...
+		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_12");	//No, řekněme... (přemýšlí) Vzhledem k tomu, jak moc bude pro tebe užitečné...
 		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_13");	//...500 zlatých mi bude stačit.
 		AI_Output(other,self,"DIA_Harlok_JointsRunning_07_14");	//COŽE? Za jeden svitek 500 zlatých?
 		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_15");	//No, já ti to jen nabízím. Nemusíš to kupovat...

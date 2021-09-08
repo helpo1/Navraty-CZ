@@ -69,7 +69,7 @@ func void DIA_STRF_8160_Ragnar_Hello_info()
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_01_01");	//Problém? (mrzutě) A co ty! Já žádnej nemám.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_01_02");	//Tedy jestli nepočítáš to, že jsem uprchlý trestanec a už týden jsem nic nejedl.
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_01_03");	//No tak vidíš? Potřebuješ mojí pomoc!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_01_04");	//Hmmm...(podezřívavě) A co za to budeš chtít?
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_01_04");	//Hmmm... (podezřívavě) A co za to budeš chtít?
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_Hello);
 	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Taky jsem byl za bariérou, stejně jako ty.",DIA_STRF_8160_Ragnar_Hello_W1);
 	Info_AddChoice(DIA_STRF_8160_Ragnar_Hello,"Jen hledám dobrodružství.",DIA_STRF_8160_Ragnar_Hello_W2);
@@ -164,9 +164,9 @@ func void DIA_STRF_8160_Ragnar_Hello_Y1()
 func void DIA_STRF_8160_Ragnar_Hello_Y2()
 {
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Y2_01_10");	//Bez ohledu na to, co jsem udělal. Hlavní je, že ten bastard ode mě nedostal ani vindru.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Y2_01_11");	//Jseš tvrďák, to je vidět...(nejistě) Možná bych mu i já mohl nakopat zadek?
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Y2_01_11");	//Jseš tvrďák, to je vidět... (nejistě) Možná bych mu i já mohl nakopat zadek?
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Y2_01_12");	//Samozřejmě! To je jediný způsob jak si získat respekt.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Y2_01_13");	//No dobře...(drbe se na hlavě) Teď si trochu odpočinu a pak si to s ním vyřídím.
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Y2_01_13");	//No dobře... (drbe se na hlavě) Teď si trochu odpočinu a pak si to s ním vyřídím.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Y2_01_14");	//Děkuji za radu, příteli.
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Y2_01_15");	//Není za co.
 	AI_StopProcessInfos(self);
@@ -176,7 +176,7 @@ func void DIA_STRF_8160_Ragnar_Hello_Y2()
 func void DIA_STRF_8160_Ragnar_Hello_Q3()
 {
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_Q3_01_00");	//Jelikož jsem bandita! Tak bych rád viděl tvoje zlato.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q3_01_01");	//Nemám ani vindru...(poraženecky) Tak co, jestli chceš, tak mě zabij!
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q3_01_01");	//Nemám ani vindru... (poraženecky) Tak co, jestli chceš, tak mě zabij!
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_Q3_01_02");	//Dělej, mě už je všechno jedno...
 	AI_StopProcessInfos(self);
 	RagnarPissOff = TRUE;
@@ -186,7 +186,7 @@ func void DIA_STRF_8160_Ragnar_Hello_Q3()
 func void DIA_STRF_8160_Ragnar_Hello_R1()
 {
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_R1_01_00");	//Ne, zbláznil ses! Tolik zlata.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_R1_01_01");	//No co...(smutně) Pak máš někomu věřit, když mu je zatěžko půjčit 50 zlatých.
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_R1_01_01");	//No co... (smutně) Pak máš někomu věřit, když mu je zatěžko půjčit 50 zlatých.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_R1_01_02");	//Vypadni, sončil jsem s tebou. Nemáme už o čem diskutovat.
 	AI_StopProcessInfos(self);
 	RagnarPissOff = TRUE;
@@ -232,7 +232,7 @@ func void DIA_STRF_8160_Ragnar_Hello_T2()
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T2_01_01");	//Chlape tobě přeskočilo? (udiveně) Ty mě opravdu chceš dát tolik zlata?!
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T2_01_02");	//Mágové Ohně chtějí od každého nově příchozího nezrovna malý dar.
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T2_01_03");	//A to je přesně ta suma, aby ti Innos odpustil všechny tvé předchozí hříchy.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T2_01_04");	//Nemyslel jsem si, že někdy potkám někoho takového jako jsi ty...(s rozvahou) Ale mýlil jsem se.
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T2_01_04");	//Nemyslel jsem si, že někdy potkám někoho takového jako jsi ty... (s rozvahou) Ale mýlil jsem se.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T2_01_05");	//Dobře teď mě omluv, vydám se do kláštera. Slyšel jsem, že dělají výborné víno!
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T2_01_07");	//Potkáme se tam.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T2_01_08");	//Samo sebou.
@@ -244,7 +244,7 @@ func void DIA_STRF_8160_Ragnar_Hello_T3()
 {
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Hello_T3_01_00");	//Tvé činy jsou zřejmě velmi špatné.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T3_01_01");	//To by ses divil! I bez tebe to vím moc dobře.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T3_01_02");	//Ach...(mrzutě) Běž si svou cestou a nech mě na pokoji.
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Hello_T3_01_02");	//Ach... (mrzutě) Běž si svou cestou a nech mě na pokoji.
 	AI_StopProcessInfos(self);
 	RagnarPissOff = TRUE;
 };
@@ -303,7 +303,7 @@ func void DIA_STRF_8160_Ragnar_Wait_info()
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Wait_01_02");	//Tolik dní jsem už nejedl, že jsem přišel o veškeré síly.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Wait_01_03");	//Co kdybys mi přinesl něco k jídlu?
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Wait_01_04");	//Co takhle, kousek opečeného masa a láhev vody.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Wait_01_05");	//Nic víc nežádám...(smutně) Bez toho dlouho nevydržím.
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_Wait_01_05");	//Nic víc nežádám... (smutně) Bez toho dlouho nevydržím.
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_Wait_01_06");	//Dobře, počkej tady. Něco ti přinesu.
 	MIS_RagnarFood = LOG_Running;
 	Log_CreateTopic(TOPIC_RagnarFood,LOG_MISSION);
@@ -375,7 +375,7 @@ func void DIA_STRF_8160_Ragnar_NOV_info()
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_01_03");	//Bylo by to dobrý nebýt toho, že celé dny zametám dlažbu a večer zpátky do postele.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_01_04");	//Všichni okolo mě říkají 'Uč se trpělivosti', i když to může trvat celé roky.
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_01_05");	//I tak je to lepší než umírat od hladu někde v lese. Nebo ne?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_01_06");	//Ano, to nepopírám...(smích)
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_01_06");	//Ano, to nepopírám... (smích)
 };
 
 
@@ -408,7 +408,7 @@ func void DIA_STRF_8160_Ragnar_NOV_Q1_info()
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_07");	//Jedná se o rostlinu, kterou nazývá trolí bobule. Jen Beliar ví, jak to vypadá a kde to roste!
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_08");	//Kdyby se mě podařilo přinést mu tu rostlinu, tak by si určitě vybral mě.
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_NOV_Q1_01_09");	//Tak na co čekáš? Běž a najdi jí!
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_10");	//Není to tak jednoduché příteli...(mrzutě) Parlan, mě nepustí za zdi kláštera.
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_10");	//Není to tak jednoduché příteli... (mrzutě) Parlan, mě nepustí za zdi kláštera.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_11");	//Ten starý bastard mě pořád sleduje. A vypadá to, že mě moc nevěří.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_NOV_Q1_01_12");	//Myslel jsem: jestli bys ty, nemohl pro mě tu rostlinu získat?
 	Info_ClearChoices(DIA_STRF_8160_Ragnar_NOV_Q1);
@@ -560,7 +560,7 @@ func void DIA_STRF_8160_Ragnar_BecameKDF_Q1_info()
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_00");	//Co ti dali mágové za úkol?
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_01");	//Vytvořit runu ohnivého šípu. Ale já ani nevím, kde začít.
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_02");	//Myslím, že nejdřív potřebuješ runový kámen.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_03");	//A ty to víš...(ufňukaně) Tak mě řekni - jak se z bývalého kopáče-trestance stane mág Ohně?
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_03");	//A ty to víš... (ufňukaně) Tak mě řekni - jak se z bývalého kopáče-trestance stane mág Ohně?
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_04");	//S tím nic nenaděláme, příteli. Budeme se muset aspoň pokusit.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_05");	//Víš, dostal jsem takový nápad.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_01_06");	//Ty se v tom všem vyznáš mnohem víc než já - Mohl bys mi tu runu vyrobit?
@@ -578,7 +578,7 @@ func void DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes()
 {
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes_01_01");	//Dobře, ruku na to!
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes_01_02");	//Věřím, že tam budou opravdu hodnotné věcičky.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes_01_03");	//Rozumím ti, příteli...(usmívá se) Nemusíš si dělat starosti.
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1_Yes_01_03");	//Rozumím ti, příteli... (usmívá se) Nemusíš si dělat starosti.
 	MIS_RagnarRune = LOG_Running;
 	Log_CreateTopic(TOPIC_RagnarRune,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RagnarRune,LOG_Running);
@@ -630,7 +630,7 @@ func void DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_info()
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_08");	//A když byl zaneprázdněn, sebral jsem tuhle knihu z jedné z poliček.
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_09");	//Dobře, tak se podíváme co je to za knihu. A teď už musím jít.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_10");	//Hodně štěstí příteli! Já půjdu za Pyrokarem ukázat mu co jsem vytvořil.
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_11");	//Potěším staříka...(smích)
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_BecameKDF_Q1Done_01_11");	//Potěším staříka... (smích)
 	MIS_RagnarRune = LOG_Success;
 	Log_SetTopicStatus(TOPIC_RagnarRune,LOG_Success);
 	B_LogEntry(TOPIC_RagnarRune,"Přinesl jsem Ragnarovi magickou runu. A za to jsem dostal nějakou starou zaprášenou knihu.");
@@ -663,7 +663,7 @@ func void DIA_STRF_8160_Ragnar_KDF_info()
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_KDF_01_02");	//Pár týdnů zpět jsem umíral hlady v lese.
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_KDF_01_03");	//A nyní jsem jeden z vážených lidí kláštera. To není možné!
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_KDF_01_04");	//Předpokládám, že nyní už moji pomoc nepotřebuješ?
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_KDF_01_05");	//Zatím ne...(sarkasticky) Ale co bude, kdo ví.
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_KDF_01_05");	//Zatím ne... (sarkasticky) Ale co bude, kdo ví.
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_KDF_01_06");	//Ani o tom nepřemýšlej.
 };
 
@@ -794,7 +794,7 @@ func void DIA_STRF_8160_Ragnar_MIL_Q1Done_info()
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_04");	//Co tam je?
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_05");	//Podívej se sám.
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_06");	//Hmm...(zamyšleně) Myslím, že lorda Andreho bude velmi zajímat jeho obsah.
+	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_06");	//Hmm... (zamyšleně) Myslím, že lorda Andreho bude velmi zajímat jeho obsah.
 	AI_Output(other,self,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_07");	//Tak to máme a co máš ty pro mně?
 	AI_Output(self,other,"DIA_STRF_8160_Ragnar_MIL_Q1Done_01_08");	//Tak vybírej.
 	MIS_RagnarBandits = LOG_Success;

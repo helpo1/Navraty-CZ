@@ -209,9 +209,9 @@ func void dia_darrion_armorcanteach_info()
 {
 	AI_Output(other,self,"DIA_Darrion_ArmorCanTeach_01_00");	//Slyšel jsem, že si jediný, kdo umí ukovat zbroj templáře.
 	AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_01");	//To je pravda, protože jsem byl jediný kovář v bažinách. Musel jsem kovat zbroje pro všechny bratry z Bratrstva, dokonce i pro samotného Cor Angara.
-	AI_Output(other,self,"DIA_Darrion_ArmorCanTeach_01_02");	//Mohl by si mě naučit ukovat tuto zbroj?
+	AI_Output(other,self,"DIA_Darrion_ArmorCanTeach_01_02");	//Mohl bys mě naučit ukovat tuto zbroj?
 	AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_03");	//No proč ne. Mohl bych ti ukázat pár způsobů jak vylepšit svou zbroj.
-	AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_04");	//Ale aby si si mohl svou zbroj vylepšit, budeš už muset být trochu zkušený v kovaříně.
+	AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_04");	//Ale aby sis mohl svou zbroj vylepšit, budeš už muset být trochu zkušený v kovaříně.
 
 	if(Npc_GetTalentSkill(other,NPC_TALENT_SMITH) > 0)
 	{
@@ -245,7 +245,7 @@ func void b_darrion_teacharmor_4()
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_05");	//... hotovo!
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_06");	//To je vše, co potřebuješ vědět, aby si vylepšil tuto zbroj.
+		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_06");	//To je vše, co potřebuješ vědět, abys vylepšil tuto zbroj.
 	};
 };
 
@@ -335,7 +335,7 @@ func void dia_darrion_armorteach_info()
 	AI_Output(other,self,"DIA_Darrion_ArmorTeach_01_00");	//Nauč mě, jak vylepšit zbroj.
 	if(Wld_IsTime(8,0,20,0))
 	{
-		AI_Output(self,other,"DIA_Darrion_ArmorTeach_01_01");	//Co by si chtěl vědět?
+		AI_Output(self,other,"DIA_Darrion_ArmorTeach_01_01");	//Co bys chtěl vědět?
 		b_darrionarmorchoices();
 	}
 	else
@@ -412,7 +412,7 @@ instance XBS_7513_DARRION_ORESMITH(C_Info)
 	condition = xbs_7513_darrion_oresmith_condition;
 	information = xbs_7513_darrion_oresmith_info;
 	permanent = FALSE;
-	description = "Netbek mi řekl, že by si mě mohl naučit, jak kovat zbraně z rudy.";
+	description = "Netbek mi řekl, že bys mě mohl naučit, jak kovat zbraně z rudy.";
 };
 
 
@@ -426,9 +426,9 @@ func int xbs_7513_darrion_oresmith_condition()
 
 func void xbs_7513_darrion_oresmith_info()
 {
-	AI_Output(other,self,"XBS_7513_Darrion_OreSmith_01_00");	//Netbek mi řekl, že by si mě mohl naučit, jak kovat zbraně z rudy.
+	AI_Output(other,self,"XBS_7513_Darrion_OreSmith_01_00");	//Netbek mi řekl, že bys mě mohl naučit, jak kovat zbraně z rudy.
 	AI_Output(self,other,"XBS_7513_Darrion_OreSmith_01_01");	//No, jestli ti to řekl, tak to asi bude pravda.
-	AI_Output(self,other,"XBS_7513_Darrion_OreSmith_01_02");	//Ale budeš potřebovat nabýt nějaké zkušenosti, aby si ovládl umění kování zbraní z rudy.
+	AI_Output(self,other,"XBS_7513_Darrion_OreSmith_01_02");	//Ale budeš potřebovat nabýt nějaké zkušenosti, abys ovládl umění kování zbraní z rudy.
 };
 
 
@@ -485,7 +485,7 @@ instance XBS_7513_DARRION_BLACKORE(C_Info)
 	condition = xbs_7513_darrion_blackore_condition;
 	information = xbs_7513_darrion_blackore_info;
 	permanent = FALSE;
-	description = "Náhodou by si nevěděl, kde bych našel černou rudu?";
+	description = "Náhodou bys nevěděl, kde bych našel černou rudu?";
 };
 
 
@@ -499,7 +499,7 @@ func int xbs_7513_darrion_blackore_condition()
 
 func void xbs_7513_darrion_blackore_info()
 {
-	AI_Output(other,self,"XBS_7513_Darrion_BlackOre_01_00");	//Náhodou by si nevěděl, kde bych našel černou rudu?
+	AI_Output(other,self,"XBS_7513_Darrion_BlackOre_01_00");	//Náhodou bys nevěděl, kde bych našel černou rudu?
 	AI_Output(self,other,"XBS_7513_Darrion_BlackOre_01_01");	//Černou rudu? Obávám se, že ne. Za celý můj život se mi tento poklad dostal do rukou jen jednou.
 	AI_Output(self,other,"XBS_7513_Darrion_BlackOre_01_02");	//Kdysi jsem však slyšel nějaké zvěsti, že skřeti ví, kde jí hledat. Jestli je to však pravda nebo ne - to ti nemůžu s jistotou říct.
 	AI_Output(other,self,"XBS_7513_Darrion_BlackOre_01_03");	//Chápu.

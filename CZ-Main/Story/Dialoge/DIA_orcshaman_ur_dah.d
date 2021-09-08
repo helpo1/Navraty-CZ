@@ -55,7 +55,7 @@ func void dia_orcshaman_ur_dah_hello_info()
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_Hello_01_04");	//Člověk mě hledal?!... (trochu udiveně) A co potřebuje člověk po Ur-Dahovi?
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_Hello_01_05");	//Potřebuji si promluvit o jedné věci - Duch Vody.
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_Hello_01_06");	//Shor, vůdce tvého klanu, mi řekl, že bys o tom měl něco málo vědět.
-	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_Hello_01_07");	//Duch Vody?! Hmmm... (Zamyšleně) A proč to chce člověk vědět?!
+	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_Hello_01_07");	//Duch Vody?! Hmmm... (zamyšleně) A proč to chce člověk vědět?!
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_Hello_01_08");	//Slyšel jsem, že kdysi dávno jeden ze skřetích šamanů zotročil tuto bytost.
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_Hello_01_09");	//Chci najít způsob jak vrátit tomuto stvoření svobodu.
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_Hello_01_10");	//Ty chceš osvobodit Ducha Vody?! Hmmm... (velmi udiveně) Nicméně tím člověk velmi překvapit Ur-Daha!

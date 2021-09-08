@@ -43,7 +43,7 @@ func int DIA_Gorax_NoEnter_PissOff_Condition()
 
 func void DIA_Gorax_NoEnter_PissOff_Info()
 {
-	AI_Output(self,other,"DIA_Gorax_NoEnter_PissOff_01_00");	//Hmm...(naštvaně)
+	AI_Output(self,other,"DIA_Gorax_NoEnter_PissOff_01_00");	//Hmm... (naštvaně)
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuildEnemy,0);
 };
@@ -849,8 +849,8 @@ func void dia_gorax_trademewine_choices()
 {
 	Info_ClearChoices(dia_gorax_trademewine);
 	Info_AddChoice(dia_gorax_trademewine,"Skončil jsem s tebou!",dia_gorax_trademewine_deal);
-	Info_AddChoice(dia_gorax_trademewine,"(Zkontrolovat aktuální cenu)",dia_gorax_trademewine_current);
-	Info_AddChoice(dia_gorax_trademewine,"(Zkontrolovat Goraxovu náladu)",dia_gorax_trademewine_mood);
+	Info_AddChoice(dia_gorax_trademewine,"(zkontrolovat aktuální cenu)",dia_gorax_trademewine_current);
+	Info_AddChoice(dia_gorax_trademewine,"(zkontrolovat Goraxovu náladu)",dia_gorax_trademewine_mood);
 
 	if(GORAXCURRENTPRICE > 50)
 	{
@@ -1117,7 +1117,7 @@ func void DIA_GORAX_GoldForGorax_info()
 	AI_Output(other,self,"DIA_GORAX_GoldForGorax_01_02");	//Mám tu tento měšec. Je zde všechno zlato, které se mu podařilo shromáždit.
 	B_GiveInvItems(other,self,itmi_daron_suma,1);
 	Npc_RemoveInvItems(self,itmi_daron_suma,1);
-	AI_Output(self,other,"DIA_GORAX_GoldForGorax_01_03");	//(Vezme měšec) No, soudě podle hmotnosti, je množství slušné.
+	AI_Output(self,other,"DIA_GORAX_GoldForGorax_01_03");	//(vezme měšec) No, soudě podle hmotnosti, je množství slušné.
 	AI_Output(self,other,"DIA_GORAX_GoldForGorax_01_04");	//Děkuji za pomoc. Nechť Innos svítí na tvou cestu!
 	B_LogEntry(TOPIC_DARON_GIVEGOLD,"Přinesl jsem měšec s dary mistru Goraxovi.");
 	Log_CreateTopic(TOPIC_DARON_GIVEGOLD,LOG_SUCCESS);
@@ -1214,7 +1214,7 @@ func void DIA_GORAX_FIND_PAPERS_OK_info()
 		AI_Output(other,self,"DIA_Gorax_Find_Papers_Ok_01_08");	//Zde je recept na víno zapomnění.
 		B_GiveInvItems(other,self,rezepturen2,1);
 		Npc_RemoveInvItems(self,rezepturen2,1);
-		AI_Output(self,other,"DIA_Gorax_Find_Papers_Ok_01_09");	//(Zamyšleně) Velice zvláštní složení...
+		AI_Output(self,other,"DIA_Gorax_Find_Papers_Ok_01_09");	//(zamyšleně) Velice zvláštní složení...
 		AI_Output(self,other,"DIA_Gorax_Find_Papers_Ok_01_10");	//Těžko to můžeme vařit v blízké budoucnosti. Ale tak jako tak, děkuji ti za tvou práci.
 		AI_Output(self,other,"DIA_Gorax_Find_Papers_Ok_01_11");	//Tady, vezmi si tento svitek vyvolání ohnivého golema jako odměnu.
 		AI_Output(self,other,"DIA_Gorax_Find_Papers_Ok_01_12");	//Použij ho pouze tehdy, když se budeš cítit dostatečně silný, jinak to může skončit špatně...
@@ -1229,7 +1229,7 @@ func void DIA_GORAX_FIND_PAPERS_OK_info()
 		B_GiveInvItems(other,self,itwr_glintvein,1);
 		Npc_RemoveInvItems(self,itwr_glintvein,1);
 		COUNTER_GORAX_PAPERS += 1;
-		AI_Output(self,other,"DIA_Gorax_Find_Papers_Ok_01_14");	//(Překvapeně) Jak jsi to...?
+		AI_Output(self,other,"DIA_Gorax_Find_Papers_Ok_01_14");	//(překvapeně) Jak jsi to...?
 		AI_Output(other,self,"DIA_Gorax_Find_Papers_Ok_01_15");	//Je to dlouhý příběh...
 		AI_Output(self,other,"DIA_Gorax_Find_Papers_Ok_01_16");	//No, i když to není přesně to, co potřebuji, dodržím své slovo.
 		AI_Output(self,other,"DIA_Gorax_Find_Papers_Ok_01_17");	//Jen tak dále.

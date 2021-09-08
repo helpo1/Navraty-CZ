@@ -130,7 +130,7 @@ func void DIA_RodDJG_WARTEMAL_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_RodDJG_WARTEMAL_06_02");	//(Kleje) Tyhle boty! Tyhle zpropadený boty!
+		AI_Output(self,other,"DIA_RodDJG_WARTEMAL_06_02");	//(kleje) Tyhle boty! Tyhle zpropadený boty!
 	};
 	if(Npc_IsDead(SwampDragon))
 	{

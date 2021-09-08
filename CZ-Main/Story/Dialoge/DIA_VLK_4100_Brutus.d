@@ -254,7 +254,7 @@ func void DIA_Brutus_Baby_Info()
 {
 	AI_Output(self,other,"DIA_Brutus_Baby_01_00");	//Počkat!
 	AI_Output(other,self,"DIA_Brutus_Baby_01_01");	//Co je?
-	AI_Output(self,other,"DIA_Brutus_Baby_01_02");	//Poslouchej, už nějakou dobu se vás chci na něco zeptat, nebo ne (zaváhal). Nebo možná jo.
+	AI_Output(self,other,"DIA_Brutus_Baby_01_02");	//Poslouchej, už nějakou dobu se vás chci na něco zeptat, nebo ne. (zaváhal) Nebo možná jo.
 	AI_Output(other,self,"DIA_Brutus_Baby_01_03");	//Poslouchám.
 	AI_Output(self,other,"DIA_Brutus_Baby_01_04");	//Vypadá to, že jsme na hradě přilepeni na zatraceně dlouhou dobu. Určitě sis všiml těch skřetů za bránou.
 	AI_Output(other,self,"DIA_Brutus_Baby_01_05");	//Ne, ničeho jsem si nevšiml.
@@ -288,7 +288,7 @@ func void DIA_Brutus_Baby_Yes()
 func void DIA_Brutus_Baby_No()
 {
 	AI_Output(other,self,"DIA_Brutus_Baby_No_01_01");	//Ne. To co chceš je abnormální nesmysl. Milten by se mi vysmál.
-	AI_Output(self,other,"DIA_Brutus_Baby_No_01_02");	//(Vztekle) Jak si teda přeješ. Už jsme se s tím vyrovnali.
+	AI_Output(self,other,"DIA_Brutus_Baby_No_01_02");	//(vztekle) Jak si teda přeješ. Už jsme se s tím vyrovnali.
 	AI_StopProcessInfos(self);
 };
 

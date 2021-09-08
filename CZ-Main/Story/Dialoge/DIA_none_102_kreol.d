@@ -1390,7 +1390,7 @@ func int dia_kreol_finddarksoul_condition()
 func void dia_kreol_finddarksoul_info()
 {
 	AI_Output(other,self,"DIA_Kreol_FindDarkSoul_01_00");	//Říkají ti něco slova Mora Ulartu?
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_01");	//Hmm... (zaskočen)... Odkud je znáš?!
+	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_01");	//Hmm... (zaskočen) Odkud je znáš?!
 	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_03");	//Hmm!... (udiveně) Nevím toho moc, ale co vím ti zkusím vysvětlit...
 	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_05");	//Co já vím, Mora Ulartu je velmi staré a mocné kouzlo. Někdy je nazýváno Bludiště Duší.
 	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_06");	//Bylo stvořeno v pradávných časech spolu s naším světem.
@@ -1498,7 +1498,7 @@ func void dia_kreol_findetlu_info()
 	AI_Output(other,self,"DIA_Kreol_FindEtlu_01_00");	//Zjistil jsem, kde paladinové skryli Triramar.
 	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_01");	//A kde?
 	AI_Output(other,self,"DIA_Kreol_FindEtlu_01_02");	//Na ostrově Etlu.
-	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_03");	//Etlu?! Hmm... (zaskočen)... Mmm, to by souhlasilo.
+	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_03");	//Etlu?! Hmm... (zaskočen) Mmm, to by souhlasilo.
 	AI_Output(other,self,"DIA_Kreol_FindEtlu_01_04");	//A taky jsem zjistil jak se tam dostat...
 	AI_Output(other,self,"DIA_Kreol_FindEtlu_01_05");	//Na ostrově je portál na Etlu.
 	AI_Output(self,other,"DIA_Kreol_FindEtlu_01_06");	//Portál?! Zajímavé, kde se tam vzal?
@@ -1712,7 +1712,7 @@ func void dia_kreol_getsupersoul_info()
 	AI_Output(other,self,"DIA_Kreol_GetSuperSoul_01_08");	//A co by to mělo být?
 	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_09");	//Hmm... Měl by být už teď mocný, aby ho duše nerozpoltila.
 	AI_Output(other,self,"DIA_Kreol_GetSuperSoul_01_10");	//A co Beliarův dráp?
-	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_11");	//DRÁP! Hmm... (zaskočen)... No, ten by byl pro naše účely výborný.
+	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_11");	//DRÁP! Hmm... (zaskočen) No, ten by byl pro naše účely výborný.
 	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_12");	//Jeho magie je stejně jako démonova magií Beliara!
 	AI_Output(other,self,"DIA_Kreol_GetSuperSoul_01_14");	//A jak bych měl dostat duši démona do toho artefaktu?
 	AI_Output(self,other,"DIA_Kreol_GetSuperSoul_01_15");	//Není nic jednoduššího! Stačí jakákoli svatyně Beliara.
@@ -2237,21 +2237,21 @@ func void DIA_Kreol_Sleeper_info()
 	};
 	if((EligorNoSword == FALSE) && (Npc_HasItems(hero,ITMW_2H_DRAGONMASTER) >= 1))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper,"(Navhrni meč Pána Draků)",DIA_Kreol_Sleeper_Sword);
+		Info_AddChoice(DIA_Kreol_Sleeper,"(navhrni meč Pána Draků)",DIA_Kreol_Sleeper_Sword);
 	};
 	if((EligorNoBow == FALSE) && (Npc_HasItems(hero,ITRW_G3_DEMON_BOW_01) >= 1))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper,"(Navrhni luk Barva Smrti)",DIA_Kreol_Sleeper_Bow);
+		Info_AddChoice(DIA_Kreol_Sleeper,"(navrhni luk Barva Smrti)",DIA_Kreol_Sleeper_Bow);
 	};
 	if((EligorNoStaff == FALSE) && (Npc_HasItems(hero,ITMW_2H_KMR_DAEMONSTAFF_01) >= 1))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper,"(Navhrni hůl Hasitel Duší)",DIA_Kreol_Sleeper_Staff);
+		Info_AddChoice(DIA_Kreol_Sleeper,"(navhrni hůl Hasitel Duší)",DIA_Kreol_Sleeper_Staff);
 	};
 	if((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
 	{
 		if((Npc_HasItems(hero,ItMi_InnosEye_MIS) >= 1) || (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >= 1))
 		{
-			Info_AddChoice(DIA_Kreol_Sleeper,"(Navrhni Innosovo oko)",DIA_Kreol_Sleeper_Innos);
+			Info_AddChoice(DIA_Kreol_Sleeper,"(navrhni Innosovo oko)",DIA_Kreol_Sleeper_Innos);
 		};
 	};
 };
@@ -2409,21 +2409,21 @@ func void DIA_Kreol_Sleeper_Again_info()
 	};
 	if((EligorNoSword == FALSE) && (Npc_HasItems(hero,ITMW_2H_DRAGONMASTER) >= 1))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper_Again,"(Navrhni meč Pána Draků)",DIA_Kreol_Sleeper_Again_Sword);
+		Info_AddChoice(DIA_Kreol_Sleeper_Again,"(navrhni meč Pána Draků)",DIA_Kreol_Sleeper_Again_Sword);
 	};
 	if((EligorNoBow == FALSE) && (Npc_HasItems(hero,ITRW_G3_DEMON_BOW_01) >= 1))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper_Again,"(Navrhni luk Barva Smrti)",DIA_Kreol_Sleeper_Again_Bow);
+		Info_AddChoice(DIA_Kreol_Sleeper_Again,"(navrhni luk Barva Smrti)",DIA_Kreol_Sleeper_Again_Bow);
 	};
 	if((EligorNoStaff == FALSE) && (Npc_HasItems(hero,ITMW_2H_KMR_DAEMONSTAFF_01) >= 1))
 	{
-		Info_AddChoice(DIA_Kreol_Sleeper_Again,"(Navhrni hůl Hasitel Duší)",DIA_Kreol_Sleeper_Again_Staff);
+		Info_AddChoice(DIA_Kreol_Sleeper_Again,"(navhrni hůl Hasitel Duší)",DIA_Kreol_Sleeper_Again_Staff);
 	};
 	if((hero.guild != GIL_PAL) && (hero.guild != GIL_KDF))
 	{
 		if((Npc_HasItems(hero,ItMi_InnosEye_MIS) >= 1) || (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >= 1))
 		{
-			Info_AddChoice(DIA_Kreol_Sleeper_Again,"(Navrhni Innosovo oko)",DIA_Kreol_Sleeper_Again_Innos);
+			Info_AddChoice(DIA_Kreol_Sleeper_Again,"(navrhni Innosovo oko)",DIA_Kreol_Sleeper_Again_Innos);
 		};
 	};
 };

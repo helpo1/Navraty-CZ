@@ -519,7 +519,7 @@ func void DIA_Bosper_Job_Info()
 	AI_Output(self,other,"DIA_Bosper_Job_11_04");	//Pokud někde nezemřeš a pokud budeš nosit dobré kůže, nechám tě spát ve svém pokoji, pokud budeš chtít.
 	if(Npc_KnowsInfo(other,DIA_Bosper_OtherMasters))
 	{
-		AI_Output(self,other,"DIA_Bosper_Job_11_05");	//Nebo (s povzdechem), se můžeš stát žákem jiného mistra... Pokud opravdu chceš.
+		AI_Output(self,other,"DIA_Bosper_Job_11_05");	//(s povzdechem) Nebo se můžeš stát žákem jiného mistra... Pokud opravdu chceš.
 	};
 	MIS_Bosper_WolfFurs = LOG_Running;
 	Log_CreateTopic(TOPIC_BosperWolf,LOG_MISSION);
@@ -1274,7 +1274,7 @@ func void DIA_Bosper_AlsLehrling_Info()
 	if((other.guild == GIL_MIL) && (Bosper_StartGuild != GIL_MIL) && (Bosper_MILKommentar == FALSE))
 	{
 		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_00");	//Koukám, že ses přidal k domobraně, co?
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_01");	//Nevadí mi to. Pokud budeš kromě banditů a skřetů lovit i vlky (s úsměvem).
+		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_01");	//Nevadí mi to. Pokud budeš kromě banditů a skřetů lovit i vlky. (s úsměvem)
 		Bosper_MILKommentar = TRUE;
 	}
 	else if((other.guild == GIL_PAL) && (Bosper_StartGuild != GIL_PAL) && (Bosper_PALKommentar == FALSE))
@@ -1464,7 +1464,7 @@ func void DIA_Bosper_SellFur_Info()
 		};
 		if(Npc_HasItems(other,ItAt_ShadowFur) > 0)
 		{
-			AI_Output(self,other,"DIA_Bosper_SellFur_11_05");	//Teda...(překvapeně) Ty máš kůži z stínové šelmy? Má velkou cenu!
+			AI_Output(self,other,"DIA_Bosper_SellFur_11_05");	//Teda... (překvapeně) Ty máš kůži z stínové šelmy? Má velkou cenu!
 			B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(other,ItAt_ShadowFur) * Value_ShadowFur);
 			Npc_RemoveInvItems(other,ItAt_ShadowFur,Npc_HasItems(other,ItAt_ShadowFur));
 		};
@@ -1595,7 +1595,7 @@ func void dia_bosper_bringarrow_info()
 		AI_Output(self,other,"DIA_Bosper_BringArrow_01_06");	//Tady, vezmi tyto šípy Falkovi.
 		B_GiveInvItems(self,other,ITRW_ZUNTARROW,100);
 		Npc_RemoveInvItems(self,itwr_letterfalk,1);
-		AI_Output(self,other,"DIA_Bosper_BringArrow_01_07");	//A neztrať je...(vážně) Nepoděkoval by ti za to.
+		AI_Output(self,other,"DIA_Bosper_BringArrow_01_07");	//A neztrať je... (vážně) Nepoděkoval by ti za to.
 		B_LogEntry(TOPIC_LETTERFALK,"Bosper si přečetl dopis a pak mi předal sto šípů, které mám donést Falkovi.");
 		BOSPERGIVEARROWS = TRUE;
 		AI_StopProcessInfos(self);
@@ -1637,7 +1637,7 @@ func int dia_bosper_shadowbow_condition()
 func void dia_bosper_shadowbow_info()
 {
 	AI_Output(other,self,"DIA_Bosper_ShadowBow_01_00");	//Poznáváš tento luk?
-	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_01");	//Hmmm, kerenický luk...(zkoumá ho) Tady je značka... Teď už vím komu patří.
+	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_01");	//Hmmm, kerenický luk... (zkoumá ho) Tady je značka... Teď už vím komu patří.
 	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_02");	//Moc ale nerozumím tomu, co ten luk dělá u tebe!
 	AI_Output(other,self,"DIA_Bosper_ShadowBow_01_03");	//Falk mi ho dal.
 	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_04");	//Falk?! Hmmm... (překvapeně) To může mít pouze jedno vysvětlení... máme tu nového mistra!

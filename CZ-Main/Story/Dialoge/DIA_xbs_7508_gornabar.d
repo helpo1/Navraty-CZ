@@ -54,13 +54,13 @@ func void dia_gornabar_hallo_info()
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_06");	//Utvořili se trhliny v průchodu a svitek proměny ve žravou štěnici mi pomohl se jimi protáhnout.
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_08");	//A kde jsi byl ty celý ten čas?
 	AI_Output(other,self,"DIA_GorNaBar_Hallo_15_02");	//No, v celkem hodně bitvách...
-	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_09");	//Stejně jako kdysi s těmi červy (úsměv).
+	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_09");	//Stejně jako kdysi s těmi červy. (úsměv)
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_10");	//Vlastně jsem to čekal.
 	AI_Output(other,self,"DIA_GorNaBar_Hallo_15_02A");	//A co tu aktuálně děláš?
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_10A");	//Trénuji se strážemi a hlídám tábor. Jestli budeš mít nějaký problém, přijď za mnou.
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_10B");	//Také ti můžu prodat něco ze svého zboží.
 	AI_Output(other,self,"DIA_GorNaBar_Hallo_15_03");	//Nemáš tu také nějaké svitky v proměnu ve žravou štěnici? V Khorinisu jsem žádné neviděl...
-	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_11");	//Možná ano... (úsměv).
+	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_11");	//Možná ano... (úsměv)
 	AI_Output(other,self,"DIA_GorNaBar_Hallo_15_04");	//A dá se tu někde stát?
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_12");	//Ve stanu kousek za mnou je volná postel.
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_13");	//Můžeš ji využít.

@@ -204,7 +204,7 @@ func void dia_gravo_helpangrynow_back()
 func void dia_gravo_helpangrynow_vatras()
 {
 	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_Vatras_01_00");	//Mám problém s mágem Vody Vatrasem.
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_01_01");	//Hmmm...(přemýšlí) Myslím že tohle půjde vyřešit docela snadno.
+	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_01_01");	//Hmmm... (přemýšlí) Myslím že tohle půjde vyřešit docela snadno.
 	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_BigFarm_01_03");	//Kolik?
 	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_01_04");	//Tři tisíce zlatých mincí!
 	Info_ClearChoices(dia_gravo_helpangrynow);

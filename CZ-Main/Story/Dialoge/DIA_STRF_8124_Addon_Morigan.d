@@ -37,7 +37,7 @@ func int DIA_STRF_8124_Addon_Morigan_hello_condition()
 func void DIA_STRF_8124_Addon_Morigan_hello_info()
 {
 	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_Hello_15_00");	//S čím mohu pomoct?
-	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Hello_08_00");	//Ano...(reptání) Například, mě můžeš dát pokoj.
+	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Hello_08_00");	//Ano... (reptání) Například, mě můžeš dát pokoj.
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Hello_08_01");	//Jestli si skřeti všimnou, že tady s tebou žvaním, tak budu mít problémy, kamaráde.
 	AI_StopProcessInfos(self);
 };
@@ -63,7 +63,7 @@ func int DIA_STRF_8124_Addon_Morigan_Help_condition()
 func void DIA_STRF_8124_Addon_Morigan_Help_info()
 {
 	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_Help_01_00");	//Ale vážně?
-	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Help_01_01");	//Poslouchej...(nervozně) Nepotřebuju tvoji pomoc!
+	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Help_01_01");	//Poslouchej... (nervozně) Nepotřebuju tvoji pomoc!
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Help_01_02");	//Ale jestli chceš opravdu udělat dobrý skutek, přines mě něco k pití.
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Help_01_03");	//Mám tak sucho v puse, že nemůžu ani polykat.
 };
@@ -116,7 +116,7 @@ func int DIA_STRF_8124_Addon_Morigan_Father_condition()
 func void DIA_STRF_8124_Addon_Morigan_Father_info()
 {
 	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_Father_01_00");	//Můžu pro tebe ještě něco udělat?
-	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Father_01_01");	//Hmmm...(zamyšleně) Nevím jestli tě o to můžu požádat.
+	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Father_01_01");	//Hmmm... (zamyšleně) Nevím jestli tě o to můžu požádat.
 	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_Father_01_02");	//Tak to zkus.
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Father_01_03");	//Dobře. Koneckonců, kromě tebe mě tu stejně nikdo jiný nepomůže.
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Father_01_04");	//Pověz, jsi často na povrchu?
@@ -170,7 +170,7 @@ func void DIA_STRF_8124_Addon_Morigan_FatherDone_info()
 	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_FatherDone_01_04");	//Tvůj otec byl rád, když slyšel, že jsi stále naživu.
 	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_FatherDone_01_05");	//A bude se za tebe modlit k Innosovi.
 	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_FatherDone_01_06");	//V naději, že se jednoho dne vrátíš domů.
-	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_FatherDone_01_07");	//Ach...(smutně) To bych rád, věř mi. Ale odsud se nedá utéct.
+	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_FatherDone_01_07");	//Ach... (smutně) To bych rád, věř mi. Ale odsud se nedá utéct.
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_FatherDone_01_08");	//Ale v každém případě děkuji za tvoji pomoc.
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_FatherDone_01_09");	//Tady vem si ten kus rudy, jako výraz mé vděčnosti.
 	B_GiveInvItems(self,other,ItMi_Zeitspalt_Addon,1);

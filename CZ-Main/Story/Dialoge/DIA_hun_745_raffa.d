@@ -145,9 +145,9 @@ func void dia_hun_745_raffa_news_info()
 	else if((Kapitel >= 2) && (MIS_INSSHADOWBEAST == FALSE) && (MIS_INSLUKER == LOG_SUCCESS))
 	{
 		AI_Output(self,other,"DIA_HUN_745_News_01_20");	//Říká se, že se na Lobartově farmě nachází jedno neuvěřitelně velké a podivně vypadající zvíře.
-		AI_Output(self,other,"DIA_HUN_745_News_01_21");	//Podle podrobného popisu mi to připomíná stínovou šelmu...(přemýšlí) velmi neobvyklou stínovku.
+		AI_Output(self,other,"DIA_HUN_745_News_01_21");	//Podle podrobného popisu mi to připomíná stínovou šelmu... (přemýšlí) velmi neobvyklou stínovku.
 		AI_Output(other,self,"DIA_HUN_745_News_01_22");	//To je trochu zvláštní?
-		AI_Output(self,other,"DIA_HUN_745_News_01_23");	//Jo! Duch stínové šelmy, noční lovec! (Vzrušeně) Slyšel jsi někdy o něm?
+		AI_Output(self,other,"DIA_HUN_745_News_01_23");	//Jo! Duch stínové šelmy, noční lovec! (vzrušeně) Slyšel jsi někdy o něm?
 		AI_Output(other,self,"DIA_HUN_745_News_01_24");	//No. A jaký druh tvora to je?
 		AI_Output(self,other,"DIA_HUN_745_News_01_25");	//Je to skoro legenda - silná jako trol a hbytá jako panter!
 		AI_Output(self,other,"DIA_HUN_745_News_01_26");	//Je zázrak vidět ji. Hlavne proto, že vetšinou pak už neuvidíš nic...
@@ -202,7 +202,7 @@ func void dia_hun_745_raffa_insluker_info()
 	AI_Output(self,other,"DIA_HUN_745_InsLuker_01_03");	//Ukh!... (opatrně) Opravdu, ale jak jsi ho získal?!
 	AI_Output(other,self,"DIA_HUN_745_InsLuker_01_04");	//To není důležité!
 	AI_Output(other,self,"DIA_HUN_745_InsLuker_01_05");	//Nicméně jsem potkal jednoho velmi velkého číhavce.
-	AI_Output(self,other,"DIA_HUN_745_InsLuker_01_06");	//Ty jsi s ním bojoval?!... (udiveně)?!
+	AI_Output(self,other,"DIA_HUN_745_InsLuker_01_06");	//Ty jsi s ním bojoval?!... (udiveně)
 	MIS_INSLUKER = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_INSLUKER,LOG_SUCCESS);
 
@@ -802,7 +802,7 @@ func void dia_hun_745_raffa_TrueShot_info()
 	AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_00");	//Potřebuji tbou radu!
 	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_01");	//Co je to?
 	AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_02");	//Víš, někdy se mi nepodaří způsobit sebemenší poškození.
-	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_03");	//Ach, to je to co...(smích) Nemůžu pokračovat! Už je mi vše jasné.
+	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_03");	//Ach, to je to co... (smích) Nemůžu pokračovat! Už je mi vše jasné.
 	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_04");	//Tohle je velký problém toho, kdo používá výhradně luky.
 	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_05");	//Nicméně, existuje několik způsobů natažení, ve kterých budou tvoje střely prorážet všechny zbroje i kůže.
 	AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_06");	//A učit mě můžete?
@@ -817,7 +817,7 @@ func void dia_hun_745_raffa_TrueShot_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_10");	//A to proč?...(vzrušeně) 
+		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_10");	//A to proč?... (vzrušeně) 
 		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_11");	//Nechceš dojem muže, který radši bojuje v boji s lukem místo meče.
 		AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_12");	//A cože?!
 		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_13");	//Víš, s takovýma jako ty nebudu ztrácet čas. Nemám ho moc!
@@ -846,7 +846,7 @@ func int dia_hun_745_raffa_TrueShot_Again_condition()
 func void dia_hun_745_raffa_TrueShot_Again_info()
 {
 	AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_Again_01_00");	//Teď už střílím dobře?
-	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_Again_01_01");	//Hmmm...(zamyšleně)
+	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_Again_01_01");	//Hmmm... (zamyšleně)
 
 	if((hero.attribute[ATR_DEXTERITY] >= 125) && (hero.HitChance[NPC_TALENT_BOW] >= 50))
 	{

@@ -393,9 +393,9 @@ func int DIA_Constantino_LostKey_Condition()
 func void DIA_Constantino_LostKey_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_LostKey_01_01");	//Vypadáš trochu rozrušeně.
-	AI_Output(self,other,"DIA_Constantino_LostKey_01_02");	//Stále...(křičí) mám být z čeho rozrušený!
+	AI_Output(self,other,"DIA_Constantino_LostKey_01_02");	//Stále... (křičí) mám být z čeho rozrušený!
 	AI_Output(other,self,"DIA_Constantino_LostKey_01_03");	//A co se stalo?
-	AI_Output(self,other,"DIA_Constantino_LostKey_01_04");	//Eh...(škrábe se na hlavě) Během své poslední procházky jsem ztratil klíč od své truhly. A teď netuším, co mám dělat.
+	AI_Output(self,other,"DIA_Constantino_LostKey_01_04");	//Eh... (škrábe se na hlavě) Během své poslední procházky jsem ztratil klíč od své truhly. A teď netuším, co mám dělat.
 	AI_Output(other,self,"DIA_Constantino_LostKey_01_06");	//No, nemohl by ti pomoci Thorben? Vyzná se v zámcích.
 	AI_Output(self,other,"DIA_Constantino_LostKey_01_07");	//Už jsem se ho ptal, ale jen potřásl hlavou a řekl, že mi s tímhle nemůže pomoci. 
 	AI_Output(other,self,"DIA_Constantino_LostKey_01_08");	//A kde ses naposledy procházel?
@@ -432,7 +432,7 @@ func void DIA_Constantino_LostKeyDone_Info()
 	AI_Output(other,self,"DIA_Constantino_LostKeyDone_01_03");	//Tady, podívej se.
 	B_GiveInvItems(other,self,ItKe_Constantino,1);
 	Npc_RemoveInvItems(self,ItKe_Constantino,1);
-	AI_Output(self,other,"DIA_Constantino_LostKeyDone_01_04");	//Ano, je to...(podezřívavě) A kde jsi ho našel?
+	AI_Output(self,other,"DIA_Constantino_LostKeyDone_01_04");	//Ano, je to... (podezřívavě) A kde jsi ho našel?
 	AI_Output(other,self,"DIA_Constantino_LostKeyDone_01_05");	//Na okraji města, poblíž východní brány.
 	AI_Output(self,other,"DIA_Constantino_LostKeyDone_01_06");	//(chichotání) Ano, tam jsem byl. No, měl bych ti za tvojí pomoc poděkovat.
 	AI_Output(self,other,"DIA_Constantino_LostKeyDone_01_08");	//Na, vezmi si tento lektvar. Taková věc je mnohem cennější než zlato. Doufám, že to pochopíš.
@@ -1703,7 +1703,7 @@ func void dia_constantino_receptfortyon_info()
 	{
 		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_04");	//A proč se můj žák zabývá takovými věcmi?
 		AI_Output(other,self,"DIA_Constantino_ReceptForTyon_01_06");	//Jako alchymista - začátečník mám velký zájem o různé zvláštní druhy elixírů. Samozřejmě, jen abych poznal jejich neobvyklé vlastnosti.
-		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_07");	//Ha!... (Nadšeně) Tvoje vášeň k poznání tajemství alchymie mě překvapuje...
+		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_07");	//Ha!... (nadšeně) Tvoje vášeň k poznání tajemství alchymie mě překvapuje...
 		AI_Output(other,self,"DIA_Constantino_ReceptForTyon_01_08");	//Řekneš mi tedy o tomhle lektvaru?
 		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_09");	//No... (zamyslí se) Ano, o tomto elixíru jsem už slyšel. Skutečně má řadu velmi neobvyklých alchymistických vlastností.
 		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_10");	//Ztrátu vědomí - to umí jen tento. Má vlastnost, měnit v lidském těle své skupenství a poté se úplně vytratit z lidského těla.
@@ -1759,7 +1759,7 @@ func void dia_constantino_gotreceptfortyon_info()
 	B_GiveInvItems(self,other,ItPl_Perm_Herb,2);
 	AI_Output(other,self,"DIA_Constantino_GotReceptForTyon_01_08");	//A co můj recept?
 	AI_Output(self,other,"DIA_Constantino_GotReceptForTyon_01_09");	//Promiň, ale bude lepší, když zůstane u mě. Stejně ještě nejsi dostatečně zručný na jeho přípravu.
-	AI_Output(self,other,"DIA_Constantino_GotReceptForTyon_01_10");	//Zvlášť, když už jsi dostal zaplaceno. Tak proč ho tak moc chceš? (Nervózně)
+	AI_Output(self,other,"DIA_Constantino_GotReceptForTyon_01_10");	//Zvlášť, když už jsi dostal zaplaceno. Tak proč ho tak moc chceš? (nervózně)
 	AI_Output(other,self,"DIA_Constantino_GotReceptForTyon_01_11");	//Dej mi můj recept!
 	AI_Output(self,other,"DIA_Constantino_GotReceptForTyon_01_12");	//Na to zapomeň! Nebo snad chceš, abych řekl mágům Ohně, kde jsi k němu přišel?!
 	AI_StopProcessInfos(self);
@@ -1787,16 +1787,16 @@ func int dia_constantino_poisonneed_condition()
 
 func void dia_constantino_poisonneed_info()
 {
-	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_01");	//Hej! Počkej chvíli... (Efektně) Ještě bych si rád o něčem promluvil.
+	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_01");	//Hej! Počkej chvíli... (efektně) Ještě bych si rád o něčem promluvil.
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_03");	//Podívej, vidím, že se dobře vyznáš v cestování na různá místa.
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_04");	//A krom toho, není nadarmo si tím získat i pár mincí, nemám pravdu?!
 	AI_Output(other,self,"DIA_Constantino_PoisonNeed_01_05");	//Jistě! Zlato člověk nikdy nedmítne. (skrytě ironicky)
-	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_06");	//Já si myslím...(usmívá se) Tak potom bych ti mohl nabídnout zajímavou prácičku, co říkáš?
+	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_06");	//Já si myslím... (usmívá se) Tak potom bych ti mohl nabídnout zajímavou prácičku, co říkáš?
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_07");	//A také si tím u mě zajistíš respekt!
 	AI_Output(other,self,"DIA_Constantino_PoisonNeed_01_08");	//Tak už k věci! Co byste rád?
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_09");	//Hele, pro můj další experiment potřebuju jednu zvláštní přísadu.
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_10");	//Je to opravdu unikátní ingredience, a proto je taky těžko k sehnání!
-	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_13");	//No... (Potí se) Zní to trochu nezvykle, ale potřebuji, abys mi sehnal nějaký velmi prudký jed!
+	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_13");	//No... (potí se) Zní to trochu nezvykle, ale potřebuji, abys mi sehnal nějaký velmi prudký jed!
 	AI_Output(other,self,"DIA_Constantino_PoisonNeed_01_14");	//Chcete někoho otrávit?!
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_15");	//U Innose! To ne... (nervózně) To nepřipadá v úvahu!
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_16");	//Prostě. Dostal se mi do rukou recept, který tento typ jedu ke své výrobě vyžaduje.
@@ -1851,11 +1851,11 @@ func void dia_constantino_poisonneedok_info()
 {
 	B_GivePlayerXP(300);
 	AI_Output(other,self,"DIA_Constantino_PoisonNeedOk_01_01");	//Mám ten jed, co jsi chtěl.
-	AI_Output(self,other,"DIA_Constantino_PoisonNeedOk_01_02");	//Opravdu?!... (Nadšeně) Ukaž, podívám se.
+	AI_Output(self,other,"DIA_Constantino_PoisonNeedOk_01_02");	//Opravdu?!... (nadšeně) Ukaž, podívám se.
 	AI_Output(other,self,"DIA_Constantino_PoisonNeedOk_01_03");	//Tady.
 	B_GiveInvItems(other,self,itpo_bloodflypoison,1);
 	Npc_RemoveInvItems(self,itpo_bloodflypoison,1);
-	AI_Output(self,other,"DIA_Constantino_PoisonNeedOk_01_04");	//Hmmm... (Přemýšlí) No výborně! Myslím, že je čas dokončit to...(zamlouvá) no, ten experiment, že ano...
+	AI_Output(self,other,"DIA_Constantino_PoisonNeedOk_01_04");	//Hmmm... (přemýšlí) No výborně! Myslím, že je čas dokončit to... (zamlouvá) no, ten experiment, že ano...
 	AI_Output(self,other,"DIA_Constantino_PoisonNeedOk_01_06");	//Zajisté! tady máš. mělo by to být dost za takovou prácičku.
 	B_GiveInvItems(self,other,ItMi_Gold,300);
 	MIS_POISONNEED = LOG_SUCCESS;
@@ -1894,7 +1894,7 @@ func void dia_constantino_aboutkillignaz_info()
 	AI_Output(other,self,"DIA_Constantino_AboutKillIgnaz_01_03");	//A všechno tohle mě vede jedním směrem...
 	AI_Output(self,other,"DIA_Constantino_AboutKillIgnaz_01_04");	//Na co narážíš?!
 	AI_Output(other,self,"DIA_Constantino_AboutKillIgnaz_01_05");	//No, nedávno jste mě požádal, abych pro Vás sehnal nějaký velmi silný jed pro své experimenty.
-	AI_Output(self,other,"DIA_Constantino_AboutKillIgnaz_01_07");	//Ale přisáhám u innose... (Nervózně) To bych nikdy neudělal!
+	AI_Output(self,other,"DIA_Constantino_AboutKillIgnaz_01_07");	//Ale přisáhám u innose... (nervózně) To bych nikdy neudělal!
 	AI_Output(self,other,"DIA_Constantino_AboutKillIgnaz_01_08");	//My jsme byli celkem dobří přátelé a samotného mě to dost rozrušilo.
 	AI_Output(self,other,"DIA_Constantino_AboutKillIgnaz_01_11");	//Nemám s tím nic společného!
 	B_LogEntry(TOPIC_KILLIGNAZ,"Alchymista Constantino nic neví o vraždě. Ale něco tu smrdí. Před několika dni jsem pro něj sháněl silný jed, prý pro svoje experimenty. To je dost silný důkaz...");
@@ -1925,9 +1925,9 @@ func void dia_constantino_foundbottle_info()
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_01_00");	//Hele podívej, co jsem našel.
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_01_01");	//Eee... (dělá jakoby nic) A co je to?!
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_01_02");	//Myslím, že víte. Řekl bych, že tato lahvička dříva patřila vám hm?!
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_01_03");	//Cože?!... (Neklidně) To teda ne! To není moje!
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_01_03");	//Cože?!... (neklidně) To teda ne! To není moje!
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_01_04");	//Ale já bych řekl že ano. Tato lahvička patřila vám, je od toho jedu a je otevřená, takže ji někdo použil!
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_01_05");	//Ale... (Nervózně) Opravdu si myslíte, že jsem otrávil Ignaze?!
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_01_05");	//Ale... (nervózně) Opravdu si myslíte, že jsem otrávil Ignaze?!
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_01_06");	//Je jasné, že jste to byl Vy! A při první příležitosti informuji domobranu...
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_01_07");	//Ne! Prosím tě, nedělej to!... (panikaří) byl jsem donucen!
 	Info_ClearChoices(dia_constantino_foundbottle);
@@ -1960,7 +1960,7 @@ func void dia_constantino_foundbottle_tellme()
 func void dia_constantino_foundbottle_no()
 {
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_No_01_01");	//Potom mi nedáváš na výběr. Je nezbytné tě předat domobraně!
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_No_01_02");	//No...(poraženě) Dělej co musíš! Ale věz, že děláš velkou chybu.
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_No_01_02");	//No... (poraženě) Dělej co musíš! Ale věz, že děláš velkou chybu.
 	CONSTANTINOFUCKOFF = TRUE;
 	B_LogEntry(TOPIC_KILLIGNAZ,"Ha! Zdá se, že oním vrahem je Constantino. To on otrávil alchymistu Ignaze. Řekl bych, že je nutné ho nahlásit lordu Andremu.");
 	AI_StopProcessInfos(self);
@@ -1971,7 +1971,7 @@ func void dia_constantino_foundbottle_yes()
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_Yes_01_01");	//Tak zkuste zamyslet! V sázce máte zbytek života!
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_02");	//Věřte mi, zkoušel jsem to... (na pokraji sil) ale už mě nic nenapadá.
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_Yes_01_03");	//Hmmm... No, a nevšiml jste si třeba během několika minulých dní nečeho zvláštního ve vašem okolí?
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_04");	//Ano! počkejte... Vzpomínám se, všiml jsem si jedné zvláštní věci...(víc se zamyslí)
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_04");	//Ano! počkejte... Vzpomínám se, všiml jsem si jedné zvláštní věci... (víc se zamyslí)
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_06");	//(přemýšlí) je to pár dní, co ke mě přišel zvláštní cizinec
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_10");	//Zajímal se o mé vzácné lektvary... Samozřejmě, některé ode mě chtěl odkoupit.
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_12");	//No... (zamyslí se) Chápete, že takového druhy lektvarů si tady v laboratoři neskladuju.
@@ -1985,7 +1985,7 @@ func void dia_constantino_foundbottle_yes()
 func void dia_constantino_foundbottle_nohelp()
 {
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_NoHelp_01_01");	//Nemyslím si, že to jako důkaz nevinny postačí.
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_NoHelp_01_02");	//No...(poraženě) Potom dělej co musíš! Ale věz, že děláš velkou chybu.
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_NoHelp_01_02");	//No... (poraženě) Potom dělej co musíš! Ale věz, že děláš velkou chybu.
 	CONSTANTINOFUCKOFF = TRUE;
 	B_LogEntry(TOPIC_KILLIGNAZ,"Ha! Zdá se, že oním vrahem je Constantino. To on otrávil alchymistu Ignaze. Řekl bych, že je nutné ho nahlásit lordu Andremu.");
 	AI_StopProcessInfos(self);
@@ -1994,7 +1994,7 @@ func void dia_constantino_foundbottle_nohelp()
 func void dia_constantino_foundbottle_yeshelp()
 {
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_YesHelp_01_01");	//No dobrá, věřím ti.
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_YesHelp_01_02");	//U Innose!... (Radostně) Díky. A doufám, že ho nakonec chytnete.
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_YesHelp_01_02");	//U Innose!... (radostně) Díky. A doufám, že ho nakonec chytnete.
 	HELPKILLIGNAZ = TRUE;
 	Info_ClearChoices(dia_constantino_foundbottle);
 	B_LogEntry(TOPIC_KILLIGNAZ,"Rozhodl jsem se, že pomůžu Constantinovi. Tento případ je těžce zapeklitý. Ale věřím Constantinovi, že to neudělal, ale měl bych zjistit, kdo byla ta tajemná osoba, co ho navštívila. Možná že si ji někdo z domobrany všimnul.");
@@ -2021,11 +2021,11 @@ func int dia_constantino_MakePoison_condition()
 func void dia_constantino_MakePoison_info()
 {
 	AI_Output(other,self,"DIA_Constantino_MakePoison_01_01");	//Víš, jak dělat jedy?
-	AI_Output(self,other,"DIA_Constantino_MakePoison_01_02");	//Hmm...(neochotně) Ano. Je to další součást mé práce hned po vaření lektvarů.
+	AI_Output(self,other,"DIA_Constantino_MakePoison_01_02");	//Hmm... (neochotně) Ano. Je to další součást mé práce hned po vaření lektvarů.
 	AI_Output(self,other,"DIA_Constantino_MakePoison_01_03");	//Ale nikomu o tom neříkám a tobě radím to samé.
 	AI_Output(self,other,"DIA_Constantino_MakePoison_01_04");	//Pokud se o tom dozví městská stráž, okamžitě zavře tento obchod!
 	AI_Output(other,self,"DIA_Constantino_MakePoison_01_05");	//Chápu. Nebojíte se, že se někdy otrávíte?
-	AI_Output(self,other,"DIA_Constantino_MakePoison_01_06");	//Neboj se...(smích) Vždy když vařím jed, mám u sebe protijed.
+	AI_Output(self,other,"DIA_Constantino_MakePoison_01_06");	//Neboj se... (smích) Vždy když vařím jed, mám u sebe protijed.
 	AI_Output(self,other,"DIA_Constantino_MakePoison_01_07");	//Dělám je také, protože bez nich se v tomto oboru neobejdeš.
 	AI_Output(self,other,"DIA_Constantino_MakePoison_01_08");	//Kromě toho jsem se ze svých experimentů naučil extrahovat některé druhy jedů.
 	AI_Output(self,other,"DIA_Constantino_MakePoison_01_09");	//Nyní mají pouze malé vedlejší účinky ve formě vyrážky na kůži nebo na tváři.
@@ -2056,7 +2056,7 @@ func void dia_constantino_MakePoisonTeachMe_info()
 
 	if(ConstForgiven == TRUE)
 	{
-		AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMe_01_02");	//Hmmm...(zamyšleně) Přeci jen jsi mi pomohl vyřešit problém s Ignazem.
+		AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMe_01_02");	//Hmmm... (zamyšleně) Přeci jen jsi mi pomohl vyřešit problém s Ignazem.
 		AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMe_01_03");	//A byl bych nevděčná svině, kdybych ti za to nepoděkoval.
 		AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMe_01_04");	//Nicméně, mé znalosti budou vyžadovat, abys měl nějaké zkušenosti.
 		AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMe_01_05");	//No... Malý obnos zlatý neuškodí. Alespoň pokryji náklady na tvé učení.
@@ -2090,7 +2090,7 @@ func int dia_constantino_MakePoisonTeachMeAgain_condition()
 func void dia_constantino_MakePoisonTeachMeAgain_info()
 {
 	AI_Output(other,self,"DIA_Constantino_MakePoisonTeachMeAgain_01_01");	//Mohl bys mi ukázat jak zvládnout jedy?
-	AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMeAgain_01_02");	//Hmmm...(zamyšleně) Přeci jen jsi mi pomohl vyřešit problém s Ignazem.
+	AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMeAgain_01_02");	//Hmmm... (zamyšleně) Přeci jen jsi mi pomohl vyřešit problém s Ignazem.
 	AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMeAgain_01_03");	//A byl bych nevděčná svině, kdybych ti za to nepoděkoval.
 	AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMeAgain_01_04");	//Nicméně, mé znalosti budou vyžadovat, abys měl nějaké zkušenosti.
 	AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMeAgain_01_05");	//No... Malý obnos zlatý neuškodí. Alespoň pokryji náklady na tvé učení.
@@ -2269,7 +2269,7 @@ func void DIA_Constantino_LOKIPOTION_Info()
 	AI_Output(other,self,"DIA_Constantino_LOKIPOTION_01_00");	//Potřebuju jednu velmi vzácnou rostlinu.
 	AI_Output(self,other,"DIA_Constantino_LOKIPOTION_01_01");	//Jak se jmenuje?
 	AI_Output(other,self,"DIA_Constantino_LOKIPOTION_01_02");	//Kaktus.
-	AI_Output(self,other,"DIA_Constantino_LOKIPOTION_01_03");	//Hmmm...(se zájmem) Ano, už jsem o něm slyšel, v této oblasti je opravdu velmi vzácný.
+	AI_Output(self,other,"DIA_Constantino_LOKIPOTION_01_03");	//Hmmm... (se zájmem) Ano, už jsem o něm slyšel, v této oblasti je opravdu velmi vzácný.
 	AI_Output(other,self,"DIA_Constantino_LOKIPOTION_01_04");	//Víš, kde ho najdu?
 	AI_Output(self,other,"DIA_Constantino_LOKIPOTION_01_05");	//Obávám se, že ho v okolí Khorinisu nenajdeš.
 	AI_Output(self,other,"DIA_Constantino_LOKIPOTION_01_06");	//Pokud vím, má tato rostlina ráda suché klima a spoustu slunečního svitu. Tady je pro něj příliš chladno.

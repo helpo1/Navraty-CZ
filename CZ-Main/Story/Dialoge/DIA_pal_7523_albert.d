@@ -288,7 +288,7 @@ func void dia_pal_7523_drakardone_info()
 	B_GivePlayerXP(400);
 	AI_Output(other,self,"DIA_PAL_7523_DrakarDone_01_00");	//Ohledně té skřetí lodi...
 	AI_Output(other,self,"DIA_PAL_7523_DrakarDone_01_02");	//Věřím, že ta loď už nikam neodpluje.
-	AI_Output(self,other,"DIA_PAL_7523_DrakarDone_01_04");	//To myslíš vážně? (Obdivně) To je velmi dobrá zpráva!
+	AI_Output(self,other,"DIA_PAL_7523_DrakarDone_01_04");	//To myslíš vážně? (obdivně) To je velmi dobrá zpráva!
 	AI_Output(self,other,"DIA_PAL_7523_DrakarDone_01_05");	//Přísun skřetů se sníží a to určitě oslabí jejich pozici.
 	AI_Output(self,other,"DIA_PAL_7523_DrakarDone_01_06");	//Musíme jen počkat na lorda Hagen s posilami. A pak je můžem nadobro poslat za Beliarem.
 	MIS_DRAKARBROKE = LOG_SUCCESS;
@@ -319,15 +319,15 @@ func void dia_pal_7523_orcorder_info()
 {
 	AI_Output(other,self,"DIA_PAL_7523_OrcOrder_01_00");	//Něco tu pro tebe mám.
 	AI_Output(other,self,"DIA_PAL_7523_OrcOrder_01_01");	//Zde je zajímavý dopis s rozkazy- Našel jsem ho u jejich vůdce na palubě Drakaru.
-	AI_Output(self,other,"DIA_PAL_7523_OrcOrder_01_02");	//Hmm...(se zájmem) já se podívám.
+	AI_Output(self,other,"DIA_PAL_7523_OrcOrder_01_02");	//Hmm... (se zájmem) já se podívám.
 	B_GiveInvItems(other,self,itwr_orcsorder,1);
 	B_UseFakeScroll();
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrder_01_04");	//No, no... Zdá se, že je to psané ve skřetím jazyce. Už dřív jsem se setkal s takovíma písemnostma.
-	AI_Output(other,self,"DIA_PAL_7523_OrcOrder_01_05");	//(Sarkasticky) A já myslel, že je to jen trochu nečitelné.
+	AI_Output(other,self,"DIA_PAL_7523_OrcOrder_01_05");	//(sarkasticky) A já myslel, že je to jen trochu nečitelné.
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrder_01_06");	//(nepřerušuj) Skřeti je dávají na významé vojenské dokumenty.
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrder_01_08");	//Tak, to je vojenský dokument! A pravděpodobně obsahuje informace o skřetích plánech.
 	AI_Output(other,self,"DIA_PAL_7523_OrcOrder_01_10");	//Dobře, dej mi ten dopis, já něco vymyslím.
-	AI_Output(self,other,"DIA_PAL_7523_OrcOrder_01_11");	//Chystáš se zajmout skřeta a zeptat se ho? (Směje se)
+	AI_Output(self,other,"DIA_PAL_7523_OrcOrder_01_11");	//Chystáš se zajmout skřeta a zeptat se ho? (směje se)
 	B_GiveInvItems(self,other,itwr_orcsorder,1);
 	MIS_ORCORDER = LOG_Running;
 	Log_CreateTopic(TOPIC_ORCORDER,LOG_MISSION);
@@ -413,7 +413,7 @@ func void dia_pal_7523_orcorderdone_info()
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_05");	//Co se týče tebe - myslím, že si zaslouží štědrou odměnu za svoji práci.
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_06");	//Bohužel nemám dostatek zlata, které bych ti mohl dát...
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_07");	//Ale myslím, že ti můžu nabídnout něco jiného.
-	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_09");	//Tady! (pyšně)... Vezmi si tenhle drahocenný prsten!
+	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_09");	//Tady! (pyšně) Vezmi si tenhle drahocenný prsten!
 	CreateInvItems(self,itri_innosjudge,1);
 	B_GiveInvItems(self,other,itri_innosjudge,1);
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_10");	//Dal mi ho sám král Rhobar za mé činy ve válce!

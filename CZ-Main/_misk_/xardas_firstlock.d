@@ -755,7 +755,7 @@ func void DIA_Addon_Xardas_Hello_Dragons()
 	AI_Output(self,other,"DIA_Xardas_Hello_14_07");	//Svým posledním zběsilým skřekem vyslal Spáč na cestu armády temnot.
 	AI_Output(self,other,"DIA_Xardas_Hello_14_08");	//Byl to rozkaz určený všem zlým stvůrám. Mocné zaklínadlo, které nemohou neuposlechnout.
 	AI_Output(self,other,"DIA_Xardas_Hello_14_09");	//Jeho poslední rozkaz byl: JDĚTE! A oni šli. Všichni. Dokonce i draci.
-	AI_Output(other,self,"DIA_Xardas_Hello_15_10");	//(užasle)... Draci?!
+	AI_Output(other,self,"DIA_Xardas_Hello_15_10");	//(užasle) ... draci?!
 	AI_Output(self,other,"DIA_Xardas_Hello_14_11");	//Jsou to pradávná stvoření nebývalé moci. Cítím jejich přítomnost - dokonce i zde.
 	AI_Output(self,other,"DIA_Xardas_Hello_14_12");	//Shromáždili kolem sebe celou armádu nižších stvůr, aby jim sloužila.
 	AI_Output(other,self,"DIA_Xardas_Hello_15_13");	//Kde je ta armáda teď?
@@ -3039,13 +3039,13 @@ func void dia_xardas_finddarksoul_info()
 	if(other.guild == GIL_KDF)
 	{
 		AI_Output(self,other,"DIA_Xardas_FindDarkSoul_01_25");	//V první řadě jsi mág Ohně - služebník Innose!
-		AI_Output(self,other,"DIA_Xardas_FindDarkSoul_01_26");	//Obávám se, že nemáš šanci!... (Skepticky)
+		AI_Output(self,other,"DIA_Xardas_FindDarkSoul_01_26");	//Obávám se, že nemáš šanci!... (skepticky)
 		CHANCEGETDARKSOUL = 1;
 	}
 	else if(other.guild == GIL_PAL)
 	{
 		AI_Output(self,other,"DIA_Xardas_FindDarkSoul_01_27");	//V první řadě jsi paladin Innose!
-		AI_Output(self,other,"DIA_Xardas_FindDarkSoul_01_28");	//Tvé šance jsou velmi malé!... (Skepticky)
+		AI_Output(self,other,"DIA_Xardas_FindDarkSoul_01_28");	//Tvé šance jsou velmi malé!... (skepticky)
 		CHANCEGETDARKSOUL = 5;
 	}
 	else if(other.guild == GIL_KDW)
@@ -5117,7 +5117,7 @@ func int dia_xardas_pyrokinez_condition()
 func void dia_xardas_pyrokinez_info()
 {
 	AI_Output(other,self,"DIA_Xardas_HarmUndead_01_00");	//Co to máš na tom stole za runu?
-	AI_Output(self,other,"DIA_Xardas_HarmUndead_01_01");	//Co máš na mysli? (Ohlédne se) Aha, v té runě se nachází esence zničení nemrtvých. Poměrně vzácné, mimochodem.
+	AI_Output(self,other,"DIA_Xardas_HarmUndead_01_01");	//Co máš na mysli? (ohlédne se) Aha, v té runě se nachází esence zničení nemrtvých. Poměrně vzácné, mimochodem.
 	AI_Output(self,other,"DIA_Xardas_HarmUndead_01_02");	//Pro ty, co se zabývají Beliarovým temným uměním - to je opravdu skvost!
 	AI_Output(other,self,"DIA_Xardas_HarmUndead_01_03");	//Působivé. Můžu takovou taky získat?
 	AI_Output(self,other,"DIA_Xardas_HarmUndead_01_04");	//Rozumím tvému zájmu. No, mohl bych ti ji dát.
@@ -5228,7 +5228,7 @@ func void DIA_Xardas_RobaUp_Find_info()
 {
 	B_GivePlayerXP(1500);
 	AI_Output(other,self,"DIA_Xardas_RobaUp_Find_00_01");	//Našel jsem recept 'Dech smrti'.
-	AI_Output(self,other,"DIA_Xardas_RobaUp_Find_00_02");	//(S úctou) Ty mě nikdy nepřestaneš udivovat. Řekni mi, našel jsi všechny části receptu?
+	AI_Output(self,other,"DIA_Xardas_RobaUp_Find_00_02");	//(s úctou) Ty mě nikdy nepřestaneš udivovat. Řekni mi, našel jsi všechny části receptu?
 	AI_Output(other,self,"DIA_Xardas_RobaUp_Find_00_03");	//Našel.
 	AI_Output(self,other,"DIA_Xardas_RobaUp_Find_00_04");	//Doufám, že sis už přečetl formuli toho lektvaru.
 	AI_Output(other,self,"DIA_Xardas_RobaUp_Find_00_05");	//Samozřejmě.
@@ -5650,7 +5650,7 @@ func void DIA_Xardas_Druid_info()
 	AI_Output(self,other,"DIA_Xardas_Druid_00_16");	//Nic ti nevysvětlím. Druidská magie se učí léta. Nebudu s tebou ztrácet tolik času.
 	AI_Output(self,other,"DIA_Xardas_Druid_00_17");	//Přines mi vše, co potřebuju a já ti to připravím.
 	AI_Output(other,self,"DIA_Xardas_Druid_00_18");	//Dobrá, to by šlo. Co za to chceš?
-	AI_Output(self,other,"DIA_Xardas_Druid_00_19");	//Hmmm...(zamyšleně) Dej mi vteřinku...
+	AI_Output(self,other,"DIA_Xardas_Druid_00_19");	//Hmmm... (zamyšleně) Dej mi vteřinku...
 	B_UseFakeScroll();
 	AI_Output(self,other,"DIA_Xardas_Druid_00_20");	//Zapamatuj si: Potřebuji královský šťovík, ohnivý kořen - to poslouží jako základ pro recept...
 	AI_Output(self,other,"DIA_Xardas_Druid_00_21");	//... tři listy léčivých bylin, trolí bobuli jako činidlo a...
@@ -5662,7 +5662,7 @@ func void DIA_Xardas_Druid_info()
 	if(Npc_HasItems(hero,ItPl_CactusFlower) > 0)
 	{
 		AI_Output(other,self,"DIA_Xardas_Druid_00_25");	//Neboj se! Už jeden takový mám.
-		AI_Output(self,other,"DIA_Xardas_Druid_00_26");	//(Překvapeně) No, pokud ano, pak mi přines zbytek přísad a vytvořím pro tebe 'Kořen života'.
+		AI_Output(self,other,"DIA_Xardas_Druid_00_26");	//(překvapeně) No, pokud ano, pak mi přines zbytek přísad a vytvořím pro tebe 'Kořen života'.
 	}
 	else
 	{
@@ -5893,7 +5893,7 @@ func void DIA_Xardas_Pirate_Start_info()
 	AI_Output(other,self,"DIA_Xardas_Pirate_Start_00_02");	//Poslouchám.
 	AI_Output(self,other,"DIA_Xardas_Pirate_Start_00_03");	//Jak jsem se dozvěděl, paladinové před příchodem do Khorinisu potopili pirátskou loď.
 	AI_Output(other,self,"DIA_Xardas_Pirate_Start_00_04");	//Ty máš zájem o piráty?
-	AI_Output(self,other,"DIA_Xardas_Pirate_Start_00_05");	//(Znechuceně) Nejprve poslouchej a až potom se ptej! Takže...
+	AI_Output(self,other,"DIA_Xardas_Pirate_Start_00_05");	//(znechuceně) Nejprve poslouchej a až potom se ptej! Takže...
 	AI_Output(self,other,"DIA_Xardas_Pirate_Start_00_06");	//Kdysi se přihodila jedna věc, předtím, než byl zničen jeden z chrámů Beliara, z něj paladinové vzali mnoho věcí.
 	AI_Output(self,other,"DIA_Xardas_Pirate_Start_00_07");	//Také sebou vzali jeden prsten. Vypadá ošklivě, ale je v něm veliká síla. Hlavně pokud ho nosí správná osoba.
 	AI_Output(other,self,"DIA_Xardas_Pirate_Start_00_08");	//Kde jsou ti piráti?
@@ -5972,7 +5972,7 @@ func void DIA_Xardas_Pirate_Done_info()
 	AI_Output(other,self,"DIA_Xardas_Pirate_Done_00_01");	//Neztrať ten prsten.
 	B_GiveInvItems(other,self,ItRi_DarkCurse,1);
 	Npc_RemoveInvItems(self,ItRi_DarkCurse,1);
-	AI_Output(self,other,"DIA_Xardas_Pirate_Done_00_02");	//(Spokojeně) Konečně je můj. Neumíš si ani představit, jak dlouho jsem na tohle čekal.
+	AI_Output(self,other,"DIA_Xardas_Pirate_Done_00_02");	//(spokojeně) Konečně je můj. Neumíš si ani představit, jak dlouho jsem na tohle čekal.
 	AI_Output(other,self,"DIA_Xardas_Pirate_Done_00_03");	//Co moje odměna?
 	AI_Output(self,other,"DIA_Xardas_Pirate_Done_00_04");	//Neboj se! Připravil jsem ti speciální dar.
 	B_GiveInvItems(self,other,ItPo_ElixirSHadow,1);
@@ -6018,7 +6018,7 @@ func void DIA_NONE_100_Xardas_WhyHere_info()
 	AI_Output(other,self,"DIA_Xardas_WhyHere_01_09");	//Jistě. Strážce Dagoth mi o nich povídal.
 	AI_Output(self,other,"DIA_Xardas_WhyHere_01_10");	//A ty nejsi v rozpacích, když víš, co tě čeká?
 	AI_Output(other,self,"DIA_Xardas_WhyHere_01_11");	//Co je na tom špatného? Zabil jsem Spáče. Už jsi zapomněl?
-	AI_Output(self,other,"DIA_Xardas_WhyHere_01_12");	//Ano, to ano...(zamyšleně) Nemyslíš, že je to příliš velká zásluha?
+	AI_Output(self,other,"DIA_Xardas_WhyHere_01_12");	//Ano, to ano... (zamyšleně) Nemyslíš, že je to příliš velká zásluha?
 	AI_Output(self,other,"DIA_Xardas_WhyHere_01_13");	//Spáč byl silný arcidémon, to nepopírám. Ale dříve se mnozí hrdinové pokoušeli o obdobné činy a většina z nich zkončila v Beliarově říši. 
 	AI_Output(other,self,"DIA_Xardas_WhyHere_01_14");	//Co tím myslíš?
 	AI_Output(self,other,"DIA_Xardas_WhyHere_01_15");	//Myslím tím, že se tě snaží odvrátit od tvé pravé cesty.
@@ -6059,7 +6059,7 @@ func void DIA_NONE_100_Xardas_WhatDo_info()
 	AI_Output(self,other,"DIA_Xardas_WhatDo_01_03");	//Tyto prastaré bytosti jsou výsledkem veliké moci elementů. Volání Spáče je probudilo z jejich spánku.
 	AI_Output(self,other,"DIA_Xardas_WhatDo_01_04");	//S největší pravděpodobností budou poslouchat vůli Strážců více než kdokoliv jiný.
 	AI_Output(other,self,"DIA_Xardas_WhatDo_01_05");	//Ale vždycky jsem si myslel, že draci jsou přesně jako Beliarova vůle.
-	AI_Output(self,other,"DIA_Xardas_WhatDo_01_06");	//(Vážně) Ne, to ne. Draci neslouží Beliarovi.
+	AI_Output(self,other,"DIA_Xardas_WhatDo_01_06");	//(vážně) Ne, to ne. Draci neslouží Beliarovi.
 	AI_Output(self,other,"DIA_Xardas_WhatDo_01_07");	//Jsou příliš silnými pouhými pěšáky v nekonečné válce bohů.
 	AI_Output(self,other,"DIA_Xardas_WhatDo_01_08");	//A jenom síla jejich tvůrců, jim může poroučet. Jejich páni jsou Strážci.
 	MIS_TrueDragonMasters = LOG_Success;
@@ -6294,7 +6294,7 @@ func void DIA_Xardas_HauntedLighthouse_info()
 	AI_Output(self,other,"DIA_Xardas_HauntedLighthouse_01_02");	//Co je to za dotaz? Jsem mág. Samozřejmě, že rozumím.
 	AI_Output(other,self,"DIA_Xardas_HauntedLighthouse_01_03");	//Pak bys mi mohl možná pomoci pochopit význam jednoho z nich.
 	AI_Output(self,other,"DIA_Xardas_HauntedLighthouse_01_04");	//Hmmm... Pověz mi, jak vypadal.
-	AI_Output(other,self,"DIA_Xardas_HauntedLighthouse_01_05");	//No tak... (popisuje)...
+	AI_Output(other,self,"DIA_Xardas_HauntedLighthouse_01_05");	//No tak... (popisuje)
 	AI_Output(self,other,"DIA_Xardas_HauntedLighthouse_01_06");	//To je znak prokletí. Poměrně starý. Kde jsi ho viděl? 
 	AI_Output(other,self,"DIA_Xardas_HauntedLighthouse_01_07");	//Ve starém majáku poblíž Khorinisu.
 	AI_Output(self,other,"DIA_Xardas_HauntedLighthouse_01_08");	//Ano, slyšel jsem o tom něco. Místní pověry naznačují skutečnost, že tento maják je prokletý a straší v něm.
@@ -6355,7 +6355,7 @@ func void DIA_Xardas_HauntedLighthouse_FindSkel()
 	AI_Output(other,self,"DIA_Xardas_HauntedLighthouse_FindSkel_01_04");	//A co si o tom myslíš?
 	AI_Output(self,other,"DIA_Xardas_HauntedLighthouse_FindSkel_01_05");	//Domnívám se, že tam mohlo snadno dojít k nějakému druhu prokletí. Pak by byl výskyt duchů snadno vysvětlitelný.
 	AI_Output(other,self,"DIA_Xardas_HauntedLighthouse_FindSkel_01_06");	//Jak zruším prokletí?
-	AI_Output(self,other,"DIA_Xardas_HauntedLighthouse_FindSkel_01_07");	//Hmmm...(zamyšleně) Nebude to snadné. Za prvé, musíš znát příčinu vraždy. V tom ti může pomoct jedině duch toho chudáka, který byl zabit.
+	AI_Output(self,other,"DIA_Xardas_HauntedLighthouse_FindSkel_01_07");	//Hmmm... (zamyšleně) Nebude to snadné. Za prvé, musíš znát příčinu vraždy. V tom ti může pomoct jedině duch toho chudáka, který byl zabit.
 	AI_Output(other,self,"DIA_Xardas_HauntedLighthouse_FindSkel_01_08");	//Můžeme ho nějak přivolat?
 	AI_Output(self,other,"DIA_Xardas_HauntedLighthouse_FindSkel_01_09");	//S tím si poraď sám, já mám i bez tebe práce dost.
 	AI_Output(self,other,"DIA_Xardas_HauntedLighthouse_FindSkel_01_10");	//Tady máš svitek. Jeho síla ti umožní přivolat ducha zabitého na místě jeho smrti.

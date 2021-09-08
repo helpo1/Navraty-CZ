@@ -387,7 +387,7 @@ func void dia_gestath_harpie_info()
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Harpie_01_06");	//Mám jeden rozpracovaný úkol- lovím Rukvayu!
 	AI_Output(other,self,"DIA_VLK_4148_Gestath_Harpie_01_07");	//A to je...
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Harpie_01_08");	//Rukvaya - to je královna zdejších harpyjí! Je mnohem vetší a silnější než ostatní.
-	AI_Output(self,other,"DIA_VLK_4148_Gestath_Harpie_01_09");	//Chýr je, že její pařáty dokážou přeťat ocelovou zbroj!
+	AI_Output(self,other,"DIA_VLK_4148_Gestath_Harpie_01_09");	//Zvěst je, že její pařáty dokážou přeťat ocelovou zbroj!
 	AI_Output(other,self,"DIA_VLK_4148_Gestath_Harpie_01_10");	//Nabudúce narazíš na skřety a nebudeš nadšenej.
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Harpie_01_11");	//Pravda, je to nebezpečné. Ale jeden obchodník mi nabídl takovou sumu za srdce bestie, že jsem nemohl odmítnout.
 	AI_Output(other,self,"DIA_VLK_4148_Gestath_Harpie_01_12");	//Kolik?
@@ -395,7 +395,7 @@ func void dia_gestath_harpie_info()
 	AI_Output(other,self,"DIA_VLK_4148_Gestath_Harpie_01_14");	//Nuž, hodně zdaru!
 	CreateInvItem(self,ItMi_Joint);
 	B_UseItem(self,ItMi_Joint);
-	AI_Output(self,other,"DIA_VLK_4148_Gestath_Harpie_01_15");	//Počkej. (Váhavo) Nedávno jsem videl jak Rukvaya roztrhala na cimpr campr dva elitné černé skřeti.
+	AI_Output(self,other,"DIA_VLK_4148_Gestath_Harpie_01_15");	//Počkej. (váhavo) Nedávno jsem videl jak Rukvaya roztrhala na cimpr campr dva elitné černé skřeti.
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Harpie_01_16");	//Děsivý pohled, to ti řeknu. Takže bez někoho pomoci to asi vzdám.
 	AI_Output(other,self,"DIA_VLK_4148_Gestath_Harpie_01_17");	//A co dostanu, když ti pomohu?
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Harpie_01_18");	//Na začátek mi pňines srdce té bestie. Pak si mužeme promluvit o odměne.
@@ -436,7 +436,7 @@ func void dia_vlk_4148_gestath_rukvaia_info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_VLK_4148_Gestath_Rukvaia_01_01");	//Zabil jsem tu tvou krasavici!
-	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_01_02");	//(Nedočkavo) A co její srdce, máš ho?
+	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_01_02");	//(nedočkavo) A co její srdce, máš ho?
 	AI_Output(other,self,"DIA_VLK_4148_Gestath_Rukvaia_01_03");	//Jo, ale ne tak rychle kámo. Na začátek si promluvme o mé odměne.
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_01_04");	//Jo, si muž kterej nezpomíná... Nuž, jakou odměnu bys chtěl?
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_01_05");	//Mužu ti nabídnout, patnáct stovek zlatých, magický lektvar nebo celkem dobrou zbraň.
@@ -449,7 +449,7 @@ func void dia_vlk_4148_gestath_rukvaia_info()
 func void dia_vlk_4148_gestath_rukvaia_money()
 {
 	AI_Output(other,self,"DIA_VLK_4148_Gestath_Rukvaia_Money_01_00");	//Chci peníze!
-	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_Money_01_01");	//Dobře. (Efektně) Na- ber!
+	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_Money_01_01");	//Dobře. (efektně) Na- ber!
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_Money_01_02");	//Patnáct stovek zlatých - to nie je zlé číslo, ale risk bol velký, nebol?
 	B_GiveInvItems(self,other,ItMi_Gold,1500);
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_Money_01_03");	//A teď mi dej srdce.
@@ -461,7 +461,7 @@ func void dia_vlk_4148_gestath_rukvaia_money()
 func void dia_vlk_4148_gestath_rukvaia_zelia()
 {
 	AI_Output(other,self,"DIA_VLK_4148_Gestath_Rukvaia_zelia_01_00");	//Vemu si ten magickej lektvar.
-	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_zelia_01_01");	//Dobře. (Efektně) Na- ber!
+	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_zelia_01_01");	//Dobře. (efektně) Na- ber!
 	B_GiveInvItems(self,other,itpo_perm_def,1);
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_Money_01_03");	//A teď mi dej srdce.
 	Info_ClearChoices(dia_vlk_4148_gestath_rukvaia);
@@ -472,10 +472,10 @@ func void dia_vlk_4148_gestath_rukvaia_zelia()
 func void dia_vlk_4148_gestath_rukvaia_weapons()
 {
 	AI_Output(other,self,"DIA_VLK_4148_Gestath_Rukvaia_weapons_01_00");	//Dej mi tu zbraň.
-	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_weapons_01_01");	//Dobře. (Efektně) Na- ber! Moje stará obouručná sekyra.
+	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_weapons_01_01");	//Dobře. (efektně) Na- ber! Moje stará obouručná sekyra.
 	B_GiveInvItems(self,other,ITMW_2H_AXE_GESTATH,1);
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_weapons_01_02");	//Je ukovaná majstrovsky. Síce je ťežká, ale zpusobuje nemalé zranenia aj cez zbroj.
-	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_weapons_01_03");	//Netušíš kolik rozbila skřetích lebek (úškrn).
+	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_weapons_01_03");	//Netušíš kolik rozbila skřetích lebek. (úškrn)
 	AI_Output(self,other,"DIA_VLK_4148_Gestath_Rukvaia_weapons_01_04");	//A teď mi dej srdce.
 	Info_ClearChoices(dia_vlk_4148_gestath_rukvaia);
 	Info_AddChoice(dia_vlk_4148_gestath_rukvaia,"Jasně! Tady máš.",dia_vlk_4148_gestath_rukvaia_serdceyes);
@@ -802,7 +802,7 @@ func void DIA_VLK_4149_GESTATH_RUKVAIA_info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_VLK_4149_GESTATH_RUKVAIA_01_01");	//Zabil jsem tu tvou krasavici!
-	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_01_02");	//(Nedočkavo) A co její srdce, máš ho?
+	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_01_02");	//(nedočkavo) A co její srdce, máš ho?
 	AI_Output(other,self,"DIA_VLK_4149_GESTATH_RUKVAIA_01_03");	//Jo, ale ne tak rychle kámo. Na začátek si promluvme o mé odměne.
 	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_01_04");	//Jo, si muž kterej nezpomíná... Nuž, jakou odměnu bys chtěl?
 	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_01_05");	//Mužu ti nabídnout, patnáct stovek zlatých, magický lektvar nebo celkem dobrou zbraň.
@@ -815,7 +815,7 @@ func void DIA_VLK_4149_GESTATH_RUKVAIA_info()
 func void DIA_VLK_4149_GESTATH_RUKVAIA_money()
 {
 	AI_Output(other,self,"DIA_VLK_4149_GESTATH_RUKVAIA_Money_01_00");	//Chci peníze!
-	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_Money_01_01");	//Dobře. (Efektně) Na- ber!
+	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_Money_01_01");	//Dobře. (efektně) Na- ber!
 	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_Money_01_02");	//Patnáct stovek zlatých - to nie je zlé číslo, ale risk bol velký, nebol?
 	B_GiveInvItems(self,other,ItMi_Gold,1500);
 	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_Money_01_03");	//A teď mi dej srdce.
@@ -827,7 +827,7 @@ func void DIA_VLK_4149_GESTATH_RUKVAIA_money()
 func void DIA_VLK_4149_GESTATH_RUKVAIA_zelia()
 {
 	AI_Output(other,self,"DIA_VLK_4149_GESTATH_RUKVAIA_zelia_01_00");	//Vemu si ten magickej lektvar.
-	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_zelia_01_01");	//Dobře. (Efektně) Na- ber!
+	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_zelia_01_01");	//Dobře. (efektně) Na- ber!
 	B_GiveInvItems(self,other,itpo_perm_def,1);
 	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_zelia_01_02");	//A teď mi dej srdce.
 	Info_ClearChoices(DIA_VLK_4149_GESTATH_RUKVAIA);
@@ -838,10 +838,10 @@ func void DIA_VLK_4149_GESTATH_RUKVAIA_zelia()
 func void DIA_VLK_4149_GESTATH_RUKVAIA_weapons()
 {
 	AI_Output(other,self,"DIA_VLK_4149_GESTATH_RUKVAIA_weapons_01_00");	//Dej mi tu zbraň.
-	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_weapons_01_01");	//Dobře. (Efektně) Na- ber! Moje stará obouručná sekyra.
+	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_weapons_01_01");	//Dobře. (efektně) Na- ber! Moje stará obouručná sekyra.
 	B_GiveInvItems(self,other,ITMW_2H_AXE_GESTATH,1);
 	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_weapons_01_02");	//Je ukovaná majstrovsky. Síce je ťežká, ale zpusobuje nemalé zranenia aj cez zbroj.
-	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_weapons_01_03");	//Netušíš kolik rozbila skřetích lebek (úškrn).
+	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_weapons_01_03");	//Netušíš kolik rozbila skřetích lebek. (úškrn)
 	AI_Output(self,other,"DIA_VLK_4149_GESTATH_RUKVAIA_weapons_01_04");	//A teď mi dej srdce.
 	Info_ClearChoices(DIA_VLK_4149_GESTATH_RUKVAIA);
 	Info_AddChoice(DIA_VLK_4149_GESTATH_RUKVAIA,"Jasně! Tady máš.",DIA_VLK_4149_GESTATH_RUKVAIA_serdceyes);

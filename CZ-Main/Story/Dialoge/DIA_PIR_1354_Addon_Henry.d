@@ -649,7 +649,7 @@ func void DIA_Addon_Henry_Palisade_Bandits_Info()
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Bandits_04_10");	//Je to zajímavý příběh. Už mi o tom hodně říkal.
 	if(self.aivar[AIV_PASSGATE] == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Henry_Palisade_Bandits_04_11");	//((podezřívavě) Škoda že si to nemůžeš poslechnout, když teď nemáš na zaplacení vstupu.
+		AI_Output(self,other,"DIA_Addon_Henry_Palisade_Bandits_04_11");	//(podezřívavě) Škoda že si to nemůžeš poslechnout, když teď nemáš na zaplacení vstupu.
 		Henry_Zoll_WhatFor = TRUE;
 	};
 };

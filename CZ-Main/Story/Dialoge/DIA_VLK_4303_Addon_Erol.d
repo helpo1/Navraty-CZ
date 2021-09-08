@@ -98,8 +98,8 @@ func int DIA_Addon_Erol_Hallo_Condition()
 func void DIA_Addon_Erol_Hallo_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Erol_Hallo_15_00");	//Co se stalo?
-	AI_Output(self,other,"DIA_Addon_Erol_Hallo_10_01");	//(Naštvaně) Co se stalo? Podívej se na ten nepořádek tamhle pod mostem!
-	AI_Output(self,other,"DIA_Addon_Erol_Hallo_10_02");	//(Naštvaně) Něco takového jsem neviděl za celý můj život. Ti tvorové by je měli do jednoho pobít.
+	AI_Output(self,other,"DIA_Addon_Erol_Hallo_10_01");	//(naštvaně) Co se stalo? Podívej se na ten nepořádek tamhle pod mostem!
+	AI_Output(self,other,"DIA_Addon_Erol_Hallo_10_02");	//(naštvaně) Něco takového jsem neviděl za celý můj život. Ti tvorové by je měli do jednoho pobít.
 };
 
 
@@ -423,8 +423,8 @@ func int dia_addon_erol_tradeguild_condition()
 
 func void dia_addon_erol_tradeguild_info()
 {
-	AI_Output(other,self,"DIA_Addon_Erol_TradeGuild_01_00");	//Chtěl bych se stát členem obchodního cechu. Mohl by si mi s tím pomoct?
-	AI_Output(self,other,"DIA_Addon_Erol_TradeGuild_01_02");	//Hmmm... (Zamyšleně) Vlastně už to bude delší doba, co jsem z tama odešel.
+	AI_Output(other,self,"DIA_Addon_Erol_TradeGuild_01_00");	//Chtěl bych se stát členem obchodního cechu. Mohl bys mi s tím pomoct?
+	AI_Output(self,other,"DIA_Addon_Erol_TradeGuild_01_02");	//Hmmm... (zamyšleně) Vlastně už to bude delší doba, co jsem z tama odešel.
 	AI_Output(self,other,"DIA_Addon_Erol_TradeGuild_01_03");	//Ačkoli, i přes to, mi pořád zůstalo určité spojení s cechem.
 	AI_Output(other,self,"DIA_Addon_Erol_TradeGuild_01_04");	//Takže by ti nedalo moc práce mi pomoci?
 	AI_Output(self,other,"DIA_Addon_Erol_TradeGuild_01_05");	//No...
@@ -693,7 +693,7 @@ func void DIA_Addon_Erol_Teach_Info()
 		AI_Output(self,other,"DIA_Addon_Erol_Teach_Add_10_00");	//Dobře. Sleduj. Je to jednoduchý trik.
 		AI_Output(self,other,"DIA_Addon_Erol_Teach_Add_10_01");	//Když někoho praštíš, nesmíš použít jen sílu paže, ale sílu celého těla.
 		AI_Output(self,other,"DIA_Addon_Erol_Teach_Add_10_02");	//Otoč se bokem, vystrč rameno dopředu a ve stejnou chvíli vymršti ruku.
-		AI_Output(self,other,"DIA_Addon_Erol_Teach_Add_10_03");	//(Smích) Když se dobře strefíš, poznáš ten rozdíl!
+		AI_Output(self,other,"DIA_Addon_Erol_Teach_Add_10_03");	//(smích) Když se dobře strefíš, poznáš ten rozdíl!
 		B_RaiseAttribute_Bonus(other,ATR_STRENGTH,1);
 		Erol_Bonus = TRUE;
 	}
@@ -779,7 +779,7 @@ func void dia_addon_erol_lurker_info()
 	else if(Kapitel == 3)
 	{
 		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_17");	//Z těch postav v černých pláštích mám husí kůži.
-		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_18");	//Něco tady neustále chodí, něco čenichá...(nervózně) Nelíbí se mi to!
+		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_18");	//Něco tady neustále chodí, něco čenichá... (nervózně) Nelíbí se mi to!
 	}
 	else
 	{
@@ -896,7 +896,7 @@ func int dia_addon_erol_agrees_recrdt_condition()
 func void dia_addon_erol_agrees_recrdt_info()
 {
 	AI_Output(other,self,"DIA_Addon_Erol_Agrees_RecrDT_15_00");	//Co tedy říkáš na moji nabídku?
-	AI_Output(self,other,"DIA_Addon_Erol_Agrees_RecrDT_10_01");	//(Udiveně) Máš nějaké další návrhy?
+	AI_Output(self,other,"DIA_Addon_Erol_Agrees_RecrDT_10_01");	//(udiveně) Máš nějaké další návrhy?
 	AI_Output(self,other,"DIA_Addon_Erol_Agrees_RecrDT_10_02");	//Dělám si legraci. Uvědomil jsem si, že je to pro mě v současné době nejlepší nabídka.
 	AI_Output(self,other,"DIA_Addon_Erol_Agrees_RecrDT_10_03");	//Taky mě nikdy nevadilo vyzkoušet něco nového.
 	AI_Output(self,other,"DIA_Addon_Erol_Agrees_RecrDT_10_04");	//Jinými slovy, souhlasím!

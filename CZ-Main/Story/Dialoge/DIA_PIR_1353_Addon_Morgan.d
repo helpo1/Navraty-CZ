@@ -168,7 +168,7 @@ func void DIA_Addon_Morgan_Meat_Info()
 	AI_Output(other,self,"DIA_Addon_Morgan_Meat_15_00");	//Přinesl jsem zásilku masa.
 	if(GregIsBack == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Morgan_Meat_07_01");	//(Vzbuzený) Uah. Nejdřív potřebuju doušek na probuzení.
+		AI_Output(self,other,"DIA_Addon_Morgan_Meat_07_01");	//(vzbuzený) Uah. Nejdřív potřebuju doušek na probuzení.
 		CreateInvItems(self,ItFo_Booze,3);
 		B_UseItem(self,ItFo_Booze);
 		AI_Output(self,other,"DIA_Addon_Morgan_Meat_07_02");	//Á, to je lepší. Dobrá, znova. Co chceš?

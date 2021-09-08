@@ -531,7 +531,7 @@ func int DIA_Alrik_DuWohnst_Condition()
 func void DIA_Alrik_DuWohnst_Info()
 {
 	AI_Output(other,self,"DIA_Alrik_DuWohnst_15_00");	//(překvapen) Ty žiješ za skladištěm?
-	AI_Output(self,other,"DIA_Alrik_DuWohnst_09_01");	//Je to jen dočasné. Kdybys měl tolik zlata jako já, mohl bys mít podobný luxus (šklebí se)!
+	AI_Output(self,other,"DIA_Alrik_DuWohnst_09_01");	//Je to jen dočasné. Kdybys měl tolik zlata jako já, mohl bys mít podobný luxus! (šklebí se)
 	AI_Output(self,other,"DIA_Alrik_DuWohnst_09_02");	//Byl jsem bojový instruktor armády, ale odešel jsem hledat štěstí jako dobrodruh.
 	AI_Output(self,other,"DIA_Alrik_DuWohnst_09_03");	//Nyní toho lituji, protože posledních 100 zlatých jsem musel dát městské stráži.
 	AI_Output(self,other,"DIA_Alrik_DuWohnst_09_04");	//Takže hledám, jak si vydělat. Dokonce jsem prodal svůj meč.
@@ -563,7 +563,7 @@ func void DIA_Alrik_WerSchwert_Info()
 	AI_Output(self,other,"DIA_Alrik_WerSchwert_09_01");	//Vyměnil jsem ho na tržišti za nejaké zásoby.
 	AI_Output(self,other,"DIA_Alrik_WerSchwert_09_02");	//Ten chlap se jmenuje Jora. Dal mi kus masa a pochodně, ale ty jsou už dávno pryč.
 	AI_Output(other,self,"DIA_Alrik_WerSchwert_15_03");	//Asi mi ho nedá jen tak...
-	AI_Output(self,other,"DIA_Alrik_WerSchwert_09_04");	//Je to starý meč. Nebude chtít hodně. Jen pomysli na to, že me znovu vyzveš (šklebí se).
+	AI_Output(self,other,"DIA_Alrik_WerSchwert_09_04");	//Je to starý meč. Nebude chtít hodně. Jen pomysli na to, že me znovu vyzveš. (šklebí se)
 	MIS_Alrik_Sword = LOG_Running;
 	Log_CreateTopic(TOPIC_AlrikSchwert,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_AlrikSchwert,LOG_Running);

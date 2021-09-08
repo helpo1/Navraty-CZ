@@ -224,7 +224,7 @@ func int dia_wolf_li_changecourse_condition()
 func void dia_wolf_li_changecourse_info()
 {
 	AI_Output(other,self,"DIA_Wolf_LI_ChangeCourse_01_00");	//Nechtěl by ses vrátit na Khorinis?
-	AI_Output(self,other,"DIA_Wolf_LI_ChangeCourse_01_01");	//Hmm...(zamyšleně) A proč se ptáš?
+	AI_Output(self,other,"DIA_Wolf_LI_ChangeCourse_01_01");	//Hmm... (zamyšleně) A proč se ptáš?
 	Info_ClearChoices(dia_wolf_li_changecourse);
 	Info_AddChoice(dia_wolf_li_changecourse,"Potřebuji pomoct paladinům!",dia_wolf_li_changecourse_ore);
 	Info_AddChoice(dia_wolf_li_changecourse,"Je zde možnost získat prachy.",dia_wolf_li_changecourse_gold);

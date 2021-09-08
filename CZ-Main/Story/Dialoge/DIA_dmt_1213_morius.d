@@ -44,7 +44,7 @@ func void dmt_1213_morius_hello_info()
 	AI_Output(self,other,"DMT_1213_Morius_Hello_00");	//Tak, tak... Kdo je to zde?!
 	AI_Output(self,other,"DMT_1213_Morius_Hello_01");	//Ááá... Dagoth mi o tobě hodně vyprávěl.
 	AI_Output(self,other,"DMT_1213_Morius_Hello_02");	//Jsem překvapen, že jsi přemohl Luciana, i když s pomocí Asgarda.
-	AI_Output(self,other,"DMT_1213_Morius_Hello_03");	//Miláček bohů (smích)...
+	AI_Output(self,other,"DMT_1213_Morius_Hello_03");	//(směje se) Miláček bohů...
 	AI_Output(other,self,"DMT_1213_Morius_Hello_04");	//Ty jsi Strážce? Nehledal jsem tě.
 	AI_Output(self,other,"DMT_1213_Morius_Hello_05");	//Měl jsi mě najít, to mi věř.
 	AI_Output(self,other,"DMT_1213_Morius_Hello_06");	//Tak, co bys rád?...
@@ -150,11 +150,11 @@ func void dmt_1213_morius_test_pass()
 	}
 	else
 	{
-		AI_Output(self,other,"DMT_1213_Morius_Test_09");	//Mezitím, vidím, že Beliar se pokusil proklet tvou duši - a že se mu to celkem povedlo...(zklamaně)
+		AI_Output(self,other,"DMT_1213_Morius_Test_09");	//Mezitím, vidím, že Beliar se pokusil proklet tvou duši - a že se mu to celkem povedlo... (zklamaně)
 		AI_Output(self,other,"DMT_1213_Morius_Test_10");	//Prsten od Dagotha by tě ochránil, ale je pozdě!
 		AI_Output(self,other,"DMT_1213_Morius_Test_11");	//Už se stalo!
 		AI_Output(other,self,"DMT_1213_Morius_Test_12");	//Je možné to nějak zvrátit?
-		AI_Output(self,other,"DMT_1213_Morius_Test_13");	//Možná...(přemyšlí) Ti pomohou mágové Ohně!
+		AI_Output(self,other,"DMT_1213_Morius_Test_13");	//Možná... (přemyšlí) Ti pomohou mágové Ohně!
 		AI_Output(self,other,"DMT_1213_Morius_Test_14");	//Nyní jdi hledat dalšího z nás!
 		AI_Output(self,other,"DMT_1213_Morius_Test_15");	//Sbohem!
 		B_LogEntry(TOPIC_GUARDIANSTEST,"Po splnění zkoušky Moriuse bych měl hledat další Strážce!");

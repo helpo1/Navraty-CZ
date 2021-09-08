@@ -60,7 +60,7 @@ func void DIA_Addon_Raven_Hi_Info()
 
 	AI_Output(self,other,"DIA_Addon_Raven_Add_10_01");	//Můj pán mě varoval, že Innos na mě pošle svého oblíbence.
 	AI_Output(self,other,"DIA_Addon_Raven_Add_10_02");	//Neočekával jsem tě ale tak brzy.
-	AI_Output(self,other,"DIA_Addon_Raven_Add_10_03");	//Dobře, nyní když jsi tu tak rychle,(směje se) můžu tě ujistit, že i tvá smrt bude rychlá.
+	AI_Output(self,other,"DIA_Addon_Raven_Add_10_03");	//Dobře, nyní když jsi tu tak rychle... (směje se) Můžu tě ujistit, že i tvá smrt bude rychlá.
 	Info_ClearChoices(DIA_Addon_Raven_Hi);
 	Info_AddChoice(DIA_Addon_Raven_Hi,"Ty jsi ten, kdo zemře!",DIA_Addon_Raven_Hi_DU);
 	Info_AddChoice(DIA_Addon_Raven_Hi,"Tys zaprodal svou duši Beliarovi!",DIA_Addon_Raven_Hi_Soul);
@@ -181,7 +181,7 @@ func void DIA_BDT_2090_Addon_Raven_Hi_Info()
 func void DIA_BDT_2090_Addon_Raven_Hi_Who()
 {
 	AI_Output(other,self,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_00");	//Takže kdo opravdu jsi?
-	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_01");	//(Smích) Bohužel jsi nic nepochopil?
+	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_01");	//(smích) Bohužel jsi nic nepochopil?
 	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_02");	//Podívejte se na sebe - a porozumíš, v čem se skrývá odpověď na tvoji otázku.
 	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_03");	//Od dávných dob, bohové bojují mezi sebou o moc na tomto světě...
 	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_04");	//Bojují rukou svých vyvolených zástupců, jako jsi ty a nebo já.

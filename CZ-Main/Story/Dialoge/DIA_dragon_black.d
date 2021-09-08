@@ -47,11 +47,11 @@ func int dia_dragon_black_hello_condition()
 func void dia_dragon_black_hello_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_00");	//Člověk?!... (Vrčí) Myslel jsem, že jsem zničil všechny ubohé lidi!
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_00");	//Člověk?!... (vrčí) Myslel jsem, že jsem zničil všechny ubohé lidi!
 	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_01");	//Jak vidíš, trochu ses zmýlil. Mám však dojem, že to byla tvá poslední chyba.
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_05");	//Arrrgh... (Vrčí) Chceš snad říct, že mne zrovna ty zbavíš mých starostí?! Pouhý smrtelník?
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_05");	//Arrrgh... (vrčí) Chceš snad říct, že mne zrovna ty zbavíš mých starostí?! Pouhý smrtelník?
 	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_03");	//Přesně tak, draku. Přišel jsem, abych srazil tvou odpornou hlavu!
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_07");	//(Vrčí) Pokud ses dostal až ke mně, pak můj věrný služebník Dakat očividně selhal.
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_07");	//(vrčí) Pokud ses dostal až ke mně, pak můj věrný služebník Dakat očividně selhal.
 	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_08");	//Hlupák jeden! Teď to musím dokončit sám!
 	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_09");	//Vyrvu ti srdce z těla, vezmu ti duši a roztrhám tvé maso na malé kousky!
 	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_10");	//Uvidíme, kdo vytrhne čí srdce! Pozdravuje tě Ur-Thrall!
@@ -69,7 +69,7 @@ func void dia_dragon_black_hello_info()
 	};
 
 	AI_Output(other,self,"DIA_Dragon_Black_Hello_01_17");	//Dost už klábosení! Je čas začít mluvit skutky!
-	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_18");	//(Pohrdavě) Dostal jsem chuť na tvou krev, připrav se na smrt, hrdino!
+	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_18");	//(pohrdavě) Dostal jsem chuť na tvou krev, připrav se na smrt, hrdino!
 	AI_PlayAni(self,"T_WARN");
 	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_23");	//MOJE ZUBY - MEČE! MÉ DRÁPY - KOPÍ! MÁ KŘÍDLA - HURIKÁNY! 
 	AI_Output(self,other,"DIA_Dragon_Black_Hello_01_24");	//JÁ SÁM JSEM PLAMENEM! JÁ JSEM... SMRT!

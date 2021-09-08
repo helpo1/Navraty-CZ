@@ -111,13 +111,13 @@ func void DIA_Cipher_MoreDrugs_Info()
 	AI_PlayAni(self,"T_SEARCH");
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_04");	//Dokonce znám místo, kde můžeš získat ještě jeden takový balíček!
 	AI_Output(other,self,"DIA_Cipher_MoreDrugs_01_05");	//Opravdu? A kde?
-	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_06");	//(Smích) Chceš si vydělat peníze navíc, co?
+	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_06");	//(smích) Chceš si vydělat peníze navíc, co?
 	AI_Output(other,self,"DIA_Cipher_MoreDrugs_01_07");	//To nemohu odmítnout.
 	AI_PlayAni(self,"T_SEARCH");
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_08");	//Svého času jeden chlap jménem Jaco měl laboratoř na spracování trávy, poblíž vchodu do Nového tábora.
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_09");	//Měl tam celou zásobu trávy!
 	AI_Output(other,self,"DIA_Cipher_MoreDrugs_01_10");	//Myslíš, že tam mohlo ještě něco zůstat?
-	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_11");	//Možná...(zamyšleně) Pravda, zkontrolovat to bude velmi obtížné! Koneckonců jsou tam všude okolo skřeti.
+	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_11");	//Možná... (zamyšleně) Pravda, zkontrolovat to bude velmi obtížné! Koneckonců jsou tam všude okolo skřeti.
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_12");	//Ale pokud se někdy rozhodneš vrátit do Hornického údolí, zkus se tam podívat.
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_13");	//Jen nezapomeň co jsem ti říkal o tom místě!
 	AI_Output(other,self,"DIA_Cipher_MoreDrugs_01_14");	//Neboj se. Všechno si pamatuju.

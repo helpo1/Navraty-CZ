@@ -465,7 +465,7 @@ func void DIA_Brahim_NeedWorldMap_Info()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_00");	//Potřebujem mapu, která ukazuje přesný kurs ku kontinentu.
-	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_01");	//Hmmm...(překvapeně) A odkud bych ji měl získat?
+	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_01");	//Hmmm... (překvapeně) A odkud bych ji měl získat?
 	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_02");	//Vždyť jsi kartograf!
 	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_03");	//Ano, ale nejsem moreplavec! Kreslím jen mapy míst které už někdo navštívil.
 	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_04");	//A já ani nikdy nebyl na moři.

@@ -154,20 +154,20 @@ func void dia_pal_2680_udar_natan_info()
 	else
 	{
 		B_GivePlayerXP(200);
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_11");	//Jak vidíš neměl jsem čas.(usmivá se) Ale rozhodně s ním promluvím.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_12");	//Musím mu nějak vysvětlit, že svou povinnost už zplatil.(zasměje se)
+		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_11");	//Jak vidíš neměl jsem čas. (usmivá se) Ale rozhodně s ním promluvím.
+		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_12");	//Musím mu nějak vysvětlit, že svou povinnost už zplatil. (zasměje se)
 		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_14");	//Ano, to je pravda. Ale on si to nemyslí.
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_15");	//Ach...(zaraženě) On si myslí že musí zabít celou armadu skřetů?
+		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_15");	//Ach... (zaraženě) On si myslí že musí zabít celou armadu skřetů?
 		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_17");	//Můžu ti s tím nějak pomoci?
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_18");	//Hmm...(zamyšleně)Pomoc by se mi hodila. Už jsem začal přemýšlet o jednom nápadu.
+		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_18");	//Hmm... (zamyšleně) Pomoc by se mi hodila. Už jsem začal přemýšlet o jednom nápadu.
 		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_20");	//Co jsi vymyslel?
 		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_21");	//Musím zařídit, aby Nathan dostal příležitost zachránit mi život. A ty mi v tom pomůžeš.
 		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_22");	//Jak?
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_23");	//Hmmm...(zamyšleně) Najdu nějakou skupinku skřetů, nechám se přepadnout a zařídím, aby to vypadalo, jako že mě Nathan zachránil.
+		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_23");	//Hmmm... (zamyšleně) Najdu nějakou skupinku skřetů, nechám se přepadnout a zařídím, aby to vypadalo, jako že mě Nathan zachránil.
 		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_24");	//Bude to muset vypadat jako že jsem v pasti.
 		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_25");	//V tom okamžiku se musíš objevit ty a Nathan, abyste mi pomohli.
 		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_26");	//To je nebezpečné. Nemáš strach, že se může objevit pozdě?
-		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_27");	//Neměj obavy...(usmívá se) Pro paladina jako jsem já není skupinka skřetů žádný problém.
+		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_27");	//Neměj obavy... (usmívá se) Pro paladina jako jsem já není skupinka skřetů žádný problém.
 		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_29");	//Chceš teda, aby to udělal Nathan?
 		AI_Output(self,other,"DIA_PAL_2680_Udar_Natan_01_30");	//Ano!... V tom spočívá můj plán. Pomůžeš mi?!
 		AI_Output(other,self,"DIA_PAL_2680_Udar_Natan_01_31");	//Jasně. Musíme jen najít vhodné místo.
@@ -210,7 +210,7 @@ func void dia_pal_2680_udar_natandolgdone_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_PAL_2680_Udar_NatanDolgDone_01_00");	//Co říkáš?
-	AI_Output(self,other,"DIA_PAL_2680_Udar_NatanDolgDone_01_01");	//(směje se ) Líp to snad ani nešlo.
+	AI_Output(self,other,"DIA_PAL_2680_Udar_NatanDolgDone_01_01");	//(směje se) Líp to snad ani nešlo.
 	AI_Output(self,other,"DIA_PAL_2680_Udar_NatanDolgDone_01_02");	//Nyní si Nathan konečně přiznal, že mi zachránil život.
 	AI_Output(self,other,"DIA_PAL_2680_Udar_NatanDolgDone_01_05");	//Díky za tvou pomoc.
 	AI_Output(self,other,"DIA_PAL_2680_Udar_NatanDolgDone_01_06");	//Tady - máš ode mne menší dar na oplátku. Bude se ti hodit!

@@ -521,7 +521,7 @@ func int DIA_1013_BANDIT_LeeFarm_Done_Condition()
 func void DIA_1013_BANDIT_LeeFarm_Done_Info()
 {
 	AI_Output(other,self,"DIA_ADDON_1013_BANDIT_LeeFarm_Done_01_00");	//Mám pro tebe novou zbroj.
-	AI_Output(self,other,"DIA_ADDON_1013_BANDIT_LeeFarm_Done_01_01");	//Dovol mi, abych se na ni podíval (pochybuje). Bude mi pasovat?
+	AI_Output(self,other,"DIA_ADDON_1013_BANDIT_LeeFarm_Done_01_01");	//(pochybuje) Dovol mi, abych se na ni podíval. Bude mi pasovat?
 	AI_Output(other,self,"DIA_ADDON_1013_BANDIT_LeeFarm_Done_01_02");	//Zkus si ji.
 
 	Info_ClearChoices(DIA_1013_BANDIT_LeeFarm_Done);

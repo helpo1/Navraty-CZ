@@ -572,7 +572,7 @@ func void DIA_SylvioDJG_Camp_Drakar_Info()
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_01_14");	//(s úsměvem) No do teď jsme měli určité neschody.
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_01_15");	//Ale jestli nám pomůžeš, jsem ochotnej se s tebou podělit.
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_01_16");	//Nabízíš mě zalto, které mě po právu náleží?
-	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_01_17");	//Ale ono už není tvoje, příteli...(posměšně) Tak jestli chceš nějaký podíl, budeš nám muset pomoct.
+	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_01_17");	//Ale ono už není tvoje, příteli... (posměšně) Tak jestli chceš nějaký podíl, budeš nám muset pomoct.
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_01_18");	//Tak co souhlasíš?
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_01_19");	//Dobře. Pokusím se něco vymyslet.
 	MIS_SylvioDrakar = LOG_Running;
@@ -714,7 +714,7 @@ func void DIA_SylvioDJG_Camp_Drakar_Done_Info()
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Done_01_09");	//Přirozeně, potřebujeme člověka, který by si poradil s toudle bárkou.
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Done_01_10");	//Koneckonců, to byl tvůj nápad sebrat loď skřetům.
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Done_01_11");	//Teď se můžeš vytáčet jak chceš!
-	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Done_01_12");	//Jo, a taky...(nedbale) By se nám hodila dobrá kuchařka.
+	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Done_01_12");	//Jo, a taky... (nedbale) By se nám hodila dobrá kuchařka.
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Done_01_13");	//Nemám zájem umřít na moři hladem, než budu mít šanci, užít si svého bohatství.
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Done_01_14");	//Doufám, že jsem to řekl dost jasně?
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_Done_01_15");	//Je to tak.
@@ -880,7 +880,7 @@ func void DIA_SylvioDJG_Camp_Drakar_Cook_Info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_Cook_01_00");	//Našel jsem kuchaře.
-	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Cook_01_01");	//Dobře...(vzdychne) Doufám, že ví jak vařit
+	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Cook_01_01");	//Dobře... (vzdychne) Doufám, že ví jak vařit
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_Cook_01_02");	//Paladinové na hradě si na něj nestěžovali.
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Cook_01_03");	//Jestli je to tak, tak je to v pořádku.
 };
@@ -1050,7 +1050,7 @@ func void DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_Info()
 	AI_Output(self,other,"DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_04");	//Nyní je to naše místo a náš tábor a my jen tak někoho dovnitř nepustíme.
 	AI_Output(self,other,"DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_05");	//(hrozivě) Tak co kdybys radši vypadnul.
 	AI_Output(other,self,"DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_06");	//Zajímavé! Takže vy tady táboříte a kdo je váš šéf?
-	AI_Output(self,other,"DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_07");	//Ty ho neznáš...(nedbale) Jmenuje se Sylvio.
+	AI_Output(self,other,"DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_07");	//Ty ho neznáš... (nedbale) Jmenuje se Sylvio.
 	AI_Output(other,self,"DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_08");	//Sylvio? Toho znám. On byl jeden ze žoldáků na Onarově farmě.
 	AI_Output(other,self,"DIA_DJG_7312_ToterDrachenjaeger_HelloAgain_01_09");	//A vypadá to, že se dostal k pokladu ledového draka!
 	AI_PlayAni(self,"T_SEARCH");

@@ -180,7 +180,7 @@ func void dia_talbin_recruitdt_info()
 
 	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_15");	//Přijímám tvoje podmínky.
 	AI_Output(other,self,"Dia_Talbin_RecruitDT_15_16");	//Super. Kolik chceš, abych ti za to platil?
-	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_17");	//(Překvapeně) Peníze? Ale to vůbec ne. Mám tě rád - bezpečný dům, jak jsi říkal - maso. Kromě toho v současné době sbírám spousty loveckých trofejí na prodej.
+	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_17");	//(překvapeně) Peníze? Ale to vůbec ne. Mám tě rád - bezpečný dům, jak jsi říkal - maso. Kromě toho v současné době sbírám spousty loveckých trofejí na prodej.
 	AI_Output(other,self,"Dia_Talbin_RecruitDT_15_18");	//Pak dohodnuto. A až budeš chtít jít do tábora, zvolej heslo 'dračí poklad'.
 	AI_Output(self,other,"Dia_Talbin_RecruitDT_07_19");	//Dobře. Říkáš věž nedaleko farmy? Nuže, uvidíme se tam. 
 	B_GivePlayerXP(300);

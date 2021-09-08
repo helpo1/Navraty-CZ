@@ -43,13 +43,13 @@ func void dia_senyak_demon_hello_info()
 {
 	Snd_Play("MFX_FEAR_CAST");
 	Npc_RemoveInvItems(self,ITMI_DRAGONGOLDGORN,1);
-	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_00");	//...(vrčí) KDO SE OPOVAŽUJE RUŠIT MŮJ KLID?!
-	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_01");	//(zkoumání)Ubohý clovíček, opravdu ses opovažil to udělat?!
+	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_00");	//... (vrčí) KDO SE OPOVAŽUJE RUŠIT MŮJ KLID?!
+	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_01");	//(zkoumání) Ubohý clovíček, opravdu ses opovažil to udělat?!
 	AI_Output(other,self,"DIA_Senyak_Demon_Hello_01_02");	//Ano, to já jsem tě vyvolal!
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_03");	//PROČ JSI TO UDĚLAL?!
 	AI_Output(other,self,"DIA_Senyak_Demon_Hello_01_04");	//To asi neuhádneš, démone?!
 	AI_Output(other,self,"DIA_Senyak_Demon_Hello_01_05");	//Zavolal jsem tě, abych tě zabil, a tak skoncoval s terorem, kterým hodláš zničit svět...
-	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_06");	//...(smích) TY SES MI ROZHODL POSTAVIT?!
+	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_06");	//... (smích) TY SES MI ROZHODL POSTAVIT?!
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_07");	//Arrgh!... (vrčí) Ty ses musel zbláznit, když si myslíš, že na to máš dost síly!
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_08");	//VÍŠ KDO JÁ JSEM?!
 	AI_Output(other,self,"DIA_Senyak_Demon_Hello_01_09");	//Jasně, že vím. takže se nemusíš namáhat s představením sebe sama, Senyaku!
@@ -60,9 +60,9 @@ func void dia_senyak_demon_hello_info()
 
 	if((Npc_HasItems(other,itru_beliarsrune01) == TRUE) || (Npc_HasItems(other,itru_beliarsrune02) == TRUE) || (Npc_HasItems(other,itru_beliarsrune03) == TRUE) || (Npc_HasItems(other,itru_beliarsrune04) == TRUE) || (Npc_HasItems(other,itru_beliarsrune05) == TRUE) || (Npc_HasItems(other,itru_beliarsrune06) == TRUE) || Npc_HasItems(hero,ItMw_BeliarWeapon_Raven) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_01) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_02) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_03) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_04) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_05) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_06) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_07) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_08) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_09) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_10) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_11) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_12) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_13) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_14) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_15) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_16) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_17) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_18) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_19) || Npc_HasItems(hero,ItMw_BeliarWeapon_1H_20) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_01) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_02) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_03) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_04) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_05) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_06) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_07) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_08) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_09) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_10) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_11) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_12) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_13) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_14) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_15) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_16) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_17) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_18) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_19) || Npc_HasItems(hero,ItMw_BeliarWeapon_2H_20))
 	{
-		AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_14");	//... (vrčí)!
+		AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_14");	//... (vrčí)
 		AI_Output(other,self,"DIA_Senyak_Demon_Hello_01_15");	//Co je?
-		AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_16");	//...(napjatě hledá)... Cítím, že máš věc, která mi patří!
+		AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_16");	//... (napjatě hledí) Cítím, že máš věc, která mi patří!
 		AI_Output(other,self,"DIA_Senyak_Demon_Hello_01_17");	//Jestli myslíš Beliarův dráp, mýlíš se - teď patří mě!
 		AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_18");	//MŮJ DRÁP! On a já - jsme jeden celek, je to moje druhá podstata, moje podstata!
 		AI_Output(other,self,"DIA_Senyak_Demon_Hello_01_19");	//No, to máš blbé. Právě teď ho nemůžeš vidět!
@@ -81,7 +81,7 @@ func void dia_senyak_demon_hello_info()
 
 	if(MoraUlartuIsOn[1] == TRUE)
 	{
-		Info_AddChoice(dia_senyak_demon_hello,"(Použít Mora Ulartu)",dia_senyak_demon_hello_mora);
+		Info_AddChoice(dia_senyak_demon_hello,"(použít Mora Ulartu)",dia_senyak_demon_hello_mora);
 	};
 };
 
@@ -106,7 +106,7 @@ func void dia_senyak_demon_hello_mora()
 	AI_TurnToNPC(other,self);
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_Mora_01_00");	//Arrgh!... (vrčí)
 	AI_Output(other,self,"DIA_Senyak_Demon_Hello_Mora_01_01");	//Tak co, démone!
-	AI_Output(self,other,"DIA_Senyak_Demon_Hello_Mora_01_02");	//...(vrčí) Podcenil jsem tě! Myslím, že vím, co bude následovat, ubohý červe!
+	AI_Output(self,other,"DIA_Senyak_Demon_Hello_Mora_01_02");	//... (vrčí) Podcenil jsem tě! Myslím, že vím, co bude následovat, ubohý červe!
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_Mora_01_03");	//Ale i tak se ti nepodaří mě porazit nebo zničit mou duši!
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_Mora_01_04");	//Kromě toho, budeš ničím až umřeš! Arrgh!... (vrčí)
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_Mora_01_05");	//Mora Ulartu ti nepomůže!

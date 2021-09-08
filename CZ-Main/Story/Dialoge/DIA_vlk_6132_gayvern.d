@@ -45,7 +45,7 @@ func void dia_vlk_6132_gayvern_hallo_info()
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_03");	//(směje se) V přístavní čtvrti není osoba, kterou bych neznal!
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_04");	//Ale tebe tady vidím poprvé!
 	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hallo_01_05");	//Co když jsem z jiné části města - například z horní čtvrti?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_06");	//KDO?! Ty?!...(směje se) Viděl si jak vypadáš chlape?
+	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_06");	//KDO?! Ty?!... (směje se) Viděl si jak vypadáš chlape?
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_07");	//Vypadáš jako otrhanec! (směje se) To je fakt sranda!
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_08");	//Ne kamaráde - takové jako ty tam oni nepustí.
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hallo_01_09");	//Takže se mě nesnaž oklamat mladý. A věř mi: stejně se ti to nepovede.
@@ -161,15 +161,15 @@ func void dia_vlk_6132_gayvern_hire_info()
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_02");	//A co můžeš nabídnout?
 	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_03");	//Jeden vlivný obchodník z horní čtvrti města hledá člověka na místo jeho pomocníka.
 	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_04");	//Práce by byla plnit jeho rozkazy a pomoci mu vést obchodní záležitosti.
-	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_06");	//Tak jsem si myslel, že by si tu práci mohl vzít.
+	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_06");	//Tak jsem si myslel, že bys tu práci mohl vzít.
 	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_07");	//Měl si zájem?
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_08");	//Chlape, jsem připravený dělat jakoukoli práci, ale nebudu tu sedět a nic nedělat.
 	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_10");	//Dobře! Ale nikam nespěchejme. Prvně bych potřeboval vědět, co umíš.
 	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_11");	//Řekni, co umíš?!
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_12");	//Nó... (Zamyšleně)
+	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_12");	//Nó... (zamyšleně)
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_13");	//Pokud je třeba něco vyložit či naložit, nikdo se mi nevyrovná.
 	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_14");	//A jsi schopen komunikovat s lidmi?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_15");	//No jasně! Dělám to každý den...(směje se)
+	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_15");	//No jasně! Dělám to každý den... (směje se)
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_16");	//A dokážu přesvědčit lidi, aby nedělali různé blbosti. A budu k tobě upřímný - moje přesvědčovací techniky fungují spolehlivě!
 	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Hire_01_17");	//No, o tom nepochybuji!
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Hire_01_18");	//Věř mi: nebudeš litovat, když mě doporučíš tomu obchodníkovi.

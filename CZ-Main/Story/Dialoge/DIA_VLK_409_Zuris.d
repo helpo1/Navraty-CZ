@@ -337,7 +337,7 @@ func void dia_zuris_tradeplace_info()
 {
 	AI_Output(other,self,"DIA_Zuris_TradePlace_01_00");	//Mluv, prý jsi měl nějaké problémy s Jorou.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_01_04");	//Ale je to pravda... Měl jsem nějaké nedorozumění s Jorou. trochu jsme se nepohodli.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_01_06");	//(Hmm! nemyslím si, že je to tvoje věc, ale čas už změnil můj přístup k věci... (naštvaný)
+	AI_Output(self,other,"DIA_Zuris_TradePlace_01_06");	//Hmm! nemyslím si, že je to tvoje věc, ale čas už změnil můj přístup k věci... (naštvaný)
 	AI_Output(self,other,"DIA_Zuris_TradePlace_01_07");	//... Prostě a jednoduše jsem zvedl nájemné mého stánku, který má pronajmutý Jora a kde teď prodává své zboží.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_01_08");	//Nebylo to nic příjemného to udělat jemu a ani kupeckému cechu.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_01_09");	//Určitě jsi už o něm něco slyšel, ne?
@@ -859,5 +859,5 @@ func void DIA_Zuris_FromWhomCactus_Info()
 	AI_Output(other,self,"DIA_Zuris_FromWhomCactus_01_02");	//A získat další asi nebude tak snadné?
 	AI_Output(self,other,"DIA_Zuris_FromWhomCactus_01_03");	//Kdysi to nebyl takový problém... ale teď...
 	AI_Output(self,other,"DIA_Zuris_FromWhomCactus_01_04");	//Jediná loď, která se zde za šest měsíců ukázala je loď paladinů.
-	AI_Output(self,other,"DIA_Zuris_FromWhomCactus_01_05");	//(Smích) A je nepravděpodobné, aby se zapojily do transportu rostlin.
+	AI_Output(self,other,"DIA_Zuris_FromWhomCactus_01_05");	//(smích) A je nepravděpodobné, aby se zapojily do transportu rostlin.
 };

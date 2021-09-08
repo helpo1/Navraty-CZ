@@ -208,9 +208,9 @@ func void dia_girion_li_changecourse_ore()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Girion_LI_ChangeCourse_Ore_01_00");	//Úplně s tebou souhlasím! Prvně musíme opravit loď.
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_01");	//(S úctou) Nic jinýho, jsem od teb nečekala.
+	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_01");	//(s úctou) Nic jinýho, jsem od teb nečekala.
 	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_02");	//Ruda co jsi naše, zvíší naše šance na úspěch ve válce proti skřetům.
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_03");	//Pravděpodobně je to naše poslední naděje...(odevzdaně)
+	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_03");	//Pravděpodobně je to naše poslední naděje... (odevzdaně)
 	B_LogEntry(TOPIC_CHANGECOURSE,"Paladin Girion souhlasil s návratem na Khorinis, abychom informovali lorda Hagena o rudě.");
 	CREWAGREEAWAYBACKPAL = CREWAGREEAWAYBACKPAL + 1;
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
@@ -248,7 +248,7 @@ func void dia_girion_li_changecourse_gold()
 	}
 	else if((other.guild == GIL_DJG) || (other.guild == GIL_SLD))
 	{
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_10");	//No samozřejmě, nic jinýho jsem ani nečekal (zlomyslně)!
+		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_10");	//No samozřejmě, nic jinýho jsem ani nečekal! (zlomyslně)
 		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_11");	//Ty a ten tvůj žoldácký chtíč po zlatě...
 	}
 	else

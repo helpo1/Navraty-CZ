@@ -205,7 +205,7 @@ func void dia_viper_gettreasure_info()
 {
 	AI_Output(other,self,"DIA_Viper_GetTreasure_01_00");	//Hej Vipere! Co děláš z lenosti?
 	AI_Output(self,other,"DIA_Viper_GetTreasure_01_01");	//To není tvá věc... A co ty?!
-	AI_Output(self,other,"DIA_Viper_GetTreasure_01_02");	//A ty mi pověz... (pomalu a rozvážně)... Našel jsi rudu?
+	AI_Output(self,other,"DIA_Viper_GetTreasure_01_02");	//A ty mi pověz... (pomalu a rozvážně) Našel jsi rudu?
 	AI_Output(other,self,"DIA_Viper_GetTreasure_01_03");	//Neměj obavy! Budeš mít radost ze svého bohatství.
 
 	if(MEETSNIPS == TRUE)
@@ -217,7 +217,7 @@ func void dia_viper_gettreasure_info()
 		AI_Output(self,other,"DIA_Viper_GetTreasure_01_07");	//Počkat, co tím chceš říct?!
 		AI_Output(other,self,"DIA_Viper_GetTreasure_01_08");	//Chci říci, že Aleph - tvůj přítel má méně, než ty a Snipes.
 		AI_Output(other,self,"DIA_Viper_GetTreasure_01_09");	//Nedostal se z údolí a skřeti udělali své.
-		AI_Output(self,other,"DIA_Viper_GetTreasure_01_10");	//Chudák, chudák Aleph... Kdo by si to pomyslel (smutný)!
+		AI_Output(self,other,"DIA_Viper_GetTreasure_01_10");	//Chudák, chudák Aleph... Kdo by si to pomyslel! (smutný)
 		AI_Output(other,self,"DIA_Viper_GetTreasure_01_11");	//Vzal jsem si jeho díl.
 		AI_Output(self,other,"DIA_Viper_GetTreasure_01_12");	//Když je Aleph mrtvý, nejsem proti. Zasloužíš si to!
 
@@ -425,7 +425,7 @@ func void dia_viper_howoreliq_info()
 	};
 
 	AI_Output(other,self,"DIA_Viper_HOWORELIQ_01_03");	//A kdo umí tavit rudu?
-	AI_Output(self,other,"DIA_Viper_HOWORELIQ_01_04");	//Hmm...(samolibě) V Hornickém údolí jsem byl jeden z nejlepších tavičů rudy!
+	AI_Output(self,other,"DIA_Viper_HOWORELIQ_01_04");	//Hmm... (samolibě) V Hornickém údolí jsem byl jeden z nejlepších tavičů rudy!
 	AI_Output(self,other,"DIA_Viper_HOWORELIQ_01_05");	//A mohu tě učit. Ne zdarma, samozřejmě.
 	B_LogEntry(TOPIC_STEELDRAW,"Viper mě může naučit, jak tavit rudu. Snipes by zas mohl být schopen naučit mě ji těžit.");
 };
@@ -508,10 +508,10 @@ func void dia_viper_MAGICOREMAKE_info()
 
  	if((MIS_VIPERNUGGETS == LOG_SUCCESS) || (VIPERGETNUGGETS == TRUE))
 	{
-		AI_Output(self,other,"DIA_Viper_MAGICOREMAKE_01_02");	//Hmmm...(zamyšleně) To už je obtížnější.
+		AI_Output(self,other,"DIA_Viper_MAGICOREMAKE_01_02");	//Hmmm... (zamyšleně) To už je obtížnější.
 		AI_Output(self,other,"DIA_Viper_MAGICOREMAKE_01_03");	//Pokud je mi známo, tajemství tavení magické rudy znají pouze kováři z Nordmaru!
 		AI_Output(other,self,"DIA_Viper_MAGICOREMAKE_01_04");	//To jsi mě uklidnil.
-		AI_Output(self,other,"DIA_Viper_MAGICOREMAKE_01_05");	//Ale máš štěstí...(usmívá se) Za dlouhá léta strávená v kolonii jsem se také něco naučil.
+		AI_Output(self,other,"DIA_Viper_MAGICOREMAKE_01_05");	//Ale máš štěstí... (usmívá se) Za dlouhá léta strávená v kolonii jsem se také něco naučil.
 		AI_Output(self,other,"DIA_Viper_MAGICOREMAKE_01_06");	//Né nadarmo jsem byl považován za nejlepšího taviče v Hornickém údolí!
 		AI_Output(other,self,"DIA_Viper_MAGICOREMAKE_01_07");	//A můžeš mě to naučit?
 		AI_Output(self,other,"DIA_Viper_MAGICOREMAKE_01_08");	//Samozřejmě.
@@ -610,7 +610,7 @@ func void dia_viper_CLEARMAGICOREMAKE_info()
 {
 	B_GivePlayerXP(350);
 	AI_Output(other,self,"DIA_Viper_CLEARMAGICOREMAKE_01_01");	//A jak získám ingot z čisté magické rudy?
-	AI_Output(self,other,"DIA_Viper_CLEARMAGICOREMAKE_01_02");	//Hmm...(zamyšleně) vytvoření takového ingotu vyžaduje mnohem sofistikovanější přístup.
+	AI_Output(self,other,"DIA_Viper_CLEARMAGICOREMAKE_01_02");	//Hmm... (zamyšleně) vytvoření takového ingotu vyžaduje mnohem sofistikovanější přístup.
 	AI_Output(self,other,"DIA_Viper_CLEARMAGICOREMAKE_01_03");	//Budeš potřebovat speciální pec, kde budeš muset stále sledovat nahřátí rudy.
 	AI_Output(self,other,"DIA_Viper_CLEARMAGICOREMAKE_01_04");	//Nejdůležitější věc v tomto procesu je udržování velmi vysoké teploty a ta nesmí poklesnout.
 	AI_Output(self,other,"DIA_Viper_CLEARMAGICOREMAKE_01_05");	//Nevím, jestli se na tomto ostrově taková pec nachází. 
@@ -654,7 +654,7 @@ func void dia_viper_askminedata_info()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_VIPER_AskMineData_01_01");	//V opuštěném dole při Onarově farmě se mi podařilo najít magickou rudu.
-	AI_Output(other,self,"DIA_VIPER_AskMineData_01_02");	//Mohl by si se tam jít podívat, jestli by z toho mohlo něco být?
+	AI_Output(other,self,"DIA_VIPER_AskMineData_01_02");	//Mohl by ses tam jít podívat, jestli by z toho mohlo něco být?
 	AI_Output(self,other,"DIA_VIPER_AskMineData_01_03");	//Ruda? Tu v Khorinise?
 	AI_Output(other,self,"DIA_VIPER_AskMineData_01_04");	//Přesně. Potřebuji vědět, zda se tam vyplatí začít těžit, anebo ne.
 	AI_Output(self,other,"DIA_VIPER_AskMineData_01_05");	//No, stále nemám co dělat... Tak se pojďme kouknout do toho tvého dolu.
@@ -689,10 +689,10 @@ func void dia_viper_getminedata_info()
 	AI_Output(other,self,"DIA_VIPER_GetMineData_01_03");	//A co jsi čekal?
 	AI_Output(self,other,"DIA_VIPER_GetMineData_01_05");	//Určite nic jako Starý důl, ale toto...
 	AI_Output(other,self,"DIA_VIPER_GetMineData_01_06");	//Uh huh.
-	AI_Output(self,other,"DIA_VIPER_GetMineData_01_07");	//No, vypadá to, že by si odtud mohl dostat tak deset beden.
+	AI_Output(self,other,"DIA_VIPER_GetMineData_01_07");	//No, vypadá to, že bys odtud mohl dostat tak deset beden.
 	AI_Output(self,other,"DIA_VIPER_GetMineData_01_08");	//Pokud půjdeš hlouběji do jádra - a soudě dle žíly, možná i více.
 	AI_Output(self,other,"DIA_VIPER_GetMineData_01_09");	//Kvalita by neměla být horší od té z Hornického údolí.
-	AI_Output(self,other,"DIA_VIPER_GetMineData_01_10");	//Celkově si myslím, že by si to měl zkusit.
+	AI_Output(self,other,"DIA_VIPER_GetMineData_01_10");	//Celkově si myslím, že bys to měl zkusit.
 	AI_Output(self,other,"DIA_VIPER_GetMineData_01_11");	//Jen by mě zajímalo, kde máš v plánu sehnat kopáče.
 	AI_Output(other,self,"DIA_VIPER_GetMineData_01_02");	//A co ty? Těžení rudy určitě není tvoje specialita, ale nechceš si to aspoň zkusit?
 	AI_Output(other,self,"DIA_VIPER_GetMineData_01_03");	//Ne, díky.
@@ -707,7 +707,7 @@ func void dia_viper_getminedata_info()
 
 		if(RhetorikSkillValue[1] >= 45)
 		{
-			Info_AddChoice(DIA_VIPER_GetMineData,"(Zkusit přesvědčit.)",DIA_VIPER_GetMineData_Yes);
+			Info_AddChoice(DIA_VIPER_GetMineData,"(zkusit přesvědčit)",DIA_VIPER_GetMineData_Yes);
 		};
 
 		Info_AddChoice(DIA_VIPER_GetMineData,"Zkusím teda najít někoho jiného.",DIA_VIPER_GetMineData_No);

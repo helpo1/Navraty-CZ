@@ -693,7 +693,7 @@ func int dia_jack_nw_kapitelorcattack_condition()
 func void dia_jack_nw_kapitelorcattack_info()
 {
 	AI_Output(other,self,"DIA_Jack_NW_KapitelOrcAttack_01_00");	//Co máte za hlášení kapitáne?
-	AI_Output(self,other,"DIA_Jack_NW_KapitelOrcAttack_01_01");	//Ano, zdá se, že je to pravda, co se říká...(smutně) Khorinis obsadili skřeti! Teď odsud nemůžeme vystrčit ani nos!
+	AI_Output(self,other,"DIA_Jack_NW_KapitelOrcAttack_01_01");	//Ano, zdá se, že je to pravda, co se říká... (smutně) Khorinis obsadili skřeti! Teď odsud nemůžeme vystrčit ani nos!
 	AI_Output(other,self,"DIA_Jack_NW_KapitelOrcAttack_01_02");	//Pár chlapů se chce zkusit probojovat skrz město...
 	AI_Output(self,other,"DIA_Jack_NW_KapitelOrcAttack_01_04");	//Možná že jo, zkušený voják by to mohl dokázat... ale co mi ostatní?
 	AI_Output(self,other,"DIA_Jack_NW_KapitelOrcAttack_01_03");	//Eh, to mi neříkej ani ze srandy!... (vyděšeně) Já ani meč v ruce neudržím, už na to nemám léta, a navíc proti skřetům...

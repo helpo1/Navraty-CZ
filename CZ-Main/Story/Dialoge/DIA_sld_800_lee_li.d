@@ -287,7 +287,7 @@ func void dia_lee_li_changecourse_gold()
 	AI_Output(other,self,"DIA_Lee_LI_ChangeCourse_Gold_01_03");	//Informuji paladiny o rudě, kterou jsem zde nalezl. A ti nám vyplatí rudu zlatem.
 	AI_Output(self,other,"DIA_Lee_LI_ChangeCourse_Gold_01_07");	//Pochybuji, že paladinové budou mít tolik zlata.
 	AI_Output(self,other,"DIA_Lee_LI_ChangeCourse_Gold_01_08");	//Kromě toho na Khorinisu můžou být skřeti.
-	AI_Output(self,other,"DIA_Lee_LI_ChangeCourse_Gold_01_10");	//(Vážně) Myslím že náš návrat je pěkná blbost.
+	AI_Output(self,other,"DIA_Lee_LI_ChangeCourse_Gold_01_10");	//(vážně) Myslím že náš návrat je pěkná blbost.
 	AI_Output(self,other,"DIA_Lee_LI_ChangeCourse_Gold_01_11");	//To je můj názor. Ale rozhodnutí nechám na tobě.
 	B_LogEntry(TOPIC_CHANGECOURSE,"Lee jde zpět na Khorinis se mnou, ale není vůbec nadšený.");
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;

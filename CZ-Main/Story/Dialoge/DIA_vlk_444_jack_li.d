@@ -87,9 +87,9 @@ func void dia_jack_li_storm_info()
 {
 	AI_Output(self,other,"DIA_Jack_LI_Storm_01_01");	//No konečně jsi přišel k sobě! Jak se cítíš?!
 	AI_Output(other,self,"DIA_Jack_LI_Storm_01_02");	//Jo, ujde to! Jenom mě ještě trochu bolí hlava, jakoby mi tam někdo vrazil hřebík.
-	AI_Output(self,other,"DIA_Jack_LI_Storm_01_03");	//No jo příteli... měl jsi fakt štěstí!(usmívá se)
+	AI_Output(self,other,"DIA_Jack_LI_Storm_01_03");	//No jo příteli... měl jsi fakt štěstí! (usmívá se)
 	AI_Output(other,self,"DIA_Jack_LI_Storm_01_04");	//A co se stalo?!
-	AI_Output(self,other,"DIA_Jack_LI_Storm_01_07");	//Hmmm... (Vážným tónem) Během bouře jsi mi pomáhal držet kormidlo, abychom se nepřevrátili, a šlo to celkem dobře...
+	AI_Output(self,other,"DIA_Jack_LI_Storm_01_07");	//Hmmm... (vážným tónem) Během bouře jsi mi pomáhal držet kormidlo, abychom se nepřevrátili, a šlo to celkem dobře...
 	AI_Output(self,other,"DIA_Jack_LI_Storm_01_08");	//Ale, pak to začlo být dost divoké a jedna z vln prudce narazila na na levobok a odmrštilo tě to pryč, bouchl ses do hlavy, a málem přepadl přes palubu.
 	AI_Output(self,other,"DIA_Jack_LI_Storm_01_09");	//Asi to musel být silný náraz, protože jsi okamžitě omldlel a vlastně ses vzbudil až teď...
 	AI_Output(self,other,"DIA_Jack_LI_Storm_01_11");	//Já, společně pár chlapy sme tě na poslední chvíli stačili zachytit, a odtáhnout do kajuty. Jinak by teď z tebe byla tak akorát snídaně pro žraloky.
@@ -257,7 +257,7 @@ func void dia_jack_li_repairhelpdone_info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Jack_LI_RepairHelpDone_01_21");	//Takže, stačí říct a my napneme plachtu!...(široce se usmívá)
+			AI_Output(self,other,"DIA_Jack_LI_RepairHelpDone_01_21");	//Takže, stačí říct a my napneme plachtu!... (široce se usmívá)
 			AI_Output(other,self,"DIA_Jack_LI_RepairHelpDone_01_22");	//Dobrá.
 			CANAWAYFROMLI = TRUE;
 			NOPEOPLEONLANDLI = TRUE;
@@ -266,7 +266,7 @@ func void dia_jack_li_repairhelpdone_info()
 	else
 	{
 		TORLOFLITIMERAWAY = Wld_GetDay();
-		AI_Output(self,other,"DIA_Jack_LI_RepairHelpDone_01_23");	//Né tak rychle příteli! Kormidlo už sice máme opravené ale...(zamyslí se) ale vůbec nevím, kde jsme, takže ani nevím, kudy plout.
+		AI_Output(self,other,"DIA_Jack_LI_RepairHelpDone_01_23");	//Né tak rychle příteli! Kormidlo už sice máme opravené ale... (zamyslí se) ale vůbec nevím, kde jsme, takže ani nevím, kudy plout.
 		AI_Output(self,other,"DIA_Jack_LI_RepairHelpDone_01_24");	//Stále nemáme opravená menší poškození, a takhle bych vystavil loď dalšímu zbytečnému nebezpečí, kdybych nevěděl kam pluji!
 
 		if(MIS_LOSTISLAND == LOG_Running)
@@ -326,7 +326,7 @@ func void dia_jack_li_away_info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Jack_LI_Away_01_05");	//Takže, stačí říct a my napneme plachtu!...(široce se usmívá)
+			AI_Output(self,other,"DIA_Jack_LI_Away_01_05");	//Takže, stačí říct a my napneme plachtu!... (široce se usmívá)
 			AI_Output(other,self,"DIA_Jack_LI_Away_01_06");	//Dobrá.
 			CANAWAYFROMLI = TRUE;
 			NOPEOPLEONLANDLI = TRUE;
@@ -334,7 +334,7 @@ func void dia_jack_li_away_info()
 	}
 	else if(MIS_LOSTISLAND == LOG_Running)
 	{
-		AI_Output(self,other,"DIA_Jack_LI_Away_01_07");	//Ale ne tak rychle příteli! Kormidlo už sice máme opravené ale...(zamyslí se) ale vůbec nevím, kde jsme, takže ani nevím, kudy plout.
+		AI_Output(self,other,"DIA_Jack_LI_Away_01_07");	//Ale ne tak rychle příteli! Kormidlo už sice máme opravené ale... (zamyslí se) ale vůbec nevím, kde jsme, takže ani nevím, kudy plout.
 		AI_Output(self,other,"DIA_Jack_LI_Away_01_08");	//Takže, raději nic neuspěcháme!
 		AI_Output(other,self,"DIA_Jack_LI_Away_01_09");	//Dobrá, jak říkáš.
 	}
@@ -383,7 +383,7 @@ func void dia_jack_li_awaydone_info()
 	if(NOPEOPLEONLANDLI == TRUE)
 	{
 		AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_01");	//Dobrá posádko! Zvedněte kotvu!
-		AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_02");	//A ty by sis měl jít do své kajuty dát dvacet...(kření se) moc jsi toho určitě nenaspal za tu dobu.
+		AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_02");	//A ty by sis měl jít do své kajuty dát dvacet... (kření se) moc jsi toho určitě nenaspal za tu dobu.
 		AI_Output(other,self,"DIA_Jack_LI_AwayDone_01_03");	//Ani ne.
 		AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_04");	//Tak vidíš. Jdi se prospat. A my vyrazíme!
 		CAPITANORDERLIAWAY = TRUE;
@@ -425,7 +425,7 @@ func void dia_jack_li_awaydone_info()
 		{
 			B_GivePlayerXP(500);
 			AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_06");	//Dobrá, všichni jsou už na palubě, můžeme zvednout kotvy!
-			AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_07");	//A ty by sis měl jít do své kajuty dát dvacet...(kření se) moc jsi toho určitě nenaspal za tu dobu.
+			AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_07");	//A ty by sis měl jít do své kajuty dát dvacet... (kření se) moc jsi toho určitě nenaspal za tu dobu.
 			AI_Output(other,self,"DIA_Jack_LI_AwayDone_01_08");	//Ani ne.
 			AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_09");	//Tak vidíš. Jdi se prospat. A my vyrazíme!
 			CAPITANORDERLIAWAY = TRUE;
@@ -438,7 +438,7 @@ func void dia_jack_li_awaydone_info()
 		{
 			AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_11");	//Ale stále tu ještě není zbytek posádky... (překvapeně) Nemůžeme je tu nechat!
 			AI_Output(other,self,"DIA_Jack_LI_AwayDone_01_12");	//A kdo chybí?!
-			AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_13");	//Hmmm, zdá se, že nám chybí... (rozhlíží se)...
+			AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_13");	//Hmmm, zdá se, že nám chybí... (rozhlíží se) ...
 			if((Gorn_IsOnBoard == LOG_SUCCESS) && (Npc_IsDead(pc_fighter_li) == FALSE) && (GORNLIHERE == TRUE) && (GORNLIONBOARD == FALSE))
 			{
 				AI_Output(self,other,"DIA_Jack_LI_AwayDone_01_14");	//... Gorn!
@@ -648,7 +648,7 @@ func void dia_jack_li_search_info()
 	AI_Output(self,other,"DIA_Jack_LI_Search_01_05");	//Ověřil jsem to na mapě s naší původní rychlostí a směrem. Jsou tu sice malé odchylky, ale ty nastaly pravděpodobně vinou té bouře.
 	AI_Output(self,other,"DIA_Jack_LI_Search_01_06");	//A tak tedy, jsem ty odchylky nahradil těmi čísly z kamenné tabulky, co jsi donesl a provedl znovu výpočty.
 	AI_Output(self,other,"DIA_Jack_LI_Search_01_09");	//A pokud je použijeme pomocí sextantu a s mapou v určitém pořadí, tak zjistíme naši zeměpisnou polohu!
-	AI_Output(self,other,"DIA_Jack_LI_Search_01_10");	//Ale samozřejmě, ty výpočty nebudou tak úplně přesné...(skepticky) ale alespoň dostaneme přibližný směr, kudy se máme plavit!
+	AI_Output(self,other,"DIA_Jack_LI_Search_01_10");	//Ale samozřejmě, ty výpočty nebudou tak úplně přesné... (skepticky) ale alespoň dostaneme přibližný směr, kudy se máme plavit!
 	AI_Output(other,self,"DIA_Jack_LI_Search_01_11");	//Chceš mi tím říct, že už KONEČNĚ můžeme z tohodle ostrova vypadnout?
 	AI_Output(self,other,"DIA_Jack_LI_Search_01_12");	//Přesně!... Můžeme vyrazit (natěšeně) hned, jakmile bude loď a posádka připravena!
 	AI_Output(other,self,"DIA_Jack_LI_Search_01_13");	//Potom tedy už neztrácejme čas...
@@ -789,7 +789,7 @@ func void dia_jack_li_misscompas_info()
 	AI_Output(other,self,"DIA_Jack_LI_MissCompas_01_01");	//Gorn říkal, že jsi ztratil svůj kompas.
 	AI_Output(self,other,"DIA_Jack_LI_MissCompas_01_02");	//(naštvaně) Ano, ztratil jsem ho!... Musel mi vypadnout z kapsy někdy během bouře. 
 	AI_Output(other,self,"DIA_Jack_LI_MissCompas_01_06");	//Asi pro tebe ten kompas hodně znamená, když jsi tak naštvaný.
-	AI_Output(self,other,"DIA_Jack_LI_MissCompas_01_07");	//Eh!... (Smutně) Tahle maličkost má pro mě velkou cenu. Byl to dar, od mého starého přítele...
+	AI_Output(self,other,"DIA_Jack_LI_MissCompas_01_07");	//Eh!... (smutně) Tahle maličkost má pro mě velkou cenu. Byl to dar, od mého starého přítele...
 	AI_Output(self,other,"DIA_Jack_LI_MissCompas_01_08");	//Vždycky jsem věřil, že mi přináší štětí. A opravdu přinášel.
 	AI_Output(self,other,"DIA_Jack_LI_MissCompas_01_09");	//A teď už chápu, proč se k nám štěstí obrátilo zády.
 	AI_Output(other,self,"DIA_Jack_LI_MissCompas_01_10");	//A nezkoušel ses po něm podívat?
@@ -907,7 +907,7 @@ func void dia_jack_li_bringfooddone_info()
 	AI_Output(other,self,"DIA_Jack_LI_BringFoodDone_01_12");	//Žádný strach, přinesl jsem ti 60 kusů čerstvého masa.
 	AI_Output(self,other,"DIA_Jack_LI_BringFoodDone_01_13");	//Masa? Ty jsi ho šel nalovit?!
 	AI_Output(other,self,"DIA_Jack_LI_BringFoodDone_01_14");	//Jo, řekněme, že jsem na tomto ostrově trochu upravil stavy. Tady, vem si ho!
-	AI_Output(self,other,"DIA_Jack_LI_BringFoodDone_01_19");	//Ne, ne, ne!... (Podrážděně) Takhle přece ne! Takhle se to nedá jíst.
+	AI_Output(self,other,"DIA_Jack_LI_BringFoodDone_01_19");	//Ne, ne, ne!... (podrážděně) Takhle přece ne! Takhle se to nedá jíst.
 	AI_Output(other,self,"DIA_Jack_LI_BringFoodDone_01_20");	//Ale proč?
 	AI_Output(self,other,"DIA_Jack_LI_BringFoodDone_01_21");	//Musí se nejdříve zpracovat, chceš abychom se udávili syrovým masem? Ale já na jeho upečení nemám čas.
 	AI_Output(self,other,"DIA_Jack_LI_BringFoodDone_01_22");	//Já se musím soustředit na opravy lodě! Navíc pečené nám vydrží déle!
@@ -1016,7 +1016,7 @@ func void dia_jack_li_findmagicorecave_info()
 		AI_Output(other,self,"DIA_Jack_LI_FindMagicOreCave_01_03");	//Našel jsem na ostrově jeskyně se spoustou nalezišť magické rudy.
 		AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCave_01_04");	//Opravdu?... (překvapeně)
 		AI_Output(other,self,"DIA_Jack_LI_FindMagicOreCave_01_05");	//Jo, o tom nepochybuj! Řekl bych, že ty doly jsou tím ostrovem doslova protkány.
-		AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCave_01_06");	//Hmmm... (Zamyšleně) To jsou opravdu zajímavé zprávy.
+		AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCave_01_06");	//Hmmm... (zamyšleně) To jsou opravdu zajímavé zprávy.
 		AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCave_01_07");	//Naleziště magické rudy, to je hodně velká rarita! Zvláště jak říkáš, v takovém množství.
 		AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCave_01_08");	//Jak asi víš, nejznámější a jediné naleziště rudy je Hornickém údolí.
 		AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCave_01_09");	//Takže, pokud máš pravdu, je tohle velký objev!
@@ -1037,7 +1037,7 @@ func void dia_jack_li_findmagicorecave_info()
 		B_GivePlayerXP(500);
 		AI_Output(other,self,"DIA_Jack_LI_FindMagicOreCave_01_19");	//V jedné z jeskyní na ostrově, jsem našel velké naleziště magické rudy
 		AI_Output(other,self,"DIA_Jack_LI_FindMagicOreCave_01_20");	//Pravděpodobně, to ale není jediné naleziště. je tam toho spousta!
-		AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCave_01_21");	//Hmmm... (Přemýšlí) To jsou opravdu zajímavé zprávy.
+		AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCave_01_21");	//Hmmm... (přemýšlí) To jsou opravdu zajímavé zprávy.
 		AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCave_01_22");	//Naleziště magické rudy... Velmi zajímavý objev! Zvlášť v takovém množství.
 		AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCave_01_23");	//Jak asi víš, nejznámější a jediné naleziště rudy je Hornickém údolí.
 		AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCave_01_24");	//Takže, pokud máš pravdu, je tohle velký objev!
@@ -1079,7 +1079,7 @@ func void dia_jack_li_findmagicorecaveprogress_info()
 	AI_Output(other,self,"DIA_Jack_LI_FindMagicOreCaveProgress_01_01");	//Prohledal jsem ostrov...
 	AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCaveProgress_01_02");	//A?
 	AI_Output(other,self,"DIA_Jack_LI_FindMagicOreCaveProgress_01_03");	//... Našel jsem ještě jednu jeskyni. Bylo v ní ještě víc rudy, než v té první!
-	AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCaveProgress_01_04");	//Hmmm... (Zamyšleně) Jseš si tím jistý?
+	AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCaveProgress_01_04");	//Hmmm... (zamyšleně) Jseš si tím jistý?
 	AI_Output(other,self,"DIA_Jack_LI_FindMagicOreCaveProgress_01_05");	//To mi jako nevěříš?!
 	AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCaveProgress_01_06");	//No, popravdě moc ne!... Prostě, tomu nějak moc nevěřím!
 	AI_Output(other,self,"DIA_Jack_LI_FindMagicOreCaveProgress_01_07");	//A co mám tedy udělat, abys mi uvěřil?!
@@ -1118,7 +1118,7 @@ func void dia_jack_li_findmagicorecavedone_info()
 {
 	B_GivePlayerXP(300);
 	AI_Output(other,self,"DIA_Jack_LI_FindMagicOreCaveDone_01_01");	//Přinesl jsem ti ten kus magické rudy.
-	AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCaveDone_01_02");	//To je skvělé!... (Se zájmem) Ukáž!
+	AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCaveDone_01_02");	//To je skvělé!... (se zájmem) Ukáž!
 	AI_Output(other,self,"DIA_Jack_LI_FindMagicOreCaveDone_01_03");	//Tady, posluž si.
 	B_GiveInvItems(other,self,itmi_testnugget,1);
 	AI_Output(self,other,"DIA_Jack_LI_FindMagicOreCaveDone_01_04");	//Hmmm... (velmi překvapeně) Ano, měl jsi pravdu!
@@ -1156,7 +1156,7 @@ func void dia_jack_li_changecourse_info()
 	AI_Output(other,self,"DIA_Jack_LI_ChangeCourse_01_01");	//A co budeme dělat teď?
 	AI_Output(self,other,"DIA_Jack_LI_ChangeCourse_01_03");	//Samozřejmě, že se takové množství rudy dá využít. V lepším případě za ni můžeme dostat hromadu zlata!
 	AI_Output(other,self,"DIA_Jack_LI_ChangeCourse_01_05");	//To zní dobře!
-	AI_Output(self,other,"DIA_Jack_LI_ChangeCourse_01_06");	//Jo!... (Zamyslí se) Je jenom na nás, jak s ní naložíme!
+	AI_Output(self,other,"DIA_Jack_LI_ChangeCourse_01_06");	//Jo!... (zamyslí se) Je jenom na nás, jak s ní naložíme!
 	AI_Output(self,other,"DIA_Jack_LI_ChangeCourse_01_07");	//Ale... našel loď ji všechnu neuveze!
 	AI_Output(self,other,"DIA_Jack_LI_ChangeCourse_01_08");	//Krom toho, ještě se musí vytěžit. A na to bychom potřebovali armádu kopáčů.
 	AI_Output(self,other,"DIA_Jack_LI_ChangeCourse_01_09");	//Takže... Napadá tě něco?!

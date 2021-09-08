@@ -334,7 +334,7 @@ func void dia_fellan_insanelast_yes()
 	AI_PlayAni(other,"T_PRACTICEMAGIC5");
 	Wld_PlayEffect("spellFX_Fear",other,other,0,0,0,FALSE);
 	AI_Output(other,self,"DIA_Fellan_InsaneLast_Yes_01_00");	//... ARH BELIAR NOMEN SAKT DAGAR JARAS...!
-	AI_Output(self,other,"DIA_Fellan_InsaneLast_Yes_01_01");	//Arrgh!... (Hlas ze záhrobí) Takže jsi rozluštil mé tajemství ty ubohý skrčku.
+	AI_Output(self,other,"DIA_Fellan_InsaneLast_Yes_01_01");	//Arrgh!... (hlas ze záhrobí) Takže jsi rozluštil mé tajemství ty ubohý skrčku.
 	AI_Output(other,self,"DIA_Fellan_InsaneLast_Yes_01_02");	//To znamená, že ty jsi ten mistr, co sloužil Beliarovi a pak odešel?!
 	AI_Output(self,other,"DIA_Fellan_InsaneLast_Yes_01_03");	//Ano, a myslím, že jsem ten, koho hledáš.
 	AI_Output(self,other,"DIA_Fellan_InsaneLast_Yes_01_04");	//Ale nemůžeš zničit nesmrtelného!
@@ -424,7 +424,7 @@ func void dia_fellan_meettwo_yes()
 	AI_Output(other,self,"DIA_Fellan_MeetTwo_Yes_01_02");	//Mě se neschováš Fellangore. Podřiď se a vrať se!
 	AI_Output(self,other,"DIA_Fellan_MeetTwo_Yes_01_03");	//Ne! Nevrátím se k nikomu! Ani k samotnému Beliarovi!
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
-	AI_Output(self,other,"DIA_Fellan_MeetTwo_Yes_01_04");	//(Divoce se směje) Amulet znova selhal v pokusu mě zabít!
+	AI_Output(self,other,"DIA_Fellan_MeetTwo_Yes_01_04");	//(divoce se směje) Amulet znova selhal v pokusu mě zabít!
 	AI_Output(self,other,"DIA_Fellan_MeetTwo_Yes_01_06");	//Schovám se ve tmě a ty mě už nikdy nenajdeš.
 	B_LogEntry(TOPIC_BELIARHELPME,"Znovu jsem narazil na Fellangora. Amulet mu vysál další síly. Sice se mu znovu podařilo zmizet, ale jsem si jistý, že to bylo naposledy.");
 	Info_ClearChoices(dia_fellan_meettwo);
@@ -499,7 +499,7 @@ func void dia_fellan_meettwoagain_yes()
 	AI_Output(other,self,"DIA_Fellan_MeetTwoAgain_Yes_01_02");	//Mě se neschováš Fellangore! Podřiď se vůli amuletu a vrať se.
 	AI_Output(self,other,"DIA_Fellan_MeetTwoAgain_Yes_01_03");	//Ne! Nevrátím se k nikomu! Ani k samotnému Beliarovi!
 	AI_PlayAni(self,"T_HEASHOOT_2_STAND");
-	AI_Output(self,other,"DIA_Fellan_MeetTwoAgain_Yes_01_04");	//(Divoce se směje) Amulet znova selhal v pokusu mě zabít!
+	AI_Output(self,other,"DIA_Fellan_MeetTwoAgain_Yes_01_04");	//(divoce se směje) Amulet znova selhal v pokusu mě zabít!
 	AI_Output(self,other,"DIA_Fellan_MeetTwoAgain_Yes_01_06");	//Schovám se ve tmě a ty mě už nikdy nenajdeš.
 	B_LogEntry(TOPIC_BELIARHELPME,"Znovu jsem narazil na Fellangora. Amulet mu vysál další síly. Sice se mu znovu podařilo zmizet, ale jsem si jistý, že to bylo naposledy.");
 	Info_ClearChoices(dia_fellan_meettwoagain);
@@ -630,7 +630,7 @@ func void dia_fellan_meetlast_kill()
 	Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 	AI_Output(self,other,"DIA_Fellan_MeetLast_Kill_01_02");	//Aargh...
 	Info_ClearChoices(dia_fellan_meetlast);
-	Info_AddChoice(dia_fellan_meetlast,"...(použít amulet)",dia_fellan_meetlast_extkill);
+	Info_AddChoice(dia_fellan_meetlast,"... (použít amulet)",dia_fellan_meetlast_extkill);
 };
 
 func void dia_fellan_meetlast_extkill()
@@ -751,7 +751,7 @@ func void dia_fellan_meetlastagain_kill()
 	Wld_PlayEffect("spellFX_Innoseye",self,self,0,0,0,FALSE);
 	AI_Output(self,other,"DIA_Fellan_MeetLastAgain_Kill_01_02");	//Aargh... (zoufale)
 	Info_ClearChoices(dia_fellan_meetlastagain);
-	Info_AddChoice(dia_fellan_meetlastagain,"...(použít amulet)",dia_fellan_meetlastagain_extkill);
+	Info_AddChoice(dia_fellan_meetlastagain,"... (použít amulet)",dia_fellan_meetlastagain_extkill);
 };
 
 func void dia_fellan_meetlastagain_extkill()

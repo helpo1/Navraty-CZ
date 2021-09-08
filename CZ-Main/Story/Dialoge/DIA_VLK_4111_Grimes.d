@@ -264,7 +264,7 @@ func void dia_grimes_learnabouterzhunt_ERZWORK()
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_09");	//Dobře! Poslouchej pozorně...(vypráví)
+				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_09");	//Dobře! Poslouchej pozorně... (vypráví)
 			};
 		};
 	}
@@ -306,10 +306,10 @@ func void dia_grimes_eligorpotion_info()
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_05");	//Hmm... (zamyšleně) No, já... Hmm... (vzpomíná)
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_07");	//... No, připadá mi, že si na něco vzpomínám, ale záleží jen na tobě, naco!... (mrká okem)
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_01_08");	//Slyšel jsem, že jsi do toho byl zapleten.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_09");	//(Překvapeně) Já?!
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_09");	//(překvapeně) Já?!
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_13");	//Dokonce ani neznám toho obchodníka!
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_01_14");	//Takže ty o tom nic nevíš?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_15");	//(Sarkasticky) Vubec nic!
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_15");	//(sarkasticky) Vubec nic!
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_16");	//A i kdybych něco věděl, proč bych ti to říkal?
 	Info_ClearChoices(dia_grimes_eligorpotion);
 	Info_AddChoice(dia_grimes_eligorpotion,"Protože tě zabiju, jestli mi to neřekneš!",dia_grimes_eligorpotion_kill);
@@ -339,7 +339,7 @@ func void dia_grimes_eligorpotion_money()
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_Money_01_00");	//Jsem ochoten za tuto informaci zaplatit.
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_01");	//Ha! Ha! A na co by mi byly peníze?!
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_02");	//Na nový krumpáč?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_04");	//Ne, chlape - peníze zde nemají cenu (smích).
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_04");	//Ne, chlape - peníze zde nemají cenu. (smích)
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_05");	//A navíc, jsem už stár a vím, že muj život skončí pravděpodobně v tomhle prokletém údolí.
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_06");	//Odsud se už nedostanu a mužu jen čekat, než mě něco sežere!
 	B_LogEntry(TOPIC_JORAHELP,"Zeptal jsem se Grimese na tu loupež u Lutera. Říká, že o tom nic neví. Nechce mi nic říci ani když jsem mu nabízel peníze - v údolí pro něj nemají cenu! Vypadal sklamaně. Teď musím vymyslet co dál.");
@@ -373,7 +373,7 @@ func void dia_grimes_eligorpotion_memory()
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_81");	//Ale co já vím, už dlouho se v opušteném dole nepracuje.
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_82");	//Stráže ho jistě odnesli předtím, než důl opustili.
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_83");	//To mohli, ale nemyslím, že na to měli čas.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_84");	//(Překvapeně) Ty nevíš co se tam stalo?
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_84");	//(překvapeně) Ty nevíš co se tam stalo?
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_85");	//Co myslíš?
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_89");	//Jeden kopáč narazil na divnou jeskyni, ukrytou v skale.
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_92");	//Několik kopáču a tři strážci se ji vydali proskoumat.
@@ -461,7 +461,7 @@ func void dia_grimes_letsgetoutsugg_info()
 	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_08");	//Potřebuju lidi, co umějí dobře zacházet s krumpáčem. V Khorinisu, jak se ukázalo, se nachází také nějaká magická ruda.
 	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_09");	//V současné době se snažím naučit tomuto řemeslu, ale zatím to neumím.
 	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_10");	//Stručně řečeno, potřebuju abys pro mě pracoval.
-	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_11");	//(Rozčarovaně) Zase do dolu? A v čem je tvůj důl lepší než tento?
+	AI_Output(self,other,"DIA_GRIMES_LetsGetOutSugg_01_11");	//(rozčarovaně) Zase do dolu? A v čem je tvůj důl lepší než tento?
 	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_12");	//Dej mě chvilku...
 	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_13");	//Okolo se nepotulují hordy skřetů, nemusíš pracovat ve dne v noci a budeš mít ubytování i stravu.
 	AI_Output(other,self,"DIA_GRIMES_LetsGetOutSugg_15_14");	//Důlní červy tam také nejsou.
@@ -631,7 +631,7 @@ func int dia_grimesnw_freedom_condition()
 
 func void dia_grimesnw_freedom_info()
 {
-	AI_Output(self,other,"DIA_GRIMESNW_Freedom_01_00");	//(Hluboce dýchá) Svoboda...
+	AI_Output(self,other,"DIA_GRIMESNW_Freedom_01_00");	//(hluboce dýchá) Svoboda...
 	AI_Output(self,other,"DIA_GRIMESNW_Freedom_01_01");	//Během posledních několita let jsem byl přesvědčen, že umřu v tom prokletém údolí.
 	AI_Output(self,other,"DIA_GRIMESNW_Freedom_01_02");	//Nemůžu uvěřit, že jsem ho nakonec opustil...
 	AI_Output(other,self,"DIA_GRIMESNW_Freedom_15_03");	//Brzo na oslavy. Ještě jsme se nedostali do mého tábora.
@@ -807,7 +807,7 @@ func void dia_grimes_NW_learnabouterzhunt_ERZWORK()
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_09");	//Dobře, poslouchej pozorně...(vypráví)
+				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_09");	//Dobře, poslouchej pozorně... (vypráví)
 			};
 		};
 	}

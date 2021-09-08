@@ -108,7 +108,7 @@ func void DIA_Ass_185_Adept_WhatDo_info()
 	AI_Output(other,self,"DIA_Ass_185_Adept_WhatDo_01_06");	//Vypadá to, že tu fakt je!
 	AI_Output(self,other,"DIA_Ass_185_Adept_WhatDo_01_07");	//Opravdu?
 	AI_Output(other,self,"DIA_Ass_185_Adept_WhatDo_01_08");	//No ano, je akorát za tebou.
-	AI_Output(self,other,"DIA_Ass_185_Adept_WhatDo_01_09");	//Ach...(sarkasticky) Asi jsem si nevšiml.
+	AI_Output(self,other,"DIA_Ass_185_Adept_WhatDo_01_09");	//Ach... (sarkasticky) Asi jsem si nevšiml.
 	AI_Output(other,self,"DIA_Ass_185_Adept_WhatDo_01_10");	//To je zvláštní, vždyť se skoro celá jeskyně třpytí zlatem.
 	AI_Output(self,other,"DIA_Ass_185_Adept_WhatDo_01_11");	//No, to se občas stává.
 };	

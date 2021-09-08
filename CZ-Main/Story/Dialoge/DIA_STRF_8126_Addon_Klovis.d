@@ -62,7 +62,7 @@ func int DIA_STRF_8126_Addon_Klovis_Ore_Condition()
 func void DIA_STRF_8126_Addon_Klovis_Ore_Info()
 {
 	AI_Output(other,self,"DIA_STRF_8126_Addon_Klovis_Ore_01_00");	//Možná budete potřebovat pomoc?
-	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_Ore_01_01");	//(Sarkasticky) Pomoc? Myslím že ji všichni potřebujem!
+	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_Ore_01_01");	//(sarkasticky) Pomoc? Myslím že ji všichni potřebujem!
 	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_Ore_01_02");	//Ale musím ti říct že by se mi hodilo, kdybys mi přinesl 50 kusů železné rudy, pak bych si mohl trochu odpočnout.
 	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_Ore_01_03");	//Kutat železnou žílu není vůbec snadné jak asi sami víte, práce to snadná vůbec není.
 	AI_Output(other,self,"DIA_STRF_8126_Addon_Klovis_Ore_01_04");	//Padesát?
@@ -76,12 +76,12 @@ func void DIA_STRF_8126_Addon_Klovis_Ore_Info()
 	if(VakurShakNeedGold == TRUE)
 	{
 		AI_Output(other,self,"DIA_STRF_8126_Addon_Klovis_Ore_01_11");	//Nech mě hádat: Nejmenuje se ten skřet náhodou Vakur Shak?
-		AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_Ore_01_12");	//Je přátelský...(Smích) Hádám, že už ses s ním setkal?
+		AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_Ore_01_12");	//Je přátelský... (smích) Hádám, že už ses s ním setkal?
 	};
 
 	AI_Output(other,self,"DIA_STRF_8126_Addon_Klovis_Ore_01_13");	//Takže tady se dá těžit zlato?
 	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_Ore_01_14");	//Ne, jen tu a tam se tu dají najít zlaté žíly.
-	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_Ore_01_15");	//(Vážně) Ale nikomu o tom něříkej! Je to naše malé tajemství.
+	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_Ore_01_15");	//(vážně) Ale nikomu o tom něříkej! Je to naše malé tajemství.
 	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_Ore_01_16");	//Protože, jestli se o tom Ar Dagar dozví, je s námi konec.
 	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_Ore_01_17");	//Tak co přineseš mi tu rudu?
 	AI_Output(other,self,"DIA_STRF_8126_Addon_Klovis_Ore_01_18");	//Pokusím se.
@@ -123,11 +123,11 @@ func void DIA_STRF_8126_Addon_Klovis_OreDone_Info()
 		AI_Output(other,self,"DIA_STRF_8126_Addon_Klovis_OreDone_01_03");	//Nevím, jak ti můžu poděkovat!
 		AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_OreDone_01_04");	//Alespoň ti ukážu jak učiněji těžit. Věř mi v tomhle oboru jsem mistr.
 		AI_Output(other,self,"DIA_STRF_8126_Addon_Klovis_OreDone_01_05");	//Vypadám snad jako kopáč?
-		AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_OreDone_01_06");	//Ne...(Zmateně) Ale třeba se ti to jednou bude hodit? Nemám jak jinak bych ti poděkoval.
+		AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_OreDone_01_06");	//Ne... (zmateně) Ale třeba se ti to jednou bude hodit? Nemám jak jinak bych ti poděkoval.
 	};
 
 	AI_Output(other,self,"DIA_STRF_8126_Addon_Klovis_OreDone_01_07");	//A co takhle zlatý nuggety?
-	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_OreDone_01_08");	//Heh...(Sarkasticky) Jak mazaný! Nejseš tak jednoduchej, jak se na první pohled zdáš. 
+	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_OreDone_01_08");	//Heh... (sarkasticky) Jak mazaný! Nejseš tak jednoduchej, jak se na první pohled zdáš. 
 	AI_Output(self,other,"DIA_STRF_8126_Addon_Klovis_OreDone_01_09");	//Okay! Pokud chceš, můžu ti pár kusů dát.
 	RT_Respect = RT_Respect + 1;
 	MIS_KlovisOre = LOG_Success;

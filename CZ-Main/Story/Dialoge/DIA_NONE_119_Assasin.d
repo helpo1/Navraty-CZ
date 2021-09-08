@@ -487,7 +487,7 @@ func void DIA_NONE_119_Assasin_PrioratNeedFind_Info()
 	AI_Output(self,other,"DIA_NONE_119_Assasin_PrioratNeedFind_01_09");	//Ale měl by sis uvědomit, že ty sám proti nim moc nezmůžeš.
 	AI_Output(self,other,"DIA_NONE_119_Assasin_PrioratNeedFind_01_10");	//Takže jestli je najdeš - nezapomeň mi o tom říct.
 	AI_Output(other,self,"DIA_NONE_119_Assasin_PrioratNeedFind_01_11");	//Proč tobě?
-	AI_Output(self,other,"DIA_NONE_119_Assasin_PrioratNeedFind_01_12");	//To teď není důležité. (Vážně) Prostě mi dej vědět jestli najdeš místo jejich úkrytu.
+	AI_Output(self,other,"DIA_NONE_119_Assasin_PrioratNeedFind_01_12");	//To teď není důležité. (vážně) Prostě mi dej vědět jestli najdeš místo jejich úkrytu.
 	AI_Output(other,self,"DIA_NONE_119_Assasin_PrioratNeedFind_01_13");	//Dobře.
 	AI_Output(self,other,"DIA_NONE_119_Assasin_PrioratNeedFind_01_14");	//Nezapomeň.
 	GonsalesRemind = TRUE;
@@ -528,12 +528,12 @@ func void DIA_NONE_119_Assasin_AmuletFind_Info()
 	AI_Output(other,self,"DIA_NONE_119_Assasin_AmuletFind_01_10");	//Co tím myslíš?
 	AI_Output(self,other,"DIA_NONE_119_Assasin_AmuletFind_01_11");	//Vidíš tenhle kovový vzor ve středu medailonu? Je tam z nějakého důvodu.
 	AI_Output(self,other,"DIA_NONE_119_Assasin_AmuletFind_01_12");	//Jestli věříš zvěstím, stínové Masyafu ho používají jako klíč k je tajnému doupěti.
-	AI_Output(self,other,"DIA_NONE_119_Assasin_AmuletFind_01_13");	//(Nepřítomně) Pravda nebo ne... kdo ví.
+	AI_Output(self,other,"DIA_NONE_119_Assasin_AmuletFind_01_13");	//(nepřítomně) Pravda nebo ne... kdo ví.
 	AI_Output(self,other,"DIA_NONE_119_Assasin_AmuletFind_01_14");	//Ale dostat se k takové věci je téměř nemožné, semozřejmě pokud nejsi jedním z nich.
 	AI_Output(other,self,"DIA_NONE_119_Assasin_AmuletFind_01_15");	//Mám prostě štěstí.
 	AI_Output(self,other,"DIA_NONE_119_Assasin_AmuletFind_01_16");	//Nikdy nevíš. (úsměv) Mnozí se drží stranou od takových věcí.
 	AI_Output(self,other,"DIA_NONE_119_Assasin_AmuletFind_01_17");	//Ale očividně nejsi jedním z nich.
-	AI_Output(self,other,"DIA_NONE_119_Assasin_AmuletFind_01_18");	//(Vážně) Pokud najdeš něco zajímavého, přijď mi o tom říct.
+	AI_Output(self,other,"DIA_NONE_119_Assasin_AmuletFind_01_18");	//(vážně) Pokud najdeš něco zajímavého, přijď mi o tom říct.
 	AI_Output(other,self,"DIA_NONE_119_Assasin_AmuletFind_01_19");	//Dobře.
 	PlayerKnowsMasiafKey = TRUE;
 	B_LogEntry(TOPIC_PrioratStart,"Ukázal jsem Gonzalesovi amulet, který jsem našel u jednoho z vrahů. Podle něj je to tajný znak bratrstva Masyaf. Stínové používají tenhle medailon jako klíč. Avšak nikdo neví, co se skutečně dá tímto klíčem otevřít. Gonzales mi řekl, že jestli přidju na něco zajímavého, mám mu dát vědět.");
@@ -1102,7 +1102,7 @@ func void DIA_NONE_1190_Assasin_NarugProblem_Info()
 		AI_Output(self,other,"DIA_NONE_1190_Assasin_NarugProblem_01_40");	//A my to dáme našemu mrtvému příteli.
 		AI_Output(self,other,"DIA_NONE_1190_Assasin_NarugProblem_01_41");	//Poté se už Hasim nevyvleče z toho, že zabil jednoho ze stínů a vzal zlato.
 		AI_Output(other,self,"DIA_NONE_1190_Assasin_NarugProblem_01_42");	//Takže tohle je náš plán. Není to sice nic pěkného, ale je to celkem mazané.
-		AI_Output(self,other,"DIA_NONE_1190_Assasin_NarugProblem_01_43");	//(Vážně) Vypadá to, že jsi zapomněl s kým máš tu čest. A ve válce, jak se říká, jsou všechny prostředky dovoleny.
+		AI_Output(self,other,"DIA_NONE_1190_Assasin_NarugProblem_01_43");	//(vážně) Vypadá to, že jsi zapomněl s kým máš tu čest. A ve válce, jak se říká, jsou všechny prostředky dovoleny.
 		AI_Output(self,other,"DIA_NONE_1190_Assasin_NarugProblem_01_44");	//Tak vezmi měšec a jdi rychle vykonat náš plán.
 		B_GiveInvItems(self,other,ItMi_AssGoldPocket,1);
 		AI_Output(other,self,"DIA_NONE_1190_Assasin_NarugProblem_01_45");	//Zase já...
@@ -1175,7 +1175,7 @@ func void DIA_NONE_1190_Assasin_NarugProblem_Temp_Info()
 	AI_Output(self,other,"DIA_NONE_1190_Assasin_NarugProblem_Temp_01_40");	//A my to dáme našemu mrtvému příteli.
 	AI_Output(self,other,"DIA_NONE_1190_Assasin_NarugProblem_Temp_01_41");	//Poté se už Hasim nevyvleče z toho, že zabil jednoho ze stínů a vzal zlato.
 	AI_Output(other,self,"DIA_NONE_1190_Assasin_NarugProblem_Temp_01_42");	//Takže tohle je náš plán. Není to sice nic pěkného, ale je to celkem mazané.
-	AI_Output(self,other,"DIA_NONE_1190_Assasin_NarugProblem_Temp_01_43");	//(Vážně) Vypadá to, že jsi zapomněl s kým máš tu čest. A ve válce, jak se říká, jsou všechny prostředky dovoleny.
+	AI_Output(self,other,"DIA_NONE_1190_Assasin_NarugProblem_Temp_01_43");	//(vážně) Vypadá to, že jsi zapomněl s kým máš tu čest. A ve válce, jak se říká, jsou všechny prostředky dovoleny.
 	AI_Output(self,other,"DIA_NONE_1190_Assasin_NarugProblem_Temp_01_44");	//Tak vezmi měšec a honem jdi vykonat můj plán.
 	B_GiveInvItems(self,other,ItMi_AssGoldPocket,1);
 	AI_Output(other,self,"DIA_NONE_1190_Assasin_NarugProblem_Temp_01_45");	//Zase já...
@@ -1248,7 +1248,7 @@ func void DIA_NONE_1190_Assasin_HaniarFirstQuest_Info()
 	AI_Output(other,self,"DIA_NONE_1190_Assasin_HaniarFirstQuest_01_03");	//Jeden z převorů Masyafu mi dal za úkol najít Hasimova vraha. Ale to jsem já!
 	AI_Output(self,other,"DIA_NONE_1190_Assasin_HaniarFirstQuest_01_04");	//Legrační, neříkej! A který z převorů to byl?
 	AI_Output(other,self,"DIA_NONE_1190_Assasin_HaniarFirstQuest_01_05");	//Jmenuje se Haniar. 
-	AI_Output(self,other,"DIA_NONE_1190_Assasin_HaniarFirstQuest_01_06");	//(Překvapeně) Haniar? Sám Haniar Slepý ti dal tento úkol?
+	AI_Output(self,other,"DIA_NONE_1190_Assasin_HaniarFirstQuest_01_06");	//(překvapeně) Haniar? Sám Haniar Slepý ti dal tento úkol?
 	AI_Output(other,self,"DIA_NONE_1190_Assasin_HaniarFirstQuest_01_07");	//Co o něm víš?
 	AI_Output(self,other,"DIA_NONE_1190_Assasin_HaniarFirstQuest_01_08");	//Och, chtěl bych říct, že nic, ale byla by to lež.
 	AI_Output(self,other,"DIA_NONE_1190_Assasin_HaniarFirstQuest_01_09");	//Znám ho! A dovolím si říct, že lépe, než někteří zdejší členové.
@@ -1338,7 +1338,7 @@ func void DIA_NONE_1190_Assasin_IDo_Info()
 	if(TiamantIsDead == TRUE)
 	{
 		AI_Output(other,self,"DIA_NONE_1190_Assasin_IDo_01_08");	//Jeden z převorů je už mrtvý.
-		AI_Output(self,other,"DIA_NONE_1190_Assasin_IDo_01_09");	//(Překvapeně) Kdo?
+		AI_Output(self,other,"DIA_NONE_1190_Assasin_IDo_01_09");	//(překvapeně) Kdo?
 		AI_Output(other,self,"DIA_NONE_1190_Assasin_IDo_01_10");	//Tiamant.
 		AI_Output(self,other,"DIA_NONE_1190_Assasin_IDo_01_11");	//Áa, Tiamant, mistr meče. Jak se to stalo?
 		AI_Output(other,self,"DIA_NONE_1190_Assasin_IDo_01_12");	//Haniar ho zabil osobně.

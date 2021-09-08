@@ -49,7 +49,7 @@ func void dia_gomezworkersoul_1_hallo_info()
 	AI_Output(other,self,"DIA_GomezWorkerSoul_1_HALLO_01_01");	//Ty jsi mě přišel osvobodit?! Aargh!... (mrtvolně) Opravdu skončí moje utrpení?!
 	AI_Output(self,other,"DIA_GomezWorkerSoul_1_HALLO_01_02");	//Přesně tak!
 	AI_Output(other,self,"DIA_GomezWorkerSoul_1_HALLO_01_04");	//Ale předtím, než to udělám, chce Gomez, abys i ty odpustil jeho duši.
-	AI_Output(self,other,"DIA_GomezWorkerSoul_1_HALLO_01_05");	//Hmmm... (mrtvolně)... Ví o co žádá?. My jsme byli prokleti kvůli němu!
+	AI_Output(self,other,"DIA_GomezWorkerSoul_1_HALLO_01_05");	//Hmmm... (mrtvolně) Ví o co žádá?. My jsme byli prokleti kvůli němu!
 	AI_Output(self,other,"DIA_GomezWorkerSoul_1_HALLO_01_06");	//A jeho duše zřejmě nemůže najít odpočinek na tomto světě.
 	AI_Output(other,self,"DIA_GomezWorkerSoul_1_HALLO_01_07");	//Máš naprostou pravdu duchu.
 	Info_ClearChoices(dia_gomezworkersoul_1_hallo);

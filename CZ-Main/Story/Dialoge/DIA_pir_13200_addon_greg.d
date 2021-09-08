@@ -182,7 +182,7 @@ func void dia_addon_greg_bf_travelonbigland_info()
 		AI_Output(other,self,"DIA_Addon_Greg_BF_TravelOnBigLand_01_02");	//Nuže, je načase odplout.
 		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_03");	//Jseš si jistej, že to chceš?
 		AI_Output(other,self,"DIA_Addon_Greg_BF_TravelOnBigLand_01_04");	//Ano, čas se krátí.
-		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_05");	//(vážně)Ať je tedy po tvým.
+		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_05");	//(vážně) Ať je tedy po tvým.
 		AI_TurnToNPC(self,DiegoNW);
 		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_06");	//... (křičí) Hej, vy suchozemský krysy! Všichni na místa!
 		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_07");	//... (křičí) Zvedněte kotvu, rozlučte se tady s tím a vyplouváme!

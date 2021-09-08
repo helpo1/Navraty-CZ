@@ -203,10 +203,10 @@ func int DIA_Parlaf_DobarOut_Condition()
 func void DIA_Parlaf_DobarOut_Info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_00");	//(Strach) Kdo je tam? Ach, to jsi ty...
+	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_00");	//(strach) Kdo je tam? Ach, to jsi ty...
 	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_01");	//Tak tady se ukrýváš. Co tě sem přivedlo?
-	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_02");	//(Deprese) Jednou v noci mě Dobar probudil a nabídl útěk z hradu. A já blázen ho poslechl.
-	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_03");	//Ale nevím jak by se dalo z tohodle údolí dostat živý... (tiše): No, možná právě tobě se to podaří.
+	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_02");	//(deprese) Jednou v noci mě Dobar probudil a nabídl útěk z hradu. A já blázen ho poslechl.
+	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_03");	//Ale nevím jak by se dalo z tohodle údolí dostat živý... (tiše) No, možná právě tobě se to podaří.
 	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_04");	//K věci, kde je Dobar a proč jseš tady?
 	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_05");	//A-ah... ano, dobře, dobře. Další noc jsme sešli dolů bez povšimnutí po beranidlu - Zrovna se střídala hlídka a my využili příležitosti.
 	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_06");	//Už jsme skoro opustily kruh obležení kolem hradu, viděli jsme spousty skřetích skupin.

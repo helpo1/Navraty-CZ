@@ -910,7 +910,7 @@ func void DIA_Orlan_Werewolf_Info()
 	AI_Output(other,self,"DIA_Orlan_Werewolf_01_00");	//Nevíš něco o napadení zvířetem?
 	AI_Output(self,other,"DIA_Orlan_Werewolf_01_01");	//(nervózně) O jakém napadení mluvíš?
 	AI_Output(other,self,"DIA_Orlan_Werewolf_01_02");	//Nedávno nějaká šelma zabila člověka nedaleko od tvého hostince, pod mostem.
-	AI_Output(self,other,"DIA_Orlan_Werewolf_01_03");	//A, co ty s tím...(povzdech) Ne, o ničem nevím.
+	AI_Output(self,other,"DIA_Orlan_Werewolf_01_03");	//A, co ty s tím... (povzdech) Ne, o ničem nevím.
 	AI_Output(other,self,"DIA_Orlan_Werewolf_01_04");	//A nedonesly se ti nějaké řeči?
 	AI_Output(self,other,"DIA_Orlan_Werewolf_01_05");	//Hmm... Někdo se zmínil, že viděl velkou stínovou šelmu nedaleko Sekobovy farmy.
 	AI_Output(self,other,"DIA_Orlan_Werewolf_01_06");	//Pár se jich tu potuluje po lesích. Věř, lesy se tu hemží monstry.

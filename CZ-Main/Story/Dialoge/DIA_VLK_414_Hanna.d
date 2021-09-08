@@ -67,7 +67,7 @@ func void DIA_Hanna_Armor_Info()
 {
 	AI_Output(other,self,"DIA_Hanna_Armor_01_00");	//Právě jdu od Pabla.
 	AI_Output(other,self,"DIA_Hanna_Armor_01_01");	//Řekl, že mi můžeš prodat oděv, který nosí většina zdejších občanů.
-	AI_Output(self,other,"DIA_Hanna_Armor_01_02");	//Hmm...(Nevěřícně) No, tak pokud tak řekl, předpokládám že asi můžu.
+	AI_Output(self,other,"DIA_Hanna_Armor_01_02");	//Hmm... (nevěřícně) No, tak pokud tak řekl, předpokládám že asi můžu.
 	AI_Output(self,other,"DIA_Hanna_Armor_01_03");	//Ale nemysli si, že to bude zadarmo.
 	AI_Output(self,other,"DIA_Hanna_Armor_01_04");	//Budeš za to muset zaplatit. A to přesně 100 zlatých.
 	AI_Output(other,self,"DIA_Hanna_Armor_01_05");	//Aha, no tak to jsem nečekal.
@@ -98,7 +98,7 @@ func void DIA_Hanna_Armor_Dis_Info()
 
 	if(HannaTakeBuh == TRUE)
 	{
-		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_01");	//Hmm...(přemýšlivě) Dobře. Přeci jen jsi mi pomohl vyřešit problém s Lehmarem.
+		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_01");	//Hmm... (přemýšlivě) Dobře. Přeci jen jsi mi pomohl vyřešit problém s Lehmarem.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_02");	//Takže ti to dám zadarmo.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_03");	//Na, vezmi si to.
 		AI_Output(other,self,"DIA_Hanna_Armor_Dis_01_04");	//Díky.
@@ -107,7 +107,7 @@ func void DIA_Hanna_Armor_Dis_Info()
 	}
 	else if(IS_LOVCACH == TRUE)
 	{
-		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_05");	//Hmm...(přemýšlivě) Dobře. Přeci jenom jsi jedním z nás.
+		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_05");	//Hmm... (přemýšlivě) Dobře. Přeci jenom jsi jedním z nás.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_06");	//Měli bychom držet pospolu.
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_07");	//Takže ti to prodám za polovinu ceny.
 		AI_Output(other,self,"DIA_Hanna_Armor_Dis_01_08");	//Díky.
@@ -116,7 +116,7 @@ func void DIA_Hanna_Armor_Dis_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_09");	//Hmm...(Sarkasticky) A proč bych to tak asi dělala?
+		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_09");	//Hmm... (sarkasticky) A proč bych to tak asi dělala?
 		AI_Output(self,other,"DIA_Hanna_Armor_Dis_01_10");	//Ne kdepak... Nic ti neslevím!
 	};
 };
@@ -149,7 +149,7 @@ func void DIA_Hanna_LEATHER_Info()
 		{
 			B_GiveInvItems(other,self,ItMi_Gold,50);
 			Npc_RemoveInvItems(self,ItMi_Gold,50);
-			AI_Output(self,other,"DIA_Hanna_LEATHER_09_01");	//Dobře...(usmívá se) Tady, vem si to.
+			AI_Output(self,other,"DIA_Hanna_LEATHER_09_01");	//Dobře... (usmívá se) Tady, vem si to.
 			B_GiveInvItems(self,other,ITAR_Vlk_L,1);
 			Hanna_LeatherBought = TRUE;
 		}
@@ -164,7 +164,7 @@ func void DIA_Hanna_LEATHER_Info()
 		{
 			B_GiveInvItems(other,self,ItMi_Gold,100);
 			Npc_RemoveInvItems(self,ItMi_Gold,100);
-			AI_Output(self,other,"DIA_Hanna_LEATHER_09_01");	//Dobře...(usmívá se) Tady, vem si to.
+			AI_Output(self,other,"DIA_Hanna_LEATHER_09_01");	//Dobře... (usmívá se) Tady, vem si to.
 			B_GiveInvItems(self,other,ITAR_Vlk_L,1);
 			Hanna_LeatherBought = TRUE;
 		}
@@ -596,7 +596,7 @@ func void DIA_Hanna_TradeMe_Info()
 		AI_PlayAni(self,"T_SEARCH");
 	};
 
-	AI_Output(self,other,"DIA_Hanna_TradeMe_01_01");	//(Usmívá se) Bývávalo.
+	AI_Output(self,other,"DIA_Hanna_TradeMe_01_01");	//(usmívá se) Bývávalo.
 	AI_Output(self,other,"DIA_Hanna_TradeMe_01_02");	//Ale teď mám slušné příjmy z provozu hotelu a prodeje potravin.
 	AI_Output(self,other,"DIA_Hanna_TradeMe_01_03");	//Popravdě, stále mám zákazníky, kteří mají zájem o více než jen jídlo a přístřeší.
 	AI_Output(other,self,"DIA_Hanna_TradeMe_01_04");	//A co jim prodáváš?

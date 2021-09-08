@@ -54,10 +54,10 @@ func void dia_orc_8566_urhan_hello_info()
 {
 	AI_Output(self,other,"DIA_Orc_8566_UrHan_Hello_01_01");	//KHATAG BAT NAR! Člověk?! Kdo tě sem pustit?!
 	AI_Output(other,self,"DIA_Orc_8566_UrHan_Hello_01_02");	//Nikdo! Přišel jsem sám.
-	AI_Output(self,other,"DIA_Orc_8566_UrHan_Hello_01_04");	//Arrgh...(bojovně) Člověk být moc smělý nebo moc hloupý, že sem přijít!
+	AI_Output(self,other,"DIA_Orc_8566_UrHan_Hello_01_04");	//Arrgh... (bojovně) Člověk být moc smělý nebo moc hloupý, že sem přijít!
 	AI_Output(self,other,"DIA_Orc_8566_UrHan_Hello_01_05");	//I když nést znak síly skřetů, to nespasit člověk. Stačí říct slovo a moji válečníci tě rozsekat na kousky!
 	AI_Output(other,self,"DIA_Orc_8566_UrHan_Hello_01_06");	//To je možné, ale já to risknu!
-	AI_Output(self,other,"DIA_Orc_8566_UrHan_Hello_01_07");	//Hmmm...(mírněji) Dobře! A co ode mne člověk tedy chtít?
+	AI_Output(self,other,"DIA_Orc_8566_UrHan_Hello_01_07");	//Hmmm... (mírněji) Dobře! A co ode mne člověk tedy chtít?
 	if(DGJMOVEPALADIN == TRUE)
 	{
 		b_readydgjmove();

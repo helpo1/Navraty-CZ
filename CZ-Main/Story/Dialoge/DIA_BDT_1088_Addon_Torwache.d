@@ -66,7 +66,7 @@ func void DIA_BDT_1088_Addon_Torwache_FirstWarn_Info()
 		}
 		else if(Torwache_Greetings == 1)
 		{
-			AI_Output(self,other,"DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_04");	//Copak to nechápeš?(výhružně) ZMIZ MI Z OČÍ!
+			AI_Output(self,other,"DIA_Addon_BDT_1088_Addon_Torwache_FirstWarn_06_04");	//Copak to nechápeš? (výhružně) ZMIZ MI Z OČÍ!
 			Torwache_Greetings = 2;
 		}
 		else

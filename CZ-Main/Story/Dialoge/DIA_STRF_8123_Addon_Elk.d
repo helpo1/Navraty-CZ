@@ -68,7 +68,7 @@ func void DIA_STRF_8123_Addon_Elk_Help_info()
 	AI_Output(other,self,"DIA_STRF_8123_Addon_Elk_Help_01_04");	//Jak to myslíte?
 	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Help_01_05");	//Už je tak starý že se každou chvílí rozbije a skřeti požadují stále více rudy.
 	AI_Output(other,self,"DIA_STRF_8123_Addon_Elk_Help_01_06");	//Proč se nezeptáš ostatních aby ti něco sehnali?
-	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Help_01_07");	//Jak...(smutně) sotva otevřete ústa, dostanete do žeber.
+	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Help_01_07");	//Jak... (smutně) sotva otevřete ústa, dostanete do žeber.
 	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Help_01_08");	//Takže musím pečlivě sledovat svůj nástroj.
 	AI_Output(self,other,"DIA_STRF_8123_Addon_Elk_Help_01_09");	//A ten se jednou rozbije!
 	AI_Output(other,self,"DIA_STRF_8123_Addon_Elk_Help_01_10");	//Pokusím se vám něco sehnat.

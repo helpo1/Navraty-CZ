@@ -98,7 +98,7 @@ func void dia_orc_8551_leitenent_hello_hagtar()
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_Hello_HagTar_18_01");	//Mám zprávu od Hag-Tara!
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_Hello_Hram_18_02");	//Tak co? Pustíš mě dovnitř?
-	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_HagTar_18_03");	//Hmm...(přemýšlí) Já znát Hag-Tar - být velký bojivník.
+	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_HagTar_18_03");	//Hmm... (přemýšlí) Já znát Hag-Tar - být velký bojivník.
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_Hram_18_04");	//Dóbrá, člověk jít dál! Ale opatrně!
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_Hram_18_05");	//Když rozhněvá Ur-Thralla - člověk zemřít. Ulu-Mulu nepomůže!
 
@@ -187,7 +187,7 @@ func void dia_orc_8551_leitenent_hellotwo_hagtar()
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_01");	//Mám zprávu od Hag-Tara!
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_02");	//Tak co? Pustíš mě dovnitř?
-	AI_Output(self,other,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_03");	//Hmm...(přemýšlí) Já znát Hag-Tar - být velký bojivník.
+	AI_Output(self,other,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_03");	//Hmm... (přemýšlí) Já znát Hag-Tar - být velký bojivník.
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_04");	//Dóbrá, člověk jít dál! Ale opatrně!
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_05");	//Když rozhněvá Ur-Thralla - člověk zemřít. Ulu-Mulu nepomůže!
 
@@ -246,7 +246,7 @@ func void DIA_Orc_8551_Leitenent_Respect_Info()
 	}
 	else if(ORCRESPECT >= 70)
 	{
-		AI_Output(self,other,"DIA_Orc_8551_Leitenent_Respect_01_02");	//(Schválení) Farrok vidí, že pro mnoho z mých bratrů se člověk stal váženým.
+		AI_Output(self,other,"DIA_Orc_8551_Leitenent_Respect_01_02");	//(schválení) Farrok vidí, že pro mnoho z mých bratrů se člověk stal váženým.
 		AI_Output(self,other,"DIA_Orc_8551_Leitenent_Respect_01_03");	//Stále to ale není dost abych tě pustil k vůdci.
 	}
 	else if(ORCRESPECT >= 50)

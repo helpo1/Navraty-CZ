@@ -429,7 +429,7 @@ func int DIA_STRF_8121_Addon_Krow_Teleport_Focus_condition()
 func void DIA_STRF_8121_Addon_Krow_Teleport_Focus_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_00");	//Můžeš sa mrknout na tento šutr?
+	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_00");	//Můžeš se mrknout na tento šutr?
 	B_GiveInvItems(other,self,ItMi_PortalCrystal,1);
 	Npc_RemoveInvItems(self,ItMi_PortalCrystal,1);
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_01");	//Hmmm... (zaujatě) Ano, přednedávnem jsem držel něco takového.

@@ -70,10 +70,10 @@ func void dia_SEK_156_SLAVEOBSSEK_hallo_info()
 	{
 		B_GivePlayerXP(150);
 		AI_Output(other,self,"DIA_SEK_156_SLAVEOBSSEK_HALLO_01_08");	//Hej! A kdes přišel na to, že odsud vůbec můžeš odejít?
-		AI_Output(self,other,"DIA_SEK_156_SLAVEOBSSEK_HALLO_01_09");	//Hmmm...(váhavě) Nevěnuj tomu pozornost. To já jen tak... přemýšlel nahlas.
+		AI_Output(self,other,"DIA_SEK_156_SLAVEOBSSEK_HALLO_01_09");	//Hmmm... (váhavě) Nevěnuj tomu pozornost. To já jen tak... přemýšlel nahlas.
 		AI_Output(other,self,"DIA_SEK_156_SLAVEOBSSEK_HALLO_01_10");	//Dělej, vyklop všechno co víš!
 		AI_Output(other,self,"DIA_SEK_156_SLAVEOBSSEK_HALLO_01_11");	//Jinak se postarám aby se o tebe osobně zajímal Osairova ochranka.
-		AI_Output(self,other,"DIA_SEK_156_SLAVEOBSSEK_HALLO_01_12");	//Dobře, dobře...(zbaběle) Všechno vyklopím. Hlavně to neříkej strážím.
+		AI_Output(self,other,"DIA_SEK_156_SLAVEOBSSEK_HALLO_01_12");	//Dobře, dobře... (zbaběle) Všechno vyklopím. Hlavně to neříkej strážím.
 		AI_Output(self,other,"DIA_SEK_156_SLAVEOBSSEK_HALLO_01_13");	//To všechno Marius! Pořád mluví o tom, že uteče.
 		AI_Output(self,other,"DIA_SEK_156_SLAVEOBSSEK_HALLO_01_14");	//A nabádá nás abychom se vzbouřili.
 		AI_Output(self,other,"DIA_SEK_156_SLAVEOBSSEK_HALLO_01_15");	//Dokonce se sám nabídl, že bude pracovat v chrámu, aby pro nás mohl získat zbraně.

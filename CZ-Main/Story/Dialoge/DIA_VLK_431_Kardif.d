@@ -128,7 +128,7 @@ func void DIA_Kardif_Hallo_Info()
 func void DIA_Kardif_Hallo_Zehn()
 {
 	AI_Output(other,self,"DIA_Kardif_Hallo_Zehn_15_00");	//No dobře, souhlasím.
-	AI_Output(self,other,"DIA_Kardif_Hallo_Zehn_14_01");	//Umíš dobře smlouvat (usměje se). Jsem ti vždycky k službám.
+	AI_Output(self,other,"DIA_Kardif_Hallo_Zehn_14_01");	//Umíš dobře smlouvat. (usměje se) Jsem ti vždycky k službám.
 	Kardif_Deal = 10;
 	Info_ClearChoices(DIA_Kardif_Hallo);
 };
@@ -857,9 +857,9 @@ func void dia_kardif_permjob_info()
 	AI_Output(self,other,"DIA_Kardif_PermJob_01_05");	//Opravdu by se mi teď hodil člověk na místo vyhazovače v mojí krčmě.
 	AI_Output(self,other,"DIA_Kardif_PermJob_01_06");	//Je to taková prašivá práce, ale jsem za to ochotný zaplatit spoustu peněz!
 	AI_Output(self,other,"DIA_Kardif_PermJob_01_09");	//Gayvern žádné problémy nedělá, ale jsou tu i jiní.
-	AI_Output(self,other,"DIA_Kardif_PermJob_01_10");	//Jenže když se na tebe dívám...(zklamaně) stěží bych tě nazval drsňákem.
+	AI_Output(self,other,"DIA_Kardif_PermJob_01_10");	//Jenže když se na tebe dívám... (zklamaně) stěží bych tě nazval drsňákem.
 	AI_Output(other,self,"DIA_Kardif_PermJob_01_12");	//Co musím udělat, abych tě přesvědčil o opaku?
-	AI_Output(self,other,"DIA_Kardif_PermJob_01_13");	//Hmmm...(zadumaně) Je to dobrá otázka! No, alespoň...
+	AI_Output(self,other,"DIA_Kardif_PermJob_01_13");	//Hmmm... (zadumaně) Je to dobrá otázka! No, alespoň...
 	AI_Output(self,other,"DIA_Kardif_PermJob_01_14");	//Řekni mi, viděl jsi toho chlápka který stojí u vchodu do mé krčmy?
 	AI_Output(other,self,"DIA_Kardif_PermJob_01_15");	//Jo, myslíš Moea.
 	AI_Output(self,other,"DIA_Kardif_PermJob_01_18");	//Myslím, že jeho jméno je Moe, ano.
@@ -872,14 +872,14 @@ func void dia_kardif_permjob_info()
 	{
 		B_GivePlayerXP(200);
 		AI_Output(other,self,"DIA_Kardif_PermJob_01_22");	//Tak jsem si s ním povyrazil! Ukázalo se, že je to slaboch.
-		AI_Output(self,other,"DIA_Kardif_PermJob_01_25");	//Ha, ha...(smích) No, pokud ano, pak stačí jít a říct mu že jestli ho tu někdy uvidím - dostane ještě více!
+		AI_Output(self,other,"DIA_Kardif_PermJob_01_25");	//Ha, ha... (smích) No, pokud ano, pak stačí jít a říct mu že jestli ho tu někdy uvidím - dostane ještě více!
 		B_LogEntry(TOPIC_MOEBORED,"Slíbil jsem Kardifovi, že naučím Moea dobrým mravům.");
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Kardif_PermJob_01_30");	//Podívám se na tvůj problém.
 		AI_Output(self,other,"DIA_Kardif_PermJob_01_31");	//Řekni mu že jestli ho tu někdy uvidím - dostane ještě více!
-		AI_Output(self,other,"DIA_Kardif_PermJob_01_32");	//Pokud to zvládneš...(smích) V což doufám!
+		AI_Output(self,other,"DIA_Kardif_PermJob_01_32");	//Pokud to zvládneš... (smích) V což doufám!
 		B_LogEntry(TOPIC_MOEBORED,"Slíbil jsem Kardifovi, že vyženu Moea.");
 	};
 	AI_StopProcessInfos(self);
@@ -1123,7 +1123,7 @@ func void DIA_VLK_431_Kardif_Game_info()
 	KardifPlayResult = 200;
 	Menu_WriteInt("AST","SysTimer01",0);
 	Log_CreateTopic(TOPIC_GameList,LOG_NOTE);
-	B_LogEntry(TOPIC_GameList,"Vypadá to, že si s Kardiffem můžu zahrát kostky. Asi bych toho mohl využít.");
+	B_LogEntry(TOPIC_GameList,"Vypadá to, že si s Kardifem můžu zahrát kostky. Asi bych toho mohl využít.");
 };
 
 instance DIA_VLK_431_Kardif_WhatOth(C_Info)
@@ -1303,5 +1303,5 @@ func void DIA_Kardif_DiscoverLH_Info()
 	AI_Output(self,other,"DIA_Kardif_DiscoverLH_01_04");	//Je to starý námořník. Viděl toho hodně, a pravděpodobně se střetl i s piráty.
 	AI_Output(other,self,"DIA_Kardif_DiscoverLH_01_05");	//Děkuji.
 	KnowStoryDLH = TRUE;
-	B_LogEntry(TOPIC_HauntedLighthouse,"Kardiff mi pověděl, že bych si měl o pirátech popovídat s Jackem.");
+	B_LogEntry(TOPIC_HauntedLighthouse,"Kardif mi řekl, že bych si měl o pirátech popovídat s Jackem.");
 };

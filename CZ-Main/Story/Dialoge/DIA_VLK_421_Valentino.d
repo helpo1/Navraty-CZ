@@ -259,7 +259,7 @@ func void dia_valentino_joinsekta_info()
 	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_04");	//Nepotřebuji pomoc od nikoho! Dokážu se o sebe postarat sám!... (povýšeně)
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_05");	//Každý občas potřebuje pomoct a ty nejsi výjimka. Chtěl bys získat respekt od lidí - ale nemáš nic.
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_07");	//A vše, čeho jsi dosáhl je pár facek od lidí, jako je Regis!
-	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_09");	//...(Nejistý)... Já... Já zkoušel, ale... (povzdech) Ano, asi máš pravdu...
+	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_09");	//... (nejistý) Já... Já zkoušel, ale... (povzdech) Ano, asi máš pravdu...
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_10");	//Vidíš! Ale nezoufej - Vím, že ti pomůžou najít víru a znovu získat důvěru v sebe sama!
 	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_11");	//Ano?!... (udiveně) Koho tím myslíš?
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_12");	//Už jsi slyšel o Bratrstvu?
@@ -267,7 +267,7 @@ func void dia_valentino_joinsekta_info()
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_16");	//Myslím, že tohle je to, co potřebuješ!
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_17");	//Brarstvo ti pomůže najít sám sebe, naučíš se žít v harmonii s sebou samým. A jinak dosáhneš jiného úspěchu - získáš respekt druhých!
 	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_18");	//Opravdu si to myslíš?!... (s nadějí)
-	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_26");	//(přemýšlí)... Tak dobrá.
+	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_26");	//(přemýšlí) Tak dobrá.
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_27");	//Skvělé! Následuj mě a nezdržuj se.
 	B_LogEntry(TOPIC_NOVICECANJOIN,"Mluvil jsem s Valentinem. Bylo lehké ho přemluvit, aby se mnou šel za Baalem Parvezem. Když uvážím jeho problémy, udělal bych to samé.");
 	AI_StopProcessInfos(self);
@@ -345,7 +345,7 @@ func void dia_valentino_taliasanletter_info()
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_10");	//Je tu jeden chlap, jménem Regis, který se mnou docela hrubě zachází.
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_12");	//Nejstli ti to nevadí, tak tohle je tvůj úkol - vpal mu za mě párkrát do hlavy!
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_14");	//Udělal bych to sám, jenže si nechci špinit ruce.
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_18");	//Ó, ano! Asi se chceš zeptat - kolik ti za to zaplatím?!...(směje se)
+	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_18");	//Ó, ano! Asi se chceš zeptat - kolik ti za to zaplatím?!... (směje se)
 	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_21");	//Zlato mě nezajímá.
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_22");	//Fakt?!... (udiveně) To jsou časy! Takže si chceš zachovat hrdost?! Odmítáš zlato?!
 	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_23");	//Ne! Je to práce jako každá jiná.
@@ -354,7 +354,7 @@ func void dia_valentino_taliasanletter_info()
 	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_31");	//Vlastně ani ne tak já. Slyšel jsi o někom jménem Gallahad?
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_32");	//Gallahad?!... Jasně! Kdo o něm neslyšel!
 	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_33");	//Takže - i on potřebuje pomoc.
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_34");	//Ale! Takže ty jsi poslíček Gallahada!...(směje se) Teď je to vše jasné!
+	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_34");	//Ale! Takže ty jsi poslíček Gallahada!... (směje se) Teď je to vše jasné!
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_35");	//A co Gallahad potřebuje?
 	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_36");	//Potřebuje, abys napsal doporučující dopis pro Lariuse, který by ho před ním vychválil.
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_37");	//Před místodržícím?! Proč by to měl chtít?
@@ -402,7 +402,7 @@ func void dia_valentino_payback_info()
 		};
 		
 		AI_Output(self,other,"DIA_Valentino_PayBack_01_14");	//No, když tak se stav.
-		AI_Output(self,other,"DIA_Valentino_PayBack_01_15");	//Možná se ještě v budoucnu najde pro tebe nějaká další práce.(směje se)
+		AI_Output(self,other,"DIA_Valentino_PayBack_01_15");	//Možná se ještě v budoucnu najde pro tebe nějaká další práce. (směje se)
 		MIS_VALENTINOHELP = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_VALENTINOHELP,LOG_SUCCESS);
 		B_LogEntry(TOPIC_VALENTINOHELP,"Valentino byl velmi rád, že jsem ztřískal Regise. Na oplátku mi napsal doporučení pro Gallahada.");
@@ -417,7 +417,7 @@ func void dia_valentino_payback_info()
 		if(MIS_TALIASANHELP == LOG_Running)
 		{
 			AI_Output(other,self,"DIA_Valentino_PayBack_01_24");	//A co dopis pro Gallahada?
-			AI_Output(self,other,"DIA_Valentino_PayBack_01_25");	//CO?!...(směje se) Jak se vůbec opovažuješ si o to žádat, drzý hochu?!
+			AI_Output(self,other,"DIA_Valentino_PayBack_01_25");	//CO?!... (směje se) Jak se vůbec opovažuješ si o to žádat, drzý hochu?!
 			AI_Output(self,other,"DIA_Valentino_PayBack_01_26");	//Nebo jsi zapomněl na naši dohodu?
 			AI_Output(self,other,"DIA_Valentino_PayBack_01_27");	//Trosko! Takoví idioti jako jsi ty ode mně nic nedostanou.
 		};

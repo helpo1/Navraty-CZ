@@ -158,11 +158,11 @@ func void DIA_Wirt_FixBeer_Done_Info()
 	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_04");	//Nuž, časy jsou těžké.
 	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_05");	//Domobrana potřebuje všechnu pomoc! A pohled na tebe je mimochodem celkem ohromující.
 	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_06");	//Myslím, že každej zlodejíček, vidíc tě už zdálky, bude utíkat jako o život.
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_07");	//(Zmatenej) Ummm... Naozaj si to myslíš?
+	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_07");	//(zmatenej) Ummm... Naozaj si to myslíš?
 	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_08");	//Jsem jsi jistej - vždyť se na sebe koukni!
 	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_09");	//Dokonce i já jsem byl z tebe trocha vystrašenej.
 	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_10");	//Hmmm... er... Nuž, možná máš pravdu. Proč jinak by mě sem zatáhli.
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_11");	//(Zamyšlene) Teda... Teda dost kecu! Mně se tenhle post docela líbí.
+	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_11");	//(zamyšlene) Teda... Teda dost kecu! Mně se tenhle post docela líbí.
 	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_12");	//Samozrejme, samozrejme! Střež to tady... vojáku.
 	AI_StopProcessInfos(self);
 };

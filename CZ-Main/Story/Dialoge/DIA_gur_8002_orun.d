@@ -525,7 +525,7 @@ func int dia_baalorun_notalk_hi_condition()
 func void dia_baalorun_notalk_hi_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_NoTalk_Hi_15_00");	//Zdravím! Jsem tady nový.
-	AI_Output(self,other,"DIA_BaalOrun_NoTalk_Hi_02_01");	//(Povzdech)
+	AI_Output(self,other,"DIA_BaalOrun_NoTalk_Hi_02_01");	//(povzdech)
 	AI_StopProcessInfos(self);
 };
 
@@ -553,7 +553,7 @@ func int dia_baalorun_notalk_sleeper_condition()
 func void dia_baalorun_notalk_sleeper_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_NoTalk_Sleeper_15_00");	//Spáč s tebou!
-	AI_Output(self,other,"DIA_BaalOrun_NoTalk_Sleeper_02_01");	//(Povzdech)
+	AI_Output(self,other,"DIA_BaalOrun_NoTalk_Sleeper_02_01");	//(povzdech)
 	AI_StopProcessInfos(self);
 };
 
@@ -581,7 +581,7 @@ func int dia_baalorun_notalk_imp_condition()
 func void dia_baalorun_notalk_imp_info()
 {
 	AI_Output(other,self,"DIA_BaalOrun_NoTalk_Imp_15_00");	//Všechno v pořádku, příteli?
-	AI_Output(self,other,"DIA_BaalOrun_NoTalk_Imp_02_01");	//(Povzdech)
+	AI_Output(self,other,"DIA_BaalOrun_NoTalk_Imp_02_01");	//(povzdech)
 	AI_StopProcessInfos(self);
 };
 

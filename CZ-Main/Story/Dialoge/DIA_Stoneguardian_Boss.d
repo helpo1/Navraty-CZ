@@ -125,7 +125,7 @@ func void DIA_Sleeper_Old_Hello_WhoYou()
 {
 	AI_Output(other,self,"DIA_Sleeper_Old_Hello_WhoYou_01_01");	//A kdo vlastně jsi?
 	AI_Output(other,self,"DIA_Sleeper_Old_Hello_WhoYou_01_02");	//Na pohled nevypadáš jako Beliarovo stvoření.
-	AI_Output(self,other,"DIA_Sleeper_Old_Hello_WhoYou_01_03");	//Je to tak...(zlověstně) Ale jeho magie mi pomohla vrátit se na tento svět!
+	AI_Output(self,other,"DIA_Sleeper_Old_Hello_WhoYou_01_03");	//Je to tak... (zlověstně) Ale jeho magie mi pomohla vrátit se na tento svět!
 	AI_Output(self,other,"DIA_Sleeper_Old_Hello_WhoYou_01_04");	//Jsem dávný démon, vzniklí z magie tohoto světa v jeho samém počátku.
 	AI_Output(self,other,"DIA_Sleeper_Old_Hello_WhoYou_01_05");	//Kdysi se mi lidé klaněli, tak jako vy se klaníte svým bohům.
 	AI_Output(self,other,"DIA_Sleeper_Old_Hello_WhoYou_01_06");	//Ale můj čas je dávno pryč. A jen díky skřetům jsem se mohl vrátit ze zapomnění.
@@ -143,7 +143,7 @@ func void DIA_Sleeper_Old_Hello_Dragons()
 	AI_Output(other,self,"DIA_Sleeper_Old_Hello_Dragons_01_01");	//Proč jsi probudil draky?
 	AI_Output(self,other,"DIA_Sleeper_Old_Hello_Dragons_01_02");	//Ty co nazýváš draky, jsou dávní tvorové jako já.
 	AI_Output(self,other,"DIA_Sleeper_Old_Hello_Dragons_01_03");	//Oni prostě nemohli neslyšet mé volání o pomoc!
-	AI_Output(self,other,"DIA_Sleeper_Old_Hello_Dragons_01_04");	//Ale já je neprobudil...(zlověstně) Poslouchají jen vůli těch, kdo je na samém počátku stvořil!
+	AI_Output(self,other,"DIA_Sleeper_Old_Hello_Dragons_01_04");	//Ale já je neprobudil... (zlověstně) Poslouchají jen vůli těch, kdo je na samém počátku stvořil!
 	AI_Output(other,self,"DIA_Sleeper_Old_Hello_Dragons_01_05");	//Mluvíš o Strážcích?
 	AI_Output(self,other,"DIA_Sleeper_Old_Hello_Dragons_01_06");	//Přímo o nich! 
 	AI_Output(self,other,"DIA_Sleeper_Old_Hello_Dragons_01_07");	//Pradávní Strážci vesmíru, skrývající se ve stínech, aby nezastínili slávu vašich bohů.

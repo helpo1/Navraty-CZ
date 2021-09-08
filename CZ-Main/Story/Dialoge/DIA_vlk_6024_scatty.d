@@ -176,7 +176,7 @@ func void dia_scatty_nw_city_info()
 	{
 		AI_Standup(self);
 		B_TurnToNpc(self,Mil_330_Miliz);
-		AI_Output(self,other,"DIA_Scatty_NW_City_01_02");	//(volá)... Hej, ty tam - absolutně špatně!
+		AI_Output(self,other,"DIA_Scatty_NW_City_01_02");	//(volá) Hej, ty tam - absolutně špatně!
 		AI_Output(self,other,"DIA_Scatty_NW_City_01_03");	//Uchop meč pouze jednou rukou. Čepel nahoru, drž jí vklidu.
 		AI_Output(self,other,"DIA_Scatty_NW_City_01_04");	//Ve tvých pohybech by ruka měla být rovnobežně se zbraní. Pomůže ti to zaměřit se na útok!
 		B_TurnToNpc(self,other);

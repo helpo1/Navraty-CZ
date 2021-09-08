@@ -90,7 +90,7 @@ func void DIA_Addon_Brandon_AnyNews_Info()
 	{
 		AI_Output(self,other,"DIA_Addon_Brandon_AnyNews_04_06");	//Počkej chvíli...
 		AI_PlayAni(self,"T_SEARCH");
-		AI_Output(self,other,"DIA_Addon_Brandon_AnyNews_04_07");	//(směje se)Nic se nezměnilo, vše je jako předtím.
+		AI_Output(self,other,"DIA_Addon_Brandon_AnyNews_04_07");	//(směje se) Nic se nezměnilo, vše je jako předtím.
 	};
 };
 

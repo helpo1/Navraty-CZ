@@ -315,7 +315,7 @@ func int dia_pal_205_torwache_passaskdm_condition()
 func void dia_pal_205_torwache_passaskdm_info()
 {
 	AI_Output(other,self,"DIA_PAL_205_Torwache_PassAsKDM_15_00");	//Nechceš snad pustit Beliarova kněze?
-	AI_Output(self,other,"DIA_PAL_205_Torwache_PassAsKDM_12_01");	//(Nevěřícně) Takže nekromant. Ale varuji tě: jestli budeš dělat potíže, nebudeš mít ani čas k pokání.
+	AI_Output(self,other,"DIA_PAL_205_Torwache_PassAsKDM_12_01");	//(nevěřícně) Takže nekromant. Ale varuji tě: jestli budeš dělat potíže, nebudeš mít ani čas k pokání.
 	CITYHALLACCESSGRANTED = TRUE;
 	PALGUARD = FALSE;
 	self.aivar[AIV_PASSGATE] = TRUE;

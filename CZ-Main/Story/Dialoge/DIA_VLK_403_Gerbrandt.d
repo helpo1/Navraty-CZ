@@ -387,7 +387,7 @@ func void dia_gerbrandt_worksfordone_info()
 	if(MEETCHIEFKILLERSLAIT == TRUE)
 	{
 		AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_02");	//Bohužel jsem ho zmeškal...
-		AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_03");	//(naštvaně)COŽE?! Ty stupidní idiote!
+		AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_03");	//(naštvaně) COŽE?! Ty stupidní idiote!
 		AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_07");	//Doufám, že peníze a dopis máš?
 		if((Npc_HasItems(other,itse_gerbrandpocket) >= 1) && ((Npc_HasItems(other,itwr_gerbrandseclet) >= 1) || (Npc_HasItems(other,itwr_gerbrandseclet_open) >= 1)))
 		{
@@ -411,7 +411,7 @@ func void dia_gerbrandt_worksfordone_info()
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_16");	//Dej to sem!
 				B_GiveInvItems(other,self,itse_gerbrandpocket,1);
 				B_GiveInvItems(other,self,itwr_gerbrandseclet_open,1);
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_17");	//Alespoň jsi měl dost rozumu, že jsi mi je přinesl! Počkat... (přejede pohledem)...
+				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_17");	//Alespoň jsi měl dost rozumu, že jsi mi je přinesl! Počkat... (přejede pohledem)
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_18");	//Tak ty jsi četl můj dopis?!
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_20");	//Ty hajzle!... (rozhněvaně)
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_21");	//Takže varování ti nestačilo.

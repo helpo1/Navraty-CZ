@@ -562,7 +562,7 @@ func void dia_urshak_orcorder_info()
 	AI_Output(other,self,"DIA_Urshak_OrcOrder_01_05");	//Tady, to je on.
 	B_GiveInvItems(other,self,itwr_orcsorder,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_06");	//...(kouká na dopis) Píše s tu o válečných plánech proti lidem.
+	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_06");	//... (kouká na dopis) Píše s tu o válečných plánech proti lidem.
 	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_07");	//KHROTOK YABART! Odkud má člověk ten dopis?!... (udivene)
 	AI_Output(other,self,"DIA_Urshak_OrcOrder_01_08");	//Našel jsem ho! Raději nepřestávej číst...
 	AI_Output(self,other,"DIA_Urshak_OrcOrder_01_09");	//Hmmm... (looks at the letter)

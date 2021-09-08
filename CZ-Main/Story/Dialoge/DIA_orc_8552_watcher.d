@@ -53,7 +53,7 @@ func void dia_orc_8552_watcher_hello_info()
 	AI_ReadyMeleeWeapon(self);
 	Snd_Play("ORC_Angry");
 	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_01");	//GROTAK NABAR!
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_02");	//ČLOVĚK?!... (nepochopitelně)...
+	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_02");	//ČLOVĚK?!... (nepochopitelně)
 	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_03");	//A nese Ulu-Mulu?!... (udiveně)
 	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_04");	//Člověk být silný válečník! Jen silný válečník získat skřetí čest! Skřeti nezabít člověka.
 	AI_Output(self,other,"DIA_Orc_8552_Watcher_Hello_Info_18_05");	//Proč člověk zde?
@@ -92,7 +92,7 @@ func int dia_orc_8552_watcher_DRINK_condition()
 func void dia_orc_8552_watcher_DRINK_info()
 {
 	AI_Output(other,self,"DIA_Orc_8552_Watcher_DRINK_01_01");	//Proč se díváš dolů?
-	AI_Output(self,other,"DIA_Orc_8552_Watcher_DRINK_01_02");	//Wah Grosh upustit svou láhev s grog...(Potřásá hlavou) Moc dobrý grog!
+	AI_Output(self,other,"DIA_Orc_8552_Watcher_DRINK_01_02");	//Wah Grosh upustit svou láhev s grog... (potřásá hlavou) Moc dobrý grog!
 	AI_Output(other,self,"DIA_Orc_8552_Watcher_DRINK_01_03");	//Tak jdi dolů a vezmi si to.
 	AI_PlayAni(self,"T_NO");
 	AI_Output(self,other,"DIA_Orc_8552_Watcher_DRINK_01_04");	//Tam být velká tma! Wah Grosh hledá dlouho.
@@ -343,7 +343,7 @@ func void DIA_Orc_8204_Grok_hello_info()
 	AI_Output(other,self,"DIA_Orc_8204_Grok_hello_01_02");	//Um... Vůbec ti nerozumím.
 	AI_PlayAni(self,"T_DONTKNOW");
 	AI_Output(self,other,"DIA_Orc_8204_Grok_hello_01_03");	//UR DAGAR TAROK MOR DAK KUR ZAR PARAK TURAB.
-	AI_Output(other,self,"DIA_Orc_8204_Grok_hello_01_04");	//Hmmm...(Vypadá to,že se budu muset naučit jazyk skřetů, abych si s ním promluvil)
+	AI_Output(other,self,"DIA_Orc_8204_Grok_hello_01_04");	//Hmmm... (vypadá to,že se budu muset naučit jazyk skřetů, abych si s ním promluvil)
 	AI_PlayAni(self,"T_GETLOST2");
 	AI_Output(self,other,"DIA_Orc_8204_Grok_hello_01_05");	//UKATAR Tarka BOR! NABAR...
 	NeedKnowOrcLang = TRUE;
@@ -433,7 +433,7 @@ func void DIA_Orc_8204_Grok_WhatYouDo_info()
 	AI_Output(self,other,"DIA_Orc_8204_Grok_WhatYouDo_01_06");	//Protože člověk nesmí! Mohou pouze bratři.
 	AI_Output(other,self,"DIA_Orc_8204_Grok_WhatYouDo_01_07");	//Hmmm... Zajímavé. Opravdu tam nemohu?
 	AI_PlayAni(self,"T_NO");
-	AI_Output(self,other,"DIA_Orc_8204_Grok_WhatYouDo_01_08");	//(Naštvaně) Ne. HARAD!
+	AI_Output(self,other,"DIA_Orc_8204_Grok_WhatYouDo_01_08");	//(naštvaně) Ne. HARAD!
 	AI_Output(self,other,"DIA_Orc_8204_Grok_WhatYouDo_01_09");	//Nech mě!
 };
 
@@ -501,7 +501,7 @@ func void DIA_Orc_8204_Grok_BringPotion_info()
 	B_UseItem(self,ItPo_Perm_STR_Fake);
 	AI_Output(self,other,"DIA_Orc_8204_Grok_BringPotion_01_02");	//Grok děkovat člověku! Cítit jak se vracet síla.
 	AI_Output(other,self,"DIA_Orc_8204_Grok_BringPotion_01_03");	//V tom případě tě tvý bratři snědí někdy jindy.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_BringPotion_01_04");	//Člověk mít smysl pro vtip...(směje se) Grok líbit vtip.
+	AI_Output(self,other,"DIA_Orc_8204_Grok_BringPotion_01_04");	//Člověk mít smysl pro vtip... (směje se) Grok líbit vtip.
 	MIS_GrokBringPotion = LOG_Success;
 	Log_SetTopicStatus(TOPIC_GrokBringPotion,LOG_Success);
 	B_LogEntry(TOPIC_GrokBringPotion,"Donesl jsem Grokovi lektvar. Vrátila se mu síla.");
@@ -530,7 +530,7 @@ func void DIA_Orc_8204_Grok_LowLevel_info()
 	AI_Output(other,self,"DIA_Orc_8204_Grok_LowLevel_01_01");	//Potřebuji vědět co se děje na dně dolu.
 	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_02");	//A proč člověk ptát zrovna Groka?
 	AI_Output(other,self,"DIA_Orc_8204_Grok_LowLevel_01_03");	//Protože ty jsi jediný, kdo ví proč ostatní skřeti zavřeli spodní patro dolu.
-	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_04");	//Grok je velmi překvapený...(překvapeně) Jak to člověk vědět?
+	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_04");	//Grok je velmi překvapený... (překvapeně) Jak to člověk vědět?
 	AI_Output(other,self,"DIA_Orc_8204_Grok_LowLevel_01_05");	//Tavič Hildur říkal, že jsi jediný, kdo v dolu přežil.
 	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_06");	//Hmmm... (zamyšleně) Dobře! Člověk pomáhá Grockovi a on jako důkaz vděčnosti mu vypráví o dolu.
 	AI_Output(self,other,"DIA_Orc_8204_Grok_LowLevel_01_07");	//Hildur mluvit pravdu! Grok opravdu vidí a ví všechno.
@@ -742,7 +742,7 @@ func void DIA_OrcWarrior_MineCommander_LowLevel_info()
 	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_LowLevel_01_01");	//Chci se zeptat na spodní patro dolu.
 	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_02");	//(hrozivě) Ar-Dagar si myslí, že to není starost pro člověk.
 	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_LowLevel_01_03");	//Je mi pověz... Poslal jsi tam své válečníky?
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_04");	//Hmmm...(hrozivě) Ar-Dagar neví odkud člověk dovědět.
+	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_04");	//Hmmm... (hrozivě) Ar-Dagar neví odkud člověk dovědět.
 	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_05");	//Ale má pravdu! Ar-Dagar chtít otevřít dno dolu.
 	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_06");	//Posílá tam mnoho silných bratr, ale tam všichni zahynou.
 	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_LowLevel_01_07");	//Nikdo se nevrátit zpět k Ar-Dagar...
@@ -821,7 +821,7 @@ func void DIA_OrcWarrior_MineCommander_HelpDemon_info()
 	else
 	{
 	 	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_HelpDemon_01_05");		//Alespoň mi dej šanci.
-		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_06");		//Hmmm...(zamyšleně) Člověk být velmi statečný a velmi hloupý!
+		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_06");		//Hmmm... (zamyšleně) Člověk být velmi statečný a velmi hloupý!
 		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_07");		//Ale Ar-Dagar mu dá šanci bojovat s tím démon.
 		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_08");		//Ale nejdřív mi člověk přinést Grah Shah!
 		AI_Output(self,other,"DIA_OrcWarrior_MineCommander_HelpDemon_01_09");		//Ar-Dagar zkontroluje, zda je člověk tak silný, jaký mluví.
@@ -857,7 +857,7 @@ func void DIA_OrcWarrior_MineCommander_BringGrah_info()
 	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_02");	//Člověk ukázat Ar-Dagar. On podívat!
 	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_BringGrah_01_03");	//Tady je.
 	B_GiveInvItems(other,self,ItMi_GrahShar,1);
-	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_04");	//Hmmm...(s respektem) BACK COR! Člověk je darem! Velký válečník bratrů.
+	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_04");	//Hmmm... (s respektem) BACK COR! Člověk je darem! Velký válečník bratrů.
 	AI_Output(self,other,"DIA_OrcWarrior_MineCommander_BringGrah_01_05");	//Nyní Ar-Dagar vidí, že člověk nelže. Člověk může dobře bojovat!
 	B_GiveInvItems(self,other,ItMi_GrahShar,1);
 	AI_Output(other,self,"DIA_OrcWarrior_MineCommander_BringGrah_01_06");	//A co ten důl?
@@ -1061,7 +1061,7 @@ func int DIA_OrcWarrior_MineWatcher_Vakur_Hello_condition()
 func void DIA_OrcWarrior_MineWatcher_Vakur_Hello_info()
 {
 	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_01");	//Zdravím tě, zelená hubo.
-	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_02");	//Člověk...(hrozivě) Proč přijít? 
+	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_02");	//Člověk... (hrozivě) Proč přijít? 
 	AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_03");	//Člověk chtít stát se otrokem bratří, stejně jako ostatní Morra?
 	AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_Hello_01_04");	//Tohle nečekej, skřete.
 };
@@ -1271,7 +1271,7 @@ func void DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_info()
 		AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_13");	//To nestačí!
 		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_14");	//Co?!
 		AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_15");	//Za ty tvoje lži mi musíš zaplatit mnohem víc.
-		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_16");	//Arrgh...(naštvaně) A co chce člověk od Vakur Shak?!
+		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_16");	//Arrgh... (naštvaně) A co chce člověk od Vakur Shak?!
 		AI_Output(other,self,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_17");	//Tak schválně, co mi nabídneš.
 		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_18");	//Hmmm... (zamyšleně) Vakur Shak má lektvar, díky němuž je Morra silná.
 		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_01_19");	//Může to dát člověku.
@@ -1367,7 +1367,7 @@ func void DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_info()
 	{
 		B_GiveInvItems(other,self,ItMi_Addon_GoldNugget,10);
 		Npc_RemoveInvItems(self,ItMi_Addon_GoldNugget,10);
-		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_01_02");	//Dobrý obchod...(spokojeně) Nyní člověk vzít svůj nástroj!
+		AI_Output(self,other,"DIA_OrcWarrior_MineWatcher_Vakur_ElkKirka_Done_01_02");	//Dobrý obchod... (spokojeně) Nyní člověk vzít svůj nástroj!
 		B_GiveInvItems(self,other,ItMw_Kirka_New,1);
 		ElkNeedNewKirka = 4;
 	}
@@ -2807,7 +2807,7 @@ func void DIA_Orc_8215_Kan_Round_First_info()
 	if(ArenaBattle_01_Won == TRUE)
 	{
 		B_GivePlayerXP(300);
-		AI_Output(self,other,"DIA_Orc_8215_Kan_Round_First_01_02");	//Člověk vyhrál...(s respektem) Ur-Kan vidí, že člověk je zručný válečník!
+		AI_Output(self,other,"DIA_Orc_8215_Kan_Round_First_01_02");	//Člověk vyhrál... (s respektem) Ur-Kan vidí, že člověk je zručný válečník!
 		AI_Output(self,other,"DIA_Orc_8215_Kan_Round_First_01_03");	//Teď, pokud chce, může bojovat s dalšími válečníky Ur-Kan.
 		AI_Output(other,self,"DIA_Orc_8215_Kan_Round_First_01_04");	//A co moje odměna?
 		AI_Output(self,other,"DIA_Orc_8215_Kan_Round_First_01_05");	//Pro tento boj člověk nedostávat nic. Ur-Kan prostě zkontrolovat člověk.
@@ -3284,7 +3284,7 @@ func void DIA_Orc_8215_Kan_RoundFive_info()
 	ArenaFighter = Hlp_GetNpc(STRF_8150_UrTrok);
 
 	AI_Output(other,self,"DIA_Orc_8215_Kan_RoundFive_01_01");	//Potřebuju dalšího soupeře.
-	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFive_01_02");	//Člověk dostane...(s respektem) Ur-Trok být jedním z nesilnějších válečník Ur-Kan!
+	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFive_01_02");	//Člověk dostane... (s respektem) Ur-Trok být jedním z nesilnějších válečník Ur-Kan!
 	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFive_01_03");	//Je možné, že porazí muž jedním máchnutím zbraně.
 	AI_Output(self,other,"DIA_Orc_8215_Kan_RoundFive_01_04");	//Nyní jděte do arény! Už na tebe čeká...
 	B_LogEntry(TOPIC_OrcArena,"Ur-Trok je můj další soupeř.");
@@ -4392,7 +4392,7 @@ func void dia_Orc_8571_HashTor_Rule_info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_Orc_8571_HashTor_Rule_01_01");	//Vím, jak ovládat skřetí zbraně.
-	AI_Output(self,other,"DIA_Orc_8571_HashTor_Rule_01_02");	//Urak Shaka Morra...(přikyvuje) Hash Tor to vidět! Člověk je silný, když se mohl naučit.
+	AI_Output(self,other,"DIA_Orc_8571_HashTor_Rule_01_02");	//Urak Shaka Morra... (přikyvuje) Hash Tor to vidět! Člověk je silný, když se mohl naučit.
 	AI_Output(other,self,"DIA_Orc_8571_HashTor_Rule_01_03");	//Takže teď mid ukážeš jak ukovat zbraně z magické rudy?
 	AI_Output(self,other,"DIA_Orc_8571_HashTor_Rule_01_04");	//Hash Tor dal slovo. Hash Tor držet slovo!
 	AI_Output(self,other,"DIA_Orc_8571_HashTor_Rule_01_05");	//Hash Tor učit člověk, pokud má člověk mnoho rudy a zkušeností.
@@ -5107,7 +5107,7 @@ func void dia_Orc_8572_UrHoshNar_Myrtana_info()
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Myrtana_01_01");	//A kdo jsou tihle 'Bratři z velkého ostrova'?
 	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Myrtana_01_02");	//Plavou sem po mnoho dní. Velký ostrov, kde být vůdce lidí.
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Myrtana_01_03");	//Takže přicházejí z pevniny?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Myrtana_01_04");	//Hmmm...(překvapeně). Hosh-Nar nechápe, co říká člověk. Co je to pev... nina?
+	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Myrtana_01_04");	//Hmmm... (překvapeně) Hosh-Nar nechápe, co říká člověk. Co je to pev... nina?
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Myrtana_01_05");	//Dobře, je to 'velký ostrov'. Podstata je stejná.
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_Myrtana_01_06");	//Zajímá mě něco jiného. Takže jsi v kontaktu se skřety z pev...'velkého ostrova'?
 	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_Myrtana_01_07");	//Před mnoho zim, náš velkolepý vůdce, Kan, přišel k nám!
@@ -5180,7 +5180,7 @@ func void dia_Orc_8572_UrHoshNar_OrcHolyPlaces_info()
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_07");	//A jak to mám udělat?
 	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_08");	//Skřeti staví velkou svatyni pro každého velkého předka. Ve Velkém údolí jsou... mmm... čtyři.
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_09");	//A kde mohu najít tyto svatyně?
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_10");	//Hosh-Nar říct muži... (zamyšleně). Jedna být nedaleko klanu Vysoké skály. 
+	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_10");	//Hosh-Nar říct muži... (zamyšleně) Jedna být nedaleko klanu Vysoké skály. 
 	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_11");	//Druhá je tam, kde voda padat z výšky hluboko! Další je vedle věže šamana lídi.
 	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_12");	//A poslední na vysoké hoře, kde je moře.
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_OrcHolyPlaces_01_13");	//Dobře, pokusím se je najít.
@@ -5265,7 +5265,7 @@ func void dia_Orc_8572_UrHoshNar_PsicampDemon_info()
 	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_11");	//Hosh-Nar bude čekat na muže až vrátit! Být ostražitý.
 	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_12");	//Velká bažina nebezpečné místo - hodně zla, mnoho mrtvých...
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_13");	//Nedělej si starost! Nějak se s tím poperu.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_14");	//KRAT SHAKA OR...(přikyvuje) Šťastnou cestu.
+	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_14");	//KRAT SHAKA OR... (přikyvuje) Šťastnou cestu.
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_PsicampDemon_01_15");	//Budu to potřebovat.
 	MIS_PsicampDemon = LOG_Running;
 	Log_CreateTopic(TOPIC_PsicampDemon,LOG_MISSION);
@@ -5301,7 +5301,7 @@ func void dia_Orc_8572_UrHoshNar_What_info()
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_05");	//V tom chrámu, kde bývalo Bratrstvo Spáče, je zlo.
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_06");	//Nicméně, Tor-Dal netuší, co to je. V noci je slyšet strašlivé vrčení.
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_07");	//Požaduje víc válečníků, aby mohl získat chrám pro skřety.
-	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_08");	//Hmmm...(nespokojeně) To je špatná zpráva, kterou přinést člověk!
+	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_08");	//Hmmm... (nespokojeně) To je špatná zpráva, kterou přinést člověk!
 	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_09");	//Hosh-Nar myslet, že v chrámu postavit svatyni pro bratry, nyní změnit názor.
 	AI_Output(self,other,"DIA_Orc_8572_UrHoshNar_What_01_00");	//A nemůže poslat ještě více válečníků.
 	AI_Output(other,self,"DIA_Orc_8572_UrHoshNar_What_01_11");	//A kdo může?
@@ -5424,7 +5424,7 @@ func void dia_ORC_8216_TorDal_hello_info()
 	B_GivePlayerXP(200);
 	AI_Output(self,other,"DIA_ORC_8216_TorDal_HELLO_01_01");	//(pohotově) Stůj člověče! Proč přijít?!
 	AI_Output(other,self,"DIA_ORC_8216_TorDal_HELLO_01_02");	//Kdo jsi, skřete?
-	AI_Output(self,other,"DIA_ORC_8216_TorDal_HELLO_01_03");	//GOR TAK NABAR SHAR...(třese hlavou)
+	AI_Output(self,other,"DIA_ORC_8216_TorDal_HELLO_01_03");	//GOR TAK NABAR SHAR... (třese hlavou)
 	AI_Output(self,other,"DIA_ORC_8216_TorDal_HELLO_01_04");	//Pokud chce hloupý člověk umřít, pak může pokračovat!
 	AI_Output(self,other,"DIA_ORC_8216_TorDal_HELLO_01_05");	//Tor-Dal ho nezastaví.
 	AI_StopProcessInfos(self);
