@@ -166,7 +166,7 @@ var int DIA_Addon_Greg_NW_Stadtwachen_ChoiceClose_constantino;
 
 func void DIA_Addon_Greg_NW_Stadtwachen_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Greg_NW_Stadtwachen_15_00");	//Ohledně sstrá�í...
+	AI_Output(other,self,"DIA_Addon_Greg_NW_Stadtwachen_15_00");	//Ohledně stráží...
 	AI_Output(self,other,"DIA_Addon_Greg_NW_Stadtwachen_01_01");	//No? Napadlo tě něco?
 	Info_ClearChoices(DIA_Addon_Greg_NW_Stadtwachen);
 	Info_AddChoice(DIA_Addon_Greg_NW_Stadtwachen,"Ještě to promyslím.",DIA_Addon_Greg_NW_Stadtwachen_nochnicht);

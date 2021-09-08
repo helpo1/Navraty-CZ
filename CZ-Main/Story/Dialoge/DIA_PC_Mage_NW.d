@@ -234,7 +234,7 @@ func void DIA_MiltenNW_KAP3_Entry_Info()
 	AI_Output(other,self,"DIA_MiltenNW_KAP3_Entry_15_00");	//Potřebuji se dostat do kláštera. Je to důležité!
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_MiltenNW_KAP3_Entry_03_01");	//Yes, sure. Here's the key.
+		AI_Output(self,other,"DIA_MiltenNW_KAP3_Entry_03_01");	//Ano, jistě. Tady je klíč.
 		CreateInvItems(self,ItKe_Innos_MIS,1);
 		B_GiveInvItems(self,other,ItKe_Innos_MIS,1);
 		MiltenNW_GivesMonasteryKey = TRUE;

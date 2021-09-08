@@ -290,7 +290,7 @@ func void DIA_BaalTyon_Mandibuls_info()
 {
 	AI_Output(other,self,"DIA_BaalTyon_Mandibuls_01_00");	//Jsou pro mě nějaké další úkoly?
 	AI_Output(self,other,"DIA_BaalTyon_Mandibuls_01_01");	//Ano. Dobře že se ptáš.
-	AI_Output(self,other,"DIA_BaalTyon_Mandibuls_01_02");	//Asi si vzpomínáš na to že jsme neustále měli nedostatek čelistí z důních červů.
+	AI_Output(self,other,"DIA_BaalTyon_Mandibuls_01_02");	//Asi si vzpomínáš na to že jsme neustále měli nedostatek kusadel důlních červů.
 	AI_Output(self,other,"DIA_BaalTyon_Mandibuls_01_03");	//Sekret z jejich žláz byl nepostradatelný. Díky němu jsme mohli míchat lekvary které pomáhali novicům zvýšit sílu jejich ducha.
 	AI_Output(self,other,"DIA_BaalTyon_Mandibuls_01_04");	//Ale nyní jsme ztratili tento zdroj. Budeme muset najít alternativu.
 	AI_Output(other,self,"DIA_BaalTyon_Mandibuls_01_05");	//Nemůžete najít doupě červů?
@@ -765,7 +765,7 @@ func void dia_baaltyon_LOKIPOTION_info()
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_08");	//Chápu. (vážně) No, tak poslouchej a zapamatuj si co potřebujem...
 	AI_Output(other,self,"DIA_BaalTyon_LOKIPOTION_01_09");	//Poslouchám...
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_10");	//Takže, nejprve je potřeba svazek bažinné trávy. Tři stonky by měli stačit.
-	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_11");	//Pak budu potřebovat jeden elixír ducha, královský šťovík, dvě léčivé rostliny, pět čelistí důlního červa, vodu...
+	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_11");	//Pak budu potřebovat jeden elixír ducha, královský šťovík, dvě léčivé rostliny, pět kusadel důlního červa, vodu...
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_12");	//... a nakonec, poslední složkou na mém seznamu - kaktusový květ!
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_13");	//Jsem si jistý, že nebudeš mít problém to všechno sehnat. No, možná s výjimkou posledního komponentu.
 	AI_Output(other,self,"DIA_BaalTyon_LOKIPOTION_01_14");	//Na to jsem se chtěl zeptat - kde ho najít?
@@ -775,7 +775,7 @@ func void dia_baaltyon_LOKIPOTION_info()
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_18");	//Takže zkus ho hledat na ostrově... Nevím.
 	AI_Output(self,other,"DIA_BaalTyon_LOKIPOTION_01_19");	//Zkus se zeptat jiných alchymistů. Možná, že někdo ti pomůže s jeho hledáním.
 	SeekCactus = TRUE;
-	B_LogEntry(TOPIC_PrioratStart,"Baal Tyon ví jak připravit lektvar, který je schopen obnovit paměť člověka. Potřebuje 3 stonky trávy, jeden elixír ducha, královský šťovík, dvě léčivé rostliny, pět čelistí důlního červa, vodu a... Kaktusový květ - poradil mi, abych se obrátil na jiný alchymisty.");
+	B_LogEntry(TOPIC_PrioratStart,"Baal Tyon ví jak připravit lektvar, který je schopen obnovit paměť člověka. Potřebuje 3 stonky trávy, jeden elixír ducha, královský šťovík, dvě léčivé rostliny, pět kusadel důlního červa, vodu a... Kaktusový květ - poradil mi, abych se obrátil na jiný alchymisty.");
 };
 
 instance DIA_BAALTYON_LokiPotion_Ready(C_Info)
