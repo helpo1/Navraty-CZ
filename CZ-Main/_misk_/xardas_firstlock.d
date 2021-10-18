@@ -739,7 +739,7 @@ func void DIA_Addon_Xardas_Hello_Man()
 	AI_Output(self,other,"DIA_Addon_Xardas_AddonIntro_Add_01_04");	//Snad nemusím vysvětlovat, že se taková zbraň nesmí dostat do rukou služebníkům Temného pána.
 	AI_Output(other,self,"DIA_Addon_Xardas_AddonIntro_Add_01_05");	//A kde je teď?
 	AI_Output(self,other,"DIA_Addon_Xardas_AddonIntro_Add_01_06");	//Dávné záznamy ukazují, že poslední majitel zbraně patřil k civilizaci Stavitelů. Tito lidé žili na tomto ostrově před několika tisíci lety.
-	AI_Output(self,other,"DIA_Addon_Xardas_AddonIntro_Add_01_07");	//Všichni byli věrnými obdivovateli a následovníky Adana. Boha vody a rovnováhy
+	AI_Output(self,other,"DIA_Addon_Xardas_AddonIntro_Add_01_07");	//Všichni byli věrnými obdivovateli a následovníky Adana. Boha vody a rovnováhy.
 	AI_Output(self,other,"DIA_Addon_Xardas_AddonIntro_Add_01_08");	//Nepochybuji, že je zde na ostrově v nějakém zapomenutém chrámu.
 	AI_Output(self,other,"DIA_Addon_Xardas_AddonIntro_Add_01_09");	//Musíš ho najít!
 	AI_Output(self,other,"DIA_Addon_Xardas_AddonIntro_Add_01_10");	//(zamyšleně) Tu zapomenutou kulturu, začali nedávno zkoumat mágové Vody.
@@ -936,7 +936,7 @@ func void dia_xardas_orctemple_info()
 	AI_Output(self,other,"DIA_Xardas_OrcTemple_14_03");	//Ta deska zakrývá tunel - to je dílo skřetů, kteří ho zakryli hned po pádu bariéry.
 	AI_Output(self,other,"DIA_Xardas_OrcTemple_14_04");	//Zatím jsem nezjistil z jakého důvodu tak spěchali a proč opustili město.
 	AI_Output(self,other,"DIA_Xardas_OrcTemple_14_05");	//Ale pak jsem pochopil všechny ty Beliarovy vtípky...
-	AI_Output(self,other,"DIA_Xardas_OrcTemple_14_06");	//Temného pána velmi baví, když jeho služebníci navzájem bujují o jeho přízeň.
+	AI_Output(self,other,"DIA_Xardas_OrcTemple_14_06");	//Temného pána velmi baví, když jeho služebníci navzájem bojují o jeho přízeň.
 	AI_Output(self,other,"DIA_Xardas_OrcTemple_14_07");	//Zřejmě se budeme muset vypořádat s jedním vážnějším nepřítelem.
 	B_GivePlayerXP(XP_Ambient);
 	B_LogEntry(TOPIC_ORCTEMPLE,"Našel jsem vchod do Spáčova chrámu zavalený kamennou deskou.");
@@ -2805,8 +2805,8 @@ func void dia_xardas_tellaboutresurect_info()
 		AI_Output(self,other,"DIA_Xardas_TellAboutResurect_01_09");	//Navrátit život? To nemůže nikdo, ani nekromant.
 		AI_Output(self,other,"DIA_Xardas_TellAboutResurect_01_11");	//No, mohl bych z něj udělat svého sluhu - zombii. Ale nejsem si jistý, jestli ti pak ještě něco poví.
 		AI_Output(other,self,"DIA_Xardas_TellAboutResurect_01_12");	//Obávám se, že jako zombie z něj nic nebude... Kromě toho z jeho těla není už žádné maso a jen pár kostí.
-		AI_Output(self,other,"DIA_Xardas_TellAboutResurect_01_13");	//Jen pár kostí říláš... (přemýšlí) No to by už něco...
-		AI_Output(self,other,"DIA_Xardas_TellAboutResurect_01_17");	//Je tu jeden rituál - vyvolání duše zemřelého. Ale je velmi nezbezpečný.
+		AI_Output(self,other,"DIA_Xardas_TellAboutResurect_01_13");	//Jen pár kostí říkáš... (přemýšlí) No to by už něco...
+		AI_Output(self,other,"DIA_Xardas_TellAboutResurect_01_17");	//Je tu jeden rituál - vyvolání duše zemřelého. Ale je velmi nebezpečný.
 		AI_Output(self,other,"DIA_Xardas_TellAboutResurect_01_18");	//Jestli je to pro tebe nezbytné...
 		AI_Output(self,other,"DIA_Xardas_TellAboutResurect_01_20");	//Hmmm... Dobře, dobře, ale k provedení rituálu něco potřebuji.
 		AI_Output(other,self,"DIA_Xardas_TellAboutResurect_01_21");	//Co?
@@ -3090,7 +3090,7 @@ func void dia_xardas_finddarksoul_info()
 	AI_Output(self,other,"DIA_Xardas_FindDarkSoul_01_68");	//S největší pravděpodobností je toto místo spolehlivě ukryté před zvědavýma očima a je téměř nemožné se tam dostat.
 	if(Npc_KnowsInfo(other,dia_pal_199_ritter_firstwarn) || Npc_KnowsInfo(other,dia_pal_199_ritter_hagen))
 	{
-		AI_Output(other,self,"DIA_Xardas_FindDarkSoul_01_69");	//Mohl by být v královské pevnsti Azgan?
+		AI_Output(other,self,"DIA_Xardas_FindDarkSoul_01_69");	//Mohl by být v královské pevnosti Azgan?
 		AI_Output(self,other,"DIA_Xardas_FindDarkSoul_01_70");	//To si nemyslím, tam je moc lidí.
 	};
 	AI_Output(other,self,"DIA_Xardas_FindDarkSoul_01_74");	//A odkud o tom všem víš ty?
