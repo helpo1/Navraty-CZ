@@ -167,11 +167,11 @@ func void dia_shrat_PrioratStart_info()
 	AI_Output(self,other,"dia_shrat_PrioratStart_01_01");	//Jsem jedno ucho. Co ode mě Guru chce?
 	AI_Output(other,self,"dia_shrat_PrioratStart_01_02");	//Chce vědět, jaká je situace ve tvém táboře.
 	AI_Output(self,other,"dia_shrat_PrioratStart_01_03");	//Můžeš mu říct, že je vše v pořádku.
-	AI_Output(self,other,"dia_shrat_PrioratStart_01_04");	//Sběr drogy probíhá standartním tempem a novou zásliku doručíme včas.
+	AI_Output(self,other,"dia_shrat_PrioratStart_01_04");	//Sběr drogy probíhá standartním tempem a novou zásilku doručíme včas.
 	AI_Output(other,self,"dia_shrat_PrioratStart_01_05");	//Dobře, vzkážu. Ještě ale jedna otázka.
 	AI_Output(self,other,"dia_shrat_PrioratStart_01_06");	//Ptej se.
 	AI_Output(other,self,"dia_shrat_PrioratStart_01_07");	//Slyšel jsi něco o zmizelých novicích?
-	AI_Output(self,other,"dia_shrat_PrioratStart_01_08");	//Cože? (zděšeně) Kolk našich noviců zmizelo?
+	AI_Output(self,other,"dia_shrat_PrioratStart_01_08");	//Cože? (zděšeně) Kolik našich noviců zmizelo?
 	AI_Output(other,self,"dia_shrat_PrioratStart_01_09");	//Ale to není nic vážného.
 	AI_Output(self,other,"dia_shrat_PrioratStart_01_10");	//... no jestli je to tak... (zmateně) Myslel jsem, že se stalo něco špatného.
 	AI_Output(self,other,"dia_shrat_PrioratStart_01_11");	//Nic o tom nevím.
