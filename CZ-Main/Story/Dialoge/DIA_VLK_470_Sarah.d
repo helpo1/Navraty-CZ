@@ -285,7 +285,7 @@ func void dia_sarah_flee_info()
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Sarah_Flee_15_00");	//Jsi v pořádku?
 	AI_Output(self,other,"DIA_Sarah_Flee_16_01");	//Je dobře, že jsi mě minule varoval. Už bych nemusela žít!
-	AI_Output(self,other,"DIA_Sarah_Flee_16_02");	//Canthar byl z vězení propuštěn a tak jsem vzala nohy na remna. Teď už mám plné zuba města.
+	AI_Output(self,other,"DIA_Sarah_Flee_16_02");	//Canthar byl z vězení propuštěn a tak jsem vzala nohy na ramena. Teď už mám plné zuby města.
 	AI_Output(self,other,"DIA_Sarah_Flee_16_03");	//Akorát nevím, co mám dělat. Tady se obchodu nedaří.
 	AI_Output(self,other,"DIA_Sarah_Flee_16_04");	//V každém případě ti patří mé díky.
 };
@@ -366,7 +366,7 @@ func void dia_sarah_afterimknast_unknown()
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Unknown_01_01");	//Věděla jsem to!...
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Unknown_01_03");	//Takoví lidé jako ty jednoduše nemají co říct. Tak a je to jasné!
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Unknown_01_04");	//Takže bude lepší, když se mi sklidíš z očí!...
-	B_LogEntry(TOPIC_SARAHTOGUILD,"Pokusil jsem se pormluvit se Sarah, ale nechtěla mě poslouchat. Asi bych se měl vrátit k Luterovi a probrat to s ním.");
+	B_LogEntry(TOPIC_SARAHTOGUILD,"Pokusil jsem se promluvit se Sarah, ale nechtěla mě poslouchat. Asi bych se měl vrátit k Luterovi a probrat to s ním.");
 	SARAPISSOFF = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -374,11 +374,11 @@ func void dia_sarah_afterimknast_unknown()
 func void dia_sarah_afterimknast_sorry()
 {
 	AI_Output(other,self,"DIA_Sarah_AfterImKnast_Sorry_01_00");	//Omlouvám se ti za, to co jsem udělal.
-	AI_Output(other,self,"DIA_Sarah_AfterImKnast_Sorry_01_02");	//Věř mi, je mi velmi líto, že se to stalo a chci se omluvit
+	AI_Output(other,self,"DIA_Sarah_AfterImKnast_Sorry_01_02");	//Věř mi, je mi velmi líto, že se to stalo a chci se omluvit.
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Sorry_01_03");	//Opravdu?! Hmmm... (nevěřícně) Jsem překvapena, že to dokážeš vůbec přiznat.
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Sorry_01_05");	//Dobrá! Tentokrát ti budu věřit a přijmu tvou omluvu.
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Sorry_01_06");	//Nicméně to neznamená, že jsem přátelé. Doufám, že tomu rozumíš!
-	B_LogEntry(TOPIC_SARAHTOGUILD,"Zkusil jsem mluvit se Sárou a navázat s ní dobré vztahy. Myslím, že se to trochu povedlo. Mám však dojem, že budu muset s Luterovou nabídkou chvíli počkat, než Sarah přijde k rozumu. Po tom všem, co se stalo, se zdá, že mi pořád ještě nedůvěřuje. Asi bych si měl nejdřív získat její důvěru.");
+	B_LogEntry(TOPIC_SARAHTOGUILD,"Zkusil jsem mluvit se Sarah a navázat s ní dobré vztahy. Myslím, že se to trochu povedlo. Mám však dojem, že budu muset s Luterovou nabídkou chvíli počkat, než Sarah přijde k rozumu. Po tom všem, co se stalo, se zdá, že mi pořád ještě nedůvěřuje. Asi bych si měl nejdřív získat její důvěru.");
 	SARAPROOFBEFRIEND = TRUE;
 	SARAHELPYOU = TRUE;
 	Info_ClearChoices(dia_sarah_afterimknast);
@@ -390,7 +390,7 @@ func void dia_sarah_afterimknast_nochoice()
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_NoChoice_01_02");	//A proto ses rozhodl, že bude lepší předat jí mě... (naštvaně) No ty jsi darebák!
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_NoChoice_01_03");	//Víš, co ti na to řeknu? Jsi člověk, který nemá žádnou čest ani důstojnost!
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_NoChoice_01_04");	//Jsem překvapena, že ještě máš svědomí zaplatiti za mě pokutu.
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_NoChoice_01_05");	//No, myslím, že ani to ne. Asi o de mně něco chceš.
+	AI_Output(self,other,"DIA_Sarah_AfterImKnast_NoChoice_01_05");	//No, myslím, že ani to ne. Asi ode mně něco chceš.
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_NoChoice_01_06");	//Nemám pravdu?
 	Info_ClearChoices(dia_sarah_afterimknast);
 	Info_AddChoice(dia_sarah_afterimknast,"Ne! Prostě jsem se rozhodl napravit svou chybu.",dia_sarah_afterimknast_no);
@@ -401,7 +401,7 @@ func void dia_sarah_afterimknast_yes()
 {
 	AI_Output(other,self,"DIA_Sarah_AfterImKnast_Yes_01_00");	//No, vlastně ano. Něco bych potřeboval.
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Yes_01_02");	//Ale víš, co ti na to povím? Nebudu se paktovat s darebákem, jako jsi ty!
-	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Yes_01_03");	//Tak,že se mi kliď z očí! 
+	AI_Output(self,other,"DIA_Sarah_AfterImKnast_Yes_01_03");	//Takže se mi kliď z očí! 
 	B_LogEntry(TOPIC_SARAHTOGUILD,"Zkusil jsem promluvit si se Sarah, ale nechce mě poslouchat. Asi bych se měl vrátit za Luterem a sdělit mu to.");
 	SARAPISSOFF = TRUE;
 	AI_StopProcessInfos(self);
@@ -413,7 +413,7 @@ func void dia_sarah_afterimknast_no()
 	AI_Output(other,self,"DIA_Sarah_AfterImKnast_No_01_01");	//Věř mi. Mrzí mě, že to takhle dopadlo a chci se ti omluvit.
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_No_01_03");	//Tentokrát ti budu věřit a omluvu přijímám.
 	AI_Output(self,other,"DIA_Sarah_AfterImKnast_No_01_04");	//Ale to pořád neznamená, že jsem přátelé. Doufám, žes tomu rozuměl!
-	B_LogEntry(TOPIC_SARAHTOGUILD,"Zkusil jsem mluvit se Sárou a navázat s ní dobré vztahy. Myslím, že se to trochu povedlo. Mám však dojem, že budu muset s Luterovou nabídkou chvíli počkat, než Sarah přijde k rozumu. Po tom všem, co se stalo, se zdá, že mi pořád ještě nedůvěřuje. Asi bych si měl nejdřív získat její důvěru.");
+	B_LogEntry(TOPIC_SARAHTOGUILD,"Zkusil jsem mluvit se Sarah a navázat s ní dobré vztahy. Myslím, že se to trochu povedlo. Mám však dojem, že budu muset s Luterovou nabídkou chvíli počkat, než Sarah přijde k rozumu. Po tom všem, co se stalo, se zdá, že mi pořád ještě nedůvěřuje. Asi bych si měl nejdřív získat její důvěru.");
 	SARAPROOFBEFRIEND = TRUE;
 	SARAHELPYOU = TRUE;
 	Info_ClearChoices(dia_sarah_afterimknast);
@@ -473,8 +473,8 @@ func void dia_sarah_sarahelpsone_info()
 	AI_Output(self,other,"DIA_Sarah_SaraHelpsOne_01_03");	//Ráda bych, ale nemám na jídlo peníze.
 	AI_Output(self,other,"DIA_Sarah_SaraHelpsOne_01_05");	//Takže krom toho, že pořád nemám žádnou práci, budu muset hladovět.
 	Info_ClearChoices(dia_sarah_sarahelpsone);
-	Info_AddChoice(dia_sarah_sarahelpsone,"Jak chceš.",dia_sarah_sarahelpsone_no);
-	Info_AddChoice(dia_sarah_sarahelpsone,"Ale jinak umřeš hlady!",dia_sarah_sarahelpsone_yes);
+	Info_AddChoice(dia_sarah_sarahelpsone,"Na tohle nemám čas.",dia_sarah_sarahelpsone_no);
+	Info_AddChoice(dia_sarah_sarahelpsone,"Přinesu ti něco k jídlu.",dia_sarah_sarahelpsone_yes);
 };
 
 func void dia_sarah_sarahelpsone_no()
@@ -775,7 +775,7 @@ func void dia_sarah_sarahtoguild_info()
 			AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_14");	//Možná mi to opravdu vrátí můj život. Pokud mi k tomu ještě nic neřekneš!
 			AI_Output(other,self,"DIA_Sarah_SarahToGuild_01_15");	//To je dobré! Pak tedy dám Luterovi vědět, že jsi nabídku přijala.
 			SARAAGREE = TRUE;
-			B_LogEntry(TOPIC_SARAHTOGUILD,"Sarah souhlasila s nabídku od Lutera. Teď bych se měl k němu vrátit a sdělit mu novinky.");
+			B_LogEntry(TOPIC_SARAHTOGUILD,"Sarah souhlasila s nabídkou od Lutera. Teď bych se měl k němu vrátit a sdělit mu novinky.");
 			AI_StopProcessInfos(self);
 		}
 		else if((SARAHELPSONEDONE == FALSE) && (SARAHELPSONEDONE == FALSE) && (SARAHELPSONEDONE == FALSE))
@@ -827,7 +827,7 @@ func void dia_sarah_sarahtoguild_info()
 		AI_Output(self,other,"DIA_Sarah_SarahToGuild_01_58");	//Možná mi to opravdu vrátí můj život. Pokud mi k tomu ještě nic neřekneš!
 		AI_Output(other,self,"DIA_Sarah_SarahToGuild_01_60");	//To je dobré! Pak tedy dám Luterovi vědět, že jsi nabídku přijala.
 		SARAAGREE = TRUE;
-		B_LogEntry(TOPIC_SARAHTOGUILD,"Sarah souhlasila s nabídku od Lutera. Teď bych se měl k němu vrátit a sdělit mu novinky.");
+		B_LogEntry(TOPIC_SARAHTOGUILD,"Sarah souhlasila s nabídkou od Lutera. Teď bych se měl k němu vrátit a sdělit mu novinky.");
 		AI_StopProcessInfos(self);
 	};
 };
