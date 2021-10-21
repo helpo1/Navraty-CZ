@@ -138,15 +138,15 @@ func void DIA_Sonja_ArriveSkip_Info()
 {
 	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_01");	//Tohle je můj klient?!
 	AI_Output(other,self,"DIA_Sonja_ArriveSkip_01_02");	//Jak vidíš, tak ano.
-	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_03");	//Vžyť je to pirát!
+	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_03");	//Vždyť je to pirát!
 	AI_Output(other,self,"DIA_Sonja_ArriveSkip_01_04");	//Co pirátům nedáváš?
 	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_05");	//No, pokud je to nutné... tak ano.
 	AI_Output(other,self,"DIA_Sonja_ArriveSkip_01_06");	//Tak to by ses měla dát do práce.
 	AI_Output(other,self,"DIA_Sonja_ArriveSkip_01_07");	//Je nezbytné postarat se o muže. Pomoct mu uvolnit se, vypustit páru. 
-	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_08");	//Žádné strachy! Udelám všechno v mých silách.
+	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_08");	//Žádné strachy! Udělám vše, co bude v mých silách.
 	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_09");	//Jen mně odsud nezapomeň odvést zpátky.
-	AI_Output(other,self,"DIA_Sonja_ArriveSkip_01_10");	//Samozřjemě.
-	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_11");	//Tak já jdu teda na věc... Hej námorníku!
+	AI_Output(other,self,"DIA_Sonja_ArriveSkip_01_10");	//Samozřejmě.
+	AI_Output(self,other,"DIA_Sonja_ArriveSkip_01_11");	//Tak já jdu teda na věc... Hej námořníku!
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	SonyaJob = TRUE;
 	AI_StopProcessInfos(self);
@@ -196,7 +196,7 @@ func int DIA_Sonja_DoBlowJobDone_Condition()
 
 func void DIA_Sonja_DoBlowJobDone_Info()
 {
-	AI_Output(self,other,"DIA_Sonja_DoBlowJobDone_01_01");	//Myslím, že je čas vrátit se za Bromorom.
+	AI_Output(self,other,"DIA_Sonja_DoBlowJobDone_01_01");	//Myslím, že je čas vrátit se za Bromorem.
 	AI_Output(self,other,"DIA_Sonja_DoBlowJobDone_01_02");	//Odvedeš mně za ním?
 	AI_Output(other,self,"DIA_Sonja_DoBlowJobDone_01_03");	//Jasně! Pojď za mnou.
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
