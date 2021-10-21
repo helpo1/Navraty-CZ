@@ -384,6 +384,6 @@ func void DIA_CipherDJG_MoreDrugs_Done_Info()
 	B_GiveInvItems(self,other,ItMi_Gold,1000);
 	MIS_MoreDrugs = LOG_Success;
 	Log_SetTopicStatus(Topic_MoreDrugs,LOG_Success);
-	B_LogEntry(Topic_MoreDrugs,"Prodal jsem balíček trávy Cypherovi, za tisíc zlatých.");
+	B_LogEntry(Topic_MoreDrugs,"Prodal jsem balíček trávy Cipherovi, za tisíc zlatých.");
 	AI_StopProcessInfos(self);
 };
