@@ -155,7 +155,7 @@ func void DIA_Nagur_Job_Info()
 	AI_Output(other,self,"DIA_Nagur_Job_15_00");	//Kardif říkal, že pro mě možná budeš mít nějakou práci.
 	if((other.guild == GIL_NOV) || (other.guild == GIL_KDF))
 	{
-		AI_Output(self,other,"DIA_Nagur_Add_08_00");	//Tady v přístavu není pro klášterní panáky na práci vůbec nic (směje se)
+		AI_Output(self,other,"DIA_Nagur_Add_08_00");	//Tady v přístavu není pro klášterní panáky na práci vůbec nic. (směje se)
 		B_Nagur_Abfertigen();
 	}
 	else if((other.guild == GIL_MIL) || (other.guild == GIL_PAL))
