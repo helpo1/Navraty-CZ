@@ -132,7 +132,7 @@ func int DIA_Coragon_WhatsUp_Condition()
 
 func void DIA_Coragon_WhatsUp_Info()
 {
-	AI_Output(other,self,"DIA_Coragon_Gelaber_15_00");	//Jak jdou obchody
+	AI_Output(other,self,"DIA_Coragon_Gelaber_15_00");	//Jak jdou obchody?
 	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_01");	//Ani mi nemluv. Lord Andre na náměstí čepuje pivo zadarmo.
 	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_02");	//Až na ty zbohatlíky sem už nikdo nechodí.
 	AI_Output(other,self,"DIA_Coragon_Add_15_03");	//A co je s nimi?
@@ -478,7 +478,7 @@ func void DIA_Coragon_News_Info()
 	else
 	{
 		AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_35");	//Hlavně, že předtím se vytahoval jak má namaštěný kapsy.
-		AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_36");	//Pak si je zkontroloval a zatvářil srandovně se zatvářil. řekl, že byl okraden...
+		AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_36");	//Pak si je zkontroloval a srandovně se zatvářil. Řekl, že byl okraden...
 	};
 	AI_Output(other,self,"DIA_Coragon_Add_15_37");	//A cos udělal?
 	AI_Output(self,other,"DIA_ADDON_NEW_Coragon_Add_09_38");	//No vykopl jsem ho, co asi?
