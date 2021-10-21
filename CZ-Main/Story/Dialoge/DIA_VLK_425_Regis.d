@@ -313,7 +313,7 @@ func int dia_regis_payback_condition()
 func void dia_regis_payback_info()
 {
 	AI_Output(other,self,"DIA_Regis_PayBack_01_00");	//Pozdravuje tě Valentino!
-	AI_Output(self,other,"DIA_Regis_PayBack_01_01");	//C?! Kdo?!... (udiveně)
+	AI_Output(self,other,"DIA_Regis_PayBack_01_01");	//Co?! Kdo?!... (udiveně)
 	AI_Output(self,other,"DIA_Regis_PayBack_01_02");	//Co ode mě chce ten idiot?!
 	AI_Output(other,self,"DIA_Regis_PayBack_01_04");	//Prostě, že tě mám na nějakou chvíli vyřídit - tak nějak to řekl.
 	AI_Output(self,other,"DIA_Regis_PayBack_01_05");	//On - poslal tě, abys mě vyřídil?!
@@ -351,7 +351,7 @@ func void dia_regis_paybackok_info()
 		AI_Output(self,other,"DIA_Regis_PayBackOk_01_00");	//No - jsi šťastný?!
 		AI_Output(self,other,"DIA_Regis_PayBackOk_01_01");	//Myslíš, že když si mě porazil, tak že jsi borec?!
 		AI_Output(other,self,"DIA_Regis_PayBackOk_01_02");	//Hej, kámo - sklidni se! Asi tě musím naučit, jak se chovat.
-		AI_Output(self,other,"DIA_Regis_PayBackOk_01_03");	//Jen do toho, opavž se... (naštvaný)
+		AI_Output(self,other,"DIA_Regis_PayBackOk_01_03");	//Jen do toho, opovaž se... (naštvaný)
 		AI_Output(self,other,"DIA_Regis_PayBackOk_01_04");	//Jen měj na paměti, že jestli se mě někdy příště jen dotkneš prstem - vyřídíš si to s lordem Andrem!
 		self.guild = GIL_VLK;
 		REGISPISSOFF = TRUE;
