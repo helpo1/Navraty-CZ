@@ -433,7 +433,7 @@ func void dia_niclas_respectdone_info()
 	AI_Output(other,self,"DIA_Niclas_RespectDone_01_00");	//Tady je to maso.
 	B_GiveInvItems(other,self,ItFoMuttonRaw,12);
 	AI_Output(self,other,"DIA_Niclas_RespectDone_01_01");	//Páni. Díky, jsi opravdu dobrý lovec.
-	AI_Output(other,self,"DIA_Niclas_RespectDone_01_02");	//Podmoříš mě tedy?
+	AI_Output(other,self,"DIA_Niclas_RespectDone_01_02");	//Podpoříš mě tedy?
 	AI_Output(self,other,"DIA_Niclas_RespectDone_01_03");	//Dobře. Podpořím tě ve sporu s Falkem.
 	NICLAS_RESPECT = TRUE;
 	B_LogEntry(TOPIC_HUNTERSWORK,"Přinesl jsem Niclasovi jeho maso a on mě podpoří v záležitosti s Falkem.");
