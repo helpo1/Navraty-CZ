@@ -338,7 +338,7 @@ func void DIA_Nadja_BUYHERB_Info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Nadja_BUYHERB_16_02");	//Jestli ti vážně mám něco sdělit, budeš se muset vytasit s ňějakou tou škvárou.
+			AI_Output(self,other,"DIA_Nadja_BUYHERB_16_02");	//Jestli ti vážně mám něco sdělit, budeš se muset vytasit s nějakou tou škvárou.
 			AI_Output(other,self,"DIA_Nadja_BUYHERB_15_03");	//Kolik chceš?
 			AI_Output(self,other,"DIA_Nadja_BUYHERB_16_04");	//Spravilo by to 50 zlatých.
 			Nadja_Money = TRUE;
