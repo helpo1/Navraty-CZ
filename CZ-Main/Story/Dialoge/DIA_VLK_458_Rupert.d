@@ -127,7 +127,7 @@ func int DIA_Rupert_ZuPal_Condition()
 
 func void DIA_Rupert_ZuPal_Info()
 {
-	AI_Output(other,self,"DIA_Rupert_ZuPal_15_00");	//Abych byl upřímný, přišel jsem, abych se setkal s paladiny
+	AI_Output(other,self,"DIA_Rupert_ZuPal_15_00");	//Abych byl upřímný, přišel jsem, abych se setkal s paladiny.
 	AI_Output(self,other,"DIA_Rupert_ZuPal_03_01");	//Tak to máš jen malou šanci! Od té doby, co se paladinové usídlili v horní čtvrti města, dostat se tam je docela obtížné.
 };
 
@@ -240,7 +240,7 @@ func void DIA_Rupert_WerEinfluss_Info()
 	if((CanTeachTownMaster == FALSE) && (hero.guild == GIL_NONE))
 	{
 		AI_Output(self,other,"DIA_Rupert_WerEinfluss_03_10");	//Nicméně nikdo z nich s tebou mluvit nebude, pokud si u nich nezískáš důvěru.
-		B_LogEntry(TOPIC_OV,"Měl bych se pokusit stát se učedníkem u jedhono z mistrů! To ale bude možné tehdy, pokud si získám jejich důvěru.");
+		B_LogEntry(TOPIC_OV,"Měl bych se pokusit stát se učedníkem u jednoho z mistrů! To ale bude možné tehdy, pokud si získám jejich důvěru.");
 	}
 	else
 	{
@@ -362,7 +362,7 @@ func void DIA_Rupert_Bauernaufstand_Info()
 {
 	AI_Output(other,self,"DIA_Rupert_Bauernaufstand_15_00");	//Řekni mi o té rolnické vzpouře.
 	AI_Output(self,other,"DIA_Rupert_Bauernaufstand_03_01");	//To je docela jednoduché! Onar, velký statkář, už nechce dál městu odvádět daně.
-	AI_Output(self,other,"DIA_Rupert_Bauernaufstand_03_02");	//No jen si to představ! Jsme ve válce se skřety a to tlusteé prase chce všechno jen pro sebe!
+	AI_Output(self,other,"DIA_Rupert_Bauernaufstand_03_02");	//No jen si to představ! Jsme ve válce se skřety a to tlusté prase chce všechno jen pro sebe!
 	AI_Output(self,other,"DIA_Rupert_Bauernaufstand_03_03");	//Obvykle městská stráž v takových případech užívá přísná opatření.
 	AI_Output(self,other,"DIA_Rupert_Bauernaufstand_03_04");	//Ale teď přijde to nejzajímavější: říká se, že si najal žoldáky, aby drželi vojáky z města dál od jeho farmy!
 	AI_Output(self,other,"DIA_Rupert_Bauernaufstand_03_05");	//ŽOLDÁCI! Vše to skončí válkou! Jako kdyby jedna válka nestačila!
