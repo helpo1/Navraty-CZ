@@ -56,7 +56,7 @@ func void dia_richter_taliasan_info()
 	AI_Output(self,other,"DIA_Richter_Taliasan_01_07");	//Byl u nás takový chytrý člověk. Myslel, že když je mág, může vše.
 	AI_Output(self,other,"DIA_Richter_Taliasan_01_08");	//A kde je teď?!
 	AI_Output(other,self,"DIA_Richter_Taliasan_01_09");	//Kde?
-	AI_Output(self,other,"DIA_Richter_Taliasan_01_10");	//Cheš vědět kde je? Na úplném dně!
+	AI_Output(self,other,"DIA_Richter_Taliasan_01_10");	//Chceš vědět kde je? Na úplném dně!
 	AI_Output(self,other,"DIA_Richter_Taliasan_01_11");	//Je nyní v přístavní čtvrti mezi městskou lůzou.
 	AI_Output(self,other,"DIA_Richter_Taliasan_01_12");	//Jestli tak nechceš skončit - vypadni!
 	AI_Output(self,other,"DIA_Richter_Taliasan_01_13");	//Není tu pro tebe místo!
@@ -107,7 +107,7 @@ func void DIA_Richter_Hello_MayBe()
 	AI_Output(other,self,"DIA_Richter_Hello_MayBe_15_00");	//Možná ano.
 	AI_Output(self,other,"DIA_Richter_Hello_MayBe_10_01");	//Chtělo by to trochu uctivější tón! S kým si vůbec myslíš, že mluvíš?
 	AI_Output(self,other,"DIA_Richter_Hello_MayBe_10_02");	//To nejmenší, co můžeš udělat, je mluvit se mnou odpovídajícím tónem.
-	AI_Output(self,other,"DIA_Richter_Hello_MayBe_10_03");	//A teď mi ztrať z očí!
+	AI_Output(self,other,"DIA_Richter_Hello_MayBe_10_03");	//A teď se mi ztrať z očí!
 	AI_StopProcessInfos(self);
 };
 
