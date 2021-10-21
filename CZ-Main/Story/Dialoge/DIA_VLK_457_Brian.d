@@ -196,9 +196,9 @@ func void DIA_Brian_OtherMasters_Info()
 {
 	AI_Output(other,self,"DIA_Brian_Add_15_00");	//Kdo jsou ostatní mistři?
 	AI_Output(self,other,"DIA_Brian_Add_04_01");	//No, je to tesař Thorben, výrobce luků Bosper, alchymista Constantino a Matteo.
-	AI_Output(self,other,"DIA_Brian_Add_04_02");	//Prodává zbroje, ale je to především obchdoník.
+	AI_Output(self,other,"DIA_Brian_Add_04_02");	//Prodává zbroje, ale je to především obchodník.
 	AI_Output(self,other,"DIA_Brian_Add_04_03");	//Dům každého z mistrů se nachazí tady v ulici.
-	AI_Output(self,other,"DIA_Brian_Add_04_04");	//A Constantinova dílna je v průchodu je vede ke chrámu.
+	AI_Output(self,other,"DIA_Brian_Add_04_04");	//A Constantinova dílna je v průchodu, který vede ke chrámu.
 };
 
 
@@ -303,7 +303,7 @@ instance DIA_Brian_GiveSharpStone(C_Info)
 	condition = DIA_Brian_GiveSharpStone_Condition;
 	information = DIA_Brian_GiveSharpStone_Info;
 	permanent = FALSE;
-	description = "Nabrousit zbraně se dá je v kovárně?";
+	description = "Nabrousit zbraně se dá jen v kovárně?";
 };
 
 func int DIA_Brian_GiveSharpStone_Condition()
@@ -324,7 +324,7 @@ func void DIA_Brian_GiveSharpStone_Info()
 	MIS_BrianSharpStone = LOG_Running;
 	Log_CreateTopic(TOPIC_BrianSharpStone,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BrianSharpStone,LOG_Running);
-	B_LogEntry(TOPIC_BrianSharpStone,"Brianovi někdo nějaký zloděj ukradl brusný kámen. Nebyl by proti, kdyby se k němu dostal zpět.");
+	B_LogEntry(TOPIC_BrianSharpStone,"Brianovi nějaký zloděj ukradl brusný kámen. Nebyl by proti, kdyby se k němu dostal zpět.");
 };
 
 instance DIA_Brian_GiveSharpStoneDone(C_Info)
@@ -398,7 +398,7 @@ func void DIA_Brian_WASKAUFEN_Info()
 		if(MIS_Jack_NewLighthouseOfficer == 0)
 		{
 			AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_02");	//Vzhledem k tomu, že už je Harad pryč, domobrana ze mě nespustí oči.
-			AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_03");	//Já kovárnu nemám povolené dál vést. Mají strach, že to celé prodám a prásku do bot.
+			AI_Output(self,other,"DIA_Brian_WASKAUFEN_04_03");	//Já kovárnu nemám povoleno dál vést. Mají strach, že to celé prodám a prásknu do bot.
 		};
 	}
 	else
@@ -604,7 +604,7 @@ func int DIA_Brian_SharpKnife_Condition()
 func void DIA_Brian_SharpKnife_Info()
 {
 	AI_Output(other,self,"DIA_Brian_SharpKnife_15_00");	//Potřebuji abys mi nabrousil nůž.
-	AI_Output(self,other,"DIA_Brian_SharpKnife_04_01");	//Jistě. Ale bude vás to něco stát.
+	AI_Output(self,other,"DIA_Brian_SharpKnife_04_01");	//Jistě. Ale bude tě to něco stát.
 	Info_ClearChoices(DIA_Brian_SharpKnife);
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 10)
@@ -632,6 +632,6 @@ func void DIA_Brian_SharpKnife_Ok()
 func void DIA_Brian_SharpKnife_No()
 {
 	AI_Output(other,self,"DIA_Brian_SharpKnife_No_15_00");	//Nemám tolik peněz.
-	AI_Output(self,other,"DIA_Brian_SharpKnife_No_04_01");	//Omluvám se že nemůžu pomoct.
+	AI_Output(self,other,"DIA_Brian_SharpKnife_No_04_01");	//Omlouvám se, že nemůžu pomoct.
 	Info_ClearChoices(DIA_Brian_SharpKnife);
 };
