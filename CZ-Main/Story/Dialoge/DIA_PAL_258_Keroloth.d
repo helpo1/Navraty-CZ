@@ -45,7 +45,7 @@ func int DIA_Keroloth_HELLO_Condition()
 
 func void DIA_Keroloth_HELLO_Info()
 {
-	AI_Output(other,self,"DIA_Keroloth_HELLO_15_00");	//Můžete trénovat lidi?
+	AI_Output(other,self,"DIA_Keroloth_HELLO_15_00");	//Ty trénuješ lidi?
 	AI_Output(self,other,"DIA_Keroloth_HELLO_07_01");	//Ano. Když nás skřeti, nebo ještě hůře, draci, znovu napadnou, budeme potřebovat každý meč.
 };
 
@@ -78,7 +78,7 @@ func void DIA_Keroloth_WantTeach_Info()
 	Log_CreateTopic(TOPIC_Teacher_OC,LOG_NOTE);
 	B_LogEntry(TOPIC_Teacher_OC,"Paladin Keroloth na hradě cvičí muže se zbraní.");
 	Log_CreateTopic(TOPIC_Trader_OC,LOG_NOTE);
-	B_LogEntry_Quiet(TOPIC_Trader_OC,"Paldin Tandor prodává na hradě zbraně.");
+	B_LogEntry_Quiet(TOPIC_Trader_OC,"Paladin Tandor prodává na hradě zbraně.");
 };
 
 var int DIA_Keroloth_Teach_permanent;
@@ -103,7 +103,7 @@ func int DIA_Keroloth_Teacher_Condition()
 
 func void DIA_Keroloth_Teacher_Info()
 {
-	AI_Output(other,self,"DIA_Keroloth_Teacher_15_00");	//Chci trrnovat!
+	AI_Output(other,self,"DIA_Keroloth_Teacher_15_00");	//Chci trénovat!
 	Info_ClearChoices(DIA_Keroloth_Teacher);
 	Info_AddChoice(DIA_Keroloth_Teacher,Dialog_Back,DIA_Keroloth_Teacher_Back);
 	Info_AddChoice(DIA_Keroloth_Teacher,b_buildlearnstringforfight(PRINT_Learn1h1,B_GetLearnCostTalent(other,NPC_TALENT_1H,1)),DIA_Keroloth_Teacher_1H_1);
@@ -121,7 +121,7 @@ func void DIA_Keroloth_Teacher_1H_1()
 
 	if(other.HitChance[NPC_TALENT_1H] >= 60)
 	{
-		AI_Output(self,other,"B_Keroloth_TeachNoMore1_07_00");	//Jsi velmi dobrej, není co bych tě naučil.
+		AI_Output(self,other,"B_Keroloth_TeachNoMore1_07_00");	//Jsi velmi dobrej, není nic, co bych tě naučil.
 		AI_Output(self,other,"B_Keroloth_TeachNoMore2_07_00");	//Jen velmi zručný šermíř tě nyní může trénovat.
 		DIA_Keroloth_Teach_permanent = TRUE;
 		Info_ClearChoices(DIA_Keroloth_Teacher);
@@ -256,7 +256,7 @@ func void DIA_Keroloth_KAP4_HELLO_Info()
 {
 	AI_Output(other,self,"DIA_Keroloth_KAP4_HELLO_15_00");	//Vypadáš frustrovaně.
 	AI_Output(self,other,"DIA_Keroloth_KAP4_HELLO_07_01");	//(rozhořčeně) Ať už se propadnu. Radím ti: dávej si pozor na své věci.
-	AI_Output(self,other,"DIA_Keroloth_KAP4_HELLO_07_02");	//Stačí otočit zády, a všechny - věci jsou fuč. Ten neřád!
+	AI_Output(self,other,"DIA_Keroloth_KAP4_HELLO_07_02");	//Stačí otočit zády, a všechny věci jsou fuč. Ten neřád!
 	Info_AddChoice(DIA_Keroloth_KAP4_HELLO,Dialog_Back,DIA_Keroloth_KAP4_HELLO_ende);
 	Info_AddChoice(DIA_Keroloth_KAP4_HELLO,"Paladin by neměl tak lehce ztrácet trpělivost.",DIA_Keroloth_KAP4_HELLO_ruhig);
 	Info_AddChoice(DIA_Keroloth_KAP4_HELLO,"Co ti sebrali?",DIA_Keroloth_KAP4_HELLO_bestohlen);
@@ -285,7 +285,7 @@ func void DIA_Keroloth_KAP4_HELLO_bestohlen_wasfehlt()
 	AI_Output(self,other,"DIA_Keroloth_KAP4_HELLO_bestohlen_wasfehlt_07_04");	//Musel to být někdo z těch drakobijců, až ho najdu...!
 	Log_CreateTopic(TOPIC_KerolothsGeldbeutel,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_KerolothsGeldbeutel,LOG_Running);
-	B_LogEntry(TOPIC_KerolothsGeldbeutel,"Paladin Kerolot ztratil měšec. Tvrdí, že mu ho ukradli drakobijci.");
+	B_LogEntry(TOPIC_KerolothsGeldbeutel,"Paladin Keroloth ztratil měšec. Tvrdí, že mu ho ukradli drakobijci.");
 	Info_ClearChoices(DIA_Keroloth_KAP4_HELLO);
 };
 
@@ -298,7 +298,7 @@ func void DIA_Keroloth_KAP4_HELLO_pack()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Keroloth_KAP4_HELLO_pack_07_02");	//Tuhle chátru, který si říká lovci draků, samozřejmě. Koho jinýho myslíš, že můžu mít na mysli?
+		AI_Output(self,other,"DIA_Keroloth_KAP4_HELLO_pack_07_02");	//Tuhle chátru, která si říká lovci draků, samozřejmě. Koho jinýho myslíš, že můžu mít na mysli?
 	};
 	AI_Output(self,other,"DIA_Keroloth_KAP4_HELLO_pack_07_03");	//(polohlasem) Musíš být bdělí, to ti řeknu.
 };
@@ -388,7 +388,7 @@ func void DIA_Keroloth_KAP4_GELDGEFUNDEN_DJG()
 func void DIA_Keroloth_KAP4_GELDGEFUNDEN_Schmiede()
 {
 	AI_Output(other,self,"DIA_Keroloth_KAP4_GELDGEFUNDEN_Schmiede_15_00");	//Byl v kovárně.
-	AI_Output(self,other,"DIA_Keroloth_KAP4_GELDGEFUNDEN_Schmiede_07_01");	//V kovárně? Tak to vypadl někomu z drakobijců! A neříkej mě že totak není.
+	AI_Output(self,other,"DIA_Keroloth_KAP4_GELDGEFUNDEN_Schmiede_07_01");	//V kovárně? Tak to vypadl někomu z drakobijců! A neříkej mě že to tak není.
 };
 
 func void DIA_Keroloth_KAP4_GELDGEFUNDEN_Lohn()
@@ -397,7 +397,7 @@ func void DIA_Keroloth_KAP4_GELDGEFUNDEN_Lohn()
 
 	if(Keroloths_BeutelLeer == TRUE)
 	{
-		AI_Output(self,other,"DIA_Keroloth_KAP4_GELDGEFUNDEN_Lohn_07_01");	//Tak to byla poslední kapka. Zdáse, že potřebuješ pár přes hubu.
+		AI_Output(self,other,"DIA_Keroloth_KAP4_GELDGEFUNDEN_Lohn_07_01");	//Tak to byla poslední kapka. Zdá se, že potřebuješ pár přes hubu.
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_NONE,1);
 	}
