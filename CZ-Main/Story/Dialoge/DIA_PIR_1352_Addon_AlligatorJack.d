@@ -150,7 +150,7 @@ func void DIA_Addon_AlligatorJack_Vorschlag_Info()
 	AI_Output(other,self,"DIA_Addon_AlligatorJack_Vorschlag_15_00");	//Znáš někoho, kdo se jmenuje Raven?
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Vorschlag_12_01");	//Jasně. Je vůdcem banditů na východě.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Vorschlag_12_02");	//Co od NĚJ chceš?
-	B_LogEntry(TOPIC_Addon_RavenKDW,"Raven a jeho banditi jsou schovaní u východu z údolí.");
+	B_LogEntry(TOPIC_Addon_RavenKDW,"Raven a jeho banditi jsou schovaní na východě údolí.");
 	Info_ClearChoices(DIA_Addon_AlligatorJack_Vorschlag);
 	Info_AddChoice(DIA_Addon_AlligatorJack_Vorschlag,"Chci se k němu připojit.",DIA_Addon_AlligatorJack_Vorschlag_join);
 	Info_AddChoice(DIA_Addon_AlligatorJack_Vorschlag,"Musím ho zabít.",DIA_Addon_AlligatorJack_Vorschlag_tot);
@@ -170,9 +170,9 @@ func void DIA_Addon_AlligatorJack_Vorschlag_tot()
 	AI_Output(other,self,"DIA_Addon_AlligatorJack_Vorschlag_tot_15_00");	//Musím ho zabít.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Vorschlag_tot_12_01");	//(směje se) Co? TY? Jak myslíš, že HO odstraníš?
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Vorschlag_tot_12_02");	//Není ten chlap na tebe trochu velké sousto?
-	AI_Output(self,other,"DIA_Addon_AlligatorJack_Vorschlag_tot_12_03");	//Vůbec se k němu nedostaneš. Banditi, které shromáždil, tě stejmou dřív, než ho jen spatříš.
-	AI_Output(self,other,"DIA_Addon_AlligatorJack_Vorschlag_tot_12_04");	//Nedostneš se ani přes první předsunutou hlídku.
-	AI_Output(self,other,"DIA_Addon_AlligatorJack_Vorschlag_tot_12_05");	//Vypadáš tak že při pohledu na tvoje paže popadaj smichy.
+	AI_Output(self,other,"DIA_Addon_AlligatorJack_Vorschlag_tot_12_03");	//Vůbec se k němu nedostaneš. Banditi, které shromáždil, tě sejmou dřív, než ho jen spatříš.
+	AI_Output(self,other,"DIA_Addon_AlligatorJack_Vorschlag_tot_12_04");	//Nedostaneš se ani přes první předsunutou hlídku.
+	AI_Output(self,other,"DIA_Addon_AlligatorJack_Vorschlag_tot_12_05");	//Vypadáš tak, že při pohledu na tvoje paže popadaj smíchy.
 	B_AlligatorJack_Besser();
 };
 
@@ -321,9 +321,9 @@ func void DIA_Addon_AlligatorJack_WasJagen_Info()
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_WasJagen_12_02");	//Kromě toho, tu žádní nezbyli.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_WasJagen_12_03");	//Proto lovím, co se dá jíst. Močálové krysy.
 	AI_Output(other,self,"DIA_Addon_AlligatorJack_WasJagen_15_04");	//Co?
-	AI_Output(self,other,"DIA_Addon_AlligatorJack_WasJagen_12_05");	//Většina potvor okolo chutná jako lidská noha, nebo jsou moc tuhý, jako alligatoří maso.
+	AI_Output(self,other,"DIA_Addon_AlligatorJack_WasJagen_12_05");	//Většina potvor okolo chutná jako lidská noha, nebo jsou moc tuhý, jako aligátoří maso.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_WasJagen_12_06");	//Tlusté močálové krysy jsou jediná věc, co se dá jíst.
-	B_LogEntry(TOPIC_Addon_RatHunt,"Jedina věc, co je tady pravděpodobně k jídlu je močalová krysa.");
+	B_LogEntry(TOPIC_Addon_RatHunt,"Jediná věc, co je tady pravděpodobně k jídlu je močalová krysa.");
 };
 
 
@@ -560,7 +560,7 @@ func void DIA_Addon_AlligatorJack_HuntEnd_Info()
 	else
 	{
 		AI_Output(self,other,"DIA_Addon_AlligatorJack_HuntEnd_12_05");	//Máš opravdový talent.
-		AI_Output(self,other,"DIA_Addon_AlligatorJack_HuntEnd_12_06");	//Zatraceně, pokud budeš pokračovat jako teď, můžu zůstat v táboře.
+		AI_Output(self,other,"DIA_Addon_AlligatorJack_HuntEnd_12_06");	//Zatraceně, pokud budeš pokračovat jako teď, můžeš zůstat v táboře.
 	};
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_PassHenry_12_07");	//Tady, vem tohle krysí maso a dones to tomu povaleči Morganovi.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_PassHenry_12_08");	//Najdeš ho v našem táboře.
@@ -941,18 +941,18 @@ func int DIA_Addon_AlligatorJack_Croc_Condition()
 func void DIA_Addon_AlligatorJack_Croc_Info()
 {
 	AI_Output(other,self,"DIA_Addon_AlligatorJack_Croc_01_00");	//Proč ti říkají Alligator?
-	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_01");	//(směje se) Věechno začalo tím, když mě málem snědl obrovský aligátor.
+	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_01");	//(směje se) Všechno začalo tím, když mě málem snědl obrovský aligátor.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_02");	//To zvíře mě tak špatně pokousalo, že jsem málem umřel!
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_03");	//Ale měl jsem štěstí, Samuel mě dokázal vyléčit.
 	AI_Output(other,self,"DIA_Addon_AlligatorJack_Croc_01_04");	//Opravdu ses neuměl vypořádat s obyčejným aligátorem?
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_05");	//Eh, člověče. (se smíchem) Nebyl to jen obyčejný aligátor!
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_06");	//Takovou bestii jsem za svůj život ještě nikdy neviděl.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_07");	//Kůže toho aligátora byla tak silná, že jsem mu svou šavlí dokázal udělat jenom malý škrábanec.
-	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_08");	//Nazvali jsme ho Skalozub. Víc už sme nepokoušeli jít blíž k jezeru.
+	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_08");	//Nazvali jsme ho Skalozub. Víc jsme se už nepokoušeli jít blíž k jezeru.
 	AI_Output(other,self,"DIA_Addon_AlligatorJack_Croc_01_09");	//Co kdybychom ho šli ulovit spolu?
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_10");	//Praštil sis hlavu? Lepší bude na to zapomenout.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_11");	//Obyčejné šipky ani čepele ho nijak nezraní.
-	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_12");	//Jediné kousnutí bude stačit, aby nás poslat na onen svět.
+	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_12");	//Jediné kousnutí bude stačit, aby nás poslal na onen svět.
 	AI_Output(other,self,"DIA_Addon_AlligatorJack_Croc_01_13");	//No a kdybych ho přesto chtěl jít ulovit - kde to monstrum najdu?
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_14");	//Někdy je ho vidět na mělčině u jezera.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_01_15");	//Ale si prostě blázen, pokud to myslíš vážně!
@@ -986,7 +986,7 @@ func void DIA_Addon_AlligatorJack_Croc_Done_Info()
 	AI_Output(other,self,"DIA_Addon_AlligatorJack_Croc_Done_01_00");	//Toto je tvůj mrtvý aligátor.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_Done_01_01");	//(nevěřícně) Děláš si srandu, chlape?
 	AI_Output(other,self,"DIA_Addon_AlligatorJack_Croc_Done_01_02");	//Pokud nevěříš, můžeš se jít podívat. Jeho kostra pravděpodobně stále leží na břehu jezera.
-	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_Done_01_04");	//Hmmm. Jste statečný! Vážím si toho.
+	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_Done_01_04");	//Hmmm. Jsi statečný! Vážím si toho.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_Done_01_05");	//No, měl bych ti poděkovat za tvou pomoc.
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_Done_01_06");	//Já nemám moc zlata. Ale od posledního lovu mi zbyla jedna docela pěkná kůže stínové šelmy!
 	AI_Output(self,other,"DIA_Addon_AlligatorJack_Croc_Done_01_07");	//Tady, vem si ji.

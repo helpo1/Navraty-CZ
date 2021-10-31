@@ -189,7 +189,7 @@ func int DIA_Sentenza_RagnarDead_Condition()
 func void DIA_Sentenza_RagnarDead_Info()
 {
 	AI_Output(other,self,"DIA_Sentenza_RagnarDead_01_00");	//Co se tady stalo?!
-	AI_Output(self,other,"DIA_Sentenza_RagnarDead_01_01");	//(tiše) Myslíš toho kreténa? Jen sem ho požádal o paušální polatek aby mohl sem na farmu a on mě praštil pěstí!
+	AI_Output(self,other,"DIA_Sentenza_RagnarDead_01_01");	//(tiše) Myslíš toho kreténa? Jen sem ho požádal o paušální poplatek aby mohl sem na farmu a on mě praštil pěstí!
 	AI_Output(self,other,"DIA_Sentenza_RagnarDead_01_02");	//Chytnul jsem amok a jednoduše ho zapichl. Viděl si něco?
 	AI_Output(other,self,"DIA_Sentenza_RagnarDead_01_03");	//Nic sem neviděl...
 };
@@ -258,7 +258,7 @@ func void DIA_Sentenza_Vote_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Sentenza_Vote_09_04");	//Takhle to nefunguje, chlapečku! Jestli pro tebe mám hlasovat, pak musíš ke mně nasměrovat taky ňějaký zlato.
+		AI_Output(self,other,"DIA_Sentenza_Vote_09_04");	//Takhle to nefunguje, chlapečku! Jestli pro tebe mám hlasovat, pak musíš ke mně nasměrovat taky nějaký zlato.
 		AI_Output(other,self,"DIA_Sentenza_Vote_15_05");	//Kolik?
 		AI_Output(self,other,"DIA_Sentenza_Vote_09_06");	//50 zlatých. To bys musel stejně zaplatit.
 		Sentenza_Wants50 = TRUE;

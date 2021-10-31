@@ -61,7 +61,7 @@ instance DIA_Gorn_DI_Teach(C_Info)
 	condition = DIA_Gorn_DI_Teach_Condition;
 	information = DIA_Gorn_DI_Teach_Info;
 	permanent = TRUE;
-	description = "Potřebuji výcvik.";
+	description = "Potřebuji trénink.";
 };
 
 
@@ -147,8 +147,8 @@ func void DIA_Gorn_DI_UndeadDragonDead_Info()
 			AI_Output(other,self,"DIA_Gorn_DI_UndeadDragonDead_15_03");	//Nic nového. Chci jít domů.
 			AI_Output(self,other,"DIA_Gorn_DI_UndeadDragonDead_12_04");	//(směšně) Domov? To je co? Pokud vím, pro tebe žádný není.
 			AI_Output(self,other,"DIA_Gorn_DI_UndeadDragonDead_12_05");	//Mám návrh. Vlítnem na další hospodu a zpijem se do němoty.
-			AI_Output(other,self,"DIA_Gorn_DI_UndeadDragonDead_15_06");	//Hhm. Možná.
-			AI_Output(self,other,"DIA_Gorn_DI_UndeadDragonDead_12_07");	//Hej nech toho. Je po všem.
+			AI_Output(other,self,"DIA_Gorn_DI_UndeadDragonDead_15_06");	//Hmm. Možná.
+			AI_Output(self,other,"DIA_Gorn_DI_UndeadDragonDead_12_07");	//Hej, nech toho. Je po všem.
 		};
 		DIA_Gorn_DI_UndeadDragonDead_OneTime = TRUE;
 	};
@@ -160,7 +160,7 @@ func void DIA_Gorn_DI_UndeadDragonDead_Info()
 			AI_Output(other,self,"DIA_Gorn_DI_UndeadDragonDead_15_09");	//Bude tady zavčas.
 		};
 	};
-	AI_Output(self,other,"DIA_Gorn_DI_UndeadDragonDead_12_10");	//Nic už tady pro nás nezbylo. 5ekni kapitánovi, ať připraví loď.
+	AI_Output(self,other,"DIA_Gorn_DI_UndeadDragonDead_12_10");	//Nic už tady pro nás nezbylo. Řekni kapitánovi, ať připraví loď.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Start");
 };

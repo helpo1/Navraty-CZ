@@ -70,11 +70,11 @@ func void DIA_Orc_8567_UrKarras_Town_Info()
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Town_01_03");	//Člověk mít pravdu. Ale místo pro Ur-Karras pořád tady. Tak říct jemu Ur-Thrall!
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_Town_01_04");	//Proč?
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Town_01_05");	//Ur-Karras být vojevůdce velikého náčelníka a zajistit ve měste pořádek.
-	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Town_01_06");	//Všichni válčníci být podřízení. Dělat jak Ur-Karras poroučet.
+	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Town_01_06");	//Všichni válečníci být podřízení. Dělat jak Ur-Karras poroučet.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Town_01_07");	//Sám Ur-Karras být podřízen velikému vůdci a jenom od něj přijímat nové rozkazy.
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_Town_01_08");	//To znamená, že jsi taky něco jako velitel stráže?
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Town_01_09");	//Ur-Karras nerozumí co člověk ríkat.
-	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Town_01_10");	//Ale myslí že člověk pořád neví proč Ur-Karras být zde.
+	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Town_01_10");	//Ale myslí, že člověk pořád neví proč Ur-Karras být zde.
 };
 
 instance DIA_Orc_8567_UrKarras_Chief(C_Info)
@@ -98,9 +98,9 @@ func void DIA_Orc_8567_UrKarras_Chief_Info()
 {
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_Chief_01_01");	//Ur-Thrall je váš náčelník?
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Chief_01_02");	//Ano, on být veliký náčelník skřetů! Být velmi mocný válečník a velice moudrý.
-	AI_Output(other,self,"DIA_Orc_8567_UrKarras_Chief_01_03");	//Říkáš nejsilnejší?
+	AI_Output(other,self,"DIA_Orc_8567_UrKarras_Chief_01_03");	//Říkáš nejsilnější?
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Chief_01_04");	//Člověk nemít pochyb! Všíchni bratři mít strach i ctít Ur-Thrall.
-	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Chief_01_05");	//Synové ducha ríkat že sám Beliar mu dát ochranu.
+	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Chief_01_05");	//Synové ducha ríkat, že sám Beliar mu dát ochranu.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Chief_01_06");	//Člověk neskoušet zabít Ur-Thrall. Člověk rychle umřít!
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_Chief_01_07");	//Na to bych ani nepomyslel!
 };
@@ -153,7 +153,7 @@ func int DIA_Orc_8567_UrKarras_WhatInteres_Condition()
 func void DIA_Orc_8567_UrKarras_WhatInteres_Info()
 {
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_WhatInteres_01_01");	//Co zajímavého můžu vidět ve vašem měste?
-	AI_Output(self,other,"DIA_Orc_8567_UrKarras_WhatInteres_01_02");	//Ur-Karras myslet že člověk zde nenajde nic zajímavé.
+	AI_Output(self,other,"DIA_Orc_8567_UrKarras_WhatInteres_01_02");	//Ur-Karras myslet, že člověk zde nenajde nic zajímavé.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_WhatInteres_01_03");	//A neměl by ve měste zůstávat příliš dlouho, bratři se pak rozhněvat!
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_WhatInteres_01_04");	//Chceš říct, že nemám očekávat příliš mnoho pohostinnosti?
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_WhatInteres_01_05");	//Člověk pochopit správně.
@@ -181,7 +181,7 @@ func void DIA_Orc_8567_UrKarras_UrTrall_Info()
 {
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_UrTrall_01_01");	//Kde bych našel velikého vůdce?
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_UrTrall_01_02");	//Jeskyňe velikého vůdce Ur-Thrall být ve středě města. Člověk jít mírne nahoru od hlavního vchodu.
-	AI_Output(self,other,"DIA_Orc_8567_UrKarras_UrTrall_01_03");	//Ale člověka dál nepustí, musí mít důležíté spravý pro Ur-Thrall.
+	AI_Output(self,other,"DIA_Orc_8567_UrKarras_UrTrall_01_03");	//Ale člověka dál nepustí, musí mít důležíté zprávy pro Ur-Thrall.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_UrTrall_01_04");	//Pokud veliký šaman skusí vejít jenom tak, skřeti sa rozhněvat a zabít člověk.
 };
 
@@ -214,7 +214,7 @@ func void DIA_Orc_8567_UrKarras_HelpRespect_Info()
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_HelpRespect_01_03");	//A jak to mám udělat?
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_HelpRespect_01_04");	//Člověk by měl pomoct bratrům nebo jít do boje ve velké skřetí aréně! Dosáhnout Mor Dar jako Ur-Karras.
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_HelpRespect_01_05");	//A jak mám si zasloužit tvoji důvěru?
-	AI_Output(self,other,"DIA_Orc_8567_UrKarras_HelpRespect_01_06");	//Ur-Karras může dát člověku několik úkolů. Když je splnit, braři budou člověka více vážit!
+	AI_Output(self,other,"DIA_Orc_8567_UrKarras_HelpRespect_01_06");	//Ur-Karras může dát člověku několik úkolů. Když je splnit, bratři budou člověka více vážit!
 	B_LogEntry(TOPIC_HeroOrcJoin,"Ur-Karras mi pomůže získat respekt skřetů když pro něj udelám nějakou práci. Nebo můžu jít do arény a vyhrát jejich přízeň svým mečem.");
 	HeroOrcJoinStart = TRUE;
 };
@@ -242,7 +242,7 @@ func void DIA_Orc_8567_UrKarras_FirstTask_Info()
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_FirstTask_01_01");	//Řekni mi, co mám udělat.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_02");	//Dobrá. Člověk dobře poslouchat Ur-Karras.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_03");	//Když člověk potkal Ur-Karras, zeptat se co Ur-Karras dělat v zemi lidí.
-	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_04");	//Nyní Ur-Karras odpověďet. Můj skupina sem jít získat velmi vzácnou trofej pro Ur-Thrall.
+	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_04");	//Nyní Ur-Karras odpovědět. Můj skupina sem jít získat velmi vzácnou trofej pro Ur-Thrall.
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_FirstTask_01_05");	//To je zajímavé. A jakou trofej?
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_06");	//Ur-Karras měl pro vůdce získat jedovatý tesák Muritana.
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_FirstTask_01_07");	//Muritana?
@@ -252,13 +252,13 @@ func void DIA_Orc_8567_UrKarras_FirstTask_Info()
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_11");	//Ur-Karras vzít pět nejlepších lovců našeho klanu a vyrazit po jeho stopách.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_12");	//V noci přejít hory a pokračovat kudy zvědi naposledy vidět Muritana.
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_FirstTask_01_13");	//A co se stalo pak?
-	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_14");	//My chteli připravit léčku... bohužel sami sebe stát kořistí.
+	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_14");	//My chtěli připravit léčku... bohužel sami sebe stát kořistí.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_15");	//Monstrum napadnout nás náhle a okamžitě zabít dva lovce skřetů.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_16");	//Pouze Ur-Karras zůstat naživu z celá skupina, být těžce zraněn.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_17");	//Kdyby nebylo člověka, jed Muritana by ho nakonec taky zabil!
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_18");	//Ur-Karras být velmi smutný, že nesplnit příkaz vůdce... Ale možná to udělat člověk?
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_FirstTask_01_19");	//Myslíš, že já sám se dokážu vypořádat s tím, co se nepodařilo celému tvému oddílu?!
-	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_20");	//Ur-Karras chce aby člověk skusit.
+	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_20");	//Ur-Karras chce aby člověk zkusit.
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_FirstTask_01_23");	//V pořádku, půjdu zabít tu tvou bestii. Kde ji mám hledat?
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_24");	//Ur-Karras myslí, že člověk najde Muritana v lese nedaleko města lidí.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_FirstTask_01_25");	//Někde ve skále být veliká a hluboká jeskyně. Tam monstrum zabít všechny bratry Ur-Karras!
@@ -339,7 +339,7 @@ func int DIA_Orc_8567_UrKarras_Hunt_Condition()
 func void DIA_Orc_8567_UrKarras_Hunt_Info()
 {
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_Hunt_01_01");	//A proč poslal hledat Muritana právě tebe?
-	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Hunt_01_02");	//Tag-Nor tehdy nebýt ve městě skřetů... Takže šéf poslat Ur-Karras!
+	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Hunt_01_02");	//Tag-Nor tehdy nebýt ve městě skřetů... Takže vůdce poslat Ur-Karras!
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_Hunt_01_04");	//Kdo je Tag-Nor?
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_Hunt_01_05");	//Být nejlepší z lovců mezi skřety! Už po mnoho zim lovit divokou zvěř, přinést bratrům hodně kořisti.
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_Hunt_01_06");	//A kde ho najdu?
@@ -566,12 +566,12 @@ func void DIA_Orc_8567_UrKarras_SecondTaskDone_Info()
 		else
 		{
 			AI_Output(self,other,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_28");	//Chodíš sem zbytečně člověče... (výhružně) Ur-Karras už vědet všechno!
-			AI_Output(self,other,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_29");	//Mí zvědové říct že ty být v pevnosti paladinů, místo toho abys mluvil s vůdcem Vysoké skály.
-			AI_Output(self,other,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_30");	//Myset, že člověk zradit Ur-Karras i jeho bratry!
-			AI_Output(other,self,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_31");	//Che... Opravdu jsi myslel, že bych pomáhl vám - odporným bestiím?
+			AI_Output(self,other,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_29");	//Mí zvědové říct, že ty být v pevnosti paladinů, místo toho abys mluvil s vůdcem Vysoké skály.
+			AI_Output(self,other,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_30");	//Myslet, že člověk zradit Ur-Karras i jeho bratry!
+			AI_Output(other,self,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_31");	//Che... Opravdu sis myslel, že bych pomohl vám - odporným bestiím?
 			AI_Output(self,other,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_32");	//Arrgh... (rozzlobeně) Člověka bude mrzet, že nás zradil!
 			AI_Output(self,other,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_33");	//Ur-Karras neříct svým bratrům aby zabili člověk.
-			AI_Output(self,other,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_34");	//Vzpomněl si že člověk udělat něco pro něj. Ale od teď, člověk již nebýt jeho bratr!
+			AI_Output(self,other,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_34");	//Vzpomněl si, že člověk udělat něco pro něj. Ale od teď, člověk již nebýt jeho bratr!
 			AI_Output(self,other,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_35");	//Pokud Ur-Karras opět vidět člověka ve městě, on zemřít!
 			AI_Output(other,self,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_36");	//(sarkasticky) Jsi tak velkorysý, skřete.
 			AI_Output(self,other,"DIA_Orc_8567_UrKarras_SecondTaskDone_01_36");	//Arrgh... (naštvaně)
@@ -618,7 +618,7 @@ func void DIA_Orc_8567_UrKarras_PaladinGoods_Yes()
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_PaladinGoods_Yes_01_04");	//Když nemůžeme porazit zvenku, je třeba skusit zevnitř!
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_PaladinGoods_Yes_01_05");	//Možná, že lidi pak pozabíjet navzájem.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_PaladinGoods_Yes_01_06");	//Ale být opatrný, jinak paladinové na to přijít.
-	AI_Output(self,other,"DIA_Orc_8567_UrKarras_PaladinGoods_Yes_01_07");	//Ur-Karras myslí že oni důverovat člověku. Bude v pořádku!
+	AI_Output(self,other,"DIA_Orc_8567_UrKarras_PaladinGoods_Yes_01_07");	//Ur-Karras myslí, že oni důverovat člověku. Bude v pořádku!
 	AI_Output(other,self,"DIA_Orc_8567_UrKarras_PaladinGoods_Yes_01_08");	//Pochopil jsem, Ur-Karrasi. Vyrazím okamžitě.
 	AI_Output(self,other,"DIA_Orc_8567_UrKarras_PaladinGoods_Yes_01_09");	//Ur-Karras přát hodně štěstí, člověče!
 	MIS_PaladinGoods = LOG_Running;
@@ -764,6 +764,6 @@ func void DIA_Orc_8567_UrKarras_PaladinCamp_Done_Info()
 
 	MIS_PaladinCamp = LOG_Success;
 	Log_SetTopicStatus(TOPIC_PaladinCamp,LOG_SUCCESS);
-	B_LogEntry(TOPIC_PaladinCamp,"Přijel jsem k Ur-Karrasovi se zprávou, že četa paladinů byla zničila. Vojevůdce skřetů byl se mnou velmi spokojen.");
+	B_LogEntry(TOPIC_PaladinCamp,"Přijel jsem k Ur-Karrasovi se zprávou, že četa paladinů byla zničena. Vojevůdce skřetů byl se mnou velmi spokojen.");
 	AI_StopProcessInfos(self);
 };

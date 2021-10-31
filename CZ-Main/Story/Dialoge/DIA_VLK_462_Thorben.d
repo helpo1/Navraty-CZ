@@ -463,7 +463,7 @@ func int DIA_Thorben_Teach_Condition()
 
 func void DIA_Thorben_Teach_Info()
 {
-	AI_Output(other,self,"DIA_Thorben_Teach_15_00");	//Nauč mě páčit zámky!
+	AI_Output(other,self,"DIA_Thorben_Teach_15_00");	//Nauč mě páčit zámky.
 	Info_ClearChoices(DIA_Thorben_Teach);
 	Info_AddChoice(DIA_Thorben_Teach,Dialog_Back,DIA_Thorben_Teach_Back);
 	Info_AddChoice(DIA_Thorben_Teach,b_buildlearnstringforthief("Páčení zámků",B_GetLearnCostTalent(other,NPC_TALENT_PICKLOCK,1)),DIA_Thorben_Teach_PICKLOCK);
@@ -915,22 +915,22 @@ func void dia_thorben_howlife_info()
 	AI_Output(other,self,"DIA_Thorben_HowLife_01_00");	//Jak to jde?
 	if((MIS_Thorben_BringElvrichBack == LOG_SUCCESS) && (GRITTAISDEAD == FALSE) && (MIS_MISSGRITTA == LOG_SUCCESS))
 	{
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_01");	//Nooo!... (usmívá se)
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_01");	//Nooo... (usmívá se)
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_02");	//Od té doby, co se Elvrich vrátil - se to s obchodem zlepšilo!
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_04");	//A Gritta se konečně zklidnila!
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_05");	//Po tom incidentu s bandity začala brát svůj život víc vážně.
 	}
 	else if((MIS_Thorben_BringElvrichBack == LOG_SUCCESS) && (GRITTAISDEAD == FALSE) && (MIS_MISSGRITTA == LOG_Running))
 	{
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_08");	//Není to špatné!... (smutně)
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_08");	//Není to špatné... (smutně)
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_09");	//Jasně, co se Elvrich vrátil - můj obchod celkem prosperuje.
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_10");	//Nicméně se velmi bojím o Grittu !... (nervózně) Ach má malá holčička!
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_10");	//Nicméně se velmi bojím o Grittu... (nervózně) Ach má malá holčička!
 	}
 	else if((MIS_Thorben_BringElvrichBack == LOG_SUCCESS) && (GRITTAISDEAD == TRUE))
 	{
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_13");	//Hrozně!... (smutně)
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_13");	//Hrozně... (smutně)
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_14");	//Jasně, co se Elvrich vrátil - můj obchod celkem prosperuje.
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_15");	//Ale to vše zbledne ve srovnání s Grittinou smrtí!... (zlomeně) Moje malá holčička!
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_15");	//Ale to vše zbledne ve srovnání s Grittinou smrtí... (zlomeně) Moje malá holčička!
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_16");	//Nikdy si to neodpustím. Všechno se to stalo jen kvůli mně...
 		AI_StopProcessInfos(self);
 	}
@@ -943,15 +943,15 @@ func void dia_thorben_howlife_info()
 	}
 	else if((MIS_Thorben_BringElvrichBack == LOG_Running) && (GRITTAISDEAD == FALSE) && (MIS_MISSGRITTA == LOG_Running))
 	{
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_24");	//Špatně!... (zoufale)
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_24");	//Špatně... (zoufale)
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_25");	//Mému obchodu se moc nedaří - moc mi chybí pomoc mého žáka, Elvricha!
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_26");	//Ale nejvíc se bojím o Grittu!... (nervózně) Moje malá holčička!
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_26");	//Ale nejvíc se bojím o Grittu... (nervózně) Moje malá holčička!
 	}
 	else if((MIS_Thorben_BringElvrichBack == LOG_Running) && (GRITTAISDEAD == TRUE))
 	{
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_29");	//Hrozně!... (smutně)
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_29");	//Hrozně... (smutně)
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_30");	//Mému obchodu se moc nedaří - moc mi chybí pomoc mého žáka, Elvricha!
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_31");	//Ale to vše zbledne ve srovnání s Grittinou smrtí!... (zlomeně) Moje malá holčička!
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_31");	//Ale to vše zbledne ve srovnání s Grittinou smrtí... (zlomeně) Moje malá holčička!
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_32");	//Nikdy si to neodpustím. Všechno se to stalo jen kvůli mně...
 		AI_StopProcessInfos(self);
 	}
@@ -966,19 +966,19 @@ func void dia_thorben_howlife_info()
 	{
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_40");	//Hůř už být nemůže... (zoufale)
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_41");	//Mému obchodu se nedaří vůbec jako ještě nikdy jindy - ani se mi o tom nechce mluvit.
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_42");	//Ale nejvíc se bojím o Grittu!... (nervózně) Moje malá holčička!
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_42");	//Ale nejvíc se bojím o Grittu... (nervózně) Moje malá holčička!
 	}
 	else if(GRITTAISDEAD == TRUE)
 	{
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_45");	//Hrozně!... (smutně)
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_45");	//Hrozně... (smutně)
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_46");	//Mému obchodu se nedaří vůbec jako ještě nikdy jindy - ani se mi o tom nechce mluvit.
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_47");	//Ale to vše zbledne ve srovnání s Grittinou smrtí!... (zlomeně) Moje malá holčička!
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_47");	//Ale to vše zbledne ve srovnání s Grittinou smrtí... (zlomeně) Moje malá holčička!
 		AI_Output(self,other,"DIA_Thorben_HowLife_01_48");	//Nikdy si to neodpustím. Všechno se to stalo jen kvůli mně...
 		AI_StopProcessInfos(self);
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Thorben_HowLife_01_49");	//Ach!... (smutně) Neptej se - něco je špatně.
+		AI_Output(self,other,"DIA_Thorben_HowLife_01_49");	//Ach... (smutně) Neptej se - něco je špatně.
 	};
 };
 
@@ -1041,7 +1041,7 @@ func void dia_thorben_missgritta_info()
 	AI_Output(self,other,"DIA_Thorben_MissGritta_01_05");	//No a pak odešla někam do lesa a už se nevrátila.
 	AI_Output(other,self,"DIA_Thorben_MissGritta_01_09");	//Hmm, to se mi nezdá! Možná to ani nebyl obchodník!
 	AI_Output(other,self,"DIA_Thorben_MissGritta_01_12");	//Opravdu, celá oblast je zamořená bandity. A to nemluvím o vlcích a jiných tvorech!
-	AI_Output(self,other,"DIA_Thorben_MissGritta_01_13");	//Ach, Innosi!... (panicky) Opravdu si myslíš, že to jsou banditi?! Že ji okradli?!
+	AI_Output(self,other,"DIA_Thorben_MissGritta_01_13");	//Ach, Innosi! (panicky) Opravdu si myslíš, že to jsou banditi?! Že ji okradli?!
 	AI_Output(other,self,"DIA_Thorben_MissGritta_01_14");	//Je to možné. Hlavně proto, že v poslední době lidé z Khorinisu mizí.
 	AI_Output(self,other,"DIA_Thorben_MissGritta_01_19");	//Co teď budeme dělat? Stráže ani prstem nepohnou, pokud se nezaplatí!
 	AI_Output(self,other,"DIA_Thorben_MissGritta_01_21");	//A já jsem jen chudý tesař... (smutně) Kde na to mám vzít!
@@ -1061,10 +1061,10 @@ func void dia_thorben_missgritta_help()
 {
 	AI_Output(other,self,"DIA_Thorben_MissGritta_Help_01_00");	//Raději ji budu hledat sám.
 	AI_Output(self,other,"DIA_Thorben_MissGritta_Help_01_01");	//Hmmm... (nechápavě) Ale proč?!
-	AI_Output(self,other,"DIA_Thorben_MissGritta_Help_01_03");	//Máš pravdu!... (vystrašeně) Jestli opravdu padla do rukou banditů - ani si neumím představit, co se ji mohlo stát!
+	AI_Output(self,other,"DIA_Thorben_MissGritta_Help_01_03");	//Máš pravdu! (vystrašeně) Jestli opravdu padla do rukou banditů - ani si neumím představit, co se ji mohlo stát!
 	AI_Output(other,self,"DIA_Thorben_MissGritta_Help_01_05");	//Mluv, kde jsi Grittu naposledy viděl?!
 	AI_Output(self,other,"DIA_Thorben_MissGritta_Help_01_06");	//U Jižní brány, na cestě k Lobartovi.
-	AI_Output(self,other,"DIA_Thorben_MissGritta_Help_01_08");	//Řekni mi všechno, co víš.
+	AI_Output(self,other,"DIA_Thorben_MissGritta_Help_01_08");	//Řekni mi všechno, co se dozvíš.
 	B_KillNpc(gobbo_mage_gr1);
 	B_KillNpc(gobbo_mage_gr2);
 	B_KillNpc(gobbo_mage_gr3);
@@ -1212,16 +1212,16 @@ func int dia_thorben_grittaisdead_condition()
 func void dia_thorben_grittaisdead_info()
 {
 	AI_Output(other,self,"DIA_Thorben_GrittaIsDead_01_00");	//Gritta se nevrátí.
-	AI_Output(self,other,"DIA_Thorben_GrittaIsDead_01_01");	//Cože?!... (ustrašeně) Proč?!
+	AI_Output(self,other,"DIA_Thorben_GrittaIsDead_01_01");	//Cože?! (ustrašeně) Proč?!
 	AI_Output(other,self,"DIA_Thorben_GrittaIsDead_01_02");	//Našel jsem její tělo v lese. Je mrtvá!
-	AI_Output(self,other,"DIA_Thorben_GrittaIsDead_01_03");	//Ale... Ale kdo to mohl udělat?!... (zmateně) Kdo zabil moji holčičku?!
+	AI_Output(self,other,"DIA_Thorben_GrittaIsDead_01_03");	//Ale... Ale kdo to mohl udělat?! (zmateně) Kdo zabil moji holčičku?!
 	AI_Output(other,self,"DIA_Thorben_GrittaIsDead_01_04");	//Byli tam banditi.
-	AI_Output(self,other,"DIA_Thorben_GrittaIsDead_01_05");	//Ne! To není možné!... (zmateně) Nevěřím ti!
+	AI_Output(self,other,"DIA_Thorben_GrittaIsDead_01_05");	//Ne! To není možné! (zmateně) Nevěřím ti!
 	AI_Output(self,other,"DIA_Thorben_GrittaIsDead_01_06");	//To nemůže být pravda! Lžeš mi!
 	if(Npc_HasItems(other,itri_grittasring) >= 1)
 	{
 		B_GivePlayerXP(50);
-		AI_Output(other,self,"DIA_Thorben_GrittaIsDead_01_07");	//Tady, Našel jsem u ní tenhle prsten.
+		AI_Output(other,self,"DIA_Thorben_GrittaIsDead_01_07");	//Tady. Našel jsem u ní tenhle prsten.
 		B_GiveInvItems(other,self,itri_grittasring,1);
 		AI_Output(self,other,"DIA_Thorben_GrittaIsDead_01_08");	//Můj bože, ne! To je její snubní prsten... (chvějícím se hlasem) Nikdy by ho nesundala!
 		AI_Output(self,other,"DIA_Thorben_GrittaIsDead_01_10");	//To je... (zmateně) Ach, ne! Nemůžu tomu uvěřit!
@@ -1276,14 +1276,14 @@ func void dia_addon_thorben_elvrichgritta_no()
 {
 	AI_Output(other,self,"DIA_Addon_Thorben_ElvrichGritta_No_01_00");	//Ne, tohle není pro mě.
 	AI_Output(self,other,"DIA_Addon_Thorben_ElvrichGritta_No_01_01");	//Ach... (s porozuměním) To je škoda!
-	AI_Output(self,other,"DIA_Addon_Thorben_ElvrichGritta_No_01_02");	//Dobrá, Zkusím to nějak sám. Snad to dobře dopadne.
+	AI_Output(self,other,"DIA_Addon_Thorben_ElvrichGritta_No_01_02");	//Dobrá, zkusím to nějak sám. Snad to dobře dopadne.
 	Info_ClearChoices(dia_addon_thorben_elvrichgritta);
 };
 
 func void dia_addon_thorben_elvrichgritta_help()
 {
 	AI_Output(other,self,"DIA_Addon_Thorben_ElvrichGritta_Help_01_00");	//No, proč ne! Promluvím s nimi.
-	AI_Output(self,other,"DIA_Addon_Thorben_ElvrichGritta_Help_01_01");	//To je skvělé!... (usmívá se) Doufám, že to dobře dopadne.
+	AI_Output(self,other,"DIA_Addon_Thorben_ElvrichGritta_Help_01_01");	//To je skvělé! (usmívá se) Doufám, že to dobře dopadne.
 	MIS_ELVRIHMARRYGRITTA = LOG_Running;
 	Log_CreateTopic(TOPIC_ELVRIHMARRYGRITTA,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ELVRIHMARRYGRITTA,LOG_Running);

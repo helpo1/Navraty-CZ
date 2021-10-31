@@ -76,7 +76,7 @@ func void DIA_BullcoDJG_WARTEMAL_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BullcoDJG_WARTEMAL_06_02");	//Teď ne! Mrznu! Jediný, co chci, je odsud vypadnout, jak nejrychlejš to půjde.
+		AI_Output(self,other,"DIA_BullcoDJG_WARTEMAL_06_02");	//Teď ne! Mrznu! Jediný, co chci, je odsud vypadnout, jak nejrychleji to půjde.
 	};
 	AI_StopProcessInfos(self);
 };

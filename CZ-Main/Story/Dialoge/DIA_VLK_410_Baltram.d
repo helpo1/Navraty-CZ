@@ -108,7 +108,7 @@ func void DIA_Addon_Baltram_LaresAbloese_Info()
 	AI_Output(self,other,"DIA_Addon_Baltram_LaresAbloese_01_05");	//Ok. Pokusím se najít někoho, kdo bude ochoten to udělat.
 	AI_Output(other,self,"DIA_Addon_Baltram_LaresAbloese_15_06");	//Výborně.
 	B_GivePlayerXP(XP_Ambient);
-	B_LogEntry(TOPIC_Addon_BringRangerToLares,"Baltram, obchodník na tržišti, se postará o Laresův ornament. Možná bude moci Lares KONEČNĚ opustit přístav.");
+	B_LogEntry(TOPIC_Addon_BringRangerToLares,"Baltram, obchodník na tržišti, se postará o Laresův úkol. Možná bude moci Lares KONEČNĚ opustit přístav.");
 	SC_KnowsBaltramAsRanger = TRUE;
 	Baltram_Exchange4Lares = TRUE;
 };
@@ -172,7 +172,7 @@ func void DIA_Baltram_Trick_Info()
 	B_LogEntry_Quiet(TOPIC_Nagur,"Baltram mě zaměstnal jako poslíčka. Mám mu přinést nějakou zásilku z Akilova statku.");
 	Log_CreateTopic(TOPIC_Baltram,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Baltram,LOG_Running);
-	B_LogEntry(TOPIC_Baltram,"Když Beltramovi doručím jeho zásilku, zaplatí mi 50 zlatých.");
+	B_LogEntry(TOPIC_Baltram,"Když Baltramovi doručím jeho zásilku, zaplatí mi 50 zlatých.");
 };
 
 
@@ -435,7 +435,7 @@ func void DIA_Baltram_LetUsTrade_Info()
 	MIS_BaltramTradeAgain = LOG_Running;
 	Log_CreateTopic(TOPIC_BaltramTradeAgain,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BaltramTradeAgain,LOG_Running);
-	B_LogEntry(TOPIC_BaltramTradeAgain,"Pokud donesu Baltramu 10 šunek a 10 láhví vína, pak se mnou bude zase obchodovat.");
+	B_LogEntry(TOPIC_BaltramTradeAgain,"Pokud donesu Baltramovi 10 šunek a 10 láhví vína, pak se mnou bude zase obchodovat.");
 };
 
 var int BaltramEnoughBacon;

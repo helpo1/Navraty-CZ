@@ -103,7 +103,7 @@ func void DIA_Addon_Garaz_Hi_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Garaz_Hi_15_00");	//Proč na ně nezaútočíme?
 	AI_Output(self,other,"DIA_Addon_Garaz_Hi_08_01");	//Taky jsem se ptal. Ale stráže mají prý na práci mnohem 'důležitější věci'.
-	AI_Output(self,other,"DIA_Addon_Garaz_Hi_08_02");	//Bloodwyn pověřil me, abych to vyřešil sám.
+	AI_Output(self,other,"DIA_Addon_Garaz_Hi_08_02");	//Bloodwyn pověřil mě, abych to vyřešil sám.
 	AI_Output(other,self,"DIA_Addon_Garaz_Hi_15_03");	//Předpokládám, že nemáš v plánu červy přepadnout.
 	AI_Output(self,other,"DIA_Addon_Garaz_Hi_08_04");	//Proč bych to měl delat? Abychom získali zlato, co je v té jeskyni?
 	AI_Output(self,other,"DIA_Addon_Garaz_Hi_08_05");	//Bloodwyn by si většinu z toho vzal stejně pro sebe. A pro tu trošku, co by zbyla, nehodlám riskovat krk.

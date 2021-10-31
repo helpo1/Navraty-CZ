@@ -175,7 +175,7 @@ func int DIA_Engor_HELP_Condition()
 
 func void DIA_Engor_HELP_Info()
 {
-	AI_Output(other,self,"DIA_Engor_HELP_15_00");	//Možná ti můžu nějako pomoci s tvou prací?
+	AI_Output(other,self,"DIA_Engor_HELP_15_00");	//Možná ti můžu nějak pomoci s tvou prací?
 	AI_Output(self,other,"DIA_Engor_HELP_13_01");	//Hmm... Jistě, proč ne? Potřeboval bych nějakou pomoc.
 	AI_Output(other,self,"DIA_Engor_HELP_15_02");	//Takže co je třeba udělat?
 	AI_Output(self,other,"DIA_Engor_HELP_13_03");	//Naše zásoby jídla jsou malé. Především jsme téměř bez masa.
@@ -199,7 +199,7 @@ func void DIA_Engor_HELP_YES()
 	AI_Output(self,other,"DIA_Engor_HELP_YES_13_01");	//Asi dva tucty pořádných kusů masa by mi pomohlo nasytit nejméně sto hladových krků. Vrať se, až ho seženeš. Teď se musím vrátit ke své práci.
 	Log_CreateTopic(TOPIC_BringMeat,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BringMeat,LOG_Running);
-	B_LogEntry(TOPIC_BringMeat,"Engor potřebuje spoustu masa, aby mohl dál zásobovat své muže. Nevadí, pujde-li o klobásy, šunku, pečené či syrové maso. Jenom aby chlapi měli co zakousnout. Dva tucty porcí by mělo stačit.");
+	B_LogEntry(TOPIC_BringMeat,"Engor potřebuje spoustu masa, aby mohl dál zásobovat své muže. Nevadí, půjde-li o klobásy, šunku, pečené či syrové maso. Jenom aby chlapi měli co zakousnout. Dva tucty porcí by měly stačit.");
 	MIS_Engor_BringMeat = LOG_Running;
 	AI_StopProcessInfos(self);
 };
@@ -375,9 +375,9 @@ func void DIA_Engor_StoreKey_Info()
 	AI_Output(other,self,"DIA_Engor_StoreKey_01_02");	//Uhodl jsi! Na a zkus ho už neztratit.
 	B_GiveInvItems(other,self,ItKe_OC_Store,1);
 	Npc_RemoveInvItems(self,ItKe_OC_Store,1);
-	AI_Output(self,other,"DIA_Engor_StoreKey_01_03");	//Díky kámo! Nevíš si představit jak jsi mi pomohl.
+	AI_Output(self,other,"DIA_Engor_StoreKey_01_03");	//Díky kámo! Neumíš si představit jak jsi mi pomohl.
 	AI_Output(self,other,"DIA_Engor_StoreKey_01_04");	//Garond by mě sežral i s ušima kvůli tomu klíči.
-	AI_Output(self,other,"DIA_Engor_StoreKey_01_05");	//Za odměnu si vezmi tenhle lektvar. Alespoň něco za tvou námahu.
+	AI_Output(self,other,"DIA_Engor_StoreKey_01_05");	//Za odměnu si vezmi tyto lektvary. Alespoň něco za tvou námahu.
 	B_GiveInvItems(self,other,ItPo_Health_02,3);
 };
 
@@ -388,7 +388,7 @@ instance DIA_Engor_Ruestung(C_Info)
 	condition = DIA_Engor_Ruestung_Condition;
 	information = DIA_Engor_Ruestung_Info;
 	permanent = FALSE;
-	description = "Máš na prodej něco zaujímavého?";
+	description = "Máš na prodej něco zajímavého?";
 };
 
 func int DIA_Engor_Ruestung_Condition()

@@ -143,7 +143,7 @@ func void DIA_Addon_Tom_Esteban_Info()
 	AI_Output(other,self,"DIA_Addon_Tom_Esteban_15_00");	//A od té doby se tu schováváš?
 	AI_Output(self,other,"DIA_Addon_Tom_Esteban_11_01");	//Nejdřív jsem se vrátil do tábora, abych to řekl Fiskovi, Hunovi a ostatním, kteří čekali na zásilku.
 	AI_Output(self,other,"DIA_Addon_Tom_Esteban_11_02");	//A Esteban je za to zodpovědný.
-	AI_Output(self,other,"DIA_Addon_Tom_Esteban_11_03");	//Asi budu mrtvý, jetli Esteban zjistí, že jsem jim řekl, že je za tím on.
+	AI_Output(self,other,"DIA_Addon_Tom_Esteban_11_03");	//Asi budu mrtvý, jestli Esteban zjistí, že jsem jim řekl, že je za tím on.
 	AI_Output(self,other,"DIA_Addon_Tom_Esteban_11_04");	//Proto nejdu zpátky do tábora.
 	Tom_Tells = TRUE;
 };

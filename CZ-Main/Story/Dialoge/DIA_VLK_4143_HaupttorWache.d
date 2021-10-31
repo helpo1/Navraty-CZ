@@ -28,7 +28,7 @@ instance DIA_Haupttorwache_AUFGABE(C_Info)
 	condition = DIA_Haupttorwache_AUFGABE_Condition;
 	information = DIA_Haupttorwache_AUFGABE_Info;
 	permanent = TRUE;
-	description = "Co tu deláš?";
+	description = "Co tady děláš?";
 };
 
 
@@ -39,9 +39,9 @@ func int DIA_Haupttorwache_AUFGABE_Condition()
 
 func void DIA_Haupttorwache_AUFGABE_Info()
 {
-	AI_Output(other,self,"DIA_Haupttorwache_AUFGABE_15_00");	//Co tu deláš?
-	AI_Output(self,other,"DIA_Haupttorwache_AUFGABE_13_01");	//Muj úkol je jednoduchý. Mám se ujistit, že skřeti zustanou více jak 30 stop od brány.
-	AI_Output(self,other,"DIA_Haupttorwache_AUFGABE_13_02");	//Jestli se o neco pokusí, spustím poplach - toa vše.
+	AI_Output(other,self,"DIA_Haupttorwache_AUFGABE_15_00");	//Co tady děláš?
+	AI_Output(self,other,"DIA_Haupttorwache_AUFGABE_13_01");	//Můj úkol je jednoduchý. Mám se ujistit, že skřeti zůstanou více jak třicet stop od brány.
+	AI_Output(self,other,"DIA_Haupttorwache_AUFGABE_13_02");	//Jestli se o něco pokusí, spustím poplach - toť vše.
 };
 
 
@@ -52,7 +52,7 @@ instance DIA_Haupttorwache_TOROEFFNEN(C_Info)
 	condition = DIA_Haupttorwache_TOROEFFNEN_Condition;
 	information = DIA_Haupttorwache_TOROEFFNEN_Info;
 	permanent = TRUE;
-	description = "Co bych musel udelat, jestli by sem chtel otevřía hlavnú bránu?";
+	description = "Co bych musel udělat, jestli bych chtěl otevřít hlavní bránu?";
 };
 
 
@@ -66,29 +66,29 @@ func int DIA_Haupttorwache_TOROEFFNEN_Condition()
 
 func void DIA_Haupttorwache_TOROEFFNEN_Info()
 {
-	AI_Output(other,self,"DIA_Haupttorwache_TOROEFFNEN_15_00");	//Co bych musel udelat, jestli by sem chtel otevřía hlavnú bránu?
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_13_01");	//U Innose, proe bys to chtel vedet?
+	AI_Output(other,self,"DIA_Haupttorwache_TOROEFFNEN_15_00");	//Co bych musel udělat, jestli bych chtěl otevřít hlavní bránu?
+	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_13_01");	//U Innose, proč bys to chtěl vědět?
 	self.flags = 0;
 	Info_ClearChoices(DIA_Haupttorwache_TOROEFFNEN);
-	Info_AddChoice(DIA_Haupttorwache_TOROEFFNEN,"Bojím se o bezpeenost hradu.",DIA_Haupttorwache_TOROEFFNEN_sicherheit);
+	Info_AddChoice(DIA_Haupttorwache_TOROEFFNEN,"Bojím se o bezpečnost hradu.",DIA_Haupttorwache_TOROEFFNEN_sicherheit);
 	Info_AddChoice(DIA_Haupttorwache_TOROEFFNEN,"No, jen jsem se zeptal.",DIA_Haupttorwache_TOROEFFNEN_frage);
 };
 
 func void DIA_Haupttorwache_TOROEFFNEN_sicherheit()
 {
-	AI_Output(other,self,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_15_00");	//Bojím se o bezpeenost hradu.
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_01");	//To já taky, veř mi.
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_02");	//Protože jsem spolehlivý strážce, Garond mi dokonce sveřil klíč od brány.
+	AI_Output(other,self,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_15_00");	//Bojím se o bezpečnost hradu.
+	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_01");	//To já taky, věř mi.
+	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_02");	//Protože jsem spolehlivý strážce, Garond mi dokonce svěřil klíč od brány.
 	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_03");	//(pyšně) To je velká zodpovědnost a já svou práci plním tak, jak jsem slíbil Garondovi.
 	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_04");	//Ta mříž je dlouho neudržovaná a kdyby ji teď někdo otevřel, ten rezavej krám by se zasekl a nešel by zavřít.
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_05");	//Nikdo by ji nezavřel! Nesmím myslet na to co by se stalo. Ještěže klíče mám já.
+	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_sicherheit_13_05");	//Nikdo by ji nezavřel! Nesmím myslet na to, co by se stalo. Ještěže klíče mám já.
 	AI_StopProcessInfos(self);
 };
 
 func void DIA_Haupttorwache_TOROEFFNEN_frage()
 {
 	AI_Output(other,self,"DIA_Haupttorwache_TOROEFFNEN_frage_15_00");	//No, jen jsem se zeptal.
-	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_frage_13_01");	//Nemel bys takto mluvit. Mužeš si narobiť problémy. Jsou to pro nás těžké easy. Teď jdi, mám tu hlídat a ne se vybavovat.
+	AI_Output(self,other,"DIA_Haupttorwache_TOROEFFNEN_frage_13_01");	//Neměl bys takhle mluvit. Můžeš si nadělat problémy. Jsou to pro nás těžké časy. Teď jdi, mám tady hlídat a ne se vybavovat.
 	AI_StopProcessInfos(self);
 };
 

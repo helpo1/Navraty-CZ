@@ -92,7 +92,7 @@ func void DIA_Jack_DI_UndeadDragonDead_Info()
 	AI_Output(self,other,"DIA_Jack_DI_UndeadDragonDead_14_01");	//Doufal jsem, že všechno dobře dopadne. Ale musim přiznat, že posledních pár hodin jsem si tím nebyl vůbec jistej.
 	AI_Output(self,other,"DIA_Jack_DI_UndeadDragonDead_14_02");	//Tak už můžem znovu vyplout?
 	Info_ClearChoices(DIA_Jack_DI_UndeadDragonDead);
-	Info_AddChoice(DIA_Jack_DI_UndeadDragonDead,"Skoro.",DIA_Jack_DI_UndeadDragonDead_moment);
+	Info_AddChoice(DIA_Jack_DI_UndeadDragonDead,"Ještě počkej.",DIA_Jack_DI_UndeadDragonDead_moment);
 	Info_AddChoice(DIA_Jack_DI_UndeadDragonDead,"Dobrá, můžeme vyrazit!",DIA_Jack_DI_UndeadDragonDead_over);
 };
 

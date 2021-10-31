@@ -33,7 +33,7 @@ func void DIA_Addon_Edgor_EXIT_Info()
 {
 	if(Npc_KnowsInfo(other,DIA_Addon_Edgor_MIS2) && (Edgor_Exiteinmal == FALSE))
 	{
-		AI_Output(self,other,"DIA_Addon_Edgor_EXIT_06_00");	//Jsem rád že jsem tě poznal...
+		AI_Output(self,other,"DIA_Addon_Edgor_EXIT_06_00");	//Jsem rád, že jsem tě poznal...
 		Edgor_Exiteinmal = TRUE;
 	};
 	AI_StopProcessInfos(self);
@@ -162,7 +162,7 @@ func void DIA_Addon_Edgor_MIS2_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Edgor_MIS2_15_00");	//Franco se mě zaptal na kamenné tabulky. Našel jsi je?
 	AI_Output(self,other,"DIA_Addon_Edgor_MIS2_06_01");	//Chlape, ani jsem je nehledal. Všechno, co vím, je, že to má být ve staré budově v pravo v bažině.
-	AI_Output(self,other,"DIA_Addon_Edgor_MIS2_06_02");	//A víš, můj vnitřní hlas mi říká, Edgore zůstař hezky daleko od těch starých budov umístěných hluboko v bažině.'
+	AI_Output(self,other,"DIA_Addon_Edgor_MIS2_06_02");	//A víš, můj vnitřní hlas mi říká:'Edgore zůstaň hezky daleko od těch starých budov umístěných hluboko v bažině.'
 	AI_Output(self,other,"DIA_Addon_Edgor_MIS2_06_03");	//Jako bych měl riskovat svůj zadek, kvůli tomu arogantnímu idiotovi Francovi!
 	B_LogEntry(Topic_Addon_Stoneplate,"Edgor nikdy nepůjde hledat kamenné tabulky. Myslí, že jsou někde ve staré budově v bažině.");
 };
@@ -293,7 +293,7 @@ func void DIA_Addon_Edgor_Start_Info()
 
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] == FALSE)
 	{
-		Info_AddChoice(DIA_Addon_Edgor_TrainStart,"Jak vyjmout žihadlo? (Stojí: 1 VB, 150 zlatých))",DIA_Addon_Edgor_TrainStart_Sting);
+		Info_AddChoice(DIA_Addon_Edgor_TrainStart,"Jak vyjmout žihadlo? (Stojí: 1 VB, 150 zlatých)",DIA_Addon_Edgor_TrainStart_Sting);
 	};
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] == FALSE)
 	{

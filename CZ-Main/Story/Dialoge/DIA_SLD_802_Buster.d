@@ -117,7 +117,7 @@ func void DIA_Buster_Hello_GoingToFarm()
 
 func void DIA_Buster_Hello_ImNoDanger()
 {
-	AI_Output(other,self,"DIA_Buster_Hello_ImNoDanger_15_00");	//To máš pravdu
+	AI_Output(other,self,"DIA_Buster_Hello_ImNoDanger_15_00");	//To máš pravdu.
 	AI_Output(self,other,"DIA_Buster_Hello_ImNoDanger_13_01");	//(samolibě) Jo, za ty roky se naučíš si takových věcí všímat, kámo.
 	AI_Output(self,other,"DIA_Buster_Hello_ImNoDanger_13_02");	//V jednom kuse tady bojujeme se skřety. Nebo strážemi z města. Teda, jsou to pěkně neodbytní prevíti!
 	Info_ClearChoices(DIA_Buster_Hello);
@@ -128,7 +128,7 @@ func void DIA_Buster_Hello_ImNoDanger()
 
 func void DIA_Buster_Hello_SlewBeasts()
 {
-	AI_Output(other,self,"DIA_Buster_Hello_SlewBeasts_15_00");	//Jednou nebo dvakrát jsem zabil nějakou příšeru
+	AI_Output(other,self,"DIA_Buster_Hello_SlewBeasts_15_00");	//Jednou nebo dvakrát jsem zabil nějakou příšeru.
 	AI_Output(self,other,"DIA_Buster_Hello_SlewBeasts_13_01");	//Ha! (zasměje se) Nejspíš jsi v poli rozšlápnul pár brouků a vyhnal několik krys z jejich nor.
 	AI_Output(self,other,"DIA_Buster_Hello_SlewBeasts_13_02");	//Tady nám jdou po krku skřeti! Jo, a ta mizerná městská stráž.
 	Info_ClearChoices(DIA_Buster_Hello);
@@ -139,7 +139,7 @@ func void DIA_Buster_Hello_SlewBeasts()
 
 func void DIA_Buster_Hello_WannaTestIt()
 {
-	AI_Output(other,self,"DIA_Buster_Hello_WannaTestIt_15_00");	//Chceš se přesvědčit
+	AI_Output(other,self,"DIA_Buster_Hello_WannaTestIt_15_00");	//Chceš se přesvědčit?
 	AI_Output(self,other,"DIA_Buster_Hello_WannaTestIt_13_01");	//Božíčku! Vybral jsem si špatného otloukánka, co?
 	AI_Output(other,self,"DIA_Buster_Hello_WannaTestIt_15_02");	//Dalo by se to tak říct.
 	AI_Output(self,other,"DIA_Buster_Hello_WannaTestIt_13_03");	//Tak pojď, ukaž mi, co v tobě je.
@@ -681,7 +681,7 @@ func void DIA_Buster_BringTrophyShadowbeast_Info()
 			// XP_BringBusterTrophyShadowbeast = Shadowbeast.level * XP_PER_VICTORY;
 			XP_BringBusterTrophyShadowbeast = Shadowbeast.level * CZ_Settings_Diff_XPMult;
 			BustersBusterTrophyShadowbeastOffer = Buster_Bonus + 100;
-			AI_Output(other,self,"DIA_Buster_BringTrophyShadowbeast_15_05");	//Přinesl jsem si roh stínové šelmy.
+			AI_Output(other,self,"DIA_Buster_BringTrophyShadowbeast_15_05");	//Přinesl jsem ti roh stínové šelmy.
 			B_GivePlayerXP(XP_BringBusterTrophyShadowbeast);
 			B_GiveInvItems(other,self,ItAt_ShadowHorn,1);
 			Npc_RemoveInvItems(self,ItAt_ShadowHorn,Npc_HasItems(self,ItAt_ShadowHorn));

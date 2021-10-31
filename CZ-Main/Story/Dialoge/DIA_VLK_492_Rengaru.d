@@ -267,12 +267,12 @@ func void DIA_Rengaru_INKNAST_Info()
 	AI_Output(self,other,"DIA_Rengaru_INKNAST_07_01");	//Co ještě chceš? Nezůstalo mi vůbec nic! Pusť mě, co?!
 	Info_AddChoice(DIA_Rengaru_INKNAST,"Proč bych tě měl nechat jít?",DIA_Rengaru_INKNAST_keinKnast);
 	Info_AddChoice(DIA_Rengaru_INKNAST,"Postarám se, abys skončil za mřížema.",DIA_Rengaru_INKNAST_Knast);
-	Info_AddChoice(DIA_Rengaru_INKNAST,"Ztrať se! A už tě tady vícekrát nevidím!",DIA_Rengaru_INKNAST_HauAb);
+	Info_AddChoice(DIA_Rengaru_INKNAST,"Ztrať se! Ať už tě tady vícekrát neuvidím!",DIA_Rengaru_INKNAST_HauAb);
 };
 
 func void DIA_Rengaru_INKNAST_HauAb()
 {
-	AI_Output(other,self,"DIA_Rengaru_INKNAST_HauAb_15_00");	//Ztrať se! A už tě tady vícekrát nevidím!
+	AI_Output(other,self,"DIA_Rengaru_INKNAST_HauAb_15_00");	//Ztrať se! Ať už tě tady vícekrát neuvidím!
 	AI_Output(self,other,"DIA_Rengaru_INKNAST_HauAb_07_01");	//Nebudeš toho litovat! Díky, chlape!
 	Npc_ExchangeRoutine(self,"Start");
 	AI_StopProcessInfos(self);

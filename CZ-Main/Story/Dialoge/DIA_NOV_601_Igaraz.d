@@ -239,7 +239,7 @@ func void DIA_Igaraz_METOO_Info()
 	AI_Output(other,self,"DIA_Igaraz_METOO_15_00");	//Mne také! Požádal jsem o Zkoušku ohně.
 	AI_Output(self,other,"DIA_Igaraz_METOO_13_01");	//Buď si tě vybral Innos nebo jsi blázen.
 	AI_Output(other,self,"DIA_Igaraz_METOO_15_02");	//Povedlo se mi dost bláznivých věcí...
-	AI_Output(self,other,"DIA_Igaraz_METOO_13_03");	//Innos mě podporuje a to já projdu touhhle zkouškou!
+	AI_Output(self,other,"DIA_Igaraz_METOO_13_03");	//Innos mě podporuje a to já projdu touhle zkouškou!
 	Info_ClearChoices(DIA_Igaraz_METOO);
 	Info_AddChoice(DIA_Igaraz_METOO,Dialog_Back,DIA_Igaraz_METOO_BACK);
 	Info_AddChoice(DIA_Igaraz_METOO,"Možná můžeme pokračovat spolu...",DIA_Igaraz_METOO_HELP);

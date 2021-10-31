@@ -44,7 +44,7 @@ func void DIA_Sld_820_Halt_Info()
 {
 	AI_Output(self,other,"DIA_Sld_820_Halt_07_00");	//Kam si myslíš že jdeš?
 	AI_Output(other,self,"DIA_Sld_820_Halt_15_01");	//Do domu.
-	AI_Output(self,other,"DIA_Sld_820_Halt_07_02");	//Onar nám platí, abychom tam nepuštěli lidi jako jsi ty!
+	AI_Output(self,other,"DIA_Sld_820_Halt_07_02");	//Onar nám platí, abychom tam nepouštěli lidi jako jsi ty!
 	if(other.guild == GIL_MIL)
 	{
 		AI_Output(self,other,"DIA_Sld_820_Halt_07_03");	//Nechce zde žádnou domobranu!
@@ -69,7 +69,7 @@ func void DIA_Sld_820_Halt_WannaJoin()
 	AI_Output(other,self,"DIA_Sld_820_Halt_WannaJoin_15_00");	//Chci se přidat k žoldákům!
 	AI_Output(self,other,"DIA_Sld_820_Halt_WannaJoin_07_01");	//Á, čerstvá síla! Jdi dál.
 	B_Sld_820_LeeIsRight();
-	AI_Output(self,other,"DIA_Sld_820_Halt_WannaJoin_07_02");	//Ale varuji tě: Ale nemluv na Onara bez vyzvání! Nesnáší to hlavně u nováčků.
+	AI_Output(self,other,"DIA_Sld_820_Halt_WannaJoin_07_02");	//Ale varuji tě: Nemluv na Onara bez vyzvání! Nesnáší to hlavně u nováčků.
 	AI_StopProcessInfos(self);
 };
 

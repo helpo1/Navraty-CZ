@@ -355,7 +355,7 @@ instance DIA_Addon_Fortuno_Trank(C_Info)
 	condition = DIA_Addon_Fortuno_Trank_Condition;
 	information = DIA_Addon_Fortuno_Trank_Info;
 	permanent = FALSE;
-	description = "Mám pro tebe lektvar který ti pomůže vzpomenout.";
+	description = "Mám pro tebe lektvar, který ti pomůže vzpomenout si.";
 };
 
 
@@ -369,7 +369,7 @@ func int DIA_Addon_Fortuno_Trank_Condition()
 
 func void DIA_Addon_Fortuno_Trank_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Fortuno_Trank_15_00");	//Mám pro tebe lektvar který ti pomůže vzpomenout.
+	AI_Output(other,self,"DIA_Addon_Fortuno_Trank_15_00");	//Mám pro tebe lektvar, který ti pomůže vzpomenout si.
 	AI_Output(self,other,"DIA_Addon_Fortuno_Trank_13_01");	//Věřím ti.
 	if(Npc_HasItems(other,ItPo_Addon_Geist_02) >= 1)
 	{
@@ -482,7 +482,7 @@ func int dia_addon_fortuno_canback_condition()
 func void dia_addon_fortuno_canback_info()
 {
 	AI_Output(other,self,"DIA_Addon_Fortuno_CanBack_01_00");	//Můžeš se vrátit do Bratrstva.
-	AI_Output(self,other,"DIA_Addon_Fortuno_CanBack_01_01");	//(zmatený) Bratrstva? To je už dávno ztraceno.!
+	AI_Output(self,other,"DIA_Addon_Fortuno_CanBack_01_01");	//(zmatený) Bratrstva? To je už dávno ztraceno.
 	AI_Output(other,self,"DIA_Addon_Fortuno_CanBack_01_02");	//Ale ne. V Khorinisu, poblíž vstupu do Hornického údolí je nový tábor Bratrstva Spáče!
 	AI_Output(other,self,"DIA_Addon_Fortuno_CanBack_01_03");	//Vede je Baal Orun. A je s ním spousta těch, co byli už v kolonii.
 	AI_Output(self,other,"DIA_Addon_Fortuno_CanBack_01_04");	//Bratrstvo Spáče existuje?!... (překvapeně)

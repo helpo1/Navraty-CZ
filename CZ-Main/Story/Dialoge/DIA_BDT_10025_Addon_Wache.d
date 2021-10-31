@@ -44,7 +44,7 @@ func void DIA_Addon_10025_Wache_Hi_Info()
 	if(Sklaven_Flucht == FALSE)
 	{
 		AI_Output(self,other,"DIA_Addon_BDT_10025_Wache_Hi_07_02");	//Ale otroci, ti nedostanou nic. Trochu vody a starej chleba nanejvýš.
-		AI_Output(self,other,"DIA_Addon_BDT_10025_Wache_Hi_07_03");	//Ono to těm mešťákům nic neudelá.
+		AI_Output(self,other,"DIA_Addon_BDT_10025_Wache_Hi_07_03");	//Ono to těm mešťákům nic neudělá.
 	};
 };
 

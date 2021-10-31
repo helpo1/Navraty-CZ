@@ -48,7 +48,7 @@ func void DIA_GornNW_Hallo_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_GornNW_Add_12_03");	//Mě dostal ven.
+		AI_Output(self,other,"DIA_GornNW_Add_12_03");	//Milten mě dostal ven.
 		AI_Output(self,other,"DIA_GornNW_Add_12_04");	//Nikdy mu to nezapomenu.
 	};
 };

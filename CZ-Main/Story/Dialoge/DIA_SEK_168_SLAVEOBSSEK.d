@@ -18,7 +18,7 @@ func int DIA_SEK_168_SLAVEOBSSEK_What_Condition()
 
 func void DIA_SEK_168_SLAVEOBSSEK_What_Info()
 {
-	AI_Output(self,other,"DIA_SEK_168_SLAVEOBSSEK_What_01_00");	//Co jsi to udělal (panikaří) Teď všichni zemřeme. Najdou nás a zabijou.
+	AI_Output(self,other,"DIA_SEK_168_SLAVEOBSSEK_What_01_00");	//Co jsi to udělal? (panikaří) Teď všichni zemřeme. Najdou nás a zabijou.
 	AI_Output(other,self,"DIA_SEK_168_SLAVEOBSSEK_What_01_01");	//Klídek! Prostě držte hubu o tom co se tady stalo a všechno bude v pohodě.
 	AI_Output(self,other,"DIA_SEK_168_SLAVEOBSSEK_What_01_02");	//Dobře, jak říkáš... jen mě prosím tě nezabíjej!
 	AI_Output(other,self,"DIA_SEK_168_SLAVEOBSSEK_What_01_03");	//To záleží jenom na tobě.

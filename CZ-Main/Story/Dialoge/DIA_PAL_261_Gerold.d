@@ -162,8 +162,8 @@ func void DIA_Gerold_Deal_Info()
 	AI_Output(other,self,"DIA_Gerold_Deal_15_04");	//Co za to chceš?
 	AI_Output(self,other,"DIA_Gerold_Deal_12_05");	//Naše příděly potravin jsou stále stejné. A já potřebuji nějakou změnu.
 	AI_Output(self,other,"DIA_Gerold_Deal_12_06");	//Přines mě klobásu, bochánek čerstvého chleba a trochu medu.
-	AI_Output(self,other,"DIA_Gerold_Deal_12_07");	//A láhev vína a bych to všechno mohl zapít. Až to všechno budeš mít vrať se.
-	B_LogEntry(TOPIC_RescueGorn,"Když Geroldovi přinesu klobásy, chléb a med s láhví vína, vyřídí Gornovi mou zprávu.");
+	AI_Output(self,other,"DIA_Gerold_Deal_12_07");	//A láhev vína abych to všechno mohl zapít. Až to všechno budeš mít vrať se.
+	B_LogEntry(TOPIC_RescueGorn,"Když Geroldovi přinesu klobásu, chléb a med s láhví vína, vyřídí Gornovi mou zprávu.");
 };
 
 

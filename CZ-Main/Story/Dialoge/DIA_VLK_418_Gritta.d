@@ -507,8 +507,8 @@ func void dia_gritta_findlosthusb_help()
 	AI_Output(self,other,"DIA_Gritta_FindLostHusb_Help_01_08");	//Bitvy, potyčky, oceán otevírající cestu do neznáma, bohatství a sláva. To je to co chtěl.
 	AI_Output(other,self,"DIA_Gritta_FindLostHusb_Help_01_09");	//Ohó! Pak je možné, že se dal k pirátům!
 	AI_Output(self,other,"DIA_Gritta_FindLostHusb_Help_01_10");	//Pirát? To by mohlo být, protože Brendik chtěl býti pirátem - připadalo mu to romantické!
-	AI_Output(self,other,"DIA_Gritta_FindLostHusb_Help_01_16");	//Hmmm... Je pravda, že v mém snu měl Brandik nějaké divné oblečení.
-	AI_Output(self,other,"DIA_Gritta_FindLostHusb_Help_01_17");	//Viděla jsem ho i na nějakých ciznicích u moře.
+	AI_Output(self,other,"DIA_Gritta_FindLostHusb_Help_01_16");	//Hmmm... Je pravda, že v mém snu měl Brendik nějaké divné oblečení.
+	AI_Output(self,other,"DIA_Gritta_FindLostHusb_Help_01_17");	//Viděla jsem ho i na nějakých cizincích u moře.
 	AI_Output(self,other,"DIA_Gritta_FindLostHusb_Help_01_19");	//Nicméně tomu stejně nemůžu uvěřit...
 	AI_Output(other,self,"DIA_Gritta_FindLostHusb_Help_01_22");	//Jestli je opravdu pirát, tak vím, kde ho hledat.
 	AI_Output(self,other,"DIA_Gritta_FindLostHusb_Help_01_25");	//Dobře, děkuji ti.
@@ -549,7 +549,7 @@ func void dia_gritta_findlosthusbdone_info()
 	AI_Output(self,other,"DIA_Gritta_FindLostHusbDone_01_05");	//Nemožné, kdo by to řekl!
 	AI_Output(self,other,"DIA_Gritta_FindLostHusbDone_01_06");	//Můj sen byl pravda.
 	AI_Output(other,self,"DIA_Gritta_FindLostHusbDone_01_07");	//To byl, ale nemyslím si, že se k tobě vrátí...
-	AI_Output(self,other,"DIA_Gritta_FindLostHusbDone_01_08");	//No, s tím jsem nepočítala... Je to škoda
+	AI_Output(self,other,"DIA_Gritta_FindLostHusbDone_01_08");	//No, s tím jsem nepočítala... Je to škoda.
 	AI_Output(self,other,"DIA_Gritta_FindLostHusbDone_01_09");	//Hlavně, že je v pořádku - to mi stačí ke štěstí.
 	AI_Output(self,other,"DIA_Gritta_FindLostHusbDone_01_10");	//Jsem ti vděčná za ty dobré zprávy!
 	MIS_FINDLOSTHUSB = LOG_SUCCESS;
@@ -592,7 +592,7 @@ func void dia_gritta_elvrichgritta_info()
 	AI_Output(other,self,"DIA_Gritta_ElvrichGritta_01_07");	//Pro příklad třeba Elvrich!
 	AI_Output(self,other,"DIA_Gritta_ElvrichGritta_01_12");	//Ano... Je velmi krásný a je to sympatický, hodný člověk.
 	AI_Output(other,self,"DIA_Gritta_ElvrichGritta_01_13");	//To je zajímavé! Elvrich na tebe nemůže přestat myslet!
-	AI_Output(self,other,"DIA_Gritta_ElvrichGritta_01_16");	//Ale... Ale jak je to možné? Proč mi nidy nic neřekl?!
+	AI_Output(self,other,"DIA_Gritta_ElvrichGritta_01_16");	//Ale... Ale jak je to možné? Proč mi nikdy nic neřekl?!
 	AI_Output(other,self,"DIA_Gritta_ElvrichGritta_01_17");	//Jen se trochu bojí, jestli by ses mu nevysmála.
 	AI_Output(self,other,"DIA_Gritta_ElvrichGritta_01_24");	//Myslím, že ne. Naopak.
 	AI_Output(other,self,"DIA_Gritta_ElvrichGritta_01_27");	//Prostě si myslím, že Elvrich ti bude něco chtít říci.

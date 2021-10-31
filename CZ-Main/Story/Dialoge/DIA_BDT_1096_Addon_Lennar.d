@@ -110,7 +110,7 @@ func void DIA_Addon_Lennar_Attentat_Info()
 	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_03");	//(nadšeně) Tutově je za tím Emilio!
 	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_04");	//(hořečně) Vždy utíkal do dolu jako šílenec a pak kopal jako krtek.
 	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_05");	//Ale od toho pokusu o vraždu jen sedí na lavičce a nepohne se ani o píď.
-	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_06");	// To je ono! Aby mohl do dolu, musel mít červený kámen od Estebana.
+	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_06");	//To je ono! Aby mohl do dolu, musel mít červený kámen od Estebana.
 	AI_Output(self,other,"DIA_Addon_Lennar_ATTENTAT_01_07");	//(šeptá) Jak se tak dívám do jeho očí, vsadím se, že nebude vzdorovat dlouho.
 	B_LogEntry(Topic_Addon_Esteban,"Lennar podezřívá Emilia, protože se Estebanovi vyhýbá.");
 };

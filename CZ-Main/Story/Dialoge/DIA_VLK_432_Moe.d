@@ -362,12 +362,12 @@ func void dia_moe_moebored_info()
 	if(MOEISBEATEN == TRUE)
 	{
 		B_GivePlayerXP(100);
-		AI_Output(other,self,"DIA_Moe_MoeBored_01_07");	//Pak si na ten tvůk život vydělávej někde jinde!
+		AI_Output(other,self,"DIA_Moe_MoeBored_01_07");	//Pak si na ten svůj život vydělávej někde jinde!
 		AI_Output(other,self,"DIA_Moe_MoeBored_01_08");	//Jinak ti budu nucen znovu udělit lekci slušného chování.
 		AI_Output(self,other,"DIA_Moe_MoeBored_01_11");	//No jo, jo... (bojácně) Všemu rozumím, jen se tak nečerti.
 		AI_Output(self,other,"DIA_Moe_MoeBored_01_12");	//Jestli ti to udělá radost, půjdu jinam.
 		AI_Output(self,other,"DIA_Moe_MoeBored_01_13");	//A tady už nepůjdu!
-		B_LogEntry(TOPIC_MOEBORED,"Moe mi slíbil, že už nebude obtěžovat Kardifovi zákazníky.");
+		B_LogEntry(TOPIC_MOEBORED,"Moe mi slíbil, že už nebude obtěžovat Kardifovy zákazníky.");
 		MOEISAWAYFROMTAVERNE = TRUE;
 		AI_StopProcessInfos(self);
 		Npc_ExchangeRoutine(self,"AwayFromTaverne");
@@ -379,7 +379,7 @@ func void dia_moe_moebored_info()
 		AI_Output(other,self,"DIA_Moe_MoeBored_01_18");	//Jinak ti budu muset udělit lekci slušného chování.
 		AI_Output(self,other,"DIA_Moe_MoeBored_01_19");	//CO?! Ty by ses mě odvážil napadnout?!
 		AI_Output(self,other,"DIA_Moe_MoeBored_01_20");	//No dobrá! Já už ti ukážu.
-		B_LogEntry(TOPIC_MOEBORED,"Jak to vypadá, měl bych Moea naučit dobrým mravům.");
+		B_LogEntry(TOPIC_MOEBORED,"Jak to vypadá, měl bych Moea naučit slušným mravům.");
 		MOEATTACKME = TRUE;
 		AI_StopProcessInfos(self);
 		B_Attack(self,other,AR_NONE,1);
@@ -413,7 +413,7 @@ func void dia_moe_moeboreddone_info()
 	AI_Output(self,other,"DIA_Moe_MoeBoredDone_01_02");	//No jo, jo... (bojácně) Všemu rozumím, jen se tak nečerti.
 	AI_Output(self,other,"DIA_Moe_MoeBoredDone_01_03");	//Jestli ti to udělá radost, půjdu jinam.
 	AI_Output(self,other,"DIA_Moe_MoeBoredDone_01_04");	//A tady už nepůjdu!
-	B_LogEntry(TOPIC_MOEBORED,"Moe my slíbil, že už nebude obtěžovat Kardifovi zákazníky.");
+	B_LogEntry(TOPIC_MOEBORED,"Moe mi slíbil, že už nebude obtěžovat Kardifovy zákazníky.");
 	MOEISAWAYFROMTAVERNE = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"AwayFromTaverne");

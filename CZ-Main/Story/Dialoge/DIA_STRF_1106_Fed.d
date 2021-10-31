@@ -43,7 +43,7 @@ func int DIA_Fed_HALLO_Condition()
 func void DIA_Fed_HALLO_Info()
 {
 	AI_Output(self,other,"DIA_Fed_HALLO_08_00");	//Co ode mě chceš? Nikam nejdu!
-	AI_Output(other,self,"DIA_Fed_HALLO_15_01");	//Klídek, v pohodě - nikdo po tobě nechce, aby někam chodil.
+	AI_Output(other,self,"DIA_Fed_HALLO_15_01");	//Klídek, v pohodě - nikdo po tobě nechce, abys někam chodil.
 	AI_Output(self,other,"DIA_Fed_HALLO_08_02");	//Díky Innosovi. Však víš, během několika posledních dní opustilo pár chlapů tábor - a nikdo z nich se nevrátil.
 	AI_Output(self,other,"DIA_Fed_HALLO_08_03");	//Všechny je sežrali chňapavci. Ale mě ne. Prostě tady zůstanu do tý doby, než to skončí.
 };
@@ -71,7 +71,7 @@ func int DIA_Fed_Snapper_Condition()
 func void DIA_Fed_Snapper_Info()
 {
 	AI_Output(other,self,"DIA_Fed_Snapper_15_00");	//Co víš o chňapavcích?
-	AI_Output(self,other,"DIA_Fed_Snapper_08_01");	//Bilgot je v noci vídá. Několik z nich jich je dole u jezírka pod tmavou věží.
+	AI_Output(self,other,"DIA_Fed_Snapper_08_01");	//Bilgot je v noci vídá. Několik z nich je dole u jezírka pod tmavou věží.
 	AI_Output(self,other,"DIA_Fed_Snapper_08_02");	//Ostatní jsou přímo nad náma - nahoře na skále. Jen čekají, až se úplně vyčerpáme.
 	AI_Output(self,other,"DIA_Fed_Snapper_08_03");	//Jsme tady v pasti. Brzo napadnou tábor - a udělají si krvavé hody...
 	AI_Output(other,self,"DIA_Fed_Snapper_15_04");	//Aha.

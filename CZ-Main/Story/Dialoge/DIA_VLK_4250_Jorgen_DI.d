@@ -28,7 +28,7 @@ instance DIA_Jorgen_DI_Hallo(C_Info)
 	condition = DIA_Jorgen_DI_Hallo_Condition;
 	information = DIA_Jorgen_DI_Hallo_Info;
 	permanent = TRUE;
-	description = "Všechno v porádku?";
+	description = "Všechno v pořádku?";
 };
 
 
@@ -45,11 +45,11 @@ func void DIA_Jorgen_DI_Hallo_Info()
 	AI_Output(other,self,"DIA_Jorgen_DI_Hallo_15_00");	//Všechno v pořádku?
 	if(ORkSturmDI == FALSE)
 	{
-		AI_Output(self,other,"DIA_Jorgen_DI_Hallo_07_01");	//V pohodě- dokud všechna ta monstra nepřijdu blíže...
+		AI_Output(self,other,"DIA_Jorgen_DI_Hallo_07_01");	//V pohodě - dokud všechna ta monstra nepřijdou blíže...
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jorgen_DI_Hallo_07_02");	//Další útok skřetů nepřežijem. Tak šup šup- potřebuješ se odtud dostat.
+		AI_Output(self,other,"DIA_Jorgen_DI_Hallo_07_02");	//Další útok skřetů nepřežijeme. Tak šup šup - potřebujeme se odtud dostat.
 		B_StartOtherRoutine(Jorgen_DI,"Start");
 	};
 	AI_StopProcessInfos(self);
@@ -63,7 +63,7 @@ instance DIA_Jorgen_DI_UndeadDragonDead(C_Info)
 	condition = DIA_Jorgen_DI_UndeadDragonDead_Condition;
 	information = DIA_Jorgen_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
-	description = "Nepřitel je mrtev.";
+	description = "Nepřítel je mrtev.";
 };
 
 
@@ -77,11 +77,11 @@ func int DIA_Jorgen_DI_UndeadDragonDead_Condition()
 
 func void DIA_Jorgen_DI_UndeadDragonDead_Info()
 {
-	AI_Output(other,self,"DIA_Jorgen_DI_UndeadDragonDead_15_00");	//Nepřitel je mrtev.
-	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_07_01");	//To jsou dobré spravy. Doufám, že už nic na tomto ostrove nepotřebujeme?
+	AI_Output(other,self,"DIA_Jorgen_DI_UndeadDragonDead_15_00");	//Nepřítel je mrtev.
+	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_07_01");	//To jsou dobré zprávy. Doufám, že už nic na tomto ostrově nepotřebujeme?
 	Info_ClearChoices(DIA_Jorgen_DI_UndeadDragonDead);
-	Info_AddChoice(DIA_Jorgen_DI_UndeadDragonDead,"Počkej chvili.",DIA_Jorgen_DI_UndeadDragonDead_moment);
-	Info_AddChoice(DIA_Jorgen_DI_UndeadDragonDead,"Vše. Mužeme se vydat na cestu.",DIA_Jorgen_DI_UndeadDragonDead_over);
+	Info_AddChoice(DIA_Jorgen_DI_UndeadDragonDead,"Počkej chvíli.",DIA_Jorgen_DI_UndeadDragonDead_moment);
+	Info_AddChoice(DIA_Jorgen_DI_UndeadDragonDead,"Jo, všechno je v pořadku.",DIA_Jorgen_DI_UndeadDragonDead_over);
 };
 
 func void DIA_Jorgen_DI_UndeadDragonDead_moment()
@@ -94,9 +94,9 @@ func void DIA_Jorgen_DI_UndeadDragonDead_moment()
 func void DIA_Jorgen_DI_UndeadDragonDead_over()
 {
 	CAPITANORDERDIAWAY = TRUE;
-	AI_Output(other,self,"DIA_Jorgen_DI_UndeadDragonDead_over_15_00");	//Jo, všecho je v pořadku. Jedeme.
-	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_over_07_01");	//Excelentní! Zvědnout plachty.
-	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_over_07_02");	//Ty se bež vyspat - v kapitánově kajute je pro tebe pňipravená postel.
+	AI_Output(other,self,"DIA_Jorgen_DI_UndeadDragonDead_over_15_00");	//Jo, všechno je v pořadku. Jedeme.
+	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_over_07_01");	//Excelentní! Zvednout kotvu, napnout plachty.
+	AI_Output(self,other,"DIA_Jorgen_DI_UndeadDragonDead_over_07_02");	//Ty se běž vyspat - v kapitánově kajutě je pro tebe připravena postel.
 	AI_StopProcessInfos(self);
 };
 

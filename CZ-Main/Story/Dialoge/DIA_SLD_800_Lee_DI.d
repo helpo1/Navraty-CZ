@@ -157,7 +157,7 @@ func void DIA_Lee_DI_Teach_2H_5()
 {
 	if(B_TeachFightTalentPercent(self,other,NPC_TALENT_2H,5,100))
 	{
-		AI_Output(self,other,"DIA_Lee_DI_Teach_2H_5_04_00");	//Silnější úder je ti k ničemu když netrefíš cíl. Snaž se ho použit jen když si jseš jistý že uspěješ.
+		AI_Output(self,other,"DIA_Lee_DI_Teach_2H_5_04_00");	//Silnější úder je ti k ničemu když netrefíš cíl. Snaž se ho použit jen když si seš jistý, že uspěješ.
 	};
 	Info_ClearChoices(DIA_Lee_DI_Teach);
 	Info_AddChoice(DIA_Lee_DI_Teach,Dialog_Back,DIA_Lee_DI_Teach_Back);

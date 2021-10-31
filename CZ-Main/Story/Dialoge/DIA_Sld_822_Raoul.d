@@ -717,7 +717,7 @@ instance DIA_Sld_822_Raoul_Game(C_Info)
 	nr = 3;
 	condition = DIA_Sld_822_Raoul_Game_condition;
 	information = DIA_Sld_822_Raoul_Game_info;
-	description = "Říká se že dobře hraješ kostky.";
+	description = "Říká se, že dobře hraješ kostky.";
 };
 
 func int DIA_Sld_822_Raoul_Game_condition()
@@ -730,10 +730,10 @@ func int DIA_Sld_822_Raoul_Game_condition()
 
 func void DIA_Sld_822_Raoul_Game_info()
 {
-	AI_Output(other,self,"DIA_Sld_822_Raoul_Game_01_00");	//Říká se že dobře hraješ kostky.
+	AI_Output(other,self,"DIA_Sld_822_Raoul_Game_01_00");	//Říká se, že dobře hraješ kostky.
 	AI_Output(self,other,"DIA_Sld_822_Raoul_Game_01_01");	//Dobře?! To je slabé slovo! Jsem nejlepší hráč v sousedství.
-	AI_Output(other,self,"DIA_Sld_822_Raoul_Game_01_02");	//Možná kdybys mi mohl ukázat svoje dovednosi.
-	AI_Output(self,other,"DIA_Sld_822_Raoul_Game_01_03");	//Neříkej pak že jsem tě nevaroval.
+	AI_Output(other,self,"DIA_Sld_822_Raoul_Game_01_02");	//Možná kdybys mi mohl ukázat svoje dovednosti.
+	AI_Output(self,other,"DIA_Sld_822_Raoul_Game_01_03");	//Neříkej pak, že jsem tě nevaroval.
 	RaoulPlayResult = 300;
 	Menu_WriteInt("AST","SysTimer04",0);
 };

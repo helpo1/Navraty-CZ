@@ -49,7 +49,7 @@ func void DIA_Addon_RoastPirate_GimmeGrog_Info()
 	AI_Output(self,other,"DIA_Addon_PIR_6_GimmeGrog_06_01");	//Hej ty, dáš mi grog?
 	Log_CreateTopic(TOPIC_Addon_RoastGrog,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_RoastGrog,LOG_Running);
-	B_LogEntry(TOPIC_Addon_RoastGrog,"Pirát u táborového ohně nutně potřebují grog.");
+	B_LogEntry(TOPIC_Addon_RoastGrog,"Pirát u táborového ohně nutně potřebuje grog.");
 	Info_ClearChoices(DIA_Addon_RoastPirate_GimmeGrog);
 	Info_AddChoice(DIA_Addon_RoastPirate_GimmeGrog,"Ne, nic nemám.",DIA_Addon_RoastPirate_GimmeGrog_DontHaveAny);
 	if(Npc_HasItems(other,ItFo_Addon_Grog) >= 1)

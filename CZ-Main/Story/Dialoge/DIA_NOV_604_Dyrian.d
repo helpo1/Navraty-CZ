@@ -224,7 +224,7 @@ func void DIA_Dyrian_Scroll_Yes()
 	MIS_HelpDyrian = LOG_Running;
 	Log_CreateTopic(Topic_DyrianDrin,LOG_MISSION);
 	Log_SetTopicStatus(Topic_DyrianDrin,LOG_Running);
-	B_LogEntry(Topic_DyrianDrin,"Dirian mi dal svitek spánku. Až se stanu mágem, chce, abych ho nechal v klášteře.");
+	B_LogEntry(Topic_DyrianDrin,"Dyrian mi dal svitek spánku. Až se stanu mágem, chce, abych ho nechal v klášteře.");
 	Info_ClearChoices(DIA_Dyrian_Scroll);
 };
 
@@ -387,7 +387,7 @@ func void DIA_Dyrian_Kneipe_Gold()
 func void DIA_Dyrian_Kneipe_CanExplain()
 {
 	AI_Output(other,self,"DIA_Dyrian_Kneipe_CanExplain_15_00");	//Můžu to vysvětlit.
-	AI_Output(self,other,"DIA_Dyrian_Kneipe_CanExplain_13_01");	//Nepotřebuji tvé vysvětlení
+	AI_Output(self,other,"DIA_Dyrian_Kneipe_CanExplain_13_01");	//Nepotřebuji tvé vysvětlení.
 	AI_Output(self,other,"DIA_Dyrian_Kneipe_CanExplain_13_02");	//Lžeš pokaždé, když otevřeš tvá špinavá ústa. Nech mě. 
 	AI_StopProcessInfos(self);
 };

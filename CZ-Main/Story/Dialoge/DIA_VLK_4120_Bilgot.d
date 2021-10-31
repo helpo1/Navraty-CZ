@@ -99,7 +99,7 @@ func void DIA_Bilgot_Job_Info()
 	AI_Output(self,other,"DIA_Bilgot_Job_05_02");	//Měl jsem radši zůstat doma se svou starou. Nebylo to sice o moc lepší, ale aspoň tam bylo něco pořádného k jídlu.
 	AI_Output(self,other,"DIA_Bilgot_Job_05_03");	//A nyní jsem všechno, co zbylo z Fajethových ozbrojenců.
 	AI_Output(self,other,"DIA_Bilgot_Job_05_04");	//Jak jsem měl vědět, že se tahle výprava nevrátí?
-	AI_Output(self,other,"DIA_Bilgot_Job_05_05");	//Muj přítel Olav se vypařil. Možná mu to vyšlo...
+	AI_Output(self,other,"DIA_Bilgot_Job_05_05");	//Můj přítel Olav se vypařil. Možná mu to vyšlo...
 };
 
 
@@ -186,7 +186,7 @@ instance DIA_Bilgot_TAKEYOUWITHME(C_Info)
 	condition = DIA_Bilgot_TAKEYOUWITHME_Condition;
 	information = DIA_Bilgot_TAKEYOUWITHME_Info;
 	permanent = FALSE;
-	description = "(Dodržet slib)";
+	description = "(dodržet slib)";
 };
 
 
@@ -373,7 +373,7 @@ func int DIA_Bilgot_NW_LetztePause_Condition()
 func void DIA_Bilgot_NW_LetztePause_Info()
 {
 	AI_Output(other,self,"DIA_Biff_HALLO_15_00");	//Co tady děláš?
-	AI_Output(self,other,"DIA_Bilgot_LetztePause_05_01");	//Už nemužu dál. Nech mě na chvíli vydechnout. Já to zvládnu. Neboj se!
+	AI_Output(self,other,"DIA_Bilgot_LetztePause_05_01");	//Už nemůžu dál. Nech mě na chvíli vydechnout. Já to zvládnu. Neboj se!
 	AI_Output(other,self,"DIA_Bilgot_LetztePause_15_02");	//Když to říkáš.
 	AI_Output(self,other,"DIA_Bilgot_LetztePause_05_03");	//Jen malou přestávku.
 };
@@ -401,8 +401,8 @@ func void DIA_Bilgot_NW_FREEDOM_info()
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Bilgot_NW_FREEDOM_01_00");	//Jak dlouho tady chceš sedět?
 	AI_Output(self,other,"DIA_Bilgot_NW_FREEDOM_01_01");	//Nevím... Je mi to jedno. Stejně nemám kam jít.
-	AI_Output(other,self,"DIA_Bilgot_NW_FREEDOM_01_02");	//Tak se pojď do tábora! Najdeš tam všechno co potřebuješ - přístřeší, jídlo a pár chvil na odpočinek.
-	AI_Output(self,other,"DIA_Bilgot_NW_FREEDOM_01_03");	//Budu sedět tady a čekat, než mě nějaká příšera sežere.
+	AI_Output(other,self,"DIA_Bilgot_NW_FREEDOM_01_02");	//Tak pojď do tábora! Najdeš tam všechno co potřebuješ - přístřeší, jídlo a pár chvil na odpočinek.
+	AI_Output(self,other,"DIA_Bilgot_NW_FREEDOM_01_03");	//Nebudu sedět tady a čekat, než mě nějaká příšera sežere.
 	AI_Output(self,other,"DIA_Bilgot_NW_FREEDOM_01_04");	//Ach jo, máš pravdu. Pojďme.
 	AI_Output(other,self,"DIA_Bilgot_NW_FREEDOM_01_05");	//Následuj mě.
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
@@ -434,7 +434,7 @@ func void DIA_Bilgot_NW_finallyintower_info()
 	AI_Output(other,self,"DIA_Bilgot_NW_FinallyInTower_01_00");	//Tak jsme tady.
 	AI_Output(self,other,"DIA_Bilgot_NW_FinallyInTower_01_01");	//To je tvůj tábor? Působivé...
 	AI_Output(other,self,"DIA_Bilgot_NW_FinallyInTower_01_02");	//Zde se můžeš cítit v bezpečí.
-	AI_Output(other,self,"DIA_Bilgot_NW_FinallyInTower_01_03");	//Zatím si jdi odpočnout k ohni. A pak začni makat!
+	AI_Output(other,self,"DIA_Bilgot_NW_FinallyInTower_01_03");	//Zatím si jdi odpočinout k ohni. A pak začni makat!
 
 	if(NICLASRECRUITEDDT == TRUE)
 	{

@@ -220,7 +220,7 @@ func void DIA_Addon_Myxir_GeistTafel_Khardimon()
 func void DIA_Addon_Myxir_GeistTafel_psi()
 {
 	AI_Output(other,self,"DIA_Addon_Myxir_GeistTafel_psi_15_00");	//Bratrstvo Spáče nešířilo jenom lži.
-	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_psi_12_01");	//Nebylo to jen to o čem mluvili, co mě utrvdilo v nepravdivosti, ale slova která použili.
+	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_psi_12_01");	//Nebylo to jen to o čem mluvili, co mě utvrdilo v nepravdivosti, ale slova která použili.
 	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_psi_12_02");	//Řeči členů Bratrstva byly zmatené a nepochopitelné. Jejich mysli byly zatemněny trávou z bažin, kterou kouřili bez přestávky.
 	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_psi_12_03");	//Ale text napsaný na této tabulce byl napsán rozvážným a rozumným člověkem. A to mě utvrzuje v pravdivosti jeho slov.
 };
@@ -243,7 +243,7 @@ func void DIA_Addon_Myxir_GeistTafel_wie()
 	B_GiveInvItems(self,other,ItWr_Addon_SUMMONANCIENTGHOST,1);
 	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_wie_12_03");	//Toť vše. Teď už jen musíš najít jeho hrob.
 	AI_Output(self,other,"DIA_Addon_Myxir_GeistTafel_wie_12_04");	//Hodně štěstí synu!
-	B_LogEntry(TOPIC_Addon_Quarhodron,"Myxir chce, abych probudil ducha pradávného krále válečníků Quadrohona a požádal ho o radu. Dal mi dokument s magickou formulí, kterou mám přečíst v Quarhodronově hrobce, která se nachází na západě.");
+	B_LogEntry(TOPIC_Addon_Quarhodron,"Myxir chce, abych probudil ducha pradávného krále válečníků Quarhodrona a požádal ho o radu. Dal mi dokument s magickou formulí, kterou mám přečíst v Quarhodronově hrobce, která se nachází na západě.");
 	Info_ClearChoices(DIA_Addon_Myxir_GeistTafel);
 };
 

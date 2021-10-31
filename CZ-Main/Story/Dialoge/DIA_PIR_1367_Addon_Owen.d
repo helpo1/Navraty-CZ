@@ -158,7 +158,7 @@ instance DIA_Addon_Owen_Henry(C_Info)
 	condition = DIA_Addon_Owen_Henry_Condition;
 	information = DIA_Addon_Owen_Henry_Info;
 	permanent = TRUE;
-	description = "Henry čeká na doručení dřava na palisádu.";
+	description = "Henry čeká na doručení dřeva na palisádu.";
 };
 
 
@@ -173,7 +173,7 @@ func int DIA_Addon_Owen_Henry_Condition()
 
 func void DIA_Addon_Owen_Henry_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Owen_Henry_15_00");	//Henry čeká na doručení dřava na palisádu.
+	AI_Output(other,self,"DIA_Addon_Owen_Henry_15_00");	//Henry čeká na doručení dřeva na palisádu.
 	if(MIS_Owen_FindMalcom != LOG_SUCCESS)
 	{
 		AI_Output(self,other,"DIA_Addon_Owen_Henry_13_01");	//První chci vědět, co se stalo s mým kámošem Malcomem.

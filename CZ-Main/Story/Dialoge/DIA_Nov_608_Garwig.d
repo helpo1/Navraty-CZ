@@ -228,7 +228,7 @@ func void DIA_Garwig_SLEEP_THIEF()
 {
 	AI_Output(other,self,"DIA_Garwig_SLEEP_THIEF_15_00");	//Proč jsou ty artefakty hlídány? Bojíte se, že je někdo ukradne?
 	AI_Output(self,other,"DIA_Garwig_SLEEP_THIEF_06_01");	//To je ale bláznivý nápad, kde jsi to vzal?
-	AI_Output(self,other,"DIA_Garwig_SLEEP_THIEF_06_02");	//Pouze ti sloužící Innoosovi smí vstoupit do kláštera. A nikdo z nich by tuto myšlenku nevzal za svou. 
+	AI_Output(self,other,"DIA_Garwig_SLEEP_THIEF_06_02");	//Pouze ti sloužící Innosovi smí vstoupit do kláštera. A nikdo z nich by tuto myšlenku nevzal za svou. 
 };
 
 func void DIA_Garwig_SLEEP_NEVER()

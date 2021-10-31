@@ -42,7 +42,7 @@ func void DIA_Addon_Monty_NW_Hi_Info()
 	B_GivePlayerXP(50);
 	AI_Output(other,self,"DIA_Addon_Monty_NW_Hi_15_00");	//Tak ses vrátil do práce?
 	AI_Output(self,other,"DIA_Addon_Monty_NW_Hi_08_01");	//Hejskové, nedali jediné prkno na správné místo, když jsem byl pryč. Budu se muset vrátit k rýsovacímu prknu a probrat to, co jsem zanechal.
-	AI_Output(other,self,"DIA_Addon_Monty_NW_Hi_15_02");	//Jasně. Nenech mě zdržet tě.
+	AI_Output(other,self,"DIA_Addon_Monty_NW_Hi_15_02");	//Jasně. Nebudu tě zdržovat.
 	AI_Output(self,other,"DIA_Addon_Monty_NW_Hi_08_03");	//Jasná věc. Příjemnou cestu.
 };
 

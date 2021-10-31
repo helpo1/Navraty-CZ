@@ -71,5 +71,5 @@ func int DIA_PAL_263_PERM_OTH_Condition()
 func void DIA_PAL_263_PERM_OTH_Info()
 {
 	AI_Output(other,self,"DIA_PAL_263_PERM_OTH_15_00");	//Jaká je situace? 
-	AI_Output(self,other,"DIA_PAL_263_PERM_OTH_04_01");	//Máme ji pod kontrolou. Žádné obavy, mi si poradíme.
+	AI_Output(self,other,"DIA_PAL_263_PERM_OTH_04_01");	//Máme ji pod kontrolou. Žádné obavy, my si poradíme.
 };

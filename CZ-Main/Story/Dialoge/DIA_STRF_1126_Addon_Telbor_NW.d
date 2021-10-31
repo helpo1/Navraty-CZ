@@ -80,7 +80,7 @@ func void DIA_Addon_Telbor_NW_Hi_Info()
 
 	if(!Npc_IsDead(Egill) && !Npc_IsDead(Ehnim))
 	{
-		AI_Output(self,other,"DIA_Addon_Telbor_NW_Hi_12_02");	//Hlavně když teď dělám s těmito dvěma šílenými bratry. Chlape, myslíš, že to bylo opravdu tak špatné u těch banditů?.
+		AI_Output(self,other,"DIA_Addon_Telbor_NW_Hi_12_02");	//Hlavně když teď dělám s těmito dvěma šílenými bratry. Chlape, myslíš, že to bylo opravdu tak špatné u těch banditů?
 	};
 };
 
