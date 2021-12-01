@@ -49,7 +49,7 @@ func void dia_ruen_hello_info()
 	AI_Output(self,other,"DIA_Ruen_Hello_01_03");	//Ano, brácho. Lov tady je čím dál, tím nebezpečnější.
 	AI_Output(self,other,"DIA_Ruen_Hello_01_04");	//Je to jakoby ses tím potvorám vrhal přímo do tlamy.
 	AI_Output(self,other,"DIA_Ruen_Hello_01_05");	//A v noci máš přímo husí kůži!
-	AI_Output(self,other,"DIA_Ruen_Hello_01_06");	//Jenom v téhle jeskyni se můžeš cítit více-jméně bezpečne.
+	AI_Output(self,other,"DIA_Ruen_Hello_01_06");	//Jenom v téhle jeskyni se můžeš cítit víceméně bezpečně.
 	AI_Output(self,other,"DIA_Ruen_Hello_01_07");	//Život tady není procházka růžovou zahradou!
 	AI_Output(other,self,"DIA_Ruen_Hello_01_08");	//A co lovíte?
 	AI_Output(self,other,"DIA_Ruen_Hello_01_09");	//Nejvíce wargy. Řeknu ti, ďábelsky nebezpečné monstra!

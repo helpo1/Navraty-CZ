@@ -77,7 +77,7 @@ func void DIA_Addon_Sancho_HI_Info()
 	AI_Output(self,other,"DIA_Addon_Sancho_HI_06_00");	//Do prdele, další nováček. (směje se) Taky kvůli zlatu, co?
 	AI_Output(other,self,"DIA_Addon_Sancho_HI_15_01");	//Zlato?
 	AI_Output(self,other,"DIA_Addon_Sancho_HI_06_02");	//(směje se) Nedělej si ze mě srandu!
-	AI_Output(self,other,"DIA_Addon_Sancho_HI_06_03");	//Všichni nováčči, kteří sem přišli se chtějí dostat do dolu.
+	AI_Output(self,other,"DIA_Addon_Sancho_HI_06_03");	//Všichni nováčci, kteří sem přišli se chtějí dostat do dolu.
 	AI_Output(self,other,"DIA_Addon_Sancho_HI_06_04");	//Ale nemysli si, že je to tak jednoduché!
 	if(SC_KnowsRavensGoldmine == FALSE)
 	{
@@ -112,11 +112,11 @@ func void DIA_Addon_Sancho_Lager_Info()
 	if(!Npc_IsDead(Franco))
 	{
 		AI_Output(self,other,"DIA_Addon_Sancho_Lager_06_02");	//Ale pokud se chceš dostat do dolu, budeš muset jít přes Franca.
-		AI_Output(self,other,"DIA_Addon_Sancho_Lager_06_03");	//Očekává, že všichni nováčči tady budou prvně chvíli otročit.
+		AI_Output(self,other,"DIA_Addon_Sancho_Lager_06_03");	//Očekává, že všichni nováčci tady budou prvně chvíli otročit.
 	};
 	Log_CreateTopic(Topic_Addon_Franco,LOG_MISSION);
 	Log_SetTopicStatus(Topic_Addon_Franco,LOG_Running);
-	B_LogEntry(Topic_Addon_Franco,"Všichni nováčči musí prvně pracovat v bažině, než dostanou přístup do dolu.");
+	B_LogEntry(Topic_Addon_Franco,"Všichni nováčci musí prvně pracovat v bažině, než dostanou přístup do dolu.");
 };
 
 
@@ -143,7 +143,7 @@ func int DIA_Addon_Sancho_Mine_Condition()
 func void DIA_Addon_Sancho_Mine_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Sancho_Mine_15_00");	//Řekni mi o dolu víc...
-	AI_Output(self,other,"DIA_Addon_Sancho_Mine_06_01");	//Dám ti doubrou radu : pokud se tam chceš dostat, buď za dobře s Francem. On je tady šéf.
+	AI_Output(self,other,"DIA_Addon_Sancho_Mine_06_01");	//Dám ti dobrou radu: pokud se tam chceš dostat, buď za dobře s Francem. On je tady šéf.
 	AI_Output(self,other,"DIA_Addon_Sancho_Mine_06_02");	//On rozhoduje kdo další vstoupí.
 	AI_Output(self,other,"DIA_Addon_Sancho_Mine_06_03");	//Ale pustí tě, pouze pokud se tady nebudeš flákat.
 	AI_Output(self,other,"DIA_Addon_Sancho_Mine_06_04");	//Takže běž za ním a nech si od něj zadat práci!
@@ -245,7 +245,7 @@ func void DIA_Addon_Sancho_Perm_Info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Addon_Sancho_Perm_06_03");	//A vyřídíls taky Carlose? Kámo, ty jsi pěknej zabiják! Ale mě nech na pokoji.
+			AI_Output(self,other,"DIA_Addon_Sancho_Perm_06_03");	//A vyřídils taky Carlose? Kámo, ty jsi pěknej zabiják! Ale mě nech na pokoji.
 		};
 		Comment_Franco = TRUE;
 	}

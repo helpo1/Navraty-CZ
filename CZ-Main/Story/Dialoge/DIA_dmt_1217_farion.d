@@ -66,13 +66,13 @@ func void dmt_1217_farion_hello_test()
 	Wld_PlayEffect("SFX_Circle",self,self,0,0,0,FALSE);
 	AI_PlayAni(self,"T_PRACTICEMAGIC5");
 	AI_Output(self,other,"DMT_1217_Farion_Hello_14");	//Hmmm... Jsi troufalý člověk!
-	AI_Output(self,other,"DMT_1217_Farion_Hello_15");	//Pojďmě se podívat jak ti tvá troufalost pomůže. Poslouchej pozorně... (povýšeně)
+	AI_Output(self,other,"DMT_1217_Farion_Hello_15");	//Pojďme se podívat jak ti tvá troufalost pomůže. Poslouchej pozorně... (povýšeně)
 	AI_Output(other,self,"DMT_1217_Farion_Hello_16");	//Ano, mistře.
 	AI_Output(self,other,"DMT_1217_Farion_Hello_17");	//Pravděpodobně víš, že Oheň může i tvořit i ničit... (děsivě) V našem případě ničit!
 	AI_Output(other,self,"DMT_1217_Farion_Hello_18");	//Co to má znamenat?!
 	AI_Output(self,other,"DMT_1217_Farion_Hello_19");	//To znamená, že mi budeš sloužit a jako nástroj posvátného vědění a svatého oltáře osudu mě uctíš životem jednoho smrtelníka.
 	AI_Output(other,self,"DMT_1217_Farion_Hello_20");	//To jako že mám někoho zabít?!
-	AI_Output(self,other,"DMT_1217_Farion_Hello_21");	//Ně jen tak někoho... (vážně) Není to jen tak obyčejný člověk!
+	AI_Output(self,other,"DMT_1217_Farion_Hello_21");	//Ne jen tak někoho... (vážně) Není to jen tak obyčejný člověk!
 	AI_Output(self,other,"DMT_1217_Farion_Hello_22");	//Vlastně to není tak docela člověk.
 	AI_Output(other,self,"DMT_1217_Farion_Hello_23");	//A kdo to teda je?!
 	AI_Output(self,other,"DMT_1217_Farion_Hello_24");	//Nyní je paladinem Innosovým a pokorným služebníkem bohů!... (ztěžka)

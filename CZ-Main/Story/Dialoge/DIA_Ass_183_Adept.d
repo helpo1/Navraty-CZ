@@ -139,7 +139,7 @@ func void DIA_Ass_183_Adept_TalkAboutJoin_Done_info()
 	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_06");	//Domluveno. Ptej se! Pokusím se ti odpovědět.
 	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_07");	//Takže, to co mě zajímá: jak se mistr Nrozas chová k mistru Tiamantovi?
 	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_08");	//No, jak... doteď se spolu moc nedohodli.
-	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_09");	//Po tom rozhovoru mistr Nrozas pravědpodobně skrývá velkou křivdu k mistru Tiamantovi.
+	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_09");	//Po tom rozhovoru mistr Nrozas pravděpodobně skrývá velkou křivdu k mistru Tiamantovi.
 	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_10");	//Přinejmenším mi to tak přijde, hlavně když si mistr Nrozas mumlá pod knírem, že mu to někdy vrátí.
 	AI_Output(self,other,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_11");	//No, nic víc už o tom nevím.
 	AI_Output(other,self,"DIA_Ass_183_Adept_TalkAboutJoin_Done_01_12");	//To mi stačí. Tady máš svůj tesák.

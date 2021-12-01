@@ -85,17 +85,17 @@ func void dia_brendik_findlosthusb_info()
 	AI_Output(other,self,"DIA_Brendik_FindLostHusb_01_06");	//Vypadá to, že se nějak bojíš své ženy!
 	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_07");	//Ona je prostě nesnesitelná! Má v hlavě jen peníze a oblečení!
 	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_08");	//'Brendiku kup mi nové šaty!', 'Brendiku chci klobouk!', 'Brendiku kup mi kožené boty'... Víš kolik to všechno stojí?!
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_09");	//Pracoval jsem tvrdě jak kůň a ona furt chtěla jen prachy, a pak si stěžovala poč si mě vůbec brala.
+	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_09");	//Pracoval jsem tvrdě jak kůň a ona furt chtěla jen prachy, a pak si stěžovala proč si mě vůbec brala.
 	AI_Output(other,self,"DIA_Brendik_FindLostHusb_01_10");	//Abych řekl pravdu tak se tvá žena vůbec nezměnila... Potkal jsem jí, protože dlužila jednomu obchodníkovi, pro kterýho jsem dělal.
 	AI_Output(other,self,"DIA_Brendik_FindLostHusb_01_11");	//Ale vypadala, že jí hodně chybíš, hlavně nevěděla, jestli žiješ nebo jsi mrtvý.
 	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_12");	//(sarkasticky) No samozřejmě! Její strýc Thorben ji asi nemohl koupit vše co chtěla!
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_13");	//Prostě jí řekni, že ji už nikdy neuvidím a stejne ona me. Taky jí řekni, že byl omyl, že jsem si ji vzal!
+	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_13");	//Prostě jí řekni, že ji už nikdy neuvidím a stejně ona mě. Taky jí řekni, že byl omyl, že jsem si ji vzal!
 	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_14");	//V Khorinisu jsem byl NIKDO! Tady jsem chlap. Vážím si kluků v táboře a kapitána Grega.
 	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_15");	//Nikdy se nevrátím ke svému starému životu!
-	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_16");	//Prostě ji řekni že jsem na živu a ať mi dá pokoj!
+	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_16");	//Prostě ji řekni, že jsem naživu a ať mi dá pokoj!
 	AI_Output(other,self,"DIA_Brendik_FindLostHusb_01_17");	//Řeknu jí to.
 	AI_Output(self,other,"DIA_Brendik_FindLostHusb_01_18");	//Bezva!
-	B_LogEntry(TOPIC_FINDLOSTHUSB,"Našel jsem Brendika. Vypadal velice znepokojen tím, že ho jeho žena hledá. A v žádném případě se nechce vrátit. Měl bych to povedet Gritte.");
+	B_LogEntry(TOPIC_FINDLOSTHUSB,"Našel jsem Brendika. Vypadal velice znepokojen tím, že ho jeho žena hledá. A v žádném případě se nechce vrátit. Měl bych to říct Grittě.");
 	BRENDIKNOTBACK = TRUE;
 };
 
@@ -153,7 +153,7 @@ func void dia_brendik_gotogreg_info()
 	AI_Output(self,other,"DIA_Brendik_GoToGreg_01_01");	//A co ode mě chce?!
 	AI_Output(other,self,"DIA_Brendik_GoToGreg_01_02");	//Abys pohnul prdelí a odklusal do tábora.
 	AI_Output(other,self,"DIA_Brendik_GoToGreg_01_03");	//Myslí si, že už se flákáš moc dlouho.
-	AI_Output(self,other,"DIA_Brendik_GoToGreg_01_04");	//Konečně bude nejaká zábava... Ty bažiny mě už nudí!
+	AI_Output(self,other,"DIA_Brendik_GoToGreg_01_04");	//Konečně bude nějaká zábava... Ty bažiny mě už nudí!
 	BRENDIKGOCAMP = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -182,7 +182,7 @@ func void dia_brendik_how_info()
 {
 	AI_Output(other,self,"DIA_Brendik_How_01_01");	//Co je s tebou?
 	AI_Output(self,other,"DIA_Brendik_How_01_02");	//Ale nic, jen jsem se trochu zamyslel!
-	AI_Output(self,other,"DIA_Brendik_How_01_03");	//Eh... Kdybychom tak měli svou loď! Tak bychom tu jen tak nečinně nesedeli.
+	AI_Output(self,other,"DIA_Brendik_How_01_03");	//Eh... Kdybychom tak měli svou loď! Tak bychom tu jen tak nečinně neseděli.
 };
 
 

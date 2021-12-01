@@ -74,9 +74,9 @@ func void dia_pal_91680_natan_udar_info()
 	AI_Output(other,self,"DIA_Pal_91680_Natan_Udar_01_00");	//Paladin Udar je opět s námi!
 	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_01");	//Naštěstí pro nás, ano... A přirozeně jsem šťastný, že se vrátil!
 	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_02");	//Pokud by padl, jen velmi obtížně bych tu skutečnost přijal.
-	AI_Output(other,self,"DIA_Pal_91680_Natan_Udar_01_03");	//Pak věřím, že tvůj slib je splněn
+	AI_Output(other,self,"DIA_Pal_91680_Natan_Udar_01_03");	//Pak věřím, že tvůj slib je splněn.
 	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_04");	//Obávám se, že ne úplně... (vážně) Ve skutečnosti jsem JÁ nehnul ani prstem!
-	AI_Output(other,self,"DIA_Pal_91680_Natan_Udar_01_05");	//Ale bojoval jsi se skřety v údolí, získal jsi čas, abych ho zachránil a bezpečně jsi ho dopravil pryč. Copak to nestačí?!
+	AI_Output(other,self,"DIA_Pal_91680_Natan_Udar_01_05");	//Ale bojoval jsi se skřety v údolí, získal jsi čas, abys ho zachránil a bezpečně jsi ho dopravil pryč. Copak to nestačí?!
 	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_06");	//Jistě... trochu... (smutný) Rozuměj, udělal jsem vše pro boj s těmi nestvůrami.
 	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_07");	//Ale abych řekl pravdu, je to jen součást mojich velkých povinností paladina...
 	AI_Output(self,other,"DIA_Pal_91680_Natan_Udar_01_08");	//A Udar mi zachránil život! A já bych mu to měl vrátit stejně a ne v menší míře.
@@ -181,7 +181,7 @@ func void dia_pal_91680_natan_whereudardone_info()
 {
 	B_GivePlayerXP(200);
 	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdarDone_01_00");	//Je dobře, že jsme tu včas... Ještě trochu a ta stvoření by ho zabila!
-	AI_Output(other,self,"DIA_Pal_91680_Natan_WhereUdarDone_01_01");	//Ale jak vidíš, vše se povedlo! Myslím, že teď jsi Udarovi konečně splatil svůj dluh - Právě jsi mu zachránili život.
+	AI_Output(other,self,"DIA_Pal_91680_Natan_WhereUdarDone_01_01");	//Ale jak vidíš, vše se povedlo! Myslím, že teď jsi Udarovi konečně splatil svůj dluh - právě jsi mu zachránili život.
 	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdarDone_01_02");	//Hmmm... Žije... Všechno se to semlelo tak rychle.
 	AI_Output(other,self,"DIA_Pal_91680_Natan_WhereUdarDone_01_03");	//Hlavní je, že jsi splatil svůj dluh, jak se to stalo už není důležité.
 	AI_Output(self,other,"DIA_Pal_91680_Natan_WhereUdarDone_01_04");	//No, máš pravdu... Díky za pomoc (úsměv) Doufám, že se znovu potkáme!

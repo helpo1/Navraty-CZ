@@ -71,7 +71,7 @@ func void DIA_Ass_184_Adept_hello_info()
 	AI_Output(other,self,"DIA_Ass_184_Adept_hello_01_23");	//Tady ti už nepomůžu. U někoho ji kup nebo vyměň.
 	AI_Output(self,other,"DIA_Ass_184_Adept_hello_01_24");	//Dobře, chápu. Zkusím udělat vše, co jsi mi poradil. 
 	TiamantNeedsSlaves = TRUE;
-	B_LogEntry(TOPIC_Intriges,"V jeskyni mistra Osaira jsem potkal novice Hoakina, který sní o tom stát se jeho muridem. Rozhodl jsem se mu pomoct s radou, jak by mohl převora zaujmout. Jestli to zvládne, bouducí murid mistra Osaira mi bude v budoucnu něco dlužit.");
+	B_LogEntry(TOPIC_Intriges,"V jeskyni mistra Osaira jsem potkal novice Hoakina, který sní o tom stát se jeho muridem. Rozhodl jsem se mu pomoct s radou, jak by mohl převora zaujmout. Jestli to zvládne, budoucí murid mistra Osaira mi bude v budoucnu něco dlužit.");
 	AI_StopProcessInfos(self);
 };
 

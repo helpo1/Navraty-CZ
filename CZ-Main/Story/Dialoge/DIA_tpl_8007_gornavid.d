@@ -154,7 +154,7 @@ func void dia_gornavid_abweisend_info()
 		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_09");	//Pokud potřebuješ něco v tomto směru něco přiučit, tak přijď za mnou.
 		AI_Output(self,other,"DIA_GorNaVid_Abweisend_01_10");	//Velice rád se podělím se svými zkušenostmi.
 		Log_CreateTopic(TOPIC_ADDON_TPLTEACHER,LOG_NOTE);
-		B_LogEntry(TOPIC_ADDON_TPLTEACHER,"Gor Na Vid me naučí střelbě z kuše.");
+		B_LogEntry(TOPIC_ADDON_TPLTEACHER,"Gor Na Vid mě naučí střelbě z kuše.");
 		GORNAVIDTEACH = TRUE;
 	}
 	else if(other.guild == GIL_NONE)

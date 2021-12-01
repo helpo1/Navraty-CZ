@@ -226,7 +226,7 @@ func void DIA_Randolph_GEGENWEN_Info()
 	AI_Output(other,self,"DIA_Randolph_GEGENWEN_15_00");	//Proti komu jsi hrál?
 	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_01");	//Proti Rukharovi, tomu starýmu budižkničemovi. Co vím, pokaždý mě porazil.
 	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_02");	//Ale mám takový nejasný tušení, že mi ten mizernej hajzl vždycky říznul pivo kořalkou.
-	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_03");	//Nejspíš ho má schovanej ve svý truhle. Ten všiváckej hajzl!
+	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_03");	//Nejspíš ji má schovanou ve svý truhle. Ten všiváckej hajzl!
 	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_04");	//Někdo by mu do tý jeho truhly měl nastrčit čistou vodu. Pak by toho mohl do piva přidávat, kolik by chtěl.
 	AI_Output(self,other,"DIA_Randolph_GEGENWEN_06_05");	//Kdybych tak měl dost peněz, abych si to s ním mohl rozdat ještě jednou.
 	B_LogEntry(TOPIC_Wettsaufen,"Randolph mi vyprávěl o Rukharovi a o soutěži v pití a také o tom, že už neměl dost peněz, aby s Rukharem změřil síly ještě jednou.");
@@ -394,7 +394,7 @@ func void DIA_Randolph_PERM_Info()
 			{
 				AI_Output(self,other,"DIA_Randolph_PERM_06_04");	//Jsem vážně na dně. Pokaždé, když přestanu pít, zabíjí mě kocovina.
 				AI_Output(self,other,"DIA_Randolph_PERM_06_05");	//Existuje lék, který mi může pomoct.
-				AI_Output(self,other,"DIA_Randolph_PERM_06_06");	//Sagitta, ta stará bylinkářka, už mi ho připravuje. Ale sám se tam teď nedostanu - všude jsou skřeti.
+				AI_Output(self,other,"DIA_Randolph_PERM_06_06");	//Sagitta, ta stará bylinkářka, mi ho už připravuje. Ale sám se tam teď nedostanu - všude jsou skřeti.
 			};
 			Log_CreateTopic(TOPIC_HealRandolph,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_HealRandolph,LOG_Running);

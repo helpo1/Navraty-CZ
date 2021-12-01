@@ -46,7 +46,7 @@ func void DIA_Ass_394_Adept_hello_info()
 
 	if(NrozasIsDead == FALSE)
 	{
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_06");	//Většinou sbírám vzácné byliny a ingridience pro mistra Nrozase.
+		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_06");	//Většinou sbírám vzácné byliny a ingredience pro mistra Nrozase.
 		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_07");	//Bohužel se v tomto údolí nenachází tolik velmi vzácných exemplářů.
 		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_08");	//Proto většinu času cestuji po celém ostrově.
 		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_09");	//Proč jsi mě vlastně hledal?
@@ -73,14 +73,14 @@ func void DIA_Ass_394_Adept_hello_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_26");	//Do nedávna jsem sbíral vzácné byliny a ingridence pro mistra Nrozase.
+		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_26");	//Do nedávna jsem sbíral vzácné byliny a ingredience pro mistra Nrozase.
 		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_27");	//Ale teď pracuju pro mistra Haniara. Plním pro něj různé práce.
 		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_28");	//Proč jsi mě vlastně hledal?
 		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_29");	//Mám pro tebe jednu nabídku.
 		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_30");	//Zajímavé, jakou?
 		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_31");	//Mistr Osair hledá nové lidi. Myslel jsem, že by tě to mohlo zajímat.
 		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_32");	//(arogantně) Mistr Osair? Hmmm. Bojím se, že jsi na špatné adrese, bratře.
-		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_33");	//Je to ta poslední věc, která mě na tomle světě zajímá.
+		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_33");	//Je to ta poslední věc, která mě na tomhle světě zajímá.
 		AI_Output(other,self,"DIA_Ass_394_Adept_hello_01_34");	//Jak to?
 		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_35");	//Protože nikdy nevíš, co od něj můžeš očekávat. Je dost chytrý a nepředvídatelný.
 		AI_Output(self,other,"DIA_Ass_394_Adept_hello_01_36");	//Nikdy jsem mu nevěřil - ani tobě to nedoporučuju.
@@ -118,7 +118,7 @@ func void DIA_Ass_394_Adept_GetPlant_info()
 	B_GiveInvItems(other,self,ITPL_SUPER_HERB,1);
 	Npc_RemoveInvItems(self,ITPL_SUPER_HERB,1);
 	AI_Output(self,other,"DIA_Ass_394_Adept_GetPlant_01_04");	//Skvěle! Splnil jsi svou část obchodu.
-	AI_Output(self,other,"DIA_Ass_394_Adept_GetPlant_01_05");	//Teď zbývá, abych já vyplnil tu svoju.
+	AI_Output(self,other,"DIA_Ass_394_Adept_GetPlant_01_05");	//Teď zbývá, abych já vyplnil tu mou.
 	AI_Output(self,other,"DIA_Ass_394_Adept_GetPlant_01_06");	//Proto můžeš říct mistru Osairovi, že od nyní jsem jeho člověk.
 	KudirGetTrollPlant = TRUE;
 	B_LogEntry(TOPIC_CareOsair,"Přinesl jsem Kudirovi trolí bobuli. Od této doby je člověk mistra Osaira.");

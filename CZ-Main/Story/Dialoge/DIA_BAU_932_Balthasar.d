@@ -129,7 +129,7 @@ func int DIA_Balthasar_AERGERMITNACHBARN_Condition()
 func void DIA_Balthasar_AERGERMITNACHBARN_Info()
 {
 	AI_Output(other,self,"DIA_Balthasar_AERGERMITNACHBARN_15_00");	//Co máš za problémy se sousedy?
-	AI_Output(self,other,"DIA_Balthasar_AERGERMITNACHBARN_05_01");	//Tráva na této části velkého pole je stará a chudá. Proto často pasu ovce na jiných velkých pastvinách ostatních farem.
+	AI_Output(self,other,"DIA_Balthasar_AERGERMITNACHBARN_05_01");	//Tráva na této části velkého pole je zakrnělá a suchá. Proto často pasu ovce na jiných velkých pastvinách ostatních farem.
 	AI_Output(self,other,"DIA_Balthasar_AERGERMITNACHBARN_05_02");	//Onarovi to nevadí, ale Bengar, majitel farmy položené na náhorní pastvině, prská pokaždé, když tam vidí moje ovce.
 	AI_Output(self,other,"DIA_Balthasar_AERGERMITNACHBARN_05_03");	//Říkal, že Sekob bude muset platit, pokud bude chtít pást ovce na jeho pastvinách.
 	AI_Output(self,other,"DIA_Balthasar_AERGERMITNACHBARN_05_04");	//Ale Sekob by se radši sám zadávil, než někomu platit, tak už na jeho pastviny nechodím.

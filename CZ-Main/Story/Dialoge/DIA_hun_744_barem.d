@@ -125,7 +125,7 @@ func void dia_hun_744_barem_hello_info()
 		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_11");	//Z těch chlapů v černym mě zebe kůže.
 		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_12");	//Chodí tu sem a tam, nic příjemného!
 	}
-	else if(Kapitel == 6)
+	else if(Kapitel == 7)
 	{
 		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_13");	//Asi jsi viděl ten kruh skřetů!
 		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_14");	//A kolik jich je!
@@ -282,19 +282,19 @@ func void dia_hun_744_barem_lurkerclaw_info()
 {
 	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_00");	//Hej, příteli! Počkej chvíli!
 	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_01");	//Mám pro tebe jistou nabídku...
-	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_03");	//Jeden vobchodník mi dal zakázku na pět číhavčích drápů.
+	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_03");	//Jeden obchodník mi dal zakázku na pět číhavčích drápů.
 	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_04");	//Já teď absolutně nemám na něco takovýho čas!
 	AI_Output(other,self,"DIA_HUN_744_Barem_LurkerClaw_01_05");	//Takže chceš, abych přinesl ty drápy...
 	AI_Output(other,self,"DIA_HUN_744_Barem_LurkerClaw_01_07");	//A jaká bude odměna?!
 	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_08");	//No, boužel ti nemůžu zaplatit, bo teď ňák potřebuju zlato!
 	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_09");	//Ale moh' bych ti za to dát nějaký pláty z důlního červa.
-	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_10");	//'sem slyšel, že jeden žoldák na Onarový farmě z toho umí udělat zbroj.
+	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_10");	//Slyšel jsem, že jeden žoldák na Onarový farmě z toho umí udělat zbroj.
 	AI_Output(other,self,"DIA_HUN_744_Barem_LurkerClaw_01_13");	//Uvidím, co budu moci udělat.
 	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_14");	//Bezva, tož víš, kde mě hledat, že.
 	MIS_LURKERCLAW = LOG_Running;
 	Log_CreateTopic(TOPIC_LURKERCLAW,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_LURKERCLAW,LOG_Running);
-	B_LogEntry(TOPIC_LURKERCLAW,"Lovec Barem mi nabízí 3 krunýře z důlmního červa za 5 čhavčích drápů.");
+	B_LogEntry(TOPIC_LURKERCLAW,"Lovec Barem mi nabízí 3 krunýře z důlního červa za 5 číhavčích drápů.");
 	AI_StopProcessInfos(self);
 };
 
@@ -324,10 +324,10 @@ func void dia_hun_744_barem_lurkerclawdone_info()
 	AI_Output(other,self,"DIA_HUN_744_Barem_LurkerClawDone_01_00");	//Mám ty drápy.
 	B_GiveInvItems(other,self,ItAt_LurkerClaw,5);
 	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClawDone_01_03");	//Bezva práce, chlape.
-	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClawDone_01_04");	//Tady je ten krunejř - jak jsme se domluvili.
+	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClawDone_01_04");	//Tady je ten krunýř - jak jsme se domluvili.
 	B_GiveInvItems(self,other,ItAt_CrawlerPlate,3);
-	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClawDone_01_05");	//A sem si vzpomněl jak že se menuje ten žoldák, co z nich dělá zbroje.
-	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClawDone_01_07");	//Jeho jméno je Wolf. Promluv s ním, ti určitě pomůže.
+	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClawDone_01_05");	//A jsem si vzpomněl, jak že se jmenuje ten žoldák, co z nich dělá zbroje.
+	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClawDone_01_07");	//Jeho jméno je Wolf. Promluv s ním, určitě ti pomůže.
 	MIS_LURKERCLAW = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_LURKERCLAW,LOG_SUCCESS);
 	B_LogEntry(TOPIC_LURKERCLAW,"Přinesl jsem Baremovi drápy a dal mi za ně ty krunýře. Taky se zmínil, že žoldák Wolf z nich dělá zbroj.");
@@ -358,8 +358,8 @@ func int dia_hun_744_barem_crawlerarmor_condition()
 func void dia_hun_744_barem_crawlerarmor_info()
 {
 	AI_Output(other,self,"DIA_HUN_744_Barem_CrawlerArmor_01_00");	//Proč si nenecháš udělat takovou zbroj taky?
-	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_01");	//Nemám dost těch krunejřů.
-	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_03");	//A nemůžu denska opustit tábor abych je splašil.
+	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_01");	//Nemám dost těch krunýřů.
+	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_03");	//A nemůžu dneska opustit tábor abych je splašil.
 	AI_Output(other,self,"DIA_HUN_744_Barem_CrawlerArmor_01_06");	//Můžu ti nějak pomoci.
 	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_07");	//Chlape, to by bylo úžasný!
 	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_08");	//Jestli se ti povede mi splašit tu zbroj, budu tvým dlužníkem!
@@ -407,7 +407,7 @@ func void dia_hun_744_barem_crawlerarmordone_info()
 	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmorDone_01_07");	//Pro lovce je to nenahraditelná věc!
 	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmorDone_01_09");	//Asi si říkáš na co ti bude.
 	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmorDone_01_10");	//Je totiž sešitá do tvaru batohu, ve kterým se můžeš kdekoli a kdykoli vyspat uprostřed divočiny.
-	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmorDone_01_11");	//Věř mi - udrží tě celou noc v teple a je snad stejně pohodlná jak postel! Je z těch nejhuňatějších a největších ovcí na vostrově!
+	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmorDone_01_11");	//Věř mi - udrží tě celou noc v teple a je snad stejně pohodlná jak postel! Je z těch nejhuňatějších a největších ovcí na ostrově!
 	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmorDone_01_13");	//To vážně nezní špatně! Jen škoda, že takových věcí není více...
 	MIS_BAREMCRAWLERARMOR = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_BAREMCRAWLERARMOR,LOG_SUCCESS);

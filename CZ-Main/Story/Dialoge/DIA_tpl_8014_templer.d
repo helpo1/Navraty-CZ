@@ -68,7 +68,7 @@ func void dia_tpl_8014_templer_first_justlooking()
 {
 	AI_Output(other,self,"DIA_TPL_8014_Templer_First_JustLooking_15_00");	//Jsem nováček. Přál bych si prohlédnout si váš tábor.
 	AI_Output(self,other,"DIA_TPL_8014_Templer_First_JustLooking_13_01");	//Vždy jsme rádi, když k nám dojdou návštěvníci.
-	AI_Output(self,other,"DIA_TPL_8014_Templer_First_JustLooking_13_02");	//Ale musíš respektovat naše pravdila. Jsou zde místa, k němž ti je přístup odepřen.
+	AI_Output(self,other,"DIA_TPL_8014_Templer_First_JustLooking_13_02");	//Ale musíš respektovat naše pravidla. Jsou zde místa, k němž ti je přístup odepřen.
 	Info_ClearChoices(dia_tpl_8014_templer_first);
 };
 
@@ -125,19 +125,19 @@ func void dia_tpl_8014_templer_PrioratStart_info()
 		{
 			AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_00");	//Počkej novici!
 			AI_Output(other,self,"DIA_TPL_8014_Templer_PrioratStart_01_01");	//Co?
-			AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_02");	//Baal Naamib s tebou chce mluvit, tak jdi hned za ním.
+			AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_02");	//Baal Namib s tebou chce mluvit, tak jdi hned za ním.
 		}
 		else if(hero.guild == GIL_GUR)
 		{
 			AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_05");	//Odpusť mi mistře...
 			AI_Output(other,self,"DIA_TPL_8014_Templer_PrioratStart_01_06");	//Poslouchám...
-			AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_07");	//Baal Naamib s tebou chce urgentně mluvit.
+			AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_07");	//Baal Namib s tebou chce urgentně mluvit.
 		}
 		else if(hero.guild == GIL_TPL)
 		{
 			AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_10");	//Počkej bratře.
 			AI_Output(other,self,"DIA_TPL_8014_Templer_PrioratStart_01_11");	//Co?
-			AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_12");	//Baal Naamib s tebou chce mluvit, tak jdi hned za ním.
+			AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_12");	//Baal Namib s tebou chce mluvit, tak jdi hned za ním.
 		};
 
 	}
@@ -146,7 +146,7 @@ func void dia_tpl_8014_templer_PrioratStart_info()
 		AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_15");	//Počkej cizinče, jeden z našich spirituálních vůdců by s tebou chtěl mluvit.
 		AI_Output(other,self,"DIA_TPL_8014_Templer_PrioratStart_01_18");	//A co po mě chce?
 		AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_19");	//Tak to netuším, jestli tě to zajíma, běž se ho zeptat.
-		AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_21");	//Je to Baal Namib, asi ho najdeš meditovat. kousek vpravo od vchodu do tábora.
+		AI_Output(self,other,"DIA_TPL_8014_Templer_PrioratStart_01_21");	//Je to Baal Namib, asi ho najdeš meditovat kousek vpravo od vchodu do tábora.
 	};
 
 	PrioratPreStart = TRUE;

@@ -39,23 +39,23 @@ func int DIA_Addon_10019_Wache_Hi_Condition()
 
 func void DIA_Addon_10019_Wache_Hi_Info()
 {
-	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_06_00");	//Co tady děláš?
+	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_06_00");	//Takže jsi na cestě do dolu?
 	Info_ClearChoices(DIA_Addon_BDT_10019_Wache_Hi);
-	Info_AddChoice(DIA_Addon_BDT_10019_Wache_Hi,"Chci vidět Ravena.",DIA_Addon_BDT_10019_Wache_Hi_Raven);
-	Info_AddChoice(DIA_Addon_BDT_10019_Wache_Hi,"Dobře.",DIA_Addon_BDT_10019_Wache_Hi_Ja);
+	Info_AddChoice(DIA_Addon_BDT_10019_Wache_Hi,"Vlastně hledám Ravena.",DIA_Addon_BDT_10019_Wache_Hi_Raven);
+	Info_AddChoice(DIA_Addon_BDT_10019_Wache_Hi,"Ano.",DIA_Addon_BDT_10019_Wache_Hi_Ja);
 };
 
 func void B_Say_Wache_kaputt()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10019_Wache_kaputt_15_00");	//Proč zemřeli?
-	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_kaputt_06_01");	//(směje se) Měl jsi mě zastavit.
+	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_kaputt_06_01");	//(zlomyslně se směje) Upracovali se na kousky.
 	Info_ClearChoices(DIA_Addon_BDT_10019_Wache_Hi);
 };
 
 func void DIA_Addon_BDT_10019_Wache_Hi_Raven()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10019_Wache_Hi_Raven_15_00");	//Vlastně hledám Ravena.
-	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_Raven_06_01");	//(vyhružně) Hele, opovaž se vstoupit do chrámu a budeš tuhej jako tihle.
+	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_Raven_06_01");	//(výhružně) Hele, opovaž se vstoupit do chrámu a budeš tuhej jako tihle.
 	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_Raven_06_02");	//Radši se odplaz zpátky do dolu.
 	B_Say_Wache_kaputt();
 	Info_ClearChoices(DIA_Addon_BDT_10019_Wache_Hi);
@@ -63,7 +63,7 @@ func void DIA_Addon_BDT_10019_Wache_Hi_Raven()
 
 func void DIA_Addon_BDT_10019_Wache_Hi_Ja()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10019_Wache_Hi_Ja_15_00");	//Dobře.
+	AI_Output(other,self,"DIA_Addon_BDT_10019_Wache_Hi_Ja_15_00");	//Ano.
 	AI_Output(self,other,"DIA_Addon_BDT_10019_Wache_Hi_Ja_06_01");	//Tak dávej pozor ať nezkončíš jako tihle.
 	B_Say_Wache_kaputt();
 	Info_ClearChoices(DIA_Addon_BDT_10019_Wache_Hi);

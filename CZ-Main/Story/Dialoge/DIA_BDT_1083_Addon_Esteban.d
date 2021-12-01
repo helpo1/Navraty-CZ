@@ -407,7 +407,7 @@ func int DIA_Addon_Esteban_fight_Condition()
 func void DIA_Addon_Esteban_fight_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Esteban_fight_15_00");	//To si děláš srandu? O tomhle naše dohoda nebyla.
-	AI_Output(self,other,"DIA_Addon_Esteban_fight_07_01");	//Vidíš, je tady pár lidí, co mohou dělat takové nabídky jako tahle. Samozřejmě, pokud se ti nelíbí, můžeš kdykoliv odejít z tábora.
+	AI_Output(self,other,"DIA_Addon_Esteban_fight_07_01");	//Takovou nabídku nedostane každý. Samozřejmě, pokud se ti nelíbí, můžeš kdykoliv odejít z tábora.
 	AI_Output(other,self,"DIA_Addon_Esteban_fight_15_02");	//A co takhle dodržet svůj slib a dát mi, co mi patří?
 	AI_Output(self,other,"DIA_Addon_Esteban_fight_07_03");	//Hej - ještě jedno slovo a moje stráže se o tebe postarají.
 	AI_Output(other,self,"DIA_Addon_Esteban_fight_15_04");	//Jaké stráže...? (šklebí se) 

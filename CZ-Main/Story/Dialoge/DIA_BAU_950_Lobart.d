@@ -122,7 +122,7 @@ func void DIA_Lobart_KLEIDUNG_Info()
 {
 	AI_Output(other,self,"DIA_Lobart_KLEIDUNG_15_00");	//Potřebuji nějaké vhodné šaty!
 	AI_Output(self,other,"DIA_Lobart_KLEIDUNG_05_01");	//Můžu ti dát čistý farmářský pracovní oděv.
-	AI_Output(self,other,"DIA_Lobart_KLEIDUNG_05_02");	//Můžeš za ně zaplatit?
+	AI_Output(self,other,"DIA_Lobart_KLEIDUNG_05_02");	//Můžeš za něj zaplatit?
 	Log_CreateTopic(TOPIC_Kleidung,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Kleidung,LOG_Running);
 	B_LogEntry(TOPIC_Kleidung,"Farmář Lobart mi prodá pracovní oděv.");
@@ -810,7 +810,7 @@ instance DIA_Lobart_VINOTOT(C_Info)
 	nr = 32;
 	condition = DIA_Lobart_VINOTOT_Condition;
 	information = DIA_Lobart_VINOTOT_Info;
-	description = "Vino už se nevrátí.";
+	description = "Vino se už nevrátí.";
 };
 
 
@@ -824,7 +824,7 @@ func int DIA_Lobart_VINOTOT_Condition()
 
 func void DIA_Lobart_VINOTOT_Info()
 {
-	AI_Output(other,self,"DIA_Lobart_VINOTOT_15_00");	//Vino už se nevrátí.
+	AI_Output(other,self,"DIA_Lobart_VINOTOT_15_00");	//Vino se už nevrátí.
 	if(Npc_IsDead(Vino))
 	{
 		AI_Output(other,self,"DIA_Lobart_VINOTOT_15_01");	//Je mrtvý.

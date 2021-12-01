@@ -84,8 +84,8 @@ func void dia_gornatot_whoyou_info()
 		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_03");	//Trénuji rekruty.
 		AI_Output(other,self,"DIA_GorNaTot_WhoYou_01_04");	//A jak to jde?
 		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_05");	//Výborně, ale potřebuji, aby byli silnejší a aby jich bylo více...
-		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_06");	//Baal Parverz už vyrazil do města, aby objevil potencionální novice.
-		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_07");	//Ale většina tech v táboře je nepoužitelná!
+		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_06");	//Baal Parvez už vyrazil do města, aby objevil potenciální novice.
+		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_07");	//Ale většina těch v táboře je nepoužitelná!
 		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_08");	//A ti, co ani neumí držet meč, tu nejvíce melou o tom, že potřebují odpočinek.
 		AI_Output(self,other,"DIA_GorNaTot_WhoYou_01_09");	//Budeme ale rádi za každého novice - ve množství je síla!
 	}
@@ -132,7 +132,7 @@ instance DIA_GORNATOT_ABWEISEND(C_Info)
 	condition = dia_gornatot_abweisend_condition;
 	information = dia_gornatot_abweisend_info;
 	permanent = TRUE;
-	description = "Můžeš mě neco naučit?";
+	description = "Můžeš mě něco naučit?";
 };
 
 
@@ -146,7 +146,7 @@ func int dia_gornatot_abweisend_condition()
 
 func void dia_gornatot_abweisend_info()
 {
-	AI_Output(other,self,"DIA_GorNaTot_Abweisend_01_00");	//Můžeš mě neco naučit?
+	AI_Output(other,self,"DIA_GorNaTot_Abweisend_01_00");	//Můžeš mě něco naučit?
 	if(other.guild == GIL_GUR)
 	{
 		AI_Output(self,other,"DIA_GorNaTot_Abweisend_01_01");	//Učím POUZE svaté templáře Bratrstva!
@@ -249,7 +249,7 @@ instance DIA_GORNATOT_TEACHTPLRUNES(C_Info)
 	condition = dia_gornatot_teachtplrunes_condition;
 	information = dia_gornatot_teachtplrunes_info;
 	permanent = TRUE;
-	description = "Chci si procvčit bojovou magii.";
+	description = "Chci si procvičit bojovou magii.";
 };
 
 
@@ -263,15 +263,15 @@ func int dia_gornatot_teachtplrunes_condition()
 
 func void dia_gornatot_teachtplrunes_info()
 {
-	AI_Output(other,self,"DIA_GorNaTot_TEACHTplRunes_01_00");	//Chci si procvčit bojovou magii.
+	AI_Output(other,self,"DIA_GorNaTot_TEACHTplRunes_01_00");	//Chci si procvičit bojovou magii.
 	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_01");	//Než začneme, řeknu ti malé poučení.
 	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_02");	//Princip naší magie je podobný jako u normální magie.
 	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_03");	//Pro uvolnění moci v našem tele užíváme magické runy. Ale jsou zde také rozdíly...
 	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_05");	//První co je, je to, že magie templářů po tobě nevyžaduje znalost kruhů magie.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_06");	//Místo toho máme něco podobného, - Cestu Moci.
+	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_06");	//Místo toho máme něco podobného - Cestu Moci.
 	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_07");	//Čím dále na své duchovní cestě budeš, tím více moci můžeš ze svého tela uvolňovat.
 	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_09");	//Myslím, že to je vše, co potřebuješ vědet. Jestli máš otázky, ptej se teď.
-	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_10");	//Jestli ne, já bych nějaké mel. Ale pozorne si rozmysli co odpovíš, více se te ptát nebudu.
+	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_10");	//Jestli ne, já bych nějaké měl. Ale pozorně si rozmysli co odpovíš, více se tě ptát nebudu.
 	AI_Output(self,other,"DIA_GorNaTot_TEACHTplRunes_01_11");	//Následuješ Cestu obnovy nebo Cestu destrukce?
 	Info_ClearChoices(dia_gornatot_teachtplrunes);
 	Info_AddChoice(dia_gornatot_teachtplrunes,"Cestu obnovy.",dia_gornatot_teachtplrunes_heal);
@@ -477,7 +477,7 @@ instance DIA_GORNATOT_NamibSendTempler(C_Info)
 	condition = dia_gornatot_NamibSendTempler_condition;
 	information = dia_gornatot_NamibSendTempler_info;
 	permanent = FALSE;
-	description = "Poslal me Baal Namib.";
+	description = "Poslal mě Baal Namib.";
 };
 
 func int dia_gornatot_NamibSendTempler_condition()
@@ -490,16 +490,16 @@ func int dia_gornatot_NamibSendTempler_condition()
 
 func void dia_gornatot_NamibSendTempler_info()
 {
-	AI_Output(other,self,"DIA_GorNaTot_NamibSendTempler_01_00");	//Poslal me Baal Namib.
-	AI_Output(self,other,"DIA_GorNaTot_NamibSendTempler_01_01");	//A co po me náš spirituální vúdce požaduje?
-	AI_Output(other,self,"DIA_GorNaTot_NamibSendTempler_01_02");	//Chce abys poslal pár templářů ku sběračům drogy.
+	AI_Output(other,self,"DIA_GorNaTot_NamibSendTempler_01_00");	//Poslal mě Baal Namib.
+	AI_Output(self,other,"DIA_GorNaTot_NamibSendTempler_01_01");	//A co po mě náš spirituální vůdce požaduje?
+	AI_Output(other,self,"DIA_GorNaTot_NamibSendTempler_01_02");	//Chce, abys poslal pár templářů ku sběračům drogy.
 	AI_Output(self,other,"DIA_GorNaTot_NamibSendTempler_01_03");	//A proč?
 	AI_Output(other,self,"DIA_GorNaTot_NamibSendTempler_01_04");	//Spochybňuješ snad Namibovy rozkazy?
-	AI_Output(self,other,"DIA_GorNaTot_NamibSendTempler_01_05");	//Jasně že ne. Jen mě zajímalo proč.
+	AI_Output(self,other,"DIA_GorNaTot_NamibSendTempler_01_05");	//Jasně, že ne. Jen by mě zajímalo proč.
 	AI_Output(other,self,"DIA_GorNaTot_NamibSendTempler_01_06");	//Klidně se ho zeptej.
 	AI_Output(self,other,"DIA_GorNaTot_NamibSendTempler_01_07");	//Hmm, radši nestrácejme čas! Považuj to za vybaveno.
 	GorNaTotSendTemplers = TRUE;
-	B_LogEntry(TOPIC_PrioratStart,"Tábory sběračů drogy by mali dostat posily co nevidět.");
+	B_LogEntry(TOPIC_PrioratStart,"Tábory sběračů drogy by měly dostat posily co nevidět.");
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(TPL_8100_TEMPLER,"NW_PSICAMP_GUARDCAMP_00_01");
 	Wld_InsertNpc(TPL_8101_TEMPLER,"NW_PSICAMP_GUARDCAMP_01_01");
@@ -515,7 +515,7 @@ instance DIA_GORNATOT_LetsTrain(C_Info)
 	condition = dia_gornatot_LetsTrain_condition;
 	information = dia_gornatot_LetsTrain_info;
 	permanent = FALSE;
-	description = "Co můžeš říct o Tiraksovi?";
+	description = "Co mě můžeš říci o svém studentovi Tiraksovi?";
 };
 
 func int dia_gornatot_LetsTrain_condition()
@@ -541,5 +541,5 @@ func void dia_gornatot_LetsTrain_info()
 	AI_Output(other,self,"DIA_GorNaTot_LetsTrain_01_09");	//Přesně na to jsem se tě chtěl zeptat. Tiraks potřebuje tvůj souhlas aby mohl začít s výcvikem.
 	AI_Output(self,other,"DIA_GorNaTot_LetsTrain_01_10");	//Nemám nic proti. Je na to ten pravý.
 	GorNaTotAgreeTiraks = TRUE;
-	B_LogEntry(TOPIC_TrainInCamp,"Cvičitel templářů Gor na Toth dal svůj souhlas, aby se Tiraks stal učitelemem stráží v táboře sběračů.");
+	B_LogEntry(TOPIC_TrainInCamp,"Cvičitel templářů Gor na Toth dal svůj souhlas, aby se Tiraks stal učitelem stráží v táboře sběračů.");
 };

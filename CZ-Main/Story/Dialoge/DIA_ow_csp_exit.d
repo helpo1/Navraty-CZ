@@ -184,7 +184,7 @@ instance DIA_OW_CSP_SEAPOST(C_Info)
 	condition = dia_ow_csp_seapost_condition;
 	information = dia_ow_csp_seapost_info;
 	permanent = TRUE;
-	description = "Co dělají?";
+	description = "Co dělají skřeti?";
 };
 
 
@@ -198,7 +198,7 @@ func int dia_ow_csp_seapost_condition()
 
 func void dia_ow_csp_seapost_info()
 {
-	AI_Output(other,self,"DIA_OW_CSP_SeaPost_15_00");	//Co dělaj?
+	AI_Output(other,self,"DIA_OW_CSP_SeaPost_15_00");	//Co dělají skřeti?
 	AI_Output(self,other,"DIA_OW_CSP_SeaPost_04_01");	//Vypadá to, že je teďka moc nezajímáme.
 };
 

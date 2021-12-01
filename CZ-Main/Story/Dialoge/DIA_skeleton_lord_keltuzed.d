@@ -48,7 +48,7 @@ func void dia_skeleton_lord_keltuzed_soul_hallo_info()
 	AI_Output(self,other,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_02");	//Člověk?! (zlověstně) Myslím, že tě zničím, ty ubohý červe!
 	AI_Output(other,self,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_03");	//Děláš velký omyl!
 	AI_Output(self,other,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_04");	//Aargggg!... (mrtvolný řev) A ty už jsi ho udělal, ale teď ti nic nepomůže.
-	AI_Output(self,other,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_05");	//Rozsekám tě nakousky a zůstaneš zde navždy!
+	AI_Output(self,other,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_05");	//Rozsekám tě na kousky a zůstaneš zde navždy!
 	AI_Output(other,self,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_06");	//Dobrá - zkus to, jestli to dokážeš.
 	AI_Output(self,other,"DIA_Skeleton_Lord_KelTuzed_Soul_HALLO_01_07");	//Aargggg!... (mrtvolný řev)
 	Info_ClearChoices(dia_skeleton_lord_keltuzed_soul_hallo);

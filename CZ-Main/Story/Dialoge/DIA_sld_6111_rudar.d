@@ -80,7 +80,7 @@ func void dia_rudar_hallo_info()
 	B_GivePlayerXP(50);
 	AI_Output(other,self,"DIA_Rudar_Hallo_01_00");	//Líbí se ti zde?
 	AI_Output(self,other,"DIA_Rudar_Hallo_01_01");	//Jak vidíš, tak ano. Dá se jen zřídka vybrat si kam nás cesty zavedou. A co tu děláš ty?
-	AI_Output(other,self,"DIA_Rudar_Hallo_01_02");	//Řekněme li, že tu mám problém s jedním člověkem.
+	AI_Output(other,self,"DIA_Rudar_Hallo_01_02");	//Řekněme-li, že tu mám problém s jedním člověkem.
 	AI_Output(self,other,"DIA_Rudar_Hallo_01_03");	//A co je to za problém?
 	AI_Output(other,self,"DIA_Rudar_Hallo_01_04");	//Můj problém jsi ty!
 	AI_Output(self,other,"DIA_Rudar_Hallo_01_05");	//(udiveně) CO?
@@ -90,7 +90,7 @@ func void dia_rudar_hallo_info()
 	AI_Output(other,self,"DIA_Rudar_Hallo_01_09");	//Asmal! Říká ti to něco?
 	AI_Output(self,other,"DIA_Rudar_Hallo_01_10");	//Hmm... Teď je mi to jasné, pracuješ pro něj. To znamená jedinou věc.
 	AI_Output(other,self,"DIA_Rudar_Hallo_01_11");	//Takže už to chápeš.
-	AI_Output(self,other,"DIA_Rudar_Hallo_01_12");	//Proč nepřišel on? Bojí se že ho zabiju?!
+	AI_Output(self,other,"DIA_Rudar_Hallo_01_12");	//Proč nepřišel on? Bojí se, že ho zabiju?!
 	AI_Output(other,self,"DIA_Rudar_Hallo_01_13");	//Má zajímavější věci na práci!
 	AI_Output(self,other,"DIA_Rudar_Hallo_01_14");	//Pak neztrácejme čas! Dáme se do toho.
 	AI_Output(other,self,"DIA_Rudar_Hallo_01_15");	//Braň se!

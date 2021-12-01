@@ -59,7 +59,7 @@ func void dia_gomezworkersoul_9_hallo_end()
 {
 	Snd_Play("SFX_INNOSEYE");
 	AI_Output(other,self,"DIA_GomezWorkerSoul_9_HALLO_End_01_01");	//Tvoje odpověď, duchu?
-	AI_Output(self,other,"DIA_GomezWorkerSoul_9_HALLO_End_01_02");	//Dobře, smrtelníku! Jestli mi to dá svobovu - Odpouštím duši Gomeze... (smrtelným hlasem)
+	AI_Output(self,other,"DIA_GomezWorkerSoul_9_HALLO_End_01_02");	//Dobře, smrtelníku! Jestli mi to dá svobodu - Odpouštím duši Gomeze... (smrtelným hlasem)
 	AI_Output(other,self,"DIA_GomezWorkerSoul_9_HALLO_End_01_03");	//Je dokonáno! Pak si teda vezmu na starost tvou duši a ukončím tvé trápení ať najdeš pokoj.
 	AI_Output(self,other,"DIA_GomezWorkerSoul_9_HALLO_End_01_04");	//Aargh!... (mrtvý hlas)
 	GOMEZSOULTALK_9 = TRUE;

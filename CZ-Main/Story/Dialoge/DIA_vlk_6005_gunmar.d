@@ -46,7 +46,7 @@ func void dia_gunmar_hello_info()
 	AI_Output(other,self,"DIA_Gunmar_Hello_01_01");	//Jak to jde, příteli?
 	AI_Output(self,other,"DIA_Gunmar_Hello_01_02");	//Co tu sakra děláš? Si spad z oblohy?!
 	AI_Output(self,other,"DIA_Gunmar_Hello_01_04");	//Jediný smysl života, kterej tu je je ten, když přemýšlíš jak si zachránit kůži a přežít další den.
-	AI_Output(self,other,"DIA_Gunmar_Hello_01_05");	//Kolem těchhle hord příšer nenjní dobrej život.
+	AI_Output(self,other,"DIA_Gunmar_Hello_01_05");	//Kolem těchhle hord příšer není dobrej život.
 	AI_Output(other,self,"DIA_Gunmar_Hello_01_07");	//No, takovýhle život mě neláká.
 	AI_Output(other,self,"DIA_Gunmar_Hello_01_08");	//Ale jinak - neviděl jsi mezi těmi kreaturami nějaké draky?
 	AI_Output(self,other,"DIA_Gunmar_Hello_01_09");	//Jen to ne, horší to už být nemůže.
@@ -155,7 +155,7 @@ func void dia_gunmar_teach_back()
 {
 	if(GUNMAR_MERKE_BOW < other.HitChance[NPC_TALENT_BOW])
 	{
-		AI_Output(self,other,"DIA_Gunmar_Teach_Back_01_01");	//Už si mnohem lepší. Trénuj ještě více a budeš lepší než já.
+		AI_Output(self,other,"DIA_Gunmar_Teach_Back_01_01");	//Už jsi mnohem lepší. Trénuj ještě více a budeš lepší než já.
 	};
 	Info_ClearChoices(dia_gunmar_teach);
 };

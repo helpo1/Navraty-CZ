@@ -354,7 +354,7 @@ func void DIA_Akil_Hof_Info()
 {
 	AI_Output(other,self,"DIA_Akil_Gegend_Onar_15_00");	//Kde najdu Onarovu farmu?
 	AI_Output(self,other,"DIA_Akil_Gegend_Onar_13_01");	//Vrať se dolů po kamenných schodech a jdi po stezce směrem na východ.
-	AI_Output(self,other,"DIA_Akil_Gegend_Onar_13_02");	//Cestou narazíš na hostinec. Od ní běž dál na východ. Za polem je farma, kde žijí žoldáci.
+	AI_Output(self,other,"DIA_Akil_Gegend_Onar_13_02");	//Cestou narazíš na hostinec. Od něj běž dál na východ. Za polem je farma, kde žijí žoldáci.
 	Knows_Taverne = TRUE;
 };
 
@@ -381,7 +381,7 @@ func int DIA_Akil_Taverne_Condition()
 func void DIA_Akil_Taverne_Info()
 {
 	AI_Output(other,self,"DIA_Akil_Gegend_Taverne_15_00");	//Co ten hostinec na východě?
-	AI_Output(self,other,"DIA_Akil_Gegend_Taverne_13_01");	//Zeptej se Randolpha. Ví toho o ní víc, než já. Už tam několikrát byl.
+	AI_Output(self,other,"DIA_Akil_Gegend_Taverne_13_01");	//Zeptej se Randolpha. Ví toho o něm víc, než já. Už tam několikrát byl.
 };
 
 

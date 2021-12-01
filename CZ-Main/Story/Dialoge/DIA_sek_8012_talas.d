@@ -69,7 +69,7 @@ func void dia_talas_getgeschenk_info()
 	AI_Output(other,self,"DIA_Talas_GetGeschenk_15_00");	//Jaký dar?
 	AI_Output(self,other,"DIA_Talas_GetGeschenk_05_01");	//Tady, tři stébla trávy z bažin. Opatrně, jsou dost silné.
 	AI_Output(self,other,"DIA_Talas_GetGeschenk_05_02");	//Můžeš si ode mě vyzvednout drogu každý den, ale pokud budeš chtít víc, než denní příděl, musíš za to zaplatit.
-	AI_Output(self,other,"DIA_Talas_GetGeschenk_05_03");	//A pokud ti po cestě padne oko na nějakéh bylinky, nebo na trávu z bažin, tak ji od tebe koupím.
+	AI_Output(self,other,"DIA_Talas_GetGeschenk_05_03");	//A pokud ti po cestě padne oko na nějaké bylinky, nebo na trávu z bažin, tak ji od tebe koupím.
 	CreateInvItems(self,ItMi_Joint,3);
 	B_GiveInvItems(self,other,ItMi_Joint,3);
 	TALAS_RATIONDAY = Wld_GetDay();

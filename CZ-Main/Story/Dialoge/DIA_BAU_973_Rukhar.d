@@ -265,7 +265,7 @@ func void DIA_Rukhar_ICHSEHEDICH_Info()
 	AI_Output(other,self,"DIA_Rukhar_ICHSEHEDICH_15_00");	//Tady je můj vklad.
 	if(B_GiveInvItems(other,self,ItMi_Gold,Rukhar_Einsatz))
 	{
-		AI_Output(self,other,"DIA_Rukhar_ICHSEHEDICH_12_01");	//Dobrá. Přiveď Randoplha co nejdřív, jasný?
+		AI_Output(self,other,"DIA_Rukhar_ICHSEHEDICH_12_01");	//Dobrá. Přiveď Randolpha co nejdřív, jasný?
 		DIA_Rukhar_ICHSEHEDICH_noPerm = TRUE;
 		MIS_Rukhar_Wettkampf = LOG_Running;
 		B_GivePlayerXP(XP_Ambient);

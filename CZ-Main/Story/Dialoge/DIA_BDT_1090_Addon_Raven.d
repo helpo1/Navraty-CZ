@@ -99,7 +99,7 @@ func void DIA_Addon_Raven_Hi_Sure()
 	AI_Output(other,self,"DIA_Addon_Raven_Add_15_04");	//A co když jsem služebník Adana?
 	AI_Output(self,other,"DIA_Addon_Raven_Add_10_10");	//(posměšně) Nesmysl!
 	AI_Output(other,self,"DIA_Addon_Raven_Add_15_05");	//Možná 'JÁ' také sloužím Beliarovi - nebo pouze sám sobě.
-	AI_Output(self,other,"DIA_Addon_Raven_Add_10_11");	//(posmívá se) Dobře, když je to tak, pak pro mě nejsi vůbec nepřítel!
+	AI_Output(self,other,"DIA_Addon_Raven_Add_10_11");	//(posmívá se) Dobře, když je to tak, pak pro mě nejsi vůbec důstojný protivník!
 	Info_ClearChoices(DIA_Addon_Raven_Hi);
 	Info_AddChoice(DIA_Addon_Raven_Hi,"To stačí, slyšel jsem dost...",DIA_Addon_Raven_Hi_Attack);
 };
@@ -173,7 +173,7 @@ func void DIA_BDT_2090_Addon_Raven_Hi_Info()
 	AI_Output(other,self,"DIA_BDT_2090_Addon_Raven_Hi_01_06");	//Ale nosíš Beliarův dráp! A jeho poslední majitel byl rudobaron Raven.
 	AI_Output(other,self,"DIA_BDT_2090_Addon_Raven_Hi_01_07");	//A vypadáš jako on. Jen trochu se změnila tvoje tvář.
 	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_01_08");	//Můj pán mi daroval znamení své síly a duši toho ubožáka, který se odvážil nosit tento mocný artefakt.
-	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_01_09");	//Ostatní se můžeš naučit od něj samotného, když se ocitneteš v říši mrtvých.
+	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_01_09");	//Ostatní se můžeš dozvědět od něj samotného, když se ocitneš v říši mrtvých.
 	Info_ClearChoices(DIA_BDT_2090_Addon_Raven_Hi);
 	Info_AddChoice(DIA_BDT_2090_Addon_Raven_Hi,"Takže kdo opravdu jsi?",DIA_BDT_2090_Addon_Raven_Hi_Who);
 };
@@ -182,7 +182,7 @@ func void DIA_BDT_2090_Addon_Raven_Hi_Who()
 {
 	AI_Output(other,self,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_00");	//Takže kdo opravdu jsi?
 	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_01");	//(smích) Bohužel jsi nic nepochopil?
-	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_02");	//Podívejte se na sebe - a porozumíš, v čem se skrývá odpověď na tvoji otázku.
+	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_02");	//Podívej se na sebe - a porozumíš, v čem se skrývá odpověď na tvoji otázku.
 	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_03");	//Od dávných dob, bohové bojují mezi sebou o moc na tomto světě...
 	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_04");	//Bojují rukou svých vyvolených zástupců, jako jsi ty a nebo já.
 	AI_Output(self,other,"DIA_BDT_2090_Addon_Raven_Hi_Who_01_05");	//Náš střet téměř nic nevyřeší ve válce, která zuří už po více než tisíc let.

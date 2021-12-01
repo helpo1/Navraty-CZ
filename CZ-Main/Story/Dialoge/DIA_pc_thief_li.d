@@ -483,7 +483,7 @@ func void dia_thief_li_changecourse_gold()
 	AI_Output(other,self,"DIA_Thief_LI_ChangeCourse_Gold_01_03");	//Myslím, že lord Hagen by zaplatil za informaci o rudě na ostrově.
 	AI_Output(self,other,"DIA_Thief_LI_ChangeCourse_Gold_01_06");	//Dobře... Tak to jsem s tebou!
 	AI_Output(self,other,"DIA_Thief_LI_ChangeCourse_Gold_01_07");	//Myslím, že si nacpeme kapsy.
-	B_LogEntry(TOPIC_CHANGECOURSE,"Diego Souhlasil s návratem na Khorinis.");
+	B_LogEntry(TOPIC_CHANGECOURSE,"Diego souhlasil s návratem na Khorinis.");
 	CREWAGREEAWAYBACKPAL = CREWAGREEAWAYBACKSELL + 1;
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)

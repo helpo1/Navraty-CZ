@@ -47,8 +47,8 @@ func void dia_skeleton_lord_kadar_hello_info()
 	AI_Output(self,other,"DIA_Skeleton_Lord_Kadar_Hello_01_01");	//Jak si dovoluješ mě rušit červe?!
 	AI_Output(self,other,"DIA_Skeleton_Lord_Kadar_Hello_01_02");	//Buď PROKLET!
 	AI_Output(other,self,"DIA_Skeleton_Lord_Kadar_Hello_01_03");	//Proklej SEBE!
-	AI_Output(self,other,"DIA_Skeleton_Lord_Kadar_Hello_01_04");	//TVŮJ PSÍ KSICHT TED NAPOSLEDY VIDÍ SVĚT!
-	AI_Output(other,self,"DIA_Skeleton_Lord_Kadar_Hello_01_05");	//Tahle myšlenka se mi moc nelibí!
+	AI_Output(self,other,"DIA_Skeleton_Lord_Kadar_Hello_01_04");	//TVŮJ PSÍ KSICHT TEĎ NAPOSLEDY VIDÍ SVĚT!
+	AI_Output(other,self,"DIA_Skeleton_Lord_Kadar_Hello_01_05");	//Tahle myšlenka se mi moc nelíbí!
 	AI_Output(self,other,"DIA_Skeleton_Lord_Kadar_Hello_01_06");	//Připrav se na smrt!
 	Info_ClearChoices(dia_skeleton_lord_kadar_hello);
 	Info_AddChoice(dia_skeleton_lord_kadar_hello,"... (KONEC)",dia_skeleton_lord_kadar_hello_ex1);

@@ -51,7 +51,7 @@ func void dia_gomezworkersoul_3_hallo_info()
 	AI_Output(other,self,"DIA_GomezWorkerSoul_3_HALLO_01_03");	//Mýlíš se! Já to můžu udělat.
 	AI_Output(other,self,"DIA_GomezWorkerSoul_3_HALLO_01_08");	//Pouze potom ti můžu pomoci. Dříve ne!
 	AI_Output(self,other,"DIA_GomezWorkerSoul_3_HALLO_01_09");	//Ty žádáš, abych odpustil tomu, jehož vinou jsem prokletý?!... (mrtvolně)
-	AI_Output(other,self,"DIA_GomezWorkerSoul_3_HALLO_01_10");	//! Jednoduše to udělej a zbavím tě tvého zatracení.
+	AI_Output(other,self,"DIA_GomezWorkerSoul_3_HALLO_01_10");	//Jednoduše to udělej a zbavím tě tvého zatracení.
 	AI_Output(self,other,"DIA_GomezWorkerSoul_3_HALLO_01_11");	//Jsi si tím jistý, smrtelníku?
 	Info_ClearChoices(dia_gomezworkersoul_3_hallo);
 	Info_AddChoice(dia_gomezworkersoul_3_hallo,"Odpustíš tedy Gomezovi?!",dia_gomezworkersoul_3_hallo_end);

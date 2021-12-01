@@ -290,7 +290,7 @@ func void DIA_Ehnim_MoleRatFett_was()
 
 func void DIA_Ehnim_MoleRatFett_was_Fett()
 {
-	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_was_Fett_15_00");	//Máš nějaké mazivo?
+	AI_Output(other,self,"DIA_Ehnim_MoleRatFett_was_Fett_15_00");	//A? Máš nějaký mazivo?
 	AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_12_01");	//Jo, jasně. Nejlepší, co se tu dá sehnat. Krysokrtí sádlo. Příšerná věc, to ti povím. Taky se používá na promazání lodních děl.
 	Info_AddChoice(DIA_Ehnim_MoleRatFett,"Prodej mi ten tuk.",DIA_Ehnim_MoleRatFett_was_Fett_habenwill);
 };
@@ -327,11 +327,11 @@ func void DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_03");	//Sakra, to je mám? Tak fajn, promiň. Jak se zdá, už to nemám. Vem si své prachy zpátky.
+			AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_03");	//Sakra, kam se to podělo? Tak fajn, promiň. Jak se zdá, už to nemám. Vem si své prachy zpátky.
 			B_GiveInvItems(self,other,ItMi_Gold,Ehnim_MoleRatFettOffer);
 			if(Npc_IsDead(Egill) == FALSE)
 			{
-				AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_04");	//Vsadím se, za to může můj bratr. Ten bastard!
+				AI_Output(self,other,"DIA_Ehnim_MoleRatFett_was_Fett_habenwill_ja_12_04");	//Vsadím se, že za to může můj bratr. Ten bastard!
 				AI_StopProcessInfos(self);
 				other.aivar[AIV_INVINCIBLE] = FALSE;
 				B_Attack(self,Egill,AR_NONE,0);

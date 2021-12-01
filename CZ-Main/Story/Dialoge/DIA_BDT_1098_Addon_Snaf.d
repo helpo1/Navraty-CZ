@@ -169,12 +169,12 @@ func void DIA_Addon_Snaf_Booze_Info()
 	B_GiveInvItems(other,self,ItFo_Addon_LousHammer,1);
 	AI_Output(self,other,"DIA_Addon_Snaf_Booze_01_01");	//Skvěle, teď to dokončím.
 	AI_Output(self,other,"DIA_Addon_Snaf_Booze_01_02");	//Teď můžeš jednu porci ochutnat. Zesílí ti po tom paže!
-	AI_Output(self,other,"DIA_Addon_Snaf_Booze_01_03");	//Och, a ještě něco. Až budeš přístě něco potřebovat... Všechny informace jsou pro tebe zdarma!
+	AI_Output(self,other,"DIA_Addon_Snaf_Booze_01_03");	//Och, a ještě něco. Až budeš příště něco potřebovat... Všechny informace jsou pro tebe zdarma!
 	Snaf_Tip_Kosten = 0;
 	B_GiveInvItems(self,other,ItFo_Addon_FireStew,1);
 	MIS_SnafHammer = LOG_SUCCESS;
 	Log_SetTopicStatus(Topic_Addon_Hammer,LOG_SUCCESS);
-	B_LogEntry(Topic_Addon_Hammer,"Přinesl jsem Snafovi pivo.");
+	B_LogEntry(Topic_Addon_Hammer,"Přinesl jsem Snafovi destilát.");
 };
 
 instance DIA_Addon_Snaf_Attentat(C_Info)
@@ -203,7 +203,7 @@ func void DIA_Addon_Snaf_Attentat_Info()
 	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_01_01");	//Estebanův případ?
 	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_01_02");	//Víš odkud vítr vane. Barman pozoruje všechno, ale k nikomu se nepřidává...
 	Info_ClearChoices(DIA_Addon_Snaf_Attentat);
-	Info_AddChoice(DIA_Addon_Snaf_Attentat,"Tak mi aspoň řekni, kde seženu infromace.",DIA_Addon_Snaf_Attentat_GoWhere);
+	Info_AddChoice(DIA_Addon_Snaf_Attentat,"Tak mi aspoň řekni, kde seženu informace.",DIA_Addon_Snaf_Attentat_GoWhere);
 	Info_AddChoice(DIA_Addon_Snaf_Attentat,"Kdybys byl já, co bys udělal?",DIA_Addon_Snaf_Attentat_YouBeingMe);
 	Info_AddChoice(DIA_Addon_Snaf_Attentat,"Takže něco víš?",DIA_Addon_Snaf_Attentat_Something);
 };
@@ -216,7 +216,7 @@ func void DIA_Addon_Snaf_Attentat_Something()
 
 func void DIA_Addon_Snaf_Attentat_GoWhere()
 {
-	AI_Output(other,self,"DIA_Addon_Snaf_Attentat_GoWhere_15_00");	//Tak mi aspoň řekni, kde seženu infromace.
+	AI_Output(other,self,"DIA_Addon_Snaf_Attentat_GoWhere_15_00");	//Tak mi aspoň řekni, kde seženu informace.
 	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_GoWhere_01_01");	//Můj bože! To by bylo stejný! Zapomeň na to!
 };
 
@@ -224,7 +224,7 @@ func void DIA_Addon_Snaf_Attentat_YouBeingMe()
 {
 	AI_Output(other,self,"DIA_Addon_Snaf_Attentat_YouBeingMe_15_00");	//Kdybys byl já, co bys udělal?
 	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_YouBeingMe_01_01");	//Snažil bych si vzpomenout, co víš o vrahově zaměstnavateli.
-	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_YouBeingMe_01_02");	//Zaprvé. Byl to samozřejmě jeden z banditů, to znamená, je tady v táboře.
+	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_YouBeingMe_01_02");	//Za prvé: Byl to samozřejmě jeden z banditů, to znamená, je tady v táboře.
 	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_YouBeingMe_01_03");	//Za druhé: Od té doby, co je dotyčný zde v táboře, tě sleduje.
 	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_YouBeingMe_01_04");	//Za třetí: Bude-li přesvědčený, že jsi na Estebanově straně, neodkryje svou totožnost.
 	AI_Output(self,other,"DIA_Addon_Snaf_Attentat_YouBeingMe_01_05");	//Zajímavá otázka je, jaké jsou tvé šance najít zaměstnavatele?
@@ -258,8 +258,8 @@ func void DIA_Addon_Snaf_Abrechnung_Info()
 	AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_01");	//Hmmm...
 	if((Senyan_Erpressung == LOG_Running) && !Npc_IsDead(Senyan))
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_02");	//Velmi špatný. Někteří chlápci si všimli, že ses motal kolem Senyana.
-		AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_03");	//Měl bys ses vzdát svýho kontaktu, jinak nemáš žádnou šanci, nájit šéfa vraždy.
+		AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_02");	//Velmi špatné. Někteří chlápci si všimli, že ses motal kolem Senyana.
+		AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_03");	//Budeš muset s ním přerušit kontakt, jinak nikdy nebudeš mít šanci najít toho, kdo je za útok zodpovědný.
 		if(Snaf_Tip_Senyan == FALSE)
 		{
 			B_LogEntry(Topic_Addon_Senyan,"Měl bych ukončit Senyanovu práci. Nicméně bylo by nemoudré zaútočit na něj hlava nehlava. Měl bych s ním naposled promluvit.");
@@ -268,18 +268,18 @@ func void DIA_Addon_Snaf_Abrechnung_Info()
 	}
 	else if(Npc_IsDead(Senyan))
 	{
-		AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_04");	//Měl bys sejmout jednoho z Estebanových lidí. Člověk kterého hledáš, bude věřit, že jsi na jeho straně.
+		AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_04");	//Srazil jsi jednoho z Estebanových lidí. Člověk kterého hledáš, bude věřit, že jsi na jeho straně.
 		AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_05");	//Ale jen tak svou identitu neukáže. Musíš toho rozlousknout mnohem víc.
 	}
 	else
 	{
 		if(Finn_Petzt == TRUE)
 		{
-			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_06");	//Vypadá to že Finn je velmi rozrušen, poté co jsi s ním mluvil.
+			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_06");	//Vypadá to, že Finn je velmi rozrušen, poté co jsi s ním mluvil.
 			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_07");	//A všichni ví, že má blízko k Estebanovi.
 			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_08");	//To znamená, že jsi řekl něco, co nechtěl slyšet.
 			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_09");	//Člověk kterého hledáš, bude velmi pobavený...
-			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_10");	//Ale riskujeme život, když poběžíme za Estebanem - (ironicky) ale to víš sám...
+			AI_Output(self,other,"DIA_Addon_Snaf_Abrechnung_01_10");	//Hrozí však, že s tím poběží za Estebanem - (ironicky) však to víš i ty sám...
 		};
 		if(Finn_TellAll == TRUE)
 		{
@@ -379,7 +379,7 @@ func void DIA_Addon_Snaf_People_Info()
 	Info_AddChoice(DIA_Addon_Snaf_People,"Paul.",DIA_Addon_Snaf_People_Paul);
 	Info_AddChoice(DIA_Addon_Snaf_People,"Huno.",DIA_Addon_Snaf_People_Huno);
 	Info_AddChoice(DIA_Addon_Snaf_People,"Fisk.",DIA_Addon_Snaf_People_Fisk);
-	Info_AddChoice(DIA_Addon_Snaf_People,"Emillio.",DIA_Addon_Snaf_People_Emilio);
+	Info_AddChoice(DIA_Addon_Snaf_People,"Emilio.",DIA_Addon_Snaf_People_Emilio);
 	if(!Npc_IsDead(Senyan))
 	{
 		Info_AddChoice(DIA_Addon_Snaf_People,"Senyan.",DIA_Addon_Snaf_People_Senyan);

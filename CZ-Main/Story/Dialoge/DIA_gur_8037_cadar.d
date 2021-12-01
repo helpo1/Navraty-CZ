@@ -193,7 +193,7 @@ func void dia_baalcadar_helpme_info()
 	AI_Output(self,other,"DIA_BaalCadar_HelpMe_01_00");	//Počkat, novici!
 	AI_Output(self,other,"DIA_BaalCadar_HelpMe_01_01");	//Udělal jsi malou službu našim sběračům.
 	AI_Output(other,self,"DIA_BaalCadar_HelpMe_01_02");	//Co pro vás mohu udělat pane?
-	AI_Output(self,other,"DIA_BaalCadar_HelpMe_01_03");	//Jak jis již jistě zjistil, tak jedním z našich úkolů je sbírat trávu z bažin.
+	AI_Output(self,other,"DIA_BaalCadar_HelpMe_01_03");	//Jak jsi již jistě zjistil, tak jedním z našich úkolů je sbírat trávu z bažin.
 	AI_Output(self,other,"DIA_BaalCadar_HelpMe_01_04");	//Bohužel, tato rostlina neroste všude.
 	AI_Output(self,other,"DIA_BaalCadar_HelpMe_01_05");	//A to co sesbírá Caine s novici, zde blízko tábora, nám bohužel nestačí.
 	AI_Output(self,other,"DIA_BaalCadar_HelpMe_01_06");	//Proto mimo ně jsou zde i jiné skupiny sběračů. Je pro mě důležité, abys donesl další dodávku.
@@ -217,7 +217,7 @@ instance DIA_BAALCADAR_ZUSTIMMUNG(C_Info)
 	condition = dia_baalcadar_zustimmung_condition;
 	information = dia_baalcadar_zustimmung_info;
 	permanent = TRUE;
-	description = "Donesl jsem dorgu od sběračů.";
+	description = "Donesl jsem trávu od sběračů.";
 };
 
 
@@ -303,7 +303,7 @@ instance DIA_BAALCADAR_PERM(C_Info)
 	condition = dia_baalcadar_perm_condition;
 	information = dia_baalcadar_perm_info;
 	permanent = TRUE;
-	description = "Jak pokračuje zpracovávání drogy?";
+	description = "Jak pokračuje zpracovávání bažinné trávy?";
 };
 
 
@@ -329,7 +329,7 @@ instance DIA_BAALCADAR_PRETEACH(C_Info)
 	condition = dia_baalcadar_preteach_condition;
 	information = dia_baalcadar_preteach_info;
 	permanent = FALSE;
-	description = "Poslal mě Baal Orun...";
+	description = "Poslal mě za tebou Baal Orun...";
 };
 
 
@@ -351,7 +351,7 @@ func void dia_baalcadar_preteach_info()
 	AI_Output(self,other,"DIA_BaalCadar_PreTeach_05_05");	//Tedy abys to dobře pochopil, ke zvýšení tvých schopností mága, musíš zvýšit i svou magickou energii. A i tehdy ji nesmíš používat unáhleně.
 	AI_Output(self,other,"DIA_BaalCadar_PreTeach_05_06");	//Pouze pak se staneš opravdovým mágem!
 	AI_Output(self,other,"DIA_BaalCadar_PreTeach_05_07");	//Jak sis všiml, mnoho z noviců sedí u vodní dýmky.
-	AI_Output(self,other,"DIA_BaalCadar_PreTeach_05_08");	//Pro Guru - to je hlavní způsob jak poznávat svět ale aj doplňovat magickú energii!
+	AI_Output(self,other,"DIA_BaalCadar_PreTeach_05_08");	//Pro Guru - to je hlavní způsob jak poznávat svět ale aj doplňovat magickou energii!
 	AI_Output(self,other,"DIA_BaalCadar_PreTeach_05_09");	//Dobrá tráva ve vodní dýmce, měřne utlačeno - co by mohlo být lepší jak tenhle způsob poznávaní světa?
 };
 
@@ -363,7 +363,7 @@ instance DIA_BAALCADAR_TEACH_MANA(C_Info)
 	condition = dia_baalcadar_teach_mana_condition;
 	information = dia_baalcadar_teach_mana_info;
 	permanent = TRUE;
-	description = "Přál bych si zvášit svou magickou energii.";
+	description = "Přál bych si zvýšit svou magickou energii.";
 };
 
 
@@ -443,13 +443,13 @@ func void dia_baalcadar_bringcalomreceipte_info()
 	AI_Output(self,other,"DIA_BaalCadar_BringCalomReceipte_01_05");	//Receptu na výrobu specíální směsi z trávy z bažin. Byla objevena jedním z našich bývalých Guru - Cor Kalomem.
 	AI_Output(other,self,"DIA_BaalCadar_BringCalomReceipte_01_06");	//Cor Kalomem?
 	AI_Output(self,other,"DIA_BaalCadar_BringCalomReceipte_01_08");	//Ano, dle toho co vím, tak po té co opustil náš tábor a vydal se hledat Spáče sám, nechal tento recept ve své truhle.
-	AI_Output(self,other,"DIA_BaalCadar_BringCalomReceipte_01_09");	//A od té doby tam popřád leží.
+	AI_Output(self,other,"DIA_BaalCadar_BringCalomReceipte_01_09");	//A od té doby tam pořád leží.
 	AI_Output(self,other,"DIA_BaalCadar_BringCalomReceipte_01_10");	//Chci abys získal ten recept a pak mi ho samozřejmě donesl.
-	AI_Output(other,self,"DIA_BaalCadar_BringCalomReceipte_01_11");	//Skúsim to.
+	AI_Output(other,self,"DIA_BaalCadar_BringCalomReceipte_01_11");	//Zkusím to.
 	MIS_REZEPTFORBAALCADAR = LOG_Running;
 	Log_CreateTopic(TOPIC_REZEPTFORBAALCADAR,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_REZEPTFORBAALCADAR,LOG_Running);
-	B_LogEntry(TOPIC_REZEPTFORBAALCADAR,"Baal Cadar mě požádala, abych mu donesl recept od Cor Kaloma, který rmu umožní vytvářet novou speciální směs z bažinné trávy. Dle toho co říkal, to vypadá, že bych se měl podívat do bývalého tábora v bažinách, do Cor Kalomovi laboratoře.");
+	B_LogEntry(TOPIC_REZEPTFORBAALCADAR,"Baal Cadar mě požádal, abych mu donesl recept od Cor Kaloma, který mu umožní vytvářet novou speciální směs z bažinné trávy. Dle toho co říkal, to vypadá, že bych se měl podívat do bývalého tábora v bažinách, do Cor Kalomovi laboratoře.");
 	AI_StopProcessInfos(self);
 };
 
@@ -461,7 +461,7 @@ instance DIA_BAALCADAR_BRINGCALOMRECEIPTEDONE(C_Info)
 	condition = dia_baalcadar_bringcalomreceiptedone_condition;
 	information = dia_baalcadar_bringcalomreceiptedone_info;
 	permanent = FALSE;
-	description = "Přinesl jsem ti recept od Car Caloma.";
+	description = "Přinesl jsem ti recept od Car Kaloma.";
 };
 
 
@@ -476,7 +476,7 @@ func int dia_baalcadar_bringcalomreceiptedone_condition()
 func void dia_baalcadar_bringcalomreceiptedone_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_BaalCadar_BringCalomReceipteDone_01_00");	//Donesl jsem ti recept od Car Kaloma.
+	AI_Output(other,self,"DIA_BaalCadar_BringCalomReceipteDone_01_00");	//Přinesl jsem ti recept od Car Kaloma.
 	B_GiveInvItems(other,self,itwr_kalomsrecipe,1);
 	B_UseFakeScroll();
 	AI_Output(self,other,"DIA_BaalCadar_BringCalomReceipteDone_01_04");	//Ano... (šťastně) to je ono. To je ten recept, který jsem hledal!
@@ -485,7 +485,7 @@ func void dia_baalcadar_bringcalomreceiptedone_info()
 	AI_Output(self,other,"DIA_BaalCadar_BringCalomReceipteDone_01_10");	//Myslím, že to chvíli potrvá...
 	MIS_REZEPTFORBAALCADAR = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_REZEPTFORBAALCADAR,LOG_SUCCESS);
-	B_LogEntry(TOPIC_REZEPTFORBAALCADAR,"Donesl jsem Baal Cadarovi recept od Car Kaloma. Velice ho potěšilo, že se mi to povedlo.");
+	B_LogEntry(TOPIC_REZEPTFORBAALCADAR,"Donesl jsem Baalu Cadarovi recept od Car Kaloma. Velice ho potěšilo, že se mi to povedlo.");
 	AI_StopProcessInfos(self);
 };
 

@@ -155,7 +155,7 @@ func void DIA_Addon_10018_Torwache_Hi_Info()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10018_Torwache_Hi_15_00");	//Je to zatraceně důležité, musím se k němu dostat.
 	AI_Output(self,other,"DIA_Addon_BDT_10018_Torwache_Hi_04_01");	//Ne. To není. Pouze Bloodwyn za ním může jít.
-	B_LogEntry(Topic_Addon_Tempel,"Do chrámu je dovoleno vstoupit pouze Bloodwynovi. Možná bych se tam dostat přes něj.");
+	B_LogEntry(Topic_Addon_Tempel,"Do chrámu je dovoleno vstoupit pouze Bloodwynovi. Možná bych se tam mohl dostat přes něj.");
 };
 
 

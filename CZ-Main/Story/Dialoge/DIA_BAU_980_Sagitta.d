@@ -395,7 +395,7 @@ func void dia_sagitta_aloe_info()
 	AI_Output(other,self,"DIA_Sagitta_Aloe_15_00");	//A jaký nápoj se bude z aloe dělat?
 	AI_Output(self,other,"DIA_Sagitta_Aloe_17_01");	//Jde o velmi mocný lektvar - po jeho užití je tvoje kůže silná jako trolí kožich.
 	AI_Output(self,other,"DIA_Sagitta_Aloe_17_02");	//Ale recept ti neřeknu.
-	AI_Output(other,self,"DIA_Sagitta_Aloe_15_03");	//A uvařila bys ho pro mně?
+	AI_Output(other,self,"DIA_Sagitta_Aloe_15_03");	//A uvařila bys ho pro mě?
 	AI_Output(self,other,"DIA_Sagitta_Aloe_17_04");	//Z této rostliny? (s lítostí) Ne, bohužel ten je již objednán.
 	AI_Output(self,other,"DIA_Sagitta_Aloe_17_05");	//Pokud mi však přineseš jinou rostlinu, pak ti připravím tento lektvar.
 	AI_Output(self,other,"DIA_Sagitta_Aloe_17_06");	//Ale samozřejmě ne zadarmo.
@@ -466,7 +466,7 @@ func void dia_sagitta_aloeready_ok()
 	{
 		AI_Output(self,other,"DIA_Sagitta_AloeReady_Ok_01_03");	//No? Kde mám ty peníze?
 		AI_Output(other,self,"DIA_Sagitta_AloeReady_Ok_01_04");	//Zdá se, že je nemám...
-		AI_Output(self,other,"DIA_Sagitta_AloeReady_Ok_01_05");	//Nesnaž se mě oklamat! Nebudu pracovat zadarmo!.
+		AI_Output(self,other,"DIA_Sagitta_AloeReady_Ok_01_05");	//Nesnaž se mě oklamat! Nebudu pracovat zadarmo!
 		AI_Output(self,other,"DIA_Sagitta_AloeReady_Ok_01_06");	//Až získáš peníze, pak se vrať.
 	};
 	AI_StopProcessInfos(self);
@@ -534,7 +534,7 @@ instance DIA_Sagitta_HEAL(C_Info)
 	condition = DIA_Sagitta_HEAL_Condition;
 	information = DIA_Sagitta_HEAL_Info;
 	permanent = TRUE;
-	description = "Vyleč mě.";
+	description = "Vyléč mě.";
 };
 
 func int DIA_Sagitta_HEAL_Condition()
@@ -547,7 +547,7 @@ func int DIA_Sagitta_HEAL_Condition()
 
 func void DIA_Sagitta_HEAL_Info()
 {
-	AI_Output(other,self,"DIA_Sagitta_HEAL_15_00");	//Vyleč mě.
+	AI_Output(other,self,"DIA_Sagitta_HEAL_15_00");	//Vyléč mě.
 	if(hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX])
 	{
 		if(PRAYDAYSAGG != Wld_GetDay())
@@ -655,7 +655,7 @@ func int DIA_Sagitta_OBSESSION_Condition()
 
 func void DIA_Sagitta_OBSESSION_Info()
 {
-	AI_Output(other,self,"DIA_Sagitta_OBSESSION_15_00");	//Trpím pocity strachu. Potřebuju pomoc.
+	AI_Output(other,self,"DIA_Sagitta_OBSESSION_15_00");	//Mám podivné pocity úzkosti. Potřebuju pomoc.
 	AI_Output(self,other,"DIA_Sagitta_OBSESSION_17_01");	//Vidím, že spánek by ti moc nepomohl. Byl jsi vystaven temnému pohledu Pátračů.
 	AI_Output(self,other,"DIA_Sagitta_OBSESSION_17_02");	//Zajdi za Pyrokarem, nejvyšším mágem kláštera. Moje skromné možnosti na tohle nestačí.
 };
@@ -682,7 +682,7 @@ func int DIA_Sagitta_Thekla_Condition()
 func void DIA_Sagitta_Thekla_Info()
 {
 	AI_Output(other,self,"DIA_Sagitta_Thekla_15_00");	//Thekla mě poslala pro nějaký balík.
-	AI_Output(self,other,"DIA_Sagitta_Thekla_17_01");	//Ach, ano. Už jsem ho očekávala včera.
+	AI_Output(self,other,"DIA_Sagitta_Thekla_17_01");	//Ach, ano. Už jsem ji očekávala včera.
 	AI_Output(self,other,"DIA_Sagitta_Thekla_17_02");	//Tady je ten balík. Dávej na něj dobrý pozor!
 	B_GivePlayerXP(XP_AmbientKap3);
 	B_GiveInvItems(self,other,ItMi_TheklasPaket,1);
@@ -934,7 +934,7 @@ func void dia_sagitta_receptfortyon_info()
 {
 	AI_Output(other,self,"DIA_Sagitta_ReceptForTyon_01_00");	//Mám otázku.
 	AI_Output(self,other,"DIA_Sagitta_ReceptForTyon_01_01");	//O co jde?
-	AI_Output(other,self,"DIA_Sagitta_ReceptForTyon_01_02");	//Zaslechl jsem něco o lektvaru který ovlivňuje lidské vědomí!
+	AI_Output(other,self,"DIA_Sagitta_ReceptForTyon_01_02");	//Zaslechl jsem něco o lektvaru, který ovlivňuje lidské vědomí!
 	AI_Output(other,self,"DIA_Sagitta_ReceptForTyon_01_03");	//Nevíš o tom něco?
 	AI_Output(self,other,"DIA_Sagitta_ReceptForTyon_01_04");	//Obávám se, že ti nemohu pomoci. Nevím co by to za lektvar mohl být.
 	AI_Output(self,other,"DIA_Sagitta_ReceptForTyon_01_05");	//Ale mohu ti dát radu.
@@ -983,7 +983,7 @@ func void dia_sagitta_claw_info()
 	AI_Output(other,self,"DIA_Sagitta_Claw_01_10");	//Takže mu pomůžeš?
 	AI_Output(self,other,"DIA_Sagitta_Claw_01_11");	//Samozřejmě vím, jak moc mu na Tlamě záleží. Jsem ochotna pomoct.
 	AI_Output(self,other,"DIA_Sagitta_Claw_01_12");	//Ale říkáš že rána je vážná - bude potřebovat silný léčivý lektvar.
-	AI_Output(self,other,"DIA_Sagitta_Claw_01_13");	//Nemohu slíbit že to pomůže.
+	AI_Output(self,other,"DIA_Sagitta_Claw_01_13");	//Nemohu slíbit, že to pomůže.
 	AI_Output(other,self,"DIA_Sagitta_Claw_01_14");	//Samozřejmě, dostanu tedy ten lektvar?
 	AI_Output(self,other,"DIA_Sagitta_Claw_01_15");	//(smutně) Bohužel ho nemám. Ale můžu ho namíchat.
 	AI_Output(self,other,"DIA_Sagitta_Claw_01_16");	//Ovšem budu potřebovat správné ingredience.
@@ -1113,7 +1113,7 @@ func void dia_sagitta_placebo_info()
 	AI_Output(self,other,"DIA_Sagitta_Placebo_01_14");	//Můžu ti zaručit, že to bude opravdu fungovat.
 	AI_Output(self,other,"DIA_Sagitta_Placebo_01_15");	//Tento trik jsem použila už několikrát a vždy to zabralo.
 	AI_Output(other,self,"DIA_Sagitta_Placebo_01_16");	//Zajímavý způsob léčby. Tak já to vyzkouším.
-	AI_Output(self,other,"DIA_Sagitta_Placebo_01_17");	//Tak dobře. (se smíchem) Řekni Pepemu že jsem pro něj udělala obzvlášť silný lektvar.
+	AI_Output(self,other,"DIA_Sagitta_Placebo_01_17");	//Tak dobře. (se smíchem) Řekni Pepemu, že jsem pro něj udělala obzvlášť silný lektvar.
 	AI_Output(self,other,"DIA_Sagitta_Placebo_01_18");	//A dej mu obyčejnou léčivou esenci.
 	AI_Output(self,other,"DIA_Sagitta_Placebo_01_19");	//Hlavně neprozraď, že jsi mu dal obyčejný lektvar, dokud se neuzdraví.
 	AI_Output(self,other,"DIA_Sagitta_Placebo_01_20");	//Jednoduše - drž jazyk za zuby.
@@ -1223,7 +1223,7 @@ func int DIA_Sagitta_Werewolf_Condition()
 func void DIA_Sagitta_Werewolf_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Sagitta_Werewolf_01_00");	//Říká se že se zde objevila obrovská stínová šelma.
+	AI_Output(other,self,"DIA_Sagitta_Werewolf_01_00");	//Říká se, že se zde objevila obrovská stínová šelma.
 	AI_Output(self,other,"DIA_Sagitta_Werewolf_01_01");	//(překvapeně) Opravdu? Kdo to říkal?
 	AI_Output(other,self,"DIA_Sagitta_Werewolf_01_02");	//No, znáš to - klepy... Ale může na tom něco být.
 	AI_Output(self,other,"DIA_Sagitta_Werewolf_01_03");	//Proč se o to zajímáš?
@@ -1414,19 +1414,19 @@ func void DIA_Sagitta_askfordt_info()
 	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_09");	//Já bych na to nespoléhal.
 	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_10");	//Leeho chlapi jsou žoldáci. Pokud půjde do tuhého, utečou.
 	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_11");	//Obzvláště pokud budou stát proti magii Temnoty.
-	AI_Output(self,other,"DIA_Sagitta_AskforDT_17_12");	//A ty mi můžeš poskytnou ochranu proti takovým silám?
+	AI_Output(self,other,"DIA_Sagitta_AskforDT_17_12");	//A ty mi můžeš poskytnout ochranu proti takovým silám?
 	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_13");	//Jistě. Vždyť mne znáš. Navíc můj tábor je nedobytný.
 	AI_Output(self,other,"DIA_Sagitta_AskforDT_17_14");	//Hm... a kde to je?
 	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_15");	//Za Onarovou farmou, u staré věže.
 	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_16");	//Poblíž je navíc pevnost paladinů.
 	AI_Output(self,other,"DIA_Sagitta_AskforDT_17_17");	//To zní bezpečně. Ale budu tam mít co dělat?
 	AI_Output(self,other,"DIA_Sagitta_AskforDT_17_18");	//Myslím tím, zdali tam nebudu zbytečná.
-	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_19");	//Toho bych se nebál, spousta lidí, spusta zranění. Samozřejmě dostaneš zaplaceno.
+	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_19");	//Toho bych se nebál, spousta lidí, spousta zranění. Samozřejmě dostaneš zaplaceno.
 	AI_Output(self,other,"DIA_Sagitta_AskforDT_17_20");	//Nejde jen o peníze. Budu potřebovat spoustu vybavení, které musím koupit.
 	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_21");	//Kolik potřebuješ?
 	AI_Output(self,other,"DIA_Sagitta_AskforDT_17_22");	//Hm... Myslím, že čtyřicet zlatých denně pokryje náklady.
 	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_23");	//Fajn. Mimochodem, co tvoje stráž?
-	AI_Output(self,other,"DIA_Sagitta_AskforDT_17_24");	//Myslím že tu zůstanou. Alespoň pohlídají jeskyni.
+	AI_Output(self,other,"DIA_Sagitta_AskforDT_17_24");	//Myslím, že tu zůstanou. Alespoň pohlídají jeskyni.
 	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_25");	//Dobře. Heslo pro vstup je 'dračí poklad'.
 	AI_Output(other,self,"DIA_Sagitta_AskforDT_17_26");	//Stačí ho sdělit strážci.
 	AI_Output(self,other,"DIA_Sagitta_AskforDT_17_27");	//Chápu. Uvidíme se tam.
@@ -1462,5 +1462,5 @@ func int DIA_Sagitta_intower_condition()
 func void DIA_Sagitta_intower_info()
 {
 	AI_Output(other,self,"DIA_Sagitta_InTower_OrcKap_15_00");	//Jak to jde?
-	AI_Output(self,other,"DIA_Sagitta_InTower_OrcKap_01_01");	//Jsem ráda že jsem sem přišla.
+	AI_Output(self,other,"DIA_Sagitta_InTower_OrcKap_01_01");	//Jsem ráda, že jsem sem přišla.
 };

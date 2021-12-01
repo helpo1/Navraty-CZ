@@ -434,7 +434,7 @@ func void dia_addon_inextremo_announcer_meetkillers_info()
 		AI_Output(self,other,"DIA_pir_1398_MeetKillers_01_05");	//Hmmm... Tvá tvář je mi nějak povědomá. Nesetkali jsme se už někdy?...
 		AI_Output(self,other,"DIA_pir_1398_MeetKillers_01_08");	//Ale to teď není důležité!
 		AI_Output(self,other,"DIA_pir_1398_MeetKillers_01_10");	//Takže to znamená, že jsi mě hledal?
-		B_LogEntry(TOPIC_GERBRANDTHELP,"Setkal jsem se s osobou, o níž mluvlil Gerbrandt, přesně jak bylo dohodnuto. Ukázalo se, že je jeden z kočovných hudebníků - Gillian. Pravda, nebyl tak laskavý, jako při našem prvním setkání.");
+		B_LogEntry(TOPIC_GERBRANDTHELP,"Setkal jsem se s osobou, o níž mluvil Gerbrandt, přesně jak bylo dohodnuto. Ukázalo se, že je jeden z kočovných hudebníků - Gillian. Pravda, nebyl tak laskavý, jako při našem prvním setkání.");
 	}
 	else
 	{
@@ -1989,7 +1989,7 @@ func void dia_addon_inextremo_announcer_killcanbemaster_info()
 	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_15");	//Abych byl upřímný, zajímalo by mě, jestli to uděláš.
 	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_16");	//Proti mně nemáš žádnou šanci! (směje se)
 	AI_Output(other,self,"DIA_pir_1398_KillCanBeMaster_01_17");	//Myslíš?
-	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_18");	//Jsem si tím jistý! Nebo si myslíš, že budeš první, kdo to to kdy zkusil?
+	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_18");	//Jsem si tím jistý! Nebo si myslíš, že budeš první, kdo to kdy zkusil?
 	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_19");	//Ti, co to zkoušeli, byli sice odvážní jako ty, ale stejně skončili jako krmivo pro krysy.
 	AI_Output(self,other,"DIA_pir_1398_KillCanBeMaster_01_21");	//Takže na tvém místě se té myšlenky zbavím co nejdřív - bude to pro tebe tak lepší.
 	AI_Output(other,self,"DIA_pir_1398_KillCanBeMaster_01_23");	//Popřemýšlím o tom.

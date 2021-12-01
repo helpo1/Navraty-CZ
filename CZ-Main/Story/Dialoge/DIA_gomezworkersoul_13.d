@@ -49,7 +49,7 @@ func void dia_gomezworkersoul_13_hallo_info()
 	AI_Output(other,self,"DIA_GomezWorkerSoul_13_HALLO_01_01");	//Máš pravdu, duchu. Jsem jiný než ty, nejsem prokletý a patřím mezi živé.
 	AI_Output(self,other,"DIA_GomezWorkerSoul_13_HALLO_01_02");	//TAK, CO HLEDÁŠ TADY, MEZI MRTVÝMI?
 	AI_Output(other,self,"DIA_GomezWorkerSoul_13_HALLO_01_05");	//Přeji si pomoci najít tvé duši dlouho očekávaný odpočinek.
-	AI_Output(self,other,"DIA_GomezWorkerSoul_13_HALLO_01_06");	//Opravdu, prišel jsi mi pomoct?!... (mrtvým hlasem) Aargh!
+	AI_Output(self,other,"DIA_GomezWorkerSoul_13_HALLO_01_06");	//Opravdu, přišel jsi mi pomoct?!... (mrtvým hlasem) Aargh!
 	AI_Output(other,self,"DIA_GomezWorkerSoul_13_HALLO_01_07");	//Ale ne jen pomoct! Je ale důležité, abys pro mě něco udělal.
 	AI_Output(self,other,"DIA_GomezWorkerSoul_13_HALLO_01_08");	//Tak co ode mě chceš, člověče?
 	AI_Output(other,self,"DIA_GomezWorkerSoul_13_HALLO_01_09");	//Měl bys dát odpuštění duši člověka jménem Gomez.
@@ -62,7 +62,7 @@ func void dia_gomezworkersoul_13_hallo_end()
 {
 	Snd_Play("SFX_INNOSEYE");
 	AI_Output(other,self,"DIA_GomezWorkerSoul_13_HALLO_End_01_01");	//Znamená to, že Gomez má od tebe odpuštěno?!
-	AI_Output(self,other,"DIA_GomezWorkerSoul_13_HALLO_End_01_02");	//Ano!... (mrtvý hlas) Má ode mě odpuštěno.
+	AI_Output(self,other,"DIA_GomezWorkerSoul_13_HALLO_End_01_02");	//Ano!... (mrtvým hlasem) Má ode mě odpuštěno.
 	AI_Output(other,self,"DIA_GomezWorkerSoul_13_HALLO_End_01_03");	//Je dokonáno! Teď je čas se postarat o tvou duši.
 	GOMEZSOULTALK_13 = TRUE;
 	AI_StopProcessInfos(self);

@@ -81,7 +81,7 @@ func void dia_sek_8048_fortuno_hi_info()
 	AI_Output(other,self,"DIA_SEK_8048_Fortuno_Hi_13_00");	//Jak se ti tady líbí?
 	AI_Output(self,other,"DIA_SEK_8048_Fortuno_Hi_13_01");	//Dobře, je tu mnohem lépe, než v Ravenově táboře... (šťastně)
 	AI_Output(self,other,"DIA_SEK_8048_Fortuno_Hi_13_02");	//O takovémhle místě jsem ani nesnil.
-	AI_Output(self,other,"DIA_SEK_8048_Fortuno_Hi_13_03");	//Dlužím ti hrozně moc. Na vždy budu tvým dlužníkem!
+	AI_Output(self,other,"DIA_SEK_8048_Fortuno_Hi_13_03");	//Dlužím ti hrozně moc. Navždy budu tvým dlužníkem!
 };
 
 

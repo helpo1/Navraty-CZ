@@ -438,7 +438,7 @@ func void dia_psionic_li_changecourse_gold()
 {
 	B_GivePlayerXP(50);
 	AI_Output(other,self,"DIA_Psionic_LI_ChangeCourse_Gold_01_01");	//Kvůli zlatu.
-	AI_Output(other,self,"DIA_Psionic_LI_ChangeCourse_Gold_01_03");	//Tentokrát ne. Paladinové určitě zaplatí spoustu zlata za tu magickou rudu, kteoru jsme zde našli.
+	AI_Output(other,self,"DIA_Psionic_LI_ChangeCourse_Gold_01_03");	//Tentokrát ne. Paladinové určitě zaplatí spoustu zlata za tu magickou rudu, kterou jsme zde našli.
 	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Gold_01_04");	//Hm... I kdyby, tak si myslím, že je to zbytečně riskantní.
 	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Gold_01_06");	//Již když jsme odplouvali, tak byl Khorinis v ohrožení napadení skřety.
 	AI_Output(self,other,"DIA_Psionic_LI_ChangeCourse_Gold_01_08");	//Skřeti už nejspíš ovládli celý ostrov. A nechce se mi přesvědčovat se osobně.
