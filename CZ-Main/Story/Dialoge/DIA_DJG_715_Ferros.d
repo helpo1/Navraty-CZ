@@ -218,7 +218,7 @@ func void DIA_DJG_715_Ferros_FerrosAnySword_Back()
 func void B_Ferros_FerrosAnySword_Give()
 {
 	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Give_01_00");	//Je to dobrá čepel. Opravdu výjimečná práce.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Give_01_01");	//Jseš si jistý, že mi něco takového chceš dát?
+	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Give_01_01");	//Jsi si jistý, že mi něco takového chceš dát?
 };
 
 func void DIA_DJG_715_Ferros_FerrosAnySword_Silverblade()
@@ -242,7 +242,7 @@ func void B_Ferros_FerrosAnySword_Yes1()
 	AI_Output(other,self,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_15_00");		//Jo, vezmi si ho.
 	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_00");		//Díky kámo! Máš to u mě.
 	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_01");		//Peníze, jak víš, já nemám... (naštvaně) 
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_02");		//Na oplátku ti ukážu pár triků, které ti v boji umožní lépe využívat svou sílu.
+	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes_01_02");		//Na oplátku ti ukážu pár triků, které ti v boji umožní lépe využívat tvou sílu.
 
 	if(RhetorikSkillValue[1] >= 50)
 	{
@@ -256,7 +256,7 @@ func void B_Ferros_FerrosAnySword_Yes1()
 func void B_Ferros_FerrosAnySword_Yes2()
 {
 	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_00");	//Děkuji! Něco ti dlužím.
-	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_01");	//Na oplátku ti ukážu pár triků, které ti v boji umožní lépe využívat svou sílu.
+	AI_Output(self,other,"DIA_DJG_715_Ferros_FerrosAnySword_Blade_Yes2_01_01");	//Na oplátku ti ukážu pár triků, které ti v boji umožní lépe využívat tvou sílu.
 
 	if(FerrosRing == TRUE)
 	{

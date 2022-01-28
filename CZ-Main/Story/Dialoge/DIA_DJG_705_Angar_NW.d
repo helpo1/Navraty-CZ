@@ -441,7 +441,7 @@ instance DIA_ANGAR_NW_GOONORKSHUNT(C_Info)
 	condition = dia_angar_nw_goonorkshunt_condition;
 	information = dia_angar_nw_goonorkshunt_info;
 	permanent = FALSE;
-	description = "Potřebuji, abyste mi pomohli proti skřetům.";
+	description = "Potřebuji, abys mi pomohl proti skřetům.";
 };
 
 
@@ -456,7 +456,7 @@ func int dia_angar_nw_goonorkshunt_condition()
 func void dia_angar_nw_goonorkshunt_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Angar_NW_GoOnOrksHunt_01_00");	//Potřebuji, abyste mi pomohli proti skřetům.
+	AI_Output(other,self,"DIA_Angar_NW_GoOnOrksHunt_01_00");	//Potřebuji, abys mi pomohl proti skřetům.
 	AI_Output(self,other,"DIA_Angar_NW_GoOnOrksHunt_01_01");	//Hmm... (vážně) Bude mi potěšením ti pomoci.
 	AI_Output(self,other,"DIA_Angar_NW_GoOnOrksHunt_01_02");	//Bude to lepší než obyčejné dny plné nudy a nicnedělání.
 	AI_Output(self,other,"DIA_Angar_NW_GoOnOrksHunt_01_03");	//Jen řekni, kdy budeme připraveni!

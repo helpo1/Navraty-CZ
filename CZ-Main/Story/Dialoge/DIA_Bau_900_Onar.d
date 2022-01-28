@@ -809,7 +809,7 @@ func void dia_onar_onarbusiness_need()
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Need_01_06");	//Možná také, chcípnou hlady dřív!
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Need_01_07");	//Zvlášť se to týká těch tvejch paladinů! Ať jsou sebelepší... (škodolibě)
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Need_01_08");	//Takže bude lepší, když odsud vypadneš a už mě nikdy nebudeš obtěžovat takovýma otázkama!
-	AI_Output(self,other,"DIA_Onar_OnarBusiness_Need_01_09");	//Jinak ti to moje děti spočítají!
+	AI_Output(self,other,"DIA_Onar_OnarBusiness_Need_01_09");	//Jinak ti to mí chlapi spočítají.
 	ONARNOTAGREED = TRUE;
 	B_LogEntry(TOPIC_ONARBUSINESS,"Nedomluvil jsem s Onarem podmínky týkající se dodávky jídla. Je čas oznámit to Luterovi.");
 	AI_StopProcessInfos(self);
@@ -837,7 +837,7 @@ func void dia_onar_onarbusiness_forget()
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Forget_01_02");	//Počkej... (podrážděně) Ještě jsme s tímhle rozhovorem neskončili.
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Forget_01_03");	//Řekni, proč vlastně Lutero tak moc potřebuje to jídlo?!
 	Info_ClearChoices(dia_onar_onarbusiness);
-	Info_AddChoice(dia_onar_onarbusiness,"To nevím nevím.",dia_onar_onarbusiness_dontknow);
+	Info_AddChoice(dia_onar_onarbusiness,"Nevím.",dia_onar_onarbusiness_dontknow);
 	Info_AddChoice(dia_onar_onarbusiness,"Jednoduše chce vydělat na městě víc.",dia_onar_onarbusiness_deal);
 	Info_AddChoice(dia_onar_onarbusiness,"Protože jsou jeho sklady prázdné.",dia_onar_onarbusiness_empty);
 	Info_AddChoice(dia_onar_onarbusiness,"Jsou to potraviny pro paladiny.",dia_onar_onarbusiness_paladin);
@@ -865,7 +865,7 @@ func void dia_onar_onarbusiness_empty()
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Empty_01_04");	//Víš, já si prostě myslím, že se mě snažíš převést a oklamat.
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Empty_01_05");	//A hlavně nemám rád lháře!
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Empty_01_06");	//Takže odsud vypadni ty ubohej podvodníku!
-	AI_Output(self,other,"DIA_Onar_OnarBusiness_Empty_01_07");	//Jinak ti to moje děti spočítají!
+	AI_Output(self,other,"DIA_Onar_OnarBusiness_Empty_01_07");	//Jinak ti to mí chlapi spočítají!
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_Empty_01_08");	//Jak jsem řekl!... (naštvaně)
 	ONARNOTAGREED = TRUE;
 	B_LogEntry(TOPIC_ONARBUSINESS,"Nedomluvil jsem s Onarem podmínky týkající se dodávky jídla. Je čas oznámit to Luterovi.");
@@ -879,7 +879,7 @@ func void dia_onar_onarbusiness_dontknow()
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_DontKnow_01_03");	//Pošle tě za mnou a ani ti neřekne proč?
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_DontKnow_01_04");	//Víš, já si myslím, že si ze mě prostě utahuješ!
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_DontKnow_01_05");	//A to se mi ani trochu nelíbí... (naštvaně)
-	AI_Output(self,other,"DIA_Onar_OnarBusiness_DontKnow_01_06");	//Takže se mi kliď z očí, nebo zavolám své děti, aby tě odtud vyhodily.
+	AI_Output(self,other,"DIA_Onar_OnarBusiness_DontKnow_01_06");	//Takže se mi kliď z očí, nebo zavolám své chlapy, aby tě odtud vyhodily.
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_DontKnow_01_07");	//Už jsem ti řekl vše.
 	ONARNOTAGREED = TRUE;
 	B_LogEntry(TOPIC_ONARBUSINESS,"Nedomluvil jsem s Onarem podmínky týkající se dodávky jídla. Je čas oznámit to Luterovi.");
@@ -906,7 +906,7 @@ func void dia_onar_onarbusiness_dntknw()
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_DntKnw_01_03");	//Pošle tě za mnou a ani ti neřekne proč?
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_DntKnw_01_04");	//Víš, já si myslím, že si ze mě prostě utahuješ!
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_DntKnw_01_05");	//A to se mi ani trochu nelíbí... (naštvaně)
-	AI_Output(self,other,"DIA_Onar_OnarBusiness_DntKnw_01_06");	//Takže se mi kliď z očí, nebo zavolám své děti, aby tě odtud vyhodily.
+	AI_Output(self,other,"DIA_Onar_OnarBusiness_DntKnw_01_06");	//Takže se mi kliď z očí, nebo zavolám své chlapy, aby tě odtud vyhodily.
 	AI_Output(self,other,"DIA_Onar_OnarBusiness_DntKnw_01_07");	//Už jsem ti řekl vše.
 	ONARNOTAGREED = TRUE;
 	B_LogEntry(TOPIC_ONARBUSINESS,"Nedomluvil jsem s Onarem podmínky týkající se dodávky jídla. Je čas oznámit to Luterovi.");

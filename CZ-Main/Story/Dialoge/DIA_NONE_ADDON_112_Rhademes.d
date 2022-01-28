@@ -49,20 +49,20 @@ func void DIA_Addon_Rhademes_First_Info()
 {
 	if(PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_1] == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_00");	//Moja mágia bola zadržaná na večné časy.
-		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_01");	//Konečne som volný. Meč má nového majitela.
-		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_02");	//Posledná komora sa otvorila.
-		AI_Output(other,self,"DIA_Addon_Rhademes_First_15_03");	//Ale brána vyzerá pre mňa zatvorená.
-		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_04");	//Toto nie je brána do poslednej komory.
-		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_05");	//Táto brána ťa zavedie do izby predtým.
-		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_06");	//Majitel... zavrel to pred ním.
+		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_00");	//Moje magie byla zadržena na věčné časy.
+		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_01");	//Konečně jsem volný. Meč má nového nositele.
+		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_02");	//Poslední komnata se otevřela.
+		AI_Output(other,self,"DIA_Addon_Rhademes_First_15_03");	//Ale brána vypadá pro mě uzavřena.
+		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_04");	//Toto není brána do poslední komnaty.
+		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_05");	//TATO brána vede pouze do předsíně.
+		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_06");	//Nositel... ji za sebou zavřel.
 		Rhademes_Understood = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_07");	//Ghanima en Kandra Adanos?
+		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_07");	//(napjatě) Ghanima en Kandra Adanos?
 		B_Say(other,self,"$CANTUNDERSTANDTHIS");
-		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_08");	//(zúrivo) Bengla anthani!
+		AI_Output(self,other,"DIA_Addon_Rhademes_First_03_08");	//(zuřivě) Bengla anthani!
 		AI_StopProcessInfos(self);
 	};
 };
@@ -87,9 +87,9 @@ func int DIA_Addon_Rhademes_Pforte_Condition()
 func void DIA_Addon_Rhademes_Pforte_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Rhademes_Pforte_15_00");	//Jak otevřu bránu?
-	AI_Output(self,other,"DIA_Addon_Rhademes_Pforte_03_01");	//Potiahni... jednu z pák.
-	AI_Output(other,self,"DIA_Addon_Rhademes_Pforte_15_02");	//Některou?
-	AI_Output(self,other,"DIA_Addon_Rhademes_Pforte_03_03");	//Všetky páky otvoria bránu.
+	AI_Output(self,other,"DIA_Addon_Rhademes_Pforte_03_01");	//Potáhni... jednu z pák.
+	AI_Output(other,self,"DIA_Addon_Rhademes_Pforte_15_02");	//Jakoukoli?
+	AI_Output(self,other,"DIA_Addon_Rhademes_Pforte_03_03");	//Všechny páky otevřou bránu.
 };
 
 
@@ -100,7 +100,7 @@ instance DIA_Addon_Rhademes_Hebel(C_Info)
 	condition = DIA_Addon_Rhademes_Hebel_Condition;
 	information = DIA_Addon_Rhademes_Hebel_Info;
 	permanent = FALSE;
-	description = "Ne, všecky páky spustí past, že?";
+	description = "Ne všechny páky spouštějí past, že?";
 };
 
 
@@ -115,8 +115,8 @@ func int DIA_Addon_Rhademes_Hebel_Condition()
 
 func void DIA_Addon_Rhademes_Hebel_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Rhademes_Hebel_15_00");	//Ne, všecky páky spustí past, že?
-	AI_Output(self,other,"DIA_Addon_Rhademes_Hebel_03_01");	//Áno!
+	AI_Output(other,self,"DIA_Addon_Rhademes_Hebel_15_00");	//Ne všechny páky spouštějí past, že?
+	AI_Output(self,other,"DIA_Addon_Rhademes_Hebel_03_01");	//Ano!
 };
 
 
@@ -143,7 +143,7 @@ func int DIA_Addon_Rhademes_DontBelieve_Condition()
 func void DIA_Addon_Rhademes_DontBelieve_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Rhademes_DontBelieve_15_00");	//Nevěřím ti!
-	AI_Output(self,other,"DIA_Addon_Rhademes_DontBelieve_03_01");	//Nie... ja nikdy neklamem.
+	AI_Output(self,other,"DIA_Addon_Rhademes_DontBelieve_03_01");	//Přesto... mluvím pouze pravdu.
 };
 
 
@@ -154,7 +154,7 @@ instance DIA_Addon_Rhademes_DeinVater(C_Info)
 	condition = DIA_Addon_Rhademes_DeinVater_Condition;
 	information = DIA_Addon_Rhademes_DeinVater_Info;
 	permanent = FALSE;
-	description = "Tvůj otec postavil tuto past. Co víš o jejím fungovaní?!";
+	description = "Tvůj otec postavil tuto past, jak můžeš vědět, jak funguje?!";
 };
 
 
@@ -169,15 +169,15 @@ func int DIA_Addon_Rhademes_DeinVater_Condition()
 
 func void DIA_Addon_Rhademes_DeinVater_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Rhademes_DeinVater_15_00");	//Tvůj otec postavil tuto past. Co víš o jejím fungovaní?
-	AI_Output(self,other,"DIA_Addon_Rhademes_DeinVater_03_01");	//QUARHODRON!Stále počujem údery kladiva... na druhej strane brány... tak dávno...
-	AI_Output(self,other,"DIA_Addon_Rhademes_DeinVater_03_02");	//Meč... ukáž... jeho pomsta... za moju chybu...
-	AI_Output(other,self,"DIA_Addon_Rhademes_DeinVater_15_03");	//Takže si viděl která páka je ta správná?
-	AI_Output(self,other,"DIA_Addon_Rhademes_DeinVater_03_04");	//Už dávno som to zabudol.
+	AI_Output(other,self,"DIA_Addon_Rhademes_DeinVater_15_00");	//Tvůj otec postavil tuto past, jak můžeš vědět, jak funguje?!
+	AI_Output(self,other,"DIA_Addon_Rhademes_DeinVater_03_01");	//QUARHODRON! Pořád slyším bušení kladiv... na druhé straně brány... po tak dlouhé době...
+	AI_Output(self,other,"DIA_Addon_Rhademes_DeinVater_03_02");	//Meč... mi ukázal... pomstu... za mé selhání...
+	AI_Output(other,self,"DIA_Addon_Rhademes_DeinVater_15_03");	//Takže jsi viděl, která páka je ta správná?
+	AI_Output(self,other,"DIA_Addon_Rhademes_DeinVater_03_04");	//Už jsem to dávno zapomněl.
 	Info_ClearChoices(DIA_Addon_Rhademes_DeinVater);
-	Info_AddChoice(DIA_Addon_Rhademes_DeinVater,"Hádej!",DIA_Addon_Rhademes_DeinVater_Guess);
-	Info_AddChoice(DIA_Addon_Rhademes_DeinVater,"Zkus si na to vzpomenout.",DIA_Addon_Rhademes_DeinVater_Remember);
-	Info_AddChoice(DIA_Addon_Rhademes_DeinVater,"Premýšlej!",DIA_Addon_Rhademes_DeinVater_Think);
+	Info_AddChoice(DIA_Addon_Rhademes_DeinVater,"Pak hádej!",DIA_Addon_Rhademes_DeinVater_Guess);
+	Info_AddChoice(DIA_Addon_Rhademes_DeinVater,"Zkus si vzpomenout.",DIA_Addon_Rhademes_DeinVater_Remember);
+	Info_AddChoice(DIA_Addon_Rhademes_DeinVater,"Přemýšlej!",DIA_Addon_Rhademes_DeinVater_Think);
 };
 
 
@@ -185,7 +185,7 @@ var int Rhademes_fertig;
 
 func void B_Addon_Rhademes_Lever(var int Choice)
 {
-	AI_Output(self,other,"DIA_Addon_Rhademes_Lever_03_00");	//Bolo to tak dávno...
+	AI_Output(self,other,"DIA_Addon_Rhademes_Lever_03_00");	//Bylo to tak dávno...
 	AI_StopProcessInfos(self);
 	if(Choice <= 1)
 	{
@@ -205,19 +205,19 @@ func void B_Addon_Rhademes_Lever(var int Choice)
 
 func void DIA_Addon_Rhademes_DeinVater_Think()
 {
-	AI_Output(other,self,"DIA_Addon_Rhademes_DeinVater_Think_15_00");	//Premýšlej!
+	AI_Output(other,self,"DIA_Addon_Rhademes_DeinVater_Think_15_00");	//Přemýšlej!
 	B_Addon_Rhademes_Lever(1);
 };
 
 func void DIA_Addon_Rhademes_DeinVater_Remember()
 {
-	AI_Output(other,self,"DIA_Addon_Rhademes_DeinVater_Remember_15_00");	//Zkus si na to vzpomenout.
+	AI_Output(other,self,"DIA_Addon_Rhademes_DeinVater_Remember_15_00");	//Zkus si vzpomenout.
 	B_Addon_Rhademes_Lever(2);
 };
 
 func void DIA_Addon_Rhademes_DeinVater_Guess()
 {
-	AI_Output(other,self,"DIA_Addon_Rhademes_DeinVater_Guess_15_00");	//Hádej!
+	AI_Output(other,self,"DIA_Addon_Rhademes_DeinVater_Guess_15_00");	//Pak hádej!
 	B_Addon_Rhademes_Lever(3);
 };
 
@@ -244,7 +244,7 @@ func int DIA_Addon_Rhademes_PERM_Condition()
 
 func void DIA_Addon_Rhademes_PERM_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Rhademes_PERM_03_00");	//Ak máš svoju silu... použi ju... do hlbín mora...
+	AI_Output(self,other,"DIA_Addon_Rhademes_PERM_03_00");	//Pokud máš sílu... potop ho... do hlubin moře...
 	SC_TookRhademesTrap = TRUE;
 	SC_TalkedToRhademAfter = TRUE;
 	AI_StopProcessInfos(self);
@@ -280,7 +280,7 @@ instance DIA_NONE_ADDON_1159_Rhademes_Why(C_Info)
 	condition = DIA_NONE_ADDON_1159_Rhademes_Why_Condition;
 	information = DIA_NONE_ADDON_1159_Rhademes_Why_Info;
 	permanent = FALSE;
-	description = "Rhademes? Co tady děláš?";
+	description = "Rhademesi? Co tady děláš?";
 };
 
 func int DIA_NONE_ADDON_1159_Rhademes_Why_Condition()
@@ -290,15 +290,15 @@ func int DIA_NONE_ADDON_1159_Rhademes_Why_Condition()
 
 func void DIA_NONE_ADDON_1159_Rhademes_Why_Info()
 {
-	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Why_01_00");	//Rhademes? Co tady děláš?
+	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Why_01_00");	//Rhademesi? Co tady děláš?
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Why_01_01");	//(chladně) Přišel jsem si promluvit s Ashtarem.
-	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Why_01_02");	//Můj duch stále nemůžete najít svou cestu do světa předků.
+	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Why_01_02");	//Můj duch stále nemůže najít svou cestu do světa předků.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Why_01_03");	//Možná by mi mohl pomoci.
 
 	if(DragonGoldIsDead == TRUE)
 	{
 		AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Why_01_04");	//Ale Ashtar je mrtvý!
-		AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Why_01_05");	//Vidím. Že moje duše je naplněna stále více smutku.
+		AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Why_01_05");	//Vidím. Moje duše je naplněna ještě větším smutkem.
 		AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Why_01_06");	//Se vší pravděpodobností, nikdy nenajdu míru na tomto světě.
 	};
 };
@@ -327,14 +327,14 @@ func void DIA_NONE_ADDON_1159_Rhademes_Father_Info()
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Father_01_00");	//Kde je tvůj otec?
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Father_01_01");	//Quarhodron? Proč se ptáš?
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Father_01_02");	//Pokud sis nevšiml, Jharkendar obsadili nemrtví!
-	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Father_01_03");	//A to ohrožuje nejen ho, ale i jiný části ostrova.
-	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Father_01_04");	//Temné časy dorazí na světě...
+	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Father_01_03");	//A to ohrožuje nejen Jharkendar, ale i jiný části ostrova.
+	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Father_01_04");	//Temné časy dorazí na tento svět...
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Father_01_05");	//Adanovy děti se již nemůžou dívat na to, jak živé ničí jejich útočiště, a poskvrňují starověké chrámy našich předků.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Father_01_06");	//Proto se bouřili, aby nesly břemeno pomsty za něj! Oni zničí každého, kdo se odváží postavit proti vůli Adana.
-	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Father_01_07");	//Pochybuji že je do toho zapojený Adanos.
-	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Father_01_08");	//S největší pravděpodobností jsou předmětem zlé vůle démoni, či snad dokonce Beliar!
+	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Father_01_07");	//Pochybuji, že je do toho zapojený Adanos.
+	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Father_01_08");	//S největší pravděpodobností jsou předmětem zlé vůle démonů, či snad dokonce Beliara!
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Father_01_09");	//Ty moc nevíš, člověče... (studeně) Ale je to jak můj otec řekl.
-	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Father_01_10");	//Zajímalo by mě, co to má dělat s tím?
+	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Father_01_10");	//Zajímalo by mě, co to má co dělat s ním?
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Father_01_11");	//To můj otec zavolal své bratry, aby mu pomohli dosáhnout Adanovy vůle.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Father_01_12");	//Když byl velký vojevůdce mých lidí. Mnozí si ho zapamatovali a jsou ochotni mu sloužit i po smrti.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Father_01_13");	//Takže, na vině všechny neduhy je Quarhodron?! Kdo by si pomyslel...
@@ -366,7 +366,7 @@ func void DIA_NONE_ADDON_1159_Rhademes_SeekFath_Info()
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_SeekFath_01_02");	//To zní skvěle. Ale mohl bys být trochu přesnější?
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_SeekFath_01_03");	//Je mi líto, nepamatuji se kde to místo je.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_SeekFath_01_04");	//To je velmi špatné.
-	B_LogEntry(TOPIC_JarCurse,"Na otázku kde je Quarhodron, Rhademes hovořil o místě kde kdysi existovala velká bitva Khar Aram. Nicméně si nepamatuje kde to bylo přesně.");		
+	B_LogEntry(TOPIC_JarCurse,"Na otázku kde je Quarhodron, Rhademes mluvil o místě kde se kdysi odehrála velká bitva Khar Aram. Nicméně si nepamatuje kde to přesně bylo.");		
 };
 
 instance DIA_NONE_ADDON_1159_Rhademes_Near(C_Info)
@@ -428,14 +428,14 @@ func void DIA_NONE_ADDON_1159_Rhademes_Priest_Info()
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Priest_01_02");	//A co kněží?
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Priest_01_03");	//Poslouchají vůli Khardimona, velekněze našich lidí.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Priest_01_04");	//Slyšel jsem to jméno. 
-	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Priest_01_05");	//Je to jeho duch, Raven povolán do tohoto světa proniknout do Adanova chrámu.
+	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Priest_01_05");	//To je duch, kterého Raven povolal do tohoto světa aby mohl proniknout do Adanova chrámu.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Priest_01_06");	//Nechápu co říkáš, člověče.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_Priest_01_07");	//No to je jedno. Jen mi řekni kde najdu Khardimona?
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_Priest_01_08");	//Jeho duch musí přebývat ve velkém chrámu, na severovýchodě údolí.
 	MIS_Qvardemon = LOG_Running;
 	Log_CreateTopic(TOPIC_Qvardemon,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Qvardemon,LOG_Running);
-	B_LogEntry(TOPIC_Qvardemon,"Quarhodron ovládá pouze vojáky nemrtvých. Kněží poslouchají Khardimona, arcimága Stavitelů. Zdá se že se budu muset vypořádat s tím. Podle Rhademese duch Khardimona žije v ruinách chrámu na severovýchod od údolí.");	
+	B_LogEntry(TOPIC_Qvardemon,"Quarhodron ovládá pouze válečníky nemrtvých. Kněží poslouchají Khardimona, velekněze Stavitelů. Zdá se, že se s tím budu muset vypořádat. Podle Rhademese duch Khardimona přebývá v ruinách chrámu na severovýchodě údolí.");	
 	Wld_InsertNpc(Skeleton_Shadow_Priest,"FP_ROAM_ENTRANCEORCGUARD_18");
 	Wld_InsertNpc(Skeleton_Mage_AV_Elite,"FP_ROAM_ENTRANCEORCGUARD_17");
 	Wld_InsertNpc(Skeleton_Shadow_Priest,"ADW_CANYON_LIBRARY_02");
@@ -507,28 +507,28 @@ func void DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_Info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_00");	//Adanos očistil od prokletí tvůj lid.
-	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_01");	//Ano, jsem se cítil... (povzdech) Teď jsem konečně volný.
-	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_02");	//Takže paměť se vrátila k vám, a teď mi řekni kde hledat vašeho otce?
+	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_01");	//Ano, cítil jsem to... (povzdech) Teď jsem konečně volný.
+	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_02");	//Takže se ti vrátila paměť, a teď mi řekni kde hledat tvého otce.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_03");	//Jak jsem již řekl dříve, nyní je tam kde kdysi došlo k velké bitvě Khar Aram.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_04");	//Už vím. Ale kde to přesně je?
-	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_05");	//Podívejte se na to v posvátných zemích Adana. To je tam, kde můj otec shromažďuje svou armádu, která se pomstí lidem.
+	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_05");	//Podívej se na to v posvátných zemích Adana. To je tam, kde můj otec shromažďuje svou armádu, která se pomstí lidem.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_06");	//A přesněji? Tahle země je rozsáhlá.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_07");	//Hmmm... (zamyšleně) V blízkosti toho místa je obrovský balvan.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_08");	//Pokud si vzpomínám, z něj byl kdysi nádherný výhled na téměř celé údolí.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_09");	//No, alespoň něco. Jinak bych musel asi věčnost putovat v divočině.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_10");	//Počkej, to není všechno...
-	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_11");	//Pokud se opravdu chcete setkat s mým otcem, pak musíte nejprve počkat na noc.
+	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_11");	//Pokud se opravdu chceš setkat s mým otcem, pak musíš nejprve počkat na noc.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_12");	//Uvidíš ho jen v odrazu měsíčního světla.
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_13");	//Ale pozor. Bývá obklopen zástupy nemrtvých válečníků.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_14");	//Prvně se budeš muset vypořádat s nimi.
-	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_15");	//Nedotknou se vás když budou vědět že sloužíš Adanovi.
+	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_15");	//Nedotknou se tě když budou vědět, že sloužíš Adanovi.
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_16");	//Dobře, cením si toho.
-	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_17");	//Nyní sbohem. Už se neuvidíme navzájem...
+	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_17");	//Nyní sbohem. Už se spolu neuvidíme...
 	AI_Output(self,other,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_18");	//A děkuji za záchranu mého lidu!
 	AI_Output(other,self,"DIA_NONE_ADDON_1159_Rhademes_CurseAncientDone_01_19");	//Nashledanou.
 	MIS_CurseAncient = LOG_Success;
 	Log_SetTopicStatus(TOPIC_CurseAncient,LOG_Success);
-	B_LogEntry(TOPIC_JarCurse,"Myslím, že budu muset jít na náhorní plošinu - do Adanovy země. Quarhodron si tam pěstuje armádů mrtvých, zničí veškerý život na tomto ostrově. Rhademes řekl že poblíž místa, kde bych mohl najít Quarhodrona je obrovský balvan. Nicméně musím počkat na noc, protože jen v měsíčním světle se můžu setkat s jeho otcem. Taky mě varoval že Quarhodrona střeží obrovské množství vojáků Stavitelů. Ale jestli jim nějak dokážu že sloužím Adanovi, nebudou na mě útočit, jinak budu muset bojovat s armádou.");
-	B_LogEntry_Quiet(TOPIC_CurseAncient,"Duše Rhademese je volná, stejně jako všichni jeho lidé zdá se, příběh dávného prokletí je u konce.");
+	B_LogEntry(TOPIC_JarCurse,"Myslím, že budu muset jít na náhorní plošinu - do Adanovy země. Quarhodron si tam pěstuje armádů nemrtvých, zničí veškerý život na tomto ostrově. Rhademes řekl, že poblíž místa, kde bych mohl najít Quarhodrona je obrovský balvan. Nicméně musím počkat na noc, protože jen v měsíčním světle se můžu setkat s jeho otcem. Taky mě varoval, že Quarhodrona střeží obrovské množství válečníků Stavitelů. Ale jestli jim nějak dokážu, že sloužím Adanovi, nebudou na mě útočit, jinak budu muset bojovat s armádou.");
+	B_LogEntry_Quiet(TOPIC_CurseAncient,"Duše Rhademese je volná, stejně jako všichni jeho lidé. Zdá se, že příběh dávného prokletí je u konce.");
 	AI_StopProcessInfos(self);
 };

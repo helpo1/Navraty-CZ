@@ -7,9 +7,9 @@ func void B_AssignORC_AntiPaladinTalk(var C_Npc Antipaladin)
 	{
 		if(AntiPaladinTalkcount == 0)
 		{
-			AI_Output(self,other,"DIA_ORC_AntiPaladin_18_01");	//KHROKGNAR! Pán říkal že velký paladin pďijde! Pán mít pravdu! Pán mít vždy pravdu!
+			AI_Output(self,other,"DIA_ORC_AntiPaladin_18_01");	//KHROKGNAR! Pán říkal, že velký paladin přijde! Pán mít pravdu! Pán mít vždy pravdu!
 			AI_Output(self,other,"DIA_ORC_AntiPaladin_18_02");	//My vůdci hrdých skřetích armád přicházet zničit paladiny!
-			AI_Output(self,other,"DIA_ORC_AntiPaladin_18_03");	//My zabít Hagen a jeho paladiny! Ani ti nepomoci jim!
+			AI_Output(self,other,"DIA_ORC_AntiPaladin_18_03");	//My zabít Hagen a jeho paladiny! Ani ty nepomoci jim!
 			B_GivePlayerXP(XP_Ambient);
 		}
 		else if(AntiPaladinTalkcount == 1)

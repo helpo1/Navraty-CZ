@@ -460,8 +460,8 @@ func void DIA_NONE_1813_Ilesil_WhoYou_Info()
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhoYou_15_01");	//Moje jméno zní Ile'Sil. Hledám zde odpovědi stejně jako ty.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_WhoYou_15_02");	//Jak dlouho je hledáš?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhoYou_15_03");	//To nevím. Od chvíle, kdy jsem se sem dostal, se čas téměř zastavil.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhoYou_15_04");	//Vím, že to zní velmi divně, ale sám se brzy můžeš přsvědčit.
-	AI_Output(other,self,"DIA_NONE_1813_Ilesil_WhoYou_15_05");	//Vlastně jsem neměl v úmyslu zůstat tady moc dlouhou.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhoYou_15_04");	//Vím, že to zní velmi divně, ale sám se brzy můžeš přesvědčit.
+	AI_Output(other,self,"DIA_NONE_1813_Ilesil_WhoYou_15_05");	//Vlastně jsem neměl v úmyslu zůstat tady moc dlouho.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhoYou_15_06");	//Zrovna jsi přišel a už chceš jít? Obávám se, že tě zklamu, odsud jen tak neodejdeš.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_WhoYou_15_07");	//Co tím myslíš?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhoYou_15_08");	//Odsud není cesta!
@@ -520,7 +520,7 @@ func void DIA_NONE_1813_Ilesil_WhyNotRun_Info()
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_WhyNotRun_15_00");	//A ty ses nezkoušel odsud dostat?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyNotRun_15_01");	//Zkoušel. Ale jenom jedenkrát. Došel jsem až na úroveň toho velkého kamene.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_WhyNotRun_15_02");	//A co potom?
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyNotRun_15_03");	//Potom, jsem prostě umřel. Vzpomýnám, něco velkého vyběhlo z poza toho kamene přímo na mě.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyNotRun_15_03");	//Potom, jsem prostě umřel. Vzpomínám, něco velkého vyběhlo z poza toho kamene přímo na mě.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyNotRun_15_04");	//A pak už jen tma. A neskutečná bolest po celém těle!
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_WhyNotRun_15_05");	//Znamená to, že jsi duch?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyNotRun_15_06");	//To sám nevím, kdo jsem. Ale možná ty, mě pomůžeš najít odpověď na mojí otázku.
@@ -551,9 +551,9 @@ func void DIA_NONE_1813_Ilesil_WhyComeHere_Info()
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_01");	//Nejsem zde ze své vůle, to všechno můj šílený bratr!
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_WhyComeHere_15_02");	//Měl jsi bratra?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_03");	//Jmenoval se Il-Kirit, byli jsme lovci.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_04");	//Když nás všechny zachvátíl strach a propuklo hromadné šílenství, řekl, že zná místo kde se můžeme schovat.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_04");	//Když nás všechny zachvátil strach a propuklo hromadné šílenství, řekl, že zná místo kde se můžeme schovat.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_WhyComeHere_15_05");	//Počkej, o jakém druhu šílenství to mluvíš?
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_06");	//Ach ano... Vždyť od té doby uplinulo tolik času, a ty samozřejmě nemůžeš vědět, co se tenkrát přihodilo.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_06");	//Ach ano... Vždyť od té doby uplynulo tolik času, a ty samozřejmě nemůžeš vědět, co se tenkrát přihodilo.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_WhyComeHere_15_07");	//Ale nyní bych to rád věděl.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_08");	//Takže začnu od úplného začátku. Stejně není kam pospíchat. 
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_09");	//To místo odkud jsi přišel, bylo kdysi překrásné údolí, Adaros.
@@ -569,13 +569,13 @@ func void DIA_NONE_1813_Ilesil_WhyComeHere_Info()
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_19");	//Bili jsme se jak to jen šlo, ale v jeden moment jsme zjistili, že nemáme kam ustoupit.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_20");	//A v tu chvíli můj bratr uviděl v rohu místnosti, něco jako magický portál.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_21");	//Neměli jsme na výběr. Oba jsme do něj vběhli a tak jsem se ocitnul na tomhle místě.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_22");	//Ale bylo pozdě když jsem pochopil,že vvšechny ty svoření, co napadli naše údolí, k nám přišli přes tento portál.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_22");	//Ale bylo pozdě když jsem pochopil, že všechna ta stvoření, co napadli naše údolí, k nám přišli přes tento portál.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_23");	//Ale kdo to mohl tenkrát vědět.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_WhyComeHere_15_24");	//A co tvůj bratr?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_25");	//Nebyl tady. A tak jsem se rozhodl ho jít hledat.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_26");	//Ale to jen do té doby než jsem se dostal k tomu velkému kameni. Tam to skončilo stejně jako můj život.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_27");	//Od té doby jsem ztratil naději, že zjistím co se stalo s mým bratrem.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_28");	//A bojím se, že už se to nikdy nedovím. Od té doby uplinulo již tolik času...
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_WhyComeHere_15_28");	//A bojím se, že už se to nikdy nedovím. Od té doby uplynulo již tolik času...
 };
 
 instance DIA_NONE_1813_Ilesil_SeekBro(C_Info)
@@ -602,28 +602,28 @@ func void DIA_NONE_1813_Ilesil_SeekBro_Info()
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_01");	//Ty mě nabízíš pomoc? To je úctyhodné.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_02");	//Ale tohle místo je velmi nebezpečné, na každém kroku zde na tebe dýchá smrt!
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_SeekBro_15_03");	//Musel jsem se vypořádat i s horšíma. A ty mě přeci pomůžeš?
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_04");	//Jak jen budu moci. Ale být se se všema těma potvorama na tomto ostrově budeš muset sám.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_04");	//Jak jen budu moci. Ale bojovat se všema těma potvorama na tomto ostrově budeš muset sám.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_SeekBro_15_05");	//A co tě drží na tomto místě?
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_06");	//Už velmi dlouhou dobu, mě nějaká magická síla spoutává k tomu to místu.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_07");	//Těžko se to vysvětluje, ale cítím to v celé těle, když se snažím někam pohnout.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_06");	//Už velmi dlouhou dobu, mě nějaká magická síla spoutává k tomuto místu.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_07");	//Těžko se to vysvětluje, ale cítím to v celém těle, když se snažím někam pohnout.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_08");	//A protože zde musím zůstat, tak tě můžu jenom sledovat. 
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_09");	//Když se ti podaří dostat hluboko do středu ostrova, možná tam najdeš řešení mého problému.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_10");	//A pak můžem pokračovat v pátrání společně.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_SeekBro_15_11");	//Nu dobrá. A jak tvůj bratr vypadal? Pověz mi něco, podle čeho bych ho poznal.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_12");	//V momentu našeho odloučení měl loveckou zbroj z kůže pantera a chitinový meč, který mu dal náš otec před tím než zemřel.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_13");	//To je vše na co si vzpomínám.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_13");	//To je vše, na co si vzpomínám.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_SeekBro_15_14");	//Dobře, budu si to pamatovat. Budu doufat, že kromě tvého bratra najdu i cestu z tohodle ostrova.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_SeekBro_15_15");	//Nerad bych zde zůstal na věčnost.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_16");	//Jsi velmi statečný chlapík. Doufám, že štěstí bude na tvé straně.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_17");	//Vezmi si tento amulet. On tě ochrání od smrtelného nebezpečí zdejšího kraje.
 	B_GiveInvItems(self,other,ItMi_IlisilAmulet,1);
-	AI_Output(other,self,"DIA_NONE_1813_Ilesil_SeekBro_15_18");	//Děkuji ateď už musím jít.
+	AI_Output(other,self,"DIA_NONE_1813_Ilesil_SeekBro_15_18");	//Děkuji a teď už musím jít.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SeekBro_15_19");	//Dávej na sebe pozor.
 	EpicJorneyStart = TRUE;
 	MIS_Miss_Brother = LOG_Running;
 	Log_CreateTopic(TOPIC_Miss_Brother,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Miss_Brother,LOG_Running);
-	B_LogEntry(TOPIC_Miss_Brother,"Po průchodu tajným portálem, jsem se setkal s neobvyklým duchem jménem Ile'Sil. Vyprávěl mi svůj příběh, jak on a jeho bratr Il-Kirit se snažil uniknout tímto portálem před monstry, které je pronásledovali. Nicméně, během teleportace se navzájem ztratili a on neví co je s jeho bratrem. Rozhodl jsem se pomoci mu s hledáním bratra, nebo alespoň toho, co z něj zbylo. Kromě toho, musím najít způsob, jak se dostat ven z tohoto místa, poněvadž podle Ile'Sila, to není možné.");
+	B_LogEntry(TOPIC_Miss_Brother,"Po průchodu tajným portálem, jsem se setkal s neobvyklým duchem jménem Ile'Sil. Vyprávěl mi svůj příběh, jak on a jeho bratr Il-Kirit se snažili uniknout tímto portálem před monstry, které je pronásledovali. Nicméně, během teleportace se navzájem ztratili a on neví co je s jeho bratrem. Rozhodl jsem se pomoci mu s hledáním bratra, nebo alespoň toho, co z něj zbylo. Kromě toho, musím najít způsob, jak se dostat ven z tohoto místa, poněvadž podle Ile'Sila, to není možné.");
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(PaleCrawler,"LOSTVALLEY_PALECRAWLER");
 };
@@ -702,7 +702,7 @@ func void DIA_NONE_1813_Ilesil_SecondBossDown_Info()
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_SecondBossDown_15_11");	//Podívám se na ten hřbitov, možná tam najdu ještě něco zajímavého.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_SecondBossDown_15_12");	//Dobře a já se podívám na to oko.
 	ReadyForBoss3 = TRUE;
-	B_LogEntry(TOPIC_Miss_Brother,"Přinesl jsem Ile'Silovi podivný předmět, vypadal jako oko, našel jsem ho v truhle Liche. Ile'Sil slíbil že se pokusí zjistit, co to je. Ale bude to nějakou dobu trvat. Raději se porozhlédnu kolem starého hřbitova. Možná budu mít štěstí a najdu něco zajímavého.");
+	B_LogEntry(TOPIC_Miss_Brother,"Přinesl jsem Ile'Silovi podivný předmět, vypadal jako oko, našel jsem ho v truhle Liche. Ile'Sil slíbil, že se pokusí zjistit, co to je. Ale bude to nějakou dobu trvat. Raději se porozhlédnu kolem starého hřbitova. Možná budu mít štěstí a najdu něco zajímavého.");
 	AI_StopProcessInfos(self);
 };
 
@@ -740,13 +740,13 @@ func void DIA_NONE_1813_Ilesil_ThirdBossDown_Info()
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_ThirdBossDown_15_12");	//Jestli je to klíč - to znamená, že musí existovat zámek. 
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_ThirdBossDown_15_13");	//Neber vše tak doslova. To co jsem měl na mysli, znamená spíš, že tento předmět má vliv na okolní objekty.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_ThirdBossDown_15_14");	//Dobře a co s tím budeme teď dělat?
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_ThirdBossDown_15_15");	//Říkal jsi, že jsi našel nějaký objetní oltář. Zkus tu věc použít na něj.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_ThirdBossDown_15_15");	//Říkal jsi, že jsi našel nějaký obětní oltář. Zkus tu věc použít na něj.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_ThirdBossDown_15_16");	//Možná to k něčemu bude.
 	B_GiveInvItems(self,other,ItMi_ArahArEye,1);
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_ThirdBossDown_15_17");	//A jestli ne?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_ThirdBossDown_15_18");	//Tak budeme pátrat dál.
 	ReadyForBoss4 = TRUE;
-	B_LogEntry(TOPIC_Miss_Brother,"Ile'Sil měl zvláštní pohled a žádal mě, abych oko použíl na oltář, hlídaný duchy. Doufám, že to k něčemu bude.");
+	B_LogEntry(TOPIC_Miss_Brother,"Ile'Sil měl zvláštní pohled a žádal mě, abych oko použil na oltář, hlídaný duchy. Doufám, že to k něčemu bude.");
 	AI_StopProcessInfos(self);
 };
 
@@ -771,7 +771,7 @@ func int DIA_NONE_1813_Ilesil_IsFree_Condition()
 func void DIA_NONE_1813_Ilesil_IsFree_Info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_IsFree_15_01");	//Vidím, že se ti přece jen podařilo nějak mě osvobodil z pout magie.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_IsFree_15_01");	//Vidím, že se ti přece jen podařilo nějak mě osvobodit z pout magie.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_IsFree_15_02");	//Zřejmě - teď už jsi tady. Jak se cítíš?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_IsFree_15_03");	//Lépe, mnohem lépe. Poslední roky pobytu na tomto místě bylo prostě nesnesitelné.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_IsFree_15_04");	//A teď v jediném momentu to skončilo. 
@@ -885,7 +885,7 @@ func void DIA_NONE_1813_Ilesil_NextMove_Info()
 	B_GivePlayerXP(1000);
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_NextMove_15_01");	//Vidím, že se ti podařilo dostat se sem.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_NextMove_15_02");	//Co to je za místo?
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_NextMove_15_03");	//Nevím, ale připomýná mě Druidský kruh. 
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_NextMove_15_03");	//Nevím, ale připomíná mě Druidský kruh. 
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_NextMove_15_04");	//Ale Druidové tu nejsou. Místo nich plno nemrtvých.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_NextMove_15_05");	//Ať to bylo cokoli, toto místo má velmi silnou magickou auru. Myslím, že musíme pátrat tady, než budeme pokračovat dál.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_NextMove_15_06");	//Podle mě ztrácíme čas. Chrám je už blízko!
@@ -918,16 +918,16 @@ func void DIA_NONE_1813_Ilesil_EnterHram_Info()
 {
 	B_GivePlayerXP(1500);
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_EnterHram_15_01");	//Tvůj boj s tou horou dřeva... to bylo něco neuvěřitelného.
-	AI_Output(other,self,"DIA_NONE_1813_Ilesil_EnterHram_15_02");	//Po pravdě řečeno jsem tak trochu doufal v tvojí pomoc.
+	AI_Output(other,self,"DIA_NONE_1813_Ilesil_EnterHram_15_02");	//Po pravdě řečeno jsem tak trochu doufal v tvou pomoc.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_EnterHram_15_03");	//Odpusť mi můj příteli... Ale co zmůže prostý duch proti takové koncentraci nenávisti a hněvu.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_EnterHram_15_04");	//A k tomu jsem součástí tohoto místa a ndokážu dlouho odolávat jeho vůli.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_EnterHram_15_04");	//A k tomu jsem součástí tohoto místa a nedokážu dlouho odolávat jeho vůli.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_EnterHram_15_05");	//Pravda, zapomněl jsem na to. Co je před námi?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_EnterHram_15_06");	//Jsme téměř v chrámu. Ale vstup blokují mocní duchové.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_EnterHram_15_07");	//Cítím je. Cítím jejich bolest, strach i nenávist! Už tě čekají.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_EnterHram_15_08");	//Tak je nenecháme čekat.
-	AI_Output(other,self,"DIA_NONE_1813_Ilesil_EnterHram_15_09");	//Mimochodem, není divné, že cestou jsme ještě nezjistili nic o tvém bratru?
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_EnterHram_15_10");	//Máš pravdu... Ale myslím, že odpověď je blízko. Možná leží to v tomto chrámu.
-	AI_Output(other,self,"DIA_NONE_1813_Ilesil_EnterHram_15_11");	//Znamenáto, že se tam musíme podívat.
+	AI_Output(other,self,"DIA_NONE_1813_Ilesil_EnterHram_15_09");	//Mimochodem, není divné, že cestou jsme ještě nezjistili nic o tvém bratrovi?
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_EnterHram_15_10");	//Máš pravdu... Ale myslím, že odpověď je blízko. Možná leží v tomto chrámu.
+	AI_Output(other,self,"DIA_NONE_1813_Ilesil_EnterHram_15_11");	//Znamená to, že se tam musíme podívat.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_EnterHram_15_12");	//Jiné cesty u nás není.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_EnterHram_15_13");	//Dobře, tak jdem.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_EnterHram_15_14");	//Ty běž... já zůstanu zde. A budu tě sledovat.
@@ -964,7 +964,7 @@ func int DIA_NONE_1813_Ilesil_OpenHram_Condition()
 func void DIA_NONE_1813_Ilesil_OpenHram_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHram_15_01");	//Přesto jsme se dostali do chrámu, už jsem nedoufal že se nám to podaří.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHram_15_01");	//Přesto jsme se dostali do chrámu, už jsem nedoufal, že se nám to podaří.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHram_15_02");	//Příliš brzy jsem se radoval. Teď se tam musí nějakým způsobem dostat. Napadá tě něco?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHram_15_03");	//Nejprve bych se zaměřil na tyto kamenné přepínače.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHram_15_04");	//Je jich zde hodně.
@@ -986,7 +986,7 @@ instance DIA_NONE_1813_Ilesil_OpenHramHint(C_Info)
 	condition = DIA_NONE_1813_Ilesil_OpenHramHint_Condition;
 	information = DIA_NONE_1813_Ilesil_OpenHramHint_Info;
 	permanent = FALSE;
-	description = "(Prozkoumat pulpit).";
+	description = "(prozkoumat pulpit)";
 };
 
 func int DIA_NONE_1813_Ilesil_OpenHramHint_Condition()
@@ -999,7 +999,7 @@ func int DIA_NONE_1813_Ilesil_OpenHramHint_Condition()
 
 func void DIA_NONE_1813_Ilesil_OpenHramHint_Info()
 {
-	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramHint_15_01");	//Vidítš ty staré pulpity umístěné po celém chrámovém nádvoří? Na každém z nich jsou divné nápisy.
+	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramHint_15_01");	//Vidíš ty staré pulpity umístěné po celém chrámovém nádvoří? Na každém z nich jsou divné nápisy.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_15_02");	//(zamyšleně) Možná je to stopa, která pomůže otevřít vchod do chrámu. Pověz mi, co je v nich napsáno?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_15_03");	//A to přesně, do posledního slova. V opačném případě nepochopíme jejich přesný význam.
 	Info_ClearChoices(DIA_NONE_1813_Ilesil_OpenHramHint);
@@ -1049,12 +1049,12 @@ func void DIA_NONE_1813_Ilesil_OpenHramHint_Yes()
 	PlayVideo("RET2_BlackScreen.bik");
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_01");	//To je všechno, co tam bylo napsáno.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_02");	//(zamyšleně) Pradávní dokázali dobře skrýt pravý význam slov.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_03");	//Trvalo by ti věčnost rozluštit tuo hádanku. Ale já ti s tím pomůžu.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_03");	//Trvalo by ti věčnost rozluštit tuto hádanku. Ale já ti s tím pomůžu.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_04");	//To by bylo dobrý.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_05");	//Jinak každý z těchto kamenných přepínačů označuje jednu světovou stranu.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_06");	//A text je vodítkem k jejich aktivaci.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHint_Yes_15_07");	//Tady se musím malinko zamyslet... dej mě trochu času.
-	B_LogEntry(TOPIC_Miss_Brother,"Ile'Sil potřebuje nějaký čas, aby dekódovat tyto tajné spisy Pradávných. Doufám, že bude úspěšný.");
+	B_LogEntry(TOPIC_Miss_Brother,"Ile'Sil potřebuje nějaký čas, aby dekódoval tyto tajné spisy Pradávných. Doufám, že bude úspěšný.");
 	HintIlesilDone = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"TransText");
@@ -1100,7 +1100,7 @@ func void DIA_NONE_1813_Ilesil_OpenHramHintDone_Info()
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHintDone_15_04");	//Třetí na jiho-západ, pátý jasně ukazuje na sever, a osmý na jih.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramHintDone_15_05");	//Pořadí dalších kamenů budeš muset zjistit sám.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramHintDone_15_06");	//No, alespoň něco. Děkuju.
-	B_LogEntry(TOPIC_Miss_Brother,"Podle Ile'Sila nejblížší kámen od mříží ukazuje na sever, ale první v pořadí označuje jiho-východ. Třetí - na jiho-západ, pátý - na sever a osmý - na jih. Zbytek kamenů a jejich pořadí musím zjistit sám...");
+	B_LogEntry(TOPIC_Miss_Brother,"Podle Ile'Sila nejbližší kámen od mříží ukazuje na sever, ale první v pořadí označuje jiho-východ. Třetí - na jiho-západ, pátý - na sever a osmý - na jih. Zbytek kamenů a jejich pořadí musím zjistit sám...");
 };
 
 instance DIA_NONE_1813_Ilesil_OpenHramDone(C_Info)
@@ -1124,15 +1124,15 @@ func int DIA_NONE_1813_Ilesil_OpenHramDone_Condition()
 func void DIA_NONE_1813_Ilesil_OpenHramDone_Info()
 {
 	B_GivePlayerXP(2000);
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramDone_15_01");	//Mříž chrámu je otevřená, už zbývá jen prozkoumat chrám.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramDone_15_01");	//Mříž chrámu je otevřena, už zbývá jen prozkoumat chrám.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramDone_15_02");	//Ty se mnou nepůjdeš?
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramDone_15_03");	//Zůstanu venku, toto místo je pro mně příliš nebezpečné.
-	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramDone_15_04");	//Mluvíš, jako byste mohl znovu umřít.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramDone_15_05");	//Poté, co jsi mi vráti zpět mou duši, po tolika letech zatracení a nesmyslné existenci, jsem znovu dostal chuť do života.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramDone_15_03");	//Zůstanu venku, toto místo je pro mě příliš nebezpečné.
+	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramDone_15_04");	//Mluvíš, jako bys mohl znovu umřít.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramDone_15_05");	//Poté, co jsi mi vrátil zpět mou duši, po tolika letech zatracení a nesmyslné existenci, jsem znovu dostal chuť do života.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramDone_15_06");	//A nechci ji znovu ztratit...
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_OpenHramDone_15_07");	//Rozumím ti. Dobře, zůstaň zde a já půjdu.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_OpenHramDone_15_08");	//Hodně štěstí, cizinče...
-	B_LogEntry(TOPIC_Miss_Brother,"Ile'Sil zůstal mimo chrám, bát se jít dovnitř. Co mám dělat, když se chci odsud dostat. Tak půjdu sám.");
+	B_LogEntry(TOPIC_Miss_Brother,"Ile'Sil zůstal mimo chrám, bál se jít dovnitř. Co mám dělat, když se chci odsud dostat. Tak půjdu sám.");
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(Skeleton_Lord_LV,"LOSTVALLEY_CHELDRAK");
 };
@@ -1218,7 +1218,7 @@ func void DIA_NONE_1813_Ilesil_Die_Ans_02_Info()
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_02_15_02");	//Tak to je. Pradávní se pečlivě ujistili, že žádný cizinec se sem nedostane.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_02_15_03");	//Ale narozdíl od mnohých se to tobě povedlo.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_Die_Ans_02_15_04");	//A co ti ostatní co se sem chtěli dostat?
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_02_15_05");	//Věřte mi, že jich byla spousta. Ale už jsou dávno mrtví... a ty - no.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_02_15_05");	//Věř mi, že jich byla spousta. Ale už jsou dávno mrtví... a ty - no.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_02_15_06");	//Zdá se, že bohové jsou ti nakloněni cizinče. To tě však nezachrání.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_02_15_07");	//Beliar s radostí přijme tvoji duši do svého náručí - ovšem výměnou za duši mého bratra.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_02_15_08");	//Spravedlivá a výhodná výměna, nemám pravdu?
@@ -1247,17 +1247,17 @@ func void DIA_NONE_1813_Ilesil_Die_Ans_03_Info()
 {
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_01");	//Kdo vlastně jsi?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_02");	//Ten, s kým by bylo se lepší nepotkat.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_03");	//Já a můj bratr Il-Kirit jsme kdysi byli mocnýmy pány stínů.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_04");	//Po mnoho let jsme se oba věrně sloužili Beliarovi. A pak... pak ten falešný bůh nás zradil.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_03");	//Já a můj bratr Il-Kirit jsme kdysi byli mocnými pány stínů.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_04");	//Po mnoho let jsme oba věrně sloužili Beliarovi. A pak... pak nás ten falešný bůh zradil.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_05");	//Beliar vás zradil, to je mu podobné.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_06");	//Poté, co naše početná armáda zdevastovala posvátné půdy Adana, já a můj bratr, místo slibované odměny, kterou jsme měli obdržet, jsme dostali trvalý exil a zapomnění.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_07");	//A to všechno proto že Adanos ve své snaze pomstít se Beliarovi byl odhodlán zničit jednoho z jeho vyvolených.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_07");	//A to všechno proto, že Adanos ve své snaze pomstít se Beliarovi byl odhodlán zničit jednoho z jeho vyvolených.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_08");	//Tmavý bůh rozhodl, že můj bratr a já už pro něj nemáme žádnou cenu a prostě nás vydal do Adanových rukou.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_09");	//A proto a za trest, byl můj bratr uvězněný v tomto chrámu a já přišel o duši a poté jsem byl odsouzen k věčnému utrpení.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_10");	//Nic jiného bych od něj ani nečekal. Ale neví jak jste se mohli dostat na náhorní plošinu pradávných.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_11");	//A ještě sebou přivést armádu příšer.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_03_15_12");	//Bylo to jednoduché, pomohla nám chamtivost a hloupost samotných Stavitelů.
-	B_LogEntry(TOPIC_Miss_Brother,"Ile'Sil nebylo ten, za koho se prohlašoval, že je. On a jeho bratr kdysi sloužil Beliarovi, a na jeho rozkaz zničit národ Stavitelů. A za to je Adanos navždy uvěznil na tomto místě.");
+	B_LogEntry(TOPIC_Miss_Brother,"Ile'Sil nebyl ten, za koho se prohlašoval, že je. On a jeho bratr kdysi sloužili Beliarovi, a na jeho rozkaz zničili národ Stavitelů. A za to je Adanos navždy uvěznil na tomto místě.");
 };
 
 instance DIA_NONE_1813_Ilesil_Die_Ans_04(C_Info)
@@ -1285,14 +1285,14 @@ func void DIA_NONE_1813_Ilesil_Die_Ans_04_Info()
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_03");	//Myslíš Beliarův dráp?
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_04");	//Ano. On ho daroval jednomu ze svých vyvolených - Er'Hazirovi, aby ho hlídal.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_05");	//Po smrti Er'Hazira byl meč pohřben společně s ním v jednom z Adanových chrámů v údolí.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_06");	//Stavitelé našli tento chrám a vzali Dráp sami, věřili, že jim to dává moc a slávu.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_06");	//Stavitelé našli tento chrám a vzali Dráp sami, věřili, že jim dává moc a slávu.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_07");	//Ale sami si nedokázali ani představit, k čemu tato zbraň byla určena.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_08");	//Dráp byl nejen silný meč, který může absorbovat duše mrtvých, ale také klíč ke království Beliara!
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_09");	//Poté, co zjistil, že meč je v rukou obyčejných smrtelníků, Beliar využil této příležitosti.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_10");	//Přinutil majitele použít sílu meče, a tím otevřít magický portál, přes který jsme prošli s naší armádou.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_11");	//Když zjistil že byl takto zrazen, Adanos nejprve proklel své oblíbené lidi a potom zcela smyl jejich odkaz z povrchu země.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_12");	//A s pomocí Drápu zapečetil místo, kde jsme teď.
-	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_13");	//Mimochodem, ten meč nyní musí být tvůj. V opačném případě by ses sem nikdy nedostal dostal.
+	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_13");	//Mimochodem, ten meč nyní musí být tvůj. V opačném případě by ses sem nikdy nedostal.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_14");	//Máš pravdu, Dráp mám já.
 	AI_Output(self,other,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_15");	//Ale ne na dlouho. Jakmile si vezmu tvoji duši a osvobodím svého bratra najdu pro Dráp lepší využití.
 	AI_Output(other,self,"DIA_NONE_1813_Ilesil_Die_Ans_04_15_16");	//No to se ještě uvidí.

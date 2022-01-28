@@ -70,12 +70,12 @@ func int DIA_Ulthar_GREET_Condition()
 func void DIA_Ulthar_GREET_Info()
 {
 	AI_Output(self,other,"DIA_Ulthar_GREET_05_00");	//Pohleďte, nový novic předstupuje před Nejvyšší radu. Innos s tebou, synu.
-	AI_Output(other,self,"DIA_Ulthar_GREET_15_01");	//Co přesně je úlohou Nejvyšší rady?
+	AI_Output(other,self,"DIA_Ulthar_GREET_15_01");	//Co přesně je úkolem Nejvyšší rady?
 	AI_Output(self,other,"DIA_Ulthar_GREET_05_02");	//Je naší povinností plnit vůli Innose. Čili jmenujeme novice, kteří podstoupí Zkoušku Ohně.
 	AI_Output(self,other,"DIA_Ulthar_GREET_05_03");	//A i když vedeme poklidný život, stále pozorujeme události ve světě, protože Innos reprezentuje nejvyšší právo světa.
-	AI_Output(other,self,"DIA_Ulthar_GREET_15_04");	//Á, takže vy se zaujímáte o to, co se děje ve světě...
+	AI_Output(other,self,"DIA_Ulthar_GREET_15_04");	//Á, takže vy se zajímáte o to, co se děje ve světě...
 	AI_Output(other,self,"DIA_Ulthar_GREET_15_05");	//Co si tedy myslíte o těch dracích v Hornickém údolí s armádou, která každým dnem roste?
-	AI_Output(self,other,"DIA_Ulthar_GREET_05_06");	//Chápu, že cítíš hněv, ale musíme zvážit tvé slova, dokud podnikneme nějaké kroky.
+	AI_Output(self,other,"DIA_Ulthar_GREET_05_06");	//Chápu, že cítíš hněv, ale musíme zvážit tvá slova, dokud podnikneme nějaké kroky.
 	AI_Output(self,other,"DIA_Ulthar_GREET_05_07");	//Pokud se necháme unést a budeme konat unáhleně, nic nedosáhneme. Plň své povinnosti – my prodiskutujeme, co je třeba udělat.
 };
 
@@ -139,7 +139,7 @@ instance DIA_Ulthar_TEST(C_Info)
 	condition = DIA_Ulthar_TEST_Condition;
 	information = DIA_Ulthar_TEST_Info;
 	permanent = FALSE;
-	description = "Mistře, jsem připraven postoupit Zkoušku.";
+	description = "Mistře, jsem připraven podstoupit Zkoušku.";
 };
 
 
@@ -153,18 +153,18 @@ func int DIA_Ulthar_TEST_Condition()
 
 func void DIA_Ulthar_TEST_Info()
 {
-	AI_Output(other,self,"DIA_Ulthar_TEST_15_00");	//Mistře, jsem připraven postoupit Zkoušku.
-	AI_Output(self,other,"DIA_Ulthar_TEST_05_01");	//Nejsem překvapený, že poznáš staré pravidla.
+	AI_Output(other,self,"DIA_Ulthar_TEST_15_00");	//Mistře, jsem připraven podstoupit Zkoušku.
+	AI_Output(self,other,"DIA_Ulthar_TEST_05_01");	//Nejsem překvapený, že poznáš stará pravidla.
 	AI_Output(self,other,"DIA_Ulthar_TEST_05_02");	//Ale tuším, že si neuvědomuješ, jak riskantní to je. Pamatuj, že netrpělivý duch Zkoušku Ohně nezvládne.
 	AI_Output(self,other,"DIA_Ulthar_TEST_05_03");	//Už dávno ji nikdo nepodstoupil. A existuje jenom jeden člověk, který jí prošel živý.
-	AI_Output(self,other,"DIA_Ulthar_TEST_05_04");	//Tehdy mladý, a ctižádostivý novic má už dlouho místo v Nejvyšší radě - hovořím o Serpentesovi.
+	AI_Output(self,other,"DIA_Ulthar_TEST_05_04");	//Tehdy mladý a ctižádostivý novic má už dlouho místo v Nejvyšší radě - hovořím o Serpentesovi.
 	AI_Output(other,self,"DIA_Ulthar_TEST_15_05");	//Za krátký čas už nebude jediný, kdo Zkouškou kdy prošel.
 	AI_Output(self,other,"DIA_Ulthar_TEST_05_06");	//Nebudu tě tedy už dál zdržovat. Poslouchej mou část Zkoušky:
 	AI_Output(self,other,"DIA_Ulthar_TEST_05_07");	//Vytvoř runu Ohnivého šípu. Nic víc, nic míň – Innos s tebou.
 	MIS_RUNE = LOG_Running;
 	Log_CreateTopic(TOPIC_Rune,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Rune,LOG_Running);
-	B_LogEntry(TOPIC_Rune,"Ulthar mi dal úlohu. Měl bych vytvořit runu Ohnivého šípu.");
+	B_LogEntry(TOPIC_Rune,"Ulthar mi dal úkol. Měl bych vytvořit runu Ohnivého šípu.");
 	AI_StopProcessInfos(self);
 };
 
@@ -190,7 +190,7 @@ func int DIA_Ulthar_RUNNING_Condition()
 
 func void DIA_Ulthar_RUNNING_Info()
 {
-	AI_Output(self,other,"DIA_Ulthar_RUNNING_05_00");	//Poznáš svojí úlohu. Plň ji.
+	AI_Output(self,other,"DIA_Ulthar_RUNNING_05_00");	//Znáš svůj úkol. Splň jej.
 	AI_StopProcessInfos(self);
 };
 
@@ -334,7 +334,7 @@ func void DIA_Ulthar_SCHREINEVERGIFTET_Info()
 		MIS_Ulthar_HeileSchreine_PAL = LOG_Running;
 		Log_CreateTopic(TOPIC_Ulthar_HeileSchreine_PAL,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_Ulthar_HeileSchreine_PAL,LOG_Running);
-		B_LogEntry(TOPIC_Ulthar_HeileSchreine_PAL,"Ulthar chce, abych očistil všechny oltáře znesvěcené nepřítelem. Mám použit svěcenou vodu.");
+		B_LogEntry(TOPIC_Ulthar_HeileSchreine_PAL,"Ulthar chce, abych očistil všechny oltáře znesvěcené nepřítelem. Mám použít svěcenou vodu.");
 		AI_StopProcessInfos(self);
 	}
 	else

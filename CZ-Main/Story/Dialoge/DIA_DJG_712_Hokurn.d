@@ -884,15 +884,15 @@ func int DIA_Hokurn_NW_PashalQuest_Condition()
 
 func void DIA_Hokurn_NW_PashalQuest_Info()
 {
-   AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_00");   //Na vaší farmě je něco zajímavého?
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_01");   //Zajímavého? Chlapče ty nejsi sám sebou, když kladeš takové otázky
+   AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_00");   //Na této farmě je něco zajímavého?
+   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_01");   //Zajímavého? Chlapče ty nejsi sám sebou, když kladeš takové otázky.
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_02");   //Rozhlédni se kolem sebe a uvidíš, že kolem jsou jen tupé ovce a berani.
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_03");   //Je to smutný obraz, bohužel a nezmění ze dne na den.
+   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_03");   //Je to smutný obraz, bohužel se nezmění ze dne na den.
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_04");   //Zajímavé věci hledej za hranicema našeho chlívku, tady nic nenajdeš.
    AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_05");   //A ty víš kde mám hledat?
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_06");   //(sarkasticky) No, jak jsem ti řek. Vím, že nic nevím, ale něco jsem slyšel.
    AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_07");   //Slyšel a co?
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_08");   //No... (zaváhal) Je to docela starý příběh. A já nevím - jestli je to pravda, nebo ne.
+   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_08");   //No... (váhavě) Je to docela starý příběh. A já nevím - jestli je to pravda, nebo ne.
    AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_09");   //Rád si to poslechnu.
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_10");   //No, proč ne.
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_11");   //Koneckonců, pohostil jsi mě drinkem, tak bych neměl zapomínat na slušné vychování.
@@ -905,7 +905,7 @@ func void DIA_Hokurn_NW_PashalQuest_Info()
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_18");   //Kdo ví jestli je to pravda, nebo blud vytvořený sektáři?
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_19");   //Jen jednu věc mohu říct s jistotou - pověsti nevznikají jen tak! To mě můžeš věřit.
    AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_20");   //Ano, neobyčejný příběh. A jak se jmenoval ten vypravěč?
-   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_21");   //Nevím jak se jmenoval, akorát si pamatuju,že byl pořád zhulenej. 
+   AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_21");   //Nevím jak se jmenoval, akorát si pamatuju, že byl pořád zhulenej. 
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_22");   //A když byl celej zahalenej v kouřu, začal mlátit hlavou o zeď, jako by jí chtěl prorazit.
    AI_Output(self,other,"DIA_Hokurn_NW_PashalQuest_01_23");   //Ano, byl to zábavnej chlapec... (zasměje se)
    AI_Output(other,self,"DIA_Hokurn_NW_PashalQuest_01_24");   //A kde je teď, nevíš?
@@ -914,7 +914,7 @@ func void DIA_Hokurn_NW_PashalQuest_Info()
    MIS_PashalQuest = LOG_Running;
    Log_CreateTopic(TOPIC_PashalQuest,LOG_MISSION);
    Log_SetTopicStatus(TOPIC_PashalQuest,LOG_Running);
-   B_LogEntry(TOPIC_PashalQuest,"Žoldák Hokurn mi řekl podivný příběh o magickém artefaktu, se kterým získáš neomezenou moc nad celým světem! Tento příběh slyšel od jednoho novice z tábora v bažinách. Hokurn si nedokázal vzpomenout na jeho jméno a neví kde by se teď mohl nacházet. Možná bych měl navštívit nový tábor Bratrstva v Khorinisu. Možná bych tam mohl zajít a zjistit více o tom magickém předmětu.");
+   B_LogEntry(TOPIC_PashalQuest,"Žoldák Hokurn mi řekl podivný příběh o magickém artefaktu, se kterým získám neomezenou moc nad celým světem! Tento příběh slyšel od jednoho novice z tábora v bažinách. Hokurn si nedokázal vzpomenout na jeho jméno a neví kde by se teď mohl nacházet. Možná bych měl navštívit nový tábor Bratrstva v Khorinisu. Možná bych tam mohl zajít a zjistit více o tom magickém předmětu.");
    AI_StopProcessInfos(self);
    Wld_InsertNpc(SEK_4567_Unicorn,"NW_PSICAMP_UNICORN");
 };
@@ -1027,9 +1027,9 @@ func void DIA_SEK_4567_Unicorn_HasSmoke_info()
    B_GiveInvItems(other,self,ItMi_Joint,Npc_HasItems(other,ItMi_Joint));
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HasSmoke_01_04");   //Vážně, nevydává Talas novou dávku každý den?
    AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_05");   //Vydává, ale bohužel to pro mně není dost. Pořád potřebuju kouřit.
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_06");   //Pokud nemám co kouři začne mě strašně bolet hlava. Tak, že s ní o stěnu musím mlátit!
+   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_06");   //Pokud nemám co kouřit začne mě strašně bolet hlava. Tak, že s ní o stěnu musím mlátit!
    AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_07");   //Dřív to pomáhalo, ale teď je to bezvýsledný. Všechno se rozděluje rovným dílem.
-   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_08");   //Takže potřebuju hodně trsů trávy z bažin, Chápeš?
+   AI_Output(self,other,"DIA_SEK_4567_Unicorn_HasSmoke_01_08");   //Takže potřebuju hodně trsů trávy z bažin, chápeš?
    UNICORNTALK_YES = TRUE;
 };
 
@@ -1040,7 +1040,7 @@ instance DIA_SEK_4567_Unicorn_HeyYou(C_Info)
    condition = DIA_SEK_4567_Unicorn_HeyYou_condition;
    information = DIA_SEK_4567_Unicorn_HeyYou_info;
    permanent = FALSE;
-   description = "Hej, ty nejseš ten týpek...";
+   description = "Hej, ty nejsi ten týpek...";
 };
 
 func int DIA_SEK_4567_Unicorn_HeyYou_condition()
@@ -1054,7 +1054,7 @@ func int DIA_SEK_4567_Unicorn_HeyYou_condition()
 func void DIA_SEK_4567_Unicorn_HeyYou_info()
 {
    B_GivePlayerXP(200);
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_00");   //Hej, ty nejseš te týpek, co nabízel trávu v Novém táboře?
+   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_00");   //Hej, ty nejsi ten týpek, co nabízel trávu v Novém táboře?
    AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_01");   //No, ano... (pokašlává) To bylo něco! Nicméně, dlouho jsem tam nepobyl.
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_02");   //Proč?
    AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_03");   //No... (provinile) Vykouřil jsem všechnu trávu, co jsem dostal k prodeji.
@@ -1152,7 +1152,7 @@ func void DIA_BDT_4568_KINJARTS_Quest_info()
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_01_02");   //Přesně tak, ale tebe jsem tam neviděl.
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_03");   //To mě nepřekvapuje. Vzhledem k tomu, že většinu času jsem trávil mimo tábor, doprovodem zboží z vnějšího světa.
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_04");   //Možná to je důvod, proč se naše cesty nikdy nestřetli.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_05");   //Kdybys se zeptal někoho kdo pamatuje staré časy, tak by ti pověděl, kdo jsem.
+   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_05");   //Kdybys se zeptal někoho kdo pamatuje staré časy, tak by ti řekl, kdo jsem.
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_01_06");   //Opravdu, možná mě to sám povíš?
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_01_07");   //(ušklíbá se) No, jestli chceš slyšet o starých časech, tak bys měl vědět, že všechno něco stojí.
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_01_08"); //Rudu, jako obvykle?
@@ -1181,7 +1181,7 @@ func void DIA_BDT_4568_KINJARTS_Quest_Back()
 
 func void DIA_BDT_4568_KINJARTS_Quest_MagicOre()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_01");   //Tady máš tři kusy rudy.
+   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_01");   //Tady máš tři kusy magické rudy.
    B_GiveInvItems(other,self,ItMi_Nugget,3);
    Npc_RemoveInvItems(self,ItMi_Nugget,3);
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_02");   //Dobrá. Teď můžu pokračovat v příběhu.
@@ -1200,14 +1200,14 @@ func void DIA_BDT_4568_KINJARTS_Quest_MagicOre()
 
 func void DIA_BDT_4568_KINJARTS_Quest_IronOre()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_01");   //Tady máš tři kusy rudy.
+   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_01");   //Tady máš tři kusy železné rudy.
    B_GiveInvItems(other,self,ItMi_SNugget,3);
    Npc_RemoveInvItems(self,ItMi_SNugget,3);
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_02");   //Co to má jako být?!
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_03");   //Ruda. Vždyť jsi ji chtěl.
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_04");   //Měl jsem na mysli magickou rudu a ne obyčejnou!
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_05");   //Ale to jsi nezmínil, takže vem co ti dávám.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_06");   //Hmm... Jako za starých časů, vypadá to že jsi mě pěkně napálil. To jsem nečekal!
+   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_06");   //Hmm... Jako za starých časů, vypadá to, že jsi mě pěkně napálil. To jsem nečekal!
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_07");   //Takže teď mě řekni něco o sobě a co jsi dělal ve Starém táboře?
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_08");   //(usmívá se) Samozřejmě. Dohoda je dohoda! Takže...
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_09");   //Byl jsem v kolonii ještě v době, když odsouzení viděli nad hlavou jasnou oblohu.
@@ -1273,7 +1273,7 @@ func void DIA_BDT_4568_KINJARTS_QuestAgain_Back()
 
 func void DIA_BDT_4568_KINJARTS_QuestAgain_MagicOre()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_01");   //Tady máš tři kusy rudy.
+   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_01");   //Tady máš tři kusy magické rudy.
    B_GiveInvItems(other,self,ItMi_Nugget,3);
    Npc_RemoveInvItems(self,ItMi_Nugget,3);
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_MagicOre_01_02");   //Dobrá. Teď můžu pokračovat v příběhu.
@@ -1291,14 +1291,14 @@ func void DIA_BDT_4568_KINJARTS_QuestAgain_MagicOre()
 
 func void DIA_BDT_4568_KINJARTS_QuestAgain_IronOre()
 {
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_01");   //Tady máš tři kusy rudy.
+   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_01");   //Tady máš tři kusy železné rudy.
    B_GiveInvItems(other,self,ItMi_SNugget,3);
    Npc_RemoveInvItems(self,ItMi_SNugget,3);
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_02");   //Co to má jako být?!
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_03");   //Ruda. Vždyť jsi ji chtěl.
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_04");   //Měl jsem na mysli magickou rudu a ne obyčejnou!
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_05");   //Ale to jsi nezmínil, takže vem co ti dávám.
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_06");   //Hmm... Jako za starých časů, vypadá to že jsi mě pěkně napálil. To jsem nečekal!
+   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_06");   //Hmm... Jako za starých časů, vypadá to, že jsi mě pěkně napálil. To jsem nečekal!
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_07");   //Takže teď mě řekni něco o sobě a co jsi dělal ve Starém táboře?
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_08");   //(usmívá se) Samozřejmě. Dohoda je dohoda! Takže...
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_Quest_IronOre_01_09");   //Byl jsem v kolonii ještě v době, když odsouzení viděli nad hlavou jasnou oblohu.
@@ -1346,7 +1346,7 @@ func void DIA_BDT_4568_KINJARTS_QuestDone_info()
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_02");   //Protože mám velmi delikátní otázku.
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_03");   //Hmmm... (se zájmem) Tak se ptej jestli chceš.
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_04");   //Hledám jednoho strážného, který se kdysi zmínil o magickém artefaktu.
-   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_05");   //Zdá se že je to velmi mocná věc, údajně schopná ovlivnit osud celého světa.
+   AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_05");   //Zdá se, že je to velmi mocná věc, údajně schopná ovlivnit osud celého světa.
    AI_PlayAni(self,"T_SEARCH");
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_06");   //Velmi zajímavé. Teď dovol abych se tě na něco zeptal, odkud to víš?
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_07");   //Vyprávěl mě o tom jeden sektář z tábora v bažinách.
@@ -1356,7 +1356,7 @@ func void DIA_BDT_4568_KINJARTS_QuestDone_info()
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_11");   //Chci tím říci, že jak se zdá, jsi s touto otázkou na správné adrese.
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_12");   //Vzhledem k tomu, že strážný, kterého hledáš jsem já!
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_13");   //Ano! Opravdu?!
-   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_14");   //Vypadám snad jako lhář? (vážně) Nebo budím takoví dojem?
+   AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_14");   //Vypadám snad jako lhář? (vážně) Nebo budím takový dojem?
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_15");   //To bych neřek.
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_16");   //Tak mě věř, synku. Je to všechno pravda!
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_17");   //A tenhle sektář, zřejmě, vyslech můj rozhovor s přítelem Scorpiem, když jsem mu o tom vyprávěl.
@@ -1371,7 +1371,7 @@ func void DIA_BDT_4568_KINJARTS_QuestDone_info()
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_25");   //Myslím, že ten mág se jmenoval Milten! Možná bys ho měl najít a promluvit s ním o tom artefaktu.
    AI_Output(self,other,"DIA_BDT_4568_KINJARTS_QuestDone_01_26");   //Nic dalšího, už ti k tomu nemohu říct.
    AI_Output(other,self,"DIA_BDT_4568_KINJARTS_QuestDone_01_27");   //Rozuměl jsem.
-   B_LogEntry(TOPIC_PashalQuest,"Kinjarts byl jeden ze strážných, kteří znali o příběh o artefaktu. Podle něj, jestli někdo může potvrdit jeho existenci, je to mág Ohně ze Starého tábora, který jako jediný unikl smrti, když se Gomez rozhodl mágy Ohně zavraždit. Jmenoval se Milten.");
+   B_LogEntry(TOPIC_PashalQuest,"Kinjarts byl jeden ze strážných, kteří znali příběh o artefaktu. Podle něj, jestli někdo může potvrdit jeho existenci, je to mág Ohně ze Starého tábora, který jako jediný unikl smrti, když se Gomez rozhodl mágy Ohně zavraždit. Jmenoval se Milten.");
    PashalQuestMageStep = TRUE;
 };
 
@@ -1464,10 +1464,10 @@ func void DIA_KDF_4569_AlexOne_WhoYou_info()
 {
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_00");   //Jsi mág Ohně?
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_01");   //Jak vidíš. A co tě na tom překvapuje?
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_02");   //Nevzpomínám si, že bych tě znal z Khorinistského kláštera.
+   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_02");   //Nevzpomínám si, že bych tě znal z khorinisského kláštera.
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_03");   //Vstoupil jsem do kruhu Ohně zde v kolonii. A o klášteru já nic nevím.
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_04");   //Zajímavé! A kdo tě přijal do kruhu Ohně?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_05");   //Sám mistr Corristo! (vážně) a z jeho vůle jsem nyní zde.
+   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_05");   //Sám mistr Corristo! (vážně) A z jeho vůle jsem nyní zde.
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_06");   //Ale Corristo a další mágové Ohně jsou již dlouho mrtvý! Zabiti na Gomezův rozkaz.
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_07");   //O čem to mluvíš?! Jak je to možné? Co jsi, blázen?
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_08");   //Ty opravdu o ničem nevíš?
@@ -1476,7 +1476,7 @@ func void DIA_KDF_4569_AlexOne_WhoYou_info()
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_11");   //Mágové Ohně byli proti a tak je nechal jednoduše zabít.
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_12");   //O Innos... Je to pravda?
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_13");   //O tom nepochybuj. Nyní v hradě Starého tábora sídlí paladinové, ale hrad je obléhán skřety.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_14");   //Jak je to možné?! (odevzdaně) pravda, nebyl jsem ve Starém táboře už několik let.
+   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_14");   //Jak je to možné?! (odevzdaně) Pravda, nebyl jsem ve Starém táboře už několik let.
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_15");   //Za tu dobu se mohlo hodně změnit! Ale co jsem slyšel od tebe, mě zlomilo srdce.
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_16");   //Drž se příteli! To není ta nejhorší věc, co se v poslední době udála.
 };
@@ -1506,8 +1506,8 @@ func void DIA_KDF_4569_AlexOne_WhatBow_info()
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_02");   //Ano, jsem mág, ale spíše slovy než činy...
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_03");   //Bohužel můj výcvik nebyl dokončen.
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_04");   //A protože mé magické schopnosti nejsou tak velké jako u jiných mágů...
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_05");   //Na druhou stranu - kuše! Od ranného dětství mě s ní otec učil zacházet.
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_06");   //Umím s ní stejně dobře jako, zkušený válečník s mečem nebo mág s holí.
+   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_05");   //Na druhou stranu - kuše! Od raného dětství mě s ní otec učil zacházet.
+   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatBow_01_06");   //Umím s ní stejně dobře jako zkušený válečník s mečem nebo mág s holí.
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatBow_01_07");   //Takže, mág - kušiník. To je zábavné.
 };
 
@@ -1549,9 +1549,9 @@ func void DIA_KDF_4569_AlexOne_WhatDeal_info()
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_14");   //A lze předpokládat, že právě tam se nachází ten artefakt!
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_15");   //Nebo aspoň něco, co nám pomůže určit jeho přesnou polohu.
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_16");   //Co se tam může nacházet?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_17");   //Pořád se mě vyptávíš, jak kdybych tam už byl.
+   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_17");   //Pořád se mě vyptáváš, jak kdybych tam už byl.
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_18");   //A proč jsi tam ještě nešel a nezjistil to?
-   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_19");   //Vchod do hrobky je uzavřen a nevím jak ho otevřít
+   AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhatDeal_01_19");   //Vchod do hrobky je uzavřen a nevím jak ho otevřít.
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhatDeal_01_20");   //To dává smysl.
    B_LogEntry(TOPIC_PashalQuest,"Nedaleko od Xardasovy věže jsem potkal mága Ohně - Lexe. To jeho poslal Corristo hledat pradávný artefakt. Lex je přesvědčen, že odpovědi se zkrývají v opuštěné kryptě, která se nachází poblíž. Nicméně vstup do krypty je uzavřen.");
    PashalQuestPentaStep = TRUE;
@@ -1618,11 +1618,11 @@ func void DIA_VLK_4570_Avabul_HELLO_info()
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_17");   //No, to sám nevím. 
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_18");   //Nevíš co?!
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_19");   //Proč mě přitahuje tento artefakt.
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_20");   //Stalo se to náhodou, zaslechl jsem o něm, a moje  cesta mě dovedla až sem.
+   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_20");   //Stalo se to náhodou, zaslechl jsem o něm, a moje cesta mě dovedla až sem.
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_21");   //Hmm, jak zajímavé!
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_22");   //Víš, je těžké uvěřit, že někdo kdo hledá nejsilnější artefakt světa a neví proč ho potřebuje.
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_23");   //(záhadně) Ale cítím, že mi říkáš pravdu, smrtelníku.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_24");   //Proto tě ponechám naživu a neproměním tě v bezduchou zombie, jak jsem to udělal s tím nadutým mágem!
+   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_24");   //Proto tě ponechám naživu a neproměním tě v bezduchou zombie, jak jsem to udělala s tím nadutým mágem!
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_25");   //Mnohokrát děkuji! Můžu doufat, že mě odpovíš i na moji otázku?
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_26");   //Artefakt který hledáš nese jméno 'Nivram'! Sestrojili ho tvůrci tohoto světa, aby mohli lépe přetvářet tento svět.
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_27");   //Mluvíš o Strážcích?
@@ -1633,11 +1633,11 @@ func void DIA_VLK_4570_Avabul_HELLO_info()
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_32");   //Pak není důvod, abych pokračoval ve svém pátrání.
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_33");   //Ano máš pravdu... (posměšně) Pro tebe - to nemá cenu!
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_34");   //Nicméně, můj hostitel po tom artefaktu už dlouho touží.
-   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_35");   //A on by ti mohl pomoci s jeho nalezení, samozřejmě s tím, že ho s ním vyměníš za moc a slávu, po které vy smrtelníci tolik toužíte!
+   AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_35");   //A on by ti mohl pomoci s jeho nalezením, samozřejmě s tím, že ho s ním vyměníš za moc a slávu, po které vy smrtelníci tolik toužíte!
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_36");   //A proč ho Beliar nehledá sám když ho tolik potřebuje? 
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_37");   //Nechce přitáhnout příliš mnoho pozornosti Strážců.
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_38");   //Proto je lepší, když některé věci dělají obyčejní smrtelníci, jako jsi ty.
-   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_39");   //Chtěl jsi říct - špinavou práci!
+   AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_39");   //Chtěla jsi říct - špinavou práci!
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_40");   //Nezáleží na tom... (panovačně) Důležité je to, co zůstane na konci této cesty. A můj hostitel nabízí mnoho...
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_41");   //Tak co, souhlasíš?!
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_42");   //A pokud nebudu souhlasit? Co pak?
@@ -1651,7 +1651,7 @@ func void DIA_VLK_4570_Avabul_HELLO_info()
    AI_Output(other,self,"DIA_VLK_4570_Avabul_HELLO_01_50");   //A kde ho mám hledat?
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_51");   //Co vím, tak chrání jednu z relikvií Strážců.
    AI_Output(self,other,"DIA_VLK_4570_Avabul_HELLO_01_52");   //Teď jdi a neztrácej čas zbytečným mluvením.
-   B_LogEntry(TOPIC_PashalQuest,"S pomocí mocného démonické lebky jsem byl schopen vyvolat jednu z temných kněžek Beliara - Avabul. Podle ní chce sám Beliar získat artefakt! Nakonec jsem souhlasil, že pomůžu Avabul najít tento artefakt pro Beliara, výměnou za moc a slávu. Teď musím jen najít Januse Dvoutvářného - nejstaršího ze starých, ten by mohl vědět něco o tomto artefaktu. Podle kněžky, Janus chrání jedenu z relikvií Strážců.");
+   B_LogEntry(TOPIC_PashalQuest,"S pomocí mocné démonické lebky jsem byl schopen vyvolat jednu z temných kněžek Beliara - Avabul. Podle ní chce sám Beliar získat artefakt! Nakonec jsem souhlasil, že pomůžu Avabul najít tento artefakt pro Beliara, výměnou za moc a slávu. Teď musím jen najít Januse Dvoutvářného - nejstaršího ze starých, ten by mohl vědět něco o tomto artefaktu. Podle kněžky, Janus chrání jednu z relikvií Strážců.");
    AI_StopProcessInfos(self);
    PashalQuestJanusStep = TRUE;
 };
@@ -1693,7 +1693,7 @@ func int DIA_DMT_4571_Jan_HELLO_condition()
 
 func void DIA_DMT_4571_Jan_HELLO_info()
 {
-   AI_Output(self,other,"DIA_DMT_4571_Jan_HELLO_01_00");   //Stůj, smrtelníku! (důrazně) dál pro tebe cesta nevede!
+   AI_Output(self,other,"DIA_DMT_4571_Jan_HELLO_01_00");   //Stůj, smrtelníku! (důrazně) Dál pro tebe cesta nevede!
    AI_Output(other,self,"DIA_DMT_4571_Jan_HELLO_01_01");   //A to jako proč?
    AI_Output(self,other,"DIA_DMT_4571_Jan_HELLO_01_02");   //Pouze vyvolení mohou vstoupit! A ty k nim nepatříš...
    AI_Output(self,other,"DIA_DMT_4571_Jan_HELLO_01_03");   //Tak se vrať zpátky, jestli si ceníš svého života.
@@ -1819,7 +1819,7 @@ func void DIA_DMT_4571_Jan_His_info()
 {
 	AI_Output(other,self,"DIA_DMT_4571_Jan_His_01_00");   //A čím jsi byl během svého života?
 	AI_Output(self,other,"DIA_DMT_4571_Jan_His_01_01");   //(odevzdaně) Byl jsem lovec draků...
-	AI_Output(other,self,"DIA_DMT_4571_Jan_His_01_02");   //Bojovla jsi s draky?!
+	AI_Output(other,self,"DIA_DMT_4571_Jan_His_01_02");   //Bojoval jsi s draky?!
 	AI_Output(self,other,"DIA_DMT_4571_Jan_His_01_03");   //A více než jednou, v době když jsem žil, nebyli draci takovou vzácností jako nyní.
 	AI_Output(self,other,"DIA_DMT_4571_Jan_His_01_04");   //V jednom takovém souboji jsem dokonce zemřel.
 	AI_Output(self,other,"DIA_DMT_4571_Jan_His_01_05");   //Nicméně jak vidíš, má pouť na tomto světě neskončila. Teď jsem strážce brány!
@@ -1849,12 +1849,12 @@ func void DIA_DMT_4571_Jan_Proof_info()
 {
 	AI_Output(other,self,"DIA_DMT_4571_Jan_Proof_01_00");   //Co bych měl udělat, abych tě přesvědčil?
 	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_01");   //(zamyšleně) Budeš muset projít mojí zkouškou! Ale bude to dost obtížné.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_02");   //Jseš si opravdu jistý, že jsi na to připravený?
+	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_02");   //Jsi si opravdu jistý, že jsi na to připravený?
 	AI_Output(other,self,"DIA_DMT_4571_Jan_Proof_01_03");   //Rozhodně, tak mluv - o co jde?
 	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_04");   //Dobře... Jelikož jsi zřejmě Beliarův posel, žádám tě abys mi přinesl duši jeho oblíbence!
 	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_05");   //Duši toho kdo reprezentuje jeho sílu a moc na tomto světě.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_06");   //No, pokud Temný bůh tolik touží po tomto artefaktu, bude muset draze zapltit.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_07");   //Jinak se ty dveře před tebou niky neotevřou.
+	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_06");   //No, pokud Temný bůh tolik touží po tomto artefaktu, bude muset draze zaplatit.
+	AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_07");   //Jinak se ty dveře před tebou nikdy neotevřou.
 
 	if(UndeadDragonIsDead == FALSE)
 	{
@@ -1863,11 +1863,11 @@ func void DIA_DMT_4571_Jan_Proof_info()
 		AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_10");   //Ale pochybuju, že získáš přístup, byť jen do jednoho z nich.
 		AI_Output(other,self,"DIA_DMT_4571_Jan_Proof_01_11");   //Tak sleduj. Dokázal jsem to.
 		AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_12");   //Co, po pravdě řečeno, velmi jsi mě překvapil...
-		AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_13");   //Nicméně, nevypadáš jako někdo, kdo by dokázal porazit, jednoho z nejsilnějších tvorů na tomto světě.
+		AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_13");   //Nicméně, nevypadáš jako někdo, kdo by dokázal porazit jednoho z nejsilnějších tvorů na tomto světě.
 		AI_Output(self,other,"DIA_DMT_4571_Jan_Proof_01_14");   //A nezměním názor do té doby, dokud neuvidím před sebou duši toho tvora.
 	};
 
-	B_LogEntry(TOPIC_PashalQuest,"Janus mně otevře bránu, pokud mu přinesu duši Beliarova vyvoleného!");
+	B_LogEntry(TOPIC_PashalQuest,"Janus mně otevře bránu, pokud mu přinesu duši Beliarova vyvoleného.");
 };
 
 instance DIA_DMT_4571_Jan_ProofDone(C_Info)
@@ -1895,7 +1895,7 @@ func void DIA_DMT_4571_Jan_ProofDone_info()
 	AI_Output(self,other,"DIA_DMT_4571_Jan_ProofDone_01_01");   //Opravdu to je ona... Skláním se před tebou velký válečníku!
 	AI_Output(other,self,"DIA_DMT_4571_Jan_ProofDone_01_02");   //A teď mě pustíš?
 	AI_Output(self,other,"DIA_DMT_4571_Jan_ProofDone_01_03");   //Jak jsem slíbil! Stačí položit duši co jsi přines na oltář za tvými zády.
-	AI_Output(self,other,"DIA_DMT_4571_Jan_ProofDone_01_04");   //Poté se ti dvře otevřou a ty můžeš vstoupit.
+	AI_Output(self,other,"DIA_DMT_4571_Jan_ProofDone_01_04");   //Poté se ti dveře otevřou a ty můžeš vstoupit.
 	B_LogEntry(TOPIC_PashalQuest,"Přinesl jsem Janusovi duši. Nyní je potřeba umístit ji na oltář, který je poblíž a pak by se dveře měli otevřít.");
 	PashalQuestEgezartStep = TRUE;
 	AI_StopProcessInfos(self);
@@ -1944,13 +1944,13 @@ func void DIA_DMT_4572_Trazege_HELLO_info()
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_00");   //Co tady děláš?! A jak ses sem dostal?
 	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_01");   //Prostřednictvím magického portálu.
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_02");   //(s úsměvem) To mě napadlo taky chytráku.
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_03");   //Mě zajímá jiná věc - koho to k čertu to sem Janus pustil?!
+	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_03");   //Mě zajímá jiná věc - koho to k čertu sem Janus pustil?!
 	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_04");   //Prošel jsem jeho zkouškou a dokázal, že jsem toho hoden.
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_05");   //Hoden?! A co jsi udělal, hrdino?
 	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_06");   //Zabil jsem Beliarova vyvoleného! Je to málo?
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_07");   //Hmmm... (nedbale) Po pravdě řečeno, není to zas tak působivé.
 	AI_Output(other,self,"DIA_DMT_4572_Trazege_HELLO_01_08");   //Proč?
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_09");   //Už jsem si zvykl na to, že jeho vyvolení nežíjí dlouho na tomto světě.
+	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_09");   //Už jsem si zvykl na to, že jeho vyvolení nežijí dlouho na tomto světě.
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_10");   //Vždycky se najde někdo, kdo je trvale pošle zpět ke svému pánovi do říše temnoty!
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_11");   //Takže nejsi první ani poslední, kdo to udělal.
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_HELLO_01_12");   //A sám Beliar si jistě už našel nějakou náhradu. Tak, to vidíš - historie se opakuje!
@@ -1997,7 +1997,7 @@ func void DIA_DMT_4572_Trazege_GiveMePower_info()
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_13");   //Jsem ten díky komu tento svět ještě žije a dýchá! A ty také.
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_14");   //Proto zůstane tam kde je, než příde doba zničit tento svět a poté ho znovu vzkřísit. 
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_GiveMePower_01_15");   //A věř mi, tak to bude!
-	B_LogEntry(TOPIC_PashalQuest,"V chrámu jsem se setkal s Egezartem, strážcem artefaktu který jsem hledal. Jak se dalo očekávat nechtěl mě artefak přenechat.");
+	B_LogEntry(TOPIC_PashalQuest,"V chrámu jsem se setkal s Egezartem, strážcem artefaktu, který jsem hledal. Jak se dalo očekávat nechtěl mě artefakt přenechat.");
 };
 
 instance DIA_DMT_4572_Trazege_NoAtAll(C_Info)
@@ -2021,7 +2021,7 @@ func int DIA_DMT_4572_Trazege_NoAtAll_condition()
 func void DIA_DMT_4572_Trazege_NoAtAll_info()
 {
 	AI_Output(other,self,"DIA_DMT_4572_Trazege_NoAtAll_01_00");   //A když si ho vezmu silou?
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_NoAtAll_01_01");   //(smích) hlupáku!
+	AI_Output(self,other,"DIA_DMT_4572_Trazege_NoAtAll_01_01");   //(smích) Hlupáku!
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_NoAtAll_01_02");   //Myslíš si, že tvé zbraně nebo magie mě může ublížit?
 	AI_Output(self,other,"DIA_DMT_4572_Trazege_NoAtAll_01_03");   //Mně stačí jen pomyslet, a ty tady zemřeš ve strašných mukách.
 	AI_PlayAni(hero,"T_INSANE");
@@ -2069,7 +2069,7 @@ func void DIA_DMT_4572_Trazege_BuyGift_Str()
 {
 	AI_Output(other,self,"DIA_DMT_4572_Trazege_BuyGift_Str_01_00");   //Dej mi ohromnou sílu!
 	B_RaiseAttribute_Bonus(other,ATR_STRENGTH,50);
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_Str_01_01");   //Jak chceš... Užij si svojí volbu! Nyní, nashledanou.
+	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_Str_01_01");   //Jak chceš... Užij si svojí volbu! Nyní, na shledanou.
 	MIS_PashalQuest = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_PashalQuest,LOG_SUCCESS);
 	AI_StopProcessInfos(self);
@@ -2079,7 +2079,7 @@ func void DIA_DMT_4572_Trazege_BuyGift_Dex()
 {
 	AI_Output(other,self,"DIA_DMT_4572_Trazege_BuyGift_Dex_01_00");   //Udělej mě nezkonale chytrým a obratným!
 	B_RaiseAttribute_Bonus(other,ATR_DEXTERITY,50);
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_Dex_01_01");   //Jak chceš... Užij si svojí volbu! Nyní, nashledanou.
+	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_Dex_01_01");   //Jak chceš... Užij si svojí volbu! Nyní, na shledanou.
 	MIS_PashalQuest = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_PashalQuest,LOG_SUCCESS);
 	AI_StopProcessInfos(self);
@@ -2092,7 +2092,7 @@ func void DIA_DMT_4572_Trazege_BuyGift_Mana()
 	Npc_ChangeAttribute(other,ATR_MANA,150);
 	ATR_INTELLECT += 20;
 	Npc_SetTalentSkill(self,NPC_TALENT_INTELLECT,ATR_INTELLECT);
-	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_Mana_01_01");   //Jak chceš... Užij si svojí volbu! Nyní, nashledanou.
+	AI_Output(self,other,"DIA_DMT_4572_Trazege_BuyGift_Mana_01_01");   //Jak chceš... Užij si svojí volbu! Nyní, na shledanou.
 	MIS_PashalQuest = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_PashalQuest,LOG_SUCCESS);
 	AI_StopProcessInfos(self);
@@ -2195,7 +2195,7 @@ func void DIA_KDW_4573_Oddler_WhoYou_info()
    AI_Output(other,self,"DIA_KDW_4573_Oddler_WhoYou_01_03");   //A tebe netrápí, že všude okolo je spousta skřetů a dalších šelem?
    AI_Output(self,other,"DIA_KDW_4573_Oddler_WhoYou_01_04");   //Skřeti tady nejsou, jejich tábory se nacházejí v jiné části hor.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_WhoYou_01_05");   //A co se týče toho ostatního s tím si nějak poradím.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_WhoYou_01_06");   //I přesto, že jsem mág (usmívá se)
+   AI_Output(self,other,"DIA_KDW_4573_Oddler_WhoYou_01_06");   //I přesto, že jsem mág. (usmívá se)
 };
 
 instance DIA_KDW_4573_Oddler_Mage(C_Info)
@@ -2236,10 +2236,10 @@ func void DIA_KDW_4573_Oddler_Mage_info()
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_15");   //Spolu s mágy Ohně jsem se zůčastnil, jedné z výzkumných expedic.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_16");   //Chtěli jsme lépe prozkoumat tyto hory, a možná najít něco zajímavého.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_17");   //Místo toho jsem se dostal do zajetí skřetů.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_18");   //Nebýt mágem tak mě zabili! Ale jejich nejvyšší šaman se zajímal o moji magii.
+   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_18");   //Nebýt mágem tak by mě zabili! Ale jejich nejvyšší šaman se zajímal o moji magii.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_19");   //To mě zachránilo život. (povzdech)
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_20");   //O několik let později se mi podařilo uniknout z jejich tábora.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_21");   //Při putování po horách jsem narzil na toto místo a teď zde žiju.
+   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_21");   //Při putování po horách jsem narazil na toto místo a teď zde žiju.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Mage_01_22");   //To je celý můj příběh.
 };
 
@@ -2294,8 +2294,8 @@ func int DIA_KDW_4573_Oddler_Away_condition()
 func void DIA_KDW_4573_Oddler_Away_info()
 {
    AI_Output(other,self,"DIA_KDW_4573_Oddler_Getout_01_00");   //Ty se odsud nechceš dostat?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_01");   //Ne. (klidně) Líbí se mě tady! Je to klidný a tichý místo.
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_02");   //Mimo to přechod přes hory bude extrémě nebezpečný.
+   AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_01");   //Ne. (klidně) Líbí se mi tady! Je to klidné a tiché místo.
+   AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_02");   //Mimo to přechod přes hory bude extrémně nebezpečný.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_03");   //A bez dobré přípravy můžeš lehce zemřít.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_04");   //Nebo ještě hůř, chytí tě skřeti.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Getout_01_05");   //Takové myšlenky mě napadají čím dál tím méně.
@@ -2327,10 +2327,10 @@ func void DIA_KDW_4573_Oddler_Mount_info()
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_03");   //Byla postavena paladiny, kteří nás doprovázeli na té nešťastné expedici.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_04");   //Nedaleko od ní se nachází starodávná svatyně skřetů. Tam mě drželi v zajetí!
    AI_Output(other,self,"DIA_KDW_4573_Oddler_Mount_01_05");   //A kde je jejich tábor?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_06");   //Daleko od tud, na druhé straně hor.
+   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_06");   //Daleko odtud, na druhé straně hor.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_07");   //Ale neradím ti tam chodit, jestli nechceš sdílet můj osud.
    AI_Output(other,self,"DIA_KDW_4573_Oddler_Mount_01_08");   //Rozumím, ještě něco?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_09");   //To je vše co vím (klidně) Nic jiného mě nenapadá.
+   AI_Output(self,other,"DIA_KDW_4573_Oddler_Mount_01_09");   //To je vše, co vím. (klidně) Nic jiného mě nenapadá.
    AI_Output(other,self,"DIA_KDW_4573_Oddler_Mount_01_10");   //Dobře, děkuji.
 };
 
@@ -2358,7 +2358,7 @@ func void DIA_KDW_4573_Oddler_Work_info()
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Work_01_01");   //A ty co, jsi taky slepý? (zasměje se) Copak nevidíš?
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Work_01_02");   //Stavím si chatu.
    AI_Output(other,self,"DIA_KDW_4573_Oddler_Work_01_03");   //Proč, v jeskyni se ti nelíbí?
-   AI_Output(self,other,"DIA_KDW_4573_Oddler_Work_01_04");   //No, je v ní teplo, ale nedokáže tě ochránit proti zdejším mrazů.
+   AI_Output(self,other,"DIA_KDW_4573_Oddler_Work_01_04");   //No, je v ní teplo, ale nedokáže tě ochránit proti zdejším mrazům.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Work_01_05");   //Nicméně, mám akutní nedostatek nástrojů. Rezavá pila - to je jediný nástroj, který jsem zde našel.
    AI_Output(self,other,"DIA_KDW_4573_Oddler_Work_01_06");   //A s ní toho moc neuděláš.
 };
@@ -2370,7 +2370,7 @@ instance DIA_KDW_4573_Oddler_WorkDo(C_Info)
    condition = DIA_KDW_4573_Oddler_WorkDo_condition;
    information = DIA_KDW_4573_Oddler_WorkDo_info;
    permanent = FALSE;
-   description = "Mohu ti získat nějaké nástroje.";
+   description = "Mohu ti sehnat nějaké nástroje.";
 };
 
 func int DIA_KDW_4573_Oddler_WorkDo_condition()
@@ -2384,7 +2384,7 @@ func int DIA_KDW_4573_Oddler_WorkDo_condition()
 func void DIA_KDW_4573_Oddler_WorkDo_info()
 {
 	AI_Output(other,self,"DIA_KDW_4573_Oddler_WorkDo_01_00");   //Mohu ti sehnat nějaké nástroje.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_WorkDo_01_01");   //Opravdu? (překvapeně) No, tak to asi vaši pomoc neodmítnu.
+	AI_Output(self,other,"DIA_KDW_4573_Oddler_WorkDo_01_01");   //Opravdu? (překvapeně) No, tak to asi tvou pomoc neodmítnu.
 	AI_Output(self,other,"DIA_KDW_4573_Oddler_WorkDo_01_02");   //Potřebuji kladivo, pilu a nový krumpáč. Abych opracoval kameny.
 	AI_Output(self,other,"DIA_KDW_4573_Oddler_WorkDo_01_03");   //Pokud se ti podaří tohle všechno získat, byl bych ti velmi vděčný.
 	AI_Output(other,self,"DIA_KDW_4573_Oddler_WorkDo_01_04");   //Souhlasím.
@@ -2450,7 +2450,7 @@ func void DIA_KDW_4573_Oddler_XRANFREG_info()
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_KDW_4573_Oddler_XRANFREG_01_00");   //Řekni mi něco o expedici.
 	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_01");   //Ach. To bylo dávno!
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_02");   //Zůčastnilo se jí jen několik mágů Ohně a paladinové co se přihlásili dobrovolně jako doprovod.
+	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_02");   //Zúčastnilo se jí jen několik mágů Ohně a paladinové co se přihlásili dobrovolně jako doprovod.
 	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_03");   //Mistr Corristo mě pozval abych šel s nima a pomohl jim prozkoumat, neznámou část ostrova.
 	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_04");   //Zpočátku jsem se chtěl vrátit z této nebezpečné výpravy.
 	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_05");   //Ale Corristo mě přesvědčil o nutnosti mé přítomnosti, a tak jsem se rozhodl zůstat.
@@ -2462,7 +2462,7 @@ func void DIA_KDW_4573_Oddler_XRANFREG_info()
 	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_11");   //Jednoho krásného dne, když jsem studoval oltář ve starověké svatyni, přišli skřeti.
 	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_12");   //Ačkoli jsem měl jako doprovod několik paladinů, výsledek bitvy byl už předem předurčen.
 	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_13");   //Paladiny skřeti okamžitě zabili. Když viděli, že jsem mág, rozhodli se mě odvést do tábora.
-	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_14");   //A to je celí můj příběh o účasti v této expedici.
+	AI_Output(self,other,"DIA_KDW_4573_Oddler_XRANFREG_01_14");   //A to je celý můj příběh o účasti v této expedici.
 	B_LogEntry(TOPIC_XRANFREG,"Zdá se, že Oddler je jedním z těch co se podíleli na expedici mágů Ohně. Podle něj je na východě starobylá svatyně skřetů. Měl bych se tam příležitostně podívat.");
 };
 
@@ -2506,10 +2506,10 @@ func int DIA_VLK_5570_Avabul_HELLO_condition()
 
 func void DIA_VLK_5570_Avabul_HELLO_info()
 {
-	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_00");   //Smrtelníku... (chmurně) máš artefakt, který hledá můj pán
+	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_00");   //Smrtelníku... (chmurně) máš artefakt, který hledá můj pán?
 	AI_Output(other,self,"DIA_VLK_5570_Avabul_HELLO_01_01");   //Obávám se, že tě zklamu.
 	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_02");   //Co jsi říkal?!
-	AI_Output(other,self,"DIA_VLK_5570_Avabul_HELLO_01_03");   //Co jsi ohluchla? Řekl jsem, že ho nemám. Jeho součesný majitel se s ním nechtěl rozloučit.
+	AI_Output(other,self,"DIA_VLK_5570_Avabul_HELLO_01_03");   //Co jsi ohluchla? Řekl jsem, že ho nemám. Jeho současný majitel se s ním nechtěl rozloučit.
 	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_04");   //To mě nezajímá... (povýšeně) Měl jsi ho přinést byla to součást naší dohody...
 	AI_Output(other,self,"DIA_VLK_5570_Avabul_HELLO_01_05");   //Tak to si ty a tvůj hostitel budete muset nechat zajít chuť. Artefakt zůstane uvnitř tohoto chrámu, takže zapomeň na naší dohodu.
 	AI_Output(self,other,"DIA_VLK_5570_Avabul_HELLO_01_06");   //(pro sebe) Jak se opovažuješ? Bídný červe! Nyní zemřeš pro svou drzost.

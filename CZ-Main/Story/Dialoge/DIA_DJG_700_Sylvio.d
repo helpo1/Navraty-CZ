@@ -331,7 +331,7 @@ instance DIA_Sylvio_DUHIER(C_Info)
 	condition = DIA_Sylvio_DUHIER_Condition;
 	information = DIA_Sylvio_DUHIER_Info;
 	permanent = TRUE;
-	description = "Potřebovat bych nějakou pomoc.";
+	description = "Potřeboval bych nějakou pomoc.";
 };
 
 
@@ -345,7 +345,7 @@ func int DIA_Sylvio_DUHIER_Condition()
 
 func void DIA_Sylvio_DUHIER_Info()
 {
-	AI_Output(other,self,"DIA_Sylvio_DUHIER_15_00");	//Potřebovat bych nějakou pomoc.
+	AI_Output(other,self,"DIA_Sylvio_DUHIER_15_00");	//Potřeboval bych nějakou pomoc.
 	AI_Output(self,other,"DIA_Sylvio_DUHIER_09_01");	//Nesmysl! Vedeš si dobře.
 	AI_StopProcessInfos(self);
 };
@@ -568,10 +568,10 @@ func void DIA_SylvioDJG_Camp_Drakar_Info()
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_01_10");	//A potom ho od nich už nedostanem!
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_01_11");	//Co navrhuješ?
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_01_12");	//(úlisně) No ty jsi tady hrdina! Tak řeš problémy.
-	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_01_13");	//A co stím mám dělat?
+	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_01_13");	//A co s tím mám dělat?
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_01_14");	//(s úsměvem) No do teď jsme měli určité neschody.
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_01_15");	//Ale jestli nám pomůžeš, jsem ochotnej se s tebou podělit.
-	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_01_16");	//Nabízíš mě zalto, které mě po právu náleží?
+	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_01_16");	//Nabízíš mě zlato, které mě po právu náleží?
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_01_17");	//Ale ono už není tvoje, příteli... (posměšně) Tak jestli chceš nějaký podíl, budeš nám muset pomoct.
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_01_18");	//Tak co souhlasíš?
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_01_19");	//Dobře. Pokusím se něco vymyslet.
@@ -789,10 +789,10 @@ func void DIA_SylvioDJG_Camp_Orcs_Up_Done_Info()
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Orcs_Up_Done_01_01");	//Jak to myslíš?
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Orcs_Up_Done_01_02");	//Už tam nejsou.
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Orcs_Up_Done_01_03");	//Dobře. To mě trošku uklidnilo.
-	AI_Output(self,other,"DIA_SylvioDJG_Camp_Orcs_Up_Done_01_04");	//Teď se můžeš zabývat něčím jiným. Všřím že něco máš.
+	AI_Output(self,other,"DIA_SylvioDJG_Camp_Orcs_Up_Done_01_04");	//Teď se můžeš zabývat něčím jiným. Věřím, že něco máš.
 	MIS_SylvioOrcs = LOG_Success;
 	Log_SetTopicStatus(Topic_SylvioOrcs,LOG_Success);
-	B_LogEntry(Topic_SylvioOrcs,"Uklidnil jsem Silvia, když jsem mu řek, že skřeti nad jeskyní už nejsou problém.");
+	B_LogEntry(Topic_SylvioOrcs,"Uklidnil jsem Sylvia, když jsem mu řek, že skřeti nad jeskyní už nejsou problém.");
 	AI_StopProcessInfos(self);
 };
 
@@ -802,7 +802,7 @@ instance DIA_SylvioDJG_Camp_Drakar_Crew(C_Info)
 	condition = DIA_SylvioDJG_Camp_Drakar_Crew_Condition;
 	information = DIA_SylvioDJG_Camp_Drakar_Crew_Info;
 	permanent = TRUE;
-	description = "Co se týče všeho kapitána...";
+	description = "Co se týče vašeho kapitána...";
 };
 
 func int DIA_SylvioDJG_Camp_Drakar_Crew_Condition()
@@ -815,7 +815,7 @@ func int DIA_SylvioDJG_Camp_Drakar_Crew_Condition()
 
 func void DIA_SylvioDJG_Camp_Drakar_Crew_Info()
 {
-	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_Crew_01_00");	//Co se týče všeho kapitána...
+	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_Crew_01_00");	//Co se týče vašeho kapitána...
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Crew_01_01");	//Ano? Co máš?
 
 
@@ -853,7 +853,7 @@ func void DIA_SylvioDJG_Camp_Drakar_Crew_Info()
 		else
 		{
 			AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_Crew_01_15");	//Zatím nic.
-			AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Crew_01_16");	//Proč mě otrvuješ s maličkostma? Radši se starej o práci!
+			AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Crew_01_16");	//Proč mě otravuješ s maličkostma? Radši se starej o práci!
 			AI_StopProcessInfos(self);
 		};
 	};
@@ -880,7 +880,7 @@ func void DIA_SylvioDJG_Camp_Drakar_Cook_Info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_Cook_01_00");	//Našel jsem kuchaře.
-	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Cook_01_01");	//Dobře... (vzdychne) Doufám, že ví jak vařit
+	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Cook_01_01");	//Dobře... (vzdychne) Doufám, že ví jak vařit.
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_Cook_01_02");	//Paladinové na hradě si na něj nestěžovali.
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_Cook_01_03");	//Jestli je to tak, tak je to v pořádku.
 };
@@ -932,9 +932,9 @@ func void DIA_SylvioDJG_Camp_Drakar_LastChance_Info()
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_LastChance_01_00");	//Ty jsi nezaplatil Ratfordovi!
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_LastChance_01_01");	//A co?
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_LastChance_01_02");	//Slíbil jsi, že mu zaplatíš.
-	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_LastChance_01_03");	//(ležérně) A za co jsem muměl platit?
+	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_LastChance_01_03");	//(ležérně) A za co jsem mu měl platit?
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_LastChance_01_04");	//Myslel jsem, že vyplujem na moře a místo toho tady trčíme, protože na drakaru je rozbité kolo.
-	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_LastChance_01_05");	//Takže ode mně nedostane ani zlaťák, dokud ho neopraví.
+	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_LastChance_01_05");	//Takže ode mě nedostane ani zlaťák, dokud ho neopraví.
 };
 
 instance DIA_SylvioDJG_Camp_Drakar_LastChanceKill(C_Info)
@@ -965,7 +965,7 @@ func void DIA_SylvioDJG_Camp_Drakar_LastChanceKill_Info()
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_05");	//Řekni děkuju, za to co jsi dostal a vypadni.
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_06");	//Ne, počkej. Ještě nejsme hotoví!
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_07");	//A ty co, chceš mě poučovat jak to mám dělat?!
-	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_08");	//Ano! Buď mě dáš přesně polovinu vašeho pokladu nebo...
+	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_08");	//Ano! Buď mně dáš přesně polovinu vašeho pokladu nebo...
 	AI_Output(other,self,"DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_09");	//... nebo budu mít dobrý důvod malinko tě pomuchlat, ty chamtivý prase!
 	AI_Output(self,other,"DIA_SylvioDJG_Camp_Drakar_LastChanceKill_01_10");	//(smích) No můžeš to zkusit, ty hajzle!
 	self.aivar[AIV_DropDeadAndKill] = TRUE;
@@ -1113,7 +1113,7 @@ func void DIA_DJG_7312_ToterDrachenjaeger_KillHim_Info()
 	AI_Output(self,other,"DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_01");	//Nikdo ho tady neměl rád.
 	AI_Output(self,other,"DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_02");	//Takže nikomu chybět nebude.
 	AI_Output(self,other,"DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_03");	//Nyní je důležité odsud rychle vypadnout, než se skřeti začnou shánět po lodi.
-	AI_Output(other,self,"DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_04");	//Teď rychle pomocte Ratfordovi vypořádat se s rozbitým kormidlem.
+	AI_Output(other,self,"DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_04");	//Teď rychle pomozte Ratfordovi vypořádat se s rozbitým kormidlem.
 	AI_Output(self,other,"DIA_DJG_7312_ToterDrachenjaeger_KillHim_01_05");	//Samozřejmě pomůžem, příteli. Samozřejmě.
 	AI_StopProcessInfos(self);
 };
