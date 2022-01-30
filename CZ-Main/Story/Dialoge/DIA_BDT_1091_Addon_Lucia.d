@@ -139,7 +139,7 @@ func void DIA_Addon_Lucia_Khorinis_Info()
 	AI_Output(self,other,"DIA_Addon_Lucia_Khorinis_16_03");	//Ale tito ostatní chlapi... (směje se) Ne, díky. Možná proto, že jsme na ostrově. No dobrá, ty časy jsou pryč.
 	if((MIS_LuciasLetter != 0) || (SC_KnowsLuciaCaughtByBandits != 0) || (Nadja_GaveLuciaInfo != 0))
 	{
-		AI_Output(self,other,"DIA_Addon_Lucia_Khorinis_16_06");	//Mluvila jsem s Elvrichem!
+		AI_Output(self,other,"DIA_Addon_Lucia_Khorinis_16_06");	//S Elvrichem jsem skončila! 
 		AI_Output(other,self,"DIA_Addon_Lucia_Khorinis_15_04");	//Proč?
 		AI_Output(self,other,"DIA_Addon_Lucia_Khorinis_16_05");	//Jaká zbabělost. Neudělal nic, když banditi přišli a zajali mě.
 		TOPIC_END_Lucia = TRUE;

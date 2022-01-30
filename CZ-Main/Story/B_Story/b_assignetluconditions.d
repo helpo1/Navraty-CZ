@@ -28,8 +28,8 @@ func void b_assignetlutalk(var C_Npc wache)
 		}
 		else if(PALADINWARNING > 2)
 		{
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_02");	//Co potřebuješ? Víš že zde nemůžeš dlouho zůstat!
-			AI_Output(self,other,"DIA_SIPAL_WARNING_01_03");	//Takže, nezkoušej naši trpělivost a okamžiť opusťte tábor.
+			AI_Output(self,other,"DIA_SIPAL_WARNING_01_02");	//Co potřebuješ? Víš, že zde nemůžeš dlouho zůstat!
+			AI_Output(self,other,"DIA_SIPAL_WARNING_01_03");	//Takže, nezkoušej naši trpělivost a okamžitě opusť tábor.
 			PALADINWARNING = PALADINWARNING + 1;
 		}
 		else if(PALADINWARNING > 1)

@@ -53,7 +53,7 @@ func void dia_kardor_hello_info()
 	AI_Output(self,other,"DIA_Kardor_Hello_01_08");	//Dyugo řekl, že teleport na vrchu pyramidy vede přímo do skřetího města.
 	AI_Output(self,other,"DIA_Kardor_Hello_01_09");	//A když pomoci něho utečeme, asi se budeme muset probít skrz hordy těch zelenokožců.
 	AI_Output(self,other,"DIA_Kardor_Hello_01_10");	//Je tam mnoho skřetů! Je tedy lepší umět dobře zacházet mečem.
-	AI_Output(other,self,"DIA_Kardor_Hello_01_11");	//Dyugo řekl tento šílený plán i ostatním. To na, na co se chystáte, je samovražda!...
+	AI_Output(other,self,"DIA_Kardor_Hello_01_11");	//Dyugo řekl tento šílený plán i ostatním. To, na co se chystáte, je samovražda!
 	AI_Output(other,self,"DIA_Kardor_Hello_01_12");	//Nikdy se nedostanete z jejich města. Neprojdete ani skrz první základnu!
 	AI_Output(self,other,"DIA_Kardor_Hello_01_13");	//Možná jo, ale je to lepší než dopadnout jako ti, co se tu ztratili před tím.
 	MEETKARDOR = TRUE;

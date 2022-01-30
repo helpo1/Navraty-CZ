@@ -41,7 +41,7 @@ func int DIA_GornDJG_STARTCAMP_Condition()
 func void DIA_GornDJG_STARTCAMP_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_STARTCAMP_15_00");	//Vidím, že ses přidal k drakobijcům.
-	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_12_01");	//Šel jsem se Sylviem do Hornického údolí, protože se tady vyznám ze všech nejlépe a chtěl jsem si udelat přesnou představu o zdejší situaci.
+	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_12_01");	//Šel jsem se Sylviem do Hornického údolí, protože se tady vyznám ze všech nejlépe a chtěl jsem si udělat přesnou představu o zdejší situaci.
 	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_12_02");	//Jedno ti povím. Něco se tu chystá. Ješte nikdy jsem nevidel tolik skřetů na jednom míste.
 	AI_Output(self,other,"DIA_GornDJG_STARTCAMP_12_03");	//Nedivil bych se, kdyby touhle dobou Garond a všichni paladinové z hradu už neutekli nebo nebyli rozsekaní na kousky.
 	Info_AddChoice(DIA_GornDJG_STARTCAMP,"Uvidíme se.",DIA_GornDJG_STARTCAMP_By);
@@ -107,7 +107,7 @@ func int DIA_GornDJG_WHATSUP_Condition()
 func void DIA_GornDJG_WHATSUP_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_WHATSUP_15_00");	//Už jsi něco chytil?
-	AI_Output(self,other,"DIA_GornDJG_WHATSUP_12_01");	//Pořád čekám. Řekl bych, že tam v těch skalních troskách neco je. V noci se tam svítí a jsou dokonce slyšet nejaké skřeky.
+	AI_Output(self,other,"DIA_GornDJG_WHATSUP_12_01");	//Pořád čekám. Řekl bych, že tam v těch skalních troskách něco je. V noci se tam svítí a jsou dokonce slyšet nejaké skřeky.
 	Info_ClearChoices(DIA_GornDJG_WHATSUP);
 	Info_AddChoice(DIA_GornDJG_WHATSUP,"Možná to je Lester?",DIA_GornDJG_WHATSUP_Lester);
 	Info_AddChoice(DIA_GornDJG_WHATSUP,"Drak?",DIA_GornDJG_WHATSUP_A_Dragon);
@@ -124,7 +124,7 @@ func void DIA_GornDJG_WHATSUP_A_Dragon()
 {
 	AI_Output(other,self,"DIA_GornDJG_WHATSUP_A_Dragon_15_00");	//Drak?
 	AI_Output(self,other,"DIA_GornDJG_WHATSUP_A_Dragon_12_01");	//Dost možná. Ta planina je střežená jako nějaká mizerná královská pokladnice. Ale je to bohužel jediná cesta k pevnosti.
-	AI_Output(self,other,"DIA_GornDJG_WHATSUP_A_Dragon_12_02");	//Jako by nestačilo, že jsou draci dost nepříjemní sami o sobě. Vypadá to, že mají v záloze ješte pár dalších příšer.
+	AI_Output(self,other,"DIA_GornDJG_WHATSUP_A_Dragon_12_02");	//Jako by nestačilo, že jsou draci dost nepříjemní sami o sobě. Vypadá to, že mají v záloze ještě pár dalších příšer.
 	GornDJG_WhatMonsters = TRUE;
 	B_LogEntry(TOPIC_Dragonhunter,"Podle Gorna se ve staré kamenné pevnosti usadil drak.");
 	Info_ClearChoices(DIA_GornDJG_WHATSUP);
@@ -151,8 +151,8 @@ func int DIA_GornDJG_WHATMONSTERS_Condition()
 func void DIA_GornDJG_WHATMONSTERS_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_WHATMONSTERS_15_00");	//Jaké příšery to jsou?
-	AI_Output(self,other,"DIA_GornDJG_WHATMONSTERS_12_01");	//Nevím to úplně přesne, ale chodí vzpřímene a mají šupinatou kůži. Pohybují se po skalách jako chňapavci, kteří vycítili obeť.
-	AI_Output(self,other,"DIA_GornDJG_WHATMONSTERS_12_02");	//Tady dole je slyším funět a supet. Řekl bych, že zabrali úplne celou planinu.
+	AI_Output(self,other,"DIA_GornDJG_WHATMONSTERS_12_01");	//Nevím to úplně přesně, ale chodí vzpřímeně a mají šupinatou kůži. Pohybují se po skalách jako chňapavci, kteří vycítili obeť.
+	AI_Output(self,other,"DIA_GornDJG_WHATMONSTERS_12_02");	//Tady dole je slyším funět a supet. Řekl bych, že zabrali úplně celou planinu.
 };
 
 
@@ -176,11 +176,11 @@ func int DIA_GornDJG_WAHTABOUTORCS_Condition()
 func void DIA_GornDJG_WAHTABOUTORCS_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_WAHTABOUTORCS_15_00");	//A co skřeti?
-	AI_Output(self,other,"DIA_GornDJG_WAHTABOUTORCS_12_01");	//Chvíli jsem je sledoval. Za tou ohradou dole se musí něco ukrývat. Mám podezření, že se jich tam shromáždil už pekný zástup.
+	AI_Output(self,other,"DIA_GornDJG_WAHTABOUTORCS_12_01");	//Chvíli jsem je sledoval. Za tou ohradou dole se musí něco ukrývat. Mám podezření, že se jich tam shromáždil už pěkný zástup.
 	if(HEROKNOWFORESTBASE == TRUE)
 	{
 		AI_Output(other,self,"DIA_GornDJG_WAHTABOUTORCS_15_05");	//Klídek, já už tam byl a tolik jich není.
-		AI_Output(self,other,"DIA_GornDJG_WAHTABOUTORCS_12_06");	//Možná jich tam tolik není teď, ale později určite bude.
+		AI_Output(self,other,"DIA_GornDJG_WAHTABOUTORCS_12_06");	//Možná jich tam tolik není teď, ale později určitě bude.
 	}
 	else
 	{
@@ -211,7 +211,7 @@ func int DIA_GornDJG_HELPKILLDRACONIANS_Condition()
 func void DIA_GornDJG_HELPKILLDRACONIANS_Info()
 {
 	AI_Output(other,self,"DIA_GornDJG_HELPKILLDRACONIANS_15_00");	//Můžeš mi pomoci dostat se do pevnosti?
-	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_01");	//To vážně nevím. Bojím se, že skřeti zaútočí přesne ve chvíli, kdy je pustím z očí.
+	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_01");	//To vážně nevím. Bojím se, že skřeti zaútočí přesně ve chvíli, kdy je pustím z očí.
 	AI_Output(other,self,"DIA_GornDJG_HELPKILLDRACONIANS_15_02");	//To je paranoidní!
 	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_03");	//Nemůžu si pomoci. Víš, nikdy bych si neodpustil, kdybych přišel pozdě. Na druhou stranu...
 	AI_Output(self,other,"DIA_GornDJG_HELPKILLDRACONIANS_12_04");	//Vždyť je to jedno! Proč jinak bych tady byl? Zaútočme na planinu a prosekejme si cestu do pevnosti.
@@ -270,7 +270,7 @@ func void DIA_GornDJG_BISHIERHIN_Info()
 	AI_Output(self,other,"DIA_GornDJG_BISHIERHIN_12_00");	//Byla to hračka. Tak, příteli, o zbytek se už budeš muset postarat ty. Pořádně jim zatop! Já se vrátím a budu zase dávat pozor na skřety.
 	AI_Output(other,self,"DIA_GornDJG_BISHIERHIN_15_01");	//Žádný problém. Ještě se uvidíme!
 	AI_Output(self,other,"DIA_GornDJG_BISHIERHIN_12_02");	//To doufám!
-	B_LogEntry(TOPIC_Dragonhunter,"Gorn se vrátil zpět na své pozorovací stanovište. Chce i nadále sledovat skřety.");
+	B_LogEntry(TOPIC_Dragonhunter,"Gorn se vrátil zpět na své pozorovací stanoviště. Chce i nadále sledovat skřety.");
 	B_GivePlayerXP(XP_GornDJGPlateauClear);
 	AI_StopProcessInfos(self);
 	self.aivar[AIV_PARTYMEMBER] = FALSE;

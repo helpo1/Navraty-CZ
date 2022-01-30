@@ -229,7 +229,7 @@ func int DIA_Fenia_Interesting_Condition()
 func void DIA_Fenia_Interesting_Info()
 {
 	AI_Output(other,self,"DIA_Fenia_Infos_interessantes_15_00");	//Co je tady v přístavu zajímavého k vidění?
-	AI_Output(self,other,"DIA_Fenia_Infos_interessantes_17_01");	//No, jestli hledáš nějakoé dobrodružství, zajdi do Kardifovy krčmy na molu. Každou chvíli se tam něco semele.
+	AI_Output(self,other,"DIA_Fenia_Infos_interessantes_17_01");	//No, jestli hledáš nějaké dobrodružství, zajdi do Kardifovy hospody na molu. Každou chvíli se tam něco semele.
 	AI_Output(self,other,"DIA_Fenia_Infos_interessantes_17_02");	//To můžeš jen těžko minout. Ten chlápek, co stojí u vchodu, určitě upoutá tvoji pozornost.
 	AI_Output(self,other,"DIA_Fenia_Infos_interessantes_17_03");	//Kromě toho je tady v přístavu ještě ta velká loď paladinů. Královská válečná galéra. Ta stojí opravdu za shlédnutí.
 	AI_Output(self,other,"DIA_Fenia_Infos_interessantes_17_04");	//Uvidíš jí, pokud půjdeš doleva po nábřeží a za ním projdeš pod velkou skálou.

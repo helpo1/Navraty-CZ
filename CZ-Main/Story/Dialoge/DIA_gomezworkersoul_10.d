@@ -52,7 +52,7 @@ func void dia_gomezworkersoul_10_hallo_info()
 	AI_Output(self,other,"DIA_GomezWorkerSoul_10_HALLO_01_08");	//Ha, ha, ha... (mrtvým hlasem)
 	AI_Output(self,other,"DIA_GomezWorkerSoul_10_HALLO_01_09");	//To znamená, že Gomez za své zlé skutky byl taky prokletý od bohů.
 	Info_ClearChoices(dia_gomezworkersoul_10_hallo);
-	Info_AddChoice(dia_gomezworkersoul_10_hallo,"Takže mu odpouštíš?!",dia_gomezworkersoul_10_hallo_end);
+	Info_AddChoice(dia_gomezworkersoul_10_hallo,"Takže mu odpouštíš?",dia_gomezworkersoul_10_hallo_end);
 };
 
 func void dia_gomezworkersoul_10_hallo_end()

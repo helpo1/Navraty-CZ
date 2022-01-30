@@ -71,7 +71,7 @@ func void DIA_Kervo_HILFE_Info()
 	MIS_Kervo_KillLurker = LOG_Running;
 	Log_CreateTopic(TOPIC_Kervo_KillLurker,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Kervo_KillLurker,LOG_Running);
-	B_LogEntry(TOPIC_Kervo_KillLurker,"Kervo je hrozně vyděšená číhavcem který putuje v blízkosti jeho jeskyně, měl bych pomoci chudáčkovi.");
+	B_LogEntry(TOPIC_Kervo_KillLurker,"Kervo je hrozně vyděšen číhavci, kteří se potulují v blízkosti jeho jeskyně, asi bych měl pomoci tomu chudáčkovi.");
 	Info_ClearChoices(DIA_Kervo_HILFE);
 	Info_AddChoice(DIA_Kervo_HILFE,"Fajn, v tom případě na to zapomeň.",DIA_Kervo_HILFE_tschau);
 	Info_AddChoice(DIA_Kervo_HILFE,"Ale tady nemůžeš zůstat věčně.",DIA_Kervo_HILFE_ewig);

@@ -50,7 +50,7 @@ func void DIA_Gunnar_Hallo_Info()
 	};
 	if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
-		AI_Output(self,other,"DIA_Gunnar_Hallo_10_04");	//Tak ty jseš teď taky žoldák, co?
+		AI_Output(self,other,"DIA_Gunnar_Hallo_10_04");	//Tak ty jsi teď taky žoldák, co?
 	};
 	if((other.guild == GIL_NOV) || (other.guild == GIL_KDF))
 	{
@@ -99,7 +99,7 @@ func void DIA_Gunnar_Everywhere_Info()
 {
 	AI_Output(other,self,"DIA_Gunnar_Everywhere_15_00");	//Odkud se vzalo tolik žoldáků?
 	AI_Output(self,other,"DIA_Gunnar_Everywhere_10_01");	//Většina z nich je z trestanecké kolonie.
-	AI_Output(self,other,"DIA_Gunnar_Everywhere_10_02");	//Další skupina žoldáků pochází oněkud z jihu, kde nejspíš lovili skřety.
+	AI_Output(self,other,"DIA_Gunnar_Everywhere_10_02");	//Další skupina žoldáků pochází odněkud z jihu, kde nejspíš lovili skřety.
 	AI_Output(self,other,"DIA_Gunnar_Everywhere_10_03");	//A objevilo se tady taky několik banditů z hor - vsadím se, že jen proto, aby se mohli zadarmo najíst!
 };
 

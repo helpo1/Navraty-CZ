@@ -48,7 +48,7 @@ func void dia_gomezworkersoul_5_hallo_info()
 	AI_Output(self,other,"DIA_GomezWorkerSoul_5_HALLO_01_00");	//Kdo jsi, člověče? Co ode mě chceš?... (mrtvým hlasem)
 	AI_Output(other,self,"DIA_GomezWorkerSoul_5_HALLO_01_01");	//Gomez od tebe chce odpuštění za to, že tě proklel.
 	AI_Output(other,self,"DIA_GomezWorkerSoul_5_HALLO_01_02");	//Na oplátku, já ti pomohu zrušit tvoje prokletí.
-	AI_Output(self,other,"DIA_GomezWorkerSoul_5_HALLO_01_05");	//Hmm... (mrtvým hlasem) Je pro mně dúležité si to promyslet, smrtelníku - přemyslet, jestli dobře udělám, když mu odpustím.
+	AI_Output(self,other,"DIA_GomezWorkerSoul_5_HALLO_01_05");	//Hmm... (mrtvým hlasem) Je pro mně důležité si to promyslet, smrtelníku - přemyslet, jestli dobře udělám, když mu odpustím.
 	Info_ClearChoices(dia_gomezworkersoul_5_hallo);
 	Info_AddChoice(dia_gomezworkersoul_5_hallo,"Tak mu odpusť!",dia_gomezworkersoul_5_hallo_end);
 };

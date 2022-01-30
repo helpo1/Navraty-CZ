@@ -43,7 +43,7 @@ func int DIA_Cornelius_SeeMurder_Condition()
 func void DIA_Cornelius_SeeMurder_Info()
 {
 	AI_Output(other,self,"DIA_Cornelius_SeeMurder_15_00");	//Viděl jsi Lotharovu vraždu, co?
-	AI_Output(self,other,"DIA_Cornelius_SeeMurder_13_01");	//(nervózně) Nebudu odpovídat na žádné otázky týkající se probíhajího vyšetřování.
+	AI_Output(self,other,"DIA_Cornelius_SeeMurder_13_01");	//(nervózně) Nebudu odpovídat na žádné otázky týkající se probíhajícího vyšetřování.
 	AI_Output(self,other,"DIA_Cornelius_SeeMurder_13_02");	//Lord Hagen už má zaznamenáno vše, co vím.
 };
 
@@ -197,7 +197,7 @@ func void dia_cornelius_dontbelieveyou_kdm()
 	AI_Output(other,self,"DIA_Cornelius_DontBelieveYou_KDM_15_02");	//No, myslím, že bych tě mohl seznámit s některým z mých zaměstnanců.
 	AI_Output(other,self,"DIA_Cornelius_DontBelieveYou_KDM_15_03");	//Myslím, že pár zombií by ti rozvázalo jazyk, kdyby ti hluboko do prdele daly ručičku.
 	AI_Output(other,self,"DIA_Cornelius_DontBelieveYou_KDM_15_04");	//Nebo... Například démon! Měl bys vidět, jak miluje lidské maso!
-	AI_Output(self,other,"DIA_Cornelius_DontBelieveYou_KDM_13_05");	//(zbledlý jako sníh) Udělám vše co budeš chtít...
+	AI_Output(self,other,"DIA_Cornelius_DontBelieveYou_KDM_13_05");	//(zbledlý jako sníh) Udělám vše, co budeš chtít...
 	Cornelius_TellTruth = TRUE;
 	Info_ClearChoices(DIA_Cornelius_DontBelieveYou);
 };
@@ -221,7 +221,7 @@ func void dia_cornelius_dontbelieveyou_sek()
 	AI_Output(other,self,"DIA_Cornelius_DontBelieveYou_SEK_15_00");	//Můžu udělat něco speciálního.
 	AI_Output(other,self,"DIA_Cornelius_DontBelieveYou_SEK_15_01");	//Jak jistě víš, naše Bratrstvo má hodně přátel mezi lidmi z tohoto města.
 	AI_Output(other,self,"DIA_Cornelius_DontBelieveYou_SEK_15_02");	//A také s tvojim šéfem!
-	AI_Output(self,other,"DIA_Cornelius_DontBelieveYou_SEK_15_03");	//Co chceš dělat?! (bílí jako sníh!)
+	AI_Output(self,other,"DIA_Cornelius_DontBelieveYou_SEK_15_03");	//Co chceš dělat?! (bílí jako sníh)
 	AI_Output(other,self,"DIA_Cornelius_DontBelieveYou_SEK_15_04");	//Budeš si muset hledat novou práci.
 	AI_Output(other,self,"DIA_Cornelius_DontBelieveYou_SEK_15_05");	//A s největší pravděpodobností bys žádnou nenašel!
 	AI_Output(other,self,"DIA_Cornelius_DontBelieveYou_SEK_15_06");	//Taky můžu říci pár slov Lariusovi a ten už něco vymyslí.
@@ -363,7 +363,7 @@ instance DIA_Cornelius_PICKPOCKET(C_Info)
 	condition = DIA_Cornelius_PICKPOCKET_Condition;
 	information = DIA_Cornelius_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = "(Pokusit se ukrást knihu)";
+	description = "(pokusit se ukrást knihu)";
 };
 
 

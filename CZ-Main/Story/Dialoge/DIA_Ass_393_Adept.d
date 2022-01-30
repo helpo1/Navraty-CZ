@@ -72,17 +72,17 @@ func void DIA_Ass_393_Adept_GetOutCave_info()
 
 	if(NazimPissOff == TRUE)
 	{
-		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_02");	//(naštvane) Nemusíš se o tom ani rozmlouvat. Už jsem o tom slyšel!
+		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_02");	//(naštvaně) Nemusíš se o tom ani rozmlouvat. Už jsem o tom slyšel!
 		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_03");	//Díky tvojí laskavosti v této jeskyni zůstanu až do konce života!
 		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_04");	//Takže už by bylo lepší, kdybys mi nechodil na oči.
 		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_05");	//Jinak za sebe nezodpovídám!
-		B_LogEntry(TOPIC_CareOsair,"Takže Nazimovi už nemám chodit na oči. Natož aby me ješte poslouchal.");
+		B_LogEntry(TOPIC_CareOsair,"Takže Nazimovi už nemám chodit na oči. Natož aby mě ještě poslouchal.");
 	}
 	else if(NazimStayInCave == TRUE)
 	{
 		B_GivePlayerXP(100);
 		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_06");	//A co říkal?
-		AI_Output(other,self,"DIA_Ass_393_Adept_GetOutCave_01_07");	//Budeš muset ješte chvíli zůstat tady v dole.
+		AI_Output(other,self,"DIA_Ass_393_Adept_GetOutCave_01_07");	//Budeš muset ještě chvíli zůstat tady v dole.
 		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_08");	//Myslel jsem si to. Ten dědek starý mě jednou dostane do hrobu.
 		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_09");	//No nic, k Beliarovi s ním! Díky tobě jsem si aspoň udělal hezký obrázek o mistru Osairovi.
 		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_10");	//No hlavní věc je se teď odtud dostat pryč. A pak se o vše postarám pěkne sám!
@@ -91,14 +91,14 @@ func void DIA_Ass_393_Adept_GetOutCave_info()
 	else if(NazimGetOutCave == TRUE)
 	{
 		B_GivePlayerXP(1000);
-		AI_Output(other,self,"DIA_Ass_393_Adept_GetOutCave_01_11");	//Můžes opustit svoje místo v dole.
-		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_12");	//(nedůvěřivě) Je to pravda? Haniar nade mnou konečne zlomil hůl?
-		AI_Output(other,self,"DIA_Ass_393_Adept_GetOutCave_01_13");	//Ano, je to pravda. A pokud se už nechceš vrátit sem zpatky, měl bys přijmout moji nabidku.
+		AI_Output(other,self,"DIA_Ass_393_Adept_GetOutCave_01_11");	//Můžeš opustit svoje místo v dole.
+		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_12");	//(nedůvěřivě) Je to pravda? Haniar nade mnou konečně zlomil hůl?
+		AI_Output(other,self,"DIA_Ass_393_Adept_GetOutCave_01_13");	//Ano, je to pravda. A pokud se už nechceš vrátit sem zpátky, měl bys přijmout moji nabídku.
 		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_14");	//Myslíš pracovat pro mistra Osaira?
 		AI_Output(other,self,"DIA_Ass_393_Adept_GetOutCave_01_15");	//Přesně tak.
-		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_16");	//Hm... (zadumčivě) Myslím, že do toho půjdu. Jak jsem slyšel, lidi se u něj mají jako prasata v žite.
+		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_16");	//Hm... (zadumčivě) Myslím, že do toho půjdu. Jak jsem slyšel, lidi se u něj mají jako prasata v žitě.
 		AI_Output(self,other,"DIA_Ass_393_Adept_GetOutCave_01_17");	//Tak teď už za ním půjdu. Díky za pomoc, bratře.
-		B_LogEntry(TOPIC_CareOsair,"Dostal jsem Nazima z dolu, ale jen díky tomu, že Haniar se take zajímal o tuto situaci.");
+		B_LogEntry(TOPIC_CareOsair,"Dostal jsem Nazima z dolu, ale jen díky tomu, že Haniar se také zajímal o tuto situaci.");
 		Npc_ExchangeRoutine(self,"WaitInOsairCave");
 	};
 

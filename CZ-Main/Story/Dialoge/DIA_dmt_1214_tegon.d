@@ -318,7 +318,7 @@ func void dia_tegon_test_fragen_answer_1()
 	}
 	else if(TEGON_NEXTQUESTION == 2)
 	{
-		AI_Output(other,self,"DIA_Tegon_Test_Fragen_Answer_1_01_02");	//Ctnost
+		AI_Output(other,self,"DIA_Tegon_Test_Fragen_Answer_1_01_02");	//Ctnost.
 	}
 	else if(TEGON_NEXTQUESTION == 3)
 	{

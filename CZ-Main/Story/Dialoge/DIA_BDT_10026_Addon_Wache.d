@@ -44,7 +44,7 @@ func void DIA_Addon_10026_Wache_Hi_Info()
 	{
 		CreateInvItems(self,ItFo_Bacon,1);
 		AI_Output(self,other,"DIA_Addon_BDT_10026_Wache_Hi_13_01");	//Bohužel, stále máme moc málo otroků. Měli bychom brzy sehnat nějaké nové.
-		AI_Output(self,other,"DIA_Addon_BDT_10026_Wache_Hi_13_02");	//Tihle chlápi jsou úplně hotoví. Asi proto, že dostali příliš málo jídla. (smích)
+		AI_Output(self,other,"DIA_Addon_BDT_10026_Wache_Hi_13_02");	//Tihle chlapi jsou úplně hotoví. Asi proto, že dostali příliš málo jídla. (smích)
 		B_UseItem(self,ItFo_Bacon);
 		AI_Output(self,other,"DIA_Addon_BDT_10026_Wache_Hi_13_03");	//Ale já radši pošlu ty kopáče zpátky do práce, než abych těm psům dal kousek masa.
 	}
@@ -76,6 +76,6 @@ func void DIA_Addon_10026_Wache_Gruft_Info()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10026_Wache_Gruft_15_00");	//Víš něco o té kryptě?
 	AI_Output(self,other,"DIA_Addon_BDT_10026_Wache_Gruft_13_01");	//Ano. Hrobka je za tímto průchodem.
-	AI_Output(self,other,"DIA_Addon_BDT_10026_Wache_Gruft_13_02");	//(tiše) Prostě jdi podle tech mrtvol a najdeš to.
+	AI_Output(self,other,"DIA_Addon_BDT_10026_Wache_Gruft_13_02");	//(tiše) Prostě jdi podle těch mrtvol a najdeš to.
 };
 

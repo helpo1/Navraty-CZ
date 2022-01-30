@@ -75,7 +75,7 @@ func void dmt_1212_dagot_hello_info()
 	AI_Output(self,other,"DMT_1212_Dagot_Hello_36");	//Dokonce i tak mocná božství, jako jsou Innos, Beliar nebo Adanos, této síle neodolají, pokud přijde na tento svět.
 	AI_Output(self,other,"DMT_1212_Dagot_Hello_37");	//A my, Strážci, ochránci těchto Síní, jsme povoláni tohle místo a jeho tisíciletá tajemství ukrývat.
 	AI_Output(other,self,"DMT_1212_Dagot_Hello_39");	//A co tedy chceš ode mne?
-	AI_Output(self,other,"DMT_1212_Dagot_Hello_40");	//Zatím ti jen mohu mohu doporučit, aby ses vydal na tuhle cestu, hrdino. A mohu ti to nabídnout jen jednou.
+	AI_Output(self,other,"DMT_1212_Dagot_Hello_40");	//Zatím ti jen mohu doporučit, aby ses vydal na tuhle cestu, hrdino. A mohu ti to nabídnout jen jednou.
 	AI_Output(self,other,"DMT_1212_Dagot_Hello_41");	//Poté už své rozhodnutí nebudeš moci zvrátit. Takže přemýšlej dobře, než mi odpovíš...
 	AI_Output(self,other,"DMT_1212_Dagot_Hello_42");	//(panovačně) Takže, jak ses rozhodl?
 	DAGOT_MEET = TRUE;
@@ -173,7 +173,7 @@ func void dmt_1212_dagot_hellotwo_info()
 	AI_Output(self,other,"DMT_1212_Dagot_HelloTwo_04");	//Nebuď překvapen. Naše setkání bylo předurčeno již v době, kdy jsi přijal mou nabídku.
 	AI_Output(self,other,"DMT_1212_Dagot_HelloTwo_05");	//Dříve nebo později by se tohle všechno stalo - na tom nezáleží. Důležité je pouze to, že se to stalo a že jsi tady.
 	AI_Output(other,self,"DMT_1212_Dagot_HelloTwo_06");	//Tys tady na mne čekal? Proč?
-	AI_Output(self,other,"DMT_1212_Dagot_HelloTwo_07");	//Moje přítomnost tady, stejně jako naše setkání, znamená, že je čas, aby ses o dozvěděl více o nás, Strážcích...
+	AI_Output(self,other,"DMT_1212_Dagot_HelloTwo_07");	//Moje přítomnost tady, stejně jako naše setkání, znamená, že je čas, aby ses dozvěděl více o nás, Strážcích...
 	AI_Output(self,other,"DMT_1212_Dagot_HelloTwo_08");	//... a udělal první krok ke svému osudu.
 	AI_Output(self,other,"DMT_1212_Dagot_HelloTwo_09");	//Jsi připraven?
 	AI_Output(other,self,"DMT_1212_Dagot_HelloTwo_10");	//Ano, mistře.

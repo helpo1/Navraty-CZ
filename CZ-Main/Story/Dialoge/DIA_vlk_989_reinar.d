@@ -113,8 +113,8 @@ func int dia_vlk_989_reinar_meet_condition()
 
 func void dia_vlk_989_reinar_meet_info()
 {
-	AI_Output(self,other,"DIA_VLK_989_Reinar_Meet_01_00");	//Hej, mladíku! Hledaš něco?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_Meet_01_01");	//Jestli hledáš, tak to si přišel na správné místo! Jsem človek, kterého potřebuješ.
+	AI_Output(self,other,"DIA_VLK_989_Reinar_Meet_01_00");	//Hej, mladíku! Hledáš něco?
+	AI_Output(self,other,"DIA_VLK_989_Reinar_Meet_01_01");	//Jestli hledáš, tak to si přišel na správné místo! Jsem člověk, kterého potřebuješ.
 };
 
 
@@ -137,8 +137,8 @@ func int dia_vlk_989_reinar_hello_condition()
 func void dia_vlk_989_reinar_hello_info()
 {
 	AI_Output(other,self,"DIA_VLK_989_Reinar_Hello_01_00");	//Kdo jsi?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_Hello_01_01");	//Jmenuji se Reinar, a jak si se uz určitě dovtípil, na přežití si vydělávám prodejem zbraní z druhé ruky a to paladinum.
-	AI_Output(self,other,"DIA_VLK_989_Reinar_Hello_01_02");	//Nicméně se zajimám hlavně o velmi vzácné a velmi drahé exempláře, ne jak to haraburdí co prodavájí na tržišti.
+	AI_Output(self,other,"DIA_VLK_989_Reinar_Hello_01_01");	//Jmenuji se Reinar, a jak si se už určitě dovtípil, na přežití si vydělávám prodejem zbraní z druhé ruky a to paladinům.
+	AI_Output(self,other,"DIA_VLK_989_Reinar_Hello_01_02");	//Nicméně se zajímám hlavně o velmi vzácné a velmi drahé exempláře, ne jak to haraburdí co prodávají na tržišti.
 	AI_Output(other,self,"DIA_VLK_989_Reinar_Hello_01_03");	//Kupuješ zbraně?
 	AI_Output(self,other,"DIA_VLK_989_Reinar_Hello_01_04");	//No jasně! Pokud se ti náhodou podaří najít nějaký vzácný meč nebo dýku - buď tak hodný a přines ho ke mě.
 	AI_Output(self,other,"DIA_VLK_989_Reinar_Hello_01_05");	//Neměj pochyby, dám ti za ně tu nejlepší cenu!
@@ -299,8 +299,8 @@ func void dia_vlk_989_reinar_sellweapon_Morgenstern()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_Morgenstern,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,150);
 	Npc_RemoveInvItems(self,ItMw_Morgenstern,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -311,8 +311,8 @@ func void dia_vlk_989_reinar_sellweapon_Inquisitor()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_Inquisitor,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,ItMw_Inquisitor,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -323,8 +323,8 @@ func void dia_vlk_989_reinar_sellweapon_Rabenschnabel()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_Rabenschnabel,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,ItMw_Rabenschnabel,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -335,8 +335,8 @@ func void dia_vlk_989_reinar_sellweapon_Crusher()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ITMW_2H_MACE_107,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	Npc_RemoveInvItems(self,ITMW_2H_MACE_107,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -347,8 +347,8 @@ func void dia_vlk_989_reinar_sellweapon_Volebir()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_2H_Volebir,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,400);
 	Npc_RemoveInvItems(self,ItMw_2H_Volebir,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -359,8 +359,8 @@ func void dia_vlk_989_reinar_sellweapon_IceHammer()
 	B_GivePlayerXP(200);
 	B_GiveInvItems(other,self,ItMw_2H_IceHammer,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,ItMw_2H_IceHammer,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -371,8 +371,8 @@ func void dia_vlk_989_reinar_sellweapon_MolagBarMace()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_1H_MolagBarMace,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	Npc_RemoveInvItems(self,ItMw_1H_MolagBarMace,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -383,8 +383,8 @@ func void dia_vlk_989_reinar_sellweapon_SharpTeeth()
 	B_GivePlayerXP(200);
 	B_GiveInvItems(other,self,ItMw_2H_SharpTeeth,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	Npc_RemoveInvItems(self,ItMw_2H_SharpTeeth,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -395,8 +395,8 @@ func void dia_vlk_989_reinar_sellweapon_drake()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_Drakesaebel,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,300);
 	Npc_RemoveInvItems(self,ItMw_Drakesaebel,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -407,8 +407,8 @@ func void dia_vlk_989_reinar_sellweapon_Deathruff()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ITMW_1H_SWORD_LONG_05,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,300);
 	Npc_RemoveInvItems(self,ITMW_1H_SWORD_LONG_05,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -419,8 +419,8 @@ func void dia_vlk_989_reinar_sellweapon_sturmbringer()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_Sturmbringer,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,ItMw_Sturmbringer,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -431,8 +431,8 @@ func void dia_vlk_989_reinar_sellweapon_Crest()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,itmw_1h_Crest,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,itmw_1h_Crest,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -443,8 +443,8 @@ func void dia_vlk_989_reinar_sellweapon_orkschlaechter()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_Orkschlaechter,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	Npc_RemoveInvItems(self,ItMw_Orkschlaechter,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -455,8 +455,8 @@ func void dia_vlk_989_reinar_sellweapon_Fearund()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ITMW_FEARUND,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,ITMW_FEARUND,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -467,8 +467,8 @@ func void dia_vlk_989_reinar_sellweapon_SnakeSword()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ITMW_1H_KMR_SNAKESWORD_01,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	Npc_RemoveInvItems(self,ITMW_1H_KMR_SNAKESWORD_01,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -479,8 +479,8 @@ func void dia_vlk_989_reinar_sellweapon_normardsword()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,itmw_normardsword,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,350);
 	Npc_RemoveInvItems(self,itmw_normardsword,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -491,8 +491,8 @@ func void dia_vlk_989_reinar_sellweapon_BlackHeart()
 	B_GivePlayerXP(200);
 	B_GiveInvItems(other,self,ITMW_1H_BLACKSWORD,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	Npc_RemoveInvItems(self,ITMW_1H_BLACKSWORD,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -503,8 +503,8 @@ func void dia_vlk_989_reinar_sellweapon_DemonBlade()
 	B_GivePlayerXP(300);
 	B_GiveInvItems(other,self,ITMW_1H_G3A_DAEMONBLADE_01,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,ITMW_1H_G3A_DAEMONBLADE_01,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -515,8 +515,8 @@ func void dia_vlk_989_reinar_sellweapon_GinnokSword()
 	B_GivePlayerXP(300);
 	B_GiveInvItems(other,self,ItMw_1H_GinnokSword,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,ItMw_1H_GinnokSword,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -527,8 +527,8 @@ func void dia_vlk_989_reinar_sellweapon_schlachtaxt()
 	B_GivePlayerXP(100);
 	B_GiveInvItems(other,self,ItMw_Schlachtaxt,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,300);
 	Npc_RemoveInvItems(self,ItMw_Schlachtaxt,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -539,8 +539,8 @@ func void dia_vlk_989_reinar_sellweapon_SoulSword()
 	B_GivePlayerXP(300);
 	B_GiveInvItems(other,self,ITMW_2H_KMR_SOULSWORD_01,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	Npc_RemoveInvItems(self,ITMW_2H_KMR_SOULSWORD_01,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -551,8 +551,8 @@ func void dia_vlk_989_reinar_sellweapon_drachenschneide()
 	B_GivePlayerXP(200);
 	B_GiveInvItems(other,self,ItMw_Drachenschneide,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	Npc_RemoveInvItems(self,ItMw_Drachenschneide,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -563,8 +563,8 @@ func void dia_vlk_989_reinar_sellweapon_RuneAxeAncient()
 	B_GivePlayerXP(200);
 	B_GiveInvItems(other,self,ItMw_RuneAxeAncient,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	Npc_RemoveInvItems(self,ItMw_RuneAxeAncient,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -575,8 +575,8 @@ func void dia_vlk_989_reinar_sellweapon_RobarWill()
 	B_GivePlayerXP(300);
 	B_GiveInvItems(other,self,ITMW_2H_KMR_RHOBAR_01,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,ITMW_2H_KMR_RHOBAR_01,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -587,8 +587,8 @@ func void dia_vlk_989_reinar_sellweapon_DemonHand()
 	B_GivePlayerXP(300);
 	B_GiveInvItems(other,self,ItMw_DemonHand,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,ItMw_DemonHand,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -599,8 +599,8 @@ func void dia_vlk_989_reinar_sellweapon_urizel()
 	B_GivePlayerXP(400);
 	B_GiveInvItems(other,self,itmw_2h_urizel,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,700);
 	Npc_RemoveInvItems(self,itmw_2h_urizel,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -611,8 +611,8 @@ func void dia_vlk_989_reinar_sellweapon_urizel_nomagic()
 	B_GivePlayerXP(200);
 	B_GiveInvItems(other,self,itmw_2h_urizel_nomagic,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	Npc_RemoveInvItems(self,itmw_2h_urizel_nomagic,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!
@@ -623,8 +623,8 @@ func void dia_vlk_989_reinar_sellweapon_weltenspalter()
 	B_GivePlayerXP(1000);
 	B_GiveInvItems(other,self,itmw_2h_weltenspalter,1);
 	AI_Output(other,self,"DIA_VLK_989_Reinar_SellWeapon_01_02");	//No a jak to jde?
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nadherná a velmi vzácná zbraň!
-	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ho od tebe vezmu. Tady, vezmi si toto zlato!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_03");	//Hmmm... (zaujatě) To je ale opravdu nádherná a velmi vzácná zbraň!
+	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_04");	//S jistotou ji od tebe vezmu. Tady, vezmi si toto zlato!
 	B_GiveInvItems(self,other,ItMi_Gold,2000);
 	Npc_RemoveInvItems(self,itmw_2h_weltenspalter,1);
 	AI_Output(self,other,"DIA_VLK_989_Reinar_SellWeapon_01_05");	//A buď si jistý, že je to sakra dobrá cena. Žádný z kupců by ti lepší nenabídl!

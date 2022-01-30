@@ -392,7 +392,7 @@ func int dia_kurgan_dgjjoinpaladin_condition()
 
 func void dia_kurgan_dgjjoinpaladin_info()
 {
-	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_01_00");	//Paladinové potřebují vaši pomoc
+	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_01_00");	//Paladinové potřebují vaši pomoc.
 	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_01_01");	//Ano?! A co po nás potřebují?
 	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladin_01_02");	//Chtějí zaútočit na pevnost a sebrat ji skřetům.
 	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladin_01_03");	//(sarkasticky) Vážně? Když je vše ztracené a na dně, Innosovi sloužící udělají nějakou blbost, aby jejich jména vešla v legendu!
@@ -498,7 +498,7 @@ func void dia_kurgan_dgjjoinpaladingold_info()
 	AI_Output(other,self,"DIA_Kurgan_DgjJoinPaladinGold_01_02");	//Tady je.
 	B_GiveInvItems(other,self,ItMi_Gold,50000);
 	AI_Output(self,other,"DIA_Kurgan_DgjJoinPaladinGold_01_03");	//(spokojeně) Dobrá, kámo. Pomůžeme paladinům!
-	B_LogEntry(TOPIC_STURMCASTLE,"Předal jsem zlato žoldákům, nyní pomůžou paladinům!");
+	B_LogEntry(TOPIC_STURMCASTLE,"Předal jsem zlato drakobijcům, nyní pomůžou paladinům!");
 	self.aivar[93] = FALSE;
 	DGJJOINPALADIN = TRUE;
 	AI_StopProcessInfos(self);

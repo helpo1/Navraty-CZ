@@ -75,7 +75,7 @@ func void DIA_Pedro_DI_YOU_Info()
 
 	if(MIS_Gorax_KillPedro == LOG_Running)
 	{
-		Info_AddChoice(DIA_Pedro_DI_YOU,"Serpetens mi nařídil zabít tě.",DIA_Pedro_DI_YOU_Serpentes);
+		Info_AddChoice(DIA_Pedro_DI_YOU,"Serpentes mi nařídil zabít tě.",DIA_Pedro_DI_YOU_Serpentes);
 	};
 };
 
@@ -100,7 +100,7 @@ func void DIA_Pedro_DI_YOU_tot()
 
 func void DIA_Pedro_DI_YOU_Serpentes()
 {
-	AI_Output(other,self,"DIA_Pedro_DI_YOU_Serpentes_15_00");	//Serpetens mi nařídil zabít tě, jestli tě najdu.
+	AI_Output(other,self,"DIA_Pedro_DI_YOU_Serpentes_15_00");	//Serpentes mi nařídil zabít tě, jestli tě najdu.
 	AI_Output(self,other,"DIA_Pedro_DI_YOU_Serpentes_09_01");	//(plačtivě) Pořád se můžu hodit, vždyť to víš.
 };
 
@@ -127,7 +127,7 @@ func void DIA_Pedro_DI_YOU_FollowShip()
 
 	if(MIS_Gorax_KillPedro == LOG_Running)
 	{
-		B_LogEntry(Topic_Gorax_KillPedro,"Rohzodl jsem se ušetřit Pedra. Udělal jsem ale správně?!");
+		B_LogEntry(Topic_Gorax_KillPedro,"Rozhodl jsem se ušetřit Pedra. Udělal jsem ale správně?!");
 	};
 };
 
@@ -195,7 +195,7 @@ func void DIA_Pedro_DI_ArrivedAtShip_Innere()
 
 func void DIA_Pedro_DI_ArrivedAtShip_OberstTot()
 {
-	AI_Output(other,self,"DIA_Pedro_DI_ArrivedAtShip_OberstTot_15_00");	//Plukovník skřetů je mrtvý.
+	AI_Output(other,self,"DIA_Pedro_DI_ArrivedAtShip_OberstTot_15_00");	//Skřetí plukovník je mrtvý.
 	AI_Output(self,other,"DIA_Pedro_DI_ArrivedAtShip_OberstTot_09_01");	//Mrtvý? Chvála Innosovi, na jeho obličej nikdy nezapomenu.
 };
 

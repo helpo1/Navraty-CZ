@@ -47,7 +47,7 @@ func void dia_pedro_li_missmygold_info()
 	AI_Output(other,self,"DIA_Pedro_LI_MissMyGold_01_03");	//Na moje zlato.
 	AI_Output(self,other,"DIA_Pedro_LI_MissMyGold_01_04");	//(strach) Je mí líto, o tom nic nevím.
 	AI_Output(other,self,"DIA_Pedro_LI_MissMyGold_01_05");	//Jak jinak.
-	B_LogEntry(TOPIC_MISSMYGOLD,"Pedro mi o mojem zlatě taky nic neřekl.");
+	B_LogEntry(TOPIC_MISSMYGOLD,"Pedro mi o mém zlatě taky nic neřekl.");
 };
 
 

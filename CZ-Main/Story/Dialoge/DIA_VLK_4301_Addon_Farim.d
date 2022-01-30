@@ -320,7 +320,7 @@ func void DIA_Addon_Farim_William_Wo()
 	Log_CreateTopic(TOPIC_Addon_WhoStolePeople,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_WhoStolePeople,LOG_Running);
 	B_LogEntry(TOPIC_Addon_WhoStolePeople,"Rybář Farim postrádá svého kamaráda Williama. Farim říká, že William se setkával s nějakými hrdlořezy na pláži severně od přístavu.");
-	Info_AddChoice(DIA_Addon_Farim_William,"Myslím jsem slyšel vše, co jsem chtěl vědět.",DIA_Addon_Farim_William_Tschau);
+	Info_AddChoice(DIA_Addon_Farim_William,"Myslím, že jsem slyšel vše, co jsem chtěl vědět.",DIA_Addon_Farim_William_Tschau);
 };
 
 func void DIA_Addon_Farim_William_WannWeg()
@@ -345,7 +345,7 @@ func void DIA_Addon_Farim_William_auftauchen()
 
 func void DIA_Addon_Farim_William_Tschau()
 {
-	AI_Output(other,self,"DIA_Addon_Farim_William_Tschau_15_00");	//Myslím jsem slyšel vše, co jsem chtěl vědět.
+	AI_Output(other,self,"DIA_Addon_Farim_William_Tschau_15_00");	//Myslím, že jsem slyšel vše, co jsem chtěl vědět.
 	AI_Output(self,other,"DIA_Addon_Farim_William_Tschau_11_01");	//Nedělej si s tím starosti. Nemyslím, že ho ještě najdeš.
 	Info_ClearChoices(DIA_Addon_Farim_William);
 };
@@ -557,20 +557,20 @@ func void dia_farim_recrdtsugg_info()
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_04");	//Jo, jak udělat zlo, moje ryby nikdo nechce.
 	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_15_05");	//Proč?
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_06");	//Tys to neslyšel? Ve městě byl jednou skandál.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_07");	//Některá děvka z horní čtvrti četla hodně exotický recepty, a pak se rozhodla se svými přáteli že něco z toho ukuchtí.
+	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_07");	//Některá děvka z horní čtvrti četla hodně exotický recepty, a pak se se svými přáteli rozhodla, že něco z toho ukuchtí.
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_08");	//Koupila si moje ryby a začala s nima vařit ty... její...
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_09");	//Ale to je mi jedno! Důležitý je že všechny ti její hnusy byly ze syrových ryb. Představ si, syrových!
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_10");	//No, jakýkémukoli člověku je jasné že ryby se potřebují buď usmažit, vařit nebo dusit.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_11");	//Jak myslíš že to může chutnat za syrova? Je to tak nechutné, co...
+	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_09");	//Ale to je mi jedno! Důležitý je, že všechny ti její hnusy byly ze syrových ryb. Představ si, syrových!
+	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_10");	//No, jakémukoli člověku je jasné, že ryby se potřebují buď usmažit, vařit nebo dusit.
+	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_11");	//Jak myslíš, že to může chutnat za syrova? Je to tak nechutné, co...
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_12");	//To jsem odbočil.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_13");	//Ta mladá žena nakoupila ryby a začala vařit ty sračky, myslím že potom si pozvala všechny ty hosty.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_14");	//Samozřejmě že po večeři to se všema začalo dělat divy.
+	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_13");	//Ta mladá žena nakoupila ryby a začala vařit ty sračky, myslím, že potom si pozvala všechny ty hosty.
+	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_14");	//Samozřejmě, že po večeři to se všema začalo dělat divy.
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_15");	//A kdo je na vině, že ženy nemají mozek?
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_16");	//No samozřejmě, rybář Farim!
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_17");	//Věc se má tak, v celém městě rozvonila že mám nekvalitní ryby.
+	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_17");	//Věc se má tak, v celém městě rozvonila, že mám nekvalitní ryby.
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_18");	//I lordu Andremu a místodržícímu promlouvala do duše.
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_19");	//Naštěstí lord Andre není hloupý člověk a neposlouchal ji. 
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_20");	//Celé město v průběhu spousty let jedli moje ryby, najednou přijde nějaká fúrie a její hloupý feká... všude křičí 'Prodává špatné ryby'! To proto že je...! 
+	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_20");	//Celé město v průběhu spousty let jedli moje ryby, najednou přijde nějaká fúrie a její hloupý feká... všude křičí 'Prodává špatné ryby'! To proto, že je...! 
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_21");	//Nicméně většina občanů poslouchá idioty tohodle typu.
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_22");	//Někdo mě dokonce začal obviňovat, že přidávám do ryb nějaké 'géemó', a prej kvůli tomuto 'géemu' jejich žábry pak přestávají růst.
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_99_23");	//Jinými slovy, teď sedím s rybami ale bez zákazníků a zlata.
@@ -594,14 +594,14 @@ func void dia_farim_recrdtsugg_yes()
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_01");	//O, to není problém. Kolik bys chtěl? Jednu, dvě? Jestli chceš pět, máš je mít.
 	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_02");	//Tys mě úplně nepochopil. Budu kupovat všechny tvé ryby.
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_03");	//Eee... všechny ryby? Ale to přece nesníš vše sám! Vypadáš jako sportovec!
-	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_04");	//Já nejsem sám. Je nás mnoho. Potřebuju pravidelný dodávky potravin pro můj tábor.
+	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_04");	//Já nejsem sám. Je nás mnoho. Potřebuju pravidelné dodávky potravin pro můj tábor.
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_05");	//Máte tábor? Kde?
 	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_06");	//V blízkosti Onara.
 	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_06");	//To není špatné! Rád pomůžu.
-	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_07");	//Ryby se budou dodávat do tábora. Zajímalo by mě kolik ryb můžete pro tábor zajistit na den a jaká je cena?
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_07");	//Záleží na úlovku. Ale tucet ulovím minimálně tak se nebojte. Cena jedné ryby - pět mincí za každou.
+	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_07");	//Ryby se budou dodávat do tábora. Zajímalo by mě kolik ryb můžeš pro tábor zajistit na den a jaká je cena?
+	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_07");	//Záleží na úlovku. Ale tucet ulovím minimálně tak se neboj. Cena jedné ryby - pět mincí za každou.
 	AI_Output(other,self,"DIA_FARIM_RecrDTSugg_Yes_15_08");	//Ujednáno.
-	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_08");	//No tak uvidíme v táboře.
+	AI_Output(self,other,"DIA_FARIM_RecrDTSugg_Yes_99_08");	//No tak se uvidíme v táboře.
 	self.npcType = NPCTYPE_FRIEND;
 	self.aivar[AIV_ToughGuy] = TRUE;
 	self.aivar[AIV_IGNORE_Theft] = TRUE;

@@ -104,13 +104,13 @@ func void dia_miguel_nw_hi_info()
 	};
 	AI_Output(other,self,"DIA_Miguel_NW_Hi_01_05");	//No je to trochu prostší, v bažinách jsem měl jen jistý úkol.
 	AI_Output(other,self,"DIA_Miguel_NW_Hi_01_06");	//A jsem, jak se ukázalo, ne? Jak jste se sem dostali?
-	AI_Output(self,other,"DIA_Miguel_NW_Hi_01_07");	//Vše bylo jednoduché chlape. Piráti nám sem hodili výměnou za trávu z bažin.
+	AI_Output(self,other,"DIA_Miguel_NW_Hi_01_07");	//Vše bylo jednoduché chlape. Piráti nás sem hodili výměnou za trávu z bažin.
 
 	if(KILLHAPPENSMADE == FALSE)
 	{
 		AI_Output(self,other,"DIA_Miguel_NW_Hi_01_08");	//Teď jsme prodávali trávu Ignazovi a Constantinovi. Stáli o nás. Zákon - zákon a zboží k nim. A tam je nutno přijmout.
 		AI_Output(other,self,"DIA_Miguel_NW_Hi_01_09");	//Jasný. Takže stačí jim prodat svou trávu?
-		AI_Output(self,other,"DIA_Miguel_NW_Hi_01_10");	//Ddokážete zavzpomínat na staré... (smích)
+		AI_Output(self,other,"DIA_Miguel_NW_Hi_01_10");	//Dokážeš zavzpomínat na staré... (smích)
 	};
 };
 
@@ -135,9 +135,9 @@ func int dia_miguel_nw_city_condition()
 
 func void dia_miguel_nw_city_info()
 {
-	AI_Output(other,self,"DIA_Miguel_NW_City_15_00");	//A jak se ti tu žije? Zde jste žili předtím?
+	AI_Output(other,self,"DIA_Miguel_NW_City_15_00");	//A jak se ti tu žije? Tady jsi žil předtím?
 	AI_Output(self,other,"DIA_Miguel_NW_City_11_01");	//Ano, ale teď už Khorinis není vůbec to samé.
-	AI_Output(self,other,"DIA_Miguel_NW_City_11_02");	//Umíte si to představit, rušný přístav, námořníci ze všech koutů světa?
+	AI_Output(self,other,"DIA_Miguel_NW_City_11_02");	//Umíš si to představit, rušný přístav, námořníci ze všech koutů světa?
 	AI_Output(self,other,"DIA_Miguel_NW_City_11_03");	//Plno obchodníků, zboží, zlaté třpytky. Pašovaná ruda tady vytvářela zázraky.
 	AI_Output(self,other,"DIA_Miguel_NW_City_11_04");	//Eeeh... jak se život otočil.
 };

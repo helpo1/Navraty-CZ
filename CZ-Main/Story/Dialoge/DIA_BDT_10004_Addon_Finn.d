@@ -130,7 +130,7 @@ func int DIA_Addon_Finn_Hacke_Condition()
 func void DIA_Addon_Finn_Hacke_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Finn_Hacke_15_00");	//Kde tady seženu krumpáč?
-	AI_Output(self,other,"DIA_Addon_Finn_Hacke_07_01");	//Běž za Hunem - je to kovář. Ale to že máš krumpáč ještě neznamená, že se dostaneš do dolu.
+	AI_Output(self,other,"DIA_Addon_Finn_Hacke_07_01");	//Běž za Hunem - je to kovář. Ale to, že máš krumpáč ještě neznamená, že se dostaneš do dolu.
 	AI_Output(self,other,"DIA_Addon_Finn_Hacke_07_02");	//Jestli tam chceš vstoupit, musíš prvně promluvit s Estebanem.
 	AI_Output(self,other,"DIA_Addon_Finn_Hacke_07_03");	//Ani nechoď za Thorusem - nepustí tě, dokud nebudeš mít červený kámen.
 };
@@ -160,7 +160,7 @@ func void DIA_Addon_Finn_Esteban_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Finn_Esteban_15_00");	//Co si myslíš o Estebanovi?
 	AI_Output(self,other,"DIA_Addon_Finn_Esteban_07_01");	//(opatrně) Hmm... je tady kápo... on... myslím, že je v klidu.
-	AI_Output(self,other,"DIA_Addon_Finn_Esteban_07_02");	//(váhavě) Posílá vždy nejlepší muže do dolu. Myslím jako ty, kerý ví něco o dolování.
+	AI_Output(self,other,"DIA_Addon_Finn_Esteban_07_02");	//(váhavě) Posílá vždy nejlepší muže do dolu. Myslím ty, kteří vědí něco o dolování.
 };
 
 

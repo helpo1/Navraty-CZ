@@ -39,7 +39,7 @@ instance DIA_Vatras_DI_HEAL(C_Info)
 	condition = DIA_Vatras_DI_HEAL_Condition;
 	information = DIA_Vatras_DI_HEAL_Info;
 	permanent = TRUE;
-	description = "Vyleč mě.";
+	description = "Vyléč mě.";
 };
 
 
@@ -53,7 +53,7 @@ func int DIA_Vatras_DI_HEAL_Condition()
 
 func void DIA_Vatras_DI_HEAL_Info()
 {
-	AI_Output(other,self,"DIA_Vatras_DI_HEAL_15_00");	//Vyleč mě.
+	AI_Output(other,self,"DIA_Vatras_DI_HEAL_15_00");	//Vyléč mě.
 
 	if(DIA_Vatras_DI_PEDROTOT_VatrasSucked == FALSE)
 	{
@@ -200,7 +200,7 @@ func void DIA_Vatras_DI_RAT_Info()
 	AI_Output(self,other,"DIA_Vatras_DI_RAT_05_01");	//Drž se od Pátračů dál. Pamatuj, že ti jejich černý pohled tady, daleko od kláštera, může způsobit vážné obtíže.
 	if(Npc_HasItems(other,ItAm_Prot_BlackEye_Mis))
 	{
-		AI_Output(other,self,"DIA_Vatras_DI_RAT_15_02");	//Nic se neděje, mám amulet na na ochranu před jejich zrakem.
+		AI_Output(other,self,"DIA_Vatras_DI_RAT_15_02");	//Nic se neděje, mám amulet na ochranu před jejich zrakem.
 	};
 	AI_Output(self,other,"DIA_Vatras_DI_RAT_05_03");	//Kdyby se ti přesto cokoli stalo, přijď za mnou. Uvidíme, co se dá dělat.
 };
@@ -236,7 +236,7 @@ func void DIA_Vatras_DI_PEDROTOT_Info()
 		AI_Output(other,self,"DIA_Vatras_DI_PEDROTOT_15_01");	//Je mrtvý.
 		AI_Output(self,other,"DIA_Vatras_DI_PEDROTOT_05_02");	//Jsem opravdu zklamán. Tohle jsem si o tobě nemyslel.
 		AI_Output(other,self,"DIA_Vatras_DI_PEDROTOT_15_03");	//Co tím myslíš?
-		AI_Output(self,other,"DIA_Vatras_DI_PEDROTOT_05_04");	//Vím o tvé odporné dohodě se Serpentesem. Jsem hluboce otřesen tím, jak jsem nakonec v tobě zmýlil.
+		AI_Output(self,other,"DIA_Vatras_DI_PEDROTOT_05_04");	//Vím o tvé odporné dohodě se Serpentesem. Jsem hluboce otřesen tím, jak jsem se nakonec v tobě zmýlil.
 		DIA_Vatras_DI_PEDROTOT_VatrasSucked = TRUE;
 		AI_StopProcessInfos(self);
 	}
@@ -266,7 +266,7 @@ func void DIA_Vatras_DI_PEDROTOT_Info()
 					B_GivePlayerXP(500);
 					MIS_Gorax_KillPedro = LOG_SUCCESS;
 					Log_SetTopicStatus(Topic_Gorax_KillPedro,LOG_SUCCESS);
-					B_LogEntry(Topic_Gorax_KillPedro,"Vatras mi řekl, že bych neměl zabíjet Pedra a tu věc se Serpentesem vyřeší on!");
+					B_LogEntry(Topic_Gorax_KillPedro,"Vatras mi řekl, že bych neměl zabíjet Pedra a tu věc se Serpentesem vyřeší on.");
 
 					if(MIS_TraitorPedro == LOG_Running)
 					{

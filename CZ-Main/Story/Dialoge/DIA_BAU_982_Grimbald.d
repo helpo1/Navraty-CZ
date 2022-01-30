@@ -228,7 +228,7 @@ func void DIA_Grimbald_Jagd_Info()
 
 func void DIA_Grimbald_Jagd_ja()
 {
-	AI_Output(other,self,"DIA_Grimbald_Jagd_ja_15_00");	//Tady jsou peníze.
+	AI_Output(other,self,"DIA_Grimbald_Jagd_ja_15_00");	//Dobrá. Tady jsou peníze.
 	if(B_GiveInvItems(other,self,ItMi_Gold,200))
 	{
 		AI_Output(self,other,"DIA_Grimbald_Jagd_ja_07_01");	//Dobře. Řekni mi, až budeš chtít začít.
@@ -245,7 +245,7 @@ func void DIA_Grimbald_Jagd_ja()
 
 func void DIA_Grimbald_Jagd_zuviel()
 {
-	AI_Output(other,self,"DIA_Grimbald_Jagd_zuviel_15_00");	//Dobrá, popřemýšlím o tom.
+	AI_Output(other,self,"DIA_Grimbald_Jagd_zuviel_15_00");	//Budu o tom přemýšlet.
 	AI_Output(self,other,"DIA_Grimbald_Jagd_zuviel_07_01");	//Jak chceš.
 	Info_ClearChoices(DIA_Grimbald_Jagd);
 };
@@ -329,7 +329,7 @@ func void DIA_Grimbald_TEACHHUNTING_DrgSnapperHorn()
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_DrgSnapperHorn))
 	{
 		AI_Output(self,other,"DIA_Grimbald_TEACHHUNTING_DrgSnapperHorn_03_01");	//Musíš vrazit nůž hluboko do zvířecího čela a jemně páčením uvolnit.
-		AI_Output(self,other,"DIA_Grimbald_TEACHHUNTING_DrgSnapperHorn_03_02");	//Pokud se neoddělí od lebky, použij druhý nuž na druhé straně čela.
+		AI_Output(self,other,"DIA_Grimbald_TEACHHUNTING_DrgSnapperHorn_03_02");	//Pokud se neoddělí od lebky, použij druhý nůž na druhé straně čela.
 		CreateInvItems(Gaans_Snapper,ItAt_DrgSnapperHorn,1);
 	};
 	Info_ClearChoices(DIA_Grimbald_TEACHHUNTING);
@@ -512,7 +512,7 @@ func void dia_grimbald_respectdone_info()
 	AI_Output(other,self,"DIA_Grimbald_RespectDone_01_00");	//Je po trolovi, dáš mi svůj hlas?
 	AI_Output(self,other,"DIA_Grimbald_RespectDone_01_01");	//Samozřejmě, tak jsme se dohodli.
 	GRIMBALD_RESPECT = TRUE;
-	B_LogEntry(TOPIC_HUNTERSWORK,"Grimblad mi dá svůj hlas.");
+	B_LogEntry(TOPIC_HUNTERSWORK,"Grimbald mi dá svůj hlas.");
 	HUNTCHALLENGECOUNT = HUNTCHALLENGECOUNT + 1;
 };
 
@@ -542,7 +542,7 @@ func void dia_grimbald_Furs_info()
 	AI_Output(self,other,"DIA_Grimbald_Furs_01_03");	//(dotčen) Jak tě to napadlo?
 	AI_Output(other,self,"DIA_Grimbald_Furs_01_04");	//Ale ty jsi lovec. Nebo ne?
 	AI_Output(self,other,"DIA_Grimbald_Furs_01_05");	//No jistě. Jsem lovec, ne farmář! Nebo vidíš snad vedle mě stádo ovcí?
-	AI_Output(other,self,"DIA_Grimbald_Furs_01_06");	//No, doufal jsem že se někde tady něco najde.
+	AI_Output(other,self,"DIA_Grimbald_Furs_01_06");	//No, doufal jsem, že se někde tady něco najde.
 	AI_Output(self,other,"DIA_Grimbald_Furs_01_07");	//Ne, člověče. Vydal ses na špatnou adresu.
 	AI_Output(self,other,"DIA_Grimbald_Furs_01_08");	//Jediné kůže, které mám, obsahují části dravých potvor, které lovím.
 	AI_Output(self,other,"DIA_Grimbald_Furs_01_09");	//Takové ti mohu nabídnout.
@@ -558,7 +558,7 @@ func void dia_grimbald_Furs_info()
 	{
 		B_GivePlayerXP(100);
 		AI_Output(self,other,"DIA_Grimbald_Furs_01_18");	//No, když ty jsi jedním z nás... Dám ti je zdarma.
-		AI_Output(self,other,"DIA_Grimbald_Furs_01_19");	//Tady. Doufám že se ti budou hodit.
+		AI_Output(self,other,"DIA_Grimbald_Furs_01_19");	//Tady. Doufám, že se ti budou hodit.
 		B_GiveInvItems(self,other,ItAt_ShadowFur,2);
 		AI_Output(other,self,"DIA_Grimbald_Furs_01_20");	//Vynikající kůže. Díky.
 		AI_Output(self,other,"DIA_Grimbald_Furs_01_21");	//Nemáš zač.
@@ -568,7 +568,7 @@ func void dia_grimbald_Furs_info()
 	else if(Npc_IsDead(troll_black_ext) == TRUE)
 	{
 		B_GivePlayerXP(50);
-		AI_Output(self,other,"DIA_Grimbald_Furs_01_22");	//No... (zamyšleně) Vzhledem k tomu že jsi to ty, trolobijec, dám ti je zadarmo.
+		AI_Output(self,other,"DIA_Grimbald_Furs_01_22");	//No... (zamyšleně) Vzhledem k tomu, že jsi to ty, trolobijec, dám ti je zadarmo.
 		AI_Output(self,other,"DIA_Grimbald_Furs_01_23");	//Ale jen jednu. Tady máš.
 		B_GiveInvItems(self,other,ItAt_ShadowFur,1);
 		AI_Output(other,self,"DIA_Grimbald_Furs_01_24");	//Vynikající kůže. A kolik stojí druhá?
@@ -642,14 +642,14 @@ func void dia_grimbald_Furs_Trade_info()
 			AI_Output(self,other,"DIA_Grimbald_Furs_Trade_01_03");	//Jak jsem řekl, za stínovou šelmu chci 200 zlatých.
 			AI_Output(self,other,"DIA_Grimbald_Furs_Trade_01_04");	//Máš na to vůbec?
 			Info_ClearChoices(DIA_Grimbald_Furs_Trade);
-			Info_AddChoice(DIA_Grimbald_Furs_Trade,"Zloději.",DIA_Grimbald_Furs_Trade_no);
-			Info_AddChoice(DIA_Grimbald_Furs_Trade,"Tady máš.",DIA_Grimbald_Furs_Trade_geld);
+			Info_AddChoice(DIA_Grimbald_Furs_Trade,"Ještě ne.",DIA_Grimbald_Furs_Trade_no);
+			Info_AddChoice(DIA_Grimbald_Furs_Trade,"Zde jsou peníze.",DIA_Grimbald_Furs_Trade_geld);
 		}
 		else
 		{
 			AI_Output(self,other,"DIA_Grimbald_Furs_Trade_01_05");	//Dobře, jaký typ kožešiny si přeješ?
 			Info_ClearChoices(DIA_Grimbald_Furs_Trade);
-			Info_AddChoice(DIA_Grimbald_Furs_Trade,"Rozmyslel jsem se.",DIA_Grimbald_Furs_Trade_NoSale);
+			Info_AddChoice(DIA_Grimbald_Furs_Trade,"Rozmyslel jsem si to.",DIA_Grimbald_Furs_Trade_NoSale);
 			Info_AddChoice(DIA_Grimbald_Furs_Trade,"Kůže warga. (cena: 100 zlatých)",DIA_Grimbald_Furs_Trade_Warg);
 			Info_AddChoice(DIA_Grimbald_Furs_Trade,"Kůže stínové šelmy. (cena: 200 zlatých)",DIA_Grimbald_Furs_Trade_Shadow);
 			Info_AddChoice(DIA_Grimbald_Furs_Trade,"Trolí kůže. (cena: 500 zlatých)",DIA_Grimbald_Furs_Trade_troll);
@@ -760,7 +760,7 @@ func void DIA_Grimbald_Furs_Trade_troll()
 	else
 	{
 		AI_Output(self,other,"DIA_Grimbald_Furs_Trade_troll_17_03");	//Nemáš dost zlata.
-		AI_Output(self,other,"DIA_Grimbald_Furs_Trade_troll_17_04");	//Nesnaž se mě znovu ošidit!
+		AI_Output(self,other,"DIA_Grimbald_Furs_Trade_troll_17_04");	//Nesnaž se mě ošidit!
 	};
 
 	Info_ClearChoices(DIA_Grimbald_Furs_Trade);
@@ -776,7 +776,7 @@ func void DIA_Grimbald_Furs_Trade_NoSale()
 
 func void DIA_Grimbald_Furs_Trade_no()
 {
-	AI_Output(other,self,"DIA_Grimbald_Furs_Trade_no_15_00");	//Zloději.
+	AI_Output(other,self,"DIA_Grimbald_Furs_Trade_no_15_00");	//Ještě ne.
 	AI_Output(self,other,"DIA_Grimbald_Furs_Trade_no_17_01");	//Pak nemáme o čem mluvit.
 	Info_ClearChoices(DIA_Grimbald_Furs_Trade);
 };

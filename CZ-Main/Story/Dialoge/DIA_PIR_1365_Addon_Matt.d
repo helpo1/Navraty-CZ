@@ -78,7 +78,7 @@ func int DIA_Addon_Matt_Hello_Condition()
 
 func void DIA_Addon_Matt_Hello_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Matt_Hello_10_01");	//Á, nováček? Dobrý. Může se hodit každej novej dobrej chlap, ce se k nám přidá.
+	AI_Output(self,other,"DIA_Addon_Matt_Hello_10_01");	//Á, nováček? Dobrý. Může se hodit každej novej dobrej chlap, co se k nám přidá.
 };
 
 
@@ -191,7 +191,7 @@ instance DIA_Addon_Matt_Anheuern(C_Info)
 	condition = DIA_Addon_Matt_Anheuern_Condition;
 	information = DIA_Addon_Matt_Anheuern_Info;
 	permanent = FALSE;
-	description = "Pojď.";
+	description = "Pojď se mnou.";
 };
 
 
@@ -330,7 +330,7 @@ func int DIA_Addon_Matt_TooFar_Condition()
 
 func void DIA_Addon_Matt_TooFar_Info()
 {
-	AI_Output(self,other,"DIA_Addon_Matt_TooFar_10_01");	//Můžeš z tady ma pokračovat sám, (cynicky) Kapitáne.
+	AI_Output(self,other,"DIA_Addon_Matt_TooFar_10_01");	//Můžeš odtud pokračovat sám, (cynicky) Kapitáne.
 	if(C_HowManyPiratesInParty() >= 2)
 	{
 		AI_Output(self,other,"DIA_Addon_Matt_TooFar_10_03");	//Já a ostatní muži se vrátíme do tábora.

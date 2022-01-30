@@ -170,7 +170,7 @@ func void DIA_Addon_Francis_Key_2000Gold()
 		AI_Output(self,other,"DIA_Addon_Francis_Key_2000Gold_13_02");	//(k sobě) Ale když se nad tím zamyslím...
 		AI_Output(self,other,"DIA_Addon_Francis_Key_2000Gold_13_03");	//Ach, ruku na to, nikdo na to nepřijde.
 		AI_Output(self,other,"DIA_Addon_Francis_Key_2000Gold_13_04");	//Tu je klíč!
-		AI_Output(self,other,"DIA_Addon_Francis_Key_2000Gold_13_05");	//Ale rychle, dokud se Greg nevrátil! A ani slovo ostatním, slyšíš?!
+		AI_Output(self,other,"DIA_Addon_Francis_Key_2000Gold_13_05");	//Ale rychle, dokud se Greg nevrátí! A ani slovo ostatním, slyšíš?!
 		B_GiveInvItems(other,self,ItMi_Gold,2000);
 		B_GiveInvItems(self,other,ITKE_Greg_ADDON_MIS,1);
 		Francis_bezahlt = TRUE;
@@ -366,7 +366,7 @@ func void DIA_Francis_Ausgeschissen_Info()
 {
 	if(!Npc_IsDead(Greg))
 	{
-		AI_Output(self,other,"DIA_Addon_Francis_Ausgeschissen_13_00");	//(nahlas) Protože by mě Greg jinak nechal kácet stromy do posedního zbylého keříčku!
+		AI_Output(self,other,"DIA_Addon_Francis_Ausgeschissen_13_00");	//(nahlas) Protože by mě Greg jinak nechal kácet stromy do posledního zbylého keříčku!
 	};
 	AI_Output(self,other,"DIA_Addon_Francis_Ausgeschissen_13_01");	//Ztrať se!
 	AI_StopProcessInfos(self);

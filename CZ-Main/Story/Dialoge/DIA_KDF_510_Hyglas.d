@@ -467,7 +467,7 @@ func void DIA_Hyglas_Kap4_PERM_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Hyglas_Kap4_PERM_14_06");	//Řekl jsem ti, že to stále zkoumám, ale bez potřebných materiálu to samozřejmě bude trvat déle.
+		AI_Output(self,other,"DIA_Hyglas_Kap4_PERM_14_06");	//Řekl jsem ti, že to stále zkoumám, ale bez potřebných materiálů to samozřejmě bude trvat déle.
 	};
 };
 

@@ -54,7 +54,7 @@ func void DIA_RodDJG_HALLO_Woher()
 {
 	AI_Output(other,self,"DIA_RodDJG_HALLO_Woher_15_00");	//Kdes sebral ty boty?
 	AI_Output(self,other,"DIA_RodDJG_HALLO_Woher_06_01");	//Ten starej skunk Bennet je udělal pro drakobijce a nechal si za ty škrpály královsky zaplatit.
-	AI_Output(self,other,"DIA_RodDJG_HALLO_Woher_06_02");	//Až se mi někdy dostane do rukou, nechám ho nejdřív ty věci sežrat a pak z něj vymlátim svoje prachy.
+	AI_Output(self,other,"DIA_RodDJG_HALLO_Woher_06_02");	//Až se mi někdy dostane do rukou, nechám ho nejdřív ty věci sežrat a pak z něj vymlátím svoje prachy.
 };
 
 func void DIA_RodDJG_HALLO_warten()
@@ -69,7 +69,7 @@ func void DIA_RodDJG_HALLO_warten()
 	else
 	{
 		AI_Output(self,other,"DIA_RodDJG_HALLO_warten_06_02");	//Přemýšlel jsem o tom, že bychom měli blíž prozkoumat tamtu bažinatou oblast.
-		AI_Output(self,other,"DIA_RodDJG_HALLO_warten_06_03");	//Myslíš že tam můžeme jít spolu? Podívat se, co by se tam dalo najít?
+		AI_Output(self,other,"DIA_RodDJG_HALLO_warten_06_03");	//Myslíš, že tam můžeme jít spolu? Podívat se, co by se tam dalo najít?
 		Info_AddChoice(DIA_RodDJG_HALLO,"Zajdu tam sám.",DIA_RodDJG_HALLO_warten_allein);
 		Info_AddChoice(DIA_RodDJG_HALLO,"Co víš o těch bažinách?",DIA_RodDJG_HALLO_warten_wasweisstdu);
 		Info_AddChoice(DIA_RodDJG_HALLO,"Tak jdeme.",DIA_RodDJG_HALLO_warten_zusammen);

@@ -198,7 +198,7 @@ func void dia_joe_inprisoin_info()
 		AI_Output(other,self,"DIA_Joe_InPrisoin_01_02");	//Tady tím. Už víš?
 		AI_Output(self,other,"DIA_Joe_InPrisoin_01_03");	//No, dal jsem ho Coragonovi za chlast.
 		AI_Output(self,other,"DIA_Joe_InPrisoin_01_04");	//Co na tom?!
-		AI_Output(other,self,"DIA_Joe_InPrisoin_01_05");	//Zatím nic. Nechceš mi ale povědět odkud ho máš?!
+		AI_Output(other,self,"DIA_Joe_InPrisoin_01_05");	//Zatím nic. Nechceš mi ale říct odkud ho máš?!
 		AI_Output(self,other,"DIA_Joe_InPrisoin_01_06");	//... (nervózně) Našel jsem ho.
 		AI_Output(other,self,"DIA_Joe_InPrisoin_01_07");	//Lžeš! Nechceš raději mluvit pravdu?!
 		AI_Output(self,other,"DIA_Joe_InPrisoin_01_08");	//Ale to je pravda! Přísahám!

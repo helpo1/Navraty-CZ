@@ -80,7 +80,7 @@ func void dia_balor_hallo_info()
 func void dia_balor_hallo_ja()
 {
 	AI_Output(other,self,"DIA_Balor_Hallo_Ja_15_00");	//Jistě.
-	AI_Output(self,other,"DIA_Balor_Hallo_Ja_13_01");	//Pak jistě víš, že je druhou nejvýznamnější osobou v táboře. Hned po Baal Orunovi samozřejmě...
+	AI_Output(self,other,"DIA_Balor_Hallo_Ja_13_01");	//Pak jistě víš, že je druhou nejvýznamnější osobou v táboře. Hned po Baalu Orunovi samozřejmě...
 	Info_ClearChoices(dia_balor_hallo);
 };
 
@@ -88,7 +88,7 @@ func void dia_balor_hallo_nein()
 {
 	AI_Output(other,self,"DIA_Balor_Hallo_Nein_15_00");	//Ne.
 	AI_Output(self,other,"DIA_Balor_Hallo_Nein_13_01");	//Vážně? Asi tu ještě nejsi moc dlouho že?
-	AI_Output(self,other,"DIA_Balor_Hallo_Nein_13_02");	//Baal Tyon. (odmlčí se) Je druhou nejvýznamnější osobou v tomto táboře hned po Baal Orunovi.
+	AI_Output(self,other,"DIA_Balor_Hallo_Nein_13_02");	//Baal Tyon. (odmlčí se) Je druhou nejvýznamnější osobou v tomto táboře hned po Baalu Orunovi.
 	AI_Output(self,other,"DIA_Balor_Hallo_Nein_13_03");	//Jeho hlas znamená moc. Zvláště pak v otázce přijetí do Bratrstva.
 	Info_ClearChoices(dia_balor_hallo);
 };
@@ -116,7 +116,7 @@ func int dia_balor_job_condition()
 func void dia_balor_job_info()
 {
 	AI_Output(other,self,"DIA_Balor_Job_15_00");	//Co je tvým posláním?
-	AI_Output(self,other,"DIA_Balor_Job_13_01");	//... Já Pomáhám mu s přípravou lektvarů.
+	AI_Output(self,other,"DIA_Balor_Job_13_01");	//... Já pomáhám mu s přípravou lektvarů.
 	AI_Output(self,other,"DIA_Balor_Job_13_02");	//Samozřejmě jen s těmi nejlehčími.
 };
 

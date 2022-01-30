@@ -197,7 +197,7 @@ instance DIA_Serpentes_NOIDEA(C_Info)
 	condition = DIA_Serpentes_NOIDEA_Condition;
 	information = DIA_Serpentes_NOIDEA_Info;
 	permanent = FALSE;
-	description = "Co přesnď by to mělo být?";
+	description = "Co přesně by to mělo být?";
 };
 
 func int DIA_Serpentes_NOIDEA_Condition()
@@ -238,7 +238,7 @@ func int DIA_Serpentes_NOHELP_Condition()
 
 func void DIA_Serpentes_NOHELP_Info()
 {
-	AI_Output(self,other,"DIA_Serpentes_NOHELP_10_00");	//(pohrdavě) Jdi a plň svou úlohu, novici!
+	AI_Output(self,other,"DIA_Serpentes_NOHELP_10_00");	//(pohrdavě) Jdi a splň svůj úkol, novici!
 	AI_StopProcessInfos(self);
 };
 
@@ -267,7 +267,7 @@ func void DIA_Serpentes_SUCCESS_Info()
 	var C_Npc Garwig;
 	Garwig = Hlp_GetNpc(Nov_608_Garwig);
 	AI_Output(other,self,"DIA_Serpentes_SUCCESS_15_00");	//Porazil jsem magického golema.
-	AI_Output(self,other,"DIA_Serpentes_SUCCESS_10_01");	//Co? Tys to vážně zvládl? Ale nemohl bys to udělat bez Innosovho kladiva.
+	AI_Output(self,other,"DIA_Serpentes_SUCCESS_10_01");	//Co? Tys to vážně zvládl? Ale nemohl bys to udělat bez Innosova kladiva.
 	if(Npc_IsDead(Garwig))
 	{
 		AI_Output(self,other,"DIA_Serpentes_SUCCESS_10_02");	//(vítězně) Ale teď ses prozradil! To tys zabil Garwiga!
@@ -446,7 +446,7 @@ func void DIA_Serpentes_MinenAnteile_was_ja()
 	SalandrilVerteilteMinenAnteil = SalandrilMinenAnteil_MAINCounter;
 	Log_CreateTopic(TOPIC_MinenAnteile,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MinenAnteile,LOG_Running);
-	B_LogEntry(TOPIC_MinenAnteile,"Někdo prodává zfalšované certifikáty rudných dolů. Měl bych vypátrat, kdo za tím stojí a stáhnout papíry z oběhu. Serpentes chce, abych mu je všechny přinesl.");
+	B_LogEntry(TOPIC_MinenAnteile,"Někdo prodává zfalšované podíly rudných dolů. Měl bych vypátrat, kdo za tím stojí a stáhnout papíry z oběhu. Serpentes chce, abych mu je všechny přinesl.");
 };
 
 func void DIA_Serpentes_MinenAnteile_KillSLD()

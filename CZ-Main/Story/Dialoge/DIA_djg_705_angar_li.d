@@ -128,7 +128,7 @@ func void dia_angar_li_hello_info()
 {
 	AI_Output(other,self,"DIA_Angar_LI_Hello_01_01");	//Jaká je situace?
 	AI_Output(self,other,"DIA_Angar_LI_Hello_01_02");	//Všechno je v klidu, ale myslím, že jen díky tomu, že nechodíme do hloubějších částí ostrova.
-	AI_Output(self,other,"DIA_Angar_LI_Hello_01_03");	//Ještě nikdo neví co se tam může skrývat.
+	AI_Output(self,other,"DIA_Angar_LI_Hello_01_03");	//Ještě nikdo neví, co se tam může skrývat.
 };
 
 
@@ -184,12 +184,12 @@ func void dia_angar_li_away_info()
 	AI_Output(other,self,"DIA_Angar_LI_Away_01_01");	//Zpátky na palubu!
 	AI_Output(self,other,"DIA_Angar_LI_Away_01_02");	//A co se stalo?
 	AI_Output(other,self,"DIA_Angar_LI_Away_01_03");	//Loď je konečně opravena, už jsme dokončili poslední přípravy a zvedáme kotvy.
-	AI_Output(self,other,"DIA_Angar_LI_Away_01_04");	//A já myslel že tu zůstaneme déle.
+	AI_Output(self,other,"DIA_Angar_LI_Away_01_04");	//A já myslel, že tu zůstaneme déle.
 	AI_Output(other,self,"DIA_Angar_LI_Away_01_05");	//Něco není v pořádku?!
 	AI_Output(self,other,"DIA_Angar_LI_Away_01_08");	//Je to první místo, kde jsem našel klid a mír - ale jsem na něj naštvaný proto, že zde nemohu zůstat.
 	AI_Output(self,other,"DIA_Angar_LI_Away_01_09");	//Takže by mi nevadilo tady zůstat pár dní.
-	AI_Output(self,other,"DIA_Angar_LI_Away_01_11");	//No doufám že se sem ještě vrátím...
-	B_LogEntry(TOPIC_GATHERCREW,"Informoval jsem Angara o odplutí. Myslím že sem ho trochu rozrušil.");
+	AI_Output(self,other,"DIA_Angar_LI_Away_01_11");	//No doufám, že se sem ještě vrátím...
+	B_LogEntry(TOPIC_GATHERCREW,"Informoval jsem Angara o odplutí. Myslím, že sem ho trochu rozrušil.");
 	ANGARLIONBOARD = TRUE;
 	if((GORNLIHERE == TRUE) && (GORNLIONBOARD == TRUE))
 	{
@@ -283,7 +283,7 @@ func void dia_angar_li_changecourse_ore()
 	AI_Output(self,other,"DIA_Angar_LI_ChangeCourse_Ore_01_04");	//To je opravdu velmi závažný důvod.
 	AI_Output(self,other,"DIA_Angar_LI_ChangeCourse_Ore_01_05");	//A věřím, že bychom to udělat měli.
 	AI_Output(self,other,"DIA_Angar_LI_ChangeCourse_Ore_01_06");	//Také by mě zajímalo, jestli se nic nestalo mým bratrům na ostrově.
-	AI_Output(self,other,"DIA_Angar_LI_ChangeCourse_Ore_01_07");	//Jestli ti zelenokožci přijdou, Bratrstvo je hned u průsmyku. Něco mi říká že bych neměl být lhostejný k jejich osudu.
+	AI_Output(self,other,"DIA_Angar_LI_ChangeCourse_Ore_01_07");	//Jestli ti zelenokožci přijdou, Bratrstvo je hned u průsmyku. Něco mi říká, že bych neměl být lhostejný k jejich osudu.
 	AI_Output(other,self,"DIA_Angar_LI_ChangeCourse_Ore_01_08");	//Takže jdeš se mnou?
 	AI_Output(self,other,"DIA_Angar_LI_ChangeCourse_Ore_01_09");	//Ano, vrátím se s tebou na Khorinis.
 	B_LogEntry(TOPIC_CHANGECOURSE,"Angar souhlasil s návratem na Khorinis, abychom řekli paladinům o rudě.");
@@ -307,7 +307,7 @@ func void dia_angar_li_changecourse_gold()
 	AI_Output(self,other,"DIA_Angar_LI_ChangeCourse_Gold_01_05");	//Takový risk kvůli zlatu je šílenství.
 	AI_Output(other,self,"DIA_Angar_LI_ChangeCourse_Gold_01_07");	//Takže jsi proti?
 	AI_Output(self,other,"DIA_Angar_LI_ChangeCourse_Gold_01_08");	//Ano, slyšel jsi mé mínění a nic ho nezmění.
-	B_LogEntry(TOPIC_CHANGECOURSE,"Angar si nemyslí, že bychom se měli vracet kvůlu zlatu.");
+	B_LogEntry(TOPIC_CHANGECOURSE,"Angar si nemyslí, že bychom se měli vracet kvůli zlatu.");
 	COUNTPEOPLEDECIDEPRG = COUNTPEOPLEDECIDEPRG + 1;
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{

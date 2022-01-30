@@ -45,7 +45,7 @@ func void DIA_Addon_Monty_Hi_Info()
 	AI_Output(self,other,"DIA_Addon_Monty_Hi_08_01");	//Jsem naživu - a to je hlavní.
 	if(Monty_einmal == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Monty_Hi_08_02");	//Jestli si chceš popovídat, tak Patrik je ten, koho hledáš.
+		AI_Output(self,other,"DIA_Addon_Monty_Hi_08_02");	//Jestli si chceš popovídat, tak Patrick je ten, koho hledáš.
 		Monty_einmal = TRUE;
 	};
 };

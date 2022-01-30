@@ -26,7 +26,7 @@ instance DIA_PAL_13_STANDARD(C_Info)
 	condition = dia_pal_13_standard_condition;
 	information = dia_pal_13_standard_info;
 	permanent = TRUE;
-	description = "Jaká je situace?";
+	description = "Jak se vede?";
 };
 
 

@@ -38,9 +38,9 @@ func int none_116_mud_hallo_condition()
 
 func void none_116_mud_hallo_info()
 {
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Info_01_00");	//Hej, a ty jseš kdo? A odkud přicházíš?
+	AI_Output(self,other,"NONE_116_Mud_Hallo_Info_01_00");	//Hej, a ty jsi kdo? A odkud přicházíš?
 	AI_Output(self,other,"NONE_116_Mud_Hallo_Info_01_01");	//I když, počkej chvilku... (zamyšleně) Já tě znám! No jistě...
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Info_01_02");	//Ty jseš ten nováček, co vyřídil samotnýho Gomeze!
+	AI_Output(self,other,"NONE_116_Mud_Hallo_Info_01_02");	//Ty jsi ten nováček, co vyřídil samotnýho Gomeze!
 	AI_Output(self,other,"NONE_116_Mud_Hallo_Info_01_03");	//Ach, chlape, ani nevíš, jak rád tě vidím!
 	Info_ClearChoices(none_116_mud_hallo);
 	Info_AddChoice(none_116_mud_hallo,"Jak vidím, moc ses nezměnil, Mude.",none_116_mud_hallo_mud);
@@ -55,7 +55,7 @@ func void none_116_mud_hallo_mud()
 	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_03");	//Ty si mě pamatuješ! Jaké štěstí! Starý kamaráde!
 	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_04");	//Pamatuješ na naše střetnutí ve Starým táboře?
 	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_06");	//To byly tedy časy! Co ty tady děláš?
-	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_07");	//Ale na tom vlastně ani nezáleží, teď jseš zase se mnou a už se ani tak moc nebojím...
+	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_07");	//Ale na tom vlastně ani nezáleží, teď jsi zase se mnou a už se ani tak moc nebojím...
 	AI_Output(other,self,"NONE_116_Mud_Hallo_Mud_01_08");	//Sklapni, Mude! Jinak tě zmlátím jako za starých dobrých časů.
 	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_09");	//Tak jo, tak jo... (polekaně) Jak řekneš, už jsem zticha. Vidíš, už jsem zticha.
 	AI_Output(self,other,"NONE_116_Mud_Hallo_Mud_01_10");	//Ale pokud mám být zticha, jak s tebou můžu mluvit?

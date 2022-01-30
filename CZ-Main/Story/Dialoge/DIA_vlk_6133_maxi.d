@@ -79,7 +79,7 @@ func void dia_vlk_6133_maxi_whatdo_info()
 	AI_Output(self,other,"DIA_VLK_6133_Maxi_WhatDo_01_08");	//Ano. Pracoval jsem už pro jednoho obchodníka, ale nedávno zkrachoval a já zůstal bez práce.
 	AI_Output(self,other,"DIA_VLK_6133_Maxi_WhatDo_01_10");	//A proto hledám někoho nového, kdo by mě zaměstnal.
 	AI_Output(other,self,"DIA_VLK_6133_Maxi_WhatDo_01_11");	//Všemu rozumím. Ale já si myslím, že tu budeš stát ještě dlouho.
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_WhatDo_01_12");	//Co? Pakuj se odsud! Adanuv hněv na tebe.
+	AI_Output(self,other,"DIA_VLK_6133_Maxi_WhatDo_01_12");	//Co? Pakuj se odsud! Adanův hněv na tebe.
 	AI_StopProcessInfos(self);
 };
 
@@ -139,15 +139,15 @@ func void dia_vlk_6133_maxi_hire_info()
 	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_00");	//Mám pro tebe práci.
 	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_01");	//Jo? A co mi můžeš nabídnout?
 	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_03");	//Jeden vlivný obchodník v horní čtvrti hledá člověka na pozici jeho pomocníka.
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_04");	//Práce spočívá v tom, dělat pro něj různou těžkou práci a pomáhat mu vést obchod
+	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_04");	//Práce spočívá v tom, dělat pro něj různou těžkou práci a pomáhat mu vést obchod.
 	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_05");	//Ohó! To fakt nezní špatně!
 	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_06");	//Myslel jsem, že by se mu tvoje pomoc mohla hodit.
 	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_07");	//To je vyníkající nabídka! Můžeš počítat, že máš můj souhlas v kapse.
 	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_08");	//Dobře! Ale pro začátek mi řekni, co umíš?
 	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_09");	//Jak už jsem ti říkal, pracoval jsem pro jednoho obchodníka a celkově byl s mou prací spokojen.
 	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_10");	//Umím trochu číst a psát a v tomto oboru to mnoho značí!
-	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_11");	//Mimoto, se nestydím ani špinavější prácičky dělníka nebo poslíčka. Můžu dělat vše!
-	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_12");	//To fakt nezní špatné.
+	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_11");	//Mimo to, se nestydím ani špinavější prácičky dělníka nebo poslíčka. Můžu dělat vše!
+	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_12");	//To fakt nezní špatně.
 	AI_Output(other,self,"DIA_VLK_6133_Maxi_Hire_01_14");	//Ještě si to promyslím, ale s největší pravděpodobností se za tebou vrátím.
 	AI_Output(self,other,"DIA_VLK_6133_Maxi_Hire_01_15");	//Dobře, ale nepřemýšlej dlouho. Takových pracovníků jako já, na cestě nenajdeš.
 	B_LogEntry(TOPIC_TRADEHELPER,"Maxi souhlasil s prací Luterova pomocníka. I když, možná ještě někdo jiný přistoupí na tuto práci.");
@@ -223,7 +223,7 @@ instance DIA_VLK_6133_MAXI_NEWLIFE(C_Info)
 	condition = dia_vlk_6133_maxi_newlife_condition;
 	information = dia_vlk_6133_maxi_newlife_info;
 	permanent = TRUE;
-	description = "Nějaké problémy?";
+	description = "Jak to jde?";
 };
 
 

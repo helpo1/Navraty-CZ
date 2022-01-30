@@ -172,7 +172,7 @@ func void DIA_Opolos_beibringen_Info()
 	AI_Output(self,other,"DIA_Opolos_beibringen_12_05");	//Přines mi ho a budu tě učit.
 	Log_CreateTopic(Topic_OpolosRezept,LOG_MISSION);
 	Log_SetTopicStatus(Topic_OpolosRezept,LOG_Running);
-	B_LogEntry(Topic_OpolosRezept,"Opolos chce recept na lektvar many. Měl bych ho sehnat u Neroase... Za odměnu mě bude učit, jak být silný.");
+	B_LogEntry(Topic_OpolosRezept,"Opolos chce recept na lektvar many. Měl bych ho sehnat u Neorase... Za odměnu mě bude učit, jak být silný.");
 };
 
 
@@ -216,7 +216,7 @@ func void DIA_Opolos_rezept_Info()
 	}
 	else if(MIS_NeorasRezept == LOG_SUCCESS)
 	{
-		AI_Output(other,self,"DIA_Opolos_rezept_15_04");	//Vrátil jsem ten recept Neorasovi
+		AI_Output(other,self,"DIA_Opolos_rezept_15_04");	//Vrátil jsem ten recept Neorasovi.
 		AI_Output(self,other,"DIA_Opolos_rezept_12_05");	//Sakra, teď už se k němu nedostanu... Ale co, stejně tě můžu trénovat.
 		Opolos_Rezept = LOG_FAILED;
 		DIA_Opolos_rezept_permanent = TRUE;
@@ -252,7 +252,7 @@ func int DIA_Opolos_TEACH_STR_Condition()
 
 func void DIA_Opolos_TEACH_STR_Info()
 {
-	AI_Output(other,self,"DIA_Opolos_TEACH_STR_15_00");	//Chcí být silnějš.
+	AI_Output(other,self,"DIA_Opolos_TEACH_STR_15_00");	//Chcí být silnější.
 	Info_ClearChoices(DIA_Opolos_TEACH_STR);
 	Info_AddChoice(DIA_Opolos_TEACH_STR,Dialog_Back,DIA_Opolos_TEACH_STR_BACK);
 	Info_AddChoice(DIA_Opolos_TEACH_STR,b_buildlearnstringforskills(PRINT_LearnSTR1,B_GetLearnCostAttribute(other,ATR_STRENGTH)),DIA_Opolos_TEACH_STR_1);

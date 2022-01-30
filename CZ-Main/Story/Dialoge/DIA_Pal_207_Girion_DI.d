@@ -275,7 +275,7 @@ func void DIA_Girion_DI_UndeadDragonDead_Info()
 	if(DIA_Girion_DI_UndeadDragonDead_OneTime == FALSE)
 	{
 		AI_Output(self,other,"DIA_Girion_DI_UndeadDragonDead_08_02");	//Teď mě konečně tu loď předej!
-		AI_Output(other,self,"DIA_Girion_DI_UndeadDragonDead_15_03");	//Ještě nejsme v Khorinisu. A upřímně řečeno, zpátky do Khorinisu se mi moc nechce
+		AI_Output(other,self,"DIA_Girion_DI_UndeadDragonDead_15_03");	//Ještě nejsme v Khorinisu. A upřímně řečeno, zpátky do Khorinisu se mi moc nechce.
 		AI_Output(other,self,"DIA_Girion_DI_UndeadDragonDead_15_04");	//Už jsem tam byl dost dlouho.
 		AI_Output(self,other,"DIA_Girion_DI_UndeadDragonDead_08_05");	//Myslel jsem si to. Ale teď není ani správný čas, ani správné místo, abychom si něco takového vyjasňovali. Probereme to, až budeme zpátky na lodi.
 		AI_Output(self,other,"DIA_Girion_DI_UndeadDragonDead_08_06");	//No a co. Stejně jsem rád, že tě mám zpátky na palubě v jednom kuse.

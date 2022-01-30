@@ -1140,7 +1140,7 @@ func void DIA_Andre_Auslieferung_Dexter()
 	B_GiveInvItems(other,self,ItMi_DexterHead,1);
 	Npc_RemoveInvItems(self,ItMi_DexterHead,1);
 	AI_Output(self,other,"DIA_Andre_Auslieferung_Dexter_01_01");	//Konečně! Ten bývalý trestanec a jeho sebránka držela v šachu celý Khorinis. Nyní budou moci lidé dýchat volněji.
-	AI_Output(self,other,"DIA_Andre_Auslieferung_Nagur_08_02");	//Zasloužíte si zlato, a můj respekt.
+	AI_Output(self,other,"DIA_Andre_Auslieferung_Nagur_08_02");	//Zasloužíš si zlato, a můj respekt.
 	B_GiveInvItems(self,other,ItMi_Gold,2500);
 
 	if((MIS_DeadOrAlive == LOG_Running) && (NestorIsDead == TRUE) && (KriksIsDead == TRUE) && (BartIsDead == TRUE) && (SkironIsDead == TRUE) && (RocksIsDead == TRUE) && (DexterIsDead == TRUE))
@@ -2612,7 +2612,7 @@ func void dia_andre_sarahtoguild_info()
 	{
 		AI_Output(self,other,"DIA_Andre_SarahToGuild_01_18");	//Nech mě přemýšlet... (zamyšleně) Když vezmu v úvahu závažnost jejího zločinu...
 		AI_Output(self,other,"DIA_Andre_SarahToGuild_01_19");	//... a fakt, že se za ní přimlouvá žoldák... (šklebí se)
-		AI_Output(self,other,"DIA_Andre_SarahToGuild_01_20");	//Myslím, že 1 500 zlatých bude za stažení obvinění stačit!
+		AI_Output(self,other,"DIA_Andre_SarahToGuild_01_20");	//Myslím, že tisíc pět set zlatých bude za stažení obvinění stačit!
 		AI_Output(other,self,"DIA_Andre_SarahToGuild_01_21");	//Tedy!
 		B_LogEntry(TOPIC_SARAHTOGUILD,"Lord Andre ustanovil pokutu pro obchodnici Sarah na sumu 1 500 zlatých.");
 		SARASHULDEN = 1500;
@@ -2708,7 +2708,7 @@ func void dia_andre_hannainprision_info()
 	AI_Output(other,self,"DIA_Andre_HannaInPrision_01_14");	//A pokud získám důkaz o její nevině?
 	AI_Output(self,other,"DIA_Andre_HannaInPrision_01_16");	//Dokud ho nemáš...
 	KNOWSHANNAINPRISIONHAKON = TRUE;
-	B_LogEntry(TOPIC_ABIGEILHELPHANNA,"Andre mi řekl, že byl okraden obchodník jménem Hakon. Klíčovým svědkem není nikdo jiný než Gaspar, nový majitel hotelu. Nejdříve bych si měl si oběma důkladně promluvit.");
+	B_LogEntry(TOPIC_ABIGEILHELPHANNA,"Andre mi řekl, že byl okraden obchodník jménem Hakon. Klíčovým svědkem není nikdo jiný než Gaspar, nový majitel hotelu. Nejdříve bych si měl s oběma důkladně promluvit.");
 	Log_AddEntry(TOPIC_ABIGEILHELPHANNA,"Pokud chci Hannu dostat ven z vězení, musím přinést lordu Andremu důkaz o její nevině.");
 	AI_StopProcessInfos(self);
 };

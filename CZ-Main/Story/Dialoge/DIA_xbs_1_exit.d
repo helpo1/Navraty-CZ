@@ -89,7 +89,7 @@ func void dia_xbs_1_location_info()
 	AI_Output(other,self,"DIA_XBS_1_LOCATION_15_00");	//Co je zajímavého v tomhle táboře?
 	AI_Output(self,other,"DIA_XBS_1_LOCATION_01_01");	//Nic! Tohle není město, ani hrad.
 	AI_Output(self,other,"DIA_XBS_1_LOCATION_01_02");	//Několik stanů a několik noviců.
-	AI_Output(self,other,"DIA_XBS_1_LOCATION_01_03");	//Ale, dole v jeskynni žije pár paladinů Innose. Sejdi k nim, oni určitě mají zajímavější život.
+	AI_Output(self,other,"DIA_XBS_1_LOCATION_01_03");	//Ale, dole v jeskyni žije pár paladinů Innose. Sejdi k nim, oni určitě mají zajímavější život.
 	b_heroknowforestbase();
 };
 

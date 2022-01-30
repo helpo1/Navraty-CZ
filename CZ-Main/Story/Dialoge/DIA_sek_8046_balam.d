@@ -266,7 +266,7 @@ func int dia_balam_JobInCamp_condition()
 func void dia_balam_JobInCamp_info()
 {
 	AI_Output(other,self,"DIA_Balam_JobInCamp_01_01");	//Není tu pro mě nějaká práce?
-	AI_Output(self,other,"DIA_Balam_JobInCamp_01_02");	//Hmmm... (zamyšleně) Jestli chceš, můžeš pomoct našim chlapcům zbírat trávu z bažin.
+	AI_Output(self,other,"DIA_Balam_JobInCamp_01_02");	//Hmmm... (zamyšleně) Jestli chceš, můžeš pomoct našim chlapcům sbírat trávu z bažin.
 	AI_Output(self,other,"DIA_Balam_JobInCamp_01_03");	//Po pravdě řečeno, ruce navíc by se nám hodily.
 	AI_Output(other,self,"DIA_Balam_JobInCamp_01_04");	//Dobře. A kde jí mám hledat?
 	AI_Output(self,other,"DIA_Balam_JobInCamp_01_05");	//Tady, v blízkosti tábora. Nebo se můžeš podívat k jezeru. Prostě přines co najdeš. Ale ne míň než deset stonků!
@@ -338,7 +338,7 @@ func void dia_balam_JobInCamp_Done_info()
 	else
 	{
 		B_GivePlayerXP(swamp_xp_big);
-		AI_Output(other,self,"DIA_Balam_JobInCamp_Done_01_07");	//To je - vše, co mám.
+		AI_Output(other,self,"DIA_Balam_JobInCamp_Done_01_07");	//To je vše, co mám.
 		AI_Output(self,other,"DIA_Balam_JobInCamp_Done_01_08");	//No dobře. Abych byl upřímný čekal jsem trochu víc.
 		AI_Output(other,self,"DIA_Balam_JobInCamp_Done_01_09");	//Zdá se ti to málo?
 		AI_Output(self,other,"DIA_Balam_JobInCamp_Done_01_10");	//Viděl jsi poslední sběr co jsme posílali do tábora, nebylo to nic moc.
@@ -372,10 +372,10 @@ func int dia_balam_StrangeCave_condition()
 func void dia_balam_StrangeCave_info()
 {
 	AI_Output(other,self,"DIA_Balam_StrangeCave_01_01");	//Nějaká další práce pro mě?
-	AI_Output(self,other,"DIA_Balam_StrangeCave_01_02");	//Hmmm... (zamyšleně) Jestli chceš, můžeš pomoct našim chlapcům zbírat trávu z bažin.
-	AI_Output(self,other,"DIA_Balam_StrangeCave_01_03");	//... Pak můžete navštívit jeskyně, což není daleko od našeho tábora.
-	AI_Output(self,other,"DIA_Balam_StrangeCave_01_05");	//Poslední dobou, se od tud v noci ozývají podivné zvuky!
-	AI_Output(self,other,"DIA_Balam_StrangeCave_01_06");	//Byli jsme tan s chlapci několikrát přes den, ale kromě několika žravých štěnic jsme nic nenašli.
+	AI_Output(self,other,"DIA_Balam_StrangeCave_01_02");	//Hmmm... (zamyšleně) Jestli chceš, můžeš pomoct našim chlapcům sbírat trávu z bažin.
+	AI_Output(self,other,"DIA_Balam_StrangeCave_01_03");	//... Pak můžeš navštívit jeskyně, což není daleko od našeho tábora.
+	AI_Output(self,other,"DIA_Balam_StrangeCave_01_05");	//Poslední dobou, se odtud v noci ozývají podivné zvuky!
+	AI_Output(self,other,"DIA_Balam_StrangeCave_01_06");	//Byli jsme tam s chlapci několikrát přes den, ale kromě několika žravých štěnic jsme nic nenašli.
 	AI_Output(self,other,"DIA_Balam_StrangeCave_01_07");	//Možná budeš mít štěstí a zjistíš co se tam děje.
 	AI_Output(other,self,"DIA_Balam_StrangeCave_01_08");	//Dobře, budu se snažit.
 	AI_Output(self,other,"DIA_Balam_StrangeCave_01_09");	//To by bylo dobré, kamaráde... To by bylo!
@@ -415,7 +415,7 @@ func void dia_balam_StrangeCave_News_info()
 	AI_Output(self,other,"DIA_Balam_StrangeCave_News_01_05");	//Myslím, že možná svou přítomností jsme ho vyděsily!
 	AI_Output(self,other,"DIA_Balam_StrangeCave_News_01_06");	//A další už znáš. Kromě žravých štěnic, jen prach a nic a nic.
 	AI_Output(other,self,"DIA_Balam_StrangeCave_News_01_07");	//Opravdu nic?
-	AI_Output(self,other,"DIA_Balam_StrangeCave_News_01_08");	//Nic co by stálo za řeč.
+	AI_Output(self,other,"DIA_Balam_StrangeCave_News_01_08");	//Nic, co by stálo za řeč.
 	AI_Output(other,self,"DIA_Balam_StrangeCave_News_01_09");	//Dobře.
 	B_LogEntry(TOPIC_StrangeCave,"Balam řekl, že jeden z jeho sběračů si všimnul stínu na stěně, který zmizel. Ale nenašli nic jiného než žravé štěnice.");
 };
@@ -460,7 +460,7 @@ instance DIA_BALAM_Proviant(C_Info)
 	condition = dia_balam_Proviant_condition;
 	information = dia_balam_Proviant_info;
 	permanent = FALSE;
-	description = "Jaká je součastná situace?";
+	description = "Jaká je současná situace?";
 };
 
 func int dia_balam_Proviant_condition()
@@ -473,18 +473,18 @@ func int dia_balam_Proviant_condition()
 
 func void dia_balam_Proviant_info()
 {
-	AI_Output(other,self,"DIA_Balam_Proviant_01_01");	//Jaká je součastná situace?
+	AI_Output(other,self,"DIA_Balam_Proviant_01_01");	//Jaká je současná situace?
 	AI_Output(self,other,"DIA_Balam_Proviant_01_02");	//Vše při starém. 
-	AI_Output(self,other,"DIA_Balam_Proviant_01_03");	//Brzy však budem muset doplnit zásoby potravin. Ty co zůstali, se už tenčí.
+	AI_Output(self,other,"DIA_Balam_Proviant_01_03");	//Brzy však budem muset doplnit zásoby potravin. Ty, co zůstali, se už tenčí.
 	AI_Output(other,self,"DIA_Balam_Proviant_01_04");	//A máš nějaký plán?
 	AI_Output(self,other,"DIA_Balam_Proviant_01_05");	//Hmmm... (zamyšleně) Zde nedaleko od tábora, se pase celé stádo horských mrchožroutů.
 	AI_Output(self,other,"DIA_Balam_Proviant_01_06");	//Domnívám se, že by bylo pěkné jich pár ulovit.
 	AI_Output(self,other,"DIA_Balam_Proviant_01_07");	//To maso by nám vystačilo, přinejmenším na pár týdnů!
-	AI_Output(other,self,"DIA_Balam_Proviant_01_08");	//A koho chceš poslat na lovu?
+	AI_Output(other,self,"DIA_Balam_Proviant_01_08");	//A koho chceš poslat na lov?
 	AI_Output(self,other,"DIA_Balam_Proviant_01_09");	//Nejdřív mě napadnul Tiraks. Ale je poslední dobou nějak podrážděný, ten mě pošle kamsi.
 	AI_Output(self,other,"DIA_Balam_Proviant_01_10");	//Tak to zase zbyde na tebe, jestli nejsi proti?
 	AI_Output(other,self,"DIA_Balam_Proviant_01_11");	//Proč ne, je to lepší než se tu nudit.
-	AI_Output(self,other,"DIA_Balam_Proviant_01_12");	//Dobře, na tebe se dá spolhnout. 
+	AI_Output(self,other,"DIA_Balam_Proviant_01_12");	//Dobře, na tebe se dá spolehnout. 
 	AI_Output(other,self,"DIA_Balam_Proviant_01_13");	//A kde jsou ty pastviny horských mrchožroutů?
 	AI_Output(self,other,"DIA_Balam_Proviant_01_14");	//Až vyjdeš ze stanu, běž pořád za nosem. 
 	AI_Output(self,other,"DIA_Balam_Proviant_01_15");	//Buď opatrný, ač jsou to jen ptáci, mohou tě uklovat k smrti.
@@ -544,7 +544,7 @@ func void dia_balam_Proviant_Done_info()
 
 	if(Raw_Mount >= 10)
 	{
-		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_04");	//Ano, přinesl jsi tolik masa kolik, bylo zapotřebí. Vidím, že jsi dobrý lovec!
+		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_04");	//Ano, přinesl jsi tolik masa, kolik bylo zapotřebí. Vidím, že jsi dobrý lovec!
 		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_05");	//Na tady máš nápoj, a trochu zlata za svoje úsilí.
 		AI_Output(self,other,"DIA_Balam_Proviant_Done_01_06");	//Bohužel, nyní je to to nejlepší, co ti mohu nabídnout.
 		AI_Output(other,self,"DIA_Balam_Proviant_Done_01_07");	//Mě to stačí. Vaše práce je oceňována stejným způsobem.

@@ -248,7 +248,7 @@ func void DIA_Addon_Paul_MaulPaul_Info()
 	AI_Output(other,self,"DIA_Addon_Paul_MaulPaul_15_02");	//(příjemně) Ale můžu!
 	AI_Output(self,other,"DIA_Addon_Paul_MaulPaul_03_03");	//Neudělej nějakou blbost!
 	AI_Output(other,self,"DIA_Addon_Paul_MaulPaul_15_04");	//(netrpělivě) Paule...
-	AI_Output(self,other,"DIA_Addon_Paul_MaulPaul_03_05");	//(rozrušeně) Vše co vím je, že Huno pracuje pro Estebana.
+	AI_Output(self,other,"DIA_Addon_Paul_MaulPaul_03_05");	//(rozrušeně) Vše co vím je, že Huno nenávidí Estebana.
 	AI_Output(self,other,"DIA_Addon_Paul_MaulPaul_03_06");	//(rozrušeně) Pořád s tím za mnou chodí. Říká, že mu Esteban kazí práci...
 	AI_Output(self,other,"DIA_Addon_Paul_MaulPaul_03_07");	//Já pouze poslouchám a nikdy se neptám.
 	AI_Output(other,self,"DIA_Addon_Paul_MaulPaul_15_08");	//Přesně! Vidíš a ani to nebolelo.

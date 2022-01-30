@@ -51,23 +51,23 @@ func void DIA_DMT_2200_DarkSpeaker_Hello_info()
 	AI_Output(other,self,"DIA_DMT_2200_DarkSpeaker_Hello_01_01");	//Kdo jsi?
 	AI_Output(other,self,"DIA_DMT_2200_DarkSpeaker_Hello_01_02");	//Další zástupce Beliara, který tě poslal mě zastavit?
 	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_03");	//Moje jméno ti nebude nic říkat... Ale mám pro tebe nabídku.
-	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_04");	//Doufám že si ji poslechneš než se mě pokusíš zabít.
+	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_04");	//Doufám, že si ji poslechneš než se mě pokusíš zabít.
 	AI_Output(other,self,"DIA_DMT_2200_DarkSpeaker_Hello_01_05");	//Tak povídej!
 	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_06");	//Přišel jsem s návrhem mého pána.
 	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_07");	//Vídí v tobě obrovskou sílu a schopnost trvale změnit tento svět.
 	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_08");	//Nyní bojuješ na straně jeho bratra Innose... Ale přemýšlej... Opravdu stojí za to?
-	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_09");	//Co pro tebe Innos udělal? Jaké má výhody že mu tak věrně sloužíš?
-	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_10");	//Jsem si jistý že žádné! Riskuješ svůj život pro nic za nic!
+	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_09");	//Co pro tebe Innos udělal? Jaké má výhody, že mu tak věrně sloužíš?
+	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_10");	//Jsem si jistý, že žádné! Riskuješ svůj život pro nic za nic!
 	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_11");	//A můj pán by ti nabídl mnohem více! Ne jen prázdné sliby toho podvodného pokrytce!
-	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_12");	//Dostaneš všechno - sílu, moc, bohatství... Pokud to je to co pro sebe požaduješ.
-	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_13");	//Jsem si jistý že tě nezklame!
+	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_12");	//Dostaneš všechno - sílu, moc, bohatství... Pokud to je to, co pro sebe požaduješ.
+	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_13");	//Jsem si jistý, že tě nezklame!
 	AI_Output(self,other,"DIA_DMT_2200_DarkSpeaker_Hello_01_14");	//Co na to říkáš?
 	Info_ClearChoices(dia_dmt1298_hello);
 	MeetDarkRavenSpeaker = TRUE;
 
 	//if(DarkPathStartEnd == FALSE)
 	//{
-	//	Info_AddChoice(DIA_DMT_2200_DarkSpeaker_Hello,"Zvuchit zamanchivo!",DIA_DMT_2200_DarkSpeaker_Hello_Yes);
+	//	Info_AddChoice(DIA_DMT_2200_DarkSpeaker_Hello,"Zní to skvěle!",DIA_DMT_2200_DarkSpeaker_Hello_Yes);
 	//};
 
 	Info_AddChoice(DIA_DMT_2200_DarkSpeaker_Hello,"Řekl bych, že je na čase abys už zemřel!.",DIA_DMT_2200_DarkSpeaker_Hello_No);

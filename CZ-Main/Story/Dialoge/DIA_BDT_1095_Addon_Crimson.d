@@ -139,7 +139,7 @@ func void DIA_Addon_Crimson_Feilsch_Info()
 	if(RhetorikSkillValue[1] >= 40)
 	{
 		AI_Output(self,other,"DIA_Addon_Crimson_Feilsch_10_50");	//Hmm... (zavrtí hlavou) Ty víš jak ukecat lidi co?
-		AI_Output(self,other,"DIA_Addon_Crimson_Feilsch_10_51");	//Dobře dám ti deset zlatých za jeden nuget. Jsi štastný?
+		AI_Output(self,other,"DIA_Addon_Crimson_Feilsch_10_51");	//Dobře dám ti deset zlatých za jeden nuget. Jsi šťastný?
 		AI_Output(other,self,"DIA_Addon_Crimson_Feilsch_10_52");	//Samozřejmě.
 		CrimsonMoreGold = TRUE;
 	}
@@ -409,7 +409,7 @@ func void dia_crimson_armorcanteach_info()
 	else
 	{
 		AI_Output(self,other,"DIA_Crimson_ArmorCanTeach_01_15");	//Ale ty nemáš páru o co tu jde!
-		AI_Output(self,other,"DIA_Crimson_ArmorCanTeach_01_16");	//První najdi někoho, kdo tě naučí nejaké základy o kovařine a pak přijď.
+		AI_Output(self,other,"DIA_Crimson_ArmorCanTeach_01_16");	//První najdi někoho, kdo tě naučí nějaké základy o kovařine a pak přijď.
 		AI_Output(self,other,"DIA_Crimson_ArmorCanTeach_01_17");	//A budeš muset zaplatit, nejsem charita!
 		AI_Output(other,self,"DIA_Crimson_ArmorCanTeach_01_18");	//Jasně.
 	};
@@ -496,7 +496,7 @@ func void b_crimson_teacharmor_4()
 
 func void b_crimson_teacharmor_5()
 {
-	AI_Output(self,other,"DIA_Crimson_TeachArmor_5_01_01");	//No tak můžeme začít. K vytvoření této zbroje budeš potřebovat hodně času a usilí - ale veř mi, ta zbroj za to stojí!
+	AI_Output(self,other,"DIA_Crimson_TeachArmor_5_01_01");	//No tak můžeme začít. K vytvoření této zbroje budeš potřebovat hodně času a úsilí - ale veř mi, ta zbroj za to stojí!
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
 		AI_SetWalkMode(self,NPC_WALK);
@@ -506,7 +506,7 @@ func void b_crimson_teacharmor_5()
 		AI_Output(self,other,"DIA_Crimson_TeachArmor_5_01_02");	//... Vem ocel, roztav ji a pokus se ji rozdělit na zhruba stejné kousky...
 		AI_Output(self,other,"DIA_Crimson_TeachArmor_5_01_03");	//... Každý kousek opracuj a spoj se spojem, který si vytvoříš na zbroji...
 		AI_Output(self,other,"DIA_Crimson_TeachArmor_5_01_04");	//... Tímto způsobem na ni lépe připevníš kovové pláty... Asi nějak takhle... (ukazuje)
-		AI_Output(self,other,"DIA_Crimson_TeachArmor_5_01_05");	//... Teď je tvá zbroj odolnejší vůči střelám, ale stále je může rozrazit šipka, takže musíš udělat dvojitou výstuž...
+		AI_Output(self,other,"DIA_Crimson_TeachArmor_5_01_05");	//... Teď je tvá zbroj odolnější vůči střelám, ale stále ji může rozrazit šipka, takže musíš udělat dvojitou výstuž...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Crimson_TeachArmor_5_01_06");	//... A máš to, jen cvič a budeš vše chápat...
@@ -674,7 +674,7 @@ func void DIA_Addon_Crimson_DoGoldStuck_info()
 {
 	var int kosten;
 	var int money;
-	AI_Output(other,self,"DIA_Addon_Crimson_DoGoldStuck_01_00");	//Nauč mě roztavit zlato.
+	AI_Output(other,self,"DIA_Addon_Crimson_DoGoldStuck_01_00");	//Nauč mě tavit zlato.
 	kosten = 5;
 	money = 1500;
 
@@ -693,9 +693,9 @@ func void DIA_Addon_Crimson_DoGoldStuck_info()
 	if((hero.lp >= kosten) && (Npc_HasItems(other,ItMi_Gold) >= money))
 	{
 		AI_Output(self,other,"DIA_Addon_Crimson_DoGoldStuck_01_01");	//Potřebovat budeš samozřejmě zlaté nugety.
-		AI_Output(self,other,"DIA_Addon_Crimson_DoGoldStuck_01_02");	//Chcete-li získat jeden ingot, potřebujete asi čtvrtinu stovky zlatých nugetů.
+		AI_Output(self,other,"DIA_Addon_Crimson_DoGoldStuck_01_02");	//Chceš-li získat jeden ingot, potřebuješ asi čtvrtinu stovky zlatých nugetů.
 		AI_Output(self,other,"DIA_Addon_Crimson_DoGoldStuck_01_03");	//Zlato se vloží do pece, přivede na správnou teplotu.
-		AI_Output(self,other,"DIA_Addon_Crimson_DoGoldStuck_01_04");	//Nakonec jen sléváš do formy přes síto
+		AI_Output(self,other,"DIA_Addon_Crimson_DoGoldStuck_01_04");	//Nakonec jen sléváš do formy přes síto.
 		hero.lp = hero.lp - kosten;
 		RankPoints = RankPoints + kosten;
 		Npc_RemoveInvItems(other,ItMi_Gold,money);

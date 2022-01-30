@@ -75,7 +75,7 @@ func void DIA_Talbin_WASMACHTIHR_Info()
 {
 	AI_Output(other,self,"DIA_Talbin_WASMACHTIHR_15_00");	//Vypadáš jak lovec, který neví, co s časem!
 	AI_Output(self,other,"DIA_Talbin_WASMACHTIHR_07_01");	//Ha-ha! Jo - jedna nula pro tebe. Ale co mám dělat - přes průsmyk se vrátit nemůžu!
-	AI_Output(self,other,"DIA_Talbin_WASMACHTIHR_07_02");	//Tak tu prostě trčím a dělám co se dá.
+	AI_Output(self,other,"DIA_Talbin_WASMACHTIHR_07_02");	//Tak tu prostě trčím a dělám, co se dá.
 	if(Npc_IsDead(Engrom) == FALSE)
 	{
 		AI_Output(self,other,"DIA_Talbin_WASMACHTIHR_07_03");	//Je mi ale líto mýho kámoše Engroma.
@@ -98,8 +98,8 @@ func void DIA_Talbin_WASMACHTIHR_strf()
 	AI_Output(self,other,"DIA_Talbin_WASMACHTIHR_strf_07_01");	//Ne, kdepak! Co si myslíš? Vlastně jsem se tady chtěl jenom trochu napakovat.
 	AI_Output(self,other,"DIA_Talbin_WASMACHTIHR_strf_07_02");	//Někdo mi napovídal, že v těchhle končinách najdu spoustu věcí.
 	AI_Output(self,other,"DIA_Talbin_WASMACHTIHR_strf_07_03");	//Požehnaný kraj, jestli víš, co myslím.
-	AI_Output(self,other,"DIA_Talbin_WASMACHTIHR_strf_07_04");	//Ale ood tý doby, co se tu objevili ti zatracení skřeti, tu můžeš dostat tak akorát sekyrou do hlavy, když náhodou popojdeš trochu dál!
-	AI_Output(self,other,"DIA_Talbin_WASMACHTIHR_strf_07_05");	//A já pitomec těm idiotům uveřil.
+	AI_Output(self,other,"DIA_Talbin_WASMACHTIHR_strf_07_04");	//Ale od tý doby, co se tu objevili ti zatracení skřeti, tu můžeš dostat tak akorát sekyrou do hlavy, když náhodou popojdeš trochu dál!
+	AI_Output(self,other,"DIA_Talbin_WASMACHTIHR_strf_07_05");	//A já pitomec těm idiotům uvěřil.
 	AI_Output(other,self,"DIA_Talbin_WASMACHTIHR_strf_15_06");	//Takové vtipálky moc dobře znám!
 };
 
@@ -246,7 +246,7 @@ func void DIA_Talbin_PayTeacher_Info()
 	if(B_GiveInvItems(other,self,ItFo_Cheese,1))
 	{
 		AI_Output(other,self,"DIA_Talbin_PayTeacher_15_00");	//Tady máš ten sýr. Budeš mě teď učit?
-		AI_Output(self,other,"DIA_Talbin_PayTeacher_07_01");	//Fakt jsi ňejakej sehnal? Páni, chlape, už je to celý věky, kdy jsem baštil něco takovýho. Díky. No a co teď... aha. Nojo. Jasně!
+		AI_Output(self,other,"DIA_Talbin_PayTeacher_07_01");	//Fakt jsi nějakej sehnal? Páni, chlape, už je to celý věky, kdy jsem baštil něco takovýho. Díky. No a co teď... aha. No jo. Jasně!
 		Talbin_TeachAnimalTrophy = TRUE;
 		DIA_Talbin_PayTeacher_noPerm = TRUE;
 	}
@@ -304,7 +304,7 @@ func void DIA_Talbin_TEACHHUNTING_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Talbin_TEACHHUNTING_07_02");	//Musím tě zklamat. Už znáš všechno, co bych tě mohl naučit. Ale i tak ešte jednou děkuju za ten sýr!
+		AI_Output(self,other,"DIA_Talbin_TEACHHUNTING_07_02");	//Musím tě zklamat. Už znáš všechno, co bych tě mohl naučit. Ale i tak ještě jednou děkuju za ten sýr!
 		TalbinTeachAll = TRUE;
 	};
 };
@@ -347,7 +347,7 @@ func void DIA_Talbin_TEACHHUNTING_Heart()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Heart))
 	{
-		AI_Output(self,other,"DIA_Talbin_TEACHHUNTING_Heart_07_00");	//Srdce magickejch tvoru jsou setsakramentsky vzácný a získáš je fakt těžko. Když to zkusíš, buď pořádně vopatrnej, zvlášť když jde vo golemy.
+		AI_Output(self,other,"DIA_Talbin_TEACHHUNTING_Heart_07_00");	//Srdce magickejch tvorů jsou setsakramentsky vzácný a získáš je fakt těžko. Když to zkusíš, buď pořádně vopatrnej, zvlášť když jde vo golemy.
 	};
 	Info_ClearChoices(DIA_Talbin_TEACHHUNTING);
 };
@@ -449,11 +449,11 @@ func int DIA_Talbin_KAP4_WASWOLLTENDJG_Condition()
 func void DIA_Talbin_KAP4_WASWOLLTENDJG_Info()
 {
 	AI_Output(other,self,"DIA_Talbin_KAP4_WASWOLLTENDJG_15_00");	//A co tady ti 'divní chlápkové' chtěli?
-	AI_Output(self,other,"DIA_Talbin_KAP4_WASWOLLTENDJG_07_01");	//Chtěli po mně proviant a vybavení. Chlape, dyk já mám sotva dost pro sebe!
-	AI_Output(self,other,"DIA_Talbin_KAP4_WASWOLLTENDJG_07_02");	//Prý zabíjejí draky a tak. Buhví vodkuď ti hošani přišli, ale nevypadali moc důvěryhodně!
+	AI_Output(self,other,"DIA_Talbin_KAP4_WASWOLLTENDJG_07_01");	//Chtěli po mně proviant a vybavení. Chlape, vždyť já mám sotva dost pro sebe!
+	AI_Output(self,other,"DIA_Talbin_KAP4_WASWOLLTENDJG_07_02");	//Prý zabíjejí draky a tak. Bůh ví vodkuď ti hošani přišli, ale nevypadali moc důvěryhodně!
 	if(Kapitel == 4)
 	{
-		B_LogEntry(TOPIC_Dragonhunter,"U sídla lovce Talbina se zastavilo nekolik drakobijců. Popis na ně celkem pasoval.");
+		B_LogEntry(TOPIC_Dragonhunter,"U sídla lovce Talbina se zastavilo několik drakobijců. Popis na ně celkem pasoval.");
 	};
 };
 
@@ -478,8 +478,8 @@ func int DIA_Talbin_WOENGROM_Condition()
 
 func void DIA_Talbin_WOENGROM_Info()
 {
-	AI_Output(other,self,"DIA_Talbin_WOENGROM_15_00");	//Ty jsi tu v téhle chvíli sám
-	AI_Output(self,other,"DIA_Talbin_WOENGROM_07_01");	//Jo. Muj přítel Engrom odešel. Včera řekl, že měl nějakou vizi. Někdo k němu promluvil.
+	AI_Output(other,self,"DIA_Talbin_WOENGROM_15_00");	//Ty jsi tu v téhle chvíli sám?
+	AI_Output(self,other,"DIA_Talbin_WOENGROM_07_01");	//Jo. Můj přítel Engrom odešel. Včera řekl, že měl nějakou vizi. Někdo k němu promluvil.
 	AI_Output(self,other,"DIA_Talbin_WOENGROM_07_02");	//Já ale neslyšel ani ťuk. Prostě jsem si myslel, že už se totálne zcvoknul a...
 	AI_Output(self,other,"DIA_Talbin_WOENGROM_07_03");	//... a pak byl najednou pryč. Nemám tušení, kam se vytratil.
 	AI_Output(self,other,"DIA_Talbin_WOENGROM_07_04");	//Kdybys Engroma náhodou někde zahlídl, tak mu vyřiď, že mi ten hajzl ještě furt dluží kůži z číhavce.
@@ -532,11 +532,11 @@ func void DIA_Talbin_FOUNDENGROM_Info()
 		AI_Output(self,other,"DIA_Talbin_FOUNDENGROM_07_06");	//Pátrači? A kdo to má jako bejt?
 		AI_Output(other,self,"DIA_Talbin_FOUNDENGROM_15_07");	//Služebníci Beliara. To oni ve skutečnosti velí všem těm skřetům.
 	};
-	AI_Output(self,other,"DIA_Talbin_FOUNDENGROM_07_08");	//U Innosove! Musím se vocaď dostat, i kdyby mě to mělo stát krk! Teď nebo nikdy!
+	AI_Output(self,other,"DIA_Talbin_FOUNDENGROM_07_08");	//U Innose! Musím se vocaď dostat, i kdyby mě to mělo stát krk! Teď nebo nikdy!
 	AI_StopProcessInfos(self);
 	Log_CreateTopic(TOPIC_Talbin_Runs,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Talbin_Runs,LOG_Running);
-	B_LogEntry(TOPIC_Talbin_Runs,"Talbin, lovec z Hornického údolí, proběhl přes prusmyk, i když měl v patách celé roje krvavých much. Myslím, že míří do Khorinisu.");
+	B_LogEntry(TOPIC_Talbin_Runs,"Talbin, lovec z Hornického údolí, proběhl přes průsmyk, i když měl v patách celé roje krvavých much. Myslím, že míří do Khorinisu.");
 	B_GivePlayerXP(XP_Ambient);
 	Npc_ExchangeRoutine(self,"FleePass");
 	Wld_InsertNpc(Snapper,"START");
@@ -584,7 +584,7 @@ func void DIA_Talbin_WOHIN_Info()
 func void DIA_Talbin_WOHIN_ok()
 {
 	AI_Output(other,self,"DIA_Talbin_WOHIN_ok_15_00");	//Dobrá.
-	AI_Output(self,other,"DIA_Talbin_WOHIN_ok_07_01");	//Díky ti - proste běž napřed a já půdu za tebou.
+	AI_Output(self,other,"DIA_Talbin_WOHIN_ok_07_01");	//Díky ti - proste běž napřed a já půjdu za tebou.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"IntoPass");
 	Talbin_FollowsThroughPass = LOG_Running;
@@ -746,5 +746,5 @@ func void DIA_Talbin_LostPaladins_Info()
 	AI_Output(self,other,"DIA_Talbin_LostPaladins_01_07");	//Ta oblast se jenom hemží skřety! Jistě ho už chytili.
 	AI_Output(other,self,"DIA_Talbin_LostPaladins_01_08");	//Chápu.
 	HintVenzelOrcs_01 = TRUE;
-	B_LogEntry(TOPIC_LostPaladins,"Lovec Talbin viděl na druhé straně řeky zraněného paladina. Možná to byl někdo z Wenzelovi skupiny. Paladin mířil podél řeky smeřem k hradu, ale podle Talbina ho pravděpodobně zajali skřěti.");
+	B_LogEntry(TOPIC_LostPaladins,"Lovec Talbin viděl na druhé straně řeky zraněného paladina. Možná to byl někdo z Wenzelovy skupiny. Paladin mířil podél řeky smeřem k hradu, ale podle Talbina ho pravděpodobně zajali skřeti.");
 };

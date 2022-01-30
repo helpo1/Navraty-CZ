@@ -42,7 +42,7 @@ func int DIA_Hakon_Sperre_Condition()
 
 func void DIA_Hakon_Sperre_Info()
 {
-	AI_Output(self,other,"DIA_Hakon_Sperre_12_00");	//Ztrať se, ty kriminálníku! Canthar mi řekl, jakej mizernej bastard jseš!
+	AI_Output(self,other,"DIA_Hakon_Sperre_12_00");	//Ztrať se, ty kriminálníku! Canthar mi řekl, jakej mizernej bastard seš!
 	AI_StopProcessInfos(self);
 };
 
@@ -540,7 +540,7 @@ func int DIA_Hakon_Kapitel2_Condition()
 func void DIA_Hakon_Kapitel2_Info()
 {
 	AI_Output(self,other,"DIA_Hakon_Add_12_22");	//Už zase TY!
-	AI_Output(self,other,"DIA_Hakon_Add_12_23");	//Harad konečně skončil s tou zatrachtilou misí pro paladiny.
+	AI_Output(self,other,"DIA_Hakon_Add_12_23");	//Harad konečně skončil s tou zatrachtilou prací pro paladiny.
 	AI_Output(self,other,"DIA_Hakon_Add_12_24");	//To značí, že ti teď můžu nabídnout nové zbraně. Máš zájem?
 };
 
@@ -568,7 +568,7 @@ func void dia_hakon_hannaisprision_info()
 {
 	B_GivePlayerXP(50);
 	AI_Output(other,self,"DIA_Hakon_HannaIsPrision_01_00");	//Slyšel jsem, že tě okradli.
-	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_01");	//Ano, pravda!...
+	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_01");	//Ano, pravda...
 	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_02");	//Ale je to celé nějaké divné.
 	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_04");	//Pro začátek - znám Hannu více jak rok.
 	AI_Output(self,other,"DIA_Hakon_HannaIsPrision_01_05");	//Takže bych dal ruku do ohně za to, že je to poctivý člověk.

@@ -90,7 +90,7 @@ func void DIA_Lester_Hello_Lester()
 	AI_Output(other,self,"DIA_Lester_Hello_Lester_15_00");	//Lestere! Jak ses se sem dostal?
 	AI_Output(self,other,"DIA_Lester_Hello_Lester_13_01");	//Byl to šílený útěk. Po výbuchu bariéry jsem se chvíli zmateně motal po okolí.
 	AI_Output(self,other,"DIA_Lester_Hello_Lester_13_02");	//Potom jsem se musel prosekat lesem, až jsem pak došel do tohohle údolí.
-	AI_Output(self,other,"DIA_Lester_Hello_Lester_13_03");	//Diego, Milten a Gorn jsou pořád v Hornickém údolí. Tedy aspoň myslí, že jsou.
+	AI_Output(self,other,"DIA_Lester_Hello_Lester_13_03");	//Diego, Milten a Gorn jsou pořád v Hornickém údolí. Tedy aspoň myslím, že jsou.
 	Info_ClearChoices(DIA_Lester_Hello);
 };
 
@@ -110,7 +110,7 @@ func void DIA_Lester_Hello_KnowFourFriends()
 	Info_ClearChoices(DIA_Lester_Hello);
 	AI_Output(other,self,"DIA_Lester_Hello_KnowFourFriends_15_00");	//Samozřejmě. Co je s nimi?
 	AI_Output(self,other,"DIA_Lester_Hello_KnowFourFriends_13_01");	//Pokud vím, tak by měli přežít zničení bariéry.
-	AI_Output(self,other,"DIA_Lester_Hello_KnowFourFriends_13_02");	//Ale nemám ponětíI kde jsou teď - pravděpodobně jsou stále v Hornickém údolí.
+	AI_Output(self,other,"DIA_Lester_Hello_KnowFourFriends_13_02");	//Ale nemám ponětí kde jsou teď - pravděpodobně jsou stále v Hornickém údolí.
 	AI_Output(self,other,"DIA_Lester_Hello_KnowFourFriends_13_03");	//Dej mi vědět, kdybys je náhodou potkal.
 };
 
@@ -153,7 +153,7 @@ func void DIA_Lester_WhatHappened_Info()
 	AI_Output(self,other,"DIA_Lester_WhatHappened_13_05");	//Jednou se mi zdálo, že vidím obrovský černý stín, který spálil na popel skupinu uprchlíků.
 	AI_Output(self,other,"DIA_Lester_WhatHappened_13_06");	//V tu chvíli jsem si myslel, že mě přišel zabít drak.
 	AI_Output(other,self,"DIA_Lester_WhatHappened_15_07");	//Viděl jsi ještě něco?
-	AI_Output(self,other,"DIA_Lester_WhatHappened_13_08");	//Ne - vzal jsem nohy na ramen a utekl jsem!
+	AI_Output(self,other,"DIA_Lester_WhatHappened_13_08");	//Ne - vzal jsem nohy na ramena a utekl jsem!
 };
 
 
@@ -279,7 +279,7 @@ func void DIA_Addon_Lester_Vorschlag_Info()
 	AI_Output(other,self,"DIA_Addon_Lester_Vorschlag_15_07");	//Díky za radu.
 	Log_CreateTopic(TOPIC_Addon_PickForConstantino,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_PickForConstantino,LOG_Running);
-	B_LogEntry(TOPIC_Addon_PickForConstantino,"Lester mi poradil, abych nasbíral 10 rostlin jednoho druhu a strážím řekl, že pracuji pro Konstantina.");
+	B_LogEntry(TOPIC_Addon_PickForConstantino,"Lester mi poradil, abych nasbíral 10 rostlin jednoho druhu a strážím řekl, že pracuji pro Constantina.");
 	MIS_Addon_Lester_PickForConstantino = LOG_Running;
 };
 
@@ -374,10 +374,10 @@ func void dia_lester_getsmoke_info()
 	AI_Output(self,other,"DIA_Lester_GetSmoke_01_03");	//Dal bych si trochu trávy. Víš co, ty které jsme dělávali v Bažinném táboře.
 	AI_Output(self,other,"DIA_Lester_GetSmoke_01_04");	//Pamatuješ si například 'Severní soumrak'? Ten model ti dokázal vyhulit mozek z hlavy.
 	AI_Output(self,other,"DIA_Lester_GetSmoke_01_05");	//Možná, že by mě mohl na chvíli zbavit těch bolestí.
-	AI_Output(other,self,"DIA_Lester_GetSmoke_01_06");	//Jestli chceš, tak se ti po něm mohl podívat.
+	AI_Output(other,self,"DIA_Lester_GetSmoke_01_06");	//Jestli chceš, tak se ti po něm mohu podívat.
 	AI_Output(self,other,"DIA_Lester_GetSmoke_01_07");	//Ale kde je chceš najít? (smutně) Slyšel jsem, že už je ani bratři u průsmyku nemají.
 	AI_Output(self,other,"DIA_Lester_GetSmoke_01_09");	//Ale budu rád, když se po nich pro mě podíváš.
-	AI_Output(other,self,"DIA_Lester_GetSmoke_01_10");	//Udělám vše co bude v mých silách.
+	AI_Output(other,self,"DIA_Lester_GetSmoke_01_10");	//Udělám vše, co bude v mých silách.
 	MIS_LESTERGETSMOKE = LOG_Running;
 	Log_CreateTopic(TOPIC_LESTERGETSMOKE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_LESTERGETSMOKE,LOG_Running);
@@ -391,7 +391,7 @@ instance DIA_LESTER_SMOKEFOUND(C_Info)
 	condition = dia_lester_smokefound_condition;
 	information = dia_lester_smokefound_info;
 	permanent = FALSE;
-	description = "Pořád vyčerpaný?";
+	description = "Něco tu pro tebe mám.";
 };
 
 
@@ -514,7 +514,7 @@ func void DIA_Lester_PERM3_Info()
 				AI_Output(self,other,"DIA_Lester_PERM3_13_09");	//Myslel jsem si to, ale doufal jsem, že to tak není. Chceš tím říct, že je zpět? Je Spáč opět mezi námi?
 				AI_Output(other,self,"DIA_Lester_PERM3_15_10");	//Dobrá otázka. Vím jen to, že musím Pátrače zastavit dřív, než budou příliš mocní.
 				AI_Output(self,other,"DIA_Lester_PERM3_13_11");	//Nelíbí se mi to, ale asi máš pravdu. Promiň, všechno už mi to začíná lézt na mozek.
-				B_LogEntry(TOPIC_DEMENTOREN,"Mé podezření se potvrdilo. Dokonce Lester neochybuje o tom, že Pátrači jsou bývalé Bratrstvo Spáče.");
+				B_LogEntry(TOPIC_DEMENTOREN,"Mé podezření se potvrdilo. Dokonce Lester nepochybuje o tom, že Pátrači jsou bývalé Bratrstvo Spáče.");
 				B_GivePlayerXP(XP_Lester_KnowsMadPsi);
 				DIA_Lester_PERM3_OneTime = TRUE;
 			};
@@ -652,7 +652,7 @@ func void DIA_Lester_KnowWhereEnemy_Info()
 	{
 		AI_Output(other,self,"DIA_Lester_KnowWhereEnemy_15_04");	//Je mi líto, ale loď je plná.
 		AI_Output(self,other,"DIA_Lester_KnowWhereEnemy_13_05");	//Možná je. Možná je můj osud bezvýznamný v porovnání s věcmi, proti kterým stojíme.
-		AI_Output(self,other,"DIA_Lester_KnowWhereEnemy_13_06");	//Víš co máš dělat. Postavi se zlu - o mě se nestrachuj.
+		AI_Output(self,other,"DIA_Lester_KnowWhereEnemy_13_06");	//Víš, co máš dělat. Postav se zlu - o mě se nestrachuj.
 		AI_Output(self,other,"DIA_Lester_KnowWhereEnemy_13_07");	//Já nejsem důležitý.
 	}
 	else
@@ -1014,7 +1014,7 @@ func void dia_lester_nw_soonbattle_info()
 	AI_Output(self,other,"DIA_Lester_NW_SoonBattle_01_01");	//Jako vždy. I když teď každý mluví o skřetech.
 	AI_Output(other,self,"DIA_Lester_NW_SoonBattle_01_03");	//Pokusili se zaútočit?
 	AI_Output(self,other,"DIA_Lester_NW_SoonBattle_01_04");	//Ne. Ještě se ani nepřiblížili.
-	AI_Output(self,other,"DIA_Lester_NW_SoonBattle_01_05");	//Zdá se, že jejich hlavní cíl byl město. Ale to je teď jedno.
+	AI_Output(self,other,"DIA_Lester_NW_SoonBattle_01_05");	//Zdá se, že jejich hlavní cíl bylo město. Ale to je teď jedno.
 };
 
 
@@ -1196,7 +1196,7 @@ func void dia_lester_nw_allgreatvictory_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Lester_NW_AllGreatVictory_01_00");	//Co se děje?
-	AI_Output(self,other,"DIA_Lester_NW_AllGreatVictory_01_01");	//Myslím, že i bys to zvládl i beze mě. Ale hlavní je, že skřeti již nadále nejsou hrozbou.
+	AI_Output(self,other,"DIA_Lester_NW_AllGreatVictory_01_01");	//Myslím, že bys to zvládl i beze mě. Ale hlavní je, že skřeti již nadále nejsou hrozbou.
 	AI_Output(self,other,"DIA_Lester_NW_AllGreatVictory_01_02");	//Vše se začíná vracet do starých kolejí a brzy si již nikdo ani nevzpomene, že se něco takového stalo.
 };
 
@@ -1223,7 +1223,7 @@ func int dia_lester_nw_whatdonow_condition()
 func void dia_lester_nw_whatdonow_info()
 {
 	AI_Output(other,self,"DIA_Lester_NW_WhatDoNow_01_00");	//Co budeš dělat teď?
-	AI_Output(self,other,"DIA_Lester_NW_WhatDoNow_01_01");	//Chvíli zůstanu v táboře, budu pomáhat Baalovi Orunovi...
+	AI_Output(self,other,"DIA_Lester_NW_WhatDoNow_01_01");	//Chvíli zůstanu v táboře, budu pomáhat Baalu Orunovi...
 	AI_Output(self,other,"DIA_Lester_NW_WhatDoNow_01_02");	//Někdo by se měl přeci starat o nové novice.
 	AI_Output(self,other,"DIA_Lester_NW_WhatDoNow_01_03");	//Navíc je tu klid a ticho, jaké lepší místo si přát?
 };

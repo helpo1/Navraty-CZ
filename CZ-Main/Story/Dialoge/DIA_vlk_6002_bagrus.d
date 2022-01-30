@@ -48,7 +48,7 @@ func void dia_bagrus_hello_info()
 	AI_Output(self,other,"DIA_Bagrus_Hello_01_03");	//Prý hledáš draka.
 	AI_Output(other,self,"DIA_Bagrus_Hello_01_04");	//Jenom černého dráčka jménem Azgalor. Víš o něm něco?
 	AI_Output(self,other,"DIA_Bagrus_Hello_01_05");	//Absolutně nic. Kdyby tady nějací draci byli, rád bych je zabil sám.
-	AI_Output(self,other,"DIA_Bagrus_Hello_01_06");	//Ale není tady nic kromě ohnivých ještěřů.
+	AI_Output(self,other,"DIA_Bagrus_Hello_01_06");	//Ale není tady nic kromě ohnivých ještěrů.
 	AI_Output(other,self,"DIA_Bagrus_Hello_01_07");	//Jsi si jistý?
 	MEETBAGRUS = TRUE;
 };
@@ -62,7 +62,7 @@ instance DIA_BAGRUS_HELLO_TEACH(C_Info)
 	information = dia_bagrus_hello_teach_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Slyšel jsem, že si nejlepší lovec v táboře.";
+	description = "Slyšel jsem, že jsi nejlepší lovec v táboře.";
 };
 
 
@@ -76,7 +76,7 @@ func int dia_bagrus_hello_teach_condition()
 
 func void dia_bagrus_hello_teach_info()
 {
-	AI_Output(other,self,"DIA_Bagrus_Hello_Teach_01_01");	//Slyšel jsem, že si nejlepší lovec v táboře.
+	AI_Output(other,self,"DIA_Bagrus_Hello_Teach_01_01");	//Slyšel jsem, že jsi nejlepší lovec v táboře.
 	AI_Output(self,other,"DIA_Bagrus_Hello_Teach_01_02");	//Nechci se vychvalovat, ale o lově vím dost.
 	AI_Output(other,self,"DIA_Bagrus_Hello_Teach_01_03");	//A umíš taky vyjmout trofeje ze zvířat?
 	AI_Output(self,other,"DIA_Bagrus_Hello_Teach_01_04");	//Ha, to je to nejdůležitější. Jenom zabít zvíře dokáže i úplný debil.
@@ -202,7 +202,7 @@ func void dia_bagrus_teachhunting_firetongue()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_FireTongue))
 	{
-		AI_Output(self,other,"DIA_Bagrus_TeachHunting_FireTongue_01_00");	//Na vyjmutí jazyka ohnivého ještěre potřebuješ ostrý nůž.
+		AI_Output(self,other,"DIA_Bagrus_TeachHunting_FireTongue_01_00");	//Na vyjmutí jazyka ohnivého ještěra potřebuješ ostrý nůž.
 	};
 	Info_ClearChoices(dia_bagrus_teachhunting);
 };

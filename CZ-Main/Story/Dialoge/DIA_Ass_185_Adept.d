@@ -45,7 +45,7 @@ func void DIA_Ass_185_Adept_hello_info()
 	AI_Output(other,self,"DIA_Ass_185_Adept_hello_01_02");	//Kdo se ptá?
 	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_03");	//Bratři mi říkají Luka, ale myslím, že moje jméno ti toho moc neříká. 
 	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_04");	//(hodnotí) Hmmm. Nebudíš zrovna dojem jako silák.
-	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_05");	//Na druhou stranu jsem slyšel,že sis docela chytře poradil s Hasimem.
+	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_05");	//Na druhou stranu jsem slyšel, že sis docela chytře poradil s Hasimem.
 	AI_Output(other,self,"DIA_Ass_185_Adept_hello_01_06");	//Jak to víš?
 	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_07");	//Jak? To já jsem se o něj musel postarat. 
 	AI_Output(self,other,"DIA_Ass_185_Adept_hello_01_08");	//Avšak mistr Tiamant se z nějakého důvodu rozhodl důvěřovat tobě.

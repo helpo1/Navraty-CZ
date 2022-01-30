@@ -217,7 +217,7 @@ func void DIA_Addon_Thorus_Rein_Info()
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Rein_15_00");	//Mám červenou kamennou tabulku...
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_01");	//Dobrá.
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_02");	//Vyřídil jsi Estebana - to znamená, že TY teď děláš jeho práci.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_03");	//V dole mají pár problému s důlními červy.
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_03");	//V dole mají pár problémů s důlními červy.
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_04");	//Tři kopáči jsou již po smrti. Je tvůj úkol opatřit nové.
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Rein_15_05");	//A kdy se můžu konečně dostat do toho zatraceného dolu?
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Rein_12_06");	//Udělej svoji práci - potom můžeš dělat, co chceš.
@@ -386,7 +386,7 @@ func void DIA_Addon_Thorus_Answer_Info()
 		AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Answer_12_01");	//Dobrá, ale co Raven?
 		AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Answer_15_02");	//Raven bude mít brzy jiné problémy. Postarám se o to.
 	};
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Answer_15_03");	//A ještě nco - postarej se, že vězni budou moci odejít.
+	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Answer_15_03");	//A ještě něco - postarej se, že vězni budou moci odejít.
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Answer_12_04");	//Jasně... Postarám se o všechny stráže venku.
 	B_LogEntry(TOPIC_Addon_Sklaven,"Bloodwyn je mrtev a Thorus se postará, aby otroci mohli odejít.");
 
@@ -423,7 +423,7 @@ func int DIA_Addon_Thorus_Raventot_Condition()
 func void DIA_Addon_Thorus_Raventot_Info()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Raventot_15_98");	//Dokázal jsem to. Raven je mrtev!
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_99");	//Co tím myslíš? (překvapeně) Ačkoliv Beliarova moc byl s ním! Bez ní nám bude každému líp!
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_99");	//Co tím myslíš? (překvapeně) Ačkoliv Beliarova moc byla s ním! Bez ní nám bude každému líp!
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_02");	//Co teď budeš dělat?
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Raventot_15_97");	//Znáš mě.
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_04");	//(směje se) Ano, jsi stále na cestě? Přeji dobrou cestu!
@@ -550,7 +550,7 @@ instance DIA_ADDON_THORUS_RAVENGUARD(C_Info)
 	condition = dia_addon_thorus_ravenguard_condition;
 	information = dia_addon_thorus_ravenguard_info;
 	permanent = FALSE;
-	description = "Ještě jedna věc...";
+	description = "Když je Raven mrtvý, můžu být strážcem, ne?";
 };
 
 
@@ -564,7 +564,7 @@ func int dia_addon_thorus_ravenguard_condition()
 
 func void dia_addon_thorus_ravenguard_info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_RavenGuard_01_02");	//Když je Raven mrtvý, můžu být stráží, ne?
+	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_RavenGuard_01_02");	//Když je Raven mrtvý, můžu být strážcem, ne?
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_RavenGuard_01_05");	//Člověče ty nejsi pozadu že?
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_RavenGuard_01_06");	//Dobrá, zabil jsi Ravena, tak to bychom měli vstupní zkoušku. (směje se)
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_RavenGuard_01_07");	//Tady - tuhle zbroj si zasloužíš.

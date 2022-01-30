@@ -25,7 +25,7 @@ instance DIA_Ass_170_Adept_Muritan(C_Info)
 	condition = DIA_Ass_170_Adept_Muritan_Condition;
 	information = DIA_Ass_170_Adept_Muritan_Info;
 	permanent = FALSE;
-	description = "Slyšel jsem, že jsil zabil Muritana.";
+	description = "Slyšel jsem, že jsi zabil Muritana.";
 };
 
 func int DIA_Ass_170_Adept_Muritan_Condition()
@@ -38,7 +38,7 @@ func int DIA_Ass_170_Adept_Muritan_Condition()
 
 func void DIA_Ass_170_Adept_Muritan_Info()
 {
-	AI_Output(other,self,"DIA_Ass_170_Adept_Muritan_01_01");	//Slyšel jsem, že jsil zabil Muritana.
+	AI_Output(other,self,"DIA_Ass_170_Adept_Muritan_01_01");	//Slyšel jsem, že jsi zabil Muritana.
 	AI_Output(self,other,"DIA_Ass_170_Adept_Muritan_01_02");	//Ano, to je pravda. Proč se ptáš, novici?
 	AI_Output(other,self,"DIA_Ass_170_Adept_Muritan_01_03");	//Mistr Tiamant mi přikázal vystopovat a zabít tu nestvůru.
 	AI_Output(self,other,"DIA_Ass_170_Adept_Muritan_01_04");	//Tak to ti nezávidím. S tímto dravcem není radno si zahrávat.
@@ -88,7 +88,7 @@ instance DIA_Ass_170_Adept_AssasinGold(C_Info)
 	condition = DIA_Ass_170_Adept_AssasinGold_Condition;
 	information = DIA_Ass_170_Adept_AssasinGold_Info;
 	permanent = FALSE;
-	description = "(dát váček s pěnezi)";
+	description = "(dát váček s penězi)";
 };
 
 func int DIA_Ass_170_Adept_AssasinGold_Condition()
@@ -489,7 +489,7 @@ func void DIA_Ass_170_Adept_NarugFind()
 	AI_Output(other,self,"DIA_Ass_170_Adept_NarugFind_01_03");	//Nedaleko odsud, v lese. A řekl mi, ať ti vzkážu, že tě čeká.
 	AI_Output(other,self,"DIA_Ass_170_Adept_NarugFind_01_04");	//Vypadá to, že něco vymyslel. 
 	AI_Output(self,other,"DIA_Ass_170_Adept_NarugFind_01_05");	//Opravdu? A co asi mohl ten hlupák vymyslet?
-	AI_Output(self,other,"DIA_Ass_170_Adept_NarugFind_01_06");	//Nee, promiň, ale radši zůstanu tady.
+	AI_Output(self,other,"DIA_Ass_170_Adept_NarugFind_01_06");	//Ne, promiň, ale radši zůstanu tady.
 	AI_Output(self,other,"DIA_Ass_170_Adept_NarugFind_01_07");	//Jestli ode mě něco potřebuje, ať svůj zadek dotáhne sem.
 	AI_Output(self,other,"DIA_Ass_170_Adept_NarugFind_01_08");	//Tak mu vzkaž.
 	ExpLoseCount = ExpLoseCount + 1;

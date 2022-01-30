@@ -241,7 +241,7 @@ func void DIA_Meldor_PERM_Info()
 	{
 		AI_Output(self,other,"DIA_Meldor_PERM_07_01");	//Před nedávnem obrátily stráže celou přístavní čtvrť vzhůru nohama.
 		AI_Output(self,other,"DIA_Meldor_PERM_07_02");	//Hledali ukradený majetek. Byla teď spousta krádeží v poslední době. Zejména v lepších čtvrtích.
-		AI_Output(self,other,"DIA_Meldor_PERM_07_03");	//Samozřejmě se snaží obvinit chuděrky s přístavu za všechno.
+		AI_Output(self,other,"DIA_Meldor_PERM_07_03");	//Samozřejmě se snaží obvinit chudáky z přístavu za všechno.
 	}
 	else if((Andre_Diebesgilde_aufgeraeumt == TRUE) && (Meldor_DGNews == FALSE))
 	{

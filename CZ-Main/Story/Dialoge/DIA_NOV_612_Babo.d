@@ -92,7 +92,7 @@ func void DIA_Babo_Anliegen_Info()
 {
 	AI_Output(other,self,"DIA_Babo_Anliegen_15_00");	//Co za prosbu?
 	AI_Output(self,other,"DIA_Babo_Anliegen_03_01");	//V klášteře je teď jeden paladin, jmenuje se Sergio.
-	AI_Output(self,other,"DIA_Babo_Anliegen_03_02");	//Jestli ho přesvědčíš, aby mi pár věcí ukázal, ukážu já pár věcí tobě
+	AI_Output(self,other,"DIA_Babo_Anliegen_03_02");	//Jestli ho přesvědčíš, aby mi pár věcí ukázal, ukážu já pár věcí tobě.
 	AI_Output(other,self,"DIA_Babo_Anliegen_15_03");	//Uvidím, co se dá dělat.
 	Log_CreateTopic(Topic_BaboTrain,LOG_MISSION);
 	Log_SetTopicStatus(Topic_BaboTrain,LOG_Running);
@@ -121,8 +121,8 @@ func int DIA_Babo_Sergio_Condition()
 
 func void DIA_Babo_Sergio_Info()
 {
-	AI_Output(other,self,"DIA_Babo_Sergio_15_00");	//Mluvil jsem se Sergiem. Každé ráno v pět si na tebe udělá dvě hodny čas.
-	AI_Output(self,other,"DIA_Babo_Sergio_03_01");	//Díky, je to pro mně čest!
+	AI_Output(other,self,"DIA_Babo_Sergio_15_00");	//Mluvil jsem se Sergiem. Každé ráno v pět si na tebe udělá dvě hodiny čas.
+	AI_Output(self,other,"DIA_Babo_Sergio_03_01");	//Díky, je to pro mě čest!
 	AI_Output(self,other,"DIA_Babo_Sergio_03_02");	//Jestli chceš, teď budu trénovat já tebe.
 	Babo_TeachPlayer = TRUE;
 	Babo_Training = TRUE;
@@ -197,7 +197,7 @@ func void DIA_Babo_Teach_2H_1()
 		};
 		if(Babo_Labercount == 3)
 		{
-			AI_Output(self,other,"DIA_DIA_Babo_Teach_03_03");	//Innosův služebík je vždy připraven k boji. Jestli nemáš po ruce magii, musíš mít po ruce hůl.
+			AI_Output(self,other,"DIA_DIA_Babo_Teach_03_03");	//Innosův služebník je vždy připraven k boji. Jestli nemáš po ruce magii, musíš mít po ruce hůl.
 		};
 		Babo_Labercount = Babo_Labercount + 1;
 		if(Babo_Labercount >= 3)
@@ -481,13 +481,13 @@ func int DIA_Babo_Life_Condition()
 func void DIA_Babo_Life_Info()
 {
 	AI_Output(other,self,"DIA_Babo_Life_15_00");	//Jak jde život v klášteře?
-	AI_Output(self,other,"DIA_Babo_Life_03_01");	//Nechci si stěžovat, ale jsou ti přísná pravidla. Porušíš je a jsi potrestán.
+	AI_Output(self,other,"DIA_Babo_Life_03_01");	//Nechci si stěžovat, ale jsou tu přísná pravidla. Porušíš je a jsi potrestán.
 	AI_Output(self,other,"DIA_Babo_Life_03_02");	//A samozřejmě spousta noviců se chce stát mágem, takže stále studují v knihovně a chystají se na zkoušku.
 	AI_Output(self,other,"DIA_Babo_Life_03_03");	//Já si myslím, že nejlepší příprava na to stát se mágem, je dobře dělat svou práci.
 	if(Npc_KnowsInfo(other,DIA_Igaranz_Choosen) == FALSE)
 	{
 		AI_Output(other,self,"DIA_Babo_Life_15_04");	//CO je to za zkoušku?
-		AI_Output(self,other,"DIA_Babo_Life_03_05");	//Zeptej se Igraze, řekne ti víc.
+		AI_Output(self,other,"DIA_Babo_Life_03_05");	//Zeptej se Igaraze, řekne ti víc.
 	};
 };
 
@@ -633,7 +633,7 @@ func void dia_babo_kdf_plants_takehalf()
 
 func void dia_babo_kdf_plants_takeall()
 {
-	AI_Output(other,self,"DIA_Babo_KDF_Plants_15_02");	//Nech si pět těch rostlin a jdi za Neroasem.
+	AI_Output(other,self,"DIA_Babo_KDF_Plants_15_02");	//Nech si všechny kopřivy a jdi za Neorasem.
 	AI_Output(self,other,"DIA_Babo_KDF_Plants_03_03");	//Ano, mistře.
 	B_GiveInvItems(self,other,ItPl_Mana_Herb_01,10);
 	Info_ClearChoices(dia_babo_kdf_plants);
@@ -718,7 +718,7 @@ func void DIA_Babo_Kap3_Hello_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Babo_Kap3_Hello_03_02");	//Neměl bych s tebou mluvit. Jsi to cizí.
+		AI_Output(self,other,"DIA_Babo_Kap3_Hello_03_02");	//Neměl bych s tebou mluvit. Jsi tady cizí.
 	};
 };
 
@@ -790,11 +790,11 @@ func void DIA_Babo_Kap3_Unhappy_Lament()
 
 func void DIA_Babo_Kap3_Unhappy_TellMe()
 {
-	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_TellMe_15_00");	//No tak, jestli je něco špatně, vyklop to
+	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_TellMe_15_00");	//No tak, jestli je něco špatně, vyklop to.
 	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_TellMe_03_01");	//Neřekneš to mágům?
 	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_TellMe_15_02");	//Vypadám jako někdo, kdo jde hned žalovat?
 	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_TellMe_03_03");	//No dobře. Mám problém s jedním novicem. Vydírá mě.
-	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_TellMe_15_04");	//Notak, ven s tím.
+	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_TellMe_15_04");	//No tak, ven s tím.
 	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_TellMe_03_05");	//Igaraz, novic, našel moji osobní korespondenci.
 	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_TellMe_03_06");	//Vyhrožuje, že jestli nebudu dělat co chce, řekne to mágům.
 	MIS_BabosDocs = LOG_Running;
@@ -810,7 +810,7 @@ func void DIA_Babo_Kap3_Unhappy_TellMe()
 
 func void DIA_Babo_Kap3_Unhappy_Privat()
 {
-	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_Privat_15_00");	//Myslím, že bych se do toho neměl plést
+	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_Privat_15_00");	//Myslím, že bych se do toho neměl plést.
 	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_Privat_03_01");	//Chápu, že nechceš problémy. 
 	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_Privat_15_02");	//To nějak zvládneš.
 	Info_ClearChoices(DIA_Babo_Kap3_Unhappy);
@@ -834,7 +834,7 @@ func void DIA_Babo_Kap3_Unhappy_Documents()
 
 func void DIA_Babo_Kap3_Unhappy_CanHelpYou()
 {
-	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_CanHelpYou_15_00");	//Myslíš, že ti s tím můžu pomoci
+	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_CanHelpYou_15_00");	//Myslíš, že ti s tím můžu pomoci?
 	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_CanHelpYou_03_01");	//Udělal bys to?
 	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_CanHelpYou_15_02");	//No... Možná.
 	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_CanHelpYou_03_03");	//(spěšně) Samozřejmě, že zaplatím.
@@ -856,7 +856,7 @@ func void DIA_Babo_Kap3_Unhappy_Yes()
 {
 	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_Yes_15_00");	//Pokusím se s tím něco udělat.
 	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_Yes_03_01");	//Opravdu? To dokážeš, věřím ti!
-	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_Yes_03_02");	//Jedině musíš zjistit, kde Igaraz schovává své věci. Pak mu je vezmi a vše bude vpořádku.
+	AI_Output(self,other,"DIA_Babo_Kap3_Unhappy_Yes_03_02");	//Jedině musíš zjistit, kde Igaraz schovává své věci. Pak mu je vezmi a vše bude v pořádku.
 	AI_Output(other,self,"DIA_Babo_Kap3_Unhappy_Yes_15_03");	//Tak pokračuj v práci a já se o to postarám.
 	Info_ClearChoices(DIA_Babo_Kap3_Unhappy);
 };

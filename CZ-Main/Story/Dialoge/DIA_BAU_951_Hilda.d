@@ -232,7 +232,7 @@ func void DIA_Hilda_PfanneGeholt_Info()
 {
 	AI_Output(other,self,"DIA_Hilda_PfanneGeholt_15_00");	//Tady je tvá pánev.
 	B_GiveInvItems(other,self,ItMi_Pan,1);
-	AI_Output(self,other,"DIA_Hilda_PfanneGeholt_17_01");	//Fajn. To se podívejme, ještě se dá narazit na poctivce.
+	AI_Output(self,other,"DIA_Hilda_PfanneGeholt_17_01");	//Fajn. Tak uvidíme, jestli je k něčemu dobrá... 
 	MIS_Hilda_PfanneKaufen = LOG_SUCCESS;
 	B_GivePlayerXP(XP_HildaHolPfanne);
 };

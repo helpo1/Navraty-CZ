@@ -58,7 +58,7 @@ func void dia_gomezworkersoul_11_hallo_info()
 	AI_Output(self,other,"DIA_GomezWorkerSoul_11_HALLO_01_11");	//Já to vidím tak, že pro lidi jako Gomez na tomhle světe není odpuštění.
 	AI_Output(self,other,"DIA_GomezWorkerSoul_11_HALLO_01_13");	//Už není v mých silách znášet tohle utrpení.
 	Info_ClearChoices(dia_gomezworkersoul_11_hallo);
-	Info_AddChoice(dia_gomezworkersoul_11_hallo,"Takže to znamená, že mu odpouštíš,?!",dia_gomezworkersoul_11_hallo_end);
+	Info_AddChoice(dia_gomezworkersoul_11_hallo,"Takže to znamená, že mu odpouštíš?",dia_gomezworkersoul_11_hallo_end);
 };
 
 func void dia_gomezworkersoul_11_hallo_end()

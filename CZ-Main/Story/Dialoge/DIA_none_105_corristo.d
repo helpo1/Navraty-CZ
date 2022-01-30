@@ -201,7 +201,7 @@ func void dia_none_105_corristo_hallo_yes()
 	AI_Output(self,other,"DIA_NONE_105_Corristo_HALLO_Yes_01_06");	//Jdi! Počkáme tu na tebe.
 	AI_Output(self,other,"DIA_NONE_105_Corristo_HALLO_Yes_01_07");	//Ať tě Innos ochraňuje!
 	CORRISTOSENDKILLDEMON = TRUE;
-	B_LogEntry(TOPIC_RESCUEGOMEZ,"Mistr Corristo a ostatní mágové Ohně souhlasili, že udělí Gomezovi své odpuštění, když pro ně splním jejich úkol. Musím jít na západ, směrem Xardasovy staré věže, a nedaleko ní najít opuštěnou kryptu. Podle Corrista v ji obývá zlo, které bych měl zničit. Kamenná deska, která blokuje vchod do krypty, pro mne už nebude problémem.");
+	B_LogEntry(TOPIC_RESCUEGOMEZ,"Mistr Corristo a ostatní mágové Ohně souhlasili, že udělí Gomezovi své odpuštění, když pro ně splním jejich úkol. Musím jít na západ, směrem ke Xardasovy staré věži, a nedaleko ní najít opuštěnou kryptu. Podle Corrista ji obývá zlo, které bych měl zničit. Kamenná deska, která blokuje vchod do krypty, pro mne už nebude problémem.");
 	AI_StopProcessInfos(self);
 };
 
@@ -234,7 +234,7 @@ func void dia_none_105_corristo_demondone_info()
 	AI_Output(self,other,"DIA_NONE_105_Corristo_DemonDone_01_07");	//A jeho duše teď může najít dlouho očekávaný odpočinek... (mrtvolně)
 	B_LogEntry(TOPIC_RESCUEGOMEZ,"Poté, co jsem navštívil kryptu a zničil tamější zlo, se mágové Ohně shodli, že duše rudobarona Gomeze dostane jejich odpuštění.");
 	Info_ClearChoices(dia_none_105_corristo_demondone);
-	Info_AddChoice(dia_none_105_corristo_demondone,"...?",dia_none_105_corristo_demondone_free);
+	Info_AddChoice(dia_none_105_corristo_demondone,"...",dia_none_105_corristo_demondone_free);
 };
 
 func void dia_none_105_corristo_demondone_free()

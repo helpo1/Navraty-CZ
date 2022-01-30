@@ -205,6 +205,6 @@ func int DIA_Addon_Pardos_perm_Condition()
 func void DIA_Addon_Pardos_perm_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Pardos_perm_15_00");	//Jak ti je?
-	AI_Output(self,other,"DIA_Addon_Pardos_perm_03_01");	///Díky tobě se cítím o mnoho lépe. Cítím jak se mi vrací síla.
+	AI_Output(self,other,"DIA_Addon_Pardos_perm_03_01");	//Díky tobě se cítím o mnoho lépe. Cítím jak se mi vrací síla.
 };
 

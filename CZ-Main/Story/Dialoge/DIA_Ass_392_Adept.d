@@ -96,7 +96,7 @@ instance DIA_Ass_392_Adept_Deal_Done(C_Info)
 	condition = DIA_Ass_392_Adept_Deal_Done_condition;
 	information = DIA_Ass_392_Adept_Deal_Done_info;
 	permanent = FALSE;
-	description = "Můžeš opět modlit v chrámu.";
+	description = "Můžeš se opět modlit v chrámu.";
 };
 	
 func int DIA_Ass_392_Adept_Deal_Done_condition()

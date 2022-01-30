@@ -575,7 +575,7 @@ func void DIA_Addon_ThiefOW_TooFar_Info()
 	{
 		if(Diego_XardasVariation == 0)
 		{
-			AI_Output(self,other,"DIA_Addon_Diego_TooFar_11_14");	//To je stará Xrdasova věž. Už ji ale samozřejmě opustil.
+			AI_Output(self,other,"DIA_Addon_Diego_TooFar_11_14");	//To je stará Xardasova věž. Už ji ale samozřejmě opustil.
 			AI_Output(self,other,"DIA_Addon_Diego_TooFar_11_15");	//Nebyl bych překvapen, kdyby na nás ještě čekaly nějaké nemilé překvapení.
 			B_Addon_Diego_WillWaitOutside();
 			Diego_XardasVariation = 1;

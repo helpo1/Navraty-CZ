@@ -69,8 +69,8 @@ func void DIA_Addon_10031_Wache_Hi_Info()
 	AI_Output(other,self,"DIA_Addon_BDT_10031_Wache_Hi_15_00");	//V pořádku?
 	if((Sklaven_Flucht == TRUE) && (Wache_Joker == FALSE))
 	{
-		AI_Output(self,other,"DIA_Addon_BDT_10031_Wache_Hi_06_01");	//Jo kámo. Otroci sou ve velkým spěchu.
-		AI_Output(self,other,"DIA_Addon_BDT_10031_Wache_Hi_06_02");	//Když slyšeli že jsou volní utekli jako králici.
+		AI_Output(self,other,"DIA_Addon_BDT_10031_Wache_Hi_06_01");	//Jo kámo. Otroci jsou ve velkým spěchu.
+		AI_Output(self,other,"DIA_Addon_BDT_10031_Wache_Hi_06_02");	//Když slyšeli, že jsou volní utekli jako králici.
 		Wache_Joker = TRUE;
 	};
 	AI_Output(self,other,"DIA_Addon_BDT_10031_Wache_Hi_06_03");	//Nedělají žádné problémy takže všechno bude v pořádku.

@@ -62,7 +62,7 @@ func void DIA_Addon_Telbor_Hi_Info()
 			};
 		};
 	};
-	AI_Output(self,other,"DIA_Addon_Telbor_Hi_12_03");	//Jestli chceš o něčem diskutovat, řekni Patrikovi. Je náš mluvčí.
+	AI_Output(self,other,"DIA_Addon_Telbor_Hi_12_03");	//Jestli chceš o něčem diskutovat, řekni Patrickovi. Je náš mluvčí.
 	AI_StopProcessInfos(self);
 };
 

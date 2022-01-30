@@ -173,7 +173,7 @@ func void DIA_Addon_Fisk_Attentat_Info()
 	AI_Output(other,self,"DIA_Addon_Fisk_Attentat_15_02");	//Jaké problémy?
 	AI_Output(self,other,"DIA_Addon_Fisk_Attentat_12_03");	//Za svoji poslední dodávku jsem zaplatil kopu zlata.
 	AI_Output(self,other,"DIA_Addon_Fisk_Attentat_12_04");	//Ale ta nikdy nedorazila! Nějaká svině ji musela sebrat.
-	AI_Output(self,other,"DIA_Addon_Fisk_Attentat_12_05");	//(zhnuseně) Někdo mi ji ukradl - asi jeden z mých chlapů!
+	AI_Output(self,other,"DIA_Addon_Fisk_Attentat_12_05");	//(rozhořčeně) Byl jsem okraden - pravděpodobně někým z našich lidí!
 };
 
 
@@ -200,7 +200,7 @@ func int DIA_Addon_Fisk_Lieferung_Condition()
 func void DIA_Addon_Fisk_Lieferung_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Fisk_Lieferung_15_00");	//Co to bylo za dodávku?
-	AI_Output(self,other,"DIA_Addon_Fisk_Lieferung_12_01");	//Balíček plný paklíčů. Někdo by je mohl střelit pirátům.
+	AI_Output(self,other,"DIA_Addon_Fisk_Lieferung_12_01");	//Balíček plný paklíčů. Někdo jej pro mě měl získat od pirátů.
 	AI_Output(self,other,"DIA_Addon_Fisk_Lieferung_12_02");	//Ale ten chlápek Juan se jí zmocnil. (naštvaný) Se vším zlatem, co jsem mu dal!
 	AI_Output(self,other,"DIA_Addon_Fisk_Lieferung_12_03");	//Ten bastard se schovává někde v bažině.
 	MIS_Lennar_Lockpick = LOG_Running;
@@ -230,7 +230,7 @@ func void B_Addon_Fisk_Belohnung()
 {
 	AI_Output(self,other,"DIA_Addon_Fisk_Belohnung_12_00");	//Pokud jde o tebe...
 	AI_Output(self,other,"DIA_Addon_Fisk_Belohnung_12_01");	//Mám dobré styky s Hunem.
-	AI_Output(self,other,"DIA_Addon_Fisk_Belohnung_12_02");	//Zajistím, abys dostal zbraně velmi levně.
+	AI_Output(self,other,"DIA_Addon_Fisk_Belohnung_12_02");	//Zajistím, abys dostal zbroj velmi levně.
 	Huno_ArmorCheap = TRUE;
 	if((other.guild == GIL_KDF) || (other.guild == GIL_KDW) || (other.guild == GIL_KDM) || (other.guild == GIL_GUR))
 	{
@@ -250,7 +250,7 @@ func void B_Addon_Fisk_Belohnung()
 			B_GiveInvItems(self,other,ItMw_Bartaxt,1);
 		};
 	};
-	AI_Output(self,other,"DIA_Addon_Fisk_Belohnung_12_06");	//(podivínsky) Podrazíš mě a já podrazím tebe - to platí pořád.
+	AI_Output(self,other,"DIA_Addon_Fisk_Belohnung_12_06");	//(škodolibě) Jedna ruka myje druhou – to se od té doby nezměnilo.
 };
 
 

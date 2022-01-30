@@ -421,11 +421,11 @@ func int dia_addon_scatty_orcinvasion_condition()
 func void dia_addon_scatty_orcinvasion_info()
 {
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_00");	//Jak to jde?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_01");	//Špatně - nemysli si, že je to teď lepší! A když otroci něco podniknou, to si ani neumíš představit?
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_01");	//Špatně - nemysli si, že je to teď lepší! A když skřeti něco podniknou, to si ani neumíš představit?
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_02");	//Povím ti to narovinu, chlape. Už teď se mi třepou kolena!
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_03");	//Vždyť jsi na živu, co víc potřebuješ?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_04");	//Ano to jsem, ale v táboře mám stále pořádnou kopu různých věcí bez kterých bych nechtěl odejít.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_05");	//A teď do toho nestrkej nos, nebo riskuješ že přijdeš o hlavu.
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_04");	//Ano to jsem, ale v táboře mám stále pořádnou kopu různých věcí, bez kterých bych nechtěl odejít.
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_OrcInvasion_01_05");	//A teď do toho nestrkej nos, nebo riskuješ, že přijdeš o hlavu.
 	if(ORCSHAMAN4ISDEAD == TRUE)
 	{
 		B_GivePlayerXP(150);
@@ -458,13 +458,13 @@ func void dia_addon_scatty_chest_info()
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_Chest_01_00");	//Jak se daří?
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_01");	//Ale, nijak zvláštně... (ututláva)
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_Chest_01_02");	//Pokud se nic neděje, proč jsi tak vystrašený?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_03");	//Dobře chlape... Ano do úst by sis zato prst netrčil.
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_03");	//Dobře chlape... Ano do úst by sis zato prst nestrčil.
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_Chest_01_04");	//No tak Scatty? Co je to?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_05");	//Tak dobře... Byla tam moje truhla dovrchu plna zlata!
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_05");	//Tak dobře... Byla tam moje truhla dovrchu plná zlata!
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_06");	//Bylo to tak, že při útěku z tábora nebyl prostě čas vzít si ji a vláčet sebou.
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_Chest_01_07");	//Zlato?!
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_08");	//Ano!... (naštvaně) Moje zlato, pamatuj. Ale neotevřeš ji, pokud si myslíš že je vhodná pro tebe.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_09");	//Má velmi silný zámek, který by si nevypáčil za celý život!
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_08");	//Ano!... (naštvaně) Moje zlato, pamatuj. Ale neotevřeš ji, pokud si myslíš, že je vhodná pro tebe.
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_09");	//Má velmi silný zámek, který bys nevypáčil za celý život!
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_10");	//A jedinej kdo má klíč jsem já! (naštvaně)
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_Chest_01_11");	//Dobře dobře proč jsi naštvaný? Nemám v plánu ti vzít tvoje zlato.
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_12");	//A co teda chceš?
@@ -472,8 +472,8 @@ func void dia_addon_scatty_chest_info()
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_14");	//(pochybuje) Opravdu to uděláš?
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_Chest_01_15");	//Ano udělám to ale jen pokud si zlato rozdělíme na půl a bez ceremónií.
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_16");	//(naštvaně) TO CHCEŠ?! 
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_Chest_01_17");	//Já nabizím - ty domítáš.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_18");	//Eh... Vidím že nemám na výběr. No i polovina je lepší než nic.
+	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_Chest_01_17");	//Já nabizím - ty odmítáš.
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_18");	//Eh... Vidím, že nemám na výběr. No i polovina je lepší než nic.
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_Chest_01_19");	//Dobře přijimám nabídku... Ale pokud mě podrazíš rozsekám tě na kusy!
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_Chest_01_20");	//Neboj se. Nepodrazím tě.
 	B_GiveInvItems(self,other,itke_scattychest,1);
@@ -482,7 +482,7 @@ func void dia_addon_scatty_chest_info()
 	SCATTYCHEST = TRUE;
 	Log_CreateTopic(TOPIC_SCATTYCHEST,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SCATTYCHEST,LOG_Running);
-	B_LogEntry(TOPIC_SCATTYCHEST,"Scatty mi dal klíč od truhly v táboře která je plná zlata. Dohodli jsme se, že jestli mu ji přinesu dá mi z ní polovinu zlata.");
+	B_LogEntry(TOPIC_SCATTYCHEST,"Scatty mi dal klíč od truhly v táboře, která je plná zlata. Dohodli jsme se, že jestli mu ji přinesu dá mi z ní polovinu zlata.");
 };
 
 
@@ -511,8 +511,8 @@ func void dia_addon_scatty_dochestit_info()
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_DoChestIt_01_00");	//Ohledně zlata...
 	B_GiveInvItems(other,self,ItMi_Addon_GoldNugget,500);
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_DoChestIt_01_01");	//(uvažuje) Tak se na to podívejme... Hmm...
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_DoChestIt_01_02");	//Ano zdá se že je jeho množství přesné.
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_DoChestIt_01_03");	//Vidím že jsi férový chlap. Dá se ti věčit narozdíl od těchto zločineckých magorů.
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_DoChestIt_01_02");	//Ano, zdá se, že je jeho množství přesné.
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_DoChestIt_01_03");	//Vidím, že jsi férový chlap. Dá se ti věřit narozdíl od těchto zločineckých magorů.
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_DoChestIt_01_04");	//A ty jsi o nich někdy pochyboval?
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_DoChestIt_01_05");	//No někdy jo a ne málo! Přátelství to zlato odcizuje... (vážně)
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_DoChestIt_01_06");	//Co naše dohoda?
@@ -549,7 +549,7 @@ func void dia_addon_scatty_cantradearmor_info()
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_05");	//Hmm... Samozřejmě bych ti mohl prodat aj zbroj stráže - ale Bloodwyn by mi usekl hlavu, kdyby se to dozvěděl.
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_06");	//Můžu ti ji prodat pouze pod jeho rozkazem. Takže promiň, ale s tímto ti nemůžu pomoct.
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_07");	//A kdyby náhodou Bloodwyn zemřel? Prodáš mi potom tu zbroj?
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_08");	//No samozřejmě pokud se tak stane... Ale o tom, že zemře pochybuji (směje se)
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_08");	//No samozřejmě pokud se tak stane... Ale o tom, že zemře pochybuji. (směje se)
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Scatty_CanTradeArmor_01_09");	//Jasně.
 	SCATTY_CANTRADEARMOR = TRUE;
 };
@@ -581,7 +581,7 @@ func void dia_addon_scatty_armor_info()
 
 	if(SCATTY_CANTRADESHC == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_Scatty_Armor_15_03");	//A ještě jedna věc můžu ti nabídnout ty nejlepší zbroje co mám.
+		AI_Output(self,other,"DIA_Addon_Scatty_Armor_15_03");	//A ještě jedna věc. Můžu ti nabídnout ty nejlepší zbroje co mám.
 	};
 
 	Info_AddChoice(dia_addon_scatty_armor,Dialog_Back,dia_addon_scatty_armor_back);

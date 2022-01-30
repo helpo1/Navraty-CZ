@@ -40,7 +40,7 @@ func void DIA_Schwarzmagier_HELLO_wer()
 {
 	AI_Output(other,self,"DIA_Schwarzmagier_HELLO_wer_15_00");	//Kdo je tvůj pán?
 	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_wer_09_01");	//Poutník mezi světy. Jeho božské vědění nás ohromuje.
-	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_wer_09_02");	//Je to Beliarův vyvolená, který zničí království následovníků Innose.
+	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_wer_09_02");	//Je to Beliarův vyvolený, který zničí království následovníků Innose.
 	AI_Output(self,other,"DIA_Schwarzmagier_HELLO_wer_09_03");	//Přinese smrt všem, kdo o něm pochybují.
 };
 

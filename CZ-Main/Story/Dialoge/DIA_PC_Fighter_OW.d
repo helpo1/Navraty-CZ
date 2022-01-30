@@ -43,9 +43,9 @@ func void DIA_GornOW_Hello_Info()
 	Milten = Hlp_GetNpc(PC_Mage_OW);
 	AI_Output(other,self,"DIA_GornOW_Hello_15_00");	//Konec s tady tím flákáním - jsi volný!
 	AI_Output(self,other,"DIA_GornOW_Hello_12_01");	//Už bylo na čase, aby mě odsud někdo dostal.
-	AI_Output(self,other,"DIA_GornOW_Hello_12_02");	//Ale nepočítal jsem s tím. Jsem pekelně rád, že tě vidím!
+	AI_Output(self,other,"DIA_GornOW_Hello_12_02");	//Ale nepočítal jsem s tebou. Jsem pekelně rád, že tě vidím!
 	AI_Output(other,self,"DIA_GornOW_Hello_15_03");	//Garond říkal, že moc jíš a on už tě nemůže živit.
-	AI_Output(self,other,"DIA_GornOW_Hello_12_04");	//Když už o tom mluvís, dal bych si pár piv. Pojďme odsud, tuhle celu už mám okoukanou.
+	AI_Output(self,other,"DIA_GornOW_Hello_12_04");	//Když už o tom mluvíš, dal bych si pár piv. Pojďme odsud, tuhle celu už mám okoukanou.
 	AI_Output(other,self,"DIA_GornOW_Hello_15_05");	//Dobře, uvidíme se u Miltena.
 	AI_Output(self,other,"DIA_GornOW_Hello_12_06");	//Jistě.
 	AI_StopProcessInfos(self);
@@ -77,7 +77,7 @@ func int DIA_GornOW_MetMilten_Condition()
 
 func void DIA_GornOW_MetMilten_Info()
 {
-	AI_Output(self,other,"DIA_GornOW_MetMilten_12_00");	//Poslouchej - Mám dost tady toho poflakování. Je načase vidět něco jíného, než toto údolí.
+	AI_Output(self,other,"DIA_GornOW_MetMilten_12_00");	//Poslouchej - mám dost tady toho poflakování. Je načase vidět něco jíného, než toto údolí.
 	AI_Output(self,other,"DIA_GornOW_MetMilten_12_01");	//Jak ses dostal přes průsmyk?
 	AI_Output(other,self,"DIA_GornOW_MetMilten_15_02");	//Vede tam stezka přes opuštěný důl.
 	AI_Output(self,other,"DIA_GornOW_MetMilten_12_03");	//Dobře. Počkám na vhodnou chvíli a pak to tady zabalím.

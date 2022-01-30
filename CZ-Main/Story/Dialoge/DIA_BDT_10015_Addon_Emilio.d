@@ -140,7 +140,7 @@ func void DIA_Addon_Emilio_Stein_Info()
 	AI_Output(other,self,"DIA_Addon_BDT_10015_Emilio_Stein_15_00");	//A ty červené kameny?
 	AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Stein_10_01");	//To vymyslel Thorus s Estebanem.
 	AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Stein_10_02");	//Thorus řídí rozdělování zlata a Esteban organizuje dělníky v dole.
-	AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Stein_10_03");	//Samožrejmě nechce běhat za Thorusem pokaždé, když pošle někoho do dolu.
+	AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Stein_10_03");	//Samozřejmě nechce běhat za Thorusem pokaždé, když pošle někoho do dolu.
 	AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Stein_10_04");	//Takhle mu dá jeden z těch červených kamenů a Thorus ho pustí. Je to jako vstupenka.
 };
 
@@ -215,7 +215,7 @@ func void DIA_Addon_Emilio_Senyan_Info()
 {
 	if(Senyan_Called == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Senyan_10_00");	//(tázavě) Řekni mi PROČ Senyan volal: 'Podívejme se kohopak to tu máme'?
+		AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Senyan_10_00");	//(tázavě) Řekni mi PROČ Senyan volal: 'Podívejme se kohopak to tu máme?'
 		AI_Output(other,self,"DIA_Addon_BDT_10015_Emilio_Senyan_15_01");	//(drsně) Nevyřízené účty.
 	}
 	else
@@ -224,7 +224,7 @@ func void DIA_Addon_Emilio_Senyan_Info()
 	};
 	AI_Output(other,self,"DIA_Addon_BDT_10015_Emilio_Senyan_15_03");	//A máš s tím nějaký problém?
 	AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Senyan_10_04");	//(uspěchaně) Ne, chlape, žádný problém s tím nemám.
-	AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Senyan_10_05");	//Na druhou stranu. (sarkasticky) Je to kus práce pro Estebana.
+	AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Senyan_10_05");	//Na druhou stranu. (sarkasticky) Ten bastard pracoval pro Estebana.
 	Senyan_CONTRA = LOG_SUCCESS;
 	B_LogEntry(Topic_Addon_Esteban,"Emilio není na Estebanově straně.");
 };
@@ -282,12 +282,12 @@ func void DIA_Addon_Emilio_VonEmilio_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Emilio_VonEmilio_15_00");	//Lennar mi o tobě něco řekl...
 	AI_Output(self,other,"DIA_Addon_Emilio_VonEmilio_10_01");	//Lennar? Ten chlap je idiot! To musíš uznat.
-	AI_Output(other,self,"DIA_Addon_Emilio_VonEmilio_15_02");	//Řekl žes nebyl v dole od toho pokusu o atentát.
+	AI_Output(other,self,"DIA_Addon_Emilio_VonEmilio_15_02");	//Řekl, žes nebyl v dole od toho pokusu o atentát.
 	AI_Output(self,other,"DIA_Addon_Emilio_VonEmilio_10_03");	//(vystrašeně) Já... nic nevím!
 	if(!Npc_IsDead(Senyan))
 	{
-		AI_Output(self,other,"DIA_Addon_Emilio_VonEmilio_10_04");	//Pracuješ s Senyanem, nebo ne!
-		AI_Output(self,other,"DIA_Addon_Emilio_VonEmilio_10_05");	//Oba jste se spojili s Estebanem. Slyšel jsem, co jste si povídali!
+		AI_Output(self,other,"DIA_Addon_Emilio_VonEmilio_10_04");	//Spolupracuješ se Senyanem!
+		AI_Output(self,other,"DIA_Addon_Emilio_VonEmilio_10_05");	//Oba jste se spojili s Estebanem! Slyšel jsem, co jste si povídali!
 		AI_Output(self,other,"DIA_Addon_Emilio_VonEmilio_10_06");	//Dosud jsem s Estebanem neměl nic společnýho. Proč bych měl věřit jeho lidem.
 		AI_Output(self,other,"DIA_Addon_Emilio_VonEmilio_10_07");	//Nech mě o samotě!
 		AI_StopProcessInfos(self);
@@ -354,7 +354,7 @@ func void DIA_Addon_Emilio_GegenEsteban_Info()
 	AI_Output(other,self,"DIA_Addon_Emilio_GegenEsteban_15_00");	//Co máš proti Estebanovi?
 	AI_Output(self,other,"DIA_Addon_Emilio_GegenEsteban_10_01");	//To prase myslí jen na peníze.
 	AI_Output(self,other,"DIA_Addon_Emilio_GegenEsteban_10_02");	//Každý den je někdo sežrán důlními červy.
-	AI_Output(self,other,"DIA_Addon_Emilio_GegenEsteban_10_03");	//Ale Esteban nechce poslat do dolu íky.
+	AI_Output(self,other,"DIA_Addon_Emilio_GegenEsteban_10_03");	//Ale Esteban nechce poslat do dolu žádné bojovníky.
 	AI_Output(self,other,"DIA_Addon_Emilio_GegenEsteban_10_04");	//A proč? Protože chlapi jsou součástí 'Ravenovy stráže' a on se bojí jim něco přikázat.
 	AI_Output(self,other,"DIA_Addon_Emilio_GegenEsteban_10_05");	//Namísto toho nás raději nechají všechny chcípnout.
 };

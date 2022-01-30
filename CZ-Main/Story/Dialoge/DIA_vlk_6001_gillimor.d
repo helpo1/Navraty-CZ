@@ -152,7 +152,7 @@ instance DIA_GILLIMOR_TEACH(C_Info)
 	condition = dia_gillimor_teach_condition;
 	information = dia_gillimor_teach_info;
 	permanent = TRUE;
-	description = "Nauč mě vařit lektvary...";
+	description = "Nauč mě vařit lektvary.";
 };
 
 

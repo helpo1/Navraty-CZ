@@ -49,7 +49,7 @@ func void DIA_Lester_DI_Hello_Info()
 	AI_Output(other,self,"DIA_Lester_DI_Hello_15_00");	//Chtěl bys mi něco říct?
 	if((Npc_IsDead(Mario_DI) == FALSE) && (ORkSturmDI == TRUE) && (DIA_Lester_DI_SCGotWarning1 == FALSE))
 	{
-		AI_Output(self,other,"DIA_Lester_DI_Hello_13_01");	//Mario opustil loď, když skřeti zaútočili. Navzory tomu chaosu tady, jsem ho bedlivě sledoval.
+		AI_Output(self,other,"DIA_Lester_DI_Hello_13_01");	//Mario opustil loď, když skřeti zaútočili. Navzdory tomu chaosu tady, jsem ho bedlivě sledoval.
 		AI_Output(self,other,"DIA_Lester_DI_Hello_13_02");	//Proběhl skřetí blokádou jako kdyby tam nebyla - a skřeti na něj neútočili.
 		AI_Output(self,other,"DIA_Lester_DI_Hello_13_03");	//Od počátku jsem měl o tom parchantovi zvláštní pocity. Vypadá to, že má čachry s nepřítelem.
 		B_GivePlayerXP(XP_Ambient);

@@ -57,7 +57,7 @@ func void DIA_Orc_8569_DeadOrc_Hello_info()
 	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_13");	//Člověk znát vše! Nog-Drag opravdu sloužit jako otrok, postavit veliký chrám pro svého pána.
 	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_14");	//Tak ty jsi tady už od výstavby chrámu?
 	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_15");	//Nog-Drag být tady dlouhou dobu. Vidět, jak bratři stavět chrám, i jak zlá démon pak všechny zabít. Vidět a pamatovat hodně!
-	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_16");	//Pak možná víš jednu velmi důležitou věc, krerá mě zajímá.
+	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_16");	//Pak možná víš jednu velmi důležitou věc, která mě zajímá.
 	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_17");	//Nog-Drag říct vše, když člověk nezabít!
 	AI_Output(other,self,"DIA_Orc_8569_DeadOrc_Hello_Info_18_18");	//Nejsi až tak hloupý... Dobře! Odpovíš mi na mou otázku - a já tě nezabiju.
 	AI_Output(self,other,"DIA_Orc_8569_DeadOrc_Hello_Info_18_19");	//Člověk se ptát, Nog-Drag říct vše.

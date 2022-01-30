@@ -422,7 +422,7 @@ func void dia_Ass_125_Tiamant_OreBugsKilled_info()
 	AI_Output(self,other,"DIA_Ass_125_Tiamant_OreBugsKilled_01_01");	//Snad nějaké novinky ohledně dolu?
 	AI_Output(other,self,"DIA_Ass_125_Tiamant_OreBugsKilled_01_02");	//(přikývnutí)
 	AI_PlayAni(other,"T_YES");
-	AI_Output(self,other,"DIA_Ass_125_Tiamant_OreBugsKilled_01_03");	//(Úsměv) Nemusíš se obtěžovat s vysvětlováním.
+	AI_Output(self,other,"DIA_Ass_125_Tiamant_OreBugsKilled_01_03");	//(úsměv) Nemusíš se obtěžovat s vysvětlováním.
 	AI_Output(self,other,"DIA_Ass_125_Tiamant_OreBugsKilled_01_04");	//Mistr Osair mi již poslal zprávu.
 	AI_Output(self,other,"DIA_Ass_125_Tiamant_OreBugsKilled_01_05");	//Není pochyb, že jsi odvedl skvělou práci.
 	AI_Output(self,other,"DIA_Ass_125_Tiamant_OreBugsKilled_01_06");	//Skoro bych řekl, že sis vysloužil odměnu!
@@ -822,7 +822,7 @@ func int dia_Ass_125_Tiamant_WhatAbout2X2_condition()
 func void dia_Ass_125_Tiamant_WhatAbout2X2_info()
 {
 	AI_Output(other,self,"DIA_Ass_125_Tiamant_WhatAbout2X2_01_01");	//A co takhle něco speciálního?
-	AI_Output(self,other,"DIA_Ass_125_Tiamant_WhatAbout2X2_01_02");	//Jistě, máš na na mysli boj se dvěmi zbraněmi.
+	AI_Output(self,other,"DIA_Ass_125_Tiamant_WhatAbout2X2_01_02");	//Jistě, máš na mysli boj se dvěmi zbraněmi.
 	AI_Output(self,other,"DIA_Ass_125_Tiamant_WhatAbout2X2_01_03");	//Ovšem, to je to nejdokonalejší umění, jehož zvládnutí vyžaduje cestu mistra.
 	AI_Output(self,other,"DIA_Ass_125_Tiamant_WhatAbout2X2_01_04");	//Pouze skutečný mistr meče se může něco takového naučit.
 	TiamantTeachMe2X2 = TRUE;

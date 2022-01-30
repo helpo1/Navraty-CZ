@@ -221,7 +221,7 @@ func void DIA_Addon_Garett_Greg_Info()
 	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_02");	//A chamtivý jako nikdo jiný.
 	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_03");	//Nechal našeho pokladníka Francise, aby nám platil akorát tolik, abychom se nevzbouřili.
 	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_04");	//A když jeden z nás něco opravdu zamýšlel, postaral se o něho osobně.
-	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_05");	//Jednou jsem ukradl kompas z jedné královké fregaty.
+	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_05");	//Jednou jsem ukradl kompas z jedné královské fregaty.
 	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_06");	//Greg, ten bastard, mi ho samozřejmě zabavil.
 	AI_Output(self,other,"DIA_Addon_Garett_Greg_09_07");	//Pf! Asi ho někam schoval, jako všechny jeho poklady.
 };
@@ -267,7 +267,7 @@ instance DIA_Addon_Garett_Tips_Next(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Garett_Tips_Next_Condition;
 	information = DIA_Addon_Garett_Tips_Next_Info;
-	description = "Je pravda že Gregův poklad stráží smrt?";
+	description = "Je pravda že Gregův poklad střeží smrt?";
 };
 
 func int DIA_Addon_Garett_Tips_Next_Condition()
@@ -280,9 +280,9 @@ func int DIA_Addon_Garett_Tips_Next_Condition()
 
 func void DIA_Addon_Garett_Tips_Next_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Garett_Tips_Next_01_00");	//Co měl Greg na mysli když řekl že jeho poklad stráží smrt?
-	AI_Output(self,other,"DIA_Addon_Garett_Tips_Next_01_01");	//Říká se že jeho poklad je prokletý! Hlidají ho lidé které Greg jednou zabil.
-	AI_Output(self,other,"DIA_Addon_Garett_Tips_Next_01_02");	//Takže buď velmi opatrny pokud ho budeš chtít ukrást.
+	AI_Output(other,self,"DIA_Addon_Garett_Tips_Next_01_00");	//Co měl Greg na mysli když řekl, že jeho poklad střeží smrt?
+	AI_Output(self,other,"DIA_Addon_Garett_Tips_Next_01_01");	//Říká se, že jeho poklad je prokletý! Hlídají ho lidé, které Greg jednou zabil.
+	AI_Output(self,other,"DIA_Addon_Garett_Tips_Next_01_02");	//Takže buď velmi opatrný pokud ho budeš chtít ukrást.
 };
 
 instance DIA_Addon_Garett_GiveKompass(C_Info)
@@ -403,7 +403,7 @@ instance DIA_Addon_Garett_Trade(C_Info)
 	condition = DIA_Addon_Garett_Trade_Condition;
 	information = DIA_Addon_Garett_Trade_Info;
 	permanent = TRUE;
-	description = "Pojďme obchodovat.";
+	description = DIALOG_TRADE;
 	trade = TRUE;
 };
 

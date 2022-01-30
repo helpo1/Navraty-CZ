@@ -49,7 +49,7 @@ func void DIA_Addon_Patrick_Hi_Info()
 	AI_Output(self,other,"DIA_Addon_Patrick_Hi_07_07");	//Pokusit se o útěk je příliš riskantní. William to zkoušel a koupil si farmu.
 	AI_Output(self,other,"DIA_Addon_Patrick_Hi_07_08");	//Vězni jsou rolníci a dělníci - věří mi, ale nebudou riskovat nebezpečí.
 	Info_ClearChoices(DIA_Addon_Patrick_Hi);
-	Info_AddChoice(DIA_Addon_Patrick_Hi,"Očekáváte mne, abych dostal pro vás od Ravena milost?",DIA_Addon_Patrick_Hi_Raven);
+	Info_AddChoice(DIA_Addon_Patrick_Hi,"Očekáváte ode mne, že pro vás dostanu od Ravena milost?",DIA_Addon_Patrick_Hi_Raven);
 	Info_AddChoice(DIA_Addon_Patrick_Hi,"To musím zabít všechny bandity, abyste si pohli?",DIA_Addon_Patrick_Hi_Kill);
 };
 
@@ -170,6 +170,6 @@ func int DIA_Addon_Patrick_Hoehle_Condition()
 func void DIA_Addon_Patrick_Hoehle_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Patrick_Hoehle_15_00");	//Nechcete odejít?
-	AI_Output(self,other,"DIA_Addon_Patrick_Hoehle_07_01");	//Samozřejmě, že chceme. Pouze čekáme na vhodou příležitost.
+	AI_Output(self,other,"DIA_Addon_Patrick_Hoehle_07_01");	//Samozřejmě, že chceme. Pouze čekáme na vhodnou příležitost.
 };
 

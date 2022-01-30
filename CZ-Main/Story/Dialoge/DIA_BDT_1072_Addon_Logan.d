@@ -17,7 +17,7 @@ func int DIA_Addon_Logan_EXIT_Condition()
 
 func void DIA_Addon_Logan_EXIT_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Logan_EXIT_15_00");	//Já se vrátím...
+	AI_Output(other,self,"DIA_Addon_Logan_EXIT_15_00");	//Vrátím se později...
 	if(!((MIS_HlpLogan == LOG_Running) || !(MIS_HlpLogan == LOG_SUCCESS)) && (Logan_Inside == FALSE))
 	{
 		AI_Output(self,other,"DIA_Addon_Logan_EXIT_10_01");	//(zavrčí) Jo, jen si uteč. Já tady zůstanu a zastavím všechno, co se přiblíží.
@@ -216,7 +216,7 @@ func void DIA_Addon_Logan_Why_Info()
 	AI_Output(other,self,"DIA_Addon_Logan_Why_15_00");	//Co dostanu za moji pomoc?
 	AI_Output(self,other,"DIA_Addon_Logan_Why_10_01");	//(zavrčí) Franco tě tady nechá zhnít, jestli to neuděláš.
 	AI_Output(self,other,"DIA_Addon_Logan_Why_10_02");	//Pokud se chceš dostat do tábora, tak musíš přiložit ruku k dílu. Se slovama se dál nedostaneš.
-	AI_Output(self,other,"DIA_Addon_Logan_Why_10_03");	//Mimochodem můžu ti ukázat, jak vyvrhnou zvířata.
+	AI_Output(self,other,"DIA_Addon_Logan_Why_10_03");	//Mimochodem můžu ti ukázat, jak vyvrhnout zvířata.
 	AI_Output(self,other,"DIA_Addon_Logan_Why_10_04");	//Ale nemysli si, že tě Franco hned pošle do tábora jen proto, že jsme si tu trochu zablbli s močálovýma žralokama.
 	AI_Output(self,other,"DIA_Addon_Logan_Why_10_05");	//Jsou tady lidé, kteří čekají dost dlouho, aby se tam dostali.
 	AI_Output(self,other,"DIA_Addon_Logan_Why_10_06");	//A další, kdo je na řadě jsem já... (zavrčí) Tak se netrap...
@@ -331,7 +331,7 @@ instance DIA_Addon_Logan_Lern(C_Info)
 	condition = DIA_Addon_Logan_Lern_Condition;
 	information = DIA_Addon_Logan_Lern_Info;
 	permanent = FALSE;
-	description = "Ukaž mi, jak stahovat zvířečí kůže...";
+	description = "Ukaž mi, jak stahovat zvířecí kůže...";
 };
 
 
@@ -346,7 +346,7 @@ func int DIA_Addon_Logan_Lern_Condition()
 
 func void DIA_Addon_Logan_Lern_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Logan_Lern_15_00");	//Ukaž mi, jak stahovat zvířečí kůže...
+	AI_Output(other,self,"DIA_Addon_Logan_Lern_15_00");	//Ukaž mi, jak stahovat zvířecí kůže...
 	AI_Output(self,other,"DIA_Addon_Logan_Lern_10_01");	//Pokud se chceš naučit něco o krvavých mouchách, tak běž za Edgorem. Ví o nich všechno.
 	AI_Output(self,other,"DIA_Addon_Logan_Lern_10_02");	//A jestli chceš vědět, jak vyvrhnout močálové žraloky nebo ještěry měl bys prvně umět odstranit jejich kůže a zuby. Můžu ti to ukázat.
 };

@@ -758,7 +758,7 @@ func void DIA_Ass_126_Haniar_BlameTiamant_Osair()
 	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_05");	//Důl někdo napadl?
 	AI_Output(other,self,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_06");	//Důlní červi všechny sežrali...
 	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_07");	//Tak to tedy je... Ještě se to ke mně nedoneslo.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_08");	//Vypadá to, že se to mistrTiamant snažil přede mnou utajit. To nebylo moc chytré.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_BlameTiamant_Osair_01_08");	//Vypadá to, že se to mistr Tiamant snažil přede mnou utajit. To nebylo moc chytré.
 	HaniarKnowOsair = TRUE;
 
 	if((HaniarKnowOsair == TRUE) && (HaniarKnowNrozas == TRUE) && (HaniarKnowHasim == TRUE))
@@ -1299,7 +1299,7 @@ func void dia_Ass_126_Haniar_OsairTrait_info()
 	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_06");	//No, předstíral jsem souhlas.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_07");	//Dobře! To, že jsi teď přišel za mnou, vypovídá dost.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_08");	//Je dobře, že jsi tak chytrý abys věděl, komu věřit.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_09");	//Takže mistr Osair začal svou nebezpečnou hru. Smrt mistraTiamanta a Nrozase mu rozvázala ruce.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_09");	//Takže mistr Osair začal svou nebezpečnou hru. Smrt mistra Tiamanta a Nrozase mu rozvázala ruce.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_10");	//A teď se ukázalo, jaký ve skutečnosti je.
 	AI_Output(other,self,"DIA_Ass_126_Haniar_OsairTrait_01_11");	//Vypadá to tak.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_OsairTrait_01_12");	//Dělá velkou chybu, jestli si myslí, že mě odstraní.

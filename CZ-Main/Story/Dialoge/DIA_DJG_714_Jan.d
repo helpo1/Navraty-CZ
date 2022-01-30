@@ -812,7 +812,7 @@ func void dia_jan_armorcanteach_info()
 	{
 		AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_09");	//Nemáš páru co kovařina vůbec je!
 		AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_10");	//Chlape, jdi se naučit základy a pak si promluvíme na toto téma.
-		AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_11");	//Ale: nebude to zadarmo.
+		AI_Output(self,other,"DIA_Jan_ArmorCanTeach_01_11");	//Ale nebude to zadarmo.
 	};
 
 	JAN_TEACHARMOR = TRUE;
@@ -831,11 +831,11 @@ func void b_jan_teacharmor_4()
 		AI_UseMob(self,"BSANVIL",5);
 		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_02");	//... Polož na kovadlinu plát kovu a kousek magické rudy...
 		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_03");	//... Rudou potom plát pečlivě pokryj...
-		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_04");	//... Potom připevníš plát ke zborji - asi nějak takhle... Podívej... (ukazuje)
+		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_04");	//... Potom připevníš plát ke zbroji - asi nějak takhle... Podívej... (ukazuje)
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_05");	//... A je to!
-		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_06");	//To je vše co bys měl vědět.
+		AI_Output(self,other,"DIA_Jan_TeachArmor_4_01_06");	//To je vše, co bys měl vědět.
 	};
 };
 
@@ -869,13 +869,13 @@ func void b_jan_teacharmor_6()
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
 		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_02");	//... Dívej se pozorně - normálně vem ocel a polož ji na kovadlinu...
-		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_03");	//... Smíchej ji do směsi s magickou rudou a po té výsledek pokrý rudou černou...
+		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_03");	//... Smíchej ji do směsi s magickou rudou a po té výsledek pokryj černou rudou...
 		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_04");	//... Udělej si dva takové pláty a pokryj jimi kostru zbroje... Takhle nějako... (ukazuje)
 		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_05");	//... Takhle se zpevní samotný základ zbroje... Trochu upravíme, aby seděla...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_06");	//... A to je vše, zbroj je hotova! Nebo lépe řečeno - vylepšena.
-		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_07");	//Už nemám co bych tě naučil - ovládl jsi toto umění.
+		AI_Output(self,other,"DIA_Jan_TeachArmor_6_01_07");	//Už nemám nic, co bych tě naučil - ovládl jsi toto umění.
 	};
 };
 
@@ -886,15 +886,15 @@ func void b_janarmorchoices()
 
 	if((PLAYER_TALENT_SMITH[20] == FALSE) && (SHOW_DJG_ARMOR_L == TRUE))
 	{
-		Info_AddChoice(dia_jan_armorteach,B_BuildLearnStringEx("Lehká zbroj drakobijce (cena: 4000 zlatých",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_DJG_L_V1)),dia_jan_armorteach_itar_djg_l_v1);
+		Info_AddChoice(dia_jan_armorteach,B_BuildLearnStringEx("Lehká zbroj drakobijce (cena: 4000 zlatých)",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_DJG_L_V1)),dia_jan_armorteach_itar_djg_l_v1);
 	};
 	if((PLAYER_TALENT_SMITH[21] == FALSE) && (Show_DJG_Armor_M == TRUE))
 	{
-		Info_AddChoice(dia_jan_armorteach,B_BuildLearnStringEx("Zbroj drakobijce (cena: 6000 zlatých",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_DJG_M_V1)),dia_jan_armorteach_itar_djg_m_v1);
+		Info_AddChoice(dia_jan_armorteach,B_BuildLearnStringEx("Zbroj drakobijce (cena: 6000 zlatých)",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_DJG_M_V1)),dia_jan_armorteach_itar_djg_m_v1);
 	};
 	if((PLAYER_TALENT_SMITH[22] == FALSE) && (SHOW_DJG_ARMOR_H == TRUE))
 	{
-		Info_AddChoice(dia_jan_armorteach,B_BuildLearnStringEx("Těžká zbroj drakobijce (cena: 8000 zlatých",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_DJG_H_V1)),dia_jan_armorteach_itar_djg_h_v1);
+		Info_AddChoice(dia_jan_armorteach,B_BuildLearnStringEx("Těžká zbroj drakobijce (cena: 8000 zlatých)",B_GetLearnCostTalent(other,NPC_TALENT_SMITH,WEAPON_ITAR_DJG_H_V1)),dia_jan_armorteach_itar_djg_h_v1);
 	};
 };
 

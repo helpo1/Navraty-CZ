@@ -61,7 +61,7 @@ instance DIA_Lares_DI_Training(C_Info)
 	condition = DIA_Lares_DI_Training_Condition;
 	information = DIA_Lares_DI_Training_Info;
 	permanent = TRUE;
-	description = "Nauč mě, to co umíš.";
+	description = "Nauč mě něco z tvých schopností.";
 };
 
 

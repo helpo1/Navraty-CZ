@@ -656,7 +656,7 @@ func int DIA_Mil_360_Miliz_SecondWarn_Condition()
 
 func void DIA_Mil_360_Miliz_SecondWarn_Info()
 {
-	AI_Output(self,other,"DIA_Mil_360_Miliz_SecondWarn_03_00");	//Před chvílí jsem tě varoval. Další kror - a poznáš moje ostří.
+	AI_Output(self,other,"DIA_Mil_360_Miliz_SecondWarn_03_00");	//Před chvílí jsem tě varoval. Další krok - a poznáš moje ostří.
 	other.aivar[AIV_LastDistToWP] = Npc_GetDistToWP(other,Mil_360_Checkpoint);
 	self.aivar[AIV_Guardpassage_Status] = GP_SecondWarnGiven;
 	AI_StopProcessInfos(self);

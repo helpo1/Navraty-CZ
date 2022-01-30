@@ -59,7 +59,7 @@ func void xor_8001_warriornature_found_info()
 	AI_Output(self,other,"XOR_8001_WarriorNature_Found_12");	//Je tu, věř mi. Lovíme ho více než tisíc let.
 	AI_Output(self,other,"XOR_8001_WarriorNature_Found_13");	//A konečně jsem ho zahnal do pasti. Ale Lucian je silný a jeden na něj nestačí.
 	AI_Output(self,other,"XOR_8001_WarriorNature_Found_14");	//Tak jsem požádal Strážce o pomoc a oni poslali tebe.
-	AI_Output(self,other,"XOR_8001_WarriorNature_Found_15");	//Mám jít do jeskyně s tevou.
+	AI_Output(self,other,"XOR_8001_WarriorNature_Found_15");	//Mám jít do jeskyně s tebou.
 	AI_Output(self,other,"XOR_8001_WarriorNature_Found_16");	//Připraven?
 	Info_ClearChoices(xor_8001_warriornature_found);
 	B_LogEntry(TOPIC_GUARDIANSTEST,"V údolí pod Xardasovou věží jsem narazil na jednoho válečníka. Shodli jsme se, že jsme tu z jednoho důvodu - zničit démona Luciana, který se schovává v jeskyni.");
@@ -165,7 +165,7 @@ func void xor_8001_warriornature_demon_dead_info()
 	AI_Output(self,other,"XOR_8001_WarriorNature_Demon_Dead_03");	//Byl silný, jsem rád, že už je po něm.
 	AI_Output(other,self,"XOR_8001_WarriorNature_Demon_Dead_04");	//Na tento boj nezapomenu!
 	AI_Output(self,other,"XOR_8001_WarriorNature_Demon_Dead_05");	//Já také ne, díky za pomoc.
-	B_LogEntry(TOPIC_GUARDIANSTEST,"Lucian je mrtev. Starověký démon se ukázal bt úctyhodným protivníkem a totálně mě vyčerpal. Nyní bych měl za Dagothem a dát mu démonovo srdce.");
+	B_LogEntry(TOPIC_GUARDIANSTEST,"Lucian je mrtev. Starověký démon se ukázal být úctyhodným protivníkem a totálně mě vyčerpal. Nyní bych měl jít za Dagothem a dát mu démonovo srdce.");
 	AI_StopProcessInfos(self);
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Npc_ExchangeRoutine(self,"Guard");

@@ -423,7 +423,7 @@ func void DIA_Addon_Franco_JemandAnderen_Info()
 		AI_Output(self,other,"DIA_Addon_Franco_JemandAnderen_08_02");	//Ne, už jsem poslal někoho jiného.
 	};
 	AI_Output(self,other,"DIA_Addon_Franco_JemandAnderen_08_03");	//A za další, oni v táboře nikoho nepotřebují.
-	AI_Output(self,other,"DIA_Addon_Franco_JemandAnderen_08_04");	//Ale já tě tady využiju dobře, (šklebí se) Teď, když už tu Logan není.
+	AI_Output(self,other,"DIA_Addon_Franco_JemandAnderen_08_04");	//Ale já tě tady využiju dobře. (šklebí se) Teď, když už tu Logan není.
 	B_LogEntry(Topic_Addon_Franco,"Franco mě nepustí do tábora. Myslím, že se s tímhle problémem vypořádám jinak...");
 };
 

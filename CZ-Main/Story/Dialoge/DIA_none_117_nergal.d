@@ -63,14 +63,14 @@ func void none_117_nergal_hallo_info()
 	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_17");	//Na vrchol temné věže Acheron!
 	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_18");	//Věž Acheron? A ta je kde?
 	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_19");	//Už si přesně nepamatuji... (nostalgicky) Je to už dávno...
-	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_20");	//Tím pádem mi tedy stačí najít tu věži a artefakt bude v mé moci.
+	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_20");	//Tím pádem mi tedy stačí najít tu věž a artefakt bude v mé moci.
 	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_21");	//Není to tak jednoduché, smrtelníku... Můj poklad střeží nemrtvé stvoření Temnoty, které nikdy neporazíš.
 	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_22");	//Určitě se o to už mnozí pokoušeli! A jsem si jistý, že jsou teď všichni mrtví.
 	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_23");	//Není žádný způsob, jak to stvoření zneškodnit?
 	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_24");	//Jistěže je! Ale neprozradím ti ho... Proto se na něj raději ani neptej!
 	AI_Output(other,self,"NONE_117_Nergal_Hallo_01_25");	//Fajn, díky za odpovědi.
 	AI_Output(self,other,"NONE_117_Nergal_Hallo_01_26");	//Nemáš za co! A teď se připrav na smrt... Teď tě zničím!
-	B_LogEntry(TOPIC_XARDASTASKSFOUR,"Duše nekromanta Nergala se mnou začala mluvit a než se mě pokusila zabít, souhlasila, že mi odpoví na otázku ohledně Nekronomikonu. Jak vysvitlo, tenhle artefakt je momentálně ukrytý na vrcholu temné věže Acheron. Nergal si už ale přesně nepamatuje, kde tahle věž stojí. Vstup navíc střeží nesmrtelná bytost stvořena samotnou Temnotou! Je sice nemožné jí zabít, ale jeden způsob, jak ji přemoci, přeci jen existuje. Na tuhle otázku mi ale samozřejmě Nergal neodpověděl. Teď je nejdůležitější najít věži a pak si rozmyslet, jak můžu přemoci tu příšeru.");
+	B_LogEntry(TOPIC_XARDASTASKSFOUR,"Duše nekromanta Nergala se mnou začala mluvit a než se mě pokusila zabít, souhlasila, že mi odpoví na otázku ohledně Nekronomikonu. Jak vysvitlo, tenhle artefakt je momentálně ukrytý na vrcholu temné věže Acheron. Nergal si už ale přesně nepamatuje, kde tahle věž stojí. Vstup navíc střeží nesmrtelná bytost stvořena samotnou Temnotou! Je sice nemožné jí zabít, ale jeden způsob, jak ji přemoci, přeci jen existuje. Na tuhle otázku mi ale samozřejmě Nergal neodpověděl. Teď je nejdůležitější najít věž a pak si rozmyslet, jak můžu přemoci tu příšeru.");
 	KNOWWHERENERCONOMICON = TRUE;
 	Info_ClearChoices(none_117_nergal_hallo);
 	Info_AddChoice(none_117_nergal_hallo,"Tak to tedy zkus.",none_117_nergal_hallo_ex1);

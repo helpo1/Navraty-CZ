@@ -56,7 +56,7 @@ func void dia_gomezworkersoul_2_hallo_info()
 	AI_Output(self,other,"DIA_GomezWorkerSoul_2_HALLO_01_10");	//HMMM... (mrtvolně) Tomu, díky kterému jsem prokletý...
 	AI_Output(self,other,"DIA_GomezWorkerSoul_2_HALLO_01_11");	//NEZDÁ SE TI, ŽE ŽÁDÁŠ PŘÍLÍŠ MNOHO, SMRTELNÍKU?
 	AI_Output(other,self,"DIA_GomezWorkerSoul_2_HALLO_01_12");	//Ani ne, když zvážím, že se jedná i o tvou záchranu.
-	AI_Output(other,self,"DIA_GomezWorkerSoul_2_HALLO_01_13");	//Nebo cheš být prokletý navěky?!
+	AI_Output(other,self,"DIA_GomezWorkerSoul_2_HALLO_01_13");	//Nebo chceš být prokletý navěky?!
 	AI_Output(self,other,"DIA_GomezWorkerSoul_2_HALLO_01_14");	//AARGH! NE, JEN TO NE!... TOHLE UTRPENÍ - JE NESNESITELNÉ...
 	Info_ClearChoices(dia_gomezworkersoul_2_hallo);
 	Info_AddChoice(dia_gomezworkersoul_2_hallo,"Potom stačí, když odpustíš Gomezovi a tvá muka budou u konce.",dia_gomezworkersoul_2_hallo_end);

@@ -164,7 +164,7 @@ func void dia_thorus_nw_escapefromtown_info()
 {
 	AI_Output(self,other,"DIA_Thorus_NW_EscapeFromTown_01_00");	//Tak to jsem fakt nevěděl, že tě zrovna tady potkám!
 	AI_Output(self,other,"DIA_Thorus_NW_EscapeFromTown_01_01");	//Myslel jsem, že jsi někde v prdeli.
-	AI_Output(other,self,"DIA_Thorus_NW_EscapeFromTown_01_02");	//Jsem překvapený stejně jako ty - jak ses dostal z mesta?!
+	AI_Output(other,self,"DIA_Thorus_NW_EscapeFromTown_01_02");	//Jsem překvapený stejně jako ty - jak ses dostal z města?!
 	AI_Output(self,other,"DIA_Thorus_NW_EscapeFromTown_01_03");	//To Cavalorn... (vážně) Kdyby mi nepomohl, bylo by po mě!
 	AI_Output(self,other,"DIA_Thorus_NW_EscapeFromTown_01_04");	//Jakmile všem došlo, že je vše ztraceno, ukázal mi tajnou cestu z města - utekli jsme po pobřeží.
 	AI_Output(self,other,"DIA_Thorus_NW_EscapeFromTown_01_05");	//A nyní jsme tady, na Akilově farmě. Skřeti sem ješte nedorazili.
@@ -226,7 +226,7 @@ func int dia_thorus_nw_oldguardgowar_condition()
 
 func void dia_thorus_nw_oldguardgowar_info()
 {
-	AI_Output(other,self,"DIA_Thorus_NW_OldGuardGoWar_01_00");	//Pojď se mnou, vezmu tě na Onarovu farmu
+	AI_Output(other,self,"DIA_Thorus_NW_OldGuardGoWar_01_00");	//Pojď se mnou, vezmu tě na Onarovu farmu.
 	AI_Output(self,other,"DIA_Thorus_NW_OldGuardGoWar_01_01");	//Doufám, že víš, co děláš!
 	THORUSJOINME = TRUE;
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
@@ -255,8 +255,8 @@ func int DIA_THORUS_NW_OLDGUARDGOWAR_DONE_condition()
 func void DIA_THORUS_NW_OLDGUARDGOWAR_DONE_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_THORUS_NW_OLDGUARDGOWAR_DONE_01_00");	//Jsem na místě!
-	AI_Output(self,other,"DIA_THORUS_NW_OLDGUARDGOWAR_DONE_01_01");	//Dobre... V jistých mezích, skřety nevidím.
+	AI_Output(other,self,"DIA_THORUS_NW_OLDGUARDGOWAR_DONE_01_00");	//Jsme tady!
+	AI_Output(self,other,"DIA_THORUS_NW_OLDGUARDGOWAR_DONE_01_01");	//Dobře... V jistých mezích, skřety nevidím.
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	THORUSINSAFE = TRUE;
 	AI_StopProcessInfos(self);

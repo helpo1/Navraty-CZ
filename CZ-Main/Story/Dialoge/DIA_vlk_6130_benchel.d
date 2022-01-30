@@ -52,12 +52,12 @@ func void dia_vlk_6130_benchel_missbrendi_info()
 	AI_Output(self,other,"DIA_VLK_6130_Benchel_MissBrendi_Info_01_13");	//Věř mi, nevěděl jsem o čase!... A když jsem šel, přepadli mě tyhle ďáblovy děvky.
 	AI_Output(self,other,"DIA_VLK_6130_Benchel_MissBrendi_Info_01_14");	//Chytli mě a přepadli.
 	AI_Output(other,self,"DIA_VLK_6130_Benchel_MissBrendi_Info_01_18");	//Co po tobě chtěli?
-	AI_Output(self,other,"DIA_VLK_6130_Benchel_MissBrendi_Info_01_24");	//A řekl jsem mu o své práci...
+	AI_Output(self,other,"DIA_VLK_6130_Benchel_MissBrendi_Info_01_24");	//Řekl jsem jim o své práci...
 	AI_Output(other,self,"DIA_VLK_6130_Benchel_MissBrendi_Info_01_25");	//Nech mě hádat - o černé brandy?!
 	AI_Output(self,other,"DIA_VLK_6130_Benchel_MissBrendi_Info_01_28");	//Jedna láhev je drahá jak můj týdenní plat!
 	AI_Output(self,other,"DIA_VLK_6130_Benchel_MissBrendi_Info_01_30");	//Kdysi cena tak vysoká nebyla, ale stoupla dvojnásobně, co lodě nejezdí na ostrov.
 	AI_Output(self,other,"DIA_VLK_6130_Benchel_MissBrendi_Info_01_31");	//Cena černý brandy ještě nikdy takhle vysoko nebyla!
-	B_LogEntry(TOPIC_BLACKBRENDI,"Pomohl jsem Benchelovy dohodnout se s bandity.");
+	B_LogEntry(TOPIC_BLACKBRENDI,"Pomohl jsem Benchelovi vypořádat se s bandity.");
 };
 
 
@@ -145,7 +145,7 @@ instance DIA_VLK_6130_BENCHEL_HALLO(C_Info)
 	condition = dia_vlk_6130_benchel_hallo_condition;
 	information = dia_vlk_6130_benchel_hallo_info;
 	permanent = TRUE;
-	description = "Jak to jde";
+	description = "Jak to jde?";
 };
 
 func int dia_vlk_6130_benchel_hallo_condition()
@@ -158,7 +158,7 @@ func int dia_vlk_6130_benchel_hallo_condition()
 
 func void dia_vlk_6130_benchel_hallo_info()
 {
-	AI_Output(other,self,"DIA_VLK_6130_Benchel_Hallo_01_00");	//Jak to jde
+	AI_Output(other,self,"DIA_VLK_6130_Benchel_Hallo_01_00");	//Jak to jde?
 	AI_Output(self,other,"DIA_VLK_6130_Benchel_Hallo_01_01");	//Nádherně, příteli.
 	AI_Output(self,other,"DIA_VLK_6130_Benchel_Hallo_01_02");	//Nikdy jsem se necítil tak lehce!
 };

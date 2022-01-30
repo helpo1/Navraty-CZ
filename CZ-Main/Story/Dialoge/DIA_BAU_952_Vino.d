@@ -576,7 +576,7 @@ func void dia_vino_killork_info()
 {
 	B_GivePlayerXP(150);
 	AI_Output(other,self,"DIA_Vino_KillOrk_01_01");	//Zabil jsem toho skřeta.
-	AI_Output(self,other,"DIA_Vino_KillOrk_01_02");	//(nevěřícně) Jseš si jistý?
+	AI_Output(self,other,"DIA_Vino_KillOrk_01_02");	//(nevěřícně) Jsi si jistý?
 	AI_Output(other,self,"DIA_Vino_KillOrk_01_03");	//Mám tady skřetí kořalku. Myslíš snad, že jsem si ji vycucal z prstu?
 	B_GiveInvItems(other,self,itfo_addon_shnaps_orks,1);
 	AI_Output(self,other,"DIA_Vino_KillOrk_01_04");	//Pak se tedy konečně zas v klidu vyspím.
@@ -584,7 +584,7 @@ func void dia_vino_killork_info()
 	AI_Output(self,other,"DIA_Vino_KillOrk_01_05");	//Díky, kámo.
 	AI_Output(other,self,"DIA_Vino_KillOrk_01_06");	//A co takhle nějakou odměnu?
 	AI_Output(self,other,"DIA_Vino_KillOrk_01_07");	//Za takovou práci si ji zasloužíš. Bohužel nemám žádné zlato, zato však jednu velmi vzácnou rostlinu.
-	AI_Output(self,other,"DIA_Vino_KillOrk_01_08");	//Platí.
+	AI_Output(self,other,"DIA_Vino_KillOrk_01_08");	//Tady máš.
 	B_GiveInvItems(self,other,ItPl_Temp_Herb,1);
 	AI_Output(other,self,"DIA_Vino_KillOrk_01_09");	//Díky.
 	MIS_KILL_VINO_ORK = LOG_SUCCESS;

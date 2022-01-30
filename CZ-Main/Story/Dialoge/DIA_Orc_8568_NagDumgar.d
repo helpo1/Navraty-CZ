@@ -45,7 +45,7 @@ func void DIA_Orc_8568_NagDumgar_Hello_info()
 	AI_Output(other,self,"DIA_Orc_8568_NagDumgar_Hello_Info_18_03");	//Chmmm. Tak ty musíš být sám strašlivý Nag-Dumgar?
 	AI_Output(self,other,"DIA_Orc_8568_NagDumgar_Hello_Info_18_04");	//(hrozivě) To já sám být!
 	AI_Output(other,self,"DIA_Orc_8568_NagDumgar_Hello_Info_18_05");	//No, pak je dobře, že jsem tě nemusel příliš dlouho hledat.
-	AI_Output(other,self,"DIA_Orc_8568_NagDumgar_Hello_Info_18_06");	//I když já už potkal démony střašnejší než jsi ty - samotného Spáče.
+	AI_Output(other,self,"DIA_Orc_8568_NagDumgar_Hello_Info_18_06");	//I když já už potkal démony strašnější než jsi ty - samotného Spáče.
 	AI_Output(self,other,"DIA_Orc_8568_NagDumgar_Hello_Info_18_07");	//Co?! Jak si dovoluješ zmiňovat jméno mého pána, ty všiváku!
 	AI_Output(other,self,"DIA_Orc_8568_NagDumgar_Hello_Info_18_08");	//Dávno už jsem se postaral o to aby tvůj pán poputoval tam kam patří. A ty za chvilku odpochoduješ hezky za ním.
 	AI_Output(self,other,"DIA_Orc_8568_NagDumgar_Hello_Info_18_10");	//Arrgh... Já tě zničím, ty mizernej červe!

@@ -78,7 +78,7 @@ func void DIA_Addon_Juan_HI_Info()
 	AI_Output(self,other,"DIA_Addon_Juan_HI_13_01");	//Co chceš? Chceš mi něco říct? Jestli ne tak běž pryč.
 	if(!Npc_IsDead(Freund))
 	{
-		AI_Output(self,other,"DIA_Addon_Juan_HI_13_02");	//Jinak muj přítel tě naseká na kousky. Je to jasný?
+		AI_Output(self,other,"DIA_Addon_Juan_HI_13_02");	//Jinak můj přítel tě naseká na kousky. Je to jasný?
 		B_StartOtherRoutine(Freund,"STAND");
 	};
 };
@@ -106,7 +106,7 @@ func int DIA_Addon_Juan_Losung_Condition()
 
 func void DIA_Addon_Juan_Losung_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Juan_Losung_15_00");	//Mluv... Nabizíš prý zajimavé zboží...
+	AI_Output(other,self,"DIA_Addon_Juan_Losung_15_00");	//Mluv... Nabízíš prý zajimavé zboží...
 	AI_Output(self,other,"DIA_Addon_Juan_Losung_13_01");	//A co? Esteban mě chce zabit. Schovávám se tu celý dny v této mizerné díře...
 	AI_Output(self,other,"DIA_Addon_Juan_Losung_13_02");	//... A jen tak si někoho pošle vyzvednout své věci? Nejsem sklad!
 	AI_Output(other,self,"DIA_Addon_Juan_Losung_15_03");	//No a? To není můj problém.
@@ -137,7 +137,7 @@ func int DIA_Addon_Juan_AufsMaul_Condition()
 func void DIA_Addon_Juan_AufsMaul_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Juan_AufsMaul_15_00");	//Nepřišel jsem kvůli Estebanovi!
-	AI_Output(self,other,"DIA_Addon_Juan_AufsMaul_13_01");	//Ano? No tak počkej...! Dostaneš pořádnej výprask!
+	AI_Output(self,other,"DIA_Addon_Juan_AufsMaul_13_01");	//Ano? No tak počkej... Dostaneš pořádnej výprask!
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);
 };

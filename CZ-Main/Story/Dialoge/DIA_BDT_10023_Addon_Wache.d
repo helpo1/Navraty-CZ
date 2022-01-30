@@ -155,7 +155,7 @@ func void DIA_Addon_10023_Wache_go_Thorus()
 	AI_Output(other,self,"DIA_Addon_10023_Wache_go_Thorus_15_00");	//Mluvil jsem s Thorusem. Říkal, že otroci mají být propuštěni.
 	AI_Output(self,other,"DIA_Addon_10023_Wache_go_Thorus_11_01");	//Dobrá, když to říkal Thorus. Ale nechápu, jak se mohl takhle rozhodnout.
 	AI_Output(other,self,"DIA_Addon_10023_Wache_go_Thorus_15_02");	//... ale za to abys chápal nejsi placen.
-	AI_Output(self,other,"DIA_Addon_10023_Wache_go_Thorus_11_03");	//Tak jo, tak jo. jak vidím, už tu nejsem potřeba, tak se jdu trochu nadlábnout.
+	AI_Output(self,other,"DIA_Addon_10023_Wache_go_Thorus_11_03");	//Tak jo, tak jo. Jak vidím, už tu nejsem potřeba, tak se jdu trochu nadlábnout.
 	Ready_Togo = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"SOUP");

@@ -105,8 +105,8 @@ func int DIA_Addon_10008_Bandit_soup_Condition()
 func void DIA_Addon_10008_Bandit_soup_Info()
 {
 	AI_Output(other,self,"DIA_Addon_10008_Bandit_soup_15_00");	//Jsi kopáč?
-	AI_Output(self,other,"DIA_Addon_10008_Bandit_soup_01_01");	//Proč si to myslíš? Kvuli těm kalhotům? Ne nejsem, nosím je jen proto, že jsou pohodlné.
-	AI_Output(self,other,"DIA_Addon_10008_Bandit_soup_01_02");	//Jediný co tu dělám je že vařím guláš. Tady, zkus ho, dá ti sílu.
+	AI_Output(self,other,"DIA_Addon_10008_Bandit_soup_01_01");	//Proč si to myslíš? Kvůli těm kalhotům? Ne nejsem, nosím je jen proto, že jsou pohodlné.
+	AI_Output(self,other,"DIA_Addon_10008_Bandit_soup_01_02");	//Jediný co tu dělám je, že vařím guláš. Tady, zkus ho, dá ti sílu.
 	B_GiveInvItems(self,other,ItFo_Addon_Meatsoup,1);
 	AI_Output(self,other,"DIA_Addon_10008_Bandit_soup_01_03");	//Síla je tu důležitá... Je tu tolik nebezpečí.
 	AI_Output(self,other,"DIA_Addon_10008_Bandit_soup_01_04");	//Můžu ti pomoct stát se silnějším.

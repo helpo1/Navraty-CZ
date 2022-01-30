@@ -132,7 +132,7 @@ func void DIA_Orlan_WERBISTDU_Info()
 	AI_Output(self,other,"DIA_Orlan_WERBISTDU_05_01");	//Jsem Orlan, majitel tohohle skromného hostince.
 	AI_Output(self,other,"DIA_Orlan_WERBISTDU_05_02");	//Co sháníš, cizinče? Možná pořádný meč, nebo snad kus dobré zbroje?
 	AI_Output(self,other,"DIA_Orlan_WERBISTDU_05_03");	//Doušek něčeho dobrého z venkovských palíren, nebo jen nějakou informaci?
-	AI_Output(self,other,"DIA_Orlan_WERBISTDU_05_04");	//Můžu ti to nabídnou všechno a dokonce ještě víc, pokud jsou tvé zlaťáky pravé.
+	AI_Output(self,other,"DIA_Orlan_WERBISTDU_05_04");	//Můžu ti to nabídnout všechno a dokonce ještě víc, pokud jsou tvé zlaťáky pravé.
 };
 
 
@@ -220,7 +220,7 @@ instance DIA_Addon_Orlan_Teleportstein(C_Info)
 	nr = 2;
 	condition = DIA_Addon_Orlan_Teleportstein_Condition;
 	information = DIA_Addon_Orlan_Teleportstein_Info;
-	description = "Už jsi někdy použil teleportarční kámen?";
+	description = "Už jsi někdy použil teleportační kámen?";
 };
 
 
@@ -234,18 +234,18 @@ func int DIA_Addon_Orlan_Teleportstein_Condition()
 
 func void DIA_Addon_Orlan_Teleportstein_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Orlan_Teleportstein_15_00");	//Už jsi někdy použil teleportarční kámen?
-	AI_Output(self,other,"DIA_Addon_Orlan_Teleportstein_05_01");	//Zbláznil ses? Dokud mi mágové Vody neřeknou, že je to bezpečné, nepřiblížím se k němu na 10 kroků.
+	AI_Output(other,self,"DIA_Addon_Orlan_Teleportstein_15_00");	//Už jsi někdy použil teleportační kámen?
+	AI_Output(self,other,"DIA_Addon_Orlan_Teleportstein_05_01");	//Zbláznil ses? Dokud mi mágové Vody neřeknou, že je to bezpečné, nepřiblížím se k němu na deset kroků.
 	AI_Output(self,other,"DIA_Addon_Orlan_Teleportstein_05_02");	//Pověřili mě, abych schoval jeden z těch teleportačních kámenů a to je přesně to, co chci udělat.
 	B_GivePlayerXP(XP_Ambient);
 	Info_ClearChoices(DIA_Addon_Orlan_Teleportstein);
-	Info_AddChoice(DIA_Addon_Orlan_Teleportstein,"Můžu se na ten teleportarční kámen podívat?",DIA_Addon_Orlan_Teleportstein_sehen);
+	Info_AddChoice(DIA_Addon_Orlan_Teleportstein,"Můžu se na ten teleportační kámen podívat?",DIA_Addon_Orlan_Teleportstein_sehen);
 	Info_AddChoice(DIA_Addon_Orlan_Teleportstein,"Kde je přesně ten teleportační kámen?",DIA_Addon_Orlan_Teleportstein_wo);
 };
 
 func void DIA_Addon_Orlan_Teleportstein_sehen()
 {
-	AI_Output(other,self,"DIA_Addon_Orlan_Teleportstein_sehen_15_00");	//Můžu se na ten teleportarční kámen podívat?
+	AI_Output(other,self,"DIA_Addon_Orlan_Teleportstein_sehen_15_00");	//Můžu se na ten teleportační kámen podívat?
 	AI_Output(self,other,"DIA_Addon_Orlan_Teleportstein_sehen_05_01");	//Pro mě za mě. Tady je klíč. Zatarasil jsem vchod.
 	CreateInvItems(self,itke_orlan_teleportstation,1);
 	B_GiveInvItems(self,other,itke_orlan_teleportstation,1);
@@ -257,7 +257,7 @@ func void DIA_Addon_Orlan_Teleportstein_sehen()
 func void DIA_Addon_Orlan_Teleportstein_wo()
 {
 	AI_Output(other,self,"DIA_Addon_Orlan_Teleportstein_wo_15_00");	//Kde je přesně ten teleportační kámen?
-	AI_Output(self,other,"DIA_Addon_Orlan_Teleportstein_wo_05_01");	//Kousek na jih od mojí hostince. Tam ho našli mágové Vody.
+	AI_Output(self,other,"DIA_Addon_Orlan_Teleportstein_wo_05_01");	//Kousek na jih od mého hostince. Tam ho našli mágové Vody.
 };
 
 
@@ -322,7 +322,7 @@ func void DIA_Addon_Orlan_WhenRangerMeeting_Today()
 	AI_Output(self,other,"DIA_Addon_Orlan_WhenRangerMeeting_Today_05_01");	//Pokud si to dobře pamatuju tak ano.
 	AI_Output(self,other,"DIA_Addon_Orlan_WhenRangerMeeting_Today_05_02");	//Doufám, že nepřijdou pozdě.
 	Info_ClearChoices(DIA_Addon_Orlan_WhenRangerMeeting);
-	Info_AddChoice(DIA_Addon_Orlan_WhenRangerMeeting,"(pokračovat)",DIA_Addon_Orlan_WhenRangerMeeting_Los);
+	Info_AddChoice(DIA_Addon_Orlan_WhenRangerMeeting,Dialog_Ende,DIA_Addon_Orlan_WhenRangerMeeting_Los);
 };
 
 func void DIA_Addon_Orlan_WhenRangerMeeting_theyCome()
@@ -583,7 +583,7 @@ func void DIA_Orlan_MieteFaellig_Info()
 	{
 		AI_Output(self,other,"DIA_Orlan_MieteFaellig_05_01");	//Kdy konečně dostanu nájem?
 		Info_ClearChoices(DIA_Orlan_MieteFaellig);
-		Info_AddChoice(DIA_Orlan_MieteFaellig,"Zapomeň na to, už ti nedám ani zlámanou grešli.",DIA_Orlan_MieteFaellig_nein);
+		Info_AddChoice(DIA_Orlan_MieteFaellig,"Zapomeň na to. Už ti nezaplatím.",DIA_Orlan_MieteFaellig_nein);
 		Info_AddChoice(DIA_Orlan_MieteFaellig,"Tady je tvých 50 zlatých.",DIA_Orlan_MieteFaellig_ja);
 	};
 };

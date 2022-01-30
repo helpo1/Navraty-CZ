@@ -29,7 +29,7 @@ instance DIA_ORC_8563_URGROM_HELLO_WAIT(C_Info)
 	information = dia_orc_8563_urgrom_hello_wait_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Vypadá to, že tě znám duchu!";
+	description = "Vypadá to, že tě znám, duchu!";
 };
 
 
@@ -44,7 +44,7 @@ func int dia_orc_8563_urgrom_hello_wait_condition()
 func void dia_orc_8563_urgrom_hello_wait_info()
 {
 	AI_Output(other,self,"DIA_Orc_8563_UrGrom_Hello_Wait_Info_01_01");	//Vypadá to, že tě znám, duchu! Tvá tvář... Vzpomínám si.
-	AI_Output(other,self,"DIA_Orc_8563_UrGrom_Hello_Wait_Info_01_02");	//Ty jseš... pravděpodobně... ehm... samozřejmě! Ur-Grom!
+	AI_Output(other,self,"DIA_Orc_8563_UrGrom_Hello_Wait_Info_01_02");	//Ty jsi... pravděpodobně... ehm... samozřejmě! Ur-Grom!
 	AI_Output(self,other,"DIA_Orc_8563_UrGrom_Hello_Wait_Info_01_03");	//... Člověk, který mluví o Ur-Gromovi? Jak zná moje jméno?
 	AI_Output(other,self,"DIA_Orc_8563_UrGrom_Hello_Wait_Info_01_04");	//Tvůj bratr Ur-Thrall mi o tobě vyprávěl.
 	AI_Output(self,other,"DIA_Orc_8563_UrGrom_Hello_Wait_Info_01_05");	//Bratr Ur-Grom... bratr... bratr... Ur-Thrall... (přemýšlí)
@@ -108,7 +108,7 @@ func void dia_orc_8563_urgrom_hello_help_info()
 	AI_Output(self,other,"DIA_Orc_8563_UrGrom_Hello_Help_Info_01_14");	//DVARTAZDAKH!
 	AI_Output(other,self,"DIA_Orc_8563_UrGrom_Hello_Help_Info_01_15");	//... přesně, to je ono.
 	AI_Output(self,other,"DIA_Orc_8563_UrGrom_Hello_Help_Info_01_16");	//Pak jdi člověče, Ur-Grom ho čeká.
-	B_LogEntry(TOPIC_URNAZULRAGE,"Ur-Grom mi řekl, že někde v údolí je skryta dávná zbraň duchů, zbraň se nazývá DVARTAZDAKH. Ta zbraň, podle Ur-Groma může způsobit Azgalorovy vážné zranění.");
+	B_LogEntry(TOPIC_URNAZULRAGE,"Ur-Grom mi řekl, že někde v údolí je skryta dávná zbraň duchů, zbraň se nazývá DVARTAZDAKH. Ta zbraň, podle Ur-Groma může způsobit Azgalorovi vážné zranění.");
 	MEETURGROMNEXT = TRUE;
 };
 
@@ -120,7 +120,7 @@ instance DIA_ORC_8563_URGROM_HELLO_FIND(C_Info)
 	information = dia_orc_8563_urgrom_hello_find_info;
 	important = FALSE;
 	permanent = TRUE;
-	description = "Není to náhodou zbraň?";
+	description = "A není to náhodou zbraň, o které jsi mluvil?";
 };
 
 
@@ -167,7 +167,7 @@ func int dia_orc_8563_urgrom_azgolor_wait_condition()
 func void dia_orc_8563_urgrom_azgolor_wait_info()
 {
 	AI_Output(self,other,"DIA_Orc_8563_UrGrom_Azgolor_Wait_01_01");	//Démon už tady čeká na toho člověka.
-	AI_Output(self,other,"DIA_Orc_8563_UrGrom_Azgolor_Wait_01_02");	//Člověk bude pokračuvat a setká se s démonem...
+	AI_Output(self,other,"DIA_Orc_8563_UrGrom_Azgolor_Wait_01_02");	//Člověk bude pokračovat a setká se s démonem...
 	AI_Output(self,other,"DIA_Orc_8563_UrGrom_Azgolor_Wait_01_03");	//Ur-Grom si myslí, že člověk může zabít démona.
 	AI_Output(self,other,"DIA_Orc_8563_UrGrom_Azgolor_Wait_01_04");	//Člověk nesmí zapomenout nést DVARTAZDAKH!
 	AI_Output(other,self,"DIA_Orc_8563_UrGrom_Azgolor_Wait_01_05");	//Samozřejmě.

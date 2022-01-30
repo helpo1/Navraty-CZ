@@ -110,7 +110,7 @@ func void DIA_Addon_Bill_Planks_Info()
 	AI_Output(other,self,"DIA_Addon_Bill_Planks_15_00");	//Co děláš s těmi deskami?
 	AI_Output(self,other,"DIA_Addon_Bill_Planks_03_01");	//Jsou na palisádu.
 	AI_Output(self,other,"DIA_Addon_Bill_Planks_03_02");	//Greg si myslí, že je dobrý nápad opevnit tábor.
-	AI_Output(self,other,"DIA_Addon_Bill_Planks_03_03");	//Ale když se mě ptáš, stejně si myslím že je to zbytečné.
+	AI_Output(self,other,"DIA_Addon_Bill_Planks_03_03");	//Ale když se mě ptáš, stejně si myslím, že je to zbytečné.
 	AI_Output(self,other,"DIA_Addon_Bill_Planks_03_04");	//Jestli na nás chtějí banditi zaútočit, tyto směšné palisády je jistě nezastaví.
 	AI_Output(self,other,"DIA_Addon_Bill_Planks_03_05");	//Nikdy jsme je neměli tolerovat v našem údolí.
 	AI_Output(self,other,"DIA_Addon_Bill_Planks_03_06");	//Kdybych to věděl dřív, zůstal bych v Khorinisu.
@@ -248,7 +248,7 @@ func void DIA_Addon_Bill_FoundFriends_Info()
 	MIS_Addon_Bill_SearchAngusMurder = LOG_Running;
 	Log_CreateTopic(TOPIC_Addon_KillJuan,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_KillJuan,LOG_Running);
-	B_LogEntry(TOPIC_Addon_KillJuan,"Bill byl úplně rozrušen, když jsem mu pověděl o smrti Angude a Hanka. Chce znát jména vrahů.");
+	B_LogEntry(TOPIC_Addon_KillJuan,"Bill byl úplně rozrušen, když jsem mu řekl o smrti Anguse a Hanka. Chce znát jména vrahů.");
 };
 
 
@@ -335,7 +335,7 @@ func void DIA_Addon_Bill_Khorinis_Info()
 	AI_Output(other,self,"DIA_Addon_Bill_Khorinis_15_00");	//Bývávals v Khorinisu?
 	AI_Output(self,other,"DIA_Addon_Bill_Khorinis_03_01");	//Ano, býval jsem malým kapesním zlodějem a podvodníkem.
 	AI_Output(self,other,"DIA_Addon_Bill_Khorinis_03_02");	//Ale když přijíždělo méně a méně lodí, obchod trpěl.
-	AI_Output(self,other,"DIA_Addon_Bill_Khorinis_03_03");	//A nemohl jsem vědět, jak domobrana prahne po pěnězích.
+	AI_Output(self,other,"DIA_Addon_Bill_Khorinis_03_03");	//A nemohl jsem vědět, jak domobrana prahne po penězích.
 	AI_Output(self,other,"DIA_Addon_Bill_Khorinis_03_04");	//Tak jsem se přidal k Gregovi. A nyní jsem zde.
 	if(GregIsBack == FALSE)
 	{
@@ -400,7 +400,7 @@ func void DIA_Addon_Bill_LearnTalent_Info()
 	{
 		if(B_TeachThiefTalent(self,other,NPC_TALENT_PICKPOCKET))
 		{
-			AI_Output(self,other,"DIA_Addon_Bill_LearnTalent_03_01");	//Když budeš chtít někoho okrást, ujisti se, že jsi v bezpečí a že tě nikdo nesleduje.
+			AI_Output(self,other,"DIA_Addon_Bill_LearnTalent_03_01");	//Když budeš chtít někoho okrást, ujisti se, že jsi v bezpečí, a že tě nikdo nesleduje.
 			AI_Output(self,other,"DIA_Addon_Bill_LearnTalent_03_02");	//Přijdeš k nim a normálně s nimi promluvíš.
 			AI_Output(self,other,"DIA_Addon_Bill_LearnTalent_03_03");	//Když něco bereš, ujisti si, že si oběť ničeho nevšimla.
 			AI_Output(other,self,"DIA_Addon_Bill_LearnTalent_15_05");	//Něco dalšího?

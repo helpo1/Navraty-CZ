@@ -74,7 +74,7 @@ func void B_SCTellsAngarAboutMadPsi2()
 func void b_sctellsangaraboutmadpsi3()
 {
 	AI_Output(other,self,"DIA_Angar_B_SCTellsAngarAboutMadPsi3_15_00");	//No, ale ne všechny to postihlo!
-	AI_Output(other,self,"DIA_Angar_B_SCTellsAngarAboutMadPsi3_15_01");	//Jsou tu také ti, do nevstoupili k temným silám.
+	AI_Output(other,self,"DIA_Angar_B_SCTellsAngarAboutMadPsi3_15_01");	//Jsou tu také ti, co nevstoupili k temným silám.
 
 	if(HEROKNOWFORESTBASE == TRUE)
 	{
@@ -205,7 +205,7 @@ func void DIA_Angar_WIEKOMMSTDUHIERHER_nun()
 		if(MIS_KORANGAR == LOG_SUCCESS)
 		{
 			AI_Output(self,other,"DIA_Angar_WIEKOMMSTDUHIERHER_nun_04_05");	//Pak... Možná bych se mohl vrátit do Bratrstva?
-			AI_Output(self,other,"DIA_Angar_WIEKOMMSTDUHIERHER_nun_04_06");	//Průběhem let v kolonii to byl můj jediný domov domov - a já ho měl rád...
+			AI_Output(self,other,"DIA_Angar_WIEKOMMSTDUHIERHER_nun_04_06");	//Průběhem let v kolonii to byl můj jediný domov - a já ho měl rád...
 			AI_Output(self,other,"DIA_Angar_WIEKOMMSTDUHIERHER_nun_04_07");	//Nikdy bych ho za nic nevyměnil.
 		}
 		else
@@ -295,7 +295,7 @@ func void DIA_Angar_FOUNDAMULETT_nun()
 	AI_Output(other,self,"DIA_Angar_FOUNDAMULETT_nun_15_00");	//Co budeš dělat teď?
 	if(MIS_KORANGAR == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Angar_FOUNDAMULETT_nun_04_03");	//Prostě jsem se rozhodl že se vrátím ke svým bratrům. Neopustím je v tak těžkých časech.
+		AI_Output(self,other,"DIA_Angar_FOUNDAMULETT_nun_04_03");	//Prostě jsem se rozhodl, že se vrátím ke svým bratrům. Neopustím je v tak těžkých časech.
 		AI_Output(self,other,"DIA_Angar_FOUNDAMULETT_nun_04_04");	//Možná se ještě někdy setkáme. Sbohem.
 		ANGARISBACK = TRUE;
 		AI_StopProcessInfos(self);
