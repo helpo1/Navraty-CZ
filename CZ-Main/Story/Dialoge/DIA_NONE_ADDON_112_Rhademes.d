@@ -116,7 +116,7 @@ func int DIA_Addon_Rhademes_Hebel_Condition()
 func void DIA_Addon_Rhademes_Hebel_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Rhademes_Hebel_15_00");	//Ne všechny páky spouštějí past, že?
-	AI_Output(self,other,"DIA_Addon_Rhademes_Hebel_03_01");	//Ano!
+	AI_Output(self,other,"DIA_Addon_Rhademes_Hebel_03_01");	//Ano, všechny!
 };
 
 

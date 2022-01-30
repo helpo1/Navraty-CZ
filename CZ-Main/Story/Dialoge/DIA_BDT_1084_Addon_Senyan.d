@@ -62,7 +62,7 @@ func void DIA_Addon_Senyan_PICKPOCKET_BACK()
 func void B_Senyan_Attack()
 {
 	AI_Output(self,other,"DIA_Addon_Senyan_Attack_12_00");	//(podceňuje) Jak mi můžeš být nápomocen, pane k ničemu?
-	AI_Output(self,other,"DIA_Addon_Senyan_Attack_12_01");	//(volá) Hej lidi, podívejte, kdo to je!
+	AI_Output(self,other,"DIA_Addon_Senyan_Attack_12_01");	//(volá) Hej, lidi, podívejte, kohopak to tu máme!
 	Senyan_Called = TRUE;
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_NONE,1);

@@ -1000,7 +1000,7 @@ func void DIA_Pyrokar_BACKFROMOW_Info()
 	AI_Output(other,self,"DIA_Pyrokar_BACKFROMOW_15_04");	//Doly, ve kterých se ještě může těžit, nemohou dostát královým požadavkům.
 	AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_05");	//Dny se stále více zatemňují a svit slunce slábne.
 	AI_Output(other,self,"DIA_Pyrokar_BACKFROMOW_15_06");	//Napadli mě nějací mágové v černých kápích.
-	AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_07");	//Ano, to jsou Pátrači. Beliarovy nohsledi z podsvětí. Pokusí se ovládnout tvou mysl, dávej si na ně pozor.
+	AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_07");	//Ano, to jsou Pátrači. Beliarovi nohsledi z podsvětí. Pokusí se ovládnout tvou mysl, dávej si na ně pozor.
 	AI_Output(self,other,"DIA_Pyrokar_BACKFROMOW_11_08");	//Jakmile tě ovládnou, už to nebudeš nadále ty. Poté už ti pomůžeme jen my, zde v klášteře.
 
 	if(hero.guild == GIL_KDF)
@@ -3767,7 +3767,7 @@ instance DIA_PYROKAR_PiratePray_Gold(C_Info)
 	condition = dia_pyrokar_PiratePray_Gold_condition;
 	information = dia_pyrokar_PiratePray_Gold_info;
 	permanent = TRUE;
-	description = "Tak pomodlete se za ně. Dal jsem dar.";
+	description = "Tak se za ně pomodlete. Přináším dar.";
 };
 
 func int dia_pyrokar_PiratePray_Gold_condition()
@@ -3780,7 +3780,7 @@ func int dia_pyrokar_PiratePray_Gold_condition()
 
 func void dia_pyrokar_PiratePray_Gold_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PiratePray_Gold_01_00");		//Tak, pomodlete se za ně. Dal jsem dar.
+	AI_Output(other,self,"DIA_Pyrokar_PiratePray_Gold_01_00");		//Tak se za ně pomodlete. Přináším dar.
 	AI_Output(self,other,"DIA_Pyrokar_PiratePray_Gold_01_01");		//A kolik zlata můžeš přispět na tuto dobrou věc?
 	Info_ClearChoices(DIA_Pyrokar_PiratePray_Gold);
 	Info_AddChoice(DIA_Pyrokar_PiratePray_Gold,"Budu o tom přemýšlet.",DIA_Pyrokar_PiratePray_Gold_Back);

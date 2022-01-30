@@ -80,7 +80,7 @@ func void dia_rudar_hallo_info()
 	B_GivePlayerXP(50);
 	AI_Output(other,self,"DIA_Rudar_Hallo_01_00");	//Líbí se ti zde?
 	AI_Output(self,other,"DIA_Rudar_Hallo_01_01");	//Jak vidíš, tak ano. Dá se jen zřídka vybrat si kam nás cesty zavedou. A co tu děláš ty?
-	AI_Output(other,self,"DIA_Rudar_Hallo_01_02");	//Řekněme-li, že tu mám problém s jedním člověkem.
+	AI_Output(other,self,"DIA_Rudar_Hallo_01_02");	//Řekněme, že mám problém s jedním člověkem.
 	AI_Output(self,other,"DIA_Rudar_Hallo_01_03");	//A co je to za problém?
 	AI_Output(other,self,"DIA_Rudar_Hallo_01_04");	//Můj problém jsi ty!
 	AI_Output(self,other,"DIA_Rudar_Hallo_01_05");	//(udiveně) CO?

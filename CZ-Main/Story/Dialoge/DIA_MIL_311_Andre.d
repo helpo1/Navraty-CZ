@@ -2612,7 +2612,7 @@ func void dia_andre_sarahtoguild_info()
 	{
 		AI_Output(self,other,"DIA_Andre_SarahToGuild_01_18");	//Nech mě přemýšlet... (zamyšleně) Když vezmu v úvahu závažnost jejího zločinu...
 		AI_Output(self,other,"DIA_Andre_SarahToGuild_01_19");	//... a fakt, že se za ní přimlouvá žoldák... (šklebí se)
-		AI_Output(self,other,"DIA_Andre_SarahToGuild_01_20");	//Myslím, že tisíc pět set zlatých bude za stažení obvinění stačit!
+		AI_Output(self,other,"DIA_Andre_SarahToGuild_01_20");	//Myslím, že patnáct set zlatých bude za stažení obvinění stačit!
 		AI_Output(other,self,"DIA_Andre_SarahToGuild_01_21");	//Tedy!
 		B_LogEntry(TOPIC_SARAHTOGUILD,"Lord Andre ustanovil pokutu pro obchodnici Sarah na sumu 1 500 zlatých.");
 		SARASHULDEN = 1500;

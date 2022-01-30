@@ -1040,7 +1040,7 @@ instance DIA_SEK_4567_Unicorn_HeyYou(C_Info)
    condition = DIA_SEK_4567_Unicorn_HeyYou_condition;
    information = DIA_SEK_4567_Unicorn_HeyYou_info;
    permanent = FALSE;
-   description = "Hej, ty nejsi ten týpek...";
+   description = "Hej, nejsi ty ten týpek...";
 };
 
 func int DIA_SEK_4567_Unicorn_HeyYou_condition()
@@ -1054,7 +1054,7 @@ func int DIA_SEK_4567_Unicorn_HeyYou_condition()
 func void DIA_SEK_4567_Unicorn_HeyYou_info()
 {
    B_GivePlayerXP(200);
-   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_00");   //Hej, ty nejsi ten týpek, co nabízel trávu v Novém táboře?
+   AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_00");   //Hej, nejsi ty ten týpek, co nabízel trávu v Novém táboře?
    AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_01");   //No, ano... (pokašlává) To bylo něco! Nicméně, dlouho jsem tam nepobyl.
    AI_Output(other,self,"DIA_SEK_4567_Unicorn_HeyYou_01_02");   //Proč?
    AI_Output(self,other,"DIA_SEK_4567_Unicorn_HeyYou_01_03");   //No... (provinile) Vykouřil jsem všechnu trávu, co jsem dostal k prodeji.
@@ -1464,7 +1464,7 @@ func void DIA_KDF_4569_AlexOne_WhoYou_info()
 {
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_00");   //Jsi mág Ohně?
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_01");   //Jak vidíš. A co tě na tom překvapuje?
-   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_02");   //Nevzpomínám si, že bych tě znal z khorinisského kláštera.
+   AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_02");   //Nevzpomínám si, že bych tě znal z khoriniského kláštera.
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_03");   //Vstoupil jsem do kruhu Ohně zde v kolonii. A o klášteru já nic nevím.
    AI_Output(other,self,"DIA_KDF_4569_AlexOne_WhoYou_01_04");   //Zajímavé! A kdo tě přijal do kruhu Ohně?
    AI_Output(self,other,"DIA_KDF_4569_AlexOne_WhoYou_01_05");   //Sám mistr Corristo! (vážně) A z jeho vůle jsem nyní zde.

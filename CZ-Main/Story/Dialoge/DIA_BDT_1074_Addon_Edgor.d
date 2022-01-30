@@ -162,7 +162,7 @@ func void DIA_Addon_Edgor_MIS2_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Edgor_MIS2_15_00");	//Franco se mě zaptal na kamenné tabulky. Našel jsi je?
 	AI_Output(self,other,"DIA_Addon_Edgor_MIS2_06_01");	//Chlape, ani jsem je nehledal. Všechno, co vím, je, že to má být ve staré budově v pravo v bažině.
-	AI_Output(self,other,"DIA_Addon_Edgor_MIS2_06_02");	//A víš, můj vnitřní hlas mi říká:'Edgore zůstaň hezky daleko od těch starých budov umístěných hluboko v bažině.'
+	AI_Output(self,other,"DIA_Addon_Edgor_MIS2_06_02");	//A víš, můj vnitřní hlas mi říká: 'Edgore, zůstaň hezky daleko od těch starých budov umístěných hluboko v bažině.'
 	AI_Output(self,other,"DIA_Addon_Edgor_MIS2_06_03");	//Jako bych měl riskovat svůj zadek, kvůli tomu arogantnímu idiotovi Francovi!
 	B_LogEntry(Topic_Addon_Stoneplate,"Edgor nikdy nepůjde hledat kamenné tabulky. Myslí, že jsou někde ve staré budově v bažině.");
 };

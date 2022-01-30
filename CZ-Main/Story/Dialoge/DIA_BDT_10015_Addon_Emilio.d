@@ -215,7 +215,7 @@ func void DIA_Addon_Emilio_Senyan_Info()
 {
 	if(Senyan_Called == TRUE)
 	{
-		AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Senyan_10_00");	//(tázavě) Řekni mi PROČ Senyan volal: 'Podívejme se kohopak to tu máme?'
+		AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Senyan_10_00");	//(tázavě) Řekni mi, PROČ Senyan volal: 'Podívejte, kohopak to tu máme!'?
 		AI_Output(other,self,"DIA_Addon_BDT_10015_Emilio_Senyan_15_01");	//(drsně) Nevyřízené účty.
 	}
 	else
@@ -224,7 +224,7 @@ func void DIA_Addon_Emilio_Senyan_Info()
 	};
 	AI_Output(other,self,"DIA_Addon_BDT_10015_Emilio_Senyan_15_03");	//A máš s tím nějaký problém?
 	AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Senyan_10_04");	//(uspěchaně) Ne, chlape, žádný problém s tím nemám.
-	AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Senyan_10_05");	//Na druhou stranu. (sarkasticky) Ten bastard pracoval pro Estebana.
+	AI_Output(self,other,"DIA_Addon_BDT_10015_Emilio_Senyan_10_05");	//Právě naopak. (posměšně) Ten bastard pracoval pro Estebana.
 	Senyan_CONTRA = LOG_SUCCESS;
 	B_LogEntry(Topic_Addon_Esteban,"Emilio není na Estebanově straně.");
 };

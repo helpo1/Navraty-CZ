@@ -67,7 +67,7 @@ func void DIA_DMT_2200_DarkSpeaker_Hello_info()
 
 	//if(DarkPathStartEnd == FALSE)
 	//{
-	//	Info_AddChoice(DIA_DMT_2200_DarkSpeaker_Hello,"Zní to skvěle!",DIA_DMT_2200_DarkSpeaker_Hello_Yes);
+	//	Info_AddChoice(DIA_DMT_2200_DarkSpeaker_Hello,"Zvuchit zamanchivo!",DIA_DMT_2200_DarkSpeaker_Hello_Yes);
 	//};
 
 	Info_AddChoice(DIA_DMT_2200_DarkSpeaker_Hello,"Řekl bych, že je na čase abys už zemřel!.",DIA_DMT_2200_DarkSpeaker_Hello_No);

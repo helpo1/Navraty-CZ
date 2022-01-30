@@ -623,7 +623,7 @@ func void dia_babo_kdf_plants_info()
 
 func void dia_babo_kdf_plants_takehalf()
 {
-	AI_Output(other,self,"DIA_Babo_KDF_Plants_15_02");	//Nech si pět těch kopřiv a jdi za Neorasem.
+	AI_Output(other,self,"DIA_Babo_KDF_Plants_15_02");	//Nech si pět těch kopřiv a jdi za mistrem Neorasem procvičovat své alchymistické dovednosti.
 	AI_Output(self,other,"DIA_Babo_KDF_Plants_03_02");	//Ano, mistře.
 	B_GivePlayerXP(XP_Ambient * 2);
 	Npc_ExchangeRoutine(self,"ALCHEMY");
@@ -633,7 +633,7 @@ func void dia_babo_kdf_plants_takehalf()
 
 func void dia_babo_kdf_plants_takeall()
 {
-	AI_Output(other,self,"DIA_Babo_KDF_Plants_15_02");	//Nech si všechny kopřivy a jdi za Neorasem.
+	AI_Output(other,self,"DIA_Babo_KDF_Plants_15_02");	//Vezmu si ty kopřivy.
 	AI_Output(self,other,"DIA_Babo_KDF_Plants_03_03");	//Ano, mistře.
 	B_GiveInvItems(self,other,ItPl_Mana_Herb_01,10);
 	Info_ClearChoices(dia_babo_kdf_plants);

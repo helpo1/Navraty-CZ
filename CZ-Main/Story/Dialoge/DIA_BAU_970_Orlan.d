@@ -583,7 +583,7 @@ func void DIA_Orlan_MieteFaellig_Info()
 	{
 		AI_Output(self,other,"DIA_Orlan_MieteFaellig_05_01");	//Kdy konečně dostanu nájem?
 		Info_ClearChoices(DIA_Orlan_MieteFaellig);
-		Info_AddChoice(DIA_Orlan_MieteFaellig,"Zapomeň na to. Už ti nezaplatím.",DIA_Orlan_MieteFaellig_nein);
+		Info_AddChoice(DIA_Orlan_MieteFaellig,"Zapomeň na to, už ti nedám ani zlámanou grešli.",DIA_Orlan_MieteFaellig_nein);
 		Info_AddChoice(DIA_Orlan_MieteFaellig,"Tady je tvých 50 zlatých.",DIA_Orlan_MieteFaellig_ja);
 	};
 };

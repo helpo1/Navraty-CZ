@@ -39,7 +39,7 @@ instance DIA_Vatras_DI_HEAL(C_Info)
 	condition = DIA_Vatras_DI_HEAL_Condition;
 	information = DIA_Vatras_DI_HEAL_Info;
 	permanent = TRUE;
-	description = "Vyléč mě.";
+	description = "Vyleč mě.";
 };
 
 
@@ -53,7 +53,7 @@ func int DIA_Vatras_DI_HEAL_Condition()
 
 func void DIA_Vatras_DI_HEAL_Info()
 {
-	AI_Output(other,self,"DIA_Vatras_DI_HEAL_15_00");	//Vyléč mě.
+	AI_Output(other,self,"DIA_Vatras_DI_HEAL_15_00");	//Vyleč mě.
 
 	if(DIA_Vatras_DI_PEDROTOT_VatrasSucked == FALSE)
 	{

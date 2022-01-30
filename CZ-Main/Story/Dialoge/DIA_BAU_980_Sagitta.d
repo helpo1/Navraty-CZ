@@ -534,7 +534,7 @@ instance DIA_Sagitta_HEAL(C_Info)
 	condition = DIA_Sagitta_HEAL_Condition;
 	information = DIA_Sagitta_HEAL_Info;
 	permanent = TRUE;
-	description = "Vyléč mě.";
+	description = "Vyleč mě.";
 };
 
 func int DIA_Sagitta_HEAL_Condition()
@@ -547,7 +547,7 @@ func int DIA_Sagitta_HEAL_Condition()
 
 func void DIA_Sagitta_HEAL_Info()
 {
-	AI_Output(other,self,"DIA_Sagitta_HEAL_15_00");	//Vyléč mě.
+	AI_Output(other,self,"DIA_Sagitta_HEAL_15_00");	//Vyleč mě.
 	if(hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX])
 	{
 		if(PRAYDAYSAGG != Wld_GetDay())

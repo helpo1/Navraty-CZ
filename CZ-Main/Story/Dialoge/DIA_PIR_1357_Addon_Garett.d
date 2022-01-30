@@ -403,7 +403,7 @@ instance DIA_Addon_Garett_Trade(C_Info)
 	condition = DIA_Addon_Garett_Trade_Condition;
 	information = DIA_Addon_Garett_Trade_Info;
 	permanent = TRUE;
-	description = DIALOG_TRADE;
+	description = "Pojďme obchodovat.";
 	trade = TRUE;
 };
 
