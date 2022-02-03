@@ -4,6 +4,7 @@
 
 v1.02:
 
+freeAimingEnabled - nastavení automatického míření (AST-AutoAIM) nahrazeno nastavením GFA (GFA-freeAimingEnabled)
 CZ_GDRPC_update - volání přesunuto do obecnější funkce
 
 
@@ -104,9 +105,9 @@ func void B_CheckMenuOption()
 	};
 	if(RealMode[2] == TRUE)
 	{
-		if(Menu_ReadInt("AST","AutoAIM") == TRUE)
+		if(Menu_ReadInt("GFA","freeAimingEnabled") == FALSE)
 		{
-			Menu_WriteInt("AST","AutoAIM",FALSE);
+			Menu_WriteInt("GFA","freeAimingEnabled",TRUE);
 		};
 		if(Menu_ReadInt("AST","bCanNewSteal") == FALSE)
 		{

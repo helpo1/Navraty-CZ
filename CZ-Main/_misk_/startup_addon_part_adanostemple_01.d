@@ -5,7 +5,7 @@
 v1.02:
 
 startup_global - odstraněna zbytečná volání některých funkcí a resetování proměnných
-init_global - přidána inicializace balíčku LeGo a modulů EnhancedInfoManager / PickLockHelper z AF Script Packetu
+init_global - přidány inicializace: LeGo (GFA), GFA, AF Script Packet (EnhancedInfoManager / PickLockHelper)
 
 
 v1.01:
@@ -4427,8 +4427,10 @@ func void init_global()
 	if (!init_once)
 	{
 		init_once = 1;
-		Lego_Init(0);
+		Lego_Init(GFA_LEGO_FLAGS);
 	};  
+	
+	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
 	
 	InfoManagerNumKeysControls = TRUE;
 	InfoManagerNumKeysNumbers = TRUE;

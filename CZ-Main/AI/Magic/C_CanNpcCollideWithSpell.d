@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+FIGHT_DIST_CANCEL - zamezeno zasažení protivníka mimo reakčního dosahu AI (pro GFA)
+
+*/
+
+
 
 const int COLL_DONOTHING = 0;
 const int COLL_DOEVERYTHING = 1;
@@ -9,6 +20,10 @@ const int COLL_DONTKILL = 32;
 
 func int C_CanNpcCollideWithSpell(var int spellType)
 {
+	// GFA: Do not damage beyond maximum fighting range (AI does not react)
+	if (Npc_GetDistToNpc(self, other) > FIGHT_DIST_CANCEL) {
+		return COLL_DONOTHING;
+	};
 	if((Npc_IsPlayer(other) == TRUE) && ((self.aivar[AIV_PARTYMEMBER] == TRUE) || (self.npcType == npctype_friend)))
 	{
 		return COLL_DONOTHING;

@@ -1,3 +1,6 @@
 [submodule "CZ-Main/AF-Script-Packet"]
 	path = CZ-Main/AF-Script-Packet
 	url = https://github.com/auronen/AF-Script-Packet
+[submodule "CZ-Main/GFA"]
+	path = CZ-Main/GFA
+	url = https://github.com/helpo1/GFA-N2-CZ

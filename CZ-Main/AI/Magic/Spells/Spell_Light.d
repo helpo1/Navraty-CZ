@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+instance Spell_UnlockChest - nastavení atributu canTurnDuringInvest (pro GFA)
+
+*/
+
+
 
 instance Spell_Light(C_Spell_Proto)
 {
@@ -191,6 +202,7 @@ instance Spell_UnlockChest(C_Spell_Proto)
 	time_per_mana = 0;
 	damage_per_level = 0;
 	spellType = SPELL_NEUTRAL;
+	canTurnDuringInvest = 0;
 };
 
 func int Spell_Logic_UnlockChest(var int manaInvested)

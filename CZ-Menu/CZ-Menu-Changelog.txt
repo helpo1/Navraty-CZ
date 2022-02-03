@@ -15,3 +15,15 @@ v1.00:
 
 
 ----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Menu\Menu_Opt_Game.d   */
+
+
+v1.02:
+
+instance MENUITEM_GAME_AUTOAIM, instance MENUITEM_GAME_AUTOAIM_CHOICE - nastavení automatického míření nahrazeno nastavením GFA
+
+
+
+----------------------------------------------------------------------------------------------------

@@ -24,12 +24,34 @@ v1.01:
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\AI\Magic\C_CanNpcCollideWithSpell.d   */
+
+
+v1.02:
+
+FIGHT_DIST_CANCEL - zamezeno zasažení protivníka mimo reakčního dosahu AI (pro GFA)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\AI\Magic\Spells\Spell_ArmyOfDarkness.d   */
 
 
 v1.00:
 
 func void Spell_Cast_ArmyOfDarkness - upraven typ vyvolávaných bytostí (na žádost hráčů)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\AI\Magic\Spells\Spell_Light.d   */
+
+
+v1.02:
+
+instance Spell_UnlockChest - nastavení atributu canTurnDuringInvest (pro GFA)
 
 
 ----------------------------------------------------------------------------------------------------
@@ -71,6 +93,22 @@ if(Npc_IsInFightMode(other,FMODE_MAGIC) == TRUE) - upraveny neutrální kouzla (
 v1.00:
 
 tzv. "fix skeletov" - opraveno vyvolávání kostlivců u strážců elementů
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\GFA\...   */
+
+
+v1.02:
+
+aktualizace modulu GFA z v0.1.2 na v1.2.0-custom (https://github.com/helpo1/GFA-N2-CZ)
+
+odstraněny soubory:
+- \_Intern\_intern.d
+- \_Intern\config.d
+- \CAMERA\CamInstFreeAim.d
 
 
 ----------------------------------------------------------------------------------------------------
@@ -302,6 +340,7 @@ func void B_PlayerFindItem - upraveny výpisy
 
 v1.02:
 
+freeAimingEnabled - nastavení automatického míření (AST-AutoAIM) nahrazeno nastavením GFA (GFA-freeAimingEnabled)
 CZ_GDRPC_update - volání přesunuto do obecnější funkce
 
 
@@ -1569,7 +1608,7 @@ func void print_campinfo - přidán Bilgot jako lovec (kvůli úpravám úkolů 
 v1.02:
 
 startup_global - odstraněna zbytečná volání některých funkcí a resetování proměnných
-init_global - přidána inicializace balíčku LeGo a modulů EnhancedInfoManager / PickLockHelper z AF Script Packetu
+init_global - přidány inicializace: LeGo (GFA), GFA, AF Script Packet (EnhancedInfoManager / PickLockHelper)
 
 
 v1.01:

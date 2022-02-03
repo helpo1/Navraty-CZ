@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+instance MENUITEM_GAME_AUTOAIM, instance MENUITEM_GAME_AUTOAIM_CHOICE - nastavení automatického míření nahrazeno nastavením GFA
+
+*/
+
+
 
 instance MENU_OPT_GAME(C_MENU_DEF)
 {
@@ -446,8 +457,8 @@ instance MENUITEM_GAME_OLDCONTROLS_CHOICE(C_MENU_ITEM_DEF)
 instance MENUITEM_GAME_AUTOAIM(C_MENU_ITEM_DEF)
 {
 	backPic = MENU_ITEM_BACK_PIC;
-	text[0] = "Automatické míření";
-	text[1] = "Zapnout systém automatického míření pro luky a kuše";
+	text[0] = "Volné míření";
+	text[1] = "Zapnout systém volného míření pro luky a kuše";
 	posx = 0;
 	posy = MENU_START_Y + (MENU_SOUND_DY * 6);
 	dimx = 7000;
@@ -466,8 +477,8 @@ instance MENUITEM_GAME_AUTOAIM_CHOICE(C_MENU_ITEM_DEF)
 	posy = MENU_START_Y + (MENU_SOUND_DY * 6) + MENU_CHOICE_YPLUS;
 	dimx = 2000;
 	dimy = MENU_CHOICE_DY;
-	onchgsetoption = "AutoAIM";
-	onchgsetoptionsection = "AST";
+	onchgsetoption = "freeAimingEnabled";
+	onchgsetoptionsection = "GFA";
 	flags = flags & ~IT_SELECTABLE;
 	flags = flags | IT_TXT_CENTER;
 };
