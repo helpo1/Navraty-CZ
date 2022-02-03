@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+(4x) FutTalent - opraven přepočet intervalů učení
+
+
 v1.00:
 
 func int B_TeachFightTalentPercent - dovysvětlení nejasné formulace
@@ -172,22 +177,26 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 	{
 		if(talent == NPC_TALENT_1H)
 		{
-			FutTalent = oth.HitChance[NPC_TALENT_1H] + percent;
+			// FutTalent = oth.HitChance[NPC_TALENT_1H] + percent;
+			FutTalent = oth.aivar[REAL_TALENT_1H] + percent;
 			FutTalentCost = B_GetLearnCostFutureTalent(oth,talent,FutTalent);
 		}
 		else if(talent == NPC_TALENT_2H)
 		{
-			FutTalent = oth.HitChance[NPC_TALENT_2H] + percent;
+			// FutTalent = oth.HitChance[NPC_TALENT_2H] + percent;
+			FutTalent = oth.aivar[REAL_TALENT_2H] + percent;
 			FutTalentCost = B_GetLearnCostFutureTalent(oth,talent,FutTalent);
 		}
 		else if(talent == NPC_TALENT_BOW)
 		{
-			FutTalent = oth.HitChance[NPC_TALENT_BOW] + percent;
+			// FutTalent = oth.HitChance[NPC_TALENT_BOW] + percent;
+			FutTalent = oth.aivar[REAL_TALENT_BOW] + percent;
 			FutTalentCost = B_GetLearnCostFutureTalent(oth,talent,FutTalent);
 		}
 		else if(talent == NPC_TALENT_CROSSBOW)
 		{
-			FutTalent = oth.HitChance[NPC_TALENT_CROSSBOW] + percent;
+			// FutTalent = oth.HitChance[NPC_TALENT_CROSSBOW] + percent;
+			FutTalent = oth.aivar[REAL_TALENT_CROSSBOW] + percent;
 			FutTalentCost = B_GetLearnCostFutureTalent(oth,talent,FutTalent);
 		};
 

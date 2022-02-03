@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+func void DIA_Addon_Esteban_Auftrag_Info - opraven kód instance NPC
+
+*/
+
+
 
 instance DIA_Addon_Esteban_EXIT(C_Info)
 {
@@ -292,7 +303,7 @@ func void DIA_Addon_Esteban_Auftrag_Info()
 		AI_TurnToNPC(self,other);
 		Bodyguard_Killer = TRUE;
 		AI_StopProcessInfos(self);
-		B_StartOtherRoutine(BDT_10005_Addon_Wache_02,"AMBUSH");
+		B_StartOtherRoutine(BDT_1081_Addon_Wache_01,"AMBUSH");
 		B_StartOtherRoutine(BDT_10005_Addon_Wache_02,"AMBUSH");
 	}
 	else

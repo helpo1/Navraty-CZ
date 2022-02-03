@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+AI_EquipArmor - opraven prodej Orlanovy vlastní zbroje
+
+
 v1.00:
 
 func void DIA_Orlan_RUESTUNG_Buy - opraveno ID předmětu (ITAR_Bau_L -> ITAR_Bau_M)
@@ -377,9 +382,10 @@ func void DIA_Orlan_RUESTUNG_Buy()
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,250))
 	{
-		AI_Output(self,other,"DIA_Orlan_RUESTUNG_Buy_05_01");	//Moudré rozhodnutí.
 		CreateInvItems(self,ITAR_Bau_M,1);
 		B_GiveInvItems(self,other,ITAR_Bau_M,1);
+		AI_EquipArmor(self,ITAR_Bau_M);
+		AI_Output(self,other,"DIA_Orlan_RUESTUNG_Buy_05_01");	//Moudré rozhodnutí.
 		DIA_Orlan_RUESTUNG_noPerm = TRUE;
 	}
 	else

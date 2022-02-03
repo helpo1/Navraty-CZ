@@ -46,10 +46,37 @@ func void PC_CZSET_END_Info()
 
 
 
-instance PC_CZSET_WARNING_1(C_Info)
+instance PC_CZSET_VERSION(C_Info)
 {
 	npc = PC_Hero;
 	nr = 1;
+	condition = PC_CZSET_VERSION_Condition;
+	information = PC_CZSET_VERSION_Info;
+	permanent = TRUE;
+	// description = "";
+};
+
+func int PC_CZSET_VERSION_Condition()
+{
+	PC_CZSET_VERSION.description = ConcatStrings("d@ Gothic 2 - Návraty 2.0a v66.2 - CZ ", CZ_Version_ToString(CZ_VERSION_CURRENT));
+	
+	if(cz_settings_lock == TRUE)
+	{
+		return TRUE;
+	};
+	
+	return FALSE;
+};
+
+func void PC_CZSET_VERSION_Info()
+{
+	// empty
+};
+
+instance PC_CZSET_WARNING_1(C_Info)
+{
+	npc = PC_Hero;
+	nr = 2;
 	condition = PC_CZSET_WARNING_Condition;
 	information = PC_CZSET_WARNING_Info;
 	permanent = TRUE;
@@ -59,7 +86,7 @@ instance PC_CZSET_WARNING_1(C_Info)
 instance PC_CZSET_WARNING_2(C_Info)
 {
 	npc = PC_Hero;
-	nr = 2;
+	nr = 3;
 	condition = PC_CZSET_WARNING_Condition;
 	information = PC_CZSET_WARNING_Info;
 	permanent = TRUE;

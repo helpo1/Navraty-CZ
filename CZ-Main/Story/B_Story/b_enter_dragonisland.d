@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_Crait_SetStatus - opraveno sledování stavu vyvolané krajty
+
+*/
+
+
+
 var int EVT_UNDEADDRAGONDEAD_ENDSITUATION_OneTime;
 
 func void b_enter_dragonisland()
@@ -336,4 +348,5 @@ func void init_dragonisland()
 
 	b_cycle_trigger_04();
 	b_enter_dragonisland();
+	CZ_Crait_SetStatus();
 };

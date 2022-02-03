@@ -4,13 +4,18 @@
 
 v1.02:
 
-ShowSkillChecks - deklarace nového .ini nastavení
 upraven systém změn obtížnosti:
 - odstraněny funkce CZ_Settings_Diff_Save, CZ_Settings_Diff_Load, CZ_Settings_Diff_Update
 - CZ_Settings_Diff_Init - (4x) odstraněno volání funkce, nastavování proměnných a zápisy do Gothic.ini
 
+CZ_Settings_Other_Init:
+- deklarace nových .ini nastavení - DialogueNumKeysControl, DialogueNumKeysShow, ShowSkillChecks
+- zrušení možnosti vypnout indikátor munice (potíže s fontem vyřešeny) - ShowAmmo
+
+CZ_GetGuildName - zjednodušen přístup do TXT_GUILDS (Ikarus/LeGo funkce)
+CZ_GDRPC_update - přechod na nový formát GDRPC API
 (20x) const int CZ_SKILL - deklarace nových konstant (kvůli skill checkům)
-CZ_GetSkillValue, CZ_GetSkillAbbr, CZ_SkillCheckPrefix, CZ_SkillCheckCondition - nové funkce
+CZ_GetSkillValue, CZ_GetSkillAbbr, CZ_SkillCheckPrefix, CZ_SkillCheckCondition, CZ_Version_ToString, CZ_Version_Check, CZ_Crait_SetStatus - nové funkce
 
 
 v1.01a:
@@ -160,8 +165,9 @@ func void CZ_Settings_Other_Init()
 		AI_Print("Inicializuji ostatní nastavení v Gothic.ini...");
 		
 		Menu_WriteInt("CZ_SETTINGS_OTHER", "OtherInitialized", TRUE);
+		Menu_WriteInt("CZ_SETTINGS_OTHER", "DialogueNumKeysControl", TRUE);
+		Menu_WriteInt("CZ_SETTINGS_OTHER", "DialogueNumKeysShow", TRUE);
 		Menu_WriteInt("CZ_SETTINGS_OTHER", "OutputGDRPC", TRUE);
-		Menu_WriteInt("CZ_SETTINGS_OTHER", "ShowAmmo", TRUE);
 		Menu_WriteInt("CZ_SETTINGS_OTHER", "ShowSkillChecks", TRUE);
 		
 	};
@@ -327,108 +333,19 @@ func string CZ_GetWorldName()
 func string CZ_GetGuildName()
 {
 	
-//	if(hero.guild == 0) { return TXT_GUILDS[0]; }
-	if(hero.guild == 0) { return "Nezávislý"; }
-else if(hero.guild == 1) { return TXT_GUILDS[1]; }
-else if(hero.guild == 2) { return TXT_GUILDS[2]; }
-else if(hero.guild == 3) { return TXT_GUILDS[3]; }
-else if(hero.guild == 4) { return TXT_GUILDS[4]; }
-else if(hero.guild == 5) { return TXT_GUILDS[5]; }
-else if(hero.guild == 6) { return TXT_GUILDS[6]; }
-else if(hero.guild == 7) { return TXT_GUILDS[7]; }
-else if(hero.guild == 8) { return TXT_GUILDS[8]; }
-else if(hero.guild == 9) { return TXT_GUILDS[9]; }
-else if(hero.guild == 10) { return TXT_GUILDS[10]; }
-else if(hero.guild == 11) { return TXT_GUILDS[11]; }
-else if(hero.guild == 12) { return TXT_GUILDS[12]; }
-else if(hero.guild == 13) { return TXT_GUILDS[13]; }
-else if(hero.guild == 14) { return TXT_GUILDS[14]; }
-else if(hero.guild == 15) { return TXT_GUILDS[15]; }
-else if(hero.guild == 16) { return TXT_GUILDS[16]; }
-else if(hero.guild == 17) { return TXT_GUILDS[17]; }
-else if(hero.guild == 18) { return TXT_GUILDS[18]; }
-else if(hero.guild == 19) { return TXT_GUILDS[19]; }
-else if(hero.guild == 20) { return TXT_GUILDS[20]; }
-else if(hero.guild == 21) { return TXT_GUILDS[21]; }
-else if(hero.guild == 22) { return TXT_GUILDS[22]; }
-else if(hero.guild == 23) { return TXT_GUILDS[23]; }
-else if(hero.guild == 24) { return TXT_GUILDS[24]; }
-else if(hero.guild == 25) { return TXT_GUILDS[25]; }
-else if(hero.guild == 26) { return TXT_GUILDS[26]; }
-else if(hero.guild == 27) { return TXT_GUILDS[27]; }
-else if(hero.guild == 28) { return TXT_GUILDS[28]; }
-else if(hero.guild == 29) { return TXT_GUILDS[29]; }
-else if(hero.guild == 30) { return TXT_GUILDS[30]; }
-else if(hero.guild == 31) { return TXT_GUILDS[31]; }
-else if(hero.guild == 32) { return TXT_GUILDS[32]; }
-else if(hero.guild == 33) { return TXT_GUILDS[33]; }
-else if(hero.guild == 34) { return TXT_GUILDS[34]; }
-else if(hero.guild == 35) { return TXT_GUILDS[35]; }
-else if(hero.guild == 36) { return TXT_GUILDS[36]; }
-else if(hero.guild == 37) { return TXT_GUILDS[37]; }
-else if(hero.guild == 38) { return TXT_GUILDS[38]; }
-else if(hero.guild == 39) { return TXT_GUILDS[39]; }
-else if(hero.guild == 40) { return TXT_GUILDS[40]; }
-else if(hero.guild == 41) { return TXT_GUILDS[41]; }
-else if(hero.guild == 42) { return TXT_GUILDS[42]; }
-else if(hero.guild == 43) { return TXT_GUILDS[43]; }
-else if(hero.guild == 44) { return TXT_GUILDS[44]; }
-else if(hero.guild == 45) { return TXT_GUILDS[45]; }
-else if(hero.guild == 46) { return TXT_GUILDS[46]; }
-else if(hero.guild == 47) { return TXT_GUILDS[47]; }
-else if(hero.guild == 48) { return TXT_GUILDS[48]; }
-else if(hero.guild == 49) { return TXT_GUILDS[49]; }
-else if(hero.guild == 50) { return TXT_GUILDS[50]; }
-else if(hero.guild == 51) { return TXT_GUILDS[51]; }
-else if(hero.guild == 52) { return TXT_GUILDS[52]; }
-else if(hero.guild == 53) { return TXT_GUILDS[53]; }
-else if(hero.guild == 54) { return TXT_GUILDS[54]; }
-else if(hero.guild == 55) { return TXT_GUILDS[55]; }
-else if(hero.guild == 56) { return TXT_GUILDS[56]; }
-else if(hero.guild == 57) { return TXT_GUILDS[57]; }
-else if(hero.guild == 58) { return TXT_GUILDS[58]; }
-else if(hero.guild == 59) { return TXT_GUILDS[59]; }
-else if(hero.guild == 60) { return TXT_GUILDS[60]; }
-else if(hero.guild == 61) { return TXT_GUILDS[61]; }
-else if(hero.guild == 62) { return TXT_GUILDS[62]; }
-else if(hero.guild == 63) { return TXT_GUILDS[63]; }
-else if(hero.guild == 64) { return TXT_GUILDS[64]; }
-else if(hero.guild == 65) { return TXT_GUILDS[65]; }
-/* else if(hero.guild == 66) { return TXT_GUILDS[66]; }
-else if(hero.guild == 67) { return TXT_GUILDS[67]; }
-else if(hero.guild == 68) { return TXT_GUILDS[68]; }
-else if(hero.guild == 69) { return TXT_GUILDS[69]; }
-else if(hero.guild == 70) { return TXT_GUILDS[70]; }
-else if(hero.guild == 71) { return TXT_GUILDS[71]; }
-else if(hero.guild == 72) { return TXT_GUILDS[72]; }
-else if(hero.guild == 73) { return TXT_GUILDS[73]; }
-else if(hero.guild == 74) { return TXT_GUILDS[74]; }
-else if(hero.guild == 75) { return TXT_GUILDS[75]; }
-else if(hero.guild == 76) { return TXT_GUILDS[76]; }
-else if(hero.guild == 77) { return TXT_GUILDS[77]; }
-else if(hero.guild == 78) { return TXT_GUILDS[78]; }
-else if(hero.guild == 79) { return TXT_GUILDS[79]; }
-else if(hero.guild == 80) { return TXT_GUILDS[80]; }
-else if(hero.guild == 81) { return TXT_GUILDS[81]; }
-else if(hero.guild == 82) { return TXT_GUILDS[82]; }
-else if(hero.guild == 83) { return TXT_GUILDS[83]; }
-else if(hero.guild == 84) { return TXT_GUILDS[84]; }
-else if(hero.guild == 85) { return TXT_GUILDS[85]; }
-else if(hero.guild == 86) { return TXT_GUILDS[86]; }
-else if(hero.guild == 87) { return TXT_GUILDS[87]; }
-else if(hero.guild == 88) { return TXT_GUILDS[88]; }
-else if(hero.guild == 89) { return TXT_GUILDS[89]; }
-else if(hero.guild == 90) { return TXT_GUILDS[90]; }
-else if(hero.guild == 91) { return TXT_GUILDS[91]; }
-else if(hero.guild == 92) { return TXT_GUILDS[92]; }
-else if(hero.guild == 93) { return TXT_GUILDS[93]; }
-else if(hero.guild == 94) { return TXT_GUILDS[94]; }
-else if(hero.guild == 95) { return TXT_GUILDS[95]; }
-else if(hero.guild == 96) { return TXT_GUILDS[96]; }
-else if(hero.guild == 97) { return TXT_GUILDS[97]; }
-else if(hero.guild == 98) { return TXT_GUILDS[98]; }
-else if(hero.guild == 99) { return TXT_GUILDS[99]; } */
-else { return "Neznámá gilda"; };
+	if(hero.guild == 0)
+	{
+		// return TXT_GUILDS[0];
+		return "Nezávislý";
+	}
+	else if(hero.guild <= 65)
+	{
+		return MEM_ReadStringArray(_@s(TXT_GUILDS), hero.guild);
+	}
+	else
+	{
+		return "Neznámá gilda";
+	};
 	
 };
 
@@ -437,25 +354,85 @@ func void CZ_GDRPC_update()
 	
 	var string gdrpc_text;
 	
-	// API format: 'GDRPC:State&&&Details'
+	/*
+		// GDRPC-CZ API format delimiters:
+		
+		API Prefix				"GDRPC:"
+		API State Delimiter		"&!STA!&"
+		API Details Delimiter	"&!DET!&"
+		API Lgkey Delimiter		"&!LGK!&"
+		API Lgtext Delimiter	"&!LGT!&"
+		API Smkey Delimiter		"&!SMK!&"
+		API Smtext Delimiter	"&!SMT!&"
+	*/
 	
 	gdrpc_text = ConcatStrings("GDRPC:", "");
 	
 	// State
-	gdrpc_text = ConcatStrings(gdrpc_text, CZ_GetGuildName());
-	gdrpc_text = ConcatStrings(gdrpc_text, " (Lvl");
-	gdrpc_text = ConcatStrings(gdrpc_text, IntToString(hero.level));
-	gdrpc_text = ConcatStrings(gdrpc_text, ") | ");
-	gdrpc_text = ConcatStrings(gdrpc_text, sHardLvl);
-
-	gdrpc_text = ConcatStrings(gdrpc_text, "&&&");
-	
-	// Details
-	gdrpc_text = ConcatStrings(gdrpc_text, "[Kap. ");
-	gdrpc_text = ConcatStrings(gdrpc_text, IntToString(Kapitel));
-	gdrpc_text = ConcatStrings(gdrpc_text, "] ");
+	gdrpc_text = ConcatStrings(gdrpc_text, "&!STA!&");
+	gdrpc_text = ConcatStrings(gdrpc_text, "Svět: ");
 	gdrpc_text = ConcatStrings(gdrpc_text, CZ_GetWorldName());
 	
+	// Details
+	gdrpc_text = ConcatStrings(gdrpc_text, "&!DET!&");
+	gdrpc_text = ConcatStrings(gdrpc_text, "[Kap. ");
+	gdrpc_text = ConcatStrings(gdrpc_text, IntToString(Kapitel));
+	gdrpc_text = ConcatStrings(gdrpc_text, "] - [HP: ");
+	gdrpc_text = ConcatStrings(gdrpc_text, IntToString(hero.attribute[ATR_HITPOINTS]));
+	gdrpc_text = ConcatStrings(gdrpc_text, "/");
+	gdrpc_text = ConcatStrings(gdrpc_text, IntToString(hero.attribute[ATR_HITPOINTS_MAX]));
+	gdrpc_text = ConcatStrings(gdrpc_text, "]");
+	
+	if (   (hero.guild == 0)
+		|| (hero.guild == 1)
+		|| (hero.guild == 2)
+		|| (hero.guild == 4)
+		|| (hero.guild == 5)
+		|| (hero.guild == 6)
+		|| (hero.guild == 7)
+		|| (hero.guild == 12)
+		|| (hero.guild == 14)
+		|| (hero.guild == 15)
+		|| (hero.guild == 16)
+		|| (hero.guild == 17)
+		|| (hero.guild == 18)
+		|| (hero.guild == 19))
+	{
+		// Large Image Key
+		gdrpc_text = ConcatStrings(gdrpc_text, "&!LGK!&");
+		gdrpc_text = ConcatStrings(gdrpc_text, "gil_");
+		gdrpc_text = ConcatStrings(gdrpc_text, IntToString(hero.guild));
+
+		// Large Image Text
+		gdrpc_text = ConcatStrings(gdrpc_text, "&!LGT!&");
+		gdrpc_text = ConcatStrings(gdrpc_text, CZ_GetGuildName());
+		gdrpc_text = ConcatStrings(gdrpc_text, " | ");
+		gdrpc_text = ConcatStrings(gdrpc_text, sHardLvl);
+	};
+
+	// Small Image Key
+	gdrpc_text = ConcatStrings(gdrpc_text, "&!SMK!&");
+	gdrpc_text = ConcatStrings(gdrpc_text, "lvl_");
+	
+	if (hero.level < 100)
+	{
+		gdrpc_text = ConcatStrings(gdrpc_text, IntToString(hero.level));
+	}
+	else
+	{
+		gdrpc_text = ConcatStrings(gdrpc_text, "max");
+	};
+
+	// Small Image Text
+	gdrpc_text = ConcatStrings(gdrpc_text, "&!SMT!&");
+	gdrpc_text = ConcatStrings(gdrpc_text, "Level ");
+	gdrpc_text = ConcatStrings(gdrpc_text, IntToString(hero.level));
+	gdrpc_text = ConcatStrings(gdrpc_text, " [XP: ");
+	gdrpc_text = ConcatStrings(gdrpc_text, IntToString(hero.exp));
+	gdrpc_text = ConcatStrings(gdrpc_text, " / ");
+	gdrpc_text = ConcatStrings(gdrpc_text, IntToString(hero.exp_next));
+	gdrpc_text = ConcatStrings(gdrpc_text, "]");
+
 	Snd_Play3D(self,gdrpc_text);
 	
 };
@@ -615,5 +592,119 @@ func string CZ_SkillCheckCondition(var int skill_type, var int reqval, var int s
 			return "";
 		};
 	};
+	
+};
+
+
+
+func string CZ_Version_ToString(var int version_number)
+{
+	
+	var string version_string;
+	version_string = "";
+	
+	if ((version_number < 010000000) || (version_number > 999999999))
+	{
+		version_string = "[UNKNOWN]";
+	}
+	else
+	{
+		
+		var int version_base;
+		var int version_major;
+		var int version_minor;
+		var int version_type;
+		var int version_typenum;
+		
+		version_base = version_number / 10000000;
+		version_major = (version_number % 10000000) / 100000;
+		version_minor = (version_number % 100000) / 1000;
+		version_type = ((version_number % 1000) / 100) * 100;
+		version_typenum = version_number % 100;
+		
+		version_string = ConcatStrings(version_string, IntToString(version_base));
+		version_string = ConcatStrings(version_string, ".");
+		
+		if (version_major < 10)
+		{
+			version_string = ConcatStrings(version_string, "0");
+		};
+		
+		version_string = ConcatStrings(version_string, IntToString(version_major));
+		
+		if (version_minor == 0)
+		{
+			// no letter
+		}
+		else if (version_minor <= 26)
+		{
+			version_string = ConcatStrings(version_string, BtoC(CtoB("a") + version_minor - 1));
+		}
+		else
+		{
+			version_string = ConcatStrings(version_string, "!UN");
+		};
+		
+		if (version_type == CZ_VERFLAG_BETA)
+		{
+			version_string = ConcatStrings(version_string, " Beta");
+		}
+		else if (version_type == CZ_VERFLAG_RC)
+		{
+			version_string = ConcatStrings(version_string, " RC");
+		}
+		else if (version_type == CZ_VERFLAG_RELEASE)
+		{
+			// no suffix
+		};
+		
+		if (version_typenum > 0)
+		{
+			version_string = ConcatStrings(version_string, "-");
+			version_string = ConcatStrings(version_string, IntToString(version_typenum));
+		};
+		
+	};
+	
+	return version_string;
+	
+};
+
+func void CZ_Version_Check(var int ignore_type)
+{
+	
+	if ((CZ_VERSION_SAVEGAME / (1 + 999 * ignore_type)) < (CZ_VERSION_MINIMUM / (1 + 999 * ignore_type)))
+	{
+		var string concatText;
+		
+		concatText = "";
+		concatText = ConcatStrings(concatText, "Uložená hra pochází z nepodporované verze češtiny (v");
+		concatText = ConcatStrings(concatText, CZ_Version_ToString(CZ_VERSION_SAVEGAME));
+		concatText = ConcatStrings(concatText, "),");
+		AI_PrintClr(concatText, 192, 0, 0);
+		
+		concatText = "";
+		concatText = ConcatStrings(concatText, "kompatibilita s aktuální verzí (v");
+		concatText = ConcatStrings(concatText, CZ_Version_ToString(CZ_VERSION_CURRENT));
+		concatText = ConcatStrings(concatText, ") není zaručena!");
+		AI_PrintClr(concatText, 192, 0, 0);
+
+		concatText = "";
+		concatText = ConcatStrings(concatText, "(nejnižší podporovaná verze uložených her: v");
+		concatText = ConcatStrings(concatText, CZ_Version_ToString(CZ_VERSION_MINIMUM));
+		concatText = ConcatStrings(concatText, ")");
+		AI_PrintClr(concatText, 192, 0, 0);
+	};
+	
+};
+
+
+
+func void CZ_Crait_SetStatus()
+{
+	
+	var C_NPC npcCrait; npcCrait = Hlp_GetAliveNPC(Crait);
+	
+	CraitIsUp = Hlp_IsValidNpc(npcCrait);
 	
 };

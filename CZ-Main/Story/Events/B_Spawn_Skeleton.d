@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+func void Scr_OpenChest_BigRuby_s1 - upravena podmínka otevření truhly na radnici
+
+
 v1.01:
 
 CZ_Settings_Diff_EnableTraps - přidání možnosti zapnout/vypnout pasti
@@ -4412,7 +4417,7 @@ func void Scr_OpenChest_BigRuby_s1()
 {
 	if(OpenChest_BigRuby == FALSE)
 	{
-		if(hero.attribute[ATR_DEXTERITY] > 150)
+		if(hero.attribute[ATR_DEXTERITY] >= 150)
 		{
 			Snd_Play("LevelUp");
 			hero.exp = hero.exp + 300;

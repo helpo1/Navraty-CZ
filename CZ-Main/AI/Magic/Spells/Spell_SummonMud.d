@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+Hlp_GetAliveNPC(Crait) - ošetřena změna stavu vyvolané krajty
+
+*/
+
+
 
 instance Spell_SummonMud(C_Spell_Proto)
 {
@@ -165,12 +176,17 @@ func void Spell_Cast_SummonCrait()
 		}
 		else
 		{
-			Wld_PlayEffect("spellFX_INCOVATION_RED",Crait,Crait,0,0,0,FALSE);
-			AI_Wait(Crait,1);
-			AI_Teleport(Crait,"TOT");
-			CraitIsUp = FALSE;
-			KillCrait = TRUE;
-			CraitCanUp = FALSE;
+			var C_NPC npcCrait; npcCrait = Hlp_GetAliveNPC(Crait);
+			
+			if(Hlp_IsValidNpc(npcCrait))
+			{
+				Wld_PlayEffect("spellFX_INCOVATION_RED",npcCrait,npcCrait,0,0,0,FALSE);
+				AI_Wait(npcCrait,1);
+				AI_Teleport(npcCrait,"TOT");
+				CraitIsUp = FALSE;
+				KillCrait = TRUE;
+				CraitCanUp = FALSE;
+			};
 		};
 	};
 

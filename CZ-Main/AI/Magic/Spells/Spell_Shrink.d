@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+ShrinkUse - zrušení omezení kouzla na jediné použití
+
+*/
+
+
 
 instance Spell_Shrink(C_Spell_Proto)
 {
@@ -12,7 +23,7 @@ func int Spell_Logic_Shrink(var int manaInvested)
 {
 	if(ShrinkUse == TRUE)
 	{
-		return SPL_SENDSTOP;
+		// return SPL_SENDSTOP;
 	};
 	if((other.guild == GIL_DRAGON) || (other.guild == GIL_DEMON) || (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(Skeleton_Lord_LV)) || (other.aivar[90] == TRUE) || (other.guild == GIL_ORC) || (other.guild == GIL_DRACONIAN))
 	{

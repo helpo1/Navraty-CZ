@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+(2x) CZ_Crait_SetStatus - opraveno sledování stavu vyvolané krajty
+
+*/
+
+
 
 func void B_Kapitelwechsel(var int neues_Kapitel,var int aktuelles_Level_Zen)
 {
@@ -32,10 +43,12 @@ func void B_Kapitelwechsel(var int neues_Kapitel,var int aktuelles_Level_Zen)
 	if(aktuelles_Level_Zen == OldWorld_Zen)
 	{
 		b_enter_oldworld();
+		CZ_Crait_SetStatus();
 	};
 	if(aktuelles_Level_Zen == NEWWORLD_ZEN)
 	{
 		b_enter_newworld();
+		CZ_Crait_SetStatus();
 	};
 	if(Kapitel == 1)
 	{

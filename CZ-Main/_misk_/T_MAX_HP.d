@@ -2,21 +2,17 @@
 
 /*
 
+v1.02:
+
+nové proměnné a konstanty přesunuty do souboru "(...)\_misk_\_czvars.d" (společně s částí changelogu)
+
+
 v1.01:
 
-var int MageSpeechCount - deklarace nové proměnné (kvůli titulkům dialogu Xardas vs. Pyrokar)
-(2x) CZ TELEPORTY - deklarace nových proměnných (kvůli nově přidaným teleportům)
-var int OpenFireCaveAgain_CZ - deklarace nové proměnné (kvůli úkolu Zbraň velkého lovce (TOPIC_TagNorGrHunWeap))
-var int CloseFireCaveAgain_CZ - deklarace nové proměnné (kvůli úkolu Zbraň velkého lovce (TOPIC_TagNorGrHunWeap))
 mis_orcgreatwar - mis_orcgreatwar (cyrilice -> latinka)
-CZ SETTINGS - deklarace nových proměnných (kvůli přidání nových nastavení)
 
 
 v1.00:
-
-var int BookBonus_162 - deklarace nové proměnné (kvůli opravě bonusu po přečtení)
-var int BookBonus_163 - deklarace nové proměnné (kvůli opravě bonusu po přečtení)
-const int BILGOTHUNTFOOD - deklarace nové konstanty (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
 
 var int RespFireGuard - kosmetické změny
 var int RespDarkGuard - kosmetické změny
@@ -100,7 +96,6 @@ var int ConcertLoaTimer;
 var int ConcertAbiTimer;
 var int HaniarWriteLetterTick;
 var int PrologCount;
-var int MageSpeechCount;
 var int EpilogeCount;
 var int PrologCredits;
 var int EpilogeDoc;
@@ -1513,36 +1508,6 @@ var int DRAGSTONE;
 var int MIS_CanDoTempler;
 var int HagenFTMeet;
 var int FuckOutDay;
-
-
-
-/*     // ----- CZ TELEPORTY ----- \\     */
-
-var int LOC_ADV_ERHAZIR_CZ_TP_OK;
-var int LOC_ADW_TELEPORTSQUARE_CZ_TP_OK;
-var int LOC_ADW_GOLDDRAGON_CZ_TP_OK;
-var int LOC_NW_DOWNTOWN_CZ_TP_OK;
-var int LOC_NW_HAFEN_CZ_TP_OK;
-var int LOC_NW_ATROS_CZ_TP_OK;
-var int LOC_PF_AZGAN_CZ_TP_OK;
-var int LOC_DG_CREOL_CZ_TP_OK;
-var int LOC_OW_ORCCITY_CZ_TP_OK;
-var int LOC_OW_SLEEPERTEMPLE_CZ_TP_OK;
-var int LOC_OW_DARRION_CZ_TP_OK;
-var int LOC_OW_HIGHROCK_CZ_TP_OK;
-var int LOC_OC_URTHRALL_CZ_TP_OK;
-var int LOC_OC_ARENA_CZ_TP_OK;
-var int LOC_OC_ORCMINE_CZ_TP_OK;
-var int LOC_OC_SHVENTRANCE_CZ_TP_OK;
-// var int LOC_SHV_OCPORTAL_CZ_TP_OK;
-// var int LOC_SHV_HUMANCAMP_CZ_TP_OK;
-// var int LOC_SHV_ORCCAMP_CZ_TP_OK;
-// var int LOC_SHV_AZGALOR_CZ_TP_OK;
-
-/*     \\ ----- CZ TELEPORTY ----- //     */
-
-
-
 var int LOC_ORCMOUNTAIN_TP_OK;
 var int LOC_TEARHRAM_TP_OK;
 var int LOC_PYRAMIDE_TP_OK;
@@ -1572,36 +1537,6 @@ var int LOC_ADWRUINS_TP_OK;
 var int LOC_BLACKTROLL_TP_OK;
 var int LOC_ADW_TP_OK;
 var int LOC_PIRATCAMP_TP_OK;
-
-
-
-/*     // ----- CZ TELEPORTY ----- \\     */
-
-var int ADV_ERHAZIR_CZ_TP_OK;
-var int ADW_TELEPORTSQUARE_CZ_TP_OK;
-var int ADW_GOLDDRAGON_CZ_TP_OK;
-var int NW_DOWNTOWN_CZ_TP_OK;
-var int NW_HAFEN_CZ_TP_OK;
-var int NW_ATROS_CZ_TP_OK;
-var int PF_AZGAN_CZ_TP_OK;
-var int DG_CREOL_CZ_TP_OK;
-var int OW_ORCCITY_CZ_TP_OK;
-var int OW_SLEEPERTEMPLE_CZ_TP_OK;
-var int OW_DARRION_CZ_TP_OK;
-var int OW_HIGHROCK_CZ_TP_OK;
-var int OC_URTHRALL_CZ_TP_OK;
-var int OC_ARENA_CZ_TP_OK;
-var int OC_ORCMINE_CZ_TP_OK;
-var int OC_SHVENTRANCE_CZ_TP_OK;
-var int SHV_OCPORTAL_CZ_TP_OK;
-var int SHV_HUMANCAMP_CZ_TP_OK;
-var int SHV_ORCCAMP_CZ_TP_OK;
-var int SHV_AZGALOR_CZ_TP_OK;
-
-/*     \\ ----- CZ TELEPORTY ----- //     */
-
-
-
 var int ORCMOUNTAIN_TP;
 var int ADW_TP;
 var int PIRATCAMP_TP;
@@ -2011,8 +1946,6 @@ var int BookBonus_156;
 var int BookBonus_157;
 var int BookBonus_158;
 var int BookBonus_159;
-var int BookBonus_162;
-var int BookBonus_163;
 var int TalBuyBooks;
 var int WerewolfIsDead;
 var int WerewolfHello;
@@ -2270,8 +2203,6 @@ var int HashGorSh_03;
 var int ProtectHashGorAoe;
 var int DeadRabOrkovInsertDone;
 var int ClearPlayerRudoplav;
-var int OpenFireCaveAgain_CZ;
-var int CloseFireCaveAgain_CZ;
 var int CrossBowNeedPlotnik;
 var int TorDalMoreWar;
 var int HoshNarSentMe;
@@ -6228,37 +6159,11 @@ const int WOLFFOODCONS = 3;
 const int EDDAFOODCONS = 2;
 
 const int BILGOTFOODCONS = 3;
-const int BILGOTHUNTFOOD = 15;
 
 var int RespFireGuard;
 var int RespDarkGuard;
 var int RespWaterGuard;
 var int RespStoneGuard;
-
-/*     // ----- CZ SETTINGS ----- \\     */
-
-var int CZ_Settings_Diff_HPPerLevel;
-var int CZ_Settings_Diff_LPPerLevel;
-
-var int CZ_Settings_Diff_XPMult;
-
-var int CZ_Settings_Diff_HungerPoolBase;
-var int CZ_Settings_Diff_HungerPoolLevelMult;
-var int CZ_Settings_Diff_ThirstPoolBase;
-var int CZ_Settings_Diff_ThirstPoolLevelMult;
-var int CZ_Settings_Diff_FatiguePoolBase;
-var int CZ_Settings_Diff_FatiguePoolLevelMult;
-
-var int CZ_Settings_Diff_EnableHunger;
-var int CZ_Settings_Diff_EnableThirst;
-var int CZ_Settings_Diff_EnableFatigue;
-
-var int CZ_Settings_Diff_EnableSleepCap;
-var int CZ_Settings_Diff_EnableTraps;
-
-var int CZ_Settings_Diff_Changed;
-
-/*     \\ ----- CZ SETTINGS ----- //     */
 
 
 func void KFJKjhhgfkjgHGDHhghgjkGDhgjkgfdGHD1()

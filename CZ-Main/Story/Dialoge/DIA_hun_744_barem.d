@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+func void dia_hun_744_barem_hello_info - upraveny podmínky dialogu
+
+*/
+
+
 
 instance DIA_HUN_744_BAREM_EXIT(C_Info)
 {
@@ -125,7 +136,7 @@ func void dia_hun_744_barem_hello_info()
 		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_11");	//Z těch chlapů v černym mě zebe kůže.
 		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_12");	//Chodí tu sem a tam, nic příjemného!
 	}
-	else if(Kapitel == 6)
+	else if(Kapitel >= 6)
 	{
 		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_13");	//Co asi. Nevidíš snad ty hordy skřetů všude kolem?
 		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_14");	//Ale odkud se jich tolik vzalo?

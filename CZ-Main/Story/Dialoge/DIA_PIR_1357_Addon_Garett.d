@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+func int DIA_Addon_Garett_Anheuern_Condition - upraveny podmínky dialogu
+func int DIA_Addon_Garett_Hello_Condition - upraveny podmínky dialogu
+
+*/
+
+
 
 instance DIA_Addon_Garett_EXIT(C_Info)
 {
@@ -68,7 +80,8 @@ instance DIA_Addon_Garett_Anheuern(C_Info)
 
 func int DIA_Addon_Garett_Anheuern_Condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (MIS_Addon_Greg_ClearCanyon == LOG_Running))
+	// if(Npc_IsInState(self,ZS_Talk) && (MIS_Addon_Greg_ClearCanyon == LOG_Running))
+	if(Npc_IsInState(self,ZS_Talk) && (MIS_Addon_Greg_ClearCanyon == LOG_Running) && Npc_KnowsInfo(other,DIA_Addon_Garett_Hello))
 	{
 		return TRUE;
 	};
@@ -96,7 +109,8 @@ instance DIA_Addon_Garett_Hello(C_Info)
 
 func int DIA_Addon_Garett_Hello_Condition()
 {
-	if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_TalkedToPlayer] == FALSE) && (MIS_Addon_Greg_ClearCanyon != LOG_Running))
+	// if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_TalkedToPlayer] == FALSE) && (MIS_Addon_Greg_ClearCanyon != LOG_Running))
+	if(Npc_IsInState(self,ZS_Talk) && (self.aivar[AIV_TalkedToPlayer] == FALSE))
 	{
 		return TRUE;
 	};

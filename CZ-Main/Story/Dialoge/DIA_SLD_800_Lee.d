@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+func void DIA_Lee_PETZMASTER_Info - opraveno nastavení proměnné prvního setkání
+
+
 v1.01:
 
 (2x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
@@ -328,6 +333,7 @@ func void DIA_Lee_PETZMASTER_Info()
 	{
 		AI_Output(self,other,"DIA_Lee_PETZMASTER_04_00");	//Co tu k čertu vyvádíš? (překvapen) Proč furt děláš problémy?
 		AI_Output(self,other,"DIA_Lee_PETZMASTER_04_01");	//Slyšel jsem od Gorna, že jsi naživu a jdeš sem, ale stejně... Achjo.
+		LeeMeet = TRUE;
 	};
 	temp1 = 0;
 	if(GLOBAL_FARM_MURDER > 2)

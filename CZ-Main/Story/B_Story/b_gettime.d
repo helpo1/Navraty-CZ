@@ -5,7 +5,13 @@
 v1.02:
 
 freeAimingEnabled - nastavení automatického míření (AST-AutoAIM) nahrazeno nastavením GFA (GFA-freeAimingEnabled)
+print_arrow_count - zrušení možnosti vypnout indikátor munice (potíže s fontem vyřešeny)
 CZ_KeepSettingsBookInInventory - přidáno volání funkce pro zachování instance knihy nastavení v inventáři
+if(PrologCount == 0) - nastavení proměnné CZ_VERSION_SAVEGAME (kvůli identifikaci verze hry)
+if(PrologCount == 2) - přesunut a automatizován výpis verze hry
+if(PrologCount == 12) - přidáno varování o přesunutí uložených pozic
+(2x) aktualizovány titulky - intro a úvodní (PrologCredits), závěrečné (ENDGAMECREDITS)
+CZ_GDRPC_Timer - snížení frekvence volání GDRPC API
 CZ_GDRPC_update - volání přesunuto do obecnější funkce
 
 
@@ -1965,10 +1971,7 @@ func void View_Current_Hour()
 		};
 	};
 
-	if(Menu_ReadInt("CZ_SETTINGS_OTHER","ShowAmmo") == TRUE)
-	{
-		print_arrow_count(1,7);
-	};
+	print_arrow_count(1,7);
 
 	//-----------Status-bary---------------
 
@@ -5634,15 +5637,12 @@ func void Hero_poisoned()
 			Snd_Play("MFX_THUNDERSTORM_THUNDER");
 			Wld_SendTrigger("EVT_CAMERA_PROLOG");
 			Mob_CreateItems("NW_CHEST_12",ITMW_1H_CREST,1);
+			CZ_VERSION_SAVEGAME = CZ_VERSION_CURRENT;
 		}
 		else if(PrologCount == 3)
 		{
 			Snd_Play("MFX_THUNDERSTORM_THUNDER");
 			Wld_PlayEffect("SPELLFX_THUNDERSTORM_RAIN_NOCOL",hero,hero,0,0,0,FALSE);
-		}
-		else if(PrologCount == 4)
-		{
-			AI_NoticePrint(500,7000,"Gothic 2 - Návraty 2.0a v66.2 - CZ v1.01");
 		}
 		else if(PrologCount == 13)
 		{
@@ -5678,11 +5678,21 @@ func void Hero_poisoned()
 			Npc_ModifyBodyState(hero,BS_MOD_CONTROLLED,0);
 		};
 
-
-
-		if(PrologCount == 3)
+		if(PrologCount == 2)
 		{
-			PrintScreen("Překlad do češtiny vytvořili:",-1,24,FONT_Screen,43);
+			concatText = "Gothic 2 - Návraty 2.0a v66.2 - CZ ";
+			concatText = ConcatStrings(concatText, CZ_Version_ToString(CZ_VERSION_CURRENT));
+			PrintScreen(concatText,-1,10,FONT_NAMEBOSS,8);
+			concatText = "";
+		}
+		else if(PrologCount == 12)
+		{
+			PrintScreen("Před začátkem nové hry přesuňte nebo vymažte obsah složky Saves!",-1,10,FONT_NAMEBOSS,8);
+		};
+
+		if(PrologCount == 4)
+		{
+			PrintScreen("Překlad do češtiny vytvořili:",-1,24,FONT_Screen,45);
 		}
 		else if(PrologCount == 6)
 		{
@@ -5690,39 +5700,43 @@ func void Hero_poisoned()
 		}
 		else if(PrologCount == 8)
 		{
-			PrintScreen("Algirion   &   irendie   &   r33i   &   Winea",-1,52,FONT_Screen,8);
+			PrintScreen("Auronen   &   Fawkes   &   NesteF.   &   Stepancz02",-1,52,FONT_Screen,8);
 		}
-		else if(PrologCount == 18)
+		else if(PrologCount == 10)
 		{
-			PrintScreen("Aeyon, Aky, Carrion, deusex",-1,40,FONT_Screen,8);
+			PrintScreen("Algirion   &   irendie   &   r33i   &   Winea",-1,60,FONT_Screen,8);
 		}
 		else if(PrologCount == 20)
 		{
-			PrintScreen("Diademos, g1g2g3, Garruk, Gustik 5",-1,48,FONT_Screen,8);
+			PrintScreen("Aeyon, Aky, Carrion, deusex",-1,40,FONT_Screen,8);
 		}
 		else if(PrologCount == 22)
 		{
-			PrintScreen("herek, Hokaido, Illidan61, Karasuuu",-1,56,FONT_Screen,8);
+			PrintScreen("Diademos, g1g2g3, Garruk, Gustik 5",-1,48,FONT_Screen,8);
 		}
 		else if(PrologCount == 24)
 		{
-			PrintScreen("Keel, kral66, Kristi, lopez.com",-1,64,FONT_Screen,8);
+			PrintScreen("herek, Huro, Illidan61, Karasuuu",-1,56,FONT_Screen,8);
 		}
-		else if(PrologCount == 34)
+		else if(PrologCount == 26)
 		{
-			PrintScreen("Mike1, palino, s.bukviar, Saturas222",-1,44,FONT_Screen,8);
+			PrintScreen("Keel, kral66, Kristi, lopez.com",-1,64,FONT_Screen,8);
 		}
 		else if(PrologCount == 36)
 		{
-			PrintScreen("Septor, shadegm, Snupy, Stone",-1,52,FONT_Screen,8);
+			PrintScreen("macin33, Mike1, palino, Saturas222",-1,44,FONT_Screen,8);
 		}
 		else if(PrologCount == 38)
 		{
-			PrintScreen("Tomislav, Trivett, Vojta1122, Xort",-1,60,FONT_Screen,8);
+			PrintScreen("Septor, shadegm, Snupy, Stone",-1,52,FONT_Screen,8);
 		}
 		else if(PrologCount == 40)
 		{
-			PrintScreen("Všem patří velké uznání a obdiv",-1,80,FONT_Screen,12);
+			PrintScreen("Tomislav, Trivett, Vojta1122, Xort",-1,60,FONT_Screen,8);
+		}
+		else if(PrologCount == 50)
+		{
+			PrintScreen("Všem patří velké uznání a obdiv",-1,80,FONT_Screen,6);
 		};
 
 
@@ -6020,69 +6034,74 @@ func void Hero_poisoned()
 		}
 		else if(EpilogeCount == 46)
 		{
-			PrintScreen("Kaiser, helpo1",-1,85,FONT_Prolog,3);
+			PrintScreen("helpo1, Kaiser",-1,85,FONT_Prolog,3);
 			PrintScreen("Nemrtvý Rysec, Greg",-1,92,FONT_Prolog,3);
 		}
 		else if(EpilogeCount == 50)
 		{
-			PrintScreen("irendie, Keel",-1,85,FONT_Prolog,3);
-			PrintScreen("r33i, Winea",-1,92,FONT_Prolog,3);
+			PrintScreen("Auronen, Fawkes",-1,85,FONT_Prolog,3);
+			PrintScreen("NesteF., Stepancz02",-1,92,FONT_Prolog,3);
 		}
 		else if(EpilogeCount == 54)
 		{
-			PrintScreen("Aeyon, Aky",-1,85,FONT_ScreenSmall,3);
-			PrintScreen("Algirion, Carrion",-1,92,FONT_ScreenSmall,3);
+			PrintScreen("Algirion, irendie",-1,85,FONT_Prolog,3);
+			PrintScreen("r33i, Winea",-1,92,FONT_Prolog,3);
 		}
 		else if(EpilogeCount == 58)
 		{
-			PrintScreen("deusex, Diademos",-1,85,FONT_ScreenSmall,3);
-			PrintScreen("g1g2g3, Garruk",-1,92,FONT_ScreenSmall,3);
+			PrintScreen("Aeyon, Aky",-1,85,FONT_ScreenSmall,3);
+			PrintScreen("Carrion, deusex",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 62)
 		{
-			PrintScreen("Gustik 5, herek",-1,85,FONT_ScreenSmall,3);
-			PrintScreen("Hokaido, Illidan61",-1,92,FONT_ScreenSmall,3);
+			PrintScreen("Diademos, g1g2g3",-1,85,FONT_ScreenSmall,3);
+			PrintScreen("Garruk, Gustik 5",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 66)
 		{
-			PrintScreen("Karasuuu, kral66",-1,85,FONT_ScreenSmall,3);
-			PrintScreen("Kristi, lopez.com",-1,92,FONT_ScreenSmall,3);
+			PrintScreen("herek, Huro",-1,85,FONT_ScreenSmall,3);
+			PrintScreen("Illidan61, Karasuuu",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 70)
 		{
-			PrintScreen("Mike1, palino",-1,85,FONT_ScreenSmall,3);
-			PrintScreen("s.bukviar, Saturas222",-1,92,FONT_ScreenSmall,3);
+			PrintScreen("Keel, kral66",-1,85,FONT_ScreenSmall,3);
+			PrintScreen("Kristi, lopez.com",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 74)
+		{
+			PrintScreen("macin33, Mike1",-1,85,FONT_ScreenSmall,3);
+			PrintScreen("palino, Saturas222",-1,92,FONT_ScreenSmall,3);
+		}
+		else if(EpilogeCount == 78)
 		{
 			PrintScreen("Septor, shadegm",-1,85,FONT_ScreenSmall,3);
 			PrintScreen("Snupy, Stone",-1,92,FONT_ScreenSmall,3);
 		}
-		else if(EpilogeCount == 78)
+		else if(EpilogeCount == 82)
 		{
 			PrintScreen("Tomislav, Trivett",-1,85,FONT_ScreenSmall,3);
 			PrintScreen("Vojta1122, Xort",-1,92,FONT_ScreenSmall,3);
 		}
-		else if(EpilogeCount == 82)
+		else if(EpilogeCount == 86)
 		{
 			PrintScreen("Pokud vydržíte až do konce,",-1,85,FONT_ScreenSmall,3);
 			PrintScreen("- na konci ještě něco je... -",-1,92,FONT_ScreenSmall,3);
 		}
-		else if(EpilogeCount == 86)
+		else if(EpilogeCount == 90)
 		{
 			PrintScreen("Zvláštní poděkování vývojářům Gothic SystemPack:",-1,85,FONT_ScreenSmall,3);
 			PrintScreen("KuDeSnik, Guzz aka killer-m, Mukhomor",-1,90,FONT_Prolog,3);
 		}
-		else if(EpilogeCount == 90)
+		else if(EpilogeCount == 94)
 		{
 			PrintScreen("Dabing modifikace:",-1,85,FONT_ScreenSmall,3);
 		}
-		else if(EpilogeCount == 94)
+		else if(EpilogeCount == 98)
 		{
 			PrintScreen("!sTaR",-1,85,FONT_Prolog,3);
 			PrintScreen("- dabing více než 100 postav -",-1,92,FONT_ScreenSmall,3);
 		}
-		else if(EpilogeCount == 100)
+		else if(EpilogeCount == 102)
 		{
 			PrintScreen("Adept",-1,85,FONT_Prolog,3);
 			PrintScreen("- dabing více než 75 postav, střih a editování dialogů -",-1,92,FONT_ScreenSmall,3);
@@ -6170,7 +6189,7 @@ func void Hero_poisoned()
 		else if(EpilogeCount == 170)
 		{
 			PrintScreen("Během vývoje byly použity materiály z následovných modifikací:",-1,85,FONT_ScreenSmall,3);
-			PrintScreen("(To by mě zajímalo jestli někdo na ty titulky kouká?)",-1,92,FONT_ScreenSmall,3);
+			PrintScreen("(To by mě zajímalo, jestli někdo na ty titulky kouká?)",-1,92,FONT_ScreenSmall,3);
 		}
 		else if(EpilogeCount == 174)
 		{
@@ -9169,7 +9188,8 @@ func void Hero_poisoned()
 		{
 			if(WarnNakedDay == FALSE)
 			{
-				AI_Print("Neběhej po světě nahý! Někdo si to může špatně vysvětlit...");
+				AI_Print("Neběhej po světě nahý!");
+				AI_Print("Lidé s tebou nebudou chtít mluvit a můžeš onemocnět...");
 				WarnNakedDay = TRUE;
 			};
 		}
@@ -16027,7 +16047,11 @@ func void GamePaused()
 
 	if(Menu_ReadInt("CZ_SETTINGS_OTHER","OutputGDRPC") == TRUE)
 	{
-		CZ_GDRPC_update();
+		if((CZ_GDRPC_Timer + 1000) < Timer())
+		{
+			CZ_GDRPC_Timer = Timer();
+			CZ_GDRPC_update();
+		};
 	};
 
 	if((MoreInfoOnScreen == TRUE) && (bHeroIsInCutscene == FALSE) && (HeroTrans == FALSE) && (PLAYER_MOBSI_PRODUCTION == MOBSI_NONE) && (OptionCheck == FALSE) && (ShakoIsOn[0] == FALSE) && (HeroNotMobsi == FALSE) && (HeroIsDead == FALSE) && (CaptureCheat == TRUE) && (ENDGAMECREDITS == FALSE))

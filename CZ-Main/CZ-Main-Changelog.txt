@@ -57,6 +57,28 @@ instance Spell_UnlockChest - nastavení atributu canTurnDuringInvest (pro GFA)
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\AI\Magic\Spells\Spell_Shrink.d   */
+
+
+v1.02:
+
+ShrinkUse - zrušení omezení kouzla na jediné použití
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\AI\Magic\Spells\Spell_SummonMud.d   */
+
+
+v1.02:
+
+Hlp_GetAliveNPC(Crait) - ošetřena změna stavu vyvolané krajty
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\AI\Monster\B_Monster\B_InitMonsterAttitudes.d   */
 
 
@@ -273,6 +295,17 @@ CZ_Settings_Diff_LPPerLevel - konstanta nahrazena upravitelnou proměnnou (na ž
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\B_Story\B_BlessAttribute.d   */
+
+
+v1.02:
+
+(6x) oth.aivar[REAL_...] - navýšení atributů pomocí modlení zařazeno mezi bonusy
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\B_Story\b_checkadwinpresence.d   */
 
 
@@ -290,6 +323,17 @@ func void Use_ItWr_VatrasDiary - upraveny podmínky získání dovednosti vytvo�
 v1.00:
 
 (3x) ITMW_1H_CREST (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\B_Story\b_enter_dragonisland.d   */
+
+
+v1.02:
+
+CZ_Crait_SetStatus - opraveno sledování stavu vyvolané krajty
 
 
 ----------------------------------------------------------------------------------------------------
@@ -341,7 +385,13 @@ func void B_PlayerFindItem - upraveny výpisy
 v1.02:
 
 freeAimingEnabled - nastavení automatického míření (AST-AutoAIM) nahrazeno nastavením GFA (GFA-freeAimingEnabled)
+print_arrow_count - zrušení možnosti vypnout indikátor munice (potíže s fontem vyřešeny)
 CZ_KeepSettingsBookInInventory - přidáno volání funkce pro zachování instance knihy nastavení v inventáři
+if(PrologCount == 0) - nastavení proměnné CZ_VERSION_SAVEGAME (kvůli identifikaci verze hry)
+if(PrologCount == 2) - přesunut a automatizován výpis verze hry
+if(PrologCount == 12) - přidáno varování o přesunutí uložených pozic
+(2x) aktualizovány titulky - intro a úvodní (PrologCredits), závěrečné (ENDGAMECREDITS)
+CZ_GDRPC_Timer - snížení frekvence volání GDRPC API
 CZ_GDRPC_update - volání přesunuto do obecnější funkce
 
 
@@ -432,6 +482,17 @@ func int B_GiveInvItems - upraveny výpisy
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\B_Story\B_Kapitelwechsel.d   */
+
+
+v1.02:
+
+(2x) CZ_Crait_SetStatus - opraveno sledování stavu vyvolané krajty
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\B_Story\B_LogEntry.d   */
 
 
@@ -473,6 +534,11 @@ func int b_teachattributepointstarinaks - dovysvětlení nejasné formulace
 
 
 /*   (...)\Story\B_Story\B_TeachFightTalentPercent.d   */
+
+
+v1.02:
+
+(4x) FutTalent - opraven přepočet intervalů učení
 
 
 v1.00:
@@ -608,6 +674,11 @@ CZ_SkillCheckCondition - přidáno zobrazování skill checků
 /*   (...)\Story\Dialoge\DIA_BAU_970_Orlan.d   */
 
 
+v1.02:
+
+AI_EquipArmor - opraven prodej Orlanovy vlastní zbroje
+
+
 v1.00:
 
 func void DIA_Orlan_RUESTUNG_Buy - opraveno ID předmětu (ITAR_Bau_L -> ITAR_Bau_M)
@@ -656,6 +727,17 @@ v1.00:
 v1.00:
 
 func void DIA_Addon_Edgor_TrainStart_GIFT - opraven zápis do deníku
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_BDT_1083_Addon_Esteban.d   */
+
+
+v1.02:
+
+func void DIA_Addon_Esteban_Auftrag_Info - opraven kód instance NPC
 
 
 ----------------------------------------------------------------------------------------------------
@@ -820,6 +902,17 @@ v1.00:
 
 func void dia_hun_743_nix_whosdogs_info - úpravy výpisů a dialogů
 DIA_HUN_743_Nix_ShadowFurDone_01_02 - opraveno other/self
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_hun_744_barem.d   */
+
+
+v1.02:
+
+func void dia_hun_744_barem_hello_info - upraveny podmínky dialogu
 
 
 ----------------------------------------------------------------------------------------------------
@@ -1123,6 +1216,7 @@ v1.01:
 
 v1.02:
 
+func void DIA_Lord_Hagen_Pass_Info - dovysvětleny podmínky pro vstup do 2. kapitoly
 (2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
@@ -1210,6 +1304,18 @@ func void DIA_Addon_Henry_Hello_Info - opraveno pořadí dialogů
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_PIR_1357_Addon_Garett.d   */
+
+
+v1.02:
+
+func int DIA_Addon_Garett_Anheuern_Condition - upraveny podmínky dialogu
+func int DIA_Addon_Garett_Hello_Condition - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_pir_1397_addon_inextremo_charlotte.d   */
 
 
@@ -1222,6 +1328,11 @@ func void dia_addon_inextremo_charlotte_permjobpay_info - Charlotte (cyrilice ->
 
 
 /*   (...)\Story\Dialoge\DIA_SLD_800_Lee.d   */
+
+
+v1.02:
+
+func void DIA_Lee_PETZMASTER_Info - opraveno nastavení proměnné prvního setkání
 
 
 v1.01:
@@ -1708,6 +1819,11 @@ FUNC VOID Trinkfass_S1 - opraven atribut (ATR_HITPOINTS_MAX -> ATR_MANA_MAX)
 /*   (...)\Story\Events\B_Spawn_Skeleton.d   */
 
 
+v1.02:
+
+func void Scr_OpenChest_BigRuby_s1 - upravena podmínka otevření truhly na radnici
+
+
 v1.01:
 
 CZ_Settings_Diff_EnableTraps - přidání možnosti zapnout/vypnout pasti
@@ -1818,6 +1934,11 @@ const string PRINT_ProdItemsMissingCZMateh - deklarace nové konstanty
 /*   (...)\_Intern\Constants.d   */
 
 
+v1.02:
+
+const string TEXT_FONT_DEFAULT - navrácen původní font (potíže vyřešeny)
+
+
 v1.00:
 
 const string TEXT_FONT_DEFAULT - opraven font (kvůli potížím s FPS)
@@ -1840,6 +1961,11 @@ func int c_schasrareweapons - itmw_1h_Crest (cyrilice -> latinka)
 /*   (...)\_misk_\equipweapn.d   */
 
 
+v1.02:
+
+(11x) CZ TELEPORTY - nové teleporty navázány na existující teleportační kameny
+
+
 v1.01:
 
 (13x) CZ TELEPORTY - nově přidané teleporty
@@ -1860,6 +1986,11 @@ v1.01:
 
 
 /*   (...)\_misk_\makearrows_s1.d   */
+
+
+v1.02:
+
+(7x) B_MAKEBOWS_BowCorpse, B_MAKEBOWS_BowMake, B_SKINRAPE_BowRope - opakovaná funkcionalita vyjmuta do oddělených funkcí
 
 
 v1.01:
@@ -1911,10 +2042,14 @@ func void print_campinfo - přidán Bilgot jako lovec (kvůli úpravám úkolů 
 
 v1.02:
 
+(36x) CZ_Crait_SetStatus - opraveno sledování stavu vyvolané krajty
 startup_global - odstraněna zbytečná volání některých funkcí a resetování proměnných
+
 init_global:
-- přidány inicializace: LeGo (Timer), AF Script Packet (EnhancedInfoManager / PickLockHelper)
+- přidány inicializace: LeGo (GFA, Timer), GFA, AF Script Packet (EnhancedInfoManager / PickLockHelper)
 - odstraněno volání zastaralé funkce CZ_Settings_Diff_Update
+- CZ_Version_Check - přidáno upozornění na nekompatibilní verzi uložených her
+- CZ_GDRPC_Timer - přidáno resetování proměnné (kvůli snížení frekvence volání GDRPC API)
 
 
 v1.01:
@@ -1941,21 +2076,17 @@ TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
 /*   (...)\_misk_\T_MAX_HP.d   */
 
 
+v1.02:
+
+nové proměnné a konstanty přesunuty do souboru "(...)\_misk_\_czvars.d" (společně s částí changelogu)
+
+
 v1.01:
 
-var int MageSpeechCount - deklarace nové proměnné (kvůli titulkům dialogu Xardas vs. Pyrokar)
-(2x) CZ TELEPORTY - deklarace nových proměnných (kvůli nově přidaným teleportům)
-var int OpenFireCaveAgain_CZ - deklarace nové proměnné (kvůli úkolu Zbraň velkého lovce (TOPIC_TagNorGrHunWeap))
-var int CloseFireCaveAgain_CZ - deklarace nové proměnné (kvůli úkolu Zbraň velkého lovce (TOPIC_TagNorGrHunWeap))
 mis_orcgreatwar - mis_orcgreatwar (cyrilice -> latinka)
-CZ SETTINGS - deklarace nových proměnných (kvůli přidání nových nastavení)
 
 
 v1.00:
-
-var int BookBonus_162 - deklarace nové proměnné (kvůli opravě bonusu po přečtení)
-var int BookBonus_163 - deklarace nové proměnné (kvůli opravě bonusu po přečtení)
-const int BILGOTHUNTFOOD - deklarace nové konstanty (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
 
 var int RespFireGuard - kosmetické změny
 var int RespDarkGuard - kosmetické změny
@@ -2009,13 +2140,18 @@ func int DIA_NONE_100_Xardas_WhyHere_condition - upraveny podmínky dialogu
 
 v1.02:
 
-ShowSkillChecks - deklarace nového .ini nastavení
 upraven systém změn obtížnosti:
 - odstraněny funkce CZ_Settings_Diff_Save, CZ_Settings_Diff_Load, CZ_Settings_Diff_Update
 - CZ_Settings_Diff_Init - (4x) odstraněno volání funkce, nastavování proměnných a zápisy do Gothic.ini
 
+CZ_Settings_Other_Init:
+- deklarace nových .ini nastavení - DialogueNumKeysControl, DialogueNumKeysShow, ShowSkillChecks
+- zrušení možnosti vypnout indikátor munice (potíže s fontem vyřešeny) - ShowAmmo
+
+CZ_GetGuildName - zjednodušen přístup do TXT_GUILDS (Ikarus/LeGo funkce)
+CZ_GDRPC_update - přechod na nový formát GDRPC API
 (20x) const int CZ_SKILL - deklarace nových konstant (kvůli skill checkům)
-CZ_GetSkillValue, CZ_GetSkillAbbr, CZ_SkillCheckPrefix, CZ_SkillCheckCondition - nové funkce
+CZ_GetSkillValue, CZ_GetSkillAbbr, CZ_SkillCheckPrefix, CZ_SkillCheckCondition, CZ_Version_ToString, CZ_Version_Check, CZ_Crait_SetStatus - nové funkce
 
 
 v1.01a:
@@ -2037,6 +2173,35 @@ nový soubor
 v1.02:
 
 nový soubor
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\_czvars.d   */
+
+
+v1.02:
+
+nový soubor
+CZ_VERSION, CZ_VERFLAG - deklarace nových konstant a proměnných (kvůli identifikaci verze hry)
+var int CZ_GDRPC_Timer - deklarace nové proměnné (kvůli snížení frekvence volání GDRPC API)
+
+
+v1.01:		(přesunuto ze souboru "(...)\_misk_\T_MAX_HP.d")
+
+var int MageSpeechCount - deklarace nové proměnné (kvůli titulkům dialogu Xardas vs. Pyrokar)
+var int OpenFireCaveAgain_CZ - deklarace nové proměnné (kvůli úkolu Zbraň velkého lovce (TOPIC_TagNorGrHunWeap))
+var int CloseFireCaveAgain_CZ - deklarace nové proměnné (kvůli úkolu Zbraň velkého lovce (TOPIC_TagNorGrHunWeap))
+CZ TELEPORTY - deklarace nových proměnných (kvůli nově přidaným teleportům)
+CZ SETTINGS - deklarace nových proměnných (kvůli přidání nových nastavení)
+
+
+v1.00:		(přesunuto ze souboru "(...)\_misk_\T_MAX_HP.d")
+
+const int BILGOTHUNTFOOD - deklarace nové konstanty (kvůli úpravám úkolů Noví lovci (TOPIC_NewHunters) a Lidé pro tábor (TOPIC_PPL_FOR_TOWER))
+var int BookBonus_162 - deklarace nové proměnné (kvůli opravě bonusu po přečtení)
+var int BookBonus_163 - deklarace nové proměnné (kvůli opravě bonusu po přečtení)
 
 
 ----------------------------------------------------------------------------------------------------

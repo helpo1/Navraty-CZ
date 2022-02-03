@@ -4,6 +4,7 @@
 
 v1.02:
 
+func void DIA_Lord_Hagen_Pass_Info - dovysvětleny podmínky pro vstup do 2. kapitoly
 (2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
@@ -745,6 +746,16 @@ func void DIA_Lord_Hagen_Pass_Info()
 		{
 			AI_Output(self,other,"DIA_Lord_Hagen_Pass_01_13");	//Nejprve mi dokaž, že se o sebe dovedeš postarat a dokonči svůj úkol.
 			AI_Output(self,other,"DIA_Lord_Hagen_Pass_01_14");	//Pomoz mágům Vody s těmi jejich potížemi.
+
+			var string concatText;
+
+			concatText = ConcatStrings("('", TOPIC_Addon_Ornament);
+			concatText = ConcatStrings(concatText, "' a '");
+			concatText = ConcatStrings(concatText, TOPIC_Addon_WhoStolePeople);
+			concatText = ConcatStrings(concatText, "')!");
+
+			AI_Print("Ještě jsi nesplnil úkoly pro mágy Vody");
+			AI_Print(concatText);
 		}
 		else if((hero.guild == GIL_NOV) || (hero.guild == GIL_NDM))
 		{

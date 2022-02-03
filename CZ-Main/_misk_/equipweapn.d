@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+(11x) CZ TELEPORTY - nové teleporty navázány na existující teleportační kameny
+
+
 v1.01:
 
 (13x) CZ TELEPORTY - nově přidané teleporty
@@ -565,21 +570,21 @@ func void PC_TELEPORTLOCATION_ON_info()
 
 	if((CurrentLevel != PALADINFORT_ZEN) && (CurrentLevel != ITUSELDTOWER_ZEN) && (CurrentLevel != LOSTVALLEY_ZEN) && (CurrentLevel != DRAGONTEMPLE_ZEN) && (CurrentLevel != PASHALWORLD_ZEN) && (CurrentLevel != HAOSWORLD_ZEN) && (CurrentLevel != PRIORATWORLD_ZEN) && (CurrentLevel != DRAGONISLAND_ZEN) && (CurrentLevel != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
 	{
-		if((VarusMeet == TRUE))
+		if((VarusMeet == TRUE) && (BIGFARM_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do pevnosti Azgan",PC_TELEPORTLOCATION_ON_PALADINFORT_CZ);			
 		};
 	};
 	if((CurrentLevel != DEADGROT_ZEN) && (CurrentLevel != ITUSELDTOWER_ZEN) && (CurrentLevel != LOSTVALLEY_ZEN) && (CurrentLevel != DRAGONTEMPLE_ZEN) && (CurrentLevel != PASHALWORLD_ZEN) && (CurrentLevel != HAOSWORLD_ZEN) && (CurrentLevel != PRIORATWORLD_ZEN) && (CurrentLevel != DRAGONISLAND_ZEN) && (CurrentLevel != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
 	{
-		if((Npc_KnowsInfo(hero,DIA_KREOL_HELLO) == TRUE))
+		if((Npc_KnowsInfo(hero,DIA_KREOL_HELLO) == TRUE) && (NETBEK_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do Zamlžené věže",PC_TELEPORTLOCATION_ON_DEADGROT_CZ);			
 		};
 	};
 	if((CurrentLevel != ORCCITY_ZEN) && (CurrentLevel != ITUSELDTOWER_ZEN) && (CurrentLevel != LOSTVALLEY_ZEN) && (CurrentLevel != DRAGONTEMPLE_ZEN) && (CurrentLevel != PASHALWORLD_ZEN) && (CurrentLevel != HAOSWORLD_ZEN) && (CurrentLevel != PRIORATWORLD_ZEN) && (CurrentLevel != DRAGONISLAND_ZEN) && (CurrentLevel != SHVALLEY_ZEN) && (CurrentLevel != SECRETISLAND_ZEN) && (CurrentLevel != UNDEADZONE_ZEN) && (CurrentLevel != LOSTISLAND_ZEN) && (CurrentLevel != FIRECAVE_ZEN) && (CurrentLevel != GUARDIANCHAMBERS_ZEN) && (CurrentLevel != HARADRIMARENA_ZEN) && (CurrentLevel != TEARSTEMPLE_ZEN))
 	{
-		if((PASSORKCHAMBER == TRUE) || (Npc_KnowsInfo(hero,DIA_Orc_8215_Kan_Hello) == TRUE) || (CanEnterOrcMine == TRUE) || (UrTrallOkShv == TRUE))
+		if(((PASSORKCHAMBER == TRUE) || (Npc_KnowsInfo(hero,DIA_Orc_8215_Kan_Hello) == TRUE) || (CanEnterOrcMine == TRUE) || (UrTrallOkShv == TRUE)) && (PASSNW_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do skřetího města",PC_TELEPORTLOCATION_ON_ORCCITY_CZ);			
 		};
@@ -612,11 +617,11 @@ func void PC_TELEPORTLOCATION_ON_ADW()
 
 	/*     // ----- CZ TELEPORTY ----- \\     */
 
-	if(Npc_KnowsInfo(hero,DIA_Addon_Saturas_ADWStart) == TRUE)
+	if((Npc_KnowsInfo(hero,DIA_Addon_Saturas_ADWStart) == TRUE) && (ADW_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] na teleportační náměstí",PC_TELEPORTLOCATION_ON_ADW_TELEPORTSQUARE_CZ);			
 	};
-	if(DRAGONGOLDMEET == TRUE)
+	if((DRAGONGOLDMEET == TRUE) && (ADW_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] ke zlatému drakovi",PC_TELEPORTLOCATION_ON_ADW_GOLDDRAGON_CZ);			
 	};
@@ -685,15 +690,15 @@ func void PC_TELEPORTLOCATION_ON_HOR()
 
 	/*     // ----- CZ TELEPORTY ----- \\     */
 
-	if(Npc_KnowsInfo(hero,DIA_Lothar_Hallo) == TRUE)
+	if((Npc_KnowsInfo(hero,DIA_Lothar_Hallo) == TRUE) && (TOWN_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] k jižní bráně města Khorinis",PC_TELEPORTLOCATION_ON_NW_DOWNTOWN_CZ);			
 	};
-	if((Npc_KnowsInfo(hero,DIA_Lares_HALLO) == TRUE) == TRUE)
+	if((Npc_KnowsInfo(hero,DIA_Lares_HALLO) == TRUE) && (TOWN_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do přístavu",PC_TELEPORTLOCATION_ON_NW_HAFEN_CZ);			
 	};
-	if(PasswordSet == TRUE)
+	if((PasswordSet == TRUE) && (BIGFARM_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do tábora Atros",PC_TELEPORTLOCATION_ON_NW_ATROS_CZ);			
 	};
@@ -742,19 +747,19 @@ func void PC_TELEPORTLOCATION_ON_OW()
 
 	/*     // ----- CZ TELEPORTY ----- \\     */
 
-	if(Npc_KnowsInfo(hero,DIA_ORC_8552_WATCHER_HELLO) == TRUE)
+	if((Npc_KnowsInfo(hero,DIA_ORC_8552_WATCHER_HELLO) == TRUE) && (PASSNW_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] ke skřetímu městu",PC_TELEPORTLOCATION_ON_OW_ORCCITY_CZ);			
 	};
-	if((ORCTEMPLEONETIME == TRUE) || (ORCTEMPLEGATEOPENED == TRUE))
+	if(((ORCTEMPLEONETIME == TRUE) || (ORCTEMPLEGATEOPENED == TRUE)) && (DARKTOWER_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] ke Spáčovu chrámu",PC_TELEPORTLOCATION_ON_OW_SLEEPERTEMPLE_CZ);			
 	};
-	if(Npc_KnowsInfo(hero,XBS_7513_DARRION_HI) == TRUE)
+	if((Npc_KnowsInfo(hero,XBS_7513_DARRION_HI) == TRUE) && (NETBEK_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do Darrionovy kovárny",PC_TELEPORTLOCATION_ON_OW_DARRION_CZ);			
 	};
-	if(Npc_KnowsInfo(hero,DIA_NagShor_Hello) == TRUE)
+	if((Npc_KnowsInfo(hero,DIA_NagShor_Hello) == TRUE) && (SKLEP_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do skřetího klanu Vysoké skály",PC_TELEPORTLOCATION_ON_OW_HIGHROCK_CZ);			
 	};
@@ -791,7 +796,7 @@ func void PC_TELEPORTLOCATION_ON_AV()
 
 	/*     // ----- CZ TELEPORTY ----- \\     */
 
-	if(Npc_KnowsInfo(hero,DIA_Dragon_AV_HELLO) == TRUE)
+	if((Npc_KnowsInfo(hero,DIA_Dragon_AV_HELLO) == TRUE) && (PYRAMIDE_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] k Er'Khazirově hrobce",PC_TELEPORTLOCATION_ON_ADV_ERHAZIR_CZ);			
 	};
@@ -821,7 +826,7 @@ func void PC_TELEPORTLOCATION_ON_PALADINFORT_CZ()
 {
 	Info_ClearChoices(PC_TELEPORTLOCATION_ON);
 
-	if(VarusMeet == TRUE)
+	if((VarusMeet == TRUE) && (BIGFARM_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do pevnosti Azgan",PC_TELEPORTLOCATION_ON_PF_AZGAN_CZ);
 	};
@@ -833,7 +838,7 @@ func void PC_TELEPORTLOCATION_ON_DEADGROT_CZ()
 {
 	Info_ClearChoices(PC_TELEPORTLOCATION_ON);
 
-	if(Npc_KnowsInfo(hero,DIA_KREOL_HELLO) == TRUE)
+	if((Npc_KnowsInfo(hero,DIA_KREOL_HELLO) == TRUE) && (NETBEK_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] k nekromantovi",PC_TELEPORTLOCATION_ON_DG_CREOL_CZ);
 	};
@@ -845,19 +850,19 @@ func void PC_TELEPORTLOCATION_ON_ORCCITY_CZ()
 {
 	Info_ClearChoices(PC_TELEPORTLOCATION_ON);
 
-	if(PASSORKCHAMBER == TRUE)
+	if((PASSORKCHAMBER == TRUE) && (PASSNW_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] ke skřetímu vůdci",PC_TELEPORTLOCATION_ON_OC_URTHRALL_CZ);
 	};
-	if(Npc_KnowsInfo(hero,DIA_Orc_8215_Kan_Hello) == TRUE)
+	if((Npc_KnowsInfo(hero,DIA_Orc_8215_Kan_Hello) == TRUE) && (PASSNW_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do skřetí arény",PC_TELEPORTLOCATION_ON_OC_ARENA_CZ);
 	};
-	if(CanEnterOrcMine == TRUE)
+	if((CanEnterOrcMine == TRUE) && (PASSNW_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] do skřetího dolu",PC_TELEPORTLOCATION_ON_OC_ORCMINE_CZ);
 	};
-	if(UrTrallOkShv == TRUE)
+	if((UrTrallOkShv == TRUE) && (PASSNW_TP == TRUE))
 	{
 		Info_AddChoice(PC_TELEPORTLOCATION_ON,"... [!] k portálu do Údolí stínů",PC_TELEPORTLOCATION_ON_OC_SHVENTRANCE_CZ);
 	};
@@ -2138,15 +2143,15 @@ func void PC_TELEPORT_ON_info()
 
 		/*     // ----- CZ TELEPORTY ----- \\     */
 
-		if(Npc_KnowsInfo(hero,DIA_Lothar_Hallo) == TRUE)
+		if((Npc_KnowsInfo(hero,DIA_Lothar_Hallo) == TRUE) && (TOWN_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] k jižní bráně města Khorinis",PC_TELEPORT_ON_NW_DOWNTOWN_CZ);			
 		};
-		if((Npc_KnowsInfo(hero,DIA_Lares_HALLO) == TRUE) == TRUE)
+		if((Npc_KnowsInfo(hero,DIA_Lares_HALLO) == TRUE) && (TOWN_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] do přístavu",PC_TELEPORT_ON_NW_HAFEN_CZ);			
 		};
-		if(PasswordSet == TRUE)
+		if((PasswordSet == TRUE) && (BIGFARM_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] do tábora Atros",PC_TELEPORT_ON_NW_ATROS_CZ);			
 		};
@@ -2167,11 +2172,11 @@ func void PC_TELEPORT_ON_info()
 
 		/*     // ----- CZ TELEPORTY ----- \\     */
 
-		if(Npc_KnowsInfo(hero,DIA_Addon_Saturas_ADWStart) == TRUE)
+		if((Npc_KnowsInfo(hero,DIA_Addon_Saturas_ADWStart) == TRUE) && (ADW_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] na teleportační náměstí",PC_TELEPORT_ON_ADW_TELEPORTSQUARE_CZ);			
 		};
-		if(DRAGONGOLDMEET == TRUE)
+		if((DRAGONGOLDMEET == TRUE) && (ADW_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] ke zlatému drakovi",PC_TELEPORT_ON_ADW_GOLDDRAGON_CZ);			
 		};
@@ -2216,19 +2221,19 @@ func void PC_TELEPORT_ON_info()
 
 		/*     // ----- CZ TELEPORTY ----- \\     */
 
-		if(Npc_KnowsInfo(hero,DIA_ORC_8552_WATCHER_HELLO) == TRUE)
+		if((Npc_KnowsInfo(hero,DIA_ORC_8552_WATCHER_HELLO) == TRUE) && (PASSNW_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] ke skřetímu městu",PC_TELEPORT_ON_OW_ORCCITY_CZ);			
 		};
-		if((ORCTEMPLEONETIME == TRUE) || (ORCTEMPLEGATEOPENED == TRUE))
+		if(((ORCTEMPLEONETIME == TRUE) || (ORCTEMPLEGATEOPENED == TRUE)) && (DARKTOWER_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] ke Spáčovu chrámu",PC_TELEPORT_ON_OW_SLEEPERTEMPLE_CZ);			
 		};
-		if(Npc_KnowsInfo(hero,XBS_7513_DARRION_HI) == TRUE)
+		if((Npc_KnowsInfo(hero,XBS_7513_DARRION_HI) == TRUE) && (NETBEK_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] do Darrionovy kovárny",PC_TELEPORT_ON_OW_DARRION_CZ);			
 		};
-		if(Npc_KnowsInfo(hero,DIA_NagShor_Hello) == TRUE)
+		if((Npc_KnowsInfo(hero,DIA_NagShor_Hello) == TRUE) && (SKLEP_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] do skřetího klanu Vysoké skály",PC_TELEPORT_ON_OW_HIGHROCK_CZ);			
 		};
@@ -2261,7 +2266,7 @@ func void PC_TELEPORT_ON_info()
 
 		/*     // ----- CZ TELEPORTY ----- \\     */
 
-		if(Npc_KnowsInfo(hero,DIA_Dragon_AV_HELLO) == TRUE)
+		if((Npc_KnowsInfo(hero,DIA_Dragon_AV_HELLO) == TRUE) && (PYRAMIDE_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] k Er'Khazirově hrobce",PC_TELEPORT_ON_ADV_ERHAZIR_CZ);			
 		};
@@ -2283,33 +2288,33 @@ func void PC_TELEPORT_ON_info()
 
 	else if(CurrentLevel == PALADINFORT_ZEN)
 	{
-		if(VarusMeet == TRUE)
+		if((VarusMeet == TRUE) && (BIGFARM_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] do pevnosti Azgan",PC_TELEPORT_ON_PF_AZGAN_CZ);
 		};
 	}
 	else if(CurrentLevel == DEADGROT_ZEN)
 	{
-		if(Npc_KnowsInfo(hero,DIA_KREOL_HELLO) == TRUE)
+		if((Npc_KnowsInfo(hero,DIA_KREOL_HELLO) == TRUE) && (NETBEK_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] k nekromantovi",PC_TELEPORT_ON_DG_CREOL_CZ);
 		};
 	}
 	else if(CurrentLevel == ORCCITY_ZEN)
 	{
-		if(PASSORKCHAMBER == TRUE)
+		if((PASSORKCHAMBER == TRUE) && (PASSNW_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] ke skřetímu vůdci",PC_TELEPORT_ON_OC_URTHRALL_CZ);
 		};
-		if(Npc_KnowsInfo(hero,DIA_Orc_8215_Kan_Hello) == TRUE)
+		if((Npc_KnowsInfo(hero,DIA_Orc_8215_Kan_Hello) == TRUE) && (PASSNW_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] do skřetí arény",PC_TELEPORT_ON_OC_ARENA_CZ);
 		};
-		if(CanEnterOrcMine == TRUE)
+		if((CanEnterOrcMine == TRUE) && (PASSNW_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] do skřetího dolu",PC_TELEPORT_ON_OC_ORCMINE_CZ);
 		};
-		if(UrTrallOkShv == TRUE)
+		if((UrTrallOkShv == TRUE) && (PASSNW_TP == TRUE))
 		{
 			Info_AddChoice(PC_TELEPORT_ON,"... [!] k portálu do Údolí stínů",PC_TELEPORT_ON_OC_SHVENTRANCE_CZ);
 		};

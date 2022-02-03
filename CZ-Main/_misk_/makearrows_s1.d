@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+(7x) B_MAKEBOWS_BowCorpse, B_MAKEBOWS_BowMake, B_SKINRAPE_BowRope - opakovaná funkcionalita vyjmuta do oddělených funkcí
+
+
 v1.01:
 
 func void pc_MagicSmithWeapon_Nimrod_info - upraven přístup do Jeskyně Ohně (FIRECAVE_ZEN) po splnění úkolu Rituál Ohně (TOPIC_KELIOSTEST)
@@ -3000,7 +3005,7 @@ func int PC_MAKEBOWS_BowCorpse_condition()
 	};
 };
 
-func void PC_MAKEBOWS_BowCorpse_info()
+func void B_MAKEBOWS_BowCorpse()
 {
 	Info_ClearChoices(PC_MAKEBOWS_BowCorpse);
 	Info_AddChoice(PC_MAKEBOWS_BowCorpse,Dialog_Back,PC_MAKEBOWS_BowCorpse_Back);
@@ -3025,6 +3030,11 @@ func void PC_MAKEBOWS_BowCorpse_info()
 	{
 		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit bukové lučiště",PC_MAKEBOWS_BowCorpse_BokTree);
 	};
+};
+
+func void PC_MAKEBOWS_BowCorpse_info()
+{
+	B_MAKEBOWS_BowCorpse();
 };
 
 func void PC_MAKEBOWS_BowCorpse_Back()
@@ -3040,29 +3050,7 @@ func void PC_MAKEBOWS_BowCorpse_JustTree()
 	CreateInvItems(self,ItMi_JustBowCorpse,1);
 	AI_PrintClr("Vyrobeno 1x Krátké lučiště!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_MAKEBOWS_BowCorpse);
-	Info_AddChoice(PC_MAKEBOWS_BowCorpse,Dialog_Back,PC_MAKEBOWS_BowCorpse_Back);
-
-	if(Npc_HasItems(self,ItMi_JustTree) >= 1)
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit krátké lučiště",PC_MAKEBOWS_BowCorpse_JustTree);
-	};
-	if((Npc_HasItems(self,ItMi_EveTree) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit vrbové lučiště",PC_MAKEBOWS_BowCorpse_EveTree);
-	};
-	if((Npc_HasItems(self,ItMi_VyzTree) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jilmové lučiště",PC_MAKEBOWS_BowCorpse_VyzTree);
-	};
-	if((Npc_HasItems(self,ItMi_YsuoTree) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jasanové lučiště",PC_MAKEBOWS_BowCorpse_YsuoTree);
-	};
-	if((Npc_HasItems(self,ItMi_BokTree) >= 1) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit bukové lučiště",PC_MAKEBOWS_BowCorpse_BokTree);
-	};
+	B_MAKEBOWS_BowCorpse();
 };
 
 func void PC_MAKEBOWS_BowCorpse_EveTree()
@@ -3073,29 +3061,7 @@ func void PC_MAKEBOWS_BowCorpse_EveTree()
 	CreateInvItems(self,ItMi_EveCorpse,1);
 	AI_PrintClr("Vyrobeno 1x Vrbové lučiště!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_MAKEBOWS_BowCorpse);
-	Info_AddChoice(PC_MAKEBOWS_BowCorpse,Dialog_Back,PC_MAKEBOWS_BowCorpse_Back);
-
-	if(Npc_HasItems(self,ItMi_JustTree) >= 1)
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit krátké lučiště",PC_MAKEBOWS_BowCorpse_JustTree);
-	};
-	if((Npc_HasItems(self,ItMi_EveTree) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit vrbové lučiště",PC_MAKEBOWS_BowCorpse_EveTree);
-	};
-	if((Npc_HasItems(self,ItMi_VyzTree) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jilmové lučiště",PC_MAKEBOWS_BowCorpse_VyzTree);
-	};
-	if((Npc_HasItems(self,ItMi_YsuoTree) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jasanové lučiště",PC_MAKEBOWS_BowCorpse_YsuoTree);
-	};
-	if((Npc_HasItems(self,ItMi_BokTree) >= 1) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit bukové lučiště",PC_MAKEBOWS_BowCorpse_BokTree);
-	};
+	B_MAKEBOWS_BowCorpse();
 };
 
 func void PC_MAKEBOWS_BowCorpse_VyzTree()
@@ -3106,29 +3072,7 @@ func void PC_MAKEBOWS_BowCorpse_VyzTree()
 	CreateInvItems(self,ItMi_VyzCorpse,1);
 	AI_PrintClr("Vyrobeno 1x Jilmové lučiště!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_MAKEBOWS_BowCorpse);
-	Info_AddChoice(PC_MAKEBOWS_BowCorpse,Dialog_Back,PC_MAKEBOWS_BowCorpse_Back);
-
-	if(Npc_HasItems(self,ItMi_JustTree) >= 1)
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit krátké lučiště",PC_MAKEBOWS_BowCorpse_JustTree);
-	};
-	if((Npc_HasItems(self,ItMi_EveTree) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit vrbové lučiště",PC_MAKEBOWS_BowCorpse_EveTree);
-	};
-	if((Npc_HasItems(self,ItMi_VyzTree) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jilmové lučiště",PC_MAKEBOWS_BowCorpse_VyzTree);
-	};
-	if((Npc_HasItems(self,ItMi_YsuoTree) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jasanové lučiště",PC_MAKEBOWS_BowCorpse_YsuoTree);
-	};
-	if((Npc_HasItems(self,ItMi_BokTree) >= 1) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit bukové lučiště",PC_MAKEBOWS_BowCorpse_BokTree);
-	};
+	B_MAKEBOWS_BowCorpse();
 };
 
 func void PC_MAKEBOWS_BowCorpse_YsuoTree()
@@ -3139,29 +3083,7 @@ func void PC_MAKEBOWS_BowCorpse_YsuoTree()
 	CreateInvItems(self,ItMi_YsuoCorpse,1);
 	AI_PrintClr("Vyrobeno 1x Jasanové lučiště!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_MAKEBOWS_BowCorpse);
-	Info_AddChoice(PC_MAKEBOWS_BowCorpse,Dialog_Back,PC_MAKEBOWS_BowCorpse_Back);
-
-	if(Npc_HasItems(self,ItMi_JustTree) >= 1)
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit krátké lučiště",PC_MAKEBOWS_BowCorpse_JustTree);
-	};
-	if((Npc_HasItems(self,ItMi_EveTree) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit vrbové lučiště",PC_MAKEBOWS_BowCorpse_EveTree);
-	};
-	if((Npc_HasItems(self,ItMi_VyzTree) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jilmové lučiště",PC_MAKEBOWS_BowCorpse_VyzTree);
-	};
-	if((Npc_HasItems(self,ItMi_YsuoTree) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jasanové lučiště",PC_MAKEBOWS_BowCorpse_YsuoTree);
-	};
-	if((Npc_HasItems(self,ItMi_BokTree) >= 1) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit bukové lučiště",PC_MAKEBOWS_BowCorpse_BokTree);
-	};
+	B_MAKEBOWS_BowCorpse();
 };
 
 func void PC_MAKEBOWS_BowCorpse_BokTree()
@@ -3172,29 +3094,7 @@ func void PC_MAKEBOWS_BowCorpse_BokTree()
 	CreateInvItems(self,ItMi_BokCorpse,1);
 	AI_PrintClr("Vyrobeno 1x Bukové lučiště!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_MAKEBOWS_BowCorpse);
-	Info_AddChoice(PC_MAKEBOWS_BowCorpse,Dialog_Back,PC_MAKEBOWS_BowCorpse_Back);
-
-	if(Npc_HasItems(self,ItMi_JustTree) >= 1)
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit krátké lučiště",PC_MAKEBOWS_BowCorpse_JustTree);
-	};
-	if((Npc_HasItems(self,ItMi_EveTree) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit vrbové lučiště",PC_MAKEBOWS_BowCorpse_EveTree);
-	};
-	if((Npc_HasItems(self,ItMi_VyzTree) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jilmové lučiště",PC_MAKEBOWS_BowCorpse_VyzTree);
-	};
-	if((Npc_HasItems(self,ItMi_YsuoTree) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jasanové lučiště",PC_MAKEBOWS_BowCorpse_YsuoTree);
-	};
-	if((Npc_HasItems(self,ItMi_BokTree) >= 1) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit bukové lučiště",PC_MAKEBOWS_BowCorpse_BokTree);
-	};
+	B_MAKEBOWS_BowCorpse();
 };
 
 instance PC_MAKEBOWS_BowMake(C_Info)
@@ -3215,7 +3115,7 @@ func int PC_MAKEBOWS_BowMake_condition()
 	};
 };
 
-func void PC_MAKEBOWS_BowMake_info()
+func void B_MAKEBOWS_BowMake()
 {
 	Info_ClearChoices(PC_MAKEBOWS_BowMake);
 	Info_AddChoice(PC_MAKEBOWS_BowMake,Dialog_Back,PC_MAKEBOWS_BowMake_Back);
@@ -3240,6 +3140,11 @@ func void PC_MAKEBOWS_BowMake_info()
 	{
 		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit bukový luk",PC_MAKEBOWS_BowMake_BokTree);
 	};
+};
+
+func void PC_MAKEBOWS_BowMake_info()
+{
+	B_MAKEBOWS_BowMake();
 };
 
 func void PC_MAKEBOWS_BowMake_Back()
@@ -3258,29 +3163,7 @@ func void PC_MAKEBOWS_BowMake_JustTree()
 	CreateInvItems(self,ItRw_BowCraft_01,1);
 	AI_PrintClr("Vyrobeno 1x Krátký luk!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_MAKEBOWS_BowMake);
-	Info_AddChoice(PC_MAKEBOWS_BowMake,Dialog_Back,PC_MAKEBOWS_BowMake_Back);
-
-	if((Npc_HasItems(self,ItMi_JustBowCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_01) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit krátký luk",PC_MAKEBOWS_BowMake_JustTree);
-	};
-	if((Npc_HasItems(self,ItMi_EveCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_02) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit vrbový luk",PC_MAKEBOWS_BowMake_EveTree);
-	};
-	if((Npc_HasItems(self,ItMi_VyzCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_03) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jilmový luk",PC_MAKEBOWS_BowMake_VyzTree);
-	};
-	if((Npc_HasItems(self,ItMi_YsuoCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_04) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jasanový luk",PC_MAKEBOWS_BowMake_YsuoTree);
-	};
-	if((Npc_HasItems(self,ItMi_BokCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_05) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 2) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit bukový luk",PC_MAKEBOWS_BowMake_BokTree);
-	};
+	B_MAKEBOWS_BowMake();
 };
 
 func void PC_MAKEBOWS_BowMake_EveTree()
@@ -3294,29 +3177,7 @@ func void PC_MAKEBOWS_BowMake_EveTree()
 	CreateInvItems(self,ItRw_BowCraft_02,1);
 	AI_PrintClr("Vyrobeno 1x Vrbový luk!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_MAKEBOWS_BowMake);
-	Info_AddChoice(PC_MAKEBOWS_BowMake,Dialog_Back,PC_MAKEBOWS_BowMake_Back);
-
-	if((Npc_HasItems(self,ItMi_JustBowCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_01) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit krátký luk",PC_MAKEBOWS_BowMake_JustTree);
-	};
-	if((Npc_HasItems(self,ItMi_EveCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_02) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit vrbový luk",PC_MAKEBOWS_BowMake_EveTree);
-	};
-	if((Npc_HasItems(self,ItMi_VyzCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_03) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jilmový luk",PC_MAKEBOWS_BowMake_VyzTree);
-	};
-	if((Npc_HasItems(self,ItMi_YsuoCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_04) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jasanový luk",PC_MAKEBOWS_BowMake_YsuoTree);
-	};
-	if((Npc_HasItems(self,ItMi_BokCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_05) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 2) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit bukový luk",PC_MAKEBOWS_BowMake_BokTree);
-	};
+	B_MAKEBOWS_BowMake();
 };
 
 func void PC_MAKEBOWS_BowMake_VyzTree()
@@ -3330,29 +3191,7 @@ func void PC_MAKEBOWS_BowMake_VyzTree()
 	CreateInvItems(self,ItRw_BowCraft_03,1);
 	AI_PrintClr("Vyrobeno 1x Jilmový luk!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_MAKEBOWS_BowMake);
-	Info_AddChoice(PC_MAKEBOWS_BowMake,Dialog_Back,PC_MAKEBOWS_BowMake_Back);
-
-	if((Npc_HasItems(self,ItMi_JustBowCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_01) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit krátký luk",PC_MAKEBOWS_BowMake_JustTree);
-	};
-	if((Npc_HasItems(self,ItMi_EveCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_02) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit vrbový luk",PC_MAKEBOWS_BowMake_EveTree);
-	};
-	if((Npc_HasItems(self,ItMi_VyzCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_03) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jilmový luk",PC_MAKEBOWS_BowMake_VyzTree);
-	};
-	if((Npc_HasItems(self,ItMi_YsuoCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_04) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jasanový luk",PC_MAKEBOWS_BowMake_YsuoTree);
-	};
-	if((Npc_HasItems(self,ItMi_BokCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_05) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 2) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit bukový luk",PC_MAKEBOWS_BowMake_BokTree);
-	};
+	B_MAKEBOWS_BowMake();
 };
 
 func void PC_MAKEBOWS_BowMake_YsuoTree()
@@ -3366,29 +3205,7 @@ func void PC_MAKEBOWS_BowMake_YsuoTree()
 	CreateInvItems(self,ItRw_BowCraft_04,1);
 	AI_PrintClr("Vyrobeno 1x Jasanový luk!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_MAKEBOWS_BowMake);
-	Info_AddChoice(PC_MAKEBOWS_BowMake,Dialog_Back,PC_MAKEBOWS_BowMake_Back);
-
-	if((Npc_HasItems(self,ItMi_JustBowCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_01) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit krátký luk",PC_MAKEBOWS_BowMake_JustTree);
-	};
-	if((Npc_HasItems(self,ItMi_EveCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_02) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit vrbový luk",PC_MAKEBOWS_BowMake_EveTree);
-	};
-	if((Npc_HasItems(self,ItMi_VyzCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_03) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jilmový luk",PC_MAKEBOWS_BowMake_VyzTree);
-	};
-	if((Npc_HasItems(self,ItMi_YsuoCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_04) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jasanový luk",PC_MAKEBOWS_BowMake_YsuoTree);
-	};
-	if((Npc_HasItems(self,ItMi_BokCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_05) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 2) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit bukový luk",PC_MAKEBOWS_BowMake_BokTree);
-	};
+	B_MAKEBOWS_BowMake();
 };
 
 func void PC_MAKEBOWS_BowMake_BokTree()
@@ -3402,29 +3219,7 @@ func void PC_MAKEBOWS_BowMake_BokTree()
 	CreateInvItems(self,ItRw_BowCraft_05,1);
 	AI_PrintClr("Vyrobeno 1x Bukový luk!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_MAKEBOWS_BowMake);
-	Info_AddChoice(PC_MAKEBOWS_BowMake,Dialog_Back,PC_MAKEBOWS_BowMake_Back);
-
-	if((Npc_HasItems(self,ItMi_JustBowCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_01) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit krátký luk",PC_MAKEBOWS_BowMake_JustTree);
-	};
-	if((Npc_HasItems(self,ItMi_EveCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_02) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit vrbový luk",PC_MAKEBOWS_BowMake_EveTree);
-	};
-	if((Npc_HasItems(self,ItMi_VyzCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_03) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jilmový luk",PC_MAKEBOWS_BowMake_VyzTree);
-	};
-	if((Npc_HasItems(self,ItMi_YsuoCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_04) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jasanový luk",PC_MAKEBOWS_BowMake_YsuoTree);
-	};
-	if((Npc_HasItems(self,ItMi_BokCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_05) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 2) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit bukový luk",PC_MAKEBOWS_BowMake_BokTree);
-	};
+	B_MAKEBOWS_BowMake();
 };
 
 instance PC_MAKEBOWS_Torch(C_Info)
@@ -3758,7 +3553,7 @@ func int PC_SKINRAPE_BowRope_condition()
 	};
 };
 
-func void PC_SKINRAPE_BowRope_info()
+func void B_SKINRAPE_BowRope()
 {
 	Info_ClearChoices(PC_SKINRAPE_BowRope);
 	Info_AddChoice(PC_SKINRAPE_BowRope,Dialog_Back,PC_SKINRAPE_BowRope_Back);
@@ -3783,6 +3578,11 @@ func void PC_SKINRAPE_BowRope_info()
 	{
 		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z trolí kůže",PC_SKINRAPE_BowRope_TrollFur);
 	};
+};
+
+func void PC_SKINRAPE_BowRope_info()
+{
+	B_SKINRAPE_BowRope();
 };
 
 func void PC_SKINRAPE_BowRope_Back()
@@ -3799,29 +3599,7 @@ func void PC_SKINRAPE_BowRope_WolfFur()
 	CreateInvItems(self,ItMi_BowRope_01,5);
 	AI_PrintClr("Vyrobeno 5x Tětiva z vlčí kůže!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_SKINRAPE_BowRope);
-	Info_AddChoice(PC_SKINRAPE_BowRope,Dialog_Back,PC_SKINRAPE_BowRope_Back);
-
-	if(Npc_HasItems(self,ItAt_WolfFur) >= 1)
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z vlčí kůže",PC_SKINRAPE_BowRope_WolfFur);
-	};
-	if((Npc_HasItems(self,ItAt_Addon_KeilerFur) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže divočáka",PC_SKINRAPE_BowRope_KeilerFur);
-	};
-	if((Npc_HasItems(self,ItAt_WargFur) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže warga",PC_SKINRAPE_BowRope_WargFur);
-	};
-	if((Npc_HasItems(self,ItAt_ShadowFur) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže stínové šelmy",PC_SKINRAPE_BowRope_ShadowFur);
-	};
-	if((Npc_HasItems(self,ItAt_TrollFur) >= 1) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z trolí kůže",PC_SKINRAPE_BowRope_TrollFur);
-	};
+	B_SKINRAPE_BowRope();
 };
 
 func void PC_SKINRAPE_BowRope_KeilerFur()
@@ -3833,29 +3611,7 @@ func void PC_SKINRAPE_BowRope_KeilerFur()
 	CreateInvItems(self,ItMi_BowRope_02,5);
 	AI_PrintClr("Vyrobeno 5x Tětiva z kůže divočáka!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_SKINRAPE_BowRope);
-	Info_AddChoice(PC_SKINRAPE_BowRope,Dialog_Back,PC_SKINRAPE_BowRope_Back);
-
-	if(Npc_HasItems(self,ItAt_WolfFur) >= 1)
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z vlčí kůže",PC_SKINRAPE_BowRope_WolfFur);
-	};
-	if((Npc_HasItems(self,ItAt_Addon_KeilerFur) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže divočáka",PC_SKINRAPE_BowRope_KeilerFur);
-	};
-	if((Npc_HasItems(self,ItAt_WargFur) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže warga",PC_SKINRAPE_BowRope_WargFur);
-	};
-	if((Npc_HasItems(self,ItAt_ShadowFur) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže stínové šelmy",PC_SKINRAPE_BowRope_ShadowFur);
-	};
-	if((Npc_HasItems(self,ItAt_TrollFur) >= 1) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z trolí kůže",PC_SKINRAPE_BowRope_TrollFur);
-	};
+	B_SKINRAPE_BowRope();
 };
 
 func void PC_SKINRAPE_BowRope_WargFur()
@@ -3867,29 +3623,7 @@ func void PC_SKINRAPE_BowRope_WargFur()
 	CreateInvItems(self,ItMi_BowRope_03,5);
 	AI_PrintClr("Vyrobeno 5x Tětiva z kůže warga!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_SKINRAPE_BowRope);
-	Info_AddChoice(PC_SKINRAPE_BowRope,Dialog_Back,PC_SKINRAPE_BowRope_Back);
-
-	if(Npc_HasItems(self,ItAt_WolfFur) >= 1)
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z vlčí kůže",PC_SKINRAPE_BowRope_WolfFur);
-	};
-	if((Npc_HasItems(self,ItAt_Addon_KeilerFur) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže divočáka",PC_SKINRAPE_BowRope_KeilerFur);
-	};
-	if((Npc_HasItems(self,ItAt_WargFur) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže warga",PC_SKINRAPE_BowRope_WargFur);
-	};
-	if((Npc_HasItems(self,ItAt_ShadowFur) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže stínové šelmy",PC_SKINRAPE_BowRope_ShadowFur);
-	};
-	if((Npc_HasItems(self,ItAt_TrollFur) >= 1) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z trolí kůže",PC_SKINRAPE_BowRope_TrollFur);
-	};
+	B_SKINRAPE_BowRope();
 };
 
 func void PC_SKINRAPE_BowRope_ShadowFur()
@@ -3901,29 +3635,7 @@ func void PC_SKINRAPE_BowRope_ShadowFur()
 	CreateInvItems(self,ItMi_BowRope_04,5);
 	AI_PrintClr("Vyrobeno 5x Tětiva z kůže stínové šelmy!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_SKINRAPE_BowRope);
-	Info_AddChoice(PC_SKINRAPE_BowRope,Dialog_Back,PC_SKINRAPE_BowRope_Back);
-
-	if(Npc_HasItems(self,ItAt_WolfFur) >= 1)
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z vlčí kůže",PC_SKINRAPE_BowRope_WolfFur);
-	};
-	if((Npc_HasItems(self,ItAt_Addon_KeilerFur) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže divočáka",PC_SKINRAPE_BowRope_KeilerFur);
-	};
-	if((Npc_HasItems(self,ItAt_WargFur) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže warga",PC_SKINRAPE_BowRope_WargFur);
-	};
-	if((Npc_HasItems(self,ItAt_ShadowFur) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže stínové šelmy",PC_SKINRAPE_BowRope_ShadowFur);
-	};
-	if((Npc_HasItems(self,ItAt_TrollFur) >= 1) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z trolí kůže",PC_SKINRAPE_BowRope_TrollFur);
-	};
+	B_SKINRAPE_BowRope();
 };
 
 func void PC_SKINRAPE_BowRope_TrollFur()
@@ -3935,29 +3647,7 @@ func void PC_SKINRAPE_BowRope_TrollFur()
 	CreateInvItems(self,ItMi_BowRope_05,5);
 	AI_PrintClr("Vyrobeno 5x Tětiva z trolí kůže!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	Info_ClearChoices(PC_SKINRAPE_BowRope);
-	Info_AddChoice(PC_SKINRAPE_BowRope,Dialog_Back,PC_SKINRAPE_BowRope_Back);
-
-	if(Npc_HasItems(self,ItAt_WolfFur) >= 1)
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z vlčí kůže",PC_SKINRAPE_BowRope_WolfFur);
-	};
-	if((Npc_HasItems(self,ItAt_Addon_KeilerFur) >= 1) && (BowMake_02 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže divočáka",PC_SKINRAPE_BowRope_KeilerFur);
-	};
-	if((Npc_HasItems(self,ItAt_WargFur) >= 1) && (BowMake_03 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže warga",PC_SKINRAPE_BowRope_WargFur);
-	};
-	if((Npc_HasItems(self,ItAt_ShadowFur) >= 1) && (BowMake_04 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže stínové šelmy",PC_SKINRAPE_BowRope_ShadowFur);
-	};
-	if((Npc_HasItems(self,ItAt_TrollFur) >= 1) && (BowMake_05 == TRUE))
-	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z trolí kůže",PC_SKINRAPE_BowRope_TrollFur);
-	};
+	B_SKINRAPE_BowRope();
 };
 
 //-----------------------------------v shakhte----------------

@@ -4,10 +4,14 @@
 
 v1.02:
 
+(36x) CZ_Crait_SetStatus - opraveno sledování stavu vyvolané krajty
 startup_global - odstraněna zbytečná volání některých funkcí a resetování proměnných
+
 init_global:
 - přidány inicializace: LeGo (GFA, Timer), GFA, AF Script Packet (EnhancedInfoManager / PickLockHelper)
 - odstraněno volání zastaralé funkce CZ_Settings_Diff_Update
+- CZ_Version_Check - přidáno upozornění na nekompatibilní verzi uložených her
+- CZ_GDRPC_Timer - přidáno resetování proměnné (kvůli snížení frekvence volání GDRPC API)
 
 
 v1.01:
@@ -724,6 +728,7 @@ func void INIT_AddonWorld()
 	B_InitNpcGlobals();
 	b_cycle_trigger_03();
 	b_enter_addonworld();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -2381,6 +2386,7 @@ func void INIT_SUB_Surface()
 	Wld_AssignRoomToGuild("DT1",GIL_DMT);
 	Wld_AssignRoomToGuild("DT2",GIL_DMT);
 	b_enter_oldworld();
+	CZ_Crait_SetStatus();
 };
 
 func void init_surface()
@@ -2401,6 +2407,7 @@ func void init_oldworld()
 	B_InitNpcGlobals();
 	b_cycle_trigger_02();
 	b_enter_oldworld();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -4412,6 +4419,7 @@ func void INIT_NewWorld()
 	b_cycle_trigger_01();
 	CurrentLevel = NEWWORLD_ZEN;
 	b_enter_newworld();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -4429,20 +4437,28 @@ func void init_global()
 	if (!init_once)
 	{
 		init_once = 1;
-		Lego_Init(GFA_LEGO_FLAGS);
+		Lego_Init(LeGo_Timer | GFA_LEGO_FLAGS);
 	};  
 	
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
 	
-	InfoManagerNumKeysControls = TRUE;
-	InfoManagerNumKeysNumbers = TRUE;
+	CZ_Settings_Other_Init();
+	
+	InfoManagerNumKeysControls = Menu_ReadInt("CZ_SETTINGS_OTHER","DialogueNumKeysControl");
+	InfoManagerNumKeysNumbers = Menu_ReadInt("CZ_SETTINGS_OTHER","DialogueNumKeysShow");
 	InfoManagerSpinnerIndicatorAnimation = TRUE;
 	G12_EnhancedInfoManager_Init();
 	
 	G12_PickLockHelper_Init();
 	
-	CZ_Settings_Other_Init();
+	if (PrologCredits == TRUE)
+	{
+		CZ_Version_Check(TRUE);
+	};
+	
 	GamblingAntiCheat_CZ = 300;
+	
+	CZ_GDRPC_Timer = 0;
 };
 
 func void STARTUP_Testlevel()
@@ -7763,6 +7779,7 @@ func void init_orctempel()
 	CurrentLevel = ORCTEMPEL_ZEN;
 	b_cycle_trigger_20();
 	b_enter_orctempel();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7774,6 +7791,7 @@ func void init_abandonedmine()
 	CurrentLevel = ABANDONEDMINE_ZEN;
 	b_cycle_trigger_11();
 	b_enter_abandonedmine();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7785,6 +7803,7 @@ func void init_orcgraveyard()
 	CurrentLevel = ORCGRAVEYARD_ZEN;
 	b_cycle_trigger_19();
 	b_enter_orcgraveyard();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7796,6 +7815,7 @@ func void init_orccity()
 	CurrentLevel = ORCCITY_ZEN;
 	b_cycle_trigger_18();
 	b_enter_orccity();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7807,6 +7827,7 @@ func void init_shvalley()
 	CurrentLevel = SHVALLEY_ZEN;
 	b_cycle_trigger_22();
 	b_enter_shvalley();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7818,6 +7839,7 @@ func void init_freeminelager()
 	CurrentLevel = FREEMINELAGER_ZEN;
 	b_cycle_trigger_16();
 	b_enter_freeminelager();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7829,6 +7851,7 @@ func void init_oldmine()
 	CurrentLevel = OLDMINE_ZEN;
 	b_cycle_trigger_17();
 	b_enter_oldmine();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7840,6 +7863,7 @@ func void init_freemine()
 	CurrentLevel = FREEMINE_ZEN;
 	b_cycle_trigger_15();
 	b_enter_freemine();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7851,6 +7875,7 @@ func void init_demonstower()
 	CurrentLevel = DEMONSTOWER_ZEN;
 	b_cycle_trigger_14();
 	b_enter_demonstower();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7862,6 +7887,7 @@ func void init_deadgrot()
 	b_cycle_trigger_12();
 	CurrentLevel = DEADGROT_ZEN;
 	b_enter_deadgrot();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7873,6 +7899,7 @@ func void init_psicamp()
 	CurrentLevel = PSICAMP_ZEN;
 	b_cycle_trigger_21();
 	b_enter_psicamp();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7884,6 +7911,7 @@ func void init_secretisland()
 	b_cycle_trigger_10();
 	CurrentLevel = SECRETISLAND_ZEN;
 	b_enter_secretisland();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7895,6 +7923,7 @@ func void init_undeadzone()
 	b_cycle_trigger_23();
 	CurrentLevel = UNDEADZONE_ZEN;
 	b_enter_undeadzone();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7906,6 +7935,7 @@ func void init_demoncave()
 	b_cycle_trigger_13();
 	CurrentLevel = DEMONCAVE_ZEN;
 	b_enter_demoncave();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7917,6 +7947,7 @@ func void init_paladinfort()
 	b_cycle_trigger_09();
 	CurrentLevel = PALADINFORT_ZEN;
 	b_enter_paladinfort();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7928,6 +7959,7 @@ func void init_lostisland()
 	b_cycle_trigger_08();
 	CurrentLevel = LOSTISLAND_ZEN;
 	b_enter_lostisland();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7939,6 +7971,7 @@ func void init_firecave()
 	b_cycle_trigger_05();
 	CurrentLevel = FIRECAVE_ZEN;
 	b_enter_firecave();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7950,6 +7983,7 @@ func void init_guardianchambers()
 	b_cycle_trigger_06();
 	CurrentLevel = GUARDIANCHAMBERS_ZEN;
 	b_enter_guardianchambers();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7961,6 +7995,7 @@ func void init_haradrimarena()
 	b_cycle_trigger_07();
 	CurrentLevel = HARADRIMARENA_ZEN;
 	b_enter_haradrimarena();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7972,6 +8007,7 @@ func void init_prioratworld()
 	b_cycle_trigger_25();
 	CurrentLevel = PRIORATWORLD_ZEN;
 	b_enter_prioratworld();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7983,6 +8019,7 @@ func void init_adanosvalley()
 	b_cycle_trigger_26();
 	CurrentLevel = ADANOSVALLEY_ZEN;
 	b_enter_adanosvalley();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -7994,6 +8031,7 @@ func void init_tearstemple()
 	b_cycle_trigger_27();
 	CurrentLevel = TEARSTEMPLE_ZEN;
 	b_enter_tearstemple();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -8005,6 +8043,7 @@ func void init_orcoremine()
 	b_cycle_trigger_28();
 	CurrentLevel = ORCOREMINE_ZEN;
 	b_enter_orcoremine();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -8016,6 +8055,7 @@ func void init_ginnokworld()
 	b_cycle_trigger_29();
 	CurrentLevel = GINNOKWORLD_ZEN;
 	b_enter_ginnokworld();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -8027,6 +8067,7 @@ func void init_haosworld()
 	b_cycle_trigger_30();
 	CurrentLevel = HAOSWORLD_ZEN;
 	b_enter_haosworld();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -8038,6 +8079,7 @@ func void init_orcmountain()
 	b_cycle_trigger_31();
 	CurrentLevel = ORCMOUNTAIN_ZEN;
 	b_enter_orcmountain();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -8049,6 +8091,7 @@ func void init_pashalworld()
 	b_cycle_trigger_32();
 	CurrentLevel = PASHALWORLD_ZEN;
 	b_enter_pashalworld();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -8060,6 +8103,7 @@ func void init_dragontemple()
 	b_cycle_trigger_33();
 	CurrentLevel = DRAGONTEMPLE_ZEN;
 	b_enter_dragontemple();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -8071,6 +8115,7 @@ func void init_goldmine()
 	b_cycle_trigger_34();
 	CurrentLevel = GOLDMINE_ZEN;
 	b_enter_goldmine();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -8082,6 +8127,7 @@ func void init_lostvalley()
 	b_cycle_trigger_35();
 	CurrentLevel = LOSTVALLEY_ZEN;
 	b_enter_lostvalley();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -8093,6 +8139,7 @@ func void init_ituseldtower()
 	b_cycle_trigger_36();
 	CurrentLevel = ITUSELDTOWER_ZEN;
 	b_enter_ituseldtower();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 
@@ -8104,6 +8151,7 @@ func void init_ashtartemple()
 	b_cycle_trigger_37();
 	CurrentLevel = ASHTARTEMPLE_ZEN;
 	b_enter_ashtartemple();
+	CZ_Crait_SetStatus();
 	b_initdamage();
 };
 

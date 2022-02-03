@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+const string TEXT_FONT_DEFAULT - navrácen původní font (potíže vyřešeny)
+
+
 v1.00:
 
 const string TEXT_FONT_DEFAULT - opraven font (kvůli potížím s FPS)
@@ -1468,7 +1473,7 @@ var int player_talent_takeanimaltrophy[MAX_TROPHIES];
 
 const string TEXT_FONT_20 = "Font_old_20_white.tga";
 const string TEXT_FONT_10 = "Font_Extra.tga";
-const string TEXT_FONT_DEFAULT = "Font_Extra_FIXED.tga";
+const string TEXT_FONT_DEFAULT = "Font_Extra.tga";
 const string TEXT_FONT_Inventory = "Font_Extra.tga";
 
 var int CheckStatusHero[2];
