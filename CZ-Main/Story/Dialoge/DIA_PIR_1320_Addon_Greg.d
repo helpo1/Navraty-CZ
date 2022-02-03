@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.01:
 
 (3x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
@@ -1010,10 +1015,13 @@ func void dia_addon_greg_gatherarmydone_info()
 	AI_Output(self,other,"DIA_Addon_Greg_GatherArmyDone_01_06");	//Co to je za kravinu, abychom vstoupili do služeb paladinů?!
 	Info_ClearChoices(dia_addon_greg_gatherarmydone);
 
-	if(RhetorikSkillValue[1] >= 80)
-	{
-		Info_AddChoice(dia_addon_greg_gatherarmydone,"Tak co?",dia_addon_greg_gatherarmydone_tell);
-	};
+	// if(RhetorikSkillValue[1] >= 80)
+	// {
+		Info_AddChoice(dia_addon_greg_gatherarmydone,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 80, TRUE), "Tak co?"),
+			// "Tak co?",
+			dia_addon_greg_gatherarmydone_tell);
+	// };
 
 	Info_AddChoice(dia_addon_greg_gatherarmydone,"Když to říkáš.",dia_addon_greg_gatherarmydone_no);
 };
@@ -1434,10 +1442,13 @@ func void dia_addon_greg_PirateDeal_Choice_info()
 	PirateDealCost = 5000;
 	Info_ClearChoices(DIA_Addon_Greg_PirateDeal_Choice);
 
-	if(RhetorikSkillValue[1] >= 45)
-	{
-		Info_AddChoice(DIA_Addon_Greg_PirateDeal_Choice,"Možná bys mohl slevit na polovinu?",DIA_Addon_Greg_PirateDeal_Choice_Cheap);
-	};
+	// if(RhetorikSkillValue[1] >= 45)
+	// {
+		Info_AddChoice(DIA_Addon_Greg_PirateDeal_Choice,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 45, TRUE), "Možná bys mohl slevit na polovinu?"),
+			// "Možná bys mohl slevit na polovinu?",
+			DIA_Addon_Greg_PirateDeal_Choice_Cheap);
+	// };
 
 	Info_AddChoice(DIA_Addon_Greg_PirateDeal_Choice,"Možná, se můžem dohodnout?",DIA_Addon_Greg_PirateDeal_Choice_Yes);
 };

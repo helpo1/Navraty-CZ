@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.01:
 
 (2x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
@@ -537,11 +542,21 @@ instance DIA_Wolf_BENGAR(C_Info)
 	condition = DIA_Wolf_BENGAR_Condition;
 	information = DIA_Wolf_BENGAR_Info;
 	permanent = TRUE;
-	description = "Možná jsem ti našel práci u Bengara na statku.";
+	// description = "Možná jsem ti našel práci u Bengara na statku.";
 };
 
 func int DIA_Wolf_BENGAR_Condition()
 {
+	if ((hero.guild == GIL_SLD) || (hero.guild == GIL_DJG))
+	{
+		DIA_Wolf_BENGAR.description = "Možná jsem ti našel práci u Bengara na statku.";
+	}
+	else
+	{
+		DIA_Wolf_BENGAR.description
+			= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 25, FALSE),"Možná jsem ti našel práci u Bengara na statku.");
+	};
+	
 	if(Npc_KnowsInfo(other,DIA_Wolf_Hallo) && (MIS_BengarsHelpingSLD == LOG_Running) && (Kapitel >= 3) && (Wolf_IsOnBoard != LOG_SUCCESS) && (CAPITANORDERDIAWAY == FALSE) && (ConcertLoaBonus == TRUE))
 	{
 		return TRUE;

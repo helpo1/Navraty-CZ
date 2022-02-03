@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.01:
 
 func void dia_viper_CLEARMAGICOREMAKE_info - upraven přístup do Jeskyně Ohně (FIRECAVE_ZEN) po splnění úkolu Rituál Ohně (TOPIC_KELIOSTEST)
@@ -705,10 +710,13 @@ func void dia_viper_getminedata_info()
 		AI_Output(self,other,"DIA_VIPER_GetMineData_01_14");	//Na co by mi to všechno bylo? Teď když jsi mi dal rudu, nějakou dobu nebudu muset pracovat.
 		Info_ClearChoices(DIA_VIPER_GetMineData);
 
-		if(RhetorikSkillValue[1] >= 45)
-		{
-			Info_AddChoice(DIA_VIPER_GetMineData,"(zkusit přesvědčit)",DIA_VIPER_GetMineData_Yes);
-		};
+		// if(RhetorikSkillValue[1] >= 45)
+		// {
+			Info_AddChoice(DIA_VIPER_GetMineData,
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 45, TRUE), "(zkusit přesvědčit)"),
+				// "(zkusit přesvědčit)",
+				DIA_VIPER_GetMineData_Yes);
+		// };
 
 		Info_AddChoice(DIA_VIPER_GetMineData,"Zkusím teda najít někoho jiného.",DIA_VIPER_GetMineData_No);
 	}

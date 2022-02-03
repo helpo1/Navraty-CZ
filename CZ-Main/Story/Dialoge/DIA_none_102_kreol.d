@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.01:
 
 (6x) CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
@@ -235,10 +240,13 @@ func void dia_kreol_hello_info()
 	Info_AddChoice(dia_kreol_hello,"Přišel jsem tě zabít!",dia_kreol_hello_kill);
 	Info_AddChoice(dia_kreol_hello,"Vypadáš překvapeně.",dia_kreol_hello_fuckoff);
 
-	if(RhetorikSkillValue[1] >= 40)
-	{
-		Info_AddChoice(dia_kreol_hello,"Nechci rušit tvou samotu.",dia_kreol_hello_sorry);
-	};
+	// if(RhetorikSkillValue[1] >= 40)
+	// {
+		Info_AddChoice(dia_kreol_hello,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 40, TRUE), "Nechci rušit tvou samotu."),
+			// "Nechci rušit tvou samotu.",
+			dia_kreol_hello_sorry);
+	// };
 
 	Info_AddChoice(dia_kreol_hello,"Omylem jsem narazil na toto místo.",dia_kreol_hello_dontknow);
 };

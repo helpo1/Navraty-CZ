@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_ELIGOR_DEMON_EXIT(C_Info)
 {
@@ -352,10 +363,13 @@ func void DIA_Skeleton_Stefan_FinalMeet_info()
 	JackMeetGhost = TRUE;
 	Info_ClearChoices(DIA_Skeleton_Stefan_FinalMeet);
 
-	if(RhetorikSkillValue[1] >= 50)
-	{
-		Info_AddChoice(DIA_Skeleton_Stefan_FinalMeet,"Pak mi však musíš něco slíbit.",DIA_Skeleton_Stefan_FinalMeet_Promise);
-	};
+	// if(RhetorikSkillValue[1] >= 50)
+	// {
+		Info_AddChoice(DIA_Skeleton_Stefan_FinalMeet,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, TRUE), "Pak mi však musíš něco slíbit."),
+			// "Pak mi však musíš něco slíbit.",
+			DIA_Skeleton_Stefan_FinalMeet_Promise);
+	// };
 
 	Info_AddChoice(DIA_Skeleton_Stefan_FinalMeet,"Ne, to neudělám.",DIA_Skeleton_Stefan_FinalMeet_No);
 	Info_AddChoice(DIA_Skeleton_Stefan_FinalMeet,"Dobře, rozsvítím ho.",DIA_Skeleton_Stefan_FinalMeet_Yes);

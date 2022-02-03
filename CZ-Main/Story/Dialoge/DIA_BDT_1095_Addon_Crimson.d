@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Addon_Crimson_EXIT(C_Info)
 {
@@ -120,12 +131,15 @@ instance DIA_Addon_Crimson_Feilsch(C_Info)
 	condition = DIA_Addon_Crimson_Feilsch_Condition;
 	information = DIA_Addon_Crimson_Feilsch_Info;
 	permanent = FALSE;
-	description = "Chci víc zlatých!";
+	// description = "Chci víc zlatých!";
 };
 
 
 func int DIA_Addon_Crimson_Feilsch_Condition()
 {
+	DIA_Addon_Crimson_Feilsch.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 40, FALSE), "Chci víc zlatých!");
+	
 	if(Npc_KnowsInfo(other,DIA_Addon_Crimson_How))
 	{
 		return TRUE;

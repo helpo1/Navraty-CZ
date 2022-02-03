@@ -2,12 +2,62 @@
 
 /*
 
+v1.02:
+
+func string CZ_AllRunesNeedSkill, PC_AllRunesNeedSkill_Info - nová funkce + pomocná (prázdná) funkce
+(6x) CZ_AllRunesNeedSkill - přidána hromadná nápověda
+(12x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.00:
 
 func int B_CheckRuneSkill - upraveny výpisy
 (24x) - upraveny výpisy (PRINT_ProdItemsMissing -> PRINT_ProdItemsMissingCZMateh)
 
 */
+
+
+
+func string CZ_AllRunesNeedSkill(var int circle)
+{
+	
+	var int reqval;
+	var string desc_concat;
+	
+		if (circle == 1)	{ reqval = 0; }
+	else if (circle == 2)	{ reqval = 15; }
+	else if (circle == 3)	{ reqval = 30; }
+	else if (circle == 4)	{ reqval = 50; }
+	else if (circle == 5)	{ reqval = 70; }
+	else if (circle == 6)	{ reqval = 90; }
+	else					{ return "UNKNOWN"; };
+
+	desc_concat = "d@ ";
+	
+	/*
+		desc_concat = ConcatStrings(desc_concat, "Všechny kouzla ");
+		desc_concat = ConcatStrings(desc_concat, IntToString(circle));
+		desc_concat = ConcatStrings(desc_concat, ". kruhu vyžadují dovednost tvorby run na úrovni ");
+		desc_concat = ConcatStrings(desc_concat, IntToString(reqval));
+		desc_concat = ConcatStrings(desc_concat, " bodů (aktuálně ");
+		desc_concat = ConcatStrings(desc_concat, CZ_SkillCheckPrefix(CZ_SKILL_RUNE, CZ_GetSkillValue(CZ_SKILL_RUNE), reqval));
+		desc_concat = ConcatStrings(desc_concat, "bodů).");
+	*/
+
+	desc_concat = ConcatStrings(desc_concat, "Požadovaná dovednost tvorby run pro kouzla ");
+	desc_concat = ConcatStrings(desc_concat, IntToString(circle));
+	desc_concat = ConcatStrings(desc_concat, ". kruhu: ");
+	desc_concat = ConcatStrings(desc_concat, CZ_SkillCheckPrefix(CZ_SKILL_RUNE, CZ_GetSkillValue(CZ_SKILL_RUNE), reqval));
+		
+	return desc_concat;
+	
+};
+
+func void PC_AllRunesNeedSkill_Info()
+{
+	Print("");
+};
+
 
 
 
@@ -152,6 +202,9 @@ func void B_Circle_01()
 	{
 		Info_AddChoice(PC_Circle,NAME_SPL_Rage,PC_ItRu_Rage_Info);
 	};
+	
+	Info_AddChoice(PC_Circle,CZ_AllRunesNeedSkill(1),PC_AllRunesNeedSkill_info);
+	
 };
 
 func void B_Circle_02()
@@ -215,6 +268,9 @@ func void B_Circle_02()
 	{
 		Info_AddChoice(PC_Circle,NAME_SPL_RapidIcebolt,PC_ItRu_RapidIcebolt_Info);
 	};
+	
+	Info_AddChoice(PC_Circle,CZ_AllRunesNeedSkill(2),PC_AllRunesNeedSkill_info);
+	
 };
 
 func void B_Circle_03()
@@ -278,6 +334,9 @@ func void B_Circle_03()
 	{
 		Info_AddChoice(PC_Circle,NAME_SPL_Extricate,PC_ItRu_Extricate_Info);
 	};
+	
+	Info_AddChoice(PC_Circle,CZ_AllRunesNeedSkill(3),PC_AllRunesNeedSkill_info);
+	
 };
 
 func void B_Circle_04()
@@ -318,6 +377,9 @@ func void B_Circle_04()
 	{
 		Info_AddChoice(PC_Circle,NAME_SPL_Acid,PC_ItRu_Acid_Info);
 	};
+	
+	Info_AddChoice(PC_Circle,CZ_AllRunesNeedSkill(4),PC_AllRunesNeedSkill_info);
+	
 };
 
 func void B_Circle_05()
@@ -357,6 +419,9 @@ func void B_Circle_05()
 	{
 		Info_AddChoice(PC_Circle,NAME_SPL_Whirlwind,PC_ItRu_Whirlwind_Info);
 	};
+	
+	Info_AddChoice(PC_Circle,CZ_AllRunesNeedSkill(5),PC_AllRunesNeedSkill_info);
+	
 };
 
 func void B_Circle_06()
@@ -396,6 +461,9 @@ func void B_Circle_06()
 	{
 		Info_AddChoice(PC_Circle,NAME_SPL_Quake,PC_ItRu_Quake_Info);
 	};
+	
+	Info_AddChoice(PC_Circle,CZ_AllRunesNeedSkill(6),PC_AllRunesNeedSkill_info);
+	
 };
 
 instance PC_Circle(C_Info)
@@ -474,9 +542,21 @@ func void PC_Make_RuneBlank_Info()
 {
 	Info_ClearChoices(PC_Make_RuneBlank);
 	Info_AddChoice(PC_Make_RuneBlank,Dialog_Back,PC_Make_RuneBlank_BACK);
-	Info_AddChoice(PC_Make_RuneBlank,"Obyčejný runový kámen (5 úlomků runového kamene)",PC_Make_RuneBlank_01);
-	Info_AddChoice(PC_Make_RuneBlank,"Starší runový kámen (10 úlomků runového kamene, 1 ingot magické rudy)",PC_Make_RuneBlank_02);
-	Info_AddChoice(PC_Make_RuneBlank,"Vyšší runový kámen (15 úlomků runového kamene, 2 ingoty magické rudy)",PC_Make_RuneBlank_03);
+	
+	Info_AddChoice(PC_Make_RuneBlank,
+		ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 10, FALSE), "Obyčejný runový kámen (5 úlomků runového kamene)"),
+		// "Obyčejný runový kámen (5 úlomků runového kamene)",
+		PC_Make_RuneBlank_01);
+	
+	Info_AddChoice(PC_Make_RuneBlank,
+		ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 30, FALSE), "Starší runový kámen (10 úlomků runového kamene, 1 ingot magické rudy)"),
+		// "Starší runový kámen (10 úlomků runového kamene, 1 ingot magické rudy)",
+		PC_Make_RuneBlank_02);
+	
+	Info_AddChoice(PC_Make_RuneBlank,
+		ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 70, FALSE), "Vyšší runový kámen (15 úlomků runového kamene, 2 ingoty magické rudy)"),
+		// "Vyšší runový kámen (15 úlomků runového kamene, 2 ingoty magické rudy)",
+		PC_Make_RuneBlank_03);
 
 	if(Npc_HasItems(hero,ItMi_RuneBlank) >= 1)
 	{
@@ -593,11 +673,14 @@ instance PC_MAKERUNE_DESTROYGUARDIANS(C_Info)
 	condition = pc_makerune_destroyguardians_condition;
 	information = pc_makerune_destroyguardians_info;
 	permanent = TRUE;
-	description = "Vytvořit runu 'Hněv Tvůrců'";
+	// description = "Vytvořit runu 'Hněv Tvůrců'";
 };
 
 func int pc_makerune_destroyguardians_condition()
 {
+	PC_MAKERUNE_DESTROYGUARDIANS.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 6, FALSE), "Vytvořit runu 'Hněv Tvůrců'");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && (NETBEKLEADME_STEP2 == TRUE) && (NETBEKLEADME_STEP2DONE == FALSE) && (HOWCANMAKERUNE == TRUE) && (Npc_HasItems(hero,ItMi_Avatar_Dark) >= 1) && (Npc_HasItems(hero,ItMi_Avatar_Fire) >= 1) && (Npc_HasItems(hero,ItMi_Avatar_Water) >= 1) && (Npc_HasItems(hero,ItMi_Avatar_Stone) >= 1)  && ((Npc_HasItems(hero,ItMi_Focus) >= 1) || (Npc_HasItems(hero,ItMi_MagicCrystal) >= 1)))
 	{
 		return TRUE;
@@ -648,11 +731,14 @@ instance PC_SPL_MasterOfDisaster(C_Info)
 	condition = PC_SPL_MasterOfDisaster_Condition;
 	information = PC_SPL_MasterOfDisaster_Info;
 	permanent = TRUE;
-	description = "Vytvořit runu 'Innosův pohled'";
+	// description = "Vytvořit runu 'Innosův pohled'";
 };
 
 func int PC_SPL_MasterOfDisaster_Condition()
 {
+	PC_SPL_MasterOfDisaster.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 90, FALSE), "Vytvořit runu 'Innosův pohled'");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && (PLAYER_TALENT_RUNES[SPL_MasterOfDisaster] == TRUE) && (PLAYER_MAKE_RUNES[SPL_MasterOfDisaster] == FALSE))
 	{
 		return TRUE;
@@ -703,11 +789,14 @@ instance PC_SPL_PalTeleportSecret(C_Info)
 	condition = PC_SPL_PalTeleportSecret_Condition;
 	information = PC_SPL_PalTeleportSecret_Info;
 	permanent = TRUE;
-	description = "Vytvořit teleportační runu";
+	// description = "Vytvořit teleportační runu";
 };
 
 func int PC_SPL_PalTeleportSecret_Condition()
 {
+	PC_SPL_PalTeleportSecret.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 0, FALSE), "Vytvořit teleportační runu");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && (PLAYER_TALENT_RUNES[SPL_PalTeleportSecret] == TRUE) && (PLAYER_MAKE_RUNES[SPL_PalTeleportSecret] == FALSE))
 	{
 		return TRUE;
@@ -746,12 +835,15 @@ instance PC_MAKERUNE_CRESTMAKE(C_Info)
 	condition = pc_makerune_crestmake_condition;
 	information = pc_makerune_crestmake_info;
 	permanent = TRUE;
-	description = "Vytvořit runu 'Kříž elementů'";
+	// description = "Vytvořit runu 'Kříž elementů'";
 };
 
 
 func int pc_makerune_crestmake_condition()
 {
+	PC_MAKERUNE_CRESTMAKE.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 0, FALSE), "Vytvořit runu 'Kříž elementů'");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MakeRune) && (KNOWS_CRESTMAKE == TRUE))
 	{
 		return TRUE;
@@ -4401,23 +4493,38 @@ func void PC_TransRune_Info()
 
 	if(HeroKnownTrans_BloodFly == TRUE)
 	{
-		Info_AddChoice(PC_TransRune,"Přeměna v krvavou mouchu",PC_TransRune_BloodFly);
+		Info_AddChoice(PC_TransRune,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 0, FALSE), "Přeměna v krvavou mouchu"),
+			// "Přeměna v krvavou mouchu",
+			PC_TransRune_BloodFly);
 	};
 	if(HeroKnownTrans_FireWaran == TRUE)
 	{
-		Info_AddChoice(PC_TransRune,"Přeměna v ohnivého ještěra",PC_TransRune_FireWaran);
+		Info_AddChoice(PC_TransRune,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 15, FALSE), "Přeměna v ohnivého ještěra"),
+			// "Přeměna v ohnivého ještěra",
+			PC_TransRune_FireWaran);
 	};
 	if(HeroKnownTrans_Warg == TRUE)
 	{
-		Info_AddChoice(PC_TransRune,"Přeměna ve warga",PC_TransRune_Warg);
+		Info_AddChoice(PC_TransRune,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 30, FALSE), "Přeměna ve warga"),
+			// "Přeměna ve warga",
+			PC_TransRune_Warg);
 	};
 	if(HeroKnownTrans_ShadowBeast == TRUE)
 	{
-		Info_AddChoice(PC_TransRune,"Přeměna ve stínovou šelmu",PC_TransRune_ShadowBeast);
+		Info_AddChoice(PC_TransRune,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 50, FALSE), "Přeměna ve stínovou šelmu"),
+			// "Přeměna ve stínovou šelmu",
+			PC_TransRune_ShadowBeast);
 	};
 	if(HeroKnownTrans_DragonSnapper == TRUE)
 	{
-		Info_AddChoice(PC_TransRune,"Přeměna v dračího chňapavce",PC_TransRune_DragonSnapper);
+		Info_AddChoice(PC_TransRune,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RUNE, 70, FALSE), "Přeměna v dračího chňapavce"),
+			// "Přeměna v dračího chňapavce",
+			PC_TransRune_DragonSnapper);
 	};
 };
 

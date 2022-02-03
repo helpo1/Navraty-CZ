@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
+
 instance DIA_Cord_EXIT(C_Info)
 {
 	npc = Sld_805_Cord;
@@ -1703,12 +1715,17 @@ instance DIA_Loa_EpicQuest_Party(C_Info)
 	condition = DIA_Loa_EpicQuest_Party_Condition;
 	information = DIA_Loa_EpicQuest_Party_Info;
 	permanent = FALSE;
-	description = "A co kdybychom si udělali něco jako piknik?";
+	// description = "A co kdybychom si udělali něco jako piknik?";
 };
 
 func int DIA_Loa_EpicQuest_Party_Condition()
 {
-	if((MIS_LoaSecret == LOG_Running) && (RhetorikSkillValue[1] >= 70))
+	DIA_Loa_EpicQuest_Party.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 70, TRUE), "A co kdybychom si udělali něco jako piknik?");
+	
+	if((MIS_LoaSecret == LOG_Running)
+	// && (RhetorikSkillValue[1] >= 70)
+	)
 	{
 		return TRUE;
 	};

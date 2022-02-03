@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 var int hosharpsword;
 
@@ -468,10 +479,13 @@ func void DIA_Hodges_DarkWeb_Done_Info()
 	Info_ClearChoices(DIA_Hodges_DarkWeb_Done);
 	Info_AddChoice(DIA_Hodges_DarkWeb_Done,"Vrátíme se k našemu rozhovoru.",DIA_Hodges_DarkWeb_Done_BACK);
 
-	if(RhetorikSkillValue[1] >= 50)
-	{
-		Info_AddChoice(DIA_Hodges_DarkWeb_Done,"Podívej, je to moc důležité.",DIA_Hodges_DarkWeb_Done_DoIt);
-	};
+	// if(RhetorikSkillValue[1] >= 50)
+	// {
+		Info_AddChoice(DIA_Hodges_DarkWeb_Done,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, TRUE), "Podívej, je to moc důležité."),
+			// "Podívej, je to moc důležité.",
+			DIA_Hodges_DarkWeb_Done_DoIt);
+	// };
 };
 
 func void DIA_Hodges_DarkWeb_Done_BACK()

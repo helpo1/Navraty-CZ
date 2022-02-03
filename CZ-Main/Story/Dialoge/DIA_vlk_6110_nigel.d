@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.00:
 
 DIA_Nigel_MoneyNew_01_07 - opraveno other/self
@@ -378,12 +383,17 @@ instance DIA_NIGEL_MONEY_NEW(C_Info)
 	condition = dia_nigel_money_new_condition;
 	information = dia_nigel_money_new_info;
 	permanent = FALSE;
-	description = "Víš kdo jsem?";
+	// description = "Víš kdo jsem?";
 };
 
 func int dia_nigel_money_new_condition()
 {
-	if((RhetorikSkillValue[1] >= 30) && (MIS_NIGELMATTER == LOG_SUCCESS))
+	DIA_NIGEL_MONEY_NEW.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 30, TRUE), "Víš kdo jsem?");
+	
+	if(
+	// (RhetorikSkillValue[1] >= 30) && 
+	(MIS_NIGELMATTER == LOG_SUCCESS))
 	{
 		return TRUE;
 	};

@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Grimes_EXIT(C_Info)
 {
@@ -314,10 +325,13 @@ func void dia_grimes_eligorpotion_info()
 	Info_ClearChoices(dia_grimes_eligorpotion);
 	Info_AddChoice(dia_grimes_eligorpotion,"Protože tě zabiju, jestli mi to neřekneš!",dia_grimes_eligorpotion_kill);
 
-	if(RhetorikSkillValue[1] >= 30)
-	{
-		Info_AddChoice(dia_grimes_eligorpotion,"Pro staré dobré časy!",dia_grimes_eligorpotion_memory);
-	};
+	// if(RhetorikSkillValue[1] >= 30)
+	// {
+		Info_AddChoice(dia_grimes_eligorpotion,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 30, TRUE), "Pro staré dobré časy!"),
+			// "Pro staré dobré časy!",
+			dia_grimes_eligorpotion_memory);
+	// };
 
 	Info_AddChoice(dia_grimes_eligorpotion,"Jsem ochoten za tuto informaci zaplatit.",dia_grimes_eligorpotion_money);
 };

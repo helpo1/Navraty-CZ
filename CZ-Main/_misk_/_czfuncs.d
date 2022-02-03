@@ -6,7 +6,7 @@ v1.02:
 
 ShowSkillChecks - deklarace nového .ini nastavení
 (20x) const int CZ_SKILL - deklarace nových konstant (kvůli skill checkům)
-CZ_SkillCheckPrefix, CZ_SkillCheckCondition - nové funkce
+CZ_GetSkillValue, CZ_GetSkillAbbr, CZ_SkillCheckPrefix, CZ_SkillCheckCondition - nové funkce
 
 
 v1.01a:
@@ -589,165 +589,128 @@ const int CZ_SKILL_DEM = 18;
 const int CZ_SKILL_ORE = 19;
 const int CZ_SKILL_GOLD = 20;
 
-func string CZ_SkillCheckPrefix(var int skill_type, var int skill_value)
+func int CZ_GetSkillValue(var int skill_type)
+{
+	
+		if (skill_type == CZ_SKILL_HP)		{ return hero.attribute[ATR_HITPOINTS_MAX]; }
+	else if (skill_type == CZ_SKILL_MP)		{ return hero.attribute[ATR_MANA_MAX]; }
+	else if (skill_type == CZ_SKILL_STR)	{ return hero.attribute[ATR_STRENGTH]; }
+	else if (skill_type == CZ_SKILL_DEX)	{ return hero.attribute[ATR_DEXTERITY]; }
+	else if (skill_type == CZ_SKILL_STA)	{ return ATR_STAMINA_MAX[0]; }
+	else if (skill_type == CZ_SKILL_INT)	{ return ATR_INTELLECT; }
+	else if (skill_type == CZ_SKILL_RHE)	{ return RhetorikSkillValue[1]; }
+	else if (skill_type == CZ_SKILL_SMI)	{ return TalentCount_Smith[0]; }
+	else if (skill_type == CZ_SKILL_ALCH)	{ return TalentCount_Alchemy[0]; }
+	else if (skill_type == CZ_SKILL_RUNE)	{ return TalentCount_Rune[0]; }
+	else if (skill_type == CZ_SKILL_1H)		{ return hero.HitChance[NPC_TALENT_1H]; }
+	else if (skill_type == CZ_SKILL_2H)		{ return hero.HitChance[NPC_TALENT_2H]; }
+	else if (skill_type == CZ_SKILL_BOW)	{ return hero.HitChance[NPC_TALENT_BOW]; }
+	else if (skill_type == CZ_SKILL_XBOW)	{ return hero.HitChance[NPC_TALENT_CROSSBOW]; }
+	else if (skill_type == CZ_SKILL_SHI)	{ return hero.attribute[ATR_REGENERATEMANA]; }
+	else if (skill_type == CZ_SKILL_CIRC)	{ return Npc_GetTalentSkill(hero,NPC_TALENT_MAGE); }
+	else if (skill_type == CZ_SKILL_MPOW)	{ return CountLearnSpell; }
+	else if (skill_type == CZ_SKILL_DEM)	{ return Npc_GetTalentSkill(hero,NPC_TALENT_DEMONOLOG); }
+	else if (skill_type == CZ_SKILL_ORE)	{ return HERO_HACKCHANCEORE; }
+	else if (skill_type == CZ_SKILL_GOLD)	{ return Hero_HackChance; }
+	else									{ return 0; };
+	
+};
+
+func string CZ_GetSkillAbbr(var int skill_type)
+{
+	
+		if (skill_type == CZ_SKILL_HP)		{ return "HP"; }
+	else if (skill_type == CZ_SKILL_MP)		{ return "MP"; }
+	else if (skill_type == CZ_SKILL_STR)	{ return "STR"; }
+	else if (skill_type == CZ_SKILL_DEX)	{ return "DEX"; }
+	else if (skill_type == CZ_SKILL_STA)	{ return "STA"; }
+	else if (skill_type == CZ_SKILL_INT)	{ return "INT"; }
+	else if (skill_type == CZ_SKILL_RHE)	{ return "RHE"; }
+	else if (skill_type == CZ_SKILL_SMI)	{ return "SMI"; }
+	else if (skill_type == CZ_SKILL_ALCH)	{ return "ALCH"; }
+	else if (skill_type == CZ_SKILL_RUNE)	{ return "RUNE"; }
+	else if (skill_type == CZ_SKILL_1H)		{ return "1H"; }
+	else if (skill_type == CZ_SKILL_2H)		{ return "2H"; }
+	else if (skill_type == CZ_SKILL_BOW)	{ return "BOW"; }
+	else if (skill_type == CZ_SKILL_XBOW)	{ return "XBOW"; }
+	else if (skill_type == CZ_SKILL_SHI)	{ return "SHI"; }
+	else if (skill_type == CZ_SKILL_CIRC)	{ return "CIRC"; }
+	else if (skill_type == CZ_SKILL_MPOW)	{ return "MPOW"; }
+	else if (skill_type == CZ_SKILL_DEM)	{ return "DEM"; }
+	else if (skill_type == CZ_SKILL_ORE)	{ return "ORE"; }
+	else if (skill_type == CZ_SKILL_GOLD)	{ return "GOLD"; }
+	else									{ return "UNKNOWN"; };
+	
+};
+
+func string CZ_SkillCheckPrefix(var int skill_type, var int currval, var int reqval)
 {
 	
 	var string desc_concat;
 	
-	desc_concat = "[";
+	desc_concat = "o@";
 	
-	if (skill_type == CZ_SKILL_HP)
+	if (skill_type == CZ_SKILL_RHE)
 	{
-		// desc_concat = ConcatStrings(desc_concat, "HP: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(hero.attribute[ATR_HITPOINTS_MAX]));
+		if (currval >= reqval)
+		{
+			desc_concat = ConcatStrings(desc_concat, "h@FFBB00 hs@FF8000");
+		}
+		else // if (currval < reqval)
+		{
+			desc_concat = ConcatStrings(desc_concat, "h@FF0000 hs@C40000");
+		};
 	}
-	else if (skill_type == CZ_SKILL_MP)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "MP: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(hero.attribute[ATR_MANA_MAX]));
-	}
-	else if (skill_type == CZ_SKILL_STR)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "STR: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(hero.attribute[ATR_STRENGTH]));
-	}
-	else if (skill_type == CZ_SKILL_DEX)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "DEX: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(hero.attribute[ATR_DEXTERITY]));
-	}
-	else if (skill_type == CZ_SKILL_STA)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "STA: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(ATR_STAMINA_MAX[0]));
-	}
-	else if (skill_type == CZ_SKILL_INT)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "INT: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(ATR_INTELLECT));
-	}
-	else if (skill_type == CZ_SKILL_RHE)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "RHE: ");
-		desc_concat = ConcatStrings(desc_concat, "h@FFBB00 hs@FF8000 ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(RhetorikSkillValue[1]));
-	}
+	
 	else if (skill_type == CZ_SKILL_SMI)
+			|| (skill_type == CZ_SKILL_ALCH)
+			|| (skill_type == CZ_SKILL_RUNE)
 	{
-		// desc_concat = ConcatStrings(desc_concat, "SMI: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(TalentCount_Smith[0]));
-	}
-	else if (skill_type == CZ_SKILL_ALCH)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "ALCH: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(TalentCount_Alchemy[0]));
-	}
-	else if (skill_type == CZ_SKILL_RUNE)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "RUNE: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(TalentCount_Rune[0]));
-	}
-	else if (skill_type == CZ_SKILL_1H)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "1H: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(hero.HitChance[NPC_TALENT_1H]));
-	}
-	else if (skill_type == CZ_SKILL_2H)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "2H: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(hero.HitChance[NPC_TALENT_2H]));
-	}
-	else if (skill_type == CZ_SKILL_BOW)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "BOW: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(hero.HitChance[NPC_TALENT_BOW]));
-	}
-	else if (skill_type == CZ_SKILL_XBOW)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "XBOW: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(hero.HitChance[NPC_TALENT_CROSSBOW]));
-	}
-	else if (skill_type == CZ_SKILL_SHI)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "SHI: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(hero.attribute[ATR_REGENERATEMANA]));
-	}
-	else if (skill_type == CZ_SKILL_CIRC)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "CIRC: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(Npc_GetTalentSkill(hero,NPC_TALENT_MAGE)));
-	}
-	else if (skill_type == CZ_SKILL_MPOW)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "MPOW: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(CountLearnSpell));
-	}
-	else if (skill_type == CZ_SKILL_DEM)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "DEM: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(Npc_GetTalentSkill(hero,NPC_TALENT_DEMONOLOG)));
-	}
-	else if (skill_type == CZ_SKILL_ORE)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "ORE: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(HERO_HACKCHANCEORE));
-	}
-	else if (skill_type == CZ_SKILL_GOLD)
-	{
-		// desc_concat = ConcatStrings(desc_concat, "GOLD: ");
-		desc_concat = ConcatStrings(desc_concat, IntToString(Hero_HackChance));
-	}
-	else
-	{
-		return "[UNKNOWN SKILLCHECK] ";
+		if (currval < reqval)
+		{
+			desc_concat = ConcatStrings(desc_concat, "d@ ");
+		};
 	};
-		
+	
+	desc_concat = ConcatStrings(desc_concat, ":[");
+	// desc_concat = ConcatStrings(desc_concat, CZ_GetSkillAbbr(skill_type));
+	// desc_concat = ConcatStrings(desc_concat, ": ");
+	desc_concat = ConcatStrings(desc_concat, IntToString(currval));
 	desc_concat = ConcatStrings(desc_concat, "/");
-	desc_concat = ConcatStrings(desc_concat, IntToString(skill_value));
-	desc_concat = ConcatStrings(desc_concat, "] ");
+	desc_concat = ConcatStrings(desc_concat, IntToString(reqval));
+	desc_concat = ConcatStrings(desc_concat, "]~ ");
 	
 	return desc_concat;
 	
 };
 
-func string CZ_SkillCheckCondition(var int skill_type, var int skill_value)
+func string CZ_SkillCheckCondition(var int skill_type, var int reqval, var int strict)
 {
 	
-	if ((skill_type == CZ_SKILL_HP) && (hero.attribute[ATR_HITPOINTS_MAX] < skill_value))
-		|| ((skill_type == CZ_SKILL_MP) && (hero.attribute[ATR_MANA_MAX] < skill_value))
-		|| ((skill_type == CZ_SKILL_STR) && (hero.attribute[ATR_STRENGTH] < skill_value))
-		|| ((skill_type == CZ_SKILL_DEX) && (hero.attribute[ATR_DEXTERITY] < skill_value))
-		|| ((skill_type == CZ_SKILL_STA) && (ATR_STAMINA_MAX[0] < skill_value))
-		|| ((skill_type == CZ_SKILL_INT) && (ATR_INTELLECT < skill_value))
-		|| ((skill_type == CZ_SKILL_RHE) && (RhetorikSkillValue[1] < skill_value))
-		|| ((skill_type == CZ_SKILL_SMI) && (TalentCount_Smith[0] < skill_value))
-		|| ((skill_type == CZ_SKILL_ALCH) && (TalentCount_Alchemy[0] < skill_value))
-		|| ((skill_type == CZ_SKILL_RUNE) && (TalentCount_Rune[0] < skill_value))
-		|| ((skill_type == CZ_SKILL_1H) && (hero.HitChance[NPC_TALENT_1H] < skill_value))
-		|| ((skill_type == CZ_SKILL_2H) && (hero.HitChance[NPC_TALENT_2H] < skill_value))
-		|| ((skill_type == CZ_SKILL_BOW) && (hero.HitChance[NPC_TALENT_BOW] < skill_value))
-		|| ((skill_type == CZ_SKILL_XBOW) && (hero.HitChance[NPC_TALENT_CROSSBOW] < skill_value))
-		|| ((skill_type == CZ_SKILL_SHI) && (hero.attribute[ATR_REGENERATEMANA] < skill_value))
-		|| ((skill_type == CZ_SKILL_CIRC) && (Npc_GetTalentSkill(hero,NPC_TALENT_MAGE) < skill_value))
-		|| ((skill_type == CZ_SKILL_MPOW) && (CountLearnSpell < skill_value))
-		|| ((skill_type == CZ_SKILL_DEM) && (Npc_GetTalentSkill(hero,NPC_TALENT_DEMONOLOG) < skill_value))
-		|| ((skill_type == CZ_SKILL_ORE) && (HERO_HACKCHANCEORE < skill_value))
-		|| ((skill_type == CZ_SKILL_GOLD) && (Hero_HackChance < skill_value))
+	var int show_checks;
+	var int currval;
+	
+	show_checks = Menu_ReadInt("CZ_SETTINGS_OTHER", "ShowSkillChecks");
+	currval = CZ_GetSkillValue(skill_type);
+	
+	// strict & fail - disable / hide
+	if ((currval < reqval) && (strict == TRUE))
 	{
-		if (Menu_ReadInt("CZ_SETTINGS_OTHER", "ShowSkillChecks") == TRUE)
+		if (show_checks == TRUE)
 		{
-			return ConcatStrings("d@ ", CZ_SkillCheckPrefix(skill_type, skill_value));
+			return ConcatStrings("d@ ", CZ_SkillCheckPrefix(skill_type, currval, reqval));
 		}
 		else
 		{
 			return "hidden@ ";
 		};
 	}
+	
 	else
 	{
-		if (Menu_ReadInt("CZ_SETTINGS_OTHER", "ShowSkillChecks") == TRUE)
+		if (show_checks == TRUE)
 		{
-			return CZ_SkillCheckPrefix(skill_type, skill_value);
+			return CZ_SkillCheckPrefix(skill_type, currval, reqval);
 		}
 		else
 		{

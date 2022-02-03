@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Addon_Saturas_EXIT(C_Info)
 {
@@ -124,10 +135,13 @@ func void DIA_Addon_Saturas_Hallo_Video()
 	AI_Output(self,other,"DIA_Addon_Saturas_Video_14_01");	//(rozčileně) Co sis vůbec myslel, že děláš?
 	Info_ClearChoices(DIA_Addon_Saturas_Hallo);
 
-	if(RhetorikSkillValue[1] >= 15)
-	{	
-		Info_AddChoice(DIA_Addon_Saturas_Hallo,"Váš plán by stejně nefungoval.",DIA_Addon_Saturas_Hallo_Spott);
-	}; 
+	// if(RhetorikSkillValue[1] >= 15)
+	// {	
+		Info_AddChoice(DIA_Addon_Saturas_Hallo,	
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 15, TRUE), "Váš plán by stejně nefungoval."),
+			// "Váš plán by stejně nefungoval.",	
+			DIA_Addon_Saturas_Hallo_Spott);
+	// }; 
 
 	Info_AddChoice(DIA_Addon_Saturas_Hallo,"Je mi to líto. Nevěděl jsem, co dělám.",DIA_Addon_Saturas_Hallo_sorry);
 	Info_AddChoice(DIA_Addon_Saturas_Hallo,"Bylo to nevyhnutelné.",DIA_Addon_Saturas_Hallo_notwendig);

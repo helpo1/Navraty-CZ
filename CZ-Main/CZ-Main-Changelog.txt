@@ -527,6 +527,50 @@ DIA_Ass_125_Tiamant_Teach_2X2_15_25 - opraveno other/self
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_Ass_170_Adept.d   */
+
+
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_Bau_900_Onar.d   */
+
+
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_BAU_907_Wasili.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_Bau_908_Hodges.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_BAU_913_Thekla.d   */
 
 
@@ -544,6 +588,17 @@ func int DIA_Thekla_Baker_Condition - upraveny podmínky dialogu
 v1.00:
 
 instance DIA_Lobart_LobartMeal - upraveny podmínky dialogu
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_BAU_960_Bengar.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 ----------------------------------------------------------------------------------------------------
@@ -572,6 +627,17 @@ instance DIA_NICLAS_HIREDASSIST_BILGOT - úpravy dialogů (kvůli úpravám úko
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_bau_987_snipes.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_Bdt_1013_Bandit_L.d   */
 
 
@@ -594,6 +660,17 @@ func void DIA_Addon_Edgor_TrainStart_GIFT - opraven zápis do deníku
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_BDT_1095_Crimson.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_DJG_708_Kurgan.d   */
 
 
@@ -606,6 +683,11 @@ v1.01:
 
 
 /*   (...)\Story\Dialoge\DIA_DJG_712_Hokurn.d   */
+
+
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 v1.00:
@@ -625,6 +707,17 @@ v1.00:
 func void DIA_Jan_DragonBlood_1 - upraveny výpisy
 func void DIA_Jan_DragonBlood_all - upraveny výpisy
 func void b_janarmorchoices - upraveny výpisy (B_BuildLearnString -> B_BuildLearnStringEx)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_DJG_715_Ferros.d   */
+
+
+v1.02:
+
+(3x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 ----------------------------------------------------------------------------------------------------
@@ -685,6 +778,17 @@ ItMi_Moleratlubric_MIS - vytvoření předmětu přesunuto ze 3. do 1. kapitoly
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_eligor_demon.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_gur_8002_orun.d   */
 
 
@@ -734,6 +838,11 @@ func void dia_hun_745_raffa_TrueShot_info - sjednoceny podmínky učení
 /*   (...)\Story\Dialoge\DIA_KDF_500_Pyrokar.d   */
 
 
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.01:
 
 CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
@@ -774,6 +883,11 @@ v1.01:
 /*   (...)\Story\Dialoge\DIA_KDF_504_Parlan.d   */
 
 
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.01:
 
 func int DIA_Parlan_TEACH_MANA_Condition - upraveny podmínky dialogu
@@ -796,6 +910,17 @@ v1.01:
 v1.00:
 
 func void DIA_Addon_Saturas_BeliarWeapGeben_Info - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_KDW_1400_Addon_Saturas_NW.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 ----------------------------------------------------------------------------------------------------
@@ -845,7 +970,23 @@ func int DIA_Wulfgar_Bandits_Condition - upraveny podmínky dialogu
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_Mil_335_Rumbold.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_none_102_kreol.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 v1.01:
@@ -857,6 +998,28 @@ v1.00:
 
 (6x) var int KREOL_ITEMSGIVEN_CHAPTER_... - upravena nabídka obchodníka
 func void dia_kreol_trade_info - upravena nabídka obchodníka
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_NOV_600_Pedro.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_NOV_601_Igaraz.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 ----------------------------------------------------------------------------------------------------
@@ -887,6 +1050,11 @@ DIA_Orc_8524_Bumshak_Hello_2_Info_18_04A - 04A (cyrilice -> latinka)
 /*   (...)\Story\Dialoge\DIA_orc_8550_urnazul.d   */
 
 
+v1.02:
+
+(3x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.00:
 
 (2x) dia_orc_8550_urnazul_urhan_Ok - Ok (cyrilice -> latinka)
@@ -911,6 +1079,11 @@ func int DIA_Orc_8551_Leitenent_DeadHead_condition - upraveny podmínky dialogu
 
 
 /*   (...)\Story\Dialoge\DIA_orc_8552_watcher.d   */
+
+
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 v1.01:
@@ -945,6 +1118,11 @@ v1.01:
 
 
 /*   (...)\Story\Dialoge\DIA_PAL_200_Hagen.d   */
+
+
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 v1.01:
@@ -996,9 +1174,25 @@ CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (
 /*   (...)\Story\Dialoge\DIA_PIR_1320_Addon_Greg.d   */
 
 
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.01:
 
 (3x) TOPIC_ORcGREATWAR - TOPIC_ORCGREATWAR (cyrilice -> latinka)
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_PIR_1351_Addon_Samuel.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 ----------------------------------------------------------------------------------------------------
@@ -1059,7 +1253,23 @@ v1.01:
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_Sld_805_Cord.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_SLD_811_Wolf.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 v1.01:
@@ -1116,6 +1326,17 @@ func void dia_lutero_tradehelperdone_info - upraveny podmínky na zadání dalš
 v1.00:
 
 func void DIA_Engor_BRINGMEAT_Info - upraveny výpisy
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_4111_Grimes.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 ----------------------------------------------------------------------------------------------------
@@ -1198,6 +1419,17 @@ func int dia_jorgen_li_bringfooddone_condition - upraveny podmínky dialogu
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_VLK_433_Bromor.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_VLK_438_Alrik.d   */
 
 
@@ -1265,12 +1497,45 @@ func int dia_jack_li_bringfooddone_condition - upraveny podmínky dialogu
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_VLK_445_Ramirez.d   */
+
+
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_447_Cassia.d   */
+
+
+v1.02:
+
+(4x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_VLK_462_Thorben.d   */
 
 
 v1.00:
 
 func void dia_thorben_missgritta_help - opraveno AIV_IgnoresArmor
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\Story\Dialoge\DIA_VLK_484_Lehmar.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 ----------------------------------------------------------------------------------------------------
@@ -1290,6 +1555,11 @@ v1.01:
 /*   (...)\Story\Dialoge\DIA_vlk_6110_nigel.d   */
 
 
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.00:
 
 DIA_Nigel_MoneyNew_01_07 - opraveno other/self
@@ -1298,7 +1568,23 @@ DIA_Nigel_MoneyNew_01_07 - opraveno other/self
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\Story\Dialoge\DIA_vlk_6134_valeran.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\Story\Dialoge\DIA_vlk_986_viper.d   */
+
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 v1.01:
@@ -1345,6 +1631,13 @@ func void PC_Goldhacken_Addon_Hour_Info - determinovanost těžby
 /*   (...)\Story\Dialog_Mobsis\MakeRune.d   */
 
 
+v1.02:
+
+func string CZ_AllRunesNeedSkill, PC_AllRunesNeedSkill_Info - nová funkce + pomocná (prázdná) funkce
+(6x) CZ_AllRunesNeedSkill - přidána hromadná nápověda
+(12x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.00:
 
 func int B_CheckRuneSkill - upraveny výpisy
@@ -1355,6 +1648,11 @@ func int B_CheckRuneSkill - upraveny výpisy
 
 
 /*   (...)\Story\Dialog_Mobsis\PotionAlchemy.d   */
+
+
+v1.02:
+
+(65x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 v1.00:
@@ -1378,6 +1676,11 @@ func void PC_PrayShrine_BlessSword_Info - upraveny výpisy
 
 
 /*   (...)\Story\Dialog_Mobsis\SmithWeapon.d   */
+
+
+v1.02:
+
+(57x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
 v1.00:
@@ -1705,7 +2008,7 @@ v1.02:
 
 ShowSkillChecks - deklarace nového .ini nastavení
 (20x) const int CZ_SKILL - deklarace nových konstant (kvůli skill checkům)
-CZ_SkillCheckPrefix, CZ_SkillCheckCondition - nové funkce
+CZ_GetSkillValue, CZ_GetSkillAbbr, CZ_SkillCheckPrefix, CZ_SkillCheckCondition - nové funkce
 
 
 v1.01a:

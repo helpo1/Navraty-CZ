@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.00:
 
 (2x) RhetorikSkillValue - opraveno navýšení rétoriky nad maximum
@@ -1165,10 +1170,14 @@ func void DIA_BDT_4568_KINJARTS_Quest_info()
    {
       Info_AddChoice(DIA_BDT_4568_KINJARTS_Quest,"(dát tři kusy magické rudy)",DIA_BDT_4568_KINJARTS_Quest_MagicOre);
    };
-   if((Npc_HasItems(other,ITMI_SNUGGET) >= 3) && (RhetorikSkillValue[1] >= 35))
-   {
-      Info_AddChoice(DIA_BDT_4568_KINJARTS_Quest,"(dát tři kusy železné rudy)",DIA_BDT_4568_KINJARTS_Quest_IronOre);
-   };
+   	// if((Npc_HasItems(other,ITMI_SNUGGET) >= 3) && (RhetorikSkillValue[1] >= 35))
+	if(Npc_HasItems(other,ITMI_SNUGGET) >= 3)
+	{
+		Info_AddChoice(DIA_BDT_4568_KINJARTS_Quest,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 35, TRUE), "(dát tři kusy železné rudy)"),
+			// "(dát tři kusy železné rudy)",
+			DIA_BDT_4568_KINJARTS_Quest_IronOre);
+	};
 };
 
 func void DIA_BDT_4568_KINJARTS_Quest_Back()
@@ -1258,10 +1267,14 @@ func void DIA_BDT_4568_KINJARTS_QuestAgain_info()
    {
       Info_AddChoice(DIA_BDT_4568_KINJARTS_QuestAgain,"(dát tři kusy magické rudy)",DIA_BDT_4568_KINJARTS_QuestAgain_MagicOre);
    };
-   if((Npc_HasItems(other,ITMI_SNUGGET) >= 3) && (RhetorikSkillValue[1] >= 35))
-   {
-      Info_AddChoice(DIA_BDT_4568_KINJARTS_QuestAgain,"(dát tři kusy železné rudy)",DIA_BDT_4568_KINJARTS_QuestAgain_IronOre);
-   };
+   	// if((Npc_HasItems(other,ITMI_SNUGGET) >= 3) && (RhetorikSkillValue[1] >= 35))
+	if(Npc_HasItems(other,ITMI_SNUGGET) >= 3)
+	{
+		Info_AddChoice(DIA_BDT_4568_KINJARTS_QuestAgain,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 35, TRUE), "(dát tři kusy železné rudy)"),
+			// "(dát tři kusy železné rudy)",
+			DIA_BDT_4568_KINJARTS_QuestAgain_IronOre);
+	};
 };
 
 func void DIA_BDT_4568_KINJARTS_QuestAgain_Back()

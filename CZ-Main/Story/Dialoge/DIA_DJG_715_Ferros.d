@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+(3x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_DJG_715_Ferros_EXIT(C_Info)
 {
@@ -132,7 +143,10 @@ func void DIA_DJG_715_Ferros_OldCamp_Info()
 	AI_Output(self,other,"DIA_DJG_715_Ferros_OldCamp_01_03");	//Bez meče se odsud nemůžu dostat a ty meče, co se tu dají koupit, jsou ty nejhorší krámy, co jsem kdy viděl.
 	Info_ClearChoices(DIA_DJG_715_Ferros_OldCamp);
 	Info_AddChoice(DIA_DJG_715_Ferros_OldCamp,"Přeju ti hodně štěstí při hledání.",DIA_DJG_715_Ferros_OldCamp_No);
-	Info_AddChoice(DIA_DJG_715_Ferros_OldCamp,"Co mi dáš za to, když ti seženu meč?",DIA_DJG_715_Ferros_OldCamp_Price);
+	Info_AddChoice(DIA_DJG_715_Ferros_OldCamp,
+		ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, FALSE), "Co mi dáš za to, když ti seženu meč?"),
+		// "Co mi dáš za to, když ti seženu meč?",
+		DIA_DJG_715_Ferros_OldCamp_Price);
 	Info_AddChoice(DIA_DJG_715_Ferros_OldCamp,"Najdu tvůj meč.",DIA_DJG_715_Ferros_OldCamp_Yes);
 	Wld_InsertItem(ItMW_1H_FerrosSword_Mis,"FP_OW_ITEM_08");
 	MIS_FErrosSword = LOG_Running;
@@ -226,7 +240,10 @@ func void DIA_DJG_715_Ferros_FerrosAnySword_Silverblade()
 	B_Ferros_FerrosAnySword_Give();
 	Info_ClearChoices(DIA_DJG_715_Ferros_FerrosAnySword);
 	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword,"Ne, potřebuju ho pro sebe.",DIA_DJG_715_Ferros_FerrosAnySword_Silverblade_No);
-	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword,"Jo, vezmi si ho.",DIA_DJG_715_Ferros_FerrosAnySword_Silverblade_Yes);
+	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword,
+		ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, FALSE), "Jo, vezmi si ho."),
+		// "Jo, vezmi si ho.",
+		DIA_DJG_715_Ferros_FerrosAnySword_Silverblade_Yes);
 };
 
 func void DIA_DJG_715_Ferros_FerrosAnySword_Oreblade()
@@ -234,7 +251,10 @@ func void DIA_DJG_715_Ferros_FerrosAnySword_Oreblade()
 	B_Ferros_FerrosAnySword_Give();
 	Info_ClearChoices(DIA_DJG_715_Ferros_FerrosAnySword);
 	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword,"Ne, potřebuju ho pro sebe.",DIA_DJG_715_Ferros_FerrosAnySword_Oreblade_No);
-	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword,"Jo, vezmi si ho.",DIA_DJG_715_Ferros_FerrosAnySword_Oreblade_Yes);
+	Info_AddChoice(DIA_DJG_715_Ferros_FerrosAnySword,
+		ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, FALSE), "Jo, vezmi si ho."),
+		// "Jo, vezmi si ho.",
+		DIA_DJG_715_Ferros_FerrosAnySword_Oreblade_Yes);
 };
 
 func void B_Ferros_FerrosAnySword_Yes1()

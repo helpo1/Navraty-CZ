@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.01:
 
 CanLearnMagicCircleNext_ABCZ - upraveny podmínky učení se magických kruhů (na žádost hráčů)
@@ -3709,11 +3714,14 @@ instance DIA_PYROKAR_PiratePray(C_Info)
 	condition = dia_pyrokar_PiratePray_condition;
 	information = dia_pyrokar_PiratePray_info;
 	permanent = FALSE;
-	description = "Potřebuji vaši pomoc.";
+	// description = "Potřebuji vaši pomoc.";
 };
 
 func int dia_pyrokar_PiratePray_condition()
 {
+	DIA_PYROKAR_PiratePray.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 60, FALSE), "Potřebuji vaši pomoc.");
+	
 	if(MIS_PiratePray == LOG_Running)
 	{
 		return TRUE;

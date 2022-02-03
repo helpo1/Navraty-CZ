@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.01:
 
 func int dia_Orc_8572_UrHoshNar_OrcHolyPlaces_condition - upraveny podmínky dialogu
@@ -1202,11 +1207,14 @@ instance DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_info;
 	permanent = FALSE;
-	description = "Můžeme to snížit na polovinu?";
+	// description = "Můžeme to snížit na polovinu?";
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount_condition()
 {
+	DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDiscount.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 65, FALSE), "Můžeme to snížit na polovinu?");
+	
 	if((MIS_FerdRing == LOG_Running) && (VakurShakNeedMoreGold == TRUE) && (VakurShakSellRing == FALSE) && (VakurShakNeedGoldCount >= 50))
 	{
 		return TRUE;
@@ -1237,11 +1245,14 @@ instance DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone(C_Info)
 	condition = DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_condition;
 	information = DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_info;
 	permanent = FALSE;
-	description = "Tady, vezmi si to zlato.";
+	// description = "Tady, vezmi si to zlato.";
 };
 
 func int DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone_condition()
 {
+	DIA_OrcWarrior_MineWatcher_Vakur_GoldNuggetDone.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 65, FALSE), "Tady, vezmi si to zlato.");
+	
 	if((MIS_FerdRing == LOG_Running) && (VakurShakNeedMoreGold == TRUE) && (Npc_HasItems(hero,ItMi_Addon_GoldNugget) >= VakurShakNeedGoldCount))
 	{
 		return TRUE;

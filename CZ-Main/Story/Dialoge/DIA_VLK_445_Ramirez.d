@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Ramirez_EXIT(C_Info)
 {
@@ -199,10 +210,13 @@ func void DIA_Ramirez_RamirezPissOff_info()
 		Info_ClearChoices(DIA_Ramirez_RamirezPissOff);
 		Info_AddChoice(DIA_Ramirez_RamirezPissOff,"Nevím.",DIA_Ramirez_RamirezPissOff_No);
 
-		if(RhetorikSkillValue[1] >= 25)
-		{
-			Info_AddChoice(DIA_Ramirez_RamirezPissOff,"Pojďme se podívat na situaci z druhé strany.",DIA_Ramirez_RamirezPissOff_Deal);
-		};
+		// if(RhetorikSkillValue[1] >= 25)
+		// {
+			Info_AddChoice(DIA_Ramirez_RamirezPissOff,
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 25, TRUE), "Pojďme se podívat na situaci z druhé strany."),
+				// "Pojďme se podívat na situaci z druhé strany.",
+				DIA_Ramirez_RamirezPissOff_Deal);
+		// };
 	}
 	else
 	{
@@ -1037,10 +1051,13 @@ func void DIA_Ramirez_MagicBook_info()
 
 	Info_AddChoice(DIA_Ramirez_MagicBook,"Ne, to je příliš.",DIA_Ramirez_MagicBook_No);
 
-	if(RhetorikSkillValue[1] >= 30)
-	{
-		Info_AddChoice(DIA_Ramirez_MagicBook,"Ty po mě chceš 100 zlatých, za bezcenný kus papíru?",DIA_Ramirez_MagicBook_Nothing);
-	};
+	// if(RhetorikSkillValue[1] >= 30)
+	// {
+		Info_AddChoice(DIA_Ramirez_MagicBook,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 30, TRUE), "Ty po mě chceš 100 zlatých, za bezcenný kus papíru?"),
+			// "Ty po mě chceš 100 zlatých, za bezcenný kus papíru?",
+			DIA_Ramirez_MagicBook_Nothing);
+	// };
 };
 
 func void DIA_Ramirez_MagicBook_Yes()

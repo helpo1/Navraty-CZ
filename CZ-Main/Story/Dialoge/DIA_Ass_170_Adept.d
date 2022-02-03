@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
+
 instance DIA_Ass_170_Adept_EXIT(C_Info)
 {
 	npc = Ass_170_Adept;
@@ -216,7 +228,10 @@ func void DIA_Ass_170_Adept_NarugGold_Info()
 	AI_Output(other,self,"DIA_Ass_170_Adept_NarugGold_01_03");	//Nemohl bys vzít jeho měšec se zlatem, abys mu ho pak předal při setkání?
 	AI_Output(self,other,"DIA_Ass_170_Adept_NarugGold_01_04");	//(udiveně) Já? Ne. Promiň, ale tohle udělat nemůžu.
 	Info_ClearChoices(DIA_Ass_170_Adept_NarugGold);
-	Info_AddChoice(DIA_Ass_170_Adept_NarugGold,"Co chceš za svou pomoc?",DIA_Ass_170_Adept_NarugGold_Help);
+	Info_AddChoice(DIA_Ass_170_Adept_NarugGold,
+		ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, FALSE), "Co chceš za svou pomoc?"),
+		// "Co chceš za svou pomoc?",
+		DIA_Ass_170_Adept_NarugGold_Help);
 	Info_AddChoice(DIA_Ass_170_Adept_NarugGold,"A co třeba pár zlaťáků za tvou pomoc?",DIA_Ass_170_Adept_NarugGold_Gold);
 	Info_AddChoice(DIA_Ass_170_Adept_NarugGold,"Tak to teda budu muset oznámit mistru Osairovi.",DIA_Ass_170_Adept_NarugGold_Osair);
 	Info_AddChoice(DIA_Ass_170_Adept_NarugGold,"Možná bychom se domluvili ještě jinak?",DIA_Ass_170_Adept_NarugGold_Deal);
@@ -291,12 +306,17 @@ instance DIA_Ass_170_Adept_NarugGold_Again(C_Info)
 	condition = DIA_Ass_170_Adept_NarugGold_Again_Condition;
 	information = DIA_Ass_170_Adept_NarugGold_Again_Info;
 	permanent = FALSE;
-	description = "Nechceš se napít kvalitního vína?";
+	// description = "Nechceš se napít kvalitního vína?";
 };
 
 func int DIA_Ass_170_Adept_NarugGold_Again_Condition()
 {
-	if((MIS_AssasinGold == LOG_Running) && (HasimPissOffGold == TRUE) && (Npc_HasItems(other,ItMi_AssGoldPocket) >= 1) && (Npc_HasItems(other,ItPo_AssasinsRareWine) >= 1) && (RhetorikSkillValue[1] > 0))
+	DIA_Ass_170_Adept_NarugGold_Again.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 1, TRUE), "Nechceš se napít kvalitního vína?");
+	
+	if((MIS_AssasinGold == LOG_Running) && (HasimPissOffGold == TRUE) && (Npc_HasItems(other,ItMi_AssGoldPocket) >= 1) && (Npc_HasItems(other,ItPo_AssasinsRareWine) >= 1)
+	// && (RhetorikSkillValue[1] > 0)
+	)
 	{
 		return TRUE;
 	};

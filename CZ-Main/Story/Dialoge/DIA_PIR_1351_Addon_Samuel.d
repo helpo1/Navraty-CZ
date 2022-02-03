@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Addon_Samuel_EXIT(C_Info)
 {
@@ -554,10 +565,13 @@ func void DIA_Addon_Samuel_RiordanRezept_Info()
 	Info_ClearChoices(DIA_Addon_Samuel_RiordanRezept);
 	Info_AddChoice(DIA_Addon_Samuel_RiordanRezept,"Jeden z mágů Vody má o něj zájem.",DIA_Addon_Samuel_RiordanRezept_Riordan);
 
-	if(RhetorikSkillValue[1] >= 50)
-	{
-		Info_AddChoice(DIA_Addon_Samuel_RiordanRezept,"Chci začít s jeho prodejem v Khorinisu.",DIA_Addon_Samuel_RiordanRezept_Trade);
-	};
+	// if(RhetorikSkillValue[1] >= 50)
+	// {
+		Info_AddChoice(DIA_Addon_Samuel_RiordanRezept,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, TRUE), "Chci začít s jeho prodejem v Khorinisu."),
+			// "Chci začít s jeho prodejem v Khorinisu.",
+			DIA_Addon_Samuel_RiordanRezept_Trade);
+	// };
 
 	Info_AddChoice(DIA_Addon_Samuel_RiordanRezept,"Jen ze zvědavosti.",DIA_Addon_Samuel_RiordanRezept_Just);
 };

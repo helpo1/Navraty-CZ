@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Bromor_EXIT(C_Info)
 {
@@ -460,10 +471,13 @@ func void DIA_Bromor_AskForWoman_Info()
 		AI_Output(self,other,"DIA_Bromor_AskForWoman_01_14");	//Takže to dělá dva tisíce zlatých a můžem si plácnout!
 		Info_ClearChoices(DIA_Bromor_AskForWoman);
 
-		if(RhetorikSkillValue[1] >= 20)
-		{
-			Info_AddChoice(DIA_Bromor_AskForWoman,"Máš velmi zvláštní počty!",DIA_Bromor_AskForWoman_Yes);
-		};
+		// if(RhetorikSkillValue[1] >= 20)
+		// {
+			Info_AddChoice(DIA_Bromor_AskForWoman,
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 20, TRUE), "Máš velmi zvláštní počty!"),
+				// "Máš velmi zvláštní počty!",
+				DIA_Bromor_AskForWoman_Yes);
+		// };
 
 		Info_AddChoice(DIA_Bromor_AskForWoman,"Není to moc?",DIA_Bromor_AskForWoman_No);
 	}

@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Onar_EXIT(C_Info)
 {
@@ -535,7 +546,10 @@ func void DIA_Onar_HowMuch_Info()
 	Info_ClearChoices(DIA_Onar_HowMuch);
 	Info_AddChoice(DIA_Onar_HowMuch,"V pořádku.",DIA_Onar_HowMuch_Ok);
 	Info_AddChoice(DIA_Onar_HowMuch,"To není zrovna moc...",DIA_Onar_HowMuch_More);
-	Info_AddChoice(DIA_Onar_HowMuch,"Za den?",DIA_Onar_HowMuch_PerDay);
+	Info_AddChoice(DIA_Onar_HowMuch,
+		ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 30, FALSE), "Za den?"),
+		// "Za den?",
+		DIA_Onar_HowMuch_PerDay);
 };
 
 func void DIA_Onar_HowMuch_PerDay()
@@ -1063,7 +1077,19 @@ func void dia_onar_tower_app_good_info()
 	AI_Output(self,other,"DIA_Onar_Tower_App_Good_14_10");	//(rozhodnutě) Ale to nestačí na celou věž.
 	AI_Output(self,other,"DIA_Onar_Tower_App_Good_14_11");	//Můžeš v ní žít, pokud jseš ochotnej zaplatit nájem. Sto zlatých na každý den. Souhlasíš?
 	Info_ClearChoices(dia_onar_tower_app_good);
-	Info_AddChoice(dia_onar_tower_app_good,"Sto zlatých - příliš vysoká cena.(smlouvat)",dia_onar_tower_app_good_maybe);
+	
+	if ((MARIA_APPROVES_TOWER == TRUE) && (LEE_APPROVES_TOWER == TRUE))
+	{
+		Info_AddChoice(dia_onar_tower_app_good,"Sto zlatých - příliš vysoká cena. (smlouvat)",dia_onar_tower_app_good_maybe);
+	}
+	else
+	{
+		Info_AddChoice(dia_onar_tower_app_good,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, FALSE), "Sto zlatých - příliš vysoká cena. (smlouvat)"),
+			// "Sto zlatých - příliš vysoká cena. (smlouvat)",
+			dia_onar_tower_app_good_maybe);
+	};
+	
 	Info_AddChoice(dia_onar_tower_app_good,"Dobře! Platí.",dia_onar_tower_app_good_yes);
 	Info_AddChoice(dia_onar_tower_app_good,"Příliš drahé.",dia_onar_tower_app_good_no);
 };

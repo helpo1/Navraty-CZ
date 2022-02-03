@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Rumbold_EXIT(C_Info)
 {
@@ -99,10 +110,13 @@ func void DIA_Rumbold_HALLO_verschwindet()
 	AI_Output(self,other,"DIA_Rumbold_HALLO_verschwindet_10_02");	//A co uděláš, když nezmizím?
 	Info_ClearChoices(DIA_Rumbold_Hallo);
 
-	if(RhetorikSkillValue[1] >= 20)
-	{
-		Info_AddChoice(DIA_Rumbold_Hallo,"Co mám udělat, abys zmizel?",DIA_Rumbold_HALLO_geld);
-	};
+	// if(RhetorikSkillValue[1] >= 20)
+	// {
+		Info_AddChoice(DIA_Rumbold_Hallo,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 20, TRUE), "Co mám udělat, abys zmizel?"),
+			// "Co mám udělat, abys zmizel?",
+			DIA_Rumbold_HALLO_geld);
+	// };
 
 	Info_AddChoice(DIA_Rumbold_Hallo,"To bylo naposled, co jsi obtěžoval rolníky.",DIA_Rumbold_HALLO_AufsMaul);
 };

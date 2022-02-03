@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+(4x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 var int CassiaTellsAttila;
 var int CassiaRecievePay;
@@ -550,10 +561,13 @@ func void DIA_Cassia_TEACH_Info()
 		Info_AddChoice(DIA_Cassia_TEACH,"Nemám tolik peněz.",DIA_Cassia_TEACH_No);
 		Info_AddChoice(DIA_Cassia_TEACH,"Jestli nechceš navštívit peklo...",DIA_Cassia_TEACH_Damn);
 
-		if(RhetorikSkillValue[1] >= 10)
-		{
-			Info_AddChoice(DIA_Cassia_TEACH,"Mám na tohle jiný názor.",DIA_Cassia_TEACH_Agreed);
-		};
+		// if(RhetorikSkillValue[1] >= 10)
+		// {
+			Info_AddChoice(DIA_Cassia_TEACH,
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 10, TRUE), "Mám na tohle jiný názor."),
+				// "Mám na tohle jiný názor.",
+				DIA_Cassia_TEACH_Agreed);
+		// };
 	}
 	else
 	{
@@ -636,10 +650,13 @@ func void DIA_Cassia_Pickpocket_Info()
 		Info_AddChoice(DIA_Cassia_Pickpocket,"Nemám tolik peněz.",DIA_Cassia_Pickpocket_No);
 		Info_AddChoice(DIA_Cassia_Pickpocket,"Jestli nechceš navštívit peklo...",DIA_Cassia_Pickpocket_Damn);
 
-		if(RhetorikSkillValue[1] >= 10)
-		{
-			Info_AddChoice(DIA_Cassia_Pickpocket,"Mám na tohle jiný názor.",DIA_Cassia_Pickpocket_Agreed);
-		};
+		// if(RhetorikSkillValue[1] >= 10)
+		// {
+			Info_AddChoice(DIA_Cassia_Pickpocket,
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 10, TRUE), "Mám na tohle jiný názor."),
+				// "Mám na tohle jiný názor.",
+				DIA_Cassia_Pickpocket_Agreed);
+		// };
 	}
 	else
 	{
@@ -704,10 +721,13 @@ func void DIA_Cassia_Acrobat_Info()
 		Info_AddChoice(DIA_Cassia_Acrobat,"Nemám tolik peněz.",DIA_Cassia_Acrobat_No);
 		Info_AddChoice(DIA_Cassia_Acrobat,"Jestli nechceš navštívit peklo...",DIA_Cassia_Acrobat_Damn);
 
-		if(RhetorikSkillValue[1] >= 10)
-		{
-			Info_AddChoice(DIA_Cassia_Acrobat,"Mám na tohle jiný názor.",DIA_Cassia_Acrobat_Agreed);
-		};
+		// if(RhetorikSkillValue[1] >= 10)
+		// {
+			Info_AddChoice(DIA_Cassia_Acrobat,
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 10, TRUE), "Mám na tohle jiný názor."),
+				// "Mám na tohle jiný názor.",
+				DIA_Cassia_Acrobat_Agreed);
+		// };
 	}
 	else
 	{
@@ -1559,10 +1579,13 @@ func void DIA_Cassia_MagicBook_info()
 	Info_AddChoice(DIA_Cassia_MagicBook,"Ten bastard by měl být za mřížemi!",DIA_Cassia_MagicBook_Kill);
 	Info_AddChoice(DIA_Cassia_MagicBook,"Mám zájem o jednu z věcí, co byla odcizena.",DIA_Cassia_MagicBook_Stolen);
 
-	if(RhetorikSkillValue[1] >= 15)
-	{
-		Info_AddChoice(DIA_Cassia_MagicBook,"Slyšel jsem nějaké zvěsti...",DIA_Cassia_MagicBook_Rumors);
-	};
+	// if(RhetorikSkillValue[1] >= 15)
+	// {
+		Info_AddChoice(DIA_Cassia_MagicBook,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 15, TRUE), "Slyšel jsem nějaké zvěsti..."),
+			// "Slyšel jsem nějaké zvěsti...",
+			DIA_Cassia_MagicBook_Rumors);
+	// };
 };
 
 func void DIA_Cassia_MagicBook_JustInt()

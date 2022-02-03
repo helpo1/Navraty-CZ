@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Wasili_EXIT(C_Info)
 {
@@ -150,7 +161,10 @@ func void DIA_Wasili_FirstOldCoin_Info()
 	};
 	Info_ClearChoices(DIA_Wasili_FirstOldCoin);
 	Info_AddChoice(DIA_Wasili_FirstOldCoin,"Ne, mám dojem, že si je raději nechám.",DIA_Wasili_FirstOldCoin_nein);
-	Info_AddChoice(DIA_Wasili_FirstOldCoin,"To nestačí. Co takhle dva?",DIA_Wasili_FirstOldCoin_mehr);
+	Info_AddChoice(DIA_Wasili_FirstOldCoin,
+		ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 20, FALSE), "To nestačí. Co takhle dva?"),
+		// "To nestačí. Co takhle dva?",
+		DIA_Wasili_FirstOldCoin_mehr);
 	Info_AddChoice(DIA_Wasili_FirstOldCoin,"Dohodnuto.",DIA_Wasili_FirstOldCoin_ok);
 	if(FirstOldCoin_angebotenXP_OneTime == FALSE)
 	{

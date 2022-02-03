@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Igaranz_Kap1_EXIT(C_Info)
 {
@@ -509,11 +520,14 @@ instance DIA_Igaranz_Price(C_Info)
 	condition = DIA_Igaraz_Price_Condition;
 	information = DIA_Igaraz_Price_Info;
 	permanent = FALSE;
-	description = "Kolik chceš za ty papíry?";
+	// description = "Kolik chceš za ty papíry?";
 };
 
 func int DIA_Igaraz_Price_Condition()
 {
+	DIA_Igaranz_Price.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 35, FALSE), "Kolik chceš za ty papíry?");
+	
 	if(Npc_KnowsInfo(other,DIA_Igaranz_BabosBelongings))
 	{
 		return TRUE;

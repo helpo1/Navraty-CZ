@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+(2x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.01:
 
 (8x) MIS_ORcGREATWAR - MIS_ORCGREATWAR (cyrilice -> latinka)
@@ -3625,10 +3630,15 @@ func void dia_lord_hagen_oreismined_info()
 	Info_ClearChoices(dia_lord_hagen_oreismined);
 	Info_AddChoice(dia_lord_hagen_oreismined,"Vyjednáno!",dia_lord_hagen_oreismined_agree);
 
-	if(RhetorikSkillValue[1] >= 50)
-	{
-		Info_AddChoice(dia_lord_hagen_oreismined,"... (Smlouvat)",dia_lord_hagen_oreismined_trade);
-	};
+	// if(RhetorikSkillValue[1] >= 50)
+	// {
+		Info_AddChoice(dia_lord_hagen_oreismined,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, TRUE),
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 75, FALSE), "... (smlouvat)")
+			),
+			// "... (smlouvat)",
+			dia_lord_hagen_oreismined_trade);
+	// };
 };
 
 func void dia_lord_hagen_oreismined_agree()

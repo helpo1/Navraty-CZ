@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Bengar_EXIT(C_Info)
 {
@@ -693,12 +704,15 @@ instance DIA_Bengar_MALAKWIEDERDA(C_Info)
 	nr = 35;
 	condition = DIA_Bengar_MALAKWIEDERDA_Condition;
 	information = DIA_Bengar_MALAKWIEDERDA_Info;
-	description = "Malak se vrátil.";
+	// description = "Malak se vrátil.";
 };
 
 
 func int DIA_Bengar_MALAKWIEDERDA_Condition()
 {
+	DIA_Bengar_MALAKWIEDERDA.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 30, FALSE), "Malak se vrátil.");
+	
 	if((Npc_GetDistToWP(Malak,"FARM3") < 3000) && (DarkPathStart == FALSE) && ((MIS_GetMalakBack == LOG_SUCCESS) || (NpcObsessedByDMT_Malak == TRUE)) && (Npc_IsDead(Malak) == FALSE))
 	{
 		return TRUE;

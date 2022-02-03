@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.01:
 
 func int DIA_Parlan_TEACH_MANA_Condition - upraveny podmínky dialogu
@@ -544,10 +549,13 @@ func void DIA_Parlan_NoEnter_Info()
 	Info_AddChoice(DIA_Parlan_NoEnter,"Přišel jsem z hor.",DIA_Parlan_NoEnter_Mount);
 	Info_AddChoice(DIA_Parlan_NoEnter,"Novic pedro mě pustil.",DIA_Parlan_NoEnter_Pedro);
 
-	if(RhetorikSkillValue[1] >= 10)
-	{
-		Info_AddChoice(DIA_Parlan_NoEnter,"A co to je za místo?",DIA_Parlan_NoEnter_NoKill);
-	};
+	// if(RhetorikSkillValue[1] >= 10)
+	// {
+		Info_AddChoice(DIA_Parlan_NoEnter,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 10, TRUE), "A co to je za místo?"),
+			// "A co to je za místo?",
+			DIA_Parlan_NoEnter_NoKill);
+	// };
 };
 
 func void DIA_Parlan_NoEnter_UpWall()

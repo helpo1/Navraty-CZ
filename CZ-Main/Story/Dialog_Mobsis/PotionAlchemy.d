@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+(65x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.00:
 
 func int B_CheckAlchemySkill - upraveny výpisy
@@ -501,19 +506,31 @@ func void B_Mana_Start()
 
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_04] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPo_Mana_01) >= 3) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Mana_Start,"Elixír čisté many",PC_ItPo_Mana_04);
+		Info_AddChoice(PC_Mana_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír čisté many"),
+			// "Elixír čisté many",
+			PC_ItPo_Mana_04);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Mana_Start,"Elixír many",PC_ItPo_Mana_03);
+		Info_AddChoice(PC_Mana_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Elixír many"),
+			// "Elixír many",
+			PC_ItPo_Mana_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Mana_Start,"Extrakt many",PC_ItPo_Mana_02);
+		Info_AddChoice(PC_Mana_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Extrakt many"),
+			// "Extrakt many",
+			PC_ItPo_Mana_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Mana_Start,"Esence many",PC_ItPo_Mana_01);
+		Info_AddChoice(PC_Mana_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Esence many"),
+			// "Esence many",
+			PC_ItPo_Mana_01);
 	};
 
 	Info_AddChoice(PC_Mana_Start,DIALOG_BACK,PC_Mana_Start_Back_Info);
@@ -649,23 +666,38 @@ func void B_Health_Start()
 
 	if((KNOWFULLHEALTH2 == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_Sting) >= 5) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Health_Start,"Elixír hojivé síly ze žihadel",pc_itpo_health_04_new);
+		Info_AddChoice(PC_Health_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 25, FALSE), "Elixír hojivé síly ze žihadel"),
+			// "Elixír hojivé síly ze žihadel",
+			pc_itpo_health_04_new);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_04] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPo_Health_01) >= 3) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Health_Start,"Elixír čisté hojivé síly",PC_ItPo_Health_04);
+		Info_AddChoice(PC_Health_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír čisté hojivé síly"),
+			// "Elixír čisté hojivé síly",
+			PC_ItPo_Health_04);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_03) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Health_Start,"Elixír hojivé síly",PC_ItPo_Health_03);
+		Info_AddChoice(PC_Health_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Elixír hojivé síly"),
+			// "Elixír hojivé síly",
+			PC_ItPo_Health_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_02] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_02) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Health_Start,"Extrakt hojivé síly",PC_ItPo_Health_02);
+		Info_AddChoice(PC_Health_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Extrakt hojivé síly"),
+			// "Extrakt hojivé síly",
+			PC_ItPo_Health_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_01] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
-		Info_AddChoice(PC_Health_Start,"Esence hojivé síly",PC_ItPo_Health_01);
+		Info_AddChoice(PC_Health_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Esence hojivé síly"),
+			// "Esence hojivé síly",
+			PC_ItPo_Health_01);
 	};
 
 	Info_AddChoice(PC_Health_Start,DIALOG_BACK,PC_Health_Start_Back_Info);
@@ -827,19 +859,31 @@ func void B_Special_StaminaSpeed()
 
 	if((KNOWSPEED3 == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_BlackSnapperLiver) >= 1) && (Npc_HasItems(hero,ItFo_Addon_Grog) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_StaminaSpeed,"'Černý chňapavec'",pc_itpo_speed_03);
+		Info_AddChoice(PC_Special_StaminaSpeed,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "'Černý chňapavec'"),
+			// "'Černý chňapavec'",
+			pc_itpo_speed_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[15] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Speed_Herb_01) >= 1) && (Npc_HasItems(hero,ItPo_Speed) >= 1))
 	{
-		Info_AddChoice(PC_Special_StaminaSpeed,"Dvojitý lektvar rychlosti",pc_itpo_speed_02);
+		Info_AddChoice(PC_Special_StaminaSpeed,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Dvojitý lektvar rychlosti"),
+			// "Dvojitý lektvar rychlosti",
+			pc_itpo_speed_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Speed] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Speed_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_StaminaSpeed,"Lektvar rychlosti",PC_ItPo_Speed);
+		Info_AddChoice(PC_Special_StaminaSpeed,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Lektvar rychlosti"),
+			// "Lektvar rychlosti",
+			PC_ItPo_Speed);
 	};
 	if((PLAYER_TALENT_ALCHEMY[17] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_StaminaSpeed,"Lektvar výdrže",pc_itpo_stamina);
+		Info_AddChoice(PC_Special_StaminaSpeed,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 5, FALSE), "Lektvar výdrže"),
+			// "Lektvar výdrže",
+			pc_itpo_stamina);
 	};
 
 	Info_AddChoice(PC_Special_StaminaSpeed,DIALOG_BACK,PC_Special_StaminaSpeed_Back_Info);
@@ -975,27 +1019,45 @@ func void B_Special_Start()
 
 	if((KNOWPERMINT == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_Addon_BCKopf) >= 10) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_Start,"Elixír rozumu",pc_itpo_intellect);
+		Info_AddChoice(PC_Special_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 75, FALSE), "Elixír rozumu"),
+			// "Elixír rozumu",
+			pc_itpo_intellect);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Mana] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_Start,"Elixír ducha",PC_ItPo_Perm_Mana);
+		Info_AddChoice(PC_Special_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír ducha"),
+			// "Elixír ducha",
+			PC_ItPo_Perm_Mana);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Health] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_03) >= 3) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_Start,"Elixír života",PC_ItPo_Perm_Health);
+		Info_AddChoice(PC_Special_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 40, FALSE), "Elixír života"),
+			// "Elixír života",
+			PC_ItPo_Perm_Health);
 	};
 	if((PLAYER_TALENT_ALCHEMY[18] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,itpl_super_herb) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_Start,"Elixír výdrže",pc_itpo_perm_stamina);
+		Info_AddChoice(PC_Special_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Elixír výdrže"),
+			// "Elixír výdrže",
+			pc_itpo_perm_stamina);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_DEX] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Dex_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_Start,"Elixír obratnosti",PC_ItPo_Dex);
+		Info_AddChoice(PC_Special_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír obratnosti"),
+			// "Elixír obratnosti",
+			PC_ItPo_Dex);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_STR] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Strength_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_Start,"Elixír síly",PC_ItPo_Strg);
+		Info_AddChoice(PC_Special_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír síly"),
+			// "Elixír síly",
+			PC_ItPo_Strg);
 	};
 
 	Info_AddChoice(PC_Special_Start,DIALOG_BACK,PC_Special_Start_Back_Info);
@@ -1186,15 +1248,24 @@ func void B_DefenceStart()
 
 	if((KNOWPROTFALL == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_Wing) >= 15) && (Npc_HasItems(hero,ItPl_Weed) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_DefenceStart,"Elixír odolnosti proti pádu",pc_itpo_falldefence);
+		Info_AddChoice(PC_Special_DefenceStart,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír odolnosti proti pádu"),
+			// "Elixír odolnosti proti pádu",
+			pc_itpo_falldefence);
 	};
 	if((KNOWFIREDEF == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 5) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_DefenceStart,"Elixír ochrany proti ohni",pc_itpo_firedefence);
+		Info_AddChoice(PC_Special_DefenceStart,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "Elixír ochrany proti ohni"),
+			// "Elixír ochrany proti ohni",
+			pc_itpo_firedefence);
 	};
 	if((KNOWMAGDEF == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 25) && (Npc_HasItems(hero,ItFo_Booze) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
-		Info_AddChoice(PC_Special_DefenceStart,"Elixír ochrany proti magii",pc_itpo_magdefence);
+		Info_AddChoice(PC_Special_DefenceStart,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "Elixír ochrany proti magii"),
+			// "Elixír ochrany proti magii",
+			pc_itpo_magdefence);
 	};
 
 	Info_AddChoice(PC_Special_DefenceStart,DIALOG_BACK,PC_Special_DefenceStart_Back_Info);
@@ -1365,15 +1436,24 @@ func void PC_Special_Mutagen_Str()
 
 	if(Npc_HasItems(hero,ItMi_Mutagen_Str_Low) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat malý mutagen síly",PC_Special_Mutagen_Str_Low);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "... přidat malý mutagen síly"),
+			// "... přidat malý mutagen síly",
+			PC_Special_Mutagen_Str_Low);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Str_Normal) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat mutagen síly",PC_Special_Mutagen_Str_Normal);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "... přidat mutagen síly"),
+			// "... přidat mutagen síly",
+			PC_Special_Mutagen_Str_Normal);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Str_Strong) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat velký mutagen síly",PC_Special_Mutagen_Str_Strong);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 90, FALSE), "... přidat velký mutagen síly"),
+			// "... přidat velký mutagen síly",
+			PC_Special_Mutagen_Str_Strong);
 	};
 
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_BACK,PC_Special_Mutagen_Back_Info);
@@ -1386,15 +1466,24 @@ func void PC_Special_Mutagen_Dex()
 
 	if(Npc_HasItems(hero,ItMi_Mutagen_Dex_Low) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat malý mutagen obratnosti",PC_Special_Mutagen_Dex_Low);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "... přidat malý mutagen obratnosti"),
+			// "... přidat malý mutagen obratnosti",
+			PC_Special_Mutagen_Dex_Low);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Dex_Normal) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat mutagen obratnosti",PC_Special_Mutagen_Dex_Normal);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "... přidat mutagen obratnosti"),
+			// "... přidat mutagen obratnosti",
+			PC_Special_Mutagen_Dex_Normal);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Dex_Strong) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat velký mutagen obratnosti",PC_Special_Mutagen_Dex_Strong);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 90, FALSE), "... přidat velký mutagen obratnosti"),
+			// "... přidat velký mutagen obratnosti",
+			PC_Special_Mutagen_Dex_Strong);
 	};
 
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_BACK,PC_Special_Mutagen_Back_Info);
@@ -1407,15 +1496,24 @@ func void PC_Special_Mutagen_HP()
 
 	if(Npc_HasItems(hero,ItMi_Mutagen_HP_Low) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat malý mutagen života",PC_Special_Mutagen_HP_Low);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "... přidat malý mutagen života"),
+			// "... přidat malý mutagen života",
+			PC_Special_Mutagen_HP_Low);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_HP_Normal) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat mutagen života",PC_Special_Mutagen_HP_Normal);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "... přidat mutagen života"),
+			// "... přidat mutagen života",
+			PC_Special_Mutagen_HP_Normal);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_HP_Strong) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat velký mutagen života",PC_Special_Mutagen_HP_Strong);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 90, FALSE), "... přidat velký mutagen života"),
+			// "... přidat velký mutagen života",
+			PC_Special_Mutagen_HP_Strong);
 	};
 
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_BACK,PC_Special_Mutagen_Back_Info);
@@ -1428,15 +1526,24 @@ func void PC_Special_Mutagen_Mana()
 
 	if(Npc_HasItems(hero,ItMi_Mutagen_Mana_Low) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat malý mutagen ducha",PC_Special_Mutagen_Mana_Low);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "... přidat malý mutagen ducha"),
+			// "... přidat malý mutagen ducha",
+			PC_Special_Mutagen_Mana_Low);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Mana_Normal) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat mutagen ducha",PC_Special_Mutagen_Mana_Normal);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "... přidat mutagen ducha"),
+			// "... přidat mutagen ducha",
+			PC_Special_Mutagen_Mana_Normal);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Mana_Strong) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat velký mutagen ducha",PC_Special_Mutagen_Mana_Strong);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 90, FALSE), "... přidat velký mutagen ducha"),
+			// "... přidat velký mutagen ducha",
+			PC_Special_Mutagen_Mana_Strong);
 	};
 
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_BACK,PC_Special_Mutagen_Back_Info);
@@ -1449,15 +1556,24 @@ func void PC_Special_Mutagen_Stamina()
 
 	if(Npc_HasItems(hero,ItMi_Mutagen_Stamina_Low) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat malý mutagen výdrže",PC_Special_Mutagen_Stamina_Low);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "... přidat malý mutagen výdrže"),
+			// "... přidat malý mutagen výdrže",
+			PC_Special_Mutagen_Stamina_Low);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Stamina_Normal) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat mutagen výdrže",PC_Special_Mutagen_Stamina_Normal);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "... přidat mutagen výdrže"),
+			// "... přidat mutagen výdrže",
+			PC_Special_Mutagen_Stamina_Normal);
 	};
 	if(Npc_HasItems(hero,ItMi_Mutagen_Stamina_Strong) >= 1)
 	{
-		Info_AddChoice(PC_Special_Mutagen,"... přidat velký mutagen výdrže",PC_Special_Mutagen_Stamina_Strong);
+		Info_AddChoice(PC_Special_Mutagen,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 90, FALSE), "... přidat velký mutagen výdrže"),
+			// "... přidat velký mutagen výdrže",
+			PC_Special_Mutagen_Stamina_Strong);
 	};
 
 	Info_AddChoice(PC_Special_Mutagen,DIALOG_BACK,PC_Special_Mutagen_Back_Info);
@@ -1823,31 +1939,52 @@ func void B_Epic_Start()
 
 	if((SOULRIVER == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,itat_luzianheart) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItPo_Mana_01) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1))
 	{
-		Info_AddChoice(PC_Epic_Start,"Extrakt duší",pc_itpo_soulriver);
+		Info_AddChoice(PC_Epic_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Extrakt duší"),
+			// "Extrakt duší",
+			pc_itpo_soulriver);
 	};
 	if((PLAYER_TALENT_ALCHEMY[16] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItAt_CrawlerMandibles) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 1) && (Npc_HasItems(hero,ItAt_StoneGolemHeart) >= 1) && (Npc_HasItems(hero,ItAt_SkeletonBone) >= 1) && (Npc_HasItems(hero,itat_crawlerqueen) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 1) && (Npc_HasItems(hero,ItMi_Aquamarine) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1))
 	{
-		Info_AddChoice(PC_Epic_Start,"Elixír Amun-Su",pc_itpo_tyonpotion);
+		Info_AddChoice(PC_Epic_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 40, FALSE), "Elixír Amun-Su"),
+			// "Elixír Amun-Su",
+			pc_itpo_tyonpotion);
 	};
 	if((Knows_MCELIXIER == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItAt_Sting) >= 2) && (Npc_HasItems(hero,ItPo_Mana_02) >= 1) && (Npc_HasItems(hero,ItPo_Health_01) >= 1) && (Npc_HasItems(hero,ItFo_Addon_Pfeffer_01) >= 1))
 	{
-		Info_AddChoice(PC_Epic_Start,"Lektvar proměny mysli",PC_ItPo_Addon_Geist);
+		Info_AddChoice(PC_Epic_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Lektvar proměny mysli"),
+			// "Lektvar proměny mysli",
+			PC_ItPo_Addon_Geist);
 	};
 	if(((Npc_HasItems(hero,ItAt_IcedragonHeart) >= 1) || (Npc_HasItems(hero,ItAt_RockdragonHeart) >= 1) || (Npc_HasItems(hero,ItAt_FiredragonHeart) >= 1) || (Npc_HasItems(hero,itat_reddragonheart) >= 1) || (Npc_HasItems(hero,itat_blackdragonheart) >= 1) || (Npc_HasItems(hero,ItAt_SwampdragonHeart) >= 1)) && (Npc_HasItems(hero,ItMi_InnosEye_Discharged_Mis) >= 1) && (PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] == TRUE))
 	{
-		Info_AddChoice(PC_Epic_Start,"Dobít 'Innosovo oko'",PC_Charge_InnosEye);
+		Info_AddChoice(PC_Epic_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Dobít 'Innosovo oko'"),
+			// "Dobít 'Innosovo oko'",
+			PC_Charge_InnosEye);
 	};
 	if((Npc_HasItems(hero,ItAt_DragonEgg_MIS) >= 9) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItMi_DarkPearl) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (PLAYER_TALENT_ALCHEMY[POTION_MegaDrink] == TRUE))
 	{
-		Info_AddChoice(PC_Epic_Start,"Embarla Firgasto",PC_ItPo_MegaDrink);
+		Info_AddChoice(PC_Epic_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 75, FALSE), "Embarla Firgasto"),
+			// "Embarla Firgasto",
+			PC_ItPo_MegaDrink);
 	};
 	if((Npc_HasItems(hero,itmi_prisonsoul) >= 1) && (Npc_HasItems(hero,itmi_orcblood) >= 1) && (Npc_HasItems(hero,itmi_barlokheart) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 5) && (READ_AZGOLOR == TRUE))
 	{
-		Info_AddChoice(PC_Epic_Start,"Probudit 'Oko hněvu'",pc_charge_prisonsoul);
+		Info_AddChoice(PC_Epic_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Probudit 'Oko hněvu'"),
+			// "Probudit 'Oko hněvu'",
+			pc_charge_prisonsoul);
 	};
 	if((KNOW_NIMROD_MAKE == TRUE) && (Npc_HasItems(hero,ItMi_Moleratlubric_MIS) >= 1) && (Npc_HasItems(hero,ItAt_PumaMuscle) >= 1))
 	{
-		Info_AddChoice(PC_Epic_Start,"Namazat šlachy krysokrtím sádlem",PC_PumaMuscle);
+		Info_AddChoice(PC_Epic_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Namazat šlachy krysokrtím sádlem"),
+			// "Namazat šlachy krysokrtím sádlem",
+			PC_PumaMuscle);
 	};
 
 	Info_AddChoice(PC_Epic_Start,DIALOG_BACK,PC_Epic_Start_Back_Info);
@@ -2064,35 +2201,59 @@ func void B_Regone()
 
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE) && ((Npc_HasItems(hero,ItPo_Mana_02) >= 2) || (Npc_HasItems(hero,ItPo_Mana_01) >= 4)))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Koncentrovat všechny lektvary many na elixíry many",PC_Regone_ItPo_Mana_03_All);
+		Info_AddChoice(PC_Mana_Regone,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Koncentrovat všechny lektvary many na elixíry many"),
+			// "Koncentrovat všechny lektvary many na elixíry many",
+			PC_Regone_ItPo_Mana_03_All);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) && ((Npc_HasItems(hero,ItPo_Health_02) >= 2) || (Npc_HasItems(hero,ItPo_Health_01) >= 4)))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Koncentrovat všechny lektvary hojivé síly na elixíry hojivé síly",PC_Regone_ItPo_Health_03_All);
+		Info_AddChoice(PC_Mana_Regone,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Koncentrovat všechny lektvary hojivé síly na elixíry hojivé síly"),
+			// "Koncentrovat všechny lektvary hojivé síly na elixíry hojivé síly",
+			PC_Regone_ItPo_Health_03_All);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE) && (Npc_HasItems(hero,ItPo_Mana_02) >= 2))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Koncentrovat extrakty many na elixír many",PC_Regone_ItPo_Mana_03);
+		Info_AddChoice(PC_Mana_Regone,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Koncentrovat extrakty many na elixír many"),
+			// "Koncentrovat extrakty many na elixír many",
+			PC_Regone_ItPo_Mana_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == TRUE) && (Npc_HasItems(hero,ItPo_Mana_01) >= 2))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Koncentrovat esence many na extrakt many",PC_Regone_ItPo_Mana_02);
+		Info_AddChoice(PC_Mana_Regone,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Koncentrovat esence many na extrakt many"),
+			// "Koncentrovat esence many na extrakt many",
+			PC_Regone_ItPo_Mana_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE) && (Npc_HasItems(hero,ItPo_Mana_01) >= 4))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Koncentrovat esence many na elixír many",PC_Regone_ItPo_Mana_01);
+		Info_AddChoice(PC_Mana_Regone,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Koncentrovat esence many na elixír many"),
+			// "Koncentrovat esence many na elixír many",
+			PC_Regone_ItPo_Mana_01);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) && (Npc_HasItems(hero,ItPo_Health_02) >= 2))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Koncentrovat extrakty hojivé síly na elixír hojivé síly",PC_Regone_ItPo_Health_03);
+		Info_AddChoice(PC_Mana_Regone,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Koncentrovat extrakty hojivé síly na elixír hojivé síly"),
+			// "Koncentrovat extrakty hojivé síly na elixír hojivé síly",
+			PC_Regone_ItPo_Health_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_02] == TRUE) && (Npc_HasItems(hero,ItPo_Health_01) >= 2))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Koncentrovat esence hojivé síly na extrakt hojivé síly",PC_Regone_ItPo_Health_02);
+		Info_AddChoice(PC_Mana_Regone,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Koncentrovat esence hojivé síly na extrakt hojivé síly"),
+			// "Koncentrovat esence hojivé síly na extrakt hojivé síly",
+			PC_Regone_ItPo_Health_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) && (Npc_HasItems(hero,ItPo_Health_01) >= 4))
 	{
-		Info_AddChoice(PC_Mana_Regone,"Koncentrovat esence hojivé síly na elixír hojivé síly",PC_Regone_ItPo_Health_01);
+		Info_AddChoice(PC_Mana_Regone,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Koncentrovat esence hojivé síly na elixír hojivé síly"),
+			// "Koncentrovat esence hojivé síly na elixír hojivé síly",
+			PC_Regone_ItPo_Health_01);
 	};
 
 	Info_AddChoice(PC_Mana_Regone,DIALOG_BACK,PC_Mana_Regone_Back_Info);
@@ -2333,40 +2494,71 @@ func void B_Booze_Start()
 
 	if(READBOOKSDONE_09 == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Připravit víno 'Zapomnění'",pc_booze_ealbalzamtwo);
+		Info_AddChoice(PC_Booze_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Připravit víno 'Zapomnění'"),
+			// "Připravit víno 'Zapomnění'",
+			pc_booze_ealbalzamtwo);
 	};
 	if(READBOOKSDONE_08 == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Připravit víno 'Balzám prozřetelnosti'",pc_booze_ealbalzam);
+		Info_AddChoice(PC_Booze_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 40, FALSE), "Připravit víno 'Balzám prozřetelnosti'"),
+			// "Připravit víno 'Balzám prozřetelnosti'",
+			pc_booze_ealbalzam);
 	};
 	if(Knows_Schlafhammer == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Připravit 'Dvojité Louovo kladivo'",PC_Booze_Schlaf);
+		Info_AddChoice(PC_Booze_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Připravit 'Dvojité Louovo kladivo'"),
+			// "Připravit 'Dvojité Louovo kladivo'",
+			PC_Booze_Schlaf);
 	};
 	if(Knows_LousHammer == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Připravit 'Louovo kladivo'",PC_Booze_Lou);
+		Info_AddChoice(PC_Booze_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Připravit 'Louovo kladivo'"),
+			// "Připravit 'Louovo kladivo'",
+			PC_Booze_Lou);
 	};
 	if(Knows_SchnellerHering == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Připravit 'Rychlý sled'",PC_Booze_SchnellerHering);
+		Info_AddChoice(PC_Booze_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Připravit 'Rychlý sled'"),
+			// "Připravit 'Rychlý sled'",
+			PC_Booze_SchnellerHering);
 	};
 	if(READBOOKSDONE_99 == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Připravit 'Gin' (10 láhví kořalky)",PC_Booze_Start_compote_11);
+		Info_AddChoice(PC_Booze_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Připravit 'Gin' (10 láhví kořalky)"),
+			// "Připravit 'Gin' (10 láhví kořalky)",
+			PC_Booze_Start_compote_11);
 	};
 	if(MakePureAlcoholBooze == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Připravit čistý alkohol (2 láhve kořalky)",PC_Booze_Start_Alcohol_Booze);
+		Info_AddChoice(PC_Booze_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Připravit čistý alkohol (2 láhve kořalky)"),
+			// "Připravit čistý alkohol (2 láhve kořalky)",
+			PC_Booze_Start_Alcohol_Booze);
 	};
 	if(MakePureAlcoholGrog == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Připravit čistý alkohol (2 láhve grogu)",PC_Booze_Start_Alcohol_Grog);
+		Info_AddChoice(PC_Booze_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Připravit čistý alkohol (2 láhve grogu)"),
+			// "Připravit čistý alkohol (2 láhve grogu)",
+			PC_Booze_Start_Alcohol_Grog);
 	};
 	if(MakePureAlcoholRom == TRUE)
 	{
-		Info_AddChoice(PC_Booze_Start,"Připravit čistý alkohol (2 láhve rumu)",PC_Booze_Start_Alcohol_Rom);
-		Info_AddChoice(PC_Booze_Start,"Připravit čistý alkohol (1 láhev skřetího pití)",PC_Booze_Start_Alcohol_Orc);
+		Info_AddChoice(PC_Booze_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 15, FALSE), "Připravit čistý alkohol (2 láhve rumu)"),
+			// "Připravit čistý alkohol (2 láhve rumu)",
+			PC_Booze_Start_Alcohol_Rom);
+
+		Info_AddChoice(PC_Booze_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Připravit čistý alkohol (1 láhev skřetího pití)"),
+			// "Připravit čistý alkohol (1 láhev skřetího pití)",
+			PC_Booze_Start_Alcohol_Orc);
 	};
 
 	Info_AddChoice(PC_Booze_Start,DIALOG_BACK,PC_Booze_Start_Back_Info);
@@ -2712,15 +2904,24 @@ func void B_Poison_Start()
 
 	if(PoisonArrowKnow == TRUE)
 	{
-		Info_AddChoice(PC_Poison_Start,"Vyrobit otrávené šípy",PC_Poison_Start_PoisonArrow);
+		Info_AddChoice(PC_Poison_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Vyrobit otrávené šípy"),
+			// "Vyrobit otrávené šípy",
+			PC_Poison_Start_PoisonArrow);
 	};
 	if(AnPoisonKnow == TRUE)
 	{
-		Info_AddChoice(PC_Poison_Start,"Připravit protijed",PC_Poison_Start_AnPoison);
+		Info_AddChoice(PC_Poison_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 25, FALSE), "Připravit protijed"),
+			// "Připravit protijed",
+			PC_Poison_Start_AnPoison);
 	};
 	if(MakePoisonKnow == TRUE)
 	{
-		Info_AddChoice(PC_Poison_Start,"Připravit jed",PC_Poison_Start_Poison);
+		Info_AddChoice(PC_Poison_Start,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Připravit jed"),
+			// "Připravit jed",
+			PC_Poison_Start_Poison);
 	};
 
 	Info_AddChoice(PC_Poison_Start,DIALOG_BACK,PC_Poison_Start_Back_Info);

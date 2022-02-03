@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_VLK_6134_VALERAN_EXIT(C_Info)
 {
@@ -475,10 +486,13 @@ func void dia_vlk_6134_valeran_recrdt_info()
 	Info_ClearChoices(dia_vlk_6134_valeran_recrdt);
 	Info_AddChoice(dia_vlk_6134_valeran_recrdt,"Padesát zlatých? To zní rozumně. Jsi přijat.",dia_vlk_6134_valeran_recrdt_yes);
 
-	if(RhetorikSkillValue[1] >= 50)
-	{
-		Info_AddChoice(dia_vlk_6134_valeran_recrdt,"Bojím se, že to je moc.",dia_vlk_6134_valeran_recrdt_no);
-	};
+	// if(RhetorikSkillValue[1] >= 50)
+	// {
+		Info_AddChoice(dia_vlk_6134_valeran_recrdt,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, TRUE), "Bojím se, že to je moc."),
+			// "Bojím se, že to je moc.",
+			dia_vlk_6134_valeran_recrdt_no);
+	// };
 };
 
 func void dia_vlk_6134_valeran_recrdt_yes()

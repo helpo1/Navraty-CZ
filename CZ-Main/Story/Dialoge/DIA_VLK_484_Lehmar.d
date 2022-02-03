@@ -1,3 +1,15 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
+
 var int LehmarLostBookDay;
 
 instance DIA_Lehmar_EXIT(C_Info)
@@ -252,7 +264,10 @@ func void DIA_Lehmar_GELDLEIHEN_Info()
 	AI_Output(self,other,"DIA_Lehmar_GELDLEIHEN_09_01");	//Jasně! Kolik bys chtěl? Počítám si 20 procent!
 	Info_ClearChoices(DIA_Lehmar_GELDLEIHEN);
 	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,"Budu o tom přemýšlet.",DIA_Lehmar_GELDLEIHEN_back);
-	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,"1000 zlatých.",DIA_Lehmar_GELDLEIHEN_1000);
+	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,
+		ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 10, FALSE), "1000 zlatých."),
+		// "1000 zlatých.",
+		DIA_Lehmar_GELDLEIHEN_1000);
 	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,"200 zlatých",DIA_Lehmar_GELDLEIHEN_200);
 	Info_AddChoice(DIA_Lehmar_GELDLEIHEN,"50 zlatých.",DIA_Lehmar_GELDLEIHEN_50);
 };

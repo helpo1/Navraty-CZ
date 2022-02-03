@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+(57x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.00:
 
 func int B_CheckSmithSkill - upraveny výpisy
@@ -438,11 +443,15 @@ instance PC_ItMw_1H_Common(C_Info)
 	condition = PC_ItMw_1H_Common_Condition;
 	information = PC_ItMw_1H_Common_Info;
 	permanent = TRUE;
+	// PC_ItMw_1H_Common.description = NAME_ItMw_1H_Common_01;
 };
 
 
 func int PC_ItMw_1H_Common_Condition()
 {
+	PC_ItMw_1H_Common.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 0, FALSE), NAME_ItMw_1H_Common_01);
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_Common] == TRUE) && (Normalwaffen == TRUE))
 	{
 		return TRUE;
@@ -477,11 +486,15 @@ instance PC_WEAPON_1H_Harad_01(C_Info)
 	condition = PC_WEAPON_1H_Harad_01_Condition;
 	information = PC_WEAPON_1H_Harad_01_Info;
 	permanent = TRUE;
+	// PC_WEAPON_1H_Harad_01.description = NAME_Addon_Harad_01;
 };
 
 
 func int PC_WEAPON_1H_Harad_01_Condition()
 {
+	PC_WEAPON_1H_Harad_01.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 0, FALSE), NAME_Addon_Harad_01);
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Harad_01] == TRUE) && (Normalwaffen == TRUE))
 	{
 		return TRUE;
@@ -516,11 +529,15 @@ instance PC_WEAPON_1H_Harad_02(C_Info)
 	condition = PC_WEAPON_1H_Harad_02_Condition;
 	information = PC_WEAPON_1H_Harad_02_Info;
 	permanent = TRUE;
+	// PC_WEAPON_1H_Harad_02.description = NAME_Addon_Harad_02;
 };
 
 
 func int PC_WEAPON_1H_Harad_02_Condition()
 {
+	PC_WEAPON_1H_Harad_02.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 0, FALSE), NAME_Addon_Harad_02);
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Harad_02] == TRUE) && (Normalwaffen == TRUE))
 	{
 		return TRUE;
@@ -555,11 +572,15 @@ instance PC_WEAPON_1H_Harad_03(C_Info)
 	condition = PC_WEAPON_1H_Harad_03_Condition;
 	information = PC_WEAPON_1H_Harad_03_Info;
 	permanent = TRUE;
+	// PC_WEAPON_1H_Harad_03.description = NAME_Addon_Harad_03;
 };
 
 
 func int PC_WEAPON_1H_Harad_03_Condition()
 {
+	PC_WEAPON_1H_Harad_03.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 10, FALSE), NAME_Addon_Harad_03);
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Harad_03] == TRUE) && (Normalwaffen == TRUE))
 	{
 		return TRUE;
@@ -597,11 +618,15 @@ instance PC_WEAPON_1H_Harad_04(C_Info)
 	condition = PC_WEAPON_1H_Harad_04_Condition;
 	information = PC_WEAPON_1H_Harad_04_Info;
 	permanent = TRUE;
+	// PC_WEAPON_1H_Harad_04.description = NAME_Addon_Harad_04;
 };
 
 
 func int PC_WEAPON_1H_Harad_04_Condition()
 {
+	PC_WEAPON_1H_Harad_04.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 20, FALSE), NAME_Addon_Harad_04);
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Harad_04] == TRUE) && (Normalwaffen == TRUE))
 	{
 		return TRUE;
@@ -639,11 +664,14 @@ instance PC_ItMw_1H_Special_01(C_Info)
 	condition = PC_ItMw_1H_Special_01_Condition;
 	information = PC_ItMw_1H_Special_01_Info;
 	permanent = TRUE;
-	description = "Rudný dlouhý meč";
+	// description = "Rudný dlouhý meč";
 };
 
 func int PC_ItMw_1H_Special_01_Condition()
 {
+	PC_ItMw_1H_Special_01.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 30, FALSE), "Rudný dlouhý meč");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_01] == TRUE) && (Erzwaffen == TRUE))
 	{
 		return TRUE;
@@ -682,12 +710,15 @@ instance PC_ItMw_2H_Special_01(C_Info)
 	condition = PC_ItMw_2H_Special_01_Condition;
 	information = PC_ItMw_2H_Special_01_Info;
 	permanent = TRUE;
-	description = "Rudný obouruční meč";
+	// description = "Rudný obouruční meč";
 };
 
 
 func int PC_ItMw_2H_Special_01_Condition()
 {
+	PC_ItMw_2H_Special_01.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 30, FALSE), "Rudný obouruční meč");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_01] == TRUE) && (Erzwaffen == TRUE))
 	{
 		return TRUE;
@@ -726,12 +757,15 @@ instance PC_ItMw_1H_Special_02(C_Info)
 	condition = PC_ItMw_1H_Special_02_Condition;
 	information = PC_ItMw_1H_Special_02_Info;
 	permanent = TRUE;
-	description = "Rudný meč bastard";
+	// description = "Rudný meč bastard";
 };
 
 
 func int PC_ItMw_1H_Special_02_Condition()
 {
+	PC_ItMw_1H_Special_02.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 45, FALSE), "Rudný meč bastard");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_02] == TRUE) && (Erzwaffen == TRUE))
 	{
 		return TRUE;
@@ -770,12 +804,15 @@ instance PC_ItMw_2H_Special_02(C_Info)
 	condition = PC_ItMw_2H_Special_02_Condition;
 	information = PC_ItMw_2H_Special_02_Info;
 	permanent = TRUE;
-	description = "Těžký rudný obouruční meč";
+	// description = "Těžký rudný obouruční meč";
 };
 
 
 func int PC_ItMw_2H_Special_02_Condition()
 {
+	PC_ItMw_2H_Special_02.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 45, FALSE), "Těžký rudný obouruční meč");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_02] == TRUE) && (Erzwaffen == TRUE))
 	{
 		return TRUE;
@@ -814,12 +851,15 @@ instance PC_ItMw_1H_Special_03(C_Info)
 	condition = PC_ItMw_1H_Special_03_Condition;
 	information = PC_ItMw_1H_Special_03_Info;
 	permanent = TRUE;
-	description = "Rudná válečná čepel";
+	// description = "Rudná válečná čepel";
 };
 
 
 func int PC_ItMw_1H_Special_03_Condition()
 {
+	PC_ItMw_1H_Special_03.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 60, FALSE), "Rudná válečná čepel");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_03] == TRUE) && (Erzwaffen == TRUE))
 	{
 		return TRUE;
@@ -858,11 +898,14 @@ instance PC_ItMw_2H_Special_03(C_Info)
 	condition = PC_ItMw_2H_Special_03_Condition;
 	information = PC_ItMw_2H_Special_03_Info;
 	permanent = TRUE;
-	description = "Těžká rudná válečná čepel";
+	// description = "Těžká rudná válečná čepel";
 };
 
 func int PC_ItMw_2H_Special_03_Condition()
 {
+	PC_ItMw_2H_Special_03.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 60, FALSE), "Těžká rudná válečná čepel");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_03] == TRUE) && (Erzwaffen == TRUE))
 	{
 		return TRUE;
@@ -901,11 +944,14 @@ instance PC_ItMw_1H_Special_04(C_Info)
 	condition = PC_ItMw_1H_Special_04_Condition;
 	information = PC_ItMw_1H_Special_04_Info;
 	permanent = TRUE;
-	description = "Rudný zabiják draků";
+	// description = "Rudný zabiják draků";
 };
 
 func int PC_ItMw_1H_Special_04_Condition()
 {
+	PC_ItMw_1H_Special_04.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 75, FALSE), "Rudný zabiják draků");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_04] == TRUE) && (Erzwaffen == TRUE))
 	{
 		return TRUE;
@@ -945,11 +991,14 @@ instance PC_ItMw_2H_Special_04(C_Info)
 	condition = PC_ItMw_2H_Special_04_Condition;
 	information = PC_ItMw_2H_Special_04_Info;
 	permanent = TRUE;
-	description = "Velký rudný zabiják draků";
+	// description = "Velký rudný zabiják draků";
 };
 
 func int PC_ItMw_2H_Special_04_Condition()
 {
+	PC_ItMw_2H_Special_04.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 75, FALSE), "Velký rudný zabiják draků");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_04] == TRUE) && (Erzwaffen == TRUE))
 	{
 		return TRUE;
@@ -991,11 +1040,14 @@ instance PC_ARMOR_MAKEARMOR_ITAR_MIL_L_V1(C_Info)
 	condition = pc_armor_makearmor_itar_mil_l_v1_condition;
 	information = pc_armor_makearmor_itar_mil_l_v1_info;
 	permanent = TRUE;
-	description = "Překovat zbroj domobránce";
+	// description = "Překovat zbroj domobránce";
 };
 
 func int pc_armor_makearmor_itar_mil_l_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_MIL_L_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 20, FALSE), "Překovat zbroj domobránce");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[13] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,ITAR_Mil_L) > 0) || (Npc_HasItems(self,itar_mil_l_v1) > 0) || (Npc_HasItems(self,itar_mil_l_v12) > 0) || (Npc_HasItems(self,itar_mil_l_v13) > 0) || (Npc_HasItems(self,itar_mil_l_v14) > 0)))
 	{
 		return TRUE;
@@ -1063,11 +1115,14 @@ instance PC_ARMOR_MAKEARMOR_ITAR_MIL_M_V1(C_Info)
 	condition = pc_armor_makearmor_itar_mil_m_v1_condition;
 	information = pc_armor_makearmor_itar_mil_m_v1_info;
 	permanent = TRUE;
-	description = "Překovat těžkou zbroj domobránce";
+	// description = "Překovat těžkou zbroj domobránce";
 };
 
 func int pc_armor_makearmor_itar_mil_m_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_MIL_M_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 40, FALSE), "Překovat těžkou zbroj domobránce");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[14] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,ItAr_MIL_M) > 0) || (Npc_HasItems(self,itar_mil_m_v1) > 0) || (Npc_HasItems(self,itar_mil_m_v12) > 0) || (Npc_HasItems(self,itar_mil_m_v13) > 0) || (Npc_HasItems(self,itar_mil_m_v14) > 0)))
 	{
 		return TRUE;
@@ -1135,11 +1190,14 @@ instance PC_ARMOR_MAKEARMOR_ITAR_PAL_M_V1(C_Info)
 	condition = pc_armor_makearmor_itar_pal_m_v1_condition;
 	information = pc_armor_makearmor_itar_pal_m_v1_info;
 	permanent = TRUE;
-	description = "Překovat zbroj rytíře";
+	// description = "Překovat zbroj rytíře";
 };
 
 func int pc_armor_makearmor_itar_pal_m_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_PAL_M_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 60, FALSE), "Překovat zbroj rytíře");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[15] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,ItAr_PAL_M) > 0) || (Npc_HasItems(self,itar_pal_m_v1) > 0) || (Npc_HasItems(self,itar_pal_m_v12) > 0) || (Npc_HasItems(self,itar_pal_m_v13) > 0) || (Npc_HasItems(self,itar_pal_m_v14) > 0)))
 	{
 		return TRUE;
@@ -1207,11 +1265,14 @@ instance PC_ARMOR_MAKEARMOR_ITAR_PAL_H_V1(C_Info)
 	condition = pc_armor_makearmor_itar_pal_h_v1_condition;
 	information = pc_armor_makearmor_itar_pal_h_v1_info;
 	permanent = TRUE;
-	description = "Překovat zbroj paladina";
+	// description = "Překovat zbroj paladina";
 };
 
 func int pc_armor_makearmor_itar_pal_h_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_PAL_H_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 80, FALSE), "Překovat zbroj paladina");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[16] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,ItAr_PAl_H) > 0) || (Npc_HasItems(self,itar_pal_h_v1) > 0) || (Npc_HasItems(self,itar_pal_h_v12) > 0) || (Npc_HasItems(self,itar_pal_h_v13) > 0) || (Npc_HasItems(self,itar_pal_h_v14) > 0)))
 	{
 		return TRUE;
@@ -1280,11 +1341,14 @@ instance PC_ARMOR_MAKEARMOR_ITAR_SLD_L_V1(C_Info)
 	condition = pc_armor_makearmor_itar_sld_l_v1_condition;
 	information = pc_armor_makearmor_itar_sld_l_v1_info;
 	permanent = TRUE;
-	description = "Překovat lehkou zbroj žoldáka";
+	// description = "Překovat lehkou zbroj žoldáka";
 };
 
 func int pc_armor_makearmor_itar_sld_l_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_SLD_L_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 15, FALSE), "Překovat lehkou zbroj žoldáka");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[17] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,ItAr_Sld_L) > 0) || (Npc_HasItems(self,itar_sld_l_v1) > 0) || (Npc_HasItems(self,itar_sld_l_v2) > 0) || (Npc_HasItems(self,itar_sld_l_v3) > 0) || (Npc_HasItems(self,itar_sld_l_v4) > 0)))
 	{
 		return TRUE;
@@ -1352,11 +1416,14 @@ instance PC_ARMOR_MAKEARMOR_ITAR_SLD_M_V1(C_Info)
 	condition = pc_armor_makearmor_itar_sld_m_v1_condition;
 	information = pc_armor_makearmor_itar_sld_m_v1_info;
 	permanent = TRUE;
-	description = "Překovat zbroj žoldáka";
+	// description = "Překovat zbroj žoldáka";
 };
 
 func int pc_armor_makearmor_itar_sld_m_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_SLD_M_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 30, FALSE), "Překovat zbroj žoldáka");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[18] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,itar_sld_M) > 0) || (Npc_HasItems(self,itar_sld_m_v1) > 0) || (Npc_HasItems(self,itar_sld_m_v2) > 0) || (Npc_HasItems(self,itar_sld_m_v3) > 0) || (Npc_HasItems(self,itar_sld_m_v4) > 0)))
 	{
 		return TRUE;
@@ -1425,12 +1492,15 @@ instance PC_ARMOR_MAKEARMOR_ITAR_SLD_H_V1(C_Info)
 	condition = pc_armor_makearmor_itar_sld_h_v1_condition;
 	information = pc_armor_makearmor_itar_sld_h_v1_info;
 	permanent = TRUE;
-	description = "Překovat těžkou zbroj žoldáka";
+	// description = "Překovat těžkou zbroj žoldáka";
 };
 
 
 func int pc_armor_makearmor_itar_sld_h_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_SLD_H_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 45, FALSE), "Překovat těžkou zbroj žoldáka");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[19] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,ItAr_Sld_H) > 0) || (Npc_HasItems(self,itar_sld_h_v1) > 0) || (Npc_HasItems(self,itar_sld_h_v2) > 0) || (Npc_HasItems(self,itar_sld_h_v3) > 0) || (Npc_HasItems(self,itar_sld_h_v4) > 0)))
 	{
 		return TRUE;
@@ -1499,11 +1569,14 @@ instance PC_ARMOR_MAKEARMOR_ITAR_DJG_L_V1(C_Info)
 	condition = pc_armor_makearmor_itar_djg_l_v1_condition;
 	information = pc_armor_makearmor_itar_djg_l_v1_info;
 	permanent = TRUE;
-	description = "Překovat lehkou zbroj drakobijce";
+	// description = "Překovat lehkou zbroj drakobijce";
 };
 
 func int pc_armor_makearmor_itar_djg_l_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_DJG_L_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 60, FALSE), "Překovat lehkou zbroj drakobijce");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[20] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,itar_djg_l) > 0) || (Npc_HasItems(self,itar_djg_l_v1) > 0) || (Npc_HasItems(self,itar_djg_l_v2) > 0) || (Npc_HasItems(self,itar_djg_l_v3) > 0) || (Npc_HasItems(self,itar_djg_l_v4) > 0)))
 	{
 		return TRUE;
@@ -1572,12 +1645,15 @@ instance PC_ARMOR_MAKEARMOR_ITAR_DJG_M_V1(C_Info)
 	condition = pc_armor_makearmor_itar_djg_m_v1_condition;
 	information = pc_armor_makearmor_itar_djg_m_v1_info;
 	permanent = TRUE;
-	description = "Překovat zbroj drakobijce";
+	// description = "Překovat zbroj drakobijce";
 };
 
 
 func int pc_armor_makearmor_itar_djg_m_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_DJG_M_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 75, FALSE), "Překovat zbroj drakobijce");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[21] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,itar_djg_m) > 0) || (Npc_HasItems(self,itar_djg_m_v1) > 0) || (Npc_HasItems(self,itar_djg_m_v2) > 0) || (Npc_HasItems(self,itar_djg_m_v3) > 0) || (Npc_HasItems(self,itar_djg_m_v4) > 0)))
 	{
 		return TRUE;
@@ -1646,12 +1722,15 @@ instance PC_ARMOR_MAKEARMOR_ITAR_DJG_H_V1(C_Info)
 	condition = pc_armor_makearmor_itar_djg_h_v1_condition;
 	information = pc_armor_makearmor_itar_djg_h_v1_info;
 	permanent = TRUE;
-	description = "Překovat těžkou zbroj drakobijce";
+	// description = "Překovat těžkou zbroj drakobijce";
 };
 
 
 func int pc_armor_makearmor_itar_djg_h_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_DJG_H_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 90, FALSE), "Překovat těžkou zbroj drakobijce");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[22] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,itar_djg_h) > 0) || (Npc_HasItems(self,itar_djg_h_v1) > 0) || (Npc_HasItems(self,itar_djg_h_v2) > 0) || (Npc_HasItems(self,itar_djg_h_v3) > 0) || (Npc_HasItems(self,itar_djg_h_v4) > 0)))
 	{
 		return TRUE;
@@ -1719,12 +1798,15 @@ instance PC_ARMOR_MAKEARMOR_ITAR_GRD_L_V1(C_Info)
 	condition = pc_armor_makearmor_itar_grd_l_v1_condition;
 	information = pc_armor_makearmor_itar_grd_l_v1_info;
 	permanent = TRUE;
-	description = "Překovat lehkou zbroj stráže";
+	// description = "Překovat lehkou zbroj stráže";
 };
 
 
 func int pc_armor_makearmor_itar_grd_l_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_GRD_L_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 20, FALSE), "Překovat lehkou zbroj stráže");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[25] == TRUE) && (ARMORWAFFEN == TRUE) && (Npc_HasItems(self,itar_grd_l) > 0))
 	{
 		return TRUE;
@@ -1763,12 +1845,15 @@ instance PC_ARMOR_MAKEARMOR_ITAR_BLOODWYN_ADDON_V1(C_Info)
 	condition = pc_armor_makearmor_itar_bloodwyn_addon_v1_condition;
 	information = pc_armor_makearmor_itar_bloodwyn_addon_v1_info;
 	permanent = TRUE;
-	description = "Překovat zbroj stráže";
+	// description = "Překovat zbroj stráže";
 };
 
 
 func int pc_armor_makearmor_itar_bloodwyn_addon_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_BLOODWYN_ADDON_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 35, FALSE), "Překovat zbroj stráže");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[26] == TRUE) && (ARMORWAFFEN == TRUE) && (Npc_HasItems(self,ITAR_Bloodwyn_Addon) > 0))
 	{
 		return TRUE;
@@ -1807,12 +1892,15 @@ instance PC_ARMOR_MAKEARMOR_ITAR_THORUS_ADDON_V1(C_Info)
 	condition = pc_armor_makearmor_itar_thorus_addon_v1_condition;
 	information = pc_armor_makearmor_itar_thorus_addon_v1_info;
 	permanent = TRUE;
-	description = "Překovat těžkou zbroj stráže";
+	// description = "Překovat těžkou zbroj stráže";
 };
 
 
 func int pc_armor_makearmor_itar_thorus_addon_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_THORUS_ADDON_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 50, FALSE), "Překovat těžkou zbroj stráže");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[27] == TRUE) && (ARMORWAFFEN == TRUE) && (Npc_HasItems(self,ITAR_Thorus_Addon) > 0))
 	{
 		return TRUE;
@@ -1851,11 +1939,14 @@ instance PC_ARMOR_MAKEARMOR_ITAR_SEKBED_V1(C_Info)
 	condition = pc_armor_makearmor_itar_sekbed_v1_condition;
 	information = pc_armor_makearmor_itar_sekbed_v1_info;
 	permanent = TRUE;
-	description = "Vyztužit bederní roušku Bratrstva";
+	// description = "Vyztužit bederní roušku Bratrstva";
 };
 
 func int pc_armor_makearmor_itar_sekbed_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_SEKBED_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 0, FALSE), "Vyztužit bederní roušku Bratrstva");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[28] == TRUE) && (ARMORWAFFEN == TRUE) && (Npc_HasItems(self,itar_sekbed) > 0))
 	{
 		return TRUE;
@@ -1891,11 +1982,14 @@ instance PC_ARMOR_MAKEARMOR_ITAR_TPL_L_V1(C_Info)
 	condition = pc_armor_makearmor_itar_tpl_l_v1_condition;
 	information = pc_armor_makearmor_itar_tpl_l_v1_info;
 	permanent = TRUE;
-	description = "Překovat lehkou zbroj templáře";
+	// description = "Překovat lehkou zbroj templáře";
 };
 
 func int pc_armor_makearmor_itar_tpl_l_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_TPL_L_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 25, FALSE), "Překovat lehkou zbroj templáře");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[29] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,itar_tpl_l) > 0) || (Npc_HasItems(self,itar_tpl_l_v1) > 0) || (Npc_HasItems(self,itar_tpl_l_v2) > 0) || (Npc_HasItems(self,itar_tpl_l_v3) > 0) || (Npc_HasItems(self,itar_tpl_l_v4) > 0)))
 	{
 		return TRUE;
@@ -1964,12 +2058,15 @@ instance PC_ARMOR_MAKEARMOR_ITAR_TPL_M_V1(C_Info)
 	condition = pc_armor_makearmor_itar_tpl_m_v1_condition;
 	information = pc_armor_makearmor_itar_tpl_m_v1_info;
 	permanent = TRUE;
-	description = "Překovat zbroj templáře";
+	// description = "Překovat zbroj templáře";
 };
 
 
 func int pc_armor_makearmor_itar_tpl_m_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_TPL_M_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 50, FALSE), "Překovat zbroj templáře");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[30] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,itar_tpl_m) > 0) || (Npc_HasItems(self,itar_tpl_m_v1) > 0) || (Npc_HasItems(self,itar_tpl_m_v2) > 0) || (Npc_HasItems(self,itar_tpl_m_v3) > 0) || (Npc_HasItems(self,itar_tpl_m_v4) > 0)))
 	{
 		return TRUE;
@@ -2038,12 +2135,15 @@ instance PC_ARMOR_MAKEARMOR_ITAR_TPL_S_V1(C_Info)
 	condition = pc_armor_makearmor_itar_tpl_s_v1_condition;
 	information = pc_armor_makearmor_itar_tpl_s_v1_info;
 	permanent = TRUE;
-	description = "Překovat těžkou zbroj templáře";
+	// description = "Překovat těžkou zbroj templáře";
 };
 
 
 func int pc_armor_makearmor_itar_tpl_s_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_TPL_S_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 75, FALSE), "Překovat těžkou zbroj templáře");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[31] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,itar_tpl_s) > 0) || (Npc_HasItems(self,itar_tpl_s_v1) > 0) || (Npc_HasItems(self,itar_tpl_s_v2) > 0) || (Npc_HasItems(self,itar_tpl_s_v3) > 0) || (Npc_HasItems(self,itar_tpl_s_v4) > 0)))
 	{
 		return TRUE;
@@ -2112,12 +2212,15 @@ instance PC_ARMOR_MAKEARMOR_ITAR_RANGER_ADDON_V1(C_Info)
 	condition = pc_armor_makearmor_itar_ranger_addon_v1_condition;
 	information = pc_armor_makearmor_itar_ranger_addon_v1_info;
 	permanent = TRUE;
-	description = "Překovat zbroj 'Kruhu Vody'";
+	// description = "Překovat zbroj 'Kruhu Vody'";
 };
 
 
 func int pc_armor_makearmor_itar_ranger_addon_v1_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_RANGER_ADDON_V1.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 20, FALSE), "Překovat zbroj 'Kruhu Vody'");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[32] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,ITAR_RANGER_Addon) > 0) || (Npc_HasItems(self,itar_ranger_addon_v1) > 0) || (Npc_HasItems(self,itar_ranger_addon_v2) > 0) || (Npc_HasItems(self,itar_ranger_addon_v3) > 0) || (Npc_HasItems(self,itar_ranger_addon_v4) > 0)))
 	{
 		return TRUE;
@@ -2186,11 +2289,14 @@ instance PC_ARMOR_MAKEARMOR_ITAR_OREARMOR(C_Info)
 	condition = pc_armor_makearmor_itar_orearmor_condition;
 	information = pc_armor_makearmor_itar_orearmor_info;
 	permanent = TRUE;
-	description = "Vykovat rudnou zbroj Světla";
+	// description = "Vykovat rudnou zbroj Světla";
 };
 
 func int pc_armor_makearmor_itar_orearmor_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_OREARMOR.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 100, FALSE), "Vykovat rudnou zbroj Světla");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[33] == TRUE) && (ARMORWAFFEN == TRUE) && (LIGHTARMORMADE == FALSE))
 	{
 		return TRUE;
@@ -2235,12 +2341,15 @@ instance PC_ARMOR_MAKEARMOR_ITAR_RAVEN_ADDON(C_Info)
 	condition = pc_armor_makearmor_itar_raven_addon_condition;
 	information = pc_armor_makearmor_itar_raven_addon_info;
 	permanent = TRUE;
-	description = "Vykovat rudnou zbroj Temnoty";
+	// description = "Vykovat rudnou zbroj Temnoty";
 };
 
 
 func int pc_armor_makearmor_itar_raven_addon_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_RAVEN_ADDON.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 100, FALSE), "Vykovat rudnou zbroj Temnoty");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[34] == TRUE) && (ARMORWAFFEN == TRUE) && (DARKARMORMADE == FALSE))
 	{
 		return TRUE;
@@ -2308,11 +2417,14 @@ instance PC_ARMOR_MAKEARMOR_CRAWLER_NEW(C_Info)
 	condition = pc_armor_makearmor_crawler_new_condition;
 	information = pc_armor_makearmor_crawler_new_info;
 	permanent = TRUE;
-	description = "Vykovat zbroj z krunýřů důlního červa";
+	// description = "Vykovat zbroj z krunýřů důlního červa";
 };
 
 func int pc_armor_makearmor_crawler_new_condition()
 {
+	PC_ARMOR_MAKEARMOR_CRAWLER_NEW.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 25, FALSE), "Vykovat zbroj z krunýřů důlního červa");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ARMORWAFFEN == TRUE) && (KNOWMAKECRAWLERARMOR == TRUE))
 	{
 		return TRUE;
@@ -2351,11 +2463,14 @@ instance PC_ITMW_ORESWORD(C_Info)
 	condition = pc_itmw_oresword_condition;
 	information = pc_itmw_oresword_info;
 	permanent = TRUE;
-	description = "Vykovat prostý rudný meč";
+	// description = "Vykovat prostý rudný meč";
 };
 
 func int pc_itmw_oresword_condition()
 {
+	PC_ITMW_ORESWORD.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 40, FALSE), "Vykovat prostý rudný meč");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (KNOWNORESWORD == TRUE) && (Erzwaffen == TRUE))
 	{
 		return TRUE;
@@ -2393,11 +2508,14 @@ instance PC_ITMW_1H_BLESSEDBLACK(C_Info)
 	condition = pc_itmw_1h_blessedblack_condition;
 	information = pc_itmw_1h_blessedblack_info;
 	permanent = TRUE;
-	description = "Vykovat jednoruční meč z černé rudy";
+	// description = "Vykovat jednoruční meč z černé rudy";
 };
 
 func int pc_itmw_1h_blessedblack_condition()
 {
+	PC_ITMW_1H_BLESSEDBLACK.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 60, FALSE), "Vykovat jednoruční meč z černé rudy");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (KNOWNORESWORD == TRUE) && (NETBEKLEADME_STEP2 == TRUE) && (Erzwaffen == TRUE))
 	{
 		return TRUE;
@@ -2444,11 +2562,14 @@ instance PC_ITMW_2H_BLESSEDBLACK(C_Info)
 	condition = pc_itmw_2h_blessedblack_condition;
 	information = pc_itmw_2h_blessedblack_info;
 	permanent = TRUE;
-	description = "Vykovat obouruční meč z černé rudy";
+	// description = "Vykovat obouruční meč z černé rudy";
 };
 
 func int pc_itmw_2h_blessedblack_condition()
 {
+	PC_ITMW_2H_BLESSEDBLACK.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 60, FALSE), "Vykovat obouruční meč z černé rudy");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (KNOWNORESWORD == TRUE) && (NETBEKLEADME_STEP2 == TRUE) && (Erzwaffen == TRUE))
 	{
 		return TRUE;
@@ -2486,11 +2607,14 @@ instance PC_ARMOR_MAKEARMOR_ITAR_SMITH_NOV(C_Info)
 	condition = pc_armor_makearmor_itar_smith_nov_condition;
 	information = pc_armor_makearmor_itar_smith_nov_info;
 	permanent = TRUE;
-	description = "Vyztužit oděv kovářského učně (Vyžaduje: 1 železný ingot)";
+	// description = "Vyztužit oděv kovářského učně (Vyžaduje: 1 železný ingot)";
 };
 
 func int pc_armor_makearmor_itar_smith_nov_condition()
 {
+	PC_ARMOR_MAKEARMOR_ITAR_SMITH_NOV.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 5, FALSE), "Vyztužit oděv kovářského učně (Vyžaduje: 1 železný ingot)");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_Common] == TRUE) && (ARMORWAFFEN == TRUE) && ((Npc_HasItems(self,itar_smith_nov) > 0) || (Npc_HasItems(self,itar_smith_nov_01) > 0) || (Npc_HasItems(self,itar_smith_nov_02) > 0) || (Npc_HasItems(self,itar_smith_nov_03) > 0) || (Npc_HasItems(self,itar_smith_nov_04) > 0)))
 	{
 		return TRUE;
@@ -2560,11 +2684,14 @@ instance PC_ItMw_ChiefRapier_01(C_Info)
 	condition = PC_ItMw_ChiefRapier_01_Condition;
 	information = PC_ItMw_ChiefRapier_01_Info;
 	permanent = TRUE;
-	description = "Vykovat kord zloděje";
+	// description = "Vykovat kord zloděje";
 };
 
 func int PC_ItMw_ChiefRapier_01_Condition()
 {
+	PC_ItMw_ChiefRapier_01.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 5, FALSE), "Vykovat kord zloděje");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Lovkach_W1 == TRUE) && (Rapierwaffen == TRUE))
 	{
 		return TRUE;
@@ -2613,12 +2740,15 @@ instance PC_ItMw_ChiefRapier_02(C_Info)
 	condition = PC_ItMw_ChiefRapier_02_Condition;
 	information = PC_ItMw_ChiefRapier_02_Info;
 	permanent = TRUE;
-	description = "Vykovat rapír zloděje";
+	// description = "Vykovat rapír zloděje";
 };
 
 
 func int PC_ItMw_ChiefRapier_02_Condition()
 {
+	PC_ItMw_ChiefRapier_02.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 10, FALSE), "Vykovat rapír zloděje");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Lovkach_W2 == TRUE) && (Rapierwaffen == TRUE))
 	{
 		return TRUE;
@@ -2668,11 +2798,14 @@ instance PC_ItMw_ChiefRapier_03(C_Info)
 	condition = PC_ItMw_ChiefRapier_03_Condition;
 	information = PC_ItMw_ChiefRapier_03_Info;
 	permanent = TRUE;
-	description = "Vykovat kord mistra zloděje";
+	// description = "Vykovat kord mistra zloděje";
 };
 
 func int PC_ItMw_ChiefRapier_03_Condition()
 {
+	PC_ItMw_ChiefRapier_03.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 15, FALSE), "Vykovat kord mistra zloděje");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Lovkach_W3 == TRUE) && (Rapierwaffen == TRUE))
 	{
 		return TRUE;
@@ -2722,12 +2855,15 @@ instance PC_ItMw_ChiefRapier_04(C_Info)
 	condition = PC_ItMw_ChiefRapier_04_Condition;
 	information = PC_ItMw_ChiefRapier_04_Info;
 	permanent = TRUE;
-	description = "Vykovat kord 'Tichá smrt'";
+	// description = "Vykovat kord 'Tichá smrt'";
 };
 
 
 func int PC_ItMw_ChiefRapier_04_Condition()
 {
+	PC_ItMw_ChiefRapier_04.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 25, FALSE), "Vykovat kord 'Tichá smrt'");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Lovkach_W4 == TRUE) && (Rapierwaffen == TRUE))
 	{
 		return TRUE;
@@ -2776,12 +2912,15 @@ instance PC_ItMw_ChiefRapier_05(C_Info)
 	condition = PC_ItMw_ChiefRapier_05_Condition;
 	information = PC_ItMw_ChiefRapier_05_Info;
 	permanent = TRUE;
-	description = "Vykovat kord 'Pronikavá ocel'";
+	// description = "Vykovat kord 'Pronikavá ocel'";
 };
 
 
 func int PC_ItMw_ChiefRapier_05_Condition()
 {
+	PC_ItMw_ChiefRapier_05.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 40, FALSE), "Vykovat kord 'Pronikavá ocel'");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Lovkach_W5 == TRUE) && (Rapierwaffen == TRUE))
 	{
 		return TRUE;
@@ -2832,12 +2971,15 @@ instance PC_ItMw_ChiefRapier_06(C_Info)
 	condition = PC_ItMw_ChiefRapier_06_Condition;
 	information = PC_ItMw_ChiefRapier_06_Info;
 	permanent = TRUE;
-	description = "Vykovat kord 'Žihadlo škorpiona'";
+	// description = "Vykovat kord 'Žihadlo škorpiona'";
 };
 
 
 func int PC_ItMw_ChiefRapier_06_Condition()
 {
+	PC_ItMw_ChiefRapier_06.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 55, FALSE), "Vykovat kord 'Žihadlo škorpiona'");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Lovkach_W6 == TRUE) && (Rapierwaffen == TRUE))
 	{
 		return TRUE;
@@ -2907,11 +3049,14 @@ instance PC_ItMw_ChiefRapier_07(C_Info)
 	condition = PC_ItMw_ChiefRapier_07_Condition;
 	information = PC_ItMw_ChiefRapier_07_Info;
 	permanent = TRUE;
-	description = "Vykovat kord 'Noční výkřik'";
+	// description = "Vykovat kord 'Noční výkřik'";
 };
 
 func int PC_ItMw_ChiefRapier_07_Condition()
 {
+	PC_ItMw_ChiefRapier_07.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 70, FALSE), "Vykovat kord 'Noční výkřik'");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Lovkach_W7 == TRUE) && (Rapierwaffen == TRUE))
 	{
 		return TRUE;
@@ -2963,11 +3108,14 @@ instance PC_ItMw_ChiefRapier_08(C_Info)
 	condition = PC_ItMw_ChiefRapier_08_Condition;
 	information = PC_ItMw_ChiefRapier_08_Info;
 	permanent = TRUE;
-	description = "Vykovat kord 'Zlatá jehla'";
+	// description = "Vykovat kord 'Zlatá jehla'";
 };
 
 func int PC_ItMw_ChiefRapier_08_Condition()
 {
+	PC_ItMw_ChiefRapier_08.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 90, FALSE), "Vykovat kord 'Zlatá jehla'");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Lovkach_W8 == TRUE) && (Rapierwaffen == TRUE))
 	{
 		return TRUE;
@@ -3198,7 +3346,7 @@ instance PC_DragonStaff(C_Info)
 	condition = PC_DragonStaff_Condition;
 	information = PC_DragonStaff_Info;
 	permanent = TRUE;
-	description = "Skovat 'Žezlo vládce draků'";
+	description = "Skout 'Žezlo vládce draků'";
 };
 
 func int PC_DragonStaff_Condition()
@@ -3234,11 +3382,14 @@ instance PC_ORCWEAPON_LINE_STR_01(C_Info)
 	condition = PC_ORCWEAPON_LINE_STR_01_Condition;
 	information = PC_ORCWEAPON_LINE_STR_01_Info;
 	permanent = TRUE;
-	description = "Vykovat rudnou skřetí sekyru";
+	// description = "Vykovat rudnou skřetí sekyru";
 };
 
 func int PC_ORCWEAPON_LINE_STR_01_Condition()
 {
+	PC_ORCWEAPON_LINE_STR_01.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 30, FALSE), "Vykovat rudnou skřetí sekyru");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ORCWEAPON_LINE_STR_01 == TRUE) && (Orcwaffen == TRUE))
 	{
 		return TRUE;
@@ -3279,11 +3430,14 @@ instance PC_ORCWEAPON_LINE_STR_02(C_Info)
 	condition = PC_ORCWEAPON_LINE_STR_02_Condition;
 	information = PC_ORCWEAPON_LINE_STR_02_Info;
 	permanent = TRUE;
-	description = "Vykovat rudný meč válečníka";
+	// description = "Vykovat rudný meč válečníka";
 };
 
 func int PC_ORCWEAPON_LINE_STR_02_Condition()
 {
+	PC_ORCWEAPON_LINE_STR_02.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 50, FALSE), "Vykovat rudný meč válečníka");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ORCWEAPON_LINE_STR_02 == TRUE) && (Orcwaffen == TRUE))
 	{
 		return TRUE;
@@ -3325,11 +3479,14 @@ instance PC_ORCWEAPON_LINE_STR_03(C_Info)
 	condition = PC_ORCWEAPON_LINE_STR_03_Condition;
 	information = PC_ORCWEAPON_LINE_STR_03_Info;
 	permanent = TRUE;
-	description = "Vykovat rudnou váleční sekyru";
+	// description = "Vykovat rudnou váleční sekyru";
 };
 
 func int PC_ORCWEAPON_LINE_STR_03_Condition()
 {
+	PC_ORCWEAPON_LINE_STR_03.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 70, FALSE), "Vykovat rudnou váleční sekyru");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ORCWEAPON_LINE_STR_03 == TRUE) && (Orcwaffen == TRUE))
 	{
 		return TRUE;
@@ -3371,11 +3528,14 @@ instance PC_ORCWEAPON_LINE_HP_01(C_Info)
 	condition = PC_ORCWEAPON_LINE_HP_01_Condition;
 	information = PC_ORCWEAPON_LINE_HP_01_Info;
 	permanent = TRUE;
-	description = "Vykovat rudný skřetí kalač";
+	// description = "Vykovat rudný skřetí kalač";
 };
 
 func int PC_ORCWEAPON_LINE_HP_01_Condition()
 {
+	PC_ORCWEAPON_LINE_HP_01.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 20, FALSE), "Vykovat rudný skřetí kalač");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ORCWEAPON_LINE_HP_01 == TRUE) && (Orcwaffen == TRUE))
 	{
 		return TRUE;
@@ -3416,11 +3576,14 @@ instance PC_ORCWEAPON_LINE_HP_02(C_Info)
 	condition = PC_ORCWEAPON_LINE_HP_02_Condition;
 	information = PC_ORCWEAPON_LINE_HP_02_Info;
 	permanent = TRUE;
-	description = "Vykovat rudný meč stařešiny";
+	// description = "Vykovat rudný meč stařešiny";
 };
 
 func int PC_ORCWEAPON_LINE_HP_02_Condition()
 {
+	PC_ORCWEAPON_LINE_HP_02.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 40, FALSE), "Vykovat rudný meč stařešiny");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ORCWEAPON_LINE_HP_02 == TRUE) && (Orcwaffen == TRUE))
 	{
 		return TRUE;
@@ -3461,11 +3624,14 @@ instance PC_ORCWEAPON_LINE_HP_03(C_Info)
 	condition = PC_ORCWEAPON_LINE_HP_03_Condition;
 	information = PC_ORCWEAPON_LINE_HP_03_Info;
 	permanent = TRUE;
-	description = "Vykovat rudnou útočnou sekyru";
+	// description = "Vykovat rudnou útočnou sekyru";
 };
 
 func int PC_ORCWEAPON_LINE_HP_03_Condition()
 {
+	PC_ORCWEAPON_LINE_HP_03.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 60, FALSE), "Vykovat rudnou útočnou sekyru");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ORCWEAPON_LINE_HP_03 == TRUE) && (Orcwaffen == TRUE))
 	{
 		return TRUE;
@@ -3506,11 +3672,14 @@ instance PC_ORCWEAPON_LINE_PRIME(C_Info)
 	condition = PC_ORCWEAPON_LINE_PRIME_Condition;
 	information = PC_ORCWEAPON_LINE_PRIME_Info;
 	permanent = TRUE;
-	description = "Vykovat rudný dvousečný meč náčelníka";
+	// description = "Vykovat rudný dvousečný meč náčelníka";
 };
 
 func int PC_ORCWEAPON_LINE_PRIME_Condition()
 {
+	PC_ORCWEAPON_LINE_PRIME.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 90, FALSE), "Vykovat rudný dvousečný meč náčelníka");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ORCPRIMEWEAPON == TRUE) && (Orcwaffen == TRUE))
 	{
 		return TRUE;
@@ -3559,11 +3728,14 @@ instance PC_ITMW_1H_MOONBLADE_LEFT(C_Info)
 	condition = PC_ITMW_1H_MOONBLADE_LEFT_Condition;
 	information = PC_ITMW_1H_MOONBLADE_LEFT_Info;
 	permanent = TRUE;
-	description = "Vykovat měsíční čepel (levá ruka)";
+	// description = "Vykovat měsíční čepel (levá ruka)";
 };
 
 func int PC_ITMW_1H_MOONBLADE_LEFT_Condition()
 {
+	PC_ITMW_1H_MOONBLADE_LEFT.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 75, FALSE), "Vykovat měsíční čepel (levá ruka)");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (KNOWS_MOONBLADES_LEFT == TRUE) && (Erzwaffen == TRUE) && (MOONSWORDDONE_LEFT == FALSE))
 	{
 		return TRUE;
@@ -3617,12 +3789,15 @@ instance PC_ITMW_1H_MOONBLADE_RIGHT(C_Info)
 	condition = PC_ITMW_1H_MOONBLADE_RIGHT_Condition;
 	information = PC_ITMW_1H_MOONBLADE_RIGHT_Info;
 	permanent = TRUE;
-	description = "Vykovat měsíční čepel (pravá ruka)";
+	// description = "Vykovat měsíční čepel (pravá ruka)";
 };
 
 
 func int PC_ITMW_1H_MOONBLADE_RIGHT_Condition()
 {
+	PC_ITMW_1H_MOONBLADE_RIGHT.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 75, FALSE), "Vykovat měsíční čepel (pravá ruka)");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (KNOWS_MOONBLADES_RIGHT == TRUE) && (Erzwaffen == TRUE) && (MOONSWORDDONE_RIGHT == FALSE))
 	{
 		return TRUE;
@@ -3675,11 +3850,14 @@ instance PC_ITMW_1H_SIGIL(C_Info)
 	condition = PC_ITMW_1H_SIGIL_Condition;
 	information = PC_ITMW_1H_SIGIL_Info;
 	permanent = TRUE;
-	description = "Vykovat 'Stříbrný runový sihill' (jednoruční)";
+	// description = "Vykovat 'Stříbrný runový sihill' (jednoruční)";
 };
 
 func int PC_ITMW_1H_SIGIL_Condition()
 {
+	PC_ITMW_1H_SIGIL.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 100, FALSE), "Vykovat 'Stříbrný runový sihill' (jednoruční)");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (SigilKnow == TRUE) && (Normalwaffen == TRUE))
 	{
 		return TRUE;
@@ -3726,11 +3904,14 @@ instance PC_ITMW_2H_SIGIL(C_Info)
 	condition = PC_ITMW_2H_SIGIL_Condition;
 	information = PC_ITMW_2H_SIGIL_Info;
 	permanent = TRUE;
-	description = "Vykovat 'Stříbrný runový sihill' (obouruční)";
+	// description = "Vykovat 'Stříbrný runový sihill' (obouruční)";
 };
 
 func int PC_ITMW_2H_SIGIL_Condition()
 {
+	PC_ITMW_2H_SIGIL.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 100, FALSE), "Vykovat 'Stříbrný runový sihill' (obouruční)");
+	
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (SigilKnow == TRUE) && (Normalwaffen == TRUE))
 	{
 		return TRUE;

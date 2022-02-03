@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_SNIPES_EXIT(C_Info)
 {
@@ -442,10 +453,13 @@ func void DIA_SNIPES_AskforDT_info()
 	AI_Output(self,other,"DIA_SNIPES_AskforDT_17_01");	//Co? Myslíš že bych se chtěl znovu hrbit v dole?
 	AI_Output(self,other,"DIA_SNIPES_AskforDT_17_02");	//Ne vážně. Už mám dolů dost.
 
-	if(RhetorikSkillValue[1] >= 60)
-	{
-		Info_AddChoice(DIA_SNIPES_AskforDT,"(pokusit se přesvědčit)",DIA_SNIPES_AskforDT_yes);
-	};
+	// if(RhetorikSkillValue[1] >= 60)
+	// {
+		Info_AddChoice(DIA_SNIPES_AskforDT,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 60, TRUE), "(pokusit se přesvědčit)"),
+			// "(pokusit se přesvědčit)",
+			DIA_SNIPES_AskforDT_yes);
+	// };
 };
 
 func void DIA_SNIPES_AskforDT_yes()

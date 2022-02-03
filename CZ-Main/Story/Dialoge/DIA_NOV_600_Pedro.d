@@ -1,3 +1,14 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+*/
+
+
 
 instance DIA_Pedro_EXIT(C_Info)
 {
@@ -82,9 +93,13 @@ func void DIA_Pedro_Wurst_Info()
 	B_UseItem(self,ItFo_Sausage);
 	Info_ClearChoices(DIA_Pedro_Wurst);
 
-	if((Npc_HasItems(hero,ItFo_Sausage) == TRUE) && (RhetorikSkillValue[1] >= 30))
+	// if((Npc_HasItems(hero,ItFo_Sausage) == TRUE) && (RhetorikSkillValue[1] >= 30))
+	if(Npc_HasItems(hero,ItFo_Sausage) == TRUE)
 	{
-		Info_AddChoice(DIA_Pedro_Wurst,"Tak si vezmi tuhle klobásu!",dia_pedro_wurst_new);
+		Info_AddChoice(DIA_Pedro_Wurst,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 30, TRUE), "Tak si vezmi tuhle klobásu!"),
+			// "Tak si vezmi tuhle klobásu!",
+			dia_pedro_wurst_new);
 	};
 	if(Npc_HasItems(hero,ItFo_Schafswurst) == TRUE)
 	{

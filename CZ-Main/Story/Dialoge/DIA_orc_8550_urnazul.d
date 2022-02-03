@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+(3x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+
+
 v1.00:
 
 (2x) dia_orc_8550_urnazul_urhan_Ok - Ok (cyrilice -> latinka)
@@ -246,10 +251,13 @@ func void DIA_Orc_8550_UrNazul_AboutIronMine_Q4()
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMine);
 	Info_AddChoice(DIA_Orc_8550_UrNazul_AboutIronMine,"Někteří z nich by mohli vědět o Spáčově chrámu.",DIA_Orc_8550_UrNazul_AboutIronMine_W1);
 
-	if(RhetorikSkillValue[1] >= 50)
-	{
-		Info_AddChoice(DIA_Orc_8550_UrNazul_AboutIronMine,"Jeden z nich má informace pro paladiny.",DIA_Orc_8550_UrNazul_AboutIronMine_W2);
-	};
+	// if(RhetorikSkillValue[1] >= 50)
+	// {
+		Info_AddChoice(DIA_Orc_8550_UrNazul_AboutIronMine,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, TRUE), "Jeden z nich má informace pro paladiny."),
+			// "Jeden z nich má informace pro paladiny.",
+			DIA_Orc_8550_UrNazul_AboutIronMine_W2);
+	// };
 
 	Info_AddChoice(DIA_Orc_8550_UrNazul_AboutIronMine,"Chci se od nich naučit jak těžit železnou rudu.",DIA_Orc_8550_UrNazul_AboutIronMine_W3);
 	Info_AddChoice(DIA_Orc_8550_UrNazul_AboutIronMine,"No o dracích!",DIA_Orc_8550_UrNazul_AboutIronMine_W4);
@@ -394,10 +402,13 @@ func void DIA_Orc_8550_UrNazul_AboutIronMineMore_Q4()
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMineMore);
 	Info_AddChoice(DIA_Orc_8550_UrNazul_AboutIronMineMore,"Někteří z nich by mohli vědět o Spáčově chrámu.",DIA_Orc_8550_UrNazul_AboutIronMineMore_W1);
 
-	if(RhetorikSkillValue[1] >= 50)
-	{
-		Info_AddChoice(DIA_Orc_8550_UrNazul_AboutIronMineMore,"Jeden z nich má informace pro paladiny.",DIA_Orc_8550_UrNazul_AboutIronMineMore_W2);
-	};
+	// if(RhetorikSkillValue[1] >= 50)
+	// {
+		Info_AddChoice(DIA_Orc_8550_UrNazul_AboutIronMineMore,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 50, TRUE), "Jeden z nich má informace pro paladiny."),
+			// "Jeden z nich má informace pro paladiny.",
+			DIA_Orc_8550_UrNazul_AboutIronMineMore_W2);
+	// };
 
 	Info_AddChoice(DIA_Orc_8550_UrNazul_AboutIronMineMore,"Chci se od nich naučit jak těžit železnou rudu.",DIA_Orc_8550_UrNazul_AboutIronMineMore_W3);
 	Info_AddChoice(DIA_Orc_8550_UrNazul_AboutIronMineMore,"No o dracích!",DIA_Orc_8550_UrNazul_AboutIronMineMore_W4);
@@ -1134,12 +1145,17 @@ instance DIA_ORC_8550_URNAZUL_BLACKORE(C_Info)
 	condition = dia_orc_8550_urnazul_blackore_condition;
 	information = dia_orc_8550_urnazul_blackore_info;
 	permanent = FALSE;
-	description = "Řekni mi, jestli vy skřeti víte, kde hledat černou rudu.";
+	// description = "Řekni mi, jestli vy skřeti víte, kde hledat černou rudu.";
 };
 
 func int dia_orc_8550_urnazul_blackore_condition()
 {
-	if((MIS_URNAZULRAGE == LOG_SUCCESS) && (FINDOREALREADY == FALSE) && Npc_KnowsInfo(hero,xbs_7513_darrion_blackore) && (RhetorikSkillValue[1] >= 75))
+	DIA_ORC_8550_URNAZUL_BLACKORE.description
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 75, TRUE), "Řekni mi, jestli vy skřeti víte, kde hledat černou rudu.");
+
+	if((MIS_URNAZULRAGE == LOG_SUCCESS) && (FINDOREALREADY == FALSE) && Npc_KnowsInfo(hero,xbs_7513_darrion_blackore)
+	// && (RhetorikSkillValue[1] >= 75)
+	)
 	{
 		return TRUE;
 	};
