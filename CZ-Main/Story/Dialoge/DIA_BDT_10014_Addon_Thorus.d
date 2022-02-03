@@ -408,7 +408,7 @@ instance DIA_Addon_Thorus_Raventot(C_Info)
 	condition = DIA_Addon_Thorus_Raventot_Condition;
 	information = DIA_Addon_Thorus_Raventot_Info;
 	permanent = FALSE;
-	description = "Dokázal jsem to. Raven je mrtev!";
+	description = "Raven zmizel!";
 };
 
 
@@ -422,8 +422,8 @@ func int DIA_Addon_Thorus_Raventot_Condition()
 
 func void DIA_Addon_Thorus_Raventot_Info()
 {
-	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Raventot_15_98");	//Dokázal jsem to. Raven je mrtev!
-	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_99");	//Co tím myslíš? (překvapeně) Ačkoliv Beliarova moc byla s ním! Bez ní nám bude každému líp!
+	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Raventot_15_98");	//Raven zmizel!
+	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_99");	//Jak to myslíš? (překvapeně) I když... Vem ho Beliar! Bez něj nám bude každému líp!
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_02");	//Co teď budeš dělat?
 	AI_Output(other,self,"DIA_Addon_BDT_10014_Thorus_Raventot_15_97");	//Znáš mě.
 	AI_Output(self,other,"DIA_Addon_BDT_10014_Thorus_Raventot_12_04");	//(směje se) Ano, jsi stále na cestě? Přeji dobrou cestu!

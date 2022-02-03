@@ -235,7 +235,7 @@ func string CZ_GetWorldName()
 	}
 	else if(CurrentLevel == GOLDMINE_ZEN)
 	{
-        return "Horský průchod (Hornické údolí)";
+        return "Horský průchod";
 	}
 	else if(CurrentLevel == OLDMINE_ZEN)
 	{
@@ -251,7 +251,7 @@ func string CZ_GetWorldName()
 	}
 	else if(CurrentLevel == FREEMINELAGER_ZEN)
 	{
-        return "Horský průchod (Zasněžené hory)";
+        return "Průsmyk k Novému dolu";
 	}
 	else if(CurrentLevel == DEMONSTOWER_ZEN)
 	{

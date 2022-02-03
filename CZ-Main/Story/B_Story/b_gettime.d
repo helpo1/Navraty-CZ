@@ -10044,7 +10044,7 @@ func void Hero_poisoned()
 		CraitLvl += 1;
 		CraitExpLvl_Next = CraitExpLvl_Next + ((CraitLvl + 1) * 500);
 		CraitCanUp = TRUE;
-		AI_Print("Nová úroveň zvířat!");
+		AI_Print("Nová úroveň (Krajta)!");
 	};
 	if((CraitIsUp == TRUE) && (CraitCanUp == TRUE))
 	{

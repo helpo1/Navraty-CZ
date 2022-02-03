@@ -497,7 +497,7 @@ func void DIA_1013_BANDIT_LeeFarm_Info()
 	MIS_JessArmor = LOG_Running;
 	Log_CreateTopic(TOPIC_JessArmor,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_JessArmor,LOG_Running);
-	B_LogEntry(TOPIC_JessArmor,"Slíbil jsem Jessovi že mu seženu slušnou zbroj, aby mohl jít na Onarovu farmu.");
+	B_LogEntry(TOPIC_JessArmor,"Slíbil jsem Jessemu, že mu seženu slušnou zbroj, aby mohl jít na Onarovu farmu.");
 };
 
 instance DIA_1013_BANDIT_LeeFarm_Done(C_Info)
@@ -561,7 +561,7 @@ func void DIA_ADDON_1013_BANDIT_LeeFarm_Done_Armor_01()
 	MIS_JessArmor = LOG_Success;
 	JessGoSld = TRUE;
 	Log_SetTopicStatus(TOPIC_JessArmor,LOG_Success);
-	B_LogEntry(TOPIC_JessArmor,"Přinesl jsem Jessovi zbroj. Teď může jít na farmu k žoldákům za Leem.");
+	B_LogEntry(TOPIC_JessArmor,"Přinesl jsem Jessemu zbroj. Teď může jít na farmu k žoldákům za Leem.");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Onar");
 	self.guild = GIL_SLD;
@@ -584,7 +584,7 @@ func void DIA_ADDON_1013_BANDIT_LeeFarm_Done_Armor_02()
 	MIS_JessArmor = LOG_Success;
 	JessGoSld = TRUE;
 	Log_SetTopicStatus(TOPIC_JessArmor,LOG_Success);
-	B_LogEntry(TOPIC_JessArmor,"Přinesl jsem Jessovi zbroj. Teď může jít na farmu k žoldákům za Leem.");
+	B_LogEntry(TOPIC_JessArmor,"Přinesl jsem Jessemu zbroj. Teď může jít na farmu k žoldákům za Leem.");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Onar");
 	self.guild = GIL_SLD;
@@ -607,7 +607,7 @@ func void DIA_ADDON_1013_BANDIT_LeeFarm_Done_Armor_03()
 	MIS_JessArmor = LOG_Success;
 	JessGoSld = TRUE;
 	Log_SetTopicStatus(TOPIC_JessArmor,LOG_Success);
-	B_LogEntry(TOPIC_JessArmor,"Přinesl jsem Jessovi zbroj. Teď může jít na farmu k žoldákům za Leem.");
+	B_LogEntry(TOPIC_JessArmor,"Přinesl jsem Jessemu zbroj. Teď může jít na farmu k žoldákům za Leem.");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Onar");
 	self.guild = GIL_SLD;
@@ -630,7 +630,7 @@ func void DIA_ADDON_1013_BANDIT_LeeFarm_Done_Armor_04()
 	MIS_JessArmor = LOG_Success;
 	JessGoSld = TRUE;
 	Log_SetTopicStatus(TOPIC_JessArmor,LOG_Success);
-	B_LogEntry(TOPIC_JessArmor,"Přinesl jsem Jessovi zbroj. Teď může jít na farmu k žoldákům za Leem.");
+	B_LogEntry(TOPIC_JessArmor,"Přinesl jsem Jessemu zbroj. Teď může jít na farmu k žoldákům za Leem.");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Onar");
 	self.guild = GIL_SLD;

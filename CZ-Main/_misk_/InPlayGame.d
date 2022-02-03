@@ -2810,7 +2810,7 @@ instance PC_PLAYPOCKER_ADDSTAVKA10(C_Info)
 	condition = pc_playpocker_addstavka10_condition;
 	information = pc_playpocker_addstavka10_info;
 	permanent = TRUE;
-	description = "... na 25 zlatých mincí";
+	description = "... o 25 zlatých mincí";
 };
 
 func int pc_playpocker_addstavka10_condition()
@@ -2844,7 +2844,7 @@ instance PC_PLAYPOCKER_ADDSTAVKA20(C_Info)
 	condition = pc_playpocker_addstavka20_condition;
 	information = pc_playpocker_addstavka20_info;
 	permanent = TRUE;
-	description = "... na 50 zlatých mincí";
+	description = "... o 50 zlatých mincí";
 };
 
 func int pc_playpocker_addstavka20_condition()
