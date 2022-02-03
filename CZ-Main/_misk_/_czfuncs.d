@@ -5,6 +5,10 @@
 v1.02:
 
 ShowSkillChecks - deklarace nového .ini nastavení
+upraven systém změn obtížnosti:
+- odstraněny funkce CZ_Settings_Diff_Save, CZ_Settings_Diff_Load, CZ_Settings_Diff_Update
+- CZ_Settings_Diff_Init - (4x) odstraněno volání funkce, nastavování proměnných a zápisy do Gothic.ini
+
 (20x) const int CZ_SKILL - deklarace nových konstant (kvůli skill checkům)
 CZ_GetSkillValue, CZ_GetSkillAbbr, CZ_SkillCheckPrefix, CZ_SkillCheckCondition - nové funkce
 
@@ -21,68 +25,6 @@ nový soubor
 */
 
 
-
-func void CZ_Settings_Diff_Save()
-{
-	
-	// AI_Print("Zapisuji nastavení obtížnosti do Gothic.ini...");
-	
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "ApplyNewSettings", FALSE);
-	
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "HPPerLevel", CZ_Settings_Diff_HPPerLevel);
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "LPPerLevel", CZ_Settings_Diff_LPPerLevel);
-	
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "XPMult", CZ_Settings_Diff_XPMult);
-	
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "HungerPoolBase", CZ_Settings_Diff_HungerPoolBase);
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "HungerPoolLevelMult", CZ_Settings_Diff_HungerPoolLevelMult);
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "ThirstPoolBase", CZ_Settings_Diff_ThirstPoolBase);
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "ThirstPoolLevelMult", CZ_Settings_Diff_ThirstPoolLevelMult);
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "FatiguePoolBase", CZ_Settings_Diff_FatiguePoolBase);
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "FatiguePoolLevelMult", CZ_Settings_Diff_FatiguePoolLevelMult);
-	
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "EnableHunger", CZ_Settings_Diff_EnableHunger);
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "EnableThirst", CZ_Settings_Diff_EnableThirst);
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "EnableFatigue", CZ_Settings_Diff_EnableFatigue);
-	
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "EnableSleepCap", CZ_Settings_Diff_EnableSleepCap);
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "EnableTraps", CZ_Settings_Diff_EnableTraps);
-	
-	// AI_Print("Nastavení obtížnosti zapsána do Gothic.ini!");
-	
-};
-
-func void CZ_Settings_Diff_Load()
-{
-	
-	AI_Print("Načítám nastavení obtížnosti z Gothic.ini...");
-	
-	Menu_WriteInt("CZ_SETTINGS_DIFF", "ApplyNewSettings", FALSE);
-	
-	CZ_Settings_Diff_HPPerLevel = Menu_ReadInt("CZ_SETTINGS_DIFF", "HPPerLevel");
-	CZ_Settings_Diff_LPPerLevel = Menu_ReadInt("CZ_SETTINGS_DIFF", "LPPerLevel");
-	
-	CZ_Settings_Diff_XPMult = Menu_ReadInt("CZ_SETTINGS_DIFF", "XPMult");
-	
-	CZ_Settings_Diff_HungerPoolBase = Menu_ReadInt("CZ_SETTINGS_DIFF", "HungerPoolBase");
-	CZ_Settings_Diff_HungerPoolLevelMult = Menu_ReadInt("CZ_SETTINGS_DIFF", "HungerPoolLevelMult");
-	CZ_Settings_Diff_ThirstPoolBase = Menu_ReadInt("CZ_SETTINGS_DIFF", "ThirstPoolBase");
-	CZ_Settings_Diff_ThirstPoolLevelMult = Menu_ReadInt("CZ_SETTINGS_DIFF", "ThirstPoolLevelMult");
-	CZ_Settings_Diff_FatiguePoolBase = Menu_ReadInt("CZ_SETTINGS_DIFF", "FatiguePoolBase");
-	CZ_Settings_Diff_FatiguePoolLevelMult = Menu_ReadInt("CZ_SETTINGS_DIFF", "FatiguePoolLevelMult");
-	
-	CZ_Settings_Diff_EnableHunger = Menu_ReadInt("CZ_SETTINGS_DIFF", "EnableHunger");
-	CZ_Settings_Diff_EnableThirst = Menu_ReadInt("CZ_SETTINGS_DIFF", "EnableThirst");
-	CZ_Settings_Diff_EnableFatigue = Menu_ReadInt("CZ_SETTINGS_DIFF", "EnableFatigue");
-	
-	CZ_Settings_Diff_EnableSleepCap = Menu_ReadInt("CZ_SETTINGS_DIFF", "EnableSleepCap");
-	CZ_Settings_Diff_EnableTraps = Menu_ReadInt("CZ_SETTINGS_DIFF", "EnableTraps");
-	
-	CZ_Settings_Diff_Changed = TRUE;
-	
-	AI_Print("Nastavení obtížnosti načtena z Gothic.ini!");
-	
-};
 
 func void CZ_Settings_Diff_Init()
 {
@@ -116,13 +58,7 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		
-		AI_Print("Nastavena obtížnost: Legendární!");
-		
-		AI_Print("Zapisuji nastavení obtížnosti do Gothic.ini...");
-		CZ_Settings_Diff_Save();
-		AI_Print("Nastavení obtížnosti zapsána do Gothic.ini!");
-		
-		Menu_WriteInt("CZ_SETTINGS_DIFF", "DiffInitialized", TRUE);
+		// AI_Print("Nastavena obtížnost: Legendární!");
 		
 	}
 	else if ((SBMODE == 1) && (RealMode[2] == FALSE))
@@ -149,13 +85,7 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		
-		AI_Print("Nastavena obtížnost: Těžká!");
-		
-		AI_Print("Zapisuji nastavení obtížnosti do Gothic.ini...");
-		CZ_Settings_Diff_Save();
-		AI_Print("Nastavení obtížnosti zapsána do Gothic.ini!");
-		
-		Menu_WriteInt("CZ_SETTINGS_DIFF", "DiffInitialized", TRUE);
+		// AI_Print("Nastavena obtížnost: Těžká!");
 
 	}
 	else if(SBMODE == 2)
@@ -182,13 +112,7 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		
-		AI_Print("Nastavena obtížnost: Střední!");
-		
-		AI_Print("Zapisuji nastavení obtížnosti do Gothic.ini...");
-		CZ_Settings_Diff_Save();
-		AI_Print("Nastavení obtížnosti zapsána do Gothic.ini!");
-		
-		Menu_WriteInt("CZ_SETTINGS_DIFF", "DiffInitialized", TRUE);
+		// AI_Print("Nastavena obtížnost: Střední!");
 
 	}
 	else if(SBMODE == 4)
@@ -215,38 +139,12 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		
-		AI_Print("Nastavena obtížnost: Lehká!");
-		
-		AI_Print("Zapisuji nastavení obtížnosti do Gothic.ini...");
-		CZ_Settings_Diff_Save();
-		AI_Print("Nastavení obtížnosti zapsána do Gothic.ini!");
-		
-		Menu_WriteInt("CZ_SETTINGS_DIFF", "DiffInitialized", TRUE);
+		// AI_Print("Nastavena obtížnost: Lehká!");
 		
 	}
 	else
 	{
 		AI_Print("Neznámá obtížnost!");
-		AI_Print("Nastavení obtížnosti NEBYLA zapsána do Gothic.ini!");
-		
-	};
-	
-};
-
-func void CZ_Settings_Diff_Update()
-{
-	
-	if (Menu_ReadInt("CZ_SETTINGS_DIFF", "DiffInitialized") == FALSE)
-	{
-		CZ_Settings_Diff_Init();
-	}
-	else if (Menu_ReadInt("CZ_SETTINGS_DIFF", "ApplyNewSettings") == TRUE)
-	{
-		CZ_Settings_Diff_Load();
-	}
-	else
-	{
-		CZ_Settings_Diff_Save();
 	};
 	
 };

@@ -341,6 +341,7 @@ func void B_PlayerFindItem - upraveny výpisy
 v1.02:
 
 freeAimingEnabled - nastavení automatického míření (AST-AutoAIM) nahrazeno nastavením GFA (GFA-freeAimingEnabled)
+CZ_KeepSettingsBookInInventory - přidáno volání funkce pro zachování instance knihy nastavení v inventáři
 CZ_GDRPC_update - volání přesunuto do obecnější funkce
 
 
@@ -1911,7 +1912,9 @@ func void print_campinfo - přidán Bilgot jako lovec (kvůli úpravám úkolů 
 v1.02:
 
 startup_global - odstraněna zbytečná volání některých funkcí a resetování proměnných
-init_global - přidány inicializace: LeGo (GFA), GFA, AF Script Packet (EnhancedInfoManager / PickLockHelper)
+init_global:
+- přidány inicializace: LeGo (Timer), AF Script Packet (EnhancedInfoManager / PickLockHelper)
+- odstraněno volání zastaralé funkce CZ_Settings_Diff_Update
 
 
 v1.01:
@@ -2007,6 +2010,10 @@ func int DIA_NONE_100_Xardas_WhyHere_condition - upraveny podmínky dialogu
 v1.02:
 
 ShowSkillChecks - deklarace nového .ini nastavení
+upraven systém změn obtížnosti:
+- odstraněny funkce CZ_Settings_Diff_Save, CZ_Settings_Diff_Load, CZ_Settings_Diff_Update
+- CZ_Settings_Diff_Init - (4x) odstraněno volání funkce, nastavování proměnných a zápisy do Gothic.ini
+
 (20x) const int CZ_SKILL - deklarace nových konstant (kvůli skill checkům)
 CZ_GetSkillValue, CZ_GetSkillAbbr, CZ_SkillCheckPrefix, CZ_SkillCheckCondition - nové funkce
 
@@ -2017,6 +2024,17 @@ v1.01a:
 
 
 v1.01:
+
+nový soubor
+
+
+----------------------------------------------------------------------------------------------------
+
+
+/*   (...)\_misk_\_czsettings.d   */
+
+
+v1.02:
 
 nový soubor
 

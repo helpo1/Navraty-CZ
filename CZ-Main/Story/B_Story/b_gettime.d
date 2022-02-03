@@ -5,6 +5,7 @@
 v1.02:
 
 freeAimingEnabled - nastavení automatického míření (AST-AutoAIM) nahrazeno nastavením GFA (GFA-freeAimingEnabled)
+CZ_KeepSettingsBookInInventory - přidáno volání funkce pro zachování instance knihy nastavení v inventáři
 CZ_GDRPC_update - volání přesunuto do obecnější funkce
 
 
@@ -2037,6 +2038,8 @@ func void b_gettime()
 	var C_Npc Mage_Vat;
 
 	DayNow = Wld_GetDay();
+	
+	CZ_KeepSettingsBookInInventory();
 	
 	if(GamblingAntiCheat_CZ > 0)
 	{

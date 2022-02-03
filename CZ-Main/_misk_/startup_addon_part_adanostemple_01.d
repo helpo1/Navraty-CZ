@@ -5,7 +5,9 @@
 v1.02:
 
 startup_global - odstraněna zbytečná volání některých funkcí a resetování proměnných
-init_global - přidány inicializace: LeGo (GFA), GFA, AF Script Packet (EnhancedInfoManager / PickLockHelper)
+init_global:
+- přidány inicializace: LeGo (GFA, Timer), GFA, AF Script Packet (EnhancedInfoManager / PickLockHelper)
+- odstraněno volání zastaralé funkce CZ_Settings_Diff_Update
 
 
 v1.01:
@@ -4434,12 +4436,11 @@ func void init_global()
 	
 	InfoManagerNumKeysControls = TRUE;
 	InfoManagerNumKeysNumbers = TRUE;
-	InfoManagerSpinnerIndicatorAnimation = FALSE;
+	InfoManagerSpinnerIndicatorAnimation = TRUE;
 	G12_EnhancedInfoManager_Init();
 	
 	G12_PickLockHelper_Init();
 	
-	CZ_Settings_Diff_Update();
 	CZ_Settings_Other_Init();
 	GamblingAntiCheat_CZ = 300;
 };
