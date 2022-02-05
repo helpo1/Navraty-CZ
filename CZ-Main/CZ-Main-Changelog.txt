@@ -16,6 +16,11 @@ const int SPL_DAMAGE_SUPERBELIARSRUNE - upraveno poškození runy BD s duší Se
 /*   (...)\AI\Human\ZS_Human\ZS_Unconscious.d   */
 
 
+v1.02:
+
+CZ_Settings_Diff_EnableFullCompanionXP - přidání možnosti zapnout/vypnout plný zisk zkušeností z protivníků poražených společníky
+
+
 v1.01:
 
 (2x) CZ_Settings_Diff_XPMult - falešná konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
@@ -441,6 +446,11 @@ func void b_givealltobayguy - upraveny výpisy
 
 
 /*   (...)\Story\B_Story\b_givebonusforelitemonster.d   */
+
+
+v1.02:
+
+CZ_Settings_Diff_EnableFullCompanionXP - přidání možnosti zapnout/vypnout plný zisk zkušeností z protivníků poražených společníky
 
 
 v1.01:
@@ -2143,6 +2153,7 @@ v1.02:
 upraven systém změn obtížnosti:
 - odstraněny funkce CZ_Settings_Diff_Save, CZ_Settings_Diff_Load, CZ_Settings_Diff_Update
 - CZ_Settings_Diff_Init - (4x) odstraněno volání funkce, nastavování proměnných a zápisy do Gothic.ini
+- CZ_Settings_Diff_EnableFullCompanionXP - přidání možnosti zapnout/vypnout plný zisk zkušeností z protivníků poražených společníky
 
 CZ_Settings_Other_Init:
 - deklarace nových .ini nastavení - DialogueNumKeysControl, DialogueNumKeysShow, ShowSkillChecks
@@ -2186,6 +2197,7 @@ v1.02:
 nový soubor
 CZ_VERSION, CZ_VERFLAG - deklarace nových konstant a proměnných (kvůli identifikaci verze hry)
 var int CZ_GDRPC_Timer - deklarace nové proměnné (kvůli snížení frekvence volání GDRPC API)
+var int CZ_Settings_Diff_EnableFullCompanionXP - deklarace nové proměnné (kvůli přidání nového nastavení)
 
 
 v1.01:		(přesunuto ze souboru "(...)\_misk_\T_MAX_HP.d")

@@ -818,12 +818,127 @@ func void PC_CZSET_Diff_EnableTraps_Info()
 
 
 
+// Full Companion XP Gain
+
+instance PC_CZSET_Diff_EnableFullCompanionXP(C_Info)
+{
+	npc = PC_Hero;
+	nr = 106;
+	condition = PC_CZSET_Diff_EnableFullCompanionXP_Condition;
+	information = PC_CZSET_Diff_EnableFullCompanionXP_Info;
+	permanent = TRUE;
+	description = "s@SPIN_CZSET_Diff_EnableFullCompanionXP Plné XP za společníky:";
+};
+
+func int PC_CZSET_Diff_EnableFullCompanionXP_Condition()
+{
+
+	// Original dialogue condition
+	if(cz_settings_lock == TRUE)
+	{
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		value = CZ_Settings_Diff_EnableFullCompanionXP;
+		
+		// Min/max values
+		min = 0;
+		max = 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_CZSET_Diff_EnableFullCompanionXP");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		// Spinner ID SPIN_CZSET_Diff_EnableFullCompanionXP
+		newDescription = ConcatStrings(newDescription, "s@SPIN_CZSET_Diff_EnableFullCompanionXP ");
+		newDescription = ConcatStrings(newDescription, "Plné XP za společníky: ");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		// Update dialogue description
+		PC_CZSET_Diff_EnableFullCompanionXP.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
+		return TRUE;
+		
+	};
+
+};
+
+func void PC_CZSET_Diff_EnableFullCompanionXP_Info()
+{
+	CZ_Settings_Diff_Changed = TRUE;
+	AI_Wait(hero,1);
+	CZ_Settings_Diff_EnableFullCompanionXP = InfoManagerSpinnerValue;
+	InfoManagerSpinnerValue = 1;
+};
+
+
+
 // Hunger
 
 instance PC_CZSET_Diff_EnableHunger(C_Info)
 {
 	npc = PC_Hero;
-	nr = 106;
+	nr = 107;
 	condition = PC_CZSET_Diff_EnableHunger_Condition;
 	information = PC_CZSET_Diff_EnableHunger_Info;
 	permanent = TRUE;
@@ -938,7 +1053,7 @@ func void PC_CZSET_Diff_EnableHunger_Info()
 instance PC_CZSET_Diff_HungerPoolBase(C_Info)
 {
 	npc = PC_Hero;
-	nr = 107;
+	nr = 108;
 	condition = PC_CZSET_Diff_HungerPoolBase_Condition;
 	information = PC_CZSET_Diff_HungerPoolBase_Info;
 	permanent = TRUE;
@@ -1053,7 +1168,7 @@ func void PC_CZSET_Diff_HungerPoolBase_Info()
 instance PC_CZSET_Diff_HungerPoolLevelMult(C_Info)
 {
 	npc = PC_Hero;
-	nr = 108;
+	nr = 109;
 	condition = PC_CZSET_Diff_HungerPoolLevelMult_Condition;
 	information = PC_CZSET_Diff_HungerPoolLevelMult_Info;
 	permanent = TRUE;
@@ -1168,7 +1283,7 @@ func void PC_CZSET_Diff_HungerPoolLevelMult_Info()
 instance PC_CZSET_Diff_EnableThirst(C_Info)
 {
 	npc = PC_Hero;
-	nr = 109;
+	nr = 110;
 	condition = PC_CZSET_Diff_EnableThirst_Condition;
 	information = PC_CZSET_Diff_EnableThirst_Info;
 	permanent = TRUE;
@@ -1283,7 +1398,7 @@ func void PC_CZSET_Diff_EnableThirst_Info()
 instance PC_CZSET_Diff_ThirstPoolBase(C_Info)
 {
 	npc = PC_Hero;
-	nr = 110;
+	nr = 111;
 	condition = PC_CZSET_Diff_ThirstPoolBase_Condition;
 	information = PC_CZSET_Diff_ThirstPoolBase_Info;
 	permanent = TRUE;
@@ -1398,7 +1513,7 @@ func void PC_CZSET_Diff_ThirstPoolBase_Info()
 instance PC_CZSET_Diff_ThirstPoolLevelMult(C_Info)
 {
 	npc = PC_Hero;
-	nr = 111;
+	nr = 112;
 	condition = PC_CZSET_Diff_ThirstPoolLevelMult_Condition;
 	information = PC_CZSET_Diff_ThirstPoolLevelMult_Info;
 	permanent = TRUE;
@@ -1513,7 +1628,7 @@ func void PC_CZSET_Diff_ThirstPoolLevelMult_Info()
 instance PC_CZSET_Diff_EnableFatigue(C_Info)
 {
 	npc = PC_Hero;
-	nr = 112;
+	nr = 113;
 	condition = PC_CZSET_Diff_EnableFatigue_Condition;
 	information = PC_CZSET_Diff_EnableFatigue_Info;
 	permanent = TRUE;
@@ -1628,7 +1743,7 @@ func void PC_CZSET_Diff_EnableFatigue_Info()
 instance PC_CZSET_Diff_FatiguePoolBase(C_Info)
 {
 	npc = PC_Hero;
-	nr = 113;
+	nr = 114;
 	condition = PC_CZSET_Diff_FatiguePoolBase_Condition;
 	information = PC_CZSET_Diff_FatiguePoolBase_Info;
 	permanent = TRUE;
@@ -1743,7 +1858,7 @@ func void PC_CZSET_Diff_FatiguePoolBase_Info()
 instance PC_CZSET_Diff_FatiguePoolLevelMult(C_Info)
 {
 	npc = PC_Hero;
-	nr = 114;
+	nr = 115;
 	condition = PC_CZSET_Diff_FatiguePoolLevelMult_Condition;
 	information = PC_CZSET_Diff_FatiguePoolLevelMult_Info;
 	permanent = TRUE;

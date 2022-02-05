@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+CZ_Settings_Diff_EnableFullCompanionXP - přidání možnosti zapnout/vypnout plný zisk zkušeností z protivníků poražených společníky
+
+
 v1.01:
 
 (2x) CZ_Settings_Diff_XPMult - falešná konstanta nahrazena upravitelnou proměnnou (na žádost hráčů)
@@ -2375,7 +2380,7 @@ func void ZS_Dead()
 				{
 					permvaluexp = permvaluexp / 2;
 				}
-				else if(!Npc_IsPlayer(other) && (other.aivar[AIV_PARTYMEMBER] == TRUE) && (other.guild <= GIL_SEPERATOR_HUM))
+				else if(!Npc_IsPlayer(other) && (other.aivar[AIV_PARTYMEMBER] == TRUE) && (other.guild <= GIL_SEPERATOR_HUM) && (CZ_Settings_Diff_EnableFullCompanionXP == FALSE))
 				{
 					permvaluexp = permvaluexp / 2;
 				};

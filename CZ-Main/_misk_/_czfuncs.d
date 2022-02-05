@@ -7,6 +7,7 @@ v1.02:
 upraven systém změn obtížnosti:
 - odstraněny funkce CZ_Settings_Diff_Save, CZ_Settings_Diff_Load, CZ_Settings_Diff_Update
 - CZ_Settings_Diff_Init - (4x) odstraněno volání funkce, nastavování proměnných a zápisy do Gothic.ini
+- CZ_Settings_Diff_EnableFullCompanionXP - přidání možnosti zapnout/vypnout plný zisk zkušeností z protivníků poražených společníky
 
 CZ_Settings_Other_Init:
 - deklarace nových .ini nastavení - DialogueNumKeysControl, DialogueNumKeysShow, ShowSkillChecks
@@ -60,6 +61,7 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_EnableSleepCap = TRUE;
 		CZ_Settings_Diff_EnableTraps = TRUE;
+		CZ_Settings_Diff_EnableFullCompanionXP = FALSE;
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		
@@ -87,6 +89,7 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_EnableSleepCap = TRUE;
 		CZ_Settings_Diff_EnableTraps = TRUE;
+		CZ_Settings_Diff_EnableFullCompanionXP = FALSE;
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		
@@ -114,6 +117,7 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_EnableSleepCap = FALSE;
 		CZ_Settings_Diff_EnableTraps = TRUE;
+		CZ_Settings_Diff_EnableFullCompanionXP = TRUE;
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		
@@ -141,6 +145,7 @@ func void CZ_Settings_Diff_Init()
 		
 		CZ_Settings_Diff_EnableSleepCap = FALSE;
 		CZ_Settings_Diff_EnableTraps = FALSE;
+		CZ_Settings_Diff_EnableFullCompanionXP = TRUE;
 		
 		CZ_Settings_Diff_Changed = FALSE;
 		

@@ -7,6 +7,7 @@ v1.02:
 nový soubor
 CZ_VERSION, CZ_VERFLAG - deklarace nových konstant a proměnných (kvůli identifikaci verze hry)
 var int CZ_GDRPC_Timer - deklarace nové proměnné (kvůli snížení frekvence volání GDRPC API)
+var int CZ_Settings_Diff_EnableFullCompanionXP - deklarace nové proměnné (kvůli přidání nového nastavení)
 
 
 v1.01:		(přesunuto ze souboru "(...)\_misk_\T_MAX_HP.d")
@@ -119,6 +120,7 @@ var int CZ_Settings_Diff_EnableFatigue;
 
 var int CZ_Settings_Diff_EnableSleepCap;
 var int CZ_Settings_Diff_EnableTraps;
+var int CZ_Settings_Diff_EnableFullCompanionXP;
 
 var int CZ_Settings_Diff_Changed;
 
