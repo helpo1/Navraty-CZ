@@ -1297,6 +1297,7 @@ v1.01:
 
 v1.02:
 
+(2x) systém kupování alkoholu přepracován pomocí spinnerů
 CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 
@@ -1774,7 +1775,9 @@ func int B_CheckRuneSkill - upraveny výpisy
 
 v1.02:
 
-(65x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+(66x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+(36x) systém výroby přepracován pomocí spinnerů
+(2x) PC_Poison_Start_Poison, PC_Poison_Start_Poison_v2 - výroba jedu rozdělena do dvou možností
 
 
 v1.00:
@@ -1803,6 +1806,7 @@ func void PC_PrayShrine_BlessSword_Info - upraveny výpisy
 v1.02:
 
 (57x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+(19x) systém výroby přepracován pomocí spinnerů
 
 
 v1.00:
@@ -1816,6 +1820,11 @@ func void PC_ItMw_ChiefRapier_06_Info - upraveny materiály potřebné pro výro
 
 
 /*   (...)\Story\Dialog_Mobsis\TRINKFASS.d   */
+
+
+v1.02:
+
+(2x) systém výroby přepracován pomocí spinnerů
 
 
 v1.00:
@@ -1984,6 +1993,18 @@ v1.01:
 ----------------------------------------------------------------------------------------------------
 
 
+/*   (...)\_misk_\herd_s1.d   */
+
+
+v1.02:
+
+(21x) systém výroby přepracován pomocí spinnerů
+func void pc_herd_fleischbraten_info - opraven výstupní produkt (ItMi_Pan -> ItFoMutton)
+
+
+----------------------------------------------------------------------------------------------------
+
+
 /*   (...)\_misk_\InPlayGame.d   */
 
 
@@ -2000,6 +2021,7 @@ v1.01:
 
 v1.02:
 
+(36x) systém výroby přepracován pomocí spinnerů
 (7x) B_MAKEBOWS_BowCorpse, B_MAKEBOWS_BowMake, B_SKINRAPE_BowRope - opakovaná funkcionalita vyjmuta do oddělených funkcí
 
 
@@ -2021,6 +2043,11 @@ func void PC_IRONHACKEN_addon_hour_info - determinovanost těžby
 
 
 /*   (...)\_misk_\pc_sleep_delt.d   */
+
+
+v1.02:
+
+systém spánku přepracován pomocí spinnerů
 
 
 v1.01:

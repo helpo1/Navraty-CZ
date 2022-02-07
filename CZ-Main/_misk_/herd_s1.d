@@ -1,3 +1,16 @@
+/* -------------------- CZ CHANGELOG -------------------- */
+
+/*
+
+v1.02:
+
+(21x) systém výroby přepracován pomocí spinnerů
+func void pc_herd_fleischbraten_info - opraven výstupní produkt (ItMi_Pan -> ItFoMutton)
+
+*/
+
+
+
 var int HerdFish;
 var int HerdMeat;
 var int HerdBug;
@@ -98,20 +111,122 @@ instance PC_Herd_Meat(C_Info)
 	condition = PC_Herd_Meat_Condition;
 	information = PC_Herd_Meat_Info;
 	permanent = TRUE;
-	description = "Opéct maso...";
+	description = "s@SPIN_Herd_Meat Opéct maso";
 };
 
 func int PC_Herd_Meat_Condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdCake == FALSE) && (HerdFish == FALSE) && (HerdMeat == FALSE) && (HerdBug == FALSE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFoMuttonRaw) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Herd_Meat");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Herd_Meat
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Herd_Meat ");
+		newDescription = ConcatStrings(newDescription, "Opéct maso");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_Herd_Meat.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_Herd_Meat_Info()
 {
-	HerdMeat = TRUE;
+	AI_Wait(hero,1);
+	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItFoMutton,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	AI_PrintClr("Hotovo!",83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_Herd_Fish(C_Info)
@@ -120,20 +235,122 @@ instance PC_Herd_Fish(C_Info)
 	condition = PC_Herd_Fish_Condition;
 	information = PC_Herd_Fish_Info;
 	permanent = TRUE;
-	description = "Opéct ryby...";
+	description = "s@SPIN_Herd_Fish Opéct ryby";
 };
 
 func int PC_Herd_Fish_Condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdCake == FALSE) && (HerdFish == FALSE) && (HerdMeat == FALSE) && (HerdBug == FALSE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Fish) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Herd_Fish");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Herd_Fish
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Herd_Fish ");
+		newDescription = ConcatStrings(newDescription, "Opéct ryby");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_Herd_Fish.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_Herd_Fish_Info()
 {
-	HerdFish = TRUE;
+	AI_Wait(hero,1);
+	Npc_RemoveInvItems(hero,ItFo_Fish,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,itfo_fish_gebraten,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	AI_PrintClr("Hotovo!",83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_Herd_Bug(C_Info)
@@ -142,20 +359,122 @@ instance PC_Herd_Bug(C_Info)
 	condition = PC_Herd_Bug_Condition;
 	information = PC_Herd_Bug_Info;
 	permanent = TRUE;
-	description = "Opéct maso ze žravé štěnice...";
+	description = "s@SPIN_Herd_Bug Opéct maso ze žravé štěnice";
 };
 
 func int PC_Herd_Bug_Condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdCake == FALSE) && (HerdFish == FALSE) && (HerdMeat == FALSE) && (HerdBug == FALSE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_Meatbugflesh) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Herd_Bug");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Herd_Bug
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Herd_Bug ");
+		newDescription = ConcatStrings(newDescription, "Opéct maso ze žravé štěnice");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_Herd_Bug.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_Herd_Bug_Info()
 {
-	HerdBug = TRUE;
+	AI_Wait(hero,1);
+	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,itat_meatbugflesh_gebraten,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	AI_PrintClr("Hotovo!",83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_Herd_Cake(C_Info)
@@ -178,75 +497,6 @@ func int PC_Herd_Cake_Condition()
 func void PC_Herd_Cake_Info()
 {
 	HerdCake = TRUE;
-};
-
-instance PC_Herd_Meat_BACK(C_Info)
-{
-	npc = PC_Hero;
-	nr = 99;
-	condition = PC_Herd_Meat_BACK_Condition;
-	information = PC_Herd_Meat_BACK_Info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_Herd_Meat_BACK_Condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdCake == FALSE) && (HerdFish == FALSE) && (HerdMeat == TRUE) && (HerdBug == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_Herd_Meat_BACK_Info()
-{
-	HerdMeat = FALSE;
-};
-
-instance PC_Herd_Fish_BACK(C_Info)
-{
-	npc = PC_Hero;
-	nr = 99;
-	condition = PC_Herd_Fish_BACK_Condition;
-	information = PC_Herd_Fish_BACK_Info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_Herd_Fish_BACK_Condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdCake == FALSE) && (HerdFish == TRUE) && (HerdMeat == FALSE) && (HerdBug == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_Herd_Fish_BACK_Info()
-{
-	HerdFish = FALSE;
-};
-
-instance PC_Herd_Bug_BACK(C_Info)
-{
-	npc = PC_Hero;
-	nr = 99;
-	condition = PC_Herd_Bug_BACK_Condition;
-	information = PC_Herd_Bug_BACK_Info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_Herd_Bug_BACK_Condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdCake == FALSE) && (HerdFish == FALSE) && (HerdMeat == FALSE) && (HerdBug == TRUE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_Herd_Bug_BACK_Info()
-{
-	HerdBug = FALSE;
 };
 
 instance PC_Herd_Cake_BACK(C_Info)
@@ -280,39 +530,131 @@ instance PC_HERD_Cake_Apple(C_Info)
 	information = PC_HERD_Cake_Apple_info;
 	permanent = 1;
 	important = 0;
-	description = "... upéct jablečný koláč";
+	description = "s@SPIN_HERD_Cake_Apple ... upéct jablečný koláč";
 };
 
 func int PC_HERD_Cake_Apple_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (Npc_GetDistToWP(hero,"NW_BIGFARM_KITCHEN_04") <= 500) && (HerdCake == TRUE) && (Thekla_Cake_01 == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Apple) / 25;
+		max = min(max, Npc_HasItems(other, ItFo_Bread) / 5);
+		max = min(max, Npc_HasItems(other, ItFo_Cheese) / 1);
+		max = min(max, Npc_HasItems(other, ItPl_Blueplant) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Water) / 1);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_HERD_Cake_Apple");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_HERD_Cake_Apple
+		newDescription = ConcatStrings(newDescription, "s@SPIN_HERD_Cake_Apple ");
+		newDescription = ConcatStrings(newDescription, "... upéct jablečný koláč");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_HERD_Cake_Apple.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_HERD_Cake_Apple_info()
 {
-	if((Npc_HasItems(hero,ItFo_Apple) >= 25) && (Npc_HasItems(hero,ItFo_Bread) >= 5) && (Npc_HasItems(hero,ItFo_Cheese) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1) && (Npc_HasItems(hero,ItFo_Water) >= 1))
-	{
-		AI_Wait(hero,1);
-		B_GivePlayerXP(10);
-		Npc_RemoveInvItems(hero,ItFo_Apple,25);
-		Npc_RemoveInvItems(hero,ItFo_Bread,5);
-		Npc_RemoveInvItems(hero,ItFo_Cheese,1);
-		Npc_RemoveInvItems(hero,ItPl_Blueplant,1);
-		Npc_RemoveInvItems(hero,ItFo_Water,1);
-		CreateInvItems(hero,ItFo_Cake_Apple,1);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Hotovo!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	AI_Wait(hero,1);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Apple,25*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Bread,5*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Cheese,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItPl_Blueplant,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Water,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItFo_Cake_Apple,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	AI_PrintClr("Hotovo!",83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_HERD_Cake_Meat(C_Info)
@@ -323,39 +665,131 @@ instance PC_HERD_Cake_Meat(C_Info)
 	information = PC_HERD_Cake_Meat_info;
 	permanent = 1;
 	important = 0;
-	description = "... upéct masový koláč";
+	description = "s@SPIN_HERD_Cake_Meat ... upéct masový koláč";
 };
 
 func int PC_HERD_Cake_Meat_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (Npc_GetDistToWP(hero,"NW_BIGFARM_KITCHEN_04") <= 500) && (HerdCake == TRUE) && (Thekla_Cake_02 == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFoMuttonRaw) / 25;
+		max = min(max, Npc_HasItems(other, ItFo_Bread) / 5);
+		max = min(max, Npc_HasItems(other, ItFo_Milk) / 2);
+		max = min(max, Npc_HasItems(other, ItFo_Cheese) / 2);
+		max = min(max, Npc_HasItems(other, ItFo_Booze) / 1);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_HERD_Cake_Meat");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_HERD_Cake_Meat
+		newDescription = ConcatStrings(newDescription, "s@SPIN_HERD_Cake_Meat ");
+		newDescription = ConcatStrings(newDescription, "... upéct masový koláč");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_HERD_Cake_Meat.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_HERD_Cake_Meat_info()
 {
-	if((Npc_HasItems(hero,ItFoMuttonRaw) >= 25) && (Npc_HasItems(hero,ItFo_Bread) >= 5) && (Npc_HasItems(hero,ItFo_Cheese) >= 2) && (Npc_HasItems(hero,ItFo_Milk) >= 2) && (Npc_HasItems(hero,ItFo_Booze) >= 1))
-	{
-		AI_Wait(hero,1);
-		B_GivePlayerXP(20);
-		Npc_RemoveInvItems(hero,ItFoMuttonRaw,25);
-		Npc_RemoveInvItems(hero,ItFo_Bread,5);
-		Npc_RemoveInvItems(hero,ItFo_Milk,2);
-		Npc_RemoveInvItems(hero,ItFo_Cheese,2);
-		Npc_RemoveInvItems(hero,ItFo_Booze,1);
-		CreateInvItems(hero,ItFo_Cake_Meat,1);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Hotovo!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	AI_Wait(hero,1);
+	B_GivePlayerXP(20*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFoMuttonRaw,25*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Bread,5*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Milk,2*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Cheese,2*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Booze,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItFo_Cake_Meat,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	AI_PrintClr("Hotovo!",83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_HERD_Cake_Mushroom(C_Info)
@@ -366,38 +800,129 @@ instance PC_HERD_Cake_Mushroom(C_Info)
 	information = PC_HERD_Cake_Mushroom_info;
 	permanent = 1;
 	important = 0;
-	description = "... upéct houbový koláč";
+	description = "s@SPIN_HERD_Cake_Mushroom ... upéct houbový koláč";
 };
 
 func int PC_HERD_Cake_Mushroom_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (Npc_GetDistToWP(hero,"NW_BIGFARM_KITCHEN_04") <= 500) && (HerdCake == TRUE) && (Thekla_Cake_03 == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Mushroom_02) / 25;
+		max = min(max, Npc_HasItems(other, ItFo_Bread) / 5);
+		max = min(max, Npc_HasItems(other, ItFo_Cheese) / 3);
+		max = min(max, Npc_HasItems(other, ItFo_Wine) / 1);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_HERD_Cake_Mushroom");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_HERD_Cake_Mushroom
+		newDescription = ConcatStrings(newDescription, "s@SPIN_HERD_Cake_Mushroom ");
+		newDescription = ConcatStrings(newDescription, "... upéct houbový koláč");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_HERD_Cake_Mushroom.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_HERD_Cake_Mushroom_info()
 {
-	if((Npc_HasItems(hero,ItPl_Mushroom_02) >= 25) && (Npc_HasItems(hero,ItFo_Bread) >= 5) && (Npc_HasItems(hero,ItFo_Cheese) >= 3) && (Npc_HasItems(hero,ItFo_Wine) >= 1))
-	{
-		AI_Wait(hero,1);
-		B_GivePlayerXP(30);
-		Npc_RemoveInvItems(hero,ItPl_Mushroom_02,25);
-		Npc_RemoveInvItems(hero,ItFo_Bread,5);
-		Npc_RemoveInvItems(hero,ItFo_Cheese,3);
-		Npc_RemoveInvItems(hero,ItFo_Wine,1);
-		CreateInvItems(hero,ItFo_Cake_Mushroom,1);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Hotovo!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	AI_Wait(hero,1);
+	B_GivePlayerXP(30*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItPl_Mushroom_02,25*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Bread,5*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Cheese,3*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Wine,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItFo_Cake_Mushroom,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	AI_PrintClr("Hotovo!",83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_HERD_Cake_Fish(C_Info)
@@ -408,38 +933,129 @@ instance PC_HERD_Cake_Fish(C_Info)
 	information = PC_HERD_Cake_Fish_info;
 	permanent = 1;
 	important = 0;
-	description = "... upéct rybí koláč";
+	description = "s@SPIN_HERD_Cake_Fish ... upéct rybí koláč";
 };
 
 func int PC_HERD_Cake_Fish_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (Npc_GetDistToWP(hero,"NW_BIGFARM_KITCHEN_04") <= 500) && (HerdCake == TRUE) && (Thekla_Cake_04 == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Fish) / 20;
+		max = min(max, Npc_HasItems(other, ItFo_Bread) / 5);
+		max = min(max, Npc_HasItems(other, ItPl_Blueplant) / 2);
+		max = min(max, Npc_HasItems(other, ItFo_Booze) / 1);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_HERD_Cake_Fish");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_HERD_Cake_Fish
+		newDescription = ConcatStrings(newDescription, "s@SPIN_HERD_Cake_Fish ");
+		newDescription = ConcatStrings(newDescription, "... upéct rybí koláč");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_HERD_Cake_Fish.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_HERD_Cake_Fish_info()
 {
-	if((Npc_HasItems(hero,ItFo_Fish) >= 20) && (Npc_HasItems(hero,ItFo_Bread) >= 5) && (Npc_HasItems(hero,ItPl_Blueplant) >= 2) && (Npc_HasItems(hero,ItFo_Booze) >= 1))
-	{
-		AI_Wait(hero,1);
-		B_GivePlayerXP(40);
-		Npc_RemoveInvItems(hero,ItFo_Fish,20);
-		Npc_RemoveInvItems(hero,ItFo_Bread,5);
-		Npc_RemoveInvItems(hero,ItPl_Blueplant,2);
-		Npc_RemoveInvItems(hero,ItFo_Booze,1);
-		CreateInvItems(hero,ItFo_Cake_Fish,1);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Hotovo!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	AI_Wait(hero,1);
+	B_GivePlayerXP(40*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Fish,20*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Bread,5*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItPl_Blueplant,2*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Booze,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItFo_Cake_Fish,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	AI_PrintClr("Hotovo!",83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_HERD_Cake_Honey(C_Info)
@@ -450,315 +1066,133 @@ instance PC_HERD_Cake_Honey(C_Info)
 	information = PC_HERD_Cake_Honey_info;
 	permanent = 1;
 	important = 0;
-	description = "... upéct medový koláč";
+	description = "s@SPIN_HERD_Cake_Honey ... upéct medový koláč";
 };
 
 func int PC_HERD_Cake_Honey_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (Npc_GetDistToWP(hero,"NW_BIGFARM_KITCHEN_04") <= 500) && (HerdCake == TRUE) && (Thekla_Cake_05 == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Honey) / 5;
+		max = min(max, Npc_HasItems(other, ItFo_Bread) / 5);
+		max = min(max, Npc_HasItems(other, ItFo_Cheese) / 3);
+		max = min(max, Npc_HasItems(other, ItFo_Milk) / 1);
+		max = min(max, Npc_HasItems(other, ITFO_WINEBERRYS) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Wine) / 1);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_HERD_Cake_Honey");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_HERD_Cake_Honey
+		newDescription = ConcatStrings(newDescription, "s@SPIN_HERD_Cake_Honey ");
+		newDescription = ConcatStrings(newDescription, "... upéct medový koláč");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_HERD_Cake_Honey.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_HERD_Cake_Honey_info()
 {
-	if((Npc_HasItems(hero,ItFo_Honey) >= 5) && (Npc_HasItems(hero,ItFo_Bread) >= 5) && (Npc_HasItems(hero,ItFo_Cheese) >= 3) && (Npc_HasItems(hero,ItFo_Milk) >= 1) && (Npc_HasItems(hero,ITFO_WINEBERRYS) >= 1) && (Npc_HasItems(hero,ItFo_Wine) >= 1))
-	{
-		AI_Wait(hero,1);
-		B_GivePlayerXP(50);
-		Npc_RemoveInvItems(hero,ItFo_Honey,5);
-		Npc_RemoveInvItems(hero,ItFo_Bread,5);
-		Npc_RemoveInvItems(hero,ItFo_Cheese,3);
-		Npc_RemoveInvItems(hero,ItFo_Milk,1);
-		Npc_RemoveInvItems(hero,ITFO_WINEBERRYS,1);
-		Npc_RemoveInvItems(hero,ItFo_Wine,1);
-		CreateInvItems(hero,ItFo_Cake_Honey,1);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Hotovo!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_HERD_FISCHBRATEN(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herd_fischbraten_condition;
-	information = pc_herd_fischbraten_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct rybu x1";
-};
-
-func int pc_herd_fischbraten_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdFish == TRUE) && (Npc_HasItems(hero,ItFo_Fish) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herd_fischbraten_info()
-{
 	AI_Wait(hero,1);
-	Npc_RemoveInvItems(hero,ItFo_Fish,1);
-	CreateInvItems(hero,itfo_fish_gebraten,1);
+	B_GivePlayerXP(50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Honey,5*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Bread,5*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Cheese,3*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Milk,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ITFO_WINEBERRYS,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Wine,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItFo_Cake_Honey,1*InfoManagerSpinnerValue);
 	RankPoints = RankPoints + 1;
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_HERD_FISCHBRATEN_10X(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herd_fischbraten10x_condition;
-	information = pc_herd_fischbraten10x_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct rybu x10";
-};
-
-func int pc_herd_fischbraten10x_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdFish == TRUE) && (Npc_HasItems(hero,ItFo_Fish) >= 10))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herd_fischbraten10x_info()
-{
-	AI_Wait(hero,1);
-	Npc_RemoveInvItems(hero,ItFo_Fish,10);
-	CreateInvItems(hero,itfo_fish_gebraten,10);
-	RankPoints = RankPoints + 1;
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_HERD_FISCHBRATEN_ALL(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = PC_HERD_FISCHBRATEN_ALL_condition;
-	information = PC_HERD_FISCHBRATEN_ALL_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct všechny ryby";
-};
-
-func int PC_HERD_FISCHBRATEN_ALL_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdFish == TRUE) && (Npc_HasItems(hero,ItFo_Fish) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_HERD_FISCHBRATEN_ALL_info()
-{
-	var int allfish;
-
-	AI_Wait(hero,1);
-	allfish = Npc_HasItems(hero,ItFo_Fish);
-	Npc_RemoveInvItems(hero,ItFo_Fish,allfish);
-	CreateInvItems(hero,itfo_fish_gebraten,allfish);
-	RankPoints = RankPoints + 1;
-	AI_PrintClr("Hotovo!",83,152,48);
-};
-
-
-instance PC_HERD_FLEISCHBRATEN(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herd_fleischbraten_condition;
-	information = pc_herd_fleischbraten_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct maso x1";
-};
-
-func int pc_herd_fleischbraten_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdMeat == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herd_fleischbraten_info()
-{
-	AI_Wait(hero,1);
-	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1);
-	CreateInvItems(hero,ItMi_Pan,1);
-	RankPoints = RankPoints + 1;
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-
-instance PC_HERD_FLEISCHBRATEN_10X(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herd_fleischbraten10x_condition;
-	information = pc_herd_fleischbraten10x_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct maso x10";
-};
-
-func int pc_herd_fleischbraten10x_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdMeat == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 10))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herd_fleischbraten10x_info()
-{
-	AI_Wait(hero,1);
-	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItFoMuttonRaw,10);
-	CreateInvItems(hero,ItFoMutton,10);
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_HERD_FLEISCHBRATEN_ALL(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = PC_HERD_FLEISCHBRATEN_ALL_condition;
-	information = PC_HERD_FLEISCHBRATEN_ALL_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct všechno maso";
-};
-
-func int PC_HERD_FLEISCHBRATEN_ALL_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdMeat == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_HERD_FLEISCHBRATEN_ALL_info()
-{
-	var int allmeat;
-
-	AI_Wait(hero,1);
-	allmeat = Npc_HasItems(hero,ItFoMuttonRaw);
-	Npc_RemoveInvItems(hero,ItFoMuttonRaw,allmeat);
-	CreateInvItems(hero,ItFoMutton,allmeat);
-	RankPoints = RankPoints + 1;
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-
-instance PC_HERD_WANZENFLEISCHBRATEN(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herd_wanzenfleischbraten_condition;
-	information = pc_herd_wanzenfleischbraten_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct maso ze žravé štěnice x1";
-};
-
-
-func int pc_herd_wanzenfleischbraten_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herd_wanzenfleischbraten_info()
-{
-	AI_Wait(hero,1);
-	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,1);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,1);
-	RankPoints = RankPoints + 1;
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-
-instance PC_HERD_WANZENFLEISCHBRATEN_10X(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herd_wanzenfleischbraten10x_condition;
-	information = pc_herd_wanzenfleischbraten10x_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct maso ze žravé štěnice x10";
-};
-
-
-func int pc_herd_wanzenfleischbraten10x_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 10))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herd_wanzenfleischbraten10x_info()
-{
-	AI_Wait(hero,1);
-	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,10);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,10);
-	RankPoints = RankPoints + 1;
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_HERD_WANZENFLEISCHBRATEN_ALL(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = PC_HERD_WANZENFLEISCHBRATEN_ALL_condition;
-	information = PC_HERD_WANZENFLEISCHBRATEN_ALL_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct všechno maso ze žravé štěnice";
-};
-
-func int PC_HERD_WANZENFLEISCHBRATEN_ALL_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == FALSE) && (HerdBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_HERD_WANZENFLEISCHBRATEN_ALL_info()
-{
-	var int allbug;
-
-	AI_Wait(hero,1);
-	allbug = Npc_HasItems(hero,ItAt_Meatbugflesh);
-	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,allbug);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,allbug);
-	RankPoints = RankPoints + 1;
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 //----------------------------------------Kompoty---------------------------------------
@@ -798,10 +1232,187 @@ instance PC_KESSEL_PEACH(C_Info)
 
 func int PC_KESSEL_PEACH_condition()
 {
+	
+	// Original dialogue condition
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_KESSEL)
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Planeberry) / 20;
+		max = min(max, Npc_HasItems(other, ItPl_Health_Herb_01) / 1);
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_KESSEL_PEACH_compote_01");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_KESSEL_PEACH_compote_01
+		newDescription = ConcatStrings(newDescription, "s@SPIN_KESSEL_PEACH_compote_01 ");
+		newDescription = ConcatStrings(newDescription, "... uvařit kompot z lučních bobulí (20x luční bobule, 1x léčivá rostlina)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_KESSEL_PEACH_compote_01");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Forestberry) / 30;
+		max = min(max, Npc_HasItems(other, ItPl_Health_Herb_02) / 1);
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_KESSEL_PEACH_compote_00");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_KESSEL_PEACH_compote_00
+		newDescription = ConcatStrings(newDescription, "s@SPIN_KESSEL_PEACH_compote_00 ");
+		newDescription = ConcatStrings(newDescription, "... uvařit kompot z lesních bobulí (30x lesní bobule, 1x léčivá bylina)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_KESSEL_PEACH_compote_00");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_Kessel_Peach()
@@ -809,21 +1420,13 @@ func void B_Kessel_Peach()
 	Info_ClearChoices(PC_KESSEL_PEACH);
 	Info_AddChoice(PC_KESSEL_PEACH,Dialog_Back,PC_KESSEL_PEACH_back);
 
-	if((Rezept_Compote_01 == TRUE) && (Npc_HasItems(hero,ItPl_Planeberry) >= 100) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 5))
-	{
-		Info_AddChoice(PC_KESSEL_PEACH,"... uvařit kompot z lučních bobulí x5 (100x luční bobule, 5x léčivá rostlina)",PC_KESSEL_PEACH_compote_01_X5);
-	};
 	if((Rezept_Compote_01 == TRUE) && (Npc_HasItems(hero,ItPl_Planeberry) >= 20) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_PEACH,"... uvařit kompot z lučních bobulí x1 (20x luční bobule, 1x léčivá rostlina)",PC_KESSEL_PEACH_compote_01);
-	};
-	if((Rezept_Compote_02 == TRUE) && (Npc_HasItems(hero,ItPl_Forestberry) >= 150) && (Npc_HasItems(hero,ItPl_Health_Herb_02) >= 5))
-	{
-		Info_AddChoice(PC_KESSEL_PEACH,"... uvařit kompot z lesních bobulí x5 (150x lesní bobule, 5x léčivá bylina)",PC_KESSEL_PEACH_compote_00_X5);
+		Info_AddChoice(PC_KESSEL_PEACH,"s@SPIN_KESSEL_PEACH_compote_01 ... uvařit kompot z lučních bobulí (20x luční bobule, 1x léčivá rostlina)",PC_KESSEL_PEACH_compote_01);
 	};
 	if((Rezept_Compote_02 == TRUE) && (Npc_HasItems(hero,ItPl_Forestberry) >= 30) && (Npc_HasItems(hero,ItPl_Health_Herb_02) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_PEACH,"... uvařit kompot z lesních bobulí x1 (30x lesní bobule, 1x léčivá bylina)",PC_KESSEL_PEACH_compote_00);
+		Info_AddChoice(PC_KESSEL_PEACH,"s@SPIN_KESSEL_PEACH_compote_00 ... uvařit kompot z lesních bobulí (30x lesní bobule, 1x léčivá bylina)",PC_KESSEL_PEACH_compote_00);
 	};
 };
 
@@ -836,23 +1439,12 @@ func void PC_KESSEL_PEACH_compote_00()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Forestberry,30);
-	Npc_RemoveInvItems(hero,ItPl_Health_Herb_02,1);
-	CreateInvItems(hero,itfo_compote_00,1);
+	Npc_RemoveInvItems(hero,ItPl_Forestberry,30*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItPl_Health_Herb_02,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,itfo_compote_00,1*InfoManagerSpinnerValue);
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	B_Kessel_Peach();
-};
-
-func void PC_KESSEL_PEACH_compote_00_X5()
-{
-	AI_Wait(hero,1);
-	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Forestberry,150);
-	Npc_RemoveInvItems(hero,ItPl_Health_Herb_02,5);
-	CreateInvItems(hero,itfo_compote_00,5);
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_Kessel_Peach();
 };
 
@@ -860,23 +1452,12 @@ func void PC_KESSEL_PEACH_compote_01()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Planeberry,20);
-	Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,1);
-	CreateInvItems(hero,itfo_compote_01,1);
+	Npc_RemoveInvItems(hero,ItPl_Planeberry,20*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,itfo_compote_01,1*InfoManagerSpinnerValue);
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	B_Kessel_Peach();
-};
-
-func void PC_KESSEL_PEACH_compote_01_X5()
-{
-	AI_Wait(hero,1);
-	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Planeberry,100);
-	Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,5);
-	CreateInvItems(hero,itfo_compote_01,5);
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_Kessel_Peach();
 };
 
@@ -898,10 +1479,422 @@ instance PC_KESSEL_FISCHSUPPE(C_Info)
 
 func int pc_kessel_fischsuppe_condition()
 {
+	
+	// Original dialogue condition
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_KESSEL)
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Beet) / 1;
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_kessel_fischsuppe_Beet");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_kessel_fischsuppe_Beet
+		newDescription = ConcatStrings(newDescription, "s@SPIN_kessel_fischsuppe_Beet ");
+		newDescription = ConcatStrings(newDescription, "... uvařit tuřínovou polévku (1x tuřín)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_kessel_fischsuppe_Beet");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Fish) / 1;
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_kessel_fischsuppe_fish");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_kessel_fischsuppe_fish
+		newDescription = ConcatStrings(newDescription, "s@SPIN_kessel_fischsuppe_fish ");
+		newDescription = ConcatStrings(newDescription, "... uvařit rybí polévku (1x ryba)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_kessel_fischsuppe_fish");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, itfoschildkroeteraw) / 1;
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_kessel_shildkroetesoup");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_kessel_shildkroetesoup
+		newDescription = ConcatStrings(newDescription, "s@SPIN_kessel_shildkroetesoup ");
+		newDescription = ConcatStrings(newDescription, "... uvařit želví polévku (1x želví maso)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_kessel_shildkroetesoup");
+		
+//-- Spinner Choice #4
+		
+		var int value4;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Mushroom_02) / 1;
+		
+		// Check boundaries
+		if(value4 < min) { value4 = min; };
+		if(value4 > max) { value4 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_kessel_pilzsuppe");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value4;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value4 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_kessel_pilzsuppe
+		newDescription = ConcatStrings(newDescription, "s@SPIN_kessel_pilzsuppe ");
+		newDescription = ConcatStrings(newDescription, "... uvařit houbovou polévku (1x otrokův chléb)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value4));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_kessel_pilzsuppe");
+		
+//-- Spinner Choice #5
+		
+		var int value5;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFoMuttonRaw) / 1;
+		
+		// Check boundaries
+		if(value5 < min) { value5 = min; };
+		if(value5 > max) { value5 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_kessel_meet");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value5;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value5 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_kessel_meet
+		newDescription = ConcatStrings(newDescription, "s@SPIN_kessel_meet ");
+		newDescription = ConcatStrings(newDescription, "... uvařit masovou polévku (1x syrové maso)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value5));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_kessel_meet");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_Kessel_Supp()
@@ -912,43 +1905,23 @@ func void B_Kessel_Supp()
 
 	if((Edda_Soup_00 == TRUE) && (Npc_HasItems(hero,ItPl_Beet) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit tuřínovou polévku (všechny tuříny)",pc_kessel_fischsuppe_Beet_all);
-	};
-	if((Edda_Soup_00 == TRUE) && (Npc_HasItems(hero,ItPl_Beet) >= 1))
-	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit tuřínovou polévku x1 (1x tuřín)",pc_kessel_fischsuppe_Beet);
+		Info_AddChoice(pc_kessel_fischsuppe,"s@SPIN_kessel_fischsuppe_Beet ... uvařit tuřínovou polévku (1x tuřín)",pc_kessel_fischsuppe_Beet);
 	};
 	if((Edda_Soup_01 == TRUE) && (Npc_HasItems(hero,ItFo_Fish) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit rybí polévku (všechny ryby)",pc_kessel_fischsuppe_fish_all);
-	};
-	if((Edda_Soup_01 == TRUE) && (Npc_HasItems(hero,ItFo_Fish) >= 1))
-	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit rybí polévku x1 (1x ryba)",pc_kessel_fischsuppe_fish);
+		Info_AddChoice(pc_kessel_fischsuppe,"s@SPIN_kessel_fischsuppe_fish ... uvařit rybí polévku (1x ryba)",pc_kessel_fischsuppe_fish);
 	};
 	if((Edda_Soup_02 == TRUE) && (Npc_HasItems(hero,itfoschildkroeteraw) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit želví polévku (všechno želví maso)",pc_kessel_shildkroetesoup_all);
-	};
-	if((Edda_Soup_02 == TRUE) && (Npc_HasItems(hero,itfoschildkroeteraw) >= 1))
-	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit želví polévku x1 (1x želví maso)",pc_kessel_shildkroetesoup);
+		Info_AddChoice(pc_kessel_fischsuppe,"s@SPIN_kessel_shildkroetesoup ... uvařit želví polévku (1x želví maso)",pc_kessel_shildkroetesoup);
 	};
 	if((Edda_Soup_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit houbovou polévku (všechny otrokovy chleby)",pc_kessel_pilzsuppe_all);
-	};
-	if((Edda_Soup_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 1))
-	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit houbovou polévku x1 (1x otrokův chléb)",pc_kessel_pilzsuppe);
+		Info_AddChoice(pc_kessel_fischsuppe,"s@SPIN_kessel_pilzsuppe ... uvařit houbovou polévku (1x otrokův chléb)",pc_kessel_pilzsuppe);
 	};
 	if((Edda_Soup_04 == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 1))
 	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit masovou polévku (všechno syrové maso)",pc_kessel_meet_all);
-	};
-	if((Edda_Soup_04 == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 1))
-	{
-		Info_AddChoice(pc_kessel_fischsuppe,"... uvařit masovou polévku x1 (1x syrové maso)",pc_kessel_meet);
+		Info_AddChoice(pc_kessel_fischsuppe,"s@SPIN_kessel_meet ... uvařit masovou polévku (1x syrové maso)",pc_kessel_meet);
 	};
 };
 
@@ -961,9 +1934,10 @@ func void pc_kessel_fischsuppe_Beet()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Beet,1);
-	CreateInvItems(hero,ItFo_BeetSoup,1);
+	Npc_RemoveInvItems(hero,ItPl_Beet,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItFo_BeetSoup,1*InfoManagerSpinnerValue);
 	AI_PrintClr("Hotovo!",83,152,48);
+	InfoManagerSpinnerValue = 1;
 	B_Kessel_Supp();
 };
 
@@ -971,10 +1945,11 @@ func void pc_kessel_fischsuppe_fish()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItFo_Fish,1);
-	CreateInvItems(hero,ItFo_FishSoup,1);
+	Npc_RemoveInvItems(hero,ItFo_Fish,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItFo_FishSoup,1*InfoManagerSpinnerValue);
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_Kessel_Supp();
 };
 
@@ -982,10 +1957,11 @@ func void pc_kessel_meet()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1);
-	CreateInvItems(hero,ItFo_MeetSoup,1);
+	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItFo_MeetSoup,1*InfoManagerSpinnerValue);
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_Kessel_Supp();
 };
 
@@ -993,10 +1969,11 @@ func void pc_kessel_shildkroetesoup()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,itfoschildkroeteraw,1);
-	CreateInvItems(hero,itfo_schildkroetesoup,1);
+	Npc_RemoveInvItems(hero,itfoschildkroeteraw,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,itfo_schildkroetesoup,1*InfoManagerSpinnerValue);
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_Kessel_Supp();
 };
 
@@ -1004,168 +1981,11 @@ func void pc_kessel_pilzsuppe()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Mushroom_02,1);
-	CreateInvItems(hero,itfo_pilzsuppe,1);
+	Npc_RemoveInvItems(hero,ItPl_Mushroom_02,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,itfo_pilzsuppe,1*InfoManagerSpinnerValue);
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	B_Kessel_Supp();
-};
-
-func void pc_kessel_meet_all()
-{
-	var int CountMeet;
-	var string concatText;
-
-	AI_Wait(hero,1);
-	CountMeet = Npc_HasItems(self,ItFoMuttonRaw);
-	Npc_RemoveInvItems(hero,ItFoMuttonRaw,Npc_HasItems(self,ItFoMuttonRaw));
-	CreateInvItems(hero,ItFo_MeetSoup,CountMeet);
-	RankPoints = RankPoints + 1;
-
-	if(CountMeet == 1)
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountMeet));
-		concatText = ConcatStrings(concatText,"x Masová polévka!");
-	}
-	else if((CountMeet > 1) && (CountMeet < 5))
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountMeet));
-		concatText = ConcatStrings(concatText,"x Masová polévka!");
-	}
-	else if(CountMeet >= 5)
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountMeet));
-		concatText = ConcatStrings(concatText,"x Masová polévka!");
-	};
-
-	AI_PrintClr(concatText,83,152,48);
-	B_Kessel_Supp();
-};
-
-func void pc_kessel_fischsuppe_Beet_all()
-{
-	var int CountBeet;
-	var string concatText;
-
-	AI_Wait(hero,1);
-	CountBeet = Npc_HasItems(self,ItPl_Beet);
-	Npc_RemoveInvItems(hero,ItPl_Beet,Npc_HasItems(self,ItPl_Beet));
-	CreateInvItems(hero,ItFo_BeetSoup,CountBeet);
-	RankPoints = RankPoints + 1;
-
-	if(CountBeet == 1)
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountBeet));
-		concatText = ConcatStrings(concatText,"x Tuřínová polévka!");
-	}
-	else if((CountBeet > 1) && (CountBeet < 5))
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountBeet));
-		concatText = ConcatStrings(concatText,"x Tuřínová polévka!");
-	}
-	else if(CountBeet >= 5)
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountBeet));
-		concatText = ConcatStrings(concatText,"x Tuřínová polévka!");
-	};
-
-	AI_PrintClr(concatText,83,152,48);
-	B_Kessel_Supp();
-};
-
-func void pc_kessel_fischsuppe_fish_all()
-{
-	var int CountFish;
-	var string concatText;
-
-	AI_Wait(hero,1);
-	CountFish = Npc_HasItems(self,ItFo_Fish);
-	Npc_RemoveInvItems(hero,ItFo_Fish,Npc_HasItems(self,ItFo_Fish));
-	CreateInvItems(hero,ItFo_FishSoup,CountFish);
-	RankPoints = RankPoints + 1;
-
-	if(CountFish == 1)
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountFish));
-		concatText = ConcatStrings(concatText,"x Rybí polévka!");
-	}
-	else if((CountFish > 1) && (CountFish < 5))
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountFish));
-		concatText = ConcatStrings(concatText,"x Rybí polévka!");
-	}
-	else if(CountFish >= 5)
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountFish));
-		concatText = ConcatStrings(concatText,"x Rybí polévka!");
-	};
-
-	AI_PrintClr(concatText,83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-	B_Kessel_Supp();
-};
-
-func void pc_kessel_shildkroetesoup_all()
-{
-	var int CountSchildMeat;
-	var string concatText;
-
-	AI_Wait(hero,1);
-	CountSchildMeat = Npc_HasItems(self,itfoschildkroeteraw);
-	Npc_RemoveInvItems(hero,itfoschildkroeteraw,Npc_HasItems(self,itfoschildkroeteraw));
-	CreateInvItems(hero,itfo_schildkroetesoup,CountSchildMeat);
-	RankPoints = RankPoints + 1;
-
-	if(CountSchildMeat == 1)
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountSchildMeat));
-		concatText = ConcatStrings(concatText,"x Želví polévka!");
-	}
-	else if((CountSchildMeat > 1) && (CountSchildMeat < 5))
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountSchildMeat));
-		concatText = ConcatStrings(concatText,"x Želví polévka!");
-	}
-	else if(CountSchildMeat >= 5)
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountSchildMeat));
-		concatText = ConcatStrings(concatText,"x Želví polévka!");
-	};
-
-	AI_PrintClr(concatText,83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-	B_Kessel_Supp();
-};
-
-func void pc_kessel_pilzsuppe_all()
-{
-	var int CountPilz;
-	var string concatText;
-
-	AI_Wait(hero,1);
-	CountPilz = Npc_HasItems(self,ItPl_Mushroom_02);
-	Npc_RemoveInvItems(hero,ItPl_Mushroom_02,Npc_HasItems(self,ItPl_Mushroom_02));
-	CreateInvItems(hero,itfo_pilzsuppe,CountPilz);
-	RankPoints = RankPoints + 1;
-
-	if(CountPilz == 1)
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountPilz));
-		concatText = ConcatStrings(concatText,"x Houbová polévka!");
-	}
-	else if((CountPilz > 1) && (CountPilz < 5))
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountPilz));
-		concatText = ConcatStrings(concatText,"x Houbová polévka!");
-	}
-	else if(CountPilz >= 5)
-	{
-		concatText = ConcatStrings("Uvařeno ",IntToString(CountPilz));
-		concatText = ConcatStrings(concatText,"x Houbová polévka!");
-	};
-
-	AI_PrintClr(concatText,83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_Kessel_Supp();
 };
 
@@ -1187,10 +2007,267 @@ instance PC_KESSEL_SOUP(C_Info)
 
 func int PC_KESSEL_SOUP_condition()
 {
+	
+	// Original dialogue condition
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_KESSEL)
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Mushroom_02) / 50;
+		max = min(max, Npc_HasItems(other, ItPl_Mana_Herb_03) / 1);
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_KESSEL_SOUP_mana");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_KESSEL_SOUP_mana
+		newDescription = ConcatStrings(newDescription, "s@SPIN_KESSEL_SOUP_mana ");
+		newDescription = ConcatStrings(newDescription, "... uvařit vývar z otrokových chlebů (50x otrokův chléb, 1x ohnivý kořen)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_KESSEL_SOUP_mana");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Mushroom_01) / 50;
+		max = min(max, Npc_HasItems(other, ItPl_Mana_Herb_02) / 1);
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_KESSEL_SOUP_magic");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_KESSEL_SOUP_magic
+		newDescription = ConcatStrings(newDescription, "s@SPIN_KESSEL_SOUP_magic ");
+		newDescription = ConcatStrings(newDescription, "... uvařit vývar z tmavých hub (50x tmavá houba, 1x ohnivé býlí)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_KESSEL_SOUP_magic");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Mushroom_01) / 2;
+		max = min(max, Npc_HasItems(other, ItAt_Meatbugflesh) / 1);
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_KESSEL_SOUP_fleischwanzenragout");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_KESSEL_SOUP_fleischwanzenragout
+		newDescription = ConcatStrings(newDescription, "s@SPIN_KESSEL_SOUP_fleischwanzenragout ");
+		newDescription = ConcatStrings(newDescription, "... uvařit masové ragú (2x tmavá houba, 1x maso ze žravé štěnice)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_KESSEL_SOUP_fleischwanzenragout");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_Kessel_Soup()
@@ -1198,29 +2275,17 @@ func void B_Kessel_Soup()
 	Info_ClearChoices(PC_KESSEL_SOUP);
 	Info_AddChoice(PC_KESSEL_SOUP,Dialog_Back,PC_KESSEL_SOUP_back);
 
-	if((Snaf_Meal_02 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 250) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 5))
-	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit vývar z otrokových chlebů x5 (250x otrokův chléb, 5x ohnivý kořen)",PC_KESSEL_SOUP_mana_x5);
-	};
 	if((Snaf_Meal_02 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 50) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit vývar z otrokových chlebů x1 (50x otrokův chléb, 1x ohnivý kořen)",PC_KESSEL_SOUP_mana);
-	};
-	if((Snaf_Meal_01 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 250) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 5))
-	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit vývar z tmavých hub x5 (250x tmavá houba, 5x ohnivé býlí)",PC_KESSEL_SOUP_magic_x5);
+		Info_AddChoice(PC_KESSEL_SOUP,"s@SPIN_KESSEL_SOUP_mana ... uvařit vývar z otrokových chlebů (50x otrokův chléb, 1x ohnivý kořen)",PC_KESSEL_SOUP_mana);
 	};
 	if((Snaf_Meal_01 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 50) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit vývar z tmavých hub x1 (50x tmavá houba, 1x ohnivé býlí)",PC_KESSEL_SOUP_magic);
-	};
-	if((Snaf_Meal_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 10) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 5))
-	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit masové ragú x5 (10x tmavá houba, 5x maso ze žravé štěnice)",PC_KESSEL_SOUP_fleischwanzenragout_x5);
+		Info_AddChoice(PC_KESSEL_SOUP,"s@SPIN_KESSEL_SOUP_magic ... uvařit vývar z tmavých hub (50x tmavá houba, 1x ohnivé býlí)",PC_KESSEL_SOUP_magic);
 	};
 	if((Snaf_Meal_03 == TRUE) && (Npc_HasItems(hero,ItPl_Mushroom_01) >= 2) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
 	{
-		Info_AddChoice(PC_KESSEL_SOUP,"... uvařit masové ragú x1 (2x tmavá houba, 1x maso ze žravé štěnice)",PC_KESSEL_SOUP_fleischwanzenragout);
+		Info_AddChoice(PC_KESSEL_SOUP,"s@SPIN_KESSEL_SOUP_fleischwanzenragout ... uvařit masové ragú (2x tmavá houba, 1x maso ze žravé štěnice)",PC_KESSEL_SOUP_fleischwanzenragout);
 	};
 };
 
@@ -1233,11 +2298,12 @@ func void PC_KESSEL_SOUP_mana()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Mushroom_02,50);
-	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,1);
-	CreateInvItems(hero,itfo_pottage_mushroom,1);
+	Npc_RemoveInvItems(hero,ItPl_Mushroom_02,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,itfo_pottage_mushroom,1*InfoManagerSpinnerValue);
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_Kessel_Soup();
 };
 
@@ -1245,11 +2311,12 @@ func void PC_KESSEL_SOUP_magic()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Mushroom_01,50);
-	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_02,1);
-	CreateInvItems(hero,itfo_pottage_mushroom_black,1);
+	Npc_RemoveInvItems(hero,ItPl_Mushroom_01,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_02,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,itfo_pottage_mushroom_black,1*InfoManagerSpinnerValue);
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_Kessel_Soup();
 };
 
@@ -1258,48 +2325,12 @@ func void PC_KESSEL_SOUP_fleischwanzenragout()
 {
 	AI_Wait(hero,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Mushroom_01,2);
-	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,1);
-	CreateInvItems(hero,itfo_fleischwanzenragout,1);
+	Npc_RemoveInvItems(hero,ItPl_Mushroom_01,2*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,itfo_fleischwanzenragout,1*InfoManagerSpinnerValue);
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	B_Kessel_Soup();
-};
-
-func void PC_KESSEL_SOUP_mana_x5()
-{
-	AI_Wait(hero,1);
-	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Mushroom_02,250);
-	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,5);
-	CreateInvItems(hero,itfo_pottage_mushroom,5);
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-	B_Kessel_Soup();
-};
-
-func void PC_KESSEL_SOUP_magic_x5()
-{
-	AI_Wait(hero,1);
-	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Mushroom_01,250);
-	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_02,5);
-	CreateInvItems(hero,itfo_pottage_mushroom_black,5);
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-	B_Kessel_Soup();
-};
-
-
-func void PC_KESSEL_SOUP_fleischwanzenragout_x5()
-{
-	AI_Wait(hero,1);
-	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItPl_Mushroom_01,10);
-	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,5);
-	CreateInvItems(hero,itfo_fleischwanzenragout,5);
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_Kessel_Soup();
 };
 
@@ -1384,20 +2415,122 @@ instance PC_Herw_Meat(C_Info)
 	condition = PC_Herw_Meat_Condition;
 	information = PC_Herw_Meat_Info;
 	permanent = TRUE;
-	description = "Opéct maso...";
+	description = "s@SPIN_Herw_Meat Opéct maso";
 };
 
 func int PC_Herw_Meat_Condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (CampfireRest == FALSE) && (HerwFish == FALSE) && (HerwMeat == FALSE) && (HerwBug == FALSE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFoMuttonRaw) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Herw_Meat");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Herw_Meat
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Herw_Meat ");
+		newDescription = ConcatStrings(newDescription, "Opéct maso");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_Herw_Meat.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_Herw_Meat_Info()
 {
-	HerwMeat = TRUE;
+	AI_Wait(hero,1);
+	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItFoMutton,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	AI_PrintClr("Hotovo!",83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_Herw_Fish(C_Info)
@@ -1406,20 +2539,122 @@ instance PC_Herw_Fish(C_Info)
 	condition = PC_Herw_Fish_Condition;
 	information = PC_Herw_Fish_Info;
 	permanent = TRUE;
-	description = "Opéct ryby...";
+	description = "s@SPIN_Herw_Fish Opéct ryby";
 };
 
 func int PC_Herw_Fish_Condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (CampfireRest == FALSE) && (HerwFish == FALSE) && (HerwMeat == FALSE) && (HerwBug == FALSE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Fish) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Herw_Fish");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Herw_Fish
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Herw_Fish ");
+		newDescription = ConcatStrings(newDescription, "Opéct ryby");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_Herw_Fish.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_Herw_Fish_Info()
 {
-	HerwFish = TRUE;
+	AI_Wait(hero,1);
+	Npc_RemoveInvItems(hero,ItFo_Fish,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,itfo_fish_gebraten,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	AI_PrintClr("Hotovo!",83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_Herw_Bug(C_Info)
@@ -1428,263 +2663,122 @@ instance PC_Herw_Bug(C_Info)
 	condition = PC_Herw_Bug_Condition;
 	information = PC_Herw_Bug_Info;
 	permanent = TRUE;
-	description = "Opéct maso ze žravé štěnice...";
+	description = "s@SPIN_Herw_Bug Opéct maso ze žravé štěnice";
 };
 
 func int PC_Herw_Bug_Condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (CampfireRest == FALSE) && (HerwFish == FALSE) && (HerwMeat == FALSE) && (HerwBug == FALSE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_Meatbugflesh) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Herw_Bug");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Herw_Bug
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Herw_Bug ");
+		newDescription = ConcatStrings(newDescription, "Opéct maso ze žravé štěnice");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_Herw_Bug.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_Herw_Bug_Info()
 {
-	HerwBug = TRUE;
-};
-
-instance PC_Herw_Meat_BACK(C_Info)
-{
-	npc = PC_Hero;
-	nr = 99;
-	condition = PC_Herw_Meat_BACK_Condition;
-	information = PC_Herw_Meat_BACK_Info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_Herw_Meat_BACK_Condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (CampfireRest == FALSE) && (HerwFish == FALSE) && (HerwMeat == TRUE) && (HerwBug == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_Herw_Meat_BACK_Info()
-{
-	HerwMeat = FALSE;
-};
-
-instance PC_Herw_Fish_BACK(C_Info)
-{
-	npc = PC_Hero;
-	nr = 99;
-	condition = PC_Herw_Fish_BACK_Condition;
-	information = PC_Herw_Fish_BACK_Info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_Herw_Fish_BACK_Condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (CampfireRest == FALSE) && (HerwFish == TRUE) && (HerwMeat == FALSE) && (HerwBug == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_Herw_Fish_BACK_Info()
-{
-	HerwFish = FALSE;
-};
-
-instance PC_Herw_Bug_BACK(C_Info)
-{
-	npc = PC_Hero;
-	nr = 99;
-	condition = PC_Herw_Bug_BACK_Condition;
-	information = PC_Herw_Bug_BACK_Info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_Herw_Bug_BACK_Condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (CampfireRest == FALSE) && (HerwFish == FALSE) && (HerwMeat == FALSE) && (HerwBug == TRUE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_Herw_Bug_BACK_Info()
-{
-	HerwBug = FALSE;
-};
-
-instance PC_HERW_FISCHBRATEN(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herw_fischbraten_condition;
-	information = pc_herw_fischbraten_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct rybu x1";
-};
-
-func int pc_herw_fischbraten_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (HerwFish == TRUE) && (Npc_HasItems(hero,ItFo_Fish) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herw_fischbraten_info()
-{
 	AI_Wait(hero,1);
-	Npc_RemoveInvItems(hero,ItFo_Fish,1);
-	CreateInvItems(hero,itfo_fish_gebraten,1);
+	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,itat_meatbugflesh_gebraten,1*InfoManagerSpinnerValue);
 	RankPoints = RankPoints + 1;
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_HERW_FISCHBRATEN_10X(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herw_fischbraten10x_condition;
-	information = pc_herw_fischbraten10x_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct rybu x5";
-};
-
-func int pc_herw_fischbraten10x_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (HerwFish == TRUE) && (Npc_HasItems(hero,ItFo_Fish) >= 5))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herw_fischbraten10x_info()
-{
-	AI_Wait(hero,1);
-	Npc_RemoveInvItems(hero,ItFo_Fish,5);
-	CreateInvItems(hero,itfo_fish_gebraten,5);
-	RankPoints = RankPoints + 1;
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_HERW_FLEISCHBRATEN(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herw_fleischbraten_condition;
-	information = pc_herw_fleischbraten_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct maso x1";
-};
-
-func int pc_herw_fleischbraten_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (HerwMeat == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herw_fleischbraten_info()
-{
-	AI_Wait(hero,1);
-	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1);
-	CreateInvItems(hero,ItFoMutton,1);
-	RankPoints = RankPoints + 1;
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_HERW_FLEISCHBRATEN_10X(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herw_fleischbraten10x_condition;
-	information = pc_herw_fleischbraten10x_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct maso x5";
-};
-
-func int pc_herw_fleischbraten10x_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (HerwMeat == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 5))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herw_fleischbraten10x_info()
-{
-	AI_Wait(hero,1);
-	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(hero,ItFoMuttonRaw,5);
-	CreateInvItems(hero,ItFoMutton,5);
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_HERW_WANZENFLEISCHBRATEN(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herw_wanzenfleischbraten_condition;
-	information = pc_herw_wanzenfleischbraten_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct maso ze žravé štěnice x1";
-};
-
-func int pc_herw_wanzenfleischbraten_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (HerwBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herw_wanzenfleischbraten_info()
-{
-	AI_Wait(hero,1);
-	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,1);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,1);
-	RankPoints = RankPoints + 1;
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_HERW_WANZENFLEISCHBRATEN_10X(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_herw_wanzenfleischbraten10x_condition;
-	information = pc_herw_wanzenfleischbraten10x_info;
-	permanent = 1;
-	important = 0;
-	description = "... opéct maso ze žravé štěnice x5";
-};
-
-func int pc_herw_wanzenfleischbraten10x_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_HERD) && (CampfirePan == TRUE) && (HerwBug == TRUE) && (Npc_HasItems(hero,ItAt_Meatbugflesh) >= 5))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_herw_wanzenfleischbraten10x_info()
-{
-	AI_Wait(hero,1);
-	Npc_RemoveInvItems(hero,ItAt_Meatbugflesh,5);
-	CreateInvItems(hero,itat_meatbugflesh_gebraten,5);
-	RankPoints = RankPoints + 1;
-	AI_PrintClr("Hotovo!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_Herw_CampfireRest(C_Info)

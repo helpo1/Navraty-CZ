@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+systém spánku přepracován pomocí spinnerů
+
+
 v1.01:
 
 func void CZ_Recalculate_Needs - nová funkce
@@ -160,117 +165,6 @@ func void PC_NoSleep_Info()
 	};
 };
 
-instance PC_SLEEPTIME_RECOVER(C_Info)
-{
-	npc = PC_Hero;
-	condition = pc_sleeptime_recover_condition;
-	information = pc_sleeptime_recover_info;
-	important = FALSE;
-	permanent = TRUE;
-	description = "Spát...";
-};
-
-func int pc_sleeptime_recover_condition()
-{
-	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SleepAbit)
-	{
-		return TRUE;
-	};
-};
-
-func void pc_sleeptime_recover_info()
-{
-	// if(SleepDis == 24)
-	if((CZ_Settings_Diff_EnableSleepCap == FALSE) || (CurrentLevel == PRIORATWORLD_ZEN))
-	{
-		Info_ClearChoices(pc_sleeptime_recover);
-		Info_AddChoice(pc_sleeptime_recover,"... 10 hodin",pc_sleeptime_recover_10);
-		Info_AddChoice(pc_sleeptime_recover,"... 9 hodin",pc_sleeptime_recover_9);
-		Info_AddChoice(pc_sleeptime_recover,"... 8 hodin",pc_sleeptime_recover_8);
-		Info_AddChoice(pc_sleeptime_recover,"... 7 hodin",pc_sleeptime_recover_7);
-		Info_AddChoice(pc_sleeptime_recover,"... 6 hodin",pc_sleeptime_recover_6);
-		Info_AddChoice(pc_sleeptime_recover,"... 5 hodin",pc_sleeptime_recover_5);
-		Info_AddChoice(pc_sleeptime_recover,"... 4 hodiny",pc_sleeptime_recover_4);
-		Info_AddChoice(pc_sleeptime_recover,"... 3 hodiny",pc_sleeptime_recover_3);
-		Info_AddChoice(pc_sleeptime_recover,"... 2 hodiny",pc_sleeptime_recover_2);
-		Info_AddChoice(pc_sleeptime_recover,"... 1 hodinu",pc_sleeptime_recover_1);
-		Info_AddChoice(pc_sleeptime_recover,Dialog_Back,pc_sleeptime_recover_back);
-	}
-	else
-	{
-		if(DaySleepHour >= 10)
-		{
-			AI_Print("Nechce se ti spát...");
-			//Wld_StopEffect("DEMENTOR_FX");
-			AI_StopProcessInfos(self);
-			PLAYER_MOBSI_PRODUCTION = MOBSI_NONE;
-			self.aivar[AIV_INVINCIBLE] = FALSE;
-
-			if(SLEEPONGROUND == TRUE)
-			{
-				AI_PlayAni(hero,"T_SLEEPGROUND_2_STAND");
-				SLEEPONGROUND = FALSE;
-			};
-			if(TorchIsOn == FALSE)
-			{
-				CheckTorchIsOn = TRUE;
-			};
-		}
-		else
-		{
-			Info_ClearChoices(pc_sleeptime_recover);
-
-			if((10 - DaySleepHour) >= 10)
-			{ 
-				Info_AddChoice(pc_sleeptime_recover,"... 10 hodin",pc_sleeptime_recover_10);
-			};
-			if((10 - DaySleepHour) >= 9)
-			{ 
-				Info_AddChoice(pc_sleeptime_recover,"... 9 hodin",pc_sleeptime_recover_9);
-			};
-			if((10 - DaySleepHour) >= 8)
-			{ 
-				Info_AddChoice(pc_sleeptime_recover,"... 8 hodin",pc_sleeptime_recover_8);
-			};
-			if((10 - DaySleepHour) >= 7)
-			{ 
-				Info_AddChoice(pc_sleeptime_recover,"... 7 hodin",pc_sleeptime_recover_7);
-			};
-			if((10 - DaySleepHour) >= 6)
-			{ 
-				Info_AddChoice(pc_sleeptime_recover,"... 6 hodin",pc_sleeptime_recover_6);
-			};
-			if((10 - DaySleepHour) >= 5)
-			{ 
-				Info_AddChoice(pc_sleeptime_recover,"... 5 hodin",pc_sleeptime_recover_5);
-			};
-			if((10 - DaySleepHour) >= 4)
-			{ 
-				Info_AddChoice(pc_sleeptime_recover,"... 4 hodiny",pc_sleeptime_recover_4);
-			};
-			if((10 - DaySleepHour) >= 3)
-			{ 
-				Info_AddChoice(pc_sleeptime_recover,"... 3 hodiny",pc_sleeptime_recover_3);
-			};
-			if((10 - DaySleepHour) >= 2)
-			{ 
-				Info_AddChoice(pc_sleeptime_recover,"... 2 hodiny",pc_sleeptime_recover_2);
-			};
-			if((10 - DaySleepHour) >= 1)
-			{ 
-				Info_AddChoice(pc_sleeptime_recover,"... 1 hodinu",pc_sleeptime_recover_1);
-			};
-
-			Info_AddChoice(pc_sleeptime_recover,Dialog_Back,pc_sleeptime_recover_back);
-		};
-	};
-};
-
-func void pc_sleeptime_recover_back()
-{
-	Info_ClearChoices(pc_sleeptime_recover);
-};
-
 func void pc_sleep_random(var int hour)
 {
 	var int hitheal;
@@ -409,187 +303,156 @@ func void pc_sleep_random(var int hour)
 	Info_ClearChoices(pc_sleeptime_recover);
 };
 
-func void pc_sleeptime_recover_1()
+
+
+instance PC_SLEEPTIME_RECOVER(C_Info)
 {
-	var int bHour;
-	var int bMinute;
-	var int rnd_scream;
-
-	if(SC_IsObsessed == FALSE)
-	{
-		/*
-			if(SBMODE == TRUE)
-			{
-				Hero_Fatigue = Hero_Fatigue + 1;
-
-				if(Hero_Fatigue >= 10)
-				{
-					Hero_Fatigue = 10;
-				};
-				if(Hero_Hunger > 1)
-				{
-					Hero_Hunger -= 1;
-				}		
-				else
-				{
-					Hero_Hunger = FALSE;
-				};	
-				if(Hero_Thirst > 1)
-				{
-					Hero_Thirst -= 1;
-				}		
-				else
-				{
-					Hero_Thirst = FALSE;
-				};	
-
-				DaySleepHour += 1;
-			};
-		*/
-		
-		CZ_Recalculate_Needs(1);
-		
-		bHour = Wld_GetTimeHour();
-		bMinute = Wld_GetTimeMin();
-		bHour += 1;
-		Wld_SetTime(bHour,bMinute);
-		pc_sleep_random(1);
-	}
-	else
-	{
-		AI_Print(PRINT_SleepOverObsessed);
-		rnd_scream = Hlp_Random(100);
-
-		if(rnd_scream >= 60)
-		{
-			Snd_Play("ZOM_DIE");		
-		}
-		else if(rnd_scream >= 30)
-		{
-			Snd_Play("ZOM_DIE_A1");	
-		}
-		else
-		{
-			Snd_Play("ZOM_DIE_A2");	
-		};
-
-		Info_ClearChoices(pc_sleeptime_recover);
-	};
+	npc = PC_Hero;
+	condition = pc_sleeptime_recover_condition;
+	information = pc_sleeptime_recover_info;
+	important = FALSE;
+	permanent = TRUE;
+	description = "s@SPIN_SLEEPTIME_RECOVER Spát...";
 };
 
-func void pc_sleeptime_recover_2()
+func int pc_sleeptime_recover_condition()
 {
-	var int bHour;
-	var int bMinute;
-	var int rnd_scream;
-
-	if(SC_IsObsessed == FALSE)
+	
+	// Original dialogue condition
+	if(PLAYER_MOBSI_PRODUCTION == MOBSI_SleepAbit)
 	{
-		/*
-			if(SBMODE == TRUE)
-			{
-				Hero_Fatigue = Hero_Fatigue + 2;
-
-				if(Hero_Fatigue >= 10)
-				{
-					Hero_Fatigue = 10;
-				};
-				if(Hero_Hunger > 1)
-				{
-					Hero_Hunger -= 1;
-				}		
-				else
-				{
-					Hero_Hunger = FALSE;
-				};	
-				if(Hero_Thirst > 1)
-				{
-					Hero_Thirst -= 1;
-				}		
-				else
-				{
-					Hero_Thirst = FALSE;
-				};	
-
-				DaySleepHour += 2;
-			};
-		*/
 		
-		CZ_Recalculate_Needs(2);
+		var string lastSpinnerID;
+		var int min;
+		var int max;
 		
-		bHour = Wld_GetTimeHour();
-		bMinute = Wld_GetTimeMin();
-		bHour += 2;
-		Wld_SetTime(bHour,bMinute);
-		pc_sleep_random(2);
-	}
-	else
-	{
-		AI_Print(PRINT_SleepOverObsessed);
-		rnd_scream = Hlp_Random(100);
-
-		if(rnd_scream >= 60)
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		
+		if((CZ_Settings_Diff_EnableSleepCap == FALSE) || (CurrentLevel == PRIORATWORLD_ZEN))
 		{
-			Snd_Play("ZOM_DIE");		
-		}
-		else if(rnd_scream >= 30)
-		{
-			Snd_Play("ZOM_DIE_A1");	
+			max = 10;
 		}
 		else
 		{
-			Snd_Play("ZOM_DIE_A2");	
+			if(DaySleepHour >= 10)
+			{
+				max = 0;
+			}
+			else
+			{
+				max = 10 - DaySleepHour;
+			};
 		};
-
-		Info_ClearChoices(pc_sleeptime_recover);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SLEEPTIME_RECOVER");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SLEEPTIME_RECOVER
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SLEEPTIME_RECOVER ");
+		newDescription = ConcatStrings(newDescription, "Spát...");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_SLEEPTIME_RECOVER.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
+		return TRUE;
+		
 	};
+	
 };
 
-func void pc_sleeptime_recover_3()
+func void pc_sleeptime_recover_info()
 {
+	
+	var int length;
+	length = InfoManagerSpinnerValue;
+	
 	var int bHour;
 	var int bMinute;
 	var int rnd_scream;
 
 	if(SC_IsObsessed == FALSE)
 	{
-		/*
-			if(SBMODE == TRUE)
-			{
-				Hero_Fatigue = Hero_Fatigue + 3;
-
-				if(Hero_Fatigue >= 10)
-				{
-					Hero_Fatigue = 10;
-				};
-				if(Hero_Hunger > 2)
-				{
-					Hero_Hunger -= 2;
-				}		
-				else
-				{
-					Hero_Hunger = FALSE;
-				};	
-				if(Hero_Thirst > 2)
-				{
-					Hero_Thirst -= 2;
-				}		
-				else
-				{
-					Hero_Thirst = FALSE;
-				};	
-
-				DaySleepHour += 3;
-			};
-		*/
-		
-		CZ_Recalculate_Needs(3);
+		CZ_Recalculate_Needs(length);
 		
 		bHour = Wld_GetTimeHour();
 		bMinute = Wld_GetTimeMin();
-		bHour += 3;
+		bHour += length;
 		Wld_SetTime(bHour,bMinute);
-		pc_sleep_random(3);
+		pc_sleep_random(length);
 	}
 	else
 	{
@@ -608,483 +471,8 @@ func void pc_sleeptime_recover_3()
 		{
 			Snd_Play("ZOM_DIE_A2");	
 		};
-
-		Info_ClearChoices(pc_sleeptime_recover);
 	};
-};
-
-func void pc_sleeptime_recover_4()
-{
-	var int bHour;
-	var int bMinute;
-	var int rnd_scream;
-
-	if(SC_IsObsessed == FALSE)
-	{
-		/*
-			if(SBMODE == TRUE)
-			{
-				Hero_Fatigue = Hero_Fatigue + 4;
-
-				if(Hero_Fatigue >= 10)
-				{
-					Hero_Fatigue = 10;
-				};
-				if(Hero_Hunger > 2)
-				{
-					Hero_Hunger -= 2;
-				}		
-				else
-				{
-					Hero_Hunger = FALSE;
-				};	
-				if(Hero_Thirst > 2)
-				{
-					Hero_Thirst -= 2;
-				}		
-				else
-				{
-					Hero_Thirst = FALSE;
-				};	
-
-				DaySleepHour += 4;
-			};
-		*/
-		
-		CZ_Recalculate_Needs(4);
-		
-		bHour = Wld_GetTimeHour();
-		bMinute = Wld_GetTimeMin();
-		bHour += 4;
-		Wld_SetTime(bHour,bMinute);
-		pc_sleep_random(4);
-	}
-	else
-	{
-		AI_Print(PRINT_SleepOverObsessed);
-		rnd_scream = Hlp_Random(100);
-
-		if(rnd_scream >= 60)
-		{
-			Snd_Play("ZOM_DIE");		
-		}
-		else if(rnd_scream >= 30)
-		{
-			Snd_Play("ZOM_DIE_A1");	
-		}
-		else
-		{
-			Snd_Play("ZOM_DIE_A2");	
-		};
-
-		Info_ClearChoices(pc_sleeptime_recover);
-	};
-};
-
-func void pc_sleeptime_recover_5()
-{
-	var int bHour;
-	var int bMinute;
-	var int rnd_scream;
-
-	if(SC_IsObsessed == FALSE)
-	{
-		/*
-			if(SBMODE == TRUE)
-			{
-				Hero_Fatigue = Hero_Fatigue + 5;
-
-				if(Hero_Fatigue >= 10)
-				{
-					Hero_Fatigue = 10;
-				};
-				if(Hero_Hunger > 3)
-				{
-					Hero_Hunger -= 3;
-				}		
-				else
-				{
-					Hero_Hunger = FALSE;
-				};	
-				if(Hero_Thirst > 3)
-				{
-					Hero_Thirst -= 3;
-				}		
-				else
-				{
-					Hero_Thirst = FALSE;
-				};	
-
-				DaySleepHour += 5;
-			};
-		*/
-		
-		CZ_Recalculate_Needs(5);
-		
-		bHour = Wld_GetTimeHour();
-		bMinute = Wld_GetTimeMin();
-		bHour += 5;
-		Wld_SetTime(bHour,bMinute);
-		pc_sleep_random(5);
-	}
-	else
-	{
-		AI_Print(PRINT_SleepOverObsessed);
-		rnd_scream = Hlp_Random(100);
-
-		if(rnd_scream >= 60)
-		{
-			Snd_Play("ZOM_DIE");		
-		}
-		else if(rnd_scream >= 30)
-		{
-			Snd_Play("ZOM_DIE_A1");	
-		}
-		else
-		{
-			Snd_Play("ZOM_DIE_A2");	
-		};
-
-		Info_ClearChoices(pc_sleeptime_recover);
-	};
-};
-
-func void pc_sleeptime_recover_6()
-{
-	var int bHour;
-	var int bMinute;
-	var int rnd_scream;
-
-	if(SC_IsObsessed == FALSE)
-	{
-		/*
-			if(SBMODE == TRUE)
-			{
-				Hero_Fatigue = Hero_Fatigue + 6;
-
-				if(Hero_Fatigue >= 10)
-				{
-					Hero_Fatigue = 10;
-				};
-				if(Hero_Hunger > 3)
-				{
-					Hero_Hunger -= 3;
-				}		
-				else
-				{
-					Hero_Hunger = FALSE;
-				};	
-				if(Hero_Thirst > 3)
-				{
-					Hero_Thirst -= 3;
-				}		
-				else
-				{
-					Hero_Thirst = FALSE;
-				};	
-
-				DaySleepHour += 6;
-			};
-		*/
-		
-		CZ_Recalculate_Needs(6);
-		
-		bHour = Wld_GetTimeHour();
-		bMinute = Wld_GetTimeMin();
-		bHour += 6;
-		Wld_SetTime(bHour,bMinute);
-		pc_sleep_random(6);
-	}
-	else
-	{
-		AI_Print(PRINT_SleepOverObsessed);
-		rnd_scream = Hlp_Random(100);
-
-		if(rnd_scream >= 60)
-		{
-			Snd_Play("ZOM_DIE");		
-		}
-		else if(rnd_scream >= 30)
-		{
-			Snd_Play("ZOM_DIE_A1");	
-		}
-		else
-		{
-			Snd_Play("ZOM_DIE_A2");	
-		};
-
-		Info_ClearChoices(pc_sleeptime_recover);
-	};
-};
-
-func void pc_sleeptime_recover_7()
-{
-	var int bHour;
-	var int bMinute;
-	var int rnd_scream;
-
-	if(SC_IsObsessed == FALSE)
-	{
-		/*
-			if(SBMODE == TRUE)
-			{
-				Hero_Fatigue = Hero_Fatigue + 7;
-
-				if(Hero_Fatigue >= 10)
-				{
-					Hero_Fatigue = 10;
-				};
-				if(Hero_Hunger > 4)
-				{
-					Hero_Hunger -= 4;
-				}		
-				else
-				{
-					Hero_Hunger = FALSE;
-				};	
-				if(Hero_Thirst > 4)
-				{
-					Hero_Thirst -= 4;
-				}		
-				else
-				{
-					Hero_Thirst = FALSE;
-				};	
-
-				DaySleepHour += 7;
-			};
-		*/
-		
-		CZ_Recalculate_Needs(7);
-		
-		bHour = Wld_GetTimeHour();
-		bMinute = Wld_GetTimeMin();
-		bHour += 7;
-		Wld_SetTime(bHour,bMinute);
-		pc_sleep_random(7);
-	}
-	else
-	{
-		AI_Print(PRINT_SleepOverObsessed);
-		rnd_scream = Hlp_Random(100);
-
-		if(rnd_scream >= 60)
-		{
-			Snd_Play("ZOM_DIE");		
-		}
-		else if(rnd_scream >= 30)
-		{
-			Snd_Play("ZOM_DIE_A1");	
-		}
-		else
-		{
-			Snd_Play("ZOM_DIE_A2");	
-		};
-
-		Info_ClearChoices(pc_sleeptime_recover);
-	};
-};
-
-func void pc_sleeptime_recover_8()
-{
-	var int bHour;
-	var int bMinute;
-	var int rnd_scream;
-
-	if(SC_IsObsessed == FALSE)
-	{
-		/*
-			if(SBMODE == TRUE)
-			{
-				Hero_Fatigue = Hero_Fatigue + 8;
-
-				if(Hero_Fatigue >= 10)
-				{
-					Hero_Fatigue = 10;
-				};
-				if(Hero_Hunger > 4)
-				{
-					Hero_Hunger -= 4;
-				}		
-				else
-				{
-					Hero_Hunger = FALSE;
-				};	
-				if(Hero_Thirst > 4)
-				{
-					Hero_Thirst -= 4;
-				}		
-				else
-				{
-					Hero_Thirst = FALSE;
-				};	
-
-				DaySleepHour += 8;
-			};
-		*/
-		
-		CZ_Recalculate_Needs(8);
-		
-		bHour = Wld_GetTimeHour();
-		bMinute = Wld_GetTimeMin();
-		bHour += 8;
-		Wld_SetTime(bHour,bMinute);
-		pc_sleep_random(8);
-	}
-	else
-	{
-		AI_Print(PRINT_SleepOverObsessed);
-		rnd_scream = Hlp_Random(100);
-
-		if(rnd_scream >= 60)
-		{
-			Snd_Play("ZOM_DIE");		
-		}
-		else if(rnd_scream >= 30)
-		{
-			Snd_Play("ZOM_DIE_A1");	
-		}
-		else
-		{
-			Snd_Play("ZOM_DIE_A2");	
-		};
-
-		Info_ClearChoices(pc_sleeptime_recover);
-	};
-};
-
-func void pc_sleeptime_recover_9()
-{
-	var int bHour;
-	var int bMinute;
-	var int rnd_scream;
-
-	if(SC_IsObsessed == FALSE)
-	{
-		/*
-			if(SBMODE == TRUE)
-			{
-				Hero_Fatigue = Hero_Fatigue + 9;
-
-				if(Hero_Fatigue >= 10)
-				{
-					Hero_Fatigue = 10;
-				};
-				if(Hero_Hunger > 5)
-				{
-					Hero_Hunger -= 5;
-				}		
-				else
-				{
-					Hero_Hunger = FALSE;
-				};	
-				if(Hero_Thirst > 5)
-				{
-					Hero_Thirst -= 5;
-				}		
-				else
-				{
-					Hero_Thirst = FALSE;
-				};	
-
-				DaySleepHour += 9;
-			};
-		*/
-		
-		CZ_Recalculate_Needs(9);
-		
-		bHour = Wld_GetTimeHour();
-		bMinute = Wld_GetTimeMin();
-		bHour += 9;
-		Wld_SetTime(bHour,bMinute);
-		pc_sleep_random(9);
-	}
-	else
-	{
-		AI_Print(PRINT_SleepOverObsessed);
-		rnd_scream = Hlp_Random(100);
-
-		if(rnd_scream >= 60)
-		{
-			Snd_Play("ZOM_DIE");		
-		}
-		else if(rnd_scream >= 30)
-		{
-			Snd_Play("ZOM_DIE_A1");	
-		}
-		else
-		{
-			Snd_Play("ZOM_DIE_A2");	
-		};
-
-		Info_ClearChoices(pc_sleeptime_recover);
-	};
-};
-
-func void pc_sleeptime_recover_10()
-{
-	var int bHour;
-	var int bMinute;
-	var int rnd_scream;
-
-	if(SC_IsObsessed == FALSE)
-	{
-		/*
-			if(SBMODE == TRUE)
-			{
-				Hero_Fatigue = Hero_Fatigue + 10;
-
-				if(Hero_Fatigue >= 10)
-				{
-					Hero_Fatigue = 10;
-				};
-				if(Hero_Hunger > 5)
-				{
-					Hero_Hunger -= 5;
-				}		
-				else
-				{
-					Hero_Hunger = FALSE;
-				};	
-				if(Hero_Thirst > 5)
-				{
-					Hero_Thirst -= 5;
-				}		
-				else
-				{
-					Hero_Thirst = FALSE;
-				};	
-
-				DaySleepHour += 10;
-			};
-		*/
-		
-		CZ_Recalculate_Needs(10);
-		
-		bHour = Wld_GetTimeHour();
-		bMinute = Wld_GetTimeMin();
-		bHour += 10;
-		Wld_SetTime(bHour,bMinute);
-		pc_sleep_random(10);
-	}
-	else
-	{
-		AI_Print(PRINT_SleepOverObsessed);
-		rnd_scream = Hlp_Random(100);
-
-		if(rnd_scream >= 60)
-		{
-			Snd_Play("ZOM_DIE");		
-		}
-		else if(rnd_scream >= 30)
-		{
-			Snd_Play("ZOM_DIE_A1");	
-		}
-		else
-		{
-			Snd_Play("ZOM_DIE_A2");	
-		};
-
-		Info_ClearChoices(pc_sleeptime_recover);
-	};
+	
+	InfoManagerSpinnerValue = 1;
+	
 };

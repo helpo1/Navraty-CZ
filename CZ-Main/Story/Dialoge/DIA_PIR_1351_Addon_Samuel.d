@@ -4,6 +4,7 @@
 
 v1.02:
 
+(2x) systém kupování alkoholu přepracován pomocí spinnerů
 CZ_SkillCheckCondition - přidáno zobrazování skill checků
 
 */
@@ -231,19 +232,118 @@ instance DIA_Addon_Samuel_Grog(C_Info)
 	condition = DIA_Addon_Samuel_Grog_Condition;
 	information = DIA_Addon_Samuel_Grog_Info;
 	permanent = TRUE;
-	description = "Chci si vzít svůj podíl grogu. (10 zlata)";
+	description = "s@SPIN_Addon_Samuel_Grog Chci si vzít svůj podíl grogu. (10 zlata)";
 };
 
 
 func int DIA_Addon_Samuel_Grog_Condition()
 {
-	return TRUE;
+	
+	// Original dialogue condition
+	if(TRUE)
+	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_Gold) / 10;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Addon_Samuel_Grog");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Addon_Samuel_Grog
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Addon_Samuel_Grog ");
+		newDescription = ConcatStrings(newDescription, "Chci si vzít svůj podíl grogu. (10 zlata)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		DIA_Addon_Samuel_Grog.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
+		return TRUE;
+		
+	};
+	
 };
 
 func void DIA_Addon_Samuel_Grog_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Samuel_Grog_15_00");	//Chci si vzít svůj podíl grogu.
-	if(B_GiveInvItems(other,self,ItMi_Gold,10))
+	if(B_GiveInvItems(other,self,ItMi_Gold,10*InfoManagerSpinnerValue))
 	{
 		if(Samuel_Grog_Varianz == 0)
 		{
@@ -259,12 +359,13 @@ func void DIA_Addon_Samuel_Grog_Info()
 		{
 			AI_Output(self,other,"DIA_Addon_Samuel_Grog_14_03");	//Můžeš mít tolik grogu, kolik chceš.
 		};
-		B_GiveInvItems(self,other,ItFo_Addon_Grog,1);
+		B_GiveInvItems(self,other,ItFo_Addon_Grog,1*InfoManagerSpinnerValue);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Addon_Samuel_Grog_14_04");	//Prodávám to levně, ale ne zadarmo! Sežeň si nejdřív zlato, mladíku!
 	};
+	InfoManagerSpinnerValue = 1;
 };
 
 
@@ -277,19 +378,118 @@ instance DIA_Addon_Samuel_Rum(C_Info)
 	condition = DIA_Addon_Samuel_Rum_Condition;
 	information = DIA_Addon_Samuel_Rum_Info;
 	permanent = TRUE;
-	description = "Dej mi rum (30 zlata)";
+	description = "s@SPIN_Addon_Samuel_Rum Dej mi rum. (30 zlata)";
 };
 
 
 func int DIA_Addon_Samuel_Rum_Condition()
 {
-	return TRUE;
+	
+	// Original dialogue condition
+	if(TRUE)
+	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_Gold) / 30;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Addon_Samuel_Rum");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Addon_Samuel_Rum
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Addon_Samuel_Rum ");
+		newDescription = ConcatStrings(newDescription, "Dej mi rum. (30 zlata)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		DIA_Addon_Samuel_Rum.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
+		return TRUE;
+		
+	};
+	
 };
 
 func void DIA_Addon_Samuel_Rum_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Samuel_Rum_15_00");	//Dej mi rum!
-	if(B_GiveInvItems(other,self,ItMi_Gold,30))
+	if(B_GiveInvItems(other,self,ItMi_Gold,30*InfoManagerSpinnerValue))
 	{
 		if(Samuel_Rum_Varianz == 0)
 		{
@@ -305,12 +505,13 @@ func void DIA_Addon_Samuel_Rum_Info()
 		{
 			AI_Output(self,other,"DIA_Addon_Samuel_Rum_14_03");	//Tady máš!
 		};
-		B_GiveInvItems(self,other,ItFo_Addon_Rum,1);
+		B_GiveInvItems(self,other,ItFo_Addon_Rum,1*InfoManagerSpinnerValue);
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Addon_Samuel_Rum_14_04");	//Nemáš dost zlata, mladíku! Což takhle dát si grog?
 	};
+	InfoManagerSpinnerValue = 1;
 };
 
 

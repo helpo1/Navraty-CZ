@@ -4,6 +4,7 @@
 
 v1.02:
 
+(36x) systém výroby přepracován pomocí spinnerů
 (7x) B_MAKEBOWS_BowCorpse, B_MAKEBOWS_BowMake, B_SKINRAPE_BowRope - opakovaná funkcionalita vyjmuta do oddělených funkcí
 
 
@@ -122,147 +123,127 @@ instance PC_MAKEGOLD_ADDON_UNHOUR(C_Info)
 	condition = PC_MAKEGOLD_addon_UNHOUR_condition;
 	information = PC_MAKEGOLD_addon_UNHOUR_info;
 	permanent = TRUE;
-	description = "Odlít zlaté mince (1x zlatý ingot)";
+	description = "s@SPIN_MAKEGOLD_ADDON_UNHOUR Odlít zlaté mince (1x zlatý ingot)";
 };
 
 func int PC_MAKEGOLD_addon_UNHOUR_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MEMORIES) && (Npc_GetDistToWP(hero,"ADW_MINE_HOEHLE_03") < 500))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_StuckGold) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEGOLD_ADDON_UNHOUR");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEGOLD_ADDON_UNHOUR
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEGOLD_ADDON_UNHOUR ");
+		newDescription = ConcatStrings(newDescription, "Odlít zlaté mince (1x zlatý ingot)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEGOLD_ADDON_UNHOUR.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEGOLD_addon_UNHOUR_info()
 {
-	if(Npc_HasItems(self,ItMi_StuckGold) >= 1)
-	{
-		AI_Wait(self,1);
-		B_GivePlayerXP(15);
-		Npc_RemoveInvItems(self,ItMi_StuckGold,1);
-		CreateInvItems(self,ItMi_Gold,500);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Odlito 500 zlatých mincí!",83,152,48);
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_MAKEGOLD_ADDON_UNHOUR_X5(C_Info)
-{
-	npc = PC_Hero;
-	nr = 2;
-	condition = PC_MAKEGOLD_addon_UNHOUR_X5_condition;
-	information = PC_MAKEGOLD_addon_UNHOUR_X5_info;
-	permanent = TRUE;
-	description = "Odlít zlaté mince (5x zlatý ingot)";
-};
-
-func int PC_MAKEGOLD_addon_UNHOUR_X5_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MEMORIES) && (Npc_GetDistToWP(hero,"ADW_MINE_HOEHLE_03") < 500) && (Npc_HasItems(self,ItMi_StuckGold) >= 5))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_MAKEGOLD_addon_UNHOUR_X5_info()
-{
-	if(Npc_HasItems(self,ItMi_StuckGold) >= 5)
-	{
-		AI_Wait(self,1);
-		B_GivePlayerXP(10);
-		Npc_RemoveInvItems(self,ItMi_StuckGold,5);
-		CreateInvItems(self,ItMi_Gold,2500);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Odlito 2500 zlatých mincí!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_MAKEGOLD_ADDON_UNHOUR_X10(C_Info)
-{
-	npc = PC_Hero;
-	nr = 3;
-	condition = PC_MAKEGOLD_addon_UNHOUR_X10_condition;
-	information = PC_MAKEGOLD_addon_UNHOUR_X10_info;
-	permanent = TRUE;
-	description = "Odlít zlaté mince (10x zlatý ingot)";
-};
-
-func int PC_MAKEGOLD_addon_UNHOUR_X10_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MEMORIES) && (Npc_GetDistToWP(hero,"ADW_MINE_HOEHLE_03") < 500) && (Npc_HasItems(self,ItMi_StuckGold) >= 10))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_MAKEGOLD_addon_UNHOUR_X10_info()
-{
-	if(Npc_HasItems(self,ItMi_StuckGold) >= 10)
-	{
-		AI_Wait(self,1);
-		B_GivePlayerXP(5);
-		Npc_RemoveInvItems(self,ItMi_StuckGold,10);
-		CreateInvItems(self,ItMi_Gold,5000);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Odlito 5000 zlatých mincí!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_MAKEGOLD_ADDON_UNHOUR_XALL(C_Info)
-{
-	npc = PC_Hero;
-	nr = 4;
-	condition = PC_MAKEGOLD_addon_UNHOUR_XALL_condition;
-	information = PC_MAKEGOLD_addon_UNHOUR_XALL_info;
-	permanent = TRUE;
-	description = "Odlít zlaté mince (všechny zlaté ingoty)";
-};
-
-func int PC_MAKEGOLD_addon_UNHOUR_XALL_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MEMORIES) && (Npc_GetDistToWP(hero,"ADW_MINE_HOEHLE_03") < 500) && (Npc_HasItems(self,ItMi_StuckGold) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_MAKEGOLD_addon_UNHOUR_XALL_info()
-{
-	var int AllStuckGold;
-	var int AllStuckCoin;
 	var string concatText;
-
-	AllStuckGold = Npc_HasItems(self,ItMi_StuckGold);
-	AllStuckCoin = AllStuckGold * 500;
+	
 	AI_Wait(self,1);
-	Npc_RemoveInvItems(self,ItMi_StuckGold,AllStuckGold);
-	CreateInvItems(self,ItMi_Gold,AllStuckCoin);
+	B_GivePlayerXP(15*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_StuckGold,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_Gold,500*InfoManagerSpinnerValue);
 	RankPoints = RankPoints + 1;
 	concatText = "Odlito ";
-	concatText = ConcatStrings(concatText,IntToString(AllStuckCoin));
+	concatText = ConcatStrings(concatText,IntToString(500*InfoManagerSpinnerValue));
 	concatText = ConcatStrings(concatText," zlatých mincí!");
 	AI_PrintClr(concatText,83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 //------------------------Brevno----------------------
@@ -316,75 +297,125 @@ instance PC_MAKEARROWS_JustTree(C_Info)
 	condition = PC_MAKEARROWS_JustTree_condition;
 	information = PC_MAKEARROWS_JustTree_info;
 	permanent = TRUE;
-	description = "Vyrobit řezivo z obyčejného dřeva x1";
+	description = "s@SPIN_MAKEARROWS_JustTree Vyrobit řezivo z obyčejného dřeva";
 };
 
 func int PC_MAKEARROWS_JustTree_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEARROWS) && (KNOWHOWTOMAKEARROWS == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = 500;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEARROWS_JustTree");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEARROWS_JustTree
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEARROWS_JustTree ");
+		newDescription = ConcatStrings(newDescription, "Vyrobit řezivo z obyčejného dřeva");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEARROWS_JustTree.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEARROWS_JustTree_info()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
-	CreateInvItems(self,ItMi_JustTree,1);
-	AI_PrintClr("Vyrobeno 1x Řezivo z obyčejného dřeva!",83,152,48);
+	CreateInvItems(self,ItMi_JustTree,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Řezivo z obyčejného dřeva!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_MAKEARROWS_JustTreeX10(C_Info)
-{
-	npc = PC_Hero;
-	nr = 2;
-	condition = PC_MAKEARROWS_JustTreeX10_condition;
-	information = PC_MAKEARROWS_JustTreeX10_info;
-	permanent = TRUE;
-	description = "Vyrobit řezivo z obyčejného dřeva x10";
-};
-
-func int PC_MAKEARROWS_JustTreeX10_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEARROWS) && (KNOWHOWTOMAKEARROWS == TRUE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_MAKEARROWS_JustTreeX10_info()
-{
-	AI_Wait(self,2);
-	CreateInvItems(self,ItMi_JustTree,10);
-	AI_PrintClr("Vyrobeno 10x Řezivo z obyčejného dřeva!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_MAKEARROWS_JustTreeX50(C_Info)
-{
-	npc = PC_Hero;
-	nr = 3;
-	condition = PC_MAKEARROWS_JustTreeX50_condition;
-	information = PC_MAKEARROWS_JustTreeX50_info;
-	permanent = TRUE;
-	description = "Vyrobit řezivo z obyčejného dřeva x50";
-};
-
-func int PC_MAKEARROWS_JustTreeX50_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEARROWS) && (KNOWHOWTOMAKEARROWS == TRUE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_MAKEARROWS_JustTreeX50_info()
-{
-	AI_Wait(self,3);
-	CreateInvItems(self,ItMi_JustTree,50);
-	AI_PrintClr("Vyrobeno 50x Řezivo z obyčejného dřeva!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 //---------------------Stol dlya sborki strel----------------------------
@@ -537,57 +568,130 @@ instance PC_MAKEARROWSANDBOLTS_ItMi_Arrow(C_Info)
 	condition = PC_MAKEARROWSANDBOLTS_ItMi_Arrow_condition;
 	information = PC_MAKEARROWSANDBOLTS_ItMi_Arrow_info;
 	permanent = TRUE;
-	description = "... obyčejné šípy";
+	description = "s@SPIN_MAKEARROWSANDBOLTS_ItMi_Arrow ... obyčejné šípy";
 };
 
 func int PC_MAKEARROWSANDBOLTS_ItMi_Arrow_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (ArrowTableOn == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE) && (DoArrows == TRUE) && (DoBolts == FALSE) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") < 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") < 500) || (Npc_GetDistToWP(hero,"OW_SAWHUT_SLEEP_01") < 1000) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") < 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_ArrowShaft) / 1;
+		max = min(max, Npc_HasItems(other, ItMi_ArrowTip) / 1);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEARROWSANDBOLTS_ItMi_Arrow");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEARROWSANDBOLTS_ItMi_Arrow
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEARROWSANDBOLTS_ItMi_Arrow ");
+		newDescription = ConcatStrings(newDescription, "... obyčejné šípy");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEARROWSANDBOLTS_ItMi_Arrow.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEARROWSANDBOLTS_ItMi_Arrow_info()
 {
-	var int sum_amount;
-	var int ing_amount_1;
-	var int ing_amount_2;
 	var string concatText;
-
-	if((Npc_HasItems(self,ItMi_ArrowShaft) >= 1) && (Npc_HasItems(self,ItMi_ArrowTip) >= 1))
-	{
-		ing_amount_1 = Npc_HasItems(other,ItMi_ArrowShaft);
-		ing_amount_2 = Npc_HasItems(other,ItMi_ArrowTip);
-
-		if(ing_amount_1 > ing_amount_2)
-		{
-			sum_amount = ing_amount_2 + 1;
-		}
-		else
-		{
-			sum_amount = ing_amount_1 + 1;
-		};
-
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_ArrowShaft,sum_amount);
-		Npc_RemoveInvItems(self,ItMi_ArrowTip,sum_amount);
-		CreateInvItems(self,ItRw_Arrow,sum_amount);
-		RankPoints = RankPoints + 1;
-		concatText = "Vyrobeno ";
-		concatText = ConcatStrings(concatText,IntToString(sum_amount));
-		concatText = ConcatStrings(concatText,"x Šíp!");
-		AI_PrintClr(concatText,83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		CreateInvItems(self,ItRw_Arrow,1);
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-
+	
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,ItMi_ArrowShaft,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_ArrowTip,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItRw_Arrow,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Šíp!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
+	
 	b_endproductiondialog();
 	DoArrows = FALSE;
 	ArrowTableOn = FALSE;
@@ -600,41 +704,131 @@ instance PC_MAKEARROWSANDBOLTS_ItMi_Arrow_Ker(C_Info)
 	condition = PC_MAKEARROWSANDBOLTS_ItMi_Arrow_Ker_condition;
 	information = PC_MAKEARROWSANDBOLTS_ItMi_Arrow_Ker_info;
 	permanent = TRUE;
-	description = "... kerenické šípy x50";
+	description = "s@SPIN_MAKEARROWSANDBOLTS_ItMi_Arrow_Ker ... kerenické šípy x50";
 };
 
 func int PC_MAKEARROWSANDBOLTS_ItMi_Arrow_Ker_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (ArrowTableOn == TRUE) && (KNOWHOWTOMAKEARROWSKER == TRUE) && (DoArrows == TRUE) && (DoBolts == FALSE) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") < 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") < 500) || (Npc_GetDistToWP(hero,"OW_SAWHUT_SLEEP_01") < 1000) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") < 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_ArrowShaft) / 50;
+		max = min(max, Npc_HasItems(other, ItMi_KerArrowTip) / 50);
+		max = min(max, Npc_HasItems(other, ItMi_HarpyFeder) / 1);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEARROWSANDBOLTS_ItMi_Arrow_Ker");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEARROWSANDBOLTS_ItMi_Arrow_Ker
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEARROWSANDBOLTS_ItMi_Arrow_Ker ");
+		newDescription = ConcatStrings(newDescription, "... kerenické šípy x50");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEARROWSANDBOLTS_ItMi_Arrow_Ker.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEARROWSANDBOLTS_ItMi_Arrow_Ker_info()
 {
 	var string concatText;
 
-	if((Npc_HasItems(self,ItMi_ArrowShaft) >= 50) && (Npc_HasItems(self,ItMi_KerArrowTip) >= 50) && (Npc_HasItems(self,ItMi_HarpyFeder) >= 1))
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_ArrowShaft,50);
-		Npc_RemoveInvItems(self,ItMi_KerArrowTip,50);
-		Npc_RemoveInvItems(self,ItMi_HarpyFeder,1);
-		CreateInvItems(self,ITRW_MYHUNTARROW,50);
-		RankPoints = RankPoints + 1;
-		concatText = "Vyrobeno ";
-		concatText = ConcatStrings(concatText,IntToString(50));
-		concatText = ConcatStrings(concatText,"x Kerenický šíp!");
-		AI_PrintClr(concatText,83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,ItMi_ArrowShaft,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_KerArrowTip,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_HarpyFeder,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ITRW_MYHUNTARROW,50*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(50*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Kerenický šíp!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_MAKEARROWSANDBOLTS_ItRw_Bolt(C_Info)
@@ -644,55 +838,129 @@ instance PC_MAKEARROWSANDBOLTS_ItRw_Bolt(C_Info)
 	condition = PC_MAKEARROWSANDBOLTS_ItRw_Bolt_condition;
 	information = PC_MAKEARROWSANDBOLTS_ItRw_Bolt_info;
 	permanent = TRUE;
-	description = "... obyčejné šipky";
+	description = "s@SPIN_MAKEARROWSANDBOLTS_ItRw_Bolt ... obyčejné šipky";
 };
 
 func int PC_MAKEARROWSANDBOLTS_ItRw_Bolt_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (ArrowTableOn == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE) && (DoArrows == FALSE) && (DoBolts == TRUE) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") < 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") < 500) || (Npc_GetDistToWP(hero,"OW_SAWHUT_SLEEP_01") < 1000) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") < 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_BoltShaft) / 1;
+		max = min(max, Npc_HasItems(other, ItMi_BoltTip) / 1);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEARROWSANDBOLTS_ItRw_Bolt");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEARROWSANDBOLTS_ItRw_Bolt
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEARROWSANDBOLTS_ItRw_Bolt ");
+		newDescription = ConcatStrings(newDescription, "... obyčejné šipky");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEARROWSANDBOLTS_ItRw_Bolt.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEARROWSANDBOLTS_ItRw_Bolt_info()
 {
-	var int sum_amount;
-	var int ing_amount_1;
-	var int ing_amount_2;
 	var string concatText;
-
-	if((Npc_HasItems(self,ItMi_BoltShaft) >= 1) && (Npc_HasItems(self,ItMi_BoltTip) >= 1))
-	{
-		ing_amount_1 = Npc_HasItems(other,ItMi_BoltShaft);
-		ing_amount_2 = Npc_HasItems(other,ItMi_BoltTip);
-
-		if(ing_amount_1 > ing_amount_2)
-		{
-			sum_amount = ing_amount_2;
-		}
-		else
-		{
-			sum_amount = ing_amount_1;
-		};
-
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_BoltShaft,sum_amount);
-		Npc_RemoveInvItems(self,ItMi_BoltTip,sum_amount);
-		CreateInvItems(self,ItRw_Bolt,sum_amount);
-		RankPoints = RankPoints + 1;
-		concatText = "Vyrobeno ";
-		concatText = ConcatStrings(concatText,IntToString(sum_amount));
-		concatText = ConcatStrings(concatText,"x Šipka!");
-		AI_PrintClr(concatText,83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,ItMi_BoltShaft,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_BoltTip,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItRw_Bolt,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Šipka!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_MAKEARROWSANDBOLTS_ItMi_FireArrow(C_Info)
@@ -702,36 +970,131 @@ instance PC_MAKEARROWSANDBOLTS_ItMi_FireArrow(C_Info)
 	condition = PC_MAKEARROWSANDBOLTS_ItMi_FireArrow_condition;
 	information = PC_MAKEARROWSANDBOLTS_ItMi_FireArrow_info;
 	permanent = TRUE;
-	description = "... ohnivé šípy x50";
+	description = "s@SPIN_MAKEARROWSANDBOLTS_ItMi_FireArrow ... ohnivé šípy x50";
 };
 
 func int PC_MAKEARROWSANDBOLTS_ItMi_FireArrow_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (ArrowTableOn == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE) && (KNOWHOWTOMAKEFIREARROWS == TRUE) && (DoArrows == TRUE) && (DoBolts == FALSE) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") < 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") < 500) || (Npc_GetDistToWP(hero,"OW_SAWHUT_SLEEP_01") < 1000) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") < 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_ArrowShaft) / 50;
+		max = min(max, Npc_HasItems(other, ItMi_ArrowTip) / 50);
+		max = min(max, Npc_HasItems(other, ItMi_Sulfur) / 10);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEARROWSANDBOLTS_ItMi_FireArrow");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEARROWSANDBOLTS_ItMi_FireArrow
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEARROWSANDBOLTS_ItMi_FireArrow ");
+		newDescription = ConcatStrings(newDescription, "... ohnivé šípy x50");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEARROWSANDBOLTS_ItMi_FireArrow.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEARROWSANDBOLTS_ItMi_FireArrow_info()
 {
-	if((Npc_HasItems(self,ItMi_ArrowShaft) >= 50) && (Npc_HasItems(self,ItMi_ArrowTip) >= 50) && (Npc_HasItems(self,ItMi_Sulfur) >= 10))
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_ArrowShaft,50);
-		Npc_RemoveInvItems(self,ItMi_ArrowTip,50);
-		Npc_RemoveInvItems(self,ItMi_Sulfur,10);
-		CreateInvItems(self,ItRw_Addon_FireArrow,50);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 50x Ohnivý šíp!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	var string concatText;
+	
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,ItMi_ArrowShaft,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_ArrowTip,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_Sulfur,10*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItRw_Addon_FireArrow,50*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(50*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Ohnivý šíp!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_MAKEARROWSANDBOLTS_ItMi_HolyArrow(C_Info)
@@ -741,36 +1104,131 @@ instance PC_MAKEARROWSANDBOLTS_ItMi_HolyArrow(C_Info)
 	condition = PC_MAKEARROWSANDBOLTS_ItMi_HolyArrow_condition;
 	information = PC_MAKEARROWSANDBOLTS_ItMi_HolyArrow_info;
 	permanent = TRUE;
-	description = "... posvěcené šípy x50";
+	description = "s@SPIN_MAKEARROWSANDBOLTS_ItMi_HolyArrow ... posvěcené šípy x50";
 };
 
 func int PC_MAKEARROWSANDBOLTS_ItMi_HolyArrow_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (ArrowTableOn == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE) && (MAKEHOLYARROWS == TRUE) && (DoArrows == TRUE) && (DoBolts == FALSE) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") < 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") < 500) || (Npc_GetDistToWP(hero,"OW_SAWHUT_SLEEP_01") < 1000) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") < 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_ArrowShaft) / 50;
+		max = min(max, Npc_HasItems(other, ItMi_ArrowTip) / 50);
+		max = min(max, Npc_HasItems(other, ItMi_HolyWater) / 10);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEARROWSANDBOLTS_ItMi_HolyArrow");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEARROWSANDBOLTS_ItMi_HolyArrow
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEARROWSANDBOLTS_ItMi_HolyArrow ");
+		newDescription = ConcatStrings(newDescription, "... posvěcené šípy x50");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEARROWSANDBOLTS_ItMi_HolyArrow.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEARROWSANDBOLTS_ItMi_HolyArrow_info()
 {
-	if((Npc_HasItems(self,ItMi_ArrowShaft) >= 50) && (Npc_HasItems(self,ItMi_ArrowTip) >= 50) && (Npc_HasItems(self,ItMi_HolyWater) >= 10))
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_ArrowShaft,50);
-		Npc_RemoveInvItems(self,ItMi_ArrowTip,50);
-		Npc_RemoveInvItems(self,ItMi_HolyWater,10);
-		CreateInvItems(self,itrw_holyarrow,50);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 50x Posvěcený šíp!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	var string concatText;
+	
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,ItMi_ArrowShaft,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_ArrowTip,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_HolyWater,10*InfoManagerSpinnerValue);
+	CreateInvItems(self,itrw_holyarrow,50*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(50*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Posvěcený šíp!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 
@@ -781,36 +1239,131 @@ instance PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicArrow(C_Info)
 	condition = PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicArrow_condition;
 	information = PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicArrow_info;
 	permanent = TRUE;
-	description = "... magické šípy x50";
+	description = "s@SPIN_MAKEARROWSANDBOLTS_ItRw_Addon_MagicArrow ... magické šípy x50";
 };
 
 func int PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicArrow_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (ArrowTableOn == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE) && (KNOWHOWTOMAKEMAGICARROWS == TRUE) && (DoArrows == TRUE) && (DoBolts == FALSE) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") < 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") < 500) || (Npc_GetDistToWP(hero,"OW_SAWHUT_SLEEP_01") < 1000) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") < 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_ArrowShaft) / 50;
+		max = min(max, Npc_HasItems(other, ItMi_ArrowTip) / 50);
+		max = min(max, Npc_HasItems(other, ItMi_Quartz) / 10);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEARROWSANDBOLTS_ItRw_Addon_MagicArrow");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEARROWSANDBOLTS_ItRw_Addon_MagicArrow
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEARROWSANDBOLTS_ItRw_Addon_MagicArrow ");
+		newDescription = ConcatStrings(newDescription, "... magické šípy x50");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicArrow.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicArrow_info()
 {
-	if((Npc_HasItems(self,ItMi_ArrowShaft) >= 50) && (Npc_HasItems(self,ItMi_ArrowTip) >= 50) && (Npc_HasItems(self,ItMi_Quartz) >= 10))
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_ArrowShaft,50);
-		Npc_RemoveInvItems(self,ItMi_ArrowTip,50);
-		Npc_RemoveInvItems(self,ItMi_Quartz,10);
-		CreateInvItems(self,ItRw_Addon_MagicArrow,50);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 50x Magický šíp!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	var string concatText;
+	
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,ItMi_ArrowShaft,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_ArrowTip,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_Quartz,10*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItRw_Addon_MagicArrow,50*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(50*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Magický šíp!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicBolt(C_Info)
@@ -820,36 +1373,131 @@ instance PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicBolt(C_Info)
 	condition = PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicBolt_condition;
 	information = PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicBolt_info;
 	permanent = TRUE;
-	description = "... magické šipky x50";
+	description = "s@SPIN_MAKEARROWSANDBOLTS_ItRw_Addon_MagicBolt ... magické šipky x50";
 };
 
 func int PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicBolt_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (ArrowTableOn == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE) && (KNOWHOWTOMAKEMAGICBOLT == TRUE) && (DoArrows == FALSE) && (DoBolts == TRUE) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") < 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") < 500) || (Npc_GetDistToWP(hero,"OW_SAWHUT_SLEEP_01") < 1000) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") < 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_BoltShaft) / 50;
+		max = min(max, Npc_HasItems(other, ItMi_BoltTip) / 50);
+		max = min(max, Npc_HasItems(other, ItMi_Quartz) / 10);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEARROWSANDBOLTS_ItRw_Addon_MagicBolt");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEARROWSANDBOLTS_ItRw_Addon_MagicBolt
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEARROWSANDBOLTS_ItRw_Addon_MagicBolt ");
+		newDescription = ConcatStrings(newDescription, "... magické šipky x50");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicBolt.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEARROWSANDBOLTS_ItRw_Addon_MagicBolt_info()
 {
-	if((Npc_HasItems(self,ItMi_BoltShaft) >= 50) && (Npc_HasItems(self,ItMi_BoltTip) >= 50) && (Npc_HasItems(self,ItMi_Quartz) >= 10))
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_BoltShaft,50);
-		Npc_RemoveInvItems(self,ItMi_BoltTip,50);
-		Npc_RemoveInvItems(self,ItMi_Quartz,10);
-		CreateInvItems(self,ItRw_Addon_MagicBolt,50);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 50x Magická šipka!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	var string concatText;
+	
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,ItMi_BoltShaft,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_BoltTip,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_Quartz,10*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItRw_Addon_MagicBolt,50*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(50*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Magická šipka!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_MAKEARROWSANDBOLTS_ItMi_HolyBolt(C_Info)
@@ -859,36 +1507,131 @@ instance PC_MAKEARROWSANDBOLTS_ItMi_HolyBolt(C_Info)
 	condition = PC_MAKEARROWSANDBOLTS_ItMi_HolyBolt_condition;
 	information = PC_MAKEARROWSANDBOLTS_ItMi_HolyBolt_info;
 	permanent = TRUE;
-	description = "... posvěcené šipky x50";
+	description = "s@SPIN_MAKEARROWSANDBOLTS_ItMi_HolyBolt ... posvěcené šipky x50";
 };
 
 func int PC_MAKEARROWSANDBOLTS_ItMi_HolyBolt_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (ArrowTableOn == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE) && (MAKEHOLYARROWS == TRUE) && (DoArrows == FALSE) && (DoBolts == TRUE) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") < 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") < 500) || (Npc_GetDistToWP(hero,"OW_SAWHUT_SLEEP_01") < 1000) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") < 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_BoltShaft) / 50;
+		max = min(max, Npc_HasItems(other, ItMi_BoltTip) / 50);
+		max = min(max, Npc_HasItems(other, ItMi_HolyWater) / 10);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEARROWSANDBOLTS_ItMi_HolyBolt");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEARROWSANDBOLTS_ItMi_HolyBolt
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEARROWSANDBOLTS_ItMi_HolyBolt ");
+		newDescription = ConcatStrings(newDescription, "... posvěcené šipky x50");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEARROWSANDBOLTS_ItMi_HolyBolt.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEARROWSANDBOLTS_ItMi_HolyBolt_info()
 {
-	if((Npc_HasItems(self,ItMi_BoltShaft) >= 50) && (Npc_HasItems(self,ItMi_BoltTip) >= 50) && (Npc_HasItems(self,ItMi_HolyWater) >= 10))
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_BoltShaft,50);
-		Npc_RemoveInvItems(self,ItMi_BoltTip,50);
-		Npc_RemoveInvItems(self,ItMi_HolyWater,10);
-		CreateInvItems(self,ItRw_HolyBolt,50);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 50x Posvěcená šipka!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	var string concatText;
+	
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,ItMi_BoltShaft,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_BoltTip,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_HolyWater,10*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItRw_HolyBolt,50*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(50*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Posvěcená šipka!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 //------------razogrev stal'noy zagotovki-------------------------
@@ -959,43 +1702,126 @@ instance PC_SMITHFIRE_ADDON_MakeRaw(C_Info)
 	condition = PC_SMITHFIRE_ADDON_MakeRaw_condition;
 	information = PC_SMITHFIRE_ADDON_MakeRaw_info;
 	permanent = TRUE;
-	description = "Vyrobit ocelové pruty...";
+	description = "s@SPIN_SMITHFIRE_ADDON_MakeRaw Vyrobit ocelové pruty (1x železný ingot)";
 };
 
 func int PC_SMITHFIRE_ADDON_MakeRaw_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == FALSE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == FALSE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_IronStuck) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SMITHFIRE_ADDON_MakeRaw");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SMITHFIRE_ADDON_MakeRaw
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SMITHFIRE_ADDON_MakeRaw ");
+		newDescription = ConcatStrings(newDescription, "Vyrobit ocelové pruty (1x železný ingot)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_SMITHFIRE_ADDON_MakeRaw.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_SMITHFIRE_ADDON_MakeRaw_info()
 {
-	MakeRawSmith = TRUE;
-};
-
-instance PC_SMITHFIRE_ADDON_MakeRaw_Back(C_Info)
-{
-	npc = PC_Hero;
-	nr = 99;
-	condition = PC_SMITHFIRE_ADDON_MakeRaw_Back_condition;
-	information = PC_SMITHFIRE_ADDON_MakeRaw_Back_info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_SMITHFIRE_ADDON_MakeRaw_Back_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == TRUE) && (WarmUpSmith == FALSE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_SMITHFIRE_ADDON_MakeRaw_Back_info()
-{
-	MakeRawSmith = FALSE;
+	var string concatText;
+	
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,ItMi_IronStuck,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMiSwordraw,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = ConcatStrings("Vyrobeno ",IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Surová ocel!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_SMITHFIRE_ADDON_WarmUpSmith(C_Info)
@@ -1005,43 +1831,126 @@ instance PC_SMITHFIRE_ADDON_WarmUpSmith(C_Info)
 	condition = PC_SMITHFIRE_ADDON_WarmUpSmith_condition;
 	information = PC_SMITHFIRE_ADDON_WarmUpSmith_info;
 	permanent = TRUE;
-	description = "Nahřát ocelové pruty...";
+	description = "s@SPIN_SMITHFIRE_ADDON_WarmUpSmith Nahřát ocelové pruty";
 };
 
 func int PC_SMITHFIRE_ADDON_WarmUpSmith_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == FALSE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == FALSE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMiSwordraw) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SMITHFIRE_ADDON_WarmUpSmith");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SMITHFIRE_ADDON_WarmUpSmith
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SMITHFIRE_ADDON_WarmUpSmith ");
+		newDescription = ConcatStrings(newDescription, "Nahřát ocelové pruty");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_SMITHFIRE_ADDON_WarmUpSmith.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_SMITHFIRE_ADDON_WarmUpSmith_info()
 {
-	WarmUpSmith = TRUE;
-};
-
-instance PC_SMITHFIRE_ADDON_WarmUpSmith_Back(C_Info)
-{
-	npc = PC_Hero;
-	nr = 99;
-	condition = PC_SMITHFIRE_ADDON_WarmUpSmith_Back_condition;
-	information = PC_SMITHFIRE_ADDON_WarmUpSmith_Back_info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_SMITHFIRE_ADDON_WarmUpSmith_Back_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == TRUE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_SMITHFIRE_ADDON_WarmUpSmith_Back_info()
-{
-	WarmUpSmith = FALSE;
+	var string concatText;
+	
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,ItMiSwordraw,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,itmiswordrawhot_1,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = ConcatStrings("Nahřáto ",IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Rozžhavená ocel!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_SMITHFIRE_ADDON_MakeIronSmith(C_Info)
@@ -1051,43 +1960,126 @@ instance PC_SMITHFIRE_ADDON_MakeIronSmith(C_Info)
 	condition = PC_SMITHFIRE_ADDON_MakeIronSmith_condition;
 	information = PC_SMITHFIRE_ADDON_MakeIronSmith_info;
 	permanent = TRUE;
-	description = "Přetavit železnou rudu...";
+	description = "s@SPIN_SMITHFIRE_ADDON_MakeIronSmith Vyrobit železné ingoty (50x železná ruda)";
 };
 
 func int PC_SMITHFIRE_ADDON_MakeIronSmith_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == FALSE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == FALSE))
+	
+	// Original dialogue condition
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == FALSE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == FALSE) && (KNOWHOWTOOREFUS == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, itmi_snugget) / 50;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SMITHFIRE_ADDON_MakeIronSmith");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SMITHFIRE_ADDON_MakeIronSmith
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SMITHFIRE_ADDON_MakeIronSmith ");
+		newDescription = ConcatStrings(newDescription, "Vyrobit železné ingoty (50x železná ruda)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_SMITHFIRE_ADDON_MakeIronSmith.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_SMITHFIRE_ADDON_MakeIronSmith_info()
 {
-	MakeIronSmith = TRUE;
-};
-
-instance PC_SMITHFIRE_ADDON_MakeIronSmith_Back(C_Info)
-{
-	npc = PC_Hero;
-	nr = 99;
-	condition = PC_SMITHFIRE_ADDON_MakeIronSmith_Back_condition;
-	information = PC_SMITHFIRE_ADDON_MakeIronSmith_Back_info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_SMITHFIRE_ADDON_MakeIronSmith_Back_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == FALSE) && (MakeIronSmith == TRUE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_SMITHFIRE_ADDON_MakeIronSmith_Back_info()
-{
-	MakeIronSmith = FALSE;
+	var string concatText;
+	
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,itmi_snugget,50*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_IronStuck,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = ConcatStrings("Vyrobeno ",IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Železný ingot!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_SMITHFIRE_ADDON_MakeGoldSmith(C_Info)
@@ -1097,45 +2089,127 @@ instance PC_SMITHFIRE_ADDON_MakeGoldSmith(C_Info)
 	condition = PC_SMITHFIRE_ADDON_MakeGoldSmith_condition;
 	information = PC_SMITHFIRE_ADDON_MakeGoldSmith_info;
 	permanent = TRUE;
-	description = "Přetavit zlaté nugety...";
+	description = "s@SPIN_SMITHFIRE_ADDON_MakeGoldSmith Vyrobit zlaté ingoty (25x zlatý nuget)";
 };
 
 func int PC_SMITHFIRE_ADDON_MakeGoldSmith_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == FALSE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == FALSE))
+	
+	// Original dialogue condition
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == FALSE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == FALSE) && (KNOWHOWTOOREFUSGOLD == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_Addon_GoldNugget) / 25;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SMITHFIRE_ADDON_MakeGoldSmith");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SMITHFIRE_ADDON_MakeGoldSmith
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SMITHFIRE_ADDON_MakeGoldSmith ");
+		newDescription = ConcatStrings(newDescription, "Vyrobit zlaté ingoty (25x zlatý nuget)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_SMITHFIRE_ADDON_MakeGoldSmith.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_SMITHFIRE_ADDON_MakeGoldSmith_info()
 {
-	MakeGoldSmith = TRUE;
+	var string concatText;
+	
+	AI_Wait(self,1);
+	Npc_RemoveInvItems(self,ItMi_Addon_GoldNugget,25*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_StuckGold,1*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	concatText = ConcatStrings("Vyrobeno ",IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Zlatý ingot!");
+	AI_PrintClr(concatText,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
-
-instance PC_SMITHFIRE_ADDON_MakeGoldSmith_Back(C_Info)
-{
-	npc = PC_Hero;
-	nr = 99;
-	condition = PC_SMITHFIRE_ADDON_MakeGoldSmith_Back_condition;
-	information = PC_SMITHFIRE_ADDON_MakeGoldSmith_Back_info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_SMITHFIRE_ADDON_MakeGoldSmith_Back_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == FALSE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == TRUE) && (MakeOreSmith == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_SMITHFIRE_ADDON_MakeGoldSmith_Back_info()
-{
-	MakeGoldSmith = FALSE;
-};
-
 
 instance PC_SMITHFIRE_ADDON_MakeOreSmith(C_Info)
 {
@@ -1144,641 +2218,126 @@ instance PC_SMITHFIRE_ADDON_MakeOreSmith(C_Info)
 	condition = PC_SMITHFIRE_ADDON_MakeOreSmith_condition;
 	information = PC_SMITHFIRE_ADDON_MakeOreSmith_info;
 	permanent = TRUE;
-	description = "Přetavit magickou rudu...";
+	description = "s@SPIN_SMITHFIRE_ADDON_MakeOreSmith Vyrobit ingoty magické rudy (50x magická ruda)";
 };
 
 func int PC_SMITHFIRE_ADDON_MakeOreSmith_condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == FALSE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == FALSE))
+	
+	// Original dialogue condition
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == FALSE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == FALSE) && (PlayerRudoplav == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, itmi_nugget) / 50;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SMITHFIRE_ADDON_MakeOreSmith");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SMITHFIRE_ADDON_MakeOreSmith
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SMITHFIRE_ADDON_MakeOreSmith ");
+		newDescription = ConcatStrings(newDescription, "Vyrobit ingoty magické rudy (50x magická ruda)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_SMITHFIRE_ADDON_MakeOreSmith.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_SMITHFIRE_ADDON_MakeOreSmith_info()
 {
-	MakeOreSmith = TRUE;
-};
-
-instance PC_SMITHFIRE_ADDON_MakeOreSmith_Back(C_Info)
-{
-	npc = PC_Hero;
-	nr = 99;
-	condition = PC_SMITHFIRE_ADDON_MakeOreSmith_Back_condition;
-	information = PC_SMITHFIRE_ADDON_MakeOreSmith_Back_info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_SMITHFIRE_ADDON_MakeOreSmith_Back_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (SharpMiscWeapon == FALSE) && (MakeRawSmith == FALSE) && (WarmUpSmith == FALSE) && (MakeIronSmith == FALSE) && (MakeGoldSmith == FALSE) && (MakeOreSmith == TRUE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_SMITHFIRE_ADDON_MakeOreSmith_Back_info()
-{
-	MakeOreSmith = FALSE;
-};
-
-instance PC_SMITHFIRE_ADDON_UNHOUR(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_smithfire_addon_UNHOUR_condition;
-	information = pc_smithfire_addon_UNHOUR_info;
-	permanent = TRUE;
-	description = "... vyrobit ocelový prut x1 (1x železný ingot)";
-};
-
-func int pc_smithfire_addon_UNHOUR_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeRawSmith == TRUE) && (Npc_HasItems(self,ItMi_IronStuck) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_UNHOUR_info()
-{
-	if(Npc_HasItems(self,ItMi_IronStuck) >= 1)
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_IronStuck,1);
-		CreateInvItems(self,ItMiSwordraw,1);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 1x Surová ocel!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_SMITHFIRE_ADDON_ANHOUR(C_Info)
-{
-	npc = PC_Hero;
-	nr = 2;
-	condition = pc_smithfire_addon_ANHOUR_condition;
-	information = pc_smithfire_addon_ANHOUR_info;
-	permanent = TRUE;
-	description = "... vyrobit ocelový prut x5 (5x železný ingot)";
-};
-
-func int pc_smithfire_addon_ANHOUR_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeRawSmith == TRUE) && (Npc_HasItems(self,ItMi_IronStuck) >= 5))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_ANHOUR_info()
-{
-	if(Npc_HasItems(self,ItMi_IronStuck) >= 5)
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_IronStuck,5);
-		CreateInvItems(self,ItMiSwordraw,5);
-		AI_PrintClr("Vyrobeno 5x Surová ocel!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_SMITHFIRE_ADDON_ANHOURALL(C_Info)
-{
-	npc = PC_Hero;
-	nr = 3;
-	condition = pc_smithfire_addon_ANHOURALL_condition;
-	information = pc_smithfire_addon_ANHOURALL_info;
-	permanent = TRUE;
-	description = "... vyrobit ocelové pruty (všechny železné ingoty)";
-};
-
-func int pc_smithfire_addon_ANHOURALL_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeRawSmith == TRUE) && (Npc_HasItems(self,ItMi_IronStuck) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_ANHOURALL_info()
-{
 	var string concatText;
-	var int CountDraw;
-
+	
 	AI_Wait(self,1);
-	CountDraw = Npc_HasItems(self,ItMi_IronStuck);
-	Npc_RemoveInvItems(self,ItMi_IronStuck,Npc_HasItems(self,ItMi_IronStuck));
-	CreateInvItems(self,ItMiSwordraw,CountDraw);
+	Npc_RemoveInvItems(self,itmi_nugget,50*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_OreStuck,1*InfoManagerSpinnerValue);
 	RankPoints = RankPoints + 1;
-	concatText = ConcatStrings("Vyrobeno ",IntToString(CountDraw));
-
-	if(CountDraw == 1)
-	{
-		concatText = ConcatStrings(concatText,"x Surová ocel!");
-	}
-	else if((CountDraw > 1) && (CountDraw < 5))
-	{
-		concatText = ConcatStrings(concatText,"x Surová ocel!");
-	}
-	else if(CountDraw >= 5)
-	{
-		concatText = ConcatStrings(concatText,"x Surová ocel!");
-	};
-
+	concatText = ConcatStrings("Vyrobeno ",IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Ingot magické rudy!");
 	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_SMITHFIRE_ADDON_HOUR(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_smithfire_addon_hour_condition;
-	information = pc_smithfire_addon_hour_info;
-	permanent = TRUE;
-	description = "... nahřát ocelový prut x1";
-};
-
-func int pc_smithfire_addon_hour_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (WarmUpSmith == TRUE) && (Npc_HasItems(self,ItMiSwordraw) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_hour_info()
-{
-	if(Npc_HasItems(self,ItMiSwordraw) >= 1)
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMiSwordraw,1);
-		CreateInvItems(self,itmiswordrawhot_1,1);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Nahřáto 1x Rozžhavená ocel!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_SMITHFIRE_ADDON_HOUR_X5(C_Info)
-{
-	npc = PC_Hero;
-	nr = 2;
-	condition = pc_smithfire_addon_hour_x5_condition;
-	information = pc_smithfire_addon_hour_x5_info;
-	permanent = TRUE;
-	description = "... nahřát ocelový prut x5";
-};
-
-func int pc_smithfire_addon_hour_x5_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (WarmUpSmith == TRUE) && (Npc_HasItems(self,ItMiSwordraw) >= 5))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_hour_x5_info()
-{
-	if(Npc_HasItems(self,ItMiSwordraw) >= 5)
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMiSwordraw,5);
-		CreateInvItems(self,itmiswordrawhot_1,5);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Nahřáto 5x Rozžhavená ocel!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_SMITHFIRE_ADDON_HOUR_XALL(C_Info)
-{
-	npc = PC_Hero;
-	nr = 3;
-	condition = PC_SMITHFIRE_ADDON_HOUR_XALL_condition;
-	information = PC_SMITHFIRE_ADDON_HOUR_XALL_info;
-	permanent = TRUE;
-	description = "... nahřát všechny ocelové pruty";
-};
-
-func int PC_SMITHFIRE_ADDON_HOUR_XALL_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (WarmUpSmith == TRUE) && (Npc_HasItems(self,ItMiSwordraw) >= 1))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_SMITHFIRE_ADDON_HOUR_XALL_info()
-{
-	var string concatText;
-	var int CountDraw;
-
-	AI_Wait(self,1);
-	CountDraw = Npc_HasItems(self,ItMiSwordraw);
-	Npc_RemoveInvItems(self,ItMiSwordraw,Npc_HasItems(self,ItMiSwordraw));
-	CreateInvItems(self,itmiswordrawhot_1,CountDraw);
-	RankPoints = RankPoints + 1;
-	// AI_PrintClr("Vy razogreli vse stal'nyye zagotovki!",83,152,48);
-	concatText = ConcatStrings("Nahřáto ",IntToString(CountDraw));
-	concatText = ConcatStrings(concatText,"x Rozžhavená ocel!");
-	AI_PrintClr(concatText,83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_SMITHFIRE_ADDON_HOUR2(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_smithfire_addon_hour2_condition;
-	information = pc_smithfire_addon_hour2_info;
-	permanent = TRUE;
-	description = "... vyrobit železný ingot x1 (50x železná ruda)";
-};
-
-func int pc_smithfire_addon_hour2_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeIronSmith == TRUE) && (KNOWHOWTOOREFUS == TRUE) && (Npc_HasItems(self,itmi_snugget) >= 50))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_hour2_info()
-{
-	if(Npc_HasItems(self,itmi_snugget) >= 50)
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,itmi_snugget,50);
-		CreateInvItems(self,ItMi_IronStuck,1);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 1x Železný ingot!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_SMITHFIRE_ADDON_HOUR2X5(C_Info)
-{
-	npc = PC_Hero;
-	nr = 2;
-	condition = pc_smithfire_addon_hour2X5_condition;
-	information = pc_smithfire_addon_hour2X5_info;
-	permanent = TRUE;
-	description = "... vyrobit železný ingot x5 (250x železná ruda)";
-};
-
-func int pc_smithfire_addon_hour2X5_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeIronSmith == TRUE) && (KNOWHOWTOOREFUS == TRUE) && (Npc_HasItems(self,itmi_snugget) >= 250))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_hour2X5_info()
-{
-	if(Npc_HasItems(self,itmi_snugget) >= 250)
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,itmi_snugget,250);
-		CreateInvItems(self,ItMi_IronStuck,5);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 5x Železný ingot!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_SMITHFIRE_ADDON_IRONALL(C_Info)
-{
-	npc = PC_Hero;
-	nr = 3;
-	condition = pc_smithfire_addon_IRONALL_condition;
-	information = pc_smithfire_addon_IRONALL_info;
-	permanent = TRUE;
-	description = "... vyrobit železné ingoty (všechna železná ruda)";
-};
-
-func int pc_smithfire_addon_IRONALL_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeIronSmith == TRUE) && (KNOWHOWTOOREFUS == TRUE) && (Npc_HasItems(self,itmi_snugget) >= 50))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_IRONALL_info()
-{
-	var string concatText;
-	var int CountIronOre;
-	var int CountIronOreStucks;
-
-	AI_Wait(self,1);
-	CountIronOre = Npc_HasItems(self,itmi_snugget);
-	CountIronOreStucks = CountIronOre / 50;
-	Npc_RemoveInvItems(self,itmi_snugget,Npc_HasItems(self,itmi_snugget));
-	CreateInvItems(self,ItMi_IronStuck,CountIronOreStucks);
-	RankPoints = RankPoints + 1;
-	concatText = ConcatStrings("Vyrobeno ",IntToString(CountIronOreStucks));
-
-	if(CountIronOreStucks == 1)
-	{
-		concatText = ConcatStrings(concatText,"x Železný ingot!");
-	}
-	else if((CountIronOreStucks > 1) && (CountIronOreStucks < 5))
-	{
-		concatText = ConcatStrings(concatText,"x Železný ingot!");
-	}
-	else if(CountIronOreStucks >= 5)
-	{
-		concatText = ConcatStrings(concatText,"x Železný ingot!");
-	};
-
-	AI_PrintClr(concatText,83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_SMITHFIRE_ADDON_GOLD(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_smithfire_addon_gold_condition;
-	information = pc_smithfire_addon_gold_info;
-	permanent = TRUE;
-	description = "... vyrobit zlatý ingot x1 (25x zlatý nuget)";
-};
-
-func int pc_smithfire_addon_gold_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeGoldSmith == TRUE) && (KNOWHOWTOOREFUSGOLD == TRUE) && (Npc_HasItems(self,ItMi_Addon_GoldNugget) >= 25))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_gold_info()
-{
-	if(Npc_HasItems(self,ItMi_Addon_GoldNugget) >= 25)
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_Addon_GoldNugget,25);
-		CreateInvItems(self,ItMi_StuckGold,1);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 1x Zlatý ingot!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_SMITHFIRE_ADDON_GOLDX5(C_Info)
-{
-	npc = PC_Hero;
-	nr = 2;
-	condition = pc_smithfire_addon_goldX5_condition;
-	information = pc_smithfire_addon_goldX5_info;
-	permanent = TRUE;
-	description = "... vyrobit zlatý ingot x5 (125x zlatý nuget)";
-};
-
-func int pc_smithfire_addon_goldX5_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeGoldSmith == TRUE) && (KNOWHOWTOOREFUSGOLD == TRUE) && (Npc_HasItems(self,ItMi_Addon_GoldNugget) >= 125))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_goldX5_info()
-{
-	if(Npc_HasItems(self,ItMi_Addon_GoldNugget) >= 125)
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,ItMi_Addon_GoldNugget,125);
-		CreateInvItems(self,ItMi_StuckGold,5);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 5x Zlatý ingot!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_SMITHFIRE_ADDON_GOLDALL(C_Info)
-{
-	npc = PC_Hero;
-	nr = 3;
-	condition = pc_smithfire_addon_GOLDALL_condition;
-	information = pc_smithfire_addon_GOLDALL_info;
-	permanent = TRUE;
-	description = "... vyrobit zlaté ingoty (všechny zlaté nugety)";
-};
-
-func int pc_smithfire_addon_GOLDALL_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeGoldSmith == TRUE) && (KNOWHOWTOOREFUSGOLD == TRUE) && (Npc_HasItems(self,ItMi_Addon_GoldNugget) >= 25))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_GOLDALL_info()
-{
-	var string concatText;
-	var int CountGoldOre;
-	var int CountGoldOreStucks;
-
-	AI_Wait(self,1);
-	CountGoldOre = Npc_HasItems(self,ItMi_Addon_GoldNugget);
-	CountGoldOreStucks = CountGoldOre / 25;
-	Npc_RemoveInvItems(self,ItMi_Addon_GoldNugget,Npc_HasItems(self,ItMi_Addon_GoldNugget));
-	CreateInvItems(self,ItMi_StuckGold,CountGoldOreStucks);
-	RankPoints = RankPoints + 1;
-	concatText = ConcatStrings("Vyrobeno ",IntToString(CountGoldOreStucks));
-
-	if(CountGoldOreStucks == 1)
-	{
-		concatText = ConcatStrings(concatText,"x Zlatý ingot!");
-	}
-	else if((CountGoldOreStucks > 1) && (CountGoldOreStucks < 5))
-	{
-		concatText = ConcatStrings(concatText,"x Zlatý ingot!");
-	}
-	else if(CountGoldOreStucks >= 5)
-	{
-		concatText = ConcatStrings(concatText,"x Zlatý ingot!");
-	};
-
-	AI_PrintClr(concatText,83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_SMITHFIRE_ADDON_OREDO(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = pc_smithfire_addon_OREDO_condition;
-	information = pc_smithfire_addon_OREDO_info;
-	permanent = TRUE;
-	description = "... vyrobit ingot magické rudy x1 (50x magická ruda)";
-};
-
-func int pc_smithfire_addon_OREDO_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeOreSmith == TRUE) && (PlayerRudoplav == TRUE) && (Npc_HasItems(self,itmi_nugget) >= 50))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_OREDO_info()
-{
-	if(Npc_HasItems(self,itmi_nugget) >= 50)
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,itmi_nugget,50);
-		CreateInvItems(self,ItMi_OreStuck,1);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 1x Ingot magické rudy!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_SMITHFIRE_ADDON_OREDOX5(C_Info)
-{
-	npc = PC_Hero;
-	nr = 2;
-	condition = pc_smithfire_addon_OREDOX5_condition;
-	information = pc_smithfire_addon_OREDOX5_info;
-	permanent = TRUE;
-	description = "... vyrobit ingot magické rudy x5 (250x magická ruda)";
-};
-
-func int pc_smithfire_addon_OREDOX5_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeOreSmith == TRUE) && (PlayerRudoplav == TRUE) && (Npc_HasItems(self,itmi_nugget) >= 250))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_OREDOX5_info()
-{
-	if(Npc_HasItems(self,itmi_nugget) >= 250)
-	{
-		AI_Wait(self,1);
-		Npc_RemoveInvItems(self,itmi_nugget,250);
-		CreateInvItems(self,ItMi_OreStuck,5);
-		RankPoints = RankPoints + 1;
-		AI_PrintClr("Vyrobeno 5x Ingot magické rudy!",83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-};
-
-instance PC_SMITHFIRE_ADDON_OREDOALL(C_Info)
-{
-	npc = PC_Hero;
-	nr = 3;
-	condition = pc_smithfire_addon_OREDOALL_condition;
-	information = pc_smithfire_addon_OREDOALL_info;
-	permanent = TRUE;
-	description = "... vyrobit ingoty magické rudy (všechna magická ruda)";
-};
-
-func int pc_smithfire_addon_OREDOALL_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (MakeOreSmith == TRUE) && (PlayerRudoplav == TRUE) && (Npc_HasItems(self,itmi_nugget) >= 50))
-	{
-		return TRUE;
-	};
-};
-
-func void pc_smithfire_addon_OREDOALL_info()
-{
-	var string concatText;
-	var int CountMagicOre;
-	var int CountMagicOreStucks;
-
-	AI_Wait(self,1);
-	CountMagicOre = Npc_HasItems(self,itmi_nugget);
-	CountMagicOreStucks = CountMagicOre / 50;
-	Npc_RemoveInvItems(self,itmi_nugget,Npc_HasItems(self,itmi_nugget));
-	CreateInvItems(self,ItMi_OreStuck,CountMagicOreStucks);
-	RankPoints = RankPoints + 1;
-	concatText = ConcatStrings("Vyrobeno ",IntToString(CountMagicOreStucks));
-
-	if(CountMagicOreStucks == 1)
-	{
-		concatText = ConcatStrings(concatText,"x Ingot magické rudy!");
-	}
-	else if((CountMagicOreStucks > 1) && (CountMagicOreStucks < 5))
-	{
-		concatText = ConcatStrings(concatText,"x Ingot magické rudy!");
-	}
-	else if(CountMagicOreStucks >= 5)
-	{
-		concatText = ConcatStrings(concatText,"x Ingot magické rudy!");
-	};
-
-	AI_PrintClr(concatText,83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_SMITHFIRE_ADDON_ORCWEAPON(C_Info)
@@ -1967,34 +2526,127 @@ instance PC_SHARPMISC_1(C_Info)
 	condition = pc_sharpmisc_1_condition;
 	information = pc_sharpmisc_1_info;
 	permanent = TRUE;
-	description = "... roztavit rezavé meče (10x rezavý meč)";
+	description = "s@SPIN_SHARPMISC_1 ... roztavit rezavé meče (10x rezavý meč)";
 };
 
 func int pc_sharpmisc_1_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (KNOWHOWTOOREFUS == TRUE) && (SharpMiscWeapon == TRUE) && (Npc_HasItems(hero,ItMw_1h_MISC_Sword) >= 1))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMw_1h_MISC_Sword) / 10;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SHARPMISC_1");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SHARPMISC_1
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SHARPMISC_1 ");
+		newDescription = ConcatStrings(newDescription, "... roztavit rezavé meče (10x rezavý meč)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_SHARPMISC_1.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void pc_sharpmisc_1_info()
 {
-	if(Npc_HasItems(hero,ItMw_1h_MISC_Sword) >= 10)
-	{
-		AI_Wait(self,1);
-		B_GivePlayerXP(10);
-		Npc_RemoveInvItems(hero,ItMw_1h_MISC_Sword,10);
-		RankPoints = RankPoints + 1;
-		CreateInvItems(hero,ItMi_IronStuck,1);
-		AI_PrintClr("Vyrobeno 1x Železný ingot!",83,152,48);
-		B_Say(hero,hero,"$ITEMREADY");
-	}
-	else
-	{
-		AI_PrintClr("Nedostatek rezavých zbraní!",177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	var string concatText;
+	
+	AI_Wait(self,1);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItMw_1h_MISC_Sword,10*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	CreateInvItems(hero,ItMi_IronStuck,1*InfoManagerSpinnerValue);
+	concatText = ConcatStrings("Vyrobeno ",IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Železný ingot!");
+	AI_PrintClr(concatText,83,152,48);
+	B_Say(hero,hero,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_SHARPMISC_2(C_Info)
@@ -2004,34 +2656,127 @@ instance PC_SHARPMISC_2(C_Info)
 	condition = pc_sharpmisc_2_condition;
 	information = pc_sharpmisc_2_info;
 	permanent = TRUE;
-	description = "... roztavit rezavé obouruční meče (6x rezavý obouruční meč)";
+	description = "s@SPIN_SHARPMISC_2 ... roztavit rezavé obouruční meče (6x rezavý obouruční meč)";
 };
 
 func int pc_sharpmisc_2_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (KNOWHOWTOOREFUS == TRUE) && (SharpMiscWeapon == TRUE) && (Npc_HasItems(hero,ItMw_2H_Sword_M_01) >= 1))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMw_2H_Sword_M_01) / 6;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SHARPMISC_2");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SHARPMISC_2
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SHARPMISC_2 ");
+		newDescription = ConcatStrings(newDescription, "... roztavit rezavé obouruční meče (6x rezavý obouruční meč)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_SHARPMISC_2.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void pc_sharpmisc_2_info()
 {
-	if(Npc_HasItems(hero,ItMw_2H_Sword_M_01) >= 6)
-	{
-		AI_Wait(self,1);
-		B_GivePlayerXP(10);
-		Npc_RemoveInvItems(hero,ItMw_2H_Sword_M_01,6);
-		RankPoints = RankPoints + 1;
-		CreateInvItems(hero,ItMi_IronStuck,1);
-		AI_PrintClr("Vyrobeno 1x Železný ingot!",83,152,48);
-		B_Say(hero,hero,"$ITEMREADY");
-	}
-	else
-	{
-		AI_PrintClr("Nedostatek rezavých zbraní!",177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	var string concatText;
+	
+	AI_Wait(self,1);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItMw_2H_Sword_M_01,6*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	CreateInvItems(hero,ItMi_IronStuck,1*InfoManagerSpinnerValue);
+	concatText = ConcatStrings("Vyrobeno ",IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Železný ingot!");
+	AI_PrintClr(concatText,83,152,48);
+	B_Say(hero,hero,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_SHARPMISC_3(C_Info)
@@ -2041,38 +2786,127 @@ instance PC_SHARPMISC_3(C_Info)
 	condition = pc_sharpmisc_3_condition;
 	information = pc_sharpmisc_3_info;
 	permanent = TRUE;
-	description = "... roztavit rezavé sekyry (8x rezavá sekyra)";
+	description = "s@SPIN_SHARPMISC_3 ... roztavit rezavé sekyry (8x rezavá sekyra)";
 };
 
 func int pc_sharpmisc_3_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SMITHFIRE) && (KNOWHOWTOOREFUS == TRUE) && (SharpMiscWeapon == TRUE) && (Npc_HasItems(hero,ItMw_1h_Misc_Axe) >= 1))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMw_1h_Misc_Axe) / 8;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SHARPMISC_3");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SHARPMISC_3
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SHARPMISC_3 ");
+		newDescription = ConcatStrings(newDescription, "... roztavit rezavé sekyry (8x rezavá sekyra)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_SHARPMISC_3.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void pc_sharpmisc_3_info()
 {
-	var int ShWeap;
-	var int IronSt;
 	var string concatText;
-
-	if(Npc_HasItems(hero,ItMw_1h_Misc_Axe) >= 8)
-	{
-		AI_Wait(self,1);
-		B_GivePlayerXP(10);
-		Npc_RemoveInvItems(hero,ItMw_1h_Misc_Axe,8);
-		RankPoints = RankPoints + 1;
-		CreateInvItems(hero,ItMi_IronStuck,1);
-		AI_PrintClr("Vyrobeno 1x Železný ingot!",83,152,48);
-		B_Say(hero,hero,"$ITEMREADY");
-	}
-	else
-	{
-		AI_PrintClr("Nedostatek rezavých zbraní!",177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	
+	AI_Wait(self,1);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItMw_1h_Misc_Axe,8*InfoManagerSpinnerValue);
+	RankPoints = RankPoints + 1;
+	CreateInvItems(hero,ItMi_IronStuck,1*InfoManagerSpinnerValue);
+	concatText = ConcatStrings("Vyrobeno ",IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Železný ingot!");
+	AI_PrintClr(concatText,83,152,48);
+	B_Say(hero,hero,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 //-------------------------------magicheskaya kuznya --------------------------------------------------------
@@ -2831,53 +3665,127 @@ instance PC_MAKEBOWS_ArrowShaft(C_Info)
 	condition = PC_MAKEBOWS_ArrowShaft_condition;
 	information = PC_MAKEBOWS_ArrowShaft_info;
 	permanent = TRUE;
-	description = "Vyrobit dříky pro šípy x50";
+	description = "s@SPIN_MAKEBOWS_ArrowShaft Vyrobit dříky pro šípy x50";
 };
 
 func int PC_MAKEBOWS_ArrowShaft_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (VerstakOn == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE) && (Npc_HasItems(self,ItMi_JustTree) >= 1) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") > 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") > 500) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") > 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_JustTree) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_ArrowShaft");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_ArrowShaft
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_ArrowShaft ");
+		newDescription = ConcatStrings(newDescription, "Vyrobit dříky pro šípy x50");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEBOWS_ArrowShaft.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEBOWS_ArrowShaft_info()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(self,ItMi_JustTree,1);
-	CreateInvItems(self,ItMi_ArrowShaft,50);
-	AI_PrintClr("Vyrobeno 50x Dřík šípu!",83,152,48);
+	Npc_RemoveInvItems(self,ItMi_JustTree,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_ArrowShaft,50*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(50*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Dřík šípu!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_MAKEBOWS_ArrowShaftX10(C_Info)
-{
-	npc = PC_Hero;
-	nr = 2;
-	condition = PC_MAKEBOWS_ArrowShaftX10_condition;
-	information = PC_MAKEBOWS_ArrowShaftX10_info;
-	permanent = TRUE;
-	description = "Vyrobit dříky pro šípy x500";
-};
-
-func int PC_MAKEBOWS_ArrowShaftX10_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (VerstakOn == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE) && (Npc_HasItems(self,ItMi_JustTree) >= 10) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") > 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") > 500) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") > 500)))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_MAKEBOWS_ArrowShaftX10_info()
-{
-	AI_Wait(self,1);
-	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(self,ItMi_JustTree,10);
-	CreateInvItems(self,ItMi_ArrowShaft,500);
-	AI_PrintClr("Vyrobeno 500x Dřík šípu!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 instance PC_MAKEBOWS_BoltShaft(C_Info)
@@ -2887,53 +3795,127 @@ instance PC_MAKEBOWS_BoltShaft(C_Info)
 	condition = PC_MAKEBOWS_BoltShaft_condition;
 	information = PC_MAKEBOWS_BoltShaft_info;
 	permanent = TRUE;
-	description = "Vyrobit dříky pro šipky x50";
+	description = "s@SPIN_MAKEBOWS_BoltShaft Vyrobit dříky pro šipky x50";
 };
 
 func int PC_MAKEBOWS_BoltShaft_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (VerstakOn == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE) && (Npc_HasItems(self,ItMi_JustTree) >= 1) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") > 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") > 500) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") > 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_JustTree) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_BoltShaft");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_BoltShaft
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_BoltShaft ");
+		newDescription = ConcatStrings(newDescription, "Vyrobit dříky pro šipky x50");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEBOWS_BoltShaft.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEBOWS_BoltShaft_info()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(self,ItMi_JustTree,1);
-	CreateInvItems(self,ItMi_BoltShaft,50);
-	AI_PrintClr("Vyrobeno 50x Dřík šipky!",83,152,48);
+	Npc_RemoveInvItems(self,ItMi_JustTree,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_BoltShaft,50*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(50*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Dřík šipky!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-};
-
-instance PC_MAKEBOWS_BoltShaftX10(C_Info)
-{
-	npc = PC_Hero;
-	nr = 4;
-	condition = PC_MAKEBOWS_BoltShaftX10_condition;
-	information = PC_MAKEBOWS_BoltShaftX10_info;
-	permanent = TRUE;
-	description = "Vyrobit dříky pro šipky x500";
-};
-
-func int PC_MAKEBOWS_BoltShaftX10_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (VerstakOn == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE) && (Npc_HasItems(self,ItMi_JustTree) >= 10) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") > 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") > 500) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") > 500)))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_MAKEBOWS_BoltShaftX10_info()
-{
-	AI_Wait(self,1);
-	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(self,ItMi_JustTree,10);
-	CreateInvItems(self,ItMi_BoltShaft,500);
-	AI_PrintClr("Vyrobeno 500x Dřík šipky!",83,152,48);
-	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 var int CrBowMadeDone;
@@ -2999,10 +3981,422 @@ instance PC_MAKEBOWS_BowCorpse(C_Info)
 
 func int PC_MAKEBOWS_BowCorpse_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (VerstakOn == TRUE) && (BowMake_01 == TRUE) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") > 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") > 500) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") > 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_JustTree) / 1;
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_BowCorpse_JustTree");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_BowCorpse_JustTree
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_BowCorpse_JustTree ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit krátké lučiště");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_MAKEBOWS_BowCorpse_JustTree");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_EveTree) / 1;
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_BowCorpse_EveTree");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_BowCorpse_EveTree
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_BowCorpse_EveTree ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit vrbové lučiště");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_MAKEBOWS_BowCorpse_EveTree");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_VyzTree) / 1;
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_BowCorpse_VyzTree");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_BowCorpse_VyzTree
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_BowCorpse_VyzTree ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit jilmové lučiště");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_MAKEBOWS_BowCorpse_VyzTree");
+		
+//-- Spinner Choice #4
+		
+		var int value4;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_YsuoTree) / 1;
+		
+		// Check boundaries
+		if(value4 < min) { value4 = min; };
+		if(value4 > max) { value4 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_BowCorpse_YsuoTree");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value4;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value4 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_BowCorpse_YsuoTree
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_BowCorpse_YsuoTree ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit jasanové lučiště");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value4));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_MAKEBOWS_BowCorpse_YsuoTree");
+		
+//-- Spinner Choice #5
+		
+		var int value5;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_BokTree) / 1;
+		
+		// Check boundaries
+		if(value5 < min) { value5 = min; };
+		if(value5 > max) { value5 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_BowCorpse_BokTree");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value5;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value5 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_BowCorpse_BokTree
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_BowCorpse_BokTree ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit bukové lučiště");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value5));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_MAKEBOWS_BowCorpse_BokTree");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_MAKEBOWS_BowCorpse()
@@ -3012,23 +4406,23 @@ func void B_MAKEBOWS_BowCorpse()
 
 	if(Npc_HasItems(self,ItMi_JustTree) >= 1)
 	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit krátké lučiště",PC_MAKEBOWS_BowCorpse_JustTree);
+		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"s@SPIN_MAKEBOWS_BowCorpse_JustTree ... vyrobit krátké lučiště",PC_MAKEBOWS_BowCorpse_JustTree);
 	};
 	if((Npc_HasItems(self,ItMi_EveTree) >= 1) && (BowMake_02 == TRUE))
 	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit vrbové lučiště",PC_MAKEBOWS_BowCorpse_EveTree);
+		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"s@SPIN_MAKEBOWS_BowCorpse_EveTree ... vyrobit vrbové lučiště",PC_MAKEBOWS_BowCorpse_EveTree);
 	};
 	if((Npc_HasItems(self,ItMi_VyzTree) >= 1) && (BowMake_03 == TRUE))
 	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jilmové lučiště",PC_MAKEBOWS_BowCorpse_VyzTree);
+		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"s@SPIN_MAKEBOWS_BowCorpse_VyzTree ... vyrobit jilmové lučiště",PC_MAKEBOWS_BowCorpse_VyzTree);
 	};
 	if((Npc_HasItems(self,ItMi_YsuoTree) >= 1) && (BowMake_04 == TRUE))
 	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit jasanové lučiště",PC_MAKEBOWS_BowCorpse_YsuoTree);
+		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"s@SPIN_MAKEBOWS_BowCorpse_YsuoTree ... vyrobit jasanové lučiště",PC_MAKEBOWS_BowCorpse_YsuoTree);
 	};
 	if((Npc_HasItems(self,ItMi_BokTree) >= 1) && (BowMake_05 == TRUE))
 	{
-		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"... vyrobit bukové lučiště",PC_MAKEBOWS_BowCorpse_BokTree);
+		Info_AddChoice(PC_MAKEBOWS_BowCorpse,"s@SPIN_MAKEBOWS_BowCorpse_BokTree ... vyrobit bukové lučiště",PC_MAKEBOWS_BowCorpse_BokTree);
 	};
 };
 
@@ -3044,56 +4438,86 @@ func void PC_MAKEBOWS_BowCorpse_Back()
 
 func void PC_MAKEBOWS_BowCorpse_JustTree()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(self,ItMi_JustTree,1);
-	CreateInvItems(self,ItMi_JustBowCorpse,1);
-	AI_PrintClr("Vyrobeno 1x Krátké lučiště!",83,152,48);
+	Npc_RemoveInvItems(self,ItMi_JustTree,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_JustBowCorpse,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Krátké lučiště!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_MAKEBOWS_BowCorpse();
 };
 
 func void PC_MAKEBOWS_BowCorpse_EveTree()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(self,ItMi_EveTree,1);
-	CreateInvItems(self,ItMi_EveCorpse,1);
-	AI_PrintClr("Vyrobeno 1x Vrbové lučiště!",83,152,48);
+	Npc_RemoveInvItems(self,ItMi_EveTree,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_EveCorpse,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Vrbové lučiště!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_MAKEBOWS_BowCorpse();
 };
 
 func void PC_MAKEBOWS_BowCorpse_VyzTree()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(self,ItMi_VyzTree,1);
-	CreateInvItems(self,ItMi_VyzCorpse,1);
-	AI_PrintClr("Vyrobeno 1x Jilmové lučiště!",83,152,48);
+	Npc_RemoveInvItems(self,ItMi_VyzTree,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_VyzCorpse,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Jilmové lučiště!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_MAKEBOWS_BowCorpse();
 };
 
 func void PC_MAKEBOWS_BowCorpse_YsuoTree()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(self,ItMi_YsuoTree,1);
-	CreateInvItems(self,ItMi_YsuoCorpse,1);
-	AI_PrintClr("Vyrobeno 1x Jasanové lučiště!",83,152,48);
+	Npc_RemoveInvItems(self,ItMi_YsuoTree,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_YsuoCorpse,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Jasanové lučiště!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_MAKEBOWS_BowCorpse();
 };
 
 func void PC_MAKEBOWS_BowCorpse_BokTree()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	Npc_RemoveInvItems(self,ItMi_BokTree,1);
-	CreateInvItems(self,ItMi_BokCorpse,1);
-	AI_PrintClr("Vyrobeno 1x Bukové lučiště!",83,152,48);
+	Npc_RemoveInvItems(self,ItMi_BokTree,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_BokCorpse,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Bukové lučiště!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_MAKEBOWS_BowCorpse();
 };
 
@@ -3109,10 +4533,432 @@ instance PC_MAKEBOWS_BowMake(C_Info)
 
 func int PC_MAKEBOWS_BowMake_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (VerstakOn == TRUE) && (BowMake_01 == TRUE) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") > 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") > 500) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") > 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_JustBowCorpse) / 1;
+		max = min(max, Npc_HasItems(other, ItMi_BowRope_01) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Pitch) / 1);
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_BowMake_JustTree");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_BowMake_JustTree
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_BowMake_JustTree ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit krátký luk");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_MAKEBOWS_BowMake_JustTree");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_EveCorpse) / 1;
+		max = min(max, Npc_HasItems(other, ItMi_BowRope_02) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Pitch) / 1);
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_BowMake_EveTree");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_BowMake_EveTree
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_BowMake_EveTree ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit vrbový luk");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_MAKEBOWS_BowMake_EveTree");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_VyzCorpse) / 1;
+		max = min(max, Npc_HasItems(other, ItMi_BowRope_03) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Pitch) / 1);
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_BowMake_VyzTree");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_BowMake_VyzTree
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_BowMake_VyzTree ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit jilmový luk");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_MAKEBOWS_BowMake_VyzTree");
+		
+//-- Spinner Choice #4
+		
+		var int value4;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_YsuoCorpse) / 1;
+		max = min(max, Npc_HasItems(other, ItMi_BowRope_04) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Pitch) / 1);
+		
+		// Check boundaries
+		if(value4 < min) { value4 = min; };
+		if(value4 > max) { value4 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_BowMake_YsuoTree");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value4;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value4 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_BowMake_YsuoTree
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_BowMake_YsuoTree ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit jasanový luk");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value4));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_MAKEBOWS_BowMake_YsuoTree");
+		
+//-- Spinner Choice #5
+		
+		var int value5;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_BokCorpse) / 1;
+		max = min(max, Npc_HasItems(other, ItMi_BowRope_05) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Pitch) / 2);
+		
+		// Check boundaries
+		if(value5 < min) { value5 = min; };
+		if(value5 > max) { value5 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_BowMake_BokTree");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value5;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value5 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_BowMake_BokTree
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_BowMake_BokTree ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit bukový luk");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value5));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_MAKEBOWS_BowMake_BokTree");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_MAKEBOWS_BowMake()
@@ -3122,23 +4968,23 @@ func void B_MAKEBOWS_BowMake()
 
 	if((Npc_HasItems(self,ItMi_JustBowCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_01) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1))
 	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit krátký luk",PC_MAKEBOWS_BowMake_JustTree);
+		Info_AddChoice(PC_MAKEBOWS_BowMake,"s@SPIN_MAKEBOWS_BowMake_JustTree ... vyrobit krátký luk",PC_MAKEBOWS_BowMake_JustTree);
 	};
 	if((Npc_HasItems(self,ItMi_EveCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_02) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_02 == TRUE))
 	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit vrbový luk",PC_MAKEBOWS_BowMake_EveTree);
+		Info_AddChoice(PC_MAKEBOWS_BowMake,"s@SPIN_MAKEBOWS_BowMake_EveTree ... vyrobit vrbový luk",PC_MAKEBOWS_BowMake_EveTree);
 	};
 	if((Npc_HasItems(self,ItMi_VyzCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_03) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_03 == TRUE))
 	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jilmový luk",PC_MAKEBOWS_BowMake_VyzTree);
+		Info_AddChoice(PC_MAKEBOWS_BowMake,"s@SPIN_MAKEBOWS_BowMake_VyzTree ... vyrobit jilmový luk",PC_MAKEBOWS_BowMake_VyzTree);
 	};
 	if((Npc_HasItems(self,ItMi_YsuoCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_04) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 1) && (BowMake_04 == TRUE))
 	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit jasanový luk",PC_MAKEBOWS_BowMake_YsuoTree);
+		Info_AddChoice(PC_MAKEBOWS_BowMake,"s@SPIN_MAKEBOWS_BowMake_YsuoTree ... vyrobit jasanový luk",PC_MAKEBOWS_BowMake_YsuoTree);
 	};
 	if((Npc_HasItems(self,ItMi_BokCorpse) >= 1) && (Npc_HasItems(self,ItMi_BowRope_05) >= 1) && (Npc_HasItems(self,ItMi_Pitch) >= 2) && (BowMake_05 == TRUE))
 	{
-		Info_AddChoice(PC_MAKEBOWS_BowMake,"... vyrobit bukový luk",PC_MAKEBOWS_BowMake_BokTree);
+		Info_AddChoice(PC_MAKEBOWS_BowMake,"s@SPIN_MAKEBOWS_BowMake_BokTree ... vyrobit bukový luk",PC_MAKEBOWS_BowMake_BokTree);
 	};
 };
 
@@ -3154,71 +5000,101 @@ func void PC_MAKEBOWS_BowMake_Back()
 
 func void PC_MAKEBOWS_BowMake_JustTree()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	B_GivePlayerXP(10);
-	Npc_RemoveInvItems(self,ItMi_JustBowCorpse,1);
-	Npc_RemoveInvItems(self,ItMi_BowRope_01,1);
-	Npc_RemoveInvItems(self,ItMi_Pitch,1);
-	CreateInvItems(self,ItRw_BowCraft_01,1);
-	AI_PrintClr("Vyrobeno 1x Krátký luk!",83,152,48);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_JustBowCorpse,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_BowRope_01,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_Pitch,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItRw_BowCraft_01,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Krátký luk!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_MAKEBOWS_BowMake();
 };
 
 func void PC_MAKEBOWS_BowMake_EveTree()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	B_GivePlayerXP(10);
-	Npc_RemoveInvItems(self,ItMi_EveCorpse,1);
-	Npc_RemoveInvItems(self,ItMi_BowRope_02,1);
-	Npc_RemoveInvItems(self,ItMi_Pitch,1);
-	CreateInvItems(self,ItRw_BowCraft_02,1);
-	AI_PrintClr("Vyrobeno 1x Vrbový luk!",83,152,48);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_EveCorpse,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_BowRope_02,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_Pitch,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItRw_BowCraft_02,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Vrbový luk!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_MAKEBOWS_BowMake();
 };
 
 func void PC_MAKEBOWS_BowMake_VyzTree()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	B_GivePlayerXP(10);
-	Npc_RemoveInvItems(self,ItMi_VyzCorpse,1);
-	Npc_RemoveInvItems(self,ItMi_BowRope_03,1);
-	Npc_RemoveInvItems(self,ItMi_Pitch,1);
-	CreateInvItems(self,ItRw_BowCraft_03,1);
-	AI_PrintClr("Vyrobeno 1x Jilmový luk!",83,152,48);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_VyzCorpse,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_BowRope_03,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_Pitch,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItRw_BowCraft_03,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Jilmový luk!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_MAKEBOWS_BowMake();
 };
 
 func void PC_MAKEBOWS_BowMake_YsuoTree()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	B_GivePlayerXP(10);
-	Npc_RemoveInvItems(self,ItMi_YsuoCorpse,1);
-	Npc_RemoveInvItems(self,ItMi_BowRope_04,1);
-	Npc_RemoveInvItems(self,ItMi_Pitch,1);
-	CreateInvItems(self,ItRw_BowCraft_04,1);
-	AI_PrintClr("Vyrobeno 1x Jasanový luk!",83,152,48);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_YsuoCorpse,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_BowRope_04,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_Pitch,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItRw_BowCraft_04,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Jasanový luk!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_MAKEBOWS_BowMake();
 };
 
 func void PC_MAKEBOWS_BowMake_BokTree()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	B_GivePlayerXP(10);
-	Npc_RemoveInvItems(self,ItMi_BokCorpse,1);
-	Npc_RemoveInvItems(self,ItMi_BowRope_05,1);
-	Npc_RemoveInvItems(self,ItMi_Pitch,2);
-	CreateInvItems(self,ItRw_BowCraft_05,1);
-	AI_PrintClr("Vyrobeno 1x Bukový luk!",83,152,48);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_BokCorpse,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_BowRope_05,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItMi_Pitch,2*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItRw_BowCraft_05,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Bukový luk!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_MAKEBOWS_BowMake();
 };
 
@@ -3229,34 +5105,128 @@ instance PC_MAKEBOWS_Torch(C_Info)
 	condition = PC_MAKEBOWS_Torch_condition;
 	information = PC_MAKEBOWS_Torch_info;
 	permanent = TRUE;
-	description = "Vyrobit pochodeň x10 (10x řezivo z obyčejného dřeva, 1x pryskyřice)";
+	description = "s@SPIN_MAKEBOWS_Torch Vyrobit pochodeň x10 (10x řezivo z obyčejného dřeva, 1x pryskyřice)";
 };
 
 func int PC_MAKEBOWS_Torch_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_MAKEBOWS) && (VerstakOn == TRUE) && ((Npc_GetDistToWP(hero,"NW_CASTLEMINE_HUT_08") > 500) || (Npc_GetDistToWP(hero,"NW_CITY_MERCHANT_SHOP01_IN_02") > 500) || (Npc_GetDistToWP(hero,"WP_NW_HUNTERCAMP_07") > 500)))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_JustTree) / 10;
+		max = min(max, Npc_HasItems(other, ItMi_Pitch) / 1);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_MAKEBOWS_Torch");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_MAKEBOWS_Torch
+		newDescription = ConcatStrings(newDescription, "s@SPIN_MAKEBOWS_Torch ");
+		newDescription = ConcatStrings(newDescription, "Vyrobit pochodeň x10 (10x řezivo z obyčejného dřeva, 1x pryskyřice)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_MAKEBOWS_Torch.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_MAKEBOWS_Torch_info()
 {
-	if((Npc_HasItems(hero,ItMi_JustTree) >= 10) && (Npc_HasItems(hero,ItMi_Pitch) >= 1))
-	{
-		AI_Wait(self,1);
-		RankPoints = RankPoints + 1;
-		Npc_RemoveInvItems(hero,ItMi_JustTree,10);
-		Npc_RemoveInvItems(hero,ItMi_Pitch,1);
-		CreateInvItems(hero,ItLsTorch,10);
-		AI_PrintClr("Vyrobeno 10x Pochodeň!",83,152,48);
-	}
-	else
-	{
-		// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
+	var string concatText;
+	
+	AI_Wait(self,1);
+	RankPoints = RankPoints + 1;
+	Npc_RemoveInvItems(hero,ItMi_JustTree,10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItMi_Pitch,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItLsTorch,10*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(10*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Pochodeň!");
+	AI_PrintClr(concatText,83,152,48);
+	InfoManagerSpinnerValue = 1;
 };
 
 //-------------------------------Vedro s vodoy--------------------------------------------------------
@@ -3547,10 +5517,422 @@ instance PC_SKINRAPE_BowRope(C_Info)
 
 func int PC_SKINRAPE_BowRope_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SKINRAPE) && (BowMake_01 == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_WolfFur) / 1;
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SKINRAPE_BowRope_WolfFur");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SKINRAPE_BowRope_WolfFur
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SKINRAPE_BowRope_WolfFur ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit tětivy z vlčí kůže");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_SKINRAPE_BowRope_WolfFur");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_Addon_KeilerFur) / 1;
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SKINRAPE_BowRope_KeilerFur");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SKINRAPE_BowRope_KeilerFur
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SKINRAPE_BowRope_KeilerFur ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit tětivy z kůže divočáka");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_SKINRAPE_BowRope_KeilerFur");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_WargFur) / 1;
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SKINRAPE_BowRope_WargFur");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SKINRAPE_BowRope_WargFur
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SKINRAPE_BowRope_WargFur ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit tětivy z kůže warga");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_SKINRAPE_BowRope_WargFur");
+		
+//-- Spinner Choice #4
+		
+		var int value4;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_ShadowFur) / 1;
+		
+		// Check boundaries
+		if(value4 < min) { value4 = min; };
+		if(value4 > max) { value4 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SKINRAPE_BowRope_ShadowFur");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value4;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value4 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SKINRAPE_BowRope_ShadowFur
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SKINRAPE_BowRope_ShadowFur ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit tětivy z kůže stínové šelmy");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value4));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_SKINRAPE_BowRope_ShadowFur");
+		
+//-- Spinner Choice #5
+		
+		var int value5;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_TrollFur) / 1;
+		
+		// Check boundaries
+		if(value5 < min) { value5 = min; };
+		if(value5 > max) { value5 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_SKINRAPE_BowRope_TrollFur");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value5;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value5 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_SKINRAPE_BowRope_TrollFur
+		newDescription = ConcatStrings(newDescription, "s@SPIN_SKINRAPE_BowRope_TrollFur ");
+		newDescription = ConcatStrings(newDescription, "... vyrobit tětivy z trolí kůže");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value5));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_SKINRAPE_BowRope_TrollFur");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_SKINRAPE_BowRope()
@@ -3560,23 +5942,23 @@ func void B_SKINRAPE_BowRope()
 
 	if(Npc_HasItems(self,ItAt_WolfFur) >= 1)
 	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z vlčí kůže",PC_SKINRAPE_BowRope_WolfFur);
+		Info_AddChoice(PC_SKINRAPE_BowRope,"s@SPIN_SKINRAPE_BowRope_WolfFur ... vyrobit tětivy z vlčí kůže",PC_SKINRAPE_BowRope_WolfFur);
 	};
 	if((Npc_HasItems(self,ItAt_Addon_KeilerFur) >= 1) && (BowMake_02 == TRUE))
 	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže divočáka",PC_SKINRAPE_BowRope_KeilerFur);
+		Info_AddChoice(PC_SKINRAPE_BowRope,"s@SPIN_SKINRAPE_BowRope_KeilerFur ... vyrobit tětivy z kůže divočáka",PC_SKINRAPE_BowRope_KeilerFur);
 	};
 	if((Npc_HasItems(self,ItAt_WargFur) >= 1) && (BowMake_03 == TRUE))
 	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže warga",PC_SKINRAPE_BowRope_WargFur);
+		Info_AddChoice(PC_SKINRAPE_BowRope,"s@SPIN_SKINRAPE_BowRope_WargFur ... vyrobit tětivy z kůže warga",PC_SKINRAPE_BowRope_WargFur);
 	};
 	if((Npc_HasItems(self,ItAt_ShadowFur) >= 1) && (BowMake_04 == TRUE))
 	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z kůže stínové šelmy",PC_SKINRAPE_BowRope_ShadowFur);
+		Info_AddChoice(PC_SKINRAPE_BowRope,"s@SPIN_SKINRAPE_BowRope_ShadowFur ... vyrobit tětivy z kůže stínové šelmy",PC_SKINRAPE_BowRope_ShadowFur);
 	};
 	if((Npc_HasItems(self,ItAt_TrollFur) >= 1) && (BowMake_05 == TRUE))
 	{
-		Info_AddChoice(PC_SKINRAPE_BowRope,"... vyrobit tětivy z trolí kůže",PC_SKINRAPE_BowRope_TrollFur);
+		Info_AddChoice(PC_SKINRAPE_BowRope,"s@SPIN_SKINRAPE_BowRope_TrollFur ... vyrobit tětivy z trolí kůže",PC_SKINRAPE_BowRope_TrollFur);
 	};
 };
 
@@ -3592,61 +5974,91 @@ func void PC_SKINRAPE_BowRope_Back()
 
 func void PC_SKINRAPE_BowRope_WolfFur()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	B_GivePlayerXP(10);
-	Npc_RemoveInvItems(self,ItAt_WolfFur,1);
-	CreateInvItems(self,ItMi_BowRope_01,5);
-	AI_PrintClr("Vyrobeno 5x Tětiva z vlčí kůže!",83,152,48);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItAt_WolfFur,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_BowRope_01,5*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(5*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Tětiva z vlčí kůže!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_SKINRAPE_BowRope();
 };
 
 func void PC_SKINRAPE_BowRope_KeilerFur()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	B_GivePlayerXP(10);
-	Npc_RemoveInvItems(self,ItAt_Addon_KeilerFur,1);
-	CreateInvItems(self,ItMi_BowRope_02,5);
-	AI_PrintClr("Vyrobeno 5x Tětiva z kůže divočáka!",83,152,48);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItAt_Addon_KeilerFur,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_BowRope_02,5*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(5*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Tětiva z kůže divočáka!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_SKINRAPE_BowRope();
 };
 
 func void PC_SKINRAPE_BowRope_WargFur()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	B_GivePlayerXP(10);
-	Npc_RemoveInvItems(self,ItAt_WargFur,1);
-	CreateInvItems(self,ItMi_BowRope_03,5);
-	AI_PrintClr("Vyrobeno 5x Tětiva z kůže warga!",83,152,48);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItAt_WargFur,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_BowRope_03,5*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(5*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Tětiva z kůže warga!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_SKINRAPE_BowRope();
 };
 
 func void PC_SKINRAPE_BowRope_ShadowFur()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	B_GivePlayerXP(10);
-	Npc_RemoveInvItems(self,ItAt_ShadowFur,1);
-	CreateInvItems(self,ItMi_BowRope_04,5);
-	AI_PrintClr("Vyrobeno 5x Tětiva z kůže stínové šelmy!",83,152,48);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItAt_ShadowFur,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_BowRope_04,5*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(5*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Tětiva z kůže stínové šelmy!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_SKINRAPE_BowRope();
 };
 
 func void PC_SKINRAPE_BowRope_TrollFur()
 {
+	var string concatText;
+	
 	AI_Wait(self,1);
 	RankPoints = RankPoints + 1;
-	B_GivePlayerXP(10);
-	Npc_RemoveInvItems(self,ItAt_TrollFur,1);
-	CreateInvItems(self,ItMi_BowRope_05,5);
-	AI_PrintClr("Vyrobeno 5x Tětiva z trolí kůže!",83,152,48);
+	B_GivePlayerXP(10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(self,ItAt_TrollFur,1*InfoManagerSpinnerValue);
+	CreateInvItems(self,ItMi_BowRope_05,5*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(5*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Tětiva z trolí kůže!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 	B_SKINRAPE_BowRope();
 };
 

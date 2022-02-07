@@ -4,7 +4,9 @@
 
 v1.02:
 
-(65x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+(66x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+(36x) systém výroby přepracován pomocí spinnerů
+(2x) PC_Poison_Start_Poison, PC_Poison_Start_Poison_v2 - výroba jedu rozdělena do dvou možností
 
 
 v1.00:
@@ -493,10 +495,364 @@ instance PC_Mana_Start(C_Info)
 
 func int PC_Mana_Start_Condition()
 {
+	
+	// Original dialogue condition
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy)
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPo_Mana_01) / 3;
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItPl_Blueplant) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Mana_04");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Mana_04
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Mana_04 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír čisté many")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Mana_04");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Mana_Herb_03) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Blueplant) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Mana_03");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Mana_03
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Mana_03 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Elixír many")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Mana_03");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Mana_Herb_02) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Blueplant) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Mana_02");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Mana_02
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Mana_02 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Extrakt many")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Mana_02");
+		
+//-- Spinner Choice #4
+		
+		var int value4;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Mana_Herb_01) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Blueplant) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value4 < min) { value4 = min; };
+		if(value4 > max) { value4 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Mana_01");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value4;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value4 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Mana_01
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Mana_01 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Esence many")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value4));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Mana_01");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_Mana_Start()
@@ -507,28 +863,36 @@ func void B_Mana_Start()
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_04] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPo_Mana_01) >= 3) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
 		Info_AddChoice(PC_Mana_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír čisté many"),
+			ConcatStrings("s@SPIN_ItPo_Mana_04 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír čisté many")
+			),
 			// "Elixír čisté many",
 			PC_ItPo_Mana_04);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_03] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
 		Info_AddChoice(PC_Mana_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Elixír many"),
+			ConcatStrings("s@SPIN_ItPo_Mana_03 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Elixír many")
+			),
 			// "Elixír many",
 			PC_ItPo_Mana_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_02] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
 		Info_AddChoice(PC_Mana_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Extrakt many"),
+			ConcatStrings("s@SPIN_ItPo_Mana_02 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Extrakt many")
+			),
 			// "Extrakt many",
 			PC_ItPo_Mana_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Mana_01] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
 		Info_AddChoice(PC_Mana_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Esence many"),
+			ConcatStrings("s@SPIN_ItPo_Mana_01 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Esence many")
+			),
 			// "Esence many",
 			PC_ItPo_Mana_01);
 	};
@@ -549,17 +913,22 @@ func void PC_Mana_Start_Back_Info()
 func void PC_ItPo_Mana_01()
 {
 	//B_GivePlayerXP(XP_HandMade_Alchemy);
-	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_01,1);
-	Npc_RemoveInvItems(hero,ItPl_Blueplant,1);
-	Npc_RemoveInvItems(hero,ItMi_Flask,1);
-	Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-	CreateInvItems(hero,ItPo_Mana_01,1);
+	Npc_RemoveInvItems(hero,ItPl_Mana_Herb_01,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItPl_Blueplant,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItPo_Mana_01,1*InfoManagerSpinnerValue);
 	//Print(PRINT_AlchemySuccess);
 	AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 	Snd_Play("POTION_DONE");
 	POTIONSTARTOK = 1;
-	B_RaisekAlchemySkill(1);
+	
+	repeat(i, InfoManagerSpinnerValue); var int i;
+		B_RaisekAlchemySkill(1);
+	end;
+	
+	InfoManagerSpinnerValue = 1;
 	B_Mana_Start();
 };
 
@@ -568,17 +937,22 @@ func void PC_ItPo_Mana_02()
 	if(B_CheckAlchemySkill(10))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_02,1);
-		Npc_RemoveInvItems(hero,ItPl_Blueplant,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,ItPo_Mana_02,1);
+		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_02,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Blueplant,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItPo_Mana_02,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(2);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(2);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Mana_Start();
 	}
 	else
@@ -592,17 +966,22 @@ func void PC_ItPo_Mana_03()
 	if(B_CheckAlchemySkill(20))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,1);
-		Npc_RemoveInvItems(hero,ItPl_Blueplant,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,ItPo_Mana_03,1);
+		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Blueplant,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItPo_Mana_03,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(3);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(3);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Mana_Start();
 	}
 	else
@@ -616,18 +995,23 @@ func void PC_ItPo_Mana_04()
 	if(B_CheckAlchemySkill(50))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPo_Mana_01,3);
-		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
-		Npc_RemoveInvItems(hero,ItPl_Blueplant,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,ItPo_Mana_Addon_04,1);
+		Npc_RemoveInvItems(hero,ItPo_Mana_01,3*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Blueplant,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItPo_Mana_Addon_04,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(4);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(4);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Mana_Start();
 	}
 	else
@@ -653,10 +1037,450 @@ instance PC_Health_Start(C_Info)
 
 func int PC_Health_Start_Condition()
 {
+	
+	// Original dialogue condition
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy)
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_Sting) / 5;
+		max = min(max, Npc_HasItems(other, ItPl_Health_Herb_01) / 1);
+		max = min(max, Npc_HasItems(other, ItPl_Blueplant) / 1);
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_itpo_health_04_new");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_itpo_health_04_new
+		newDescription = ConcatStrings(newDescription, "s@SPIN_itpo_health_04_new ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 25, FALSE), "Elixír hojivé síly ze žihadel")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_itpo_health_04_new");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPo_Health_01) / 3;
+		max = min(max, Npc_HasItems(other, ItPl_Blueplant) / 1);
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Health_04");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Health_04
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Health_04 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír čisté hojivé síly")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Health_04");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Health_Herb_03) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Blueplant) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Health_03");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Health_03
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Health_03 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Elixír hojivé síly")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Health_03");
+		
+//-- Spinner Choice #4
+		
+		var int value4;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Health_Herb_02) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Blueplant) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value4 < min) { value4 = min; };
+		if(value4 > max) { value4 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Health_02");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value4;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value4 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Health_02
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Health_02 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Extrakt hojivé síly")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value4));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Health_02");
+		
+//-- Spinner Choice #5
+		
+		var int value5;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Health_Herb_01) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Blueplant) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value5 < min) { value5 = min; };
+		if(value5 > max) { value5 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Health_01");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value5;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value5 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Health_01
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Health_01 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Esence hojivé síly")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value5));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Health_01");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_Health_Start()
@@ -667,35 +1491,45 @@ func void B_Health_Start()
 	if((KNOWFULLHEALTH2 == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_Sting) >= 5) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
 		Info_AddChoice(PC_Health_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 25, FALSE), "Elixír hojivé síly ze žihadel"),
+			ConcatStrings("s@SPIN_itpo_health_04_new ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 25, FALSE), "Elixír hojivé síly ze žihadel")
+			),
 			// "Elixír hojivé síly ze žihadel",
 			pc_itpo_health_04_new);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_04] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPo_Health_01) >= 3) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
 		Info_AddChoice(PC_Health_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír čisté hojivé síly"),
+			ConcatStrings("s@SPIN_ItPo_Health_04 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír čisté hojivé síly")
+			),
 			// "Elixír čisté hojivé síly",
 			PC_ItPo_Health_04);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_03] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_03) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
 		Info_AddChoice(PC_Health_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Elixír hojivé síly"),
+			ConcatStrings("s@SPIN_ItPo_Health_03 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Elixír hojivé síly")
+			),
 			// "Elixír hojivé síly",
 			PC_ItPo_Health_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_02] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_02) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
 		Info_AddChoice(PC_Health_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Extrakt hojivé síly"),
+			ConcatStrings("s@SPIN_ItPo_Health_02 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Extrakt hojivé síly")
+			),
 			// "Extrakt hojivé síly",
 			PC_ItPo_Health_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Health_01] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1))
 	{
 		Info_AddChoice(PC_Health_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Esence hojivé síly"),
+			ConcatStrings("s@SPIN_ItPo_Health_01 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Esence hojivé síly")
+			),
 			// "Esence hojivé síly",
 			PC_ItPo_Health_01);
 	};
@@ -716,17 +1550,22 @@ func void PC_Health_Start_Back_Info()
 func void PC_ItPo_Health_01()
 {
 	//B_GivePlayerXP(XP_HandMade_Alchemy);
-	Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,1);
-	Npc_RemoveInvItems(hero,ItPl_Blueplant,1);
-	Npc_RemoveInvItems(hero,ItMi_Flask,1);
-	Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-	CreateInvItem(hero,ItPo_Health_01);
+	Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItPl_Blueplant,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItPo_Health_01,1*InfoManagerSpinnerValue);
 	//Print(PRINT_AlchemySuccess);
 	AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 	Snd_Play("POTION_DONE");
 	POTIONSTARTOK = 1;
-	B_RaisekAlchemySkill(1);
+	
+	repeat(i, InfoManagerSpinnerValue); var int i;
+		B_RaisekAlchemySkill(1);
+	end;
+	
+	InfoManagerSpinnerValue = 1;
 	B_Health_Start();
 };
 
@@ -735,17 +1574,22 @@ func void PC_ItPo_Health_02()
 	if(B_CheckAlchemySkill(10))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPl_Health_Herb_02,1);
-		Npc_RemoveInvItems(hero,ItPl_Blueplant,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,ItPo_Health_02,1);
+		Npc_RemoveInvItems(hero,ItPl_Health_Herb_02,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Blueplant,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItPo_Health_02,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(2);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(2);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Health_Start();
 	}
 	else
@@ -759,17 +1603,22 @@ func void PC_ItPo_Health_03()
 	if(B_CheckAlchemySkill(20))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPl_Health_Herb_03,1);
-		Npc_RemoveInvItems(hero,ItPl_Blueplant,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,ItPo_Health_03,1);
+		Npc_RemoveInvItems(hero,ItPl_Health_Herb_03,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Blueplant,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItPo_Health_03,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(3);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(3);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Health_Start();
 	}
 	else
@@ -783,18 +1632,23 @@ func void PC_ItPo_Health_04()
 	if(B_CheckAlchemySkill(50))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPo_Health_01,3);
-		Npc_RemoveInvItems(hero,ItPl_Blueplant,1);
-		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,ItPo_Health_Addon_04,1);
+		Npc_RemoveInvItems(hero,ItPo_Health_01,3*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Blueplant,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItPo_Health_Addon_04,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(4);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(4);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Health_Start();
 	}
 	else
@@ -808,19 +1662,24 @@ func void pc_itpo_health_04_New()
 	if(B_CheckAlchemySkill(25))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItAt_Sting,5);
-		Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,1);
-		Npc_RemoveInvItems(hero,ItPl_Blueplant,1);
-		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,ItPo_Health_Addon_04_New,1);
+		Npc_RemoveInvItems(hero,ItAt_Sting,5*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Health_Herb_01,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Blueplant,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItPo_Health_Addon_04_New,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(3);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(3);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Health_Start();
 	}
 	else
@@ -846,10 +1705,364 @@ instance PC_Special_StaminaSpeed(C_Info)
 
 func int PC_Special_StaminaSpeed_Condition()
 {
+	
+	// Original dialogue condition
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy)
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_BlackSnapperLiver) / 1;
+		max = min(max, Npc_HasItems(other, ItFo_Addon_Grog) / 1);
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_itpo_speed_03");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_itpo_speed_03
+		newDescription = ConcatStrings(newDescription, "s@SPIN_itpo_speed_03 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "'Černý chňapavec'")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_itpo_speed_03");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Speed_Herb_01) / 1;
+		max = min(max, Npc_HasItems(other, ItPo_Speed) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_itpo_speed_02");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_itpo_speed_02
+		newDescription = ConcatStrings(newDescription, "s@SPIN_itpo_speed_02 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Dvojitý lektvar rychlosti")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_itpo_speed_02");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Speed_Herb_01) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Speed");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Speed
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Speed ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Lektvar rychlosti")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Speed");
+		
+//-- Spinner Choice #4
+		
+		var int value4;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Blueplant) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value4 < min) { value4 = min; };
+		if(value4 > max) { value4 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_itpo_stamina");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value4;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value4 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_itpo_stamina
+		newDescription = ConcatStrings(newDescription, "s@SPIN_itpo_stamina ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 5, FALSE), "Lektvar výdrže")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value4));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_itpo_stamina");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_Special_StaminaSpeed()
@@ -860,28 +2073,36 @@ func void B_Special_StaminaSpeed()
 	if((KNOWSPEED3 == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_BlackSnapperLiver) >= 1) && (Npc_HasItems(hero,ItFo_Addon_Grog) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_StaminaSpeed,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "'Černý chňapavec'"),
+			ConcatStrings("s@SPIN_itpo_speed_03 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "'Černý chňapavec'")
+			),
 			// "'Černý chňapavec'",
 			pc_itpo_speed_03);
 	};
 	if((PLAYER_TALENT_ALCHEMY[15] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Speed_Herb_01) >= 1) && (Npc_HasItems(hero,ItPo_Speed) >= 1))
 	{
 		Info_AddChoice(PC_Special_StaminaSpeed,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Dvojitý lektvar rychlosti"),
+			ConcatStrings("s@SPIN_itpo_speed_02 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Dvojitý lektvar rychlosti")
+			),
 			// "Dvojitý lektvar rychlosti",
 			pc_itpo_speed_02);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Speed] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Speed_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_StaminaSpeed,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Lektvar rychlosti"),
+			ConcatStrings("s@SPIN_ItPo_Speed ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Lektvar rychlosti")
+			),
 			// "Lektvar rychlosti",
 			PC_ItPo_Speed);
 	};
 	if((PLAYER_TALENT_ALCHEMY[17] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Blueplant) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_StaminaSpeed,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 5, FALSE), "Lektvar výdrže"),
+			ConcatStrings("s@SPIN_itpo_stamina ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 5, FALSE), "Lektvar výdrže")
+			),
 			// "Lektvar výdrže",
 			pc_itpo_stamina);
 	};
@@ -904,17 +2125,22 @@ func void pc_itpo_stamina()
 	if(B_CheckAlchemySkill(5))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPl_Blueplant,1);
-		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,itpo_stamina,1);
+		Npc_RemoveInvItems(hero,ItPl_Blueplant,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,itpo_stamina,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(2);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(2);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Special_StaminaSpeed();
 	}
 	else
@@ -926,17 +2152,22 @@ func void pc_itpo_stamina()
 func void PC_ItPo_Speed()
 {
 	//B_GivePlayerXP(XP_HandMade_Alchemy);
-	Npc_RemoveInvItems(hero,ItPl_Speed_Herb_01,1);
-	Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
-	Npc_RemoveInvItems(hero,ItMi_Flask,1);
-	Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-	CreateInvItems(hero,ItPo_Speed,1);
+	Npc_RemoveInvItems(hero,ItPl_Speed_Herb_01,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItPo_Speed,1*InfoManagerSpinnerValue);
 	//Print(PRINT_AlchemySuccess);
 	AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
 	Snd_Play("POTION_DONE");
 	POTIONSTARTOK = 1;
-	B_RaisekAlchemySkill(1);
+	
+	repeat(i, InfoManagerSpinnerValue); var int i;
+		B_RaisekAlchemySkill(1);
+	end;
+	
+	InfoManagerSpinnerValue = 1;
 	B_Special_StaminaSpeed();
 };
 
@@ -945,17 +2176,22 @@ func void pc_itpo_speed_02()
 	if(B_CheckAlchemySkill(20))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPl_Speed_Herb_01,1);
-		Npc_RemoveInvItems(hero,ItPo_Speed,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,itpo_speed_02,1);
+		Npc_RemoveInvItems(hero,ItPl_Speed_Herb_01,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPo_Speed,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,itpo_speed_02,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(2);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(2);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Special_StaminaSpeed();
 	}
 	else
@@ -969,18 +2205,23 @@ func void pc_itpo_speed_03()
 	if(B_CheckAlchemySkill(50))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItAt_BlackSnapperLiver,1);
-		Npc_RemoveInvItems(hero,ItFo_Addon_Grog,1);
-		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,itpo_speed_03,1);
+		Npc_RemoveInvItems(hero,ItAt_BlackSnapperLiver,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Addon_Grog,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,itpo_speed_03,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(3);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(3);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Special_StaminaSpeed();
 	}
 	else
@@ -1006,10 +2247,532 @@ instance PC_Special_Start(C_Info)
 
 func int PC_Special_Start_Condition()
 {
+	
+	// Original dialogue condition
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy)
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_Addon_BCKopf) / 10;
+		max = min(max, Npc_HasItems(other, ItPl_SwampHerb) / 1);
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_itpo_intellect");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_itpo_intellect
+		newDescription = ConcatStrings(newDescription, "s@SPIN_itpo_intellect ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 75, FALSE), "Elixír rozumu")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_itpo_intellect");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Mana_Herb_03) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Perm_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Perm_Mana");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Perm_Mana
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Perm_Mana ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír ducha")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Perm_Mana");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Health_Herb_03) / 3;
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Perm_Health");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Perm_Health
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Perm_Health ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 40, FALSE), "Elixír života")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Perm_Health");
+		
+//-- Spinner Choice #4
+		
+		var int value4;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, itpl_super_herb) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Perm_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value4 < min) { value4 = min; };
+		if(value4 > max) { value4 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_itpo_perm_stamina");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value4;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value4 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_itpo_perm_stamina
+		newDescription = ConcatStrings(newDescription, "s@SPIN_itpo_perm_stamina ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Elixír výdrže")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value4));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_itpo_perm_stamina");
+		
+//-- Spinner Choice #5
+		
+		var int value5;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Dex_Herb_01) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Perm_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value5 < min) { value5 = min; };
+		if(value5 > max) { value5 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Dex");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value5;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value5 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Dex
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Dex ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír obratnosti")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value5));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Dex");
+		
+//-- Spinner Choice #6
+		
+		var int value6;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Strength_Herb_01) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Perm_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value6 < min) { value6 = min; };
+		if(value6 > max) { value6 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItPo_Strg");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value6;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value6 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItPo_Strg
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItPo_Strg ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír síly")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value6));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_ItPo_Strg");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_Special_Start()
@@ -1020,42 +2783,54 @@ func void B_Special_Start()
 	if((KNOWPERMINT == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_Addon_BCKopf) >= 10) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 75, FALSE), "Elixír rozumu"),
+			ConcatStrings("s@SPIN_itpo_intellect ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 75, FALSE), "Elixír rozumu")
+			),
 			// "Elixír rozumu",
 			pc_itpo_intellect);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Mana] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mana_Herb_03) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír ducha"),
+			ConcatStrings("s@SPIN_ItPo_Perm_Mana ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír ducha")
+			),
 			// "Elixír ducha",
 			PC_ItPo_Perm_Mana);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_Health] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Health_Herb_03) >= 3) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 40, FALSE), "Elixír života"),
+			ConcatStrings("s@SPIN_ItPo_Perm_Health ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 40, FALSE), "Elixír života")
+			),
 			// "Elixír života",
 			PC_ItPo_Perm_Health);
 	};
 	if((PLAYER_TALENT_ALCHEMY[18] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,itpl_super_herb) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Elixír výdrže"),
+			ConcatStrings("s@SPIN_itpo_perm_stamina ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Elixír výdrže")
+			),
 			// "Elixír výdrže",
 			pc_itpo_perm_stamina);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_DEX] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Dex_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír obratnosti"),
+			ConcatStrings("s@SPIN_ItPo_Dex ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír obratnosti")
+			),
 			// "Elixír obratnosti",
 			PC_ItPo_Dex);
 	};
 	if((PLAYER_TALENT_ALCHEMY[POTION_Perm_STR] == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Strength_Herb_01) >= 1) && (Npc_HasItems(hero,ItPl_Perm_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír síly"),
+			ConcatStrings("s@SPIN_ItPo_Strg ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír síly")
+			),
 			// "Elixír síly",
 			PC_ItPo_Strg);
 	};
@@ -1078,17 +2853,22 @@ func void pc_itpo_perm_stamina()
 	if(B_CheckAlchemySkill(30))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,itpl_super_herb,1);
-		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,itpo_perm_stamina,1);
+		Npc_RemoveInvItems(hero,itpl_super_herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,itpo_perm_stamina,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(5);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(5);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Special_Start();
 	}
 	else
@@ -1102,17 +2882,22 @@ func void PC_ItPo_Perm_Health()
 	if(B_CheckAlchemySkill(40))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPl_Health_Herb_03,3);
-		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,ItPo_Perm_Health,1);
+		Npc_RemoveInvItems(hero,ItPl_Health_Herb_03,3*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItPo_Perm_Health,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(5);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(5);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Special_Start();
 	}
 	else
@@ -1126,17 +2911,22 @@ func void PC_ItPo_Perm_Mana()
 	if(B_CheckAlchemySkill(50))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,1);
-		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,ItPo_Perm_Mana,1);
+		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_03,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItPo_Perm_Mana,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(5);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(5);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Special_Start();
 	}
 	else
@@ -1150,18 +2940,23 @@ func void pc_itpo_intellect()
 	if(B_CheckAlchemySkill(75))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItAt_Addon_BCKopf,10);
-		Npc_RemoveInvItems(hero,ItPl_SwampHerb,1);
-		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,itpo_intellect,1);
+		Npc_RemoveInvItems(hero,ItAt_Addon_BCKopf,10*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_SwampHerb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,itpo_intellect,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(5);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(5);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Special_Start();
 	}
 	else
@@ -1175,17 +2970,22 @@ func void PC_ItPo_Dex()
 	if(B_CheckAlchemySkill(50))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPl_Dex_Herb_01,1);
-		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,ItPo_Perm_DEX,1);
+		Npc_RemoveInvItems(hero,ItPl_Dex_Herb_01,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItPo_Perm_DEX,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(5);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(5);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Special_Start();
 	}
 	else
@@ -1199,17 +2999,22 @@ func void PC_ItPo_Strg()
 	if(B_CheckAlchemySkill(50))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPl_Strength_Herb_01,1);
-		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,ItPo_Perm_STR,1);
+		Npc_RemoveInvItems(hero,ItPl_Strength_Herb_01,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Perm_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItPo_Perm_STR,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(5);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(5);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Special_Start();
 	}
 	else
@@ -1235,10 +3040,282 @@ instance PC_Special_DefenceStart(C_Info)
 
 func int PC_Special_DefenceStart_Condition()
 {
+	
+	// Original dialogue condition
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy)
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_Wing) / 15;
+		max = min(max, Npc_HasItems(other, ItPl_Weed) / 1);
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_itpo_falldefence");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_itpo_falldefence
+		newDescription = ConcatStrings(newDescription, "s@SPIN_itpo_falldefence ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír odolnosti proti pádu")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_itpo_falldefence");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItAt_WaranFiretongue) / 5;
+		max = min(max, Npc_HasItems(other, ItPl_Mana_Herb_02) / 1);
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_itpo_firedefence");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_itpo_firedefence
+		newDescription = ConcatStrings(newDescription, "s@SPIN_itpo_firedefence ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "Elixír ochrany proti ohni")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_itpo_firedefence");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Mushroom_02) / 25;
+		max = min(max, Npc_HasItems(other, ItFo_Booze) / 1);
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Alcohol) / 1);
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_itpo_magdefence");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_itpo_magdefence
+		newDescription = ConcatStrings(newDescription, "s@SPIN_itpo_magdefence ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "Elixír ochrany proti magii")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_itpo_magdefence");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_DefenceStart()
@@ -1249,21 +3326,27 @@ func void B_DefenceStart()
 	if((KNOWPROTFALL == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_Wing) >= 15) && (Npc_HasItems(hero,ItPl_Weed) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_DefenceStart,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír odolnosti proti pádu"),
+			ConcatStrings("s@SPIN_itpo_falldefence ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Elixír odolnosti proti pádu")
+			),
 			// "Elixír odolnosti proti pádu",
 			pc_itpo_falldefence);
 	};
 	if((KNOWFIREDEF == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItAt_WaranFiretongue) >= 5) && (Npc_HasItems(hero,ItPl_Mana_Herb_02) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_DefenceStart,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "Elixír ochrany proti ohni"),
+			ConcatStrings("s@SPIN_itpo_firedefence ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "Elixír ochrany proti ohni")
+			),
 			// "Elixír ochrany proti ohni",
 			pc_itpo_firedefence);
 	};
 	if((KNOWMAGDEF == TRUE) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItFo_Alcohol) >= 1) && (Npc_HasItems(hero,ItPl_Mushroom_02) >= 25) && (Npc_HasItems(hero,ItFo_Booze) >= 1) && (Npc_HasItems(hero,ItPl_Temp_Herb) >= 1))
 	{
 		Info_AddChoice(PC_Special_DefenceStart,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "Elixír ochrany proti magii"),
+			ConcatStrings("s@SPIN_itpo_magdefence ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 60, FALSE), "Elixír ochrany proti magii")
+			),
 			// "Elixír ochrany proti magii",
 			pc_itpo_magdefence);
 	};
@@ -1286,18 +3369,23 @@ func void pc_itpo_magdefence()
 	if(B_CheckAlchemySkill(60))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItPl_Mushroom_02,25);
-		Npc_RemoveInvItems(hero,ItFo_Booze,1);
-		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,itpo_magdefence,1);
+		Npc_RemoveInvItems(hero,ItPl_Mushroom_02,25*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Booze,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,itpo_magdefence,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(4);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(4);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_DefenceStart();
 	}
 	else
@@ -1312,18 +3400,23 @@ func void pc_itpo_firedefence()
 	if(B_CheckAlchemySkill(60))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItAt_WaranFiretongue,5);
-		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_02,1);
-		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,itpo_firedefence,1);
+		Npc_RemoveInvItems(hero,ItAt_WaranFiretongue,5*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Mana_Herb_02,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,itpo_firedefence,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(4);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(4);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_DefenceStart();
 	}
 	else
@@ -1337,18 +3430,23 @@ func void pc_itpo_falldefence()
 	if(B_CheckAlchemySkill(50))
 	{
 		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItAt_Wing,15);
-		Npc_RemoveInvItems(hero,ItPl_Weed,1);
-		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1);
-		Npc_RemoveInvItems(hero,ItMi_Flask,1);
-		Npc_RemoveInvItems(hero,ItFo_Alcohol,1);
-		CreateInvItems(hero,itpo_falldefence,1);
+		Npc_RemoveInvItems(hero,ItAt_Wing,15*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Weed,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_Temp_Herb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,itpo_falldefence,1*InfoManagerSpinnerValue);
 		//Print(PRINT_AlchemySuccess);
 		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
 		Snd_Play("POTION_DONE");
 		POTIONSTARTOK = 1;
-		B_RaisekAlchemySkill(4);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(4);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_DefenceStart();
 	}
 	else
@@ -2481,10 +4579,855 @@ instance PC_Booze_Start(C_Info)
 
 func int PC_Booze_Start_Condition()
 {
+	
+	// Original dialogue condition
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy)
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, itfo_wineberrys) / 4;
+		max = min(max, Npc_HasItems(other, ItAt_DemonHeart) / 2);
+		max = min(max, Npc_HasItems(other, ItPl_Temp_Herb) / 3);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_booze_ealbalzamtwo");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_booze_ealbalzamtwo
+		newDescription = ConcatStrings(newDescription, "s@SPIN_booze_ealbalzamtwo ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Připravit víno 'Zapomnění'")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_booze_ealbalzamtwo");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, itfo_wineberrys) / 2;
+		max = min(max, Npc_HasItems(other, ItPl_SwampHerb) / 2);
+		max = min(max, Npc_HasItems(other, ItAt_WaranFiretongue) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Addon_Rum) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_booze_ealbalzam");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_booze_ealbalzam
+		newDescription = ConcatStrings(newDescription, "s@SPIN_booze_ealbalzam ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 40, FALSE), "Připravit víno 'Balzám prozřetelnosti'")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_booze_ealbalzam");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_SwampHerb) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Beet) / 2);
+		max = min(max, Npc_HasItems(other, ItAt_SharkTeeth) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Addon_Rum) / 2);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Booze_Schlaf");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Booze_Schlaf
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Booze_Schlaf ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Připravit 'Dvojité Louovo kladivo'")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Booze_Schlaf");
+		
+//-- Spinner Choice #4
+		
+		var int value4;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_SwampHerb) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_Beet) / 2);
+		max = min(max, Npc_HasItems(other, ItAt_SharkTeeth) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Addon_Rum) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		
+		// Check boundaries
+		if(value4 < min) { value4 = min; };
+		if(value4 > max) { value4 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Booze_Lou");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value4;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value4 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Booze_Lou
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Booze_Lou ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Připravit 'Louovo kladivo'")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value4));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Booze_Lou");
+		
+//-- Spinner Choice #5
+		
+		var int value5;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItPl_Speed_Herb_01) / 1;
+		max = min(max, Npc_HasItems(other, ItFo_Addon_Rum) / 1);
+		max = min(max, Npc_HasItems(other, ItFo_Fish) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		
+		// Check boundaries
+		if(value5 < min) { value5 = min; };
+		if(value5 > max) { value5 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Booze_SchnellerHering");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value5;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value5 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Booze_SchnellerHering
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Booze_SchnellerHering ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Připravit 'Rychlý sled'")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value5));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Booze_SchnellerHering");
+		
+//-- Spinner Choice #6
+		
+		var int value6;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Booze) / 10;
+		
+		// Check boundaries
+		if(value6 < min) { value6 = min; };
+		if(value6 > max) { value6 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Booze_Start_compote_11");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value6;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value6 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Booze_Start_compote_11
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Booze_Start_compote_11 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Připravit 'Gin' (10 láhví kořalky)")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value6));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Booze_Start_compote_11");
+		
+//-- Spinner Choice #7
+		
+		var int value7;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Booze) / 2;
+		
+		// Check boundaries
+		if(value7 < min) { value7 = min; };
+		if(value7 > max) { value7 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Booze_Start_Alcohol_Booze");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value7;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value7 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Booze_Start_Alcohol_Booze
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Booze_Start_Alcohol_Booze ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Připravit čistý alkohol (2 láhve kořalky)")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value7));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Booze_Start_Alcohol_Booze");
+		
+//-- Spinner Choice #8
+		
+		var int value8;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Addon_Grog) / 2;
+		
+		// Check boundaries
+		if(value8 < min) { value8 = min; };
+		if(value8 > max) { value8 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Booze_Start_Alcohol_Grog");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value8;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value8 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Booze_Start_Alcohol_Grog
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Booze_Start_Alcohol_Grog ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Připravit čistý alkohol (2 láhve grogu)")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value8));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Booze_Start_Alcohol_Grog");
+		
+//-- Spinner Choice #9
+		
+		var int value9;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Addon_Rum) / 2;
+		
+		// Check boundaries
+		if(value9 < min) { value9 = min; };
+		if(value9 > max) { value9 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Booze_Start_Alcohol_Rom");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value9;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value9 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Booze_Start_Alcohol_Rom
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Booze_Start_Alcohol_Rom ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 15, FALSE), "Připravit čistý alkohol (2 láhve rumu)")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value9));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Booze_Start_Alcohol_Rom");
+		
+//-- Spinner Choice #10
+		
+		var int value10;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, itfo_addon_orcrum) / 1;
+		
+		// Check boundaries
+		if(value10 < min) { value10 = min; };
+		if(value10 > max) { value10 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Booze_Start_Alcohol_Orc");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value10;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value10 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Booze_Start_Alcohol_Orc
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Booze_Start_Alcohol_Orc ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Připravit čistý alkohol (1 láhev skřetího pití)")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value10));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Booze_Start_Alcohol_Orc");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_Booze_Start()
@@ -2495,68 +5438,88 @@ func void B_Booze_Start()
 	if(READBOOKSDONE_09 == TRUE)
 	{
 		Info_AddChoice(PC_Booze_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Připravit víno 'Zapomnění'"),
+			ConcatStrings("s@SPIN_booze_ealbalzamtwo ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Připravit víno 'Zapomnění'")
+			),
 			// "Připravit víno 'Zapomnění'",
 			pc_booze_ealbalzamtwo);
 	};
 	if(READBOOKSDONE_08 == TRUE)
 	{
 		Info_AddChoice(PC_Booze_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 40, FALSE), "Připravit víno 'Balzám prozřetelnosti'"),
+			ConcatStrings("s@SPIN_booze_ealbalzam ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 40, FALSE), "Připravit víno 'Balzám prozřetelnosti'")
+			),
 			// "Připravit víno 'Balzám prozřetelnosti'",
 			pc_booze_ealbalzam);
 	};
 	if(Knows_Schlafhammer == TRUE)
 	{
 		Info_AddChoice(PC_Booze_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Připravit 'Dvojité Louovo kladivo'"),
+			ConcatStrings("s@SPIN_Booze_Schlaf ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Připravit 'Dvojité Louovo kladivo'")
+			),
 			// "Připravit 'Dvojité Louovo kladivo'",
 			PC_Booze_Schlaf);
 	};
 	if(Knows_LousHammer == TRUE)
 	{
 		Info_AddChoice(PC_Booze_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Připravit 'Louovo kladivo'"),
+			ConcatStrings("s@SPIN_Booze_Lou ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Připravit 'Louovo kladivo'")
+			),
 			// "Připravit 'Louovo kladivo'",
 			PC_Booze_Lou);
 	};
 	if(Knows_SchnellerHering == TRUE)
 	{
 		Info_AddChoice(PC_Booze_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Připravit 'Rychlý sled'"),
+			ConcatStrings("s@SPIN_Booze_SchnellerHering ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 30, FALSE), "Připravit 'Rychlý sled'")
+			),
 			// "Připravit 'Rychlý sled'",
 			PC_Booze_SchnellerHering);
 	};
 	if(READBOOKSDONE_99 == TRUE)
 	{
 		Info_AddChoice(PC_Booze_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Připravit 'Gin' (10 láhví kořalky)"),
+			ConcatStrings("s@SPIN_Booze_Start_compote_11 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 20, FALSE), "Připravit 'Gin' (10 láhví kořalky)")
+			),
 			// "Připravit 'Gin' (10 láhví kořalky)",
 			PC_Booze_Start_compote_11);
 	};
 	if(MakePureAlcoholBooze == TRUE)
 	{
 		Info_AddChoice(PC_Booze_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Připravit čistý alkohol (2 láhve kořalky)"),
+			ConcatStrings("s@SPIN_Booze_Start_Alcohol_Booze ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Připravit čistý alkohol (2 láhve kořalky)")
+			),
 			// "Připravit čistý alkohol (2 láhve kořalky)",
 			PC_Booze_Start_Alcohol_Booze);
 	};
 	if(MakePureAlcoholGrog == TRUE)
 	{
 		Info_AddChoice(PC_Booze_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Připravit čistý alkohol (2 láhve grogu)"),
+			ConcatStrings("s@SPIN_Booze_Start_Alcohol_Grog ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Připravit čistý alkohol (2 láhve grogu)")
+			),
 			// "Připravit čistý alkohol (2 láhve grogu)",
 			PC_Booze_Start_Alcohol_Grog);
 	};
 	if(MakePureAlcoholRom == TRUE)
 	{
 		Info_AddChoice(PC_Booze_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 15, FALSE), "Připravit čistý alkohol (2 láhve rumu)"),
+			ConcatStrings("s@SPIN_Booze_Start_Alcohol_Rom ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 15, FALSE), "Připravit čistý alkohol (2 láhve rumu)")
+			),
 			// "Připravit čistý alkohol (2 láhve rumu)",
 			PC_Booze_Start_Alcohol_Rom);
 
 		Info_AddChoice(PC_Booze_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Připravit čistý alkohol (1 láhev skřetího pití)"),
+			ConcatStrings("s@SPIN_Booze_Start_Alcohol_Orc ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 0, FALSE), "Připravit čistý alkohol (1 láhev skřetího pití)")
+			),
 			// "Připravit čistý alkohol (1 láhev skřetího pití)",
 			PC_Booze_Start_Alcohol_Orc);
 	};
@@ -2576,43 +5539,34 @@ func void PC_Booze_Start_Back_Info()
 
 func void PC_Booze_Start_Alcohol_Orc()
 {
-	if(Npc_HasItems(hero,itfo_addon_orcrum) >= 1)
-	{
-		Npc_RemoveInvItems(hero,itfo_addon_orcrum,1);
-		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
-		CreateInvItems(hero,ItFo_Alcohol,1);
+	Npc_RemoveInvItems(hero,itfo_addon_orcrum,1*InfoManagerSpinnerValue);
+	AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
+	CreateInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+	
+	repeat(i, InfoManagerSpinnerValue); var int i;
 		B_RaisekAlchemySkillNoInt(1);
-		POTIONSTARTOK = 1;
-	}
-	else
-	{
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-
+	end;
+	
+	POTIONSTARTOK = 1;
+	InfoManagerSpinnerValue = 1;
 	B_Booze_Start();
 };
 
 func void PC_Booze_Start_Alcohol_Booze()
 {
-	if(Npc_HasItems(hero,ItFo_Booze) >= 2)
-	{
-		//B_GivePlayerXP(XP_HandMade_Alchemy);
-		Npc_RemoveInvItems(hero,ItFo_Booze,2);
-		//Print(PRINT_AlchemySuccess);
-		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
-		//B_Say(self,self,"$ITEMREADY");
-		CreateInvItems(hero,ItFo_Alcohol,1);
+	//B_GivePlayerXP(XP_HandMade_Alchemy);
+	Npc_RemoveInvItems(hero,ItFo_Booze,2*InfoManagerSpinnerValue);
+	//Print(PRINT_AlchemySuccess);
+	AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
+	//B_Say(self,self,"$ITEMREADY");
+	CreateInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+	
+	repeat(i, InfoManagerSpinnerValue); var int i;
 		B_RaisekAlchemySkillNoInt(1);
-		POTIONSTARTOK = 1;
-	}
-	else
-	{
-		//Print(PRINT_ProdItemsMissing);
-		AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-		B_Say(self,self,"$MISSINGINGREDIENTS");
-	};
-
+	end;
+	
+	POTIONSTARTOK = 1;
+	InfoManagerSpinnerValue = 1;
 	B_Booze_Start();
 };
 
@@ -2620,24 +5574,19 @@ func void PC_Booze_Start_Alcohol_Grog()
 {
 	if(B_CheckAlchemySkill(10))
 	{
-		if(Npc_HasItems(hero,ItFo_Addon_Grog) >= 2)
-		{
-			//B_GivePlayerXP(XP_HandMade_Alchemy);
-			Npc_RemoveInvItems(hero,ItFo_Addon_Grog,2);
-			//Print(PRINT_AlchemySuccess);
-			AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-			CreateInvItems(hero,ItFo_Alcohol,1);
+		//B_GivePlayerXP(XP_HandMade_Alchemy);
+		Npc_RemoveInvItems(hero,ItFo_Addon_Grog,2*InfoManagerSpinnerValue);
+		//Print(PRINT_AlchemySuccess);
+		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		CreateInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekAlchemySkillNoInt(1);
-			POTIONSTARTOK = 1;
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
-
+		end;
+		
+		POTIONSTARTOK = 1;
+		InfoManagerSpinnerValue = 1;
 		B_Booze_Start();
 	}
 	else
@@ -2650,24 +5599,19 @@ func void PC_Booze_Start_Alcohol_Rom()
 {
 	if(B_CheckAlchemySkill(15))
 	{
-		if(Npc_HasItems(hero,ItFo_Addon_Rum) >= 2)
-		{
-			//B_GivePlayerXP(XP_HandMade_Alchemy);
-			Npc_RemoveInvItems(hero,ItFo_Addon_Rum,2);
-			//Print(PRINT_AlchemySuccess);
-			AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-			CreateInvItems(hero,ItFo_Alcohol,1);
+		//B_GivePlayerXP(XP_HandMade_Alchemy);
+		Npc_RemoveInvItems(hero,ItFo_Addon_Rum,2*InfoManagerSpinnerValue);
+		//Print(PRINT_AlchemySuccess);
+		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		CreateInvItems(hero,ItFo_Alcohol,1*InfoManagerSpinnerValue);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekAlchemySkillNoInt(1);
-			POTIONSTARTOK = 1;
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
-
+		end;
+		
+		POTIONSTARTOK = 1;
+		InfoManagerSpinnerValue = 1;
 		B_Booze_Start();
 	}
 	else
@@ -2680,24 +5624,19 @@ func void PC_Booze_Start_compote_11()
 {
 	if(B_CheckAlchemySkill(20))
 	{
-		if(Npc_HasItems(hero,ItFo_Booze) >= 10)
-		{
-			//B_GivePlayerXP(XP_HandMade_Alchemy);
-			Npc_RemoveInvItems(hero,ItFo_Booze,10);
-			//Print(PRINT_AlchemySuccess);
-			AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-			CreateInvItems(hero,itfo_booze_ext,1);
+		//B_GivePlayerXP(XP_HandMade_Alchemy);
+		Npc_RemoveInvItems(hero,ItFo_Booze,10*InfoManagerSpinnerValue);
+		//Print(PRINT_AlchemySuccess);
+		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		CreateInvItems(hero,itfo_booze_ext,1*InfoManagerSpinnerValue);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekAlchemySkillNoInt(1);
-			POTIONSTARTOK = 1;
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
-
+		end;
+		
+		POTIONSTARTOK = 1;
+		InfoManagerSpinnerValue = 1;
 		B_Booze_Start();
 	}
 	else
@@ -2710,28 +5649,23 @@ func void PC_Booze_Lou()
 {
 	if(B_CheckAlchemySkill(20))
 	{
-		if((Npc_HasItems(self,ItPl_SwampHerb) >= 1) && (Npc_HasItems(self,ItMi_Flask) >= 1) && (Npc_HasItems(self,ItPl_Beet) >= 2) && (Npc_HasItems(self,ItAt_SharkTeeth) >= 1) && (Npc_HasItems(self,ItFo_Addon_Rum) >= 1))
-		{
-			//B_GivePlayerXP(XP_HandMade_Alchemy);
-			Npc_RemoveInvItems(self,ItPl_SwampHerb,1);
-			Npc_RemoveInvItems(self,ItPl_Beet,2);
-			Npc_RemoveInvItems(self,ItAt_SharkTeeth,1);
-			Npc_RemoveInvItems(self,ItFo_Addon_Rum,1);
-			Npc_RemoveInvItems(hero,ItMi_Flask,1);
-			//Print(PRINT_AlchemySuccess);
-			AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-			CreateInvItems(self,ItFo_Addon_LousHammer,1);
+		//B_GivePlayerXP(XP_HandMade_Alchemy);
+		Npc_RemoveInvItems(self,ItPl_SwampHerb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItPl_Beet,2*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItAt_SharkTeeth,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItFo_Addon_Rum,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		//Print(PRINT_AlchemySuccess);
+		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		CreateInvItems(self,ItFo_Addon_LousHammer,1*InfoManagerSpinnerValue);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekAlchemySkillNoInt(2);
-			POTIONSTARTOK = 1;
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
-
+		end;
+		
+		POTIONSTARTOK = 1;
+		InfoManagerSpinnerValue = 1;
 		B_Booze_Start();
 	}
 	else
@@ -2744,28 +5678,23 @@ func void PC_Booze_Schlaf()
 {
 	if(B_CheckAlchemySkill(30))
 	{
-		if((Npc_HasItems(self,ItPl_SwampHerb) >= 1) && (Npc_HasItems(self,ItMi_Flask) >= 1) && (Npc_HasItems(self,ItPl_Beet) >= 2) && (Npc_HasItems(self,ItAt_SharkTeeth) >= 1) && (Npc_HasItems(self,ItFo_Addon_Rum) >= 2))
-		{
-			//B_GivePlayerXP(XP_HandMade_Alchemy);
-			Npc_RemoveInvItems(self,ItPl_SwampHerb,1);
-			Npc_RemoveInvItems(self,ItPl_Beet,2);
-			Npc_RemoveInvItems(self,ItAt_SharkTeeth,1);
-			Npc_RemoveInvItems(self,ItFo_Addon_Rum,2);
-			Npc_RemoveInvItems(hero,ItMi_Flask,1);
-			//Print(PRINT_AlchemySuccess);
-			AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-			CreateInvItems(self,ItFo_Addon_SchlafHammer,1);
+		//B_GivePlayerXP(XP_HandMade_Alchemy);
+		Npc_RemoveInvItems(self,ItPl_SwampHerb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItPl_Beet,2*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItAt_SharkTeeth,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItFo_Addon_Rum,2*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		//Print(PRINT_AlchemySuccess);
+		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		CreateInvItems(self,ItFo_Addon_SchlafHammer,1*InfoManagerSpinnerValue);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekAlchemySkillNoInt(2);
-			POTIONSTARTOK = 1;
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
-
+		end;
+		
+		POTIONSTARTOK = 1;
+		InfoManagerSpinnerValue = 1;
 		B_Booze_Start();
 	}
 	else
@@ -2778,27 +5707,22 @@ func void PC_Booze_SchnellerHering()
 {
 	if(B_CheckAlchemySkill(30))
 	{
-		if((Npc_HasItems(self,ItPl_Speed_Herb_01) >= 1) && (Npc_HasItems(self,ItMi_Flask) >= 1) && (Npc_HasItems(self,ItFo_Fish) >= 1) && (Npc_HasItems(self,ItFo_Addon_Rum) >= 1))
-		{
-			//B_GivePlayerXP(XP_HandMade_Alchemy);
-			Npc_RemoveInvItems(self,ItPl_Speed_Herb_01,1);
-			Npc_RemoveInvItems(self,ItFo_Addon_Rum,1);
-			Npc_RemoveInvItems(self,ItFo_Fish,1);
-			Npc_RemoveInvItems(hero,ItMi_Flask,1);
-			//Print(PRINT_AlchemySuccess);
-			AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-			CreateInvItems(self,ItFo_Addon_SchnellerHering,1);
+		//B_GivePlayerXP(XP_HandMade_Alchemy);
+		Npc_RemoveInvItems(self,ItPl_Speed_Herb_01,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItFo_Addon_Rum,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItFo_Fish,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		//Print(PRINT_AlchemySuccess);
+		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		CreateInvItems(self,ItFo_Addon_SchnellerHering,1*InfoManagerSpinnerValue);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekAlchemySkillNoInt(2);
-			POTIONSTARTOK = 1;
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
-
+		end;
+		
+		POTIONSTARTOK = 1;
+		InfoManagerSpinnerValue = 1;
 		B_Booze_Start();
 	}
 	else
@@ -2811,28 +5735,23 @@ func void pc_booze_ealbalzam()
 {
 	if(B_CheckAlchemySkill(40))
 	{
-		if((Npc_HasItems(self,itfo_wineberrys) >= 2) && (Npc_HasItems(self,ItMi_Flask) >= 1) && (Npc_HasItems(self,ItPl_SwampHerb) >= 2) && (Npc_HasItems(self,ItAt_WaranFiretongue) >= 1) && (Npc_HasItems(self,ItFo_Addon_Rum) >= 1))
-		{
-			//B_GivePlayerXP(XP_HandMade_Alchemy);
-			Npc_RemoveInvItems(self,itfo_wineberrys,2);
-			Npc_RemoveInvItems(self,ItPl_SwampHerb,2);
-			Npc_RemoveInvItems(self,ItAt_WaranFiretongue,1);
-			Npc_RemoveInvItems(self,ItFo_Addon_Rum,1);
-			Npc_RemoveInvItems(hero,ItMi_Flask,1);
-			//Print(PRINT_AlchemySuccess);
-			AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-			CreateInvItems(self,itfo_ealbalzam,1);
+		//B_GivePlayerXP(XP_HandMade_Alchemy);
+		Npc_RemoveInvItems(self,itfo_wineberrys,2*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItPl_SwampHerb,2*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItAt_WaranFiretongue,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItFo_Addon_Rum,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		//Print(PRINT_AlchemySuccess);
+		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		CreateInvItems(self,itfo_ealbalzam,1*InfoManagerSpinnerValue);
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekAlchemySkill(3);
-			POTIONSTARTOK = 1;
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
-
+		end;
+		
+		POTIONSTARTOK = 1;
+		InfoManagerSpinnerValue = 1;
 		B_Booze_Start();
 	}
 	else
@@ -2845,27 +5764,22 @@ func void pc_booze_ealbalzamtwo()
 {
 	if(B_CheckAlchemySkill(50))
 	{
-		if((Npc_HasItems(self,itfo_wineberrys) >= 4) && (Npc_HasItems(self,ItMi_Flask) >= 1) && (Npc_HasItems(self,ItAt_DemonHeart) >= 2) && (Npc_HasItems(self,ItPl_Temp_Herb) >= 3))
-		{
-			//B_GivePlayerXP(XP_HandMade_Alchemy);
-			Npc_RemoveInvItems(self,itfo_wineberrys,4);
-			Npc_RemoveInvItems(self,ItAt_DemonHeart,2);
-			Npc_RemoveInvItems(self,ItPl_Temp_Herb,3);
-			Npc_RemoveInvItems(hero,ItMi_Flask,1);
-			//Print(PRINT_AlchemySuccess);
-			AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
-			CreateInvItems(self,itfo_ealbalzamtwo,1);
-			//B_Say(self,self,"$ITEMREADY");
+		//B_GivePlayerXP(XP_HandMade_Alchemy);
+		Npc_RemoveInvItems(self,itfo_wineberrys,4*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItAt_DemonHeart,2*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(self,ItPl_Temp_Herb,3*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		//Print(PRINT_AlchemySuccess);
+		AI_PrintClr(PRINT_AlchemySuccess,83,152,48);
+		CreateInvItems(self,itfo_ealbalzamtwo,1*InfoManagerSpinnerValue);
+		//B_Say(self,self,"$ITEMREADY");
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekAlchemySkill(3);
-			POTIONSTARTOK = 1;
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
-
+		end;
+		
+		POTIONSTARTOK = 1;
+		InfoManagerSpinnerValue = 1;
 		B_Booze_Start();
 	}
 	else
@@ -2891,10 +5805,362 @@ instance PC_Poison_Start(C_Info)
 
 func int PC_Poison_Start_Condition()
 {
+	
+	// Original dialogue condition
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_PotionAlchemy)
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Choice #1
+		
+		var int value1;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItRw_Arrow) / 20;
+		max = min(max, Npc_HasItems(other, ITPO_POISON) / 1);
+		
+		// Check boundaries
+		if(value1 < min) { value1 = min; };
+		if(value1 > max) { value1 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Poison_Start_PoisonArrow");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value1;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value1 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Poison_Start_PoisonArrow
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Poison_Start_PoisonArrow ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Vyrobit otrávené šípy")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value1));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Poison_Start_PoisonArrow");
+		
+//-- Spinner Choice #2
+		
+		var int value2;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Water) / 1;
+		max = min(max, Npc_HasItems(other, ItMi_Sulfur) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Coal) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Salt) / 1);
+		
+		// Check boundaries
+		if(value2 < min) { value2 = min; };
+		if(value2 > max) { value2 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Poison_Start_AnPoison");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value2;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value2 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Poison_Start_AnPoison
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Poison_Start_AnPoison ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 25, FALSE), "Připravit protijed")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value2));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Poison_Start_AnPoison");
+		
+//-- Spinner Choice #3
+		
+		var int value3;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Water) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_SwampHerb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItAt_Sting) / 1);
+		
+		// Check boundaries
+		if(value3 < min) { value3 = min; };
+		if(value3 > max) { value3 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Poison_Start_Poison");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value3;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value3 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Poison_Start_Poison
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Poison_Start_Poison ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Připravit jed (ze žihadel)")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value3));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Poison_Start_Poison");
+		
+//-- Spinner Choice #4
+		
+		var int value4;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFo_Water) / 1;
+		max = min(max, Npc_HasItems(other, ItPl_SwampHerb) / 1);
+		max = min(max, Npc_HasItems(other, ItMi_Flask) / 1);
+		max = min(max, Npc_HasItems(other, ItAt_SpiderMandibles) / 1);
+		
+		// Check boundaries
+		if(value4 < min) { value4 = min; };
+		if(value4 > max) { value4 = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Poison_Start_Poison_v2");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value4;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value4 = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Poison_Start_Poison_v2
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Poison_Start_Poison_v2 ");
+		newDescription = ConcatStrings(newDescription,
+			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Připravit jed (z kusadel pavouka)")
+		);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value4));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update choice description
+		InfoManager_SetInfoChoiceText_BySpinnerID(newDescription, "SPIN_Poison_Start_Poison_v2");
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void B_Poison_Start()
@@ -2905,23 +6171,35 @@ func void B_Poison_Start()
 	if(PoisonArrowKnow == TRUE)
 	{
 		Info_AddChoice(PC_Poison_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Vyrobit otrávené šípy"),
+			ConcatStrings("s@SPIN_Poison_Start_PoisonArrow ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 10, FALSE), "Vyrobit otrávené šípy")
+			),
 			// "Vyrobit otrávené šípy",
 			PC_Poison_Start_PoisonArrow);
 	};
 	if(AnPoisonKnow == TRUE)
 	{
 		Info_AddChoice(PC_Poison_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 25, FALSE), "Připravit protijed"),
+			ConcatStrings("s@SPIN_Poison_Start_AnPoison ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 25, FALSE), "Připravit protijed")
+			),
 			// "Připravit protijed",
 			PC_Poison_Start_AnPoison);
 	};
 	if(MakePoisonKnow == TRUE)
 	{
 		Info_AddChoice(PC_Poison_Start,
-			ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Připravit jed"),
-			// "Připravit jed",
+			ConcatStrings("s@SPIN_Poison_Start_Poison ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Připravit jed (ze žihadel)")
+			),
+			// "Připravit jed (ze žihadel)",
 			PC_Poison_Start_Poison);
+		Info_AddChoice(PC_Poison_Start,
+			ConcatStrings("s@SPIN_Poison_Start_Poison_v2 ",
+				ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_ALCH, 50, FALSE), "Připravit jed (z kusadel pavouka)")
+			),
+			// "Připravit jed (z kusadel pavouka)",
+			PC_Poison_Start_Poison_v2);
 	};
 
 	Info_AddChoice(PC_Poison_Start,DIALOG_BACK,PC_Poison_Start_Back_Info);
@@ -2942,27 +6220,22 @@ func void PC_Poison_Start_AnPoison()
 {
 	if(B_CheckAlchemySkill(25))
 	{
-		if((Npc_HasItems(hero,ItFo_Water) >= 1) && (Npc_HasItems(hero,ItMi_Salt) >= 1) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItMi_Sulfur) >= 1) && (Npc_HasItems(hero,ItMi_Coal) >= 1))
-		{
-			//B_GivePlayerXP(XP_HandMade_Alchemy);
-			Npc_RemoveInvItems(hero,ItFo_Water,1);
-			Npc_RemoveInvItems(hero,ItMi_Sulfur,1);
-			Npc_RemoveInvItems(hero,ItMi_Coal,1);
-			Npc_RemoveInvItems(hero,ItMi_Flask,1);
-			Npc_RemoveInvItems(hero,ItMi_Salt,1);
-			CreateInvItems(hero,ITPO_ANPOIS,1);
-			POTIONSTARTOK = 1;
+		//B_GivePlayerXP(XP_HandMade_Alchemy);
+		Npc_RemoveInvItems(hero,ItFo_Water,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Sulfur,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Coal,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Salt,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ITPO_ANPOIS,1*InfoManagerSpinnerValue);
+		POTIONSTARTOK = 1;
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekAlchemySkill(1);
-			AI_PrintClr(PRINT_Success,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
-
+		end;
+		
+		AI_PrintClr(PRINT_Success,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		InfoManagerSpinnerValue = 1;
 		B_Poison_Start();
 	}
 	else
@@ -2975,35 +6248,48 @@ func void PC_Poison_Start_Poison()
 {
 	if(B_CheckAlchemySkill(50))
 	{
-		if((Npc_HasItems(hero,ItFo_Water) >= 1) && (Npc_HasItems(hero,ItMi_Flask) >= 1) && (Npc_HasItems(hero,ItPl_SwampHerb) >= 1) && ((Npc_HasItems(hero,ItAt_Sting) >= 1) || (Npc_HasItems(hero,ItAt_SpiderMandibles) >= 1)))
-		{
-			//B_GivePlayerXP(XP_HandMade_Alchemy);
-			Npc_RemoveInvItems(hero,ItFo_Water,1);
-			Npc_RemoveInvItems(hero,ItPl_SwampHerb,1);
-			Npc_RemoveInvItems(hero,ItMi_Flask,1);
+		//B_GivePlayerXP(XP_HandMade_Alchemy);
+		Npc_RemoveInvItems(hero,ItFo_Water,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_SwampHerb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItAt_Sting,1*InfoManagerSpinnerValue);
+		POTIONSTARTOK = 1;
+		CreateInvItems(hero,ITPO_POISON,1*InfoManagerSpinnerValue);
+		AI_PrintClr(PRINT_Success,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
 		
-			if(Npc_HasItems(hero,ItAt_Sting) >= 1)
-			{
-				Npc_RemoveInvItems(hero,ItAt_Sting,1);
-			}
-			else
-			{
-				Npc_RemoveInvItems(hero,ItAt_SpiderMandibles,1);
-			};
-
-			POTIONSTARTOK = 1;
-			CreateInvItems(hero,ITPO_POISON,1);
-			AI_PrintClr(PRINT_Success,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekAlchemySkill(3);
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
+		end;
+		
+		InfoManagerSpinnerValue = 1;
+		B_Poison_Start();
+	}
+	else
+	{
+		B_Poison_Start();
+	};
+};
 
+func void PC_Poison_Start_Poison_v2()
+{
+	if(B_CheckAlchemySkill(50))
+	{
+		//B_GivePlayerXP(XP_HandMade_Alchemy);
+		Npc_RemoveInvItems(hero,ItFo_Water,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItPl_SwampHerb,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItMi_Flask,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItAt_SpiderMandibles,1*InfoManagerSpinnerValue);
+		POTIONSTARTOK = 1;
+		CreateInvItems(hero,ITPO_POISON,1*InfoManagerSpinnerValue);
+		AI_PrintClr(PRINT_Success,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekAlchemySkill(3);
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Poison_Start();
 	}
 	else
@@ -3016,22 +6302,17 @@ func void PC_Poison_Start_PoisonArrow()
 {
 	if(B_CheckAlchemySkill(10))
 	{
-		if((Npc_HasItems(hero,ItRw_Arrow) >= 20) && (Npc_HasItems(hero,ITPO_POISON) >= 1))
-		{
-			Npc_RemoveInvItems(hero,ItRw_Arrow,20);
-			Npc_RemoveInvItems(hero,ITPO_POISON,1);
-			CreateInvItems(hero,ItRw_PoisonArrow,20);
-			AI_PrintClr(PRINT_Success,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
+		Npc_RemoveInvItems(hero,ItRw_Arrow,20*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ITPO_POISON,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItRw_PoisonArrow,20*InfoManagerSpinnerValue);
+		AI_PrintClr(PRINT_Success,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekAlchemySkill(1);
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
-
+		end;
+		
+		InfoManagerSpinnerValue = 1;
 		B_Poison_Start();
 	}
 	else

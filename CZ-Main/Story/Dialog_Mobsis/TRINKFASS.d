@@ -2,6 +2,11 @@
 
 /*
 
+v1.02:
+
+(2x) systém výroby přepracován pomocí spinnerů
+
+
 v1.00:
 
 FUNC VOID Trinkfass_S1 - opraven atribut (ATR_HITPOINTS_MAX -> ATR_MANA_MAX)
@@ -311,71 +316,122 @@ INSTANCE PC_WELL_NWasser(C_Info)
 	condition = PC_WELL_NWasser_Condition;
 	information = PC_WELL_NWasser_Info;
 	permanent = TRUE;
-	description = "Nabrat vodu x1 (1x láhev)"; 
+	description = "s@SPIN_WELL_NWasser Nabrat vodu (1x láhev)";
 };
 
 FUNC INT PC_WELL_NWasser_Condition()
 {
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_WELL) && (Npc_GetDistToWP(hero,"AV_WELL") < 1000)) 
-	{	
+	
+	// Original dialogue condition
+	if((PLAYER_MOBSI_PRODUCTION == MOBSI_WELL) && (Npc_GetDistToWP(hero,"AV_WELL") < 1000))
+	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_Bottle_Empty) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_WELL_NWasser");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_WELL_NWasser
+		newDescription = ConcatStrings(newDescription, "s@SPIN_WELL_NWasser ");
+		newDescription = ConcatStrings(newDescription, "Nabrat vodu (1x láhev)");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_WELL_NWasser.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 FUNC VOID PC_WELL_NWasser_Info()
 {
- 	if(Npc_HasItems(hero,ItMi_Bottle_Empty) >= 1)
-	{
-		Snd_Play("DRINKBOTTLE");
-		AI_Wait(hero,1);
-		CreateInvItems(hero,ItFo_AdanosWater,1);
-		Npc_RemoveInvItems(hero,ItMi_Bottle_Empty,1);
-		Print(PRINT_Success);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		Print(PRINT_WaterSuck);
-		AI_PlayAni(self,"T_DONTKNOW");
-		B_Say_Overlay(self,self,"$MISSINGITEM");
-	};
-};
-
-INSTANCE PC_WELL_NWasserMany(C_Info)
-{
-	npc = PC_Hero;
-	nr = 556;
-	condition = PC_WELL_NWasserMany_Condition;
-	information = PC_WELL_NWasserMany_Info;
-	permanent = TRUE;
-	description = "Nabrat vodu x5 (5x láhev)"; 
-};
-
-FUNC INT PC_WELL_NWasserMany_Condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_WELL) && (Npc_GetDistToWP(hero,"AV_WELL") < 1000)) 
-	{	
-		return TRUE;
-	};
-};
-
-FUNC VOID PC_WELL_NWasserMany_Info()
-{
- 	if(Npc_HasItems(hero,ItMi_Bottle_Empty) >= 5)
-	{
-		Snd_Play("DRINKBOTTLE");
-		AI_Wait(hero,1);
-		CreateInvItems(hero,ItFo_AdanosWater,5);
-		Npc_RemoveInvItems(hero,ItMi_Bottle_Empty,5);
-		Print(PRINT_Success);
-		//B_Say(self,self,"$ITEMREADY");
-	}
-	else
-	{
-		Print(PRINT_WaterSuck);
-		AI_PlayAni(self,"T_DONTKNOW");
-		B_Say_Overlay(self,self,"$MISSINGITEM");
-	};
+	Snd_Play("DRINKBOTTLE");
+	AI_Wait(hero,1);
+	CreateInvItems(hero,ItFo_AdanosWater,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ItMi_Bottle_Empty,1*InfoManagerSpinnerValue);
+	Print(PRINT_Success);
+	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 };
 
 INSTANCE PC_WELL_DrainHolyChan_01(C_Info)
@@ -925,127 +981,121 @@ instance PC_Firecamp_MEATFIRE(C_Info)
 	condition = PC_Firecamp_MEATFIRE_condition;
 	information = PC_Firecamp_MEATFIRE_info;
 	permanent = TRUE;
-	description = "Opéct maso...";
+	description = "s@SPIN_Firecamp_MEATFIRE Opéct maso";
 };
 
 func int PC_Firecamp_MEATFIRE_condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_FIRECAMP) && (WaitMasDone == TRUE) && (WaitMasDone == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 1) && (FireCamp_MeatRoast == FALSE) && (MasCampfireRest == FALSE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItFoMuttonRaw) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Firecamp_MEATFIRE");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Firecamp_MEATFIRE
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Firecamp_MEATFIRE ");
+		newDescription = ConcatStrings(newDescription, "Opéct maso");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_Firecamp_MEATFIRE.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_Firecamp_MEATFIRE_info()
 {
-	FireCamp_MeatRoast = TRUE;
-};
-
-instance PC_Firecamp_FLEISCHBRATEN(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = PC_Firecamp_fleischbraten_condition;
-	information = PC_Firecamp_fleischbraten_info;
-	permanent = TRUE;
-	description = "... opéct maso x1";
-};
-
-func int PC_Firecamp_fleischbraten_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_FIRECAMP) && (WaitMasDone == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 1) && (FireCamp_MeatRoast == TRUE) && (MasCampfireRest == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_Firecamp_fleischbraten_info()
-{
-	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1);
-	CreateInvItems(hero,ItFoMutton,1);
-	FireCamp_MeatRoast = FALSE;
+	Npc_RemoveInvItems(hero,ItFoMuttonRaw,1*InfoManagerSpinnerValue);
+	CreateInvItems(hero,ItFoMutton,1*InfoManagerSpinnerValue);
+	InfoManagerSpinnerValue = 1;
 	b_endproductiondialog();
 	AI_Wait(hero,2);
 	AI_PlayAniBS(hero,"T_SIT_2_STAND",BS_STAND);
-};
-
-instance PC_Firecamp_FLEISCHBRATEN_10X(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = PC_Firecamp_fleischbraten10x_condition;
-	information = PC_Firecamp_fleischbraten10x_info;
-	permanent = TRUE;
-	description = "... opéct maso x10";
-};
-
-func int PC_Firecamp_fleischbraten10x_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_FIRECAMP) && (WaitMasDone == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 10) && (FireCamp_MeatRoast == TRUE) && (MasCampfireRest == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_Firecamp_fleischbraten10x_info()
-{
-	FireCamp_MeatRoast = FALSE;
-	Npc_RemoveInvItems(hero,ItFoMuttonRaw,10);
-	CreateInvItems(hero,ItFoMutton,10);
-	b_endproductiondialog();
-	AI_Wait(hero,2);
-	AI_PlayAniBS(hero,"T_SIT_2_STAND",BS_STAND);
-};
-
-instance PC_Firecamp_FLEISCHBRATEN_50X(C_Info)
-{
-	npc = PC_Hero;
-	nr = 1;
-	condition = PC_Firecamp_fleischbraten50x_condition;
-	information = PC_Firecamp_fleischbraten50x_info;
-	permanent = TRUE;
-	description = "... opéct maso x50";
-};
-
-func int PC_Firecamp_fleischbraten50x_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_FIRECAMP) && (WaitMasDone == TRUE) && (Npc_HasItems(hero,ItFoMuttonRaw) >= 50) && (FireCamp_MeatRoast == TRUE) && (MasCampfireRest == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_Firecamp_fleischbraten50x_info()
-{
-	Npc_RemoveInvItems(hero,ItFoMuttonRaw,50);
-	CreateInvItems(hero,ItFoMutton,50);
-	FireCamp_MeatRoast = FALSE;
-	b_endproductiondialog();
-	AI_Wait(hero,2);
-	AI_PlayAniBS(hero,"T_SIT_2_STAND",BS_STAND);
-};
-
-instance PC_Firecamp_MEATFIRE_No(C_Info)
-{
-	npc = PC_Hero;
-	nr = 999;
-	condition = PC_Firecamp_MEATFIRE_No_condition;
-	information = PC_Firecamp_MEATFIRE_No_info;
-	permanent = TRUE;
-	description = Dialog_Back;
-};
-
-func int PC_Firecamp_MEATFIRE_No_condition()
-{
-	if((PLAYER_MOBSI_PRODUCTION == MOBSI_FIRECAMP) && (WaitMasDone == TRUE) && (FireCamp_MeatRoast == TRUE) && (MasCampfireRest == FALSE))
-	{
-		return TRUE;
-	};
-};
-
-func void PC_Firecamp_MEATFIRE_No_info()
-{
-	FireCamp_MeatRoast = FALSE;
 };
 
 FUNC VOID PYRAMID_WRITE_S1()

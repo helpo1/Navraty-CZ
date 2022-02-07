@@ -5,6 +5,7 @@
 v1.02:
 
 (57x) CZ_SkillCheckCondition - přidáno zobrazování skill checků
+(19x) systém výroby přepracován pomocí spinnerů
 
 
 v1.00:
@@ -449,24 +450,128 @@ instance PC_ItMw_1H_Common(C_Info)
 
 func int PC_ItMw_1H_Common_Condition()
 {
-	PC_ItMw_1H_Common.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 0, FALSE), NAME_ItMw_1H_Common_01);
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 0, FALSE), NAME_ItMw_1H_Common_01);
+	
+	PC_ItMw_1H_Common.description = ConcatStrings("s@SPIN_ItMw_1H_Common ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_Common] == TRUE) && (Normalwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ITMISWORDRAWHOT_1) / 1 + 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMw_1H_Common");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMw_1H_Common
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMw_1H_Common ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMw_1H_Common.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMw_1H_Common_Info()
 {
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
-	CreateInvItems(hero,ItMw_1H_Common_01,1);
+	CreateInvItems(hero,ItMw_1H_Common_01,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ITMISWORDRAWHOT_1,1*(InfoManagerSpinnerValue-1));
 	//Print(PRINT_SmithSuccess);
-	B_RaisekSmithSkill(1);
+
+	repeat(i, InfoManagerSpinnerValue); var int i;
+		B_RaisekSmithSkill(1);
+	end;
+
 	AI_PrintClr(PRINT_SmithSuccess,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 
 	if(Npc_HasItems(hero,ITMISWORDRAWHOT_1) >= 1)
 	{
@@ -492,24 +597,128 @@ instance PC_WEAPON_1H_Harad_01(C_Info)
 
 func int PC_WEAPON_1H_Harad_01_Condition()
 {
-	PC_WEAPON_1H_Harad_01.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 0, FALSE), NAME_Addon_Harad_01);
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 0, FALSE), NAME_Addon_Harad_01);
+	
+	PC_WEAPON_1H_Harad_01.description = ConcatStrings("s@SPIN_WEAPON_1H_Harad_01 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Harad_01] == TRUE) && (Normalwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ITMISWORDRAWHOT_1) / 1 + 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_WEAPON_1H_Harad_01");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_WEAPON_1H_Harad_01
+		newDescription = ConcatStrings(newDescription, "s@SPIN_WEAPON_1H_Harad_01 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_WEAPON_1H_Harad_01.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_WEAPON_1H_Harad_01_Info()
 {
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
-	CreateInvItems(hero,ItMw_Schwert1,1);
+	CreateInvItems(hero,ItMw_Schwert1,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ITMISWORDRAWHOT_1,1*(InfoManagerSpinnerValue-1));
 	//Print(PRINT_SmithSuccess);
-	B_RaisekSmithSkill(1);
+
+	repeat(i, InfoManagerSpinnerValue); var int i;
+		B_RaisekSmithSkill(1);
+	end;
+
 	AI_PrintClr(PRINT_SmithSuccess,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 
 	if(Npc_HasItems(hero,ITMISWORDRAWHOT_1) >= 1)
 	{
@@ -535,24 +744,128 @@ instance PC_WEAPON_1H_Harad_02(C_Info)
 
 func int PC_WEAPON_1H_Harad_02_Condition()
 {
-	PC_WEAPON_1H_Harad_02.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 0, FALSE), NAME_Addon_Harad_02);
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 0, FALSE), NAME_Addon_Harad_02);
+	
+	PC_WEAPON_1H_Harad_02.description = ConcatStrings("s@SPIN_WEAPON_1H_Harad_02 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Harad_02] == TRUE) && (Normalwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ITMISWORDRAWHOT_1) / 1 + 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_WEAPON_1H_Harad_02");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_WEAPON_1H_Harad_02
+		newDescription = ConcatStrings(newDescription, "s@SPIN_WEAPON_1H_Harad_02 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_WEAPON_1H_Harad_02.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_WEAPON_1H_Harad_02_Info()
 {
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
-	CreateInvItems(hero,ItMw_Schwert4,1);
+	CreateInvItems(hero,ItMw_Schwert4,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ITMISWORDRAWHOT_1,1*(InfoManagerSpinnerValue-1));
 	//Print(PRINT_SmithSuccess);
-	B_RaisekSmithSkill(2);
+
+	repeat(i, InfoManagerSpinnerValue); var int i;
+		B_RaisekSmithSkill(2);
+	end;
+
 	AI_PrintClr(PRINT_SmithSuccess,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
+	InfoManagerSpinnerValue = 1;
 
 	if(Npc_HasItems(hero,ITMISWORDRAWHOT_1) >= 1)
 	{
@@ -578,13 +891,111 @@ instance PC_WEAPON_1H_Harad_03(C_Info)
 
 func int PC_WEAPON_1H_Harad_03_Condition()
 {
-	PC_WEAPON_1H_Harad_03.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 10, FALSE), NAME_Addon_Harad_03);
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 10, FALSE), NAME_Addon_Harad_03);
+	
+	PC_WEAPON_1H_Harad_03.description = ConcatStrings("s@SPIN_WEAPON_1H_Harad_03 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Harad_03] == TRUE) && (Normalwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ITMISWORDRAWHOT_1) / 1 + 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_WEAPON_1H_Harad_03");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_WEAPON_1H_Harad_03
+		newDescription = ConcatStrings(newDescription, "s@SPIN_WEAPON_1H_Harad_03 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_WEAPON_1H_Harad_03.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_WEAPON_1H_Harad_03_Info()
@@ -593,11 +1004,17 @@ func void PC_WEAPON_1H_Harad_03_Info()
 	{
 		AI_Wait(self,1);
 		//B_GivePlayerXP(XP_HandMade);
-		CreateInvItems(hero,ItMw_Rubinklinge,1);
+		CreateInvItems(hero,ItMw_Rubinklinge,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ITMISWORDRAWHOT_1,1*(InfoManagerSpinnerValue-1));
 		//Print(PRINT_SmithSuccess);
-		B_RaisekSmithSkill(3);
+
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekSmithSkill(3);
+		end;
+
 		AI_PrintClr(PRINT_SmithSuccess,83,152,48);
 		//B_Say(self,self,"$ITEMREADY");
+		InfoManagerSpinnerValue = 1;
 
 		if(Npc_HasItems(hero,ITMISWORDRAWHOT_1) >= 1)
 		{
@@ -624,13 +1041,111 @@ instance PC_WEAPON_1H_Harad_04(C_Info)
 
 func int PC_WEAPON_1H_Harad_04_Condition()
 {
-	PC_WEAPON_1H_Harad_04.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 20, FALSE), NAME_Addon_Harad_04);
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 20, FALSE), NAME_Addon_Harad_04);
+	
+	PC_WEAPON_1H_Harad_04.description = ConcatStrings("s@SPIN_WEAPON_1H_Harad_04 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Harad_04] == TRUE) && (Normalwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ITMISWORDRAWHOT_1) / 1 + 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_WEAPON_1H_Harad_04");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_WEAPON_1H_Harad_04
+		newDescription = ConcatStrings(newDescription, "s@SPIN_WEAPON_1H_Harad_04 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_WEAPON_1H_Harad_04.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_WEAPON_1H_Harad_04_Info()
@@ -639,10 +1154,16 @@ func void PC_WEAPON_1H_Harad_04_Info()
 	{
 		AI_Wait(self,1);
 		//B_GivePlayerXP(XP_HandMade);
-		CreateInvItems(hero,ItMw_ElBastardo,1);
+		CreateInvItems(hero,ItMw_ElBastardo,1*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ITMISWORDRAWHOT_1,1*(InfoManagerSpinnerValue-1));
 		//Print(PRINT_SmithSuccess);
-		B_RaisekSmithSkill(4);
+
+		repeat(i, InfoManagerSpinnerValue); var int i;
+			B_RaisekSmithSkill(4);
+		end;
+
 		AI_PrintClr(PRINT_SmithSuccess,83,152,48);
+		InfoManagerSpinnerValue = 1;
 
 		if(Npc_HasItems(hero,ITMISWORDRAWHOT_1) >= 1)
 		{
@@ -669,37 +1190,130 @@ instance PC_ItMw_1H_Special_01(C_Info)
 
 func int PC_ItMw_1H_Special_01_Condition()
 {
-	PC_ItMw_1H_Special_01.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 30, FALSE), "Rudný dlouhý meč");
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 30, FALSE), "Rudný dlouhý meč");
+	
+	PC_ItMw_1H_Special_01.description = ConcatStrings("s@SPIN_ItMw_1H_Special_01 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_01] == TRUE) && (Erzwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_OreStuck) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMw_1H_Special_01");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMw_1H_Special_01
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMw_1H_Special_01 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMw_1H_Special_01.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMw_1H_Special_01_Info()
 {
 	if(B_CheckSmithSkill(30))
 	{
-		if(Npc_HasItems(hero,ItMi_OreStuck) >= 1)
-		{
-			AI_Wait(self,1);
-			//B_GivePlayerXP(XP_HandMade);
-			Npc_RemoveInvItems(hero,ItMi_OreStuck,1);
-			CreateInvItems(hero,ItMw_1H_Special_01,1);
-			//Print(PRINT_SmithSuccess);
+		AI_Wait(self,1);
+		//B_GivePlayerXP(XP_HandMade);
+		Npc_RemoveInvItems(hero,ItMi_OreStuck,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItMw_1H_Special_01,1*InfoManagerSpinnerValue);
+		//Print(PRINT_SmithSuccess);
+
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekSmithSkill(2);
-			AI_PrintClr(PRINT_SmithSuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
+		end;
+
+		AI_PrintClr(PRINT_SmithSuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		InfoManagerSpinnerValue = 1;
 	};
 };
 
@@ -716,37 +1330,130 @@ instance PC_ItMw_2H_Special_01(C_Info)
 
 func int PC_ItMw_2H_Special_01_Condition()
 {
-	PC_ItMw_2H_Special_01.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 30, FALSE), "Rudný obouruční meč");
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 30, FALSE), "Rudný obouruční meč");
+	
+	PC_ItMw_2H_Special_01.description = ConcatStrings("s@SPIN_ItMw_2H_Special_01 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_01] == TRUE) && (Erzwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_OreStuck) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMw_2H_Special_01");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMw_2H_Special_01
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMw_2H_Special_01 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMw_2H_Special_01.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMw_2H_Special_01_Info()
 {
 	if(B_CheckSmithSkill(30))
 	{
-		if(Npc_HasItems(hero,ItMi_OreStuck) >= 1)
-		{
-			AI_Wait(self,1);
-			//B_GivePlayerXP(XP_HandMade);
-			Npc_RemoveInvItems(hero,ItMi_OreStuck,1);
-			CreateInvItems(hero,ItMw_2H_Special_01,1);
-			//Print(PRINT_SmithSuccess);
+		AI_Wait(self,1);
+		//B_GivePlayerXP(XP_HandMade);
+		Npc_RemoveInvItems(hero,ItMi_OreStuck,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItMw_2H_Special_01,1*InfoManagerSpinnerValue);
+		//Print(PRINT_SmithSuccess);
+
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekSmithSkill(2);
-			AI_PrintClr(PRINT_SmithSuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
+		end;
+
+		AI_PrintClr(PRINT_SmithSuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		InfoManagerSpinnerValue = 1;
 	};
 };
 
@@ -763,37 +1470,130 @@ instance PC_ItMw_1H_Special_02(C_Info)
 
 func int PC_ItMw_1H_Special_02_Condition()
 {
-	PC_ItMw_1H_Special_02.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 45, FALSE), "Rudný meč bastard");
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 45, FALSE), "Rudný meč bastard");
+	
+	PC_ItMw_1H_Special_02.description = ConcatStrings("s@SPIN_ItMw_1H_Special_02 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_02] == TRUE) && (Erzwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_OreStuck) / 2;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMw_1H_Special_02");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMw_1H_Special_02
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMw_1H_Special_02 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMw_1H_Special_02.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMw_1H_Special_02_Info()
 {
 	if(B_CheckSmithSkill(45))
 	{
-		if(Npc_HasItems(hero,ItMi_OreStuck) >= 2)
-		{
-			AI_Wait(self,1);
-			//B_GivePlayerXP(XP_HandMade);
-			Npc_RemoveInvItems(hero,ItMi_OreStuck,2);
-			CreateInvItems(hero,ItMw_1H_Special_02,1);
-			//Print(PRINT_SmithSuccess);
+		AI_Wait(self,1);
+		//B_GivePlayerXP(XP_HandMade);
+		Npc_RemoveInvItems(hero,ItMi_OreStuck,2*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItMw_1H_Special_02,1*InfoManagerSpinnerValue);
+		//Print(PRINT_SmithSuccess);
+
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekSmithSkill(3);
-			AI_PrintClr(PRINT_SmithSuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
+		end;
+
+		AI_PrintClr(PRINT_SmithSuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		InfoManagerSpinnerValue = 1;
 	};
 };
 
@@ -810,37 +1610,130 @@ instance PC_ItMw_2H_Special_02(C_Info)
 
 func int PC_ItMw_2H_Special_02_Condition()
 {
-	PC_ItMw_2H_Special_02.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 45, FALSE), "Těžký rudný obouruční meč");
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 45, FALSE), "Těžký rudný obouruční meč");
+	
+	PC_ItMw_2H_Special_02.description = ConcatStrings("s@SPIN_ItMw_2H_Special_02 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_02] == TRUE) && (Erzwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_OreStuck) / 2;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMw_2H_Special_02");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMw_2H_Special_02
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMw_2H_Special_02 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMw_2H_Special_02.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMw_2H_Special_02_Info()
 {
 	if(B_CheckSmithSkill(45))
 	{
-		if(Npc_HasItems(hero,ItMi_OreStuck) >= 2)
-		{
-			AI_Wait(self,1);
-			//B_GivePlayerXP(XP_HandMade);
-			Npc_RemoveInvItems(hero,ItMi_OreStuck,2);
-			CreateInvItems(hero,ItMw_2H_Special_02,1);
-			//Print(PRINT_SmithSuccess);
+		AI_Wait(self,1);
+		//B_GivePlayerXP(XP_HandMade);
+		Npc_RemoveInvItems(hero,ItMi_OreStuck,2*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItMw_2H_Special_02,1*InfoManagerSpinnerValue);
+		//Print(PRINT_SmithSuccess);
+
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekSmithSkill(3);
-			AI_PrintClr(PRINT_SmithSuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
+		end;
+
+		AI_PrintClr(PRINT_SmithSuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		InfoManagerSpinnerValue = 1;
 	};
 };
 
@@ -857,37 +1750,130 @@ instance PC_ItMw_1H_Special_03(C_Info)
 
 func int PC_ItMw_1H_Special_03_Condition()
 {
-	PC_ItMw_1H_Special_03.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 60, FALSE), "Rudná válečná čepel");
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 60, FALSE), "Rudná válečná čepel");
+	
+	PC_ItMw_1H_Special_03.description = ConcatStrings("s@SPIN_ItMw_1H_Special_03 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_03] == TRUE) && (Erzwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_OreStuck) / 3;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMw_1H_Special_03");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMw_1H_Special_03
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMw_1H_Special_03 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMw_1H_Special_03.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMw_1H_Special_03_Info()
 {
 	if(B_CheckSmithSkill(60))
 	{
-		if(Npc_HasItems(hero,ItMi_OreStuck) >= 3)
-		{
-			AI_Wait(self,1);
-			//B_GivePlayerXP(XP_HandMade);
-			Npc_RemoveInvItems(hero,ItMi_OreStuck,3);
-			CreateInvItems(hero,ItMw_1H_Special_03,1);
-			//Print(PRINT_SmithSuccess);
+		AI_Wait(self,1);
+		//B_GivePlayerXP(XP_HandMade);
+		Npc_RemoveInvItems(hero,ItMi_OreStuck,3*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItMw_1H_Special_03,1*InfoManagerSpinnerValue);
+		//Print(PRINT_SmithSuccess);
+
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekSmithSkill(4);
-			AI_PrintClr(PRINT_SmithSuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
+		end;
+
+		AI_PrintClr(PRINT_SmithSuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		InfoManagerSpinnerValue = 1;
 	};
 };
 
@@ -903,37 +1889,130 @@ instance PC_ItMw_2H_Special_03(C_Info)
 
 func int PC_ItMw_2H_Special_03_Condition()
 {
-	PC_ItMw_2H_Special_03.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 60, FALSE), "Těžká rudná válečná čepel");
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 60, FALSE), "Těžká rudná válečná čepel");
+	
+	PC_ItMw_2H_Special_03.description = ConcatStrings("s@SPIN_ItMw_2H_Special_03 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_03] == TRUE) && (Erzwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_OreStuck) / 3;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMw_2H_Special_03");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMw_2H_Special_03
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMw_2H_Special_03 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMw_2H_Special_03.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMw_2H_Special_03_Info()
 {
 	if(B_CheckSmithSkill(60))
 	{
-		if(Npc_HasItems(hero,ItMi_OreStuck) >= 3)
-		{
-			AI_Wait(self,1);
-			//B_GivePlayerXP(XP_HandMade);
-			Npc_RemoveInvItems(hero,ItMi_OreStuck,3);
-			CreateInvItems(hero,ItMw_2H_Special_03,1);
-			//Print(PRINT_SmithSuccess);
+		AI_Wait(self,1);
+		//B_GivePlayerXP(XP_HandMade);
+		Npc_RemoveInvItems(hero,ItMi_OreStuck,3*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItMw_2H_Special_03,1*InfoManagerSpinnerValue);
+		//Print(PRINT_SmithSuccess);
+
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekSmithSkill(4);
-			AI_PrintClr(PRINT_SmithSuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
+		end;
+
+		AI_PrintClr(PRINT_SmithSuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		InfoManagerSpinnerValue = 1;
 	};
 };
 
@@ -949,38 +2028,132 @@ instance PC_ItMw_1H_Special_04(C_Info)
 
 func int PC_ItMw_1H_Special_04_Condition()
 {
-	PC_ItMw_1H_Special_04.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 75, FALSE), "Rudný zabiják draků");
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 75, FALSE), "Rudný zabiják draků");
+	
+	PC_ItMw_1H_Special_04.description = ConcatStrings("s@SPIN_ItMw_1H_Special_04 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_1H_Special_04] == TRUE) && (Erzwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_OreStuck) / 4;
+		max = min(max, Npc_HasItems(other, ItAt_DragonBlood) / 5);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMw_1H_Special_04");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMw_1H_Special_04
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMw_1H_Special_04 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMw_1H_Special_04.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMw_1H_Special_04_Info()
 {
 	if(B_CheckSmithSkill(75))
 	{
-		if((Npc_HasItems(hero,ItMi_OreStuck) >= 4) && (Npc_HasItems(hero,ItAt_DragonBlood) >= 5))
-		{
-			AI_Wait(self,1);
-			//B_GivePlayerXP(XP_HandMade);
-			Npc_RemoveInvItems(hero,ItMi_OreStuck,4);
-			Npc_RemoveInvItems(hero,ItAt_DragonBlood,5);
-			CreateInvItems(hero,ItMw_1H_Special_04,1);
-			//Print(PRINT_SmithSuccess);
+		AI_Wait(self,1);
+		//B_GivePlayerXP(XP_HandMade);
+		Npc_RemoveInvItems(hero,ItMi_OreStuck,4*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItAt_DragonBlood,5*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItMw_1H_Special_04,1*InfoManagerSpinnerValue);
+		//Print(PRINT_SmithSuccess);
+
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekSmithSkill(5);
-			AI_PrintClr(PRINT_SmithSuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
+		end;
+
+		AI_PrintClr(PRINT_SmithSuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		InfoManagerSpinnerValue = 1;
 	};
 };
 
@@ -996,38 +2169,132 @@ instance PC_ItMw_2H_Special_04(C_Info)
 
 func int PC_ItMw_2H_Special_04_Condition()
 {
-	PC_ItMw_2H_Special_04.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 75, FALSE), "Velký rudný zabiják draků");
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 75, FALSE), "Velký rudný zabiják draků");
+	
+	PC_ItMw_2H_Special_04.description = ConcatStrings("s@SPIN_ItMw_2H_Special_04 ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (PLAYER_TALENT_SMITH[WEAPON_2H_Special_04] == TRUE) && (Erzwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_OreStuck) / 4;
+		max = min(max, Npc_HasItems(other, ItAt_DragonBlood) / 5);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMw_2H_Special_04");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMw_2H_Special_04
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMw_2H_Special_04 ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMw_2H_Special_04.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMw_2H_Special_04_Info()
 {
 	if(B_CheckSmithSkill(75))
 	{
-		if((Npc_HasItems(hero,ItMi_OreStuck) >= 4) && (Npc_HasItems(hero,ItAt_DragonBlood) >= 5))
-		{
-			AI_Wait(self,1);
-			//B_GivePlayerXP(XP_HandMade);
-			Npc_RemoveInvItems(hero,ItMi_OreStuck,4);
-			Npc_RemoveInvItems(hero,ItAt_DragonBlood,5);
-			CreateInvItems(hero,ItMw_2H_Special_04,1);
-			//Print(PRINT_SmithSuccess);
+		AI_Wait(self,1);
+		//B_GivePlayerXP(XP_HandMade);
+		Npc_RemoveInvItems(hero,ItMi_OreStuck,4*InfoManagerSpinnerValue);
+		Npc_RemoveInvItems(hero,ItAt_DragonBlood,5*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItMw_2H_Special_04,1*InfoManagerSpinnerValue);
+		//Print(PRINT_SmithSuccess);
+
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekSmithSkill(5);
-			AI_PrintClr(PRINT_SmithSuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
+		end;
+
+		AI_PrintClr(PRINT_SmithSuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		InfoManagerSpinnerValue = 1;
 	};
 };
 
@@ -2468,36 +3735,129 @@ instance PC_ITMW_ORESWORD(C_Info)
 
 func int pc_itmw_oresword_condition()
 {
-	PC_ITMW_ORESWORD.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 40, FALSE), "Vykovat prostý rudný meč");
 	
+	var string skillCheckConcat;
+	skillCheckConcat = ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_SMI, 40, FALSE), "Vykovat prostý rudný meč");
+	
+	PC_ITMW_ORESWORD.description = ConcatStrings("s@SPIN_ITMW_ORESWORD ", skillCheckConcat);
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (KNOWNORESWORD == TRUE) && (Erzwaffen == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ItMi_OreStuck) / 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ITMW_ORESWORD");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ITMW_ORESWORD
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ITMW_ORESWORD ");
+		newDescription = ConcatStrings(newDescription, skillCheckConcat);
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ITMW_ORESWORD.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void pc_itmw_oresword_info()
 {
 	if(B_CheckSmithSkill(40))
 	{
-		if(Npc_HasItems(hero,ItMi_OreStuck) >= 1)
-		{
-			//B_GivePlayerXP(XP_HandMade);
-			Npc_RemoveInvItems(hero,ItMi_OreStuck,1);
-			CreateInvItems(hero,ItMw_1H_Blessed_01,1);
-			//Print(PRINT_SmithSuccess);
+		//B_GivePlayerXP(XP_HandMade);
+		Npc_RemoveInvItems(hero,ItMi_OreStuck,1*InfoManagerSpinnerValue);
+		CreateInvItems(hero,ItMw_1H_Blessed_01,1*InfoManagerSpinnerValue);
+		//Print(PRINT_SmithSuccess);
+
+		repeat(i, InfoManagerSpinnerValue); var int i;
 			B_RaisekSmithSkill(2);
-			AI_PrintClr(PRINT_SmithSuccess,83,152,48);
-			//B_Say(self,self,"$ITEMREADY");
-		}
-		else
-		{
-			//Print(PRINT_ProdItemsMissing);
-			// AI_PrintClr(PRINT_ProdItemsMissing,177,58,17);
-			AI_PrintClr(PRINT_ProdItemsMissingCZMateh,177,58,17);
-			B_Say(self,self,"$MISSINGINGREDIENTS");
-		};
+		end;
+
+		AI_PrintClr(PRINT_SmithSuccess,83,152,48);
+		//B_Say(self,self,"$ITEMREADY");
+		InfoManagerSpinnerValue = 1;
 	};
 };
 
@@ -3161,25 +4521,132 @@ instance PC_ItMi_ArrowTip(C_Info)
 	condition = PC_ItMi_ArrowTip_Condition;
 	information = PC_ItMi_ArrowTip_Info;
 	permanent = TRUE;
-	description = "Vykovat hroty šípů (50 kusů)";
+	description = "s@SPIN_ItMi_ArrowTip Vykovat hroty šípů x50";
 };
 
 func int PC_ItMi_ArrowTip_Condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ARBALETWAFFEN == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ITMISWORDRAWHOT_1) / 1 + 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMi_ArrowTip");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMi_ArrowTip
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMi_ArrowTip ");
+		newDescription = ConcatStrings(newDescription, "Vykovat hroty šípů x50");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMi_ArrowTip.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMi_ArrowTip_Info()
 {
+	var string concatText;
+
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
-	CreateInvItems(hero,ItMi_ArrowTip,50);
-	AI_PrintClr("Hroty šípů vyrobeny...",83,152,48);
+	CreateInvItems(hero,ItMi_ArrowTip,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ITMISWORDRAWHOT_1,1*(InfoManagerSpinnerValue-1));
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(50*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Hrot šípu!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	B_RaisekSmithSkillNoStr(0);
+
+	repeat(i, InfoManagerSpinnerValue); var int i;
+		B_RaisekSmithSkillNoStr(0);
+	end;
+
+	InfoManagerSpinnerValue = 1;
 
 	if(Npc_HasItems(hero,ITMISWORDRAWHOT_1) >= 1)
 	{
@@ -3198,26 +4665,134 @@ instance PC_ItMi_KerArrowTip(C_Info)
 	condition = PC_ItMi_KerArrowTip_Condition;
 	information = PC_ItMi_KerArrowTip_Info;
 	permanent = TRUE;
-	description = "Vykovat rudné hroty šípů (50 kusů)";
+	description = "s@SPIN_ItMi_KerArrowTip Vykovat rudné hroty šípů x50";
 };
 
 func int PC_ItMi_KerArrowTip_Condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ARBALETWAFFEN == TRUE) && (KNOWHOWTOMAKEARROWSKER == TRUE) && (Npc_HasItems(hero,ItMi_OreStuck) >= 1))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ITMISWORDRAWHOT_1) / 1 + 1;
+		max = min(max, Npc_HasItems(other, ItMi_OreStuck) / 1);
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMi_KerArrowTip");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMi_KerArrowTip
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMi_KerArrowTip ");
+		newDescription = ConcatStrings(newDescription, "Vykovat rudné hroty šípů x50");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMi_KerArrowTip.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMi_KerArrowTip_Info()
 {
+	var string concatText;
+
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
-	CreateInvItems(hero,ItMi_KerArrowTip,50);
-	Npc_RemoveInvItems(hero,ItMi_OreStuck,1);
-	AI_PrintClr("Rudné hroty šípů vyrobeny...",83,152,48);
+	CreateInvItems(hero,ItMi_KerArrowTip,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ITMISWORDRAWHOT_1,1*(InfoManagerSpinnerValue-1));
+	Npc_RemoveInvItems(hero,ItMi_OreStuck,1*InfoManagerSpinnerValue);
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(50*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Rudný hrot šípu!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	B_RaisekSmithSkillNoStr(1);
+
+	repeat(i, InfoManagerSpinnerValue); var int i;
+		B_RaisekSmithSkillNoStr(1);
+	end;
+
+	InfoManagerSpinnerValue = 1;
 
 	if(Npc_HasItems(hero,ITMISWORDRAWHOT_1) >= 1)
 	{
@@ -3236,25 +4811,132 @@ instance PC_ItMi_BoltTip(C_Info)
 	condition = PC_ItMi_BoltTip_Condition;
 	information = PC_ItMi_BoltTip_Info;
 	permanent = TRUE;
-	description = "Vykovat hroty šipek (50 kusů)";
+	description = "s@SPIN_ItMi_BoltTip Vykovat hroty šipek x50";
 };
 
 func int PC_ItMi_BoltTip_Condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ARBALETWAFFEN == TRUE) && (KNOWHOWTOMAKEARROWS == TRUE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ITMISWORDRAWHOT_1) / 1 + 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItMi_BoltTip");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItMi_BoltTip
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItMi_BoltTip ");
+		newDescription = ConcatStrings(newDescription, "Vykovat hroty šipek x50");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItMi_BoltTip.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItMi_BoltTip_Info()
 {
+	var string concatText;
+
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
-	CreateInvItems(hero,ItMi_BoltTip,50);
-	AI_PrintClr("Hroty šipek vyrobeny...",83,152,48);
+	CreateInvItems(hero,ItMi_BoltTip,50*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ITMISWORDRAWHOT_1,1*(InfoManagerSpinnerValue-1));
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(50*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Hrot šipky!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	B_RaisekSmithSkillNoStr(0);
+
+	repeat(i, InfoManagerSpinnerValue); var int i;
+		B_RaisekSmithSkillNoStr(0);
+	end;
+
+	InfoManagerSpinnerValue = 1;
 
 	if(Npc_HasItems(hero,ITMISWORDRAWHOT_1) >= 1)
 	{
@@ -3273,25 +4955,127 @@ instance PC_Common_Blade(C_Info)
 	condition = PC_Common_Blade_Condition;
 	information = PC_Common_Blade_Info;
 	permanent = TRUE;
-	description = "Vykovat čepel";
+	description = "s@SPIN_Common_Blade Vykovat čepel";
 };
 
 func int PC_Common_Blade_Condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (Normalwaffen == FALSE) && (Orcwaffen == FALSE) && (Rapierwaffen == FALSE) && (Erzwaffen == FALSE) && (ARMORWAFFEN == FALSE) && (ARBALETWAFFEN == FALSE))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ITMISWORDRAWHOT_1) / 1 + 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_Common_Blade");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_Common_Blade
+		newDescription = ConcatStrings(newDescription, "s@SPIN_Common_Blade ");
+		newDescription = ConcatStrings(newDescription, "Vykovat čepel");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_Common_Blade.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_Common_Blade_Info()
 {
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
-	CreateInvItems(hero,ItMiSwordbladehot,1);
+	CreateInvItems(hero,ItMiSwordbladehot,1*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ITMISWORDRAWHOT_1,1*(InfoManagerSpinnerValue-1));
 	AI_PrintClr("Hotovo!",83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	B_RaisekSmithSkill(1);
+
+	repeat(i, InfoManagerSpinnerValue); var int i;
+		B_RaisekSmithSkill(1);
+	end;
+
+	InfoManagerSpinnerValue = 1;
 
 	if(Npc_HasItems(hero,ITMISWORDRAWHOT_1) >= 1)
 	{
@@ -3309,25 +5093,132 @@ instance PC_ItKE_lockpick(C_Info)
 	condition = PC_ItKE_lockpick_Condition;
 	information = PC_ItKE_lockpick_Info;
 	permanent = TRUE;
-	description = "Vykovat paklíče (10 kusů)";
+	description = "s@SPIN_ItKE_lockpick Vykovat paklíče x10";
 };
 
 func int PC_ItKE_lockpick_Condition()
 {
+	
+	// Original dialogue condition
 	if((PLAYER_MOBSI_PRODUCTION == MOBSI_SmithWeapon) && (ARBALETWAFFEN == TRUE) && (Npc_GetTalentSkill(hero,NPC_TALENT_PICKLOCK) >= 1))
 	{
+		
+		var string lastSpinnerID;
+		var int min;
+		var int max;
+		
+		var int isActive;
+		var string newDescription;
+		var string editedNumber;
+		
+//-- Spinner Instance
+		
+		var int value;
+		
+		// Min/max values
+		min = 1;
+		max = Npc_HasItems(other, ITMISWORDRAWHOT_1) / 1 + 1;
+		
+		// Check boundaries
+		if(value < min) { value = min; };
+		if(value > max) { value = max; };
+		
+		isActive = Hlp_StrCmp(InfoManagerSpinnerID, "SPIN_ItKE_lockpick");
+		
+		// Setup spinner if spinner ID has changed
+		if(isActive)
+		{
+			
+			// What is current InfoManagerSpinnerID ?
+			if(!Hlp_StrCmp(InfoManagerSpinnerID, lastSpinnerID))
+			{
+				// Update value
+				InfoManagerSpinnerValue = value;
+			};
+			
+			// Page Up/Down quantity
+			InfoManagerSpinnerPageSize = 5;
+			
+			// Min/max value (Home/End keys)
+			InfoManagerSpinnerValueMin = min;
+			InfoManagerSpinnerValueMax = max;
+			
+			// Update
+			value = InfoManagerSpinnerValue;
+			
+		};
+		
+		newDescription = "";
+		
+		if((max == 0)
+		&& (TRUE)) // FALSE: override strict disable for (max == 0)
+		{
+			newDescription = ConcatStrings(newDescription, "d@ ");
+		};
+		
+		// Spinner ID SPIN_ItKE_lockpick
+		newDescription = ConcatStrings(newDescription, "s@SPIN_ItKE_lockpick ");
+		newDescription = ConcatStrings(newDescription, "Vykovat paklíče x10");
+		newDescription = ConcatStrings(newDescription, " (");
+		
+		// Manually typed-in number:
+		if((InfoManagerSpinnerNumberEditMode)
+		&& (TRUE) // FALSE: override / disallow manual typing
+		&& (isActive))
+		{
+			editedNumber = InfoManagerSpinnerNumber;
+			editedNumber = ConcatStrings(editedNumber, "_");
+			
+			// Check boundaries - if value is outside allowed range, add red color overlay
+			if((STR_ToInt(InfoManagerSpinnerNumber) < min) || (STR_ToInt(InfoManagerSpinnerNumber) > max))
+			{
+				editedNumber = ConcatStrings("o@h@FF3030 hs@FF4646 :", editedNumber);
+				editedNumber = ConcatStrings(editedNumber, "~");
+			};
+			
+			newDescription = ConcatStrings(newDescription, editedNumber);
+		}
+		else
+		{
+			newDescription = ConcatStrings(newDescription, IntToString(value));
+		};
+		
+		newDescription = ConcatStrings(newDescription, "/");
+		newDescription = ConcatStrings(newDescription, IntToString(max));
+		newDescription = ConcatStrings(newDescription, ")");
+		
+		// Update dialogue description
+		PC_ItKE_lockpick.description = newDescription;
+		
+//--
+		
+		lastSpinnerID = InfoManagerSpinnerID;
+		
 		return TRUE;
+		
 	};
+	
 };
 
 func void PC_ItKE_lockpick_Info()
 {
+	var string concatText;
+
 	AI_Wait(self,1);
 	//B_GivePlayerXP(XP_HandMade);
-	CreateInvItems(hero,ItKE_lockpick,10);
-	AI_PrintClr("Paklíče byly úspěšně vyrobeny!",83,152,48);
+	CreateInvItems(hero,ItKE_lockpick,10*InfoManagerSpinnerValue);
+	Npc_RemoveInvItems(hero,ITMISWORDRAWHOT_1,1*(InfoManagerSpinnerValue-1));
+	concatText = "Vyrobeno ";
+	concatText = ConcatStrings(concatText,IntToString(10*InfoManagerSpinnerValue));
+	concatText = ConcatStrings(concatText,"x Paklíč!");
+	AI_PrintClr(concatText,83,152,48);
 	//B_Say(self,self,"$ITEMREADY");
-	B_RaisekSmithSkillNoStr(0);
+
+	repeat(i, InfoManagerSpinnerValue); var int i;
+		B_RaisekSmithSkillNoStr(0);
+	end;
+
+	InfoManagerSpinnerValue = 1;
 
 	if(Npc_HasItems(hero,ITMISWORDRAWHOT_1) >= 1)
 	{
