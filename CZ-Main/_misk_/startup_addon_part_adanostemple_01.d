@@ -4434,11 +4434,11 @@ func void init_global()
 {
 	Game_InitGerman();
 
-	if (!init_once)
-	{
-		init_once = 1;
+	// if (!init_once)
+	// {
+		// init_once = 1;
 		Lego_Init(LeGo_Timer | GFA_LEGO_FLAGS);
-	};  
+	// };  
 	
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
 	

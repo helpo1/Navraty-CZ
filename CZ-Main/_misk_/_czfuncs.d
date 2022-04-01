@@ -437,8 +437,11 @@ func void CZ_GDRPC_update()
 	gdrpc_text = ConcatStrings(gdrpc_text, " / ");
 	gdrpc_text = ConcatStrings(gdrpc_text, IntToString(hero.exp_next));
 	gdrpc_text = ConcatStrings(gdrpc_text, "]");
-
-	Snd_Play3D(self,gdrpc_text);
+	
+	if (Hlp_IsValidNpc(hero))
+	{
+		Snd_Play3D(hero,gdrpc_text);
+	};
 	
 };
 
