@@ -5,7 +5,8 @@
 ---
 
 ## [Download:](https://github.com/helpo1/Navraty-CZ/releases)
-- **[v1.01](https://github.com/helpo1/Navraty-CZ/releases/tag/v1.01)** (aktuálna verzia)
+- **[v1.02](https://github.com/helpo1/Navraty-CZ/releases/tag/v1.02)** (aktuálna verzia)
+- [v1.01](https://github.com/helpo1/Navraty-CZ/releases/tag/v1.01)
 - [v1.00](https://github.com/helpo1/Navraty-CZ/releases/tag/v1.00)
 
 ---
@@ -22,6 +23,7 @@
    4. **(NIE)** Fonts for high resolutions
    5. *(voliteľné)* Original music by KaiRo
    6. *(voliteľné)* Camera for the render DX11 + Render DX11 - referenčná verzia z technických príčin DX11 nepoužíva
+      - lepší výkon a funkcionalitu je možné dosiahnuť s aktuálnejšími verziami/forkmi DX11 (napr. [kirides/GD3D11](https://github.com/kirides/GD3D11/releases)) - kvôli stále prebiehajúcemu vývoju DX11 však kompatibilita s budúcimi verziami nie je stopercentne zaručená
 4. (voliteľné) vložiť jednu z verzií [NoGrass patchu](https://yadi.sk/d/uumUOh_U3GSSyL) do `(...)\Data\`
    - `noGRASS.vdf` - odstránenie trávy
    - `noGRASS_all.vdf` - odstránenie všetkého porastu (okrem stromov)
@@ -29,11 +31,23 @@
    - `noGRASS_full_all.vdf` - ostránenie všetkého porastu (vrátane stromov, paliem, vodných rastlín apod.)
 
 5. nainštalovať češtinu:
-   1. odstrániť všetky súčasti predošlých verzií češtiny (`Returning2CZ`, `R2_BETA_##`, `TexturesCZ`, staršie verzie nižšie uvedených súborov)
-   2. `CZScripts###.vdf` vložiť do `(...)\Data\`
-   3. `CZFonts###.vdf` vložiť do `(...)\Data\`
-   4. *(voliteľné)* `CZStartScreen###.vdf` vložiť do `(...)\Data\`
-   5. `AST###.dll` premenovať na `AST.dll` **(nutné!)** a vložiť do `(...)\System\`
+   - **automaticky**
+     1. stiahnuť a spustiť [inštalátor](https://github.com/helpo1/Navraty-CZ/releases/latest)
+	 2. vybrať požadované voliteľné súčasti:
+	    - **(odporúčané)** alternatívny obrázok pozadia hlavného menu
+		- **(odporúčané)** [Gothic Discord Rich Presence](https://github.com/helpo1/GDRPC) (v1.00) pre Návraty 2.0
+	   - pozn.: češtinu je možné kedykoľvek odinštalovať spustením súboru `N2.0-CZ-v[verzia češtiny]_Uninst.exe` v adresári s hrou
+
+   **ALEBO**
+   - **manuálne**
+     1. odstrániť všetky súčasti predošlých verzií češtiny (`Returning2CZ`, `R2_BETA_##`, `TexturesCZ`, staršie verzie nižšie uvedených súborov)
+     2. `CZScripts###.vdf` vložiť do `(...)\Data\`
+     3. `CZFonts###.vdf` vložiť do `(...)\Data\`
+     4. *(voliteľné)* `CZStartScreen###.vdf` vložiť do `(...)\Data\`
+	 5. *(voliteľné)*  GDRPC:
+        - `libdiscord-rpc.dll`, `orgVdfs32g.dll` a `vdfs32g.dll` vložiť do `(...)\System\`
+		- `GDRPC-CZ-R2.ini` premenovať na `GDRPC.ini` **(nutné!)** a vložiť do `(...)\System\`
+     6. `AST###.dll` premenovať na `AST.dll` **(nutné!)** a vložiť do `(...)\System\`
 
 ---
 
@@ -41,12 +55,12 @@
 
 - číslovanie verzií jednotlivých súborov sa nemusí zhodovať - v budúcnosti môže jeden balík CZ obsahovať napríklad skripty v1.04, fonty v1.01, úvodný obrázok v1.00 a AST v1.02
 
-- verzia hry uvedená v hlavnom menu označuje verziu AST; verzia skriptov je dohľadateľná po spustení novej hry (v úvodných titulkoch)
+- verzia hry uvedená v hlavnom menu označuje len **verziu balíku AST**; verzia skriptov je dohľadateľná po spustení novej hry (v úvodných titulkoch) alebo v knihe nastavení
 
 - v prípade, že dôjde k výraznejšiemu updatu, po ktorom už niektoré súčasti nebudú naďalej vzájomne kompatibilné so staršími verziami ostatných súborov, dôjde zároveň aj k zjednoteniu číslovania verzií a rekompilácii všetkých súčastí balíka (napr. na skripty, fonty, obrázok i AST v1.05)
   - podporované sú vždy len kompletné balíky (t.j. tie, ktoré sú [na tejto stránke](#download) spoločne uverejnené v jednom archíve); používanie iných kombinácií je síce možné, ale iba na vlastné riziko
 
-- pri každej verzii hry aj prekladu stále platí odporúčanie **ukladať na čo najviac rôznych pozícií**
+- pri každej verzii hry aj prekladu stále platí odporúčanie **ukladať na čo najviac rôznych pozícií** a pred začiatkom novej hry **vymazať/presunúť obsah zložky `\Saves`** v adresári s hrou
 
 - changelogy výraznejších zásahov do kódu sú oddelené ([hlavná časť skriptov](/CZ-Main/CZ-Main-Changelog.txt) a [menu](/CZ-Menu/CZ-Menu-Changelog.txt))
 
@@ -54,56 +68,51 @@
 
 ### Známe (neopravené) bugy:
 
-##### Výrazný pokles FPS pri zapnutom zobrazovaní dodatočných informácií na obrazovke (kláves I)
-- zdroj - ikony pri niektorých štatistikách (karma, hlad/smäd/únava, šípy/šípky)
-- workaround - vypnúť zobrazovanie problémových štatistík, odložiť luk/kušu
+##### ~~Výrazný pokles FPS pri zapnutom zobrazovaní dodatočných informácií na obrazovke (kláves I)~~
+- ~~zdroj - ikony pri niektorých štatistikách (karma, hlad/smäd/únava, šípy/šípky)~~
+- ~~workaround - vypnúť zobrazovanie problémových štatistík, odložiť luk/kušu~~
+- **vyriešené** (v1.02+)
 
 ---
 
 ### FAQ:
 
-##### Q: Po nainštalovaní češtiny sa namiesto znakov s diakritikou zobrazuje cyrilika
+##### Q: Po (manuálnom) nainštalovaní češtiny sa namiesto znakov s diakritikou zobrazuje cyrilika
 - A: viď body **3.iv.)** a **5.iii.)** [odporúčaného postupu inštalácie](#odporúčaný-postup-inštalácie)
   - pokiaľ už fonty z bodu 3.iv.) nainštalované sú, manuálne ich vymazať (súbor `(...)\Data\RET2_Font_High_Resolution.vdf`)
 
-##### Q: Po nainštalovaní češtiny nie sú preložené štatistiky, recepty atď. (záložky dostupné pod B/C)
+##### Q: Po (manuálnom) nainštalovaní češtiny nie sú preložené štatistiky, recepty atď. (záložky dostupné pod B/C)
 - A: viď bod **5.v.)** [odporúčaného postupu inštalácie](#odporúčaný-postup-inštalácie)
 
 ---
 
-### Úpravy `Gothic.ini`
-Po prvom načítaní hry / spustení novej hry a úvodnom dialógu sa v súbore `(...)\System\Gothic.ini` vytvoria nové sekcie v nasledovnom tvare (uvedený príklad pre ťažkú obtiažnosť):
+### Úpravy `Gothic.ini` a nastavení obtiažnosti v hre
+Po prvom načítaní hry / spustení novej hry a úvodnom dialógu sa v súbore `(...)\System\Gothic.ini` vytvoria nové sekcie v nasledovnom tvare:
 
 ```ini
-[CZ_SETTINGS_DIFF]         ; predvolené hodnoty          : (popis nastavenia)
-ApplyNewSettings=0         ; def:  0                     : aplikovať nastavenia z tohto súboru pri najbližšom načítaní hry
-HPPerLevel=0               ; def:  30 | 20 | 0  | 0      : počet získaných HP pri postupe na novú úroveň
-LPPerLevel=15              ; def:  25 | 20 | 15 | 10     : počet získaných LP pri postupe na novú úroveň
-XPMult=15                  ; def:  25 | 20 | 15 | 10     : koeficient získaných XP za porazených nepriateľov
-HungerPoolBase=496         ; def:  496                   : doba, po uplynutí ktorej sa zvýši hlad o 10% (~ v sekundách)
-HungerPoolLevelMult=5      ; def:  5                     :   bonus k ^ za každú úroveň
-ThirstPoolBase=616         ; def:  616                   : doba, po uplynutí ktorej sa zvýši smäd o 20% (~ v sekundách)
-ThirstPoolLevelMult=5      ; def:  5                     :   bonus k ^ za každú úroveň
-FatiguePoolBase=864        ; def:  864                   : doba, po uplynutí ktorej sa zvýši únava o 10% (~ v sekundách)
-FatiguePoolLevelMult=0     ; def:  0                     :   bonus k ^ za každú úroveň
-EnableHunger=1             ; def:  0 | 0 | 1 | 1         : zapnutie / vypnutie hladu
-EnableThirst=1             ; def:  0 | 0 | 1 | 1         : zapnutie / vypnutie smädu
-EnableFatigue=1            ; def:  0 | 0 | 1 | 1         : zapnutie / vypnutie únavy
-EnableSleepCap=1           ; def:  0 | 0 | 1 | 1         : zapnutie / vypnutie obmedzenia spánku na 10h/deň
-EnableTraps=1              ; def:  0 | 1 | 1 | 1         : zapnutie / vypnutie náhodných pascí (v truhlách, sarkofágoch a pod.)
-[CZ_SETTINGS_OTHER]
-OtherInitialized=1         ; def:  1                     : (interná premenná)
-OutputGDRPC=1              ; def:  1                     : zapnutie / vypnutie Discord integrácie cez Discord Rich Presence
-ShowAmmo=1                 ; def:  1                     : zapnutie / vypnutie indikátora munície
+[CZ_SETTINGS_OTHER]                ; predvolené hodnoty : (popis nastavenia)
+OtherInitialized=1                 ; def:  1            : (interná premenná)
+DialogueNumKeysControl=1           ; def:  1            : zapnutie / vypnutie upraveného ovládania dialógových možností číslami
+DialogueNumKeysShow=1              ; def:  1            : zapnutie / vypnutie zobrazovania čísel vedľa dialógových možností
+OutputGDRPC=1                      ; def:  1            : zapnutie / vypnutie Discord integrácie cez Discord Rich Presence
+ShowSkillChecks=1                  ; def:  1            : zapnutie / vypnutie zobrazovania skill checkov v dialógoch
+
+[GFA]
+freeAimingEnabled=1                ; def:  1            : (pre bližší popis GFA nastavení pozri
+focusUpdateIntervalMS=0            ; def:  0            :  https://github.com/szapp/GothicFreeAim/wiki/Free-Aiming#ini-settings)
+showFocusWhenNotAiming=0           ; def:  0            :
+reticleSizePx=64                   ; def:  64           :
+overwriteControlSchemeRanged=2     ; def:  2            : predvolene: G2 schéma ovládania (mierenie pravým tlačidlom myši, streľba tlačidlom akcie; umožňuje pohyb vpred počas mierenia)
+overwriteControlSchemeSpells=2     ; def:  2            :   alternatívne: G1 schéma ovládania (mierenie tlačidlom akcie, streľba tlačidlom pohybu vpred; neumožňuje pohyb vpred počas mierenia)
 ```
 
-a vypíše sa text `Nastavena obtížnost: Lehká/Střední/Těžká/Legendární!`, prípadne `Inicializuji ostatní nastavení v Gothic.ini...`.
+a vypíše sa text `Inicializuji ostatní nastavení v Gothic.ini...`.
 
-Pokiaľ chce hráč zmeniť niektoré z nastavení obtiažnosti (sekcia `CZ_SETTINGS_DIFF`), je potrebné vypnúť hru, zmeniť príslušné hodnoty, **nastaviť `ApplyNewSettings=1`**, uložiť súbor a načítať uloženú hru. Úspešnú zmenu si je možné overiť zobrazením dvoch kontrolných hlásení po načítaní hry (tieto hlásenia sa v niektorých prípadoch môžu vypísať duplicitne; na ich účinok to nemá vplyv). Taktiež sa v štatistikách pri názve obtiažnosti zobrazí poznámka ` (upr.)`.
+Nastavenia obtiažnosti boli od verzie 1.02+ **presunuté z `Gothic.ini` priamo do hry prostredníctvom knihy nastavení** a sú uchovávané pre každú uloženú hru samostatne. Sekcia `CZ_SETTINGS_DIFF` z CZ v1.01 už na hru nemá žiaden vplyv.
+
+Pokiaľ chce hráč zmeniť niektoré z nastavení obtiažnosti, je potrebné otvoriť knihu nastavení v inventári a podľa pokynov nastaviť jednotlivé hodnoty. V štatistikách sa pri názve obtiažnosti zobrazí poznámka ` (upr.)`.
 
 Pri zmene nastavení v sekcii Ostatné (`CZ_SETTINGS_OTHER`) stačí vypnúť hru, zmeniť príslušné hodnoty a znovu zapnúť hru.
-
-Súbory potrebné pre integráciu so službou Discord sú nateraz dostupné len na vyžiadanie.
 
 ---
 
