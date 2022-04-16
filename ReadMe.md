@@ -73,6 +73,11 @@
 - ~~workaround - vypnúť zobrazovanie problémových štatistík, odložiť luk/kušu~~
 - **vyriešené** (v1.02+)
 
+##### Hra aj s češtinou v1.02+ stále používa starý (AST) freeaim modul namiesto nového (GFA)
+- symptómy - nepresná registrácia streľby (strela vizuálne zasiahne NPC/monštrum, ale "netrafí" ho), počas mierenia sa nedá pohybovať
+- zdroj - nesprávne nastavenia AST freeaim modulu (napr. kvôli čistej inštalácii hry / hraní s AST freeaimom pred v1.02)
+- riešenie - manuálne v `Gothic.ini` v sekcii `[AST]` nastaviť `AutoAIM=1` (a v sekcii `[GFA]` ponechať `freeAimingEnabled=1`)
+
 ---
 
 ### FAQ:
