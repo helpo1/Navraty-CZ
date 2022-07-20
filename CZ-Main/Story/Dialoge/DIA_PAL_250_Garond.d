@@ -1041,7 +1041,7 @@ instance DIA_Garond_Marcos(C_Info)
 	condition = DIA_Garond_Marcos_Condition;
 	information = DIA_Garond_Marcos_Info;
 	permanent = FALSE;
-	description = "Potkal jsem Markose.";
+	description = "Potkal jsem Marcose.";
 };
 
 
@@ -1055,7 +1055,7 @@ func int DIA_Garond_Marcos_Condition()
 
 func void DIA_Garond_Marcos_Info()
 {
-	AI_Output(other,self,"DIA_Garond_Marcos_15_00");	//Potkal jsem Markose.
+	AI_Output(other,self,"DIA_Garond_Marcos_15_00");	//Potkal jsem Marcose.
 	AI_Output(self,other,"DIA_Garond_Marcos_10_01");	//A? Co hlásí? Kolik má rudy?
 	AI_Output(other,self,"DIA_Garond_Marcos_15_02");	//Čtyři bedny. Musel opustit důl, aby je dostal do bezpečí.
 	AI_Output(other,self,"DIA_Garond_Marcos_15_03");	//Nyní je střeží v malém údolíčku za skřetími liniemi. Potřebuje posily.
@@ -1609,7 +1609,7 @@ instance DIA_Garond_DobarOut(C_Info)
 	condition = DIA_Garond_DobarOut_Condition;
 	information = DIA_Garond_DobarOut_Info;
 	permanent = FALSE;
-	description = "Řekl jste, že váš kovář unikl.";
+	description = "Řekl jsi, že váš kovář unikl.";
 };
 
 func int DIA_Garond_DobarOut_Condition()
@@ -1623,7 +1623,7 @@ func int DIA_Garond_DobarOut_Condition()
 func void DIA_Garond_DobarOut_Info()
 {
 	B_GivePlayerXP(1500);
-	AI_Output(other,self,"DIA_Garond_DobarOut_01_00");	//Řekl jste, že váš kovář unikl.
+	AI_Output(other,self,"DIA_Garond_DobarOut_01_00");	//Řekl jsi, že váš kovář unikl.
 	AI_Output(self,other,"DIA_Garond_DobarOut_01_01");	//Ano, a ne sám, ale společně se svým asistentem. Nicméně, si nemyslím, že by mohli dojít daleko.
 	AI_Output(self,other,"DIA_Garond_DobarOut_01_02");	//V posledních dnech v údolí je ještě více skřetů a všelijaké jiné havěti a oni dva nebyli dobří bojovníci.
 	AI_Output(self,other,"DIA_Garond_DobarOut_01_03");	//Víš, ať ti mizerní zbabělci utečou, ale Innos s nimi. V každém případě, není to nejhorší - mám na mysli, když skřeti ovládnou hrad - to by byl konec.
@@ -1631,11 +1631,11 @@ func void DIA_Garond_DobarOut_Info()
 
 	if(MIS_JanBecomesSmith == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Garond_DobarOut_01_05");	//Chcete-li mou upřímnost, v současné situaci, je mi to jedno. Kováře už máme.
+		AI_Output(self,other,"DIA_Garond_DobarOut_01_05");	//Chceš-li mou upřímnost, v současné situaci, je mi to jedno. Kováře už máme.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Garond_DobarOut_01_06");	//Chcete-li mou upřímnost, v současné situaci, je mi to jedno.
+		AI_Output(self,other,"DIA_Garond_DobarOut_01_06");	//Chceš-li mou upřímnost, v současné situaci, je mi to jedno.
 	};
 
 	AI_Output(self,other,"DIA_Garond_DobarOut_01_07");	//Ale zas to nepřeháněj s tím běháním po údolí, jednou tě chytí a zničíš tím sám sebe.
@@ -1693,8 +1693,8 @@ func void DIA_Garond_DobarOut_Done_Info()
 		AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_07");	//(sarkasticky) Cože, tam není jídlo lepší než tady? Zatracení fňukalové...
 		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_08");	//Není na místě urážet mrtvé.
 		AI_Output(self,other,"DIA_Garond_DobarOut_Done_01_09");	//Och, Innosi. VŠICHNI jsme na půl mrtví! Čekáš, že projevím lítost za zbabělého dezertéra?
-		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_10");	//Nic vám nevnucuju.
-		B_LogEntry(TOPIC_DobarOut,"Ohlásil jsem Garondovy Parlafovu smrt. Zdá se, že na něj moc nezapůsobyla.");
+		AI_Output(other,self,"DIA_Garond_DobarOut_Done_01_10");	//Nic ti nevnucuju.
+		B_LogEntry(TOPIC_DobarOut,"Ohlásil jsem Garondovi Parlafovu smrt. Zdá se, že na něj moc nezapůsobila.");
 		GarondKnowParlaf = TRUE;
 
 		if(GarondKnowDobar == TRUE)
