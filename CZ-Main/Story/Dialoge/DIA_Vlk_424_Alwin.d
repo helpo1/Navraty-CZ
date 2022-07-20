@@ -75,7 +75,7 @@ func int DIA_Alwin_Sheep_Condition()
 func void DIA_Alwin_Sheep_Info()
 {
 	AI_Output(other,self,"DIA_Alwin_Sheep_15_00");	//Tohle jsou tvoje ovce?
-	AI_Output(self,other,"DIA_Alwin_Sheep_12_01");	//Kdepak mě patří jenom ta, která se jmenuje Luci (usměje se) - a to je moje žena.
+	AI_Output(self,other,"DIA_Alwin_Sheep_12_01");	//Kdepak mě patří jenom ta, která se jmenuje Lucy (usměje se) - a to je moje žena.
 	AI_Output(self,other,"DIA_Alwin_Sheep_12_02");	//Ovce jsou majetkem domobrany - hned, jak je získají od farmářů, přivedou je ke mně.
 };
 
@@ -113,7 +113,7 @@ func void DIA_Alwin_Sheep_Do_Info()
 	AI_Output(self,other,"DIA_Alwin_Sheep_Do_12_11");   //No co třeba 150 zlatých.
    	AI_Output(self,other,"DIA_Alwin_Sheep_Do_12_12");   //Aspoň to pokryje moje výdaje, kdyby někdo ukradl jednu z mých ovcí zatím co tě budu učit.
 	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTeacher,"Alvin mě může naučit získávat maso ze zvířat.");
+	B_LogEntry(TOPIC_CityTeacher,"Alwin mě může naučit získávat maso ze zvířat.");
 };
 
 instance DIA_Alwin_Butcher(C_Info)
@@ -158,7 +158,7 @@ func void DIA_Alwin_Butcher_info()
 	if((hero.lp >= kosten) && (Npc_HasItems(other,ItMi_Gold) >= money))
 	{
       	AI_Output(self,other,"DIA_Alwin_Butcher_01_01");   //Je to jednoduché. Hlavně si pamatuj: Nikdy nezačínej od hlavy.
-      	AI_Output(self,other,"DIA_Alwin_Butcher_01_02");   //První řez proveď na břiše kde je kůže měká a dobře se odstraní.
+      	AI_Output(self,other,"DIA_Alwin_Butcher_01_02");   //První řez proveď na břiše kde je kůže měkká a dobře se odstraní.
       	AI_Output(self,other,"DIA_Alwin_Butcher_01_03");   //Vždy si vybírej místa kde můžeš získat pořádný kus masa. Čím víc tím lépe.
       	AI_Output(self,other,"DIA_Alwin_Butcher_01_04");   //A teď se můžeš procvičit. Ale nezkoušej to na mých ovcích nebo z tebe sám stáhnu kůži!
 		hero.lp = hero.lp - kosten;
@@ -368,7 +368,7 @@ func int DIA_Alwin_GiveAmulet_condition()
 func void DIA_Alwin_GiveAmulet_info()
 {
 	AI_Output(other,self,"DIA_Alwin_GiveAmulet_01_01");	//Poslal mě za tebou Holger.
-	AI_Output(self,other,"DIA_Alwin_GiveAmulet_01_02");	//(udiveně) Můj syn! Lucy! Slyšela jsi. Nakonec přišla zpráva od Holgerta.
+	AI_Output(self,other,"DIA_Alwin_GiveAmulet_01_02");	//(udiveně) Můj syn! Lucy! Slyšela jsi. Nakonec přišla zpráva od Holgera.
 	AI_Output(self,other,"DIA_Alwin_GiveAmulet_01_03");	//No, jak se má? Nechybí mu něco?
 	AI_Output(other,self,"DIA_Alwin_GiveAmulet_01_04");	//Nic mu nechybí, aspoň myslím.
 	AI_Output(other,self,"DIA_Alwin_GiveAmulet_01_05");	//Jediný co mu vadí tak, ta tvrdá disciplína.
@@ -380,7 +380,7 @@ func void DIA_Alwin_GiveAmulet_info()
 	B_GiveInvItems(self,other,itam_holger_amulet,1);
 	AI_Output(other,self,"DIA_Alwin_GiveAmulet_01_11");	//Dobře, předám.
 	MIS_HOLGER_QUEST = 2;
-	B_LogEntry(TOPIC_BADSON,"Něco se objasnilo. Vypadá to, že Holger je syn Alvina. Kdo by to řek. Co měl na mysli Alvin když mluvil o tom nešťastném dni Holger mi bude muset říct vše!");
+	B_LogEntry(TOPIC_BADSON,"Něco se objasnilo. Vypadá to, že Holger je syn Alwina. Kdo by to řek. Co měl na mysli Alwin když mluvil o tom nešťastném dni. Holger mi bude muset říct vše!");
 
 	if(Npc_HasItems(other,itwr_holger_letter) >= 1)
 	{

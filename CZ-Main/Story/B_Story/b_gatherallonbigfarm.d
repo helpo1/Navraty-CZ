@@ -274,7 +274,7 @@ func void b_againgatherallonbigfarm()
 		B_StartOtherRoutine(SLD_824_Soeldner,"Start");
 		B_StartOtherRoutine(SLD_825_Soeldner,"Start");
 		B_StartOtherRoutine(SLD_826_Soeldner,"Start");
-		B_StartOtherRoutine(SLD_827_Soeldner,"Start");
+		B_StartOtherRoutine(SLD_827_Soeldner,"Orcatcbegan");
 
 		if(TORLOFCAPTURED == FALSE)
 		{

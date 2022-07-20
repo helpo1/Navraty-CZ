@@ -542,7 +542,7 @@ func void dia_Ass_128_Nrozas_Poison_Done_info()
 			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_27");	//Nebo se mě pokoušíš podvést?
 			AI_Output(other,self,"DIA_Ass_128_Nrozas_Poison_Done_01_28");	//Ne, v žádném případě se o to nepokouším.
 			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_29");	//Víš, že se mi nelíbí, když se mé příkazy neplní přesně do puntíku.
-			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_30");	//Také nemůžu vystát, když ze mě někdo má za hlupáka!
+			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_30");	//Také nemůžu vystát, když mě někdo má za hlupáka!
 			AI_Output(self,other,"DIA_Ass_128_Nrozas_Poison_Done_01_31");	//Takže mi odpusť...
 			B_LogEntry(TOPIC_PW_PoisonNrozas,"Mistr Nrozas byl rozzuřen, protože jsem mu nepřinesl důkazy o účinku jedu. Moje nedbalost mě teď může stát život.");
 			PlayerIsPrioratFakeTemp = TRUE;
@@ -1111,10 +1111,10 @@ func void DIA_Ass_128_Nrozas_TeachPoisonMake_Info()
 	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_03");	//Mužu ti ukázat, jak mužeš udělat ty nejprostější z nich.
 	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_04");	//Nebo tě mužu naučit otrávit jedem čepel nebo šípy.
 	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_05");	//Ale budeš u toho muset dávat velký pozor.
-	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_06");	//Jakákoli chyba tě totiž muže při tvých experimentech zabít.
+	AI_Output(self,other,"DIA_Ass_128_Nrozas_TeachPoisonMake_01_06");	//Jakákoli chyba tě totiž může při tvých experimentech zabít.
 	NrozasTeachMakePoison = TRUE;
 	Log_CreateTopic(TOPIC_PrioratTeacher,LOG_NOTE);
-	B_LogEntry(TOPIC_PrioratTeacher,"Mistr Nrozas mě muže naučit připravovat jedy. Také mi ukáže, jak otrávit jedem čepel nebo šípy.");
+	B_LogEntry(TOPIC_PrioratTeacher,"Mistr Nrozas mě může naučit připravovat jedy. Také mi ukáže, jak otrávit jedem čepel nebo šípy.");
 };
 
 instance DIA_Ass_128_Nrozas_TeachPoison(C_Info)
@@ -1274,7 +1274,7 @@ func void DIA_Ass_128_Nrozas_TeachPoison_PoisonBlade()
 		PoisonBladeKnow = TRUE;
 		Snd_Play("LevelUP");
 		Log_CreateTopic(TOPIC_TalentAlchemy,LOG_NOTE);
-		B_LogEntry(TOPIC_TalentAlchemy,"Ingredience pro otrávení zbraně: čepel a lahvička s jedem.");
+		B_LogEntry(TOPIC_TalentAlchemy,"Ingredience pro OTRÁVENÍ ZBRANĚ: čepel a lahvička s jedem.");
 	};
 };
 

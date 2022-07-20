@@ -876,7 +876,7 @@ func void DIA_Ass_125_Tiamant_Teach_2X2_Info()
 		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_15");	//To ti umožní provést naprosto smrtící sérii výpadů.
 		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_16");	//Pokud jde o styl, to je téma opravdu obsáhlé.
 		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_17");	//Boj s dvojicí mečů se podobá spíše tanci než šermování.
-		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_18");	//Od jedné k druhé a tak pořád dookola.
+		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_18");	//Od jedné k druhé a tak pořád dokola.
 		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_19");	//To je vše, co pro začátek potřebuješ vědět.
 		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_20");	//Pokud tedy chápeš, co jsem se ti snažil sdělit...
 		AI_Output(self,other,"DIA_Ass_125_Tiamant_Teach_2X2_15_21");	//... brzy zjistíš, že jsi na bojišti naprosto bezkonkurenční. Zkrátka skvělý bojovník.

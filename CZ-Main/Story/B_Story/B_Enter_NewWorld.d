@@ -1648,7 +1648,10 @@ func void B_ENTER_NEWWORLD_Kapitel_6()
 		//B_KillNpc(vlk_6036_buergerin);
 		B_KillNpc(vlk_6037_buerger);
 		B_KillNpc(VLK_4302_Addon_Elvrich);
-		B_KillNpc(SLD_827_Soeldner);
+		if(!Npc_IsDead(SLD_827_Soeldner))
+		{
+			B_StartOtherRoutine(SLD_827_Soeldner,"OrcAtcBegan");
+		};
 		B_KillNpc(BAU_930_Sekob);
 		B_KillNpc(BAU_932_Balthasar);
 		B_KillNpc(PAL_187_MELHIOR);

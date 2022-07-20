@@ -471,7 +471,7 @@ func void dia_maria_tower_win()
 func void dia_maria_tower_fail_a()
 {
 	AI_Output(other,self,"DIA_Maria_Tower_fail_a_15_00");	//Chci tam udělat tábor.
-	AI_Output(other,self,"DIA_Maria_Tower_fail_a_15_01");	//Lord Hagen si to přeje. Tak se zamezí aby tam nalezla další verbež.
+	AI_Output(other,self,"DIA_Maria_Tower_fail_a_15_01");	//Lord Hagen si to přeje. Tak se zamezí aby tam nelezla další verbež.
 	AI_Output(self,other,"DIA_Maria_Tower_fail_a_17_02");	//Lord Hagen ti to dovolil? To je ale naše věž!
 	AI_Output(self,other,"DIA_Maria_Tower_fail_a_17_03");	//Jsi dobrý člověk ale lord Hagen nás nemůže jen tak připravit o majetek!
 	AI_Output(self,other,"DIA_Maria_Tower_fail_a_17_04");	//Tohle se mi nelíbí. Prosím odejdi!

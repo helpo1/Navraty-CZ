@@ -26,7 +26,7 @@ instance DIA_Pal_212_Schiffswache_WERSEIDIHR(C_Info)
 	npc = PAL_212_Schiffswache;
 	condition = DIA_Pal_212_Schiffswache_WERSEIDIHR_Condition;
 	information = DIA_Pal_212_Schiffswache_WERSEIDIHR_Info;
-	description = "Kdo jsi?";
+	description = "Kdo jste?";
 };
 
 

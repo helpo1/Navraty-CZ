@@ -509,7 +509,7 @@ func void dia_Ass_127_Osair_HelpWithAssair_Done_info()
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_Ass_127_Osair_HelpWithAssair_Done_01_01");	//Ohledně zlaté rudy, mistře...
 	AI_Output(self,other,"DIA_Ass_127_Osair_HelpWithAssair_Done_01_02");	//Ano? Čím mě můžeš potěšít?
-	AI_Output(other,self,"DIA_Ass_127_Osair_HelpWithAssair_Done_01_03");	//Mám u sebe exemplář rudy, který jste chtěl.
+	AI_Output(other,self,"DIA_Ass_127_Osair_HelpWithAssair_Done_01_03");	//Mám u sebe exemplář rudy, který jsi chtěl.
 	AI_Output(self,other,"DIA_Ass_127_Osair_HelpWithAssair_Done_01_04");	//No, dej, ať se na něj podívám.
 	B_GiveInvItems(other,self,ItMi_Osair_GoldNugget,1);
 	AI_Output(self,other,"DIA_Ass_127_Osair_HelpWithAssair_Done_01_05");	//Podle toho jak vypadá, je ta ruda opravdu bohatá na zlato.
@@ -629,7 +629,7 @@ func void dia_Ass_127_Osair_DamnHoakin_Done_info()
 
 		if(Npc_HasItems(other,ItMi_Gold) >= 4000)
 		{
-			Info_AddChoice(DIA_Ass_127_Osair_DamnHoakin_Done,"Zde je vaše zlato, mistře.",DIA_Ass_127_Osair_DamnHoakin_Done_Yes);
+			Info_AddChoice(DIA_Ass_127_Osair_DamnHoakin_Done,"Tady je mé zlato, mistře.",DIA_Ass_127_Osair_DamnHoakin_Done_Yes);
 		};
 	}
 	else if(ConvoyGoldShahtDone == TRUE)
@@ -733,7 +733,7 @@ func void dia_Ass_127_Osair_Poison_info()
 	AI_Output(self,other,"DIA_Ass_127_Osair_Poison_01_02");	//Tebe? Ach, ano. Stalo se tu něco zajimavého.
 	AI_Output(other,self,"DIA_Ass_127_Osair_Poison_01_03");	//Poslouchám.
 	AI_Output(self,other,"DIA_Ass_127_Osair_Poison_01_04");	//Hmm... Nedávno jsem se bavil s mistrem Nrozasem a ten náhodou řekl, že se mu povedlo udělat extrémně silný a rychle účinkující jed.
-	AI_Output(self,other,"DIA_Ass_127_Osair_Poison_01_05");	//Podle něj je ten jed tak silný, že by mohl zabít dokonce ohromného horního trola.
+	AI_Output(self,other,"DIA_Ass_127_Osair_Poison_01_05");	//Podle něj je ten jed tak silný, že by mohl zabít dokonce ohromného horského trola.
 	AI_Output(self,other,"DIA_Ass_127_Osair_Poison_01_06");	//Já osobně mu věřím, ale mistr Nrozas občas rád přechvaluje svoje činy.
 	AI_Output(self,other,"DIA_Ass_127_Osair_Poison_01_07");	//No, jestli je to, co říká pravda, tak bezpochyby bych u sebe chtěl mít nemalou část toho jedu.
 	AI_Output(self,other,"DIA_Ass_127_Osair_Poison_01_08");	//A proto potřebuji, aby někdo jako ty šel k mistru Nrozasovi a vyjasnil celou situaci.
@@ -1139,7 +1139,7 @@ func void DIA_Ass_127_Osair_DualWeapon_Yes()
 	Log_CreateTopic(TOPIC_CareOsair,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_CareOsair,LOG_Running);
 	B_LogEntry(TOPIC_CareOsair,"Musím si promluvit se čtyřmi bratry Masyafu a zařídit jejich podporu pro mistra Osaira. Jejich jména jsou: Famid, Rafat, Nazim a Kudir.");
-	B_LogEntry_Quiet(TOPIC_MoonBlades,"Abych svitek získal, budu muset pracovat pro mistra Osaira.");
+	B_LogEntry_Quiet(TOPIC_MoonBlades,"Abych recept získal, budu muset pracovat pro mistra Osaira.");
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(Ass_391_Adept,"PW_FAMID");
 	Wld_InsertNpc(Ass_392_Adept,"PW_RAFAT");
@@ -1415,7 +1415,7 @@ instance DIA_Ass_127_Osair_OsairPlans(C_Info)
 	condition = DIA_Ass_127_Osair_OsairPlans_condition;
 	information = DIA_Ass_127_Osair_OsairPlans_info;
 	permanent = FALSE;
-	description = "Proč potřebujete přesně tyto lidi, mistře?";
+	description = "Proč potřebuješ přesně tyto lidi, mistře?";
 };
 
 func int DIA_Ass_127_Osair_OsairPlans_condition()
@@ -1466,8 +1466,8 @@ func void dia_Ass_127_Osair_Trait_info()
 	AI_Output(other,self,"DIA_Ass_127_Osair_Trait_01_12");	//A co když odmítnu?
 	AI_Output(self,other,"DIA_Ass_127_Osair_Trait_01_13");	//Tak nebudu mít na výběr. A nemůžu tak riskovat.
 	Info_ClearChoices(DIA_Ass_127_Osair_Trait);
-	Info_AddChoice(DIA_Ass_127_Osair_Trait,"Tak riskovat budete muset.",DIA_Ass_127_Osair_Trait_No);
-	Info_AddChoice(DIA_Ass_127_Osair_Trait,"Raději budu na vaší straně.",DIA_Ass_127_Osair_Trait_Yes);
+	Info_AddChoice(DIA_Ass_127_Osair_Trait,"Tak riskovat budeš muset.",DIA_Ass_127_Osair_Trait_No);
+	Info_AddChoice(DIA_Ass_127_Osair_Trait,"Raději budu na tvé straně.",DIA_Ass_127_Osair_Trait_Yes);
 };
 
 func void dia_Ass_127_Osair_Trait_No()

@@ -40,9 +40,9 @@ func void DIA_STRF_8127_Addon_Hildur_HowYou_Info()
 {
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowYou_01_00");	//Jsi kovář?
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowYou_01_01");	//Ne, jsem jen prostej tavič rudy.
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowYou_01_02");	//To znamená, že nemusíš celí den tvrdě pracovat s kladivem v ruce?
+	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowYou_01_02");	//To znamená, že nemusíš celý den tvrdě pracovat s kladivem v ruce?
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowYou_01_03");	//Jak vidíš. Ale nemysli si, že je to lehká práce!
-	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowYou_01_04");	//Věřím?
+	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowYou_01_04");	//Opravdu?
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowYou_01_05");	//Chvilku si to se mnou vyzkoušej a pochopíš.
 };	
 	
@@ -71,7 +71,7 @@ func void DIA_STRF_8127_Addon_Hildur_HowLong_Info()
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_02");	//Byl jsem zde v dobách, kdy celé údolí ovládali rudobaroni.
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_HowLong_01_03");	//Jak ses dostal ke skřetům?
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_04");	//To je dlouhá historie... (zamyšleně) Jednou jsem doprovázel náklad rudy ze starého dolu.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_05");	//Když už jsem se skoro dostali k hradu, náhle na nás zaůtočili skřeti.
+	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_05");	//Když už jsem se skoro dostali k hradu, náhle na nás zaútočili skřeti.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_06");	//Většinu stráží tenkrát zabili, a mě a ještě několik dalších odvlekli s sebou.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_07");	//Když skřeti zjistili, že jsem celkem dobrý v tavení rudy tak mě dali sem k peci abych odléval ingoty.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_HowLong_01_08");	//No a tak jsem tady uvíznul.
@@ -110,7 +110,7 @@ func void DIA_STRF_8127_Addon_Hildur_NeedRest_Info()
 	MIS_NeedRest = LOG_Running;
 	Log_CreateTopic(TOPIC_NeedRest,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_NeedRest,LOG_Running);
-	B_LogEntry(TOPIC_NeedRest,"Hildur mě může naučit, jak tavit rudu, jestli dokážu nějak rozptýlit skřeta jménem Dabar Shaka, který ho neustále sleduje.");
+	B_LogEntry(TOPIC_NeedRest,"Hildur mě může naučit, jak tavit rudu, jestli dokážu nějak rozptýlit skřeta jménem Dabar Shak, který ho neustále sleduje.");
 };	
 
 
@@ -285,7 +285,7 @@ func void DIA_STRF_8127_Addon_Hildur_LowLevel_Info()
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_05");	//Ach! No, dobře... (povzdechne si) Víš nerad o tom mluvím.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_06");	//Po pravdě, dřív se v spodní části také těžila ruda.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_07");	//Ale ne železná, ale magická! Byla tam velmi bohatá žíla.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_08");	//A všechno šlo lhce do doby, než skřeti vykopali něco co neměli.
+	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_08");	//A všechno šlo lehce do doby, než skřeti vykopali něco co neměli.
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_09");	//Co konkrétně tam našli?
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_10");	//To nevím kamaráde. V té době jsem už pracoval tady, u pece. Takže jsem se už nemohl moc vzdalovat.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_LowLevel_01_11");	//Ale jedno vím jistě...
@@ -351,9 +351,9 @@ func void DIA_STRF_8127_Addon_Hildur_ElkKirka_Info()
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_03");	//To prase je příliš chamtivý na skřeta! Ale to na tom nic nemění...
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_04");	//A odkud otroci berou zlato?
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_05");	//Někdy se v žíle železné rudy najdou drobné žilky zlata.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_06");	//Když na takovou žílu narazíš, pak jsi šťastlivec,
+	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_06");	//Když na takovou žílu narazíš, pak jsi šťastlivec.
 	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_07");	//Za zlato si zde můžeš koupit cokoliv, i různé nástroje.
-	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_08");	//A takle tu žijem!
+	AI_Output(self,other,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_08");	//A takhle tu žijem!
 	AI_Output(other,self,"DIA_STRF_8127_Addon_Hildur_ElkKirka_01_09");	//Jasně.
 	ElkNeedNewKirka = 2;
 };	

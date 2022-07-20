@@ -57,7 +57,7 @@ func void dia_holger_story_info()
 	AI_Output(self,other,"DIA_Holger_01_12");	//Pak budu brzy u nich!
 	MIS_HOLGER_QUEST = 4;
 	Log_SetTopicStatus(TOPIC_BADSON,LOG_SUCCESS);
-	B_LogEntry(TOPIC_BADSON,"Tak, nakonec do sebe vše zapadlo. Holger měl prostě smůlu a klášter byla jeho poslední možnost. Doufám, že se s Alvinem vše urovná.");
+	B_LogEntry(TOPIC_BADSON,"Tak, nakonec do sebe vše zapadlo. Holger měl prostě smůlu a klášter byla jeho poslední možnost. Doufám, že se s Alwinem vše urovná.");
 	INNOSPRAYCOUNT += 1;
 	Npc_ExchangeRoutine(nov_11114_holger,"Smoke");
 };
@@ -90,7 +90,7 @@ func void dia_holger_hello_info()
 	AI_Output(self,other,"DIA_Holger_Hello_01_06");	//Ram náhodou upustil do sudu vína palici a Gorax už ho třetí týden nutí zametat.
 	AI_Output(self,other,"DIA_Holger_Hello_01_07");	//Ani nevím, kde ji tu vzal.
 	AI_Output(other,self,"DIA_Holger_Hello_01_08");	//To je smutné, ale zpátky k věci!
-	AI_Output(self,other,"DIA_Holger_Hello_01_09");	//Jo, jasně... Takže, mohl bys něco vzít od pastýře z města Alvina? Jeden amulet.
+	AI_Output(self,other,"DIA_Holger_Hello_01_09");	//Jo, jasně... Takže, mohl bys něco vzít od pastýře z města Alwina? Jeden amulet.
 	AI_Output(other,self,"DIA_Holger_Hello_01_10");	//No, mám ho ukrást, koupit...?
 	AI_Output(self,other,"DIA_Holger_Hello_01_11");	//Ne, jenom mu dej tenhle dopis a zmiň moje jméno.
 	AI_Output(other,self,"DIA_Holger_Hello_01_12");	//A proč tam nejdeš sám?
@@ -109,7 +109,7 @@ func void dia_holger_hello_yes()
 	Log_CreateTopic(TOPIC_BADSON,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BADSON,LOG_Running);
 	MIS_HOLGER_QUEST = 1;
-	B_LogEntry(TOPIC_BADSON,"Mluvil jsem s novicem jménem Holger. Požádal mě, abych mu přinesl z města jeden amulet od pastýře Alvina. Když jsem se ho zeptal, proč si pro něj nezajde sám trochu se vykroucel. Prý mi to řekne, když mu amulet přinesu. Mám Alvinovi říct, kdo mě poslal a předat dopis.");
+	B_LogEntry(TOPIC_BADSON,"Mluvil jsem s novicem jménem Holger. Požádal mě, abych mu přinesl z města jeden amulet od pastýře Alwina. Když jsem se ho zeptal, proč si pro něj nezajde sám trochu se vykroucel. Prý mi to řekne, když mu amulet přinesu. Mám Alwinovi říct, kdo mě poslal a předat dopis.");
 	Info_ClearChoices(dia_holger_hello);
 };
 
@@ -150,7 +150,7 @@ func void DIA_Holger_GiveAmulet_info()
 	AI_Output(self,other,"DIA_Holger_GiveAmulet_01_04");	//To je vážně on, moc děkuji!
 	AI_Output(self,other,"DIA_Holger_GiveAmulet_01_05");	//Tady, mám u sebe svitek Malé ohnivé bouře.
 	B_GiveInvItems(self,other,ItSc_Firestorm,1);
-	B_LogEntry(TOPIC_BADSON,"Přinesl jsem Hogarovi amulet od Alvina, teď by měl vyklopit, proč si pro něj nezašel sám.");
+	B_LogEntry(TOPIC_BADSON,"Přinesl jsem Holgerovi amulet od Alwina, teď by měl vyklopit, proč si pro něj nezašel sám.");
 	MIS_HOLGER_QUEST = 3;
 };
 

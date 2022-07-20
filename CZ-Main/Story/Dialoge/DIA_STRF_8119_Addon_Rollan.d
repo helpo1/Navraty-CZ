@@ -286,7 +286,7 @@ func void DIA_STRF_8119_Addon_Rollan_AboutMine_info()
 		};
 		if(MIS_LowLevel == FALSE)
 		{
-			Info_AddChoice(DIA_STRF_8119_Addon_Rollan_AboutMine,"Co je v té dolní časti dolu?",DIA_STRF_8119_Addon_Rollan_AboutMine_LowLev);
+			Info_AddChoice(DIA_STRF_8119_Addon_Rollan_AboutMine,"Co je v té dolní části dolu?",DIA_STRF_8119_Addon_Rollan_AboutMine_LowLev);
 		};
 		if(MIS_EscapeMine == FALSE)
 		{
@@ -361,7 +361,7 @@ func void DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin()
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_07");	//Takže dokud ti většina z nás nevěří, nemá smysl se na něco takového ptát.
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_08");	//Jak si získám vaši důvěru?
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_09");	//Jak, jak... Zeptej se kluků kolem, jestli nepotřebují s něčím pomoct.
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_10");	//Dokáž, na čí straně jsi a že je na tebe spoleh!
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_10");	//Dokaž, na čí straně jsi a že je na tebe spoleh!
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_11");	//Pak už to půjde samo.
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_12");	//Ano, vím, co tím myslíš.
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Paladin_01_13");	//To je dobře, teď už se o tom bavit nebudem.
@@ -403,12 +403,12 @@ func void DIA_STRF_8119_Addon_Rollan_AboutMine_Escape()
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_07");	//Navíc, nemáme žádné zbraně. Pokud teda nečekáš, že na jejich sekery naběhneme s pěstmi.
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_08");	//Už se někdo pokusil o útěk?
 	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_09");	//Hmm... (zamyšleně) Vzpomínám si, že někdo se už o útěk pokoušel.
-	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_10");	//Ale to bys se měl zeptat spíše Ferda. On to tehdá viděl na vlastní oči.
+	AI_Output(self,other,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_10");	//Ale to bys se měl zeptat spíše Ferda. On to tehdy viděl na vlastní oči.
 	AI_Output(other,self,"DIA_STRF_8119_Addon_Rollan_AboutMine_Escape_01_11");	//Dobře, promluvím si s ním.
 	MIS_EscapeMine = LOG_Running;
 	Log_CreateTopic(TOPIC_EscapeMine,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_EscapeMine,LOG_Running);
-	B_LogEntry(TOPIC_EscapeMine,"Očividně otroci ani nepomyšlejí nad útěkem. Nemají zbraně ani žádnou touhu bojovat s elitními skřety. Podle Rollanda by Ferd mohl vědět více o původním pokusu o útěk.");
+	B_LogEntry(TOPIC_EscapeMine,"Očividně otroci ani nepomýšlejí nad útěkem. Nemají zbraně ani žádnou touhu bojovat s elitními skřety. Podle Rollanda by Ferd mohl vědět více o původním pokusu o útěk.");
 
 	if((RolTellChief == TRUE) && (RolTellPal == TRUE) && (RolTellSlaves == TRUE) && (RolTellHowMany == TRUE) && (MIS_LowLevel != FALSE) && (MIS_EscapeMine != FALSE))
 	{

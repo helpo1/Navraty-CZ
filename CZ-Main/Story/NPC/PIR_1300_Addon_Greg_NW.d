@@ -17,7 +17,7 @@ instance PIR_1300_Addon_Greg_NW(Npc_Default)
 	fight_tactic = FAI_HUMAN_MASTER;
 	EquipItem(self,ItMw_1H_GoldBrand_Greg);
 	B_CreateAmbientInv(self);
-	B_SetNpcVisual(self,MALE,"Hum_Head_Thief",Face_P_Greg,BodyTex_P,ITAR_PIR_N_Addon);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Thief",Face_P_Greg,BodyTex_N,ITAR_PIR_N_Addon);
 	Mdl_SetModelFatness(self,1);
 	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
 	Mdl_ApplyOverlayMds(self,"humans_pirate.mds");

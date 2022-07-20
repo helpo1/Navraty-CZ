@@ -51,7 +51,7 @@ instance DIA_STRF_8125_Addon_Nuts_NotWork(C_Info)
 	condition = DIA_STRF_8125_Addon_Nuts_NotWork_Condition;
 	information = DIA_STRF_8125_Addon_Nuts_NotWork_Info;
 	permanent = FALSE;
-	description = "Nevypadalo to se že bys něco dělal.";
+	description = "Vypadá to tak, že nepracuješ.";
 };
 
 func int DIA_STRF_8125_Addon_Nuts_NotWork_Condition()
@@ -64,12 +64,12 @@ func int DIA_STRF_8125_Addon_Nuts_NotWork_Condition()
 
 func void DIA_STRF_8125_Addon_Nuts_NotWork_Info()
 {
-	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_NotWork_01_00");	//Nevypadalo to se že bys něco dělal.
-	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_NotWork_01_01");	//No... (potutelně) No tak pokukd zrovna stráže spí.
-	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_NotWork_01_02");	//A on spal... očividně, a to pěkně dlouhou dobu.
-	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_NotWork_01_03");	//No a co... (zmateněě) Kdo by se o tom dozvěděl?
-	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_NotWork_01_04");	//Mohl bych se o tom skřetem zmínit...
-	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_NotWork_01_05");	//A ty s tím teda nic neuděláš?
+	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_NotWork_01_00");	//Vypadá to tak, že nepracuješ.
+	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_NotWork_01_01");	//No... (potutelně) No tak pokud zrovna stráže spí.
+	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_NotWork_01_02");	//A oni spí... očividně, a to pěkně dlouhou dobu.
+	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_NotWork_01_03");	//No a co... (zmateně) Kdo by se o tom dozvěděl?
+	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_NotWork_01_04");	//Mohl bych se o tom zmínit skřetům...
+	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_NotWork_01_05");	//Ale ty to neuděláš, že ne? Pravda?
 	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_NotWork_01_06");	//Ne neudělám, tedy pokud mi můžeš být nějak užitečný.
 	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_NotWork_01_07");	//Co ode mě chceš?
 	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_NotWork_01_08");	//Ale no tak, klid... jen jsem si z tebe utahoval.
@@ -97,8 +97,8 @@ func int DIA_STRF_8125_Addon_Nuts_YouHereLongTime_Condition()
 func void DIA_STRF_8125_Addon_Nuts_YouHereLongTime_Info()
 {
 	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_YouHereLongTime_01_00");	//Jsi tady dlouho?
-	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_YouHereLongTime_01_01");	//Chcete-li být upřímný, ztratil jsem pojem o čase.
-	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_YouHereLongTime_01_02");	//Ale v případě, že skřeti budou i nadále nás nutit pracovat tolik, tu nikdo dlouho nevydrží.
+	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_YouHereLongTime_01_01");	//Mám-li být upřímný, ztratil jsem pojem o čase.
+	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_YouHereLongTime_01_02");	//Ale v případě, že nás skřeti i nadále budou nutit tolik pracovat, tu nikdo dlouho nevydrží.
 };
 
 instance DIA_STRF_8125_Addon_Nuts_Teleport(C_Info)
@@ -156,7 +156,7 @@ func void DIA_STRF_8125_Addon_Nuts_Want_Info()
 {
 	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_Want_01_00");	//Co za ní chceš?
 	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_Want_01_01");	//Hmmm... (potutelně) Pro mě je nenahraditelná!
-	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_Want_01_02");	//Ale když už se ptáš... Možná že dobrá kniha by byla rovnoceným náhražkem.
+	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_Want_01_02");	//Ale když už se ptáš... Možná, že dobrá kniha by byla rovnocenným náhražkem.
 	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_Want_01_03");	//A pokud možno, o hvězdách.
 	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_Want_01_04");	//O hvězdách?
 	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_Want_01_05");	//Vždycky jsem se rád díval na hvězdy, už od malička!
@@ -191,13 +191,13 @@ func void DIA_STRF_8125_Addon_Nuts_WantDone_Info()
 {
 	B_GivePlayerXP(300);
 	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_WantDone_01_00");	//Tady je ta kniha co jsi chtěl.
-	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_WantDone_01_01");	//Hmmm... (nevěťícně) A je zajímavá?
+	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_WantDone_01_01");	//Hmmm... (nevěřícně) A je zajímavá?
 	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_WantDone_01_02");	//No tak jak jsi chtěl... je o hvězdách.
 	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_WantDone_01_03");	//Radši se na ní podívám.
 	B_GiveInvItems(other,self,ASTRONOMIE,1);
 	Npc_RemoveInvItems(self,ASTRONOMIE,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_WantDone_01_04");	//Kamaráde, to je pťesně to co jsem potťeboval!
+	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_WantDone_01_04");	//Kamaráde, to je přesně to co jsem potřeboval!
 	AI_Output(other,self,"DIA_STRF_8125_Addon_Nuts_WantDone_01_05");	//A co naše dohoda?
 	AI_Output(self,other,"DIA_STRF_8125_Addon_Nuts_WantDone_01_06");	//V pořádku, tady to máš.
 	B_GiveInvItems(self,other,ItWr_OldTextMine,1);

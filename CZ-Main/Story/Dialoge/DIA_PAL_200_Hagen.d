@@ -723,7 +723,7 @@ func void DIA_Lord_Hagen_Pass_Info()
 		{
 			AI_Output(self,other,"DIA_Lord_Hagen_Pass_01_09");	//Pomohl jsi nám se zásobami, takže ti dám na výběr:
 			AI_Output(self,other,"DIA_Lord_Hagen_Pass_01_10");	//Můžeš jít přímo do Hornického údolí,
-			AI_Output(self,other,"DIA_Lord_Hagen_Pass_01_11");	//Nebo zjistit, co se děje za portálem mágů Vody.
+			AI_Output(self,other,"DIA_Lord_Hagen_Pass_01_11");	//nebo zjistit, co se děje za portálem mágů Vody.
 			CHOOSE_WAY = TRUE;
 		};
 
@@ -2414,7 +2414,7 @@ func int dia_lord_hagen_leecare_condition()
 func void dia_lord_hagen_leecare_info()
 {
 	AI_Output(self,other,"DIA_Lord_Hagen_LeeCare_01_00");	//Sakra! Co to má znamenat?! (zmateně) Co se stalo?
-	AI_Output(other,self,"DIA_Lord_Hagen_LeeCare_01_01");	//Vypadá to tak, že ho v bitvě těžce ranili skřeti. Okamžitě musí na farmu.
+	AI_Output(other,self,"DIA_Lord_Hagen_LeeCare_01_01");	//Vypadá to tak, že ho v bitvě těžce zranili skřeti. Okamžitě musí na farmu.
 	AI_Output(self,other,"DIA_Lord_Hagen_LeeCare_01_02");	//Zatracené bestie! Jako kdyby toho nebylo dost - po takovém vítězství ztratit velitele.
 	AI_Output(self,other,"DIA_Lord_Hagen_LeeCare_01_03");	//Dobrá, postarám se o něj osobně! Udělám, co budu moci.
 	AI_Output(self,other,"DIA_Lord_Hagen_LeeCare_01_04");	//A taky bych ti chtěl poděkovat za tvůj přínos v bitvě. Tvá pomoc byla neocenitelná.
@@ -2706,7 +2706,7 @@ func void dia_pal_200_hagen_hiddenore_info()
 	B_UseFakeScroll();
 	AI_Output(self,other,"DIA_PAL_200_Hagen_HiddenOre_01_17");	//(pozorně) Velmi zajímavé!
 	AI_Output(self,other,"DIA_PAL_200_Hagen_HiddenOre_01_18");	//Podle téhle mapy jste na dosud neprozkoumané části oceánu našli kousek souše. Jak jste se tam dostali?
-	AI_Output(other,self,"DIA_PAL_200_Hagen_HiddenOre_01_19");	//Na cestě jsme se dostali velice silné bouře. To ona nás zavedla na ten ostrov.
+	AI_Output(other,self,"DIA_PAL_200_Hagen_HiddenOre_01_19");	//Na cestě jsme se dostali do velice silné bouře. To ona nás zavedla na ten ostrov.
 	AI_Output(self,other,"DIA_PAL_200_Hagen_HiddenOre_01_20");	//Ano. Cesty Innose jsou vskutku nevyzpytatelné.
 	AI_Output(self,other,"DIA_PAL_200_Hagen_HiddenOre_01_21");	//Jsem si jistý, že kdyby tak nechtěl On, rozhodně by se vám to nepodařilo.
 	AI_Output(self,other,"DIA_PAL_200_Hagen_HiddenOre_01_23");	//Dobrá. (vážně) Přijmi mé upřímné poděkování ve jménu celého našeho řádu!
@@ -3433,11 +3433,11 @@ func void dia_lord_hagen_killdmt_info()
 	AI_Output(self,other,"DIA_Lord_Hagen_KILLDMT_04_01");	//Nemůžu si vůbec pomoci, ale všimni si cest na kterých se procházejí podezřelé osoby v černých róbách.
 	AI_Output(self,other,"DIA_Lord_Hagen_KILLDMT_04_02");	//Lidé jim přezdívají temní cizinci, jistě uctívají Beliara.
 	AI_Output(self,other,"DIA_Lord_Hagen_KILLDMT_04_03");	//Jak jsem se dozvěděl, nedaleko Onarovy farmy se nachází jejich hlavní tábor.
-	AI_Output(self,other,"DIA_Lord_Hagen_KILLDMT_04_04");	//Nemyslím si, že by vedli podnikatelské činnosti s žoldáky, ale jejich volba místa mi přivádí vážné obavy. 
+	AI_Output(self,other,"DIA_Lord_Hagen_KILLDMT_04_04");	//Nemyslím si, že by vedli podnikatelské činnosti se žoldáky, ale jejich volba místa mi přivádí vážné obavy. 
 
 	if(Npc_KnowsInfo(hero,DIA_Torlof_DEMENTOREN))
 	{
-		AI_Output(other,self,"DIA_Lord_Hagen_KILLDMT_15_01");	//Věřte mi, že žoldákům se to nelíbí o nic víc než vám.
+		AI_Output(other,self,"DIA_Lord_Hagen_KILLDMT_15_01");	//Věř mi, že žoldákům se to nelíbí o nic víc než tobě.
 		AI_Output(self,other,"DIA_Lord_Hagen_KILLDMT_04_05");	//To je správně. Problém však nemizí.
 	};
 
@@ -3450,7 +3450,7 @@ func void dia_lord_hagen_killdmt_info()
 	AI_Output(self,other,"DIA_Lord_Hagen_KILLDMT_04_10");	//Naše jediná šance je jednat tajně, také se tam nachází nějaké doly. 
 	Info_ClearChoices(dia_lord_hagen_killdmt);
 	Info_AddChoice(dia_lord_hagen_killdmt,"No, uvidím co se dá dělat.",dia_lord_hagen_killdmt_yes);
-	Info_AddChoice(dia_lord_hagen_killdmt,"Ne, je to příliš nebezpečné. To pro vás neudělám.",dia_lord_hagen_killdmt_no);
+	Info_AddChoice(dia_lord_hagen_killdmt,"Ne, je to příliš nebezpečné. To pro tebe neudělám.",dia_lord_hagen_killdmt_no);
 };
 
 func void dia_lord_hagen_killdmt_yes()
@@ -3461,13 +3461,13 @@ func void dia_lord_hagen_killdmt_yes()
 	MIS_HAGENKILLDMT = LOG_Running;
 	Log_CreateTopic(TOPIC_HAGENKILLDMT,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HAGENKILLDMT,LOG_Running);
-	B_LogEntry(TOPIC_HAGENKILLDMT,"Lord Hagen chce, abych odstranil všechny temné poutníky v bývalé věži Dextera. Tahle mise se zdá být čistá sebevražda. Navíc se tam vyskytují nějaké doly.");
+	B_LogEntry(TOPIC_HAGENKILLDMT,"Lord Hagen chce, abych odstranil všechny pátrače v bývalé věži Dextera. Tahle mise se zdá být čistá sebevražda. Navíc se tam vyskytují nějaké doly.");
 	AI_StopProcessInfos(self);
 };
 
 func void dia_lord_hagen_killdmt_no()
 {
-	AI_Output(other,self,"DIA_Lord_Hagen_KILLDMT_No_15_00");	//Ne, je to příliš nebezpečné. To pro vás neudělám.
+	AI_Output(other,self,"DIA_Lord_Hagen_KILLDMT_No_15_00");	//Ne, je to příliš nebezpečné. To pro tebe neudělám.
 	AI_Output(self,other,"DIA_Lord_Hagen_KILLDMT_No_04_01");	//Je to škoda, spoléhal jsem na tebe. V každém případě chápu a nemám zášť.
 	AI_StopProcessInfos(self);
 };
@@ -3493,11 +3493,11 @@ func int dia_lord_hagen_dmtaredead_condition()
 func void dia_lord_hagen_dmtaredead_info()
 {
 	B_GivePlayerXP(2000);
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_00");	//Jsi zpátky! A co mé zakázky? Podařilo se ti vypořádat s nepřítelem?
-	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_15_01");	//Nemůžu říct, že by to bylo snadné, ale všichni temní poutníci skonali.
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_02");	//Chvála Innos! Věděl jsem že se na tebe můžu spolehnout.
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_00");	//Jsi zpátky! A co můj úkol? Podařilo se ti vypořádat s nepřítelem?
+	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_15_01");	//Nemůžu říct, že by to bylo snadné, ale všichni pátrači skonali.
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_02");	//Chvála Innosovi! Věděl jsem, že se na tebe můžu spolehnout.
 	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_03");	//Tady, vem si malou odměnu za vykonanou práci. Zasloužíš si ji víc než kdokoliv jiný.
-	B_LogEntry(TOPIC_HAGENKILLDMT,"Zabil jsem temné cizince a nahlásil vše lordu Hagenovi.");
+	B_LogEntry(TOPIC_HAGENKILLDMT,"Zabil jsem pátrače a nahlásil vše lordu Hagenovi.");
 	MIS_HAGENKILLDMT = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HAGENKILLDMT,LOG_SUCCESS);
 	B_GiveInvItems(self,other,ItMi_Gold,1500);
@@ -3518,52 +3518,52 @@ func void dia_lord_hagen_dmtaredead_info()
 		};
 	};
 
-	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_15_04");	//Děkuju. Máte pro mě ještě nějakou práci? 
+	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_15_04");	//Děkuju. Máš pro mě ještě nějakou práci? 
 	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_05");	//Hmmm, záleží na tom co si představuješ. Řekni mi jak ti to jde s bydlením?
 	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_15_07");	//S bydlením? Nemám se čím chlubit.
-	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_15_08");	//Nicméně mám, kde se vyspat v noci. Ale proč se ptáte? 
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_09");	//Zatímco jsi byl pryč, uvědomil jsem si že máme co do činění s tamtou věží.
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_10");	//Za prvé, banditi, potom přisluhovači Temného boha. Kdo je další - skřeti? Nebo draci? 
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_11");	//Vypadá to, že je magnetem na špatné hosty a to přináší problémy.
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_12");	//Mohu poslat paladiny, ale Onar...
-	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_15_13");	//Všechno je mi jasné. Nechte mě hádat, ta potíž by se dala shodit mě na ramena?
+	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_15_08");	//Nicméně v noci se mám kde vyspat. Ale proč se ptáš? 
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_09");	//Zatímco jsi byl pryč, uvědomil jsem si, že s touhle věží musíme něco udělat.
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_10");	//Nejprve banditi, potom přisluhovači Temného boha. Kdo je další - skřeti? Nebo draci? 
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_11");	//Vypadá to, že to místo je magnetem na špatné hosty a to přináší problémy.
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_12");	//Mohl bych tam poslat paladiny, ale Onar...
+	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_15_13");	//Všechno je mi jasné. Nech mě hádat, ta potíž by se dala shodit mě na ramena?
 	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_14");	//Dalo by se to tak říct. Teda spíše, tu věž a prostor kolem ní. Chci ten zatracenej kus země dát do rukou spolehlivého člověka.
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_15");	//Ano, není to tam příliš bezpečné, ale podívej se na to tak: celý majetek připadne do tvého vlastnictvý.
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_16");	//O dokumenty se budu starat já. Najdi si jenom lidi, co ti zajistí a ochrání věž. 
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_17");	//Kromě toho existuje tam celá řada opuštěných dolů, které již příliš dlouho přitahovaly mou pozornost.
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_18");	//Může v nich být stále ruda a my teď potřebujeme každý kousek.
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_19");	//Onar mi těžit v dolech nedovolí, na to máme příliš chladné vztahy s žoldáky.
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_15");	//Ano, není to tam příliš bezpečné, ale podívej se na to tak: celý majetek připadne do tvého vlastnictví.
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_16");	//O dokumenty se budu starat já. Najdi si jenom lidi, co ti zajistí a ochrání věž.
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_17");	//Kromě toho se tam nachází celá řada opuštěných dolů, které již příliš dlouho přitahovaly mou pozornost.
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_18");	//Stále v nich může být ruda a my teď potřebujeme každý kousek.
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_19");	//Onar mi v dolech těžit nedovolí, na to máme příliš chladné vztahy se žoldáky.
 	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_20");	//Tak co ty na to?
-	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_15_21");	//Hmm... váš návrh je zajímavý, ale jak zareaguje Onar?
+	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_15_21");	//Hmm... tvůj návrh je zajímavý, ale jak zareaguje Onar?
 	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_22");	//A to je - hlavní háček.
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_23");	//Starý lakomec by se raději díval na pohled prázdnou, rozpadající se pod vlivem času věž, než že by tam někoho pustil.
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_23");	//Starý lakomec by se raději díval na pohled prázdnou, rozpadající se věž, než že by tam někoho pustil.
 	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_24");	//Kromě toho si myslí, že celá oblast kolem farmy je jeho vlastní a nikdo ji nemůže narušit.
 	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_04_25");	//Musíš ho nějak přesvědčit, aby nenarušoval naše akce a mohli jsme přivést věž do pořádku.
 	Info_ClearChoices(dia_lord_hagen_dmtaredead);
 	Info_AddChoice(dia_lord_hagen_dmtaredead,"Dobře, beru to.",dia_lord_hagen_dmtaredead_yes);
-	Info_AddChoice(dia_lord_hagen_dmtaredead,"Příliš mnoho zmatků. Myslím že se toho vzdám.",dia_lord_hagen_dmtaredead_no);
+	Info_AddChoice(dia_lord_hagen_dmtaredead,"Příliš mnoho starostí. Myslím že se toho vzdám.",dia_lord_hagen_dmtaredead_no);
 };
 
 func void dia_lord_hagen_dmtaredead_yes()
 {
 	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_Yes_15_00");	//Dobře, beru to.
-	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_Yes_04_01");	//Výborně. Papírové formality, jak jsem řekl pro mě. Kromě toho, tady jsou nějaké peníze napoprvé.
+	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_Yes_04_01");	//Výborně. Papírové formality, jak jsem řekl, nech na mě. Kromě toho, tady jsou nějaké peníze.
 	B_GiveInvItems(self,other,ItMi_Gold,2000);
 	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_Yes_04_02");	//To znamená, že musíš najít nějakého odborníka co prověří doly. Myslím, že ho budeš potřebovat.
 	MIS_MYNEWMANSION = LOG_Running;
 	Log_CreateTopic(TOPIC_MYNEWMANSION,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MYNEWMANSION,LOG_Running);
-	B_LogEntry(TOPIC_MYNEWMANSION,"Lord Hagen se rozhodl, mi poděkovat za odstranění tmavých lidí a předal mi majetek bývalé věže Dextera. Nicméně, Onar pravděpodobně nebude souhlasit, takže nejprve musím urovnat celou záležitost s ním. Musím najít něco, co ho přesvědčí.");
+	B_LogEntry(TOPIC_MYNEWMANSION,"Lord Hagen mi poděkoval za odstranění temných cizinců a předal mi vlastnictví bývalé věže Dextera. Nicméně, Onar pravděpodobně nebude souhlasit, takže nejprve musím s ním urovnat celou záležitost. Musím najít něco, co ho přesvědčí.");
 	MIS_DTOLDNEWMINE = LOG_Running;
 	Log_CreateTopic(TOPIC_DTOLDNEWMINE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DTOLDNEWMINE,LOG_Running);
-	B_LogEntry_Quiet(TOPIC_DTOLDNEWMINE,"Zdá se, že o rudu ve staré věži je velký zájem ze strany lorda Hagena. Chce vědět, zda tam stále existuje magická ruda nebo ne. Měli bychom najít někoho, kdo bude schopen odhadnout jeho množství a kvality.");
+	B_LogEntry_Quiet(TOPIC_DTOLDNEWMINE,"Zdá se, že lord Hagen má velký zájem o rudu ve staré věži. Chce vědět, zda se tam stále nachází nebo ne. Měli bychom najít někoho, kdo bude schopen odhadnout jeho množství a kvalitu.");
 	AI_StopProcessInfos(self);
 };
 
 func void dia_lord_hagen_dmtaredead_no()
 {
-	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_No_15_00");	//Příliš mnoho zmatků. Myslím, že se toho vzdám.
+	AI_Output(other,self,"DIA_Lord_Hagen_DMTAREDEAD_No_15_00");	//Příliš mnoho starostí. Myslím, že se toho vzdám.
 	AI_Output(self,other,"DIA_Lord_Hagen_DMTAREDEAD_No_04_01");	//Ty - válečník, ne vládce, to je naprosto zřejmé. Ale podle zákonů obyčejné spravedlnosti, co ti kteří nás nezbavují od zla ve světě? Dobře, nebudu tě k ničemu nutit. Je mou povinností pouze poděkovat za získání nadvlády nad věží.
 	AI_StopProcessInfos(self);
 };
@@ -3590,22 +3590,22 @@ func void dia_lord_hagen_onarsuccs_info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_Lord_Hagen_OnarSuccs_15_00");	//Povedlo se mi urovnat tu záležitost s Onarem. Od teď nebude zasahovat do našeho podnikání ve věži.
-	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_01");	//Zdá se, že váš diplomat není horší než jako voják či infiltrátor.
-	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_02");	//Já se mezitím postaral o dokumenty. Nyní věž, nedaleké doly a les spadají oficiálně pod nás. Blahopřeji! 
+	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_01");	//Zdá se, že nejsi o nic horší diplomat než válečník nebo zvěd.
+	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_02");	//Já se mezitím postaral o dokumenty. Nyní věž, nedaleké doly a les oficiálně patří tobě. Blahopřeji! 
 	B_GiveInvItems(self,other,ItWr_HagenLoanDocs,1);
-	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_03");	//Ještě zbývá zajistit správu pro tvé podnikání. Můžu ti už jen poradit, aby sis našel dobrého správce, který povede hospodářství v době tvé nepřítomnosti.
-	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_04");	//Také se pokus najímat lidi, ruce ber z míst kterým důvěřuješ.
-	AI_Output(other,self,"DIA_Lord_Hagen_OnarSuccs_15_05");	//Díky za radu. Mohu jít, teď?
-	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_06");	//Můžeš. Ach, ano, ještě poslední věc. Vyhledám lorda Andreho a pošlu ti pár dobrovolníků na pomoc. Zbytek lidí si najdeš sám.
+	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_03");	//Jak je budeš spravovat, to je tvá věc. Můžu ti už jen poradit, aby sis našel dobrého správce, který povede hospodářství v době tvé nepřítomnosti.
+	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_04");	//Také se pokus naverbovat lidi, kteří budou užiteční a kterým důvěřuješ.
+	AI_Output(other,self,"DIA_Lord_Hagen_OnarSuccs_15_05");	//Díky za radu. Mohu teď jít?
+	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_06");	//Můžeš. Ach, ano, ještě poslední věc. Požádám lorda Andreho aby ti na pomoc poslal pár domobranců. Zbytek lidí si musíš najít sám.
 	AI_Output(other,self,"DIA_Lord_Hagen_OnarSuccs_15_07");	//Nemyslím si, že by domobrana ve věži potěšila Onara.
-	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_08");	//Z tohohle důvodu, nezoufej. Jim budu muset nařídit změnu uniformy. Ujišťuji tě, že z nich odstraním poznamenání státem, ztratí odlišnosti od vesničanů a stanou se jedním z nich.
+	AI_Output(self,other,"DIA_Lord_Hagen_OnarSuccs_04_08");	//Kvůli tomu nezoufej. Jim budu muset nařídit změnu uniformy. Ujišťuji tě, že z nich odstraním královské symboly, ztratí odlišnosti od tuláků a měšťanů.
 	MIS_MYNEWMANSION = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_MYNEWMANSION,LOG_SUCCESS);
 	MIS_PPL_FOR_TOWER = LOG_Running;
 	Log_CreateTopic(TOPIC_PPL_FOR_TOWER,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PPL_FOR_TOWER,LOG_Running);
-	B_LogEntry(TOPIC_PPL_FOR_TOWER,"Zdá se, že nyní v mém vlastnictví existuje značný prostor. Je zřejmé, že jsem dostal všechnu správu, což znamená, že musím mít lidi, kteří jsou připraveni se připojit do mého malého tábora. Možná bych měl začít zkoumat své nové majetky, a dávat pokyny k ochraně tábora. A pak začít hledat lidi. Najít dobrého správce - to je hned první!");
-	B_LogEntry_Quiet(TOPIC_PPL_FOR_TOWER,"Lord Hagen mi přislíbil pár dobrovolníků na pomoc.");
+	B_LogEntry(TOPIC_PPL_FOR_TOWER,"Zdá se, že nyní je v mém vlastnictví značné množství území. Je zřejmé, že musím najít lidi, kteří jsou připraveni se připojit do mého malého tábora. Možná bych měl nejprve prohlédnout svůj nový majetek a dát pokyny strážcům tábora. A pak bych měl začít hledat lidi. Najít dobrého správce - to je prvořadá věc!");
+	B_LogEntry_Quiet(TOPIC_PPL_FOR_TOWER,"Lord Hagen mi přislíbil na pomoc pár domobranců.");
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(Mil_360_Miliz,"NW_CASTLEMINE_PATH_HUT_02");
 	Wld_InsertNpc(Mil_361_Miliz,"NW_CASTLEMINE_PATH_HUT_02");
@@ -3737,7 +3737,7 @@ func void DIA_Lord_Hagen_DarkWeb_Info()
 	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_01_03");	//Ale vždyť už jsme to vyřešily.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_01_04");	//Ano, víme že kovář ho nezabil! Ale kdo byl skutečný vrah jsme nezjistily.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_01_05");	//To je důvod proč ti chci zadat další práci - najdi toho parchanta, který nožem zezadu probodl Lothara! 
-	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_01_06");	//A vy jste nemohl tento úkol svěřit někomu jinému?
+	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_01_06");	//A tys nemohl tento úkol svěřit někomu jinému?
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_01_07");	//Proč? Již jsi prokázal že jsi schopen dojít daleko. A moji lidé mají zase jiné starosti.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_01_08");	//Kromě toho musíš pochopit, že je to taky otázka cti pro paladiny.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_01_09");	//Nemůžeme jen zavřit oči před tímto incidentem.
@@ -3745,7 +3745,7 @@ func void DIA_Lord_Hagen_DarkWeb_Info()
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_01_11");	//Je to velmi důležité, pro mě i celý Řád! Odměna bude nemalá.
 	Info_ClearChoices(DIA_Lord_Hagen_DarkWeb);
 	Info_AddChoice(DIA_Lord_Hagen_DarkWeb,"Ne, radši se do toho všeho už nebudu míchat.",DIA_Lord_Hagen_DarkWeb_No);
-	Info_AddChoice(DIA_Lord_Hagen_DarkWeb,"Dobře, pomůžu vám.",DIA_Lord_Hagen_DarkWeb_Yes);
+	Info_AddChoice(DIA_Lord_Hagen_DarkWeb,"Dobře, pomůžu ti.",DIA_Lord_Hagen_DarkWeb_Yes);
 };
 
 func void DIA_Lord_Hagen_DarkWeb_No()
@@ -3758,8 +3758,8 @@ func void DIA_Lord_Hagen_DarkWeb_No()
 func void DIA_Lord_Hagen_DarkWeb_Yes()
 {
 	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Yes_01_00");	//Dobře, pomůžu ti. Ale potřebuji více informací!
-	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Yes_01_01");	//Řeknu vám všechno, co vím. 
-	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Yes_01_02");	//Můžete začít.
+	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Yes_01_01");	//Řeknu ti všechno, co vím. 
+	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Yes_01_02");	//Můžeš začít.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Yes_01_03");	//Hmmm... Nedlouho před vraždou, do města přijeli dva Onarovy žoldáci. 
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Yes_01_04");	//Prý podle nich, přišli na nákup nářadí. A potom jsem jim přestal přikládat na důležitosti.
 	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Yes_01_05");	//Jaké jsou jména?
@@ -3769,14 +3769,14 @@ func void DIA_Lord_Hagen_DarkWeb_Yes()
 	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Yes_01_09");	//Co tam dělal?
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Yes_01_10");	//Obvykle, v těch momentech prováděl večerní prohlídky města. Zdá se, že tam narazil na vraha.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Yes_01_11");	//Ale jsem z toho stejně v rozpacích. Na místě činu nebylo ani památky po boji!
-	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Yes_01_12");	//Lothar byl nejlepší válečník ve svém oddílu, určitě by nepříteli kladl značný odpor.
+	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Yes_01_12");	//Lothar byl nejlepší válečník v mém řádu, určitě by nepříteli kladl značný odpor.
 	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Yes_01_13");	//Zajímalo by mě, kdo mohl zabít paladina, že není ani stopy po boji.
-	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Yes_01_14");	//Takže mě to zajímá. A ty budeš muset nají odpověď.
+	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Yes_01_14");	//Takže mě to zajímá. A ty budeš muset najít odpověď.
 	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Yes_01_15");	//Dobře, půjdu se podívat co se dá dělat.
 	MIS_DarkWeb = LOG_Running;
 	Log_CreateTopic(TOPIC_DarkWeb,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DarkWeb,LOG_Running);
-	B_LogEntry(TOPIC_DarkWeb,"Rozhodl jsem se pomoci lordu Hagenovi najít skutečného vraha paladina Lothara. Pravdivých informací o tomto případu je extrémně málo. Za prvé, byl jsem schopen přijít na to, že Lothar během vraždy dorazil do městských bran se dvěma žoldáky, z nichž jeden byl sám Bennet. Jmenovat druhého žoldáka lord Hagen nezná. Budeme se muset zeptat samotného Benneta. Navíc si myslím, že budu muset prozkoumat místo činu sám - v blízkosti hotelu, vedle jižní brány Khorinisu. Prý se tam nenašly ani stopy po boji. To vše je poněkud zvláštní, s ohledem na skutečnost, že oběť byla nejlepším válečníkem z oddílu.");
+	B_LogEntry(TOPIC_DarkWeb,"Rozhodl jsem se pomoci lordu Hagenovi najít skutečného vraha paladina Lothara. Pravdivých informací o tomto případu je extrémně málo. Za prvé, byl jsem schopen přijít na to, že Lothar během vraždy dorazil do městských bran se dvěma žoldáky, z nichž jeden byl sám Bennet. Jméno druhého žoldáka lord Hagen nezná. Budeme se muset zeptat samotného Benneta. Navíc si myslím, že budu muset prozkoumat místo činu sám - v blízkosti hotelu, vedle jižní brány Khorinisu. Prý se tam nenašly ani stopy po boji. To vše je poněkud zvláštní, s ohledem na skutečnost, že oběť byla nejlepším válečníkem z řádu.");
 	AI_StopProcessInfos(self);
 	Wld_InsertItem(ItMi_LotarRing,"FP_ITEM_LOTARRING_01");
 };
@@ -3803,20 +3803,20 @@ func void DIA_Lord_Hagen_DarkWeb_Done_Info()
 {
 	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Done_01_00");	//Chytil jsem vraha paladina Lothara.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Done_01_02");	//Kdo to byl?
-	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Done_01_03");	//Jeden docela silný mág, který sloužil Beliarovy. Tady je jeho hlava.
+	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Done_01_03");	//Jeden docela silný mág, který sloužil Beliarovi. Tady je jeho hlava.
 	B_GiveInvItems(other,self,ItMi_Ituseld_Kopf,1);
 	Npc_RemoveInvItems(self,ItMi_Ituseld_Kopf,1);
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Done_01_04");	//Hmmm... (znechucený) Vím, jaký mág!
-	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Done_01_05");	//Takže jste ho znal?
+	AI_Output(other,self,"DIA_Lord_Hagen_DarkWeb_Done_01_05");	//Takže jsi ho znal?
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Done_01_06");	//Osobně ne. Ale tvář temných mágů poznám i se zavřenýma očima!
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Done_01_07");	//Toto je mocný služebník Temného boha, ačkoli jeden z mála soupeřů, proti nimž jsem kdysi bojoval.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Done_01_08");	//Pravdou je, že kdysi dávno během výpravy do Ir'Hirrat - jeden ze čtyř chrámů Beliara, který byl srovnán se zemí, jsem takových mágů potkal mnoho.
-	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Done_01_09");	//No, teď už aspoň vím, že Lothar neměl žádnou šanci uniknout naživu.
+	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Done_01_09");	//No, teď už aspoň vím, že Lothar neměl žádnou šanci uniknout živý.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Done_01_10");	//Pokud jde o tebe, odvedl jsi dobrou práci. K tomu dostaneš zvláštní ocenění.
 	AI_Output(self,other,"DIA_Lord_Hagen_DarkWeb_Done_01_11");	//Stačí se rozhodnout, co bys chtěl dostat...
 	MIS_DarkWeb = LOG_Success;
 	Log_SetTopicStatus(TOPIC_DarkWeb,LOG_Success);
-	B_LogEntry(TOPIC_DarkWeb,"Řekl jsem lordu Hagenovy, kdo byl Lotharovým vrahem. Jako důkaz jsem mu přinesl hlavu toho mága. Lord Hagen ocenil mou pomoc.");
+	B_LogEntry(TOPIC_DarkWeb,"Řekl jsem lordu Hagenovi, kdo byl Lotharovým vrahem. Jako důkaz jsem mu přinesl hlavu toho mága. Lord Hagen ocenil mou pomoc.");
 	Info_ClearChoices(DIA_Lord_Hagen_DarkWeb_Done);
 	Info_AddChoice(DIA_Lord_Hagen_DarkWeb_Done,"Meč 'Rhobarova vůle'",DIA_Lord_Hagen_DarkWeb_Done_Gift_00);
 	Info_AddChoice(DIA_Lord_Hagen_DarkWeb_Done,"Helma paladina",DIA_Lord_Hagen_DarkWeb_Done_Gift_01);

@@ -1010,7 +1010,7 @@ func void DIA_Ass_126_Haniar_NrozasPoisonGift_info()
 	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_18");	//Láhev vína?
 	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_19");	//Dal mi ho mistr Osair jako výraz vděčnosti za lahvičku s jedem.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_20");	//(překvapeně) Mistr Osair o něj měl zájem? 
-	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_21");	//Myslím, že ano. Chtěl od mistra Nrozase větší množsví.
+	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_21");	//Myslím, že ano. Chtěl od mistra Nrozase větší množství.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_22");	//Podivné... A já zase nic nevím.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_23");	//To mi mohl říct.
 	AI_Output(other,self,"DIA_Ass_126_Haniar_NrozasPoisonGift_01_24");	//Má to pro své lidi, s tím jedem budou neporazitelní.
@@ -1138,7 +1138,7 @@ func void DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_info()
 	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_36");	//Neboj se, nyní je naprosto bezpečné.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_37");	//Dopřej starému muži trochu božského nektaru.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_NrozasPoisonGift_Ok_01_38");	//Tak jdi, uvidíme se později. 
-	B_LogEntry(TOPIC_NrozasPoisonGift,"Mistr Haniar mi řekl, že víno pro mistra Nrozase bylo otrávené. Zdá se, že mistr Osair chtěl zabít mistra Nrozase a mě do toho namočit. Vypadá to, že se chce zbavit všech převorů bratrstva a ujmout se moci. Nicméně mistr Haniar přišel se svým vlastním plánem... A ten se mistru Osairovi líbit nebude. Mám teď ještě donést mistru Nrozasovii již bezpečné víno.");
+	B_LogEntry(TOPIC_NrozasPoisonGift,"Mistr Haniar mi řekl, že víno pro mistra Nrozase bylo otrávené. Zdá se, že mistr Osair chtěl zabít mistra Nrozase a mě do toho namočit. Vypadá to, že se chce zbavit všech převorů bratrstva a ujmout se moci. Nicméně mistr Haniar přišel se svým vlastním plánem... A ten se mistru Osairovi líbit nebude. Mám teď ještě donést mistru Nrozasovi již bezpečné víno.");
 	AI_StopProcessInfos(self);
 };
 
@@ -1385,7 +1385,7 @@ func void dia_Ass_126_Haniar_preteach_mana_info()
 	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_04");	//Takže jestli chceš, můžu učit i tebe.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_05");	//Také ti pomůžu zocelit tělo a posílit tvou vytrvalost.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_06");	//Samozřejmě za předpokladu, že na to budeš připraven.
-	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_07");	//Chceš-li se věnovat umění boje, měl bysi navštívit mistra Tiamanta.
+	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_07");	//Chceš-li se věnovat umění boje, měl bys navštívit mistra Tiamanta.
 	AI_Output(self,other,"DIA_Ass_126_Haniar_PreTeach_Mana_01_08");	//Učí naše bratry boji.
 	HaniarTeachMe = TRUE;
 	Log_CreateTopic(TOPIC_PrioratTeacher,LOG_NOTE);

@@ -69,7 +69,7 @@ func int dia_hanis_psiinfo_condition()
 func void dia_hanis_psiinfo_info()
 {
 	AI_Output(other,self,"DIA_Hanis_PsiInfo_01_00");	//Bratrstva? Jakého Bratrstva?
-	AI_Output(self,other,"DIA_Hanis_PsiInfo_01_01");	//Bratrstvo Spáče! Ibkdyž teď je možné ho prostě nazývat Bratrstvem.
+	AI_Output(self,other,"DIA_Hanis_PsiInfo_01_01");	//Bratrstvo Spáče! I když teď je možné ho prostě nazývat Bratrstvem.
 	AI_Output(other,self,"DIA_Hanis_PsiInfo_01_02");	//Ale já si myslel, že po pádu bariéry, Bratrstvo Spáče přestalo existovat?!
 	AI_Output(self,other,"DIA_Hanis_PsiInfo_01_03");	//Tak to není! Většina z našich bratrů zemřela, nebo byli posednuti démony...
 	AI_Output(self,other,"DIA_Hanis_PsiInfo_01_04");	//Ale někteří z nás přežili. Tak jsme založili nový tábor.
@@ -102,7 +102,7 @@ func void dia_hanis_hello_info()
 {
 	AI_Output(other,self,"DIA_Hanis_Hello_01_00");	//Jak pokračuje sběr drogy?
 	AI_Output(self,other,"DIA_Hanis_Hello_01_01");	//Ne špatně.
-	AI_Output(other,self,"DIA_Hanis_Hello_01_02");	//Ty asi nejsi zrovna výřečný člověk že?
+	AI_Output(other,self,"DIA_Hanis_Hello_01_02");	//Ty asi nejsi zrovna výřečný člověk, že?
 	AI_Output(self,other,"DIA_Hanis_Hello_01_03");	//Ne.
 };
 
@@ -144,7 +144,7 @@ func void dia_hanis_giveplant_info()
 	else
 	{
 		AI_Output(self,other,"DIA_Hanis_GivePlant_01_06");	//Ty určitě nejsi z našeho Bratrstva! Baal Cadar tě nemohl poslat.
-		AI_Output(self,other,"DIA_Hanis_GivePlant_01_07");	//Tobě bych dorgu nesvěřil ani ve snu!
+		AI_Output(self,other,"DIA_Hanis_GivePlant_01_07");	//Tobě bych drogu nesvěřil ani ve snu!
 	};
 };
 
@@ -173,7 +173,7 @@ func void DIA_Hanis_NewPlants_info()
 	AI_Output(self,other,"DIA_Hanis_NewPlants_01_03");	//Vypadáš na silného chlapa.
 	AI_Output(self,other,"DIA_Hanis_NewPlants_01_04");	//A pomoc takového chlapa by se mi šikla.
 	AI_Output(other,self,"DIA_Hanis_NewPlants_01_05");	//Tak k věci.
-	AI_Output(self,other,"DIA_Hanis_NewPlants_01_06");	//Jeden z našich metorů mi dal takový menší úkol.
+	AI_Output(self,other,"DIA_Hanis_NewPlants_01_06");	//Jeden z našich mentorů mi dal takový menší úkol.
 	AI_Output(self,other,"DIA_Hanis_NewPlants_01_07");	//Ve jménu prosperity naší komunity mě pověřil hledáním nových míst na pestování drogy.
 	AI_Output(other,self,"DIA_Hanis_NewPlants_01_08");	//Aha a co to znamená?
 	AI_Output(self,other,"DIA_Hanis_NewPlants_01_09");	//Prostě potřebuji najít nové místo na pestování drogy.
@@ -197,7 +197,7 @@ func void DIA_Hanis_NewPlants_yes()
 	AI_Output(self,other,"DIA_Hanis_NewPlants_yes_01_01");	//Není to jasné? Běž a zabij je.
 	AI_Output(self,other,"DIA_Hanis_NewPlants_yes_01_02");	//Na oplátku ti zaplatím anebo ti dám pár stébel trávy z bažin.
 	AI_Output(other,self,"DIA_Hanis_NewPlants_yes_01_03");	//Dobrá. Kde to je?
-	AI_Output(self,other,"DIA_Hanis_NewPlants_yes_01_04");	//Choď kousek popri tomhle svahu a nemůžeš to minout.
+	AI_Output(self,other,"DIA_Hanis_NewPlants_yes_01_04");	//Jdi kousek popri tomhle svahu a nemůžeš to minout.
 	AI_Output(other,self,"DIA_Hanis_NewPlants_yes_01_05");	//Dobrá, hned jsem zpátky.
 	MIS_HanisPlants = LOG_Running;
 	Log_CreateTopic(TOPIC_HanisPlants,LOG_MISSION);
@@ -267,7 +267,7 @@ func void DIA_Hanis_NewPlants_Done_Herb()
 	AI_Output(other,self,"DIA_Hanis_NewPlants_Done_Herb_01_00");	//Dej mi ty rostliny.
 	AI_Output(self,other,"DIA_Hanis_NewPlants_Done_Herb_01_01");	//Tady.
 	B_GiveInvItems(self,other,ItPl_SwampHerb,50);
-	AI_Output(self,other,"DIA_Hanis_NewPlants_Done_Herb_01_02");	//Použivej je moudře.
+	AI_Output(self,other,"DIA_Hanis_NewPlants_Done_Herb_01_02");	//Používej je moudře.
 	AI_StopProcessInfos(self);
 };
 	
@@ -325,12 +325,12 @@ func void DIA_Hanis_PrioratStart_info()
 	AI_Output(self,other,"DIA_Hanis_PrioratStart_01_01");		//Byli jsme napadeni! Nevím kdo to byl...
 	AI_Output(self,other,"DIA_Hanis_PrioratStart_01_02");		//Překvapili nás... Jediné co jsem dokázal bylo zranit jednoho z útočníků.
 	AI_Output(other,self,"DIA_Hanis_PrioratStart_01_03");		//A co se stalo ostatním?
-	AI_Output(self,other,"DIA_Hanis_PrioratStart_01_04");		//Nevím, myslím, že je berou.
+	AI_Output(self,other,"DIA_Hanis_PrioratStart_01_04");		//Nevím, myslím, že je unesli.
 	AI_Output(other,self,"DIA_Hanis_PrioratStart_01_05");		//Vydrž tady. Přivedu pomoc!
-	AI_Output(self,other,"DIA_Hanis_PrioratStart_01_06");		//Na to je už příliš pozdě... Cítím, že už dlouho nevydžím.
+	AI_Output(self,other,"DIA_Hanis_PrioratStart_01_06");		//Na to je už příliš pozdě... Cítím, že už dlouho nevydržím.
 	AI_Output(self,other,"DIA_Hanis_PrioratStart_01_07");		//Myslím, že použili nějaký silný jed.
 	AI_Output(other,self,"DIA_Hanis_PrioratStart_01_08");		//Tak jak mohu pomoci?
-	AI_Output(self,other,"DIA_Hanis_PrioratStart_01_09");		//Slib mi, že zachráníš naše nocice.
+	AI_Output(self,other,"DIA_Hanis_PrioratStart_01_09");		//Slib mi, že zachráníš naše novice.
 	AI_Output(other,self,"DIA_Hanis_PrioratStart_01_10");		//Dobrá. Viděl jsi kam útočníci šli?
 	AI_Output(self,other,"DIA_Hanis_PrioratStart_01_11");		//Neeee... (dusí se krví) Ale jsem jsi jistý, že ten kterého jsem zranil silno krvácí.
 	AI_Output(self,other,"DIA_Hanis_PrioratStart_01_12");		//Zkus... sledovat... jeho krev...

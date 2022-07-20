@@ -51,7 +51,7 @@ func void DIA_Ass_130_CorGalomDemon_hello_info()
 	AI_Output(self,other,"DIA_Ass_130_CorGalomDemon_hello_01_05");	//Nezapomněl jsi...
 	AI_Output(other,self,"DIA_Ass_130_CorGalomDemon_hello_01_06");	//To ani nejde! Zabil jsem tě! 
 	AI_Output(self,other,"DIA_Ass_130_CorGalomDemon_hello_01_07");	//Je tomu tak. Ale síla temnot mne vrátila do tohoto světa.
-	AI_Output(self,other,"DIA_Ass_130_CorGalomDemon_hello_01_08");	//A podle všeho se můj pán rozhodl že budu užitečnější v této démonické formě, než jako kostlivcový mág.
+	AI_Output(self,other,"DIA_Ass_130_CorGalomDemon_hello_01_08");	//A podle všeho se můj pán rozhodl že budu užitečnější v této démonické formě, než jako kostlivý mág.
 
 	if(MeetDarkTempleMage == TRUE)
 	{

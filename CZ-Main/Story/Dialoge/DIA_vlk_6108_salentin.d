@@ -39,11 +39,11 @@ func int dia_salentin_hallo_condition()
 
 func void dia_salentin_hallo_info()
 {
-	AI_Output(self,other,"DIA_Salentin_Hallo_01_00");	//Hej! CO TADY DĚLÁŠ?!... (udiveně) A jak se tu sakra dostal?!
-	AI_Output(self,other,"DIA_Salentin_Hallo_01_01");	//Jestli tě paladinové uvidí, zabijou te!
+	AI_Output(self,other,"DIA_Salentin_Hallo_01_00");	//Hej! CO TADY DĚLÁŠ?!... (udiveně) A jak ses tu sakra dostal?!
+	AI_Output(self,other,"DIA_Salentin_Hallo_01_01");	//Jestli tě paladinové uvidí, zabijou tě!
 	AI_Output(other,self,"DIA_Salentin_Hallo_01_02");	//Bez obav, řekněme, že se k nim potřebuji dostat.
 	AI_Output(self,other,"DIA_Salentin_Hallo_01_03");	//COŽE?! VÍŠ VŮBEC KDE JSI?!
-	AI_Output(self,other,"DIA_Salentin_Hallo_01_04");	//Ó, chlape, zmiz, než tě najdou... (soucitne)
+	AI_Output(self,other,"DIA_Salentin_Hallo_01_04");	//Ó, chlape, zmiz, než tě najdou... (soucitně)
 	BEONETLU = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -69,10 +69,10 @@ func void dia_salentin_bauernaufstand_info()
 {
 	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_00");	//Kdo jsi?
 	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_01");	//COŽE?! Ty jsi stále tady!... (nervózně)
-	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_03");	//Nebojte se! Jsem tady služebně.
+	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_03");	//Neboj se! Jsem tady služebně.
 	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_04");	//A co je to za práci, že tě sem dostala?
-	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_05");	//Hledám jeden amulet. Přesněji - amulet Triramar. Víš o nem neco?
-	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_06");	//Jaké Triramar? Co to je?
+	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_05");	//Hledám jeden amulet. Přesněji - amulet Triramar. Víš o něm něco?
+	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_06");	//Jaký Triramar? Co to je?
 	AI_Output(other,self,"DIA_Salentin_Bauernaufstand_01_08");	//Potřebuji ho a bez něj neodejdu.
 	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_09");	//(smích) Ty odsud už stejně nikam neodejdeš!
 	AI_Output(self,other,"DIA_Salentin_Bauernaufstand_01_10");	//Jediný způsob, jak se dostat z tohoto ostrova - je použít magický portál v kapli na severu, ale ta je střežena paladiny.
@@ -102,11 +102,11 @@ func int dia_salentin_triramar_condition()
 
 func void dia_salentin_triramar_info()
 {
-	AI_Output(other,self,"DIA_Salentin_Triramar_01_00");	//Kaple, říkáš? (zamyšleně) a nemůže tam být ten amulet?
-	AI_Output(self,other,"DIA_Salentin_Triramar_01_01");	//Nemám ponětí co je tam schované. Nepřibližuj se k ní na dosah střeli, jestli máš svůj život rád.
+	AI_Output(other,self,"DIA_Salentin_Triramar_01_00");	//Kaple, říkáš? (zamyšleně) A nemůže tam být ten amulet?
+	AI_Output(self,other,"DIA_Salentin_Triramar_01_01");	//Nemám ponětí co je tam schované. Nepřibližuj se k ní na dosah střely, jestli máš svůj život rád.
 	AI_Output(other,self,"DIA_Salentin_Triramar_01_03");	//Přestaň mě strašit a řekni mě, kde je ta kaple.
 	AI_Output(self,other,"DIA_Salentin_Triramar_01_04");	//Blázne, zešílel jsi.
-	AI_Output(self,other,"DIA_Salentin_Triramar_01_06");	//Kaple se nachází sverně od mé chaty. A když už se tam chystáš, poprosím tě o jednu laskavost.
+	AI_Output(self,other,"DIA_Salentin_Triramar_01_06");	//Kaple se nachází severně od mé chaty. A když už se tam chystáš, poprosím tě o jednu laskavost.
 	AI_Output(self,other,"DIA_Salentin_Triramar_01_07");	//... postarej se ať tě nezabijou moc daleko ode mně - hodila by se mně tvoje výbava. (sarkasticky)
 	AI_Output(other,self,"DIA_Salentin_Triramar_01_08");	//Koukám, že jsi veselá kopa. Řekni mě radši, kolik je v kapli paladinů?
 	AI_Output(self,other,"DIA_Salentin_Triramar_01_11");	//Ne moc, většina je společně s velitelem v táboře ve východní části ostrova.
@@ -244,7 +244,7 @@ func void dia_salentin_canpass_use()
 	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_02");	//Teď dokončím to proč jsem tady!
 	AI_PlayAni(other,"T_MAGRUN_2_HEASHOOT");
 	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_03");	//O Innos! Kdo jsi? (v panice) Ty sloužíš Beliarovi?!
-	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_04");	//A co je to za magii?! Innos, co se se mnou děje! Neee...
+	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_04");	//A co je to za magii?! Innosi, co se se mnou děje! Neee...
 	USESALENTINAMULET = TRUE;
 	Info_ClearChoices(dia_salentin_canpass);
 	if(ZIGOSMAGICISON == TRUE)
@@ -294,8 +294,8 @@ func void dia_salentin_canpassagain_info()
 
 func void dia_salentin_canpassagain_no()
 {
-	AI_Output(other,self,"DIA_Salentin_CanPassAgain_No_01_00");	//Zapomeň na to
-	AI_Output(self,other,"DIA_Salentin_CanPassAgain_No_01_01");	//Hnn... Dobře, jak říkáš.
+	AI_Output(other,self,"DIA_Salentin_CanPassAgain_No_01_00");	//Zapomeň na to.
+	AI_Output(self,other,"DIA_Salentin_CanPassAgain_No_01_01");	//Hmm... Dobře, jak říkáš.
 	Info_ClearChoices(dia_salentin_canpassagain);
 };
 
@@ -323,7 +323,7 @@ func void dia_salentin_canpassagain_use()
 	AI_Output(other,self,"DIA_Salentin_CanPass_Use_01_02");	//Teď dokončím to proč jsem tady!
 	AI_PlayAni(other,"T_MAGRUN_2_HEASHOOT");
 	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_03");	//O Innos! Kdo jsi? (v panice) Ty sloužíš Beliarovi?!
-	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_04");	//A co je to za magii?! Innos, co se se mnou děje! Neéé...
+	AI_Output(self,other,"DIA_Salentin_CanPass_Use_01_04");	//A co je to za magii?! Innosi, co se se mnou děje! Neee...
 	USESALENTINAMULET = TRUE;
 	Info_ClearChoices(dia_salentin_canpassagain);
 	if(ZIGOSMAGICISON == TRUE)
@@ -363,8 +363,8 @@ func void dia_salentin_advice_info()
 {
 	AI_Output(self,other,"DIA_Salentin_Advice_01_00");	//Hej, počkej!
 	AI_Output(other,self,"DIA_Salentin_Advice_01_01");	//Co ještě?
-	AI_Output(self,other,"DIA_Salentin_Advice_01_02");	//Jestli opravdu chceš navštívit tábor paladinů,...
-	AI_Output(self,other,"DIA_Salentin_Advice_01_04");	//Nechoď tam přes den- nebudeš mít jedinou šanci cokoliv udělat, bez ohledu na to co jsi měl za lubem.
+	AI_Output(self,other,"DIA_Salentin_Advice_01_02");	//Jestli opravdu chceš navštívit tábor paladinů...
+	AI_Output(self,other,"DIA_Salentin_Advice_01_04");	//Nechoď tam přes den nebudeš mít jedinou šanci cokoliv udělat, bez ohledu na to co jsi měl za lubem.
 	AI_Output(self,other,"DIA_Salentin_Advice_01_05");	//Nejlepší je to v noci, když všichni spí. Snad až na pár výjimek.
 	AI_Output(other,self,"DIA_Salentin_Advice_01_07");	//Odkud tohle všechno víš?
 	AI_Output(self,other,"DIA_Salentin_Advice_01_08");	//A není to jedno? Prostě si pamatuj co jsem ti řek.

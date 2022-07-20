@@ -26,6 +26,12 @@ func void Rtn_Start_827()
 	TA_Sit_Bench(20,58,7,2,"NW_BIGFARM_HUT_BENCH");
 };
 
+func void rtn_orcatcbegan_827()
+{
+	TA_Stand_Guarding(6,55,20,30,"NW_BIGFARM_HOUSE_OUT_09");
+	TA_Stand_Guarding(20,30,6,55,"NW_BIGFARM_HOUSE_OUT_09");
+};
+
 func void rtn_inbattle_827()
 {
 	ta_bigfight(8,0,22,0,"NW_BIGFIGHT_8622");

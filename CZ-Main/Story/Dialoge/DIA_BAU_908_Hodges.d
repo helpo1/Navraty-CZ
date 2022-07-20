@@ -444,11 +444,11 @@ func void DIA_Hodges_DarkWeb_Info()
 	AI_Output(self,other,"DIA_Hodges_DarkWeb_01_03");	//S Bennetem jsou staří přátelé! Takže mu Hakon stále dodává ten správný materiál do kovárny.
 	AI_Output(self,other,"DIA_Hodges_DarkWeb_01_04");	//Proč se vlastně ptáš?
 	AI_Output(other,self,"DIA_Hodges_DarkWeb_01_05");	//Teď se ptám já. Kde jsi byl při zatčení?
-	AI_Output(self,other,"DIA_Hodges_DarkWeb_01_06");	//Já? Hmmm... jsem pil kořalku v hospodě Coragona. A problém je v tom...
+	AI_Output(self,other,"DIA_Hodges_DarkWeb_01_06");	//Já? Hmmm... pil jsem kořalku v hospodě Coragona. A problém je v tom...
 	AI_Output(other,self,"DIA_Hodges_DarkWeb_01_07");	//Jak si zdrhnul domobraně?
 	AI_Output(self,other,"DIA_Hodges_DarkWeb_01_08");	//Když jsem slyšel, že Bennet byl zatčen za vraždu paladina, šel jsem přímo na farmu.
 	AI_Output(self,other,"DIA_Hodges_DarkWeb_01_09");	//Stráže se mě ani nepokusili zastavit. Zřejmě jim stačil Bennet.
-	B_LogEntry(TOPIC_DarkWeb,"Hodges pil kořalku v hospodě Coragona, když byl Bennet zatčen. Když se to dozvěděl, zamířil přímo na farmu a stráže ho nechaly. Myslely, že skutečného vraha Lothara už chytily. Ale mám takový pocit že Hodges něco skrývá, měl bych na něj nějak zatlačit aby se rozmluvil...");
+	B_LogEntry(TOPIC_DarkWeb,"Hodges pil kořalku v hospodě Coragona, když byl Bennet zatčen. Když se to dozvěděl, zamířil přímo na farmu a stráže ho nechaly. Myslely, že skutečného vraha Lothara už chytily. Ale mám takový pocit, že Hodges něco skrývá, měl bych na něj nějak zatlačit aby se rozmluvil...");
 };
 
 instance DIA_Hodges_DarkWeb_Done(C_Info)
@@ -504,7 +504,7 @@ func void DIA_Hodges_DarkWeb_Done_DoIt()
 	AI_Output(other,self,"DIA_Hodges_DarkWeb_Done_DoIt_01_03");	//Proto je ve tvém vlastním zájmu mi říct, jak to bylo doopravdy, nebo řeknu lordu Hagenovi, že jsem našel vraha jeho paladina.
 	AI_Output(self,other,"DIA_Hodges_DarkWeb_Done_DoIt_01_04");	//CO?! JAK, ty... to nedělej!
 	AI_Output(other,self,"DIA_Hodges_DarkWeb_Done_DoIt_01_05");	//Ještě uvidíš.
-	AI_Output(self,other,"DIA_Hodges_DarkWeb_Done_DoIt_01_06");	//Sakra! Dobře, Beliar s vámi. Řeknu ti všechno, co vím.
+	AI_Output(self,other,"DIA_Hodges_DarkWeb_Done_DoIt_01_06");	//Sakra! Dobře, Beliar s tebou. Řeknu ti všechno, co vím.
 	AI_Output(self,other,"DIA_Hodges_DarkWeb_Done_DoIt_01_07");	//Ale slib, že o tom nikomu nepovíš.
 	AI_Output(other,self,"DIA_Hodges_DarkWeb_Done_DoIt_01_08");	//Slibuju. Můžeš začít. 
 	AI_Output(self,other,"DIA_Hodges_DarkWeb_Done_DoIt_01_09");	//Tu noc jsem opravdu pil v hospodě u Coragona a po několika hodinách zábavy jsem chtěl na záchod.

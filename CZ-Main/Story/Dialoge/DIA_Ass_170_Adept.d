@@ -336,7 +336,7 @@ func void DIA_Ass_170_Adept_NarugGold_Again_Info()
 	AI_Output(self,other,"DIA_Ass_170_Adept_NarugGold_Again_01_05");	//Výborné víno! Abych řekl pravdu, dávno jsem neměl takové skvělé pití.
 	AI_Output(self,other,"DIA_Ass_170_Adept_NarugGold_Again_01_06");	//Co chceš za tu láhev?
 	AI_Output(other,self,"DIA_Ass_170_Adept_NarugGold_Again_01_07");	//Můžeš si ji nechat. Teď prodiskutujeme to Narugovo zlato.
-	AI_Output(self,other,"DIA_Ass_170_Adept_NarugGold_Again_01_08");	//Aha, tak ty tahkle. No dobře! Za takovou věc to nejspíš můžu risknout.
+	AI_Output(self,other,"DIA_Ass_170_Adept_NarugGold_Again_01_08");	//Aha, tak ty takhle. No dobře! Za takovou věc to nejspíš můžu risknout.
 	AI_PlayAni(self,"T_SEARCH");
 	AI_Output(self,other,"DIA_Ass_170_Adept_NarugGold_Again_01_09");	//Dej mi jeho měšec. Ale tiše!
 	AI_Output(other,self,"DIA_Ass_170_Adept_NarugGold_Again_01_10");	//Tady máš.
@@ -381,7 +381,7 @@ func void DIA_Ass_170_Adept_NarugGold_Wine_Info()
 	AI_Output(other,self,"DIA_Ass_170_Adept_NarugGold_Wine_01_06");	//Tady máš.
 	B_GiveInvItems(other,self,ItMi_AssGoldPocket,1);
 	Npc_RemoveInvItems(self,ItMi_AssGoldPocket,1);
-	AI_Output(self,other,"DIA_Ass_170_Adept_NarugGold_Wine_01_07");	//Hlavněj - nikomu neříkej ani slovo. Jinak budeme mít problémy oba dva.
+	AI_Output(self,other,"DIA_Ass_170_Adept_NarugGold_Wine_01_07");	//Hlavně - nikomu neříkej ani slovo. Jinak budeme mít problémy oba dva.
 	AI_Output(other,self,"DIA_Ass_170_Adept_NarugGold_Wine_01_08");	//Jasně.
 	B_LogEntry(TOPIC_AssasinGold,"Napařil jsem Hasimovi měšec s Narugovým zlatem. Myslím, že by bylo dobré informovat mistra Osaira, že zlato za skupinu otroků bylo distribuováno.");
 	HasimNeedRareWineDone = TRUE;

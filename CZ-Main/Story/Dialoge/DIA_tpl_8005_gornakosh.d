@@ -114,7 +114,7 @@ func int dia_gornakosh_whoyou_condition()
 func void dia_gornakosh_whoyou_info()
 {
 	AI_Output(other,self,"DIA_GorNaKosh_WhoYou_01_00");	//Kdo jsi?
-	AI_Output(self,other,"DIA_GorNaKosh_WhoYou_01_01");	//Moje jméno je - Gor Na Kosh, Nejvyšší templář Bratrstva!... (pyšně) Stačí?!
+	AI_Output(self,other,"DIA_GorNaKosh_WhoYou_01_01");	//Moje jméno je - Gor Na Kosh, nejvyšší templář Bratrstva!... (pyšně) Stačí?!
 	AI_Output(other,self,"DIA_GorNaKosh_WhoYou_01_02");	//Ano. Jak můžu získat zbroj, jakou máš ty?
 	AI_Output(self,other,"DIA_GorNaKosh_WhoYou_01_03");	//Ha!... Pro začátek by ses musel stát jedním z nás a pak dlouho cvičit, abys dostal zbroj templáře.
 	AI_Output(self,other,"DIA_GorNaKosh_WhoYou_01_04");	//Taky ti můžu říct, že tlacháním se tak nestane!
@@ -149,7 +149,7 @@ func void dia_gornakosh_what_info()
 	AI_Output(other,self,"DIA_GorNaKosh_What_01_00");	//Co tady máš na práci?
 	AI_Output(self,other,"DIA_GorNaKosh_What_01_01");	//(pyšně) Trénuji templáře Bratrstva!...
 	AI_Output(self,other,"DIA_GorNaKosh_What_01_02");	//Protože tu nění Cor Angar, je tato povinnost na mě.
-	AI_Output(self,other,"DIA_GorNaKosh_What_01_03");	//Ale já stále oufám, že se k nám náš učitel vrátí!...
+	AI_Output(self,other,"DIA_GorNaKosh_What_01_03");	//Ale já stále doufám, že se k nám náš učitel vrátí!...
 };
 
 
@@ -404,8 +404,8 @@ func void dia_gornakosh_readybetpl_info()
 			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_24");	//Hmmm... Dobře! Dokázal jsi toho hodně.
 			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_25");	//Můžu o tobě povědět, že někdo, jako ty je pro nás nezbytný!
 			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_26");	//Nicméně, měl bys pochopit, že volbu být templářem nejde změnit.
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_27");	//Jestli chceš být raději Guru, promluv s Baal Orunem.
-			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_28");	//Jestli ses ale rozhodl pro cestu templáře, symozřejmě tě přijmu do templářského kruhu.
+			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_27");	//Jestli chceš být raději Guru, promluv s Baalem Orunem.
+			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_28");	//Jestli ses ale rozhodl pro cestu templáře, samozřejmě tě přijmu do templářského kruhu.
 			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_29");	//V každém případě, je to tvoje volba...
 			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_30");	//... Ale dobře si promysli vše okolo, protože finální rozhodnutí již nemůžeš nijak změnit!
 			AI_Output(self,other,"DIA_GorNaKosh_ReadyBeTPL_01_31");	//Myslím, že jsem ti vysvětlil vše důležité. A až se rozhodneš, okamžitě mi to přijď říci!
@@ -1038,7 +1038,7 @@ func void dia_gornakosh_howtobegin_info()
 {
 	AI_Output(other,self,"DIA_GorNaKosh_HowToBegin_15_00");	//S čím bych měl začít? Jedno, nebo obouruční zbraní?
 	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_01");	//To je zcela na tobě.
-	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_02");	//Pokud se specializuješ pouze na jenu zbraň, můžeš být dobrý i u jiné.
+	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_02");	//Pokud se specializuješ pouze na jednu zbraň, můžeš být dobrý i u jiné.
 	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_03");	//Jestliže jsi dobrý v boji s jednoručními zbraněmi, jsi začátečník s obouručními...
 	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_04");	//... Stejně je to i naopak.
 	AI_Output(self,other,"DIA_GorNaKosh_HowToBegin_04_05");	//Takovéto učení je ale těžší, než se zlepšovat v obojím najednou.
@@ -1159,7 +1159,7 @@ func void tpl_8005_gornakosh_armor_l()
 func void tpl_8005_gornakosh_armor_back()
 {
 	AI_Output(hero,self,"TPL_8005_GorNaKosh_ARMOR_BACK_01_01");	//Změnil jsem rozhodnutí!
-	AI_Output(self,hero,"TPL_8005_GorNaKosh_ARMOR_BACK_01_02");	//Jak cheš. Víš, kde mě najít.
+	AI_Output(self,hero,"TPL_8005_GorNaKosh_ARMOR_BACK_01_02");	//Jak chceš. Víš, kde mě najít.
 	Info_ClearChoices(tpl_8005_gornakosh_armor);
 };
 
@@ -1195,7 +1195,7 @@ func void dia_gornakosh_gatherarmy_info()
 	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_15");	//Protože s jejich výbavou nemůžou jít do bitvy!
 	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_16");	//Nevydrželi by proti sekyrám skřetů.
 	AI_Output(other,self,"DIA_GorNaKosh_GatherArmy_01_17");	//Tak jim rozdej zbroje templářů!
-	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_18");	//To není tak jedoduché příteli, protože většinu jsme nechali v Hornickém údolí.
+	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_18");	//To není tak jednoduché příteli, protože většinu jsme nechali v Hornickém údolí.
 	AI_Output(other,self,"DIA_GorNaKosh_GatherArmy_01_22");	//Co navrhuješ?
 	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_23");	//Jak znám skřety, jsou v boji neohrabaní a pomalí!
 	AI_Output(self,other,"DIA_GorNaKosh_GatherArmy_01_24");	//Takže kdyby moji lidé byli dostatečně rychlí, mohli by se jejich úderům vyhnout.

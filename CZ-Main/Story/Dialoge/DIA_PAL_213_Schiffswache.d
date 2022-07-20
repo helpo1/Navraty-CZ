@@ -140,7 +140,7 @@ func int DIA_Pal_213_Schiffswache_GoOnBoard_Condition()
 
 func void DIA_Pal_213_Schiffswache_GoOnBoard_Info()
 {
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_GoOnBoard_15_00");	//Potřebuji se dostat na loď
+	AI_Output(other,self,"DIA_Pal_213_Schiffswache_GoOnBoard_15_00");	//Potřebuji se dostat na loď.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_GoOnBoard_01_01");	//Nikdo nesmí na loď, mám své rozkazy!
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_GoOnBoard_01_02");	//Zabiju každého, kdo se pokusí nalodit bez pověření.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_GoOnBoard_01_03");	//Ve jménu Innose budu loď bránit svým životem.
@@ -169,7 +169,7 @@ func int DIA_Pal_213_Schiffswache_IAmKDF_Condition()
 func void DIA_Pal_213_Schiffswache_IAmKDF_Info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDF_15_00");	//Máš pochybnosti o mágovi Ohně?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF_01_01");	//(nervózně) Ne, samozřejmě že ne. Innos mi odpusť
+	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF_01_01");	//(nervózně) Ne, samozřejmě, že ne. Innos mi odpusť.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF_01_02");	//Mágové Ohně - střeží moudrost Innose.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDF_01_03");	//(nervózně) ... kdo by o nich pochyboval, pochybuje o Innosovi.
 };
@@ -457,7 +457,7 @@ func void dia_pal_213_schiffswache_iamkdm_info()
 {
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_15_00");	//Paladine, víš vůbec komu sloužím?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_01");	//Myslím, že ano! Jsi nekromant - služebník Beliara!... (s opovržením)
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_02");	//A co myslíš že udělá, jesti se opvážíš pozvednout svůj meč proti jeho služebníkovi.
+	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_02");	//A co myslíš že udělá, jestli se opovážíš pozvednout svůj meč proti jeho služebníkovi.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_03");	//Co, zabije mě? (směje se)
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_04");	//Toho se nebojím, nekromante! Přísahal jsem položit život za Innose!
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_05");	//Takže jsi připraven ztratit duši pro jeho slávu?
@@ -466,8 +466,8 @@ func void dia_pal_213_schiffswache_iamkdm_info()
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_08");	//Blázne, myslel sis že můj bůh chce tvůj život. Věř mi, že ten nepotřebuje!
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_09");	//Víš co udělá? Prokleje tě, paladine!
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_10");	//Po tvé smrti se pak staneš jeho služebníkem a nedojdeš pokoje!
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_11");	//Nebo jsi nikdy neslyšel o nemrtvých paladinech? O Pánech Stínu?! Proč myslíš že by sloužili Beliarovi?
-	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_12");	//Protože ten, kdo se odváží napadnout někoho z nejvyšších služebníků Temného boha bude potrstán samotným Beliarem!
+	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_11");	//Nebo jsi nikdy neslyšel o nemrtvých paladinech? O Pánech Stínů?! Proč myslíš, že by sloužili Beliarovi?
+	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_12");	//Protože ten, kdo se odváží napadnout někoho z nejvyšších služebníků Temného boha bude potrestán samotným Beliarem!
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_13");	//A ani tvůj ubohý bůh ti pak nepomůže!
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_IAmKDM_01_14");	//Ne!... (nervózně) Jen to ne!
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_IAmKDM_01_15");	//Tak mě jednoduše pusť na loď než Beliar pošle své služebníky pro tvou duši.
@@ -687,8 +687,8 @@ func void DIA_Pal_213_Schiffswache_Rats_Info()
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_Rats_01_01");	//O co se jedná?
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_02");	//Ty zatracené krysy mě přivádějí k šílenství.
 	AI_Output(other,self,"DIA_Pal_213_Schiffswache_Rats_01_03");	//Krysy?
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_04");	//Ano, krysy. (podrážděně) Obyčejný lodní krysy!
-	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_05");	//Každý večer ty malí paraziti šramotí v nákladovém prostoru a dělají strašný ránus.
+	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_04");	//Ano, krysy. (podrážděně) Obyčejné lodní krysy!
+	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_05");	//Každý večer ty malí paraziti šramotí v nákladovém prostoru a dělají strašný rámus.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_06");	//Když tu s parťákem stojíme na stráži, tak nás to každou chvilku vyleká.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_07");	//Zejména, když jsme pořád ve střehu.
 	AI_Output(self,other,"DIA_Pal_213_Schiffswache_Rats_01_08");	//A tydle krysy, ať je Beliar zničí! Nemůžem se kvůli nim soustředit na střežení lodě.
@@ -700,7 +700,7 @@ func void DIA_Pal_213_Schiffswache_Rats_Info()
 	MIS_SchiffswacheRats = LOG_Running;
 	Log_CreateTopic(TOPIC_SchiffswacheRats,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SchiffswacheRats,LOG_Running);
-	B_LogEntry(TOPIC_SchiffswacheRats,"Lodní důstojník, který si stěžoval, že každou noc krysy v nákladovém prostoru vytváří příliš velký hluk. Mě požádal, abych se s nimi vypořádal.");
+	B_LogEntry(TOPIC_SchiffswacheRats,"Lodní důstojník, který si stěžoval, že každou noc krysy v nákladovém prostoru vytváří příliš velký hluk mě požádal, abych se s nimi vypořádal.");
 };
 
 instance DIA_Pal_213_Schiffswache_Rats_Done(C_Info)

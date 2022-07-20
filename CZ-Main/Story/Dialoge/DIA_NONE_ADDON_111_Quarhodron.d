@@ -383,7 +383,7 @@ func void DIA_Addon_Quarhodron_GibMirKey_Info()
 	AI_Output(self,other,"DIA_Addon_Quarhodron_GibMirKey_11_07");	//Přijmi nyní slova, která ti umožní vstup. Jsou napsána na kamenné tabulce. Řekni slova před zavřenými dveřmi chrámu a měly by se otevřít.
 	CreateInvItems(self,ItMi_TempelTorKey,1);
 	B_GiveInvItems(self,other,ItMi_TempelTorKey,1);
-	AI_Output(self,other,"DIA_Addon_Quarhodron_GibMirKey_11_08");	//Můj čas je u konce, už ti déle nomohu být nápomocen.
+	AI_Output(self,other,"DIA_Addon_Quarhodron_GibMirKey_11_08");	//Můj čas je u konce, už ti déle nemohu být nápomocen.
 	AI_Output(self,other,"DIA_Addon_Quarhodron_GibMirKey_11_09");	//Ale opatrně. Mysli na Adanovy komnaty. Nebo to bude tvá jistá smrt.
 	AI_Output(other,self,"DIA_Addon_Quarhodron_GibMirKey_15_10");	//Počkej! CO JSOU tyto Adanovy komnaty?
 	AI_Output(self,other,"DIA_Addon_Quarhodron_GibMirKey_11_11");	//Moje síly jsou u konce. Sbohem. Opět se setkáme v zemi mrtvých...

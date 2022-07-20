@@ -219,7 +219,7 @@ instance Ass_125_Tiamant(Npc_Default)
 	EquipItem(self,ITMW_2H_MASIAF_TIAMANT);
 	EquipItem(self,ITMW_FAKESWORD_01);
 	B_CreateAmbientInv_Ass(self);
-	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_Prior_Rage,BodyTex_B,ITAR_ASSASINS_02_NPC);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_Prior_Rage,BodyTex_L,ITAR_ASSASINS_02_NPC);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Militia.mds");
 	B_GiveNpcTalents(self);
@@ -284,7 +284,7 @@ instance Ass_126_Haniar(Npc_Default)
 	EquipItem(self,ITMW_2H_MASIAF_HANIAR);
 	EquipItem(self,ITMW_FAKESWORD_01);
 	B_CreateAmbientInv_Ass(self);
-	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_Prior_Blind,BodyTex_B,ITAR_ASSASINS_02_NPC);
+	B_SetNpcVisual(self,MALE,"Hum_Head_Bald",Face_Prior_Blind,BodyTex_L,ITAR_ASSASINS_02_NPC);
 	Mdl_SetModelFatness(self,0);
 	Mdl_ApplyOverlayMds(self,"Humans_Mage.mds");
 	B_GiveNpcTalents(self);

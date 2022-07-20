@@ -77,7 +77,7 @@ instance DIA_Orc_8570_TagNor_Hello(C_Info)
 	information = DIA_Orc_8570_TagNor_Hello_info;
 	important = FALSE;
 	permanent = FALSE;
-	description = "Slyšel jsem, že jseš ze všech skřetů nejlepší lovec.";
+	description = "Slyšel jsem, že jsi ze všech skřetů nejlepší lovec.";
 };
 
 func int DIA_Orc_8570_TagNor_Hello_condition()
@@ -90,7 +90,7 @@ func int DIA_Orc_8570_TagNor_Hello_condition()
 
 func void DIA_Orc_8570_TagNor_Hello_info()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Hello_Info_18_01");	//Slyšel jsem, že jseš ze všech skřetů nejlepší lovec.
+	AI_Output(other,self,"DIA_Orc_8570_TagNor_Hello_Info_18_01");	//Slyšel jsem, že jsi ze všech skřetů nejlepší lovec.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_Hello_Info_18_02");	//Arrgh... (pohrdavě) A proč se člověk stará?!
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_Hello_Info_18_03");	//Jen mě napadlo, že bys mě mohl učit své řemeslo.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_Hello_Info_18_04");	//Ne! Tag-Nor nebude nic učit člověk.
@@ -157,9 +157,9 @@ func void DIA_Orc_8570_TagNor_Muritan_Claw()
 		};
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Claw_01_01");	//Arrgh... (překvapeně) To být jedovatý zub Muritana! Kde to člověk vzít?!
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Claw_01_01");	//Arrgh... (překvapeně) To být jedovatý tesák Muritana! Kde to člověk vzít?!
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_Muritan_Claw_01_02");	//Byl jsem schopen vypátrat jednoho z těchto tvorů a zabít ho.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Claw_01_03");	//Člověk být velmi zručný lovec, když ho dokázal zabít. Tag-Nord být ohromen!
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Claw_01_03");	//Člověk být velmi zručný lovec, když ho dokázal zabít. Tag-Nor být ohromen!
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_Muritan_Claw_01_04");	//Vidím, že můj dar na tebe udělal dojem. Teď už mě budeš učit lovit?
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Claw_01_06");	//Dobře, Tag-Nor bude učit člověk.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_Muritan_Claw_01_07");	//Ale myslet, že když člověk zabít Muritana, není mnoho co učit.
@@ -252,8 +252,8 @@ func int DIA_Orc_8570_TagNor_Bow_condition()
 
 func void DIA_Orc_8570_TagNor_Bow_info()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_Bow_Info_18_01");	//A proč vy skřeti nepoužíváte luky?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_Bow_Info_18_02");	//Luk je zbraň lidí. Bratři nevěděli, jak s ní bojovat!
+	AI_Output(other,self,"DIA_Orc_8570_TagNor_Bow_Info_18_01");	//Proč vy skřeti nepoužíváte luky?
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_Bow_Info_18_02");	//Luk je zbraň lidí. Bratři nevěděli, jak s ním bojovat!
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_Bow_Info_18_03");	//A co kuše?
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_Bow_Info_18_04");	//To taky přinést lidi, ale my se je naučili používat v boji.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_Bow_Info_18_05");	//Pokud člověk má trochu zkušeností, Tag-Nor může ukázat, jak ještě líp střílet z kuše.
@@ -289,7 +289,7 @@ func void DIA_Orc_8570_TagNor_FindCrBow_info()
 		AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_05");	//Pak co?
 		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_06");	//... pak možná Tag-Nor může pomoci. Ale být velmi obtížné!
 		AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_07");	//Nebojím se potíží! Pověz mi, kde najdu takovou zbraň.
-		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_08");	//No dobře... Ale člověk nejpoprve přinést nějaké věci.
+		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_08");	//No dobře... Ale člověk nejprve přinést nějaké věci.
 		AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_09");	//No, ovšem, když jinak nedáš! Dobře, řekni mi - co chceš?
 		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_10");	//Za prvé, Tag-Nor bude potřebovat magickou rudu! Mnoho magické rudy...
 		AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_11");	//Kolik rudy budeš potřebovat?
@@ -299,7 +299,7 @@ func void DIA_Orc_8570_TagNor_FindCrBow_info()
 		AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Info_18_15");	//Jestli získat takové množství pro člověk příliš těžké, pak můžeme zakončit tento rozhovor.
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBow);
 		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBow,"Jo, tohle asi pro mě není.",DIA_Orc_8570_TagNor_FindCrBow_Back);
-		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBow,"Dobře, skusím tu rudu pro tebe získat.",DIA_Orc_8570_TagNor_FindCrBow_Forward);
+		Info_AddChoice(DIA_Orc_8570_TagNor_FindCrBow,"Dobře, zkusím tu rudu pro tebe získat.",DIA_Orc_8570_TagNor_FindCrBow_Forward);
 	};
 };
 
@@ -313,9 +313,9 @@ func void DIA_Orc_8570_TagNor_FindCrBow_Back()
 
 func void DIA_Orc_8570_TagNor_FindCrBow_Forward()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_01");	//Dobře, skusím tu rudu pro tebe získat.
+	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_01");	//Dobře, zkusím tu rudu pro tebe získat.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_02");	//Dobře... A ještě, kdyby člověk náhodou našel černou rudu, také ji může přinést pro Tag-Nor!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_03");	//On určite použít jestli člověk najít.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_03");	//On určitě použít jestli člověk najít.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_04");	//Jistě. Co ještě potřebuješ?
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_05");	//Druhá věc, kterou muset získat pro Tag-Nor, být kus dřeva... bukového dřeva!
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBow_Forward_01_06");	//Slyšet, že na jihu ostrova rostou takové stromy. Člověk nejlíp hledat tam!
@@ -335,7 +335,7 @@ func void DIA_Orc_8570_TagNor_FindCrBow_Forward()
 	MIS_TagNorGrHunWeap = LOG_Running;
 	Log_CreateTopic(TOPIC_TagNorGrHunWeap,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TagNorGrHunWeap,LOG_Running);
-	B_LogEntry(TOPIC_TagNorGrHunWeap,"Tag-Nor řekl, že by mi mohl pomoct získat zbraň hodnou velkých lovců. Nicméně poté, co mi vylíčil všechno co bude potřeba sehnat, jsem téměr litoval, že jsem se vůbec zeptal. Takže musím přinést Tag-Norovi sto kusů magické rudy, špalík pevného bukového dřeva, roh černého jeskynního trola, šlach obří černé pumy, a konečně - talisman, který kdysi patřil velkému skřetímu lovci. Tag-Nor mi poradil, abych to poslední hledal ve starém skřetím hřbitově. Podle něj zde musí být pohřben jeden z takových hrdinů.");
+	B_LogEntry(TOPIC_TagNorGrHunWeap,"Tag-Nor řekl, že by mi mohl pomoct získat zbraň hodnou velkých lovců. Nicméně poté, co mi vylíčil všechno co bude potřeba sehnat, jsem téměř litoval, že jsem se vůbec zeptal. Takže musím přinést Tag-Norovi sto kusů magické rudy, špalík pevného bukového dřeva, roh černého jeskynního trola, šlach obří černé pumy, a nakonec - talisman, který kdysi patřil velkému skřetímu lovci. Tag-Nor mi poradil, abych to poslední hledal ve starém skřetím hřbitově. Podle něj zde musí být pohřben jeden z takových hrdinů.");
 	AI_StopProcessInfos(self);
 };
 
@@ -346,7 +346,7 @@ instance DIA_Orc_8570_TagNor_BlackOre(C_Info)
 	information = DIA_Orc_8570_TagNor_BlackOre_info;
 	important = FALSE;
 	permanent = FALSE;
-	description = "A v čem se běžná magická ruda se liší od černé?";
+	description = "A v čem se běžná magická ruda liší od černé?";
 };
 
 func int DIA_Orc_8570_TagNor_BlackOre_condition()
@@ -359,8 +359,8 @@ func int DIA_Orc_8570_TagNor_BlackOre_condition()
 
 func void DIA_Orc_8570_TagNor_BlackOre_info()
 {
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_BlackOre_01_01");	//A v čem se běžná magická ruda se liší od černé?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_BlackOre_01_02");	//Tag-Nor nezná odpověd na tuto otázku.
+	AI_Output(other,self,"DIA_Orc_8570_TagNor_BlackOre_01_01");	//A v čem se běžná magická ruda liší od černé?
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_BlackOre_01_02");	//Tag-Nor nezná odpověď na tuto otázku.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_BlackOre_01_03");	//Ale vědět jistě, že černá ruda mít více magie, než je obvyklé.
 };
 
@@ -596,7 +596,7 @@ func void DIA_Orc_8570_TagNor_FindCrBowIng_Ore()
 	{
 		AllIngCrBow_All = TRUE;
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi všechny věci, které žádal. Uvidíme se, co se bude dít dál...");
+		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi všechny věci, které žádal. Uvidíme, co se bude dít dál...");
 	}
 	else
 	{
@@ -617,7 +617,7 @@ func void DIA_Orc_8570_TagNor_FindCrBowIng_Tree()
 	{
 		AllIngCrBow_All = TRUE;
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi všechny věci, které žádal. Uvidíme se, co se bude dít dál...");
+		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi všechny věci, které žádal. Uvidíme, co se bude dít dál...");
 	}
 	else
 	{
@@ -639,7 +639,7 @@ func void DIA_Orc_8570_TagNor_FindCrBowIng_Horn()
 	{
 		AllIngCrBow_All = TRUE;
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi všechny věci, které žádal. Uvidíme se, co se bude dít dál...");
+		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi všechny věci, které žádal. Uvidíme, co se bude dít dál...");
 	}
 	else
 	{
@@ -661,7 +661,7 @@ func void DIA_Orc_8570_TagNor_FindCrBowIng_Puma()
 	{
 		AllIngCrBow_All = TRUE;
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi všechny věci, které žádal. Uvidíme se, co se bude dít dál...");
+		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi všechny věci, které žádal. Uvidíme, co se bude dít dál...");
 	}
 	else
 	{
@@ -672,7 +672,7 @@ func void DIA_Orc_8570_TagNor_FindCrBowIng_Puma()
 func void DIA_Orc_8570_TagNor_FindCrBowIng_Sign()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_15");	//Mám talisman velkého skřetího lovece.
+	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_15");	//Mám talisman velkého skřetího lovce.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowIng_01_16");	//Opravdu? Tag-Nor velmi překvapen! Člověk hned ukázat!
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowIng_01_17");	//Tady.
 	B_GiveInvItems(other,self,ItMi_HuntSign,1);
@@ -684,11 +684,11 @@ func void DIA_Orc_8570_TagNor_FindCrBowIng_Sign()
 	{
 		AllIngCrBow_All = TRUE;
 		Info_ClearChoices(DIA_Orc_8570_TagNor_FindCrBowIng);
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi všechny věci, které žádal. Uvidíme se, co se bude dít dál...");
+		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi všechny věci, které žádal. Uvidíme, co se bude dít dál...");
 	}
 	else
 	{
-		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi talisman velkého skřetího lovece.");
+		B_LogEntry(TOPIC_TagNorGrHunWeap,"Přinesl jsem Tag-Norovi talisman velkého skřetího lovce.");
 	};
 };
 
@@ -735,12 +735,12 @@ func void DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_info()
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_05");	//Být opravdu tak. Nebo člověk myslet, že to pro něj udělat Tag-Nor?
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_06");	//No, myslel jsem...
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_07");	//Tag-Nor být jenom lovec a vyrobit zbraň neumí!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_08");	//Člověk najít někoho, kto naučí jak vyrobit.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_08");	//Člověk najít někoho, kdo naučí jak vyrobit.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_09");	//Kdo by to mohl být?
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_10");	//Člověk se ptát u stejné lidi jako je on. Možná naučí ten který umí vykovat zbraně.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_11");	//Myslíš kováře. No dobře, rozumím.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_12");	//Dobrá. Když se člověk naučí vyrobit zbraň, on znovu navštívit Tag-Nor.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_13");	//Tag-Nor pak ríct člověk, co dělat dál.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_FindCrBowSmithTeacher_01_13");	//Tag-Nor pak říct člověk, co dělat dál.
 	B_LogEntry(TOPIC_TagNorGrHunWeap,"Tag-Nor chce, abych našel někoho, kdo by mě naučil vyrábět kuše. Zřejmě bych se měl poptat kolem kovářů.");
 	FindSmithTeacherCrBow = TRUE;
 };
@@ -809,15 +809,15 @@ func void DIA_Orc_8570_TagNor_GetNimrod_info()
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_05");	//No, pokud ano... Pak člověk sám být velký válečník. A oprávněně zaslouží nosit!
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_06");	//A taky že budu.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_07");	//Tag-Nor není překvapen, že člověk si chce nechat tuto kuši... (směje se) Být téměř neporazitelný s takovou zbraní!
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_08");	//Nicméně, Tag-Nor chce požádat člověl o jednu věc.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_08");	//Nicméně, Tag-Nor chce požádat člověk o jednu věc.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_09");	//Jakou?
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_10");	//(vlezle) Pokud chce, člověk může dát tuto velkou zbraň Tag-Nor?
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_11");	//Co?!
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_12");	//Tag-Nor vždycky snít o takové zbrani jako Drag Nimrod! S takovou kuší Tag-Nor získat ještě větší úctu u svých bratří.
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_13");	//Na oplátku, člověk může požádat Tag-Nor úplne všechno, co by on chtít!
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_13");	//Na oplátku, člověk může požádat Tag-Nor úplně všechno, co by on chtít!
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_14");	//To je hodně nečekaný návrh! Musím si to pečlivě zvážit.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_15");	//Tag-Nor nespěchat. Člověk přemýšlet jak dlouho chce. Tag-Nor bude čekat na jeho odpověď.
-	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_16");	//Souhlasím. Zatím si ale kuši nechám, jestli se naurazíš?
+	AI_Output(other,self,"DIA_Orc_8570_TagNor_GetNimrod_01_16");	//Souhlasím. Zatím si ale kuši nechám, jestli se neurazíš?
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GetNimrod_01_17");	//Samozřejmě, že nosit! Zbraň patřit po právu člověk.
 	ORCRESPECT = ORCRESPECT + 10;
 
@@ -828,7 +828,8 @@ func void DIA_Orc_8570_TagNor_GetNimrod_info()
 
 	MIS_TagNorGrHunWeap = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_TagNorGrHunWeap,LOG_SUCCESS);
-	B_LogEntry(TOPIC_TagNorGrHunWeap,"Řekl jsem Tag-Norovi, že jsem vyrobil Drag Nimrod - kuši velkých skřetích lovců. Ocenil mou práci a nabídl mi dát mu tu zbraň za přiměřenou odměnu. Musím nad jeho návrhem popřemýšlet.");};
+	B_LogEntry(TOPIC_TagNorGrHunWeap,"Řekl jsem Tag-Norovi, že jsem vyrobil Drag Nimrod - kuši velkých skřetích lovců. Ocenil mou práci a nabídl mi dát mu tu zbraň za přiměřenou odměnu. Musím nad jeho návrhem popřemýšlet.");
+};
 
 instance DIA_Orc_8570_TagNor_GiveNimrod(C_Info)
 {
@@ -851,7 +852,7 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_info()
 {
 	B_GivePlayerXP(3000);
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_01_01");	//Pořád ještě chceš tu kuši?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_02");	//Drag-Nimrod?! (oživle) Tag-Nor už říct člověk, že zbraň skutečně chce vlastnit. Proč se teď ptá?
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_02");	//Drag Nimrod?! (oživle) Tag-Nor už říct člověk, že zbraň skutečně chce vlastnit. Proč se teď ptá?
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_01_03");	//Nakonec jsem se rozhodl, že ti ji dám.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_04");	//Člověk mluvit vážně? Opravdu chce dát Drag Nimrod?
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_01_05");	//Ano, ale rád bych věděl, co dostanu na oplátku.
@@ -860,7 +861,7 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_info()
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_08");	//Skutečně mistrovská dovednost lovce - být jak vždy zůstat nenápadný, když připlížit na svou kořist.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_09");	//Tag-Nor může ukázat člověk, jak se stát na chvíli neviditelný!
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_01_10");	//Děláš si srandu?
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_11");	//Tag-Nor nežertuje. (vážně) On se podelit s člověk o toto tajemství, když mu dát Drag-Nimrod!
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_11");	//Tag-Nor nežertuje. (vážně) On se podělit s člověk o toto tajemství, když mu dát Drag Nimrod!
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_12");	//Ale jestli nemá zájem, může se naučit, jak zvýšit svou sílu, obratnost a vitalitu! Tag-Nor může naučit i to.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_01_14");	//Tak, jak člověk vybrat?
 	ORCRESPECT = ORCRESPECT + 5;
@@ -916,7 +917,7 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Hide()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_10");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_10");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikých skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hide_01_11");	//No jo, samozřejmě.
 	AI_StopProcessInfos(self);
 };
@@ -956,7 +957,7 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Str()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_06");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_06");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikých skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Str_01_07");	//No jo, samozřejmě.
 	AI_StopProcessInfos(self);
 };
@@ -997,7 +998,7 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Dex()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_06");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_06");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikých skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Dex_01_07");	//No jo, samozřejmě.
 	AI_StopProcessInfos(self);
 };
@@ -1009,7 +1010,7 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Hlth()
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_01");	//Ukaž mi, jak být houževnatý.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_02");	//Cokoliv řekneš, člověče. Teď poslouchat pozorně.
 	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_03");	//... (vypráví) ...
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_04");	//To je vše! Nyní člověk vydržet mnohem víc uderů než předtím.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_04");	//To je vše! Nyní člověk vydržet mnohem víc úderů než předtím.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_05");	//A tady je tvá kuše Tag-Nore. Jak jsme se dohodli.
 
 	if(Npc_HasItems(other,ITRW_GREATARBALET_ORC_01) >= 1)
@@ -1038,7 +1039,7 @@ func void DIA_Orc_8570_TagNor_GiveNimrod_Hlth()
 		Npc_RemoveInvItems(self,ITRW_GREATARBALET_ORC_05,Npc_HasItems(self,ITRW_GREATARBALET_ORC_05));
 	};
 
-	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_06");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikích skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
+	AI_Output(self,other,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_06");	//KHROTAK NAK!... (šťastně) Konečně, zbraň velikých skřetích lovců patřit Tag-Nor! On velice děkovat člověk za to.
 	AI_Output(other,self,"DIA_Orc_8570_TagNor_GiveNimrod_Hlth_01_07");	//No jo, samozřejmě.
 	AI_StopProcessInfos(self);
 };

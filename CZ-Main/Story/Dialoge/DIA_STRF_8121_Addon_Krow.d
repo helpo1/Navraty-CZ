@@ -233,7 +233,7 @@ func void DIA_STRF_8121_Addon_Krow_Respect_info()
 	else if(RT_Respect >= 6)
 	{
 		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_12");	//Už to skoro máš!
-		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_13");	//Mnoho z nás ti už důveřuje.
+		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_13");	//Mnoho z nás ti už důvěřuje.
 		AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Respect_01_14");	//Zbývá už jen pár věcí.
 	}
 	else if(RT_Respect >= 3)
@@ -441,7 +441,7 @@ func void DIA_STRF_8121_Addon_Krow_Teleport_Focus_info()
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_07");	//Nebylo těžké to uhádnout, díky těmto šutrům portály fungují.
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_08");	//Ale vypadá to, že tento vyrobili kdesi na kontinentě. Asi Vengard...
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_09");	//Jak to víš?
-	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_10");	//Vidíš? To je značka řádu mágů Ohně. Takové věci si člověk nezplete.
+	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_10");	//Vidíš? To je značka řádu mágů Ohně. Takové věci si člověk nesplete.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_11");	//Říkáš, že tento portál vede na kontinent?
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_12");	//Pravděpodobně. Ale nevím, co dělá ve skřetím dole.
 	AI_Output(other,self,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_13");	//Myslím, že to neví ani skřeti.
@@ -455,5 +455,5 @@ func void DIA_STRF_8121_Addon_Krow_Teleport_Focus_info()
 	AI_Output(self,other,"DIA_STRF_8121_Addon_Krow_Teleport_Focus_01_21");	//Běž za Wenzelem. On ti poví, co dělat dál.
 	MIS_MineTeleport = LOG_Success;
 	Log_SetTopicStatus(TOPIC_MineTeleport,LOG_Success);
-	B_LogEntry_Quiet(TOPIC_MineTeleport,"Šutr co jsem našel dole je magické ohnisko. S ním můžeme aktitovat portál. Podle Crowa ho vyrobili ve Vengardě a je dost možné, že vede na kontinent.");
+	B_LogEntry_Quiet(TOPIC_MineTeleport,"Šutr co jsem našel dole je magické ohnisko. S ním můžeme aktitovat portál. Podle Crowa ho vyrobili ve Vengardu a je dost možné, že vede na kontinent.");
 };

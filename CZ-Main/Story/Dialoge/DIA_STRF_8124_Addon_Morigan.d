@@ -128,10 +128,10 @@ func void DIA_STRF_8124_Addon_Morigan_Father_info()
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Father_01_10");	//To je dobře, aspoň tak...
 	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_Father_01_11");	//Proč tě to tak zajímá?
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Father_01_12");	//To proto, že v Khorinisu žije můj otec.
-	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Father_01_13");	//Kdybys mu tak mohl dát zprávu že jsem naživu.
+	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Father_01_13");	//Kdybys mu tak mohl dát zprávu, že jsem naživu.
 	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_Father_01_14");	//A kdo je tvůj otec?
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Father_01_15");	//Jmenuje se Carl a je kovář. Jestli jsi byl někdy ve městě tak ho musíš znát.
-	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_Father_01_16");	//Ano znám ho. Ale jestli vůbec chce slyšet takové novinky
+	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_Father_01_16");	//Ano znám ho. Ale jestli vůbec chce slyšet takové novinky.
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Father_01_17");	//Chápu, že moje vyhlídky nejsou nejlepší. 
 	AI_Output(self,other,"DIA_STRF_8124_Addon_Morigan_Father_01_18");	//Ale stále jsem na živu a chci aby to věděl!
 	AI_Output(other,self,"DIA_STRF_8124_Addon_Morigan_Father_01_19");	//Dobře, předám mu tvojí zprávu.

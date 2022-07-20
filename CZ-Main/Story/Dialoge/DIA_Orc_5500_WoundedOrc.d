@@ -51,9 +51,9 @@ func void DIA_Orc_5500_WoundedOrc_Hello_info()
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_08");	//Všechny zabily, všichni mrtví! Jen já sám zůstal žít, ale být vážně zraněn a není schopen se vrátit do údolí.
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_09");	//Pobili je paladinové?
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_10");	//Ne, my nebojovat s paladiny... (lapá po dechu) Moje četa príliš malá, aby na ně zaútočit.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_11");	//Pokud ne oni, tak kdo? A co ste v takovém případě dělali v Khorinisu?
+	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_11");	//Pokud ne oni, tak kdo? A co jste v takovém případě dělali v Khorinisu?
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_12");	//Já nemohu říci člověku.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_13");	//Pokud mi to okamžitě neřekneš, na míste tě zabiju!
+	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_13");	//Pokud mi to okamžitě neřekneš, na místě tě zabiju!
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Info_18_14");	//Pokud člověk chce zabít, ať nestrácí čas. (bolestivě) Ur-Karras se nebát smrti.
 	Info_ClearChoices(DIA_Orc_5500_WoundedOrc_Hello);
 	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello,"Tvá slova si zaslouží respekt, Ur-Karras.",DIA_Orc_5500_WoundedOrc_Hello_Mercy);
@@ -65,11 +65,11 @@ func void DIA_Orc_5500_WoundedOrc_Hello_Mercy()
 {
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_01");	//Tvá slova si zaslouží respekt, Ur-Karras. Myslím, že tě nechám naživu.
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_02");	//Ale musíš mi přísahat, že okamžitě opustíš Khorinis! Jestli tě příště potkám, bez zaváhání ti podříznu hrdlo.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_03");	//Člověk si nemusí dělat starost. Jak jsem již říkal, Ur-Karras vážne zranen a nemůže se vrátit ke svým bratrům...
+	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_03");	//Člověk si nemusí dělat starost. Jak jsem již říkal, Ur-Karras vážně zraněn a nemůže se vrátit ke svým bratrům...
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_18_04");	//Můžeš mě rovnou zabít... (funění) čas na tom stejně nic nezmění.
 	Info_ClearChoices(DIA_Orc_5500_WoundedOrc_Hello);
-	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello,"Jak již bylo rěčeno - já tě nechci zabít!",DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two);
-	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello,"No nedáváš mi na vybranou, skrěte!",DIA_Orc_5500_WoundedOrc_Hello_Kill_Two);
+	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello,"Já tě nechci zabít!",DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two);
+	Info_AddChoice(DIA_Orc_5500_WoundedOrc_Hello,"No nedáváš mi na vybranou, skřete!",DIA_Orc_5500_WoundedOrc_Hello_Kill_Two);
 };
 
 func void DIA_Orc_5500_WoundedOrc_Hello_Kill()
@@ -96,26 +96,26 @@ func void DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two()
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_03");	//Ur-Karras neví.
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_04");	//Hmmm. Dovol mi aspoň podívat se na tvoje rány.
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_05");	//Chrrrr... (lapá po dechu) Dobře, podívej, člověče.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_06");	//Ano, to jsou vážná zranení. Vypadá to, žes byl pokousán nějakým hrozným tvorem.
+	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_06");	//Ano, to jsou vážná zranění. Vypadá to, žes byl pokousán nějakým hrozným tvorem.
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_07");	//Existuje nějaký způsob, který by ti pomohl vyléčit se?
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_08");	//Ur-Karras si myslí, že jen jeho bratři - mluvící s duchy, by mohly pomoci. Ale bratři být daleko v údolí...
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_09");	//Mluvící s duchy?
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_10");	//Být velcí mágové skřetů. Lidé obvykle nazývat je šamany.
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_11");	//Ale k vaším šamanem se tak jednoduše přiblížit nedá...
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_12");	//Promění mě v pochodeň dřív než jim stihnu něco říct.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_13");	//Pak človeku zůstává jen odejít... (chrapčí) a nechat Ur-Karrase zemřít!
+	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_13");	//Pak člověku zůstává jen odejít... (chrapčí) a nechat Ur-Karrase zemřít!
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_14");	//Ne. Když už nic jiného, zůstanu u tebe!
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_15");	//Vypadá to, že mám ve zvyku pomáhat zraněným skrětům.
+	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_15");	//Vypadá to, že mám ve zvyku pomáhat zraněným skřetům.
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_17");	//Ááá... (překvapeně) Ur-Karras být překvapen, že se člověk snaží, aby mu pomohl.
 	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_18");	//Obvykle ho dříve chtějí všichni lidé prostě zabít!
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_19");	//Dobře, tady seď a pokus se nezemřít, dokud se nevrátím.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_20");	//Nelíbila by se mi představa, že sem s tebou jen strácel čas.
-	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_21");	//Ur-Karras mít nějaké léčivé lektvary skrětů, aby nezemřel. Ale ne nadlouho.
-	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_22");	//Pak tedy nestrácejme čas mluvením. Brzy se vrátím.
+	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_20");	//Nelíbila by se mi představa, že sem s tebou jen ztrácel čas.
+	AI_Output(self,other,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_21");	//Ur-Karras mít nějaké léčivé lektvary skřetů, aby nezemřel. Ale ne nadlouho.
+	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_Hello_Mercy_Two_18_22");	//Pak tedy neztrácejme čas mluvením. Brzy se vrátím.
 	MIS_Orcwayhero = LOG_Running;
 	Log_CreateTopic(TOPIC_Orcwayhero,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Orcwayhero,LOG_Running);
-	B_LogEntry(TOPIC_Orcwayhero,"Kousek od Khorinisu, jsem narazil na zraněného skřeta jménem Ur-Karras. Vedl malý oddíl skrětů z údolí aby provedli důležitý úkol, který mi však odmítl prozradit dokonce i pod hrozbou smrti. On jediný přežil ale je těžce raněný a nemůže se vrátit. Rozhodl jsem se pomoci tomuto skřetovi, který mluví lidskou řečí. Léčivé kouzla šamanů by mu mohli pomoci, ale kde v Khorinisu najít skřetího šamana, který by byl ochotný se mnou mluvit? Musím něco vymyslet - času je málo, je třeba jednat rychle.");
+	B_LogEntry(TOPIC_Orcwayhero,"Kousek od Khorinisu, jsem narazil na zraněného skřeta jménem Ur-Karras. Vedl malý oddíl skřetů z údolí aby provedli důležitý úkol, který mi však odmítl prozradit dokonce i pod hrozbou smrti. On jediný přežil ale je těžce raněný a nemůže se vrátit. Rozhodl jsem se pomoci tomuto skřetovi, který mluví lidskou řečí. Léčivé kouzla šamanů by mu mohli pomoci, ale kde v Khorinisu najít skřetího šamana, který by byl ochotný se mnou mluvit? Musím něco vymyslet - času je málo, je třeba jednat rychle.");
 	AI_StopProcessInfos(self);
 	self.name[0] = CZ_NAME_Orc_Unique_Urkarras;
 };
@@ -173,7 +173,7 @@ func void DIA_Orc_5500_WoundedOrc_HaveCure_info()
 	AI_Output(other,self,"DIA_Orc_5500_WoundedOrc_HaveCure_18_22");	//Samo sebou... hmmm... bratře.
 	MIS_Orcwayhero = LOG_SUCCESS;
 	Log_SetTopicStatus(Topic_Orcwayhero,LOG_SUCCESS);
-	B_LogEntry(Topic_Orcwayhero,"Pomohl jsem Ur-Karrasovi zotavit se ze svých zranění. Teď se může vrátit do údolí. Ur-Karras slíbil, že na mou pomoc nezapomene a začal mě od této chvíle nazývat... bratrem. Zvláštní tvorové, tihle skrěti.");
+	B_LogEntry(Topic_Orcwayhero,"Pomohl jsem Ur-Karrasovi zotavit se ze svých zranění. Teď se může vrátit do údolí. Ur-Karras slíbil, že na mou pomoc nezapomene a začal mě od této chvíle nazývat... bratrem. Zvláštní tvorové, tihle skřeti.");
 	Info_ClearChoices(DIA_Orc_5500_WoundedOrc_HaveCure);
 	Info_AddChoice(DIA_Orc_5500_WoundedOrc_HaveCure,Dialog_Ende,DIA_Orc_5500_WoundedOrc_HaveCure_Quit);
 };

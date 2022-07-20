@@ -336,7 +336,7 @@ instance DIA_SNIPES_HOWOREHUCK(C_Info)
 	condition = dia_snipes_howorehuck_condition;
 	information = dia_snipes_howorehuck_info;
 	permanent = FALSE;
-	description = "Snipesi! Ty jseš kopáč.";
+	description = "Snipesi! Ty jsi kopáč.";
 };
 
 func int dia_snipes_howorehuck_condition()
@@ -349,12 +349,12 @@ func int dia_snipes_howorehuck_condition()
 
 func void dia_snipes_howorehuck_info()
 {
-	AI_Output(other,self,"DIA_Snipes_HOWOREHUCK_01_00");	//Snipesi! Ty jseš kopáč. Mohl bys mi ukázat pár triků? 
+	AI_Output(other,self,"DIA_Snipes_HOWOREHUCK_01_00");	//Snipesi! Ty jsi kopáč. Mohl bys mi ukázat pár triků? 
 	AI_Output(self,other,"DIA_Snipes_HOWOREHUCK_01_01");	//Samozřejmě, bejby! Víš kolik času jsem strávil ve starém dolu?
 	AI_Output(other,self,"DIA_Snipes_HOWOREHUCK_01_02");	//Můžeš mě učit, jak těžit?
 	AI_Output(self,other,"DIA_Snipes_HOWOREHUCK_01_03");	//Ano, můžu ti dát pár lekcí...
-	AI_Output(other,self,"DIA_Snipes_HOWOREHUCK_01_04");	//Výborne. Nevíš náhodou kdo je schopen roztavit rudu?
-	AI_Output(self,other,"DIA_Snipes_HOWOREHUCK_01_05");	//Viper celý život strávil pri tavící peci, možná něco i naučil.
+	AI_Output(other,self,"DIA_Snipes_HOWOREHUCK_01_04");	//Výborně. Nevíš náhodou kdo je schopen roztavit rudu?
+	AI_Output(self,other,"DIA_Snipes_HOWOREHUCK_01_05");	//Viper celý život strávil u tavicí pece, možná by tě něco naučil.
 	B_LogEntry(TOPIC_STEELDRAW,"Snipes mě může naučit, jak těžit rudu, Viper by zas mohl být schopen naučit mě ji tavit.");
 };
 
@@ -406,12 +406,12 @@ func void dia_snipes_learnabouterzhunt_ERZWORK()
 			if(GRIMESTEACHMOREORE == FALSE)
 			{
 				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_01");	//Dobře! Pozorně poslouchej...
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_02");	//Pro začátek je třeba si dobre vybrat - to je polovina úspěchu!
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_03");	//Pak začnete zpracovávat rudnu žílu.
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_04");	//Není třeba trafiť na okraj žíly, ani přesně do středu... Stačí jeden silný úder a pak poněkud slabší.
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_05");	//Takto narušíš strukturu a dalším úderom určitě nějaký kus rudy získaš.
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_06");	//A to opakuješ znovu a znovu - ak sa nudíš. (směje se)
-				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_07");	//To je hlavní věc, kterou potřebujete vědět o těžbě rudy.
+				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_02");	//Pro začátek je třeba si dobře vybrat - to je polovina úspěchu!
+				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_03");	//Pak začni zpracovávat rudnou žílu.
+				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_04");	//Není třeba trefit na okraj žíly, ani přesně do středu... Stačí jeden silný úder a pak poněkud slabší.
+				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_05");	//Takto narušíš strukturu a dalším úderem určitě nějaký kus rudy získáš.
+				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_06");	//A to opakuješ znovu a znovu - pokud se nudíš. (směje se)
+				AI_Output(self,other,"DIA_SNIPES_LearnAboutErzHunt_01_07");	//To je hlavní věc, kterou potřebuješ vědět o těžbě rudy.
 				AI_Output(other,self,"DIA_SNIPES_LearnAboutErzHunt_01_08");	//Dík!
 				GRIMESTEACHMOREORE = TRUE;
 			}
@@ -450,7 +450,7 @@ func int DIA_SNIPES_askfordt_condition()
 func void DIA_SNIPES_AskforDT_info()
 {
 	AI_Output(other,self,"DIA_SNIPES_AskforDT_15_00");	//Hledám zkušeného kopáče.
-	AI_Output(self,other,"DIA_SNIPES_AskforDT_17_01");	//Co? Myslíš že bych se chtěl znovu hrbit v dole?
+	AI_Output(self,other,"DIA_SNIPES_AskforDT_17_01");	//Co? Myslíš, že bych se chtěl znovu hrbit v dole?
 	AI_Output(self,other,"DIA_SNIPES_AskforDT_17_02");	//Ne vážně. Už mám dolů dost.
 
 	// if(RhetorikSkillValue[1] >= 60)
@@ -465,18 +465,18 @@ func void DIA_SNIPES_AskforDT_info()
 func void DIA_SNIPES_AskforDT_yes()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_00");	//Zadrž! Nemluvím o tom že bys musel celé dny rubat kámen.
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_01");	//Jen pár hodin deně. S dobrým platem, přístřeším a dostatkem jídla.
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_02");	//Myslím že pro tebe by to nebylo zlé.
+	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_00");	//Zadrž! Nemluvím o tom, že bys musel celé dny rubat kámen.
+	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_01");	//Jen pár hodin denně. S dobrým platem, přístřeším a dostatkem jídla.
+	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_02");	//Myslím, že pro tebe by to nebylo zlé.
 	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_03");	//Takže, ty bys mi dával plat?
 	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_04");	//Řekněme třicet zlatých denně.
 	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_05");	//Kolik? To není špatné. Je to dvakrát více než dá Lobart.
-	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_06");	//No vidíš. Říkám že to není zlé.
+	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_06");	//No vidíš. Říkám, že to není zlé.
 	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_07");	//A kde to je?
 	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_08");	//V mém táboře. U staré věže nedaleko Onarovi farmy.
 	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_09");	//Ach jo... Myslím, že tohle místo znám. Tam jsem makal než mě hodili do kolonie.
 	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_10");	//Tys tam byl? Víš něco o tom místě?
-	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_11");	//Co říci... Důl jako důl. Není moc velký ale důležité je že je zcela suchý!
+	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_11");	//Co říci... Důl jako důl. Není moc velký ale důležité je, že je zcela suchý!
 	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_12");	//Nikdy tam nedošlo k závalu. Koneckonců to nebylo špatné místo k těžbě.
 	AI_Output(other,self,"DIA_SNIPES_askfordt_yes_15_13");	//Tak proč to znovu nezkusit?
 	AI_Output(self,other,"DIA_SNIPES_askfordt_yes_15_14");	//No... tak dobře. Horší to být nemůže a peníze budou dobré.
