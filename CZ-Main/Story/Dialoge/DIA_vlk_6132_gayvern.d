@@ -78,7 +78,7 @@ func void dia_vlk_6132_gayvern_work_info()
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_02");	//Ale protože do Khorinisu přestali jezdit obchodní lodě, mám po práci.
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_03");	//Už tady sedím skoro šest týdnu bez práce. Zkráceně, nuda!
 	AI_Output(other,self,"DIA_VLK_6132_Gayvern_Work_01_04");	//To znamená, že jsi nezaměstnaný?
-	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_07");	//Ne tak docela. Kardif, majítel této krčmy, mi nabídl, že u něj můžu pracovat jako vyhazovač. 
+	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_07");	//Ne tak docela. Kardif, majitel této krčmy, mi nabídl, že u něj můžu pracovat jako vyhazovač. 
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_11");	//Samozřejmě, makat zde není nic příjemnýho, ale je to lepší než tu hladovět.
 	AI_Output(self,other,"DIA_VLK_6132_Gayvern_Work_01_12");	//I když, po pravdě řečeno, bych chtěl dělat něco jiného.
 
@@ -300,16 +300,16 @@ func void DIA_VLK_6132_GAYVERN_askfordt_info()
 	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_03");	//Ty máš tábor?
 	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_04");	//Jo, právě jsem to pořešil. Tak co říkáš?
 	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_05");	//(zaraženě) Stráž? Jak to bude vypadat, bude mít někdo z nás opět náhubek?
-	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_06");	//Řekl bych že tohle je více rozumný post. Jistě, budete taky muset udržovat pořádek.
+	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_06");	//Řekl bych že tohle je více rozumný post. Jistě, budeš taky muset udržovat pořádek.
 	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_07");	//Ale ne jenom to, tábor můžou taky napadnout monstra, banditi nebo dokonce skřeti. A chci mít lidi co budou připraveni bránit.
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_08");	//Aha, no... to zní mnohem zajímavěji. Sestra tam bude?
+	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_08");	//Aha, no... to zní mnohem zajímavěji. Bude tam jídlo?
 	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_09");	//Samozřejmě. Tři jídla denně, malé přístřeší, a pravidelná výplata za ochranu.
 	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_10");	//Pořád bude výplata? A kolik?
 	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_11");	//Hmmm... Asi třicet zlatých za den. Dost?
 	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_12");	//Třicet zlatých mincí?! Jo, jsem trošku bez peněz, nikde moc dlouho nevydržím. Dobře, souhlasím.
 	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_13");	//To je super. Jdi se sbalit a ráno ať jseš tam.
 	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_14");	//A mimochodem, heslo pro vstup do tábora zní 'dračí poklad'. Prostě to řekni stráži u vchodu.
-	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_15");	//Rozumím, ale nejdřív řeknu Kardifovi že končím.
+	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_15");	//Rozumím, ale nejdřív řeknu Kardifovi, že končím.
 	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_16");	//Och... Snad to tam bude dobrý. Sedět celý den v krčmě mě už hrozně nudí. 
 	AI_Output(other,self,"DIA_VLK_6132_GAYVERN_AskforDT_17_17");	//Dobře, hlavně tady nezůstaň.
 	AI_Output(self,other,"DIA_VLK_6132_GAYVERN_AskforDT_17_18");	//Pokusím se.

@@ -106,8 +106,8 @@ func void DIA_Tengron_News_Info()
 	AI_Output(self,other,"DIA_Tengron_News_07_04");	//Poslouchej... Mám na hradě kamaráda. Jmenuje se Udar. Bojovali jsme spolu mnoho bitev...
 	AI_Output(self,other,"DIA_Tengron_News_07_05");	//Prosím, vezmi mu tento prsten. Ať mi ho schová. Vezmu si ho zpět jak se vrátím. Řekni mu to prosím...
 	Info_ClearChoices(DIA_Tengron_News);
-	Info_AddChoice(DIA_Tengron_News,"Na to nemám čas...",DIA_Tengron_News_No);
-	Info_AddChoice(DIA_Tengron_News,"Bez problému...",DIA_Tengron_News_Yes);
+	Info_AddChoice(DIA_Tengron_News,"Na to nemám čas.",DIA_Tengron_News_No);
+	Info_AddChoice(DIA_Tengron_News,"Bez problému.",DIA_Tengron_News_Yes);
 };
 
 func void DIA_Tengron_News_No()
@@ -151,7 +151,7 @@ func int DIA_Tengron_Situation_Condition()
 func void DIA_Tengron_Situation_Info()
 {
 	AI_Output(other,self,"DIA_Tengron_Situation_15_00");	//Jaká je zde situace?
-	AI_Output(self,other,"DIA_Tengron_Situation_07_01");	//Jsme napadáni monstry. A nepodařilo se nám vytěžit moc nagické rudy, protože jsme přišli o hodně lidí.
+	AI_Output(self,other,"DIA_Tengron_Situation_07_01");	//Jsme napadáni monstry. A nepodařilo se nám vytěžit moc magické rudy, protože jsme přišli o hodně lidí.
 	AI_Output(self,other,"DIA_Tengron_Situation_07_02");	//Nevím, jak dlouho vydržíme, ale nevzdáme se!
 };
 

@@ -44,7 +44,7 @@ func int DIA_Marduk_NoEnter_PissOff_Condition()
 
 func void DIA_Marduk_NoEnter_PissOff_Info()
 {
-	AI_Output(self,other,"DIA_Marduk_NoEnter_PissOff_01_00");	//Hmm... (naštvanř)
+	AI_Output(self,other,"DIA_Marduk_NoEnter_PissOff_01_00");	//Hmm... (naštvaně)
 	AI_StopProcessInfos(self);
 	B_Attack(self,other,AR_GuildEnemy,0);
 };
@@ -152,7 +152,7 @@ func int DIA_Marduk_Evil_Condition()
 func void DIA_Marduk_Evil_Info()
 {
 	AI_Output(other,self,"DIA_Marduk_Evil_15_00");	//Co je 'Zlo'?
-	AI_Output(self,other,"DIA_Marduk_Evil_05_01");	//Zlo je všude. Je to síla Beliara, Innosovho odvěkého nepřítele.
+	AI_Output(self,other,"DIA_Marduk_Evil_05_01");	//Zlo je všude. Je to síla Beliara, Innosova odvěkého nepřítele.
 	AI_Output(self,other,"DIA_Marduk_Evil_05_02");	//Je to všudypřítomná temnota, která chce navždy zničit Světlo Innosovo.
 	AI_Output(self,other,"DIA_Marduk_Evil_05_03");	//Beliar je Pán temnoty, nenávisti a ničení.
 	AI_Output(self,other,"DIA_Marduk_Evil_05_04");	//Jenom ti z nás, kterým v srdci hoří Innosův oheň, přinesou do světa jeho Světlo a zaženou temnotu.
@@ -306,7 +306,7 @@ func void DIA_Marduk_Kap3_Hello_DJG()
 {
 	AI_Output(other,self,"DIA_Marduk_Kap3_Hello_DJG_15_00");	//Přišel jsem ze statků.
 	AI_Output(self,other,"DIA_Marduk_Kap3_Hello_DJG_05_01");	//Tak tě teda ve jméně naší pohostinnosti vítám. Doufám, že jí patřičně oceníš.
-	AI_Output(self,other,"DIA_Marduk_Kap3_Hello_DJG_05_02");	//Nezneužívej svou pozici hoste, jinak budeš mít veliké problémy.
+	AI_Output(self,other,"DIA_Marduk_Kap3_Hello_DJG_05_02");	//Nezneužívej svou pozici hosta, jinak budeš mít veliké problémy.
 	Info_ClearChoices(DIA_Marduk_Kap3_Hello);
 };
 
@@ -397,7 +397,7 @@ func void DIA_Marduk_SwordBlessing_Info()
 	AI_Output(self,other,"DIA_Marduk_SwordBlessing_05_01");	//Pokud jsi rozhodnout podstoupit tento krok, nejprve potřebuješ magickou čepel.
 	AI_Output(self,other,"DIA_Marduk_SwordBlessing_05_02");	//Pak bys měl jít do kaple a pomodlit se.
 	AI_Output(self,other,"DIA_Marduk_SwordBlessing_05_03");	//Při modlitbě a po rozumném daru, bys měl žádat o jeho přízeň a vedení v boji proti Zlu.
-	AI_Output(self,other,"DIA_Marduk_SwordBlessing_05_04");	//Pokud ti bude Innos nakloněný, od toho momentu bude tvůj meč bude zasvěcen Pánovi.
+	AI_Output(self,other,"DIA_Marduk_SwordBlessing_05_04");	//Pokud ti bude Innos nakloněný, od toho momentu bude tvůj meč zasvěcen Pánovi.
 	Info_ClearChoices(DIA_Marduk_SwordBlessing);
 	Info_AddChoice(DIA_Marduk_SwordBlessing,Dialog_Back,DIA_Marduk_SwordBlessing_Back);
 	Info_AddChoice(DIA_Marduk_SwordBlessing,"Co by mělo být tím darem?",DIA_Marduk_SwordBlessing_Donation);
@@ -518,7 +518,7 @@ func void DIA_Marduk_Kap3_PERM_Murderer()
 func void DIA_Marduk_Kap3_PERM_thief()
 {
 	AI_Output(other,self,"DIA_Marduk_Kap3_PERM_thief_15_00");	//Kde je teď ten zloděj?
-	AI_Output(self,other,"DIA_Marduk_Kap3_PERM_thief_05_01");	//Nevím, vyletěl z brány jako posednutý a pak zmizl.
+	AI_Output(self,other,"DIA_Marduk_Kap3_PERM_thief_05_01");	//Nevím, vyletěl z brány jako posednutý a pak zmizel.
 	AI_Output(self,other,"DIA_Marduk_Kap3_PERM_thief_05_02");	//Nezáleží na tom, kam se skryje, Innosův hněv ho zasáhne a spálí jeho temnou duši.
 };
 
@@ -666,12 +666,12 @@ func void dia_marduk_canteacharmor_info()
 	AI_Output(self,other,"DIA_Marduk_CanTeachArmor_01_08");	//Posvěcení zbroje – nejsvatější paladinský rituál... A zvládnou ho jenom ti nejlepší.
 	AI_Output(self,other,"DIA_Marduk_CanTeachArmor_01_10");	//V tomto rituálu zbrojí prochází energie a moudrost Innose, která ho naplní sílou a dodá mu božskou podstatu!
 	AI_Output(self,other,"DIA_Marduk_CanTeachArmor_01_12");	//Poté si zbroj nemůžeš jednoduše sundat, protože když tak uděláš, zemřeš!
-	AI_Output(other,self,"DIA_Marduk_CanTeachArmor_01_15");	//A co je potřebné na to, abych se stal jedním z Vyvoleních?
+	AI_Output(other,self,"DIA_Marduk_CanTeachArmor_01_15");	//A co je potřebné na to, abych se stal jedním z Vyvolených?
 	AI_Output(self,other,"DIA_Marduk_CanTeachArmor_01_16");	//Nic! Innos si sám zvolí, kdo je hodný jeho daru a kdo ne...
 	AI_Output(other,self,"DIA_Marduk_CanTeachArmor_01_17");	//A co potřebuji, když chci vykonat tenhle rituál?
-	AI_Output(self,other,"DIA_Marduk_CanTeachArmor_01_19");	//Rudná paladinská zbroj je na začátek potřebné – nezáleží na tom, která.
+	AI_Output(self,other,"DIA_Marduk_CanTeachArmor_01_19");	//Rudná paladinská zbroj je na začátek potřebná – nezáleží na tom, která.
 	AI_Output(self,other,"DIA_Marduk_CanTeachArmor_01_20");	//Pak bys měl přijít do kaple, ale nejprve by sis měl nastudovat modlitbu Vyvolených.
-	AI_Output(self,other,"DIA_Marduk_CanTeachArmor_01_21");	//Pří modlení a po odevzdání daru, bys měl Innosa požádat o přízeň a vedení v boji se Zlem.
+	AI_Output(self,other,"DIA_Marduk_CanTeachArmor_01_21");	//Pří modlení a po odevzdání daru, bys měl Innose požádat o přízeň a vedení v boji se Zlem.
 	AI_Output(self,other,"DIA_Marduk_CanTeachArmor_01_22");	//Když se Innos rozhodne, že jsi hoden jeho daru, sešle na tebe svou dobrou vůli a posvětí tvou zbroj.
 	AI_Output(other,self,"DIA_Marduk_CanTeachArmor_01_24");	//A jak Innos zjistí, zda jsem hoden?
 	AI_Output(self,other,"DIA_Marduk_CanTeachArmor_01_25");	//Modli se k němu a možná tě vyslyší.
@@ -776,7 +776,7 @@ func void dia_marduk_trevius_info()
 	AI_Output(self,other,"DIA_Marduk_TREVIUS_01_06");	//On se zabýval studiem magických formulí, které zůstali po Xardasovi v klášteře.
 	AI_Output(self,other,"DIA_Marduk_TREVIUS_01_07");	//Je už příliš dlouho pryč, a obávám se, že už ho živého neuvidíme. Najdi ho a najdeš i rukopisy.
 	AI_Output(self,other,"DIA_Marduk_TREVIUS_01_08");	//A prosím tě, informuj mě co se stalo s Treviusem! To je vše, jdi...
-	B_LogEntry(TOPIC_XARDASNDMTASKSONE,"Aspoň, že se mezi těmi arogantní mágy našel ještě rozumný člověk. Marduk mi řekl, že rukopis Xardase studoval mág Trevius. Ale někam zmizel...");
+	B_LogEntry(TOPIC_XARDASNDMTASKSONE,"Alespoň, že se mezi těmi arogantními mágy našel ještě rozumný člověk. Marduk mi řekl, že rukopis Xardase studoval mág Trevius. Ale někam zmizel...");
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(KDF_512_Trevius,"NW_FARM2_TAVERNCAVE1_02");
 	B_KillNpc(KDF_512_Trevius);
@@ -805,7 +805,7 @@ func void dia_marduk_trevius1_info()
 {
 	B_GivePlayerXP(50);
 	AI_Output(self,other,"DIA_Marduk_TREVIUS1_01_00");	//Co víš o Treviusovi?
-	AI_Output(other,self,"DIA_Marduk_TREVIUS1_01_01");	//Ano, je mrtvý. Našel jsem ho v blízkosti podivného kámene v západních lesích.
+	AI_Output(other,self,"DIA_Marduk_TREVIUS1_01_01");	//Ano, je mrtvý. Našel jsem ho v blízkosti podivného kamene v západních lesích.
 	AI_Output(self,other,"DIA_Marduk_TREVIUS1_01_02");	//Jak k tomu došlo... (smutně) Innos žehnej jeho duši!
 	AI_Output(self,other,"DIA_Marduk_TREVIUS1_01_03");	//Děkuji, že jsi přišel. I když jsi temný mág, nemůžu se zbavit pocitu, že jsi přišel konat dobro na tomto světě.
 	AI_Output(self,other,"DIA_Marduk_TREVIUS1_01_04");	//Vezmi si svoji odměnu a můžeš jít...
@@ -848,10 +848,10 @@ func void dia_marduk_lords_horinis_yes()
 	B_GivePlayerXP(250);
 	AI_Output(other,self,"DIA_Marduk_LORDS_HORINIS_01_05");	//To jako, že je to moje práce!
 	AI_Output(self,other,"DIA_Marduk_LORDS_HORINIS_01_06");	//Opravdu? Tak to vypadá, že nemám na výběr, než tě za tu práci odměnit.
-	AI_Output(self,other,"DIA_Marduk_LORDS_HORINIS_01_07");	//Vezmi si tohle zlato, na důkaz vděčnosti
+	AI_Output(self,other,"DIA_Marduk_LORDS_HORINIS_01_07");	//Vezmi si tohle zlato, na důkaz vděčnosti.
 	B_GiveInvItems(self,hero,ItMi_Gold,1000);
 	AI_Output(other,self,"DIA_Marduk_LORDS_HORINIS_01_08");	//To je opravdu velká částka!
-	AI_Output(self,other,"DIA_Marduk_LORDS_HORINIS_01_09");	//Zasloužíš si to. Jdi bratře a Innos s tebou, při všekeré tvém počínání.
+	AI_Output(self,other,"DIA_Marduk_LORDS_HORINIS_01_09");	//Zasloužíš si to. Jdi bratře a Innos s tebou, při veškerém tvém počínání.
 	INNOSPRAYCOUNT = INNOSPRAYCOUNT + 5;
 	AI_StopProcessInfos(self);
 };

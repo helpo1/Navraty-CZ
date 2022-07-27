@@ -56,7 +56,7 @@ func int DIA_Grimes_Hallo_Condition()
 func void DIA_Grimes_Hallo_Info()
 {
 	AI_Output(self,other,"DIA_Grimes_Hallo_05_00");	//Ty? Kdo by to byl řekl, že se znovu setkáme.
-	AI_Output(self,other,"DIA_Grimes_Hallo_05_01");	//Tak to vypadá, že oba víme, jak zustat na živu ale jak vidíš já zustal v téhle díře.
+	AI_Output(self,other,"DIA_Grimes_Hallo_05_01");	//Tak to vypadá, že oba víme, jak zůstat na živu ale jak vidíš já zůstal v téhle díře.
 	if(Grimes_First == FALSE)
 	{
 		Wld_InsertNpc(DragonSnapper,"OW_PATH_148_A");
@@ -91,7 +91,7 @@ func int DIA_Grimes_Erz_Condition()
 func void DIA_Grimes_Erz_Info()
 {
 	AI_Output(other,self,"DIA_Grimes_Erz_15_00");	//Kolik rudy už jsi vytěžil?
-	AI_Output(self,other,"DIA_Grimes_Erz_05_01");	//Několik beden. Ale nic z toho tady nezustalo.
+	AI_Output(self,other,"DIA_Grimes_Erz_05_01");	//Několik beden. Ale nic z toho tady nezůstalo.
 	AI_Output(self,other,"DIA_Grimes_Erz_05_02");	//Paladin Marcos se rozhodl vzít rudu do hradu, protože nás pořád ohrožovali skřeti.
 };
 
@@ -144,7 +144,7 @@ func int DIA_Grimes_PERM_Condition()
 func void DIA_Grimes_PERM_Info()
 {
 	AI_Output(other,self,"DIA_Grimes_PERM_15_00");	//Jak to jinak jde?
-	AI_Output(self,other,"DIA_Grimes_PERM_05_01");	//Tahle skála je zatracené nepoddajná - úplně jako by se snažila nám zabránit v získávání rudy.
+	AI_Output(self,other,"DIA_Grimes_PERM_05_01");	//Tahle skála je zatraceně nepoddajná - úplně jako by se snažila nám zabránit v získávání rudy.
 };
 
 
@@ -265,10 +265,10 @@ func void dia_grimes_learnabouterzhunt_ERZWORK()
 			if(GRIMESTEACHMOREORE == FALSE)
 			{
 				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_01");	//Dobrá, poslouchej pozorně...
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_02");	//Pro začátek je důležitý dobrý krumpáč. S ním je z poloviny máš vyhráno!
+				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_02");	//Pro začátek je důležitý dobrý krumpáč. S ním máš z poloviny vyhráno!
 				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_03");	//Pak jen vykopávej nugety ze žíly, ale kopej jen kolem nich, jinak je poškodíš.
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_04");	//Začínej z kraje žíly, slabými údermi a pak pár silnejch. Střídej více slabých úderu a jeden silnej.
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_05");	//Silným úderem poškodíš strukturu, kterou nuget vězí v žíle a slabým nuget konečne vypadne, aniž by se poškodil.
+				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_04");	//Začínej z kraje žíly, slabými údermi a pak pár silnejch. Střídej více slabých úderů a jeden silnej.
+				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_05");	//Silným úderem poškodíš strukturu, kterou nuget vězí v žíle a slabý nuget konečně vypadne, aniž by se poškodil.
 				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_06");	//A pak to opakuj jak dlouho chceš...
 				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_07");	//Tohle jsou úplné základy.
 				GRIMESTEACHMOREORE = TRUE;
@@ -315,12 +315,12 @@ func void dia_grimes_eligorpotion_info()
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_01_03");	//Stalo se to dávno, mnoho let zpátky.
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_01_04");	//Byla to vcelku událost - měl by sis to pamatovat...
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_05");	//Hmm... (zamyšleně) No, já... Hmm... (vzpomíná)
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_07");	//... No, připadá mi, že si na něco vzpomínám, ale záleží jen na tobě, naco!... (mrká okem)
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_07");	//... No, připadá mi, že si na něco vzpomínám, ale záleží jen na tobě, na co!... (mrká okem)
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_01_08");	//Slyšel jsem, že jsi do toho byl zapleten.
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_09");	//(překvapeně) Já?!
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_13");	//Dokonce ani neznám toho obchodníka!
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_01_14");	//Takže ty o tom nic nevíš?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_15");	//(sarkasticky) Vubec nic!
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_15");	//(sarkasticky) Vůbec nic!
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_01_16");	//A i kdybych něco věděl, proč bych ti to říkal?
 	Info_ClearChoices(dia_grimes_eligorpotion);
 	Info_AddChoice(dia_grimes_eligorpotion,"Protože tě zabiju, jestli mi to neřekneš!",dia_grimes_eligorpotion_kill);
@@ -340,9 +340,9 @@ func void dia_grimes_eligorpotion_kill()
 {
 	CreateInvItems(self,itke_grimkey,1);
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_Kill_01_00");	//Protože tě zabiju, jestli mi to neřekneš!
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Kill_01_01");	//Chlapče, výhružky ti nepomužou!...
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_Kill_01_01");	//Chlapče, výhružky ti nepomůžou!...
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Kill_01_02");	//Jsem už starý a stejně zemřu.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Kill_01_03");	//A když se pozorně rozhlédneš- je celkem jasný, že se odsud stěží vrátim živ.
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_Kill_01_03");	//A když se pozorně rozhlédneš - je celkem jasný, že se odsud stěží vrátím živ.
 	B_LogEntry(TOPIC_JORAHELP,"Zeptal jsem se Grimese na tu loupež u Lutera. Říká, že o tom nic neví. Neřekl mi nic víc, ani, když jsem mu hrozil smrtí. Vypadal až smutně. Musím zkusit něco jiného.");
 	AI_StopProcessInfos(self);
 };
@@ -354,8 +354,8 @@ func void dia_grimes_eligorpotion_money()
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_01");	//Ha! Ha! A na co by mi byly peníze?!
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_02");	//Na nový krumpáč?
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_04");	//Ne, chlape - peníze zde nemají cenu. (smích)
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_05");	//A navíc, jsem už stár a vím, že muj život skončí pravděpodobně v tomhle prokletém údolí.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_06");	//Odsud se už nedostanu a mužu jen čekat, než mě něco sežere!
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_05");	//A navíc, jsem už stár a vím, že můj život skončí pravděpodobně v tomhle prokletém údolí.
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_Money_01_06");	//Odsud se už nedostanu a můžu jen čekat, než mě něco sežere!
 	B_LogEntry(TOPIC_JORAHELP,"Zeptal jsem se Grimese na tu loupež u Lutera. Říká, že o tom nic neví. Nechce mi nic říci ani když jsem mu nabízel peníze - v údolí pro něj nemají cenu! Vypadal sklamaně. Teď musím vymyslet co dál.");
 	AI_StopProcessInfos(self);
 };
@@ -374,14 +374,14 @@ func void dia_grimes_eligorpotion_memory()
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_27");	//A příští ráno jsem se dozvěděl, že někdo okradl bohatého obchodníka!
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_2F");	//Mm... Takže neznáš jména těch lupičů?
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_43");	//Počkej. Rok na to jsem potkal jednoho z nich ve vězení. Byl to kopáč jako já, jmenoval se Rufus.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_44");	//Říkal, že okradli bohatého obchoníka a z jeho domu sebrali všechno, co unesli.
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_44");	//Říkal, že okradli bohatého obchodníka a z jeho domu sebrali všechno, co unesli.
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_47");	//Také říkal, že věci, které tam vzali byly velmi cenné!
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_51");	//Myslím, že to byl nějakej elixír.
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_57");	//A pak zde byla ta příhoda...
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_59");	//Co se stalo?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_60");	//Jednou v opušteném dole jeden z tunelu začal kolabovat. Stráže se snažili rychle nás odsaď dostat. Ale Rufus se vrátil zpátky!
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_60");	//Jednou v opušteném dole jeden z tunelů začal kolabovat. Stráže se snažili rychle nás odsaď dostat. Ale Rufus se vrátil zpátky!
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_67");	//Videli jsem ho jak utíka pomezi padajíci balvany.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_69");	//Skoro se dostal zpátky, když ho jeden z balvanu zasáhl přímo do hlavy. Byl na míste mrtev!
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_69");	//Skoro se dostal zpátky, když ho jeden z balvanů zasáhl přímo do hlavy. Byl na místě mrtev!
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_76");	//A co se stalo s Rufusovým elixírem?
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_77");	//Byl sebrán jedným strážcem a uložen v jeho truhle, mimo slídivých očí.
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_81");	//Ale co já vím, už dlouho se v opušteném dole nepracuje.
@@ -389,8 +389,8 @@ func void dia_grimes_eligorpotion_memory()
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_83");	//To mohli, ale nemyslím, že na to měli čas.
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_84");	//(překvapeně) Ty nevíš co se tam stalo?
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_85");	//Co myslíš?
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_89");	//Jeden kopáč narazil na divnou jeskyni, ukrytou v skale.
-	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_92");	//Několik kopáču a tři strážci se ji vydali proskoumat.
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_89");	//Jeden kopáč narazil na divnou jeskyni, ukrytou ve skále.
+	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_92");	//Několik kopáčů a tři strážci se ji vydali prozkoumat.
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_93");	//V několika minutách k nám dolehlo jen děsivé sténání.
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_99");	//Ta jeskyně byla zaplavena nemrtvými!
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_106");	//Byl to krvavý masakr... Mnoho lidí zemřelo...
@@ -398,8 +398,8 @@ func void dia_grimes_eligorpotion_memory()
 	AI_Output(other,self,"DIA_Grimes_EligorPotion_Memory_01_113");	//A nemohl bys mi ho dát?!
 	AI_Output(self,other,"DIA_Grimes_EligorPotion_Memory_01_123");	//A nač? I když, to je tvoje starost. Ale je lepší držet se od toho místa.
 	B_GiveInvItems(self,other,itke_grimkey,1);
-	B_LogEntry(TOPIC_JORAHELP,"Dostal jsem z Grimese podrobnosti o té loupeži! Grimes mi řekl historii o jistém Rufusovi a jednom lektvaru, který měl u sebe. Velmi si ho cenil, nakonec zaň položil i život. Z jeho příbehu to vyznělo, že to je Eligorův plamen.");
-	Log_AddEntry(TOPIC_JORAHELP,"Grimes kdysi kutal v Zasypaném dole. Jednou byl zával a Rufus zemřel. Stráže sebrali elixír a uzamkli ho v truhle! Když jednou prorazili kopáči do jeskyne, kde narazili na jakésy stvury, Grimes využil situace a ukradl jednomu strážci klíč. Neví od čeho je, ale dal mi ho - co já vím, možná bude od truhly s elixírem. To by bylo vážně štěstí.");
+	B_LogEntry(TOPIC_JORAHELP,"Dostal jsem z Grimese podrobnosti o té loupeži! Grimes mi řekl historii o jistém Rufusovi a jednom lektvaru, který měl u sebe. Velmi si ho cenil, nakonec zaň položil i život. Z jeho příběhu to vyznělo, že to je Eligorův plamen.");
+	Log_AddEntry(TOPIC_JORAHELP,"Grimes kdysi kutal v Zasypaném dole. Jednou byl zával a Rufus zemřel. Stráže sebrali elixír a uzamkli ho v truhle! Když jednou prorazili kopáči do jeskyně, kde narazili na jakési stvůry, Grimes využil situace a ukradl jednomu strážci klíč. Neví od čeho je, ale dal mi ho - co já vím, možná bude od truhly s elixírem. To by bylo vážně štěstí.");
 	GrimesCanEscape = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -436,7 +436,7 @@ func void dia_grimes_possecceligorpotion_info()
 		AI_Output(self,other,"DIA_Grimes_PosseccEligorPotion_01_07");	//A cos tam viděl?
 		AI_Output(other,self,"DIA_Grimes_PosseccEligorPotion_01_08");	//Byl tam démon, ale zabil jsem ho.
 		AI_Output(other,self,"DIA_Grimes_PosseccEligorPotion_01_09");	//V dole bylo i další svinstvo.
-		AI_Output(self,other,"DIA_Grimes_PosseccEligorPotion_01_15");	//Chlape, ty si hrdina!
+		AI_Output(self,other,"DIA_Grimes_PosseccEligorPotion_01_15");	//Chlape, ty jsi hrdina!
 	}
 	else
 	{
@@ -570,7 +570,7 @@ func int dia_grimes_wegotoutofhere_condition()
 
 func void dia_grimes_wegotoutofhere_info()
 {
-	AI_Output(other,self,"DIA_GRIMES_WeGotOutOfHere_15_00");	//Jsme na místě! Přes tule jeskyni se můžem dostat do Khorinisu. Prostě pojďte za mnou.
+	AI_Output(other,self,"DIA_GRIMES_WeGotOutOfHere_15_00");	//Jsme na místě! Přes tuhle jeskyni se můžem dostat do Khorinisu. Prostě pojďte za mnou.
 	AI_Output(self,other,"DIA_GRIMES_WeGotOutOfHere_01_01");	//Dobře.
 	HUNTYGRIMESESCAPEOW = TRUE;
 	Pal_219_Ritter.flags = 0;
@@ -684,7 +684,7 @@ func void dia_grimesnw_finallyintower_info()
 	AI_Output(other,self,"DIA_GRIMESNW_FinallyInTower_15_03");	//Doufám, že jsi nezapomněl na naši dohodu?
 	AI_Output(self,other,"DIA_GRIMESNW_FinallyInTower_01_04");	//To se ví, své slovo držím.
 	AI_Output(other,self,"DIA_GRIMESNW_FinallyInTower_15_05");	//Rozhlédněte se! A ještě, Za svou práci dostanete zaplaceno 35 zlatých na den?
-	AI_Output(self,other,"DIA_GRIMESNW_FinallyInTower_01_06");	//Zlaťáky! Už jsem skoro zapomněl co toje.
+	AI_Output(self,other,"DIA_GRIMESNW_FinallyInTower_01_06");	//Zlaťáky! Už jsem skoro zapomněl co to je.
 	AI_Output(self,other,"DIA_GRIMESNW_FinallyInTower_01_07");	//Ještě jednou ti děkuju.
 	B_LogEntry_Quiet(TOPIC_PPL_FOR_TOWER,"Podařilo se mě dostat kopáče Grimese a Huntyho z Hornického údolí. Nyní budou pracovat pro mě.");
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
@@ -813,7 +813,7 @@ func void dia_grimes_NW_learnabouterzhunt_ERZWORK()
 				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_01");	//Dobře! Poslouchej pozorně...
 				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_02");	//Než začneš potřebuješ dobrej krumpáč, to je půlka úspěchu.
 				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_03");	//Potom když nalezneš rudnou žílu, začni jí zpracovávat.
-				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_04");	//Udery soustřeď do středu, ne na okraje. Začni jedním silným úderem, a pak několika slabšími.
+				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_04");	//Údery soustřeď do středu, ne na okraje. Začni jedním silným úderem, a pak několika slabšími.
 				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_05");	//Tím trochu narušíš strukturu horniny. A při dalším silném úderu určitě nějaký ten kousek odpadne.
 				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_06");	//A pak nanovo...
 				AI_Output(self,other,"DIA_Grimes_LearnAboutErzHunt_01_07");	//To je to hlavní co potřebuješ vědět.

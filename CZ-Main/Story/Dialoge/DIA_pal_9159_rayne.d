@@ -79,7 +79,7 @@ func void dia_pal_9159_rayne_skladwatch_info()
 	else
 	{
 		AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladWatch_01_04");	//Velmi vtipné!
-		AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladWatch_01_05");	//Měl by sis to zkusit- abys věděl co je práce.
+		AI_Output(self,other,"DIA_Pal_9159_Rayne_SkladWatch_01_05");	//Měl by sis to zkusit - abys věděl co je práce.
 	};
 };
 
@@ -143,7 +143,7 @@ func void dia_pal_9159_rayne_help_info()
 	AI_Output(self,other,"DIA_Pal_9159_Rayne_Help_01_10");	//Jako všechno ostatní ve skladišti jsou ty poháry majetkem paladinů.
 	AI_Output(self,other,"DIA_Pal_9159_Rayne_Help_01_11");	//Takže na to zapomeň.
 	AI_Output(other,self,"DIA_Pal_9159_Rayne_Help_01_12");	//Nemůžeš udělat výjimku?
-	AI_Output(self,other,"DIA_Pal_9159_Rayne_Help_01_14");	//Poslyš - Jestli by se to Varus dozvěděl, zabil by mě.
+	AI_Output(self,other,"DIA_Pal_9159_Rayne_Help_01_14");	//Poslyš - jestli by se to Varus dozvěděl, zabil by mě.
 	AI_Output(self,other,"DIA_Pal_9159_Rayne_Help_01_15");	//Ale to ty nechápeš...
 	AI_Output(self,other,"DIA_Pal_9159_Rayne_Help_01_16");	//Kdybys mi raději pomáhal ve skladu.
 	AI_Output(self,other,"DIA_Pal_9159_Rayne_Help_01_17");	//Prostě si tu už nedokážu poradit sám!
@@ -197,7 +197,7 @@ func void dia_pal_9159_rayne_helpdone_info()
 {
 	AI_Output(other,self,"DIA_Pal_9159_Rayne_HelpDone_01_00");	//Lord Varus ti někoho pošle.
 	AI_Output(self,other,"DIA_Pal_9159_Rayne_HelpDone_01_04");	//(radostně) Díky, chlape!
-	AI_Output(self,other,"DIA_Pal_9159_Rayne_HelpDone_01_05");	//Mámli být upřímný- nijak zvláť jsem nespoléhal na tvoji pomoc.
+	AI_Output(self,other,"DIA_Pal_9159_Rayne_HelpDone_01_05");	//Mám-li být upřímný - nijak zvlášť jsem nespoléhal na tvoji pomoc.
 	if(MIS_FERDSILVERCUP == LOG_Running)
 	{
 		AI_Output(self,other,"DIA_Pal_9159_Rayne_HelpDone_01_08");	//Tady - vezmi si ten stříbrný pohár!

@@ -67,17 +67,17 @@ func int DIA_Bartok_Jaeger_Condition()
 func void DIA_Bartok_Jaeger_Info()
 {
 	AI_Output(other,self,"DIA_Bartok_Jager_15_00");	//Kde najdu ty ostatní lovce?
-	AI_Output(self,other,"DIA_Bartok_Jager_01_01");	//Tady ve městě je rozhodně nenajdeš... (usměje se) Tady jsme zústali jen já a můj přítel Trokar.
+	AI_Output(self,other,"DIA_Bartok_Jager_01_01");	//Tady ve městě je rozhodně nenajdeš... (usměje se) Tady jsme zůstali jen já a můj přítel Trokar.
 	AI_Output(self,other,"DIA_Bartok_Jager_01_02");	//Zbytek odešel do tábora poblíž Onarovy farmy, někde v půli cesty od hostince.
 	AI_Output(other,self,"DIA_Bartok_Jager_01_03");	//Co je to za tábor?!
 	AI_Output(self,other,"DIA_Bartok_Jager_01_04");	//Říkáme tomu tábor Svobodných lovců! Sám jsem ho byl několikrát navštívit... 
 	AI_Output(other,self,"DIA_Bartok_Jager_01_05");	//Jaké to tam je?
 	AI_Output(self,other,"DIA_Bartok_Jager_01_06");	//Abych řekl pravdu, tak je to dobré místo, velice přívětivé.
 	AI_Output(other,self,"DIA_Bartok_Jager_01_07");	//Potom bude nezbytné abych tábor navštívil také.
-	AI_Output(self,other,"DIA_Bartok_Jager_01_08");	//Můžeš to zkusit (usměje se) Možná se jednou staneš jedním z nich!
+	AI_Output(self,other,"DIA_Bartok_Jager_01_08");	//Můžeš to zkusit. (usměje se) Možná se jednou staneš jedním z nich!
 	AI_Output(self,other,"DIA_Bartok_Jager_01_09");	//Věř mi, od chlapů v táboře se mají ještě hodně co učit.
 	AI_Output(other,self,"DIA_Bartok_Jager_01_10");	//Co mám teda udělat?
-	AI_Output(self,other,"DIA_Bartok_Jager_01_11");	//Hmmm (zamyslí se) Opravdu nevím.
+	AI_Output(self,other,"DIA_Bartok_Jager_01_11");	//Hmmm. (zamyslí se) Opravdu nevím.
 	AI_Output(self,other,"DIA_Bartok_Jager_01_12");	//Ale myslím, že pro začátek by sis mohl sehnat nějakou loveckou zbroj.
 	AI_Output(self,other,"DIA_Bartok_Jager_01_13");	//V těch hadrech co máš právě na sobě by tě měli chlapi tak akorát za nějakého žebráka.
 	AI_Output(self,other,"DIA_Bartok_Jager_01_14");	//A nikdo se s tebou vůbec nezačne ani bavit.
@@ -85,7 +85,7 @@ func void DIA_Bartok_Jaeger_Info()
 	AI_Output(self,other,"DIA_Bartok_Jager_01_16");	//Vím pouze o jednom takovém místě - u obchodníka Bospera. Jedině ten má skvělé lovecké zbroje!
 	AI_Output(self,other,"DIA_Bartok_Jager_01_17");	//Pravda je, že se budeš muset možná stát jedním z jeho poskoků.
 	AI_Output(self,other,"DIA_Bartok_Jager_01_18");	//Neprodává své zbroje jen tak.
-	AI_Output(self,other,"DIA_Bartok_Jager_01_19");	//Ale když se u nej zaměstnáš, tak máš zbroj prakticky v rucích. Já svou získal stejně.
+	AI_Output(self,other,"DIA_Bartok_Jager_01_19");	//Ale když se u něj zaměstnáš, tak máš zbroj prakticky v rucích. Já svou získal stejně.
 	AI_Output(self,other,"DIA_Bartok_Jager_01_20");	//Takže, myslím, že víš co máš dělat.
 };
 
@@ -166,8 +166,8 @@ func int dia_addon_bartok_findtrokar_condition()
 func void dia_addon_bartok_findtrokar_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Addon_Bartok_FindTrokar_01_00");	//Mám pro tebe špatné zprávy
-	AI_Output(self,other,"DIA_Addon_Bartok_FindTrokar_01_01");	//Jakou?! Co se stalo?
+	AI_Output(other,self,"DIA_Addon_Bartok_FindTrokar_01_00");	//Mám pro tebe špatné zprávy.
+	AI_Output(self,other,"DIA_Addon_Bartok_FindTrokar_01_01");	//Jaké?! Co se stalo?
 	AI_Output(other,self,"DIA_Addon_Bartok_FindTrokar_01_02");	//Opravdu si nepřeji tě naštvat, ale tvůj přítel Trokar už se nikdy nevrátí.
 	AI_Output(self,other,"DIA_Addon_Bartok_FindTrokar_01_03");	//Cože? Proč?!
 	AI_Output(other,self,"DIA_Addon_Bartok_FindTrokar_01_04");	//Jednoduše... Zemřel.
@@ -455,7 +455,7 @@ func void DIA_Bartok_Zusammen_Info()
 	{
 		AI_Output(other,self,"DIA_Bartok_Zusammen_15_07");	//Ne.
 		AI_Output(self,other,"DIA_Bartok_Zusammen_04_08");	//V tom případě to za to nestojí.
-		AI_Output(self,other,"DIA_Bartok_Zusammen_04_09");	//Vrať se až budeš něco umět
+		AI_Output(self,other,"DIA_Bartok_Zusammen_04_09");	//Vrať se až budeš něco umět.
 	};
 };
 
@@ -506,7 +506,7 @@ func void DIA_Bartok_HuntNOW_Info()
 {
 	AI_Output(other,self,"DIA_Bartok_HuntNOW_15_00");	//Jdeme na lov!
 	AI_Output(self,other,"DIA_Bartok_HuntNOW_GO_04_01");	//Dobrá, pojď za mnou. Venku za jižní bránou je les, kde se dá tý havěti najít víc než dost.
-	AI_Output(self,other,"DIA_Bartok_HuntNOW_GO_04_02");	//(pro sebe) Možná víc, než by nám mohlo líbit.
+	AI_Output(self,other,"DIA_Bartok_HuntNOW_GO_04_02");	//(pro sebe) Možná víc, než by se nám mohlo líbit.
 	Bartok_Los = TRUE;
 	AI_StopProcessInfos(self);
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
@@ -653,7 +653,7 @@ func void DIA_Bartok_PERM_Info()
 	}
 	else if(Bartok_Ende == TRUE)
 	{
-		AI_Output(self,other,"DIA_Bartok_PERM_04_01");	//Jo, ale za brány města už mě nikdy nikdo nedostane - alespoň ne v dohldné době.
+		AI_Output(self,other,"DIA_Bartok_PERM_04_01");	//Jo, ale za brány města už mě nikdy nikdo nedostane - alespoň ne v dohledné době.
 
 		if(Bartok_OrkGesagt == TRUE)
 		{
@@ -709,14 +709,14 @@ func void DIA_Bartok_HuntCamp_Info()
 	AI_Output(other,self,"DIA_Bartok_HuntCamp_01_06");	//Nooo... co takhle se připojit k ostatním lovcům a ne jen vysedávat?
 	AI_Output(other,self,"DIA_Bartok_HuntCamp_01_07");	//Rád lovíš?
 	AI_Output(self,other,"DIA_Bartok_HuntCamp_01_08");	//Jasně, je to moje oblíbená činnost.
-	AI_Output(other,self,"DIA_Bartok_HuntCamp_01_09");	//Tak o to víc by ses k nim měl připojit. Falka zrovna hledá nové lidi.
+	AI_Output(other,self,"DIA_Bartok_HuntCamp_01_09");	//Tak o to víc by ses k nim měl připojit. Falk zrovna hledá nové lidi.
 	AI_Output(self,other,"DIA_Bartok_HuntCamp_01_11");	//Och, já na ně úplně zapomněl.
 	AI_Output(self,other,"DIA_Bartok_HuntCamp_01_12");	//Hmmm... alespoň nebudu muset lovit sám.
 	AI_Output(self,other,"DIA_Bartok_HuntCamp_01_13");	//Takže říkáš, že potřebují nové lidi?
-	AI_Output(other,self,"DIA_Bartok_HuntCamp_01_14");	//Jěsli mi nevěříš, choď se zeptat Falky sám.
-	AI_Output(self,other,"DIA_Bartok_HuntCamp_01_15");	//Jěsli je to tak, možná bych měl tvou ponuku zvážit.
+	AI_Output(other,self,"DIA_Bartok_HuntCamp_01_14");	//Jěstli mi nevěříš, jdi se zeptat Falka sám.
+	AI_Output(self,other,"DIA_Bartok_HuntCamp_01_15");	//Jěstli je to tak, možná bych měl tvou nabídku zvážit.
 	AI_Output(other,self,"DIA_Bartok_HuntCamp_01_16");	//No ták... A pohni si, nebo si najdu někoho jiného.
-	B_LogEntry(TOPIC_NewHunters,"Přsvědčil jsem Bartoka aby se mnou šel do tábora lovců.");
+	B_LogEntry(TOPIC_NewHunters,"Přesvědčil jsem Bartoka aby se mnou šel do tábora lovců.");
 	BartokBecameHunt = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"GoHuntCamp");

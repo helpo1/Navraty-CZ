@@ -167,7 +167,7 @@ func void dia_orc_8566_urhan_paladincost_info()
 	AI_Output(self,other,"DIA_Orc_8566_UrHan_PaladinCost_01_04");	//Osvobodit lidi?! Arrgh... Hag-Tar neví jak bys jej přinutil pustit lidi.
 	AI_Output(self,other,"DIA_Orc_8566_UrHan_PaladinCost_01_05");	//Já lidi vždy jen zabíjím nebo k jídlu! Nikdy nepouštím - jen zabíjím.
 	AI_Output(other,self,"DIA_Orc_8566_UrHan_PaladinCost_01_06");	//Tak proč jsi je ještě nezabil? Na co čekáš?
-	AI_Output(self,other,"DIA_Orc_8566_UrHan_PaladinCost_01_07");	//(zamyšleně) Hmm... Hag-Tar je ještě potřebuje! říkal to šaman.
+	AI_Output(self,other,"DIA_Orc_8566_UrHan_PaladinCost_01_07");	//(zamyšleně) Hmm... Hag-Tar je ještě potřebuje! Říkal to šaman.
 	AI_Output(self,other,"DIA_Orc_8566_UrHan_PaladinCost_01_08");	//Nyní je zabít nemůžu - musím počkat.
 	AI_Output(self,other,"DIA_Orc_8566_UrHan_PaladinCost_01_11");	//Co člověk může vyměnit za jejich svobodu?!
 	if(MIS_NEWSSURVIVERS == LOG_Running)
@@ -517,7 +517,7 @@ func void dia_orc_8566_urhan_killurtralldone_info()
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Orc_8566_UrHan_KillUrTrallDone_01_01");	//Nyní se můžeš stát vůdcem.
 	AI_Output(self,other,"DIA_Orc_8566_UrHan_KillUrTrallDone_01_02");	//Hmm... Člověk opravdu porazil Ur-Thralla?!
-	AI_Output(other,self,"DIA_Orc_8566_UrHan_KillUrTrallDone_01_03");	//Už to tak bude, takdy je důkaz mých slov.
+	AI_Output(other,self,"DIA_Orc_8566_UrHan_KillUrTrallDone_01_03");	//Už to tak bude, tady je důkaz mých slov.
 	B_GiveInvItems(other,self,itmi_orcmaintotem,1);
 	AI_Output(other,self,"DIA_Orc_8566_UrHan_KillUrTrallDone_01_04");	//Myslím, že by to mělo stačit.
 	AI_Output(self,other,"DIA_Orc_8566_UrHan_KillUrTrallDone_01_05");	//GAR TAGAN SAKH!... Totem síly! Nevěřím svým očím...
@@ -532,7 +532,7 @@ func void dia_orc_8566_urhan_killurtralldone_info()
 	CANFREEPALADIN = TRUE;
 	MIS_KILLURTRALL = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_KILLURTRALL,LOG_SUCCESS);
-	B_LogEntry(TOPIC_KILLURTRALL,"Zabil jsem Ur-Thralls a dal totem síly Hag-Tarovi - ten teď pustil paladiny!");
+	B_LogEntry(TOPIC_KILLURTRALL,"Zabil jsem Ur-Thralla a dal totem síly Hag-Tarovi - ten teď pustil paladiny!");
 	if(MIS_NEWSSURVIVERS == LOG_Running)
 	{
 		B_LogEntry(TOPIC_NEWSSURVIVERS,"Paladinové jsou volní, měl bych za nima zajít.");

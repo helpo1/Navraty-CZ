@@ -331,7 +331,7 @@ func void dia_kreol_hello_kill()
 	else
 	{
 		AI_Output(self,other,"DIA_Kreol_Hello_14_22");	//Vyzvat mě, jednoho z vyvolených Beliara, to je tvůj poslední omyl.
-		AI_Output(self,other,"DIA_Kreol_Hello_14_23");	//Nyní zemřeš a temnému pánu budeš sloužit i po smerti!
+		AI_Output(self,other,"DIA_Kreol_Hello_14_23");	//Nyní zemřeš a temnému pánu budeš sloužit i po smrti!
 		AI_Output(self,other,"DIA_Kreol_Hello_14_24");	//Zemři, ubohý červe!
 	};
 	AI_ReadyMeleeWeapon(other);
@@ -674,7 +674,7 @@ func void dia_kreol_xardasmiss_info()
 	AI_Output(self,other,"DIA_Kreol_XardasMiss_01_01");	//Cože?! Co to zkouší?
 	AI_Output(other,self,"DIA_Kreol_XardasMiss_01_02");	//Myslím, že víš kam zmizel.
 	AI_Output(self,other,"DIA_Kreol_XardasMiss_01_03");	//To možná ano...
-	AI_Output(self,other,"DIA_Kreol_XardasMiss_01_04");	//... ale je zajímavé PROč zmizel...
+	AI_Output(self,other,"DIA_Kreol_XardasMiss_01_04");	//... ale je zajímavé PROČ zmizel...
 	KreolBuyWeap = TRUE;
 
 	if(KREOL_MYTEACHER == FALSE)
@@ -686,7 +686,7 @@ func void dia_kreol_xardasmiss_info()
 		AI_Output(self,other,"DIA_Kreol_XardasMiss_01_20");	//Doufám, že nebudu litovat.
 		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_08");	//A ještě něco, když už jsi mým učněm vem si tenhle prsten.
 		B_GiveInvItems(self,other,ITRI_KREOLPLACE,1);
-		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_09");	//Umožní ti dostat se do této věže rychleji než si umíš predstavit.
+		AI_Output(self,other,"DIA_Xardas_CanBeNecromOk_Yes_01_09");	//Umožní ti dostat se do této věže rychleji než si umíš představit.
 		AI_Output(self,other,"DIA_Kreol_XardasMiss_01_21");	//Teď jdi a dělej něco užitečného!
 		Log_CreateTopic(TOPIC_ADDON_DMTTEACHER,LOG_NOTE);
 		B_LogEntry(TOPIC_ADDON_DMTTEACHER,"Creol mě bude učit tvorbě run, kruhům magie a pomůže mi navýšit mou zásobu many.");
@@ -831,7 +831,7 @@ func void dia_kreol_trade_info()
 		CreateInvItems(self,ItBE_Addon_KDF_03,1);
 		KREOL_ITEMSGIVEN_CHAPTER_5 = TRUE;
 	};
-	if((Kapitel == 6) && (KREOL_ITEMSGIVEN_CHAPTER_6 == FALSE))
+	if((Kapitel >= 6) && (KREOL_ITEMSGIVEN_CHAPTER_6 == FALSE))
 	{
 		CreateInvItems(self,ItMi_RuneBlank,2);
 		CreateInvItems(self,ItSc_SumGobSkel,5);
@@ -1399,7 +1399,7 @@ func void dia_kreol_finddarksoul_info()
 {
 	AI_Output(other,self,"DIA_Kreol_FindDarkSoul_01_00");	//Říkají ti něco slova Mora Ulartu?
 	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_01");	//Hmm... (zaskočen) Odkud je znáš?!
-	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_03");	//Hmm!... (udiveně) Nevím toho moc, ale co vím ti zkusím vysvětlit...
+	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_03");	//Hmm... (udiveně) Nevím toho moc, ale co vím ti zkusím vysvětlit...
 	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_05");	//Co já vím, Mora Ulartu je velmi staré a mocné kouzlo. Někdy je nazýváno Bludiště Duší.
 	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_06");	//Bylo stvořeno v pradávných časech spolu s naším světem.
 	AI_Output(self,other,"DIA_Kreol_FindDarkSoul_01_07");	//Není jisté jak se dostalo do světa, ale je jisté, že ho sem dostal Beliar!
@@ -1908,10 +1908,10 @@ func int DIA_KREOL_Kill_Pals_condition()
 func void DIA_KREOL_Kill_Pals_info()
 {
 	AI_Output(other,self,"DIA_KREOL_Kill_Pals_01_01");	//Mohl bych udělat něco pro Temného boha?
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_02");	//(arogantne) Zeptej se ho sám. Ale mně by se pomoc hodila!
+	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_02");	//(arogantně) Zeptej se ho sám. Ale mně by se pomoc hodila!
 	AI_Output(other,self,"DIA_KREOL_Kill_Pals_01_03");	//A s čím?
 	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_04");	//Jde o to, že jsem sa rozhodl skusit jeden temný rituál.
-	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_05");	//Ale nanešťestí jsem zjistil, že na to nemám dost materiálu.
+	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_05");	//Ale naneštěstí jsem zjistil, že na to nemám dost materiálu.
 	AI_Output(other,self,"DIA_KREOL_Kill_Pals_01_06");	//Jakého materiálu?
 	AI_Output(self,other,"DIA_KREOL_Kill_Pals_01_07");	//Nic speciálního. Jenom čerstvé lidské maso!
 	AI_Output(other,self,"DIA_KREOL_Kill_Pals_01_08");	//A tomu ríkáš nic speciálního?
@@ -2098,7 +2098,7 @@ func void DIA_Kreol_MonasterySecret_info()
 	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_06");	//Našel jsem ho ve věži Amon Shen.
 	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_07");	//Ve staré věži nekromanta Nergala?!
 	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_08");	//Ne dělám si legraci.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_09");	//Takže ten blázen snil o získání tohoto artefaktu již do konce svích dní!
+	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_09");	//Takže ten blázen snil o získání tohoto artefaktu již do konce svých dní!
 	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_10");	//Mluvíš o něčem, co dokáže kontrolovat živého draka?
 	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_11");	//Přesně tak!
 	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_12");	//A co o něm víš?
@@ -2106,7 +2106,7 @@ func void DIA_Kreol_MonasterySecret_info()
 	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_14");	//Čaroděj, co tento artefakt vytvořil, ho před smrtí rozlomil na čtyři části a ty schoval někde na ostrově.
 	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_15");	//A odkud to všechno víš?
 	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_16");	//Jednu část totiž mám! Ale ty ji nikdy nedostaneš, o tom ani nesni.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_17");	//Navíc bez ostaních částí je to jen kus kovu, nic víc.
+	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_17");	//Navíc bez ostatních částí je to jen kus kovu, nic víc.
 	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_18");	//A pokud bych ti přinesl ostatní kousky?
 	AI_Output(self,other,"DIA_Kreol_MonasterySecret_01_19");	//Pak se k tomu můžeme vrátit. Jasně?
 	AI_Output(other,self,"DIA_Kreol_MonasterySecret_01_20");	//Dobře.
@@ -2164,7 +2164,7 @@ func void DIA_Kreol_MonasterySecret_Done_info()
 	AI_Output(other,self,"DIA_Kreol_MonasterySecret_Two_01_18");	//Ale jestli se mi povede setkat se s drakem, jak obnovím tento artefakt?
 	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_19");	//Jsi tvrdohlavý jako osel! Ale jestli si myslíš, že máš šanci nějakého draka ještě potkat...
 	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_20");	//... tak jenom spoj všechny části žezla do kopy a vlož tam oko.
-	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_21");	//Síla žezla obnoví oko a pak bude možné ho používať.
+	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_21");	//Síla žezla obnoví oko a pak bude možné ho používat.
 	AI_Output(other,self,"DIA_Kreol_MonasterySecret_Two_01_22");	//Dobře, co s okem je mi jasné, ale co kosti?
 	AI_Output(self,other,"DIA_Kreol_MonasterySecret_Two_01_23");	//Na dokončení žezla budeš potřebovat čtyři dračí lebky. Přinejmenším!
 	MIS_MonasterySecret = LOG_SUCCESS;
@@ -2207,15 +2207,15 @@ func void DIA_Kreol_Sleeper_info()
 	AI_Output(self,other,"DIA_Kreol_Sleeper_01_07");	//Všechen můj dlouholetý výzkum teď nestačí ani na vytírání prdele!
 	AI_Output(other,self,"DIA_Kreol_Sleeper_01_08");	//Mýlíš se! Spáč se vrátil. To sis nevšiml? A prý že mocný mág...
 	AI_Output(self,other,"DIA_Kreol_Sleeper_01_09");	//(nadšeně) Cože?! A jak se o tom dověděl takovej mizera jako ty?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_10");	//Protože já jsem ten mistní idiot, který ho nějakou blbou náhodou vypudil z nášho světa.
+	AI_Output(other,self,"DIA_Kreol_Sleeper_01_10");	//Protože já jsem ten místní idiot, který ho nějakou blbou náhodou vypudil z nášho světa.
 	AI_Output(self,other,"DIA_Kreol_Sleeper_01_11");	//Ty?! (dlouhý upřímený pohled) I když připouštím...
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_12");	//... Pokud si dokázal porazit avatar samotného Beliara, pak je možné, že bys měl nejakou šanci i se Spáčem.
+	AI_Output(self,other,"DIA_Kreol_Sleeper_01_12");	//... Pokud si dokázal porazit avatara samotného Beliara, pak je možné, že bys měl nějakou šanci i se Spáčem.
 	AI_Output(other,self,"DIA_Kreol_Sleeper_01_13");	//Ale co s ním mám dělat teď?
-	AI_Output(other,self,"DIA_Kreol_Sleeper_01_14");	//Možná že tak mocný temný mág jako si ty, Beliarův vyvolený... by mi věděl poradit jak na něj tentokrát. A jelikož nevím, kde je teď Xardas, přišel jsem za tebou. 
+	AI_Output(other,self,"DIA_Kreol_Sleeper_01_14");	//Možná že tak mocný temný mág jako jsi ty, Beliarův vyvolený... by mi věděl poradit jak na něj tentokrát. A jelikož nevím, kde je teď Xardas, přišel jsem za tebou. 
 	AI_Output(self,other,"DIA_Kreol_Sleeper_01_15");	//(dlouhý nepříjemný vražedný pohled) A co ti brání vypudit ho znovu?
 	AI_Output(other,self,"DIA_Kreol_Sleeper_01_16");	//Jeho magie! Přivádí mě do šílenství.
 	AI_Output(self,other,"DIA_Kreol_Sleeper_01_17");	//No ovšem. Co tě na tom překvapuje?
-	AI_Output(self,other,"DIA_Kreol_Sleeper_01_18");	//Nakonec, jseš jenom místní idiot, smrtelník! A on je jedním z démonů od počátku času.
+	AI_Output(self,other,"DIA_Kreol_Sleeper_01_18");	//Nakonec, jsi jenom místní idiot, smrtelník! A on je jedním z démonů od počátku času.
 	AI_Output(other,self,"DIA_Kreol_Sleeper_01_19");	//Poradíš mi, nebo ne?
 	AI_Output(self,other,"DIA_Kreol_Sleeper_01_20");	//Meh. Tak třeba jo. Uděláme obchod.
 	AI_Output(self,other,"DIA_Kreol_Sleeper_01_21");	//Já ti řeknu, jak zabránit jeho mentálním útokům a ty mi na oplátku přineseš jeho srdce!
@@ -2327,14 +2327,14 @@ func void DIA_Kreol_Sleeper_Adanos()
 func void DIA_Kreol_Sleeper_Sword()
 {
 	AI_Output(other,self,"DIA_Kreol_Sleeper_Sword_01_01");	//Mám meč Pána Draků!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_02");	//Hmmm... (zamyšleně) Zaujímavá věc, ale nemyslím si, že to bude Eligora zajímavat.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_03");	//Zkus neco jiného.
+	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_02");	//Hmmm... (zamyšleně) Zajímavá věc, ale nemyslím si, že to bude Eligora zajímat.
+	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_03");	//Zkus něco jiného.
 	EligorNoSword = TRUE;
 };
 
 func void DIA_Kreol_Sleeper_Bow()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Bow_01_01");	//Mám luk Barva smrti!
+	AI_Output(other,self,"DIA_Kreol_Sleeper_Bow_01_01");	//Mám luk Barva Smrti!
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Bow_01_02");	//Ne, to není ono.
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Bow_01_03");	//Potřebuješ něco skutečně hodnotného, abys zaujal Eligora.
 	EligorNoBow = TRUE;
@@ -2342,7 +2342,7 @@ func void DIA_Kreol_Sleeper_Bow()
 
 func void DIA_Kreol_Sleeper_Staff()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Staff_01_01");	//Mám Hasitele Duší!
+	AI_Output(other,self,"DIA_Kreol_Sleeper_Staff_01_01");	//Mám hůl Hasitele Duší!
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Staff_01_02");	//A naco to bude pánovi démonů?
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Staff_01_03");	//Pořádně se zamysli předtím, než mu nabídneš nějaký odpad.
 	EligorNoStaff = TRUE;
@@ -2439,7 +2439,7 @@ func void DIA_Kreol_Sleeper_Again_info()
 func void DIA_Kreol_Sleeper_Again_No()
 {
 	AI_Output(other,self,"DIA_Kreol_Sleeper_No_01_01");	//Bohužel nic, co by stálo za řeč.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_No_01_02");	//Tak potom sa nemáme o čom baviť! Zase márniš moj čas!
+	AI_Output(self,other,"DIA_Kreol_Sleeper_No_01_02");	//Pak sa nemáme o čem bavit! Zase marníš můj čas!
 	CanTellSleeperAgain = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -2499,14 +2499,14 @@ func void DIA_Kreol_Sleeper_Again_Adanos()
 func void DIA_Kreol_Sleeper_Again_Sword()
 {
 	AI_Output(other,self,"DIA_Kreol_Sleeper_Sword_01_01");	//Mám meč Pána Draků!
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_02");	//Hmmm... (zamyšleně) Zaujímavá věc, ale nemyslím si, že to bude Eligora zajímavat.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_03");	//Zkus neco jiného.
+	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_02");	//Hmmm... (zamyšleně) Zajímavá věc, ale nemyslím si, že to bude Eligora zajímat.
+	AI_Output(self,other,"DIA_Kreol_Sleeper_Sword_01_03");	//Zkus něco jiného.
 	EligorNoSword = TRUE;
 };
 
 func void DIA_Kreol_Sleeper_Again_Bow()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Bow_01_01");	//Mám luk Barva smrti!
+	AI_Output(other,self,"DIA_Kreol_Sleeper_Bow_01_01");	//Mám luk Barva Smrti!
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Bow_01_02");	//Ne, to není ono.
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Bow_01_03");	//Potřebuješ něco skutečně hodnotného, abys zaujal Eligora.
 	EligorNoBow = TRUE;
@@ -2514,7 +2514,7 @@ func void DIA_Kreol_Sleeper_Again_Bow()
 
 func void DIA_Kreol_Sleeper_Again_Staff()
 {
-	AI_Output(other,self,"DIA_Kreol_Sleeper_Staff_01_01");	//Mám Hasitele Duší!
+	AI_Output(other,self,"DIA_Kreol_Sleeper_Staff_01_01");	//Mám hůl Hasitele Duší!
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Staff_01_02");	//A naco to bude pánovi démonů?
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Staff_01_03");	//Pořádně se zamysli předtím, než mu nabídneš nějaký odpad.
 	EligorNoStaff = TRUE;
@@ -2585,7 +2585,7 @@ func void DIA_Kreol_Sleeper_MaskTrade_info()
 	AI_Output(self,other,"DIA_Kreol_Sleeper_MaskTrade_01_06");	//Použi magický pentagram pro rituál vyvolání.
 	AI_Output(self,other,"DIA_Kreol_Sleeper_MaskTrade_01_07");	//Zbytek ti řekne už Eligor osobně.
 	AI_Output(other,self,"DIA_Kreol_Sleeper_MaskTrade_01_08");	//Ale řekls, že...
-	AI_Output(self,other,"DIA_Kreol_Sleeper_MaskTrade_01_09");	//Dost hloupých otázek! Jdi a nezapomeň mi pňinést Spáčovo srdce až ho zabiješ.
+	AI_Output(self,other,"DIA_Kreol_Sleeper_MaskTrade_01_09");	//Dost hloupých otázek! Jdi a nezapomeň mi přinést Spáčovo srdce až ho zabiješ.
 	ReadyToSumEligor = TRUE;
 	B_LogEntry(TOPIC_SLEEPERBACK,"Creol mi dal magickou runu, abych mohl přivolat Eligora na tento svět. Místo k provedení rituálu je ve staré Xardasové věži.");
 	AI_StopProcessInfos(self);
@@ -2615,7 +2615,7 @@ func void DIA_Kreol_Sleeper_Dead_info()
 	AI_Output(other,self,"DIA_Kreol_Sleeper_Dead_01_01");	//Zabil jsem Spáče!
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Dead_01_02");	//Dobře. Doufám, že máš u sebe temný krystal jeho duše.
 	AI_Output(other,self,"DIA_Kreol_Sleeper_Dead_01_03");	//Na tom nezáleží! Stejně bych ti ho nedal.
-	AI_Output(self,other,"DIA_Kreol_Sleeper_Dead_01_04");	//Jseš hlupák! Tedy, sám sis zvolil svůj osud.
+	AI_Output(self,other,"DIA_Kreol_Sleeper_Dead_01_04");	//Jsi hlupák! Tedy, sám sis zvolil svůj osud.
 	AI_Output(self,other,"DIA_Kreol_Sleeper_Dead_01_05");	//Místo jeho srdce si vezmu to tvoje!
 	Info_ClearChoices(DIA_Kreol_Sleeper_Dead);
 	Info_AddChoice(DIA_Kreol_Sleeper_Dead,"Uklidni se!",DIA_Kreol_Sleeper_Dead_Ext);
@@ -2721,7 +2721,7 @@ func void DIA_Kreol_Hromanin_Yes()
 	AI_Output(self,other,"DIA_Kreol_Hromanin_Yes_01_02");	//Výborně. Tak tady nestoj a běž získat ten artefakt.
 	AI_Output(self,other,"DIA_Kreol_Hromanin_Yes_01_03");	//Jo a ještě něco...
 	AI_Output(self,other,"DIA_Kreol_Hromanin_Yes_01_04");	//Dřív než zemřeš, nech mi nějaký odkaz, kde hledat tvou mrtvolu.
-	AI_Output(self,other,"DIA_Kreol_Hromanin_Yes_01_05");	//Myslím, že z tebe bude skvělý kostlivec. Hodně toho uděláš a jseš tak akorát hloupý.
+	AI_Output(self,other,"DIA_Kreol_Hromanin_Yes_01_05");	//Myslím, že z tebe bude skvělý kostlivec. Hodně toho uděláš a jsi tak akorát hloupý.
 	AI_Output(other,self,"DIA_Kreol_Hromanin_Yes_01_06");	//Na to ani nemysli.
 	AI_Output(self,other,"DIA_Kreol_Hromanin_Yes_01_07");	//(úškleb)
 	KreolOpenHromaninSaga = TRUE;
@@ -2830,7 +2830,7 @@ func int DIA_Kreol_MAXROBE_condition()
 func void DIA_Kreol_MAXROBE_info()
 {
 	AI_Output(other,self,"DIA_Kreol_MAXROBE_01_00");	//Kde seženu lepší roucho?
-	AI_Output(self,other,"DIA_Kreol_MAXROBE_01_01");	//Jelikož ovládáš všech šest kruhů magie, jsi hoden nosit roucho velmistra Temnoty. Ale když tak na tebe koukám...
+	AI_Output(self,other,"DIA_Kreol_MAXROBE_01_01");	//Jelikož ovládáš všech šest kruhů magie, jsi hoden nosit roucho arcimága Temnoty. Ale když tak na tebe koukám...
 	AI_Output(self,other,"DIA_Kreol_MAXROBE_01_02");	//(úškleb) Jelikož nejsem charita, budeš za něj muset zaplatit.
 	AI_Output(other,self,"DIA_Kreol_MAXROBE_01_03");	//Rozumím.
 	LastRobeKDM = TRUE;

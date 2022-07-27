@@ -123,7 +123,7 @@ func void DIA_Addon_Brandon_WannaLearn_Info()
 	B_LogEntry(Topic_Addon_PIR_Teacher,Log_Text_Addon_BrandonTeach);
 	Log_CreateTopic(TOPIC_Addon_BrandonBooze,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_BrandonBooze,LOG_Running);
-	Log_AddEntry(TOPIC_Addon_BrandonBooze,"Musím koupit Bradonovi drink. Pouze pak mě bude učit.");
+	Log_AddEntry(TOPIC_Addon_BrandonBooze,"Musím koupit Brandonovi drink. Pouze pak mě bude učit.");
 };
 
 
@@ -164,7 +164,7 @@ func void DIA_Addon_Brandon_HoleGrog_Info()
 		AI_Output(other,self,"DIA_Addon_Brandon_Hello_15_07");	//Ne, ještě ne.
 		AI_Output(self,other,"DIA_Addon_Brandon_HoleGrog_04_06");	//Stůj, měl si to pouze zkusit!
 	};
-	AI_Output(self,other,"DIA_Addon_Brandon_HoleGrog_04_08");	//Miluji tento Ďábelský nápoj!
+	AI_Output(self,other,"DIA_Addon_Brandon_HoleGrog_04_08");	//Miluji tento ďábelský nápoj!
 	B_LogEntry(TOPIC_Addon_BrandonBooze,"Grog není pro Brandona dost dobrý. Chce 'Rychlého sleďe'. Pouze Samuel má tento chlast.");
 };
 
@@ -194,7 +194,7 @@ func void DIA_Addon_Brandon_SchnellerHering_Info()
 	B_GiveInvItems(other,self,ItFo_Addon_SchnellerHering,1);
 	B_UseItem(self,ItFo_Addon_SchnellerHering);
 	AI_Output(self,other,"DIA_Addon_Brandon_GiveGrog_04_01");	//Á! Jde to dolů jak tekutý oheň!
-	B_LogEntry(TOPIC_Addon_BrandonBooze,"Dal jsem Bradonovi drink. Nyní mě bude rád učit.");
+	B_LogEntry(TOPIC_Addon_BrandonBooze,"Dal jsem Brandonovi drink. Nyní mě bude rád učit.");
 	MIS_Brandon_BringHering = LOG_SUCCESS;
 	B_GivePlayerXP(XP_Ambient);
 };

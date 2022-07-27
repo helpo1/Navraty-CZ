@@ -145,7 +145,7 @@ instance DIA_LARES_LI_FINDMAGICORECAVE(C_Info)
 	condition = dia_lares_li_findmagicorecave_condition;
 	information = dia_lares_li_findmagicorecave_info;
 	permanent = FALSE;
-	description = "Našel jsem jeskyni s nálezišti magické rudy.";
+	description = "Našel jsem jeskyni s nalezištěm magické rudy.";
 };
 
 
@@ -198,10 +198,10 @@ func void dia_lares_li_changecourse_info()
 	AI_Output(self,other,"DIA_Lares_LI_ChangeCourse_01_12");	//Pamatuješ si, když jsem se s tebou setkal poprvé?
 	AI_Output(other,self,"DIA_Lares_LI_ChangeCourse_01_13");	//Ano, vzpomínám. Stalo se to v Novém táboře...
 	AI_Output(self,other,"DIA_Lares_LI_ChangeCourse_01_14");	//No, takže (zvážněl) už tehdy jsem podvědomně cítil, že je v tobě něco, co tě odlišuje od ostatních lidí. A měl jsem pravdu!
-	AI_Output(self,other,"DIA_Lares_LI_ChangeCourse_01_15");	//Nejdrříve jsi zahnal Spáče a spolu s ním zničil magická bariéra. Pak jsi zastavil Ravena, čímž si mu zabránil, aby přiveld temné zlo na tento svět.
+	AI_Output(self,other,"DIA_Lares_LI_ChangeCourse_01_15");	//Nejdříve jsi zahnal Spáče a spolu s ním zničil magickou bariéru. Pak jsi zastavil Ravena, čímž si mu zabránil, aby přivedl temné zlo na tento svět.
 	AI_Output(self,other,"DIA_Lares_LI_ChangeCourse_01_16");	//A nakonec, téměř bez pomoci, to, co by se zdálo být i nad síly celé armádě paladinů - jsi zničil bytost, ve které byla soustředěna veškerá moc Temného boha!
 	AI_Output(self,other,"DIA_Lares_LI_ChangeCourse_01_17");	//Neříká tohle všechno samosebou hodně?... (sarkasticky)
-	AI_Output(self,other,"DIA_Lares_LI_ChangeCourse_01_18");	//A teď tady. Rozhodneš se vrátit zpět na Khorinisu. Upřímně řečeno, nedovedu si představit, jak tohle všechno skončí!
+	AI_Output(self,other,"DIA_Lares_LI_ChangeCourse_01_18");	//A teď tady. Rozhodneš se vrátit zpět na Khorinis. Upřímně řečeno, nedovedu si představit, jak tohle všechno skončí!
 	AI_Output(other,self,"DIA_Lares_LI_ChangeCourse_01_21");	//Mám takový pocit, že to zjistím jak dorazím do Khorinisu!
 	AI_Output(self,other,"DIA_Lares_LI_ChangeCourse_01_22");	//Máš pravdu! Vše je to jen otázka času...
 	B_LogEntry(TOPIC_CHANGECOURSE,"Laresovi je jedno, jestli se budem plavit zpět na Khorinis nebo poplujem na pevninu.");

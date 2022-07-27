@@ -840,7 +840,7 @@ func int DIA_Addon_Skip_TalkAboutElza_Condition()
 func void DIA_Addon_Skip_TalkAboutElza_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Addon_Skip_TalkAboutElza_01_00");	//Greg říkal, že si se pokoušel opravit 'Jednookou Elsu'.
+	AI_Output(other,self,"DIA_Addon_Skip_TalkAboutElza_01_00");	//Greg říkal, že ses pokoušel opravit 'Jednookou Elsu'.
 	AI_Output(self,other,"DIA_Addon_Skip_TalkAboutElza_01_01");	//Jo, zkusil. Ale bylo to k ničemu! 
 	AI_Output(other,self,"DIA_Addon_Skip_TalkAboutElza_01_02");	//Jakto?
 	AI_Output(self,other,"DIA_Addon_Skip_TalkAboutElza_01_03");	//Praskliny v trupu a velkou díru, která je na přídi lodi si můžeme opravit sami.
@@ -874,7 +874,7 @@ func void DIA_Addon_Skip_TalkAboutElza_Fix_Info()
 	AI_Output(self,other,"DIA_Addon_Skip_TalkAboutElza_Fix_01_04");	//Dobře, pokud náhodou najdeš nějakého mistra, který by pro nás chtěl pracovat, tak tady...
 	B_GiveInvItems(self,other,ItMi_ShipShceme,1);
 	AI_Output(other,self,"DIA_Addon_Skip_TalkAboutElza_Fix_01_05");	//Co to je?
-	AI_Output(self,other,"DIA_Addon_Skip_TalkAboutElza_Fix_01_06");	//Ve volné chvíli jsem načtrl podoby těch součástek, které jsou potřeba vyměnit u 'Elsy'.
+	AI_Output(self,other,"DIA_Addon_Skip_TalkAboutElza_Fix_01_06");	//Ve volné chvíli jsem načrtl podoby těch součástek, které jsou potřeba vyměnit u 'Elsy'.
 	AI_Output(self,other,"DIA_Addon_Skip_TalkAboutElza_Fix_01_07");	//Pokud by náhodou nechtěl přijít k nám do tábora, o čemž pochybuji, tak třeba bude souhlasit, že by nám je vyrobil.
 	AI_Output(self,other,"DIA_Addon_Skip_TalkAboutElza_Fix_01_08");	//O peníze se neboj. Všechny výdaje s tím spojene ti pokryju. Samozřejmě v rozumné míře.
 	AI_Output(other,self,"DIA_Addon_Skip_TalkAboutElza_Fix_01_09");	//Dobře, uvidím, co půjde dělat.
@@ -910,7 +910,7 @@ func void DIA_Addon_Skip_FixShip_Info()
 	AI_Output(self,other,"DIA_Addon_Skip_FixShip_01_04");	//Samo sebou! Hned se o to postarám.
 	AI_Output(other,self,"DIA_Addon_Skip_FixShip_01_05");	//A jak dlouho to myslíš zabere?
 	AI_Output(self,other,"DIA_Addon_Skip_FixShip_01_06");	//Hmm... no pokud se nic nepokazí, myslím, že za pár dní by to mohlo být hotové.
-	AI_Output(self,other,"DIA_Addon_Skip_FixShip_01_07");	//Hlavní je, že ty součástky, které si přinesl, sedí ke kormildlu na 'Else'. Kolik si za ně vlastně zaplatil?
+	AI_Output(self,other,"DIA_Addon_Skip_FixShip_01_07");	//Hlavní je, že ty součástky, které si přinesl, sedí ke kormidlu na 'Else'. Kolik si za ně vlastně zaplatil?
 	AI_Output(other,self,"DIA_Addon_Skip_FixShip_01_08");	//2000 zlatých.
 	AI_Output(self,other,"DIA_Addon_Skip_FixShip_01_09");	//Můj ty blázne! To je ale pěkná sumička. 
 	AI_Output(other,self,"DIA_Addon_Skip_FixShip_01_10");	//Nebylo s níma lehké smlouvat.

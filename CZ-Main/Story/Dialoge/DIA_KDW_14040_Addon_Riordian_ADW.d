@@ -505,7 +505,7 @@ instance DIA_Addon_Riordian_ADW_PreTeach(C_Info)
 	condition = DIA_Addon_Riordian_ADW_PreTeach_Condition;
 	information = DIA_Addon_Riordian_ADW_PreTeach_Info;
 	permanent = TRUE;
-	description = "Můžeš mě naučit něco z tvých schopnosti?";
+	description = "Můžeš mě naučit něco z tvých schopností?";
 };
 
 func int DIA_Addon_Riordian_ADW_PreTeach_Condition()
@@ -518,7 +518,7 @@ func int DIA_Addon_Riordian_ADW_PreTeach_Condition()
 
 func void DIA_Addon_Riordian_ADW_PreTeach_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Riordian_ADW_PreTeach_15_00");	//Můžeš mě naučit něco z tvých schopnosti?
+	AI_Output(other,self,"DIA_Addon_Riordian_ADW_PreTeach_15_00");	//Můžeš mě naučit něco z tvých schopností?
 
 	if(hero.guild == GIL_KDW)
 	{
@@ -744,27 +744,27 @@ func void dia_addon_riordian_ADW_teach_info()
 
 		if(player_talent_wispdetector[WISPSKILL_FF] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání zbraní, šípů a šipek (vyžaduje 10 kusů magické rudy).",dia_addon_riordian_ADW_teach_wispskill_ff);
+			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání zbraní, šípů a šipek (vyžaduje: 10 kusů magické rudy)",dia_addon_riordian_ADW_teach_wispskill_ff);
 		};
 		if(player_talent_wispdetector[WISPSKILL_NONE] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání zlata a různého nádobí (vyžaduje 20 kusů magické rudy).",dia_addon_riordian_ADW_teach_wispskill_none);
+			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání zlata a různého nádobí (vyžaduje: 20 kusů magické rudy)",dia_addon_riordian_ADW_teach_wispskill_none);
 		};
 		if(player_talent_wispdetector[WISPSKILL_RUNE] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání magických svitků (vyžaduje 30 kusů magické rudy).",dia_addon_riordian_ADW_teach_wispskill_rune);
+			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání magických svitků (vyžaduje: 30 kusů magické rudy)",dia_addon_riordian_ADW_teach_wispskill_rune);
 		};
 		if(player_talent_wispdetector[WISPSKILL_FOOD] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání rostlin a potravin (vyžaduje 50 kusů magické rudy).",dia_addon_riordian_ADW_teach_wispskill_food);
+			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání rostlin a potravin (vyžaduje: 50 kusů magické rudy)",dia_addon_riordian_ADW_teach_wispskill_food);
 		};
 		if(player_talent_wispdetector[WISPSKILL_MAGIC] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání magických prstenů a amuletů (vyžaduje 75 kusů magické rudy).",dia_addon_riordian_ADW_teach_wispskill_magic);
+			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání magických prstenů a amuletů (vyžaduje: 75 kusů magické rudy)",dia_addon_riordian_ADW_teach_wispskill_magic);
 		};
 		if(player_talent_wispdetector[WISPSKILL_POTIONS] == FALSE)
 		{
-			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání magických lektvarů (vyžaduje 100 kusů magické rudy).",dia_addon_riordian_ADW_teach_wispskill_potions);
+			Info_AddChoice(dia_addon_riordian_ADW_teach,"Vyhledávání magických lektvarů (vyžaduje: 100 kusů magické rudy)",dia_addon_riordian_ADW_teach_wispskill_potions);
 		};
 	}
 	else
@@ -872,7 +872,7 @@ func void DIA_Addon_Riordian_LostPower_Info()
 	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_04");	//Na základě této úvahy, zakázal dál studovat toto místo...
 	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_05");	//No, nejspíš ale jeho zákaz pro tebe neplatí...
 	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_01_06");	//Co tím myslíš?
-	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_07");	//Mohl bys to místo prozkoumat. A přinést mi něco, co by mi poskytlo důkaz týkající se spojitosti onoho místa a zdejší civilizací.
+	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_07");	//Mohl bys to místo prozkoumat. A přinést mi něco, co by mi poskytlo důkaz týkající se spojitosti onoho místa a zdejší civilizace.
 	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_08");	//Pomohlo by mi to lépe pochopit jak se zdejší civilizace rozvíjela, než toto údolí uzavřeli...
 	AI_Output(other,self,"DIA_Addon_Riordian_LostPower_01_09");	//Ale co když to místo vytvořil někdo jiný?
 	AI_Output(self,other,"DIA_Addon_Riordian_LostPower_01_10");	//Ano, je to možné. Ale vytvořili ten portál. Museli vědět kam vede.

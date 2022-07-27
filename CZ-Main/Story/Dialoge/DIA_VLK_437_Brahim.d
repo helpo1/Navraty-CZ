@@ -157,11 +157,11 @@ func void DIA_Brahim_HelpPath_Info()
 	AI_Output(self,other,"DIA_Brahim_HelpPath_01_03");	//Však to poznáš, nedávno jsem dostal objednávku na mapu celého ostrova.
 	AI_Output(self,other,"DIA_Brahim_HelpPath_01_04");	//Kupec za ni platí pěknou hromádku peněz. Skoro 500 zlatých!
 	AI_Output(self,other,"DIA_Brahim_HelpPath_01_05");	//A mně zrovna došel atrament.
-	AI_Output(self,other,"DIA_Brahim_HelpPath_01_06");	//Takže teď sedím a přemýšlím kde bych nejaký sehnal.
-	AI_Output(other,self,"DIA_Brahim_HelpPath_01_07");	//A skusils nejaký koupit?
+	AI_Output(self,other,"DIA_Brahim_HelpPath_01_06");	//Takže teď sedím a přemýšlím kde bych nějaký sehnal.
+	AI_Output(other,self,"DIA_Brahim_HelpPath_01_07");	//A skusils nějaký koupit?
 	AI_Output(self,other,"DIA_Brahim_HelpPath_01_08");	//V téhle části města atrament nikdo nemá na prodej a do horní čtvrti mě nepustí.
-	AI_Output(other,self,"DIA_Brahim_HelpPath_01_09");	//Dobře, skusím ti teda nejaký sehnat.
-	AI_Output(other,self,"DIA_Brahim_HelpPath_01_10");	//Jen tak mimochodem, kto je tou štědrou osobou, která ti platí za tu mapu?
+	AI_Output(other,self,"DIA_Brahim_HelpPath_01_09");	//Dobře, zkusím ti teda nějaký sehnat.
+	AI_Output(other,self,"DIA_Brahim_HelpPath_01_10");	//Jen tak mimochodem, kdo je tou štědrou osobou, která ti platí za tu mapu?
 	AI_Output(self,other,"DIA_Brahim_HelpPath_01_11");	//Pravdu říci, nikdy předtím jsem ho neviděl.
 	AI_Output(self,other,"DIA_Brahim_HelpPath_01_12");	//Myslím, že to bylo něco jako Goales nebo Gonsles. Moc si to nepamatuju.
 	MIS_BrahimWax = LOG_Running;
@@ -194,7 +194,7 @@ func void DIA_Brahim_HelpPath_Done_Info()
 	AI_Output(other,self,"DIA_Brahim_HelpPath_Done_01_00");	//Tady je tvůj atrament.
 	B_GiveInvItems(other,self,ItMi_Wax,1);
 	Npc_RemoveInvItems(self,ItMi_Wax,1);
-	AI_Output(self,other,"DIA_Brahim_HelpPath_Done_01_01");	//Díky, zachránil jsi mě. 
+	AI_Output(self,other,"DIA_Brahim_HelpPath_Done_01_01");	//Díky, zachránils mě. 
 	AI_Output(self,other,"DIA_Brahim_HelpPath_Done_01_02");	//Teď můžu konečně dokončit tu mapu a shrábnout za ni kopu zlata.
 	AI_Output(other,self,"DIA_Brahim_HelpPath_Done_01_03");	//A co já?
 	AI_Output(self,other,"DIA_Brahim_HelpPath_Done_01_04");	//Nemám pro tebe nic cenného.
@@ -246,7 +246,7 @@ instance DIA_BRAHIM_COAST_MAP(C_Info)
 	condition = dia_brahim_coast_map_condition;
 	information = dia_brahim_coast_map_info;
 	permanent = FALSE;
-	description = "Nemáš věrnou kopii mapy Hornického údolí?";
+	description = "Nechtěl bys věrnou kopii mapy Hornického údolí?";
 };
 
 func int dia_brahim_coast_map_condition()
@@ -259,12 +259,12 @@ func int dia_brahim_coast_map_condition()
 
 func void dia_brahim_coast_map_info()
 {
-	AI_Output(other,self,"DIA_Brahim_Coast_Map_15_00");	//Nemáš věrnou kopii mapy Hornického údolí
+	AI_Output(other,self,"DIA_Brahim_Coast_Map_15_00");	//Nechtěl bys věrnou kopii mapy Hornického údolí? Takovou určitě nemáš.
 	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_01");	//Ukaž, podívám se...
 	B_UseFakeScroll();
 	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_02");	//Hm, velmi zajímavé.
 	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_03");	//Co za to chceš? Mám málo zlata, ale mohu ti dát i něco jiného.
-	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_04");	//Vyber si:
+	AI_Output(self,other,"DIA_Brahim_Coast_Map_07_04");	//Vyber si...
 	Info_ClearChoices(dia_brahim_coast_map);
 	Info_AddChoice(dia_brahim_coast_map,"Léčivý lektvar",dia_brahim_coast_map_health_03);
 	Info_AddChoice(dia_brahim_coast_map,"Elixír many",dia_brahim_coast_map_mana_03);
@@ -439,7 +439,7 @@ func void DIA_Brahim_Kap3_First_EXIT_Content()
 func void DIA_Brahim_Kap3_First_EXIT_KeepIt()
 {
 	AI_Output(other,self,"DIA_Brahim_Kap3_First_EXIT_KeepIt_15_00");	//Proč si ji nenecháš sám?
-	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_KeepIt_07_01");	//Jsem už starý a časy, kdy jsem vyrážel na výpravy, už jsou dávno pryč.
+	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_KeepIt_07_01");	//Jsem už starý a časy, kdy jsem vyrážel na výpravy, jsou už dávno pryč.
 	AI_Output(self,other,"DIA_Brahim_Kap3_First_EXIT_KeepIt_07_02");	//Teď už to nechávám na mladších.
 };
 
@@ -450,7 +450,7 @@ instance DIA_Brahim_NeedWorldMap(C_Info)
 	condition = DIA_Brahim_NeedWorldMap_Condition;
 	information = DIA_Brahim_NeedWorldMap_Info;
 	permanent = FALSE;
-	description = "Potřebujem mapu.";
+	description = "Potřebuji mapu.";
 };
 
 func int DIA_Brahim_NeedWorldMap_Condition()
@@ -464,13 +464,13 @@ func int DIA_Brahim_NeedWorldMap_Condition()
 func void DIA_Brahim_NeedWorldMap_Info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_00");	//Potřebujem mapu, která ukazuje přesný kurs ku kontinentu.
+	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_00");	//Potřebuji mapu, která ukazuje přesný kurz ku kontinentu.
 	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_01");	//Hmmm... (překvapeně) A odkud bych ji měl získat?
 	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_02");	//Vždyť jsi kartograf!
-	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_03");	//Ano, ale nejsem moreplavec! Kreslím jen mapy míst které už někdo navštívil.
+	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_03");	//Ano, ale nejsem mořeplavec! Kreslím jen mapy míst které už někdo navštívil.
 	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_04");	//A já ani nikdy nebyl na moři.
-	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_05");	//Možná mně aspoň nasměruj kde bych ji mohl najít.
+	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_05");	//Možná mě alespoň nasměruj kde bych ji mohl najít.
 	AI_Output(self,other,"DIA_Brahim_NeedWorldMap_01_06");	//Mohli by ji mít paladinové, oni odtamtudy přijeli!
 	AI_Output(other,self,"DIA_Brahim_NeedWorldMap_01_07");	//Ano, oni by ji mohli mít.
-	B_LogEntry(Topic_SylvioCrew,"Kartograf Brahim mi nepomůže, ale poradil mi abych skusil paladiny.");
+	B_LogEntry(Topic_SylvioCrew,"Kartograf Brahim mi nepomůže, ale poradil mi abych zkusil paladiny.");
 };

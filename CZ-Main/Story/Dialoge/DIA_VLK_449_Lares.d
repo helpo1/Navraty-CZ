@@ -535,7 +535,7 @@ func void DIA_Addon_Lares_GetRangerArmor_Learn()
 	};
 	if(Npc_IsDead(BAU_961_Gaan) == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Lares_GetRangerArmor_Learn_09_03");	//Gann tě naučí, jak získat ze zvěře trofeje.
+		AI_Output(self,other,"DIA_Addon_Lares_GetRangerArmor_Learn_09_03");	//Gaan tě naučí, jak získat ze zvěře trofeje.
 	};
 	if(Npc_IsDead(Mil_350_Addon_Martin) == FALSE)
 	{
@@ -1022,7 +1022,7 @@ func void DIA_Addon_Lares_Gilde_SLD()
 	AI_Output(self,other,"DIA_Addon_Lares_Gilde_SLD_Add_09_01");	//Nicméně, je tam test, zda-li jsi použitelný.
 	AI_Output(self,other,"DIA_Addon_Lares_Gilde_SLD_09_02");	//Navrhnul bych si pohovořit si s žoldákem Cordem.
 	AI_Output(self,other,"DIA_Addon_Lares_Gilde_SLD_Add_09_02");	//Může ti pomoct se zkouškou.
-	AI_Output(self,other,"DIA_Addon_Lares_Gilde_SLD_09_03");	//Řekni mu, že 'žiješ pod mými ochranými křídly'. On to pochopí.
+	AI_Output(self,other,"DIA_Addon_Lares_Gilde_SLD_09_03");	//Řekni mu, že 'žiješ pod mými ochrannými křídly'. On to pochopí.
 	RangerHelp_gildeSLD = TRUE;
 	Log_CreateTopic(TOPIC_Addon_RangerHelpSLD,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_RangerHelpSLD,LOG_Running);
@@ -1760,7 +1760,7 @@ func int DIA_Addon_Lares_GOFORESTPRE_Condition()
 func void DIA_Addon_Lares_GOFORESTPRE_ja()
 {
 	B_MakeRangerReadyForMeeting(self);
-	AI_Output(other,self,"DIA_Addon_Lares_GOFORESTPRE_ja_15_00");	//Ano
+	AI_Output(other,self,"DIA_Addon_Lares_GOFORESTPRE_ja_15_00");	//Ano.
 	AI_Output(self,other,"DIA_Addon_Lares_GOFORESTPRE_ja_09_01");	//Dobře můj příteli. Následuj mě. Bude to jízda.
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"GUIDEMEDIUMWALD2");
@@ -2496,12 +2496,12 @@ func void dia_vlk_449_lares_yourfree_info()
 	if(COUNTCAPTURED > 1)
 	{
 		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_03");	//Tak to je skvělé kámo... (radostně) A to už jsme si mysleli, že je tohle náš konec!
-		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_04");	//Tak už otevřy ty mříže, ať už se můžem nadýchat čerstvého vzduchu.
+		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_04");	//Tak už otevři ty mříže, ať už se můžem nadýchat čerstvého vzduchu.
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_05");	//Tak to je skvělé kámo... (radostně) A to už jsme si mysleli, že je tohle můj konec!
-		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_06");	//Tak už otevřy ty mříže, ať už se můžu nadýchat čerstvého vzduchu.
+		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_05");	//Tak to je skvělé kámo... (radostně) A to už jsem si myslel, že je tohle můj konec!
+		AI_Output(self,other,"DIA_VLK_449_Lares_YourFree_01_06");	//Tak už otevři ty mříže, ať už se můžu nadýchat čerstvého vzduchu.
 	};
 	CAPTUREDMANSISFREE = TRUE;
 	AI_StopProcessInfos(self);
@@ -2556,9 +2556,9 @@ func int dia_vlk_449_lares_goonorkshunt_condition()
 func void dia_vlk_449_lares_goonorkshunt_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_VLK_449_Lares_GoOnOrksHunt_01_00");	//Nechceš se jít pobavit?
+	AI_Output(other,self,"DIA_VLK_449_Lares_GoOnOrksHunt_01_00");	//Nechceš se jít projít?
 	AI_Output(self,other,"DIA_VLK_449_Lares_GoOnOrksHunt_01_01");	//Hmmm... (lstivě) Chceš snad něčím pomoct?!
-	AI_Output(other,self,"DIA_VLK_449_Lares_GoOnOrksHunt_01_02");	//Nic zvláštního! Prostě si to jít vyřídt účty s pár skřety.
+	AI_Output(other,self,"DIA_VLK_449_Lares_GoOnOrksHunt_01_02");	//Nic zvláštního! Prostě si jít vyřídit účty s pár skřety.
 	AI_Output(self,other,"DIA_VLK_449_Lares_GoOnOrksHunt_01_03");	//Tak to jo! Jdu s tebou kámo.
 	LARESJOINMEHUNT = TRUE;
 };
@@ -2646,7 +2646,7 @@ func void dia_vlk_449_lares_travelonbigland_info()
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_VLK_449_Lares_TravelOnBigLand_01_00");	//Nechceš se se mnou plavit na kontinent?
 	AI_Output(self,other,"DIA_VLK_449_Lares_TravelOnBigLand_01_01");	//To myslíš vážně?!... To bych řekl, že chci!
-	AI_Output(other,self,"DIA_VLK_449_Lares_TravelOnBigLand_01_02");	//Dobrá tedy! Za nedlouho vyplouváme.
+	AI_Output(other,self,"DIA_VLK_449_Lares_TravelOnBigLand_01_02");	//Dobrá tedy! Zanedlouho vyplouváme.
 	AI_Output(self,other,"DIA_VLK_449_Lares_TravelOnBigLand_01_03");	//Ok, pospíším si.
 	COUNTTRAVELONBIGLAND = COUNTTRAVELONBIGLAND + 1;
 	LARESTOBIGLAND = TRUE;

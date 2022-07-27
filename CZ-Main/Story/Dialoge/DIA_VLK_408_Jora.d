@@ -204,7 +204,7 @@ func void DIA_Jora_HolDeinGold_ToOV()
 {
 	AI_Output(other,self,"DIA_Jora_Add_15_00");	//Přijde na to - můžu se s tvou pomocí dostat do horní čtvrti?
 	AI_Output(self,other,"DIA_Jora_HolDeinGold_08_03");	//(směje se) To jsi na špatné adrese, já vůbec nejsem z města - jako většina kupců na tržišti.
-	AI_Output(self,other,"DIA_Jora_Add_08_01");	//Jestli se chceš dostat do horní čtvrti, promluv si v dolní čtvrti s některými místními obchodníky
+	AI_Output(self,other,"DIA_Jora_Add_08_01");	//Jestli se chceš dostat do horní čtvrti, promluv si v dolní čtvrti s některými místními obchodníky.
 };
 
 func void DIA_Jora_HolDeinGold_GHDG()
@@ -255,7 +255,7 @@ func void DIA_Jora_HolDeinGold_DoIt()
 	Log_CreateTopic(TOPIC_Jora,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Jora,LOG_Running);
 	B_LogEntry(TOPIC_Jora,"Obchodníka Jora okradl chlapík jménem Rengaru, který se přes den potuluje po tržišti.");
-	B_LogEntry_Quiet(TOPIC_JoraDieb,"Obchodníka Jora okradl chlapík jménem Rengaru - jestli ho chytím, možná z toho bude koukat i nějaká odměna.");
+	B_LogEntry_Quiet(TOPIC_JoraDieb,"Obchodníka Joru okradl chlapík jménem Rengaru - jestli ho chytím, možná z toho bude koukat i nějaká odměna.");
 	Info_ClearChoices(DIA_Jora_HolDeinGold);
 };
 
@@ -602,7 +602,7 @@ func void dia_jora_bengargoods_info()
 	AI_Output(other,self,"DIA_Jora_BengarGoods_01_11");	//Tak ty ses vlastně přidal k cechu?
 	AI_Output(self,other,"DIA_Jora_BengarGoods_01_12");	//Samozřejmě, jinak by tě Lutero neposlal s balíčkem za mnou.
 	AI_Output(other,self,"DIA_Jora_BengarGoods_01_16");	//Chápu, ale teď už raději jdu za Luterem.
-	AI_Output(self,other,"DIA_Jora_BengarGoods_01_17");	//Ano, Ano! Jen jdi, ještě se uvidíme!
+	AI_Output(self,other,"DIA_Jora_BengarGoods_01_17");	//Ano, ano! Jen jdi, ještě se uvidíme!
 	AI_StopProcessInfos(self);
 	JORATAKEPACK = TRUE;
 	MIS_BENGARORDER = LOG_SUCCESS;

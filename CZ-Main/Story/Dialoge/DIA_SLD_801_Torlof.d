@@ -104,12 +104,12 @@ func void DIA_Torlof_Probe_Info()
 		AI_Output(other,self,"DIA_Torlof_Probe_15_02");	//Řekl, že mi pomůžeš.
 		AI_Output(self,other,"DIA_Torlof_Probe_01_03");	//Dobrá... (vzdychne si) Fajn! Než se k nám budeš moci přidat, musíš udělat dvě věci.
 		AI_Output(self,other,"DIA_Torlof_Probe_01_04");	//Za prvé - musíš prokázat, že budeš schopný zvládnout úkoly, které budeš jako žoldák dostávat. Sám tě ozkouším.
-		AI_Output(self,other,"DIA_Torlof_Probe_01_05");	//A za druhé: musíš si vysloužit respekt ostatních žoldáků.
+		AI_Output(self,other,"DIA_Torlof_Probe_01_05");	//A za druhé - musíš si vysloužit respekt ostatních žoldáků.
 		Torlof_Go = TRUE;
 		Npc_ExchangeRoutine(self,"Start");
 		Log_CreateTopic(TOPIC_BecomeSLD,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_BecomeSLD,LOG_Running);
-		B_LogEntry(TOPIC_BecomeSLD,"Mám-li být přijat mezi žoldáky, musím projít Torlofovou zkouškou a získat si úctu ostatních.");
+		B_LogEntry(TOPIC_BecomeSLD,"Mám-li být přijat mezi žoldáky, musím projít Torlofovou zkouškou a získat si respekt ostatních.");
 	}
 	else
 	{
@@ -410,7 +410,7 @@ func void DIA_Torlof_RUF_Info()
 		Torlof_GenugStimmen = TRUE;
 		MIS_SLDRESPEKT = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_SLDRespekt,LOG_SUCCESS);
-		B_LogEntry(TOPIC_BecomeSLD,"Mezi žoldáky už jsem si vydobyl dost úcty. Nyní bych měl prohodit pár slov s Leem!");
+		B_LogEntry(TOPIC_BecomeSLD,"Mezi žoldáky už jsem si vydobyl dost respektu. Nyní bych měl prohodit pár slov s Leem!");
 	}
 	else if(Points_Sld >= 7)
 	{
@@ -984,7 +984,7 @@ func void DIA_Torlof_DmtSuccess_Info()
 	AI_Output(self,other,"DIA_Torlof_DmtSuccess_01_02");	//Ani za mák jsem těm chlapíkům nevěřil. Jenom by budili trable!
 	MIS_Torlof_Dmt = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_Torlof_Dmt,LOG_SUCCESS);
-	B_LogEntry(TOPIC_Torlof_Dmt,"Řekl jsem, Torlofovi že se už o černé kápě nemusí starat.");
+	B_LogEntry(TOPIC_Torlof_Dmt,"Řekl jsem Torlofovi, že se už o černé kápě nemusí starat.");
 };
 
 instance DIA_Torlof_KAP4_EXIT(C_Info)
@@ -1086,7 +1086,7 @@ func int DIA_Torlof_BEMYCAPTAIN_Condition()
 func void DIA_Torlof_BEMYCAPTAIN_Info()
 {
 	AI_Output(other,self,"DIA_Torlof_BEMYCAPTAIN_15_00");	//Ty jsi námořník?
-	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_01_01");	//Konečně tě to trklo?! (přkvapeně) Jo, ksakru, jsem námořník! Proč se ptáš?
+	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_01_01");	//Konečně tě to trklo?! (překvapeně) Jo, ksakru, jsem námořník! Proč se ptáš?
 	AI_Output(other,self,"DIA_Torlof_BEMYCAPTAIN_15_02");	//Hodily by se mi tvoje schopnosti. Potřebuji se dostat na jeden ostrov.
 	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_01_03");	//(zasměje se) Na ostrov? Vždyť ani nemáš loď, natož posádku, která by ji řídila!
 	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_01_04");	//Ne, chlapče! Jestli chceš využít mých služeb jako kapitána a učitele síly, musíš mi nejdřív dokázat, že víš, o čem mluvíš.
@@ -1112,7 +1112,7 @@ func void dia_torlof_bemycaptain_yes()
 	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN_Yes_01_02");	//Ale ne dříve, než splníš co jsi slíbil!
 	Log_CreateTopic(Topic_Captain,LOG_MISSION);
 	Log_SetTopicStatus(Topic_Captain,LOG_Running);
-	B_LogEntry(Topic_Captain,"Torlof bude můj kapitán, když přimeji paladiny opustit město. Jak tu ale udělat?");
+	B_LogEntry(Topic_Captain,"Torlof bude můj kapitán, když přimeji paladiny opustit město. Jak to ale udělat?");
 	AI_StopProcessInfos(self);
 };
 
@@ -1138,7 +1138,7 @@ func int DIA_Torlof_BEMYCAPTAIN2_Condition()
 func void DIA_Torlof_BEMYCAPTAIN2_Info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Torlof_BEMYCAPTAIN2_15_00");	//Brána do hradu v Hornickém údolí je otevřená a zaseknutá
+	AI_Output(other,self,"DIA_Torlof_BEMYCAPTAIN2_15_00");	//Brána do hradu v Hornickém údolí je otevřená a zaseknutá.
 	AI_Output(other,self,"DIA_Torlof_BEMYCAPTAIN2_15_01");	//Paladinové utrpěli v bitvě se skřety vážné ztráty.
 	AI_Output(other,self,"DIA_Torlof_BEMYCAPTAIN2_15_02");	//Řekl bych, že už nebude trvat dlouho, než se paladinové odsud z města vydají do Hornického údolí, aby dostali své kamarády pryč z hradu.
 	AI_Output(self,other,"DIA_Torlof_BEMYCAPTAIN2_01_03");	//To jsou příjemné zprávy! Takže už nic nestojí v cestě tomu, abych utekl z tohohle prokletého kraje.
@@ -1266,7 +1266,7 @@ func void DIA_Torlof_LOSFAHREN_Info()
 		B_GiveInvItems(other,self,ItWr_Seamap_Irdorath,1);
 		AI_Output(self,other,"DIA_Torlof_LOSFAHREN_01_02");	//(zavolá) Všichni na palubu!
 		AI_Output(self,other,"DIA_Torlof_LOSFAHREN_01_03");	//Ujisti se, že máš opravdu všechno, co bys mohl potřebovat. Vracet se nemůžeme!
-		AI_Output(self,other,"DIA_Torlof_LOSFAHREN_01_04");	//Jestli si jsi jistý, běž se natáhnout do kapitánské kajuty. Za chvíli vyrazíme na cestu.
+		AI_Output(self,other,"DIA_Torlof_LOSFAHREN_01_04");	//Jestli jsi si jistý, běž se natáhnout do kapitánské kajuty. Za chvíli vyrazíme na cestu.
 		B_GiveInvItems(self,other,ItKe_Ship_Levelchange_MIS,1);
 		AI_StopProcessInfos(self);
 		B_CaptainCallsAllOnBoard(self);
@@ -1494,7 +1494,7 @@ func void dia_sld_801_torlof_yourfree_info()
 	else
 	{
 		AI_Output(self,other,"DIA_SLD_801_Torlof_YourFree_01_05");	//Výborně příteli, doufal jsem, že ještě není konec.
-		AI_Output(self,other,"DIA_SLD_801_Torlof_YourFree_01_06");	//Stačí otevřít mříže od cely, pak můžeme vypadnout.
+		AI_Output(self,other,"DIA_SLD_801_Torlof_YourFree_01_06");	//Stačí otevřít mříže od cely, pak můžu vypadnout.
 	};
 	CAPTUREDMANSISFREE = TRUE;
 	AI_StopProcessInfos(self);
@@ -1560,7 +1560,7 @@ func void dia_sld_801_torlof_againcapitan_info()
 	};
 	AI_Output(other,self,"DIA_SLD_801_Torlof_AgainCapitan_01_03");	//Potřebuji se dostat na kontinent.
 	AI_Output(self,other,"DIA_SLD_801_Torlof_AgainCapitan_01_04");	//(překvapě) Na kontinent?
-	AI_Output(self,other,"DIA_SLD_801_Torlof_AgainCapitan_01_06");	//No dobře, budu tvůj kapitán
+	AI_Output(self,other,"DIA_SLD_801_Torlof_AgainCapitan_01_06");	//No dobře, budu tvůj kapitán.
 	AI_Output(self,other,"DIA_SLD_801_Torlof_AgainCapitan_01_07");	//Je to lepší než zůstat tady na farmě.
 	AI_Output(self,other,"DIA_SLD_801_Torlof_AgainCapitan_01_08");	//A kdy vyrážíme?
 	AI_Output(other,self,"DIA_SLD_801_Torlof_AgainCapitan_01_09");	//Teď.

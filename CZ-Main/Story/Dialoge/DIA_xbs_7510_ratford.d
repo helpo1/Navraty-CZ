@@ -158,7 +158,7 @@ func void dia_ratford_fiskok_info()
 		CreateInvItems(self,ItMi_Gold,200);
 		B_GiveInvItems(self,other,ItMi_Gold,200);
 	};
-	B_LogEntry(TOPIC_RATFORDFISK,"Předal jsem Ratfordovi balíček od Fiska. Ratfrod byl šťastný Na mou otázku, co to spolu měli za obchod mi Ratford odpověděl, že mu Fisk dlužil nějaké peníze z dob bariéry.");
+	B_LogEntry(TOPIC_RATFORDFISK,"Předal jsem Ratfordovi balíček od Fiska. Ratford byl šťastný. Na mou otázku, co to spolu měli za obchod mi Ratford odpověděl, že mu Fisk dlužil nějaké peníze z dob bariéry.");
 	Log_CreateTopic(TOPIC_RATFORDFISK,LOG_SUCCESS);
 	MIS_RATFORDFISK = LOG_SUCCESS;
 	AI_StopProcessInfos(self);
@@ -189,22 +189,22 @@ func void DIA_Ratford_Capitan_info()
 	AI_Output(self,other,"DIA_Ratford_Capitan_01_01");	//(ušklíbne se) No byl - kdysi.
 	AI_Output(other,self,"DIA_Ratford_Capitan_01_02");	//A nechceš se vydat na nové mořské dobrodružství?
 	AI_Output(self,other,"DIA_Ratford_Capitan_01_03");	//Co o čem to mluvíš?
-	AI_Output(other,self,"DIA_Ratford_Capitan_01_04");	//O tom, že potřebuji kapitána co s ním mohu vyplout na otevřené moře?.
+	AI_Output(other,self,"DIA_Ratford_Capitan_01_04");	//O tom, že potřebuji kapitána co s ním mohu vyplout na otevřené moře.
 	AI_Output(self,other,"DIA_Ratford_Capitan_01_05");	//Hmm... (ušklíbne se) Na to je potřeba mít loď. A ty nějakou máš?
-	AI_Output(other,self,"DIA_Ratford_Capitan_01_06");	//Samozřejmě. A můžeš jí vidět, když se teď podíváš dolů?.
+	AI_Output(other,self,"DIA_Ratford_Capitan_01_06");	//Samozřejmě. A můžeš jí vidět, když se teď podíváš dolů.
 	AI_Output(self,other,"DIA_Ratford_Capitan_01_07");	//Ty máš na mysli drakar skřetů?
 	AI_Output(other,self,"DIA_Ratford_Capitan_01_08");	//Bingo!
 	AI_Output(self,other,"DIA_Ratford_Capitan_01_09");	//Máš horečku, skřeti tě k němu nenechaj ani přiblížit.
 	AI_Output(other,self,"DIA_Ratford_Capitan_01_10");	//Ty už mají jiné starosti, poslal jsem je za Beliarem.
-	AI_Output(other,self,"DIA_Ratford_Capitan_01_11");	//Takže drakar je nyní opuštěný a čeká jen, až s ním někdo vypluje?.
+	AI_Output(other,self,"DIA_Ratford_Capitan_01_11");	//Takže drakar je nyní opuštěný a čeká jen, až s ním někdo vypluje?
 	AI_Output(self,other,"DIA_Ratford_Capitan_01_12");	//To je novinka, jestli je to tak tak ti jsem k službám.
-	AI_Output(other,self,"DIA_Ratford_Capitan_01_13");	//A ty výš jak se na něm plavit?
+	AI_Output(other,self,"DIA_Ratford_Capitan_01_13");	//A ty víš jak se na něm plavit?
 	AI_Output(self,other,"DIA_Ratford_Capitan_01_14");	//Poperu se s tím a kam se chceš plavit?
 	AI_Output(other,self,"DIA_Ratford_Capitan_01_15");	//Já sám se nikam plavit nechci, tvým šéfem bude žoldák Sylvio.
 	AI_Output(other,self,"DIA_Ratford_Capitan_01_16");	//A s ním ještě další hrdlořezové. 
 	AI_Output(other,self,"DIA_Ratford_Capitan_01_17");	//Ale co vím, tak chtěli plout na pevninu.
 	AI_Output(self,other,"DIA_Ratford_Capitan_01_18");	//V tom případě potřebuji mapu, jinak můžem na volném moři lehce ztratit směr.
-	AI_Output(self,other,"DIA_Ratford_Capitan_01_19");	//A ještě 500 zl., bezplatně mu pomáhat nebudu.
+	AI_Output(self,other,"DIA_Ratford_Capitan_01_19");	//A ještě 500 zlatých, bezplatně mu pomáhat nebudu.
 	AI_Output(other,self,"DIA_Ratford_Capitan_01_20");	//Dobře, ohledně peněz jsme dohodnutý a co za mapu potřebuješ.
 	AI_Output(self,other,"DIA_Ratford_Capitan_01_21");	//Obyčejná mořská mapa na které je vyznačen kurz na pevninu.
 	AI_Output(other,self,"DIA_Ratford_Capitan_01_22");	//A kde bych jí měl hledat?
@@ -243,7 +243,7 @@ func void DIA_Ratford_Capitan_Done_info()
 	AI_Output(self,other,"DIA_Ratford_Capitan_Done_01_02");	//Ano, dostačující! To by šlo.
 	AI_Output(other,self,"DIA_Ratford_Capitan_Done_01_03");	//Nyní jsi připraven stát u kormidla drakaru?
 	AI_Output(self,other,"DIA_Ratford_Capitan_Done_01_04");	//Samozřejmě, jak jsme se domluvili.
-	AI_Output(self,other,"DIA_Ratford_Capitan_Done_01_05");	//Ale nezapomeň, že ten týpek mě ještě dluží 500 zl.!
+	AI_Output(self,other,"DIA_Ratford_Capitan_Done_01_05");	//Ale nezapomeň, že ten týpek mě ještě dluží 500 zlatých!
 	AI_Output(other,self,"DIA_Ratford_Capitan_Done_01_06");	//Samozřejmě je dostaneš, nemusíš se bát.
 	AI_Output(self,other,"DIA_Ratford_Capitan_Done_01_07");	//Tak já se vydám na loď a budu tam čekat.
 	AI_Output(self,other,"DIA_Ratford_Capitan_Done_01_08");	//Drax mimochodem také projevil přání, opustit tento ostrov.

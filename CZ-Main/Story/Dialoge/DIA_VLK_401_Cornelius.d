@@ -211,7 +211,7 @@ func void dia_cornelius_dontbelieveyou_kdw()
 	AI_Output(other,self,"DIA_Cornelius_DontBelieveYou_KDW_15_05");	//Lidé by ti plivali do očí a hanobili by tvé jméno!
 	AI_Output(self,other,"DIA_Cornelius_DontBelieveYou_KDW_15_06");	//CO? A kdo by ti věřil?!
 	AI_Output(other,self,"DIA_Cornelius_DontBelieveYou_KDW_15_07");	//Je jedno, jestli ne mě, ale Vatrasovi ano.
-	AI_Output(self,other,"DIA_Cornelius_DontBelieveYou_KDW_13_08");	//Dobře, dobře. Řeknu ti vše, co chceš!.
+	AI_Output(self,other,"DIA_Cornelius_DontBelieveYou_KDW_13_08");	//Dobře, dobře. Řeknu ti vše, co chceš!
 	Cornelius_TellTruth = TRUE;
 	Info_ClearChoices(DIA_Cornelius_DontBelieveYou);
 };

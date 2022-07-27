@@ -164,7 +164,7 @@ instance DIA_Bennet_BauOrSld(C_Info)
 	condition = DIA_Bennet_BauOrSld_Condition;
 	information = DIA_Bennet_BauOrSld_Info;
 	permanent = FALSE;
-	description = "Jsi s rolníky, nebo žoldákama?";
+	description = "Jsi s rolníky, nebo s žoldákama?";
 };
 
 
@@ -369,7 +369,7 @@ func void DIA_Bennet_WannaSmithORE_Info()
 	{
 		AI_Output(self,other,"DIA_Bennet_WannaSmithORE_06_12");	//Skvěle, přinesl jsi mi rudu a také víš, jak ukovat normální meč.
 		AI_Output(other,self,"DIA_Bennet_WannaSmithORE_15_13");	//No, tak tedy povídej...
-		AI_Output(self,other,"DIA_Bennet_WannaSmithORE_06_14");	//Nejdůležitější věc je: Nezáleží na tom, zdali je tvá celá zbraň vyrobená z magické rudy, nebo jestli máš pokrytou jen obyčejnou ocelovou čepel vrstvou rudy. Povrch je to, na čem záleží.
+		AI_Output(self,other,"DIA_Bennet_WannaSmithORE_06_14");	//Nejdůležitější věc je: nezáleží na tom, zdali je tvá celá zbraň vyrobená z magické rudy, nebo jestli máš pokrytou jen obyčejnou ocelovou čepel vrstvou rudy. Povrch je to, na čem záleží.
 		AI_Output(self,other,"DIA_Bennet_WannaSmithORE_06_15");	//A protože je ten mizernej materiál tak drahej, popadni ocelovej prut a použij pár hrud rudy.
 		AI_Output(self,other,"DIA_Bennet_WannaSmithORE_06_16");	//Přirozeně z toho nevznikne nic jinýho, než že to jenom pokryje hotový meč magickou rudou. Budeš muset ukovat ten meč od začátku.
 		AI_Output(self,other,"DIA_Bennet_WannaSmithORE_06_17");	//Všechno ostatní závisí na zbrani, kterou chceš vyrobit.
@@ -761,7 +761,7 @@ func void DIA_Bennet_ThankYou_Info()
 	AI_Output(self,other,"DIA_Bennet_ThankYou_06_03");	//(směje se) Byl tak vystrašenej, že si skoro nadělal do kalhot.
 	AI_Output(self,other,"DIA_Bennet_ThankYou_06_04");	//Což mi připomíná, že pro tebe něco mám.
 	AI_Output(other,self,"DIA_Bennet_ThankYou_15_05");	//Co myslíš?
-	AI_Output(self,other,"DIA_Bennet_ThankYou_06_06");	//(kření se) Dáreček.!
+	AI_Output(self,other,"DIA_Bennet_ThankYou_06_06");	//(kření se) Dáreček!
 };
 
 var int BennetNeedSteel;
@@ -1438,7 +1438,7 @@ func void DIA_Bennet_KnowWhereEnemy_Yes()
 
 func void DIA_Bennet_KnowWhereEnemy_No()
 {
-	AI_Output(other,self,"DIA_Bennet_KnowWhereEnemy_No_15_00");	//Dám ti včas vědět až tě budu potřebovat
+	AI_Output(other,self,"DIA_Bennet_KnowWhereEnemy_No_15_00");	//Dám ti včas vědět až tě budu potřebovat.
 	AI_Output(self,other,"DIA_Bennet_KnowWhereEnemy_No_06_01");	//Fajn. Budu tady.
 	Bennet_IsOnBoard = LOG_OBSOLETE;
 	Info_ClearChoices(DIA_Bennet_KnowWhereEnemy);
@@ -1638,7 +1638,7 @@ func void b_bennet_teacharmor_2()
 
 func void b_bennet_teacharmor_3()
 {
-	AI_Output(self,other,"DIA_Bennet_TeachArmor_3_01_01");	//Sleduj to a pamatuj si vše ci to tady ukážu. Ve skutečnosti na tom zas tak nic těžkého neni...
+	AI_Output(self,other,"DIA_Bennet_TeachArmor_3_01_01");	//Sleduj to a pamatuj si vše co ti tady ukážu. Ve skutečnosti na tom zas tak nic těžkého není...
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
 		AI_SetWalkMode(self,NPC_WALK);
@@ -1962,7 +1962,7 @@ func void dia_bennet_nw_kapitelorcattack_farm()
 func void dia_bennet_nw_kapitelorcattack_nogiverune()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Bennet_NW_KapitelOrcAttack_NoGiveRune_01_01");	//To nevím
+	AI_Output(other,self,"DIA_Bennet_NW_KapitelOrcAttack_NoGiveRune_01_01");	//To nevím.
 	AI_Output(other,self,"DIA_Bennet_NW_KapitelOrcAttack_NoGiveRune_01_02");	//Ale nejpravděpodobněji se zkusíme probít městem. Jiná možnost není!
 	AI_Output(self,other,"DIA_Bennet_NW_KapitelOrcAttack_NoGiveRune_01_03");	//Ano... (smutně) Nejsem sice žádný zbabělec, ale jako voják jsem nezkušený.
 	AI_Output(self,other,"DIA_Bennet_NW_KapitelOrcAttack_NoGiveRune_01_04");	//Nemyslím si, že budu mít v tom zmatku mnoho šancí.
@@ -2038,7 +2038,7 @@ func void dia_sld_809_bennet_yourfree_info()
 		AI_Output(self,other,"DIA_SLD_809_Bennet_YourFree_01_05");	//Výborně! Věděl jsem, že někdo přijde.
 		AI_Output(self,other,"DIA_SLD_809_Bennet_YourFree_01_06");	//Otevři ty mříže!
 	};
-	AI_Output(other,self,"DIA_SLD_809_Bennet_YourFree_01_07");	//Jasně
+	AI_Output(other,self,"DIA_SLD_809_Bennet_YourFree_01_07");	//Jasně.
 	CAPTUREDMANSISFREE = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -2176,7 +2176,7 @@ func int DIA_Bennet_NeedSteel_condition()
 func void DIA_Bennet_NeedSteel_info()
 {
 	AI_Output(other,self,"DIA_Bennet_NeedSteel_01_01");	//Vypadáš trochu frustrovaný.
-	AI_Output(self,other,"DIA_Bennet_NeedSteel_01_02");	//Ano, mám pro todůvod. Lee mi zadal velkou objednávku na nové zbroje.
+	AI_Output(self,other,"DIA_Bennet_NeedSteel_01_02");	//Ano, mám pro to důvod. Lee mi zadal velkou objednávku na nové zbroje.
 	AI_Output(self,other,"DIA_Bennet_NeedSteel_01_03");	//A nemám na to dost oceli. A ani nevím kde ji sehnat!
 	AI_Output(other,self,"DIA_Bennet_NeedSteel_01_04");	//A co koupit ocel jednoduše ve městě?
 	AI_Output(self,other,"DIA_Bennet_NeedSteel_01_05");	//Je nepravděpodobné, že by ve městě se mnou někdo obchodoval. A i kdyby tak jsem slyšel, že mají taky nedostatek.
@@ -2229,7 +2229,7 @@ func void DIA_Bennet_NeedSteel_Done_info()
 	AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_04");	//Hej, hej... (překvapeně) Ne všechny najednou! Víš jak je to těžký.
 	AI_Output(other,self,"DIA_Bennet_NeedSteel_Done_01_05");	//Tak co, bude to stačit?
 	AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_06");	//Uf... (ztěžka oddechuje) Tak jo! Myslím, žes toho přines až, až.
-	AI_Output(other,self,"DIA_Bennet_NeedSteel_Done_01_07");	//Jak jsi chtěl. Sto ocelových ingotů
+	AI_Output(other,self,"DIA_Bennet_NeedSteel_Done_01_07");	//Jak jsi chtěl. Sto ocelových ingotů.
 	AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_08");	//Dobře. Ocel - je zboží, co se vždycky hodí.
 	AI_Output(other,self,"DIA_Bennet_NeedSteel_Done_01_09");	//A co tvoje vděčnost?
 	AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_10");	//No, myslíš že jsem na to zapomněl? (naštvaně) To mě uráží, kamaráde!
@@ -2240,7 +2240,7 @@ func void DIA_Bennet_NeedSteel_Done_info()
 		B_GiveInvItems(self,other,ItMw_Drachen_Sword_02,1);
 		AI_Output(other,self,"DIA_Bennet_NeedSteel_Done_01_12");	//Co?! Obyčejný meč?
 		AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_13");	//(vztekle) To není obyčejný meč! Takový nenajdeš na celém světě!
-		AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_14");	//Koval jsem ho skoro rok podle speciálního výkresu, který jsem koupil od jednoho obchodníka v Monterey za velké peníze.
+		AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_14");	//Koval jsem ho skoro rok podle speciálního výkresu, který jsem koupil od jednoho obchodníka v Monteře za velké peníze.
 		AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_15");	//(hrdě) Ale věřím, že to stálo za to! Meč je lehký, odolný a smrtící.
 		AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_16");	//Pravdou je, že jsem ho ještě nevytáh z pochvy... (směje se) Zatím nebyla příležitost!
 		AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_17");	//Ale myslím, že ty oceníš jeho kvality.
@@ -2251,7 +2251,7 @@ func void DIA_Bennet_NeedSteel_Done_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_19");	//Tady, vem si to zlato jako jeho odměnu.
+		AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_19");	//Tady, vem si to zlato jako svou odměnu.
 		B_GiveInvItems(self,other,ItMi_Gold,2000);
 		AI_Output(self,other,"DIA_Bennet_NeedSteel_Done_01_20");	//Myslím, že pro něj najdeš využití.
 		MIS_NeedSteel = LOG_Success;
@@ -2366,7 +2366,7 @@ func int DIA_Bennet_BetterArmor_Finish_Condition()
 func void DIA_Bennet_BetterArmor_Finish_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_Finish_01_00");	//O tvém zbroji... (unaveně) Je hotová!
+	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_Finish_01_00");	//O tvé zbroji... (unaveně) Je hotová!
 	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_Finish_01_01");	//Tady, vem si ji. Ochrání tě před jakýmkoli nepřítelem.
 	B_GiveInvItems(self,other,ItAr_DragonKiller,1);
 	MIS_BetterArmor = LOG_SUCCESS;
@@ -2396,9 +2396,9 @@ func int DIA_Bennet_DarkWeb_Condition()
 func void DIA_Bennet_DarkWeb_Info()
 {
 	AI_Output(other,self,"DIA_Bennet_DarkWeb_01_00");	//Mám na tebe jeden dotaz.
-	AI_Output(self,other,"DIA_Bennet_DarkWeb_01_01");	//Zeptejte se jestli je skutečný.
+	AI_Output(self,other,"DIA_Bennet_DarkWeb_01_01");	//Ptej se.
 	AI_Output(other,self,"DIA_Bennet_DarkWeb_01_02");	//S kým jsi byl ve městě když tě zatkli?
-	AI_Output(self,other,"DIA_Bennet_DarkWeb_01_03");	//S Hodgesem, mím asistentem.
+	AI_Output(self,other,"DIA_Bennet_DarkWeb_01_03");	//S Hodgesem, mým asistentem.
 	AI_Output(other,self,"DIA_Bennet_DarkWeb_01_04");	//Kde byl Hodges v době tvého zatčení?
 	AI_Output(self,other,"DIA_Bennet_DarkWeb_01_05");	//Nevím, když jsme dokončili svou práci pravil že musí jít svlažit hrdlo ke Coragonovi.
 	AI_Output(self,other,"DIA_Bennet_DarkWeb_01_06");	//Tak tam šel, jak jsem pochopil. Více nevím.

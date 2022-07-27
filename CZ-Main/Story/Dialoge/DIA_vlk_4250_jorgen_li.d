@@ -176,20 +176,20 @@ func void dia_jorgen_li_repairhelp_info()
 	AI_Output(other,self,"DIA_Jorgen_LI_RepairHelp_01_03");	//Klidně.
 	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_04");	//Takže k věci!
 	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_05");	//Zhodnotil jsem poškození a došel k závěru, že většina je celkem zanedbatelná.
-	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_06");	//Vpohodě to zvládnem!... (úsměv) Ale máme jeden velký problém! Jak jsem předpokládal, tak kormidlo je v prdeli!
+	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_06");	//V pohodě to zvládnem!... (úsměv) Ale máme jeden velký problém! Jak jsem předpokládal, tak kormidlo je v prdeli!
 	AI_Output(other,self,"DIA_Jorgen_LI_RepairHelp_01_07");	//A co je s ním?
-	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_08");	//Nefachá! Je v něm neco rozlámaný.
-	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_09");	//A jak jistě chápeš, tak bez něj nedojedeme ani do řite psí mateři!
+	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_08");	//Nefachá! Je v něm něco rozlámaný.
+	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_09");	//A jak jistě chápeš, tak bez něj nedojedeme ani do prdele psí mateři!
 	AI_Output(other,self,"DIA_Jorgen_LI_RepairHelp_01_10");	//A co tedy budeme dělat?
 	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_11");	//Myslím si, že problém je v jednom z ozubených kol.
-	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_12");	//Pravděpodobně se rozlomilo pod tlakem vln na zadní část kormidla.
+	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_12");	//Pravděpodobně se rozlomilo pod tlakem vln na zadní části kormidla.
 	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_13");	//Musíme najít náhradu, jinak to nepůjde.
 	AI_Output(other,self,"DIA_Jorgen_LI_RepairHelp_01_14");	//Ale kde vezmeme nový kolečko?!
 	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_15");	//To asi nikde, budeme muset použít jakýkoliv svinstvo, co najdem!
 	AI_Output(other,self,"DIA_Jorgen_LI_RepairHelp_01_16");	//To nebude jednoduché.
 	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_17");	//Chápu, ale nic jinýho se dělat nedá!
 	AI_Output(other,self,"DIA_Jorgen_LI_RepairHelp_01_18");	//Dobrá, po něčem se poohlédnu.
-	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_19");	//Výborně, já se zatím postarám o další veci.
+	AI_Output(self,other,"DIA_Jorgen_LI_RepairHelp_01_19");	//Výborně, já se zatím postarám o další věci.
 	AI_Output(other,self,"DIA_Jorgen_LI_RepairHelp_01_20");	//Dobrá.
 	B_LogEntry(TOPIC_REPAIRSHIP,"Jorgen mě požádal o pomoc s opravou kormidla. Podle jeho slov se podělalo jedno z ozubených koleček u zadní části kormidla! Jorgen mě požádal, abych se podíval po jakékoliv přijatelné náhradě.");
 };
@@ -279,10 +279,10 @@ func void dia_jorgen_li_repairhelpdone_info()
 	{
 		TORLOFLITIMERAWAY = Wld_GetDay();
 		AI_Output(self,other,"DIA_Jorgen_LI_RepairHelpDone_01_23");	//Ne tak rychle, chlape!... Kormidlo je, ale neznamená to, že je připraven i zbytek lodi.
-		AI_Output(self,other,"DIA_Jorgen_LI_RepairHelpDone_01_24");	//Neměl jsem dost času opravit ostatní, menší, trhliny, takže to by byla zasraně nebezpečná plavba!
+		AI_Output(self,other,"DIA_Jorgen_LI_RepairHelpDone_01_24");	//Neměl jsem dost času opravit ostatní menší trhliny, takže to by byla zasraně nebezpečná plavba!
 		if(MIS_LOSTISLAND == LOG_Running)
 		{
-			AI_Output(self,other,"DIA_Jorgen_LI_RepairHelpDone_01_25");	//A hlavně, když ješte nevíme, kde jsme!
+			AI_Output(self,other,"DIA_Jorgen_LI_RepairHelpDone_01_25");	//A hlavně, když ještě nevíme, kde jsme!
 		}
 		else if(MIS_CHANGECOURSE == LOG_Running)
 		{
@@ -497,7 +497,7 @@ func void dia_jorgen_li_awaydone_info()
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_Jorgen_LI_AwayDone_01_21");	//Už pro ně jdu.
+				AI_Output(other,self,"DIA_Jorgen_LI_AwayDone_01_21");	//Už pro něj jdu.
 			};
 		};
 	};
@@ -596,12 +596,12 @@ func void dia_jorgen_li_islandprogress_info()
 	AI_Output(self,other,"DIA_Jorgen_LI_IslandProgress_01_18");	//Jestli to tak opravdu je, mohlo by nás to odsud dostat.
 	AI_Output(self,other,"DIA_Jorgen_LI_IslandProgress_01_19");	//Ale potřeboval bych sextant.
 	AI_Output(other,self,"DIA_Jorgen_LI_IslandProgress_01_20");	//A to je problém?!
-	AI_Output(self,other,"DIA_Jorgen_LI_IslandProgress_01_21");	//Jo, ztratil se uprostřed bouře a bez něj proste nedokážu provést ty výpočty.
+	AI_Output(self,other,"DIA_Jorgen_LI_IslandProgress_01_21");	//Jo, ztratil se uprostřed bouře a bez něj prostě nedokážu provést ty výpočty.
 	AI_Output(other,self,"DIA_Jorgen_LI_IslandProgress_01_22");	//No, po nějakým se ti podívám.
-	AI_Output(self,other,"DIA_Jorgen_LI_IslandProgress_01_23");	//Zkus to, ale nemyslím si, že na tomhle ostrově bys nejaký našel.
+	AI_Output(self,other,"DIA_Jorgen_LI_IslandProgress_01_23");	//Zkus to, ale nemyslím si, že na tomhle ostrově bys nějaký našel.
 	AI_Output(self,other,"DIA_Jorgen_LI_IslandProgress_01_24");	//Ale možná... Kdo ví!
 	CAPNEEDSEXTANT = TRUE;
-	B_LogEntry(TOPIC_LOSTISLAND,"Ukázal jsem Jorgenovi kamennou tabulku, kterou jsem našel na ostrově. Podle nej připomíná námořní mapu. Jsou tam i nějaké figurky, které považuje za klíč k zemepisné šířce a délce, ale bez sextantu jí nikdy nenameří. Musím se po nějakém podívat.");
+	B_LogEntry(TOPIC_LOSTISLAND,"Ukázal jsem Jorgenovi kamennou tabulku, kterou jsem našel na ostrově. Podle něj připomíná námořní mapu. Jsou tam i nějaké figurky, které považuje za klíč k zemepisné šířce a délce, ale bez sextantu jí nikdy nenaměří. Musím se po nějakém podívat.");
 };
 
 
@@ -714,8 +714,8 @@ func int dia_jorgen_li_aboutisland_condition()
 func void dia_jorgen_li_aboutisland_info()
 {
 	AI_Output(other,self,"DIA_Jorgen_LI_AboutIsland_01_01");	//Zajímavé, žije zde na ostrově někdo?
-	AI_Output(self,other,"DIA_Jorgen_LI_AboutIsland_01_02");	//Navryadli!... Pravděpodobně je neobydlený.
-	AI_Output(other,self,"DIA_Jorgen_LI_AboutIsland_01_03");	//Jseš si tím jistý?!
+	AI_Output(self,other,"DIA_Jorgen_LI_AboutIsland_01_02");	//Nepravděpodobné. Vypadá to, že je úplně neobydlený.
+	AI_Output(other,self,"DIA_Jorgen_LI_AboutIsland_01_03");	//Jsi si tím jistý?!
 	AI_Output(self,other,"DIA_Jorgen_LI_AboutIsland_01_04");	//Eh, ne, ale nikdo se zatím neukázal!
 	AI_Output(self,other,"DIA_Jorgen_LI_AboutIsland_01_05");	//Už bychom to dávno věděli.
 	AI_Output(self,other,"DIA_Jorgen_LI_AboutIsland_01_06");	//Jestli zde někdo je, bojí se nás.
@@ -747,7 +747,7 @@ func int dia_jorgen_li_whereguys_condition()
 func void dia_jorgen_li_whereguys_info()
 {
 	AI_Output(other,self,"DIA_Jorgen_LI_WhereGuys_01_01");	//Kde jsou všichni chlapi?!
-	AI_Output(self,other,"DIA_Jorgen_LI_WhereGuys_01_02");	//Šli na pobřeží, protáhnout se po plavbě. Teda jen nekteří.
+	AI_Output(self,other,"DIA_Jorgen_LI_WhereGuys_01_02");	//Šli na pobřeží, protáhnout se po plavbě. Teda jen někteří.
 	AI_Output(other,self,"DIA_Jorgen_LI_WhereGuys_01_03");	//Proč?
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGuys_01_04");	//No... Některým plavba nesedla.
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGuys_01_05");	//Teda myslím.
@@ -788,7 +788,7 @@ func void dia_jorgen_li_wheregold_info()
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGold_01_04");	//A co já s ním?!... (udiveně)
 	AI_Output(other,self,"DIA_Jorgen_LI_WhereGold_01_05");	//Není tu!
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGold_01_06");	//Opravdu?... (ještě více udiveně) A kde je?!
-	AI_Output(other,self,"DIA_Jorgen_LI_WhereGold_01_07");	//To bych chtěl taky vědět! Proste zmizelo.
+	AI_Output(other,self,"DIA_Jorgen_LI_WhereGold_01_07");	//To bych chtěl taky vědět! Prostě zmizelo.
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGold_01_08");	//Promiň, příteli, ale nevím, kde by mohlo být!
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGold_01_09");	//Taková hromada se jen tak nepřehlídne, myslíš si snad, že jsem ji narval do kapsy?!
 	AI_Output(other,self,"DIA_Jorgen_LI_WhereGold_01_10");	//No, to ne... Ale co mám jako dělat?!
@@ -886,7 +886,7 @@ func void dia_jorgen_li_wheregolddone_info()
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGoldDone_01_23");	//Nechtěli jsme ti to říkat, protože jsme mysleli, že tě to hodně naštve!
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGoldDone_01_24");	//Tak jsme dělali, že nic nevíme.
 	AI_Output(other,self,"DIA_Jorgen_LI_WhereGoldDone_01_25");	//No, máš pravdu - opravdu nejsem zrovna rád!
-	AI_Output(self,other,"DIA_Jorgen_LI_WhereGoldDone_01_26");	//Příteli!... (úsměv) Na tvém míste bych nebyl tak pochmurně naladěn.
+	AI_Output(self,other,"DIA_Jorgen_LI_WhereGoldDone_01_26");	//Příteli!... (úsměv) Na tvém místě bych nebyl tak pochmurně naladěn.
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGoldDone_01_27");	//Zlata bude ještě hodně a ty získáš svou šanci stát se bohatým!
 	AI_Output(self,other,"DIA_Jorgen_LI_WhereGoldDone_01_28");	//Nejdůležitější je, že nás Innos ochránil!
 	AI_Output(other,self,"DIA_Jorgen_LI_WhereGoldDone_01_29");	//No, to je asi pravda.
@@ -1021,7 +1021,7 @@ func void dia_jorgen_li_bringfooddoneext_fifty()
 	AI_Output(self,other,"DIA_Jorgen_LI_BringFoodDoneExt_Fifty_01_07");	//Nemohl jsi sníst více než 5 kusů!
 	AI_Output(other,self,"DIA_Jorgen_LI_BringFoodDoneExt_Fifty_01_08");	//To není přesně, přidej dalších 5.
 	AI_Output(self,other,"DIA_Jorgen_LI_BringFoodDoneExt_Fifty_01_09");	//No, dobrá. Alespoň máš pro nás tady těch 50.
-	AI_Output(self,other,"DIA_Jorgen_LI_BringFoodDoneExt_Fifty_01_10");	//Ale nevěřím tomu, že jsi to zežral sám.
+	AI_Output(self,other,"DIA_Jorgen_LI_BringFoodDoneExt_Fifty_01_10");	//Ale nevěřím tomu, že jsi to sežral sám.
 	AI_Output(self,other,"DIA_Jorgen_LI_BringFoodDoneExt_Fifty_01_11");	//Chtěl jsem alespoň trochu zvednout příděly a teď nemůžu!
 	AI_Output(self,other,"DIA_Jorgen_LI_BringFoodDoneExt_Fifty_01_12");	//Ach...
 	AI_Output(self,other,"DIA_Jorgen_LI_BringFoodDoneExt_Fifty_01_13");	//No, teď už je to jedno.
@@ -1087,7 +1087,7 @@ func void dia_jorgen_li_findmagicorecave_info()
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_08");	//Co já vím, tak takovéhlé zásoby nebyly ani v Hornickém údolí.
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_09");	//Takže jestli máš pravdu, je to úplně nový začátek!
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_10");	//Ale nejspíše je tu jen obyčejná ruda smíšená s kamenem.
-		AI_Output(other,self,"DIA_Jorgen_LI_FindMagicOreCave_01_11");	//A co mám zatraceně dělat, abys mi uveřil?!
+		AI_Output(other,self,"DIA_Jorgen_LI_FindMagicOreCave_01_11");	//A co mám zatraceně dělat, abys mi uvěřil?!
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_12");	//No, musel bych kus rudy vidět, abych zhodnotil její kvalitu!
 		AI_Output(other,self,"DIA_Jorgen_LI_FindMagicOreCave_01_13");	//Tak pojď se mnou, ukážu ti ty jeskyně.
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_14");	//Chlape, na to teď absolutně nemám čas. (úsměv)
@@ -1107,7 +1107,7 @@ func void dia_jorgen_li_findmagicorecave_info()
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_22");	//Aby tady bylo ložisko rudy.
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_23");	//Co já vím, tak takové rozlohy by překonaly doly v Hornickým údolí.
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_24");	//To by bylo úplně něco jiného!
-		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_25");	//Ale musím tě zchladit. Pravdepodobně je to jen obyčejný rudný odpad v kameni.
+		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_25");	//Ale musím tě zchladit. Pravděpodobně je to jen obyčejný rudný odpad v kameni.
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_26");	//Takových je hodně, něco v tom je, ale skutečná těžba z toho nevzejde.
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_27");	//Mohl jsi jednoduše narazit na takovou žilku!
 		AI_Output(other,self,"DIA_Jorgen_LI_FindMagicOreCave_01_28");	//A co teda budem dělat?
@@ -1115,7 +1115,7 @@ func void dia_jorgen_li_findmagicorecave_info()
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_30");	//Možná tu najdeš ještě další ložiska!
 		AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCave_01_31");	//Takže jestli najdeš něco zajímavého, dej mi vědět... (úsměv)
 		LIBEFORETESTOK = TRUE;
-		B_LogEntry(TOPIC_FINDMAGICORECAVE,"Měl bych se porozhlédnout na ostrove, jestli tu nebude ještě jiná žíla rudy.");
+		B_LogEntry(TOPIC_FINDMAGICORECAVE,"Měl bych se porozhlédnout na ostrově, jestli tu nebude ještě jiná žíla rudy.");
 	};
 };
 
@@ -1145,7 +1145,7 @@ func void dia_jorgen_li_findmagicorecaveprogress_info()
 	AI_Output(other,self,"DIA_Jorgen_LI_FindMagicOreCaveProgress_01_01");	//Prohledal jsem ostrov...
 	AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCaveProgress_01_02");	//A?!
 	AI_Output(other,self,"DIA_Jorgen_LI_FindMagicOreCaveProgress_01_03");	//... Našel jsem ještě jednu jeskyni a je v ní více rudy než v té první!
-	AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCaveProgress_01_04");	//Jseš si tím jistý?
+	AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCaveProgress_01_04");	//Jsi si tím jistý?
 	AI_Output(other,self,"DIA_Jorgen_LI_FindMagicOreCaveProgress_01_05");	//Ty nevěříš mým slovům?!
 	AI_Output(self,other,"DIA_Jorgen_LI_FindMagicOreCaveProgress_01_06");	//Ale jo, ale ruda tady na tomhle ostrově!
 	AI_Output(other,self,"DIA_Jorgen_LI_FindMagicOreCaveProgress_01_07");	//Co mám do prdele udělat, abys mi uvěřil?!
@@ -1194,7 +1194,7 @@ func void dia_jorgen_li_findmagicorecavedone_info()
 	AI_Output(other,self,"DIA_Jorgen_LI_FindMagicOreCaveDone_01_08");	//Tak je to lepší.
 	MIS_FINDMAGICORECAVE = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_FINDMAGICORECAVE,LOG_SUCCESS);
-	B_LogEntry(TOPIC_FINDMAGICORECAVE,"Jorgen mi konečně uveřil, že na ostrově je ruda.");
+	B_LogEntry(TOPIC_FINDMAGICORECAVE,"Jorgen mi konečně uvěřil, že na ostrově je ruda.");
 };
 
 
@@ -1221,13 +1221,13 @@ func void dia_jorgen_li_changecourse_info()
 {
 	AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourse_01_01");	//A co budeme dělat teď?
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_01_02");	//Hmm... O tom jsem ještě nepřemýšlel!
-	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_01_03");	//Bude dobré něco udelat s tou rudou.
+	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_01_03");	//Bude dobré něco udělat s tou rudou.
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_01_04");	//Na pevnině by za ni byla hromada zlata!
 	AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourse_01_05");	//To zní dobře!
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_01_06");	//To jo! Ale jak to uděláme?!
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_01_07");	//Naše loď moc neunese a ta ruda není zrovna lehká!
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_01_08");	//A taky bychom potřebovali dobré kopáče. Hodně kopáčů.
-	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_01_09");	//Takže... (smutně) Nejaké nápady?!
+	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_01_09");	//Takže... (smutně) Nějaké nápady?!
 	Info_ClearChoices(dia_jorgen_li_changecourse);
 	if((other.guild == GIL_MIL) || (other.guild == GIL_PAL) || (other.guild == GIL_KDF) || (other.guild == GIL_KDW))
 	{
@@ -1246,11 +1246,11 @@ func void dia_jorgen_li_changecourse_paladin()
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Paladin_01_05");	//Stále nevíme, jaká je situace na kontinentu. Ale říká se, že skřeti jsou už u královského města!
 	AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourse_Paladin_01_06");	//Pak pro rudu nemáme jiné využití.
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Paladin_01_07");	//Dobře, nechám to na tobě.
-	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Paladin_01_08");	//Nicméně pak bychom se měli navrátit na Khorinis.
+	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Paladin_01_08");	//Nicméně pak bychom se měli vrátit na Khorinis.
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Paladin_01_09");	//Ale nemyslím si, že většina posádky ten nápad zrovna uvítá... (pochybně)
 	AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourse_Paladin_01_10");	//No, vysvětlím jim to a uvidíme!
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Paladin_01_11");	//Když to říkáš, přesvědči si je sám... (zlomyslně)
-	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Paladin_01_12");	//V každém případě jim to nejak vysvětli!
+	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Paladin_01_12");	//V každém případě jim to nějak vysvětli!
 	AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourse_Paladin_01_13");	//Jasně!
 	MIS_CHANGECOURSE = LOG_Running;
 	Log_CreateTopic(TOPIC_CHANGECOURSE,LOG_MISSION);
@@ -1268,7 +1268,7 @@ func void dia_jorgen_li_changecourse_sell()
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Sell_01_05");	//Hmm... To není špatný nápad!
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Sell_01_06");	//V jejich situaci po této nabídce skočí.
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Sell_01_07");	//Ale kdo z paladinů má tyto pravomoce?!
-	AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourse_Sell_01_08");	//Ty jseš asi hodně vadnej, přece je na Khorinisu jejich generál...
+	AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourse_Sell_01_08");	//Ty jsi asi hodně vadnej, přece je na Khorinisu jejich generál...
 	AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourse_Sell_01_09");	//... který mi určitě bude naslouchat...
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Sell_01_10");	//To je asi to nejlepší, co s rudou můžeme udělat!
 	AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourse_Sell_01_11");	//Dobrá, vracíme se na Khorinis.
@@ -1352,7 +1352,7 @@ func void dia_jorgen_li_changecoursedone_info()
 		AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourseDone_01_18");	//A co teda budeme dělat?!
 		AI_Output(self,other,"DIA_Jorgen_LI_ChangeCourseDone_01_19");	//To nevím, ale asi se vrátíme na ostrov!
 		AI_Output(other,self,"DIA_Jorgen_LI_ChangeCourseDone_01_20");	//No, tak dobře.
-		B_LogEntry(TOPIC_CHANGECOURSE,"Polovina posádky chce pomoci paladinům, polovina je proti. Vypadá to, že rozhodnutí bude na mě, až se vrátíme na Khorinis!");
+		B_LogEntry(TOPIC_CHANGECOURSE,"Polovina posádky chce pomoci paladinům, polovina je proti. Vypadá to, že rozhodnutí bude na mě, až se vrátíme na Khorinis.");
 		LIGOFORUNKNOWN = TRUE;
 	};
 	MIS_CHANGECOURSE = LOG_SUCCESS;

@@ -61,7 +61,7 @@ instance DIA_VIRAN_MAGICSYMBOLS(C_Info)
 	information = dia_viran_magicsymbols_info;
 	permanent = TRUE;
 	important = FALSE;
-	description = "Mám pro tebe řešení.";
+	description = "Mám na tebe prosbu.";
 };
 
 
@@ -83,18 +83,18 @@ func void dia_viran_magicsymbols_info()
 		AI_Output(other,self,"DIA_Viran_MagicSymbols_01_02");	//Orun mi řekl, že mi můžeš vytetovat magické symboly na tělo.
 		AI_Output(other,self,"DIA_Viran_MagicSymbols_01_03");	//Jako jeden z členů Bratrstva už můžu symboly nosit.
 		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_04");	//A tohle to je ta prosba. Samozřejmě ti pomůžu. Nebude to trvat ani moc času.
-		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_05");	//Jseš si jistý že to chceš opravdu udělat?
+		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_05");	//Jsi si jistý že to chceš opravdu udělat?
 		VIRANFIRSTTALKSYMBOLS = TRUE;
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_06");	//(mrzutě) Co zase chceš?
 		AI_Output(other,self,"DIA_Viran_MagicSymbols_01_07");	//Nakonec jsem se rozhodl si symboly nechat vytetovat. Pomůžeš mi?
-		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_08");	//Dobře... (pochybovačně) Jseš si opravdu jistý?
+		AI_Output(self,other,"DIA_Viran_MagicSymbols_01_08");	//Dobře... (pochybovačně) Jsi si opravdu jistý?
 	};
 	Info_ClearChoices(dia_viran_magicsymbols);
-	Info_AddChoice(dia_viran_magicsymbols,"Ano,samozřejmě!",dia_viran_magicsymbols_yes);
-	Info_AddChoice(dia_viran_magicsymbols,"Ne,tohle není nic pro mě.",dia_viran_magicsymbols_no);
+	Info_AddChoice(dia_viran_magicsymbols,"Ano, samozřejmě!",dia_viran_magicsymbols_yes);
+	Info_AddChoice(dia_viran_magicsymbols,"Ne, tohle není nic pro mě.",dia_viran_magicsymbols_no);
 };
 
 func void dia_viran_magicsymbols_yes()
@@ -139,7 +139,7 @@ func int DIA_Viran_Bold_condition()
 func void DIA_Viran_Bold_info()
 {
 	AI_Output(other,self,"DIA_Viran_Bold_01_00");	//Vyhol mě na pleš.
-	AI_Output(self,other,"DIA_Viran_MagicSymbols_01_08");	//Dobře... (překvapeně) Jseš si tím jistý?
+	AI_Output(self,other,"DIA_Viran_MagicSymbols_01_08");	//Dobře... (překvapeně) Jsi si tím jistý?
 	Info_ClearChoices(DIA_Viran_Bold);
 	Info_AddChoice(DIA_Viran_Bold,"Jo, dělej!",DIA_Viran_Bold_Yes);
 	Info_AddChoice(DIA_Viran_Bold,"Ne, to není pro mě.",DIA_Viran_Bold_No);
@@ -170,7 +170,7 @@ func void DIA_Viran_Bold_Yes()
 		Mdl_SetVisualBody(hero,"hum_body_Naked0",16,0,"Hum_Head_Bald",Face_NX_Player,0,NO_ARMOR);
 	};
 
-	AI_Output(other,self,"DIA_Viran_MagicSymbols_Yes_01_02");	//Děkuju.
+	AI_Output(other,self,"DIA_Viran_MagicSymbols_Yes_01_02");	//Děkuji.
 	Info_ClearChoices(DIA_Viran_Bold);
 };
 
@@ -287,7 +287,7 @@ func void dia_viran_needsteel_info()
 	AI_Output(self,other,"DIA_Viran_NeedSteel_01_08");	//Pokud se ti podaří sehnat nějakou ocel, bylo by to pro nás dost užitečný.
 	AI_Output(other,self,"DIA_Viran_NeedSteel_01_09");	//Co přesně mi za tu ocel můžeš nabídnout?
 	AI_Output(self,other,"DIA_Viran_NeedSteel_01_13");	//Řekněme že za tvoji pomoc bych ti mohl dát... Hmmm...
-	AI_Output(self,other,"DIA_Viran_NeedSteel_01_14");	//... Jednu velmi dobrou zbraň co máme v našem arzenálu rezerv.
+	AI_Output(self,other,"DIA_Viran_NeedSteel_01_14");	//... jednu velmi dobrou zbraň co máme v našem arzenálu rezerv.
 	AI_Output(other,self,"DIA_Viran_NeedSteel_01_15");	//Co je to za zbraň?
 	AI_Output(self,other,"DIA_Viran_NeedSteel_01_16");	//Nejprve dones ocel. Potom ti o ní řeknu víc.
 	AI_Output(self,other,"DIA_Viran_NeedSteel_01_17");	//Řeknu ti jen jedno. Čím více oceli doneseš tím lepší zbraň dostaneš!
@@ -350,7 +350,7 @@ func void dia_viran_bringsteel_info()
 		AI_Output(self,other,"DIA_Viran_BringSteel_01_03");	//To ale nebude stačit ani na pořádný meč!
 		AI_Output(other,self,"DIA_Viran_BringSteel_01_04");	//Co má odměna?
 		AI_Output(self,other,"DIA_Viran_BringSteel_01_05");	//Ach ano tvoje odměna... (zlomyslně)
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_06");	//Tady, víc nezasloužíš!
+		AI_Output(self,other,"DIA_Viran_BringSteel_01_06");	//Tady, víc si nezasloužíš!
 		if(countsteel == 1)
 		{
 			B_GiveInvItems(self,other,itmw_1h_misc_gsword,1);
@@ -369,7 +369,7 @@ func void dia_viran_bringsteel_info()
 		AI_Output(self,other,"DIA_Viran_BringSteel_01_08");	//Ale lepší něco než nic...
 		AI_Output(other,self,"DIA_Viran_BringSteel_01_09");	//Co má odměna?
 		AI_Output(self,other,"DIA_Viran_BringSteel_01_10");	//Ach ano tvoje odměna... (povzdech)
-		AI_Output(self,other,"DIA_Viran_BringSteel_01_11");	//Tady, víc nezasloužíš!
+		AI_Output(self,other,"DIA_Viran_BringSteel_01_11");	//Tady, víc si nezasloužíš!
 		B_GiveInvItems(self,other,ItMw_Schwert,1);
 	}
 	else if((countsteel > 5) && (countsteel <= 7))

@@ -342,7 +342,7 @@ func void DIA_Jergan_Leader_Info()
 	else
 	{
 		AI_Output(other,self,"DIA_Jergan_Leader_15_04");	//Ne.
-		AI_Output(self,other,"DIA_Jergan_Leader_13_05");	//Měl bys to udelat. Jsem si jistý, že za ně dostaneš fůru zlata.
+		AI_Output(self,other,"DIA_Jergan_Leader_13_05");	//Měl bys to udělat. Jsem si jistý, že za ně dostaneš fůru zlata.
 	};
 };
 
@@ -404,17 +404,17 @@ func void DIA_Jergan_Venzel_Info()
 	B_GivePlayerXP(150);
 	AI_Output(other,self,"DIA_Jergan_Venzel_01_00");	//Všiml sis něčeho zajímavého?
 	AI_Output(self,other,"DIA_Jergan_Venzel_01_01");	//Hmm, nemyslím, že by tě něco z toho zajímalo.
-	AI_Output(other,self,"DIA_Jergan_Venzel_01_02");	//Vubec nic?
+	AI_Output(other,self,"DIA_Jergan_Venzel_01_02");	//Vůbec nic?
 	AI_Output(self,other,"DIA_Jergan_Venzel_01_03");	//No, možná... (poškrábe se na hlavě) Jediná věc, která mě napadá...
 	AI_Output(other,self,"DIA_Jergan_Venzel_01_04");	//Co?
 	AI_Output(self,other,"DIA_Jergan_Venzel_01_05");	//Behěm své posledné výpravy jsem viděl jak skřeti vedli někam malou skupinu zajatců.
 	AI_Output(other,self,"DIA_Jergan_Venzel_01_06");	//Zajímavé. Nebyl mezi nimi paladin?
 	AI_Output(self,other,"DIA_Jergan_Venzel_01_07");	//Ne nebyl. Toho bych si všimnul.
 	AI_Output(other,self,"DIA_Jergan_Venzel_01_08");	//A kam šli?
-	AI_Output(self,other,"DIA_Jergan_Venzel_01_09");	//Vypadalo to, že smerem k té velké hoře. Na severovýchod.
+	AI_Output(self,other,"DIA_Jergan_Venzel_01_09");	//Vypadalo to, že směrem k té velké hoře. Na severovýchod.
 	AI_Output(self,other,"DIA_Jergan_Venzel_01_10");	//Myslím si, že tam mají malý tábor.
-	AI_Output(self,other,"DIA_Jergan_Venzel_01_11");	//Ale na tvém místě bych to neoveřoval.
+	AI_Output(self,other,"DIA_Jergan_Venzel_01_11");	//Ale na tvém místě bych to neověřoval.
 	AI_Output(other,self,"DIA_Jergan_Venzel_01_12");	//(ironicky) A kdo jiný, když ne já?
 	HintVenzelOrcs_02 = TRUE;
-	B_LogEntry(TOPIC_LostPaladins,"Průzkumník Jergan nedávno videl skřety jak vedou malou skupinu zajatců. Podle Jergana tam paladin nebyl. Také si myslí, že skřeti šli směrem k velké hoře na severovýchod údolí. Myslím, že je čas promluvit si s Garondem.");
+	B_LogEntry(TOPIC_LostPaladins,"Průzkumník Jergan nedávno viděl skřety jak vedou malou skupinu zajatců. Podle Jergana tam paladin nebyl. Také si myslí, že skřeti šli směrem k velké hoře na severovýchod údolí. Myslím, že je čas promluvit si s Garondem.");
 };

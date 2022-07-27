@@ -53,7 +53,7 @@ func void dia_mage_li_hellos_info()
 	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_21");	//Uvědomil jsem si, že jsem ve středu ostrova viděl věž!
 	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_22");	//Je zakrytá stromy, takže sis jí možná nevšiml.
 	AI_Output(other,self,"DIA_Mage_LI_Ancient_01_24");	//Tak tu věž prozkoumám co nejdříve to bude možné!
-	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_26");	//Ale bojím se, že ho budeš muset uskutečnit sám.
+	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_26");	//Ale bojím se, že to budeš muset uskutečnit sám.
 	AI_Output(self,other,"DIA_Mage_LI_Ancient_01_30");	//Ta magie co tu cítím. Já se k věži nedostanu.
 	AI_Output(other,self,"DIA_Mage_LI_Ancient_01_32");	//Dobrá, tak já se tam podívám a dám ti vědět.
 	if(self.aivar[AIV_PARTYMEMBER] == TRUE)
@@ -63,7 +63,7 @@ func void dia_mage_li_hellos_info()
 	MIS_MILTENANCIENT = LOG_Running;
 	Log_CreateTopic(TOPIC_MILTENANCIENT,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_MILTENANCIENT,LOG_Running);
-	B_LogEntry(TOPIC_MILTENANCIENT,"Milten mi řekl o jedné velmi neobvyklé věci. Když udělal pár kroků ke středu ostrova, ucítil prastarou magii. Někde na ostrově je zdroj prastaré magické síly! Podle Miltena je zdroj někde ve středu ostrova. Podle Miltena v jedné staré věži v prostřed ostrova. Myslím, že bych se tam měl rychle podívat!");
+	B_LogEntry(TOPIC_MILTENANCIENT,"Milten mi řekl o jedné velmi neobvyklé věci. Když udělal pár kroků ke středu ostrova, ucítil prastarou magii. Někde na ostrově je zdroj prastaré magické síly! Podle Miltena je zdroj někde ve středu ostrova. Podle Miltena v jedné staré věži uprostřed ostrova. Myslím, že bych se tam měl rychle podívat!");
 };
 
 

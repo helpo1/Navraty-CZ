@@ -278,7 +278,7 @@ func void DIA_Jarvis_SylviosMen_Info()
 	AI_Output(self,other,"DIA_Jarvis_SylviosMen_04_01");	//Je to šest chlapů. První je Sylvio sám a jeho pravá ruka Bullco.
 	AI_Output(self,other,"DIA_Jarvis_SylviosMen_04_02");	//A pak jsou tu Rod, Sentenza, Fester a Raoul.
 	AI_Output(self,other,"DIA_Jarvis_SylviosMen_04_03");	//Zbytek chlapů je buď neutrálních, nebo na Leeově straně.
-	B_LogEntry(TOPIC_JarvisSLDKo,"K Sylviovým chlapům patří kromě Sylvia ještě jeho velitel Bullco, Rod, Sentenza, Fester a Raoul.");
+	B_LogEntry(TOPIC_JarvisSLDKo,"K Sylviovým chlapům patří kromě Sylvia ještě jeho pravá ruka Bullco, Rod, Sentenza, Fester a Raoul.");
 };
 
 
@@ -445,7 +445,7 @@ func void DIA_Jarvis_ShieldTeach_Info()
 		AI_Output(self,other,"DIA_Jarvis_ShieldTeach_01_09");	//Řekni mě, až budeš připraven a můžem začít.
 		JarvisShieldTeach = TRUE;
 		Log_CreateTopic(Topic_SoldierTeacher,LOG_NOTE);
-		B_LogEntry(Topic_SoldierTeacher,"Jarvis mě může nauč, jak zacházet se štítem.");
+		B_LogEntry(Topic_SoldierTeacher,"Jarvis mě může naučit, jak zacházet se štítem.");
 	}
 	else
 	{
@@ -482,11 +482,11 @@ func void DIA_Jarvis_Shield_Teach_Info()
 		B_GiveInvItems(other,self,ItMi_Gold,1000);
 		Npc_RemoveInvItems(self,ItMi_Gold,1000);
 		AI_Output(self,other,"DIA_Jarvis_Shield_Teach_01_01");	//Dobře! Pozorně poslouchej.
-		AI_Output(self,other,"DIA_Jarvis_Shield_Teach_01_02");	//Štít - je něco, co ti může v těžkých chvílích zachráni prdel, před smrtelnou ranou.
+		AI_Output(self,other,"DIA_Jarvis_Shield_Teach_01_02");	//Štít - je něco, co ti může v těžkých chvílích zachránit prdel, před smrtelnou ranou.
 		AI_Output(self,other,"DIA_Jarvis_Shield_Teach_01_03");	//Zacházet se štítem neumí každý! Ale když se to naučíš, tak to stojí za to.
 		AI_Output(self,other,"DIA_Jarvis_Shield_Teach_01_04");	//Za prvé snaž se udržet štít v úrovni očí, ne níž ani výš.
 		AI_Output(self,other,"DIA_Jarvis_Shield_Teach_01_05");	//To ti umožní, dobře sledovat protivníka a včas štítem vykrýt úder.
-		AI_Output(self,other,"DIA_Jarvis_Shield_Teach_01_06");	//Úder mečem musí být rychlý bez velkého nápřahu. Odtkrýt se, udeřit a znova schovat za štít!
+		AI_Output(self,other,"DIA_Jarvis_Shield_Teach_01_06");	//Úder mečem musí být rychlý bez velkého nápřahu. Odkrýt se, udeřit a znova se schovat za štít!
 		AI_Output(self,other,"DIA_Jarvis_Shield_Teach_01_07");	//Nepřítel si bude marně lámat hlavu nad tím, jak překonat tvoji obranu.
 		AI_Output(self,other,"DIA_Jarvis_Shield_Teach_01_08");	//A dřív nebo později udělá chybu kterou můžeš využít.
 		AI_Output(self,other,"DIA_Jarvis_Shield_Teach_01_09");	//Když budeš dělat vše jak jsem tě učil, jednoho dne se staneš mistrem štítu!

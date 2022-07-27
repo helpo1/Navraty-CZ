@@ -111,7 +111,7 @@ func void dia_fisk_nw_hi_info()
 	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_11");	//Jo a zrovna špatně sis pak nevedl!
 	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_12");	//No, je pravda, že jsem si sehnal dostatek kapitálu, abych si zde mohl otevřít stánek.
 	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_13");	//Ostatním obchodníkům to nevadí?
-	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_14");	//No, někteří se ješte rozmýšlí, ale myslím, že ne!
+	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_14");	//No, někteří se ještě rozmýšlí, ale myslím, že ne!
 	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_15");	//Navíc, tohle místo je velká obchodní zóna, určitě tu pro mě místo bude.
 	AI_Output(self,other,"DIA_Fisk_NW_Hi_01_16");	//Budu ale muset pracovat o trochu více, než ostatní obchodníci...
 	AI_Output(other,self,"DIA_Fisk_NW_Hi_01_17");	//Můžeš mi prodat něco zajímavého?

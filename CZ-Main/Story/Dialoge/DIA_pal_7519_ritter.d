@@ -155,7 +155,7 @@ func int dia_pal_7519_ritter_gotokillorcslavesdone_condition()
 
 func void dia_pal_7519_ritter_gotokillorcslavesdone_info()
 {
-	AI_Output(self,other,"DIA_PAL_7519_RITTER_GoToKillOrcSlavesDone_01_00");	//Musíte se vrátit do tábora - Albert potřebuje vědět, co se stalo!
+	AI_Output(self,other,"DIA_PAL_7519_RITTER_GoToKillOrcSlavesDone_01_00");	//Musíš se vrátit do tábora - Albert potřebuje vědět, co se stalo!
 	AI_Output(other,self,"DIA_PAL_7519_RITTER_GoToKillOrcSlavesDone_01_01");	//Samozřejmě.
 	AI_StopProcessInfos(self);
 	self.aivar[AIV_PARTYMEMBER] = FALSE;

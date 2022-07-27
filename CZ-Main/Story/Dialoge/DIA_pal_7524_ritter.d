@@ -45,7 +45,7 @@ func void dia_pal_7524_pass_info()
 	AI_Output(other,self,"DIA_PAL_7524_Pass_01_00");	//Co je tady?
 	AI_Output(self,other,"DIA_PAL_7524_Pass_01_01");	//Tábor paladinů.
 	AI_Output(self,other,"DIA_PAL_7524_Pass_01_02");	//Po skřetím útoku jsme se sem stáhli a bráníme to tady.
-	AI_Output(self,other,"DIA_PAL_7524_Pass_01_03");	//Ale krátce nato zde vyrostl teto les a skřeti ustoupili.
+	AI_Output(self,other,"DIA_PAL_7524_Pass_01_03");	//Ale krátce nato zde vyrostl tento les a skřeti ustoupili.
 };
 
 

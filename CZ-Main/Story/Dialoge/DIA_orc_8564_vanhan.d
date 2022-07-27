@@ -159,7 +159,7 @@ func void dia_orc_8564_vanhan_talisman_info()
 	AI_Output(self,other,"DIA_Orc_8564_VanHan_Talisman_01_13");	//Člověk podívat dole v táboře, tam najít ji.
 	AI_Output(other,self,"DIA_Orc_8564_VanHan_Talisman_01_14");	//A co v té truhle je?
 	AI_Output(self,other,"DIA_Orc_8564_VanHan_Talisman_01_15");	//Ur-Han nepamatovat. Být moc dávno.
-	AI_Output(other,self,"DIA_Orc_8564_VanHan_Talisman_01_16");	//Áha.
+	AI_Output(other,self,"DIA_Orc_8564_VanHan_Talisman_01_16");	//Aha.
 	B_GiveInvItems(self,other,itke_orcshaman_shv,1);
 };
 
@@ -205,7 +205,7 @@ func void dia_orc_8564_vanhan_prisonsoul_info()
 		B_GivePlayerXP(100);
 		AI_Output(other,self,"DIA_Orc_8564_VanHan_PrisonSoul_01_10");	//Myslím, že vím jak to udělat. Našel jsem v chrámu tuhle starou knihu.
 		AI_Output(other,self,"DIA_Orc_8564_VanHan_PrisonSoul_01_11");	//Díky za pomoc.
-		B_LogEntry(TOPIC_URNAZULRAGE,"Ukázal jsem Ur-Hanovi ten zláštní kámen, co jsem našel. Řekl, že je to Oko hněvu. Nyní mu navrátím moc pomocí knihy démonů.");
+		B_LogEntry(TOPIC_URNAZULRAGE,"Ukázal jsem Ur-Hanovi ten zvláštní kámen, co jsem našel. Řekl, že je to Oko hněvu. Nyní mu navrátím moc pomocí knihy démonů.");
 	};
 	B_GiveInvItems(self,other,itmi_prisonsoul,1);
 	FINDPRISONSOUL = TRUE;

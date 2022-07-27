@@ -97,7 +97,7 @@ func void dia_snaf_nw_hi_info()
 	}
 	else if(other.guild == GIL_KDM)
 	{
-		AI_Output(self,other,"DIA_Snaf_NW_Hi_01_0B");	//NEKTROMANT! No koho by to napadlo?
+		AI_Output(self,other,"DIA_Snaf_NW_Hi_01_0B");	//NEKROMANT! No koho by to napadlo?
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
@@ -107,10 +107,10 @@ func void dia_snaf_nw_hi_info()
 	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_09");	//Copak nevidíš? Pracuji zde... 
 	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_10");	//Kardif tě vzal k sobě?
 	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_11");	//Podělil jsem se s ním o své nejlepší recepty, on mi na oplátku nabídl práci.
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_12");	//Já si nestěžuji. A Kardif mé méně problémů.
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_13");	//Nevypadá to, že by litoval,že mě vzal k sobě.
+	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_12");	//Já si nestěžuji. A Kardif má méně problémů.
+	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_13");	//Nevypadá to, že by litoval, že mě vzal k sobě.
 	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_14");	//Ano, dobře ses zabydlel.
-	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_15");	//Samo sebe. Dobře tedy - mám ještě hodně práce, takže na pokec nemám čas. Dokonce ani se starým známým!
+	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_15");	//Samo sebou. Dobře tedy - mám ještě hodně práce, takže na pokec nemám čas. Dokonce ani se starým známým!
 	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_16");	//Dobrá tedy, pracuj. Nebudu ti tu překážet.
 	AI_Output(self,other,"DIA_Snaf_NW_Hi_01_17");	//Děkuji.
 	AI_Output(other,self,"DIA_Snaf_NW_Hi_01_18");	//Bez problémů.
@@ -144,7 +144,7 @@ func void DIA_Snaf_NW_Booze_Info()
 	B_GiveInvItems(self,other,ItFo_Addon_FireStew,1);
 	MIS_SnafHammer = LOG_SUCCESS;
 	Log_SetTopicStatus(Topic_Addon_Hammer,LOG_SUCCESS);
-	B_LogEntry(Topic_Addon_Hammer,"Donesl jsem Snafovy chlast.");
+	B_LogEntry(Topic_Addon_Hammer,"Donesl jsem Snafovi chlast.");
 };
 
 instance DIA_SNAF_NW_CITY(C_Info)
@@ -270,7 +270,7 @@ func void DIA_Addon_Snaf_NW_TeachCookDone_HotMeal()
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,750);
 		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_01");	//Pro tuhletu polívku se ukázalo že je důležité nelitovat hub.
-		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_02");	//Dáš padesát kousků hub do hrnce, potom ohnivý kořen a pomaly míchat v rozpáleném hrnci.
+		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_02");	//Dáš padesát kousků hub do hrnce, potom ohnivý kořen a pomaly mícháš v rozpáleném hrnci.
 		AI_Output(self,other,"DIA_Addon_Snaf_TeachCookDone_HotMeal_01_03");	//Za méně než půl hodiny je polévka hotová.
 		AI_Print("Naučeno: Vaření - 'Vývar z otrokových chlebů'");
 		B_LogEntry(TOPIC_COOK,"Ingredience pro VÝVAR Z OTROKOVÝCH CHLEBŮ: 50x otrokův chléb a ohnivý kořen.");

@@ -241,7 +241,7 @@ func void DIA_Addon_Henry_WantEnter_Info()
 {
 	var C_Item itm;
 	AI_Output(other,self,"DIA_Addon_Henry_WantEnter_15_00");	//Chci jít do tábora!
-	AI_Output(self,other,"DIA_Addon_Henry_WantEnter_04_01");	//Fakt? Tak to tě výjde pěkně draze.
+	AI_Output(self,other,"DIA_Addon_Henry_WantEnter_04_01");	//Fakt? Tak to tě vyjde pěkně draze.
 	B_Henry_Gold(500);
 
 	if(Henry_Zoll_WhatFor == FALSE)
@@ -260,7 +260,7 @@ func void B_Henry_NoJoin()
 	AI_Output(self,other,"DIA_Addon_Henry_Add_04_00");	//Jestli se k nám chceš přidat, tak tě asi musím zklamat, mládenče!
 	AI_Output(self,other,"DIA_Addon_Henry_Add_04_01");	//Kapitán s polovinou chlapů z tábora odplul na moře. A on je jediný, kdo přijímá nové členy.
 	AI_Output(self,other,"DIA_Addon_Henry_Add_04_02");	//Ale můžeš počkat, dokud se nevrátí.
-	AI_Output(self,other,"DIA_Addon_Henry_Add_04_03");	//Nesnaž se tu ovšem zpusobit nějaký problém!
+	AI_Output(self,other,"DIA_Addon_Henry_Add_04_03");	//Nesnaž se tu ovšem způsobit nějaký problém!
 };
 
 
@@ -299,7 +299,7 @@ instance DIA_Addon_Henry_Einigen(C_Info)
 	nr = 3;
 	condition = DIA_Addon_Henry_Einigen_Condition;
 	information = DIA_Addon_Henry_Einigen_Info;
-	description = "Nemohli bychom se dohodnut nějak líp?";
+	description = "Nemohli bychom se dohodnout nějak líp?";
 };
 
 
@@ -313,7 +313,7 @@ func int DIA_Addon_Henry_Einigen_Condition()
 
 func void DIA_Addon_Henry_Einigen_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Henry_Einigen_15_00");	//Nemohli bychom se dohodnut nějak líp?
+	AI_Output(other,self,"DIA_Addon_Henry_Einigen_15_00");	//Nemohli bychom se dohodnout nějak líp?
 	AI_Output(self,other,"DIA_Addon_Henry_Einigen_04_01");	//Možná. Dej mi nějaký dobrý důvod a možná tě to vyjde levněji.
 };
 
@@ -368,7 +368,7 @@ func void DIA_Addon_Henry_Malcom_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Henry_Malcom_15_00");	//Posíla mě Malcom. Mám ti vzkázat, že na ty trámy potřebuje ještě nějaký čas.
 	AI_Output(self,other,"DIA_Addon_Henry_Malcom_04_01");	//(lamentování) Och ano, ano. To jsem si mohl myslet. Určitě mu to bude trvat celou věčnost.
-	B_MalcomExident();
+	//B_MalcomExident();
 };
 
 
@@ -446,7 +446,7 @@ func void DIA_Addon_Henry_Tribut_Info()
 			AI_Output(self,other,"DIA_Addon_Henry_Tribut_Add_04_00");	//A nejlepší na tom je:
 		};
 		AI_Output(self,other,"DIA_Addon_Henry_Tribut_Add_04_01");	//Postaral ses o ty spráskaný psy na věži.
-		AI_Output(self,other,"DIA_Addon_Henry_Tribut_Add_04_02");	//Nemyslel jsem si, že to vzládneš sám.
+		AI_Output(self,other,"DIA_Addon_Henry_Tribut_Add_04_02");	//Nemyslel jsem si, že to zvládneš sám.
 		Henry_Amount = Henry_Amount - 200;
 	};
 	if(Henry_Amount <= 0)
@@ -471,9 +471,9 @@ func void DIA_Addon_Henry_Tribut_Info()
 
 func void DIA_Addon_Henry_Tribut_ja()
 {
-	AI_Output(other,self,"DIA_Addon_Henry_Tribut_ja_15_00");	//Dobrá. Tu je tvé zlato
+	AI_Output(other,self,"DIA_Addon_Henry_Tribut_ja_15_00");	//Dobrá. Tu je tvé zlato.
 	B_GiveInvItems(other,self,ItMi_Gold,Henry_Amount);
-	AI_Output(self,other,"DIA_Addon_Henry_Tribut_ja_04_01");	//Děkuji. Vítam tě v našem táboře.
+	AI_Output(self,other,"DIA_Addon_Henry_Tribut_ja_04_01");	//Děkuji. Vítám tě v našem táboře.
 	B_Henry_NoJoin();
 	Info_ClearChoices(DIA_Addon_Henry_Tribut);
 	self.aivar[AIV_PASSGATE] = TRUE;
@@ -501,7 +501,7 @@ instance DIA_Addon_Henry_Palisade(C_Info)
 	condition = DIA_Addon_Henry_Palisade_Condition;
 	information = DIA_Addon_Henry_Palisade_Info;
 	permanent = FALSE;
-	description = "Co tu delaš?";
+	description = "Co tady deláš?";
 };
 
 
@@ -515,8 +515,8 @@ func int DIA_Addon_Henry_Palisade_Condition()
 
 func void DIA_Addon_Henry_Palisade_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Henry_Palisade_15_00");	//Co tu delaš?
-	AI_Output(self,other,"DIA_Addon_Henry_Palisade_04_01");	//Co si myslíš? Musím dohlídnut na tyhle slabochy, aby dostavěli palisádu.
+	AI_Output(other,self,"DIA_Addon_Henry_Palisade_15_00");	//Co tady deláš?
+	AI_Output(self,other,"DIA_Addon_Henry_Palisade_04_01");	//Co si myslíš? Musím dohlídnout na tyhle slabochy, aby dostavěli palisádu.
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_04_02");	//Jak to nepostavíme, tak mě kapitán Greg nakope do zadku.
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_04_03");	//Navíc musím dohlížet na to, aby sem nenapochodoval každý, komu se zachce!
 };
@@ -529,7 +529,7 @@ instance DIA_Addon_Henry_Palisade_WhatFor(C_Info)
 	condition = DIA_Addon_Henry_Palisade_WhatFor_Condition;
 	information = DIA_Addon_Henry_Palisade_WhatFor_Info;
 	permanent = FALSE;
-	description = "Proč tu stavíte palisadu?";
+	description = "Proč tu stavíte palisádu?";
 };
 
 
@@ -543,7 +543,7 @@ func int DIA_Addon_Henry_Palisade_WhatFor_Condition()
 
 func void DIA_Addon_Henry_Palisade_WhatFor_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Henry_Palisade_WhatFor_15_00");	//Proč tu stavíte palisadu?
+	AI_Output(other,self,"DIA_Addon_Henry_Palisade_WhatFor_15_00");	//Proč tu stavíte palisádu?
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_WhatFor_04_10");	//Aby to banditi neměli tak jednoduché!
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_WhatFor_04_02");	//Ti bastardi jsou čímdál drzejší. Již několik dní obkličují náš tábor. Přesně jako žraloci obkličují ztroskotance na moři.
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_WhatFor_04_11");	//Několik těch bastardů se ukrylo do věže na jih od tábora.
@@ -644,7 +644,7 @@ func void DIA_Addon_Henry_Palisade_Bandits_Info()
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Bandits_04_05");	//Na začátku to bylo v pořádku. Přivezli jsme je sem a oni se usadili v bažinách, nechajíc nás na pokoji.
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Bandits_04_06");	//Ale teď začali napadat každého, kdo k nim nepatří.
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Bandits_04_07");	//Co jsem se doslechl, démoni je vyhnali.
-	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Bandits_04_08");	//Myslel jsem, že chtějí naše lodě. Prece jen - není žádnej jinej způsob, jak se odsud dostat.
+	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Bandits_04_08");	//Myslel jsem, že chtějí naše lodě. Přece jen - není žádnej jinej způsob, jak se odsud dostat.
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Bandits_04_09");	//Zeptej se na to Skipa. Byl tam - a vyvázl živej.
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Bandits_04_10");	//Je to zajímavý příběh. Už mi o tom hodně říkal.
 	if(self.aivar[AIV_PASSGATE] == FALSE)
@@ -754,7 +754,7 @@ func void DIA_Addon_Henry_Owen_Info()
 	MIS_Henry_HolOwen = LOG_Running;
 	Log_CreateTopic(TOPIC_Addon_HolOwen,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_HolOwen,LOG_Running);
-	B_LogEntry(TOPIC_Addon_HolOwen,"Henry čeká na trámy na hradby. Oznámil jsem to Owenovi. Stojí u jezera spolu s Malcomem.");
+	B_LogEntry(TOPIC_Addon_HolOwen,"Henry čeká na trámy na palisádu. Oznámil jsem to Owenovi. Stojí u jezera spolu s Malcomem.");
 };
 
 func void B_Addon_Henry_MalcomsDead()
@@ -1010,7 +1010,7 @@ instance DIA_Addon_Henry_Palisade_Train(C_Info)
 	condition = DIA_Addon_Henry_Palisade_Train_Condition;
 	information = DIA_Addon_Henry_Palisade_Train_Info;
 	permanent = FALSE;
-	description = "Greg je tvuj šéf?";
+	description = "Greg je tvůj šéf?";
 };
 
 
@@ -1024,7 +1024,7 @@ func int DIA_Addon_Henry_Palisade_Train_Condition()
 
 func void DIA_Addon_Henry_Palisade_Train_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Henry_Palisade_Train_15_00");	//Greg je tvuj šéf?
+	AI_Output(other,self,"DIA_Addon_Henry_Palisade_Train_15_00");	//Greg je tvůj šéf?
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Train_04_01");	//Přesně tak. A pro tebe je to KAPITÁN Greg. Mám ti to vysvětlit?
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Train_04_02");	//Je to skvělý muž. Když ho potkáš, tak na něj nezkoušej žadnej podraz. Nemusela by se ti líbit jeho reakce.
 	if(PIR_1300_Addon_Greg_NW.aivar[AIV_TalkedToPlayer] == TRUE)
@@ -1032,7 +1032,7 @@ func void DIA_Addon_Henry_Palisade_Train_Info()
 		AI_Output(other,self,"DIA_Addon_Henry_Palisade_Train_15_03");	//Ve skutečnosti jsem se s ním už potkal.
 		AI_Output(self,other,"DIA_Addon_Henry_Palisade_Train_04_04");	//Ach tak. Takže víš o čem mluvím.
 	};
-	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Train_04_05");	//Nanešťěstí teď není v táboře.
+	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Train_04_05");	//Naneštěstí teď není v táboře.
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Train_04_06");	//Jeho zástupce se jmenuje Francis.
 	AI_Output(self,other,"DIA_Addon_Henry_Palisade_Train_04_07");	//Po celý den sedí před Gregovou chatrčí, a zírá na nás, jak pracujeme.
 };

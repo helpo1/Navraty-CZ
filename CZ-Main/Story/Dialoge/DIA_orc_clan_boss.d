@@ -39,7 +39,7 @@ func void DIA_NagShor_Hello_Info()
 	AI_Output(self,other,"DIA_NagShor_Hello_01_03");	//Nikdy jsem nemyslel, že člověk dostat zde.
 	AI_Output(self,other,"DIA_NagShor_Hello_01_04");	//I když vidím, že mít Ulu-Mulu - znak síly!
 	AI_Output(self,other,"DIA_NagShor_Hello_01_05");	//Takže znát naše zvyky... (s uznáním) To být dobré pro člověk.
-	AI_Output(self,other,"DIA_NagShor_Hello_01_06");	//Skřeti respektovat Ulu-Mulu, mluv, co cheš?!
+	AI_Output(self,other,"DIA_NagShor_Hello_01_06");	//Skřeti respektovat Ulu-Mulu, mluv, co chceš?!
 	Info_ClearChoices(DIA_NagShor_Hello);
 	Info_AddChoice(DIA_NagShor_Hello,"Nevím.",DIA_NagShor_Hello_None);
 
@@ -85,9 +85,9 @@ func void DIA_NagShor_Hello_UrKarras()
 	AI_Output(other,self,"DIA_NagShor_Hello_UrKarras_01_05");	//Počkej, šéfe! Tady, vem si tento svitek - vše je zde napsáno.
 	B_GiveInvItems(other,self,ItWr_UrKarrasLetter,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_NagShor_Hello_UrKarras_01_06");	//Arrgh... Zdá se, že človek mluví pravdu!
-	AI_Output(self,other,"DIA_NagShor_Hello_UrKarras_01_07");	//Je zřejmé, že Ur-Karras a klan Černého draka si tohohle človeka opravdu vážit!
-	AI_Output(self,other,"DIA_NagShor_Hello_UrKarras_01_08");	//Když tě respektovat oni - my budeme taky. Nezabíjejte ho! Od teď s ním zacházejte jako se svým bratem.
+	AI_Output(self,other,"DIA_NagShor_Hello_UrKarras_01_06");	//Arrgh... Zdá se, že člověk mluví pravdu!
+	AI_Output(self,other,"DIA_NagShor_Hello_UrKarras_01_07");	//Je zřejmé, že Ur-Karras a klan Černého draka si tohohle člověka opravdu vážit!
+	AI_Output(self,other,"DIA_NagShor_Hello_UrKarras_01_08");	//Když tě respektovat oni - my budeme taky. Nezabíjejte ho! Od teď s ním zacházejte jako se svým bratrem.
 	AI_Output(other,self,"DIA_NagShor_Hello_UrKarras_01_09");	//Jsem rád, že se všechno vyjasnilo. Když sis teď prečetl tu zprávu - jakou odpověď mám přinést Ur-Karrasovi?
 	AI_Output(self,other,"DIA_NagShor_Hello_UrKarras_01_10");	//Hmm... (přemýšlí) Řekni mu, že já i mí bratři přistoupíme na jeho návrh.
 	AI_Output(other,self,"DIA_NagShor_Hello_UrKarras_01_11");	//Dobrá. Musím jít.
@@ -158,8 +158,8 @@ func void DIA_NagShor_HelloAgain_UrShak()
 	AI_Output(other,self,"DIA_NagShor_HelloAgain_UrShak_01_08");	//Takže nemáme důvod k nepřátelství.
 	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrShak_01_09");	//Člověk zachránil skřetí život?!... (velmi udiveně) Nikdy jsem neslyšel! Mluví člověk pravda?!
 	AI_Output(other,self,"DIA_NagShor_HelloAgain_UrShak_01_10");	//Jestli mi nevěříš, tak jednoduše můžeš jít za ním a zeptat se ho.
-	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrShak_01_11");	//(prozíravě) Dobrá. já věřit. Člověk vypadá, že mluvit pravda.
-	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrShak_01_13");	//Nyní člověk říct - co on chce vědet?
+	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrShak_01_11");	//(prozíravě) Dobrá. Já věřit. Člověk vypadá, že mluvit pravda.
+	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrShak_01_13");	//Nyní člověk říct - co on chce vědět?
 	NagShorTellUrShak = TRUE;
 	NagShorAreedAnswer = TRUE;
 	Info_ClearChoices(DIA_NagShor_HelloAgain);
@@ -175,13 +175,13 @@ func void DIA_NagShor_HelloAgain_UrKarras()
 	AI_Output(other,self,"DIA_NagShor_HelloAgain_UrKarras_01_05");	//Počkej, šéfe! Tady, vem si tento svitek - vše je zde napsáno.
 	B_GiveInvItems(other,self,ItWr_UrKarrasLetter,1);
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrKarras_01_06");	//Arrgh... Zdá se, že človek mluví pravdu!
+	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrKarras_01_06");	//Arrgh... Zdá se, že člověk mluví pravdu!
 	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrKarras_01_07");	//Je zřejmé, že Ur-Karras a klan Černého draka si tohohle člověka opravdu vážit!
-	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrKarras_01_08");	//Když tě respektovat oni - my budeme taky. Nezabíjejte ho! Od teď s ním zacházejte jako se svým bratem.
-	AI_Output(other,self,"DIA_NagShor_HelloAgain_UrKarras_01_09");	//Jsem rád, že se všechno vyjasnilo. Když sis teď prečet tu zprávu - jakou odpověď mám přinést Ur-Karrasovi?
+	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrKarras_01_08");	//Když tě respektovat oni - my budeme taky. Nezabíjejte ho! Od teď s ním zacházejte jako se svým bratrem.
+	AI_Output(other,self,"DIA_NagShor_HelloAgain_UrKarras_01_09");	//Jsem rád, že se všechno vyjasnilo. Když sis teď prečetl tu zprávu - jakou odpověď mám přinést Ur-Karrasovi?
 	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrKarras_01_10");	//Hmm... (přemýšlí) Řekni mu, že já i mí bratři přistoupíme na jeho návrh.
 	AI_Output(other,self,"DIA_NagShor_HelloAgain_UrKarras_01_11");	//Dobrá. Musím jít.
-	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrKarras_01_12");	//Sbohem, bratře človeku!
+	AI_Output(self,other,"DIA_NagShor_HelloAgain_UrKarras_01_12");	//Sbohem, bratře člověku!
 	NagShorTellUrKarras = TRUE;
 	OrcClanBossLetterDeliver = TRUE;
 	B_LogEntry(TOPIC_HeroOrcJoin_T2,"Doručil jsem zprávu od Ur-Karrase vůdci klanu Vysoké skály. Nyní je čas vrátit se do města skřetů a předat Ur-Karrasovi jeho odpověď.");
@@ -216,8 +216,8 @@ func int DIA_NagShor_WhoYou_Condition()
 func void DIA_NagShor_WhoYou_Info()
 {
 	AI_Output(other,self,"DIA_NagShor_WhoYou_01_01");	//Kdo jsi?!
-	AI_Output(self,other,"DIA_NagShor_WhoYou_01_02");	//Říkají mi Shor! Jsem náčelník Vysoká skála! To proto, že já být nejvíc chytrý, silný a elegantní skřet co ty tu moci potkat! (škrábe se na zadku)
-	AI_Output(other,self,"DIA_NagShor_WhoYou_01_03");	//Takže jsi zde nejdůležitejší?
+	AI_Output(self,other,"DIA_NagShor_WhoYou_01_02");	//Říkají mi Nag Shor! Jsem náčelník Vysoká skála! To proto, že já být nejvíc chytrý, silný a elegantní skřet co ty tu moci potkat! (škrábe se na zadku)
+	AI_Output(other,self,"DIA_NagShor_WhoYou_01_03");	//Takže jsi zde nejdůležitější?
 	AI_Output(self,other,"DIA_NagShor_WhoYou_01_04");	//To ano!
 	AI_Output(other,self,"DIA_NagShor_WhoYou_01_05");	//Dobrá.
 };
@@ -244,21 +244,21 @@ func void DIA_NagShor_WaterSoul_Info()
 	B_GivePlayerXP(300);
 	AI_Output(other,self,"DIA_NagShor_WaterSoul_01_01");	//Víš něco o stvoření zvaném Duch Vody?
 	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_02");	//Duch Vody?! Hmmm... Nemám ponětí co člověk myslí.
-	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_03");	//Jen šamani mluví s duchy! Shor nebýt šaman.
-	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_04");	//Shor válečník. Vstupuje do bitvy a zabije nepřítele! Nic jiného nedělat!
-	AI_Output(other,self,"DIA_NagShor_WaterSoul_01_05");	//Áha, a nevíš, který šaman by o tom mohl něco málo vědět?
+	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_03");	//Jen šamani mluví s duchy! Nag Shor nebýt šaman.
+	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_04");	//Nag Shor válečník. Vstupuje do bitvy a zabije nepřítele! Nic jiného nedělat!
+	AI_Output(other,self,"DIA_NagShor_WaterSoul_01_05");	//Aha, a nevíš, který šaman by o tom mohl něco málo vědět?
 	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_06");	//Hmmm... Myslím, že šaman Ur-Dah by mohl pomoci. On moci vědět více!
 	AI_Output(other,self,"DIA_NagShor_WaterSoul_01_07");	//Ur-Dah?! Kdo je to?
 	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_08");	//On být šaman Vysoké skály - šamani mluví s duchy a získají od nich magii! Je velmi starý a moudrý!
 	AI_Output(other,self,"DIA_NagShor_WaterSoul_01_09");	//Pak s ním musím mluvit. Ve které části tábora ho najdu?
 	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_10");	//On nyní nebýt v kmeni! Odešel bojovat proti lidem.
-	AI_Output(other,self,"DIA_NagShor_WaterSoul_01_11");	//A kde muže být?!
-	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_12");	//Ty muset jít tam, kde mi léčíme rány a pohřbíváme, vééélmi daleko odsud.
+	AI_Output(other,self,"DIA_NagShor_WaterSoul_01_11");	//A kde může být?!
+	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_12");	//Ty muset jít tam, kde my léčíme rány a pohřbíváme, vééélmi daleko odsud.
 	AI_Output(other,self,"DIA_NagShor_WaterSoul_01_14");	//Mluvíš o Skřetím hřbitově?!
-	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_15");	//Shor věří, že tak lidé nazývají to místo. Hledej tam!
+	AI_Output(self,other,"DIA_NagShor_WaterSoul_01_15");	//Nag Shor věří, že tak lidé nazývají to místo. Hledej tam!
 	AI_Output(other,self,"DIA_NagShor_WaterSoul_01_16");	//Díky.
 	NagShorTellMe = TRUE;
-	B_LogEntry(TOPIC_WakonTest,"Vůdce klanu Vysoké skály neví vůbec nic o Duchu Vody. Nicméně řekl, že nejvyšší šaman Ur-Dah by měl něco vědět. Podle toho co Shor mlel by měl Ur-Dah být na skřetím hřbitově!");
+	B_LogEntry(TOPIC_WakonTest,"Vůdce klanu Vysoké skály neví vůbec nic o Duchu Vody. Nicméně řekl, že nejvyšší šaman Ur-Dah by měl něco vědět. Podle toho co Nag Shor mlel by měl Ur-Dah být na skřetím hřbitově.");
 };
 
 instance DIA_NagShor_UrShak(C_Info)

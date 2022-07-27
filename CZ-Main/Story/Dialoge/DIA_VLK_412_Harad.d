@@ -792,7 +792,7 @@ func void DIA_Harad_Romantic_Info()
 	AI_Output(other,self,"DIA_Harad_Romantic_01_04");	//Existuje alespoň nějaká romantika v kovářské profesi?
 	AI_Output(self,other,"DIA_Harad_Romantic_01_05");	//Romantika?! (zamyšleně) Heh, no, tak to jsi mě opravdu zaskočil. Romantika...
 	AI_Output(other,self,"DIA_Harad_Romantic_01_06");	//Znamená to, že ne.
-	AI_Output(self,other,"DIA_Harad_Romantic_01_07");	//No, mušlema pokryté pobřeží a mořské pany s krásnýma prsama, ovšem. Věčně rozpálený hrnek od horka, mozoly od kladiva a zvonění v uších- to je veškerá romantika.
+	AI_Output(self,other,"DIA_Harad_Romantic_01_07");	//No, mušlema pokryté pobřeží a mořské pany s krásnýma prsama, ovšem. Věčně rozpálený hrnek od horka, mozoly od kladiva a zvonění v uších - to je veškerá romantika.
 	AI_Output(self,other,"DIA_Harad_Romantic_01_08");	//No kováři jsou silní chlapi a dívky milují silné chlapy.
 	AI_Output(other,self,"DIA_Harad_Romantic_01_09");	//Nemluvím o tělesných rozkoších, já mluvím o...
 	AI_Output(self,other,"DIA_Harad_Romantic_01_10");	//Nic jiného není. Naše řemeslo je takové jaké je. Není pro žádné usmrkance!
@@ -1217,7 +1217,7 @@ instance DIA_Harad_TeachSTR(C_Info)
 	condition = DIA_Harad_TeachSTR_Condition;
 	information = DIA_Harad_TeachSTR_Info;
 	permanent = 1;
-	description = "Chci se stát silnějším!";
+	description = "Chci se stát silnějším.";
 };
 
 
@@ -1414,7 +1414,7 @@ func void DIA_Harad_Erzklingen_2h()
 
 func void DIA_Harad_Erzklingen_1h()
 {
-	AI_Output(other,self,"DIA_Harad_Erzklingen_1h_15_00");	//Jednoruční meč!
+	AI_Output(other,self,"DIA_Harad_Erzklingen_1h_15_00");	//Vezmu si jednoruční meč!
 
 	if(Npc_HasItems(other,ItMi_Gold) >= 2000)
 	{
@@ -1547,7 +1547,7 @@ func int dia_harad_armorcanteach_condition()
 func void dia_harad_armorcanteach_info()
 {
 	AI_Output(other,self,"DIA_Harad_ArmorCanTeach_01_00");	//Rozumíš kování zbrojí?
-	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_01");	//Ne, že jim rozumím! Já je vyrábím, dítě! Samozřejmě, ale jen paladinům a jen z rozkazu lorda Hagena.
+	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_01");	//Ne, že jim rozumím! Já je vyrábím, chlapče! Samozřejmě, ale jen paladinům a jen z rozkazu lorda Hagena.
 	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_03A");	//A taky jsem řekl, že je vyrábím pouze na zakázku lorda Hagena. A já jsem žádný rozkaz nedostal. Poslouchal jsi mě dobře?!
 	AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_04");	//Ale protože byste je měli dostat všichni - můžu ti ukázat, jak vylepšit zbroj, za použití magické rudy.
 	AI_Output(other,self,"DIA_Harad_ArmorCanTeach_01_05");	//Magické rudy?!
@@ -1567,7 +1567,7 @@ func void dia_harad_armorcanteach_info()
 	{
 		AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_15");	//A zdá se, že i ty!
 		AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_16");	//Je však třeba upozornit, že výroba takové zbroje vyjde velmi draho a ne všichni členové paladinského řádu jsou při velkých penězích... Mluvíme o astronomických výdajích...
-		AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_17");	//A to jsou velké náklady, věř mi dítě.
+		AI_Output(self,other,"DIA_Harad_ArmorCanTeach_01_17");	//A to jsou velké náklady, věř mi chlapče.
 	};
 
 	HARAD_TEACHARMOR = TRUE;
@@ -1788,7 +1788,7 @@ func void dia_harad_sarahelpsthree_info()
 		B_GivePlayerXP(300);
 		Npc_RemoveInvItems(other,ItMi_Gold,2000);
 		AI_Output(other,self,"DIA_Harad_SaraHelpsThree_01_09");	//Tady.
-		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_10");	//Nemožné!... (udiveně) Jseš opravdu rozhodnut to udělat?!
+		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_10");	//Nemožné!... (udiveně) Jsi opravdu rozhodnut to udělat?!
 		AI_Output(self,other,"DIA_Harad_SaraHelpsThree_01_16");	//Jestli ano, tak si vezmi jako poděkování tento meč. Jeden z mých nejlepších!
 		B_GiveInvItems(self,other,ItMw_Schwert4,1);
 		SARADOBTPAYED = TRUE;

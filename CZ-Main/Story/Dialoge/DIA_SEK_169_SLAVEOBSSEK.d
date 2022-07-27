@@ -82,8 +82,8 @@ func void dia_SEK_169_SLAVEOBSSEK_REBELS_info()
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_01");	//Slyšel jsem, že chystáš útěk.
 	AI_PlayAni(self,"T_SEARCH");
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_02");	//To se pleteš. Nic jsem nepřipravoval.
-	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_03");	//Zbytečně zapíráš! Jeden ze otroků tě napráskal.
-	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_04");	//Sakra. Věděl jsem, že k tomu dojde. (vztekle) Tak co odemě chceš?
+	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_03");	//Zbytečně zapíráš! Jeden z otroků tě napráskal.
+	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_04");	//Sakra. Věděl jsem, že k tomu dojde. (vztekle) Tak co ode mě chceš?
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_05");	//Chci jen pomoct.
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_06");	//Ty? (překvapeně) A cože, tak najednou chce novic stínů pomáhat otrokům.
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_REBELS_01_07");	//Baal Namib a další Guru, jsou velmi znepokojeni vaším zmizením.
@@ -134,7 +134,7 @@ func void dia_SEK_169_SLAVEOBSSEK_RebelsTrust_info()
 	MIS_RebelsWeapon = LOG_Running;
 	Log_CreateTopic(TOPIC_RebelsWeapon,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RebelsWeapon,LOG_Running);
-	B_LogEntry(TOPIC_RebelsWeapon,"Marius mě požádal abych donesl tři svzky zbraní pro otroky.");
+	B_LogEntry(TOPIC_RebelsWeapon,"Marius mě požádal abych donesl tři svazky zbraní pro otroky.");
 };
 
 instance DIA_SEK_169_SLAVEOBSSEK_OsairNeed(C_Info)
@@ -171,7 +171,7 @@ func void dia_SEK_169_SLAVEOBSSEK_OsairNeed_info()
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_13");	//No jestli se tak strachuješ o jeho osud, mohu Osairovi předhodit tebe. A pak...
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_14");	//Dobře, dobře... (rozčíleně) Nemusíš dál pokračovat. 
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_15");	//Dobrá, vezmu si to na svědomí, jelikož náš úkol je mnohem důležitější.
-	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_16");	//Bude to pro nás snžší, když si Osair bude myslet, že zabil organizátora vzpoury.
+	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_01_16");	//Bude to pro nás snažší, když si Osair bude myslet, že zabil organizátora vzpoury.
 	BetrayFound = TRUE;
 	B_LogEntry(TOPIC_RebelSlave,"Rozhodli jsme se s Mariusem vydat Osairovi práskače co Mariuse zradil a udělat z něj rebela co organizuje vzpouru. Osair se uklidní a ztratí ostražitost.");
 };
@@ -230,7 +230,7 @@ func int dia_SEK_169_SLAVEOBSSEK_OsairNeed_Death_condition()
 func void dia_SEK_169_SLAVEOBSSEK_OsairNeed_Death_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_Done_01_01");	//Zrádce dostal co si zasloužil
+	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_Done_01_01");	//Zrádce dostal co si zasloužil.
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_Done_01_02");	//(soucitně) Doufám, že dlouho netrpěl?
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_Done_01_03");	//Ne. Osair ho setnul jednou ranou.
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_OsairNeed_Done_01_04");	//Víš, je to pro mě nepříjemné.
@@ -269,7 +269,7 @@ func void dia_SEK_169_SLAVEOBSSEK_WhenRun_info()
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_WhenRun_01_09");	//Ale počkej, jak stínové neustále opouští údolí a vracejí se zpět s novými otroky?
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_WhenRun_01_10");	//To jsem zatím nezjistil. Ale než to prověřím, tak zatím nic nepodnikejte.
 	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_WhenRun_01_12");	//Máš pravdu. Dobře. Musím jít pracovat.
-	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_WhenRun_01_13");	//Jestli stínové uvidí že se vybavuju míto toho, abych zametal podlahu - zmlátí mě k smrti.
+	AI_Output(self,other,"DIA_SEK_169_SLAVEOBSSEK_WhenRun_01_13");	//Jestli stínové uvidí že se vybavuju místo toho, abych zametal podlahu - zmlátí mě k smrti.
 	AI_Output(other,self,"DIA_SEK_169_SLAVEOBSSEK_WhenRun_01_14");	//Dobře, ještě se uvidíme.
 	AI_StopProcessInfos(self);
 };

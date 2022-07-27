@@ -927,7 +927,7 @@ func void dia_kardif_permjobdone_info()
 		KARDIFPAYDAY = Wld_GetDay();
 		MIS_MOEBORED = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_MOEBORED,LOG_SUCCESS);
-		B_LogEntry(TOPIC_MOEBORED,"Kardif mi dal práci. Platí deset zlatých na den. Prostě se mám sem tam zastavit u něj, jestli nejsou potíže a vybrat si plat...");
+		B_LogEntry(TOPIC_MOEBORED,"Kardif mi dal práci. Platí deset zlatých na den. Prostě se mám sem tam zastavit u něj, jestli nejsou potíže a vybrat si plat.");
 		AI_StopProcessInfos(self);
 	}
 	else if(MOEBEATME == TRUE)
@@ -1032,8 +1032,8 @@ func void dia_kardif_buymeat_info()
 {
 	AI_Output(other,self,"DIA_Kardif_BuyMeat_01_00");	//Mohl bych něco zařídit?
 	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_01");	//No, pokud chceš vydělat trochu víc. Jdi na lov a přines mi nějaké syrové maso.
-	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_02");	//A v poslední době jsem v krčmě měl hodně návštěvníků. Tady není masa nikdy dost!
-	AI_Output(other,self,"DIA_Kardif_BuyMeat_01_03");	//Jak moc jich budete potřebovat?
+	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_02");	//V poslední době jsem v krčmě měl hodně návštěvníků. Tady není masa nikdy dost!
+	AI_Output(other,self,"DIA_Kardif_BuyMeat_01_03");	//Jak moc jich budeš potřebovat?
 	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_04");	//(zamyšleně) Každý den asi dvacet kusů.
 	AI_Output(self,other,"DIA_Kardif_BuyMeat_01_05");	//Ale ne víc! Jinak je nemám kam uložit, a nakonec se to prostě zkazí.
 	AI_Output(other,self,"DIA_Kardif_BuyMeat_01_06");	//Dobře. Co o mém platu?
@@ -1043,7 +1043,7 @@ func void dia_kardif_buymeat_info()
 	AI_Output(other,self,"DIA_Kardif_BuyMeat_01_10");	//Ok. Budu přemýšlet o tvém návrhu.
 	KardifBuyMeat = TRUE;
 	Log_CreateTopic(TOPIC_CityTrader,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTrader,"Kardif si od mě každý den koupí várku syrového masa po 20 kusech.");
+	B_LogEntry(TOPIC_CityTrader,"Kardif si ode mě každý den koupí várku syrového masa po 20 kusech.");
 };
 
 instance DIA_Kardif_SellMeat(C_Info)
@@ -1150,11 +1150,11 @@ func void DIA_VLK_431_Kardif_WhatOth_info()
 	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_02");	//Jeden takový by mohl být alchymista Salandril. Najdeš ho v horní části města.
 	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_03");	//Krom něho je tu ještě Orlan - majitel hostince 'U Mrtvé harpyje'. Ten je vcelku dobrý.
 	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_04");	//Měl bys vidět, jak obírá své zákazníky i o poslední peníz. Dokonce i já se bojím s ním hrát.
-	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_05");	//Posledním je Raul, žoldák z Onarovy farmy. Ten je fakt profesionál.
+	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_05");	//Posledním je Raoul, žoldák z Onarovy farmy. Ten je fakt profesionál.
 	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_06");	//Ale nedoporučuju ti to s ním ani zkoušet, protože ten tě klidně obere i o kalhoty.
 	AI_Output(self,other,"DIA_VLK_431_Kardif_WhatOth_01_07");	//A to je všechno.
 	GameOtherPlayers = TRUE;
-	B_LogEntry(TOPIC_GameList,"Je tu víc hráčů, se kterými můžu hrát: Salandril, Orlan a Raul.");
+	B_LogEntry(TOPIC_GameList,"Je tu víc hráčů, se kterými můžu hrát: Salandril, Orlan a Raoul.");
 };
 
 instance DIA_VLK_431_Kardif_GamePlay(C_Info)
@@ -1212,7 +1212,7 @@ func void DIA_VLK_431_Kardif_GamePlay_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_VLK_431_Kardif_GamePlay_01_04");	//Naposledy jsi u mě prohrál vcelku dost velkou částku - nebo sis myslel, že jsem na to zapoměl?
+		AI_Output(self,other,"DIA_VLK_431_Kardif_GamePlay_01_04");	//Naposledy jsi u mě prohrál vcelku dost velkou částku - nebo sis myslel, že jsem na to zapomněl?
 		AI_Output(self,other,"DIA_VLK_431_Kardif_GamePlay_01_05");	//Takže pokud mi nezaplatíš, nic se hrát nebude.
 		Info_ClearChoices(DIA_VLK_431_Kardif_GamePlay);
 

@@ -260,12 +260,12 @@ func void dia_valentino_joinsekta_info()
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_05");	//Každý občas potřebuje pomoct a ty nejsi výjimka. Chtěl bys získat respekt od lidí - ale nemáš nic.
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_07");	//A vše, čeho jsi dosáhl je pár facek od lidí, jako je Regis!
 	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_09");	//... (nejistý) Já... Já zkoušel, ale... (povzdech) Ano, asi máš pravdu...
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_10");	//Vidíš! Ale nezoufej - Vím, že ti pomůžou najít víru a znovu získat důvěru v sebe sama!
+	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_10");	//Vidíš! Ale nezoufej - vím, že ti pomůžou najít víru a znovu získat důvěru v sebe sama!
 	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_11");	//Ano?!... (udiveně) Koho tím myslíš?
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_12");	//Už jsi slyšel o Bratrstvu?
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_15");	//Tak to se hluboce mýlíš! Guru Bratrstva jsou velmi silní a moudří muži, kteří pochopili pravou víru po mnoha letech meditací a sebeuvědomění.
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_16");	//Myslím, že tohle je to, co potřebuješ!
-	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_17");	//Brarstvo ti pomůže najít sám sebe, naučíš se žít v harmonii s sebou samým. A jinak dosáhneš jiného úspěchu - získáš respekt druhých!
+	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_17");	//Bratrstvo ti pomůže najít sám sebe, naučíš se žít v harmonii s sebou samým. A jinak dosáhneš jiného úspěchu - získáš respekt druhých!
 	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_18");	//Opravdu si to myslíš?!... (s nadějí)
 	AI_Output(self,other,"DIA_Valentino_JoinSekta_01_26");	//(přemýšlí) Tak dobrá.
 	AI_Output(other,self,"DIA_Valentino_JoinSekta_01_27");	//Skvělé! Následuj mě a nezdržuj se.
@@ -341,15 +341,15 @@ func void dia_valentino_taliasanletter_info()
 	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_00");	//Máš pro mě práci?
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_06");	//Hmmm... Ty teda nevypadáš jako drsňák!
 	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_07");	//Ty jsi snad nikdy neřekl, kvůli vzhledu - něco vymyšleného?
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_08");	//Ale jo! Tak teda... (zaujetě)
+	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_08");	//Ale jo! Tak teda... (zaujatě)
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_10");	//Je tu jeden chlap, jménem Regis, který se mnou docela hrubě zachází.
-	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_12");	//Nejstli ti to nevadí, tak tohle je tvůj úkol - vpal mu za mě párkrát do hlavy!
+	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_12");	//Jestli ti to nevadí, tak tohle je tvůj úkol - vpal mu za mě párkrát do hlavy!
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_14");	//Udělal bych to sám, jenže si nechci špinit ruce.
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_18");	//Ó, ano! Asi se chceš zeptat - kolik ti za to zaplatím?!... (směje se)
 	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_21");	//Zlato mě nezajímá.
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_22");	//Fakt?!... (udiveně) To jsou časy! Takže si chceš zachovat hrdost?! Odmítáš zlato?!
 	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_23");	//Ne! Je to práce jako každá jiná.
-	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_25");	//Potřebuju vyřešit malý problém za pomoci vlvnýc lidí tady ve městě.
+	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_25");	//Potřebuju vyřešit malý problém za pomoci vlivných lidí tady ve městě.
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_30");	//Hmmm... Dobrá, fajn. A co bys teda potřeboval?
 	AI_Output(other,self,"DIA_Valentino_TaliasanLetter_01_31");	//Vlastně ani ne tak já. Slyšel jsi o někom jménem Gallahad?
 	AI_Output(self,other,"DIA_Valentino_TaliasanLetter_01_32");	//Gallahad?!... Jasně! Kdo o něm neslyšel!
@@ -363,7 +363,7 @@ func void dia_valentino_taliasanletter_info()
 	MIS_VALENTINOHELP = LOG_Running;
 	Log_CreateTopic(TOPIC_VALENTINOHELP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_VALENTINOHELP,LOG_Running);
-	B_LogEntry(TOPIC_VALENTINOHELP,"Valentiono napíše doporučující dopis pro Gallahada, pokud zmlátím Regise za nadávání při jejich poslední hádce.");
+	B_LogEntry(TOPIC_VALENTINOHELP,"Valentino napíše doporučující dopis pro Gallahada, pokud zmlátím Regise za nadávání při jejich poslední hádce.");
 	AI_StopProcessInfos(self);
 };
 

@@ -88,7 +88,7 @@ instance DIA_CAINE_CAINSENTTOCADAR(C_Info)
 	information = dia_caine_cainsenttocadar_info;
 	permanent = FALSE;
 	important = FALSE;
-	description = "Chtěl bych se přidat k Bratrstvu. Můžeš mi pomoc?";
+	description = "Chtěl bych se přidat k Bratrstvu. Můžeš mi pomoct?";
 };
 
 
@@ -102,7 +102,7 @@ func int dia_caine_cainsenttocadar_condition()
 
 func void dia_caine_cainsenttocadar_info()
 {
-	AI_Output(other,self,"DIA_Caine_CainSentToCadar_01_00");	//Chtěl bych se přidat k Bratrstvu. Můžeš mi pomoc?
+	AI_Output(other,self,"DIA_Caine_CainSentToCadar_01_00");	//Chtěl bych se přidat k Bratrstvu. Můžeš mi pomoct?
 	AI_Output(self,other,"DIA_Caine_CainSentToCadar_01_01");	//Chceš se k nám přidat? Dobře!
 	AI_Output(self,other,"DIA_Caine_CainSentToCadar_01_02");	//Měl by sis uvědomit, že žádný z Guru si s tebou nepřeje mluvit.
 	AI_Output(self,other,"DIA_Caine_CainSentToCadar_01_03");	//Abys tohle změnil, musíš na ně udělat dojem!
@@ -133,10 +133,10 @@ func int dia_caine_sentplantstocadar_condition()
 
 func void dia_caine_sentplantstocadar_info()
 {
-	AI_Output(self,other,"DIA_Caine_SentPlantsToCadar_01_00");	//Počkej chvilku... Ano, myslím, že ti mohu pomoc.
+	AI_Output(self,other,"DIA_Caine_SentPlantsToCadar_01_00");	//Počkej chvilku... Ano, myslím, že ti mohu pomoct.
 	AI_Output(self,other,"DIA_Caine_SentPlantsToCadar_01_01");	//Udělej něco pro mě.
 	AI_Output(other,self,"DIA_Caine_SentPlantsToCadar_01_02");	//Co mám udělat?
-	AI_Output(self,other,"DIA_Caine_SentPlantsToCadar_01_03");	//Buď tak hodný a dones tuhle trávu z bažin Baalovi Cadarovi. Jsem si jistý, že už ho nebaví na ni čekat.
+	AI_Output(self,other,"DIA_Caine_SentPlantsToCadar_01_03");	//Buď tak hodný a dones tuhle trávu z bažin Baalu Cadarovi. Jsem si jistý, že už ho nebaví na ni čekat.
 	AI_Output(other,self,"DIA_Caine_SentPlantsToCadar_01_04");	//A ty to nemůžeš udělat?
 	AI_Output(self,other,"DIA_Caine_SentPlantsToCadar_01_05");	//Jak jsem ti už říkal. Jestli chceš udělat dojem na Guru, buď užitečný. Chápeš?
 	AI_Output(self,other,"DIA_Caine_SentPlantsToCadar_01_06");	//Dávám ti šanci dokázat že za něco stojíš před Guru.
@@ -145,7 +145,7 @@ func void dia_caine_sentplantstocadar_info()
 	B_GiveInvItems(self,other,ItPl_SwampHerb,50);
 	Log_CreateTopic(TOPIC_CAINSENTTOCADAR,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_CAINSENTTOCADAR,LOG_Running);
-	B_LogEntry(TOPIC_CAINSENTTOCADAR,"Caine mě požádal, abych odnesl drogu Baalovi Cadarovi. Tak mohu být užitečný Bratrstvu.");
+	B_LogEntry(TOPIC_CAINSENTTOCADAR,"Caine mě požádal, abych odnesl drogu Baalu Cadarovi. Tak mohu být užitečný Bratrstvu.");
 	MIS_CAINSENTTOCADAR = LOG_Running;
 };
 

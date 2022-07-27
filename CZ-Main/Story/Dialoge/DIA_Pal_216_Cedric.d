@@ -88,7 +88,7 @@ instance DIA_Cedric_CanTeachShield(C_Info)
 	condition = DIA_Cedric_CanTeachShield_Condition;
 	information = DIA_Cedric_CanTeachShield_Info;
 	permanent = FALSE;
-	description = "Máš zajmavý štít!";
+	description = "Máš zajímavý štít!";
 };
 
 func int DIA_Cedric_CanTeachShield_Condition()
@@ -101,16 +101,16 @@ func int DIA_Cedric_CanTeachShield_Condition()
 
 func void DIA_Cedric_CanTeachShield_Info()
 {
-	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_00");	//Máš zajmavý štít!
+	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_00");	//Máš zajímavý štít!
 	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_01");	//Líbí se ti? (sarkasticky) Vidím, že tě velmi zaujal.
 	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_02");	//Tak to je.
 	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_03");	//Pouze my, paladinové krále, máme tu čest je nosit!
 	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_04");	//I když mnozí věří, že to není nic víc než jen obyčejný kus železa.
 	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_05");	//A to opravdu?
 	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_06");	//Ať si říkají, co chtějí. (vážně) Ale skutečný mistr vždy pozná hodnotu dobrého štítu ve správných rukou!
-	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_07");	//I já jsem válečník, a rád bych nosit štít.
+	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_07");	//I já jsem válečník, a rád bych nosil štít.
 	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_08");	//Pak by ses měl obrátit na Ingmara.
-	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_09");	//Jsem si jistý, žepro tebe bude mít něco užitečného.
+	AI_Output(self,other,"DIA_Cedric_CanTeachShield_01_09");	//Jsem si jistý, že pro tebe bude mít něco užitečného.
 	AI_Output(other,self,"DIA_Cedric_CanTeachShield_01_10");	//Promluvím s ním.
 	CedricSendIngmar = TRUE;
 };
@@ -140,7 +140,7 @@ func void DIA_Cedric_DoTeachShield_Info()
 	AI_Output(other,self,"DIA_Cedric_DoTeachShield_01_02");	//A co proto musím udělat?
 	AI_Output(self,other,"DIA_Cedric_DoTeachShield_01_03");	//Trochu zkušeností a trpělivosti, nic víc.
 	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
-	B_LogEntry(TOPIC_CityTeacher,"Paladin Cedric mě může učit umění boje s štítem.");
+	B_LogEntry(TOPIC_CityTeacher,"Paladin Cedric mě může učit umění boje se štítem.");
 	CedricTeachShield = TRUE;
 };
 

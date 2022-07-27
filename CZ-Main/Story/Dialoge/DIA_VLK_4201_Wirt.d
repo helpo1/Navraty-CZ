@@ -77,8 +77,8 @@ func int DIA_Wirt_Hallo_Condition()
 
 func void DIA_Wirt_Hallo_Info()
 {
-	AI_Output(self,other,"DIA_Wirt_Hallo_14_00");	//Hej, pojď blíž - dej si pauzu a pár loku dobře chlazeného piva.
-	AI_Output(self,other,"DIA_Wirt_Hallo_14_01");	//Lord Andre objednal pár soudku piva, které točíme zdarma.
+	AI_Output(self,other,"DIA_Wirt_Hallo_14_00");	//Hej, pojď blíž - dej si pauzu a pár loků dobře chlazeného piva.
+	AI_Output(self,other,"DIA_Wirt_Hallo_14_01");	//Lord Andre objednal pár soudků piva, které točíme zdarma.
 };
 
 instance DIA_WIRT_GIVEBEER(C_Info)
@@ -105,7 +105,7 @@ func void dia_wirt_givebeer_info()
 	AI_Output(other,self,"DIA_Wirt_GiveBeer_01_00");	//Nalej mi.
 	if(WIRT_DAY != Wld_GetDay())
 	{
-		AI_Output(self,other,"DIA_Wirt_GiveBeer_01_01");	//Jasne, že jo! Tady, ber... (úsmev)
+		AI_Output(self,other,"DIA_Wirt_GiveBeer_01_01");	//Jasně, že jo! Tady, ber... (úsměv)
 		B_GiveInvItems(self,other,ItFo_Beer,1);
 		randy = Hlp_Random(3);
 		if(randy == 0)
@@ -114,19 +114,19 @@ func void dia_wirt_givebeer_info()
 		}
 		else if(randy == 1)
 		{
-			AI_Output(self,other,"DIA_Wirt_Hallo_14_03");	//Paladinové dají všechno do pořádku, takže si klidne ješte lokni a užij si to.
+			AI_Output(self,other,"DIA_Wirt_Hallo_14_03");	//Paladinové dají všechno do pořádku, takže si klidně ještě lokni a užij si to.
 		}
 		else if(randy == 2)
 		{
-			AI_Output(self,other,"DIA_Wirt_Hallo_14_04");	//O Khorinisu si říkej co chceš, ale náš 'Temný paladin' je proste nejlepší pívo z celé Myrtany.
+			AI_Output(self,other,"DIA_Wirt_Hallo_14_04");	//O Khorinisu si říkej co chceš, ale náš 'Temný paladin' je prostě nejlepší pivo z celé Myrtany.
 		};
 		WIRT_DAY = Wld_GetDay();
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Wirt_GiveBeer_01_02");	//Hej, dnes jsi už svoji porci mel.
+		AI_Output(self,other,"DIA_Wirt_GiveBeer_01_02");	//Hej, dnes jsi už svoji porci měl.
 		AI_Output(self,other,"DIA_Wirt_GiveBeer_01_03");	//Paladinové platí pro všechny. Ne jen pro tebe.
-		AI_Output(self,other,"DIA_Wirt_GiveBeer_01_04");	//Jestli chceš ješte, přijď zítra!
+		AI_Output(self,other,"DIA_Wirt_GiveBeer_01_04");	//Pokud ještě chceš, přijď zítra!
 	};
 };
 
@@ -151,19 +151,19 @@ func int DIA_Wirt_FixBeer_Done_Condition()
 func void DIA_Wirt_FixBeer_Done_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_00");	//Teď sloužíš v armáde?
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_01");	//Stále tomu sám nemohu uveřiť. Proste přjeli a odvědli mně.
+	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_00");	//Teď sloužíš v domobraně?
+	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_01");	//Stále tomu sám nemohu uvěřit. Prostě přišli a odvedli mě.
 	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_02");	//Řekli, že na obranu města potřebují silné muže jako jsem já.
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_03");	//Ja ani nevím jako držet měč v ruce.
+	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_03");	//Já ani nevím jak v ruce držet meč.
 	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_04");	//Nuž, časy jsou těžké.
 	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_05");	//Domobrana potřebuje všechnu pomoc! A pohled na tebe je mimochodem celkem ohromující.
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_06");	//Myslím, že každej zlodejíček, vidíc tě už zdálky, bude utíkat jako o život.
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_07");	//(zmatenej) Ummm... Naozaj si to myslíš?
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_08");	//Jsem jsi jistej - vždyť se na sebe koukni!
+	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_06");	//Myslím, že každý zlodějíček, vidíc tě už zdálky, bude utíkat jako o život.
+	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_07");	//(zmatenej) Ummm... Opravdu si to myslíš?
+	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_08");	//Jsem jsi jistý - vždyť se na sebe koukni!
 	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_09");	//Dokonce i já jsem byl z tebe trocha vystrašenej.
 	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_10");	//Hmmm... er... Nuž, možná máš pravdu. Proč jinak by mě sem zatáhli.
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_11");	//(zamyšlene) Teda... Teda dost kecu! Mně se tenhle post docela líbí.
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_12");	//Samozrejme, samozrejme! Střež to tady... vojáku.
+	AI_Output(self,other,"DIA_Wirt_FixBeer_Done_01_11");	//(zamyšleně) Teda... Teda dost keců! Mně se tenhle post docela líbí.
+	AI_Output(other,self,"DIA_Wirt_FixBeer_Done_01_12");	//Samozřejmě, samozřejmě! Střež to tady... vojáku.
 	AI_StopProcessInfos(self);
 };
 
@@ -174,7 +174,7 @@ instance DIA_Wirt_FixBeer_Perm(C_Info)
 	condition = DIA_Wirt_FixBeer_Perm_Condition;
 	information = DIA_Wirt_FixBeer_Perm_Info;
 	permanent = TRUE;
-	description = "Jako šichta?";
+	description = "Jak jde šichta?";
 };
 
 func int DIA_Wirt_FixBeer_Perm_Condition()
@@ -187,7 +187,7 @@ func int DIA_Wirt_FixBeer_Perm_Condition()
 
 func void DIA_Wirt_FixBeer_Perm_Info()
 {
-	AI_Output(other,self,"DIA_Wirt_FixBeer_Perm_01_00");	//Jako šichta?
-	AI_Output(self,other,"DIA_Wirt_FixBeer_Perm_01_01");	//Neobťežuj se!
+	AI_Output(other,self,"DIA_Wirt_FixBeer_Perm_01_00");	//Jak jde šichta?
+	AI_Output(self,other,"DIA_Wirt_FixBeer_Perm_01_01");	//Neobtěžuj mě.
 	AI_StopProcessInfos(self);
 };

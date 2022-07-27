@@ -57,7 +57,7 @@ func void dia_vlk_6134_valeran_hallo_info()
 	AI_Output(self,other,"DIA_VLK_6134_Valeran_Hallo_01_01");	//Vítej, cizinče, mně říkají Valeran.
 	AI_Output(other,self,"DIA_VLK_6134_Valeran_Hallo_01_02");	//A čím se zabýváš?
 	AI_Output(self,other,"DIA_VLK_6134_Valeran_Hallo_01_03");	//Pracuji jako vedoucí u obchodníka Fernanda - pomáhám mu vést obchod.
-	AI_Output(self,other,"DIA_VLK_6134_Valeran_Hallo_01_04");	//Je to těžké a náročná práce, a proto si mě Fernando najmul.
+	AI_Output(self,other,"DIA_VLK_6134_Valeran_Hallo_01_04");	//Je to těžká a náročná práce, a proto si mě Fernando najmul.
 	AI_Output(other,self,"DIA_VLK_6134_Valeran_Hallo_01_05");	//A jak ti jde tvoje práce?
 	AI_Output(self,other,"DIA_VLK_6134_Valeran_Hallo_01_06");	//Nemám si na co stěžovat - platí mi dobré peníze, jestli je to to, na co ses ptal.
 	AI_Output(self,other,"DIA_VLK_6134_Valeran_Hallo_01_07");	//Dokonce i sám Fernando se ke mně pěkně chová.
@@ -347,7 +347,7 @@ func void dia_vlk_6134_valeran_thanks_info()
 	AI_Output(self,other,"DIA_VLK_6134_Valeran_Thanks_01_00");	//Díky, že jsi mi pomohl!
 	AI_Output(self,other,"DIA_VLK_6134_Valeran_Thanks_01_01");	//Konečně znovu pracuji a za to ti moc děkuji. Teď jsem tvým dlužníkem.
 	AI_Output(other,self,"DIA_VLK_6134_Valeran_Thanks_01_02");	//V pohodě, nebylo to tak těžké.
-	AI_Output(self,other,"DIA_VLK_6134_Valeran_Thanks_01_05");	//Chci ti nějak poděkovat. Na - Vem si tuhle věcičku.
+	AI_Output(self,other,"DIA_VLK_6134_Valeran_Thanks_01_05");	//Chci ti nějak poděkovat. Na - vem si tuhle věcičku.
 	AI_Output(self,other,"DIA_VLK_6134_Valeran_Thanks_01_06");	//Těžko něco takového najdeš u jiných obchodníků. Je to velká vzácnost!
 	B_GiveInvItems(self,other,itwr_kampfkunst,1);
 	AI_Output(self,other,"DIA_VLK_6134_Valeran_Thanks_01_07");	//Určitě se ti bude hodit.
@@ -1757,7 +1757,7 @@ func void dia_valeran_igetthefoutofhere_info()
 	AI_Output(self,other,"DIA_Valeran_IGetTheFOutOfHere_10_01");	//To jsou nám noviny... chceš odplout navždy, nebo se máš v úmyslu vrátit?
 	AI_Output(other,self,"DIA_Valeran_IGetTheFOutOfHere_15_02");	//Bojím se, že už se do Khorinisu nevrátím. Jestli máš zájem starat se i nadále o tvrz, tak ti jí přenechám.
 	AI_Output(self,other,"DIA_Valeran_IGetTheFOutOfHere_10_03");	//Á... dobře, když to říkáš. Díky tvému úsilí jsme se zde dobře zabydleli, tak myslím, že mohu i nadále vést úspěšně tento tábor.
-	AI_Output(self,other,"DIA_Valeran_IGetTheFOutOfHere_10_04");	//Teď když se toje tvrz a Onarova farma, staly hlavním pilířem obrany proti skřetům. Můžeme upevnit vztahy s ostatnímy tábory, ve společném úsilí boje proti těmto tvorům.
+	AI_Output(self,other,"DIA_Valeran_IGetTheFOutOfHere_10_04");	//Teď když se tvoje tvrz a Onarova farma, staly hlavním pilířem obrany proti skřetům. Můžeme upevnit vztahy s ostatnímy tábory, ve společném úsilí boje proti těmto tvorům.
 	AI_Output(self,other,"DIA_Valeran_IGetTheFOutOfHere_10_05");	//Tak si myslím, že můžeš bez obav odplout.
 	AI_Output(self,other,"DIA_Valeran_IGetTheFOutOfHere_10_06");	//Udělal jsi pro nás všechno co jsi mohl a teď je řada na nás abychom se snažili. Šťastnou cestu!
 	AI_Output(other,self,"DIA_Valeran_IGetTheFOutOfHere_15_07");	//Děkuji!

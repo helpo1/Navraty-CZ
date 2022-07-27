@@ -78,7 +78,7 @@ func void dia_viper_hallo_info()
 	AI_Output(self,other,"DIA_Viper_HALLO_01_14");	//Už jsme s rudou byli skoro venku z dolu.
 	AI_Output(self,other,"DIA_Viper_HALLO_01_15");	//Mno a tady to začalo. Moc to nechápu.
 	AI_Output(self,other,"DIA_Viper_HALLO_01_16");	//Ozvala se silná rána a do dolu vtrhla voda, která začala demolovat spodní části dolu.
-	AI_Output(self,other,"DIA_Viper_HALLO_01_17");	//S klukama jsem utíkal dál ven, ale strážci nás skoro chytili, když v tu na ně spadla kamenná deska a bylo po nich.
+	AI_Output(self,other,"DIA_Viper_HALLO_01_17");	//S klukama jsem utíkal dál ven, ale strážci nás skoro chytili, když tu na ně spadla kamenná deska a bylo po nich.
 	AI_Output(self,other,"DIA_Viper_HALLO_01_18");	//Bylo po všem během chvilky a my byli s rudou venku sami.
 	AI_Output(self,other,"DIA_Viper_HALLO_01_21");	//Mno, byli jsme s rudou v lese a nemohli jsme do Starého tábora. Tak jsme se rozhodli jít k Laresovi.
 	AI_Output(self,other,"DIA_Viper_HALLO_01_22");	//Mno ale když jsme si uvědomili, že by nám ji sebral, ukryli jsme ji.
@@ -143,7 +143,7 @@ func void dia_viper_help_ok()
 	MIS_VIPERNUGGETS = LOG_Running;
 	Log_CreateTopic(TOPIC_VIPERNUGGETS,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_VIPERNUGGETS,LOG_Running);
-	B_LogEntry(TOPIC_VIPERNUGGETS,"V Kardifově krčmě jsem potkal Vipera, který říkal, že se svými přáteli, Snipesem a Alephtem schovali hromadu rudy. Neví kde jeho kámoši jsou, ale zkusím je najít i s rudou.");
+	B_LogEntry(TOPIC_VIPERNUGGETS,"V Kardifově krčmě jsem potkal Vipera, který říkal, že se svými přáteli, Snipesem a Alephem schovali hromadu rudy. Neví kde jeho kámoši jsou, ale zkusím je najít i s rudou.");
 	B_LogEntry(TOPIC_VIPERNUGGETS,"Viper souhlasil s mou nabídkou najít rudu. Přirozeně mi nevěří. Řekl mi, že rudu a své přátelé viděl naposled u mostu do Nového tábora. Přesněji mi to říct nedokáže. Ale na Lobartově farmě je nový dělník, který by to mohl znát, protože se jmenuje stejně jako Snipes a to asi nebude náhoda.");
 };
 
@@ -162,7 +162,7 @@ instance DIA_VIPER_HOW(C_Info)
 	condition = dia_viper_how_condition;
 	information = dia_viper_how_info;
 	permanent = TRUE;
-	description = "Co je?";
+	description = "Co děláš, Vipere?";
 };
 
 
@@ -249,7 +249,7 @@ func void dia_viper_gettreasure_info()
 		AI_Output(other,self,"DIA_Viper_GetTreasure_01_17");	//Tady ber. Zde je tvých 250 kusů. Teď si můžeš užívat života!
 		B_GiveInvItems(other,self,ItMi_Nugget,250);
 		Npc_RemoveInvItems(self,ItMi_Nugget,Npc_HasItems(self,ItMi_Nugget));
-		AI_Output(self,other,"DIA_Viper_GetTreasure_01_18");	//Nevěřím svojim očím! Co se to stalo! Konečně můžu začít žít. Díky chlape!
+		AI_Output(self,other,"DIA_Viper_GetTreasure_01_18");	//Nevěřím svým očím! Co se to stalo! Konečně můžu začít žít. Díky chlape!
 		AI_Output(self,other,"DIA_Viper_GetTreasure_01_19");	//Ale čekej! Proč 250 kusů?!
 		AI_Output(other,self,"DIA_Viper_GetTreasure_01_20");	//Snipese jsem nenašel a Aleph je mrtvý, takže fifty-fifty.
 		AI_Output(self,other,"DIA_Viper_GetTreasure_01_21");	//Co tím chceš říct?!
@@ -660,7 +660,7 @@ func void dia_viper_askminedata_info()
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_VIPER_AskMineData_01_01");	//V opuštěném dole při Onarově farmě se mi podařilo najít magickou rudu.
 	AI_Output(other,self,"DIA_VIPER_AskMineData_01_02");	//Mohl by ses tam jít podívat, jestli by z toho mohlo něco být?
-	AI_Output(self,other,"DIA_VIPER_AskMineData_01_03");	//Ruda? Tu v Khorinise?
+	AI_Output(self,other,"DIA_VIPER_AskMineData_01_03");	//Ruda? Tady v Khorinisu?
 	AI_Output(other,self,"DIA_VIPER_AskMineData_01_04");	//Přesně. Potřebuji vědět, zda se tam vyplatí začít těžit, anebo ne.
 	AI_Output(self,other,"DIA_VIPER_AskMineData_01_05");	//No, stále nemám co dělat... Tak se pojďme kouknout do toho tvého dolu.
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
@@ -692,7 +692,7 @@ func void dia_viper_getminedata_info()
 	AI_Output(other,self,"DIA_VIPER_GetMineData_01_01");	//Jsme na místě.
 	AI_Output(self,other,"DIA_VIPER_GetMineData_01_02");	//Jen tato jedna šachta? A to je všechno?
 	AI_Output(other,self,"DIA_VIPER_GetMineData_01_03");	//A co jsi čekal?
-	AI_Output(self,other,"DIA_VIPER_GetMineData_01_05");	//Určite nic jako Starý důl, ale toto...
+	AI_Output(self,other,"DIA_VIPER_GetMineData_01_05");	//Určitě nic jako Starý důl, ale tohle...
 	AI_Output(other,self,"DIA_VIPER_GetMineData_01_06");	//Uh huh.
 	AI_Output(self,other,"DIA_VIPER_GetMineData_01_07");	//No, vypadá to, že bys odtud mohl dostat tak deset beden.
 	AI_Output(self,other,"DIA_VIPER_GetMineData_01_08");	//Pokud půjdeš hlouběji do jádra - a soudě dle žíly, možná i více.

@@ -95,7 +95,7 @@ func void DIA_Addon_Bromor_MissingPeople_Info()
 	AI_Output(self,other,"DIA_Addon_Bromor_MissingPeople_07_01");	//Samozřejmě! Myslíš, že bych chtěl být ve vězení za takovou blbost?
 	AI_Output(other,self,"DIA_Addon_Bromor_MissingPeople_15_02");	//Hm... Nezmiňuji jejich věk. Možná některá z nich chybí?
 	AI_Output(self,other,"DIA_Addon_Bromor_MissingPeople_07_03");	//Ach tak. Právě jedna z mých dívek zmizela - její jméno je Lucia.
-	AI_Output(self,other,"DIA_Addon_Bromor_MissingPeople_07_04");	//Oznámil jsem to i domobraně, ale nebyli schopni sledovat její stoupu příliš dlouho.
+	AI_Output(self,other,"DIA_Addon_Bromor_MissingPeople_07_04");	//Oznámil jsem to i domobraně, ale nebyli schopni sledovat její stopu příliš dlouho.
 	Log_CreateTopic(TOPIC_Addon_MissingPeople,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_MissingPeople,LOG_Running);
 	B_LogEntry(TOPIC_Addon_MissingPeople,"Jedna z holek z Červené lucerny v přístavu se ztratila.");
@@ -244,7 +244,7 @@ instance DIA_Bromor_Pay(C_Info)
 	condition = DIA_Bromor_Pay_Condition;
 	information = DIA_Bromor_Pay_Info;
 	permanent = TRUE;
-	description = "Chci se trochu pobavit (zaplatit 50 zlatých)";
+	description = "Chci se trochu pobavit. (zaplatit 50 zlatých)";
 };
 
 func int DIA_Bromor_Pay_Condition()
@@ -545,7 +545,7 @@ func void DIA_Bromor_AskForWoman_Pay_Info()
 	
 	if(Npc_IsDead(VLK_436_Sonja) == TRUE)
 	{
-		AI_Output(self,other,"DIA_Bromor_AskForWoman_Pay_01_02");	//Jedna z mích dívek je mrtvá! Takže dohoda padá.
+		AI_Output(self,other,"DIA_Bromor_AskForWoman_Pay_01_02");	//Jedna z mých dívek je mrtvá! Takže dohoda padá.
 		B_LogEntry(TOPIC_WomanForSkip,"Bromor odmítl dohodu, protože jedna z jeho dívek je mrtvá.");
 		SonyaNoGoWithMe = TRUE;
 		AI_StopProcessInfos(self);
@@ -561,7 +561,7 @@ func void DIA_Bromor_AskForWoman_Pay_Info()
 				Npc_RemoveInvItems(self,ItMi_Gold,1000);
 				AI_Output(self,other,"DIA_Bromor_AskForWoman_Pay_01_03");	//Výborně! Sonja může jít s tebou.
 				AI_Output(self,other,"DIA_Bromor_AskForWoman_Pay_01_04");	//Nezapomeň, vrať mě ji v pořádku a včas! Jinak zalarmuju stráže.
-				B_LogEntry(TOPIC_WomanForSkip,"Teď si může jít Sonja se mnou. Nesmím zapomenout ji vrátit Bromorovi včas.");	
+				B_LogEntry(TOPIC_WomanForSkip,"Teď může jít Sonja se mnou. Nesmím zapomenout ji vrátit Bromorovi včas.");	
 				SonyaGoWithMe = TRUE;
 				SonyaGoWithMeDay = Wld_GetDay();
 				AI_StopProcessInfos(self);
@@ -582,7 +582,7 @@ func void DIA_Bromor_AskForWoman_Pay_Info()
 				Npc_RemoveInvItems(self,ItMi_Gold,2000);
 				AI_Output(self,other,"DIA_Bromor_AskForWoman_Pay_01_03");	//Výborně! Sonja může jít s tebou.
 				AI_Output(self,other,"DIA_Bromor_AskForWoman_Pay_01_04");	//Nezapomeň, vrať mě ji v pořádku a včas! Jinak zalarmuju stráže.
-				B_LogEntry(TOPIC_WomanForSkip,"Teď si může jít Sonja se mnou. Nesmím zapomenout ji vrátit Bromorovi včas.");	
+				B_LogEntry(TOPIC_WomanForSkip,"Teď může jít Sonja se mnou. Nesmím zapomenout ji vrátit Bromorovi včas.");	
 				SonyaGoWithMe = TRUE;
 				SonyaGoWithMeDay = Wld_GetDay();
 				AI_StopProcessInfos(self);

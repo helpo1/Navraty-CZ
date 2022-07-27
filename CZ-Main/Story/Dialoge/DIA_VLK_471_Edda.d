@@ -152,7 +152,7 @@ func int DIA_Edda_TeachCook_Condition()
 func void DIA_Edda_TeachCook_Info()
 {
 	AI_Output(other,self,"DIA_Edda_TeachCook_01_00");	//Naučila bys mě vařit polévku?
-	AI_Output(self,other,"DIA_Edda_TeachCook_01_01");	//Hmmm... (přemýšlí) Vzhledem k tomu to bude těžší! Ale jsem připravena vám pomoci v případě několika zlatých mincí.
+	AI_Output(self,other,"DIA_Edda_TeachCook_01_01");	//Hmmm... (přemýšlí) Vzhledem k tomu to bude těžší! Ale jsem připravena ti pomoci v případě několika zlatých mincí.
 	EddaTeachCook = TRUE;
 	Log_CreateTopic(TOPIC_COOK,LOG_NOTE);
 	B_LogEntry(TOPIC_COOK,"Edda mě může naučit, jak vařit polévky.");
@@ -215,7 +215,7 @@ func void DIA_Edda_TeachCookDone_Beet()
 	if(Npc_HasItems(hero,ItMi_Gold) >= 25)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,25);
-		AI_Output(self,other,"DIA_Edda_TeachCookDone_fish_01_02");	//Vaříš jí deset minut - a vaše polévka je hotová.
+		AI_Output(self,other,"DIA_Edda_TeachCookDone_fish_01_02");	//Vaříš jí deset minut - a tvá polévka je hotová.
 		AI_Print("Naučeno: Vaření - 'Tuřínová polévka'");
 		B_LogEntry(TOPIC_COOK,"Ingredience pro TUŘÍNOVOU POLÉVKU: tuřín.");
 		Snd_Play("LevelUP");
@@ -231,7 +231,7 @@ func void DIA_Edda_TeachCookDone_Beet()
 
 func void DIA_Edda_TeachCookDone_fish()
 {
-	AI_Output(other,self,"DIA_Edda_TeachCookDone_fish_01_00");	//Rybí polévka
+	AI_Output(other,self,"DIA_Edda_TeachCookDone_fish_01_00");	//Rybí polévka.
 
 	if(Npc_HasItems(hero,ItMi_Gold) >= 50)
 	{
@@ -284,7 +284,7 @@ func void DIA_Edda_TeachCookDone_shildkroetesoup()
 		AI_Output(self,other,"DIA_Edda_TeachCookDone_shildkroetesoup_01_02");	//Ale nejprve budeš muset najít želví maso.
 		AI_Output(self,other,"DIA_Edda_TeachCookDone_shildkroetesoup_01_03");	//Myslím, že z jednoho kusu by to mělo stačit. Hodíš do hrnce a vaříš.
 		AI_Output(self,other,"DIA_Edda_TeachCookDone_shildkroetesoup_01_04");	//S očima ani zamrkat nestihneš, už je polévka hotová. Zapamatuješ si to?
-		AI_Output(other,self,"DIA_Edda_TeachCookDone_shildkroetesoup_01_05");	//Jasně
+		AI_Output(other,self,"DIA_Edda_TeachCookDone_shildkroetesoup_01_05");	//Jasně.
 		AI_Print("Naučeno: Vaření - 'Želví polévka'");
 		B_LogEntry(TOPIC_COOK,"Ingredience pro ŽELVÍ POLÉVKU: želví maso.");
 		Snd_Play("LevelUP");
@@ -306,8 +306,8 @@ func void DIA_Edda_TeachCookDone_pilzsuppe()
 	if(Npc_HasItems(hero,ItMi_Gold) >= 100)
 	{
 		Npc_RemoveInvItems(hero,ItMi_Gold,100);
-		AI_Output(self,other,"DIA_Edda_TeachCookDone_pilzsuppe_01_01");	//Vše je jednoduché. Budete potřebovat pouze jednu houbu!
-		AI_Output(self,other,"DIA_Edda_TeachCookDone_pilzsuppe_01_03");	//Hoď to do hrnce, tvojee polévka se vaří jen pár minut a bude připravena.
+		AI_Output(self,other,"DIA_Edda_TeachCookDone_pilzsuppe_01_01");	//Vše je jednoduché. Budeš potřebovat pouze jednu houbu!
+		AI_Output(self,other,"DIA_Edda_TeachCookDone_pilzsuppe_01_03");	//Hoď to do hrnce, tvoje polévka se vaří jen pár minut a bude připravena.
 		AI_Output(self,other,"DIA_Edda_TeachCookDone_pilzsuppe_01_04");	//To je všechno.
 		AI_Print("Naučeno: Vaření - 'Houbová polévka'");
 		B_LogEntry(TOPIC_COOK,"Ingredience pro HOUBOVOU POLÉVKU: otrokův chléb.");
@@ -520,7 +520,7 @@ func void DIA_EDDA_UHA_SBORNAY_info()
 	AI_Output(self,other,"DIA_EDDA_UHA_SBORNAY_01_04");	//Hmm... (zamyšleně) Zapamatuj si! Pro začátek budeme potřebovat ryby, asi tak deset.
 	AI_Output(self,other,"DIA_EDDA_UHA_SBORNAY_01_05");	//Dále budu potřebovat sýr, pět rostlin modrého bezu, červený pepř a co je nejdůležitější - rum!
 	AI_Output(other,self,"DIA_EDDA_UHA_SBORNAY_01_06");	//Rum?!
-	AI_Output(self,other,"DIA_EDDA_UHA_SBORNAY_01_07");	//Ano, pčesně tak! A žádnou levnou kořalku, jestli chceš abych uvařila pořádnou polévku a ne nějaké pomeje.
+	AI_Output(self,other,"DIA_EDDA_UHA_SBORNAY_01_07");	//Ano, přesně tak! A žádnou levnou kořalku, jestli chceš abych uvařila pořádnou polévku a ne nějaké pomeje.
 	AI_Output(other,self,"DIA_EDDA_UHA_SBORNAY_01_08");	//Dobře, všemu jsem rozuměl.
 	EddaCanMakeUhaSborka = TRUE;
 	B_LogEntry(TOPIC_ADDON_FARIMFISH,"Edda může uvařit Farimovi jeho speciální polévku, ale potřebuje ty správné ingredience. Deset kusů ryb, sýr, červený pepř, pět rostlin modrého bezu a rum.");

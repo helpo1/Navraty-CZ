@@ -78,7 +78,7 @@ func void dia_skeletonmage_sendsenyak_2_hello_info()
 
 func void dia_skeletonmage_sendsenyak_2_hello_no()
 {
-	AI_Output(other,self,"DIA_SkeletonMage_SendSenyak_1_Hello_No_01_00");	//Na to zapomeň...
+	AI_Output(other,self,"DIA_SkeletonMage_SendSenyak_1_Hello_No_01_00");	//Na to zapomeň!
 	AI_Output(other,self,"DIA_SkeletonMage_SendSenyak_1_Hello_No_01_01");	//Beliar ode mně nic nedostane!
 	AI_Output(self,other,"DIA_SkeletonMage_SendSenyak_1_Hello_No_01_02");	//PAK ZEMŘEŠ SMRTELNÍKU!
 	AI_Output(self,other,"DIA_SkeletonMage_SendSenyak_1_Hello_No_01_03");	//NYNÍ UCÍTÍŠ SÍLU MÉHO PÁNA! PŘED NÍ NEMŮŽEŠ UNIKNOUT... (mrtvý hlas)
@@ -95,7 +95,7 @@ func void dia_skeletonmage_sendsenyak_2_hello_ok()
 	B_GiveInvItems(other,self,ItMw_BeliarWeapon_Raven,1);
 	AI_Output(self,other,"DIA_SkeletonMage_SendSenyak_1_Hello_Ok_01_01");	//SPRÁVNÉ ROZHODNUTÍ ODEVZDAT MI TEN MEČ SMRTELNÍKU!
 	AI_Output(self,other,"DIA_SkeletonMage_SendSenyak_1_Hello_Ok_01_02");	//MŮJ PÁN BUDE POTĚŠEN... (mrtvý hlas)
-	AI_Output(self,other,"DIA_SkeletonMage_SendSenyak_1_Hello_Ok_01_03");	//DÍKY TOMU MEČÍ BUDU MÍT NEOMEZENOU MOC...
+	AI_Output(self,other,"DIA_SkeletonMage_SendSenyak_1_Hello_Ok_01_03");	//DÍKY TOMU MEČI BUDU MÍT NEOMEZENOU MOC...
 	AI_Output(self,other,"DIA_SkeletonMage_SendSenyak_1_Hello_Ok_01_04");	//... A DOKONČÍM PLÁN MÉHO STVOŘITELE!
 	Info_ClearChoices(dia_skeletonmage_sendsenyak_2_hello);
 	Info_AddChoice(dia_skeletonmage_sendsenyak_2_hello,"... (Co jsem to udělal?!)",dia_skeletonmage_sendsenyak_2_hello_ex2);

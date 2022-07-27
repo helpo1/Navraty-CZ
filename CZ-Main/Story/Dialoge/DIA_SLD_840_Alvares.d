@@ -377,7 +377,7 @@ func void DIA_Kharim_Escape_Info()
 {
 	AI_Output(other,self,"DIA_Kharim_Escape_01_00");	//Jak ses dostal ze Starého tábora?
 	AI_Output(self,other,"DIA_Kharim_Escape_01_01");	//Scatty se nějak dozvěděl co Gomez chystá a přišel nás včas varovat. 
-	AI_Output(self,other,"DIA_Kharim_Escape_01_02");	//Jen zázrakem jsem stihnul proběhnout bránou! Jeden ze strážných dokonce po mě stihnul vystřeli.
+	AI_Output(self,other,"DIA_Kharim_Escape_01_02");	//Jen zázrakem jsem stihnul proběhnout bránou! Jeden ze strážných dokonce po mě stihnul vystřelit.
 	AI_Output(self,other,"DIA_Kharim_Escape_01_03");	//Ale díky bohu byl ještě pěkně pod parou a tak nemířil přesně.
 };
 
@@ -406,7 +406,7 @@ func void DIA_Kharim_Cup_Info()
 	AI_Output(self,other,"DIA_Kharim_Cup_01_02");	//Tak rychle jsem se snažil zmizet ze Starého tábora, že jsem na něj zapomněl.
 	AI_Output(other,self,"DIA_Kharim_Cup_01_03");	//Co je to za pohár?
 	AI_Output(self,other,"DIA_Kharim_Cup_01_04");	//Je to cena pro nejlepšího bojovníka v aréně!
-	AI_Output(self,other,"DIA_Kharim_Cup_01_05");	//I když mě ho předával Gomez, byla to pro mě ta nejcenější věc.
+	AI_Output(self,other,"DIA_Kharim_Cup_01_05");	//I když mě ho předával Gomez, byla to pro mě ta nejcennější věc.
 	AI_Output(self,other,"DIA_Kharim_Cup_01_06");	//Připomínal mě moje předešlá vítězství.
 	AI_Output(self,other,"DIA_Kharim_Cup_01_07");	//A mimo to je ten pohár z ryzího zlata, takže má pořád velkou cenu.
 	AI_Output(other,self,"DIA_Kharim_Cup_01_08");	//A proč se pro něj nevrátíš?
@@ -447,12 +447,12 @@ func void DIA_Kharim_Cup_Done_Info()
 	Npc_RemoveInvItems(self,ItMi_HarimCup,1);
 	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_02");	//Ano sakra, to je on! Nikdy nezapomenu na boj, po kterém jsem ho dostal.
 	AI_Output(other,self,"DIA_Kharim_Cup_Done_01_03");	//Teď jsi spokojený?
-	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_04");	//To se nedá popstat. To je vše, xo jsem potřeboval ke štěstí.
+	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_04");	//To se nedá popsat. To je vše, co jsem potřeboval ke štěstí.
 	AI_Output(other,self,"DIA_Kharim_Cup_Done_01_05");	//A co ta slibovaná odměna?
 	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_06");	//Samozřejmě! Tady, vezmi si tento prut rudy.
 	B_GiveInvItems(self,other,ItMi_OreStuck,1);
 	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_07");	//Bennet mě ho vytvořil ze zbytků magické rudy, které jsem si přines z kolonie.
-	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_08");	//A kdo ví, možná pro tebe bude mnohem cenější než zlato.
+	AI_Output(self,other,"DIA_Kharim_Cup_Done_01_08");	//A kdo ví, možná pro tebe bude mnohem cennější než zlato.
 	MIS_KharimCup = LOG_Success;
 	Log_SetTopicStatus(TOPIC_KharimCup,LOG_Success);
 	B_LogEntry(TOPIC_KharimCup,"Kharim byl rád, že dostal zpět svůj pohár.");
@@ -629,7 +629,7 @@ func void DIA_Roscoe_News_Info()
 		MIS_RoscoeMage = LOG_Running;
 		Log_CreateTopic(TOPIC_RoscoeMage,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_RoscoeMage,LOG_Running);
-		B_LogEntry(TOPIC_RoscoeMage,"Rosco je vystrašený z lidí v černých róbách. Podle něj jeden z nich šel ke starému hřbitovu v lese.");
+		B_LogEntry(TOPIC_RoscoeMage,"Roscoe je vystrašený z lidí v černých róbách. Podle něj jeden z nich šel ke starému hřbitovu v lese.");
 		AI_StopProcessInfos(self);
 		Wld_InsertNpc(DMT_1812_Dementor,"NW_FARM2_TO_TAVERN_09_MONSTER4");
 		Wld_InsertNpc(SKELETON_DARK,"FP_ROAM_NW_FARM2_TO_TAVERN_09_MONSTER4_04");

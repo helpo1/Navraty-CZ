@@ -46,11 +46,11 @@ func void dia_harlok_hallo_info()
 	}
 	else if(other.guild == GIL_TPL)
 	{
-		AI_Output(self,other,"DIA_Harlok_Hallo_01_02");	//Máte můj respekt, ctihodný templáři!
+		AI_Output(self,other,"DIA_Harlok_Hallo_01_02");	//Máš můj respekt, ctihodný templáři!
 	}
 	else if(other.guild == GIL_GUR)
 	{
-		AI_Output(self,other,"DIA_Harlok_Hallo_01_03");	//Máte můj respekt, mistře!
+		AI_Output(self,other,"DIA_Harlok_Hallo_01_03");	//Máš můj respekt, mistře!
 	}
 	else
 	{
@@ -249,13 +249,13 @@ func void dia_harlok_jointsrunning_info()
 		AI_Output(other,self,"DIA_Harlok_JointsRunning_07_09");	//Jaký?
 		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_10");	//Mám u sebe jeden svitek Spánku. Myslím, že bych ti ho mohl prodat.
 		AI_Output(other,self,"DIA_Harlok_JointsRunning_07_11");	//Kolik za něj chceš?
-		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_12");	//No, řekněme... (přemýšlí) Vzhledem k tomu, jak moc bude pro tebe užitečné...
-		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_13");	//...500 zlatých mi bude stačit.
+		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_12");	//No, řekněme... (přemýšlí) Vzhledem k tomu, jak moc bude pro tebe užitečný...
+		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_13");	//... 500 zlatých mi bude stačit.
 		AI_Output(other,self,"DIA_Harlok_JointsRunning_07_14");	//COŽE? Za jeden svitek 500 zlatých?
 		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_15");	//No, já ti to jen nabízím. Nemusíš to kupovat...
 		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_16");	//Ale nemysli si, že slevním!
 		AI_Output(self,other,"DIA_Harlok_JointsRunning_07_17");	//Pokud se rozhodneš koupit ho, řekni mi.
-		AI_Output(other,self,"DIA_Harlok_JointsRunning_07_18");	//Budu o tom přemýšelt.
+		AI_Output(other,self,"DIA_Harlok_JointsRunning_07_18");	//Budu o tom přemýšlet.
 		B_GiveInvItems(other,self,ItMi_Joint,3);
 		HARLOK_BRINGJOINTS = LOG_SUCCESS;
 		Log_SetTopicStatus(TOPIC_HARLOKJOINPSI,LOG_SUCCESS);
@@ -301,7 +301,7 @@ func void dia_harlok_tradescroll_info()
 	else
 	{
 		AI_Output(self,other,"DIA_Harlok_TradeScroll_07_03");	//Ale vždyť nemáš dost peněz!
-		AI_Output(self,other,"DIA_Harlok_TradeScroll_07_04");	//Vrať se, až budeš mít pětset zlatých!
+		AI_Output(self,other,"DIA_Harlok_TradeScroll_07_04");	//Vrať se, až budeš mít pět set zlatých!
 	};
 };
 

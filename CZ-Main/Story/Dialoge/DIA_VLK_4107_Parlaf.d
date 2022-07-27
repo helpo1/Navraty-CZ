@@ -138,7 +138,7 @@ func int DIA_Parlaf_HUNGRIG_Condition()
 func void DIA_Parlaf_HUNGRIG_Info()
 {
 	AI_Output(other,self,"DIA_Parlaf_HUNGRIG_15_00");	//Co je nového?
-	AI_Output(self,other,"DIA_Parlaf_HUNGRIG_03_01");	//Ten zatracený Engor zase zkrátil příděly
+	AI_Output(self,other,"DIA_Parlaf_HUNGRIG_03_01");	//Ten zatracený Engor zase zkrátil příděly.
 };
 
 
@@ -203,26 +203,26 @@ func int DIA_Parlaf_DobarOut_Condition()
 func void DIA_Parlaf_DobarOut_Info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_00");	//(strach) Kdo je tam? Ach, to jsi ty...
+	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_00");	//(vystrašený) Kdo je tam? Ach, to jsi ty...
 	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_01");	//Tak tady se ukrýváš. Co tě sem přivedlo?
-	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_02");	//(deprese) Jednou v noci mě Dobar probudil a nabídl útěk z hradu. A já blázen ho poslechl.
+	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_02");	//(deprimovaný) Jednou v noci mě Dobar probudil a nabídl mi útěk z hradu. A já blázen ho poslechl.
 	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_03");	//Ale nevím jak by se dalo z tohodle údolí dostat živý... (tiše) No, možná právě tobě se to podaří.
-	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_04");	//K věci, kde je Dobar a proč jseš tady?
-	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_05");	//A-ah... ano, dobře, dobře. Další noc jsme sešli dolů bez povšimnutí po beranidlu - Zrovna se střídala hlídka a my využili příležitosti.
+	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_04");	//K věci, kde je Dobar a proč jsi tady?
+	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_05");	//A-ah... ano, dobře, dobře. Další noc jsme sešli dolů bez povšimnutí po beranidlu - zrovna se střídala hlídka a my využili příležitosti.
 	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_06");	//Už jsme skoro opustily kruh obležení kolem hradu, viděli jsme spousty skřetích skupin.
 	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_07");	//Nevzpomínám si přesně jak - rozběhly jsme se do různých směrů. 
 	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_08");	//Běžel jsem bez ohlédnutí podél útesu, dokud jsem si nevšiml římsy a pak vylezl sem.
 	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_09");	//A ty potvory neviděly jak se sem škrábeš?
-	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_10");	//Jsem velmi překvapen že jsem stále naživu. Nemohli, nevidí... (drbe se na hlavě)
-	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_11");	//Myslím že oni ví, že nemám kam jít odsuď. A tak si raději ze mě dělají srandu protože tady brzo umřu hlady.
+	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_10");	//Jsem velmi překvapen že jsem stále naživu. Nemohli to vidět... (drbe se na hlavě)
+	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_11");	//Myslím že oni ví, že nemám odsud kam jít. A tak si raději ze mě dělají srandu protože tady brzo umřu hlady.
 	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_12");	//Mám ale jiný nápad.
 	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_13");	//Kam běžel Dobar?
 	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_14");	//Já nevím... Jak říkám všechno se stalo tak náhle. Ale neběžel zrovna v tomhle směru.
 	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_15");	//Vidím... A co s tebou mám dělat chlape?
-	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_16");	//B... Byl bych velmi vděčný, jestli... bys mě vzal zpátky do hradu
+	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_16");	//B... byl bych velmi vděčný, jestli... bys mě vzal zpátky do hradu.
 	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_17");	//Jenom... Bojím se představy reakce Garonda na mou dezerci...
 	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_18");	//Nemyslím si že tě bude přísně trestat. Mluvil jsem s ním a zjistil že má plné ruce práce.
-	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_19");	//Tak mi řekni jedno - dovedete mě na hrad, nebo ne?
+	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_19");	//Tak mi řekni jedno - vzít tě na hrad nebo ne?
 	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_20");	//Ale, no tak co... půjdu s tebou.
 	AI_Output(other,self,"DIA_Parlaf_DobarOut_01_21");	//Tak jdeme.
 	AI_Output(self,other,"DIA_Parlaf_DobarOut_01_22");	//Dobře, veď.
@@ -259,7 +259,7 @@ func void DIA_Parlaf_DobarOut_Come_Info()
 
 	if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM) || (hero.guild == GIL_GUR) || (hero.guild == GIL_NDM) || (hero.guild == GIL_NDW) || (hero.guild == GIL_NOV))
 	{
-		AI_Output(self,other,"DIA_Parlaf_DobarOut_Come_01_02");	//Jednou při procházce do kaple, našel jsem runový kámen. Pravděpodobně někoho z mágů, myslím že se ti to bude hodit.
+		AI_Output(self,other,"DIA_Parlaf_DobarOut_Come_01_02");	//Jednou při procházce do kaple jsem našel runový kámen. Pravděpodobně patřil někomu z mágů, myslím že se ti to bude hodit.
 		B_GiveInvItems(self,other,ItMi_HighRuneBlank,1);
 	}
 	else
@@ -283,7 +283,7 @@ instance DIA_Parlaf_DobarDead(C_Info)
 	condition = DIA_Parlaf_DobarDead_Condition;
 	information = DIA_Parlaf_DobarDead_Info;
 	permanent = FALSE;
-	description = "Zjistil jsem že Dobar nedaleko hradu, skončil.";
+	description = "Našel jsem Dobara poblíž hradu. Je mrtvý.";
 };
 
 func int DIA_Parlaf_DobarDead_Condition()
@@ -297,8 +297,8 @@ func int DIA_Parlaf_DobarDead_Condition()
 func void DIA_Parlaf_DobarDead_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Parlaf_DobarDead_01_00");	//Zjistil jsem že Dobar nedaleko hradu, skončil.
-	AI_Output(self,other,"DIA_Parlaf_DobarDead_01_01");	//Eh... nestačilo stále běhat. Sundaly ho dolů.
+	AI_Output(other,self,"DIA_Parlaf_DobarDead_01_00");	//Našel jsem Dobara poblíž hradu. Je mrtvý.
+	AI_Output(self,other,"DIA_Parlaf_DobarDead_01_01");	//Eh... neměli jsme přece utíkat. Nechť odpočívá v pokoji.
 };
 
 instance DIA_Parlaf_WorkAgain(C_Info)
@@ -323,7 +323,7 @@ func void DIA_Parlaf_WorkAgain_Info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Parlaf_WorkAgain_01_00");	//Garond se rozhodl že tě neztrestá.
-	AI_Output(other,self,"DIA_Parlaf_WorkAgain_01_01");	//Budeš muset, stejně jako dříve ostřit nože.
+	AI_Output(other,self,"DIA_Parlaf_WorkAgain_01_01");	//Budeš muset, stejně jako dříve ostřit meče.
 	AI_Output(self,other,"DIA_Parlaf_WorkAgain_01_02");	//Ó, obával jsem se nejhoršího...
 	AI_Output(self,other,"DIA_Parlaf_WorkAgain_01_03");	//Ale teď nechci vytáhnout ani paty z hradu. Alespoň do doby, kdy je kolem živo.
 	AI_Output(self,other,"DIA_Parlaf_WorkAgain_01_04");	//Děkuji moc!

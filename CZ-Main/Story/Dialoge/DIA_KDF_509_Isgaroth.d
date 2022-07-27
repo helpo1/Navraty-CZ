@@ -19,7 +19,7 @@ func int DIA_Isgaroth_EXIT_Condition()
 
 func void DIA_Isgaroth_EXIT_Info()
 {
-	AI_Output(self,other,"DIA_Isgaroth_EXIT_01_00");	//Nechť tě Innos ochráňuje.
+	AI_Output(self,other,"DIA_Isgaroth_EXIT_01_00");	//Nechť tě Innos ochraňuje.
 	AI_StopProcessInfos(self);
 };
 
@@ -68,7 +68,7 @@ func int DIA_Isgaroth_Segen_Condition()
 func void DIA_Isgaroth_Segen_Info()
 {
 	AI_Output(other,self,"DIA_Isgaroth_Segen_15_00");	//Požehnej mi!
-	AI_Output(self,other,"DIA_Isgaroth_Segen_01_01");	//Žehnám ti ve jménu Innosu. Nechť Pánův oheň hoří v srdci tvém a dá ti sílu konat v právu.
+	AI_Output(self,other,"DIA_Isgaroth_Segen_01_01");	//Žehnám ti ve jménu Innose. Nechť Pánův oheň hoří v srdci tvém a dá ti sílu konat v právu.
 
 	if(MIS_Thorben_GetBlessings == LOG_Running)
 	{
@@ -100,10 +100,10 @@ func int DIA_Isgaroth_Wolf_Condition()
 
 func void DIA_Isgaroth_Wolf_Info()
 {
-	AI_Output(other,self,"DIA_Isgaroth_Wolf_15_00");	//Poslal mě Sergio. Mám splnit úlohu. Co to teda je?
-	AI_Output(self,other,"DIA_Isgaroth_Wolf_01_01");	//Potuluje se tu Černý vlk. Vystopuj a zabij ho.
+	AI_Output(other,self,"DIA_Isgaroth_Wolf_15_00");	//Poslal mě Sergio. Mám splnit úkol. Co to teda je?
+	AI_Output(self,other,"DIA_Isgaroth_Wolf_01_01");	//Potuluje se tu černý vlk. Vystopuj a zabij ho.
 	MIS_IsgarothWolf = LOG_Running;
-	B_LogEntry(Topic_IsgarothWolf,"V blízkosti oltáři před klášterem se potuluje Černý vlk. Měl bych ho vystopovat a zabít.");
+	B_LogEntry(Topic_IsgarothWolf,"V blízkosti oltáře před klášterem se potuluje černý vlk. Měl bych ho vystopovat a zabít.");
 };
 
 
@@ -160,7 +160,7 @@ func void DIA_Isgaroth_Job_Info()
 {
 	AI_Output(other,self,"DIA_Isgaroth_Job_15_00");	//Co tady děláš?
 	AI_Output(self,other,"DIA_Isgaroth_Job_01_01");	//Jsem mág Ohně. Kněz nášho boha Innose.
-	AI_Output(self,other,"DIA_Isgaroth_Job_01_02");	//Tenhle oltář je zasvěcen JEMU, nejvyššímu bohu, stvořiteli ohně a pánu spravedlivosti.
+	AI_Output(self,other,"DIA_Isgaroth_Job_01_02");	//Tenhle oltář je zasvěcen JEMU, nejvyššímu bohu, stvořiteli ohně a pánu spravedlnosti.
 	AI_Output(self,other,"DIA_Isgaroth_Job_01_03");	//Lidé ke mne chodí, aby se modlili a dostali požehnání.
 	AI_Output(self,other,"DIA_Isgaroth_Job_01_04");	//A za malý poplatek ode mně můžeš získat mnoho užitečných věcí.
 	Log_CreateTopic(Topic_KlosterTrader,LOG_NOTE);
@@ -223,7 +223,7 @@ func int DIA_Isgaroth_Kloster_Condition()
 func void DIA_Isgaroth_Kloster_Info()
 {
 	AI_Output(other,self,"DIA_Isgaroth_Kloster_15_00");	//Kam mě tahle cesta zavede?
-	AI_Output(self,other,"DIA_Isgaroth_Kloster_01_01");	//Cesta vede do kláštere mágů Ohně. Vstoupit je ale dovoleno jenom jeho služebníkům.
+	AI_Output(self,other,"DIA_Isgaroth_Kloster_01_01");	//Cesta vede do kláštera mágů Ohně. Vstoupit je ale dovoleno jenom jeho služebníkům.
 	if(other.guild == GIL_NONE)
 	{
 		AI_Output(self,other,"DIA_Isgaroth_Kloster_01_02");	//Pokud chceš být přijmout za novice, musíš přinést ovci a...
@@ -234,7 +234,7 @@ func void DIA_Isgaroth_Kloster_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Isgaroth_Kloster_01_03");	//Jelikož sis již zvolil jinou skupinu, vstup ti bude odepřen.
+		AI_Output(self,other,"DIA_Isgaroth_Kloster_01_03");	//Jelikož sis již zvolil jinou cestu, vstup ti bude odepřen.
 	};
 };
 
@@ -246,7 +246,7 @@ instance DIA_Isgaroth_Vatras(C_Info)
 	condition = DIA_Isgaroth_Vatras_Condition;
 	information = DIA_Isgaroth_Vatras_Info;
 	permanent = TRUE;
-	description = "Přinesl jsem zprávu od Vatrasa.";
+	description = "Přinesl jsem zprávu od Vatrase.";
 };
 
 
@@ -260,7 +260,7 @@ func int DIA_Isgaroth_Vatras_Condition()
 
 func void DIA_Isgaroth_Vatras_Info()
 {
-	AI_Output(other,self,"DIA_ISgaroth_Vatras_15_00");	//Přinesl jsem zprávu od Vatrasa.
+	AI_Output(other,self,"DIA_ISgaroth_Vatras_15_00");	//Přinesl jsem zprávu od Vatrase.
 	AI_Output(self,other,"DIA_Isgaroth_Vatras_01_01");	//Co je to za zprávu?
 	AI_Output(other,self,"DIA_Isgaroth_Vatras_15_02");	//Dopis. Tady je.
 
@@ -357,7 +357,7 @@ func void dia_isgaroth_runemagicnotwork_info()
 	AI_Output(other,self,"DIA_Isgaroth_RuneMagicNotWork_01_00");	//Tvé magické runy - stále fungují?
 	AI_Output(self,other,"DIA_Isgaroth_RuneMagicNotWork_01_01");	//Momentálně ne... (nechápavě) A ani za svět nedokážu pochopit proč!
 	AI_Output(other,self,"DIA_Isgaroth_RuneMagicNotWork_01_02");	//A co ostatní?
-	AI_Output(self,other,"DIA_Isgaroth_RuneMagicNotWork_01_03");	//Pravděpodobně to postihlo všechni! Ostatnim mágům Ohně se také nic nedaří.
+	AI_Output(self,other,"DIA_Isgaroth_RuneMagicNotWork_01_03");	//Pravděpodobně to postihlo všechni! Ostatním mágům Ohně se také nic nedaří.
 	B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Runové kameny ostatních mágů Ohně také ztratili svou moc.");
 	FIREMAGERUNESNOT = TRUE;
 };

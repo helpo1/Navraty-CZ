@@ -254,7 +254,7 @@ func void DIA_Brutus_Baby_Info()
 {
 	AI_Output(self,other,"DIA_Brutus_Baby_01_00");	//Počkat!
 	AI_Output(other,self,"DIA_Brutus_Baby_01_01");	//Co je?
-	AI_Output(self,other,"DIA_Brutus_Baby_01_02");	//Poslouchej, už nějakou dobu se vás chci na něco zeptat, nebo ne. (zaváhal) Nebo možná jo.
+	AI_Output(self,other,"DIA_Brutus_Baby_01_02");	//Poslouchej, už nějakou dobu se tě chci na něco zeptat, nebo ne. (zaváhal) Nebo možná jo.
 	AI_Output(other,self,"DIA_Brutus_Baby_01_03");	//Poslouchám.
 	AI_Output(self,other,"DIA_Brutus_Baby_01_04");	//Vypadá to, že jsme na hradě přilepeni na zatraceně dlouhou dobu. Určitě sis všiml těch skřetů za bránou.
 	AI_Output(other,self,"DIA_Brutus_Baby_01_05");	//Ne, ničeho jsem si nevšiml.
@@ -268,7 +268,7 @@ func void DIA_Brutus_Baby_Info()
 	AI_Output(other,self,"DIA_Brutus_Baby_01_13");	//A proč Milten?
 	AI_Output(self,other,"DIA_Brutus_Baby_01_14");	//No, je to pořádný mág... a tvůj přítel. Možná když mu řekneš aby mi vykouzlil ženu, bude tě poslouchat.
 	AI_Output(other,self,"DIA_Brutus_Baby_01_15");	//Myslíš, že je to možné?
-	AI_Output(self,other,"DIA_Brutus_Baby_01_16");	//Nevím, ale za zkoušku nic nedáme. Pokud to zvládneš, tak mi věř: nebudeš litovat. No co říkáš?
+	AI_Output(self,other,"DIA_Brutus_Baby_01_16");	//Nevím, ale za zkoušku nic nedáme. Pokud to zvládneš, tak mi věř, že nebudeš litovat. No co říkáš?
 	Info_ClearChoices(DIA_Brutus_Baby);
 	Info_AddChoice(DIA_Brutus_Baby,"Máš pravdu. Zeptám se.",DIA_Brutus_Baby_Yes);
 	Info_AddChoice(DIA_Brutus_Baby,"Ne.",DIA_Brutus_Baby_No);
@@ -281,7 +281,7 @@ func void DIA_Brutus_Baby_Yes()
 	MIS_BrutusBaby = LOG_Running;
 	Log_CreateTopic(TOPIC_BrutusBaby,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BrutusBaby,LOG_Running);
-	B_LogEntry(TOPIC_BrutusBaby,"Brutus mě požádal o neobvyklou věc. On i ostatní chlapci v zámku by se chtěli trochu uvolnit. Brutus po mě chce abych zašel za Miltenem a požádal ho o trochu té ženštiny. Rozhodl jsem se pomoci dětem.");
+	B_LogEntry(TOPIC_BrutusBaby,"Brutus mě požádal o neobvyklou věc. On i ostatní chlapci v zámku by se chtěli trochu uvolnit. Brutus po mě chce abych zašel za Miltenem a požádal ho o trochu té ženštiny. Rozhodl jsem se klukům pomoci.");
 	AI_StopProcessInfos(self);
 };
 

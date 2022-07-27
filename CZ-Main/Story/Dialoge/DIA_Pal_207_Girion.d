@@ -468,8 +468,8 @@ func void dia_pal_207_girion_yourfree_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_05");	//(radostně) Výborně příteli! A to jsme si mysleli, že je s námi konec!
-		AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_06");	//Jen otevři mříže, abychom mohli odejít.
+		AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_05");	//(radostně) Výborně příteli! A to jsem si myslel, že je se mnou konec!
+		AI_Output(self,other,"DIA_Pal_207_Girion_YourFree_01_06");	//Jen otevři mříže, abych mohl odejít.
 	};
 	CAPTUREDMANSISFREE = TRUE;
 	AI_StopProcessInfos(self);

@@ -187,15 +187,15 @@ func void dia_pal_9168_natan_whoyou_info()
 		B_GivePlayerXP(200);
 		AI_Output(other,self,"DIA_Pal_9168_Natan_WhoYou_01_03");	//Ach ano. Lord Hagen mi o tobě řekl.
 		AI_Output(other,self,"DIA_Pal_9168_Natan_WhoYou_01_04");	//Jsi jeden z těch, kteří se dobrovolně přihlásili na tuto výpravu?
-		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_10");	//Jsem zde za paladina Udara
+		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_10");	//Jsem zde za paladina Udara.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_13");	//Před několika lety mě zachránil život v jedné z ledových pustin Nordmaru na misi pro krále.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_14");	//Složil jsem posvátný slib Innosovi, že mu to oplatím.
 		AI_Output(other,self,"DIA_Pal_9168_Natan_WhoYou_01_15");	//Takže ti zachránil život? Jak k tomu došlo?!
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_16");	//Byli jsme posláni do jednoho údolí, kde žije muž, který pro království vyrábí výbušné šípy, při vstupu do jednoho údolí nás obklíčili skřeti... (pamatuju) ty svině byli všude.
-		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_21");	//Když pomalu bylo jasné, že skřetů je příliš mnoho, najednou kolem mě padli dva skřeti a z prsou jim trčela šipka do kuše.
+		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_21");	//Když pomalu bylo jasné, že skřetů je příliš mnoho, najednou kolem mě padli dva skřeti a z prsou jim trčela šipka od kuše.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_22");	//A pak se Udar s mečem vrhl mezi nepřátele kolem mě a zuřivě máchal kolem sebe, abych se stihl zvednout ze země... (s úžasem)
-		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_25");	//A my jsme využili příležitost!... Naše skupina unikla, i když se zančnými ztrátami.
-		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_26");	//Poté, když jsme začli utíkat pryč, skřeti nás sledovali.
+		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_25");	//A my jsme využili příležitost!... Naše skupina unikla, i když se značnými ztrátami.
+		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_26");	//Poté, když jsme začali utíkat pryč, skřeti nás sledovali.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_27");	//... ale jedna ze střel skřetů mě strefila do nohy! Spadnul jsem jak podťatej.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_28");	//Udar to viděl a přispěchal mi na pomoc bez ohledu na to, že už se blížili skřeti co nás pronásledovali.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_WhoYou_01_29");	//Zvednul mě a pomohl mi utíkat dál.
@@ -253,17 +253,17 @@ func void dia_pal_9168_natan_zamok_info()
 	NATATELLZAMOK = TRUE;
 	if(MIS_RESCUEGAROND == LOG_Running)
 	{
-		B_LogEntry(TOPIC_RESCUEGAROND,"Zdá se, že Pevnost v Hornickém údolí padla! Skřeti ji obsadili a není jisté, jestli někdo přežil.");
+		B_LogEntry(TOPIC_RESCUEGAROND,"Zdá se, že pevnost v Hornickém údolí padla! Skřeti ji obsadili a není jisté, jestli někdo přežil.");
 	};
 	Info_ClearChoices(dia_pal_9168_natan_zamok);
 	Info_AddChoice(dia_pal_9168_natan_zamok,"Tak to nějak zkusím!",dia_pal_9168_natan_zamok_ulumulu);
-	Info_AddChoice(dia_pal_9168_natan_zamok,"Pak tedy musíme dobít pevnost zpět!",dia_pal_9168_natan_zamok_noway);
+	Info_AddChoice(dia_pal_9168_natan_zamok,"Pak tedy musíme dobýt pevnost zpět!",dia_pal_9168_natan_zamok_noway);
 };
 
 func void dia_pal_9168_natan_zamok_ulumulu()
 {
 	AI_Output(other,self,"DIA_Pal_9168_Natan_Zamok_UluMulu_01_01");	//Tak to nějak zkusím!
-	AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_UluMulu_01_04");	//Hmmm... (udiveně) No dobrá! Pkud jseš si jistý, pokračuj.
+	AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_UluMulu_01_04");	//Hmmm... (udiveně) No dobrá! Pokud jseš si jistý, pokračuj.
 	AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_UluMulu_01_05");	//Je pravda, že to není nejjistější!
 	MIS_NEWSSURVIVERS = LOG_Running;
 	Log_CreateTopic(TOPIC_NEWSSURVIVERS,LOG_MISSION);
@@ -275,7 +275,7 @@ func void dia_pal_9168_natan_zamok_ulumulu()
 
 func void dia_pal_9168_natan_zamok_noway()
 {
-	AI_Output(other,self,"DIA_Pal_9168_Natan_Zamok_NoWay_01_01");	//Pak musíme dobít pevnost zpět!
+	AI_Output(other,self,"DIA_Pal_9168_Natan_Zamok_NoWay_01_01");	//Pak musíme dobýt pevnost zpět!
 	AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_NoWay_01_02");	//Hmm... (zamyšleně) Dobrý nápad! Abych řekl pravdu, už jsem o tom přemýšlel.
 	AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_NoWay_01_03");	//Nicméně nás není dost, abychom bojovali proti celé armádě skřetů.
 	AI_Output(other,self,"DIA_Pal_9168_Natan_Zamok_NoWay_01_06");	//A co máš na mysli?!
@@ -310,11 +310,11 @@ func void dia_pal_9168_natan_zamok_noway()
 		}
 		else
 		{
-			AI_Output(other,self,"DIA_Pal_9168_Natan_Zamok_NoWay_01_09");	//Obávám se, že všichni jsou už mrtví
+			AI_Output(other,self,"DIA_Pal_9168_Natan_Zamok_NoWay_01_09");	//Obávám se, že všichni jsou už mrtví.
 			AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_NoWay_01_10");	//A jak to víš?!
 		};
-		AI_Output(other,self,"DIA_Pal_9168_Natan_Zamok_NoWay_01_11");	//Věř mi, je to tak!. Tak co, budem bojovat bez nich!
-		AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_NoWay_01_12");	//Ano,škoda... (rozrušený) budeme simuset poct sami.
+		AI_Output(other,self,"DIA_Pal_9168_Natan_Zamok_NoWay_01_11");	//Věř mi, je to tak. Tak co, budem bojovat bez nich!
+		AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_NoWay_01_12");	//Ano, škoda... (rozrušený) budeme si muset pomoct sami.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_Zamok_NoWay_01_13");	//Myslím, že bychom měli začít s útokem! Dej vědět až budeš připravený.
 		AI_Output(other,self,"DIA_Pal_9168_Natan_Zamok_NoWay_01_14");	//Dobře.
 		PALADINREADYATTACK = TRUE;
@@ -322,7 +322,7 @@ func void dia_pal_9168_natan_zamok_noway()
 		Log_CreateTopic(TOPIC_STURMCASTLE,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_STURMCASTLE,LOG_Running);
 		B_LogEntry(TOPIC_STURMCASTLE,"Nedaleko hradu v údolí jsem potkal skupinu paladinů. Vede je paladin Nathan. Řekl mi, že pevnost padla a neví, jestli někdo přežil. Měl bych to zjistit.");
-		Log_AddEntry(TOPIC_STURMCASTLE,"Nejlepší způsob, jak vše zjistit bude dobít pevnost zpět. V údolí je skupina drakobijců, se kterou by to bylo jednodušší, ale řekl jsem Nathanovi, že jsou po smrti a musíme hrad dobít sami.");
+		Log_AddEntry(TOPIC_STURMCASTLE,"Nejlepší způsob, jak vše zjistit bude dobýt pevnost zpět. V údolí je skupina drakobijců, se kterou by to bylo jednodušší, ale řekl jsem Nathanovi, že jsou po smrti a musíme hrad dobýt sami.");
 		Info_ClearChoices(dia_pal_9168_natan_zamok);
 	}
 	else
@@ -333,7 +333,7 @@ func void dia_pal_9168_natan_zamok_noway()
 		Log_CreateTopic(TOPIC_STURMCASTLE,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_STURMCASTLE,LOG_Running);
 		B_LogEntry(TOPIC_STURMCASTLE,"Nedaleko hradu v údolí jsem potkal skupinu paladinů. Vede je paladin Nathan. Řekl mi, že pevnost padla a neví, jestli někdo přežil. Měl bych to zjistit.");
-		Log_AddEntry(TOPIC_STURMCASTLE,"Nejlepší způsob, jak vše zjistit bude dobít pevnost zpět. V údolí je skupina drakobijců, se kterou by to bylo jednodušší, měl bych se po nich podívat a přesvěčit je, aby se k nám přidali.");
+		Log_AddEntry(TOPIC_STURMCASTLE,"Nejlepší způsob, jak vše zjistit bude dobýt pevnost zpět. V údolí je skupina drakobijců, se kterou by to bylo jednodušší, měl bych se po nich podívat a přesvědčit je, aby se k nám přidali.");
 		AI_StopProcessInfos(self);
 	};
 };
@@ -368,7 +368,7 @@ func void dia_pal_9168_natan_newssurvivers_info()
 	if((MIS_NATANDOLG == LOG_Running) && (UDARKNOWSNATAN == TRUE))
 	{
 		B_GivePlayerXP(200);
-		AI_Output(other,self,"DIA_Pal_9168_Natan_NewsSurvivers_01_10");	//Mimochodem, mezi paladiny které skřeti vězní je i váš přítel Udar! On také padl do zajetí.
+		AI_Output(other,self,"DIA_Pal_9168_Natan_NewsSurvivers_01_10");	//Mimochodem, mezi paladiny které skřeti vězní je i tvůj přítel Udar! On také padl do zajetí.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_NewsSurvivers_01_11");	//Udar je v pevnosti?! Jo! Takže ho ještě mohu zachránit.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_NewsSurvivers_01_12");	//Prokletí skřeti!... (rozlobeně) Tak jednoduše je z toho vyjít nenechám.
 		AI_Output(other,self,"DIA_Pal_9168_Natan_NewsSurvivers_01_13");	//Myslím, že máš šanci zplatit Udarovi dluh.
@@ -391,7 +391,7 @@ instance DIA_PAL_9168_NATAN_ZAMOKKNOWN(C_Info)
 	condition = dia_pal_9168_natan_zamokknown_condition;
 	information = dia_pal_9168_natan_zamokknown_info;
 	permanent = FALSE;
-	description = "Proč jste tady?!";
+	description = "Jaká je situace?";
 };
 
 
@@ -407,7 +407,7 @@ func void dia_pal_9168_natan_zamokknown_info()
 {
 	B_GivePlayerXP(250);
 	AI_Output(other,self,"DIA_Pal_9168_Natan_ZamokKnown_01_01");	//Jaká je situace?
-	AI_Output(self,other,"DIA_Pal_9168_Natan_ZamokKnown_01_02");	//Před několika dny, skřeti znovu zaútočil na hrad, a tentokrát se jim to podařilo.
+	AI_Output(self,other,"DIA_Pal_9168_Natan_ZamokKnown_01_02");	//Před několika dny, skřeti znovu zaútočili na hrad, a tentokrát se jim to podařilo.
 	if(KNOWABOUTGAROND == TRUE)
 	{
 		AI_Output(self,other,"DIA_Pal_9168_Natan_ZamokKnown_01_04");	//Co?!... (napjatě) Ty jsi tam byl? A co jsi zjistil?
@@ -420,7 +420,7 @@ func void dia_pal_9168_natan_zamokknown_info()
 			if(BOGNARREFUSETALK == TRUE)
 			{
 				Info_ClearChoices(dia_pal_9168_natan_zamokknown);
-				Info_AddChoice(dia_pal_9168_natan_zamokknown,"Je nezbytné zkusit dobít pevnost zpět!",dia_pal_9168_natan_zamokknown_noway);
+				Info_AddChoice(dia_pal_9168_natan_zamokknown,"Je nezbytné zkusit dobýt pevnost zpět!",dia_pal_9168_natan_zamokknown_noway);
 			}
 			else
 			{
@@ -442,8 +442,8 @@ func void dia_pal_9168_natan_zamokknown_info()
 		AI_Output(self,other,"DIA_Pal_9168_Natan_ZamokKnown_01_15");	//Rozsekají tě na kusy ještě než se dostaneš k pevnosti!
 		NATATELLZAMOKTWO = TRUE;
 		Info_ClearChoices(dia_pal_9168_natan_zamokknown);
-		Info_AddChoice(dia_pal_9168_natan_zamokknown,"Nech to na mě!.",dia_pal_9168_natan_zamokknown_ulumulu);
-		Info_AddChoice(dia_pal_9168_natan_zamokknown,"Musíme pevnost dobít zpět!",dia_pal_9168_natan_zamokknown_noway);
+		Info_AddChoice(dia_pal_9168_natan_zamokknown,"Nech to na mě!",dia_pal_9168_natan_zamokknown_ulumulu);
+		Info_AddChoice(dia_pal_9168_natan_zamokknown,"Musíme pevnost dobýt zpět!",dia_pal_9168_natan_zamokknown_noway);
 	};
 };
 
@@ -462,8 +462,8 @@ func void dia_pal_9168_natan_zamokknown_ulumulu()
 
 func void dia_pal_9168_natan_zamokknown_noway()
 {
-	AI_Output(other,self,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_01");	//Musíme ji dobít zpět!
-	AI_Output(self,other,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_02");	//Hmm... (zymyšleně) Dobrý nápad, taky jsem na to pomyslel.
+	AI_Output(other,self,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_01");	//Musíme ji dobýt zpět!
+	AI_Output(self,other,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_02");	//Hmm... (zamyšleně) Dobrý nápad, taky jsem na to pomyslel.
 	AI_Output(self,other,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_03");	//Nicméně nás není dost, abychom porazili armádu skřetů.
 	AI_Output(other,self,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_06");	//A co navrhuješ?!
 	AI_Output(self,other,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_07");	//Hmm... (zamyšleně) Slyšel jsem, že v údolí jsou drakobijci.
@@ -501,7 +501,7 @@ func void dia_pal_9168_natan_zamokknown_noway()
 			};
 		};
 		AI_Output(other,self,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_14");	//Věř mi, je to tak, takže je třeba bojovat bez nich!
-		AI_Output(self,other,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_15");	//Ano, škoda... Dobrá, připravte se na útok.
+		AI_Output(self,other,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_15");	//Ano, škoda... Dobrá, připrav se na útok.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_16");	//Myslím, že je nejvhodnější doba na útok. Dej vědět, až budeš připravenej.
 		AI_Output(other,self,"DIA_Pal_9168_Natan_ZamokKnown_NoWay_01_17");	//Dobře.
 		PALADINREADYATTACK = TRUE;
@@ -509,7 +509,7 @@ func void dia_pal_9168_natan_zamokknown_noway()
 		Log_CreateTopic(TOPIC_STURMCASTLE,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_STURMCASTLE,LOG_Running);
 		B_LogEntry(TOPIC_STURMCASTLE,"Nedaleko od průchodu do Hornického údolí jsem potkal malou skupinu paladinů. Vede je jistý Nathan. Řekl mi, že skřeti podnikli další útok na hrad a ten padl. Nathan věří, že všichni obránci hradu jsou mrtví, ale není si jistý. Měl bych to prověřit.");
-		Log_AddEntry(TOPIC_STURMCASTLE,"Myslím, že nejlepší cesta bude dobít zpět pevnost! Nathan souhlasil, když půjdou i drakobijci, kteří se usadili v údolí. Když jsem mu ale oznámil, že je po nich. Rozhodl, že zaútočíme vlastními silami!");
+		Log_AddEntry(TOPIC_STURMCASTLE,"Myslím, že nejlepší cesta bude dobýt zpět pevnost! Nathan souhlasil, když půjdou i drakobijci, kteří se usadili v údolí. Když jsem mu ale oznámil, že je po nich. Rozhodl, že zaútočíme vlastními silami!");
 		Info_ClearChoices(dia_pal_9168_natan_zamokknown);
 	}
 	else
@@ -520,7 +520,7 @@ func void dia_pal_9168_natan_zamokknown_noway()
 		Log_CreateTopic(TOPIC_STURMCASTLE,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_STURMCASTLE,LOG_Running);
 		B_LogEntry(TOPIC_STURMCASTLE,"Nedaleko od průchodu do Hornického údolí jsem potkal malou skupinu paladinů. Vede je jistý Nathan. Řekl mi, že skřeti podnikli další útok na hrad a ten padl. Nathan věří, že všichni obránci hradu jsou mrtví, ale není si jistý. Měl bych to prověřit.");
-		Log_AddEntry(TOPIC_STURMCASTLE,"Myslím, že nejlepší cesta bude dobít zpět pevnost! Nathan souhlasil, když půjdou i drakobijci, kteří se usadili v údolí. Myslím, že je půjdu zkusit najít.");
+		Log_AddEntry(TOPIC_STURMCASTLE,"Myslím, že nejlepší cesta bude dobýt zpět pevnost! Nathan souhlasil, když půjdou i drakobijci, kteří se usadili v údolí. Myslím, že je půjdu zkusit najít.");
 		AI_StopProcessInfos(self);
 	};
 };
@@ -616,7 +616,7 @@ func void dia_pal_9168_natan_info()
 		if(CASTLEISFREE == TRUE)
 		{
 			AI_Output(self,other,"DIA_Pal_9168_Natan_01_01");	//Dokázali jsme to! Pevnost je opět naše!
-			AI_Output(self,other,"DIA_Pal_9168_Natan_01_02");	//Ale na velké oslavy to není. Nemyslím, že si to skřeti nechají líbit
+			AI_Output(self,other,"DIA_Pal_9168_Natan_01_02");	//Ale na velké oslavy to není. Nemyslím, že si to skřeti nechají líbit.
 			AI_StopProcessInfos(self);
 		}
 		else
@@ -630,8 +630,8 @@ func void dia_pal_9168_natan_info()
 			{
 				AI_Output(self,other,"DIA_Pal_9168_Natan_01_06");	//Zatím je všude klid... (vážně) Ale to může být jen zdání!
 				AI_Output(self,other,"DIA_Pal_9168_Natan_01_07");	//Nikdy nevíš, kdy přijdou skřeti a pak je dobré být připravenej.
-				AI_Output(self,other,"DIA_Pal_9168_Natan_01_08");	//Takže ty musíš pokud možno co nejrychleji nají tuhle patrolu. Nesmíme ztratit ani minutu!
-				AI_Output(other,self,"DIA_Pal_9168_Natan_01_09");	//Dobře už jdou.
+				AI_Output(self,other,"DIA_Pal_9168_Natan_01_08");	//Takže ty musíš pokud možno co nejrychleji najít tuhle patrolu. Nesmíme ztratit ani minutu!
+				AI_Output(other,self,"DIA_Pal_9168_Natan_01_09");	//Dobře už jdu.
 				AI_StopProcessInfos(self);
 			}
 			else
@@ -709,7 +709,7 @@ func void dia_pal_9168_natan_canreadyattack_info()
 	if(DGJJOINPALADIN == TRUE)
 	{
 		B_GivePlayerXP(100);
-		AI_Output(other,self,"DIA_Pal_9168_Natan_CanReadyAttack_01_05");	//Souhlasili, jdou do bitvi s námi.
+		AI_Output(other,self,"DIA_Pal_9168_Natan_CanReadyAttack_01_05");	//Souhlasili, jdou do bitvy s námi.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_CanReadyAttack_01_06");	//To jsou dobré zprávy! Skřetům teď nic nepomůže!
 		AI_Output(self,other,"DIA_Pal_9168_Natan_CanReadyAttack_01_07");	//Myslím, že je možné začít s útokem! Řekni, až budeš připravenej.
 		AI_Output(other,self,"DIA_Pal_9168_Natan_CanReadyAttack_01_08");	//Dobře.
@@ -722,7 +722,7 @@ func void dia_pal_9168_natan_canreadyattack_info()
 		B_GivePlayerXP(200);
 		AI_Output(other,self,"DIA_Pal_9168_Natan_CanReadyAttack_01_09");	//Nemyslím si že pro nás budou přínosem.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_CanReadyAttack_01_10");	//Proč tak uvažuješ?!
-		AI_Output(other,self,"DIA_Pal_9168_Natan_CanReadyAttack_01_11");	//Ti zbabělci se posrali, jak se dozvěděli, co cheš dělat.
+		AI_Output(other,self,"DIA_Pal_9168_Natan_CanReadyAttack_01_11");	//Ti zbabělci se posrali, jak se dozvěděli, co chceš dělat.
 		AI_Output(other,self,"DIA_Pal_9168_Natan_CanReadyAttack_01_12");	//Takže se musíme obejít bez nich!
 		AI_Output(self,other,"DIA_Pal_9168_Natan_CanReadyAttack_01_13");	//Ano, je to škoda...
 		AI_Output(self,other,"DIA_Pal_9168_Natan_CanReadyAttack_01_14");	//Myslím, že jsme připraveni. Dej vědět až budeš i ty!
@@ -735,7 +735,7 @@ func void dia_pal_9168_natan_canreadyattack_info()
 		if(ALLDRGHUNTERSISDEAD == TRUE)
 		{
 			AI_Output(other,self,"DIA_Pal_9168_Natan_CanReadyAttack_01_16");	//Bojím se, že už jsou všichni mrtví.
-			AI_Output(self,other,"DIA_Pal_9168_Natan_CanReadyAttack_01_17");	//Jak to výš?!
+			AI_Output(self,other,"DIA_Pal_9168_Natan_CanReadyAttack_01_17");	//Jak to víš?!
 		}
 		else
 		{
@@ -761,8 +761,8 @@ func void dia_pal_9168_natan_canreadyattack_info()
 				Wld_InsertNpc(orkelite_addon2,"FP_ROAM_OW_ORCOND_CAVE1_3");
 			};
 		};
-		AI_Output(other,self,"DIA_Pal_9168_Natan_CanReadyAttack_01_20");	//Věř mi, je to tak. Musíme jít do bitvi bez nich!
-		AI_Output(self,other,"DIA_Pal_9168_Natan_CanReadyAttack_01_21");	//škoda... Dobrá, nic jiného nám nezbývá.
+		AI_Output(other,self,"DIA_Pal_9168_Natan_CanReadyAttack_01_20");	//Věř mi, je to tak. Musíme jít do bitvy bez nich!
+		AI_Output(self,other,"DIA_Pal_9168_Natan_CanReadyAttack_01_21");	//Škoda... Dobrá, nic jiného nám nezbývá.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_CanReadyAttack_01_22");	//Myslím, že jsme připraveni. Dej vědět, až budeš i ty!
 		AI_Output(other,self,"DIA_Pal_9168_Natan_CanReadyAttack_01_23");	//Dobře.
 		B_LogEntry(TOPIC_STURMCASTLE,"Nathan byl zklamaný, když slyšel noviny o drakobijcích. Musíme to zvládnout vlastními silami!");
@@ -833,7 +833,7 @@ func void dia_pal_9168_natan_surviversfailed_info()
 			};
 		};
 		AI_Output(other,self,"DIA_Pal_9168_Natan_SurviversFailed_01_11");	//Věř mi, musíme do útoku bez nich!
-		AI_Output(self,other,"DIA_Pal_9168_Natan_SurviversFailed_01_12");	//Škoda... Dobrá, dobudeme to vlastní silou.
+		AI_Output(self,other,"DIA_Pal_9168_Natan_SurviversFailed_01_12");	//Škoda... Dobrá, dobyjeme to vlastní silou.
 		AI_Output(self,other,"DIA_Pal_9168_Natan_SurviversFailed_01_13");	//Myslím, že můžeme začít s útokem. Dej vědět, až budeš připraven!
 		AI_Output(other,self,"DIA_Pal_9168_Natan_SurviversFailed_01_14");	//Dobře.
 		MIS_NEWSSURVIVERS = LOG_OBSOLETE;
@@ -842,7 +842,7 @@ func void dia_pal_9168_natan_surviversfailed_info()
 		MIS_STURMCASTLE = LOG_Running;
 		Log_CreateTopic(TOPIC_STURMCASTLE,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_STURMCASTLE,LOG_Running);
-		B_LogEntry(TOPIC_STURMCASTLE,"Nathan souhlasil s mojim nápadem dobít pevnost zpět, ale stěžuje si, že je nás málo. Říkal, že v údolí jsou drakobijci, ale když jsem mu řekl, že jsou mrtví, souhlasil s útokem.");
+		B_LogEntry(TOPIC_STURMCASTLE,"Nathan souhlasil s mojim nápadem dobýt pevnost zpět, ale stěžuje si, že je nás málo. Říkal, že v údolí jsou drakobijci, ale když jsem mu řekl, že jsou mrtví, souhlasil s útokem.");
 	}
 	else
 	{
@@ -903,7 +903,7 @@ func void dia_pal_9168_natan_readyattack_attack()
 	PALADINATTACK = TRUE;
 	B_LogEntry(TOPIC_STURMCASTLE,"Útok na pevnost začal...");
 	Info_ClearChoices(dia_pal_9168_natan_readyattack);
-	Info_AddChoice(dia_pal_9168_natan_readyattack,"Na steč!",dia_pal_9168_natan_readyattack_go);
+	Info_AddChoice(dia_pal_9168_natan_readyattack,"Na zteč!",dia_pal_9168_natan_readyattack_go);
 };
 
 func void dia_pal_9168_natan_readyattack_go()

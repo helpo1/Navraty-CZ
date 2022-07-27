@@ -247,7 +247,7 @@ func int DIA_Igaraz_METOO_Condition()
 
 func void DIA_Igaraz_METOO_Info()
 {
-	AI_Output(other,self,"DIA_Igaraz_METOO_15_00");	//Mne také! Požádal jsem o Zkoušku ohně.
+	AI_Output(other,self,"DIA_Igaraz_METOO_15_00");	//Mne také! Požádal jsem o Zkoušku Ohně.
 	AI_Output(self,other,"DIA_Igaraz_METOO_13_01");	//Buď si tě vybral Innos nebo jsi blázen.
 	AI_Output(other,self,"DIA_Igaraz_METOO_15_02");	//Povedlo se mi dost bláznivých věcí...
 	AI_Output(self,other,"DIA_Igaraz_METOO_13_03");	//Innos mě podporuje a to já projdu touhle zkouškou!
@@ -396,7 +396,7 @@ func void DIA_Igaraz_Stein_Info()
 	AI_Output(self,other,"DIA_Igaraz_OneMoreChance_01_09");	//Co teď?
 	AI_Output(other,self,"DIA_Igaraz_OneMoreChance_01_10");	//Modli se. Tak můžeš získat přízeň Innose.
 	AI_Output(other,self,"DIA_Igaraz_OneMoreChance_01_11");	//Jestli se stanu mágem, pomohu ti.
-	AI_Output(self,other,"DIA_Igaraz_OneMoreChance_01_12");	//Vážně bys mi pomohl...? No, díky... Vrácím se do kláštera, zatím ahoj...
+	AI_Output(self,other,"DIA_Igaraz_OneMoreChance_01_12");	//Vážně bys mi pomohl...? No, díky... Vracím se do kláštera, zatím ahoj...
 	MIS_Igaraz_OneMoreChance = LOG_Running;
 	Log_CreateTopic(TOPIC_IGARANZ_NEW,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_IGARANZ_NEW,LOG_Running);
@@ -789,7 +789,7 @@ func int DIA_Igaraz_New_MakeMage_condition()
 func void DIA_Igaraz_New_MakeMage_info()
 {
 	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_01_01");	//Mám tu pro tebe něco, co z tebe udělá mága!
-	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_01_02");	//Tady, vezmi so to srdce.
+	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_01_02");	//Tady, vezmi si to srdce.
 	AI_Output(other,self,"DIA_Igaraz_New_MakeMage_01_03");	//Zbytek se dozvíš od Parlana.
 	Snd_Play("LEVELUP");
 	B_GiveInvItems(other,self,itar_kdf_m_new,1);
@@ -882,7 +882,7 @@ func void DIA_Igaraz_New_MakeMage_UnknownBook()
 	MIS_Igaraz_OneMoreChance = LOG_SUCCESS;
 	IG_TRADE_COND = TRUE;
 	Log_SetTopicStatus(TOPIC_IGARANZ_NEW,LOG_SUCCESS);
-	B_LogEntry(TOPIC_IGARANZ_NEW,"Pomohl jsem Igarazovi, dal mi elixír many.");
+	B_LogEntry(TOPIC_IGARANZ_NEW,"Pomohl jsem Igarazovi, dal mi elixír ducha.");
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Trade");
 };

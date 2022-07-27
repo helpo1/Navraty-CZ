@@ -706,7 +706,7 @@ instance DIA_SALANDRIL_MyBrew(C_Info)
 	condition = dia_salandril_MyBrew_condition;
 	information = dia_salandril_MyBrew_info;
 	permanent = FALSE;
-	description = "Mohl by ses podívat na jeden alchemistický recept?";
+	description = "Mohl by ses podívat na jeden alchymistický recept?";
 };
 
 func int dia_salandril_MyBrew_condition()
@@ -720,7 +720,7 @@ func int dia_salandril_MyBrew_condition()
 func void dia_salandril_MyBrew_info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Salandril_MyBrew_01_00");	//Mohl bys se podívat na jeden alchemistický recept?
+	AI_Output(other,self,"DIA_Salandril_MyBrew_01_00");	//Mohl bys ses podívat na jeden alchymistický recept?
 	AI_Output(self,other,"DIA_Salandril_MyBrew_01_01");	//Samozřejmě! Ukaž mi ho.
 	AI_Output(other,self,"DIA_Salandril_MyBrew_01_02");	//Tu je.
 	B_GiveInvItems(other,self,ItWr_ConstRecept,1);
@@ -733,7 +733,7 @@ func void dia_salandril_MyBrew_info()
 	B_GiveInvItems(self,other,ItWr_ConstRecept,1);
 	AI_Output(self,other,"DIA_Salandril_MyBrew_01_08");	//Takže kdo to napsal?
 	AI_Output(other,self,"DIA_Salandril_MyBrew_01_09");	//Bude lepší, když ti to nepovím.
-	AI_Output(self,other,"DIA_Salandril_MyBrew_01_10");	//Dobře, nechceš - tak mi to neříkej... (pochechtávání) Ale ten, kdo to psal, by měl jednoznačne změnit zaměstnání.
+	AI_Output(self,other,"DIA_Salandril_MyBrew_01_10");	//Dobře, nechceš - tak mi to neříkej... (pochechtávání) Ale ten, kdo to psal, by měl jednoznačně změnit zaměstnání.
 	AI_Output(self,other,"DIA_Salandril_MyBrew_01_11");	//Jako alchymista je nanic.
 	KnowFakeRecept = TRUE;
 	B_LogEntry(TOPIC_MyBrew,"Ukázal jsem Salandrilovi Constantinův recept. Vypadá to, že se mě pokusil podvést, protože pro skutečného alchymistu je úplně na nic.");
@@ -759,7 +759,7 @@ func int dia_salandril_PureElixir_condition()
 
 func void dia_salandril_PureElixir_info()
 {
-	AI_Output(other,self,"DIA_Salandril_PureElixir_01_00");	//Vatras si chce objednat nějaké lektvary čisté magické sily.
+	AI_Output(other,self,"DIA_Salandril_PureElixir_01_00");	//Vatras si chce objednat nějaké lektvary čisté magické síly.
 	AI_Output(other,self,"DIA_Salandril_PureElixir_01_01");	//Tu je 200 zlatých, které máš jako zálohu za práci.
 	B_GiveInvItems(other,self,ItMi_Gold,200);
 	Npc_RemoveInvItems(self,ItMi_Gold,200);
@@ -767,13 +767,13 @@ func void dia_salandril_PureElixir_info()
 	AI_Output(self,other,"DIA_Salandril_PureElixir_01_03");	//Ale formule tohoto lektvaru je příliš komplexní, takže budu potřebovat aspoň týden.
 	AI_Output(self,other,"DIA_Salandril_PureElixir_01_04");	//Určitě bych nechtěl nechat Vatrase tak dlouho čekat, ale jinak to nejde.
 	AI_Output(other,self,"DIA_Salandril_PureElixir_01_05");	//Dobře, povím mu to.
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_06");	//Eh, počkej chvilku... (nervózně) Myslím, že tu ješte pár těch lektvarů mám.
-	AI_Output(self,other,"DIA_Salandril_PureElixir_01_07");	//Ach ano, tu jsou. Pár lektvarů, aby mu náhodou nedošly.
+	AI_Output(self,other,"DIA_Salandril_PureElixir_01_06");	//Eh, počkej chvilku... (nervózně) Myslím, že tu ještě pár těch lektvarů mám.
+	AI_Output(self,other,"DIA_Salandril_PureElixir_01_07");	//Ach ano, tady jsou. Pár lektvarů, aby mu náhodou nedošly.
 	B_GiveInvItems(self,other,ItPo_Mana_Addon_04,2);
 	AI_Output(self,other,"DIA_Salandril_PureElixir_01_08");	//Dej mu je a pozdravuj ho. Nezapomeň.
 	AI_Output(other,self,"DIA_Salandril_PureElixir_01_09");	//Samozřejmě.
 	SalandrilPureElixir = TRUE;
-	B_LogEntry(TOPIC_VatrasPotion,"Salandril přijal Vatrasovu objednávku, ale než se lektary uvaří, potrvá to aspoň týden. Takže mi dal pár lektvarů do zásoby pro Vatrase.");
+	B_LogEntry(TOPIC_VatrasPotion,"Salandril přijal Vatrasovu objednávku, ale než se lektvary uvaří, potrvá to aspoň týden. Takže mi dal pár lektvarů do zásoby pro Vatrase.");
 };
 
 //------------------------------------------kosti-------------------------------------
@@ -963,7 +963,7 @@ func void DIA_Fernando_Minental_Info()
 	MIS_SalandrilOre = LOG_Running;
 	Log_CreateTopic(TOPIC_Fernando,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Fernando,LOG_Running);
-	B_LogEntry(TOPIC_Fernando,"Salandril chce vědet, co se děje v Hornickém údolí.");
+	B_LogEntry(TOPIC_Fernando,"Salandril chce vědět, co se děje v Hornickém údolí.");
 };
 
 instance DIA_Fernando_Success(C_Info)

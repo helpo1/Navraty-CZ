@@ -51,7 +51,7 @@ func void DIA_Addon_Myxir_CITY_HelloCITY_Info()
 	if((RavenAway == TRUE) && (DIA_Addon_Myxir_CITY_HelloCITY_OneTime == FALSE))
 	{
 		AI_Output(self,other,"DIA_Addon_Myxir_CITY_HelloCITY_12_02");	//Ještě jedna věc.
-		AI_Output(self,other,"DIA_Addon_Myxir_CITY_HelloCITY_12_03");	//Bylo opravdu hrdinské to co jsi dokázal Jharkendaru
+		AI_Output(self,other,"DIA_Addon_Myxir_CITY_HelloCITY_12_03");	//Bylo opravdu hrdinské to co jsi dokázal v Jharkendaru.
 		AI_Output(other,self,"DIA_Addon_Myxir_CITY_HelloCITY_15_04");	//Bohužel to ale musím dokázat i na Khorinisu.
 		AI_Output(self,other,"DIA_Addon_Myxir_CITY_HelloCITY_12_05");	//To ano...
 		AI_Output(other,self,"DIA_Addon_Myxir_CITY_HelloCITY_15_06");	//Uvidíme se.
@@ -67,7 +67,7 @@ instance DIA_Addon_Myxir_CITY_AncientBookDone(C_Info)
 	condition = DIA_Addon_Myxir_CITY_AncientBookDone_Condition;
 	information = DIA_Addon_Myxir_CITY_AncientBookDone_Info;
 	permanent = FALSE;
-	description = "Podívejte se na to.";
+	description = "Podívej se na to.";
 };
 
 func int DIA_Addon_Myxir_CITY_AncientBookDone_Condition()
@@ -81,7 +81,7 @@ func int DIA_Addon_Myxir_CITY_AncientBookDone_Condition()
 func void DIA_Addon_Myxir_CITY_AncientBookDone_Info()
 {
 	B_GivePlayerXP(1000);
-	AI_Output(other,self,"DIA_Addon_Myxir_AncientBookDone_01_00");	//Podívejte se na to. 
+	AI_Output(other,self,"DIA_Addon_Myxir_AncientBookDone_01_00");	//Podívej se na to. 
 	B_GiveInvItems(other,self,ItWr_AncientBook_01,1);
 	Npc_RemoveInvItems(self,ItWr_AncientBook_01,1);
 	B_UseFakeScroll();
@@ -139,7 +139,7 @@ func void DIA_Addon_Myxir_CITY_Teach_Info()
 		{
 			Info_AddChoice(DIA_Addon_Myxir_CITY_Teach,b_buildlearnstringforlanguage(NAME_ADDON_LEARNLANGUAGE_2,B_GetLearnCostTalent(other,NPC_TALENT_FOREIGNLANGUAGE,LANGUAGE_2)),DIA_Addon_Myxir_CITY_Teach_LANGUAGE_2);
 		};
-		if((PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_3] == FALSE) && (PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_1] == TRUE))
+		if((PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_3] == FALSE) && (PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_2] == TRUE) && (PLAYER_TALENT_FOREIGNLANGUAGE[LANGUAGE_1] == TRUE))
 		{
 			Info_AddChoice(DIA_Addon_Myxir_CITY_Teach,b_buildlearnstringforlanguage(NAME_ADDON_LEARNLANGUAGE_3,B_GetLearnCostTalent(other,NPC_TALENT_FOREIGNLANGUAGE,LANGUAGE_3)),DIA_Addon_Myxir_CITY_Teach_LANGUAGE_3);
 		};
@@ -275,19 +275,19 @@ func void DIA_Addon_Myxir_CITY_JarCurse_Info()
 	AI_Output(other,self,"DIA_Addon_Myxir_CITY_JarCurse_01_02");	//A co to bylo za bytosti?
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_03");	//Nevím. Takové nemrtvé jsem ještě neviděl.
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_04");	//Naše magie jim skoro neublíží. Je to moc divné!
-	AI_Output(other,self,"DIA_Addon_Myxir_CITY_JarCurse_01_05");	//Napadá vás čím to může být?
+	AI_Output(other,self,"DIA_Addon_Myxir_CITY_JarCurse_01_05");	//Napadá tě čím to může být?
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_06");	//Mohu jen předpokládat, že to nějak souvisí s portálem.
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_07");	//Když jsme sem přišli, chrámový sál kde se nyní nacházíme, se hemžil nemrtvými vojáky!
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_08");	//Skrýváme se zde v naději, že nás nenajdou.
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_09");	//Jen díky tobě jsme ještě naživu!
-	AI_Output(other,self,"DIA_Addon_Myxir_CITY_JarCurse_01_10");	//Jestli máte pravdu tak mágové Vody, kteří zůstali v údolí, jsou teď ve smrtelném nebezpečí.
+	AI_Output(other,self,"DIA_Addon_Myxir_CITY_JarCurse_01_10");	//Jestli máš pravdu tak mágové Vody, kteří zůstali v údolí, jsou teď ve smrtelném nebezpečí.
 	AI_Output(other,self,"DIA_Addon_Myxir_CITY_JarCurse_01_11");	//Jistě situace na druhé straně portálu může být ještě horší.
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_12");	//Pak to musíme prověřit. Já tě žádám, postarej se o to.
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_13");	//Já se zatím vydám do města informovat Vatrase.
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_14");	//A Mitras zůstane u portálu a bude na něj dávat pozor.
 	AI_Output(other,self,"DIA_Addon_Myxir_CITY_JarCurse_01_15");	//Samo sebou! A jako vždy, mám nejjednodušší práci.
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_16");	//Pochop, nyní jsi jediný kdo to může dokázat.
-	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_17");	//Všichni bratři kruhu Vody nyní bojují s nemrtvími kteří napadli Khorinis.
+	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_17");	//Všichni bratři kruhu Vody nyní bojují s nemrtvými kteří napadli Khorinis.
 	AI_Output(other,self,"DIA_Addon_Myxir_CITY_JarCurse_01_18");	//Bez obav, nějak to vyřeším.
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_19");	//Adanos ti žehnej... (povzdech) Ano, a než odejdeš promluv ještě s Mitrasem.
 	AI_Output(self,other,"DIA_Addon_Myxir_CITY_JarCurse_01_20");	//Myslím, že ho něco napadlo při tom střetu s nemrtvými.
@@ -408,7 +408,7 @@ func void DIA_KDW_1406_Mitras_JarCurse_info()
 	AI_Output(self,other,"DIA_KDW_1406_Mitras_JarCurse_01_10");	//Ale nějakým podivným jazykem, který jsem nikdy před tím neslyšel.
 	AI_Output(other,self,"DIA_KDW_1406_Mitras_JarCurse_01_11");	//A tak ses rozhodl tam podívat?
 	AI_Output(self,other,"DIA_KDW_1406_Mitras_JarCurse_01_12");	//Ne... (ustrašeně) Po pravdě měl jsem strach, tak jsem se vrátil k Myxirovi.
-	AI_Output(self,other,"DIA_KDW_1406_Mitras_JarCurse_01_13");	//A pak o několik dní později byl chrá plný nemrtvých!
+	AI_Output(self,other,"DIA_KDW_1406_Mitras_JarCurse_01_13");	//A pak o několik dní později byl chrám plný nemrtvých!
 	AI_Output(self,other,"DIA_KDW_1406_Mitras_JarCurse_01_14");	//Tak si myslím, že to spolu nějak souvisí - ten podivný zvuk a nemrtví.
 	AI_Output(other,self,"DIA_KDW_1406_Mitras_JarCurse_01_15");	//Dobře prověřím tu pyramidu.
 	AI_Output(self,other,"DIA_KDW_1406_Mitras_JarCurse_01_16");	//Dobře... (povzdechne si) Bude lepší se tam vypravit v noci, protože ve dne tam nikdo není. To už jsme zkoušeli.
@@ -495,7 +495,7 @@ func void DIA_KDW_1407_Norolas_Hello_info()
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Hello_01_01");	//Ty jsi mág Vody?
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Hello_01_02");	//No při pohledu na mé roucho, to není těžké uhodnout.
-	AI_Output(other,self,"DIA_KDW_1407_Norolas_Hello_01_03");	//Znamená to že jsi ten koho Saturas poslal s úkolem do močálu?
+	AI_Output(other,self,"DIA_KDW_1407_Norolas_Hello_01_03");	//Znamená to, že jsi ten koho Saturas poslal s úkolem do močálu?
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Hello_01_04");	//Ano máš pravdu, i když opravdu nevím, odkud to víš ty.
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Hello_01_05");	//Saturas mě poslal, abych na tebe dohlédnul, přecejen je to tam celkem nebezpečné.
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Hello_01_06");	//Pak je to jasné, ale já opravdu pomoc nepotřebuju.
@@ -559,7 +559,7 @@ func void DIA_KDW_1407_Norolas_Idea_info()
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Idea_01_04");	//Chci vytvořit speciální lektvar, který mě umožní, volně se procházet mezi nemrtvými.
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Idea_01_05");	//Hmmm... A jak?
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Idea_01_06");	//Když ho vypiju budou mě považovat za jednoho z nich.
-	AI_Output(other,self,"DIA_KDW_1407_Norolas_Idea_01_07");	//Zajímavý nápad. A víš, jak uvařit takoví elixír?
+	AI_Output(other,self,"DIA_KDW_1407_Norolas_Idea_01_07");	//Zajímavý nápad. A víš, jak uvařit takový elixír?
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Idea_01_08");	//Bohužel, ne. Bohužel ne. Ale vím, že existuje recept s podrobným popisem přípravy tohoto elixíru.
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Idea_01_09");	//Alespoň to bylo napsáno v jedné z knih, které jsem kdysi četl v knihovně mágů Ohně.
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Idea_01_10");	//Zajímavé! A jaktože ti umožnily nahlížet do svých záznamů?
@@ -569,10 +569,10 @@ func void DIA_KDW_1407_Norolas_Idea_info()
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Idea_01_14");	//Takže ten recept existuje, zbývá ho jenom najít a připravit recept.
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Idea_01_15");	//Dobře zkusím ho získat, ale neslibuju, že to bude rychle.
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Idea_01_16");	//Koneckonců, jak jsem pochopil máš tušení kde ho hledat.
-	AI_Output(self,other,"DIA_KDW_1407_Norolas_Idea_01_17");	//Já nezpěchám, a stejně je to jediná možnost jak se dostat do chrámu.
+	AI_Output(self,other,"DIA_KDW_1407_Norolas_Idea_01_17");	//Já nespěchám, a stejně je to jediná možnost jak se dostat do chrámu.
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Idea_01_18");	//Pokud samozřejmě nechceš bojovat s hordou nemrtvých.
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Idea_01_19");	//No, kdo ví...
-	B_LogEntry(TOPIC_SendNorolas,"Norolas má představu jak se dotatdo chrámu. Vyprávěl mi o lektvaru který může změnit vnímání nemrtvých. Sice neví jak ten lektvar připravit, ale je přesvědčený že recept se nachází někde v Hornickém údolí.");
+	B_LogEntry(TOPIC_SendNorolas,"Norolas má představu jak se dostat do chrámu. Vyprávěl mi o lektvaru který může změnit vnímání nemrtvých. Sice neví jak ten lektvar připravit, ale je přesvědčený že recept se nachází někde v Hornickém údolí.");
 };
 
 instance DIA_KDW_1407_Norolas_Rezept(C_Info)
@@ -607,7 +607,7 @@ func void DIA_KDW_1407_Norolas_Rezept_info()
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Rezept_01_06");	//Navíc některé ani nevím kde hledat.
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Rezept_01_07");	//Například?
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_KDW_1407_Norolas_Rezept_01_08");	//Například rostlina, která je zde uvedná, jako 'Černý jetel'.
+	AI_Output(self,other,"DIA_KDW_1407_Norolas_Rezept_01_08");	//Například rostlina, která je zde uvedená, jako 'Černý jetel'.
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Rezept_01_09");	//Ale to je jen malá část toho, co je třeba nalézt!
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Rezept_01_10");	//Mám pocit, že jejich sehnání bude můj další úkol.
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Rezept_01_11");	//No... (váhavě) Postaral bych se o to sám, ale pak by mě nezbýval čas na přípravu elixíru.
@@ -655,7 +655,7 @@ func void DIA_KDW_1407_Norolas_Rezept_Ingr_info()
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Rezept_Ingr_01_04");	//To je vše, a je to.
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Rezept_Ingr_01_05");	//Jestli to dobře chápu, tak je potřeba ho vyzkoušet.
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Rezept_Ingr_01_06");	//Myslím, že ano. No, víš já... (nervózně) Nejsem na to zrovna připraven.
-	AI_Output(self,other,"DIA_KDW_1407_Norolas_Rezept_Ingr_01_07");	//Ne že bych pochybovat o správnosti jeho přípravy, ale... 
+	AI_Output(self,other,"DIA_KDW_1407_Norolas_Rezept_Ingr_01_07");	//Ne že bych pochyboval o správnosti jeho přípravy, ale... 
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Rezept_Ingr_01_08");	//Chápu tvoje obavy. Tak to sem dej, já to vyzkouším.
 	AI_Output(self,other,"DIA_KDW_1407_Norolas_Rezept_Ingr_01_09");	//(nevěřícně) Jsi si úplně jistý? Nemohu zaručit, že to nebude mít vedlejší účinky na tvoji mysl.
 	AI_Output(other,self,"DIA_KDW_1407_Norolas_Rezept_Ingr_01_10");	//Dej mi to. A uvidíme.

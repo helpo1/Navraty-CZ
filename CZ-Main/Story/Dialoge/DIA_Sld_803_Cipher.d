@@ -105,7 +105,7 @@ func int DIA_Cipher_MoreDrugs_Condition()
 func void DIA_Cipher_MoreDrugs_Info()
 {
 	AI_Output(other,self,"DIA_Cipher_MoreDrugs_01_00");	//Celý balíček trávy?
-	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_01");	//A tebe to překvapuje? V kolonii to bylo extrémě horké zboží.
+	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_01");	//A tebe to překvapuje? V kolonii to bylo extrémně horké zboží.
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_02");	//Jeho výrobou se nezbývali jenom ty šílení blázni v močálech.
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_03");	//Mimochodem...
 	AI_PlayAni(self,"T_SEARCH");
@@ -114,7 +114,7 @@ func void DIA_Cipher_MoreDrugs_Info()
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_06");	//(smích) Chceš si vydělat peníze navíc, co?
 	AI_Output(other,self,"DIA_Cipher_MoreDrugs_01_07");	//To nemohu odmítnout.
 	AI_PlayAni(self,"T_SEARCH");
-	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_08");	//Svého času jeden chlap jménem Jaco měl laboratoř na spracování trávy, poblíž vchodu do Nového tábora.
+	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_08");	//Svého času jeden chlap jménem Jacko měl laboratoř na spracování trávy, poblíž vchodu do Nového tábora.
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_09");	//Měl tam celou zásobu trávy!
 	AI_Output(other,self,"DIA_Cipher_MoreDrugs_01_10");	//Myslíš, že tam mohlo ještě něco zůstat?
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_01_11");	//Možná... (zamyšleně) Pravda, zkontrolovat to bude velmi obtížné! Koneckonců jsou tam všude okolo skřeti.
@@ -151,9 +151,9 @@ func void DIA_Cipher_MoreDrugs_Done_Info()
 	AI_Output(other,self,"DIA_Cipher_MoreDrugs_Done_01_00");	//Mám sebou další balíček trávy.
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_Done_01_01");	//(usmívá se) Byl jsi tam! No to jsi statečný muž.
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_Done_01_02");	//Bude to tak: ty mě dáš ten balíček a já ti dám polovinu jeho obvyklé ceny.
-	AI_Output(other,self,"DIA_Cipher_MoreDrugs_Done_01_03");	//A kolik je to ve zaltě?
+	AI_Output(other,self,"DIA_Cipher_MoreDrugs_Done_01_03");	//A kolik je to ve zlatě?
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_Done_01_04");	//Nech mě přemýšlet... asi tak 1000 zlatých, přímo na ruku.
-	AI_Output(other,self,"DIA_Cipher_MoreDrugs_Done_01_05");	//Domluveni, tady máš tenbalíček.
+	AI_Output(other,self,"DIA_Cipher_MoreDrugs_Done_01_05");	//Domluveni, tady máš ten balíček.
 	B_GiveInvItems(other,self,ItMi_JointPacket_OW,1);
 	Npc_RemoveInvItems(self,ItMi_JointPacket_OW,1);
 	AI_Output(self,other,"DIA_Cipher_MoreDrugs_Done_01_06");	//Výborně! Teď aspoň nebude můj život na tédle farmě nuda.

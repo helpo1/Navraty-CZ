@@ -105,7 +105,7 @@ func void DIA_Gaertner_Escape_Info()
 {
 	AI_Output(other,self,"DIA_Gaertner_Escape_01_00");	//Snažil ses utéct?
 	AI_Output(self,other,"DIA_Gaertner_Escape_01_01");	//Zprvu jsem o tom přemýšlel... Ale pak jsem od toho upustil.
-	AI_Output(self,other,"DIA_Gaertner_Escape_01_02");	//Za prvé, všechny stráže mě znají osobně, a nemůžu ani opustit horní čtvrt.
+	AI_Output(self,other,"DIA_Gaertner_Escape_01_02");	//Za prvé, všechny stráže mě znají osobně, a nemůžu ani opustit horní čtvrť.
 	AI_Output(self,other,"DIA_Gaertner_Escape_01_03");	//Za druhé, s přihlédnutím na všechny tyto zvěsti o skřetech, raději zůstanu v blízkosti paladinů.
 	AI_Output(self,other,"DIA_Gaertner_Escape_01_04");	//A za třetí, nikam se mi ani nechce!
 	AI_Output(self,other,"DIA_Gaertner_Escape_01_05");	//Takže, lepší tady než s krumpáčem v rukou v dolech paladinů.
@@ -302,7 +302,7 @@ func void DIA_Gaertner_HelpThings_Done_info()
 	B_GiveInvItems(self,other,ItKe_PaladinTruhe,1);
 	MIS_GaertnerHive = LOG_Success;
 	Log_SetTopicStatus(TOPIC_GaertnerHive,LOG_Success);
-	B_LogEntry(TOPIC_GaertnerHive,"Přinesl jsem zahradníkovi kořalku a za to mi dal podivný klíč. Zdá se, že patří k nějaké truhle.");
+	B_LogEntry(TOPIC_GaertnerHive,"Přinesl jsem zahradníkovi kořalku a trávu, a za to mi dal podivný klíč. Zdá se, že patří k nějaké truhle.");
 };
 
 instance DIA_GAERTNER_ENTERHALL(C_Info)

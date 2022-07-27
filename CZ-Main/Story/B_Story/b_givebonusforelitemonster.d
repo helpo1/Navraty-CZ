@@ -3585,7 +3585,7 @@ func void ZS_Dead()
 				B_LogEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetího velitele Nar-Shaga.");
 				if((ELITEGENERALORICISDEAD_01 == TRUE) && (ELITEGENERALORICISDEAD_02 == TRUE) && (ELITEGENERALORICISDEAD_03 == TRUE) && (ELITEGENERALORICISDEAD_04 == TRUE))
 				{
-					Log_AddEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetí velitele, čas informovat Orika.");
+					Log_AddEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetí velitele, čas informovat Orica.");
 				};
 			};
 		};
@@ -3613,7 +3613,7 @@ func void ZS_Dead()
 				B_LogEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetího velitele Nur-Shaka.");
 				if((ELITEGENERALORICISDEAD_01 == TRUE) && (ELITEGENERALORICISDEAD_02 == TRUE) && (ELITEGENERALORICISDEAD_03 == TRUE) && (ELITEGENERALORICISDEAD_04 == TRUE))
 				{
-					Log_AddEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetí velitele, čas informovat Orika.");
+					Log_AddEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetí velitele, čas informovat Orica.");
 				};
 			};
 		};
@@ -3625,7 +3625,7 @@ func void ZS_Dead()
 				B_LogEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetího velitele Tum-Paka.");
 				if((ELITEGENERALORICISDEAD_01 == TRUE) && (ELITEGENERALORICISDEAD_02 == TRUE) && (ELITEGENERALORICISDEAD_03 == TRUE) && (ELITEGENERALORICISDEAD_04 == TRUE))
 				{
-					Log_AddEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetí velitele, čas informovat Orika.");
+					Log_AddEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetí velitele, čas informovat Orica.");
 				};
 			};
 		};
@@ -3637,7 +3637,7 @@ func void ZS_Dead()
 				B_LogEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetího velitele Dur-Kashe.");
 				if((ELITEGENERALORICISDEAD_01 == TRUE) && (ELITEGENERALORICISDEAD_02 == TRUE) && (ELITEGENERALORICISDEAD_03 == TRUE) && (ELITEGENERALORICISDEAD_04 == TRUE))
 				{
-					Log_AddEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetí velitele, čas informovat Orika.");
+					Log_AddEntry(TOPIC_KILLOCELITE,"Zabil jsem skřetí velitele, čas informovat Orica.");
 				};
 			};
 		};

@@ -193,7 +193,7 @@ func void dia_lee_li_missmygold_info()
 	AI_Output(other,self,"DIA_Lee_LI_MissMyGold_01_01");	//Nevíš, kde je mé zlato?
 	AI_Output(self,other,"DIA_Lee_LI_MissMyGold_01_02");	//Ne, chlape, to já nevím. Nebyl čas se o to starat.
 	AI_Output(other,self,"DIA_Lee_LI_MissMyGold_01_03");	//Aha.
-	B_LogEntry(TOPIC_MISSMYGOLD,"Lee mi taky nepomuže ohledně zlata.");
+	B_LogEntry(TOPIC_MISSMYGOLD,"Lee mi taky nepomůže ohledně zlata.");
 };
 
 
@@ -250,13 +250,13 @@ func void dia_lee_li_changecourse_info()
 	AI_Output(self,other,"DIA_Lee_LI_ChangeCourse_01_01");	//(udiveně) A proč by sme se měli vracet?
 	Info_ClearChoices(dia_lee_li_changecourse);
 	Info_AddChoice(dia_lee_li_changecourse,"Říci paladinům o rudě.",dia_lee_li_changecourse_ore);
-	Info_AddChoice(dia_lee_li_changecourse,"Pro hromadu zlata!",dia_lee_li_changecourse_gold);
+	Info_AddChoice(dia_lee_li_changecourse,"Pro hromadu zlata.",dia_lee_li_changecourse_gold);
 };
 
 func void dia_lee_li_changecourse_ore()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Lee_LI_ChangeCourse_Ore_01_01");	//Musíme jim pomoct! Je nutné je informovat o magické rudě co je tady na ostrově.
+	AI_Output(other,self,"DIA_Lee_LI_ChangeCourse_Ore_01_01");	//Říci paladinům o rudě. Je nutné je informovat o magické rudě co je tady na ostrově.
 	AI_Output(other,self,"DIA_Lee_LI_ChangeCourse_Ore_01_02");	//Myslím, že se jim bude hodit ve válce proti skřetům!
 	AI_Output(self,other,"DIA_Lee_LI_ChangeCourse_Ore_01_03");	//A co má být? Copak jim něco dlužíme!
 	AI_Output(self,other,"DIA_Lee_LI_ChangeCourse_Ore_01_04");	//Mám zájem starat se jen o osud svojich lidí. Pro ty idioty nic neudělám!

@@ -195,7 +195,7 @@ func void DIA_Carl_Diebe_Info()
 {
 	AI_Output(other,self,"DIA_Carl_Diebe_15_00");	//Co víš o zlodějích?
 	AI_Output(self,other,"DIA_Carl_Diebe_05_01");	//Nic. Ale většina lidí ve městě je ustrašená a podezřívavá - hlavně k cizincům.
-	AI_Output(self,other,"DIA_Carl_Diebe_05_02");	//Dej si pozor ať tě nachytí v cizím domě. Nevidíme rádi, když nám tady někdo šmejdí.
+	AI_Output(self,other,"DIA_Carl_Diebe_05_02");	//Dej si pozor ať tě nechytí v cizím domě. Nevidíme rádi, když nám tady někdo šmejdí.
 	AI_Output(self,other,"DIA_Carl_Diebe_05_03");	//Ano, taky se budeš muset bránit před zloději. Obušek by měl být ideální.
 };
 
@@ -271,7 +271,7 @@ instance DIA_Carl_bezahlen(C_Info)
 	condition = DIA_Carl_bezahlen_Condition;
 	information = DIA_Carl_bezahlen_Info;
 	permanent = TRUE;
-	description = "Rád bych se u tebe nechal vycvičit (zaplatit 50 zlatých)";
+	description = "Rád bych se u tebe nechal vycvičit. (zaplatit 50 zlatých)";
 };
 
 func int DIA_Carl_bezahlen_Condition()
@@ -438,7 +438,7 @@ func void dia_carl_armorcanteach_info()
 	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_04");	//A co ti vlastně o mě pověděl?
 	AI_Output(other,self,"DIA_Carl_ArmorCanTeach_01_05");	//Lares mi řekl, že bys pro mě mohl ukovat lepší zbroj, než je tohle... (ukáže zbroj 'Kruhu Vody')
 	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_06");	//Á! Konečně jsem si jistý, že předemnou stojí bratr z 'Kruhu Vody'. K tomu, co řekl Lares...
-	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_07");	//Myslím, že se nechal trochu unést. Ostatní zbroje pro vás nemám k dispozici. Ale...
+	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_07");	//Myslím, že se nechal trochu unést. Ostatní zbroje pro tebe nemám k dispozici. Ale...
 	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_08");	//... Mohl bych ti ukázat, jak vylepšit zbroj, kterou si mi právě ukázal.
 	AI_Output(self,other,"DIA_Carl_ArmorCanTeach_01_09");	//Pravda, k tomu bys potřeboval alespoň rozumět kovářství.
 
@@ -485,7 +485,7 @@ func void b_carl_teacharmor_1()
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Carl_TeachArmor_1_01_06");	//... To je vše!
-		AI_Output(self,other,"DIA_Carl_TeachArmor_1_01_07");	//Zkus to sám. Myslím,že bys s tím neměl mít velké problémy.
+		AI_Output(self,other,"DIA_Carl_TeachArmor_1_01_07");	//Zkus to sám. Myslím, že bys s tím neměl mít velké problémy.
 	};
 };
 
@@ -628,7 +628,7 @@ func int DIA_Carl_FatherNews_Condition()
 func void DIA_Carl_FatherNews_Info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Carl_FatherNews_01_00");	//Mám pro tebe novinkyu od Morigana.
+	AI_Output(other,self,"DIA_Carl_FatherNews_01_00");	//Mám pro tebe novinky od Morigana.
 	AI_Output(self,other,"DIA_Carl_FatherNews_01_01");	//(zaraženě) Od koho?
 	AI_Output(other,self,"DIA_Carl_FatherNews_01_02");	//Od Morigana, tvého syna!
 	AI_PlayAni(self,"T_STAND_2_SIT");
@@ -699,20 +699,20 @@ func void DIA_Carl_MySmith_Info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_Carl_MySmith_01_00");	//Potřebuji kováře.
-	AI_Output(self,other,"DIA_Carl_MySmith_01_01");	//A kdo podle vás jsem?
-	AI_Output(other,self,"DIA_Carl_MySmith_01_02");	//Vy mi nerozumíte. Potřebuji kováře do svého tábora.
+	AI_Output(self,other,"DIA_Carl_MySmith_01_01");	//A kdo podle tebe jsem?
+	AI_Output(other,self,"DIA_Carl_MySmith_01_02");	//Ty mi nerozumíš. Potřebuji kováře do svého tábora.
 	AI_Output(self,other,"DIA_Carl_MySmith_01_03");	//Ty máš tábor?!
 	AI_Output(other,self,"DIA_Carl_MySmith_01_04");	//Jo, poblíž Onarovy farmy, ve staré věži.
 	AI_Output(self,other,"DIA_Carl_MySmith_01_05");	//Hmm... To není špatné na někoho, kdo teprve nedávno za mnou běhal za prací.
 	AI_Output(self,other,"DIA_Carl_MySmith_01_06");	//Návrh je samozřejmě atraktivní. Ale co z toho?
-	AI_Output(other,self,"DIA_Carl_MySmith_01_07");	//No, posuďte sami. Jaké jsou zde vaše vyhlídky? Práce máte málo, peněz taky.
+	AI_Output(other,self,"DIA_Carl_MySmith_01_07");	//No, posuď sám. Jaké jsou zde tvé vyhlídky? Práce máš málo, peněz taky.
 	AI_Output(other,self,"DIA_Carl_MySmith_01_08");	//Když vezmeš v úvahu že městské kovařině vládne Harad, pak nemáš žádnou šanci zabodovat.
 	AI_Output(other,self,"DIA_Carl_MySmith_01_09");	//Říkal jsem že ti nabídnu přístřeší, jídlo a stabilní příjem.
 	AI_Output(self,other,"DIA_Carl_MySmith_01_10");	//Tady máš pravdu. Ve zlatě se zrovna nemyju, a život utíká.
 	AI_Output(self,other,"DIA_Carl_MySmith_01_11");	//No, nakonec to nebude o nic horší. Pokud se mi náhle něco nebude líbit - vrátím se zpět do města.
 	AI_Output(self,other,"DIA_Carl_MySmith_01_12");	//Kolik jsi ochoten mi za spolupráci zaplatit?
 	AI_Output(other,self,"DIA_Carl_MySmith_01_13");	//Například osmdesát zlatých mincí denně. Jsem si jistý že zde jsi neměl ani polovinu.
-	AI_Output(self,other,"DIA_Carl_MySmith_01_14");	//Jaká to velkorysá nábídka od vás. Myslím že právě máte v kempu kováře. Dej mi nějaký čas na příchod.
+	AI_Output(self,other,"DIA_Carl_MySmith_01_14");	//Jaká to od tebe velkorysá nábídka. Myslím že právě máš v táboře kováře. Dej mi nějaký čas na příchod.
 	AI_Output(other,self,"DIA_Carl_MySmith_01_15");	//Pak se uvidíme v táboře. Jo a mimochodem - heslo pro vstup je 'dračí poklad'.
 	AI_Output(self,other,"DIA_Carl_MySmith_01_16");	//Dobře, budu si to pamatovat. Sbohem!
 	B_LogEntry(TOPIC_PPL_FOR_TOWER,"Carl bude nyní pracovat v mé kovárně.");
@@ -793,7 +793,7 @@ func void DIA_Carl_SharpKnife_Ok()
 	AI_Output(self,other,"DIA_Carl_SharpKnife_Ok_04_01");	//Dobrý! Počkej chvilku...
 	AI_Output(self,other,"DIA_Carl_SharpKnife_Ok_04_02");	//... nu, to je všechno. Nyní je ten nůž ostřejší než břitva.
 	HildaSharpKnife = TRUE;
-	B_LogEntry(TOPIC_Hilda_SharpKnife,"Kovář Carl mi může nabrousit nože pro Hildu.");
+	B_LogEntry(TOPIC_Hilda_SharpKnife,"Kovář Carl mi může nabrousit nůž pro Hildu.");
 	Info_ClearChoices(DIA_Carl_SharpKnife);
 };
 

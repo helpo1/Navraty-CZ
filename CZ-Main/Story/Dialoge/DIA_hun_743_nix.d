@@ -96,8 +96,8 @@ func void dia_hun_743_nix_nexdog_info()
 	AI_Output(self,other,"DIA_HUN_743_Nix_NexDog_01_03");	//Samozřejmě, že je. Já nebo ostatní kluci ji občas vezmeme do lesa na lov.
 	AI_Output(self,other,"DIA_HUN_743_Nix_NexDog_01_05");	//Jednou mi dokonce zachránila život.
 	AI_Output(self,other,"DIA_HUN_743_Nix_NexDog_01_06");	//Takže tahle vlčice pro mě znamená mnohem více než jen běžné zvíře.
-	AI_Output(self,other,"DIA_HUN_743_Nix_NexDog_01_07");	//Tlama je můj kamarád!
-	AI_Output(other,self,"DIA_HUN_743_Nix_NexDog_01_08");	//Jasné.
+	AI_Output(self,other,"DIA_HUN_743_Nix_NexDog_01_07");	//Tlama je moje kamarádka!
+	AI_Output(other,self,"DIA_HUN_743_Nix_NexDog_01_08");	//Jasně.
 };
 
 
@@ -167,7 +167,7 @@ func void dia_hun_743_nix_recoverdog_info()
 	MIS_RECOVERDOG = LOG_Running;
 	Log_CreateTopic(TOPIC_RECOVERDOG,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RECOVERDOG,LOG_Running);
-	B_LogEntry(TOPIC_RECOVERDOG,"Nixe velmi rozrušil stav Tlamy, vlčice, kterou jako mládě zachránil. Při posledním lovu ji zranil warg a vypadá to s ní každý den huř a huř. Řekl jsem Nixovi, že se pokusím neco vymyslet se Saggitou. Musím si ale pospíšit, Tlama je každým dnem slabší a slabší.");
+	B_LogEntry(TOPIC_RECOVERDOG,"Nixe velmi rozrušil stav Tlamy, vlčice, kterou jako mládě zachránil. Při posledním lovu ji zranil warg a vypadá to s ní každý den huř a huř. Řekl jsem Nixovi, že se pokusím něco vymyslet se Sagittou. Musím si ale pospíšit, Tlama je každým dnem slabší a slabší.");
 };
 
 
@@ -207,7 +207,7 @@ func void dia_hun_743_nix_recoverdogbring_info()
 	else
 	{
 		B_GivePlayerXP(100);
-		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_04");	//Opravdu?... (nadejne) Myslíš, že jí opravdu pomuže?
+		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_04");	//Opravdu?... (nadejně) Myslíš, že jí opravdu pomůže?
 		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_06");	//A co bych měl udělat?
 		AI_Output(other,self,"DIA_HUN_743_Nix_RecoverDogBring_01_07");	//Musíš jí ošetřit ránu tímto výtažkem bylin, který mi dala.
 		AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogBring_01_08");	//Dobře, pojďme jí tu medicínu dát...
@@ -282,13 +282,13 @@ func void dia_hun_743_nix_recoverdogdone_info()
 	B_GivePlayerXP(200);
 	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogDone_01_00");	//Hej, kamaráde!
 	AI_Output(other,self,"DIA_HUN_743_Nix_RecoverDogDone_01_01");	//Co?
-	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogDone_01_02");	//Díky tvojí pomoci a léku od Saggity se Tlama už uzdravuje!
+	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogDone_01_02");	//Díky tvojí pomoci a léku od Sagitty se Tlama už uzdravuje!
 	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogDone_01_03");	//Takže ti moc děkuji za tvou pomoc s léčením.
 	AI_Output(self,other,"DIA_HUN_743_Nix_RecoverDogDone_01_04");	//Tady, vezmi si to jako drobnost, jsem ti vděčný.
 	B_GiveInvItems(self,other,ItPo_Perm_Health,1);
 	MIS_RECOVERDOG = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_RECOVERDOG,LOG_SUCCESS);
-	B_LogEntry(TOPIC_RECOVERDOG,"Nix mi řekl, že ta medicína od Saggity Tlamě opravdu pomohla.");
+	B_LogEntry(TOPIC_RECOVERDOG,"Nix mi řekl, že ta medicína od Sagitty Tlamě opravdu pomohla.");
 };
 
 
@@ -358,7 +358,7 @@ func void dia_hun_743_nix_clawrevenge_info()
 		else
 		{
 		};
-		AI_Output(self,other,"DIA_HUN_743_Nix_ClawRevenge_01_04");	//Idiote! (vyskočí a křičí) Byl to můj přítel, smrt si nezasloužila!
+		AI_Output(self,other,"DIA_HUN_743_Nix_ClawRevenge_01_04");	//Idiote! (vyskočí a křičí) Byla to moje přítelkyně, smrt si nezasloužila!
 		AI_Output(self,other,"DIA_HUN_743_Nix_ClawRevenge_01_05");	//Za to tě zabiju, ty hajzle!
 		AI_StopProcessInfos(self);
 		NIXFIRSTWARN = TRUE;
@@ -467,17 +467,17 @@ func void dia_hun_743_nix_news_info()
 	if((Kapitel >= 3) && (MIS_INSBLACKSANPPER == FALSE))
 	{
 		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_01");	//No, je tu něco...
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_02");	//Říká se, že u tech prastarých pyramid byl viden velmi zvláštní chaapavec.
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_03");	//Narozdíl od svých příbůzných je prý černý jako noc. A kromě toho se chová podivně.
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_04");	//A podle pověstí tam loví sám, ačkoliv obyvkle tato zvířata loví ve smečce.
+		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_02");	//Říká se, že u těch prastarých pyramid byl viděn velmi zvláštní chňapavec.
+		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_03");	//Narozdíl od svých příbuzných je prý černý jako noc. A kromě toho se chová podivně.
+		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_04");	//A podle pověstí tam loví sám, ačkoliv obvykle tato zvířata loví ve smečce.
 		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_06");	//Někteří říkají že ulovit takové zvíře je pro lovce velký úspěch!
 		AI_Output(other,self,"DIA_HUN_743_Nix_News_01_07");	//Proč?
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_08");	//Protože vystopovat ho je nadliský úkol a zabít ho to je ještě těžší.
+		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_08");	//Protože vystopovat ho je nadlidský úkol a zabít ho to je ještě těžší.
 		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_09");	//I když já bych řekl, že je to pouze pověra.
 		MIS_INSBLACKSANPPER = LOG_Running;
 		Log_CreateTopic(TOPIC_INSBLACKSANPPER,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_INSBLACKSANPPER,LOG_Running);
-		B_LogEntry(TOPIC_INSBLACKSANPPER,"Podle povídaeek by u velkých pyramid mel být podivný eerný chaapavec! Lidé prý říkali, že ho dokáže zabít jen schopný lovec! Nix tomu ale neveří a myslí si, že nejaký hlupák se jen lekl ve tme chaapavce.");
+		B_LogEntry(TOPIC_INSBLACKSANPPER,"Podle povídaček by u velkých pyramid měl být podivný černý chňapavec! Lidé prý říkali, že ho dokáže zabít jen schopný lovec! Nix tomu ale nevěří a myslí si, že nějaký hlupák se jen lekl ve tmě chňapavce.");
 		Wld_InsertNpc(blacksnapper,"NW_TROLLAREA_RUINS_22");
 	}
 	else if(Kapitel == 3)
@@ -488,10 +488,10 @@ func void dia_hun_743_nix_news_info()
 	}
 	else if(Kapitel == 5)
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_16");	//Trochu me znervózňují všichni ti skřeti, kteří se mužou vyrojit z údolí.
+		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_16");	//Trochu mě znervózňují všichni ti skřeti, kteří se mužou vyrojit z údolí.
 		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_17");	//Nelíbí se mi to.
 	}
-	else if(Kapitel == 6)
+	else if(Kapitel >= 6)
 	{
 		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_18");	//Všichni jsme tady na nervy!
 		AI_Output(self,other,"DIA_HUN_743_Nix_News_01_19");	//Všude kolem jsou skřeti a nemůžeme s tím nic dělat.
@@ -527,17 +527,17 @@ func void dia_hun_743_nix_insblacksanpper_info()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_HUN_743_Nix_InsBlackSanpper_01_00");	//Zabil jsem černého chňapavce.
-	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_01");	//Opravdu?! (pochybne) A kde je dukaz?!
+	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_01");	//Opravdu?! (pochybně) A kde je důkaz?!
 	AI_Output(other,self,"DIA_HUN_743_Nix_InsBlackSanpper_01_02");	//Tu máš jeho zuby.
 	B_GiveInvItems(other,self,itat_clawblacksnapper,1);
 	Npc_RemoveInvItems(self,itat_clawblacksnapper,1);
-	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_03");	//To je teda vrchol... (udivene) To je jednoduše nemožné!
+	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_03");	//To je teda vrchol... (udiveně) To je jednoduše nemožné!
 	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_04");	//Člověče, ty máš prostě štěstí!
 	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_05");	//Blahopřeji.
 	AI_Output(self,other,"DIA_HUN_743_Nix_InsBlackSanpper_01_06");	//Jsi prostě skvělý lovec!
 	MIS_INSBLACKSANPPER = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_INSBLACKSANPPER,LOG_SUCCESS);
-	B_LogEntry(TOPIC_INSBLACKSANPPER,"Nix byl velmi překvapen, když jsem mu řekl o tom, že jsem ulovil černého chňapavce! Říká, že teď není pochyb, že jsem vynikajcí lovec!");
+	B_LogEntry(TOPIC_INSBLACKSANPPER,"Nix byl velmi překvapen, když jsem mu řekl o tom, že jsem ulovil černého chňapavce! Říká, že teď není pochyb, že jsem vynikající lovec!");
 };
 
 
@@ -564,7 +564,7 @@ func void dia_hun_743_nix_respect_info()
 {
 	AI_Output(other,self,"DIA_HUN_743_Nix_Respect_01_00");	//Potřebuji tvoji pomoc.
 	AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_01");	//A v čem?
-	AI_Output(other,self,"DIA_HUN_743_Nix_Respect_01_02");	//Chci Falka vyzvat v soutěži o nejlepšího lovce, ale potřebuji hlasy lovcu.
+	AI_Output(other,self,"DIA_HUN_743_Nix_Respect_01_02");	//Chci Falka vyzvat v soutěži o nejlepšího lovce, ale potřebuji hlasy lovců.
 	AI_Output(other,self,"DIA_HUN_743_Nix_Respect_01_03");	//Můžu získat tvůj hlas?
 	if((MIS_RECOVERDOG == LOG_SUCCESS) || (MIS_INSBLACKSANPPER == LOG_SUCCESS))
 	{
@@ -572,13 +572,13 @@ func void dia_hun_743_nix_respect_info()
 		AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_04");	//Samozřejmě, kamaráde!
 		if(MIS_RECOVERDOG == LOG_SUCCESS)
 		{
-			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_05");	//No, díky tobe se uzdravila Tlama a to ti nikdy nezapomenu!
-			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_06");	//Takže mužeš jít za Falkem a říci, že máš moji podporu.
+			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_05");	//No, díky tobě se uzdravila Tlama a to ti nikdy nezapomenu!
+			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_06");	//Takže můžeš jít za Falkem a říci, že máš moji podporu.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_07");	//Když jsi dokázal sejmou černého chňapavce, tak si ho zasloužíš!
-			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_08");	//Takže mužeš jít za Falkem a říci, že máš moji podporu.
+			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_07");	//Když jsi dokázal sejmout černého chňapavce, tak si ho zasloužíš!
+			AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_08");	//Takže můžeš jít za Falkem a říci, že máš moji podporu.
 		};
 		B_LogEntry(TOPIC_HUNTERSWORK,"Nix mi dal hlas v soutěži proti Falkovi.");
 		NIX_RESPECT = TRUE;
@@ -586,7 +586,7 @@ func void dia_hun_743_nix_respect_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_10");	//Neukázal jsi, že by sis to zasloužil
+		AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_10");	//Neukázal jsi, že by sis to zasloužil.
 		AI_Output(self,other,"DIA_HUN_743_Nix_Respect_01_11");	//Takže nejdřív něco dokaž, pak si můžeme o tom promluvit.
 	};
 };
@@ -620,13 +620,13 @@ func void dia_hun_743_nix_respectdone_info()
 		AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_01");	//No, proč ne.
 		if(MIS_RECOVERDOG == LOG_SUCCESS)
 		{
-			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_02");	//No, díky tobe se uzdravila Tlama a to ti nikdy nezapomenu!
-			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_03");	//Takže mužeš jít za Falkem a říci, že máš moji podporu.
+			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_02");	//No, díky tobě se uzdravila Tlama a to ti nikdy nezapomenu!
+			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_03");	//Takže můžeš jít za Falkem a říci, že máš moji podporu.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_04");	//Když jsi dokázal sejmou černého chaapavce, tak si ho zasloužíš!
-			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_05");	//Takže mužeš jít za Falkem a říci, že máš moji podporu.
+			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_04");	//Když jsi dokázal sejmout černého chňapavce, tak si ho zasloužíš!
+			AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_05");	//Takže můžeš jít za Falkem a říci, že máš moji podporu.
 		};
 		B_LogEntry(TOPIC_HUNTERSWORK,"Nix mi dal hlas v soutěži proti Falkovi.");
 		NIX_RESPECT = TRUE;
@@ -634,7 +634,7 @@ func void dia_hun_743_nix_respectdone_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_06");	//Chlape, řekl jsem, že musíš udelat neco za co si ho zasloužíš!
+		AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_06");	//Chlape, řekl jsem, že musíš udělat něco za co si ho zasloužíš!
 		AI_Output(self,other,"DIA_HUN_743_Nix_RespectDone_01_07");	//Co na tom nechápeš?
 	};
 };
@@ -665,7 +665,7 @@ func void dia_hun_743_nix_hello_info()
 	AI_Output(self,other,"DIA_HUN_743_Nix_Hello_01_01");	//Můžu ti ukázat, jak být obratnější.
 	AI_Output(self,other,"DIA_HUN_743_Nix_Hello_01_02");	//Samozřejmě pokud budeš chtít.
 	Log_CreateTopic(TOPIC_HUNTERTEACHERS,LOG_NOTE);
-	B_LogEntry(TOPIC_HUNTERTEACHERS,"Nix mi muže ukázat jak být obratnejší.");
+	B_LogEntry(TOPIC_HUNTERTEACHERS,"Nix mi může ukázat jak být obratnější.");
 };
 
 
@@ -676,7 +676,7 @@ instance DIA_HUN_743_NIX_DEX(C_Info)
 	condition = dia_hun_743_nix_dex_condition;
 	information = dia_hun_743_nix_dex_info;
 	permanent = TRUE;
-	description = "Ukaž mi, jak být obratnejší.";
+	description = "Ukaž mi, jak být obratnější.";
 };
 
 
@@ -754,7 +754,7 @@ func void dia_hun_743_nix_shadowfur_info()
 	MIS_SHADOWFURNIX = LOG_Running;
 	Log_CreateTopic(TOPIC_SHADOWFURNIX,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SHADOWFURNIX,LOG_Running);
-	B_LogEntry(TOPIC_SHADOWFURNIX,"Nix potřebuje kuži stínové šelmy. Říká, že když ji seženu, nebudu litovat. Tahle zvířata nemají ráda denní záři, takže se skrývají v šeru jeskyní a stromu.");
+	B_LogEntry(TOPIC_SHADOWFURNIX,"Nix potřebuje kuži stínové šelmy. Říká, že když ji seženu, nebudu litovat. Tahle zvířata nemají ráda denní záři, takže se skrývají v šeru jeskyní a stromů.");
 	AI_StopProcessInfos(self);
 };
 
@@ -786,7 +786,7 @@ func void dia_hun_743_nix_shadowfurdone_info()
 	Npc_RemoveInvItems(self,ItAt_ShadowFur,1);
 	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFurDone_01_01");	//Výborně. (obdiv) Myslím, že to s touto šelmou byla celkem fuška, že?
 	AI_Output(other,self,"DIA_HUN_743_Nix_ShadowFurDone_01_02");	//Docela dost.
-	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFurDone_01_03");	//Dobré! Vezmi si tohle zlato, zasloužíš si ho.
+	AI_Output(self,other,"DIA_HUN_743_Nix_ShadowFurDone_01_03");	//Dobře! Vezmi si tohle zlato, zasloužíš si ho.
 	B_GiveInvItems(self,other,ItMi_Gold,250);
 	MIS_SHADOWFURNIX = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_SHADOWFURNIX,LOG_SUCCESS);

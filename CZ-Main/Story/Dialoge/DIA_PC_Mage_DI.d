@@ -417,7 +417,7 @@ instance DIA_Milten_DI_UndeadDragonDead(C_Info)
 	condition = DIA_Milten_DI_UndeadDragonDead_Condition;
 	information = DIA_Milten_DI_UndeadDragonDead_Info;
 	permanent = TRUE;
-	description = "Tak, a je to! Chrám je teď zbavený své síly!";
+	description = "Tak, a je to! Chrám je teď zbavený své síly.";
 };
 
 

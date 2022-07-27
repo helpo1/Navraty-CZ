@@ -59,7 +59,7 @@ func void dia_hun_744_barem_welcome_info()
 	{
 		AI_Output(self,other,"DIA_HUN_744_Barem_Welcome_01_01");	//Hej, chlape, vypadáš jako lovec...
 		AI_Output(self,other,"DIA_HUN_744_Barem_Welcome_01_04");	//Tohle je tábor lovců.
-		AI_Output(self,other,"DIA_HUN_744_Barem_Welcome_01_06");	//Dám ti radu - promluv si s Falkem, von je tu něco jako náš... ten... jo... jo, vůdce!
+		AI_Output(self,other,"DIA_HUN_744_Barem_Welcome_01_06");	//Dám ti radu - promluv si s Falkem, on je tu něco jako náš... ten... jo... jo, vůdce!
 	}
 	else
 	{
@@ -121,14 +121,14 @@ func void dia_hun_744_barem_hello_info()
 	if((Kapitel >= 2) && (MIS_INSVEPR == FALSE))
 	{
 		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_01");	//Vše v klidu, ale slyšels ty novinky?
-		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_03");	//Nedaleko jedněch kamennejch šutrů se vobjevil jeden velkej divočák, viděl jsi už něco takovýho?
+		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_03");	//Nedaleko jedněch kamennejch šutrů se objevil jeden velkej divočák, viděl jsi už něco takovýho?
 		AI_Output(other,self,"DIA_HUN_744_Barem_Hello_01_04");	//Ne, ani ne.
 		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_06");	//A to je pro tebe lepší chlape. Protože tenhle divočák je velmi nebezpečné stvoření!
-		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_07");	//Bez problému tě rozžvejká na kousky.
+		AI_Output(self,other,"DIA_HUN_744_Barem_Hello_01_07");	//Bez problémů tě rozžvejká na kousky.
 		MIS_INSVEPR = LOG_Running;
 		Log_CreateTopic(TOPIC_INSVEPR,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_INSVEPR,LOG_Running);
-		B_LogEntry(TOPIC_INSVEPR,"Barem říkal, že u kamenného kruhu v severních lesích se objevil extrémně velký divočák. Říkal, že je také extrémě nebezpečný a měl bych se mu vyhnout. Copak by asi řekl, kdybych ho složil?");
+		B_LogEntry(TOPIC_INSVEPR,"Barem říkal, že u kamenného kruhu v severních lesích se objevil extrémně velký divočák. Říkal, že je také extrémně nebezpečný a měl bych se mu vyhnout. Copak by asi řekl, kdybych ho složil?");
 		Wld_InsertNpc(keiler_vepr,"FP_ROAM_NW_HUNTVEPR_01");
 	}
 	else if(Kapitel == 3)
@@ -223,8 +223,8 @@ func void dia_hun_744_barem_respect_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_HUN_744_Barem_Respect_01_07");	//Chlape, já nevím vo ničem, proč bys měl mít tohle právo!
-		AI_Output(self,other,"DIA_HUN_744_Barem_Respect_01_09");	//Takže udělej něco co by zvedlo mý mínění vo tobě a pak se zkus vrátit.
+		AI_Output(self,other,"DIA_HUN_744_Barem_Respect_01_07");	//Chlape, já nevím o ničem, proč bys měl mít tohle právo!
+		AI_Output(self,other,"DIA_HUN_744_Barem_Respect_01_09");	//Takže udělej něco co by zvedlo mí mínění o tobě a pak se zkus vrátit.
 	};
 };
 
@@ -297,9 +297,9 @@ func void dia_hun_744_barem_lurkerclaw_info()
 	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_04");	//Já teď absolutně nemám na něco takovýho čas!
 	AI_Output(other,self,"DIA_HUN_744_Barem_LurkerClaw_01_05");	//Takže chceš, abych přinesl ty drápy...
 	AI_Output(other,self,"DIA_HUN_744_Barem_LurkerClaw_01_07");	//A jaká bude odměna?!
-	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_08");	//No, boužel ti nemůžu zaplatit, bo teď ňák potřebuju zlato!
-	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_09");	//Ale moh' bych ti za to dát nějaký pláty z důlního červa.
-	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_10");	//Slyšel jsem, že jeden žoldák na Onarový farmě z toho umí udělat zbroj.
+	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_08");	//No, bohužel ti nemůžu zaplatit, bo teď ňák potřebuju zlato!
+	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_09");	//Ale moh' bych ti za to dát nějaké krunýře z důlního červa.
+	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_10");	//Slyšel jsem, že jeden žoldák na Onarovy farmě z toho umí udělat zbroj.
 	AI_Output(other,self,"DIA_HUN_744_Barem_LurkerClaw_01_13");	//Uvidím, co budu moci udělat.
 	AI_Output(self,other,"DIA_HUN_744_Barem_LurkerClaw_01_14");	//Bezva, tož víš, kde mě hledat, že.
 	MIS_LURKERCLAW = LOG_Running;
@@ -374,14 +374,14 @@ func void dia_hun_744_barem_crawlerarmor_info()
 	AI_Output(other,self,"DIA_HUN_744_Barem_CrawlerArmor_01_06");	//Můžu ti nějak pomoci.
 	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_07");	//Chlape, to by bylo úžasný!
 	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_08");	//Jestli se ti povede mi splašit tu zbroj, budu tvým dlužníkem!
-	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_10");	//Tady máš všechny pláty, který mi ještě zbyly.
+	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_10");	//Tady máš všechny krunýře, který mi ještě zbyly.
 	B_GiveInvItems(self,other,ItAt_CrawlerPlate,4);
-	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_13");	//Slyšel jsem ale, že jestli je zbroj z čerstvých plátů, je lepší!
+	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_13");	//Slyšel jsem ale, že jestli je zbroj z čerstvých krunýřů, je lepší!
 	AI_Output(self,other,"DIA_HUN_744_Barem_CrawlerArmor_01_14");	//Nevím, jestli je to pravda, nebo není, to jen abys věděl.
 	MIS_BAREMCRAWLERARMOR = LOG_Running;
 	Log_CreateTopic(TOPIC_BAREMCRAWLERARMOR,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BAREMCRAWLERARMOR,LOG_Running);
-	B_LogEntry(TOPIC_BAREMCRAWLERARMOR,"Rozhodl jsem se pro Barema získat zbroj z krunýře důlního červa. Říkal, že z čerstvých plátů je lepší, ale neví, jestli to nejsou povídačky! Měl bych zajít za Wolfem, ten by mohl vědět o tom, jak ty krunýře dostat z červíků.");
+	B_LogEntry(TOPIC_BAREMCRAWLERARMOR,"Rozhodl jsem se pro Barema získat zbroj z krunýře důlního červa. Říkal, že z čerstvých krunýřů je lepší, ale neví, jestli to nejsou povídačky! Měl bych zajít za Wolfem, ten by mohl vědět o tom, jak ty krunýře dostat z červíků.");
 };
 
 

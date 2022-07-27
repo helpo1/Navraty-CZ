@@ -73,7 +73,7 @@ func void dia_xardas_goblin_hello_ok()
 	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_Ok_01_11");	//Nejspíše se nalézají v té staré věži. Určitě tam něco bude.
 	AI_Output(other,self,"DIA_Xardas_Goblin_Hello_Ok_01_12");	//No, myslím že něco.
 	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_Ok_01_13");	//Před odjezdem, ti dám instrukce:
-	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_Ok_01_14");	//Pokud půjdete rovnou k nekromantovi, neříkejte že jsme se setkali, pro služebnictvo by...
+	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_Ok_01_14");	//Pokud půjdeš rovnou k nekromantovi, neříkej že jsme se setkali, pro služebnictvo by...
 	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_Ok_01_15");	//... milosti nejspíše nenašel. 	
 	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_Ok_01_16");	//Jestli půjdeš navštívit věž buď opatrný.
 	AI_Output(self,other,"DIA_Xardas_Goblin_Hello_Ok_01_17");	//Nacházejí se zde zlí nemrtvý a démoni z pekelných končin.
@@ -261,7 +261,7 @@ func void DIA_Gobbo_Desert_Quest_info()
 {
 	AI_Output(other,self,"DIA_Gobbo_Desert_Quest_01_00");	//Ještě něco?
 	AI_Output(self,other,"DIA_Gobbo_Desert_Quest_01_01");	//Muž mít pravdu... Shakzi nejen s ním mluvit. Chce, také trochu pomoct. 
-	AI_Output(self,other,"DIA_Gobbo_Desert_Quest_01_02");	//Za to Shakzi dát člověku výbornou a hodnotnou cenu! Člověk musí ji mít opravdu rád.
+	AI_Output(self,other,"DIA_Gobbo_Desert_Quest_01_02");	//Za to Shakzi dát člověku výbornou a hodnotnou odměnu! Člověk musí ji mít opravdu rád.
 	AI_Output(other,self,"DIA_Gobbo_Desert_Quest_01_03");	//No, trochu mě to zaujalo. Co bys rád?
 	AI_Output(self,other,"DIA_Gobbo_Desert_Quest_01_04");	//Člověk pomoct Shakzi hledat jednu věc - jeho posvátný totem!
 	AI_Output(other,self,"DIA_Gobbo_Desert_Quest_01_05");	//Posvátný totem? Co to je?

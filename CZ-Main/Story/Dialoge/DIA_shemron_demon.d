@@ -55,7 +55,7 @@ func void dia_shemron_demon_hello_info()
 	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_06");	//Já - Shemron, pátý démon Eligorovy legie, věrný ochránce Strážců božské Temnoty, jejichž moudrost vládne noci!
 	self.name[0] = CZ_NAME_Monster_DemonLord_Shemron;
 	SHEMRONKNOWS = TRUE;
-	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_07");	//Já hájím jejich zájmy a ty si ubohý zloděj, který kradl.
+	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_07");	//Já hájím jejich zájmy a ty jsi ubohý zloděj, který kradl.
 	AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_08");	//A nyní se postarám o to, aby se to už nikdy znovu neopakovalo... (vrčí)
 	if(GUARDIAN_WAY == TRUE)
 	{
@@ -82,7 +82,7 @@ func void dia_shemron_demon_hello_info()
 		if(Npc_HasItems(other,itri_guardians_01) >= 1)
 		{
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_26");	//Mám tento prsten. Dal mi ho Strážce Dagoth při našem prvním setkání.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_27");	//... (vrčí) Prsten Baalův!... Jenom Strážce ti mohl dát takovouto věc.
+			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_27");	//... (vrčí) Prsten Baalův!... Jenom Strážce ti mohl dát takovou věc.
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_28");	//Nyní už mi věříš?
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_29");	//Ano. Tento důkaz je dostatečný!
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_30");	//Ušetřím tvůj život, člověče. Ale to, co jsi vzal - zůstává zde.
@@ -99,7 +99,7 @@ func void dia_shemron_demon_hello_info()
 		else if(Npc_HasItems(other,itri_guardians_02) >= 1)
 		{
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_33");	//Mám tento prsten stoupence posvátného kruhu. Strážce Stonnos mi ho dal při mém zasvěcení.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_34");	//... (vrčí) Prsten elementů!... Jenom Strážce ti mohl dát takovouto věc.
+			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_34");	//... (vrčí) Prsten elementů!... Jenom Strážce ti mohl dát takovou věc.
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_35");	//Nyní už mi věříš?
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_36");	//Ano. Tento důkaz je dostatečný!
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_37");	//Ušetřím tvůj život, člověče. Ale to, co jsi vzal - zůstává zde.
@@ -116,7 +116,7 @@ func void dia_shemron_demon_hello_info()
 		else if(Npc_HasItems(other,itri_narus) >= 1)
 		{
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_40");	//Mám tento prsten. Dal mi ho Strážce Wakon při našem prvním setkání.
-			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_41");	//... (vrčí) Prsten vody!... Jenom Strážce ti mohl dát takovouto věc.
+			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_41");	//... (vrčí) Prsten vody!... Jenom Strážce ti mohl dát takovou věc.
 			AI_Output(other,self,"DIA_Shemron_Demon_Hello_01_42");	//Nyní už mi věříš?
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_43");	//Ano. Tento důkaz je dostatečný!
 			AI_Output(self,other,"DIA_Shemron_Demon_Hello_01_44");	//Ušetřím tvůj život, člověče. Ale to, co jsi vzal - zůstává zde.
@@ -215,7 +215,7 @@ func void dia_shemron_demon_backshephre_info()
 {
 	AI_Output(other,self,"DIA_Shemron_Demon_BackShephre_01_01");	//Element temnoty je pro Strážce Stonnose velmi důležitý! A já mám v plánu vyhovět jeho rozkazu za každou cenu.
 	AI_Output(self,other,"DIA_Shemron_Demon_BackShephre_01_03");	//Stonnos?! Hmmm... (vrčí) Jestliže je tomu tak, tak boj není na místě člověče.
-	AI_Output(self,other,"DIA_Shemron_Demon_BackShephre_01_04");	//Jestliže vše, co hovoříš pravda jest, a ty jsi byl sem poslán hlavním představeným posvátného kruhu - pak si ho tedy ode mě můžeš vzít bez potíží!
+	AI_Output(self,other,"DIA_Shemron_Demon_BackShephre_01_04");	//Jestliže vše, co hovoříš je pravda, a ty jsi byl sem poslán hlavním představeným posvátného kruhu - pak si ho tedy ode mě můžeš vzít bez potíží!
 	AI_Output(self,other,"DIA_Shemron_Demon_BackShephre_01_05");	//Zde, vezmi tento magický artefakt a odnes ho vrchnímu Strážci!
 	B_GiveInvItems(self,other,itmi_darkshpere,1);
 	GIVESHEPHRESHEMRONBACK = TRUE;

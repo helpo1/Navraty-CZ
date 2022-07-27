@@ -114,7 +114,7 @@ func void DIA_Cassia_Gilde_Info()
 	if((other.guild == GIL_MIL) || (other.guild == GIL_PAL))
 	{
 		AI_Output(self,other,"DIA_Cassia_Gilde_16_00");	//Vidím, že ses přidal na stranu práva a řádu.
-		AI_Output(self,other,"DIA_Cassia_Gilde_16_01");	//Nevadí, že ses stal služebníkem Innose. Jsi jedním z nás. A já doufám, že se nějaký způsob najde
+		AI_Output(self,other,"DIA_Cassia_Gilde_16_01");	//Nevadí, že ses stal služebníkem Innose. Jsi jedním z nás. A já doufám, že se nějaký způsob najde.
 	};
 	if(other.guild == GIL_KDF)
 	{
@@ -506,7 +506,7 @@ func int DIA_Cassia_BevorLernen_Condition()
 func void DIA_Cassia_BevorLernen_Info()
 {
 	AI_Output(other,self,"DIA_Cassia_BevorLernen_15_00");		//Můžeš mě něco naučit?
-	AI_Output(self,other,"DIA_Cassia_BevorLernen_900_02");	//Jasně, žádný problém. Jsi přece jden z nás.
+	AI_Output(self,other,"DIA_Cassia_BevorLernen_900_02");	//Jasně, žádný problém. Jsi přece jeden z nás.
 	Cassia_TeachPickpocket = TRUE;
 	Cassia_TeachDEX = TRUE;
 	Cassia_TeachAcrobat = TRUE;
@@ -1187,7 +1187,7 @@ func void DIA_Cassia_abgeben_Info()
 		THIEF_REPUTATION = THIEF_REPUTATION + 3;
 		MIS_CassiaKelche = LOG_SUCCESS;
 		Log_SetTopicStatus(Topic_CassiaKelche,LOG_SUCCESS);
-		B_LogEntry(Topic_CassiaKelche,"Donesl jdsem Cassii všech šest kalichů.");
+		B_LogEntry(Topic_CassiaKelche,"Donesl jsem Cassii všech šest kalichů.");
 	}
 	else
 	{
@@ -1309,7 +1309,7 @@ func void DIA_Cassia_In_Guild_Done_info()
 		Npc_RemoveInvItems(self,ItMi_LostInnosStatue_Daron,1);
 		Npc_RemoveInvItems(hero,ItMi_GoblinnosStatue_Daron_New,1);
 		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_02");	//Ano to vidím. A přinesl jsi i další - falošnou.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_03");	//Dobrá, skuśim ji prodat.
+		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_03");	//Dobrá, zkusím ji prodat.
 		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_04");	//Co se tebe týče, skvělá práce.
 		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_05");	//Tady, vem si tenhle lektvar.
 		B_GiveInvItems(self,other,ItPo_Perm_DEX,1);
@@ -1324,7 +1324,7 @@ func void DIA_Cassia_In_Guild_Done_info()
 		B_GiveInvItems(hero,self,ItMi_GoblinnosStatue_Daron_New,1);
 		Npc_RemoveInvItems(self,ItMi_GoblinnosStatue_Daron_New,1);
 		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_06");	//Ano to vidím. Ale na mé velké zklamání je to jen padělek.
-		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_07");	//Dobrá, skuśim ji prodat.
+		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_07");	//Dobrá, zkusím ji prodat.
 		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_08");	//Co se tebe týče, jsem sklamaná.
 		AI_Output(self,other,"DIA_Cassia_In_Guild_Done_01_09");	//Ale neboj, nic proti tobě nemám.
 		THIEF_REPUTATION = THIEF_REPUTATION + 1;
@@ -1540,7 +1540,7 @@ func void DIA_Cassia_Quest_Music_Done_info()
 	Npc_RemoveInvItems(hero,ItMi_IEDudelBlau,1);
 	Npc_RemoveInvItems(hero,ItMi_IELaute,1);
 	Npc_RemoveInvItems(hero,ItMi_IEDrumScheit,1);
-	AI_Output(self,other,"DIA_Cassia_Quest_Music_Done_01_03");	//Dotanu za ně pěknou hromádku zlata.
+	AI_Output(self,other,"DIA_Cassia_Quest_Music_Done_01_03");	//Dostanu za ně pěknou hromádku zlata.
 	AI_Output(other,self,"DIA_Cassia_Quest_Music_Done_01_04");	//A co já?
 	AI_Output(self,other,"DIA_Cassia_Quest_Music_Done_01_05");	//Jsem ji jistá, že oceníš mou vděčnost...
 	B_GiveInvItems(self,other,ItMi_Gold,500);
@@ -1594,7 +1594,7 @@ func void DIA_Cassia_MagicBook_JustInt()
 	AI_Output(self,other,"DIA_Cassia_MagicBook_JustInt_01_02");	//Na tvém místě bych se od toho držela dál.
 	AI_Output(self,other,"DIA_Cassia_MagicBook_JustInt_01_03");	//Za takové otázky se můžeš lehko dostat do problémů.
 	MagicBookCantFind = TRUE;
-	B_LogEntry(TOPIC_VatrasMagicBook,"Je nepravděpodobné, že bych teď zjistil, kdo má Vatrasův denník. Měl bych mu sdělit špatné zprávy.");	
+	B_LogEntry(TOPIC_VatrasMagicBook,"Je nepravděpodobné, že bych teď zjistil, kdo má Vatrasův deník. Měl bych mu sdělit špatné zprávy.");	
 	Info_ClearChoices(DIA_Cassia_MagicBook);
 };
 
@@ -1604,7 +1604,7 @@ func void DIA_Cassia_MagicBook_Kill()
 	AI_Output(self,other,"DIA_Cassia_MagicBook_Kill_01_02");	//Není zrovna moc moudré mi říkat takovéhle věci.
 	AI_Output(self,other,"DIA_Cassia_MagicBook_Kill_01_03");	//Za to, že to je poprvé ti odpouštím.
 	MagicBookCantFind = TRUE;
-	B_LogEntry(TOPIC_VatrasMagicBook,"Je nepravděpodobné, že bych teď zjistil, kdo má Vatrasův denník. Měl bych mu sdělit špatné zprávy.");	
+	B_LogEntry(TOPIC_VatrasMagicBook,"Je nepravděpodobné, že bych teď zjistil, kdo má Vatrasův deník. Měl bych mu sdělit špatné zprávy.");	
 	Info_ClearChoices(DIA_Cassia_MagicBook);
 };
 
@@ -1613,7 +1613,7 @@ func void DIA_Cassia_MagicBook_Stolen()
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Cassia_MagicBook_Stolen_01_01");	//Mám zájem o jednu z věcí, co byla odcizena.
 	AI_Output(self,other,"DIA_Cassia_MagicBook_Stolen_01_02");	//Jakou?
-	AI_Output(other,self,"DIA_Cassia_MagicBook_Stolen_01_03");	//Vatrasův denník, nevíš, kde by mohl být?
+	AI_Output(other,self,"DIA_Cassia_MagicBook_Stolen_01_03");	//Vatrasův deník, nevíš, kde by mohl být?
 	AI_Output(self,other,"DIA_Cassia_MagicBook_Stolen_01_04");	//Ne, ale tady ho nenajdeš.
 	AI_Output(self,other,"DIA_Cassia_MagicBook_Stolen_01_05");	//Poptej se nejlepších obchodníků na tržišti. Možná má jeden z nich novou knihu na prodej.
 	B_LogEntry(TOPIC_VatrasMagicBook,"Cassia mi doporučila se poptát obchodníků na tržišti.");	
@@ -1625,7 +1625,7 @@ func void DIA_Cassia_MagicBook_Rumors()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Cassia_MagicBook_Rumors_01_01");	//Slyšel jsem nějaké zvěsti...
-	AI_Output(other,self,"DIA_Cassia_MagicBook_Rumors_01_02");	//Chtěli vědět jěstli to daný řemeslník zvládl úplně sám.
+	AI_Output(other,self,"DIA_Cassia_MagicBook_Rumors_01_02");	//Chtěli vědět jestli to daný řemeslník zvládl úplně sám.
 	AI_Output(self,other,"DIA_Cassia_MagicBook_Rumors_01_03");	//No, není to tajemství... (usmívá se) Samozřejmě že to byl Ramirez! Jedině on by to zvládl.
 	AI_Output(self,other,"DIA_Cassia_MagicBook_Rumors_01_04");	//Takže mu můžeš jít pogratulovat i za mě.
 
@@ -1636,7 +1636,7 @@ func void DIA_Cassia_MagicBook_Rumors()
 	};
 
 	MagicBookFindTradeExt = TRUE;
-	B_LogEntry(TOPIC_VatrasMagicBook,"Cassia mi řekla, že za krádeží stojí Ramirez. On určitě ví, kde se denník nachází.");
+	B_LogEntry(TOPIC_VatrasMagicBook,"Cassia mi řekla, že za krádeží stojí Ramirez. On určitě ví, kde se deník nachází.");
 	Info_ClearChoices(DIA_Cassia_MagicBook);
 };
 
@@ -1666,7 +1666,7 @@ func void DIA_Cassia_RichStones_Info()
 	AI_Output(self,other,"DIA_Cassia_RichStones_01_03");	//Ale nás zajímá jenom jeden - obrovský rubín, velký skoro jako pěst.
 	AI_Output(other,self,"DIA_Cassia_RichStones_01_04");	//Jak o něm víš?
 	AI_Output(self,other,"DIA_Cassia_RichStones_01_05");	//Máme své zdroje...
-	AI_Output(self,other,"DIA_Cassia_RichStones_01_06");	//Takže chi aby se ten šutr stal ozdobou mých pokladů.
+	AI_Output(self,other,"DIA_Cassia_RichStones_01_06");	//Takže chci aby se ten šutr stal ozdobou mých pokladů.
 	AI_Output(other,self,"DIA_Cassia_RichStones_01_07");	//Takže ho mám pro tebe ukradnout?
 	AI_Output(self,other,"DIA_Cassia_RichStones_01_08");	//Vidím, že jsi všechno pochopil dokonale.
 	AI_Output(self,other,"DIA_Cassia_RichStones_01_09");	//Pokud vím, tak by se truhla s těmito poklady měla nacházet na radnici města.
@@ -1681,7 +1681,7 @@ func void DIA_Cassia_RichStones_Info()
 	MIS_RichStones = LOG_Running;
 	Log_CreateTopic(Topic_RichStones,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_RichStones,LOG_Running);
-	B_LogEntry(TOPIC_RichStones,"Cassia po mě chce abych ukradl rubín z měststké radnice.");
+	B_LogEntry(TOPIC_RichStones,"Cassia po mě chce abych ukradl rubín z městské radnice.");
 };
 
 instance DIA_Cassia_RichStones_Done(C_Info)
@@ -1757,7 +1757,7 @@ func void DIA_Cassia_DragonTreasure_Info()
 	MIS_DragonTreasure = LOG_Running;
 	Log_CreateTopic(Topic_DragonTreasure,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DragonTreasure,LOG_Running);
-	B_LogEntry(TOPIC_DragonTreasure,"Cassia má zájem o nějaké věci z dračích pokladů, ale neví ktreré. Teď to jednoduché - zabít draky.");
+	B_LogEntry(TOPIC_DragonTreasure,"Cassia má zájem o nějaké věci z dračích pokladů, ale neví které. Teď to jednoduché - zabít draky.");
 };
 
 var int OreBaronCrownUp;
@@ -1870,7 +1870,7 @@ func void DIA_Cassia_DragonTreasure_Done_GoldKnife()
 	B_GiveInvItems(other,self,ItMi_KnifeGold,1);
 	Npc_RemoveInvItems(self,ItMi_KnifeGold,1);
 	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_GoldKnife_01_01");	//Hmm. Pěkné řemeslné umění.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_GoldKnife_01_02");	//Místní sběratele bude bude určitě zajímat.
+	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_GoldKnife_01_02");	//Místní sběratele bude určitě zajímat.
 	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_GoldKnife_01_03");	//Mě spíš zajímá moje odměna.
 	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_GoldKnife_01_04");	//Tady, tenhle lektvar by se ti mohl hodit.
 	B_GiveInvItems(self,other,ItPo_Perm_DEX,1);
@@ -1896,7 +1896,7 @@ func void DIA_Cassia_DragonTreasure_Done_OreBaronCrown()
 	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_02");	//Vážně?
 	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_03");	//Ano, to je. Dar od samotného krále Myrtany.
 	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_04");	//Kdysi ji nosil ten nejmocnější rudobaron na ostrově.
-	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_05");	//Nikdy bych nevěřila, že ji jednou budu mít v rucích,
+	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_05");	//Nikdy bych nevěřila, že ji jednou budu mít v rucích.
 	AI_Output(other,self,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_06");	//Za ni dostaneš u každého obchodníka hromadu zlata.
 	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_07");	//Její cena je nevyčíslitelná! Ale líbí se mi jak smýšlíš.
 	AI_Output(self,other,"DIA_Cassia_DragonTreasure_Done_OreBaronCrown_01_08");	//Ale co teď s ní? To bude třeba pečlivě promyslet.
@@ -1964,7 +1964,7 @@ func void DIA_Cassia_OrcHide_info()
 	AI_Output(self,other,"DIA_Cassia_OrcHide_01_02");	//(nervózně) Jak vidíš, podařilo se nám přežít.
 	AI_Output(self,other,"DIA_Cassia_OrcHide_01_03");	//Teď je tohle jediné bezpečné místo v Khorinisu.
 	AI_Output(other,self,"DIA_Cassia_OrcHide_01_04");	//A co když vás najdou?
-	AI_Output(self,other,"DIA_Cassia_OrcHide_01_05");	//Jak? (smích) O téhle stoce vědělo jen ár lidí.
+	AI_Output(self,other,"DIA_Cassia_OrcHide_01_05");	//Jak? (smích) O téhle stoce vědělo jen pár lidí.
 	AI_Output(self,other,"DIA_Cassia_OrcHide_01_06");	//A skřeti je všechny zabili.
 };
 
@@ -1990,7 +1990,7 @@ func void DIA_Cassia_OrcHideWhat_info()
 {
 	AI_Output(other,self,"DIA_Cassia_OrcHideWhat_01_01");	//A co budete dělat teď?
 	AI_Output(self,other,"DIA_Cassia_OrcHideWhat_01_02");	//Nic, budeme tady sedět a doufat v zázrak.
-	AI_Output(other,self,"DIA_Cassia_OrcHideWhat_01_03");	//Ale vždyť tady nemůže te sedět dokonce života!
+	AI_Output(other,self,"DIA_Cassia_OrcHideWhat_01_03");	//Ale vždyť tady nemůžete sedět dokonce života!
 	AI_Output(self,other,"DIA_Cassia_OrcHideWhat_01_04");	//Na to hádam nedojde.
 	AI_Output(self,other,"DIA_Cassia_OrcHideWhat_01_05");	//Paladinové se vrátí a osvobodí město.
 	AI_Output(other,self,"DIA_Cassia_OrcHideWhat_01_06");	//No, možná máš pravdu.

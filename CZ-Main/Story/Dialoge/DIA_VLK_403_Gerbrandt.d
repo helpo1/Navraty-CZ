@@ -338,7 +338,7 @@ func void dia_gerbrandt_worksfor_think()
 	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_17");	//Věř mi, nebude to nic složitého.
 	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_19");	//Ta osoba, kterou máš potkat, by o tobě neměla vědět, takže to nebude nic složitého.
 	AI_Output(other,self,"DIA_Gerbrandt_WorksFor_Think_01_1A");	//Chceš říci, že bych měl dělat podle sebe?
-	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_1B");	//Ano! Chci ti říci, žě tě nebude nijak podezírat.
+	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_1B");	//Ano! Chci ti říci, že tě nebude nijak podezírat.
 	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_22");	//Tady je ten měšec...
 	B_GiveInvItems(self,other,itse_gerbrandpocket,1);
 	AI_Output(self,other,"DIA_Gerbrandt_WorksFor_Think_01_23");	//... A dopis.
@@ -431,7 +431,7 @@ func void dia_gerbrandt_worksfordone_info()
 				B_GiveInvItems(other,self,itwr_gerbrandseclet,1);
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_24");	//Cože?! A kde je můj měšec?!
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_26");	//Ty hajzle!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_27");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšiš?!
+				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_27");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšíš?!
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_28");	//Tohle je naposled co mě někdo okradl!
 				MIS_GERBRANDTHELP = LOG_FAILED;
 				GERBRANDTPISSOFF = TRUE;
@@ -445,7 +445,7 @@ func void dia_gerbrandt_worksfordone_info()
 				B_GiveInvItems(other,self,itwr_gerbrandseclet_open,1);
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_30");	//Cože?! A kde je můj měšec?!
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_32");	//Ty hajzle!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_33");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšiš?!
+				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_33");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšíš?!
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_34");	//Počkat... Ty jsi četl můj dopis?!
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_36");	//Varoval jsem tě, abys to nedělal.
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_37");	//Teď budeš litovat!
@@ -462,7 +462,7 @@ func void dia_gerbrandt_worksfordone_info()
 			B_GiveInvItems(other,self,itse_gerbrandpocket,1);
 			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_39");	//Cože?! Kde je můj dopis?!
 			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_41");	//Ty hajzle!
-			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_42");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšiš?!
+			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_42");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšíš?!
 			AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_43");	//Teď ti ukážu co se stane těm, co mě okradou!
 			MIS_GERBRANDTHELP = LOG_FAILED;
 			B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
@@ -536,7 +536,7 @@ func void dia_gerbrandt_worksfordone_info()
 					B_GiveInvItems(other,self,itwr_gerbrandseclet,1);
 					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_76");	//Cože?! Kde jsou moje peníze?!
 					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_78");	//Ty jeden hajzle!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_79");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšiš?!
+					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_79");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšíš?!
 					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_80");	//Teď ti ukážu co se stane těm co se mě snaží okrást!
 					MIS_GERBRANDTHELP = LOG_FAILED;
 					B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
@@ -550,7 +550,7 @@ func void dia_gerbrandt_worksfordone_info()
 					B_GiveInvItems(other,self,itwr_gerbrandseclet_open,1);
 					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_82");	//Cože? Kde je můj měšec?!
 					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_84");	//Ty jeden hajzle!
-					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_85");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšiš?!
+					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_85");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšíš?!
 					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_86");	//(vztekle) Počkat... Ty jsi četl ten dopis?!
 					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_88");	//Varoval jsem tě, abys to nedělal.
 					AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_89");	//Teď budeš litovat!
@@ -567,7 +567,7 @@ func void dia_gerbrandt_worksfordone_info()
 				B_GiveInvItems(other,self,itse_gerbrandpocket,1);
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_91");	//Cože? Kde je můj dopis?!
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_93");	//Ty jeden hajzle!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_94");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšiš?!
+				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_94");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšíš?!
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_95");	//Teď ti ukážu co se stane těm co se mě snaží okrást!
 				MIS_GERBRANDTHELP = LOG_FAILED;
 				B_LogEntry_Failed(TOPIC_GERBRANDTHELP);
@@ -579,7 +579,7 @@ func void dia_gerbrandt_worksfordone_info()
 			{
 				AI_Output(other,self,"DIA_Gerbrandt_WorksForDone_01_96");	//Ani jedno nemám.
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_97");	//CO?! Ty jeden hajzle!
-				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_98");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšiš?!
+				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_98");	//Já tě naučím! Tohle to si ke mě dovolovat nebudeš slyšíš?!
 				AI_Output(self,other,"DIA_Gerbrandt_WorksForDone_01_99");	//Teď ti ukážu co se stane těm co se mě snaží okrást!
 				MIS_GERBRANDTHELP = LOG_FAILED;
 				GERBRANDTPISSOFF = TRUE;

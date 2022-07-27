@@ -177,7 +177,7 @@ func int dia_pal_7523_forestbase_condition()
 func void dia_pal_7523_forestbase_info()
 {
 	AI_Output(other,self,"DIA_PAL_7523_Forestbase_01_00");	//Jak je to s osadou nad táborem?
-	AI_Output(self,other,"DIA_PAL_7523_Forestbase_01_01");	//Všichni jsou to zločinci z kolonie (arogantně)
+	AI_Output(self,other,"DIA_PAL_7523_Forestbase_01_01");	//Všichni jsou to zločinci z kolonie. (arogantně)
 	AI_Output(self,other,"DIA_PAL_7523_Forestbase_01_02");	//Udržujeme s nimi kontakt, obchodujeme, a dokonce nám i poskytují informace...
 	AI_Output(self,other,"DIA_PAL_7523_Forestbase_01_03");	//Jestli nás skřeti najdou, budou ti trestanci vítanou posilou...
 };
@@ -248,7 +248,7 @@ func void dia_pal_7523_drakar_info()
 	AI_Output(self,other,"DIA_PAL_7523_Drakar_01_05");	//Ach... s každým dnem je tady čím dál tím víc těch chlupatejch, zelenejch potvor.
 	AI_Output(self,other,"DIA_PAL_7523_Drakar_01_06");	//Byl jsi u moře, viděl jsi válečnou loď skřetů?
 	AI_Output(self,other,"DIA_PAL_7523_Drakar_01_07");	//Ano ta loď přiváží stále další skřety.
-	AI_Output(self,other,"DIA_PAL_7523_Drakar_01_08");	//Pokud to takle půjde dál, tak brzy převezmou kontrolu nad údolím.
+	AI_Output(self,other,"DIA_PAL_7523_Drakar_01_08");	//Pokud to takhle půjde dál, tak brzy převezmou kontrolu nad údolím.
 	AI_Output(self,other,"DIA_PAL_7523_Drakar_01_09");	//Pak nám už nedokáže pomoci ani lord Hagen se svými lidmi.
 	AI_Output(other,self,"DIA_PAL_7523_Drakar_01_10");	//Co navrhuješ?
 	AI_Output(self,other,"DIA_PAL_7523_Drakar_01_11");	//Jestli se nám podaří nějakým způsobem sabotovat loď, způsobíme skřetům vážnou ztrátu.
@@ -290,7 +290,7 @@ func void dia_pal_7523_drakardone_info()
 	AI_Output(other,self,"DIA_PAL_7523_DrakarDone_01_02");	//Věřím, že ta loď už nikam neodpluje.
 	AI_Output(self,other,"DIA_PAL_7523_DrakarDone_01_04");	//To myslíš vážně? (obdivně) To je velmi dobrá zpráva!
 	AI_Output(self,other,"DIA_PAL_7523_DrakarDone_01_05");	//Přísun skřetů se sníží a to určitě oslabí jejich pozici.
-	AI_Output(self,other,"DIA_PAL_7523_DrakarDone_01_06");	//Musíme jen počkat na lorda Hagen s posilami. A pak je můžem nadobro poslat za Beliarem.
+	AI_Output(self,other,"DIA_PAL_7523_DrakarDone_01_06");	//Musíme jen počkat na lorda Hagena s posilami. A pak je můžem nadobro poslat za Beliarem.
 	MIS_DRAKARBROKE = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_DRAKARBROKE,LOG_SUCCESS);
 	B_LogEntry(TOPIC_DRAKARBROKE,"Albert byl rád, když slyšel, že válečná loď skřetů je poškozená a neschopná plavby.");
@@ -318,7 +318,7 @@ func int dia_pal_7523_orcorder_condition()
 func void dia_pal_7523_orcorder_info()
 {
 	AI_Output(other,self,"DIA_PAL_7523_OrcOrder_01_00");	//Něco tu pro tebe mám.
-	AI_Output(other,self,"DIA_PAL_7523_OrcOrder_01_01");	//Zde je zajímavý dopis s rozkazy- Našel jsem ho u jejich vůdce na palubě Drakaru.
+	AI_Output(other,self,"DIA_PAL_7523_OrcOrder_01_01");	//Zde je zajímavý dopis s rozkazy - Našel jsem ho u jejich vůdce na palubě Drakaru.
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrder_01_02");	//Hmm... (se zájmem) já se podívám.
 	B_GiveInvItems(other,self,itwr_orcsorder,1);
 	B_UseFakeScroll();
@@ -332,7 +332,7 @@ func void dia_pal_7523_orcorder_info()
 	MIS_ORCORDER = LOG_Running;
 	Log_CreateTopic(TOPIC_ORCORDER,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ORCORDER,LOG_Running);
-	B_LogEntry(TOPIC_ORCORDER,"Ukázal jsem Albertovi dopis, který jsem získal od vůdce skřetů na palubě Drakar. Podle něj jsou údaje v tom dopise pro skřety velmi důležité, protože dopis obsahuje jejich vojenskou značku. Nyní je třeba zjistit - o čem se v dopise píše. Musíme najít někoho, kdo mi pomůže přeložit ten dopis.");
+	B_LogEntry(TOPIC_ORCORDER,"Ukázal jsem Albertovi dopis, který jsem získal od vůdce skřetů na palubě Drakaru. Podle něj jsou údaje v tom dopise pro skřety velmi důležité, protože dopis obsahuje jejich vojenskou značku. Nyní je třeba zjistit - o čem se v dopise píše. Musíme najít někoho, kdo mi pomůže přeložit ten dopis.");
 };
 
 
@@ -343,7 +343,7 @@ instance DIA_PAL_7523_ORCORDERPROGRESS(C_Info)
 	condition = dia_pal_7523_orcorderprogress_condition;
 	information = dia_pal_7523_orcorderprogress_info;
 	permanent = FALSE;
-	description = "Zjistil jsem co znamená te skřetí dokument.";
+	description = "Zjistil jsem co znamená ten skřetí dokument.";
 };
 
 
@@ -358,13 +358,13 @@ func int dia_pal_7523_orcorderprogress_condition()
 func void dia_pal_7523_orcorderprogress_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_PAL_7523_OrcOrderProgress_01_00");	//Zjistil jsem co znamená te skřetí dokument.
-	AI_Output(other,self,"DIA_PAL_7523_OrcOrderProgress_01_01");	//Skřeti neopustí údolí dokud nedobudou pevnost.
+	AI_Output(other,self,"DIA_PAL_7523_OrcOrderProgress_01_00");	//Zjistil jsem co znamená ten skřetí dokument.
+	AI_Output(other,self,"DIA_PAL_7523_OrcOrderProgress_01_01");	//Skřeti neopustí údolí dokud nedobijí pevnost.
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderProgress_01_02");	//To je mě novina, na to by přišel i goblin.
-	AI_Output(other,self,"DIA_PAL_7523_OrcOrderProgress_01_03");	//A co je důležité. Pro tento účel poslali skupinku dělníků, aby postavili nová eranidla a katapulty.
-	AI_Output(other,self,"DIA_PAL_7523_OrcOrderProgress_01_04");	//Až budou mít hotovo, zaůtočí na hrad.
+	AI_Output(other,self,"DIA_PAL_7523_OrcOrderProgress_01_03");	//A co je důležité. Pro tento účel poslali skupinku dělníků, aby postavili nová beranidla a katapulty.
+	AI_Output(other,self,"DIA_PAL_7523_OrcOrderProgress_01_04");	//Až budou mít hotovo, zaútočí na hrad.
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderProgress_01_05");	//Proklatě! Jestli se dostanou přes bránu, tak Garond jejich útok nezadrží!
-	AI_Output(self,other,"DIA_PAL_7523_OrcOrderProgress_01_06");	//To nemůžem připusti, kde se nyní nachází ten pracovní oddíl?
+	AI_Output(self,other,"DIA_PAL_7523_OrcOrderProgress_01_06");	//To nemůžem připustit, kde se nyní nachází ten pracovní oddíl?
 	AI_Output(other,self,"DIA_PAL_7523_OrcOrderProgress_01_07");	//Zřejmě se přemísťují na pozice skřetů.
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderProgress_01_08");	//Pak je musíme zastavit za každou cenu, hrad nesmí padnout!
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderProgress_01_10");	//Dám ti některé ze svých nejlepších lidí!... A teď můžeš vyrazit!
@@ -410,7 +410,7 @@ func void dia_pal_7523_orcorderdone_info()
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_01");	//Super!... Nejlepší zprávy, jaké jsi mi mohl přinést!
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_02");	//Nyní se paladinové v pevnosti nemusí bát útoku! 
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_03");	//Nyní se skřeti můžou zkusit přes kamennou zeď prokousat.
-	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_05");	//Co se týče tebe - myslím, že si zaslouží štědrou odměnu za svoji práci.
+	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_05");	//Co se týče tebe - myslím, že si zasloužíš štědrou odměnu za svoji práci.
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_06");	//Bohužel nemám dostatek zlata, které bych ti mohl dát...
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_07");	//Ale myslím, že ti můžu nabídnout něco jiného.
 	AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_09");	//Tady! (pyšně) Vezmi si tenhle drahocenný prsten!
@@ -424,7 +424,7 @@ func void dia_pal_7523_orcorderdone_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_13");	//Po právu si zasloužíš takovoupoctu! Nos ho s hrdostí.
+		AI_Output(self,other,"DIA_PAL_7523_OrcOrderDone_01_13");	//Po právu si zasloužíš takovou poctu! Nos ho s hrdostí.
 	};
 	AI_Output(other,self,"DIA_PAL_7523_OrcOrderDone_01_14");	//Děkuji.
 	MIS_ORCORDER = LOG_SUCCESS;
@@ -497,7 +497,7 @@ func void dia_pal_7523_howhere_info()
 	AI_Output(self,other,"DIA_PAL_7523_HowHere_01_02");	//Měli jsme co nejrychleji přijít a napadnout skřety zezadu.
 	AI_Output(other,self,"DIA_PAL_7523_HowHere_01_03");	//A jak to dopadlo?
 	AI_Output(self,other,"DIA_PAL_7523_HowHere_01_04");	//Věř mi - plán byl dobrý... (naštvaně) Ale, bohužel, naše pomoc dorazila příliš pozdě!
-	AI_Output(self,other,"DIA_PAL_7523_HowHere_01_06");	//Na cestě do obléhané pevnosti, naše oddíl přepadli skřeti.
+	AI_Output(self,other,"DIA_PAL_7523_HowHere_01_06");	//Na cestě do obléhané pevnosti, náš oddíl přepadli skřeti.
 	AI_Output(self,other,"DIA_PAL_7523_HowHere_01_07");	//Nebylo jich moc, ale drahocenej čas byl ztracen!
 	AI_Output(self,other,"DIA_PAL_7523_HowHere_01_08");	//Když jsme přišli k pevnosti, tak nad ní už vlála skřetí standarta.
 	AI_Output(self,other,"DIA_PAL_7523_HowHere_01_09");	//Utábořili jsme se zde a měli jsme v plánu počkat, jestli někdo nepřežil. Nikdo se neukázal.

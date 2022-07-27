@@ -90,7 +90,7 @@ func void DIA_Addon_Nefarius_Neues_find()
 	AI_Output(self,other,"DIA_Addon_Nefarius_Neues_find_05_02");	//Máme jistý nápad.
 	Log_CreateTopic(TOPIC_Addon_Flut,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_Flut,LOG_Running);
-	B_LogEntry(TOPIC_Addon_Flut,"Nefarius si myslí, že bych si měl promluvit se Saturasem o tomhle městě v rujnách.");
+	B_LogEntry(TOPIC_Addon_Flut,"Nefarius si myslí, že bych si měl promluvit se Saturasem o tomhle městě v ruinách.");
 	NefariusADW_Talk2Saturas = TRUE;
 };
 
@@ -107,14 +107,14 @@ func void DIA_Addon_Nefarius_Neues_was()
 	AI_Output(self,other,"DIA_Addon_Nefarius_Neues_was_05_01");	//Někdo z nich svěřil svou duši zlu. Byl to skvělý velitel Quarhodron.
 	AI_Output(self,other,"DIA_Addon_Nefarius_Neues_was_05_02");	//Když se vrátil z jedné úspěšné bitvy, přinesl s sebou i zlo.
 	AI_Output(self,other,"DIA_Addon_Nefarius_Neues_was_05_03");	//Všichni jeho přívrženci začali mít sklon k šílenství a začali bojovat proti svým vlastním lidem.
-	AI_Output(self,other,"DIA_Addon_Nefarius_Neues_was_05_04");	//A nastávájíci občanská válka zničila všechno.
+	AI_Output(self,other,"DIA_Addon_Nefarius_Neues_was_05_04");	//A nastávajíci občanská válka zničila všechno.
 };
 
 func void DIA_Addon_Nefarius_Neues_auf()
 {
 	AI_Output(other,self,"DIA_Addon_Nefarius_Neues_auf_15_00");	//A my hlupáci jsme znovu otevřeli portál.
 	AI_Output(self,other,"DIA_Addon_Nefarius_Neues_auf_05_01");	//Věř mi, taky mě to neteší.
-	AI_Output(self,other,"DIA_Addon_Nefarius_Neues_auf_05_02");	//Ale neměli jsme na výběr?
+	AI_Output(self,other,"DIA_Addon_Nefarius_Neues_auf_05_02");	//Ale měli jsme na výběr?
 	AI_Output(self,other,"DIA_Addon_Nefarius_Neues_auf_05_03");	//Pokud se nám nepodaří zastavit to, co se tady děje, Khorinis postihne stejný osud.
 };
 
@@ -139,7 +139,7 @@ func void DIA_Addon_Nefarius_AncientRune_Info()
 	AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_01_02");	//O skutečnosti, že byli obeznámeni s pojmem magie, nepochybuji.
 	AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_01_03");	//V údolí existuje mnoho chrámů, v nichž by mělo být možné najít odpověď na tuto otázku.
 	AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_01_04");	//Ale, bohužel, moje další studie mě neumožňují se na to podívat.
-	AI_Output(other,self,"DIA_Addon_Nefarius_AncientRune_01_05");	//Pokud něco najdu, určitě vám dám vědět.
+	AI_Output(other,self,"DIA_Addon_Nefarius_AncientRune_01_05");	//Pokud něco najdu, určitě ti dám vědět.
 	AI_Output(self,other,"DIA_Addon_Nefarius_AncientRune_01_06");	//Spoléhám na to. Taková znalost nám pomůže hlouběji prozkoumat jejich kulturu.
 	MIS_AncientRune = LOG_Running;
 	Log_CreateTopic(TOPIC_AncientRune,LOG_MISSION);
@@ -266,7 +266,7 @@ func void DIA_Addon_Nefarius_PermADW_Info()
 	MIS_NEFARIUS_POTIONADW = LOG_Running;
 	Log_CreateTopic(TOPIC_NEFARIUS_POTIONADW,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_NEFARIUS_POTIONADW,LOG_Running);
-	B_LogEntry(TOPIC_NEFARIUS_POTIONADW,"Nefarius potřebovat recept, který se nachází za vstupem do Svobodného dolu.");
+	B_LogEntry(TOPIC_NEFARIUS_POTIONADW,"Nefarius potřebuje recept, který se nachází za vstupem do Svobodného dolu.");
 };
 
 instance DIA_ADDON_NEFARIUS1_PERMADW(C_Info)
@@ -301,9 +301,9 @@ func void dia_addon_nefarius1_permadw_info()
 	AI_Output(self,other,"DIA_Addon_Nefarius1_PermADW_05_97");	//Může tě to ochránit před účinky temné magie.
 	AI_Output(other,self,"DIA_Addon_Nefarius1_PermADW_15_05");	//To zní dobře. A můžu ho využít?
 	AI_Output(self,other,"DIA_Addon_Nefarius1_PermADW_05_06");	//Sám ho uvařit nedokážeš, ale jako poděkování za jeho nalezení ti pomůžu.
-	AI_Output(self,other,"DIA_Addon_Nefarius1_PermADW_05_10");	//Přines mi dvě srdcem ohnivého golema, tři perly a pět láhví grogu. A já ti pak uvařím tenhle skvělý lektvar.
+	AI_Output(self,other,"DIA_Addon_Nefarius1_PermADW_05_10");	//Přines mi dvě srdce ohnivého golema, tři perly a pět láhví grogu. A já ti pak uvařím tenhle skvělý lektvar.
 	NEFARIUS_PERMADW = TRUE;
-	B_LogEntry(TOPIC_NEFARIUS_POTIONADW,"Nefarius může uvařit lektvar - 'Ledový plášť'. Za tímto účelem je třeba: dvě srdce ohnivého golema, tři perly a pěti láhví grogu.");
+	B_LogEntry(TOPIC_NEFARIUS_POTIONADW,"Nefarius může uvařit lektvar - 'Ledový plášť'. Za tímto účelem je třeba: dvě srdce ohnivého golema, tři perly a pět láhví grogu.");
 };
 
 instance DIA_ADDON_NEFARIUS2_PERMADW(C_Info)
@@ -336,7 +336,7 @@ func void dia_addon_nefarius2_permadw_info()
 	B_GiveInvItems(self,other,itpo_waterfire,1);
 	MIS_NEFARIUS_POTIONADW = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_NEFARIUS_POTIONADW,LOG_SUCCESS);
-	B_LogEntry(TOPIC_NEFARIUS_POTIONADW,"Nefarius mi připravil Ledový plášť.");
+	B_LogEntry(TOPIC_NEFARIUS_POTIONADW,"Nefarius mi připravil 'Ledový plášť'.");
 };
 
 instance DIA_Addon_Nefarius_PreTeach(C_Info)
@@ -373,7 +373,7 @@ instance DIA_Addon_Nefarius_ADW_Runen(C_Info)
 	condition = DIA_Addon_Nefarius_ADW_Runen_Condition;
 	information = DIA_Addon_Nefarius_ADW_Runen_Info;
 	permanent = TRUE;
-	description = "Uč mě (tvorba run).";
+	description = "Uč mě. (tvorba run)";
 };
 
 func int DIA_Addon_Nefarius_ADW_Runen_Condition()

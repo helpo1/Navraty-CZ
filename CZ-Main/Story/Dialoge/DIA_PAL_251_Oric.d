@@ -145,7 +145,7 @@ func void DIA_Oric_Statue_Done_Info()
 	AI_Output(other,self,"DIA_Oric_Statue_Done_01_04");	//Je to na tobě vidět.
 	MIS_OricStatue = LOG_Success;
 	Log_SetTopicStatus(TOPIC_OricStatue,LOG_Success);
-	B_LogEntry(TOPIC_OricStatue,"Získal jsem pro paladina Orika sošku Innose... byl šťastný.");
+	B_LogEntry(TOPIC_OricStatue,"Získal jsem pro paladina Orica sošku Innose... byl šťastný.");
 };
 
 instance DIA_Oric_ScoutMine(C_Info)
@@ -202,7 +202,7 @@ func void DIA_Oric_Perm_Info()
 	}
 	else if(MIS_ScoutMine == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Oric_Perm_11_02");	//Situace se vyhrotila do krajnosti. My neustoupíme. Innos je s námi on nás od tud vyvede.
+		AI_Output(self,other,"DIA_Oric_Perm_11_02");	//Situace se vyhrotila do krajnosti. My neustoupíme. Innos je s námi on nás odtud vyvede.
 	}
 	else
 	{
@@ -286,7 +286,7 @@ func void DIA_Oric_IAmBack_Info()
 	AI_Output(self,other,"DIA_Oric_IAmBack_11_01");	//Nikdy jsem nemyslel, že tě ještě uvidím.
 	if(hero.guild == GIL_PAL)
 	{
-		AI_Output(self,other,"DIA_Oric_IAmBack_11_02");	//Vítám tě ve jménu řádu
+		AI_Output(self,other,"DIA_Oric_IAmBack_11_02");	//Vítám tě ve jménu řádu.
 	}
 	else if(hero.guild == GIL_KDF)
 	{
@@ -378,7 +378,7 @@ func int DIA_Oric_NeedStuff_Condition()
 
 func void DIA_Oric_NeedStuff_Info()
 {
-	AI_Output(other,self,"DIA_Oric_NeedStuff_15_00");	//Potřebuji vybavení
+	AI_Output(other,self,"DIA_Oric_NeedStuff_15_00");	//Potřebuji vybavení.
 	AI_Output(self,other,"DIA_Oric_NeedStuff_11_01");	//Nemáme toho moc, co bychom ti mohli dát.
 	AI_Output(self,other,"DIA_Oric_NeedStuff_11_02");	//Můžu ti nabídnout toto.
 	Info_ClearChoices(DIA_Oric_NeedStuff);
@@ -402,7 +402,7 @@ func void DIA_Oric_NeedStuff_Mana()
 	AI_Output(other,self,"DIA_Oric_NeedStuff_Mana_15_00");	//Vezmu si ty lektvary many.
 	AI_Output(self,other,"DIA_Oric_NeedStuff_Mana_11_01");	//Dobrá volba, budou se ti hodit. Ať tě Innos ochraňuje.
 	CreateInvItems(self,ItPo_Mana_03,3);
-	B_GiveInvItems(self,other,ItPo_Health_03,3);
+	B_GiveInvItems(self,other,ItPo_Mana_03,3);
 	Info_ClearChoices(DIA_Oric_NeedStuff);
 };
 
@@ -431,7 +431,7 @@ instance DIA_Oric_NoMurder(C_Info)
 	nr = 7;
 	condition = DIA_Oric_NoMurder_Condition;
 	information = DIA_Oric_NoMurder_Info;
-	description = "Nemůžu zabít Hosh-Paka takovím podlím způsobem.";
+	description = "Nemůžu zabít Hosh-Paka takovým podlým způsobem.";
 };
 
 
@@ -445,7 +445,7 @@ func int DIA_Oric_NoMurder_Condition()
 
 func void DIA_Oric_NoMurder_Info()
 {
-	AI_Output(other,self,"DIA_Oric_NoMurder_15_00");	//Nemůžu zabít Hosh-Paka takovím podlím způsobem
+	AI_Output(other,self,"DIA_Oric_NoMurder_15_00");	//Nemůžu zabít Hosh-Paka takovým podlým způsobem.
 	AI_Output(self,other,"DIA_Oric_NoMurder_11_01");	//Víš jak je naše situace špatná?
 	AI_Output(self,other,"DIA_Oric_NoMurder_11_02");	//Jsme obleženi armádou skřetů a naše zásoby jsou stále menší!
 	AI_Output(self,other,"DIA_Oric_NoMurder_11_03");	//Pokud neuspějeme, bude to mít dopad na celé království!
@@ -521,7 +521,7 @@ func void dia_oric_canhelp_nosorry()
 {
 	AI_Output(other,self,"DIA_Oric_CanHelp_NoSorry_01_01");	//Je to příliš riskantní! Nesouhlasím.
 	AI_Output(self,other,"DIA_Oric_CanHelp_NoSorry_01_02");	//Hmmm. No, to je tvoje rozhodnutí.
-	AI_Output(self,other,"DIA_Oric_CanHelp_NoSorry_01_05");	//(se smutným úsměvem) Musím najít jiného šílenece. I když pochybuji, že se tady někdo takový najde.
+	AI_Output(self,other,"DIA_Oric_CanHelp_NoSorry_01_05");	//(se smutným úsměvem) Musím najít jiného šílence. I když pochybuji, že se tady někdo takový najde.
 	Info_ClearChoices(dia_oric_canhelpagain);
 };
 
@@ -540,7 +540,7 @@ func void dia_oric_canhelpagain_stuff()
 		AI_Output(other,self,"DIA_Oric_CanHelpAgain_Stuff_01_06");	//Budu potřebovat výbavu.
 		AI_Output(self,other,"DIA_Oric_CanHelpAgain_Stuff_01_07");	//Výborně, příteli. Věděl jsem, že se na tebe můžu spolehnout.
 	};
-	AI_Output(self,other,"DIA_Oric_CanHelpAgain_Stuff_01_08");	//Ohledně vzbavení... tady je to poslední, co máme.
+	AI_Output(self,other,"DIA_Oric_CanHelpAgain_Stuff_01_08");	//Ohledně vybavení... tady je to poslední, co máme.
 	AI_Output(self,other,"DIA_Oric_CanHelpAgain_Stuff_01_09");	//Vyber to, co nejvíce potřebuješ.
 	MIS_KILLOCELITE = LOG_Running;
 	Log_CreateTopic(TOPIC_KILLOCELITE,LOG_MISSION);
@@ -555,7 +555,7 @@ func void dia_oric_canhelpagain_stuff()
 
 func void dia_oric_canhelpagain_health()
 {
-	AI_Output(other,self,"DIA_Oric_CanHelpAgain_Health_15_00");	// Vezmu si elixír života.
+	AI_Output(other,self,"DIA_Oric_CanHelpAgain_Health_15_00");	//Vezmu si elixír života.
 	CreateInvItems(self,ItPo_Perm_Health,1);
 	B_GiveInvItems(self,other,ItPo_Perm_Health,1);
 	AI_Output(self,other,"DIA_Oric_CanHelpAgain_Health_11_01");	//Dobrý výběr, snad tě udrží při životě.
@@ -703,7 +703,7 @@ func int DIA_Oric_HoshDead_Condition()
 func void DIA_Oric_HoshDead_Info()
 {
 	AI_Output(other,self,"DIA_Oric_HoshDead_15_00");	//Hosh-Pak je mrtev!
-	AI_Output(self,other,"DIA_Oric_HoshDead_11_01");	//Skvěle! Teď jsou naše šance zase lepší!.
+	AI_Output(self,other,"DIA_Oric_HoshDead_11_01");	//Skvěle! Teď jsou naše šance zase lepší!
 	AI_Output(self,other,"DIA_Oric_HoshDead_11_02");	//Myslím, že nám to dalo alespoň týden času na odpočinek a doplnění zásob!
 	MIS_KillHoshPak = LOG_SUCCESS;
 	B_GivePlayerXP(XP_KillHosh_Pak);
@@ -738,7 +738,7 @@ func void DIA_Oric_AnyNews_Info()
 	}
 	else if(MIS_AllDragonsDead == TRUE)
 	{
-		AI_Output(self,other,"DIA_Oric_AnyNews_11_02");	//Ano. Jsi náš hrdina. Zbavit se všech draků najednou není v silách smrtelnika a ty jsi to dokázal.
+		AI_Output(self,other,"DIA_Oric_AnyNews_11_02");	//Ano. Jsi náš hrdina. Zbavit se všech draků najednou není v silách smrtelníka a ty jsi to dokázal.
 	}
 	else if(MIS_KillHoshPak == LOG_SUCCESS)
 	{

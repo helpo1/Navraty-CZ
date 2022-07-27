@@ -56,7 +56,7 @@ func void dia_pal_9161_guardwatch_hallo_info()
 	{
 		AI_Output(self,other,"DIA_Pal_9161_GuardWatch_Hallo_01_01");	//Kam si myslíš že jdeš?
 		AI_Output(other,self,"DIA_Pal_9161_GuardWatch_Hallo_01_02");	//A kam, že jdu?
-		AI_Output(self,other,"DIA_Pal_9161_GuardWatch_Hallo_01_03");	//K lordovi Varusovi- vedoucímu posádky.
+		AI_Output(self,other,"DIA_Pal_9161_GuardWatch_Hallo_01_03");	//K lordovi Varusovi - vedoucímu posádky.
 		if((MIS_PALADINFOOD == LOG_Running) && (HAGENSENTTOVARUS == TRUE))
 		{
 			AI_Output(other,self,"DIA_Pal_9161_GuardWatch_Hallo_01_04");	//Mohu dovnitř?
@@ -75,7 +75,7 @@ func void dia_pal_9161_guardwatch_hallo_info()
 			AI_Output(other,self,"DIA_Pal_9161_GuardWatch_Hallo_01_13");	//Díky, budu na to myslet. A teď už můžu projít?
 			if(other.guild == GIL_PAL)
 			{
-				AI_Output(self,other,"DIA_Pal_9161_GuardWatch_Hallo_01_14");	//No jelikož jsi-jedním z nás můžeš jít, ale nedělej problémy.
+				AI_Output(self,other,"DIA_Pal_9161_GuardWatch_Hallo_01_14");	//No jelikož jsi jedním z nás můžeš jít, ale nedělej problémy.
 				AI_Output(self,other,"DIA_Pal_9161_GuardWatch_Hallo_01_15");	//Ale pamatuj jestli budeš lorda Varuse otravovat tak...
 				AI_Output(self,other,"DIA_Pal_9161_GuardWatch_Hallo_01_16");	//... já budu první kdo tě naučí slušnému chování. Rozumíš?
 				GRANTTOVARUS = TRUE;
@@ -151,7 +151,7 @@ func int dia_pal_9161_guardwatch_hallonotattack_condition()
 
 func void dia_pal_9161_guardwatch_hallonotattack_info()
 {
-	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_HalloNotAttack_01_00");	//Stůj (hrozivě) co tady zase děláš?
+	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_HalloNotAttack_01_00");	//Stůj! (hrozivě) Co tady zase děláš?
 	if(PYROKARSENTTOHAGEN == TRUE)
 	{
 		AI_Output(other,self,"DIA_Pal_9161_GuardWatch_HalloNotAttack_01_20");	//Nech mě slečinko! Mám naléhavou zprávu pro lorda Varuse, jsem mág Ohně.
@@ -294,7 +294,7 @@ func void dia_pal_9161_guardwatch_missgold_info()
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_09");	//To je pravda, ale já prostě na to nemám čas. (podrážděně)
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_10");	//Z křoví vylezla nějaká potvora, vytrhla mě měšec a zdrhla směrem k pláži.
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_11");	//Vystřelil jsem po ní z kuše, ale byla moc velká tma.
-	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_12");	//Byl jsem rozčílenej- ale zjistil jsem, že je to k ničemu.
+	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_12");	//Byl jsem rozčílenej ale zjistil jsem, že je to k ničemu.
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_13");	//Nyní nemám klid, musím najít svůj měšec!
 	AI_Output(other,self,"DIA_Pal_9161_GuardWatch_MissGold_01_14");	//A co v něm bylo tak cenné?
 	AI_Output(self,other,"DIA_Pal_9161_GuardWatch_MissGold_01_15");	//Kromě několika zlatých, jsem tam měl prsten. Moc pro mě znamenal!

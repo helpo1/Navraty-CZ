@@ -234,13 +234,13 @@ func void dia_baalnamib_zustimmung_info()
 		AI_Output(other,self,"DIA_BaalNamib_Zustimmung_01_03");	//Takže to znamená, mistře, že mi dáváte svolení stát se členem Bratrstva?
 		AI_Output(self,other,"DIA_BaalNamib_Zustimmung_01_04");	//Ano, cizinče! Běž za Baalem Orunem a požádej ho o uniformu novice.
 		Log_SetTopicStatus(TOPIC_NAMIBWORK,LOG_SUCCESS);
-		B_LogEntry(TOPIC_NAMIBWORK,"Namib si myslí, že můj duch není ještě tak silný, abych našel uplatnění v Bratrstvu.");
+		B_LogEntry(TOPIC_NAMIBWORK,"Baal Namib si myslí, že lidé se silným duchem jsou užiteční pro Bratrstvo a souhlasí s mým přijetím.");
 		MIS_NAMIBWORK = LOG_SUCCESS;
 		NAMIBAGREED = TRUE;
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_BaalNamib_Zustimmung_01_05");	//Ještě ne- jsi pořád slabý!... (zklamaně)
+		AI_Output(self,other,"DIA_BaalNamib_Zustimmung_01_05");	//Ještě ne - jsi pořád slabý!... (zklamaně)
 		AI_Output(self,other,"DIA_BaalNamib_Zustimmung_01_06");	//Nemrhej mým časem. Vrať se až tvá duše bude silnější!
 	};
 };
@@ -629,9 +629,9 @@ func void DIA_BaalNamib_PrioratStart_yes()
 	B_StartOtherRoutine(SEK_8039_NOVIZE,"TOT");
 	B_StartOtherRoutine(SEK_8040_NOVIZE,"TOT");
 	B_StartOtherRoutine(tpl_8045_hanis,"Death");
-	AI_Output(other,self,"DIA_BaalNamib_PrioratStart_yes_01_01");	//Dobrá, kde mám začít se svím pátráním?
+	AI_Output(other,self,"DIA_BaalNamib_PrioratStart_yes_01_01");	//Dobrá, kde mám začít se svým pátráním?
 	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_02");	//Myslím, že bys měl nejprve prověřit tábor našich sběračů trávy.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_03");	//Už jsme od nich dluho nedostali žádnou zprávu.
+	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_03");	//Už jsme od nich dlouho nedostali žádnou zprávu.
 	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_04");	//Mám o ně velký strach. Zdejší krajina není příliš přátelská.
 	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_05");	//Zaprvé zjisti jestli něco nevědí o ztracených novicích. Každá informace se bude hodit.
 	AI_Output(self,other,"DIA_BaalNamib_PrioratStart_yes_01_06");	//Po návštěvě sběračů se vydej do města a navštiv Baala Parveze.
@@ -672,7 +672,7 @@ func void dia_baalnamib_PrioratNews_info()
 
 	ExpAll = FALSE;
 
-	AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_01");	//Mám pro tebe nějaké novinky
+	AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_01");	//Mám pro tebe nějaké novinky.
 	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_02");	//Dobře tě poslouchám.
 
 	if((PsiCamp_01_Ok == TRUE) && (PsiCamp_01_Done == FALSE))
@@ -688,7 +688,7 @@ func void dia_baalnamib_PrioratNews_info()
 	if((PsiCamp_02_Ok == TRUE) && (PsiCamp_02_Done == FALSE))
 	{
 		ExpAll = ExpAll + 100;
-		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_07");	//U Shreta a jeho sběračů je vše v pořádku.
+		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_07");	//U Shrata a jeho sběračů je vše v pořádku.
 		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_08");	//To mě těší. A vědí něco o ztacených novicích?
 		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_09");	//Ne.
 		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_10");	//Když nic tak nic. A máš ještě nějaké jiné zprávy?
@@ -700,7 +700,7 @@ func void dia_baalnamib_PrioratNews_info()
 		ExpAll = ExpAll + 100;
 		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_11");	//Promluvil jsem s Baalem Parvezem. 
 		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_12");	//A co říkal?
-		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_13");	//Podle něj, ve městě nikdo nováčky z tábora neviděl. 
+		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_13");	//Podle něj, ve městě nikdo novice z tábora neviděl. 
 		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_14");	//A je o tom přesvědčen?
 		AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_15");	//Absolutně. Městská ztráž by to nenechala bez povšimnutí.
 		AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_16");	//Dobře... (zamyšleně) Ještě nějaké novinky?
@@ -760,17 +760,17 @@ func void dia_baalnamib_PrioratNews_info()
 				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_31");	//Zjisti - komu by mohl takový meč patřit.
 				AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_32");	//To nebude snadné. Nemáš nějakou radu, jak na to?
 				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_33");	//Zkus se poptat u zdejších kovářů. Kdo, když ne oni by mohl něco vědět o zbraních.
-				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_34");	//Možná budeš mít štěstí a něko z nich ti k tomu meči něco poví.
+				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_34");	//Možná budeš mít štěstí a někdo z nich ti k tomu meči něco poví.
 				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_35");	//Další novinky nemáš?
 				BladePrioratSeek = TRUE;
-				B_LogEntry(TOPIC_PrioratStart,"Řekl jsem Baalu Namibovi o útoku na tábor sběračů trávy a ukázal jsem mu meč, ktrý měl jeden z útočníků. Guru mě požádal abych o tom meči zjistil co nejvíce, měl bych začít u zdejších kovářů.");
+				B_LogEntry(TOPIC_PrioratStart,"Řekl jsem Baalu Namibovi o útoku na tábor sběračů trávy a ukázal jsem mu meč, který měl jeden z útočníků. Guru mě požádal abych o tom meči zjistil co nejvíce, měl bych začít u zdejších kovářů.");
 			}
 			else
 			{
 				AI_Output(other,self,"DIA_BaalNamib_PrioratNews_01_36");	//Bohužel nemám ho sebou.
 				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_37");	//Tak ho přines, ať se na něj můžu podívat.
 				AI_Output(self,other,"DIA_BaalNamib_PrioratNews_01_39");	//Nějaké další novinky?
-				B_LogEntry(TOPIC_PrioratStart,"Řekl jsem Baalu Namibovi o útoku na tábor sběračů trávy a ukázal jsem mu meč, ktrý měl jeden z útočníků. Guru mě požádal abych o tom meči zjistil co nejvíce, měl bych začít u zdejších kovářů.");
+				B_LogEntry(TOPIC_PrioratStart,"Řekl jsem Baalu Namibovi o útoku na tábor sběračů trávy a ukázal jsem mu meč, který měl jeden z útočníků. Guru mě požádal abych o tom meči zjistil co nejvíce, měl bych začít u zdejších kovářů.");
 				MissAssBlade = TRUE;
 			};
 
@@ -852,9 +852,9 @@ func void dia_baalnamib_PrioratNews_Blade_info()
 	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_06");	//Zjisti - komu by mohl takový meč patřit.
 	AI_Output(other,self,"DIA_BaalNamib_PrioratNews_Blade_01_07");	//To nebude snadné. Nemáš nějakou radu, jak na to?
 	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_08");	//Zkus se poptat u zdejších kovářů. Kdo, když ne oni by mohl něco vědět o zbraních.
-	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_09");	//Možná budeš mít štěstí a něko z nich ti k tomu meči něco poví.
+	AI_Output(self,other,"DIA_BaalNamib_PrioratNews_Blade_01_09");	//Možná budeš mít štěstí a někdo z nich ti k tomu meči něco poví.
 	BladePrioratSeek = TRUE;
-	B_LogEntry(TOPIC_PrioratStart,"Řekl jsem Baalu Namibovi o útoku na tábor sběračů trávy a ukázal jsem mu meč, ktrý měl jeden z útočníků. Guru mě požádal abych o tom meči zjistil co nejvíce, měl bych začít u zdejších kovářů.");
+	B_LogEntry(TOPIC_PrioratStart,"Řekl jsem Baalu Namibovi o útoku na tábor sběračů trávy a ukázal jsem mu meč, který měl jeden z útočníků. Guru mě požádal abych o tom meči zjistil co nejvíce, měl bych začít u zdejších kovářů.");
 
 
 	if((PsiCamp_01_Done == TRUE) && (PsiCamp_02_Done == TRUE) && (PsiCamp_03_Done == TRUE) && (PsiCamp_04_Done == TRUE) && (BladePrioratSeek == TRUE))
@@ -900,7 +900,7 @@ func void dia_baalnamib_ShadowKnown_info()
 	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_12");	//Řekni mu ať pošle několik templářů!
 	AI_Output(other,self,"DIA_BaalNamib_ShadowKnown_01_13");	//Dobře a co mám dělat já?
 	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_14");	//V současné době pro tebe žádnou práci nemám.
-	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_15");	//Ale jestli chceš s něčím pomoci - vydej se ze templáři do některého z táborů.
+	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_15");	//Ale jestli chceš s něčím pomoci - vydej se za templáři do některého z táborů.
 	AI_Output(self,other,"DIA_BaalNamib_ShadowKnown_01_16");	//Myslím, že člověk navíc nebude na škodu.
 	NamibSendTempler = TRUE;
 	B_LogEntry(TOPIC_PrioratStart,"Řekl jsem Baalu Namibovi všechno co jsem zjistil o útočnících. Byl velmi znepokojen, že za útokem stojí bratrstvo Masyaf. Namib mě poslal za cvičitelem templářů aby se postaral o bezpečnost sběračů trávy. Mohu také pomoci templářům.");
@@ -930,7 +930,7 @@ func void dia_baalnamib_WhereToGo_info()
 {
 	AI_Output(other,self,"DIA_BaalNamib_WhereToGo_01_01");	//Do jakého tábora sběračů bych se měl vydat?
 	AI_Output(self,other,"DIA_BaalNamib_WhereToGo_01_02");	//Myslím, že v táboře na severu v blízkosti pyramidy bude tvá pomoc nejvíce potřeba.
-	AI_Output(other,self,"DIA_BaalNamib_WhereToGo_01_03");	//Proč si to myslíš.?
+	AI_Output(other,self,"DIA_BaalNamib_WhereToGo_01_03");	//Proč si to myslíš?
 	AI_Output(self,other,"DIA_BaalNamib_WhereToGo_01_04");	//Bratrstvo Masyaf se těžko odváží zaútočit na tábor v blízkosti města. I pro ně je to příliš riskantní.
 	AI_Output(self,other,"DIA_BaalNamib_WhereToGo_01_05");	//Koneckonců, už je odhalena jejich přítomnost na ostrově.
 	B_LogEntry(TOPIC_PrioratStart,"Baal Namib mě radil jít do tábora, který se nachází v severní části Khorinisu, v blízkosti pyramidy.");
@@ -983,7 +983,7 @@ func void dia_baalnamib_AssStopAttack_info()
 		B_GiveInvItems(other,self,ItAm_MasiafKey,1);
 		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_14");	//Ano... (zamyšleně) zvláštní věc. 
 		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_15");	//Doufám, že ti nebude vadit když si ho ponechám. 
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_16");	//Možná se mě podaří zjitit víc podrobností o tom amuletu.
+		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_16");	//Možná se mě podaří zjistit víc podrobností o tom amuletu.
 
 		if(PlayerKnowsMasiafKey == TRUE)
 		{
@@ -1013,7 +1013,7 @@ func void dia_baalnamib_AssStopAttack_info()
 		NamibAmuletSearch = TRUE;
 		AI_Output(other,self,"DIA_BaalNamib_AssStopAttack_01_30");	//Zatím nic.
 		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_31");	//To je zlé. Potřebujeme více informací o těch útočnících.
-		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_32");	//Dobrá zatí si dej pohov, ale jestli něco zjistíš, tak mě dej hned vědět!
+		AI_Output(self,other,"DIA_BaalNamib_AssStopAttack_01_32");	//Dobrá zatím si dej pohov, ale jestli něco zjistíš, tak mě dej hned vědět!
 	};
 };
 
@@ -1039,14 +1039,14 @@ func void dia_baalnamib_MasiafAmulet_info()
 {
 	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_01");	//Něco bych pro tebe měl.
 	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_02");	//Co konkrétně?
-	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_03");	//Zvláštní amulet, který jsem našelu jednoho z útočníků.
+	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_03");	//Zvláštní amulet, který jsem našel u jednoho z útočníků.
 	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_04");	//Hmm... (se zájmem) Podej mi ho, ať se podívám.
 	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_01_05");	//Tady je.
 	B_GiveInvItems(other,self,ItAm_MasiafKey,1);
 	Npc_RemoveInvItems(self,ItAm_MasiafKey,Npc_HasItems(self,ItAm_MasiafKey));
 	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_06");	//Ano... (zamyšleně) zvláštní věc. 
 	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_07");	//Doufám, že ti nebude vadit když si ho ponechám. 
-	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_08");	//Možná se mě podaří zjitit víc podrobností o tom amuletu.
+	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_01_08");	//Možná se mě podaří zjistit víc podrobností o tom amuletu.
 
 	if(PlayerKnowsMasiafKey == TRUE)
 	{
@@ -1112,7 +1112,7 @@ func void dia_baalnamib_MasiafAmulet_News_info()
 	AI_Output(other,self,"DIA_BaalNamib_MasiafAmulet_News_01_11");	//Jak se jmenuje ten novic?
 	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_12");	//Jeho jméno je Loki. Nyní je ve městě společně s Baalem Parvezem.
 	AI_Output(self,other,"DIA_BaalNamib_MasiafAmulet_News_01_13");	//Duchovní meditace a klid to je přesně to co potřebuje po takovém zážitku.
-	B_LogEntry(TOPIC_PrioratStart,"Baal Namib mi řekl, že nedávno znovu zaůtočily na novice, ale jednomu z nich se podařilo útočníkům uniknout. Novic jménem Loki podle Guru něco ví o tajemném amuletu.");
+	B_LogEntry(TOPIC_PrioratStart,"Baal Namib mi řekl, že nedávno znovu zaútočily na novice, ale jednomu z nich se podařilo útočníkům uniknout. Novic jménem Loki podle Guru něco ví o tajemném amuletu.");
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(SEK_8049_LOKI,"NW_CITY_LOKI");
 };
@@ -1239,7 +1239,7 @@ func int dia_baalnamib_Assasins_DoneHram_condition()
 func void dia_baalnamib_Assasins_DoneHram_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneHram_01_00");	//To ještě není všechno. Vzpomýnáš, říkal jsem ti o tajném průchodu skrytém ve skále?
+	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneHram_01_00");	//To ještě není všechno. Vzpomínáš, říkal jsem ti o tajném průchodu skrytém ve skále?
 	AI_Output(self,other,"DIA_BaalNamib_Assasins_DoneHram_01_01");	//Samo sebou. Vzpomínám si na to.
 	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneHram_01_02");	//Na druhé straně jeskyně je menší údolí, kde se nachází chrám. To bylo sídlo Cor Kaloma a bratrstva Masyaf.
 	AI_Output(other,self,"DIA_BaalNamib_Assasins_DoneHram_01_03");	//A tam oni drželi lidi, které unesli. A také vaše novice.

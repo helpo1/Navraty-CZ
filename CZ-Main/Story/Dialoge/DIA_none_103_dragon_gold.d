@@ -43,7 +43,7 @@ func void dia_dragon_gold_hello_info()
 	AI_Output(self,other,"DIA_Dragon_Gold_Hello_01_01");	//Již dlouhý čas jsem neviděl člověka...
 	AI_Output(other,self,"DIA_Dragon_Gold_Hello_01_02");	//Tak proto byl tento portál schovaný. Ještě jeden drak! Kdo by si to pomyslel!
 	AI_Output(other,self,"DIA_Dragon_Gold_Hello_01_05");	//Kdo jsi?!
-	AI_Output(self,other,"DIA_Dragon_Gold_Hello_01_06");	//Já jsem Ashtar, zlatý drak, ale mylím, že ti to moc neřekne...
+	AI_Output(self,other,"DIA_Dragon_Gold_Hello_01_06");	//Já jsem Ashtar, zlatý drak. Málokomu se dostalo této cti.
 	AI_Output(other,self,"DIA_Dragon_Gold_Hello_01_11");	//Cti?! Být sežrán drakem je podle tebe čest?!
 	AI_Output(self,other,"DIA_Dragon_Gold_Hello_01_12");	//Ha, ha, ha!... (vrčení) Jsi směšný. Už dlouho mě nikdo takto nepobavil...
 	AI_Output(other,self,"DIA_Dragon_Gold_Hello_01_14");	//Když draci jsou generací temnoty, není snad smysl jejich života zabít vše živé, co uvidí?!
@@ -143,11 +143,11 @@ func void dia_dragon_gold_ADANOSVALLEY_info()
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_11");	//Podle textu je tohle vyvolání...
 	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_12");	//... Čeho?
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_13");	//... (vrčí) Vyvolání starověkého Adanova strážce!
-	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_14");	//Zajímavé! Co je to za gardu?
+	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_14");	//Zajímavé! Co je to za strážce?
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_15");	//Rozumím tomu tak že je to tvor co kdysi střežil Adanův chrám.
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_16");	//Nicméně, pokud je mi známo, jejich čas již dávno odezněl.
 	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_17");	//To je vše, co říká?
-	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_18");	//(vrčí) odkazuje taky na nějaký mocný artefakt, který tito tvorové chránily.
+	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_18");	//(vrčí) Odkazuje taky na nějaký mocný artefakt, který tito tvorové chránily.
 	AI_Output(other,self,"DIA_Dragon_Gold_ADANOSVALLEY_01_19");	//Velmi zajímavé. Co je to za artefakt?
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_20");	//O tom se tu nezmiňují...
 	AI_Output(self,other,"DIA_Dragon_Gold_ADANOSVALLEY_01_21");	//Jestli někdo jiný ví něco více, tak to budou ti strážci? 
@@ -260,17 +260,17 @@ func void DIA_DRAGON_GOLD_AVGO_info()
 	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_10");	//Takže, jak se zdá, artefakt je tam? Jak se tam dostat?
 	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_11");	//(vrčení) Zaprvé je nutno použít srdce Strážce. Mělo by být použito před magickým portálem.
 	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_13");	//Vynikajicí! Jedno už mám.
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_14");	//JAK JSTE TO...? Můžeš ho vyvolat v tomto světě znovu?
+	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_14");	//JAK JSI TO...? Můžeš ho vyvolat v tomto světě znovu?
 	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_15");	//Ano jednou. Jestli jsem chtěl jeho srdce, musel zemřít.
 	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_16");	//(vrčení) Jsem stále více překvapen, jak se lidé jako ty stále hůře snášíte s prastarými bytostmi.
 	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_17");	//Já někdy taky.
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_18");	//Jak vidím, bohové ti stále přejí když jsi po tolika případech tady, zdravý. Jiné vysvětlení nemám.
+	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_18");	//Jak vidím, bohové ti stále přejí když jsi po tolika případech tady, živý. Jiné vysvětlení nemám.
 	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_20");	//To všechno je sice pěkné ale odbočily jsme od témata. Co s tím portálem?
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_21");	//Tvoje poselství říká, že se nachází v severní části údolí. 
-	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_22");	//Je možno přesněji? 
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_23");	//Nic víc tu není... Budeš muset hledat a snad i najít.
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_25");	//(vrčení) Ale už znovu tě chci varovat... Adanova země může být velmi nebezpečná pro obyčejného smrtelníka jako jsi ty.
-	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_27");	//Takže se dobře připrav, než tam vyrazíš...
+	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_21");	//Tady se píše, že se nachází v severní části údolí. 
+	AI_Output(other,self,"DIA_DRAGON_GOLD_AVGO_01_22");	//Můžeš být přesnější?
+	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_23");	//Nic víc tu není... Takže toto místo budeš muset najít sám.
+	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_25");	//(vrčení) Ale znovu tě chci varovat... Adanova země může být velmi nebezpečná pro obyčejného smrtelníka jako jsi ty.
+	AI_Output(self,other,"DIA_DRAGON_GOLD_AVGO_01_27");	//Tak se dobře připrav, než tam půjdeš...
 	B_LogEntry(TOPIC_AdanosCrone,"Ashtar přeložil tabulku strážce chrámu. Je tam uvedena zmínka o magickém portálu v severní části údolí, který vede do Adanovy země. Skvělé místo kde se nachází tajemný artefakt, který jsem hledal tady. K aktivaci portálu musím použít srdce strážce. Ashtar mě varoval, že to tam může být velice nebezpečné, proto se musím důkladně připravit, než vyrazím.");
 	InsFireShadowGuards = TRUE;
 	AI_StopProcessInfos(self);
@@ -377,13 +377,13 @@ func void dia_dragon_gold_whatman_info()
 	if((Npc_HasItems(other,itru_beliarsrune01) == TRUE) || (Npc_HasItems(other,itru_beliarsrune02) == TRUE) || (Npc_HasItems(other,itru_beliarsrune03) == TRUE) || (Npc_HasItems(other,itru_beliarsrune04) == TRUE) || (Npc_HasItems(other,itru_beliarsrune05) == TRUE) || (Npc_HasItems(other,itru_beliarsrune06) == TRUE))
 	{
 		AI_Output(other,self,"DIA_Dragon_Gold_WhatMan_01_02");	//To nepůjde, proměnil jsem Dráp v runu!
-		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_03");	//Není důležité, jestli je v podobě meče, nebo runy!
+		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_03");	//To není důležité, jestli je v podobě meče, nebo runy!
 		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_09");	//(studuje) Já to věděl!
 		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_10");	//Symbol je matný a necítím Senyakovu energii.
 		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_11");	//To znamená jediné - Senyak uprchl!
 		AI_Output(self,other,"DIA_Dragon_Gold_WhatMan_01_13");	//To je velmi špatné!
 		AI_Output(other,self,"DIA_Dragon_Gold_WhatMan_01_16");	//Co budeme dělat?
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Nejhorší obavy se ukázali být pravdou... Energie Drápu je matná, takže Senyak uprchl...");
+		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Nejhorší obavy se ukázali být pravdou... Energie Drápu je matná, takže Senyak uprchl.");
 	}
 	else
 	{
@@ -482,7 +482,7 @@ func void dia_dragon_gold_destroywaytwo_info()
 	AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_06");	//A jak můžu chytit Senyakovu duši?
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_07");	//(vrčení) ... Opakujeme starou chybu...
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_09");	//K zajmutí duše slouží jedna prastará věc.
-	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_11");	//Je to runa. Jmenuje se - Mora Ulartu! V jazyce prastarých to znamená bludiště duší.
+	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_11");	//Je to runa. Jmenuje se - Mora Ulartu! V jazyce prastarých to znamená Bludiště duší.
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_12");	//Měl bys ji použít na Senyaka.
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_13");	//Je snažší o tom mluvit, než ho zabít...
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_16");	//Ne, vůbec ne. Je nutno duši umístit zpět do krystalů.
@@ -501,10 +501,10 @@ func void dia_dragon_gold_destroywaytwo_info()
 				AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_22");	//Hmm... Myslím, že někoho takového znám.
 				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_23");	//... (vrčení)
 				AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_24");	//A až najdu kouzlo, kde mám hledat Senyaka?
-				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_25");	//První najdi bludiště Duší a až potom se budeme bavit o tvém setkání se Senyakem... (vrčení)
+				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_25");	//První najdi Bludiště duší a až potom se budeme bavit o tvém setkání se Senyakem... (vrčení)
 				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_27");	//Rychle, potřebujeme každou minutu!
 				TASKFINDDARKSOUL = TRUE;
-				B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Ashtar mi řekl ještě o jednom způsobu, jak zničit Senyaka. Tedy ne úplně zničit, ale uvěznit jeho duši, tak jako byla dříve. Kvůli tomu musím najít Mora Ulartu, ve starověkém jazyce to znamená bludiště Duší. Drak mi řekl, že by o ní mohl vědět někdo, kdo se zabývá magií Temnoty. Zajdu za Creolem!");
+				B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Ashtar mi řekl ještě o jednom způsobu, jak zničit Senyaka. Tedy ne úplně zničit, ale uvěznit jeho duši, tak jako byla dříve. Kvůli tomu musím najít Mora Ulartu, ve starověkém jazyce to znamená Bludiště duší. Drak mi řekl, že by o ní mohl vědět někdo, kdo se zabývá magií Temnoty. Zajdu za Creolem!");
 			}
 			else
 			{
@@ -514,24 +514,24 @@ func void dia_dragon_gold_destroywaytwo_info()
 				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_25");	//První najdi bludiště Duší a až potom se budeme bavit o tvém setkání se Senyakem... (vrčení)
 				AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_27");	//Rychle, potřebujeme každou minutu!
 				TASKFINDDARKSOUL = TRUE;
-				B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Ashtar mi řekl ještě o jednom způsobu, jak zničit Senyaka. Tedy ne úplně zničit, ale uvěznit jeho duši, tak jako byla dříve. Kvůli tomu musím najít Mora Ulartu, ve starověkém jazyce to znamená bludiště Duší. Drak mi řekl, že by o ní mohl vědět někdo, kdo se zabývá magií Temnoty. Jen jestli někoho najdu.");
+				B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Ashtar mi řekl ještě o jednom způsobu, jak zničit Senyaka. Tedy ne úplně zničit, ale uvěznit jeho duši, tak jako byla dříve. Kvůli tomu musím najít Mora Ulartu, ve starověkém jazyce to znamená Bludiště duší. Drak mi řekl, že by o ní mohl vědět někdo, kdo se zabývá magií Temnoty. Jen jestli někoho najdu.");
 			};
 		}
 		else
 		{
 			AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_34");	//Hmm... Obávám se, že nikoho takového nenajdu!
 			AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_35");	//... Pak neztrácej čas a jdi hledat sféry elementů... (vrčení)
-			B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Ashtar mi řekl ještě o jednom způsobu, jak zničit Senyaka. Tedy ne úplně zničit, ale uvěznit jeho duši, tak jako byla dříve. Kvůli tomu musím najít Mora Ulartu, ve starověkém jazyce to znamená bludiště Duší. Drak mi řekl, že by o ní mohl vědět někdo, kdo se zabývá magií Temnoty. Jestli někoho takového najdu, asi bych měl na tohle zapomenout...");
+			B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Ashtar mi řekl ještě o jednom způsobu, jak zničit Senyaka. Tedy ne úplně zničit, ale uvěznit jeho duši, tak jako byla dříve. Kvůli tomu musím najít Mora Ulartu, ve starověkém jazyce to znamená Bludiště duší. Drak mi řekl, že by o ní mohl vědět někdo, kdo se zabývá magií Temnoty. Jestli někoho takového najdu, asi bych měl na tohle zapomenout...");
 		};
 	}
 	else
 	{
 		AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_37");	//Hmm... Myslím, že vím kam jít.
 		AI_Output(other,self,"DIA_Dragon_Gold_DestroyWayTwo_01_24");	//A až najdu kouzlo, kde mám hledat Senyaka?
-		AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_25");	//Prvně najdi bludiště Duší a až potom se budeme bavit o tvém setkání se Senyakem... (vrčení)
+		AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_25");	//Prvně najdi Bludiště duší a až potom se budeme bavit o tvém setkání se Senyakem... (vrčení)
 		AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_27");	//Rychle, potřebujeme každou minutu!
 		TASKFINDDARKSOUL = TRUE;
-		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Ashtar mi řekl ještě o jednom způsobu, jak zničit Senyaka. Tedy ne úplně zničit, ale uvěznit jeho duši, tak jako byla dříve. Kvůli tomu musím najít Mora Ulartu, ve starověkém jazyce to znamená bludiště Duší. Drak mi řekl, že by o ní mohl vědět někdo, kdo se zabývá magií Temnoty. Měl bych promluvit s Xardasem!");
+		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Ashtar mi řekl ještě o jednom způsobu, jak zničit Senyaka. Tedy ne úplně zničit, ale uvěznit jeho duši, tak jako byla dříve. Kvůli tomu musím najít Mora Ulartu, ve starověkém jazyce to znamená Bludiště duší. Drak mi řekl, že by o ní mohl vědět někdo, kdo se zabývá magií Temnoty. Měl bych promluvit s Xardasem!");
 	};
 };
 
@@ -605,7 +605,7 @@ func void dia_dragon_gold_clawdestroy_yes()
 	AI_PlayAni(self,"T_SURPRISE_CW");
 	AI_Output(self,other,"DIA_Dragon_Gold_DestroyWayTwo_01_23");	//... (vrčení)
 	AI_Output(self,other,"DIA_Dragon_Gold_ClawDestroy_Yes_01_01");	//To je vše. Dráp je zničen!
-	AI_Output(self,other,"DIA_Dragon_Gold_ClawDestroy_Yes_01_02");	//Svět kvůli nemu už nikdy nebude trpět... (vrčení)
+	AI_Output(self,other,"DIA_Dragon_Gold_ClawDestroy_Yes_01_02");	//Svět kvůli němu už nikdy nebude trpět... (vrčení)
 	DESTROYCLAW = TRUE;
 	TOPIC_END_Klaue = TRUE;
 	Log_SetTopicStatus(TOPIC_Addon_Klaue,LOG_Success);
@@ -685,7 +685,7 @@ func void dia_dragon_gold_haveoneorall_spheregone()
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_09");	//Arrgh... (vrčení) Takže se ti podařilo získat ji.
 		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_14");	//Ano, a nebylo by špatné vědět co teď.
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15");	//Vše je velmi jednoduché - než začneš bojovat se Senyakem, použij na něho Mora Ulartu.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//Až bude arcidémon poražen, vezmi z jeh srce kámen s duší, který tam vytvoří Mora Ulartu... (vrčení)
+		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//Až bude arcidémon poražen, vezmi z jeho srdce kámen s duší, který tam vytvoří Mora Ulartu... (vrčení)
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17");	//Pak spoj kámen s Drápem na oltáři Temného boha a meč získá část své bývalé síly!
 		TELLGDMU = TRUE;
 		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Pokud mám v úmyslu použít Mora Ulartu na Senyaka, měl bych pak kámen s jeho duší spojit s Drápem na Beliarově oltáři, aby zbraň získala zpět alespoň část své síly.");
@@ -695,7 +695,7 @@ func void dia_dragon_gold_haveoneorall_spheregone()
 		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_22");	//A pokud se mi podaří dostat Mora Ulartu?!
 		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_25");	//Jak ho použiju?
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15");	//Vše je velmi jednoduché - než začneš bojovat se Senyakem, použij na něho Mora Ulartu.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//Až bude arcidémon poražen, vezmi z jeh srce kámen s duší, který tam vytvoří Mora Ulartu... (vrčení)
+		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//Až bude arcidémon poražen, vezmi z jeho srdce kámen s duší, který tam vytvoří Mora Ulartu... (vrčení)
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17");	//Pak spoj kámen s Drápem na oltáři Temného boha a meč získá část své bývalé síly!
 		TELLGDMU = TRUE;
 		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Pokud mám v úmyslu použít Mora Ulartu na Senyaka, měl bych pak kámen s jeho duší spojit s Drápem na Beliarově oltáři, aby zbraň získala zpět alespoň část své síly.");
@@ -707,13 +707,13 @@ func void dia_dragon_gold_haveoneorall_spheregone()
 
 	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_34");	//Raději mi řekni, kde ho můžu najít?!
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_36");	//Jeho klášter je ve světě démonů, kde se smrtelník nemůže dostat!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_37");	//Jedniný způsob, jak se Senyakem bojovat je dostat ho do tohoto světa!
+	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_37");	//Jediný způsob, jak se Senyakem bojovat je dostat ho do tohoto světa!
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_39");	//Stačí si vzít tohle.
 	B_GiveInvItems(self,other,ITMI_DRAGONGOLDGORN,1);
 	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_40");	//Co to je?
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_41");	//Zlatý roh Akhianti. Jeho majitel může přivolat cokoli ze světa démonů, ale vždy jen jednou!
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_42");	//Senyak nemůže odolat síle tohoto artefaktu.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_43");	//Jak jistě chápeš, místo setkání se Senyakem si můžeš vybrat sám, tak vybýrej moudře.
+	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_43");	//Jak jistě chápeš, místo setkání se Senyakem si můžeš vybrat sám, tak vybírej moudře.
 	KNOWS_CRESTMAKE = TRUE;
 	AshtarLastWarn = TRUE;
 	MISSSOULFOREVER = TRUE;
@@ -727,14 +727,14 @@ func void dia_dragon_gold_haveoneorall_mora()
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_09");	//Arrgh... (vrčení) Takže se ti podařilo získat ji.
 	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_14");	//Ano, a nebylo by špatné vědět co teď.
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15");	//Vše je velmi jednoduché - než začneš bojovat se Senyakem, použij na něho Mora Ulartu.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//Až bude arcidémon poražen, vezmi z jeh srce kámen s duší, který tam vytvoří Mora Ulartu.
+	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//Až bude arcidémon poražen, vezmi z jeho srdce kámen s duší, který tam vytvoří Mora Ulartu.
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17");	//Pak spoj kámen s Drápem na oltáři Temného boha a meč získá část své bývalé síly!
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_13");	//Ale musím ti říci, že jestli chceš použít Mora Ulartu...
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_14");	//... NESMÍŠ POUŽÍT KŘÍŽ ELEMENTŮ!... (vrčení)
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_16");	//Nemůže odolat síle Kříže elementů a kámen s jeho duší by se rozpadl!
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_17");	//Proto je třeba bojovat se Senyakem normálním způsobem.
 	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_33");	//Nu, uvidíme.
-	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_1W");	//Řekneš mi jak dosáhnu Senyaka?!
+	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_1W");	//Řekneš mi jak porazím Senyaka?!
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_20");	//Ne... (vrčení)
 	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_21");	//Jak?
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_23");	//V tom případě budež muset použít Kříž elementů!
@@ -783,13 +783,13 @@ func void dia_dragon_gold_haveoneorall_giveheart()
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_04");	//Pak se setkej s arcidémonem.
 	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_GiveHeart_01_05");	//Kde to můžu najít?!
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_36");	//Jeho klášter je ve světě démonů, kde se smrtelník nemůže dostat!
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_37");	//Jedniný způsob, jak se Senyakem bojovat je dostat ho do tohoto světa!
+	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_37");	//Jediný způsob, jak se Senyakem bojovat je dostat ho do tohoto světa!
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_39");	//Stačí si vzít tohle.
 	B_GiveInvItems(self,other,ITMI_DRAGONGOLDGORN,1);
 	AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_40");	//Co to je?
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_41");	//Zlatý roh Akhianti. Jeho majitel může přivolat cokoli ze světa démonů, ale vždy jen jednou!
 	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_42");	//Senyak nemůže odolat síle tohoto artefaktu.
-	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_43");	//Jak jistě chápeš, místo setkání se Senyakem si můžeš vybrat sám, tak vybýrej moudře.
+	AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_43");	//Jak jistě chápeš, místo setkání se Senyakem si můžeš vybrat sám, tak vybírej moudře.
 
 	if((TASKFINDDARKSOUL == TRUE) && (Npc_HasItems(other,itru_moraulartu) >= 1) && (DESTROYCLAW == FALSE) && (TELLGDMU == FALSE))
 	{
@@ -798,7 +798,7 @@ func void dia_dragon_gold_haveoneorall_giveheart()
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_09");	//Arrgh... (vrčení) Takže se ti podařilo získat ji.
 		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_14");	//Jak ta věc funguje?
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15");	//Vše je velmi jednoduché - než začneš bojovat se Senyakem, použij na něho Mora Ulartu.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//Až bude arcidémon poražen, vezmi z jeh srce kámen s duší, který tam vytvoří Mora Ulartu.
+		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//Až bude arcidémon poražen, vezmi z jeho srdce kámen s duší, který tam vytvoří Mora Ulartu.
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17");	//Pak spoj kámen s Drápem na oltáři Temného boha a meč získá část své bývalé síly!
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_13");	//Ale musím ti říci, že jestli chceš použít Mora Ulartu...
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_Mora_01_14");	//... NESMÍŠ POUŽÍT KŘÍŽ ELEMENTŮ!...
@@ -813,7 +813,7 @@ func void dia_dragon_gold_haveoneorall_giveheart()
 	{
 		AI_Output(other,self,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_22");	//A pokud se mi podaří dostat Mora Ulartu?!
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_15");	//Vše je velmi jednoduché - než začneš bojovat se Senyakem, použij na něho Mora Ulartu.
-		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//Až bude arcidémon poražen, vezmi z jeh srce kámen s duší, který tam vytvoří Mora Ulartu.
+		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_16");	//Až bude arcidémon poražen, vezmi z jeho srdce kámen s duší, který tam vytvoří Mora Ulartu.
 		AI_Output(self,other,"DIA_Dragon_Gold_HaveOneOrAll_SphereGone_01_17");	//Pak spoj kámen s Drápem na oltáři Temného boha a meč získá část své bývalé síly!
 		TELLGDMU = TRUE;
 		B_LogEntry(TOPIC_GOLDDRAGONPORTAL,"Pokud chci použít Mora Ulartu na Senyaka, pomůže mi kouzlo, Kříž elementů. Až bude Senyak mrtev, musím propojit kámen s jeho duší spolu s Drápem, abych mu navrátil původní moc!");
@@ -921,16 +921,16 @@ func void dia_Dragon_AV_Evil_info()
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_06");	//Jak teď vypadá, nevím! Ale stále ho cítím... Myslím že tam pořád je.
 	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_07");	//Kde je?!
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_08");	//Arrgh... (vrčení) V chrámu za mnou!
-	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_09");	//Říkáte, že bych musel jít do chrámu a zničit to zlo?
+	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_09");	//Říkáš, že bych musel jít do chrámu a zničit to zlo?
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_12");	//To je... (vrčení)
 	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_13");	//No řekněme že souhlasím. A jak mám porazit to tvoje zlo?!
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_14");	//Netuším... (vrčení) Prostě jen strážce, nic víc!
 	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_15");	//Dobré skutky! No, abychom si rozuměli. Jak se tam dostanu?
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_17");	//Otevřu dveře chrámu jakmile mi řekneš že si připraven.
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_18");	//Ale chci tě varovat... (vrčení) S výjimkou mě, chrám je stále střežen nesmrtelnými strážci!
-	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_19");	//Čas strávený vevnitř, pod vlivem mocného zla je přemněnil na strašlivá monstra.
+	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_19");	//Čas strávený vevnitř, pod vlivem mocného zla je proměnil na strašlivá monstra.
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_20");	//V minulosti by se neodvážili zaútočit ani Adanovi vyvolení ale teď... (vrčení)
-	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_21");	//Domnívám se že mi nebudou chtít ublížit?
+	AI_Output(other,self,"DIA_Dragon_AV_Evil_01_21");	//Domnívám se, že mi nebudou chtít ublížit?
 	AI_Output(self,other,"DIA_Dragon_AV_Evil_01_22");	//Nyní jsou zlý, budou bránit svého pána dokud nezemřou!
 };
 

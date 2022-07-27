@@ -104,8 +104,8 @@ func void DIA_Addon_Greg_NW_Hallo_ja()
 	AI_Output(other,self,"DIA_Addon_Greg_NW_Hallo_ja_15_00");	//Proč ne?
 	AI_Output(self,other,"DIA_Addon_Greg_NW_Hallo_ja_01_01");	//Musíš prominout starýmu nevzdělanýmu mořskýmu vlkovi. Jsem tu novej a neznám zákony téhle země.
 	AI_Output(self,other,"DIA_Addon_Greg_NW_Hallo_ja_01_02");	//Hořce jsem zjistil, že cestující z daleka nejsou v tomhle městě vítáni.
-	AI_Output(self,other,"DIA_Addon_Greg_NW_Hallo_ja_01_03");	//(žalostně) Teď jsem ale úpně ztracenej a nemůžu se dostat do města.
-	AI_Output(self,other,"DIA_Addon_Greg_NW_Hallo_ja_01_04");	//Musím se zůčastnit velice důležitýho obchodu a moji společníci nepřijmou odklad dobře, jestli víš, co tím myslím.
+	AI_Output(self,other,"DIA_Addon_Greg_NW_Hallo_ja_01_03");	//(žalostně) Teď jsem ale úplně ztracenej a nemůžu se dostat do města.
+	AI_Output(self,other,"DIA_Addon_Greg_NW_Hallo_ja_01_04");	//Musím se zúčastnit velice důležitýho obchodu a moji společníci nepřijmou odklad dobře, jestli víš, co tím myslím.
 	AI_Output(self,other,"DIA_Addon_Greg_NW_Hallo_ja_01_05");	//Mohl bys mi pomoci dostat se přes tyhle městský stráže?
 	Info_ClearChoices(DIA_Addon_Greg_NW_Hallo);
 	Log_CreateTopic(TOPIC_Addon_Greg_NW,LOG_MISSION);
@@ -209,12 +209,12 @@ func void DIA_Addon_Greg_NW_Stadtwachen_klamotten()
 	{
 		AI_EquipArmor(self,ITAR_Bau_M);
 	};
-	AI_Output(self,other,"DIA_Addon_Greg_NW_Stadtwachen_klamotten_01_03");	//Výborně. A tady je tvá zasoulžená odměna.
+	AI_Output(self,other,"DIA_Addon_Greg_NW_Stadtwachen_klamotten_01_03");	//Výborně. A tady je tvá zasloužená odměna.
 	CreateInvItems(self,ItMi_Gold,50);
 	B_GiveInvItems(self,other,ItMi_Gold,50);
 	B_GivePlayerXP(XP_Greg_NW_GiveBauArmor);
 	AI_Output(other,self,"DIA_Addon_Greg_NW_Stadtwachen_klamotten_15_04");	//(naštvaně) Cože? Zatracených padesát zlatek? To nemůžeš myslet vážně.
-	AI_Output(self,other,"DIA_Addon_Greg_NW_Stadtwachen_klamotten_01_05");	//(blahoskloně) Zlato není vše, příteli. Prozatím si vem aspoň to.
+	AI_Output(self,other,"DIA_Addon_Greg_NW_Stadtwachen_klamotten_01_05");	//(blahosklonně) Zlato není vše, příteli. Prozatím si vem aspoň to.
 	AI_Output(self,other,"DIA_Addon_Greg_NW_Stadtwachen_klamotten_01_06");	//Ale mám pocit, že se nevidíme naposledy.
 	AI_Output(self,other,"DIA_Addon_Greg_NW_Stadtwachen_klamotten_01_07");	//A kdo ví? Třeba ti to někdy oplatím. Opatruj se.
 	AI_StopProcessInfos(self);
@@ -315,7 +315,7 @@ func void DIA_Addon_Greg_NW_MeetGregSecondTime_Info()
 	else if(MIS_Addon_Greg_BringMeToTheCity == LOG_Running)
 	{
 		AI_Output(self,other,"DIA_Addon_Greg_NW_MeetGregSecondTime_01_03");	//(naštvaně) Myslel jsem, že mi pomůžeš. Ale ty jsi místo toho prostě pláchnul.
-		AI_Output(self,other,"DIA_Addon_Greg_NW_MeetGregSecondTime_01_04");	//Myslel sis, že tam stvrdnu navždy, co?
+		AI_Output(self,other,"DIA_Addon_Greg_NW_MeetGregSecondTime_01_04");	//Myslel sis, že tam ztvrdnu navždy, co?
 		AI_Output(self,other,"DIA_Addon_Greg_NW_MeetGregSecondTime_01_05");	//Tady to máš. Pomoz si sám, protože nikdo jiný ti nepomůže. Znovu se z toho tak lehce nevyvlíkneš.
 	};
 	AI_Output(self,other,"DIA_Addon_Greg_NW_MeetGregSecondTime_01_06");	//Přišel jsi právě včas.
@@ -462,7 +462,7 @@ func void DIA_Addon_Greg_NW_was_HierGold()
 	AI_Output(self,other,"DIA_Addon_Greg_NW_was_HierGold_01_03");	//Akorát tam není pro mě samotnýho bezpečno. Chci abys mi s tím pomohl.
 	Log_CreateTopic(TOPIC_Addon_Greg_NW,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_Greg_NW,LOG_Running);
-	B_LogEntry(TOPIC_Addon_Greg_NW,"Nabídl jsem muži s páskou přes oko pár zlaťáků, ale nechtěl je. Místo toho ho mám sledovat do jendé jeskyně.");
+	B_LogEntry(TOPIC_Addon_Greg_NW,"Nabídl jsem muži s páskou přes oko pár zlaťáků, ale nechtěl je. Místo toho ho mám sledovat do jedné jeskyně.");
 	MIS_Addon_Greg_RakeCave = LOG_Running;
 	Info_ClearChoices(DIA_Addon_Greg_NW_was);
 };
@@ -607,7 +607,7 @@ func void DIA_Addon_Greg_NW_RakeCavePlundered_No()
 	if(RAKEPLACE[1] == TRUE)
 	{
 		AI_Output(self,other,"DIA_Addon_Greg_NW_RakeCavePlundered_No_01_01");	//Snažíš se mě oškubat?
-		AI_Output(other,self,"DIA_Addon_Greg_NW_RakeCavePlundered_No_15_02");	//(předsírá nevinu) Opravdu tam nic nebylo.
+		AI_Output(other,self,"DIA_Addon_Greg_NW_RakeCavePlundered_No_15_02");	//(předstírá nevinu) Opravdu tam nic nebylo.
 	};
 	AI_Output(self,other,"DIA_Addon_Greg_NW_RakeCavePlundered_No_01_03");	//Zatraceně. Věděl jsem, že ti supi to vykradou.
 	AI_Output(self,other,"DIA_Addon_Greg_NW_RakeCavePlundered_No_01_04");	//No nic. Nic se neděje prcku. Musím jít, uvidíme se později.
@@ -629,7 +629,7 @@ func void B_Greg_RakePlaceBriefing()
 	AI_Output(self,other,"DIA_Addon_Greg_NW_RakePlaceBriefing_01_04");	//Pod schodama je poslední flek.
 	if(B_Greg_RakePlaceBriefing_OneTime == FALSE)
 	{
-		B_LogEntry(TOPIC_Addon_Greg_NW,"Jsou tady další poklady 1) na malém ostrůvku na jezeře se dvěma vodopády 2) nahoře v pastvinách za farmou 3) vedle vstupu do průsmyku u vodopádů. 4) Pod schodama vedoucími z pastvin k velkostatkáři Onarovi.");
+		B_LogEntry(TOPIC_Addon_Greg_NW,"Jsou tady další poklady 1) na malém ostrůvku na jezeře se dvěma vodopády 2) nahoře v pastvinách za farmou 3) vedle vstupu do průsmyku u vodopádů. 4) pod schodama vedoucími z pastvin k velkostatkáři Onarovi.");
 		B_Greg_RakePlaceBriefing_OneTime = TRUE;
 	};
 };
@@ -646,7 +646,7 @@ func void DIA_Addon_Greg_NW_RakeCavePlundered_gold()
 		}
 		else if(B_GiveInvItems(other,self,ItMi_Gold,25))
 		{
-			AI_Output(other,self,"DIA_Addon_Greg_NW_RakeCavePlundered_gold_15_03");	//Ve vnitř bylo 25 zlatých. Na, vem si je.
+			AI_Output(other,self,"DIA_Addon_Greg_NW_RakeCavePlundered_gold_15_03");	//Uvnitř bylo 25 zlatých. Na, vem si je.
 		};
 		AI_Output(self,other,"DIA_Addon_Greg_NW_RakeCavePlundered_gold_01_04");	//Skvěle. Takže tu stále jsou.
 		AI_Output(self,other,"DIA_Addon_Greg_NW_RakeCavePlundered_gold_01_05");	//Nakonec nebudeš tak neschopnej.
@@ -1078,7 +1078,7 @@ func void DIA_Addon_Greg_NW_WasWillstDu_da()
 func void DIA_Addon_Greg_NW_WasWillstDu_Skip()
 {
 	AI_Output(other,self,"DIA_Addon_Greg_NW_WasWillstDu_Skip_15_00");	//Potkal jsem piráta jménem Skip nedaleko přístavu.
-	AI_Output(self,other,"DIA_Addon_Greg_NW_WasWillstDu_Skip_01_01");	//Ten idiot. čekal jsem tam 3 dny. Proč tam přišel až teď?
+	AI_Output(self,other,"DIA_Addon_Greg_NW_WasWillstDu_Skip_01_01");	//Ten idiot. Čekal jsem tam tři dny. Proč tam přišel až teď?
 	AI_Output(self,other,"DIA_Addon_Greg_NW_WasWillstDu_Skip_01_02");	//Hned co se trochu zmátořím, dostane co proto.
 	SC_KnowsConnectionSkipGreg = TRUE;
 	B_GivePlayerXP(XP_Ambient);

@@ -80,7 +80,7 @@ func void DIA_Lehmar_LemarTheft_Info()
 {
 	AI_Output(other,self,"DIA_Lehmar_LemarTheft_01_00");	//I tak pochybuji, že mi je dáš jenom tak.
 	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_01");	//No, ne vždycky... (usmívá se) Ve většině případů si beru něco cenného do zálohy!
-	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_02");	//To v případě, že někdo není schopen dostát svých povinoostí!
+	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_02");	//To v případě, že někdo není schopen dostát svých povinností!
 	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_03");	//Bez toho, už bych byl dávno na mizině. Ale některé věci mi zcela zaplatí mé výlohy.
 	AI_Output(other,self,"DIA_Lehmar_LemarTheft_01_04");	//A co s nima děláš potom? Prodáváš je?
 	AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_05");	//Některé prodám, některé zůstanou u mě.
@@ -119,7 +119,7 @@ func void DIA_Lehmar_LemarTheft_Info()
 	else
 	{
 		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_21");	//Hmmm. (pohrdavě) I odtud můžu vidět, že jsi chudý.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_22");	//Radši si najdi práci! A na moje zboží zapomeň (zívá) Nejsou pro takové jako jsi ty.
+		AI_Output(self,other,"DIA_Lehmar_LemarTheft_01_22");	//Radši si najdi práci! A na moje zboží zapomeň. (zívá) Nejsou pro takové jako jsi ty.
 		LehmarNoTrade = TRUE;
 		AI_StopProcessInfos(self);
 	};
@@ -206,7 +206,7 @@ func void DIA_Lehmar_LemarTheft_Again_Info()
 	else
 	{
 		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_12");	//Hmmm. (pohrdavě) I odtud můžu vidět, že jsi chudý.
-		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_13");	//Tak to na moje zboží zapomeň (zívá) Nejsou pro takové jako jsi ty.
+		AI_Output(self,other,"DIA_Lehmar_LemarTheft_Again_01_13");	//Tak to na moje zboží zapomeň. (zívá) Nejsou pro takové jako jsi ty.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -234,7 +234,7 @@ func void DIA_Lehmar_Relic_Info()
 	AI_Output(self,other,"DIA_Lehmar_Relic_01_00");	//Věděl jsem, že bude mít o to zájem!
 	AI_Output(self,other,"DIA_Lehmar_Relic_01_01");	//Dal to sem do zálohy jeden z mágu Ohně.
 	AI_Output(self,other,"DIA_Lehmar_Relic_01_02");	//Bohužel, ukázalo se, že mě je úplně k ničemu.
-	AI_Output(self,other,"DIA_Lehmar_Relic_01_03");	//Proto jsem rád, že se jí konečně zbavím... (docela) výhodná koupě!
+	AI_Output(self,other,"DIA_Lehmar_Relic_01_03");	//Proto jsem rád, že se jí konečně zbavím... (docela) Výhodná koupě!
 	AI_StopProcessInfos(self);
 };
 
@@ -475,7 +475,7 @@ func void DIA_Lehmar_GELDZURUECK_Info()
 	if((RangerHelp_LehmarKohle == TRUE) && (Lehmar_GeldGeliehen_Day <= (Wld_GetDay() - 2)))
 	{
 		AI_Output(self,other,"DIA_Addon_Lehmar_GELDZURUECK_09_00");	//Nech si je. Lares se už o to postaral.
-		AI_Output(self,other,"DIA_Addon_Lehmar_GELDZURUECK_09_01");	//Vypadá, že se kamarádíčkuješ s tím podvodníkem, co? Dobře, není to můj problém. hodně štěstí!
+		AI_Output(self,other,"DIA_Addon_Lehmar_GELDZURUECK_09_01");	//Vypadá, že se kamarádíčkuješ s tím podvodníkem, co? Dobře, není to můj problém. Hodně štěstí!
 		Lehmar_GeldGeliehen = 0;
 		AI_StopProcessInfos(self);
 	}
@@ -750,12 +750,12 @@ func void DIA_Lehmar_Job_Info()
 	AI_Output(self,other,"DIA_Lehmar_Job_01_02");	//Mám tráble s jedním člověkem.
 	AI_Output(other,self,"DIA_Lehmar_Job_01_03");	//Co ti provedl?
 	AI_Output(self,other,"DIA_Lehmar_Job_01_04");	//Vzal si ode mě velkou sumu zlata!
-	AI_Output(self,other,"DIA_Lehmar_Job_01_05");	//Jak mi řekl - poveldo se mu velice rychle zbohatnout prodejem trávy z bažin v přístavu.
+	AI_Output(self,other,"DIA_Lehmar_Job_01_05");	//Jak mi řekl - povedlo se mu velice rychle zbohatnout prodejem trávy z bažin v přístavu.
 	AI_Output(self,other,"DIA_Lehmar_Job_01_06");	//Slíbil, že vrátí dvakrát tolik peněz než jsem mu půjčil. Nikdy se ale neukázal!
-	AI_Output(self,other,"DIA_Lehmar_Job_01_07");	//Tedy, (vážně) Najdi ho a vrať mi moje peníze! 
-	AI_Output(self,other,"DIA_Lehmar_Job_01_08");	//Pokud ty peníze nebude mít u sebe, tak ho prostě zabíj.
+	AI_Output(self,other,"DIA_Lehmar_Job_01_07");	//Tedy, (vážně) najdi ho a vrať mi moje peníze! 
+	AI_Output(self,other,"DIA_Lehmar_Job_01_08");	//Pokud ty peníze nebude mít u sebe, tak ho prostě zabij.
 	AI_Output(self,other,"DIA_Lehmar_Job_01_09");	//Ale udělej to potichu! Nechci mít nic společného s těma, co obchodují s trávou z bažin.
-	AI_Output(self,other,"DIA_Lehmar_Job_01_10");	//Koneckonců zákony města vězní za tokovéto praktiky.
+	AI_Output(self,other,"DIA_Lehmar_Job_01_10");	//Koneckonců zákony města vězní za takovéto praktiky.
 	AI_Output(other,self,"DIA_Lehmar_Job_01_11");	//Dobře. Kde ho můžu najít?
 	AI_Output(self,other,"DIA_Lehmar_Job_01_12");	//(kření se) To kdybych věděl, tak je dávno po problému.
 	AI_Output(self,other,"DIA_Lehmar_Job_01_13");	//Doufám, že je ti to jasné?
@@ -763,7 +763,7 @@ func void DIA_Lehmar_Job_Info()
 	MIS_LehmarDebt = LOG_Running;
 	Log_CreateTopic(TOPIC_LehmarDebt,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_LehmarDebt,LOG_Running);
-	B_LogEntry(TOPIC_LehmarDebt,"Jeden chlápek si od Lehmara půčjil slušnou sumičku s tím, že ví, jak rychle zbohatnout na prodeji trávy z bažin. Peníze ale nevrátil. Lehmar po mě chce, abych ho a našel a peníze z něho vybil, nebo ho prostě zabil jako vyrování druhým.");
+	B_LogEntry(TOPIC_LehmarDebt,"Jeden chlápek si od Lehmara půjčil slušnou sumičku s tím, že ví, jak rychle zbohatnout na prodeji trávy z bažin. Peníze ale nevrátil. Lehmar po mě chce, abych ho a našel a peníze z něho vybil, nebo ho prostě zabil jako varování pro ostatní.");
 };
 
 instance DIA_Lehmar_Job_Done(C_Info)

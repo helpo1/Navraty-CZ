@@ -140,7 +140,7 @@ instance DIA_Dar_DuDieb(C_Info)
 	condition = DIA_Dar_DuDieb_Condition;
 	information = DIA_Dar_DuDieb_Info;
 	permanent = FALSE;
-	description = "Cipher mi řekl, že mu někdo ukradnul jeho balíček trávy...";
+	description = "Cipher mi řekl, že mu někdo ukradnul jeho balíček trávy.";
 };
 
 
@@ -403,7 +403,7 @@ func void DIA_Dar_ORCRING_necken()
 	};
 	if((hero.guild == GIL_MIL) || (hero.guild == GIL_PAL))
 	{
-		AI_Output(self,other,"DIA_Dar_ORCRING_necken_03_05");	//Když o tom tak přemýšlím, rozbití tvojí lebky je přesně to, čím bych si mohl u Leeovým chlapců vysloužit ten správný respekt.
+		AI_Output(self,other,"DIA_Dar_ORCRING_necken_03_05");	//Když o tom tak přemýšlím, rozbití tvojí lebky je přesně to, čím bych si mohl u Leeových chlapců vysloužit ten správný respekt.
 		Info_ClearChoices(DIA_Dar_ORCRING);
 		Info_AddChoice(DIA_Dar_ORCRING,"Nemám čas na tyhle kecy.",DIA_Dar_ORCRING_necken_no);
 		Info_AddChoice(DIA_Dar_ORCRING,"Fajn. Tak to zkus.",DIA_Dar_ORCRING_necken_schlagen);

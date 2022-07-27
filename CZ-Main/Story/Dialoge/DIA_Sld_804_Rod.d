@@ -257,7 +257,7 @@ func int DIA_Rod_BINStarkGenug_Condition()
 func void DIA_Rod_BINStarkGenug_Info()
 {
 	AI_Output(other,self,"DIA_Rod_BINStarkGenug_15_00");	//Řekl jsem, že JSEM dost silnej!
-	AI_Output(self,other,"DIA_Rod_BINStarkGenug_06_01");	//Chacháa, asi umřu smíchy. Chceš se vsadit?
+	AI_Output(self,other,"DIA_Rod_BINStarkGenug_06_01");	//Chachá, asi umřu smíchy. Chceš se vsadit?
 };
 
 
@@ -292,7 +292,7 @@ func void DIA_Rod_Wette_Info()
 	AI_Output(self,other,"DIA_Rod_Wette_06_02");	//No... Vypadáš jako ubohej začátečník. Vsaďme se o 30 zlatých! Máš vůbec tolik?
 	Info_ClearChoices(DIA_Rod_Wette);
 	Info_AddChoice(DIA_Rod_Wette,"Ne.",DIA_Rod_Wette_No);
-	Info_AddChoice(DIA_Rod_Wette,"Jasně.!",DIA_Rod_Wette_Yes);
+	Info_AddChoice(DIA_Rod_Wette,"Jasně!",DIA_Rod_Wette_Yes);
 	B_LogEntry(Topic_RodWette,"Rod se se mnou vsadil o 30 zlatých, že neuzvednu jeho meč.");
 };
 
@@ -305,14 +305,14 @@ func void DIA_Rod_Wette_No()
 
 func void DIA_Rod_Wette_Yes()
 {
-	AI_Output(other,self,"DIA_Rod_Wette_Yes_15_00");	//Jasně.!
+	AI_Output(other,self,"DIA_Rod_Wette_Yes_15_00");	//Jasně!
 	AI_Output(self,other,"DIA_Rod_Wette_Yes_06_01");	//Nejdřív se kouknu...
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,30))
 	{
 		Rod_WetteAngenommen = TRUE;
 		AI_Output(other,self,"DIA_Rod_Wette_Yes_15_02");	//Tady jsou!
-		AI_Output(self,other,"DIA_Rod_Wette_Yes_06_03");	//V pořádku, podíváme se tedy jak si silnej... (škodolibě) 
+		AI_Output(self,other,"DIA_Rod_Wette_Yes_06_03");	//V pořádku, podíváme se tedy jak jsi silnej... (škodolibě) 
 		B_GiveInvItems(self,other,ItMw_2h_Rod,1);
 
 		if(other.attribute[ATR_STRENGTH] >= 30)
@@ -470,7 +470,7 @@ instance DIA_Rod_Quest(C_Info)
 	condition = DIA_Rod_Quest_Condition;
 	information = DIA_Rod_Quest_Info;
 	permanent = FALSE;
-	description = "Co je tak zvláštního na tvojím meči?";
+	description = "Co je tak zvláštního na tvém meči?";
 };
 
 func int DIA_Rod_Quest_Condition()
@@ -483,11 +483,11 @@ func int DIA_Rod_Quest_Condition()
 
 func void DIA_Rod_Quest_Info()
 {
-	AI_Output(other,self,"DIA_Rod_Quest_01_01");	//Co je tak zvláštního na tvojím meči?
+	AI_Output(other,self,"DIA_Rod_Quest_01_01");	//Co je tak zvláštního na tvém meči?
 	AI_Output(self,other,"DIA_Rod_Quest_01_02");	//Nic. Já jen rád použivám obouruční zbraně. Zbytek nějak není pro mě.
-	AI_Output(other,self,"DIA_Rod_Quest_01_04");	//A mohl bys me naučit jak s ním zacházet?
+	AI_Output(other,self,"DIA_Rod_Quest_01_04");	//A mohl bys mě naučit jak s ním zacházet?
 	AI_Output(self,other,"DIA_Rod_Quest_01_05");	//Samozřejmě. Pro začátek mi dones nejméně tucet láhví kořalky.
-	AI_Output(other,self,"DIA_Rod_Quest_01_06");	//Hmm... Jseš si jistý?
+	AI_Output(other,self,"DIA_Rod_Quest_01_06");	//Hmm... Jsi si jistý?
 	AI_Output(self,other,"DIA_Rod_Quest_01_07");	//O tom není pochyb... (směje se) Přines mi pití - a já ti ukážu jak zacházet s obouručákem.
 	MIS_RodRing = LOG_Running;
 	Log_CreateTopic(TOPIC_RodRing,LOG_MISSION);
@@ -520,7 +520,7 @@ func void DIA_Rod_Quest_Done_Info()
 	B_GiveInvItems(other,self,ItFo_Booze,12);
 	Npc_RemoveInvItems(self,ItFo_Booze,12);
 	AI_Output(self,other,"DIA_Rod_Quest_Done_01_02");	//Hmm... (uznale) Ano, to je ona!
-	AI_Output(self,other,"DIA_Rod_Quest_Done_01_03");	//Konečně se mi bude líp travit čas, tady na farmě!
+	AI_Output(self,other,"DIA_Rod_Quest_Done_01_03");	//Konečně se mi bude líp trávit čas, tady na farmě!
 	AI_Output(other,self,"DIA_Rod_Quest_Done_01_04");	//A co školení?
 	AI_Output(self,other,"DIA_Rod_Quest_Done_01_05");	//Samozřejmě! Jak se slíbil.
 	AI_Output(self,other,"DIA_Rod_Quest_Done_01_06");	//Tady, vem si tento prsten.

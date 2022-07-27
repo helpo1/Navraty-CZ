@@ -38,7 +38,7 @@ func void DIA_Addon_Greg_EXIT_Info()
 {
 	if((GregCanPray == TRUE) && (MIS_PiratePray == FALSE))
 	{
-		AI_Output(self,other,"DIA_Addon_Greg_Pray_01_00");	//Počjek chvilku, mám ještě jednu otázku.
+		AI_Output(self,other,"DIA_Addon_Greg_Pray_01_00");	//Počkej chvilku, mám ještě jednu otázku.
 		AI_Output(other,self,"DIA_Addon_Greg_Pray_01_01");	//Jakou?
 		AI_Output(self,other,"DIA_Addon_Greg_Pray_01_02");	//(povzdechne si) Víš, nikdy jsem nebyl věřící.
 		AI_Output(self,other,"DIA_Addon_Greg_Pray_01_03");	//Ale ten případ s prstenem mě donutil přemýšlet.
@@ -49,7 +49,7 @@ func void DIA_Addon_Greg_EXIT_Info()
 		MIS_PiratePray = LOG_Running;
 		Log_CreateTopic(TOPIC_PiratePray,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_PiratePray,LOG_Running);
-		B_LogEntry(TOPIC_PiratePray,"Greg mě požádal, ať jdu do kláštera a požádám někoho, ať se pomodlí za duši jeho a jeho bandy. Zdá se, že ten případ s prstenem na něj silně zapůsobil.");
+		B_LogEntry(TOPIC_PiratePray,"Greg mě požádal, ať jdu do kláštera a požádám někoho, ať se pomodlí za jeho duši i za duše jeho bandy. Zdá se, že ten případ s prstenem na něj silně zapůsobil.");
 	};
 
 	AI_StopProcessInfos(self);
@@ -249,7 +249,7 @@ func void DIA_Addon_Greg_DiscoverLH_Info()
 	AI_Output(other,self,"DIA_Addon_Greg_DiscoverLH_01_00");	//Slyšel jsi někdy o pirátovi jménem Kelevra?
 	AI_Output(self,other,"DIA_Addon_Greg_DiscoverLH_01_01");	//Kdyby jen to. Plavili jsme se spolu.
 	AI_Output(other,self,"DIA_Addon_Greg_DiscoverLH_01_02");	//Víš, kde je teď?
-	AI_Output(self,other,"DIA_Addon_Greg_DiscoverLH_01_03");	//Nemám tušení. Neviděl ho už deset let.
+	AI_Output(self,other,"DIA_Addon_Greg_DiscoverLH_01_03");	//Nemám tušení. Neviděl jsem ho už deset let.
 	B_LogEntry(TOPIC_HauntedLighthouse,"Greg se kdysi plavil s pirátem jménem Kelevra, ale už ho dlouho neviděl, takže netuší, kde je.");
 	FindPirate_01 = TRUE;
 };
@@ -308,11 +308,11 @@ func void DIA_Addon_Greg_JoinPirates_Info()
 	{
 		AI_Output(self,other,"DIA_Addon_Greg_JoinPirates_01_02");	//To líný prase Morgan bude řezat fošny.
 	};
-	AI_Output(self,other,"DIA_Addon_Greg_JoinPirates_01_03");	//TY převezmeš morganovu práci a vyčistíš kaňon od těch zatracených potvor.
+	AI_Output(self,other,"DIA_Addon_Greg_JoinPirates_01_03");	//TY převezmeš Morganovu práci a vyčistíš kaňon od těch zatracených potvor.
 	MIS_Addon_Greg_ClearCanyon = LOG_Running;
 	Log_CreateTopic(TOPIC_Addon_ClearCanyon,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_ClearCanyon,LOG_Running);
-	B_LogEntry(TOPIC_Addon_ClearCanyon,"Greg po mně chce abych převzal Morganovu práci - Mám vyčistit kaňon od potvor.");
+	B_LogEntry(TOPIC_Addon_ClearCanyon,"Greg po mně chce abych převzal Morganovu práci - mám vyčistit kaňon od potvor.");
 	Info_ClearChoices(DIA_Addon_Greg_JoinPirates);
 	Info_AddChoice(DIA_Addon_Greg_JoinPirates,"V tom případě musím jít.",DIA_Addon_Greg_JoinPirates_Leave);
 	if((Npc_IsDead(Brandon) == FALSE) || (Npc_IsDead(Matt) == FALSE))
@@ -524,7 +524,7 @@ instance DIA_Addon_Greg_Sauber2(C_Info)
 	nr = 5;
 	condition = DIA_Addon_Greg_Sauber2_Condition;
 	information = DIA_Addon_Greg_Sauber2_Info;
-	description = "Severní pláž opět bezpečná.";
+	description = "Severní pláž je opět bezpečná.";
 };
 
 
@@ -539,7 +539,7 @@ func int DIA_Addon_Greg_Sauber2_Condition()
 
 func void DIA_Addon_Greg_Sauber2_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Greg_Sauber2_15_00");	//Severní pláž opět bezpečná.
+	AI_Output(other,self,"DIA_Addon_Greg_Sauber2_15_00");	//Severní pláž je opět bezpečná.
 	AI_Output(self,other,"DIA_Addon_Greg_Sauber2_01_01");	//Výborně. Tady je tvá odměna.
 	CreateInvItems(self,ItMi_Gold,200);
 	B_GiveInvItems(self,other,ItMi_Gold,200);
@@ -715,7 +715,7 @@ func void DIA_Addon_Greg_Story_Way()
 	AI_Output(other,self,"DIA_Addon_Greg_Story_Way_15_00");	//Jak ses sem dostal?
 	AI_Output(self,other,"DIA_Addon_Greg_Story_Way_01_01");	//Našel jsem tunel nedaleko starobylé pyramidy. Hlídali to tam nějací mágové.
 	AI_Output(self,other,"DIA_Addon_Greg_Story_Way_01_02");	//Prostě jsem se jim proplížil pod ksichtem.
-	AI_Output(self,other,"DIA_Addon_Greg_Story_Way_01_03");	//Prvně jsem si myslel, že jde o ňejakou pohřební síň, a že se pěkně napakuju.
+	AI_Output(self,other,"DIA_Addon_Greg_Story_Way_01_03");	//Prvně jsem si myslel, že jde o nějakou pohřební síň, a že se pěkně napakuju.
 	AI_Output(self,other,"DIA_Addon_Greg_Story_Way_01_04");	//Představ si jak jsem se tvářil, když jsem zjistil, že jsem zpět v mém milovaném údolí.
 	AI_Output(self,other,"DIA_Addon_Greg_Story_Way_01_05");	//Zrovna v tu chvíli, když jsem si myslel, že budu muset zdrhat domobráncům po zbytek svého života.
 };
@@ -957,10 +957,10 @@ func int dia_addon_greg_gatherarmy_condition()
 func void dia_addon_greg_gatherarmy_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Addon_Greg_GatherArmy_01_02");	//Paladinové chtějí osvobodit ostrov od skřetů. Hodila by jim tvá pomoc.
+	AI_Output(other,self,"DIA_Addon_Greg_GatherArmy_01_02");	//Paladinové chtějí osvobodit ostrov od skřetů. Hodila by se jim tvá pomoc.
 	AI_Output(self,other,"DIA_Addon_Greg_GatherArmy_01_03");	//(nevěřícně) Cože? Ty si ze mě děláš šoufky, že jo?
 	AI_Output(self,other,"DIA_Addon_Greg_GatherArmy_01_07");	//Proč bych jim měl pomáhat?!
-	AI_Output(other,self,"DIA_Addon_Greg_GatherArmy_01_08");	//Protože dříve či později se skřeti dostanou i sem. Na to jsi nepomysle, co?
+	AI_Output(other,self,"DIA_Addon_Greg_GatherArmy_01_08");	//Protože dříve či později se skřeti dostanou i sem. Na to jsi nepomyslel, co?
 	AI_Output(self,other,"DIA_Addon_Greg_GatherArmy_01_09");	//(škodolibě se usmívá) Ha! Pokud vím, tak jsou odsud na míle daleko.
 	AI_Output(other,self,"DIA_Addon_Greg_GatherArmy_01_10");	//Asi ne tak daleko, když obsadili Khorinis. A tam zdaleka nekončí.
 	AI_Output(self,other,"DIA_Addon_Greg_GatherArmy_01_13");	//(zamyšleně) Hmm... to není dobré.
@@ -1037,7 +1037,7 @@ func void dia_addon_greg_gatherarmydone_no()
 	{
 		PREGATHERALLONBIGFARM = TRUE;
 	};
-	B_LogEntry(TOPIC_PIRATENEEDSHIP,"Greg odmítl nabídli lorda Hagena a nepodařilo se mi ho přesvědčit k pomoci paladinům. Zdá se, že s nimi tedy nemůžeme počítat.");
+	B_LogEntry(TOPIC_PIRATENEEDSHIP,"Greg odmítl nabídku lorda Hagena a nepodařilo se mi ho přesvědčit k pomoci paladinům. Zdá se, že s nimi tedy nemůžeme počítat.");
 	AI_StopProcessInfos(self);
 };
 
@@ -1196,9 +1196,9 @@ func void dia_addon_greg_DOOMRING_info()
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_19");	//Naše nájezdy na karavany a lodě byly velmi úspěšné, vždycky jsme se vrátili s bohatou kořistí.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_20");	//Ale pak jsem se rozhodl skrýt většinu pokladů.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_21");	//Šli jsme do jeskyně jihovýchodně odsud.
-	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_22");	//Zakopali jsme zlato a chystali se jít zpěto do tábora, ale pak se začali dít podivbné věci.
+	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_22");	//Zakopali jsme zlato a chystali se jít zpět do tábora, ale pak se začali dít podivné věci.
 	AI_Output(other,self,"DIA_Addon_Greg_DOOMRING_01_23");	//Co se stalo?
-	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_24");	//Drake a pár dalších chlapů úplně zešílel.
+	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_24");	//Drake a pár dalších chlapů úplně zešíleli.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_25");	//Vrhli se na mě, jako by je posedl sám Beliar.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_26");	//Jenom mně se povedlo dostat z jeskyně naživu.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_27");	//O několik dní později jsem poslal další chlapy, aby jeskyni prozkoumali, ale už se nevrátili.
@@ -1210,17 +1210,17 @@ func void dia_addon_greg_DOOMRING_info()
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_34");	//Každý obchodník jako kdyby plul bez nákladu... (vrtí hlavou)
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_35");	//... hodnota zboží byla taková, že to ani nestačilo na pokrytí nákladů.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_36");	//A poslední kapka byla, jak jsme přišel o svoji loď, když jsme na otevřeném moři narazily na paladinskou galéru! Beliar aby je spral...
-	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_37");	//(nervózně) Ale nejhorší věc, kterí se děje, je to, že v noci ve snech se mě zjevují duchové těch, kteří zůstali v jeskyni.
-	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_38");	//Tyhle noční můry má už dlouho a jsou každou noc horší.
+	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_37");	//(nervózně) Ale nejhorší věc, která se děje, je to, že v noci ve snech se mě zjevují duchové těch, kteří zůstali v jeskyni.
+	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_38");	//Tyhle noční můry mám už dlouho a jsou každou noc horší.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_39");	//Pak mi došlo, že je to všechno kvůli tomu prstenu.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_40");	//Snažil jsem se ho zbavit, ale nešlo to!
-	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_41");	//Jakmile jsem se ho pokusil sundat, zkroutil jsem se v příšerných bolestech.
-	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_42");	//... Tak jsem to nechal být, abych měl klid.
+	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_41");	//Jakmile jsem se ho pokusil sundat, zkroutil jsem se v příšerných bolestech...
+	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_42");	//... tak jsem to nechal být, abych měl klid.
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_43");	//Takže poraď, jak se ho zbavit?
-	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_44");	//Co kdyby se tvůj přítel mág, trošku nezamysle a nepřišel na to, jak země sejmout tohle prokletí...
+	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_44");	//Co kdyby se tvůj přítel mág, trošku nezamyslel a nepřišel na to, jak ze mě sejmout tohle prokletí...
 	AI_Output(self,other,"DIA_Addon_Greg_DOOMRING_01_45");	//Dal bych mu ten prsten zadarmo! Požádáš ho?
 	AI_Output(other,self,"DIA_Addon_Greg_DOOMRING_01_46");	//Dobře, pokusím se ho na to zeptat.
-	B_LogEntry(TOPIC_PirateRing,"Nebylo to tak jednoduché jak se zdálo. Prsten, který hledal Xardas je zřejmě prokletý, podle tvrzení jeho posledního majitele - kapitána Grega, je očarován temnou magií! Síla té kledby zabila několik jeho lidí a přinesla jemu a jeho posádce smůlu. Mimoto nemůže ten prsten sundat aniž by nezemřel. Musím o tom promluvit s Xardasem.");
+	B_LogEntry(TOPIC_PirateRing,"Nebylo to tak jednoduché jak se zdálo. Prsten, který hledal Xardas je zřejmě prokletý, podle tvrzení jeho posledního majitele - kapitána Grega, je očarován temnou magií! Síla té kletby zabila několik jeho lidí a přinesla jemu a jeho posádce smůlu. Mimo to nemůže ten prsten sundat aniž by nezemřel. Musím o tom promluvit s Xardasem.");
 	GregCurse = TRUE;
 };
 
@@ -1231,7 +1231,7 @@ instance DIA_ADDON_GREG_DRAKE(C_Info)
 	condition = dia_addon_greg_DRAKE_condition;
 	information = dia_addon_greg_DRAKE_info;
 	permanent = FALSE;
-	description = "A kdo je Drake?";
+	description = "A kdo je ten Drake?";
 };
 
 func int dia_addon_greg_DRAKE_condition()
@@ -1248,9 +1248,9 @@ func void dia_addon_greg_DRAKE_info()
 	AI_Output(other,self,"DIA_Addon_Greg_DRAKE_01_01");	//A kdo je ten Drake?
 	AI_Output(self,other,"DIA_Addon_Greg_DRAKE_01_02");	//Jeden z kapitánů, který plul pod mým vedením. Byli jsme dobří přátelé.
 	AI_Output(other,self,"DIA_Addon_Greg_DRAKE_01_03");	//Řekni mi o něm něco.
-	AI_Output(self,other,"DIA_Addon_Greg_DRAKE_01_04");	//Co můžu říct? Byl to velmi spolehlivý člověk, svěšřil bych mu vlastní život.
+	AI_Output(self,other,"DIA_Addon_Greg_DRAKE_01_04");	//Co můžu říct? Byl to velmi spolehlivý člověk, svěřil bych mu vlastní život.
 	AI_Output(self,other,"DIA_Addon_Greg_DRAKE_01_05");	//Jednou mě dokonce zachránil život... A to je něco!
-	B_LogEntry(TOPIC_PirateRing,"V noci když Greg usne, zjevují se mu duchové těch které zahubila kletba prstenu. Mezi těmi duchy je i jeden Gregův starý přítel kapitán Drake. Právě díky němu se začly dít podivné věci.");
+	B_LogEntry(TOPIC_PirateRing,"V noci když Greg usne, zjevují se mu duchové těch které zahubila kletba prstenu. Mezi těmi duchy je i jeden Gregův starý přítel kapitán Drake. Právě díky němu se začaly dít podivné věci.");
 };
 
 instance DIA_ADDON_GREG_NOMORECURSE(C_Info)
@@ -1277,7 +1277,7 @@ func void dia_addon_greg_NOMORECURSE_info()
 	AI_Output(other,self,"DIA_Addon_Greg_NOMORECURSE_01_01");	//Zkus si sundat ten prsten.
 	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_02");	//Co?! To neudělám!
 	AI_Output(other,self,"DIA_Addon_Greg_NOMORECURSE_01_03");	//Hned ho sundej! Teda pokud se chceš zbavit svého prokletí.
-	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_04");	//Hele kámo... (výhružně) Jestli se pleteš, tak nebudeš mít ode mě klid v tomnto životě.
+	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_04");	//Hele kámo... (výhružně) Jestli se pleteš, tak nebudeš mít ode mě klid v tomto životě.
 	AI_Output(other,self,"DIA_Addon_Greg_NOMORECURSE_01_05");	//Sundej ho.
 	AI_Output(self,other,"DIA_Addon_Greg_NOMORECURSE_01_06");	//(sundává prsten)
 	AI_Output(other,self,"DIA_Addon_Greg_NOMORECURSE_01_07");	//No, jak se cítíš?
@@ -1289,7 +1289,7 @@ func void dia_addon_greg_NOMORECURSE_info()
 	B_GiveInvItems(self,other,ItRi_DarkCurse,1);
 	AI_Output(other,self,"DIA_Addon_Greg_NOMORECURSE_01_13");	//Díky.
 	GregCanPray = TRUE;
-	B_LogEntry(TOPIC_PirateRing,"Přesně, jak mi řekl Xardas, prokletí zesláblo a Greg, i když s mou pomocí, byl schopen prsten sundat. Teď ho ještě odnesu Xardsovi.");
+	B_LogEntry(TOPIC_PirateRing,"Přesně, jak mi řekl Xardas, prokletí zesláblo a Greg, i když s mou pomocí, byl schopen prsten sundat. Teď ho ještě odnesu Xardasovi.");
 };
 
 instance DIA_ADDON_GREG_PiratePray_Done(C_Info)
@@ -1319,7 +1319,7 @@ func void dia_addon_greg_PiratePray_Done_info()
 	{
 		AI_Output(other,self,"DIA_Addon_Greg_PiratePray_Done_01_02");	//Ano, budou se modlit za tebe a tvou posádku.
 		AI_Output(self,other,"DIA_Addon_Greg_PiratePray_Done_01_03");	//(radostně) Výborně, chlape. Myslím, že tohle kluky trochu rozveselí.
-		AI_Output(self,other,"DIA_Addon_Greg_PiratePray_Done_01_04");	//Pravděpodobně z tebe vytáhli soustu zlata, že?
+		AI_Output(self,other,"DIA_Addon_Greg_PiratePray_Done_01_04");	//Pravděpodobně z tebe vytáhli spoustu zlata, že?
 		AI_Output(other,self,"DIA_Addon_Greg_PiratePray_Done_01_05");	//Nemůžu říct, že to bylo zrovna levné.
 		AI_Output(self,other,"DIA_Addon_Greg_PiratePray_Done_01_06");	//(zasměje se) Co od nich taky čekat. Vidím, že jsi lepší, než ti zazobanci.
 		AI_Output(self,other,"DIA_Addon_Greg_PiratePray_Done_01_07");	//Vezmi si tohle jako odměnu.
@@ -1392,7 +1392,7 @@ func void dia_addon_greg_PirateDeal_info()
 	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_01_00");	//Ještě něco bych pro tebe měl...
 	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_01_01");	//Hmm... Tak ven s tím.
 	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_01_02");	//Přinesl jsem návrh na dohodu s mágy Vody.
-	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_01_03");	//?ágové vody?!
+	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_01_03");	//Mágové Vody?!
 	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_01_04");	//Je třeba jim poskytnout veškeré zásoby. Potraviny a zbraně.
 	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_01_05");	//A já myslím, že jste toho schopní, nemám pravdu?
 	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_01_06");	//Zajímalo by mě, proč najednou uzavírají dohody s takovou spodinou, jako jsme my.
@@ -1437,7 +1437,7 @@ func void dia_addon_greg_PirateDeal_Choice_info()
 	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_Choice_01_00");	//Tak jak ses rozhodl?
 	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_Choice_01_01");	//Tak jsme nad tím s klukama přemýšleli a rozhodli jsem se, že nám nejdřív musíte zaplatit...
 	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_Choice_01_02");	//... řekněme pět tisíc zlatých. Teprve potom budeme připraveni zásobovat mágy Vody.
-	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_Choice_01_03");	//Pět tisíc? Zblaznil ses?
+	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_Choice_01_03");	//Pět tisíc? Zbláznil ses?
 	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_Choice_01_04");	//To jsou naše podmínky. V opačném případě není o čem mluvit.
 	PirateDealCost = 5000;
 	Info_ClearChoices(DIA_Addon_Greg_PirateDeal_Choice);
@@ -1450,7 +1450,7 @@ func void dia_addon_greg_PirateDeal_Choice_info()
 			DIA_Addon_Greg_PirateDeal_Choice_Cheap);
 	// };
 
-	Info_AddChoice(DIA_Addon_Greg_PirateDeal_Choice,"Možná, se můžem dohodnout?",DIA_Addon_Greg_PirateDeal_Choice_Yes);
+	Info_AddChoice(DIA_Addon_Greg_PirateDeal_Choice,"Možná se můžem dohodnout?",DIA_Addon_Greg_PirateDeal_Choice_Yes);
 };
 
 func void DIA_Addon_Greg_PirateDeal_Choice_Cheap()
@@ -1472,7 +1472,7 @@ func void DIA_Addon_Greg_PirateDeal_Choice_Cheap()
 
 func void DIA_Addon_Greg_PirateDeal_Choice_Yes()
 {
-	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_Choice_Yes_01_00");	//Možná, se můžem dohodnout?
+	AI_Output(other,self,"DIA_Addon_Greg_PirateDeal_Choice_Yes_01_00");	//Možná se můžem dohodnout?
 	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_Choice_Yes_01_01");	//Ne, vyjednávání není na místě.
 	AI_Output(self,other,"DIA_Addon_Greg_PirateDeal_Choice_Yes_01_02");	//Nakul pět tisíc, nebo běž za Beliarem!
 	B_LogEntry_Quiet(TOPIC_PirateDeal,"Greg předložil své požadavky. Chce 5000 zlatých! Pak bude obchodovat s mágy Vody. Chamtivý bastard...");
@@ -1628,21 +1628,21 @@ func void DIA_Addon_Greg_TalkAboutElza_Info()
 	{
 		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_02");	//Hmmm... Proč tě to zajímá?
 		AI_Output(other,self,"DIA_Addon_Greg_TalkAboutElza_01_03");	//Jen jsem přemýšlel, kam vlastně jdeš.
-		AI_Output(other,self,"DIA_Addon_Greg_TalkAboutElza_01_04");	//Koneckonců, než Vám paladinové potopili loď, nakradli jste hodnotné věci.
+		AI_Output(other,self,"DIA_Addon_Greg_TalkAboutElza_01_04");	//Koneckonců, než vám paladinové potopili loď, nakradli jste hodnotné věci.
 		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_05");	//Jo, v logice jsi nepřekonatelný, kamaráde.
 		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_06");	//Přirozeně, že naše řemeslo by nemělo cenu ani zlámané grešle, kdybychom nedokázali dostat dobrou cenu za naše zboží.
-		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_07");	//Část zboží jsme vzali do Khorinis pro ty obchodníky, kteří se nestydí jednat s námi. A věř mi, není jich málo.
+		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_07");	//Část zboží jsme vzali do Khorinisu pro ty obchodníky, kteří se s námi nestydí jednat. A věř mi, není jich málo.
 		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_08");	//Bohužel je to teď složitý. Kvůli těm zatraceným paladinům, co nedávno přijeli do města.
 		AI_Output(other,self,"DIA_Addon_Greg_TalkAboutElza_01_09");	//A co zbytek? 
 		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_10");	//Zbytek dovezeme obchodníkům na Drakiu! Za veškeré zboží nám s radostí zaplatí velmi hodně.
 		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_11");	//A to vše bez rizika! Místní baron se řídí královskými dekrety. Naštěstí jen na oko.
 		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_12");	//Je to stejnej zloděj, jako my.
 		AI_Output(other,self,"DIA_Addon_Greg_TalkAboutElza_01_13");	//Drakiu?! Co je to za město?
-		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_14");	//Chceš říst, že jsi o něm ještě neslyšel?!
+		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_14");	//Chceš říct, že jsi o něm ještě neslyšel?!
 		AI_Output(other,self,"DIA_Addon_Greg_TalkAboutElza_01_15");	//Ne, neslyšel. Ale rád si o něm poslechnu.
 		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_16");	//Drakia je západní provincie ostrova Khorinis a město se jmenuje stejně jako ostrov. Pravda, není tak velké jako Khorinis.
 		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_17");	//Pokud vím, všemu tam velí baron Lockhart.
-		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_18");	//Tak jako tak je Drakia je součást Myrtany, ale ve skutečnosti je ovládána pouze baronem. Celé to tam vlastní.
+		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_18");	//Tak jako tak je Drakia součástí Myrtany, ale ve skutečnosti je ovládána pouze baronem. Celé to tam vlastní.
 		AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_01_19");	//Je mu jedno jestli jsi pirát nebo ne. Hlavní je mít v kapse zlato.
 		AI_Output(other,self,"DIA_Addon_Greg_TalkAboutElza_01_20");	//Hmmm... to není špatný.
 		GregCanTalkAboutElsa = TRUE;
@@ -1708,7 +1708,7 @@ func void DIA_Addon_Greg_TalkAboutElza_Ship_Info()
 	AI_Output(other,self,"DIA_Addon_Greg_TalkAboutElza_Ship_01_08");	//Nedá se opravit?
 	AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_Ship_01_09");	//Už jsme to zkoušeli, ale nevyšlo to. Potřebovali bychom dobrého tesaře, ale takové štěstí nemáme.
 	AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_Ship_01_10");	//Lepší bude když se na to zeptáš Skipa. Ten se zabýval opravou lodě.
-	AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_Ship_01_11");	//Ten chlap si skoro sedřel kůži, aby mohla Elza znovu plout. Nakonec se na to taky vykašlal.
+	AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_Ship_01_11");	//Ten chlap si skoro sedřel kůži, aby mohla Elsa znovu plout. Nakonec se na to taky vykašlal.
 	AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_Ship_01_12");	//Svoje nejlepší léta má již za sebou...
 	AI_Output(other,self,"DIA_Addon_Greg_TalkAboutElza_Ship_01_13");	//To je smutný co?
 	AI_Output(self,other,"DIA_Addon_Greg_TalkAboutElza_Ship_01_14");	//Vypadá to, že mu ta stará loď přirostla k srdci.
@@ -1716,7 +1716,7 @@ func void DIA_Addon_Greg_TalkAboutElza_Ship_Info()
 	MIS_OldElza = LOG_Running;
 	Log_CreateTopic(TOPIC_OldElza,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_OldElza,LOG_Running);
-	B_LogEntry(TOPIC_OldElza,"Zeptal jsem se Grega na tu loď v zálivu. Zasmál se a řekl mi, že je to 'Jednooká Elsa', na které se dlouho, co se na ní plavili. Loď je poškozená a pirátům se jí nepodařilo opravit. Jednomu z pirátů na té lodi záleží víc než je zdrávo.");
+	B_LogEntry(TOPIC_OldElza,"Zeptal jsem se Grega na tu loď v zálivu. Zasmál se a řekl mi, že je to 'Jednooká Elsa', na které se někdy plavili. Loď je poškozená a pirátům se jí nepodařilo opravit. Jednomu z pirátů na té lodi záleží víc než je zdrávo.");
 };
 
 instance DIA_Addon_Greg_OldRumors(C_Info)
@@ -1742,12 +1742,12 @@ func void DIA_Addon_Greg_OldRumors_Info()
 	AI_Output(other,self,"DIA_Addon_Greg_OldRumors_01_00");	//Potkal jsem Lou.
 	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_01");	//Jakou Lou... (podrážděně)
 	AI_Output(other,self,"DIA_Addon_Greg_OldRumors_01_02");	//No, holka. Co přišla s prosbou jestli jí vezmem na Drakiu!
-	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_03");	//S prosbou?! Baliáre vem si jí! Znám ji. Je jako vzteklá vlčice a vloupala se mi do domu!
+	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_03");	//S prosbou?! Beliáre vem si jí! Znám ji. Je jako vzteklá vlčice a vloupala se mi do domu!
 	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_04");	//Začala na mě ječet, že když jí nevezmu na loď tak mi udělá ze života peklo.
 	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_05");	//Chápu, že ta ženská to nemá lehký. Skoro jako Abigail.
 	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_06");	//Vyhrožovala mi, mě Gregovi, pirátskému kapitánovi, v mém domě! To je na mě moc kamaráde.
 	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_07");	//Vyhodil jsem jí ven se slovy, že ženská na lodi je jeden velkej malér.
-	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_08");	//Musíš pochopit, že je pro mě velmi důležité, aby Elsa dorazila na břehy Drakii v pořádku a jednom kuse.
+	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_08");	//Musíš pochopit, že je pro mě velmi důležité, aby Elsa dorazila na břehy Drakii v pořádku a v jednom kuse.
 	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_01_09");	//A tenhle malej ďábel s těma manýrama by na palubě dělal jenom zle.
 	AI_Output(other,self,"DIA_Addon_Greg_OldRumors_01_10");	//Klid, klid... Uklidni se! Možná jenom přehání. Asi jako ty.
 	AI_Output(other,self,"DIA_Addon_Greg_OldRumors_01_11");	//Můžu se za ní zaručit.
@@ -1788,7 +1788,7 @@ func void DIA_Addon_Greg_OldRumors_Agreed_Info()
 	B_GiveInvItems(other,self,ItMi_Gold,10000);
 	Npc_RemoveInvItems(self,ItMi_Gold,10000);
 	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_Agreed_01_01");	//Je příjemné s tebou obchodovat.
-	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_Agreed_01_02");	//Každopádně, teď můžeš říct své kamarádce, že ji dovozeme na Drakiu.
+	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_Agreed_01_02");	//Každopádně, teď můžeš říct své kamarádce, že ji dovezeme na Drakiu.
 	AI_Output(other,self,"DIA_Addon_Greg_OldRumors_Agreed_01_03");	//Zkus nedodržet slovo.
 	AI_Output(self,other,"DIA_Addon_Greg_OldRumors_Agreed_01_04");	//Neboj se! Já své slovo dodržím.
 	AI_Output(other,self,"DIA_Addon_Greg_OldRumors_Agreed_01_05");	//To doufám.

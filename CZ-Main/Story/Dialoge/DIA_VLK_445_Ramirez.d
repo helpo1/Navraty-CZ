@@ -147,7 +147,7 @@ func void DIA_Ramirez_First_info()
 	if(AttilaIsDead == TRUE)
 	{
 		AI_Output(self,other,"DIA_Ramirez_First_01_20");	//To říkala? Hmm... Pro začátek by bylo vhodné zeptat se na můj názor.
-		AI_Output(other,self,"DIA_Ramirez_First_01_21");	//A máte nějaký problém?
+		AI_Output(other,self,"DIA_Ramirez_First_01_21");	//A máš nějaký problém?
 		AI_Output(self,other,"DIA_Ramirez_First_01_22");	//Největší problém je že Attila byl donedávna můj nejlepší kamarád. A tys ho oddělal.
 		AI_Output(self,other,"DIA_Ramirez_First_01_23");	//Takže budeš muset hledat učitele kdekoli jinde. Já tě nic učit nebudu.
 		AI_Output(other,self,"DIA_Ramirez_First_01_24");	//Počkej...
@@ -164,11 +164,11 @@ func void DIA_Ramirez_First_info()
 		AI_Output(self,other,"DIA_Ramirez_First_01_04");	//Několik tajemství, které skrývají tajemství jak vyrábět meče a rapíry, které náš cech používá.
 		AI_Output(other,self,"DIA_Ramirez_First_01_05");	//A co je na nich tak úžasného?
 		AI_Output(self,other,"DIA_Ramirez_First_01_06");	//Jsem si jistý, že víš, že obyčejné zbraně jsou velmi nemotorné a těžké.
-		AI_Output(self,other,"DIA_Ramirez_First_01_07");	//Kým ty zvedneš svoji zbraň, dobrý majster meče tě desetkrát zabije.
+		AI_Output(self,other,"DIA_Ramirez_First_01_07");	//Kým ty zvedneš svoji zbraň, dobrý mistr meče tě desetkrát zabije.
 		AI_Output(self,other,"DIA_Ramirez_First_01_08");	//Je to pochopitelné, protože meč je volbou vrahů, zlodejů a všech co chtějí být vždy krok před svým nepřítelem.
 		AI_Output(other,self,"DIA_Ramirez_First_01_09");	//A ty víš jak takovou zbraň vytvořit?
-		AI_Output(self,other,"DIA_Ramirez_First_01_10");	//Existuje mnoho různých metod. Hlavní je vědět, které přísady mají být smíchány z ocelí.
-		AI_Output(self,other,"DIA_Ramirez_First_01_11");	//I obyčejný meč nabroušen směsí síry je nebezpečnejší než kdy dřív!
+		AI_Output(self,other,"DIA_Ramirez_First_01_10");	//Existuje mnoho různých metod. Hlavní je vědět, které přísady mají být smíchány s ocelí.
+		AI_Output(self,other,"DIA_Ramirez_First_01_11");	//I obyčejný meč nabroušen směsí síry je nebezpečnější než kdy dřív!
 		AI_Output(other,self,"DIA_Ramirez_First_01_12");	//Zajímavé!
 		AI_Output(self,other,"DIA_Ramirez_First_01_13");	//Tak to by mělo! Naučím tě kousek po kousku co a jak.
 		AI_Output(self,other,"DIA_Ramirez_First_01_14");	//Ale jak poznáš náš cech, nejsme charita...
@@ -222,17 +222,17 @@ func void DIA_Ramirez_RamirezPissOff_info()
 	{
 		AI_Output(self,other,"DIA_Ramirez_RamirezPissOff_01_02");	//Hmm... Měli jsme něco vyřídit?
 		AI_Output(other,self,"DIA_Ramirez_RamirezPissOff_01_03");	//Zdá se že ne.
-		AI_Output(self,other,"DIA_Ramirez_RamirezPissOff_01_04");	//Tak co ode mě chcete?
+		AI_Output(self,other,"DIA_Ramirez_RamirezPissOff_01_04");	//Tak co ode mě chceš?
 		AI_Output(other,self,"DIA_Ramirez_First_01_00");	//Poslala mě Cassia. Říkala, že mě můžeš něco naučit.
 		AI_Output(self,other,"DIA_Ramirez_First_01_03");	//Co se tréninku týče, tak tě skutečně můžu naučit něco, co tě nenaučí nikde jinde v Myrtaně.
 		AI_Output(self,other,"DIA_Ramirez_First_01_04");	//Několik tajemství, které skrývají tajemství jak vyrábět meče a rapíry, které náš cech používá.
 		AI_Output(other,self,"DIA_Ramirez_First_01_05");	//A co je na nich tak úžasného?
 		AI_Output(self,other,"DIA_Ramirez_First_01_06");	//Jsem si jistý, že víš, že obyčejné zbraně jsou velmi nemotorné a těžké.
-		AI_Output(self,other,"DIA_Ramirez_First_01_07");	//Kým ty zvedneš svoji zbraň, dobrý majster meče tě desetkrát zabije.
+		AI_Output(self,other,"DIA_Ramirez_First_01_07");	//Kým ty zvedneš svoji zbraň, dobrý mistr meče tě desetkrát zabije.
 		AI_Output(self,other,"DIA_Ramirez_First_01_08");	//Je to pochopitelné, protože meč je volbou vrahů, zlodejů a všech co chtějí být vždy krok před svým nepřítelem.
 		AI_Output(other,self,"DIA_Ramirez_First_01_09");	//A ty víš jak takovou zbraň vytvořit?
-		AI_Output(self,other,"DIA_Ramirez_First_01_10");	//Existuje mnoho různých metod. Hlavní je vědět, které přísady mají být smíchány z ocelí.
-		AI_Output(self,other,"DIA_Ramirez_First_01_11");	//I obyčejný meč nabroušen směsí síry je nebezpečnejší než kdy dřív!
+		AI_Output(self,other,"DIA_Ramirez_First_01_10");	//Existuje mnoho různých metod. Hlavní je vědět, které přísady mají být smíchány s ocelí.
+		AI_Output(self,other,"DIA_Ramirez_First_01_11");	//I obyčejný meč nabroušen směsí síry je nebezpečnější než kdy dřív!
 		AI_Output(other,self,"DIA_Ramirez_First_01_12");	//Zajímavé!
 		AI_Output(self,other,"DIA_Ramirez_First_01_13");	//Tak to by mělo! Naučím tě kousek po kousku co a jak.
 		AI_Output(self,other,"DIA_Ramirez_First_01_14");	//Ale jak poznáš náš cech, nejsme charita...
@@ -257,14 +257,14 @@ func void DIA_Ramirez_RamirezPissOff_No()
 func void DIA_Ramirez_RamirezPissOff_Deal()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Ramirez_RamirezPissOff_Deal_01_00");	//Pojďme se podívat na situaci z druhé strany
+	AI_Output(other,self,"DIA_Ramirez_RamirezPissOff_Deal_01_00");	//Pojďme se podívat na situaci z druhé strany.
 	AI_Output(other,self,"DIA_Ramirez_RamirezPissOff_Deal_01_01");	//Attila se mě pokusil zabít! Neměl jsem na vybranou.
 	AI_Output(self,other,"DIA_Ramirez_RamirezPissOff_Deal_01_02");	//Nemusel jsi ho dorážet!
 	AI_Output(other,self,"DIA_Ramirez_RamirezPissOff_Deal_01_03");	//Innos mi buď svědkem, nechtěl jsem ho zabít. To se tak přihodilo, že jsem ho na místě zabil ranou do srdce.
 	AI_Output(other,self,"DIA_Ramirez_RamirezPissOff_Deal_01_04");	//Jsem si jistý že nic necítil. Prostě zakrvácený padl rovnou k zemi, mrtvý.
 	AI_Output(self,other,"DIA_Ramirez_RamirezPissOff_Deal_01_05");	//No, alespoň tak... ještě že nemusel dlouho trpět.
 	AI_Output(self,other,"DIA_Ramirez_RamirezPissOff_Deal_01_06");	//Ach, dobře. Beliar s tebou! Příkazy co měl jednou dostat od Cassii by ho stejně přivedly do hrobu.
-	AI_Output(self,other,"DIA_Ramirez_RamirezPissOff_Deal_01_07");	//A proto na tebe nejsu tak naštvaný za vraždu Attily.
+	AI_Output(self,other,"DIA_Ramirez_RamirezPissOff_Deal_01_07");	//A proto na tebe nejsem tak naštvaný za vraždu Attily.
 	AI_Output(other,self,"DIA_Ramirez_RamirezPissOff_Deal_01_08");	//To je dobře.
 	RamirezTechMe = TRUE;
 	AI_StopProcessInfos(self);
@@ -487,14 +487,14 @@ func int dia_ramirez_guildkill_condition()
 func void dia_ramirez_guildkill_info()
 {
 	AI_Output(other,self,"DIA_Ramirez_GuildKill_01_00");	//Víš něco o cechu vrahů?
-	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_01");	//(vydešene) Proč se ptáš?!...
+	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_01");	//(vyděšeně) Proč se ptáš?!...
 	AI_Output(other,self,"DIA_Ramirez_GuildKill_01_02");	//Cassia mi řekla, že bys mohl něco vědět.
 	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_03");	//Takže ona řekla!
 	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_04");	//V takovýchto věcech je lepší držet jazyk za zuby, nebo se ti může něco ošklivého stát.
 	AI_Output(other,self,"DIA_Ramirez_GuildKill_01_05");	//Povíš mi o nich něco?
 	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_06");	//No, ale nic jim o tom neříkej, nebo bych se mohl rovnou rozloučit se životem.
 	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_07");	//Na Šibeničním náměstí se zeptej jednoho z trúbadůrů. Jmenuje se Gillian.
-	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_08");	//On by to mohl pomoci s tvým hledáním.
+	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_08");	//On by ti mohl pomoci s tvým hledáním.
 	AI_Output(other,self,"DIA_Ramirez_GuildKill_01_09");	//To je vše co víš?
 	AI_Output(self,other,"DIA_Ramirez_GuildKill_01_10");	//Jo!... (nervózně)
 	B_LogEntry(TOPIC_GUILDKILL,"Ramirez mi řekl, že o cechu vrahů se můžu dozvědět od trúbadůra Gilliana na Šibeničním náměstí...");
@@ -659,7 +659,7 @@ func void DIA_Ramirez_Teach_W3_info()
 
 	if((hero.lp >= 3) && (Npc_HasItems(other,ItMi_Gold) >= 1500))
 	{
-		AI_Output(self,other,"DIA_Ramirez_Teach_W3_01_02");	//To už je skutečná zbraň! Buď opatrný při výběru komponentů. Vyber jen ty nejlepší a bude z toho výborný meč!.
+		AI_Output(self,other,"DIA_Ramirez_Teach_W3_01_02");	//To už je skutečná zbraň! Buď opatrný při výběru komponentů. Vyber jen ty nejlepší a bude z toho výborný meč!
 		AI_Output(self,other,"DIA_Ramirez_Teach_W3_01_03");	//Teď mě dobře poslouchej.
 		AI_Output(self,other,"DIA_Ramirez_Teach_W3_01_04");	//Uděláš to samé, jako při výrobě krátkého meče.
 		AI_Output(self,other,"DIA_Ramirez_Teach_W3_01_05");	//Ale navíc, do meče zakováš černou perlu.
@@ -749,7 +749,7 @@ instance DIA_Ramirez_Teach_W5(C_Info)
 	condition = DIA_Ramirez_Teach_W5_condition;
 	information = DIA_Ramirez_Teach_W5_info;
 	permanent = TRUE;
-	description = "Nauč mě, jak vykovat 'Pronikavá ocel'. (VB: 5, cena: 3000 zlatých)";
+	description = "Nauč mě, jak vykovat meč 'Pronikavá ocel'. (VB: 5, cena: 3000 zlatých)";
 };
 
 func int DIA_Ramirez_Teach_W5_condition()
@@ -767,7 +767,7 @@ func void DIA_Ramirez_Teach_W5_info()
 	if((hero.lp >= 5) && (Npc_HasItems(other,ItMi_Gold) >= 3000))
 	{
 		AI_Output(self,other,"DIA_Ramirez_Teach_W5_01_02");	//To je velmi sofistikovaná zbraň.
-		AI_Output(self,other,"DIA_Ramirez_Teach_W5_01_03");	//Pečlivě si vyber z čeho ten meč budeš kovat, u tohoto meče je to obzlášť důležité.
+		AI_Output(self,other,"DIA_Ramirez_Teach_W5_01_03");	//Pečlivě si vyber z čeho ten meč budeš kovat, u tohoto meče je to obzvlášť důležité.
 		AI_Output(self,other,"DIA_Ramirez_Teach_W5_01_04");	//A teď mě dobře poslouchej.
 		AI_Output(self,other,"DIA_Ramirez_Teach_W5_01_05");	//Tenhle meč se ková podobným způsobem jako ten předchozí.
 		AI_Output(self,other,"DIA_Ramirez_Teach_W5_01_06");	//Ocel ale tentokrát vyžaduje rudu, a k naostření meče je použita síra.
@@ -827,7 +827,7 @@ func void DIA_Ramirez_Teach_W6_info()
 		AI_Output(self,other,"DIA_Ramirez_Teach_W6_01_05");	//Vhoď do kovárny více uhlí.
 		AI_Output(self,other,"DIA_Ramirez_Teach_W6_01_06");	//Akvamarín bude sloužit jako dekorace pro výrobu rukojeti.
 		AI_Output(self,other,"DIA_Ramirez_Teach_W6_01_07");	//Ta bude vypadat jako zakřivený bodec štíra!
-		AI_Output(self,other,"DIA_Ramirez_Teach_W6_01_08");	//Dále budeš potřebovat černou perlu, simbolizující jen škorpiona.
+		AI_Output(self,other,"DIA_Ramirez_Teach_W6_01_08");	//Dále budeš potřebovat černou perlu, symbolizující jen škorpiona.
 		AI_Output(self,other,"DIA_Ramirez_Teach_W6_01_09");	//Pak nanes skutečný jed na její ostří.
 		hero.lp = hero.lp - 6;
 		RankPoints = RankPoints + 6;
@@ -878,10 +878,10 @@ func void DIA_Ramirez_Teach_W7_info()
 	if((hero.lp >= 7) && (Npc_HasItems(other,ItMi_Gold) >= 5000))
 	{
 		AI_Output(self,other,"DIA_Ramirez_Teach_W7_01_02");	//Je obtížné obstarat si všechny ingredience nutné pro výrobu tohoto meče, ale je to ta nejlepší zbraň kterou tě mohu naučit vykovat.
-		AI_Output(self,other,"DIA_Ramirez_Teach_W7_01_03");	//Jak vidíš k vykování takéveho meče je potřeba hodně zkušeností, je to tak trochu umění.
+		AI_Output(self,other,"DIA_Ramirez_Teach_W7_01_03");	//Jak vidíš k vykování takového meče je potřeba hodně zkušeností, je to tak trochu umění.
 		AI_Output(self,other,"DIA_Ramirez_Teach_W7_01_04");	//Meč vyzařuje temnou auru a je smrtící pro všechny tvé nepřátele!
 		AI_Output(self,other,"DIA_Ramirez_Teach_W7_01_05");	//Teď mě dobře poslouchej...
-		AI_Output(self,other,"DIA_Ramirez_Teach_W7_01_06");	//Ocelové pruty, uhlí, křišťál, černou perlu a tři kusy ectoplasmy, to vše budeš potřebovat.
+		AI_Output(self,other,"DIA_Ramirez_Teach_W7_01_06");	//Ocelové pruty, uhlí, křišťál, černou perlu a tři kusy ektoplazmy, to vše budeš potřebovat.
 		AI_Output(self,other,"DIA_Ramirez_Teach_W7_01_07");	//Výroba tohoto meče končí doslova mystickým rituálem. Je nutno ji obětovat mrtvé maso!
 		AI_Output(self,other,"DIA_Ramirez_Teach_W7_01_08");	//To bude asi vše.
 		hero.lp = hero.lp - 7;
@@ -936,7 +936,7 @@ func void DIA_Ramirez_TellAboutFingers_info()
 	MIS_TellAboutFingers = LOG_Running;
 	Log_CreateTopic(TOPIC_TellAboutFingers,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TellAboutFingers,LOG_Running);
-	B_LogEntry(TOPIC_TellAboutFingers,"Ramirez mi řekl o meči který kdysi patřil Fingerovi. Byla to prý skutečně krásná a nebezpečná zbraň. Ale nejspíš to je jen legenda. Pokud o tom skutečně někdo ví, tak jen samotný Fingers.");
+	B_LogEntry(TOPIC_TellAboutFingers,"Ramirez mi řekl o meči který kdysi patřil Fingersovi. Byla to prý skutečně krásná a nebezpečná zbraň. Ale nejspíš to je jen legenda. Pokud o tom skutečně někdo ví, tak jen samotný Fingers.");
 };
 
 instance DIA_Ramirez_BanditShpaga(C_Info)
@@ -1076,7 +1076,7 @@ func void DIA_Ramirez_MagicBook_No()
 {
 	AI_Output(other,self,"DIA_Ramirez_MagicBook_No_01_01");	//To je moc drahé.
 	AI_Output(self,other,"DIA_Ramirez_MagicBook_No_01_02");	//Jak myslíš, nechám si ji zatím u sebe.
-	AI_Output(self,other,"DIA_Ramirez_MagicBook_No_01_03");	//Třeba se jí jednou někdo opravdu ode mě koupí.
+	AI_Output(self,other,"DIA_Ramirez_MagicBook_No_01_03");	//Třeba jí jednou někdo opravdu ode mě koupí.
 	MagicBookFindTrade = TRUE;
 	Info_ClearChoices(DIA_Ramirez_MagicBook);
 };
@@ -1086,7 +1086,7 @@ func void DIA_Ramirez_MagicBook_Nothing()
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Ramirez_MagicBook_Nothing_01_00");	//Ty po mě chceš 100 zlatých, za bezcenný kus papíru?
 	AI_Output(self,other,"DIA_Ramirez_MagicBook_Nothing_01_01");	//Hmmm.
-	AI_Output(other,self,"DIA_Ramirez_MagicBook_Nothing_01_02");	//Chceš me snad napálit?
+	AI_Output(other,self,"DIA_Ramirez_MagicBook_Nothing_01_02");	//Chceš mě snad napálit?
 	AI_Output(self,other,"DIA_Ramirez_MagicBook_Nothing_01_03");	//Myslel jsem, že ten deník potřebuješ.
 	AI_Output(self,other,"DIA_Ramirez_MagicBook_Nothing_01_04");	//Ach, no tak dobře... U Beliara! Tak si ji vem, na... 
 

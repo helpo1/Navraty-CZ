@@ -150,7 +150,7 @@ func int DIA_Addon_SawPirate_GoHome_Condition()
 func void DIA_Addon_SawPirate_GoHome_Info()
 {
 	AI_Output(other,self,"DIA_Addon_SawPirate_GoHome_15_00");	//Už tě déle nepotřebuji.
-	AI_Output(self,other,"DIA_Addon_SawPirate_GoHome_09_01");	//V tom případř se vratím do práce.
+	AI_Output(self,other,"DIA_Addon_SawPirate_GoHome_09_01");	//V tom případě se vrátím do práce.
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Npc_ExchangeRoutine(self,"START");
 };
@@ -179,7 +179,7 @@ func int DIA_Addon_SawPirate_TooFar_Condition()
 func void DIA_Addon_SawPirate_TooFar_Info()
 {
 	AI_Output(self,other,"DIA_Addon_SawPirate_TooFar_09_01");	//Jsme moc daleko od tábora.
-	AI_Output(self,other,"DIA_Addon_SawPirate_GoHome_09_02");	//To se mi nelibí. Vracím se.
+	AI_Output(self,other,"DIA_Addon_SawPirate_GoHome_09_02");	//To se mi nelíbí. Vracím se.
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Npc_ExchangeRoutine(self,"START");
 	AI_StopProcessInfos(self);

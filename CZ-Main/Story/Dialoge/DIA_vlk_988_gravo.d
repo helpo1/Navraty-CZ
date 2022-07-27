@@ -75,7 +75,7 @@ func void dia_gravo_firstmeet_info()
 	AI_Output(self,other,"DIA_Gravo_FirstMeet_01_01");	//Ano? Hmm... (přemýšlí) Možná ano. Tvůj obličej jsem už někde viděl.
 	AI_Output(self,other,"DIA_Gravo_FirstMeet_01_03");	//Ach, jistěže ano! Pamatuji si tě.
 	AI_Output(self,other,"DIA_Gravo_FirstMeet_01_04");	//Ty jsi ten kluk, který se vždy dostane do problémů. Jenže ti to v ničem nezabrání!
-	AI_Output(self,other,"DIA_Gravo_FirstMeet_01_06");	//Ukazuje se, že se nepletu. Mohl byste být snadno zaměněný za banditu.
+	AI_Output(self,other,"DIA_Gravo_FirstMeet_01_06");	//Ukazuje se, že se nepletu. Mohl bys být snadno zaměněný za banditu.
 	AI_Output(self,other,"DIA_Gravo_FirstMeet_01_07");	//K odsouzeným se nechovají příliš dobře.
 };
 
@@ -135,7 +135,7 @@ func void dia_gravo_hallo_info()
 	AI_Output(other,self,"DIA_Gravo_Hallo_01_05");	//Jaké problémy řešíš?
 	AI_Output(self,other,"DIA_Gravo_Hallo_01_06");	//No, všechny. Záleží na tom, jakej máš problém.
 	AI_Output(self,other,"DIA_Gravo_Hallo_01_08");	//No, některé se většinou považují za trestný čin.
-	AI_Output(self,other,"DIA_Gravo_Hallo_01_09");	//Mohl bych vyřešit kdejaké nedorozumění nebo se přimluvi u těch správných lidí.
+	AI_Output(self,other,"DIA_Gravo_Hallo_01_09");	//Mohl bych vyřešit kdejaké nedorozumění nebo se přimluvit u těch správných lidí.
 	AI_Output(self,other,"DIA_Gravo_Hallo_01_10");	//Věř mi, vždy je nějaký článek, který lze vyndat a hned bude po problémech.
 	AI_Output(self,other,"DIA_Gravo_Hallo_01_11");	//A poté se k tobě začnou lidé chovat jinak. Opět tě budou mít v oblibě.
 	AI_Output(self,other,"DIA_Gravo_Hallo_01_12");	//Samozřejmě si budeš moci dělat co chceš, a všechno bude normální. Nic neobvyklého.
@@ -288,7 +288,7 @@ func void dia_gravo_helpangrynow_netbek()
 	Info_AddChoice(dia_gravo_helpangrynow,"Tolik u sebe nemám.",dia_gravo_helpangrynow_nomoney);
 	if(Npc_HasItems(other,ItMi_Gold) >= 2000)
 	{
-		Info_AddChoice(dia_gravo_helpangrynow,"Jsou tvé!.",dia_gravo_helpangrynow_netbek_takeit);
+		Info_AddChoice(dia_gravo_helpangrynow,"Jsou tvé.",dia_gravo_helpangrynow_netbek_takeit);
 	};
 };
 
@@ -304,7 +304,7 @@ func void dia_gravo_helpangrynow_vatras_takeit()
 	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_00");	//Dobře tedy.
 	B_GiveInvItems(other,self,ItMi_Gold,3000);
 	Npc_RemoveInvItems(self,ItMi_Gold,3000);
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_01");	//To by mohlo stačit. Předpokládejme, že problém je vyřešen
+	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_01");	//To by mohlo stačit. Předpokládejme, že problém je vyřešen.
 	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_BigFarm_TakeIt_01_02");	//Nikomu o tom neříkej! Chovej se, jakoby se nic nedělo.
 	VatrasPissedOffForever = FALSE;
 	B_LogEntry(TOPIC_DIPLOM,"Teď mi musí Vatras odpustit.");
@@ -366,7 +366,7 @@ func void dia_gravo_helpangrynow_city_takeit()
 	AI_Output(other,self,"DIA_Gravo_HelpAngryNow_City_TakeIt_01_00");	//Skvělé!
 	B_GiveInvItems(other,self,ItMi_Gold,5000);
 	Npc_RemoveInvItems(self,ItMi_Gold,5000);
-	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_City_TakeIt_01_01");	//To by mohlo stačit. Předpokládejme, že problém je vyřešen
+	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_City_TakeIt_01_01");	//To by mohlo stačit. Předpokládejme, že problém je vyřešen.
 	AI_Output(self,other,"DIA_Gravo_HelpAngryNow_City_TakeIt_01_02");	//Nikomu o tom neříkej! Chovej se, jakoby se nic nedělo.
 	if(GARONDTROUBLE == TRUE)
 	{

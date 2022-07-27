@@ -84,7 +84,7 @@ func void DIA_Jorgen_Hallo_Info()
 
 	if((hero.guild == GIL_NOV) || (hero.guild == GIL_KDF))
 	{
-		AI_Output(self,other,"DIA_Jorgen_Hallo_07_01");	//Vidím, že patříš ke klášteru mágů
+		AI_Output(self,other,"DIA_Jorgen_Hallo_07_01");	//Vidím, že patříš ke klášteru mágů.
 		AI_Output(other,self,"DIA_Jorgen_Hallo_15_02");	//Ano, proč?
 		AI_Output(self,other,"DIA_Jorgen_Hallo_07_03");	//Neuživili byste tam ještě jednoho dělníka?
 	}
@@ -425,7 +425,7 @@ func void DIA_Jorgen_BEMYCAPTAIN3_Info()
 {
 	AI_Output(other,self,"DIA_Jorgen_BEMYCAPTAIN3_15_00");	//Buď mým kapitánem.
 	AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN3_07_01");	//Je to pro mě čest, ale máš vůbec nějakou loď a posádku?
-	AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN3_07_02");	//řekl bych, že budeme potřebovat aspoň pět chlapů.
+	AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN3_07_02");	//Řekl bych, že budeme potřebovat aspoň pět chlapů.
 	AI_Output(other,self,"DIA_Jorgen_BEMYCAPTAIN3_15_03");	//Dobře, uvidím, co se dá dělat. Zatím na mě počkej v přístavu.
 	AI_Output(self,other,"DIA_Jorgen_BEMYCAPTAIN3_07_04");	//Rozkaz, pane.
 	AI_StopProcessInfos(self);
@@ -473,7 +473,7 @@ func void DIA_Jorgen_LOSFAHREN_Info()
 	else
 	{
 		AI_Output(self,other,"DIA_Jorgen_LOSFAHREN_07_05");	//Potřebuješ loď, posádku aspoň pěti mužů a námořní mapu, podle které bych mohl plavbu navigovat.
-		AI_Output(self,other,"DIA_Jorgen_LOSFAHREN_07_06");	//Nemůžeme odrazit, dokud neuvidím, že jsi sehnal všechno potřebné.
+		AI_Output(self,other,"DIA_Jorgen_LOSFAHREN_07_06");	//Nemůžeme vyrazit, dokud neuvidím, že jsi sehnal všechno potřebné.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -556,7 +556,7 @@ instance DIA_JORGEN_NW_KAPITELORCATTACK(C_Info)
 	condition = dia_jorgen_nw_kapitelorcattack_condition;
 	information = dia_jorgen_nw_kapitelorcattack_info;
 	permanent = FALSE;
-	description = "Co říkáte, kapitáne?";
+	description = "Co říkáš, kapitáne?";
 };
 
 
@@ -570,7 +570,7 @@ func int dia_jorgen_nw_kapitelorcattack_condition()
 
 func void dia_jorgen_nw_kapitelorcattack_info()
 {
-	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_01_00");	//Co říkáte, kapitáne?
+	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_01_00");	//Co říkáš, kapitáne?
 	AI_Output(self,other,"DIA_Jorgen_NW_KapitelOrcAttack_01_01");	//Co mohu říci... (smutně) Slyšel jsem, že Khorinis je plně v područí skřetů.
 	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_01_02");	//Slyšel jsem, že se někteří chlapy chtějí probojovat skrz město.
 	AI_Output(self,other,"DIA_Jorgen_NW_KapitelOrcAttack_01_04");	//Mnoho z nich jsou zkušení válečníci a jsou zdatnými zabijáky skřetů.
@@ -579,7 +579,7 @@ func void dia_jorgen_nw_kapitelorcattack_info()
 
 	if(Npc_HasItems(other,ItMi_TeleportTaverne) >= 1)
 	{
-		Info_AddChoice(dia_jorgen_nw_kapitelorcattack,"(nabídnout teleportační runy do hostince)",dia_jorgen_nw_kapitelorcattack_taverne);
+		Info_AddChoice(dia_jorgen_nw_kapitelorcattack,"(nabídnout teleportační runu do hostince)",dia_jorgen_nw_kapitelorcattack_taverne);
 	};
 	Info_AddChoice(dia_jorgen_nw_kapitelorcattack,"Pokusím se.",dia_jorgen_nw_kapitelorcattack_nogiverune);
 };
@@ -587,13 +587,13 @@ func void dia_jorgen_nw_kapitelorcattack_info()
 func void dia_jorgen_nw_kapitelorcattack_taverne()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_01");	//Počkej! Potřeboval bych teleportační runu do hostince 'U Mrtvé harpyje'.
+	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_01");	//Počkej! Mám runu, která tě teleportuje do hostince 'U Mrtvé harpyje'.
 	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_02");	//Můžeš ji použít.
 	AI_Output(self,other,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_03");	//Noo... (zamyšleně) ja nevím, musím si to promyslet, zda mi to za to stojí.
 	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_05");	//Bojovat přes město, kde číhá plno skřetů - to se rovná jisté smrti!
-	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_06");	//Nadělají z Vás sekanou a Vy to víte!
-	AI_Output(self,other,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_08");	//Jo... přesvědčil jste mě. Dobře jdu do toho!
-	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_09");	//TAdy máte.
+	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_06");	//Nadělají z tebe sekanou a ty to víš!
+	AI_Output(self,other,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_08");	//Jo... přesvědčil jsi mě. Dobře jdu do toho!
+	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_09");	//Tady máš.
 	B_GiveInvItems(other,self,ItMi_TeleportTaverne,1);
 	Npc_RemoveInvItems(self,ItMi_TeleportTaverne,1);
 	AI_Output(self,other,"DIA_Jorgen_NW_KapitelOrcAttack_Taverne_01_10");	//Eh! Doufám, že po ní nebudu zlitej, jako po týden staré láhvy staré kořalky.
@@ -607,8 +607,8 @@ func void dia_jorgen_nw_kapitelorcattack_taverne()
 func void dia_jorgen_nw_kapitelorcattack_nogiverune()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_NoGiveRune_01_01");	//Další příležitost dostat se odsud!
-	AI_Output(self,other,"DIA_Jorgen_NW_KapitelOrcAttack_NoGiveRune_01_02");	//Nemyslím si, že mám práci... (odsouzen) Ale bude muset pokusit.
+	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_NoGiveRune_01_01");	//Neexistuje žádný jiný způsob, jak se odtud dostat!
+	AI_Output(self,other,"DIA_Jorgen_NW_KapitelOrcAttack_NoGiveRune_01_02");	//Nemyslím si, že to dokážu... (odsouzen) Ale musím to zkusit.
 	AI_Output(other,self,"DIA_Jorgen_NW_KapitelOrcAttack_NoGiveRune_01_03");	//Hodně štěstí, budeš ho potřebovat!
 	AI_Output(self,other,"DIA_Jorgen_NW_KapitelOrcAttack_NoGiveRune_01_04");	//Díky.
 	B_LogEntry(TOPIC_HELPCREW,"Jorgen se pokouší prorazit skrz město. Myslím, že nemá žádnou naději na úspěch.");
@@ -644,11 +644,11 @@ func void dia_jorgen_nw_againcapitan_info()
 	AI_Output(other,self,"DIA_Jorgen_NW_AgainCapitan_01_00");	//Opět musím sehnat kapitána na loď. 
 	AI_Output(self,other,"DIA_Jorgen_NW_AgainCapitan_01_01");	//Hmm... (ironicky) Ty máš něco za lubem kámo, co?
 	AI_Output(other,self,"DIA_Jorgen_NW_AgainCapitan_01_02");	//Jedu na pevninu. Mám velmi důležitou zprávu pro krále! Pomůžeš mi?
-	AI_Output(self,other,"DIA_Jorgen_NW_AgainCapitan_01_03");	//No jestli jo - tak napněme plachty! Ale už nejsem asistent
+	AI_Output(self,other,"DIA_Jorgen_NW_AgainCapitan_01_03");	//No jestli jo - tak napněme plachty! Omlouvám se, ale už ti nemůžu pomoci.
 	AI_Output(other,self,"DIA_Jorgen_NW_AgainCapitan_01_04");	//Proč?
 	AI_Output(self,other,"DIA_Jorgen_NW_AgainCapitan_01_05");	//Měl jsem dost všeho toho svinstva! Skřeti, draci, démoni - Jsem prostý člověk a já chci žít v míru.
-	AI_Output(self,other,"DIA_Jorgen_NW_AgainCapitan_01_06");	//Raději zůstanu tady a budu jednoduše žít v klášteře, než se plavit s vámi a neustále se strachovat v mém životě.
-	AI_Output(self,other,"DIA_Jorgen_NW_AgainCapitan_01_07");	//Takže se omlouvám, nemohu si pomoci!
-	AI_Output(other,self,"DIA_Jorgen_NW_AgainCapitan_01_08");	//Je to škoda. Spoléhám na vás.
+	AI_Output(self,other,"DIA_Jorgen_NW_AgainCapitan_01_06");	//Raději zůstanu tady a budu jednoduše žít v klášteře, než se plavit s tebou a neustále se strachovat o svůj život.
+	AI_Output(self,other,"DIA_Jorgen_NW_AgainCapitan_01_07");	//Takže se omlouvám, nemohu ti pomoci!
+	AI_Output(other,self,"DIA_Jorgen_NW_AgainCapitan_01_08");	//Je to škoda. Spoléhal jsem na tebe.
 	B_LogEntry(TOPIC_SALETOBIGLAND,"Jorgen odmítl být kapitánem mé lodi. Měl bych hledat někoho jiného, kdo mi může pomoci.");
 };

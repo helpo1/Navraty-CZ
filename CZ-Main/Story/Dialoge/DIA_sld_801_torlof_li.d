@@ -169,14 +169,14 @@ func void dia_torlof_li_storm_info()
 	AI_Output(other,self,"DIA_Torlof_LI_Storm_01_02");	//Hlavu mám jako kdyby mě po ní někdo praštil trámem.
 	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_03");	//Ano... (směje se) Něco podobného se opravdu stalo příteli!
 	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_08");	//Během bouře jsi mi pomohl vyrovnat kormidlo a vše vypadalo dobře, ale pak nás jedna vlna doslova srazila!
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_09");	//Tebe odhodila a hlavou si narazil do dřevřného zábradlí.
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_13");	//Sakra (vážnř) Ta bouře by nás brzy poslala na onen svět!
+	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_09");	//Tebe odhodila a hlavou si narazil do dřevěného zábradlí.
+	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_13");	//Sakra! (vážně) Ta bouře by nás brzy poslala na onen svět!
 	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_15");	//Díky Innosovi, že nám přivedl do cesty tento ostrov!
 	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_21");	//Tady v zátoce se můžeme cítit bezpečně.
 	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_23");	//Ale ještě se neradujme. Teď musíme přemýšlet jak opravit loď.
 	AI_Output(other,self,"DIA_Torlof_LI_Storm_01_24");	//Jak vážná oprava to bude?
 	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_25");	//Bude to docela náročná oprava. Ta bouře dala lodi dost zabrat.
-	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_26");	//Ty díry zamozřejmě zaděláme, ale je rozbité kormidlo - bez něj se nikam nedostanem!
+	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_26");	//Ty díry samozřejmě zaděláme, ale je rozbité kormidlo - bez něj se nikam nedostanem!
 	AI_Output(other,self,"DIA_Torlof_LI_Storm_01_27");	//Kolik ti to zabere času?
 	AI_Output(self,other,"DIA_Torlof_LI_Storm_01_28");	//Nevím. Pár dní, možná týden, možná víc. Dám ti vědět!
 };
@@ -212,7 +212,7 @@ func void dia_torlof_li_repair_info()
 	MIS_REPAIRSHIP = LOG_Running;
 	Log_CreateTopic(TOPIC_REPAIRSHIP,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_REPAIRSHIP,LOG_Running);
-	B_LogEntry(TOPIC_REPAIRSHIP,"Řekl jsem Torlofovi, že mu omohu s opravou lodi. On ale pověděl, že první musí prozkoumat škody. Mám se stavit pak.");
+	B_LogEntry(TOPIC_REPAIRSHIP,"Řekl jsem Torlofovi, že mu pomohu s opravou lodi. On ale pověděl, že první musí prozkoumat škody. Mám se stavit pak.");
 };
 
 
@@ -336,8 +336,8 @@ func void dia_torlof_li_repairhelpdone_info()
 	else
 	{
 		TORLOFLITIMERAWAY = Wld_GetDay();
-		AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_23");	//Ne tak jenoduše. Kolečko máme, ale ještě musíme opravit zbytek lodi.
-		AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_24");	//I takovéto malé poškození by v mři bylo smrtící!
+		AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_23");	//Ne tak rychle, kámo! Loď ještě není připravena k plavbě.
+		AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_24");	//Ještě jsem nestihl opravit nějaké další drobné poškození!
 		if(MIS_LOSTISLAND == LOG_Running)
 		{
 			AI_Output(self,other,"DIA_Torlof_LI_RepairHelpDone_01_25");	//Hlavně když nevíme kde jsme!
@@ -551,7 +551,7 @@ func void dia_torlof_li_awaydone_info()
 			}
 			else
 			{
-				AI_Output(other,self,"DIA_Torlof_LI_AwayDone_01_21");	//Dobře, jdu pro ně.
+				AI_Output(other,self,"DIA_Torlof_LI_AwayDone_01_21");	//Dobře, jdu pro něj.
 			};
 		};
 	};
@@ -630,14 +630,14 @@ func void dia_torlof_li_islandprogress_info()
 	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_11");	//Mapě?!
 	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_12");	//Ano, mapě! Ale nevím, co přesně ukazuje...
 	B_UseFakeScroll();
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_13");	//Zdá se že na té tabulce jsou vyznačená ještě nějaká čísla. Možná sou klíčem k rozluštění obsahu tabulky.
+	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_13");	//Zdá se že na té tabulce jsou vyznačená ještě nějaká čísla. Možná jsou klíčem k rozluštění obsahu tabulky.
 	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_17");	//Jsou to asi jen dohady, ale možná je tu šířka a délka ostrova.
 	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_18");	//Jestli to ty čísla opravdu obsahují, tak můžu zjistit kde jsme.
 	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_19");	//Ale abych mohl upřesnit naši polohu budu potřebovat námořní sextant.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_21");	//Bez něj nemůžu určit naši polohu
+	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_21");	//Bez něj nemůžu určit naši polohu.
 	AI_Output(other,self,"DIA_Torlof_LI_IslandProgress_01_22");	//Dobře! Pokusím se ho najít.
 	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_23");	//Zkus to, ale nemyslím si, že na tomhle ostrově něco takového bude.
-	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_24");	//Ale možná budeš mít zase štěstí jako vždy... (směje se) A podaěí se ti ho najít!
+	AI_Output(self,other,"DIA_Torlof_LI_IslandProgress_01_24");	//Ale možná budeš mít zase štěstí jako vždy... (směje se) A podaří se ti ho najít!
 	CAPNEEDSEXTANT = TRUE;
 	B_LogEntry(TOPIC_LOSTISLAND,"Ukázal jsem Torlofovi kamennou tabulku, kterou jsem našel na ostrově. Když jsme ji blíže prozkoumali, zjistil, že to může být mapa. Nicméně bez sextantu nemůže určit přesnou naši polohu. Proto ho musím někde na ostrově najít.");
 };
@@ -772,7 +772,7 @@ func void dia_torlof_li_whereguys_info()
 {
 	AI_Output(other,self,"DIA_Torlof_LI_WhereGuys_01_01");	//Kde jsou ostatní chlapi?!
 	AI_Output(self,other,"DIA_Torlof_LI_WhereGuys_01_02");	//Většina chlapů šla na břeh, jakmile sme ztrozkotali tady na tom ostrově.
-	AI_Output(self,other,"DIA_Torlof_LI_WhereGuys_01_04");	//No... (váhavě) Chtěli prozkoumat pobřeží ostrov
+	AI_Output(self,other,"DIA_Torlof_LI_WhereGuys_01_04");	//No... (váhavě) Chtěli prozkoumat pobřeží ostrova.
 };
 
 
@@ -799,7 +799,7 @@ func void dia_torlof_li_wheregold_info()
 {
 	AI_Output(other,self,"DIA_Torlof_LI_WhereGold_01_01");	//Kam se podělo mé zlato?
 	AI_Output(self,other,"DIA_Torlof_LI_WhereGold_01_02");	//(nechápavě) O čem mluvíš, příteli?!
-	AI_Output(other,self,"DIA_Torlof_LI_WhereGold_01_03");	//O velké hromadě zlata z ostrova Irdorath, kterou jsem vlastnoručně nakládal!
+	AI_Output(other,self,"DIA_Torlof_LI_WhereGold_01_03");	//O velké hromadě zlata z ostrova Irdorathu, kterou jsem vlastnoručně nakládal!
 	AI_Output(self,other,"DIA_Torlof_LI_WhereGold_01_08");	//Promiň chlape, ale nemám představu kde je!
 	BEGINGOLDSEEK = TRUE;
 	Wld_InsertItem(itmi_misstorlofthing,"FP_ITEM_CAPITANTHING");
@@ -829,7 +829,7 @@ func int dia_torlof_li_misscompas_condition()
 func void dia_torlof_li_misscompas_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_Torlof_LI_MissCompas_01_01");	//Gorn říkal, že jsi ztratil svůj kompas
+	AI_Output(other,self,"DIA_Torlof_LI_MissCompas_01_01");	//Gorn říkal, že jsi ztratil svůj kompas.
 	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_02");	//Ano... (zklamaně)
 	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_04");	//V průběhu bouře mi asi vypadl z kapsy.
 	AI_Output(self,other,"DIA_Torlof_LI_MissCompas_01_05");	//Ale nejsem si jistý, kde je...
@@ -879,7 +879,7 @@ func void dia_torlof_li_wheregolddone_info()
 	AI_Output(self,other,"DIA_Torlof_LI_WhereGoldDone_01_28");	//Raději bys měl děkovat Innosovi, že žijeme! To je mnohem důležitější.
 	MIS_MISSMYGOLD = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_MISSMYGOLD,LOG_SUCCESS);
-	B_LogEntry(TOPIC_MISSMYGOLD,"Nyní vím, kde je mé zlato. Posádka ho v bouři vyhodila přes plalubu, protože loď byla přetížena. Neřekli mi to, protože si mysleli, že se naštvu. Což měli pravdu.");
+	B_LogEntry(TOPIC_MISSMYGOLD,"Nyní vím, kde je mé zlato. Posádka ho v bouři vyhodila přes palubu, protože loď byla přetížena. Neřekli mi to, protože si mysleli, že se naštvu. Což měli pravdu.");
 };
 
 
@@ -1009,7 +1009,7 @@ func void dia_torlof_li_bringfooddoneext_sixty()
 	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_01");	//Super! Nyní všichni budou zajištěni na několik dalších dnů.
 	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_02");	//A kromě toho můžu i trochu zvýšit příděl.
 	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_03");	//Bude to pro ně dobrá zpráva.
-	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_04");	//A to vše díky tobě, příteli
+	AI_Output(self,other,"DIA_Torlof_LI_BringFoodDoneExt_Sixty_01_04");	//A to vše díky tobě, příteli.
 	Info_ClearChoices(dia_torlof_li_bringfooddoneext);
 	THANKSTELLALLMEAT = TRUE;
 	MIS_BRINGFOOD = LOG_SUCCESS;
@@ -1185,12 +1185,12 @@ func void dia_torlof_li_changecourse_paladin()
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Paladin_01_01");	//Mohli bychom o tom říci Hagenovi!
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_02");	//Co?! (naštvaně) Dát rudu paladinům?!
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Paladin_01_03");	//Potřebujou ji více než mi. S ní budou mít větší šanci vyhrát válku.
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_04");	//A co?! Možná že už ju prohráli!
+	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_04");	//A co?! Možná že už ji prohráli!
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_07");	//Eh... (naštvaně) Ať je po tvém.
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_08");	//Pak se tedy vrátíme na Khorinis.
 	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_09");	//Nemyslím, že ta myšlenka chlapi nadchne... (pochybuje)
 	AI_Output(other,self,"DIA_Torlof_LI_ChangeCourse_Paladin_01_10");	//Vysvětlím jim to!
-	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_11");	//Když to říkáš! Pak dej vědět co na to ěekli...
+	AI_Output(self,other,"DIA_Torlof_LI_ChangeCourse_Paladin_01_11");	//Když to říkáš! Pak dej vědět co na to řekli...
 	MIS_CHANGECOURSE = LOG_Running;
 	Log_CreateTopic(TOPIC_CHANGECOURSE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_CHANGECOURSE,LOG_Running);
@@ -1258,7 +1258,7 @@ func void dia_torlof_li_changecoursedone_info()
 		B_GivePlayerXP(500);
 		AI_Output(other,self,"DIA_Torlof_LI_ChangeCourseDone_01_03");	//Většina chce jít pomoci paladinům.
 		AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_05");	//No, dobře... (smutně) Tak rozhodla většina...
-		AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_06");	//Jen doufám že to lordu Hagenovi upravdu pomůže.
+		AI_Output(self,other,"DIA_Torlof_LI_ChangeCourseDone_01_06");	//Jen doufám že to lordu Hagenovi opravdu pomůže.
 		B_LogEntry(TOPIC_CHANGECOURSE,"Dohodli jsme se pro rozhodnutí říci o rudě paladinům.");
 		LIGOFORFREE = TRUE;
 	}

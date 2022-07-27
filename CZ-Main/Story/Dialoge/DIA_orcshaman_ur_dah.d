@@ -54,7 +54,7 @@ func void dia_orcshaman_ur_dah_hello_info()
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_Hello_01_03");	//Takže jsem se nemýlil - něco po tobě potřebuji!
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_Hello_01_04");	//Člověk mě hledal?!... (trochu udiveně) A co potřebuje člověk po Ur-Dahovi?
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_Hello_01_05");	//Potřebuji si promluvit o jedné věci - Duch Vody.
-	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_Hello_01_06");	//Shor, vůdce tvého klanu, mi řekl, že bys o tom měl něco málo vědět.
+	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_Hello_01_06");	//Nag Shor, vůdce tvého klanu, mi řekl, že bys o tom měl něco málo vědět.
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_Hello_01_07");	//Duch Vody?! Hmmm... (zamyšleně) A proč to chce člověk vědět?!
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_Hello_01_08");	//Slyšel jsem, že kdysi dávno jeden ze skřetích šamanů zotročil tuto bytost.
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_Hello_01_09");	//Chci najít způsob jak vrátit tomuto stvoření svobodu.
@@ -93,7 +93,7 @@ func void dia_orcshaman_ur_dah_tellstory_info()
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_01_04");	//Bylo to hodně zim zpátky, hodně zim - když Ur-Dah odešel.
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_01_05");	//Velký šaman mocného kmene Velký kámen šel hledat něco, co mu pomůže konečně porazit jeho nepřátele!
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_01_06");	//Chápu dobře, že Velký kámen je Vysoká skála?!
-	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_01_07");	//Správně človeče - nyní se nazýváme Vysoká.
+	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_01_07");	//Správně člověče - nyní se nazýváme Vysoká.
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_01_08");	//Jasně. A dál?
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_01_09");	//Bratři viděli, že jejich nepřítel přivolat zlý démon - Krushak - a stát se velmi silný! Nepřítele teď nemožné porazit!
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_01_10");	//Krushak?! Vím o čem mluvíš - mi mu říkáme Spáč.
@@ -169,15 +169,15 @@ func void dia_orcshaman_ur_dah_tellstory_magic_info()
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_22");	//Pět šamanů? To mi něco připomíná.
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_23");	//Proč je člověk překvapen? Ur-Dah nerozumí... (udiveně)
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_24");	//Šamani ze skřetího města povolali Spáče - Krushaka! Bylo jich také pět!
-	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_25");	//Arrgh... Člověk mít pravdu! Nyní Ur-Dah rozumí proč všecho velmi podobné pro člověk.
+	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_25");	//Arrgh... Člověk mít pravdu! Nyní Ur-Dah rozumí proč všechno velmi podobné pro člověk.
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_26");	//Nevím, proč jsem nerozuměl hned!
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_27");	//Dobře, ale teď není čas o tom mluvit.
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_28");	//Raději mi řekni - kde najdu ty úlomky?!
-	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_29");	//Pokud si vzpomínám, řekl jsi, že během války byli ti šamani zabiti. Nezústali ty úlomky u nich?
+	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_29");	//Pokud si vzpomínám, řekl jsi, že během války byli ti šamani zabiti. Nezůstali ty úlomky u nich?
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_30");	//Ne tak docela! Každý šaman ukryl svůj úlomek na tajné místo - nenosit ho pořád u sebe.
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_31");	//Nikdo neví kde přesně!
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_32");	//Jasně. Hledání se teda zřejmě nevyhnu...
-	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_33");	//Ur-dah doufá, že člověk hledat pořádně. Hodně štěstí!
+	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_33");	//Ur-Dah doufá, že člověk hledat pořádně. Hodně štěstí!
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_Magic_01_34");	//No, dík.
 	URDAHTELLME = URDAHTELLME + 1;
 	B_LogEntry(TOPIC_WAKONTEST,"Aby Duch Vody nemohl být osvobozen, skřetí šamani položili na starý oltář v jejich kmeni velký černý kámen a uzavřeli do něj magickou sílu. Ur-Dah neví jaké je kouzlo podstaty, ale varoval mě, že kdo se ho dotkne, zemře! Po rituálu prý každý šaman ulomil kus krystalu z kamene. Co s nimi udělali - nikdo neví! Ale myslí si, že úlomky jsou klíčem k osvobození Ducha Vody. Pro začátek bych měl najít ty úlomky a pak zjistit jak je použít. Nicméně kde je hledat neví přesně ani Ur-Dah!");
@@ -206,7 +206,7 @@ func void dia_orcshaman_ur_dah_tellstory_find_info()
 {
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_Find_01_01");	//Kde přesně skřeti uchovávají Ducha Vody?
 	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_Find_01_02");	//Člověk půjde do klanu Vysoká skála a najde vééélký kámen. Uvnitř je Duch Vody!
-	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_Find_01_03");	//Nicméně, člověk by neměl skoušet zničit kámen - to nelze provést, jinak Duch Vody okamžitě umřít.
+	AI_Output(self,other,"DIA_OrcShaman_Ur_Dah_TellStory_Find_01_03");	//Nicméně, člověk by neměl zkoušet zničit kámen - to nelze provést, jinak Duch Vody okamžitě umřít.
 	AI_Output(other,self,"DIA_OrcShaman_Ur_Dah_TellStory_Find_01_04");	//Dobře! Pochopil jsem.
 	URDAHTELLME = URDAHTELLME + 1;
 	B_LogEntry(TOPIC_WAKONTEST,"Ur-Dah řekl, že Duch Vody je ve klanu Vysoké skály, uvězněn ve velkém kameni.");

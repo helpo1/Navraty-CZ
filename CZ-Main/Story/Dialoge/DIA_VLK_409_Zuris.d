@@ -337,7 +337,7 @@ func void dia_zuris_tradeplace_info()
 {
 	AI_Output(other,self,"DIA_Zuris_TradePlace_01_00");	//Mluv, prý jsi měl nějaké problémy s Jorou.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_01_04");	//Ale je to pravda... Měl jsem nějaké nedorozumění s Jorou. trochu jsme se nepohodli.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_01_06");	//Hmm! nemyslím si, že je to tvoje věc, ale čas už změnil můj přístup k věci... (naštvaný)
+	AI_Output(self,other,"DIA_Zuris_TradePlace_01_06");	//Hmm! Nemyslím si, že je to tvoje věc, ale čas už změnil můj přístup k věci... (naštvaný)
 	AI_Output(self,other,"DIA_Zuris_TradePlace_01_07");	//... Prostě a jednoduše jsem zvedl nájemné mého stánku, který má pronajmutý Jora a kde teď prodává své zboží.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_01_08");	//Nebylo to nic příjemného to udělat jemu a ani kupeckému cechu.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_01_09");	//Určitě jsi už o něm něco slyšel, ne?
@@ -398,7 +398,7 @@ func void dia_zuris_tradeplace_interes()
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Interes_01_01");	//Ha! jestli tě to zajímá, tak nechápu proč jednoduše nejdeš do horní čtvrti a jednoduše neposloucháš.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Interes_01_04");	//Lidé obyčejně nemají ve zvyku mrhat časem.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Interes_01_05");	//Takže s tebou dál nehodlám mluvit na toto téma, zmiz!... (naštvaný)
-	B_LogEntry(TOPIC_JORAHELP,"Nedokázal jsem se se Zurisem dohodnout ohledně Jory. zuris už se mnou nechce mluvit a myslím, že tohle Lutera moc nepotěší...");
+	B_LogEntry(TOPIC_JORAHELP,"Nedokázal jsem se se Zurisem dohodnout ohledně Jory. Zuris už se mnou nechce mluvit a myslím, že tohle Lutera moc nepotěší...");
 	ZURISPISSOFF = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -442,8 +442,8 @@ func void dia_zuris_tradeplace_deal()
 	AI_Output(other,self,"DIA_Zuris_TradePlace_Deal_01_15");	//Deset tisíc? Ale to je hodně!
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_16");	//To je má cena. Můžeš ji přijmout nebo odmítnout.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_20");	//Samozřejmě chápu, že takové peníze jen tak neseženeš...
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_21");	//Ale cech ti možná vypomůže
-	B_LogEntry(TOPIC_JORAHELP,"Řekl jsem Zurisovi proč mě Lutero poslal. Souhlasil, že mi stánek prodá, ale za 10 000 zlatých. Možná mi nějaké peníze poskytne cech!");
+	AI_Output(self,other,"DIA_Zuris_TradePlace_Deal_01_21");	//Ale cech ti možná vypomůže.
+	B_LogEntry(TOPIC_JORAHELP,"Řekl jsem Zurisovi proč mě Lutero poslal. Souhlasil, že mi stánek prodá, ale za 10 000 zlatých. Možná mi nějaké peníze poskytne cech.");
 	ZURISTRADEPLACEYES = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -486,7 +486,7 @@ func void dia_zuris_tradeplace_place()
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Place_01_13");	//Slušné peníze za slušné místo.
 	AI_Output(other,self,"DIA_Zuris_TradePlace_Place_01_14");	//Dobrá, seženu ti tu sumu.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Place_01_15");	//Času máš dost. Zhruba celé tři týdny!
-	B_LogEntry(TOPIC_JORAHELP,"Zuris mi nabídl stánek odkoupit za 5 000 zlatých! mám na to tři týdny, takže bych měl zajít za Luterem a zeptat se, jestli cech nemá nějaké zdroje pro tento účel!");
+	B_LogEntry(TOPIC_JORAHELP,"Zuris mi nabídl stánek odkoupit za 5 000 zlatých! Mám na to tři týdny, takže bych měl zajít za Luterem a zeptat se, jestli cech nemá nějaké zdroje pro tento účel.");
 	ZURISTRADEPLACEYESCHIP = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -504,17 +504,17 @@ func void dia_zuris_tradeplace_problem()
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_24");	//Samozřejmě za ten lektvar chtěl dost peněz, ale tu cenu to má!
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_28");	//Ale jakmile se mu dostal do rukou, zlomil cenu a nasadil ji nehorázně vysoko!
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_29");	//Třikrát více, než bylo dohodnuto!
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_30");	//Přirozeně jsem tolik penět neměl!
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_31");	//Znamená to, že lutero porušil dohodu?!
+	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_30");	//Přirozeně jsem tolik peněz neměl!
+	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_31");	//Znamená to, že Lutero porušil dohodu?!
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_32");	//Ano, porušil dohodu, nechal se zaslepit zlatým leskem...
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_33");	//A ještě promrhal tento poklad...
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_34");	//Někdo mu pár dní po té vybílil dům včetně elixíru.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_38");	//A proto chci Luterovi oplatit stejnou mincí.
 	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_39");	//To chápu, ale není fér, aby na to dopláceli obyčejní lidé.
-	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_40");	//Také je možné, že Lutero toho lutuje a chce svou chybu napravit...
+	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_40");	//Také je možné, že Lutero toho lituje a chce svou chybu napravit...
 	AI_Output(other,self,"DIA_Zuris_TradePlace_Problem_01_43");	//Je něco, co by tě donutilo změnit úhel pohledu?
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Problem_01_48");	//Hmmm... Ale proč bys něco takového dělal?
-	B_LogEntry(TOPIC_JORAHELP,"Promluvil jsem si se Zurisem ohledně Jorova stánku. Po dlouhé rozmluvě jsem se dozvěděl, že měl kdysi s Luterem dohodu ohledně jistého lektvaru jménem Plamen Eligiora. Lutero ho podvedl a od té doby ho Zuris snaží shodit. Zeptal jsem se ho, jestli bych mohl jejich spor nějak urovnat...");
+	B_LogEntry(TOPIC_JORAHELP,"Promluvil jsem si se Zurisem ohledně Jorova stánku. Po dlouhé rozmluvě jsem se dozvěděl, že měl kdysi s Luterem dohodu ohledně jistého lektvaru jménem 'Eligorův plamen'. Lutero ho podvedl a od té doby se ho Zuris snaží shodit. Zeptal jsem se ho, jestli bych mohl jejich spor nějak urovnat...");
 	Info_ClearChoices(dia_zuris_tradeplace);
 	Info_AddChoice(dia_zuris_tradeplace,"Jednoduše chci pomoct.",dia_zuris_tradeplace_help);
 };
@@ -522,7 +522,7 @@ func void dia_zuris_tradeplace_problem()
 func void dia_zuris_tradeplace_help()
 {
 	AI_Output(other,self,"DIA_Zuris_TradePlace_Help_01_00");	//Jednoduše chci pomoct.
-	AI_Output(self,other,"DIA_Zuris_TradePlace_Help_01_07");	//Ano, on. Jestli ho získáš, změním své rozhodnutí ohledně Jory.
+	AI_Output(self,other,"DIA_Zuris_TradePlace_Help_01_07");	//Jestli ho získáš, změním své rozhodnutí ohledně Jory.
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Help_01_08");	//Samozřejmě ti také v rozumných mezích uhradím náklady na cestu!
 	AI_Output(other,self,"DIA_Zuris_TradePlace_Help_01_15");	//Myslíš, že ho ještě neužil?
 	AI_Output(self,other,"DIA_Zuris_TradePlace_Help_01_16");	//Myslím, že ne. Lidé většinou nemají tušení co se jim dostalo do rukou a poklady prodávají.
@@ -641,7 +641,7 @@ func void dia_zuris_givemetaskok_tellme()
 	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_01");	//Opravdu?!... No, očekával jsem od tebe trochu jinou odpověď.
 	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_05");	//Lutero mi řekl o té věci s Jorou.
 	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_21");	//Chtěl bych ti poděkovat za tvou práci.
-	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_22");	//Dám ti také jeden lektvar, není tak sílný jako Plamen, ale potěší...
+	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_22");	//Dám ti také jeden lektvar, není tak silný jako Plamen, ale potěší...
 	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_23");	//... jeho vlastnosti jsou také dobré.
 	B_GiveInvItems(self,other,ItPo_Perm_STR,1);
 	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_25");	//Toť vše...
@@ -651,7 +651,7 @@ func void dia_zuris_givemetaskok_tellme()
 	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_31");	//Možná by tě to mohlo zajímat.
 	AI_Output(other,self,"DIA_Zuris_GiveMeTaskOk_Tellme_01_32");	//To jako že bych ho od tebe mohl odkoupit?
 	AI_Output(self,other,"DIA_Zuris_GiveMeTaskOk_Tellme_01_35");	//Pouhých 7 000 a je tvůj!
-	AI_Output(other,self,"DIA_Zuris_GiveMeTaskOk_Tellme_01_36");	//Bezva, jseš si jistý?
+	AI_Output(other,self,"DIA_Zuris_GiveMeTaskOk_Tellme_01_36");	//Bezva, jsi si jistý?
 	ZURISGIVEMETASKOK = TRUE;
 	ZURISGIVEMETASKOKBONUS = TRUE;
 	TRADEELIGORFIRE = TRUE;
@@ -769,7 +769,7 @@ instance DIA_ZURIS_ABOUTKILLIGNAZ(C_Info)
 	condition = dia_zuris_aboutkillignaz_condition;
 	information = dia_zuris_aboutkillignaz_info;
 	permanent = FALSE;
-	description = "Jsem to ohledně vraždy Ignaze.";
+	description = "Jsem tu ohledně vraždy Ignaze.";
 };
 
 func int dia_zuris_aboutkillignaz_condition()
@@ -783,7 +783,7 @@ func int dia_zuris_aboutkillignaz_condition()
 func void dia_zuris_aboutkillignaz_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Zuris_AboutKillIgnaz_01_01");	//Jsem to ohledně vraždy Ignaze.
+	AI_Output(other,self,"DIA_Zuris_AboutKillIgnaz_01_01");	//Jsem tu ohledně vraždy Ignaze.
 	AI_Output(self,other,"DIA_Zuris_AboutKillIgnaz_01_06");	//Jsem jen obyčejný obchodník.
 	AI_Output(other,self,"DIA_Zuris_AboutKillIgnaz_01_07");	//Ano, ale tato část města je plná lidí...
 	AI_Output(other,self,"DIA_Zuris_AboutKillIgnaz_01_08");	//... Takže jsi mohl něco zaslechnout?
@@ -804,7 +804,7 @@ instance DIA_Zuris_LOKIPOTION(C_Info)
 	condition = DIA_Zuris_LOKIPOTION_Condition;
 	information = DIA_Zuris_LOKIPOTION_Info;
 	permanent = FALSE;
-	description = "Obchoduješ také z bylinkami?";
+	description = "Obchoduješ také s bylinkami?";
 };
 
 
@@ -819,14 +819,14 @@ func int DIA_Zuris_LOKIPOTION_Condition()
 func void DIA_Zuris_LOKIPOTION_Info()
 {
 	B_GivePlayerXP(300);
-	AI_Output(other,self,"DIA_Zuris_LOKIPOTION_01_00");	//Obchoduješ také z bylinkami?
-	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_01");	//Samozrejme. O co přesně máš zájem?
-	AI_Output(other,self,"DIA_Zuris_LOKIPOTION_01_02");	//Sháním velmi vzácnú... kaktusový květ. Máš ho?
+	AI_Output(other,self,"DIA_Zuris_LOKIPOTION_01_00");	//Obchoduješ také s bylinkami?
+	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_01");	//Samozřejmě. O co přesně máš zájem?
+	AI_Output(other,self,"DIA_Zuris_LOKIPOTION_01_02");	//Sháním velmi vzácnou věc... kaktusový květ. Máš ho?
 	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_03");	//Ano měl sem jeden...
 	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_04");	//Ale před pár dny ho koupil mág z kláštera.
-	AI_Output(other,self,"DIA_Zuris_LOKIPOTION_01_05");	//Sakra, an neřekl, proč ho najednou potřeboval?
+	AI_Output(other,self,"DIA_Zuris_LOKIPOTION_01_05");	//Sakra, ani neřekl, proč ho najednou potřeboval?
 	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_06");	//Říkal, že ho chce využít pro jeho alchymistické experimenty.
-	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_07");	//A tato květina je hodne drahá.
+	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_07");	//A tato květina je hodně drahá.
 	AI_Output(self,other,"DIA_Zuris_LOKIPOTION_01_08");	//Je mi to líto. Teď ti nemohu pomoct.
 	FindCactus = TRUE;
 	B_LogEntry(TOPIC_PrioratStart,"Zuris prodával kaktusový květ, ale před pár dny ho prodal mágovi Ohně z kláštera. Musím se pokusit nějak ho získat.");
@@ -840,7 +840,7 @@ instance DIA_Zuris_FromWhomCactus(C_Info)
 	condition = DIA_Zuris_FromWhomCactus_Condition;
 	information = DIA_Zuris_FromWhomCactus_Info;
 	permanent = FALSE;
-	description = "Kde si vzal ten kaktusový kvet?";
+	description = "Kde si vzal ten kaktusový květ?";
 };
 
 
@@ -854,7 +854,7 @@ func int DIA_Zuris_FromWhomCactus_Condition()
 
 func void DIA_Zuris_FromWhomCactus_Info()
 {
-	AI_Output(other,self,"DIA_Zuris_FromWhomCactus_01_00");	//Kde si vzal ten kaktusový kvet?
+	AI_Output(other,self,"DIA_Zuris_FromWhomCactus_01_00");	//Kde si vzal ten kaktusový květ?
 	AI_Output(self,other,"DIA_Zuris_FromWhomCactus_01_01");	//Přinesl mi ho jeden obchodník, kamarád z Varantu. Bylo to již dávno.
 	AI_Output(other,self,"DIA_Zuris_FromWhomCactus_01_02");	//A získat další asi nebude tak snadné?
 	AI_Output(self,other,"DIA_Zuris_FromWhomCactus_01_03");	//Kdysi to nebyl takový problém... ale teď...

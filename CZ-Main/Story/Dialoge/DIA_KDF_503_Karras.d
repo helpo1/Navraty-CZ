@@ -128,7 +128,7 @@ func void DIA_Karras_Aufgabe_Info()
 	AI_Output(self,other,"DIA_Karras_Aufgabe_10_04");	//Chci, abys šel do města a sehnal mi tři svitky.
 	B_GiveInvItems(self,other,ItMi_Gold,600);
 	AI_Output(self,other,"DIA_Karras_Aufgabe_10_05");	//Nikomu ani slovo, jasně?
-	AI_Output(other,self,"DIA_Karras_Aufgabe_15_06");	//Jasny.
+	AI_Output(other,self,"DIA_Karras_Aufgabe_15_06");	//Jasný.
 	MIS_KarrasVergessen = LOG_Running;
 	Log_CreateTopic(Topic_KarrasCharm,LOG_MISSION);
 	Log_SetTopicStatus(Topic_KarrasCharm,LOG_Running);
@@ -551,7 +551,7 @@ func void DIA_Karras_HaveBook_Info()
 	AI_Output(self,other,"DIA_Karras_HaveBook_10_06");	//Nemůžu ti ale říct, jestli jsou duševně posedlí, anebo zmutováni čistě fyzicky.
 	AI_Output(self,other,"DIA_Karras_HaveBook_10_07");	//Vrať se za nějaký čas. Pak budu vědět víc.
 	MIS_KarrasResearchDMT = LOG_SUCCESS;
-	B_LogEntry(TOPIC_DEMENTOREN,"Karras pokračuje výzkum Almanachem Posedlých. Měl bych se k němu později pak vrátit.");
+	B_LogEntry(TOPIC_DEMENTOREN,"Karras pokračuje ve výzkumu Almanachu Posedlých. Měl bych se k němu později pak vrátit.");
 	KarrasGotResearchDMTBook_Day = Wld_GetDay();
 	B_GivePlayerXP(XP_KarrasResearchDMT);
 };
@@ -711,7 +711,7 @@ func void DIA_Karras_ItAm_Prot_BlackEye_Mis_Info()
 		B_GiveInvItems(self,other,ItAm_Prot_BlackEye_Mis,1);
 		AI_Output(self,other,"DIA_Karras_ItAm_Prot_BlackEye_Mis_10_02");	//Vždy ho nos s sebou a Pátrači tě nebudou moci zatáhnout do svojí pasti.
 		AI_Output(other,self,"DIA_Karras_ItAm_Prot_BlackEye_Mis_15_03");	//Děkuji.
-		B_LogEntry(TOPIC_DEMENTOREN,"Od Karrasa jsem obdržel ochranný amulet proti temných pohledům Pátračů.");
+		B_LogEntry(TOPIC_DEMENTOREN,"Od Karrasa jsem obdržel ochranný amulet proti temným pohledům Pátračů.");
 		DIA_Karras_ItAm_Prot_BlackEye_Mis_NoPerm = TRUE;
 		B_GivePlayerXP(XP_Ambient);
 	}
@@ -998,7 +998,7 @@ func void DIA_Karras_HelpBooks_Ok_info()
 	Npc_RemoveInvItems(other,itwr_oldbook6,1);
 	AI_Output(self,other,"DIA_Karras_HelpBooks_Ok_01_03");	//Ó, Innosi, dokázal jsi to! Aniž bys měl nějakou představu, jak zajímavé a důležité informace z těch svazků získáme.
 	AI_Output(other,self,"DIA_Karras_HelpBooks_Ok_01_04");	//Podělíš se pak o své znalosti se mnou?
-	AI_Output(self,other,"DIA_Karras_HelpBooks_Ok_01_05");	//Kdoví, Kdoví... (sarkasticky) Běž za Pyrokarem, už tě netrpělivě očekává, aby tě přijal do Kruhu Ohně! Než půjdeš, zde máš ode mně runový kámen, bude se ti hodit.
+	AI_Output(self,other,"DIA_Karras_HelpBooks_Ok_01_05");	//Kdoví, kdoví... (sarkasticky) Běž za Pyrokarem, už tě netrpělivě očekává, aby tě přijal do Kruhu Ohně! Než půjdeš, zde máš ode mně runový kámen, bude se ti hodit.
 	B_GiveInvItems(self,other,ItMi_RuneBlank,1);
 	MIS_KARRAS_BOOKS = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_HELPKARRASBOOKS,LOG_SUCCESS);

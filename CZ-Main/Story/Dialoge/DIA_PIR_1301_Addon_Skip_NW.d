@@ -572,7 +572,7 @@ func void DIA_Addon_Skip_About_Drink_Info()
 	AI_Output(other,self,"DIA_Addon_Skip_About_Drink_01_03");	//Radši něco silnějšího.
 	AI_Output(self,other,"DIA_Addon_Skip_About_Drink_01_04");	//Hmmm... (zamyšleně) Zůstala mi tu poslední láhev vskutku nevšedního nápoje.
 	AI_Output(self,other,"DIA_Addon_Skip_About_Drink_01_05");	//Říká se mu 'Rychlý sleď'! Dělá ho jeden můj starý přítel.
-	AI_Output(self,other,"DIA_Addon_Skip_About_Drink_01_06");	//Jistě mi ale rozumíš, že se ním nechci rozloučit jen tak.
+	AI_Output(self,other,"DIA_Addon_Skip_About_Drink_01_06");	//Jistě mi ale rozumíš, že se s ním nechci rozloučit jen tak.
 	AI_Output(other,self,"DIA_Addon_Skip_About_Drink_01_07");	//A kolik chceš?
 	AI_Output(self,other,"DIA_Addon_Skip_About_Drink_01_08");	//V tomto případě mě zlato příliš nezajímá...
 	AI_Output(other,self,"DIA_Addon_Skip_About_Drink_01_09");	//Tak co chceš?
@@ -580,7 +580,7 @@ func void DIA_Addon_Skip_About_Drink_Info()
 	AI_Output(self,other,"DIA_Addon_Skip_About_Drink_01_11");	//Byl jsem příliš dlouho na moři, a teď to je přesně to, co potřebuji.
 	AI_Output(self,other,"DIA_Addon_Skip_About_Drink_01_12");	//Do bordelu ale sám nemůžu jít. Domobrana mě sebere hned jak skočím na první suku.
 	AI_Output(self,other,"DIA_Addon_Skip_About_Drink_01_13");	//Co kdybys ji přivedl sem? Pak dostaneš svůj chlast.
-	AI_Output(self,other,"DIA_Addon_Skip_About_Drink_01_14");	//Dumluv se s ní, že tu zůstane minimálně tři dny.
+	AI_Output(self,other,"DIA_Addon_Skip_About_Drink_01_14");	//Domluv se s ní, že tu zůstane minimálně tři dny.
 	AI_Output(other,self,"DIA_Addon_Skip_About_Drink_01_15");	//Dobře! Pokusím se to zařídit.
 	MIS_WomanForSkip = LOG_Running;
 	Log_CreateTopic(TOPIC_WomanForSkip,LOG_MISSION);

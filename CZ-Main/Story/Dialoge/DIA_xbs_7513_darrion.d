@@ -211,7 +211,7 @@ func void dia_darrion_armorcanteach_info()
 	AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_01");	//To je pravda, protože jsem byl jediný kovář v bažinách. Musel jsem kovat zbroje pro všechny bratry z Bratrstva, dokonce i pro samotného Cor Angara.
 	AI_Output(other,self,"DIA_Darrion_ArmorCanTeach_01_02");	//Mohl bys mě naučit ukovat tuto zbroj?
 	AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_03");	//No proč ne. Mohl bych ti ukázat pár způsobů jak vylepšit svou zbroj.
-	AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_04");	//Ale aby sis mohl svou zbroj vylepšit, budeš už muset být trochu zkušený v kovaříně.
+	AI_Output(self,other,"DIA_Darrion_ArmorCanTeach_01_04");	//Ale aby sis mohl svou zbroj vylepšit, budeš už muset být trochu zkušený v kovařině.
 
 	if(Npc_GetTalentSkill(other,NPC_TALENT_SMITH) > 0)
 	{
@@ -240,8 +240,8 @@ func void b_darrion_teacharmor_4()
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
 		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_02");	//... na kovadlinu nachystáš plát a vkoveš do něj kus magické rudy...
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_03");	//... potom uděláš úchyty a připojíš je k plátu, a opratrně je budeš přikovávat v místě spoje...
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_04");	//... poté opratrně připojíš vzniklou část na pancíř zbroje - asi nějak takto... podívej...
+		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_03");	//... potom uděláš úchyty a připojíš je k plátu, a opatrně je budeš přikovávat v místě spoje...
+		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_04");	//... poté opatrně připojíš vzniklou část na pancíř zbroje - asi nějak takto... podívej...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Darrion_TeachArmor_4_01_05");	//... hotovo!
@@ -280,7 +280,7 @@ func void b_darrion_teacharmor_6()
 		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_02");	//Dívej se pořádně a zkus si zapamatovat. Vezmeš rozžhavenou ocel a na kovadlině jí vykoveš do formy plátu...
 		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_03");	//... pokryješ výsledek drtí z magické rudy a na povrch naneseš vrstvu roztoku z pryskyřice...
 		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_04");	//... spoj takovéto dva pláty ocelovými šrouby a upevni je na kostru zbroje... no, a takto se to dělá...
-		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_05");	//... tento krok dodá odolnost spojům všech částí zbroje. Ještě trochu upravíme obrys zboje a...
+		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_05");	//... tento krok dodá odolnost spojům všech částí zbroje. Ještě trochu upravíme obrys zbroje a...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
 		AI_Output(self,other,"DIA_Darrion_TeachArmor_6_01_06");	//... a to je vše, zbroj je hotova!
@@ -544,13 +544,13 @@ func void XBS_7513_DARRION_PrioratBlade_info()
 	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_12");	//Co je to?
 	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_13");	//Ale pro místní obyvatelé nemá tahle zbraň absolutně žádnou hodnotu!
 	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_14");	//Takže pochází z Varantu? A co je to ten Varant?
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_15");	//Varant - je ohromná poušt, která se nacházi na jihu Myrtany. A lide, co jí obývají - asasíni, velmi často používají podobné čepele.
+	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_15");	//Varant - je ohromná poušt, která se nacházi na jihu Myrtany. A lidé, co jí obývají - asasíni, velmi často používají podobné čepele.
 	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_16");	//Ačkoliv tato zbraň se trochu liší od toho, co jsem měl možnost vidět předtím.
 	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_17");	//Jak to myslíš?
 	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_18");	//Velmi mě zaujala rytina na hlavní části čepele. Znaky, jež jsou na ní zobrazeny, mi nejsou vůbec povědomé.
 	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_19");	//Ale kdybych věděl co znamenají, dokázal bych ti přesně říct - kdo je opravdovým majitelem této zbraně.
 	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_20");	//A kdo by to mohl vědět?
-	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_21");	//Vůbec nemám ponětí. (zaraženě) Možná sami asasíni by poznali komu patři.
+	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_21");	//Vůbec nemám ponětí. (zaraženě) Možná sami asasíni by poznali komu patří.
 	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_22");	//No a kde bych mohl najít alespoň jednoho z nich?
 	AI_Output(self,other,"XBS_7513_DARRION_PrioratBlade_01_23");	//Vyhovuje jim teplé slunce Varantu spíše než počasí co je zde.
 	AI_Output(other,self,"XBS_7513_DARRION_PrioratBlade_01_24");	//Dobrá, rozumím. Díky za pomoc!

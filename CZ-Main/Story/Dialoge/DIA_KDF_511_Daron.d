@@ -790,7 +790,7 @@ func void DIA_DARON_RING_TEST_Take_info()
 	Log_CreateTopic(TOPIC_DARON_RING_TEST,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DARON_RING_TEST,LOG_Running);
 	MIS_DARON_RING_TEST = LOG_Running;
-	B_LogEntry(TOPIC_DARON_RING_TEST,"Daron nabídl mi vyskoušet si jeden podivně vypadající prsten. Souhlasil jsem, že to udělám.");
+	B_LogEntry(TOPIC_DARON_RING_TEST,"Daron mi nabídl vyskoušet si jeden podivně vypadající prsten. Souhlasil jsem, že to udělám.");
 };
 
 
@@ -801,7 +801,7 @@ instance DIA_DARON_RING_TEST_Done(C_Info)
 	condition = DIA_DARON_RING_TEST_Done_condition;
 	information = DIA_DARON_RING_TEST_Done_info;
 	permanent = FALSE;
-	description = "Použil jsem svůj prsten.";
+	description = "Použil jsem tvůj prsten.";
 };
 
 func int DIA_DARON_RING_TEST_Done_condition()
@@ -815,16 +815,16 @@ func int DIA_DARON_RING_TEST_Done_condition()
 func void DIA_DARON_RING_TEST_Done_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_DARON_RING_TEST_Done_01_01");	//Použil jsem svůj prsten.
+	AI_Output(other,self,"DIA_DARON_RING_TEST_Done_01_01");	//Použil jsem tvůj prsten.
 	AI_Output(self,other,"DIA_DARON_RING_TEST_Done_01_02");	//A co se stalo?
-	AI_Output(other,self,"DIA_DARON_RING_TEST_Done_01_03");	//Níc zvláštního. Přeneslo mě to přímo ke kruhu Slunce.
+	AI_Output(other,self,"DIA_DARON_RING_TEST_Done_01_03");	//Nic zvláštního. Přeneslo mě to přímo ke kruhu Slunce.
 	AI_Output(self,other,"DIA_DARON_RING_TEST_Done_01_04");	//Takže je to jen prsten teleportace? (zklamaně) Upřimně jsem doufal ve víc.
 	AI_Output(self,other,"DIA_DARON_RING_TEST_Done_01_05");	//V každém případě, díky že jsi mi s tím pomohl.
 	AI_Output(other,self,"DIA_DARON_RING_TEST_Done_01_06");	//A co mám dělat s prstenem?
 	AI_Output(self,other,"DIA_DARON_RING_TEST_Done_01_07");	//Klidně si ho nech. Já ho nepotřebuju.
 	Npc_RemoveInvItems(hero,ItRi_UnknownRing,Npc_HasItems(hero,ItRi_UnknownRing));
 	CreateInvItems(hero,ItRi_Teleport_Ring,1);
-	AI_Output(self,other,"DIA_DARON_RING_TEST_Done_01_08");	//Vezmi si taky několik léčivých lekvarú jako poděkování.
+	AI_Output(self,other,"DIA_DARON_RING_TEST_Done_01_08");	//Vezmi si taky několik léčivých lektvarů jako poděkování.
 	B_GiveInvItems(self,other,ItPo_Health_03,3);
 	B_LogEntry(TOPIC_DARON_RING_TEST,"Řekl jsem Daronovi o tom, co se stalo, když jsem si nasadil jeho prsten. Byl trochu zklamaný, že jeho magický artefakt byl jenom prstenem teleportace.");
 	Log_CreateTopic(TOPIC_DARON_RING_TEST,LOG_SUCCESS);
@@ -853,7 +853,7 @@ func int DIA_DARON_GoldForGorax_condition()
 func void DIA_DARON_GoldForGorax_info()
 {
 	AI_Output(other,self,"DIA_DARON_GoldForGorax_01_00");	//Mohu pro tebe něco udělat?
-	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_01");	//Tvoje touha pomoci skužebníku Innosovu je chvályhodná, můj synu a já ti veřím.
+	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_01");	//Tvoje touha pomoci služebníku Innosovu je chvályhodná, můj synu a já ti věřím.
 	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_02");	//Protože tvé skutky dokázali, že jsi toho hoden.
 	AI_Output(other,self,"DIA_DARON_GoldForGorax_01_03");	//To rád slyším.
 	AI_Output(self,other,"DIA_DARON_GoldForGorax_01_04");	//Takže, potřebuju teď doručit nashromážděné dary do kláštera.

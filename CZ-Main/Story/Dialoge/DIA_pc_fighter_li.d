@@ -209,7 +209,7 @@ func void dia_gorn_li_bringfoodproggress_info()
 	AI_Output(self,other,"DIA_Gorn_LI_BringFoodProggress_00_01");	//Čím víc, tím líp! Nevíme jak dlouho tu ještě budem!
 	AI_Output(self,other,"DIA_Gorn_LI_BringFoodProggress_00_03");	//Hmmm... Myslím, že pro začátek by dva tucty fláků masa a dvacet jablek mělo stačit.
 	AI_Output(self,other,"DIA_Gorn_LI_BringFoodProggress_00_05");	//Copak, rozhodnul ses jít na lov?
-	AI_Output(other,self,"DIA_Gorn_LI_BringFoodProggress_00_06");	//No, proč ne. Někdo stějne musí prozkoumat ostrov.
+	AI_Output(other,self,"DIA_Gorn_LI_BringFoodProggress_00_06");	//No, proč ne. Někdo stejně musí prozkoumat ostrov.
 	AI_Output(self,other,"DIA_Gorn_LI_BringFoodProggress_00_12");	//Jestli jsi tedy rozhodnutý to udělat, tak tedy hodně štěstí.
 	AI_Output(self,other,"DIA_Gorn_LI_BringFoodProggress_00_13");	//Ale pamatuj - zásoby sice potřebujem, ale dávej si pozor!
 	MIS_BRINGFOOD = LOG_Running;
@@ -447,8 +447,8 @@ func void dia_fighter_li_away_info()
 	B_GivePlayerXP(50);
 	AI_Output(other,self,"DIA_Fighter_LI_Away_01_01");	//Čas vrátit se na loď.
 	AI_Output(self,other,"DIA_Fighter_LI_Away_01_02");	//Konečně opraveno?!
-	AI_Output(other,self,"DIA_Fighter_LI_Away_01_03");	//Před chvílí se donočily poslední opravy a jsme připraveni odplout.
-	AI_Output(self,other,"DIA_Fighter_LI_Away_01_04");	//Konečně, zde bychom dlouho nepřežili - nebo alepoň já bych nečinností chcípl.
+	AI_Output(other,self,"DIA_Fighter_LI_Away_01_03");	//Před chvílí se dokončily poslední opravy a jsme připraveni odplout.
+	AI_Output(self,other,"DIA_Fighter_LI_Away_01_04");	//Konečně, zde bychom dlouho nepřežili - nebo alespoň já bych nečinností chcípl.
 	B_LogEntry(TOPIC_GATHERCREW,"Řekl jsem Gornovi, že zvedáme kotvy - šel na loď a je štěstím bez sebe!");
 	GORNLIONBOARD = TRUE;
 	if((GORNLIHERE == TRUE) && (GORNLIONBOARD == TRUE))
@@ -554,7 +554,7 @@ func void dia_fighter_li_changecourse_ore()
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		Log_AddEntry(TOPIC_CHANGECOURSE,"Mluvil jsem se všemi chlapi, teď bych měl za kapitánem.");
+		Log_AddEntry(TOPIC_CHANGECOURSE,"Mluvil jsem se všemi chlapi, teď bych měl jít za kapitánem.");
 	};
 	Info_ClearChoices(dia_fighter_li_changecourse);
 };
@@ -571,7 +571,7 @@ func void dia_fighter_li_changecourse_gold()
 	if(COUNTPEOPLEDECIDEPRG >= COUNTPEOPLEDECIDE)
 	{
 		READYCHANGECOURSE = TRUE;
-		Log_AddEntry(TOPIC_CHANGECOURSE,"Mluvil jsem se všemi chlapi, teď bych měl za kapitánem.");
+		Log_AddEntry(TOPIC_CHANGECOURSE,"Mluvil jsem se všemi chlapi, teď bych měl jít za kapitánem.");
 	};
 	Info_ClearChoices(dia_fighter_li_changecourse);
 };

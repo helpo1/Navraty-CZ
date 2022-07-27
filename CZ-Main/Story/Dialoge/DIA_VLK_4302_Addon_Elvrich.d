@@ -81,7 +81,7 @@ func void DIA_Addon_Elvrich_BanditsThere_Info()
 {
 	if(Npc_IsDead(BDT_10307_Addon_RangerBandit_M) && Npc_IsDead(BDT_10308_Addon_RangerBandit_L) && Npc_IsDead(BDT_10309_Addon_RangerBandit_L) && Npc_IsDead(BDT_10310_Addon_RangerBandit_M))
 	{
-		AI_Output(self,other,"DIA_Addon_Elvrich_BanditsThere_04_00");	//Díky bohu! S bandity je konec. Zachránil si mi život.
+		AI_Output(self,other,"DIA_Addon_Elvrich_BanditsThere_04_00");	//Díky bohu! S bandity je konec. Zachránils mi život.
 		DIA_Addon_Elvrich_BanditsThere_NoPerm = TRUE;
 		self.aivar[AIV_NoFightParker] = FALSE;
 	}
@@ -179,7 +179,7 @@ func void DIA_Addon_Elvrich_WhatExactly_Info()
 func void DIA_Addon_Elvrich_WhatExactly_Want()
 {
 	AI_Output(other,self,"DIA_Addon_Elvrich_WhatExactly_Want_15_00");	//Co od tebe banditi chtěli?
-	AI_Output(self,other,"DIA_Addon_Elvrich_WhatExactly_Want_04_01");	//Několikrát se mi podařilo je odpslouchávat jejich rozhovory. Z nich jsem pochopil, že nás chtějí prodat do otroctví. 
+	AI_Output(self,other,"DIA_Addon_Elvrich_WhatExactly_Want_04_01");	//Několikrát se mi podařilo odposlouchávat jejich rozhovory. Z nich jsem pochopil, že nás chtějí prodat do otroctví. 
 	Info_AddChoice(DIA_Addon_Elvrich_WhatExactly,"Kam vás chtěli odvléct?",DIA_Addon_Elvrich_WhatExactly_Pirates);
 };
 
@@ -204,7 +204,7 @@ func void DIA_Addon_Elvrich_WhatExactly_Here()
 {
 	AI_Output(other,self,"DIA_Addon_Elvrich_WhatExactly_Here_15_00");	//Piráti v Khorinisu?
 	AI_Output(self,other,"DIA_Addon_Elvrich_WhatExactly_Here_04_01");	//Moc o nich nevím. Upřímně řečeno, jsem je tehdy viděl poprvé.
-	AI_Output(self,other,"DIA_Addon_Elvrich_WhatExactly_Here_04_02");	//Oni se snaží skrývat ve stínech, v pozadí. Skoro každý z nich - kdo je hledaný zločinec.
+	AI_Output(self,other,"DIA_Addon_Elvrich_WhatExactly_Here_04_02");	//Oni se snaží skrývat ve stínech, v pozadí. Skoro každý z nich je hledaný zločinec.
 	AI_Output(self,other,"DIA_Addon_Elvrich_WhatExactly_Here_04_03");	//Piráti mají pověru - Bojí se totiž šibenice. Proto na ně nikdy nenarazíš ve městě.
 };
 

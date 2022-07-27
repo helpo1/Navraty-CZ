@@ -735,7 +735,7 @@ func void dia_addon_saturas_canbekdw_info()
 			AI_Output(self,other,"DIA_Addon_Saturas_CanBeKdw_15_14");	//Být mágem Vody je veliký dar i veliká odpovědnost. Jenom vyvoleným Adana je dopřáno této pocty.
 			AI_Output(self,other,"DIA_Addon_Saturas_CanBeKdw_15_15");	//Jenom ti, kteří jsou připraveni a oddaní vždy následovat posvátnou cestu Adana, mohou doufat v zasvěcení mezi mágy Vody.
 			AI_Output(self,other,"DIA_Addon_Saturas_CanBeKdw_15_16");	//Být mágem Vody neznamená jenom získat moc a vědomosti, které nám Adanos dává. Je to mnohem víc...
-			AI_Output(self,other,"DIA_Addon_Saturas_CanBeKdw_15_17");	//... Mnohem víc pro ty, kteří slouží Adanovi, je to znamením i osudem!
+			AI_Output(self,other,"DIA_Addon_Saturas_CanBeKdw_15_17");	//... mnohem víc pro ty, kteří slouží Adanovi, je to znamením i osudem!
 			AI_Output(self,other,"DIA_Addon_Saturas_CanBeKdw_15_18");	//Proto mě tedy nežádej, abych tě jmenoval mágem Vody hned teď. Nejsi ještě připraven!
 			AI_Output(self,other,"DIA_Addon_Saturas_CanBeKdw_15_20");	//Můžu tě jenom přijmout mezi novice našeho řádu. Odtud můžeš vykročit na cestu Adanova služebníka.
 			AI_Output(self,other,"DIA_Addon_Saturas_CanBeKdw_15_23");	//A pamatuj - když se zavážeš zasvětit svůj život službě Adanovi, nemůžeš to jednoduše vzít zpátky.

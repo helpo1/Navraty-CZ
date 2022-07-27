@@ -137,7 +137,7 @@ func void dia_vatras_li_vatrassucked_info()
 	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_00");	//Běž mi z očí, ty vrahu. Nemůžeš už ode mě očekávat absolutně žádnou pomoc.
 	AI_Output(other,self,"DIA_Vatras_DI_VatrasSucked_05_10");	//Po všem co jsem udělal - mě nyní neposloucháš?!
 	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_11");	//Ano, tvé skutky jsou velké! Ale teď jsi udělal hrozné věci.
-	AI_Output(other,self,"DIA_Vatras_DI_VatrasSucked_05_12");	//Ale hodně lidí dělá velké omily.
+	AI_Output(other,self,"DIA_Vatras_DI_VatrasSucked_05_12");	//Ale hodně lidí dělá velké omyly.
 	AI_Output(other,self,"DIA_Vatras_DI_VatrasSucked_05_13");	//Odpust mi, mistře, chtěl bych tě požádat o milost.
 	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_14");	//To není tak lehké, synu.
 	AI_Output(self,other,"DIA_Vatras_DI_VatrasSucked_05_15");	//Přirozeně já ti odpustit mohu, ale jak ti může tvé činy odpustit Adanos?!

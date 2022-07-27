@@ -73,7 +73,7 @@ func void DIA_TPL_8104_TEMPLER_AboutMe_info()
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_05");	//A proč se ptáš?
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_AboutMe_01_06");	//Prostě si nepamatuju, že bych tě viděl v bejvalém táboře Bratrstva Spáče.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_07");	//Přirozeně! Nemůžeš si na mě pamatovat... (smích) Ve starém táboře jsem byl jenom novic co pomáhal Guru zpracovávat trávu z bažin. 
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_08");	//Ale já si tě pamatuju dobře. Ty jsi ten, co přimesl Cor Kalomovi výměšek z důlních červů. Nebo ne?
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_08");	//Ale já si tě pamatuju dobře. Ty jsi ten, co přinesl Cor Kalomovi výměšek z důlních červů. Nebo ne?
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_AboutMe_01_09");	//Ano, tak to bylo.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_AboutMe_01_10");	//Takže se nepletu... (smích) mám výbornou paměť na lidi! Obzvlášť když šlo o naše Bratrstvo.
 };
@@ -261,7 +261,7 @@ func void DIA_TPL_8104_TEMPLER_Relax_info()
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_04");	//Ach člověče... to by bylo řešení, ale jak to udělat? 
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_Relax_01_05");	//A včem je problém?
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_06");	//Rozumíš, kdybych teď byl v táboře Bratrstva, Tak bych si zašel za Talasem. 
-	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_07");	//Pár pávů toho matroše co on dává novicům, by mě určitě posrtavilo na nohy.
+	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_07");	//Pár pávů toho matroše co on dává novicům, by mě určitě postavilo na nohy.
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_08");	//No řekni mě, kde v tédle poušti seženu aspoň jeden kousek trávy z bažin?
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_Relax_01_09");	//Tak, jak to tak vypadá, s odpočinkem budu muset počkat.
 	Log_CreateTopic(TOPIC_TiraksRelax,LOG_MISSION);
@@ -330,7 +330,7 @@ instance DIA_TPL_8104_TEMPLER_GetFurs(C_Info)
 	condition = DIA_TPL_8104_TEMPLER_GetFurs_condition;
 	information = DIA_TPL_8104_TEMPLER_GetFurs_info;
 	permanent = FALSE;
-	description = "Můžu vám ještě s něčím poct?";
+	description = "Můžu vám ještě s něčím pomoct?";
 };
 
 func int DIA_TPL_8104_TEMPLER_GetFurs_condition()
@@ -343,7 +343,7 @@ func int DIA_TPL_8104_TEMPLER_GetFurs_condition()
 
 func void DIA_TPL_8104_TEMPLER_GetFurs_info()
 {
-	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_01_00");	//Můžu vám ještě s něčím poct?
+	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_01_00");	//Můžu vám ještě s něčím pomoct?
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_01");	//Hmmm... (zamyšleně) Domnívám se, že bys nám mohl sehnat pár ovčích kůží.
 	AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_01_02");	//A to proč?
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_03");	//No v noci je tu celkem chladno, když musíš spát na zemi.
@@ -354,7 +354,7 @@ func void DIA_TPL_8104_TEMPLER_GetFurs_info()
 	AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_01_08");	//Tak možná bude mít co potřebujem.
 	Log_CreateTopic(TOPIC_TiraksFur,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_TiraksFur,LOG_Running);
-	B_LogEntry(TOPIC_TiraksFur,"Tiraks mě požádal jestli bych nesehnal pár ovčích kůží, aby jemu a jeho mužum nebylo v noci zima.");
+	B_LogEntry(TOPIC_TiraksFur,"Tiraks mě požádal jestli bych nesehnal pár ovčích kůží, aby jemu a jeho mužům nebylo v noci zima.");
 	MIS_TiraksFur = LOG_Running;
 };
 
@@ -389,8 +389,8 @@ func void DIA_TPL_8104_TEMPLER_GetFurs_Done_info()
 		B_GiveInvItems(other,self,ItAt_ShadowFur,2);
 		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_03");	//Hmmm... (překvapeně) Pro mě jsou to jen kůže, až na to, že jsou výborně dílensky zpracované!
 		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_04");	//Teď aspoň moji muži nebudou v noci mrznout.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_05");	//Zajmalo by mě, kde jsi je získal? Byl jsi na lovu těchto zvířat?!
-		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_06");	//Já ne, to ten lovec, kterého jste viděli v blízkosti tábora. On loví v těchto krajích
+		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_05");	//Zajímalo by mě, kde jsi je získal? Byl jsi na lovu těchto zvířat?!
+		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_06");	//Já ne, to ten lovec, kterého jste viděli v blízkosti tábora. On loví v těchto krajích.
 		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_01_08");	//Rozumím. A předpokládám, že jsi za ně musel zaplatit velkou kupu zlata.
 		Info_ClearChoices(DIA_TPL_8104_TEMPLER_GetFurs_Done);
 
@@ -434,7 +434,7 @@ func void DIA_TPL_8104_TEMPLER_GetFurs_Done_info()
 func void DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale()
 {
 		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_00");	//Dostal jsem je darem.
-		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_01");	//No, pokud ano... (zamyšleně) Potom jako jeho poděkování, ti dám pár vzácných magických elixírů.
+		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_01");	//No, pokud ano... (zamyšleně) Potom jako poděkování, ti dám pár vzácných magických elixírů.
 		AI_Output(other,self,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_02");	//To je od tebe velkorysé.
 		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_03");	//Ty jsi nám pomohl a to se cení mnohem víc.
 		AI_Output(self,other,"DIA_TPL_8104_TEMPLER_GetFurs_Done_NoSale_01_04");	//Tady, vem si ty magické nápoje. Doufám, že ti přijdou vhod.

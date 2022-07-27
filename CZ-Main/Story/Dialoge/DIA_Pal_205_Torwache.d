@@ -190,7 +190,7 @@ func int DIA_PAL_205_Torwache_PassAsMil_Condition()
 
 func void DIA_PAL_205_Torwache_PassAsMil_Info()
 {
-	AI_Output(other,self,"DIA_PAL_205_Torwache_PassAsMil_15_00");	//Jsem členem domovrany.
+	AI_Output(other,self,"DIA_PAL_205_Torwache_PassAsMil_15_00");	//Jsem členem domobrany.
 	AI_Output(self,other,"DIA_PAL_205_Torwache_PassAsMil_12_01");	//Tak to mění situaci - můžeš vejít.
 	CITYHALLACCESSGRANTED = TRUE;
 	PALGUARD = FALSE;
@@ -222,7 +222,7 @@ func int DIA_PAL_205_Torwache_PassAsMage_Condition()
 func void DIA_PAL_205_Torwache_PassAsMage_Info()
 {
 	AI_Output(other,self,"DIA_PAL_205_Torwache_PassAsMage_15_00");	//Jsem mág Ohně.
-	AI_Output(self,other,"DIA_PAL_205_Torwache_PassAsMage_12_01");	//Ano, samozřejmně... Odpusť mágu, konám jen svou povinnost!
+	AI_Output(self,other,"DIA_PAL_205_Torwache_PassAsMage_12_01");	//Ano, samozřejmě... Odpusť mágu, konám jen svou povinnost!
 	CITYHALLACCESSGRANTED = TRUE;
 	PALGUARD = FALSE;
 	self.aivar[AIV_PASSGATE] = TRUE;
@@ -345,7 +345,7 @@ func int dia_pal_205_torwache_passassek_condition()
 func void dia_pal_205_torwache_passassek_info()
 {
 	AI_Output(other,self,"DIA_PAL_205_Torwache_PassAsSEK_15_00");	//Mám zde schůzku s místodržícím Lariusem. Měli ti to oznámit!
-	AI_Output(self,other,"DIA_PAL_205_Torwache_PassAsSEK_12_01");	//Ano, byl jsem informován. Pro vstuo však musíš znát heslo? Řekni mi ho!
+	AI_Output(self,other,"DIA_PAL_205_Torwache_PassAsSEK_12_01");	//Ano, byl jsem informován. Pro vstup však musíš znát heslo? Řekni mi ho!
 	AI_Output(other,self,"DIA_PAL_205_Torwache_PassAsSEK_15_01");	//Y'Berion!... Můžu teď dovnitř, paladine?!
 	AI_Output(self,other,"DIA_PAL_205_Torwache_PassAsSEK_12_02");	//Vstup. Ale varuji tě: Začni dělat problémy a budeš litovat dne, kdy ses narodil.
 	CITYHALLACCESSGRANTED = TRUE;

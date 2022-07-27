@@ -42,7 +42,7 @@ func int DIA_Fernando_Hello_Condition()
 func void DIA_Fernando_Hello_Info()
 {
 	AI_Output(other,self,"DIA_Fernando_Hello_15_00");	//Jak jdou obchody?
-	AI_Output(self,other,"DIA_Fernando_Hello_14_01");	//Nic moc. Když ještě stála bariéra, bylo to lepší časy.
+	AI_Output(self,other,"DIA_Fernando_Hello_14_01");	//Nic moc. Když ještě stála bariéra, byly to lepší časy.
 	AI_Output(self,other,"DIA_Fernando_Hello_14_02");	//Trestanci dodávali tuny a tuny rudy z dolů a mé lodě ji pak odvážely na pevninu.
 	AI_Output(self,other,"DIA_Fernando_Hello_14_03");	//A zpátky zase přivážely potraviny a jiné zboží.
 	AI_Output(self,other,"DIA_Fernando_Hello_14_04");	//Ale teď jsme odříznuti od pevniny a jsme se zásobami závislí na farmářích.
@@ -104,7 +104,7 @@ func void DIA_Addon_Fernando_BanditTrader_Info()
 	};
 	if(Npc_HasItems(other,ItRi_Addon_BanditTrader))
 	{
-		AI_Output(other,self,"DIA_Addon_Fernando_BanditTrader_15_03");	//Našel jsem také tento prsten u zámořského průvodce Araxosose. A ty jsi zámořský obchodník.
+		AI_Output(other,self,"DIA_Addon_Fernando_BanditTrader_15_03");	//Našel jsem také tento prsten cechu zámořských obchodníků Araxos. A ty jsi zámořský obchodník.
 		if(Npc_HasItems(other,ItMw_Addon_BanditTrader))
 		{
 			AI_Output(other,self,"DIA_Addon_Fernando_BanditTrader_15_04");	//A meče banditů jsou podepsány tvým iniciálem 'F'.
@@ -271,7 +271,7 @@ func void dia_fernando_taliasanletter_info()
 	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_11");	//CO?! Gallahada?!... Toho šarlatána?
 	AI_Output(other,self,"DIA_Fernando_TaliasanLetter_01_17");	//A co s tím máš za problém?
 	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_22");	//Eh... (smutný) No neměli jsme žádný spor, ale...
-	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_23");	//... Chtěl jsem si od něj koupit jednu knihu. Už tomu bude déle.
+	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_23");	//... chtěl jsem si od něj koupit jednu knihu. Už tomu bude déle.
 	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_24");	//Velmi jsem ji potřeboval, ale on mi ji nechtěl prodat a já nevím proč!
 	AI_Output(self,other,"DIA_Fernando_TaliasanLetter_01_25");	//Stále dokola jsem ho prosil a on stále dokola odmítal.
 	AI_Output(other,self,"DIA_Fernando_TaliasanLetter_01_26");	//Maličkost! A co to bylo za knihu?

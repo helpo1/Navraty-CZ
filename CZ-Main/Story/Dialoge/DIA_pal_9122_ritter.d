@@ -66,7 +66,7 @@ func int dia_pal_9122_ritter_silvercup_condition()
 func void dia_pal_9122_ritter_silvercup_info()
 {
 	AI_Output(other,self,"DIA_Pal_9122_Ritter_SilverCup_01_00");	//Co je s tebou? Nikdy jsem neviděl paladina trpícího melancholií.
-	AI_Output(self,other,"DIA_Pal_9122_Ritter_SilverCup_01_01");	//Bohužel, mám dobrý důvod
+	AI_Output(self,other,"DIA_Pal_9122_Ritter_SilverCup_01_01");	//Bohužel, mám dobrý důvod.
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SilverCup_01_02");	//Jsem vyschlej jak troud, už dlouhou dobu nemohou pít své oblíbené víno.
 	AI_Output(other,self,"DIA_Pal_9122_Ritter_SilverCup_01_03");	//Co, prohrál jsi všechny peníze v kostkách, a teď nemáš na zaplacení v hospodě? (zasměje se)
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SilverCup_01_04");	//Bohužel, můj problém je mnohem horší!
@@ -157,7 +157,7 @@ func void dia_pal_9122_ritter_silvercup_give()
 	AI_Output(other,self,"DIA_Pal_9122_Ritter_SilverCup_Give_01_00");	//Nic nechci, na vem si ho!
 	B_GiveInvItems(other,self,ItMi_SilverCup,1);
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SilverCup_Give_01_01");	//Tvoje štědrost nezná mezí, příteli, ale nemohu si ho jen tak vzít.
-	AI_Output(self,other,"DIA_Pal_9122_Ritter_SilverCup_Give_01_02");	//Vzmi si kousek černé rudy, je velmi vzácná.
+	AI_Output(self,other,"DIA_Pal_9122_Ritter_SilverCup_Give_01_02");	//Vezmi si kousek černé rudy, je velmi vzácná.
 	B_GiveInvItems(self,other,ItMi_Zeitspalt_Addon,1);
 	Info_ClearChoices(dia_pal_9122_ritter_silvercup);
 };
@@ -231,7 +231,7 @@ func void dia_pal_9122_ritter_silvercupdone_give()
 	AI_Output(other,self,"DIA_Pal_9122_Ritter_SilverCupDone_Give_01_00");	//Nic nechci, na vem si ho!
 	B_GiveInvItems(other,self,ItMi_SilverCup,1);
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SilverCupDone_Give_01_01");	//Tvoje štědrost nezná mezí, příteli, ale nemohu si ho jen tak vzít.
-	AI_Output(self,other,"DIA_Pal_9122_Ritter_SilverCupDone_Give_01_02");	//Vzmi si kousek černé rudy, je velmi vzácná.
+	AI_Output(self,other,"DIA_Pal_9122_Ritter_SilverCupDone_Give_01_02");	//Vezmi si kousek černé rudy, je velmi vzácná.
 	B_GiveInvItems(self,other,ItMi_Zeitspalt_Addon,1);
 	MIS_FERDSILVERCUP = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_FERDSILVERCUP,LOG_SUCCESS);
@@ -330,7 +330,7 @@ func int dia_pal_9122_ritter_specwine_condition()
 func void dia_pal_9122_ritter_specwine_info()
 {
 	AI_Output(other,self,"DIA_Pal_9122_Ritter_SpecWine_01_00");	//A co piješ za víno?
-	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_01");	//(směje se) zajímá tě to?
+	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_01");	//(směje se) Zajímá tě to?
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_02");	//Nazývá se 'Slzy štěstí'. 
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_03");	//Jsou to nejlepší hrozny z nejlepších vinohradů! Proto je velmi vzácné a drahé!
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_04");	//Na ostrově ho nekoupíš.
@@ -340,12 +340,12 @@ func void dia_pal_9122_ritter_specwine_info()
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_09");	//Myslím, že se jmenuje Matteo. Ale je nepravděpodobné, že by ho prodal.
 	AI_Output(other,self,"DIA_Pal_9122_Ritter_SpecWine_01_10");	//Proč?
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_11");	//Poslal jsem k němu člověka, aby koupil všechno jeho víno - měl všehovšudy - několik láhví.
-	AI_Output(other,self,"DIA_Pal_9122_Ritter_SpecWine_01_12");	//Poslali jste kurýra do města? A proč jsi mu sakra neřek ať ti koupí taky pohár?
+	AI_Output(other,self,"DIA_Pal_9122_Ritter_SpecWine_01_12");	//Poslal jsi kurýra do města? A proč jsi mu sakra neřek ať ti koupí taky pohár?
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_13");	//Pochop, že člověk co kupuje víno nikoho nezajímá.
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_14");	//A za stříbrný pohár ti lidi klidně podříznou krk.
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_15");	//Hmm... I když je divné že má můj kurýr zpoždění.
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_16");	//Poslyš, nemohl bys zjistit co se s ním stalo?
-	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_17");	//Jak se vrátíte, pohostím tě tímdle znamenitým vínem!
+	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWine_01_17");	//Jak se vrátíš, pohostím tě tímdle znamenitým vínem!
 	Info_ClearChoices(dia_pal_9122_ritter_specwine);
 	Info_AddChoice(dia_pal_9122_ritter_specwine,"Nemám na to čas.",dia_pal_9122_ritter_specwine_no);
 	Info_AddChoice(dia_pal_9122_ritter_specwine,"Dobrá, půjdu do města a zjistím co se dá.",dia_pal_9122_ritter_specwine_yes);
@@ -394,14 +394,14 @@ func void dia_pal_9122_ritter_specwinedone_info()
 	B_GivePlayerXP(250);
 	AI_Output(other,self,"DIA_Pal_9122_Ritter_SpecWineDone_01_00");	//Našel jsem tvého kurýra.
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWineDone_01_01");	//A kde je ten hlupák?
-	AI_Output(other,self,"DIA_Pal_9122_Ritter_SpecWineDone_01_02");	//Je mrtvý - daleko od města narazili na smečku vlků.
+	AI_Output(other,self,"DIA_Pal_9122_Ritter_SpecWineDone_01_02");	//Je mrtvý - daleko od města narazil na smečku vlků.
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWineDone_01_03");	//(lítostně) Hmmm, to není pěkný osud.
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWineDone_01_04");	//A co je s vínem?
 	AI_Output(other,self,"DIA_Pal_9122_Ritter_SpecWineDone_01_05");	//Víno mám já - tady. Dvě láhve, jak jsi řekl.
 	B_GiveInvItems(other,self,itfo_specwine,2);
 	Npc_RemoveInvItems(self,itfo_specwine,2);
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWineDone_01_06");	//No, alespoň to je dobrá zpráva.	
-	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWineDone_01_07");	//A jak jsem slíbil pohostí tě tímdle vínem.
+	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWineDone_01_07");	//A jak jsem slíbil pohostím tě tímdle vínem.
 	AI_Output(self,other,"DIA_Pal_9122_Ritter_SpecWineDone_01_08");	//Tumáš jedna láhev je tvoje, připijme si na zdraví.
 	B_GiveInvItems(self,other,itfo_specwine_hp,1);
 	MIS_FERDSPECWINE = LOG_SUCCESS;

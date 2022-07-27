@@ -334,7 +334,7 @@ func void DIA_Jack_SmokePipe_Info()
 	AI_Output(self,other,"DIA_Jack_SmokePipe_01_01");	//Och... Myslím, že teď by byl dobrý nápad pokouřit dobrý tabák.
 	AI_Output(other,self,"DIA_Jack_SmokePipe_01_02");	//A v čem je problém?
 	AI_Output(self,other,"DIA_Jack_SmokePipe_01_03");	//V tom, že moje stará fajka již není co bývala.
-	AI_Output(self,other,"DIA_Jack_SmokePipe_01_04");	//A teď, když přestali přicházet loďe z pevniny...
+	AI_Output(self,other,"DIA_Jack_SmokePipe_01_04");	//A teď, když přestali přicházet lodě z pevniny...
 	AI_Output(other,self,"DIA_Jack_SmokePipe_01_05");	//A co bys chtěl?
 	AI_Output(self,other,"DIA_Jack_SmokePipe_01_06");	//Nooo... Jsem zvyklý na dobrý tabák a fajku. Ta stará se mnou byla věčnost a dobře mi sloužila...
 	AI_Output(self,other,"DIA_Jack_SmokePipe_01_07");	//Zahřívala mě počas chladných nocí, když jsem stával na vrcholu majáku.
@@ -561,7 +561,7 @@ func void DIA_Jack_BEMYCAPTAIN2_Info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN2_14_05");	//Podíváme se, jestli je ten kluk k něčemu dobrej
+			AI_Output(self,other,"DIA_Jack_BEMYCAPTAIN2_14_05");	//Podíváme se, jestli je ten kluk k něčemu dobrej.
 			AI_StopProcessInfos(self);
 		};
 	};
@@ -640,7 +640,7 @@ func void DIA_Jack_LOSFAHREN_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Jack_LOSFAHREN_14_05");	//Klídek, chlapče. Ještě jsem ten škopek neviděl. Takhle to nepude.
+		AI_Output(self,other,"DIA_Jack_LOSFAHREN_14_05");	//Klídek, chlapče. Ještě jsem ten škopek neviděl. Takhle to nepůjde.
 		AI_Output(self,other,"DIA_Jack_LOSFAHREN_14_06");	//Nejdřív budeš potřebovat kompletní posádku s minimálně pěti chlapama, volný přístup na loď a námořní mapu. Jinak na to zapomeň.
 		AI_StopProcessInfos(self);
 	};
@@ -678,7 +678,7 @@ instance DIA_JACK_NW_KAPITELORCATTACK(C_Info)
 	condition = dia_jack_nw_kapitelorcattack_condition;
 	information = dia_jack_nw_kapitelorcattack_info;
 	permanent = FALSE;
-	description = "Co máte za hlášení kapitáne?";
+	description = "Co máš za hlášení kapitáne?";
 };
 
 
@@ -692,7 +692,7 @@ func int dia_jack_nw_kapitelorcattack_condition()
 
 func void dia_jack_nw_kapitelorcattack_info()
 {
-	AI_Output(other,self,"DIA_Jack_NW_KapitelOrcAttack_01_00");	//Co máte za hlášení kapitáne?
+	AI_Output(other,self,"DIA_Jack_NW_KapitelOrcAttack_01_00");	//Co máš za hlášení kapitáne?
 	AI_Output(self,other,"DIA_Jack_NW_KapitelOrcAttack_01_01");	//Ano, zdá se, že je to pravda, co se říká... (smutně) Khorinis obsadili skřeti! Teď odsud nemůžeme vystrčit ani nos!
 	AI_Output(other,self,"DIA_Jack_NW_KapitelOrcAttack_01_02");	//Pár chlapů se chce zkusit probojovat skrz město...
 	AI_Output(self,other,"DIA_Jack_NW_KapitelOrcAttack_01_04");	//Možná že jo, zkušený voják by to mohl dokázat... ale co mi ostatní?
@@ -710,13 +710,13 @@ func void dia_jack_nw_kapitelorcattack_taverne()
 {
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Jack_NW_KapitelOrcAttack_Taverne_01_01");	//Počkej, uklidni se! Mám tady u sebe teleportační runu k hostinci 'U Mrtvé harpyje'.
-	AI_Output(other,self,"DIA_Jack_NW_KapitelOrcAttack_Taverne_01_05");	//Navíc, Vy opravdu nejste schopen čelit tolika skřetům, a rozhodně byste to až k bráně nezvládl.
+	AI_Output(other,self,"DIA_Jack_NW_KapitelOrcAttack_Taverne_01_05");	//Navíc, ty opravdu nejsi schopen čelit tolika skřetům, a rozhodně bys to až k bráně nezvládl.
 	AI_Output(self,other,"DIA_Jack_NW_KapitelOrcAttack_Taverne_01_08");	//Dobrá... (značně skepticky) Doufám, že takhle přesvědčíš i ostatní. Vezmu si ji.
 	B_GiveInvItems(other,self,ItMi_TeleportTaverne,1);
 	Npc_RemoveInvItems(self,ItMi_TeleportTaverne,1);
 	AI_Output(self,other,"DIA_Jack_NW_KapitelOrcAttack_Taverne_01_10");	//Eh! Doufám, že po tom cestování nebudu mít kocovinu, jako posledně po těžkým fláku.
 	JACKNOBATTLETHROUGTH = TRUE;
-	B_LogEntry(TOPIC_HELPCREW,"Dal jsem kapitánovi teleportční runu k hostinci 'U Mrtvé harpyje'. Teď už se o něj nemusím strachovat!");
+	B_LogEntry(TOPIC_HELPCREW,"Dal jsem kapitánovi teleportační runu k hostinci 'U Mrtvé harpyje'. Teď už se o něj nemusím strachovat!");
 	PERMCOUNTBACKNW = PERMCOUNTBACKNW + 1;
 	b_countbackcrew();
 	AI_StopProcessInfos(self);

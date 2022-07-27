@@ -50,7 +50,7 @@ func int DIA_Addon_Nefarius_Hallo_Condition()
 
 func void DIA_Addon_Nefarius_Hallo_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Nefarius_Hallo_15_00");	//Jak to jde?
+	AI_Output(other,self,"DIA_Addon_Nefarius_Hallo_15_00");	//Jak se vede?
 	AI_Output(self,other,"DIA_Addon_Nefarius_Hallo_05_01");	//Co TY tady děláš? Tohle je vážně překvapení.
 	AI_Output(self,other,"DIA_Addon_Nefarius_Hallo_05_02");	//Myslel jsem, že jsi zahynul.
 	AI_Output(other,self,"DIA_Addon_Nefarius_Hallo_15_03");	//Skoro.
@@ -432,7 +432,7 @@ func int DIA_Addon_Nefarius_NW_Runen_Condition()
 
 func void DIA_Addon_Nefarius_NW_Runen_Info()
 {
-	AI_Output(other,self,"DIA_Parlan_TEACH_15_00");	//Nauč mě!
+	AI_Output(other,self,"DIA_Parlan_TEACH_15_00");	//Nauč mě vytvářet runy.
 	Info_ClearChoices(DIA_Addon_Nefarius_NW_Runen);
 	Info_AddChoice(DIA_Addon_Nefarius_NW_Runen,Dialog_Back,DIA_Addon_Nefarius_NW_Runen_BACK);
 

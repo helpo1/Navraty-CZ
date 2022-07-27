@@ -95,14 +95,14 @@ func int dia_nigel_hallo_condition()
 func void dia_nigel_hallo_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Nigel_Hallo_01_00");	//Říká se, že jednomu obchodníkovi dlužíš spoustu peněz a neccheš je vracet.
+	AI_Output(other,self,"DIA_Nigel_Hallo_01_00");	//Říká se, že jednomu obchodníkovi dlužíš spoustu peněz a nechceš je vracet.
 	AI_Output(self,other,"DIA_Nigel_Hallo_01_01");	//A co ti do toho jako je?!...
 	AI_Output(other,self,"DIA_Nigel_Hallo_01_02");	//Poslal mě někdo kdo chce své peníze! To mám chápat tak, že mě jednoduše vyhodíš?!
 	AI_Output(self,other,"DIA_Nigel_Hallo_01_03");	//A proč si myslíš že bych se měl s tebou bavit? A vůbec, nevím o čem mluvíš.
 	AI_Output(other,self,"DIA_Nigel_Hallo_01_04");	//Ty se jmenuješ Nigel, není to tak?!
 	AI_Output(self,other,"DIA_Nigel_Hallo_01_05");	//No, to jsem já.
 	AI_Output(other,self,"DIA_Nigel_Hallo_01_06");	//To znamená, že jsem se nemýlil - potřebuji tě. Takže ze sebe přestaň dělat nechápajícího idiota!
-	AI_Output(other,self,"DIA_Nigel_Hallo_01_07");	//Zaplať nebo se postarám, abys měl co nejvíc potíží můžeš mít.
+	AI_Output(other,self,"DIA_Nigel_Hallo_01_07");	//Zaplať nebo se postarám, abys měl co nejvíc potíží co můžeš mít.
 	AI_Output(self,other,"DIA_Nigel_Hallo_01_08");	//Dobrá! Ale jak bys mě chtěl dostat do těch potíží?!
 	AI_Output(other,self,"DIA_Nigel_Hallo_01_09");	//Jednoduše tě můžu podříznout! A vypadá to, že to bys nechtěl.
 	AI_Output(self,other,"DIA_Nigel_Hallo_01_12");	//A ty myslíš, že se bojím?! (nervózně)
@@ -166,7 +166,7 @@ func void dia_nigel_hallo_trust()
 	AI_Output(self,other,"DIA_Nigel_Hallo_Trust_01_06");	//Minimálně tři, nevím přesně, nevšímal jsem si počtu, byl jsem vystrašen... (stydlivě)
 	AI_Output(other,self,"DIA_Nigel_Hallo_Trust_01_07");	//... Jasně, mám rád týpky, co se poserou při náznaku nebezpečí...
 	AI_Output(other,self,"DIA_Nigel_Hallo_Trust_01_08");	//Modli se ať ty peníze ještě mají.
-	AI_Output(self,other,"DIA_Nigel_Hallo_Trust_01_09");	//Budou! Až ho najdeš, dej je tomu obchodníkovi...
+	AI_Output(self,other,"DIA_Nigel_Hallo_Trust_01_09");	//Budou! Až je najdeš, dej je tomu obchodníkovi...
 	AI_Output(self,other,"DIA_Nigel_Hallo_Trust_01_10");	//Už se tam nechci vracet.
 	AI_Output(other,self,"DIA_Nigel_Hallo_Trust_01_11");	//A co mi za to dáš?
 	AI_Output(self,other,"DIA_Nigel_Hallo_Trust_01_12");	//No, vrať se tady a něco vymyslíme.
@@ -214,7 +214,7 @@ func void dia_nigel_hallo_dealbad()
 	AI_Output(self,other,"DIA_Nigel_Hallo_NoDeal_01_01");	//Jak myslíš, je to tvoje věc. Pokud si to ale rozmyslíš, víš kde mě najdeš.
 	AI_Output(other,self,"DIA_Nigel_Hallo_NoDeal_01_02");	//To si asi nerozmyslím, ale věř mi, že na tebe nezapomenu, zvlášť pokud zjistím, že jsi mi lhal!
 	AI_Output(self,other,"DIA_Nigel_Hallo_NoDeal_01_03");	//(nervozně) Proč bych lhal?
-	AI_Output(self,other,"DIA_Nigel_Hallo_NoDeal_01_06");	//Doufám, že se vrátíte zlato...
+	AI_Output(self,other,"DIA_Nigel_Hallo_NoDeal_01_06");	//Doufám, že se vrátíš se zlatem...
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(bdt_6121_nigelband_01,"NW_CITY_TO_FOREST_04_08");
 	Wld_InsertNpc(bdt_6122_nigelband_02,"NW_CITY_TO_FOREST_04_09");
@@ -232,7 +232,7 @@ func void dia_nigel_hallo_dealyes()
 	MIS_NIGELMATTER = LOG_Running;
 	Log_CreateTopic(TOPIC_NIGELMATTER,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_NIGELMATTER,LOG_Running);
-	B_LogEntry(TOPIC_NIGELMATTER,"Nigel mi udělal dobrou nabídku, když mu vrátím peníze. Je si jistý, že je dokáže investovat tak, že zaplatí dluh a ještě mi dá sto zlatých. Rozhodl jsem se s ním souhlasit a až najdu ty banidity, donesu jejich měšec Nigelovi.");
+	B_LogEntry(TOPIC_NIGELMATTER,"Nigel mi udělal dobrou nabídku, když mu vrátím peníze. Je si jistý, že je dokáže investovat tak, že zaplatí dluh a ještě mi dá sto zlatých. Rozhodl jsem se s ním souhlasit a až najdu ty bandity, donesu jejich měšec Nigelovi.");
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(bdt_6121_nigelband_01,"NW_CITY_TO_FOREST_04_08");
 	Wld_InsertNpc(bdt_6122_nigelband_02,"NW_CITY_TO_FOREST_04_09");
@@ -270,11 +270,11 @@ func void dia_nigel_moneyback_info()
 	AI_Output(other,self,"DIA_Nigel_MoneyBack_01_04");	//A co naše dohoda?
 	AI_Output(self,other,"DIA_Nigel_MoneyBack_01_05");	//Myslíš si, že jsem zapomněl?
 	AI_Output(self,other,"DIA_Nigel_MoneyBack_01_07");	//Já držím slovo...
-	AI_Output(other,self,"DIA_Nigel_MoneyBack_01_08");	//A kde je tedy mé zlaty?
+	AI_Output(other,self,"DIA_Nigel_MoneyBack_01_08");	//A kde je tedy mé zlato?
 	AI_Output(self,other,"DIA_Nigel_MoneyBack_01_09");	//Trpělivost, příteli, trpělivost! Nic nejde tak rychle...
 	AI_Output(self,other,"DIA_Nigel_MoneyBack_01_10");	//Obchod není tak jednoduchý jak si lidi myslí!
 	AI_Output(self,other,"DIA_Nigel_MoneyBack_01_11");	//Myslím, že tak za tři dny se to znovu rozhoupe!
-	AI_Output(self,other,"DIA_Nigel_MoneyBack_01_12");	//Pak přijdi vyzvednout podíl pro sebe a toho obchodníka.
+	AI_Output(self,other,"DIA_Nigel_MoneyBack_01_12");	//Pak přijď vyzvednout podíl pro sebe a toho obchodníka.
 	AI_Output(other,self,"DIA_Nigel_MoneyBack_01_15");	//Kde tě za ty tři dny najdu?
 	AI_Output(self,other,"DIA_Nigel_MoneyBack_01_16");	//Budu na Onarové farmě.
 	AI_Output(self,other,"DIA_Nigel_MoneyBack_01_20");	//Buď vklidu! Dostaneš co si zasloužíš.
@@ -321,7 +321,7 @@ func void dia_nigel_moneynow_info()
 		AI_Output(self,other,"DIA_Nigel_MoneyNow_01_03");	//Jsi spokojen?!
 		AI_Output(other,self,"DIA_Nigel_MoneyNow_01_04");	//Ano, jsi opravdu dobrý obchodník!
 		AI_Output(self,other,"DIA_Nigel_MoneyNow_01_05");	//To ano...
-		AI_Output(self,other,"DIA_Nigel_MoneyNow_01_06");	//... obchod je extrémě výnosný, když víš jak na něj.
+		AI_Output(self,other,"DIA_Nigel_MoneyNow_01_06");	//... obchod je extrémně výnosný, když víš jak na něj.
 
 		if((MEMBERTRADEGUILD == FALSE) && (MIS_TRADEGUILD != LOG_FAILED) && (NIGELTELLABOUTGUILD == FALSE) && (EROLTELLABOUTGUILD == FALSE))
 		{
@@ -331,8 +331,8 @@ func void dia_nigel_moneynow_info()
 			AI_Output(self,other,"DIA_Nigel_MoneyNow_01_13");	//Chlape, stálo by ti za to to alespoň zkusit.
 			AI_Output(other,self,"DIA_Nigel_MoneyNow_01_15");	//A jak s tím mám začít?
 			AI_Output(self,other,"DIA_Nigel_MoneyNow_01_16");	//Hmm... Nooo...
-			AI_Output(self,other,"DIA_Nigel_MoneyNow_01_19");	//Už jsem napsal dopis pro jednoho mého přítele, který tě zaučí
-			AI_Output(self,other,"DIA_Nigel_MoneyNow_01_21");	//Velmi vážený muž, který vede Khoriniský cech obchodníků.
+			AI_Output(self,other,"DIA_Nigel_MoneyNow_01_19");	//Už jsem napsal dopis pro jednoho mého přítele, který tě zaučí.
+			AI_Output(self,other,"DIA_Nigel_MoneyNow_01_21");	//Velmi vážený muž, který vede khoriniský cech obchodníků.
 			AI_Output(other,self,"DIA_Nigel_MoneyNow_01_22");	//Cech obchodníků? O tom jsem nikdy neslyšel!
 			AI_Output(self,other,"DIA_Nigel_MoneyNow_01_23");	//No, je to tajný spolek.
 			AI_Output(other,self,"DIA_Nigel_MoneyNow_01_25");	//A co mu mám teda povědět?!
@@ -355,7 +355,7 @@ func void dia_nigel_moneynow_info()
 			AI_Output(self,other,"DIA_Nigel_MoneyNow_01_46");	//Zatím!
 			AI_Output(other,self,"DIA_Nigel_MoneyNow_01_45");	//Zase přijdu.
 			NIGELTELLABOUTGUILD = TRUE;
-			B_LogEntry(TOPIC_NIGELMATTER,"Nigel nelhal, jeho obchod opravdu vynesl. Navrátil mi měšec s dluhem a ještě mi dal 1000 zlatých navíc!");
+			B_LogEntry(TOPIC_NIGELMATTER,"Nigel nelhal, jeho obchod opravdu vynesl. Navrátil mi měšec s dluhem a ještě mi dal 100 zlatých navíc!");
 			Log_SetTopicStatus(TOPIC_NIGELMATTER,LOG_SUCCESS);
 			MIS_NIGELMATTER = LOG_SUCCESS;
 			AI_StopProcessInfos(self);
@@ -363,7 +363,7 @@ func void dia_nigel_moneynow_info()
 		else
 		{
 			AI_Output(self,other,"DIA_Nigel_MoneyNow_01_07");	//To věř!
-			B_LogEntry(TOPIC_NIGELMATTER,"Nigel nelhal, jeho obchod opravdu vynesl. Navrátil mi měšec s dluhem a ještě mi dal 1000 zlatých navíc!");
+			B_LogEntry(TOPIC_NIGELMATTER,"Nigel nelhal, jeho obchod opravdu vynesl. Navrátil mi měšec s dluhem a ještě mi dal 100 zlatých navíc!");
 			Log_SetTopicStatus(TOPIC_NIGELMATTER,LOG_SUCCESS);
 			MIS_NIGELMATTER = LOG_SUCCESS;
 		};

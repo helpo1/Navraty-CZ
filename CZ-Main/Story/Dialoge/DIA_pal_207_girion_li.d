@@ -39,8 +39,8 @@ func int dia_girion_li_teach_condition()
 
 func void dia_girion_li_teach_info()
 {
-	AI_Output(other,self,"DIA_Girion_LI_Teach_15_00");	//Můžeme se procvičit s mečem
-	AI_Output(self,other,"DIA_Girion_LI_Teach_08_01");	//S radostí! Aspoň zabiju čas čas.
+	AI_Output(other,self,"DIA_Girion_LI_Teach_15_00");	//Můžeme se procvičit s mečem?
+	AI_Output(self,other,"DIA_Girion_LI_Teach_08_01");	//S radostí! Aspoň zabiju čas.
 	Info_ClearChoices(dia_girion_li_teach);
 	Info_AddChoice(dia_girion_li_teach,Dialog_Back,dia_girion_li_teach_back);
 	Info_AddChoice(dia_girion_li_teach,b_buildlearnstringforfight(PRINT_Learn2h1,B_GetLearnCostTalent(other,NPC_TALENT_2H,1)),dia_girion_li_teach_2h_1);
@@ -208,8 +208,8 @@ func void dia_girion_li_changecourse_ore()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Girion_LI_ChangeCourse_Ore_01_00");	//Úplně s tebou souhlasím! Prvně musíme opravit loď.
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_01");	//(s úctou) Nic jinýho, jsem od teb nečekala.
-	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_02");	//Ruda co jsi naše, zvíší naše šance na úspěch ve válce proti skřetům.
+	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_01");	//(s úctou) Nic jinýho, jsem od tebe nečekal.
+	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_02");	//Ruda co jsi našel, zvýší naše šance na úspěch ve válce proti skřetům.
 	AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Ore_01_03");	//Pravděpodobně je to naše poslední naděje... (odevzdaně)
 	B_LogEntry(TOPIC_CHANGECOURSE,"Paladin Girion souhlasil s návratem na Khorinis, abychom informovali lorda Hagena o rudě.");
 	CREWAGREEAWAYBACKPAL = CREWAGREEAWAYBACKPAL + 1;
@@ -234,12 +234,12 @@ func void dia_girion_li_changecourse_gold()
 	else if(other.guild == GIL_KDF)
 	{
 		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_04");	//Co?!... (velmi udiveně) Je velmi divné slyšet to od mága Ohně!
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_05");	//To je ti zlato drahžší než tvá svatá povinnost Innosovi?!
+		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_05");	//To je ti zlato dražší než tvá svatá povinnost Innosovi?!
 	}
 	else if(other.guild == GIL_KDW)
 	{
 		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_06");	//Co?!... (velmi udiveně) Je velmi divné slyšet to od mága Vody!
-		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_07");	//To je ti zlato drahžší než tvá svatá povinnost Adanovi?!
+		AI_Output(self,other,"DIA_Girion_LI_ChangeCourse_Gold_01_07");	//To je ti zlato dražší než tvá svatá povinnost Adanovi?!
 	}
 	else if(other.guild == GIL_KDM)
 	{

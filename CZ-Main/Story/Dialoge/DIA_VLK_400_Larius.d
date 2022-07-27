@@ -153,7 +153,7 @@ func void DIA_Larius_Richterueberfall_Info()
 	};
 	if((hero.guild == GIL_KDF) || (hero.guild == GIL_KDW) || (hero.guild == GIL_KDM))
 	{
-		AI_Output(self,other,"DIA_Larius_Richterueberfall_01_03");	//I kdybys byl mágee...
+		AI_Output(self,other,"DIA_Larius_Richterueberfall_01_03");	//I kdybys byl mágem...
 	};
 	AI_Output(self,other,"DIA_Larius_Richterueberfall_01_04");	//Mé slovo má v tomhle městě stále ještě svou váhu. Už se nikdy víc neopovažuj špinit jméno soudce!
 	B_GivePlayerXP(XP_Ambient);
@@ -233,7 +233,7 @@ func void dia_larius_drogenpacket_info()
 		B_GiveInvItems(other,self,itmi_drogenpocket,1);
 		Npc_RemoveInvItems(self,itmi_drogenpocket,1);
 		AI_Output(self,other,"DIA_Larius_DrogenPacket_01_06");	//Uff! Konečně, už mně to čekání unavovalo!
-		AI_Output(self,other,"DIA_Larius_DrogenPacket_01_07");	//Tu máš, dej mu to. A neopovažuj se to otevří jasný? A drž hubu o všem co si tady teď viděl.
+		AI_Output(self,other,"DIA_Larius_DrogenPacket_01_07");	//Tu máš, dej mu to. A neopovažuj se to otevřít jasný? A drž hubu o všem co si tady teď viděl.
 		B_GiveInvItems(self,other,itmi_lariusgoldpocket,1);
 		B_LogEntry(TOPIC_ORUNPACKET,"Setkal jsem se s Lariusem, místodržícím města Khorinis. Dal mi zásilku pro Baala Oruna.");
 
@@ -291,7 +291,7 @@ func void dia_larius_drogenpacketagain_info()
 		MeetLarius = TRUE;
 		AI_Output(other,self,"DIA_Larius_DrogenPacketAgain_01_02");	//Nemohl jsem to mít. Posílá mne Baal Orun!
 		AI_Output(self,other,"DIA_Larius_DrogenPacketAgain_01_03");	//Hmm... (podívá se)
-		AI_Output(self,other,"DIA_Larius_DrogenPacketAgain_01_04");	//Baal Orun, povídáš (zamyšleně)
+		AI_Output(self,other,"DIA_Larius_DrogenPacketAgain_01_04");	//Baal Orun, povídáš. (zamyšleně)
 		AI_Output(self,other,"DIA_Larius_DrogenPacketAgain_01_05");	//Fajn, dej to sem!
 		B_GiveInvItems(other,self,itmi_drogenpocket,1);
 		Npc_RemoveInvItems(self,itmi_drogenpocket,1);
@@ -402,7 +402,7 @@ func void dia_larius_letterfromtaliasan_info()
 		AI_Output(self,other,"DIA_Larius_LetterFromTaliasan_01_35");	//To už nemůže být ani pravda!
 		AI_Output(self,other,"DIA_Larius_LetterFromTaliasan_01_36");	//A nějaké počmárané kousky papíru - ty jsou mi tam, kde slunko nesvítí!
 		AI_Output(self,other,"DIA_Larius_LetterFromTaliasan_01_40");	//A teď jdi z mých očí, jinak zavolám stráže!
-		AI_Output(self,other,"DIA_Larius_LetterFromTaliasan_01_41");	//!... (začíná křičet)
+		AI_Output(self,other,"DIA_Larius_LetterFromTaliasan_01_41");	//... (začíná křičet)
 		LARIUSPISSOFF = TRUE;
 		TALKLARIUSABOUTTALIASAN = TRUE;
 		B_LogEntry(TOPIC_TALIASANHELP,"Larius o ničem nechtěl ani slyšet a vykázal mě z radnice.");

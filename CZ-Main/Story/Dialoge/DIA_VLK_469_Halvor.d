@@ -144,7 +144,7 @@ instance DIA_Addon_Halvor_Job(C_Info)
 	nr = 1;
 	condition = DIA_Addon_Halvor_Job_Condition;
 	information = DIA_Addon_Halvor_Job_Info;
-	description = "Neměl bys pro mně nejakou práci?";
+	description = "Neměl bys pro mně nějakou práci?";
 };
 
 func int DIA_Addon_Halvor_Job_Condition()
@@ -157,8 +157,8 @@ func int DIA_Addon_Halvor_Job_Condition()
 
 func void DIA_Addon_Halvor_Job_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Halvor_Job_01_00");	//Neměl bys pro mně nejakou práci?
-	AI_Output(self,other,"DIA_Addon_Halvor_Job_01_01");	//Ano, něco bych pro tebe asi měl. Právě bych potřeboval nejaké ústřice.
+	AI_Output(other,self,"DIA_Addon_Halvor_Job_01_00");	//Neměl bys pro mně nějakou práci?
+	AI_Output(self,other,"DIA_Addon_Halvor_Job_01_01");	//Ano, něco bych pro tebe asi měl. Právě bych potřeboval nějaké ústřice.
 	AI_Output(self,other,"DIA_Addon_Halvor_Job_01_02");	//Je to delikatesa, je o ně velký zájem.
 	AI_Output(self,other,"DIA_Addon_Halvor_Job_01_03");	//Takže pokud mi chceš pomoct, běž na pláž a sežeň mi zhruba tucet.
 	AI_Output(self,other,"DIA_Addon_Halvor_Job_01_04");	//Neslibuju ti za ně moc zlata. Ale můžeš si být jistý, že dlužníkem nezůstanu.
@@ -195,7 +195,7 @@ func void DIA_Addon_Halvor_Job_Done_Info()
 	AI_Output(self,other,"DIA_Addon_Halvor_Job_Done_01_01");	//Dobře, za každou ti dám pět zlaťáků.
 	AI_Output(self,other,"DIA_Addon_Halvor_Job_Done_01_02");	//Celkově padesát zlatých. Doufám, že jsi šťastný.
 	B_GiveInvItems(self,other,ItMi_Gold,50);
-	AI_Output(other,self,"DIA_Addon_Halvor_Job_Done_01_03");	//To je.
+	AI_Output(other,self,"DIA_Addon_Halvor_Job_Done_01_03");	//To jsem.
 	MIS_HalvorShells = LOG_Success;
 	Log_SetTopicStatus(TOPIC_HalvorShells,LOG_Success);
 	B_LogEntry(TOPIC_HalvorShells,"Donesl jsem Halvorovi ústřice a dostal jsem za ně padesát zlatých.");
@@ -398,7 +398,7 @@ func void dia_halvor_zeichen_murder_info()
 	AI_Output(self,other,"DIA_Halvor_Zeichen_Murder_06_00");	//Od kdy ses zjevil, nějací vlivní lidé města byli zavraždeni.
 	AI_Output(self,other,"DIA_Halvor_Zeichen_Murder_06_01");	//Tyhle vraždy velmi komplikují život poctivým zlodejům.
 	AI_Output(self,other,"DIA_Halvor_Zeichen_Murder_06_02");	//A já podezřívám z těchto vražd tebe.
-	AI_Output(self,other,"DIA_Halvor_Zeichen_Murder_06_03");	//Odmítám od tebe koupit tyhle věci! Zlodeji a vrazi nespolupracují.
+	AI_Output(self,other,"DIA_Halvor_Zeichen_Murder_06_03");	//Odmítám od tebe koupit tyhle věci! Zloději a vrazi nespolupracují.
 	Betrayal_Halvor = TRUE;
 	B_LogEntry(Topic_Diebesgilde,"Halvor si je vědom mé účasti na vraždách nevinných občanú a odmítá se mnou obchodovat.");
 };
@@ -579,7 +579,7 @@ func void dia_halvor_nekro_fear_info()
 	Betrayal_Halvor = FALSE;
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_01");	//Víš, tak jsem přemýšlel, jak bys asi vypadal jako kostlivec?
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_02");	//Mě by se celkem hodil kostlivej sluha.
-	AI_Output(self,other,"DIA_Halvor_NEKRO_FEAR_00_03");	//Co, zbláznil jsi?!... (v panice) To nemůžeš udělat! ZAVOLÁM STRÁŽE!
+	AI_Output(self,other,"DIA_Halvor_NEKRO_FEAR_00_03");	//Co, zbláznil jsi se?!... (v panice) To nemůžeš udělat! ZAVOLÁM STRÁŽE!
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_04");	//Tak zavolej, až budeš mrzká zombie a přijdou paladinové, zbude z tebe jenom prach.
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_05");	//Přemýšlej o tom!
 	AI_Output(other,self,"DIA_Halvor_NEKRO_FEAR_00_06");	//Ale je tu i jiná možnost. Budeš ode mě skupovat odcizené věci, zlato a stříbro a já tě nechám být.

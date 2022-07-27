@@ -364,13 +364,13 @@ func int DIA_Bennet_DI_BetterArmor_Condition()
 func void DIA_Bennet_DI_BetterArmor_Info()
 {
 	AI_Output(other,self,"DIA_Bennet_DI_BetterArmor_01_00");	//Nenajde se u tebe lepší zbroj?
-	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_01_01");	//Hmmm... (zamyšleně) Mohu protebe vykovat takovou zbroj, jakou jsi ještě neviděl.
+	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_01_01");	//Hmmm... (zamyšleně) Mohu pro tebe vykovat takovou zbroj, jakou jsi ještě neviděl.
 	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_01_02");	//Ale k výrobě potřebuji velké množství různého materiálu.
 	AI_Output(other,self,"DIA_Bennet_DI_BetterArmor_01_03");	//Jakého konkrétně?
 	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_01_04");	//Pro začátek padesát dračích šupin! Mají sloužit jako základ pro vytvoření horní pancíře zbroje a nožních plátů.
 	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_01_05");	//Dále pro zvýšení pevnosti zbroje magickou rudu. Aspoň 20 hrudek!
 	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_01_06");	//Pro práci ještě potřebuju, 10 kousků síry, 5 černých perel, 2 hrnce pryskyřice a co je nejdůležitější 4 kusy čelní kosti draka.
-	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_01_07");	//Pokavaď se ti to podaří sehnat, budeš mít nejsilnější pancíř na celém světě!
+	AI_Output(self,other,"DIA_Bennet_DI_BetterArmor_01_07");	//Pokud se ti to podaří sehnat, budeš mít nejsilnější pancíř na celém světě!
 	MIS_BetterArmor = LOG_Running;
 	Log_CreateTopic(TOPIC_BetterArmor,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BetterArmor,LOG_Running);

@@ -139,7 +139,7 @@ instance DIA_Udar_Teach(C_Info)
 	condition = DIA_Udar_Teach_Condition;
 	information = DIA_Udar_Teach_Info;
 	permanent = TRUE;
-	description = "Chci se něco naučit.";
+	description = "Chci se u tebe učit.";
 };
 
 
@@ -253,7 +253,7 @@ func int DIA_Udar_Ring_Condition()
 
 func void DIA_Udar_Ring_Info()
 {
-	AI_Output(other,self,"DIA_Udar_Ring_15_00");	//Přinesl jsem ti tento prsten od Tengrona. Má tě ochránit. Prý si ho vyzvedne až se vrátí
+	AI_Output(other,self,"DIA_Udar_Ring_15_00");	//Přinesl jsem ti tento prsten od Tengrona. Má tě ochránit. Prý si ho vyzvedne až se vrátí.
 	AI_Output(self,other,"DIA_Udar_Ring_09_01");	//Cože? Víš co je to za prsten? Dostal ho jako odměnu za udatnost v bitvě.
 	AI_Output(self,other,"DIA_Udar_Ring_09_02");	//Říkáš, že si pro něj přijde? Snad to bude vůle Innosova...
 	B_GiveInvItems(other,self,ItRi_Tengron,1);
@@ -403,7 +403,7 @@ func void DIA_Udar_BADFEELING_Info()
 {
 	if(MIS_OCGateOpen == TRUE)
 	{
-		AI_Output(self,other,"DIA_Udar_BADFEELING_09_00");	//Ještě jeden takovíto útok a je po nás.
+		AI_Output(self,other,"DIA_Udar_BADFEELING_09_00");	//Ještě jeden takovýto útok a je po nás.
 	}
 	else if(MIS_AllDragonsDead == TRUE)
 	{

@@ -54,7 +54,7 @@ func void dia_netbek_firsthallo_info()
 	AI_Output(other,self,"DIA_Netbek_Hallo_01_01");	//Cože?! Ty si mě odněkud pamatuješ?
 	AI_Output(self,other,"DIA_Netbek_Hallo_01_02");	//A jak!... (úsměv) Ano, většinou jsem byl zasněn mezi svýmy stromy, ale konverzaci s osobou jako jsi ty si prostě musím pamatovat!
 	AI_Output(other,self,"DIA_Netbek_Hallo_01_03");	//To je potěšující. Ale co se tady stalo?!
-	AI_Output(self,other,"DIA_Netbek_Hallo_01_04");	//Celkěm nic, ale jestli tě zajímá to, jak jsem dokázal přežít, pak poslouchej.
+	AI_Output(self,other,"DIA_Netbek_Hallo_01_04");	//Celkem nic, ale jestli tě zajímá to, jak jsem dokázal přežít, pak poslouchej.
 	AI_Output(self,other,"DIA_Netbek_Hallo_01_05");	//Mé stromy mi propůjčily ochranu proti Spáčově magii - zachránily mne ze šílenství a strašlivé smrti, která postihla mé bratry!
 	AI_Output(self,other,"DIA_Netbek_Hallo_01_06");	//A nyní mi pomohly dostat se k božstvu, vědění a poznání skutečného smyslu života.
 	AI_Output(self,other,"DIA_Netbek_Hallo_01_08");	//Je to duch přírody, jehož moc bys teď měl kolem sebe cítit. Nebo snad ne?!
@@ -125,7 +125,7 @@ func void dia_netbek_hallo_orcs()
 	AI_Output(other,self,"DIA_Netbek_Hallo_15_09");	//A jak se tvůj bůh staví ke skřetům?
 	AI_Output(self,other,"DIA_Netbek_Hallo_01_13");	//Je otcem všech živých stvoření.
 	AI_Output(other,self,"DIA_Netbek_Hallo_15_10");	//Proč odsud tedy nevyžene skřety?
-	AI_Output(self,other,"DIA_Netbek_Hallo_01_14");	//Myslím, že ta zvířátka mají stormy ráda, ale chtěla pokácet moje stromy!
+	AI_Output(self,other,"DIA_Netbek_Hallo_01_14");	//Myslím, že ta zvířátka mají stromy ráda, ale chtěla pokácet moje stromy!
 	AI_Output(self,other,"DIA_Netbek_Hallo_01_15");	//Nyní jsou posláni pryč a už se nikdy nevrátí do mého lesa.
 };
 
@@ -163,7 +163,7 @@ func void dia_netbek_OrcFight_info()
 	AI_Output(self,other,"DIA_Netbek_OrcFight_01_03");	//Nedávno, do mého lesa vpadlo obrovské monstrum - jeskynní trol!
 	AI_Output(self,other,"DIA_Netbek_OrcFight_01_04");	//Tato bytost přináší jen zkázu mému lesu, dupá na rostliny a láme stromy. Je třeba ho zastavit, dokud nenatropí ještě větší problémy!
 	AI_Output(other,self,"DIA_Netbek_OrcFight_01_05");	//Mám se ho pokusit zabít?
-	AI_Output(self,other,"DIA_Netbek_OrcFight_01_06");	//To záleží na vás! Já chci jen aby měli stromy klid.
+	AI_Output(self,other,"DIA_Netbek_OrcFight_01_06");	//To záleží na tobě! Já chci jen aby měli stromy klid.
 	AI_Output(other,self,"DIA_Netbek_OrcFight_01_07");	//Dobře, tak si s ním promluvím.
 	MIS_EvilTroll = LOG_Running;
 	Log_CreateTopic(TOPIC_EvilTroll,LOG_MISSION);
@@ -193,7 +193,7 @@ func int dia_netbek_OrcFight_Done_condition()
 func void dia_netbek_OrcFight_Done_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Netbek_OrcFight_Done_01_01");	//Postaral jsem se o tvého návštěvníka
+	AI_Output(other,self,"DIA_Netbek_OrcFight_Done_01_01");	//Postaral jsem se o tvého návštěvníka.
 	AI_Output(self,other,"DIA_Netbek_OrcFight_Done_01_02");	//Dobře. Nyní je můj les v bezpečí.
 
 	if(other.attribute[ATR_DEXTERITY] > other.attribute[ATR_STRENGTH])
@@ -334,7 +334,7 @@ func void dia_netbek_lastdragon_info()
 	AI_Output(other,self,"DIA_Netbek_LastDragon_01_00");	//Musím do Irdorathských síní zapudit následovníky Beliara.
 	AI_Output(other,self,"DIA_Netbek_LastDragon_01_01");	//Nemůže mi tvůj bůh nějak pomoci?
 	AI_Output(self,other,"DIA_Netbek_LastDragon_01_02");	//Hmm... (zamyšleně) Ano, už mě varoval, že se tu můžeš zastavit.
-	AI_Output(self,other,"DIA_Netbek_LastDragon_01_03");	//A tak jsem pro tebe vyrobyl jeden velmi zvláštní lektvar.
+	AI_Output(self,other,"DIA_Netbek_LastDragon_01_03");	//A tak jsem pro tebe vyrobil jeden velmi zvláštní lektvar.
 	AI_Output(other,self,"DIA_Netbek_LastDragon_01_04");	//Co je to za lektvar?!
 	AI_Output(self,other,"DIA_Netbek_LastDragon_01_05");	//Jak jsem řekl, je to velmi neobvyklý lektvar. Daruje ti nesmrtelnost!
 	AI_Output(self,other,"DIA_Netbek_LastDragon_01_06");	//Ale můžeš ho použít jen jednou a jen na omezený čas.
@@ -474,11 +474,11 @@ func void dia_netbek_healing_info()
 	{
 		if(MIS_OCGateOpen == TRUE)
 		{
-			AI_Output(self,other,"DIA_Netbek_Healing_01_09");	//Dobrá, pomohu ti, ale nezasloužíš si to!
+			AI_Output(self,other,"DIA_Netbek_Healing_01_09");	//Dobrá, pomohu ti, ale nezasloužíš si to.
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Netbek_Healing_01_06");	//Dobrá, pomohu ti, ale nezasloužíš si to.
+			AI_Output(self,other,"DIA_Netbek_Healing_01_06");	//Dobrá.
 		};
 		AI_WaitTillEnd(self,other);
 	};
@@ -554,7 +554,7 @@ func void dia_netbek_guardiansknow_info()
 	AI_Output(other,self,"DIA_Netbek_GuardiansKnow_01_10");	//Já?!... Ale jak by mohl pouhý smrtelník?!
 	AI_Output(self,other,"DIA_Netbek_GuardiansKnow_01_11");	//Nejsi jen obyčejný smrtelník a konečně bys to měl začít chápat... (vážně) Obyčejní lidé by nedokázali takové věci jako ty.
 	AI_Output(other,self,"DIA_Netbek_GuardiansKnow_01_15");	//Já mám být vyvolený bohů?!
-	AI_Output(self,other,"DIA_Netbek_GuardiansKnow_01_16");	//Nerozumíš? Nemusíš poslouchat Innose, Beliara nebo Adana, ani všechny najdenou.
+	AI_Output(self,other,"DIA_Netbek_GuardiansKnow_01_16");	//Nerozumíš? Nemusíš poslouchat Innose, Beliara nebo Adana, ani všechny najednou.
 	AI_Output(self,other,"DIA_Netbek_GuardiansKnow_01_17");	//V tom je tvůj rozdíl od ostatních! Můžeš si zvolit cestu podle sebe a ne podle toho, komu chceš sloužit.
 	AI_Output(self,other,"DIA_Netbek_GuardiansKnow_01_18");	//A nyní nastal čas, kdy máš ty zachránit svět.
 	AI_Output(self,other,"DIA_Netbek_GuardiansKnow_01_19");	//Jen ty můžeš tento svět ochránit před Strážci!
@@ -609,7 +609,7 @@ instance DIA_NETBEK_HOWGETBLESSED(C_Info)
 	condition = DIA_NETBEK_HOWGETBLESSED_condition;
 	information = DIA_NETBEK_HOWGETBLESSED_info;
 	permanent = FALSE;
-	description = "Myslíte že mi bohové propůjčí svou sílu?";
+	description = "Myslíš že mi bohové propůjčí svou sílu?";
 };
 
 func int DIA_NETBEK_HOWGETBLESSED_condition()
@@ -623,7 +623,7 @@ func int DIA_NETBEK_HOWGETBLESSED_condition()
 func void DIA_NETBEK_HOWGETBLESSED_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_NETBEK_HOWGETBLESSED_01_01");	//Myslíte že mi bohové propůjčí svou sílu?
+	AI_Output(other,self,"DIA_NETBEK_HOWGETBLESSED_01_01");	//Myslíš že mi bohové propůjčí svou sílu?
 	AI_Output(self,other,"DIA_NETBEK_HOWGETBLESSED_01_02");	//Věř mi, že nemají jinou možnost!
 	AI_Output(self,other,"DIA_NETBEK_HOWGETBLESSED_01_03");	//Není nikdo, s výjimkou tebe kdo by byl schopen ustát, tobě jsou ochotni svěřit moc.
 	AI_Output(self,other,"DIA_NETBEK_HOWGETBLESSED_01_04");	//(vážně) Nicméně předtím než to uděláš, bohové budou chtít opět být přesvědčeni o správnosti svého rozhodnutí.
@@ -666,14 +666,14 @@ func void DIA_NETBEK_TITANS_info()
 	AI_Output(self,other,"DIA_NETBEK_TITANS_01_08");	//Možná, že to tam opravdu nebylo bez zásahu některých starověkých sil.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_01_09");	//Musíme nějak najít a zničit zdroj magie!
 	AI_Output(other,self,"DIA_NETBEK_TITANS_01_10");	//V opačném případě lidé nebudou mít žádnou šanci odolávat skřetům.
-	AI_Output(other,self,"DIA_NETBEK_TITANS_01_11");	//Koneckonců, váš bůh vás nemůže pořád všechny chránit!
-	AI_Output(self,other,"DIA_NETBEK_TITANS_01_12");	//Ano, máte pravdu. On není tak silný jako ostatní bohové tohoto světa.
+	AI_Output(other,self,"DIA_NETBEK_TITANS_01_11");	//Koneckonců, tvůj bůh vás nemůže pořád všechny chránit!
+	AI_Output(self,other,"DIA_NETBEK_TITANS_01_12");	//Ano, máš pravdu. On není tak silný jako ostatní bohové tohoto světa.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_01_13");	//Tak mi alespoň pomoz najít toto starobylé zlo! Pokud nejsme schopni více.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_01_14");	//Chystám se ho požádat, aby pomohl... (vážně) Ale bude to trvat nějakou dobu.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_01_15");	//Jenže čas nemáme! Takže pospíchej a kontaktuj svého přítele.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_01_16");	//Vrať se zítra. Pokusím se zjistit, co způsobilo silné kouzlo skřetů.
 	NetBekWaitDay = Wld_GetDay();
-	B_LogEntry(TOPIC_ORCSECRET,"Netbek již čelí skřetím vojskům která jsou chráněna starobylým kouzlem. Do příštího rána se zeptá božstva co způsobylo onu silnou magii...");
+	B_LogEntry(TOPIC_ORCSECRET,"Netbek již čelí skřetím vojskům která jsou chráněna starobylým kouzlem. Do příštího rána se zeptá božstva co způsobilo onu silnou magii...");
 	AI_StopProcessInfos(self);
 };
 
@@ -761,7 +761,7 @@ func void DIA_NETBEK_TITANS_Sleeper_info()
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_01_22");	//Dobře, uklidni se! Vezměme si, že jsem v půli cesty do chrámu.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_01_23");	//A pokud je to nutné, usnadním vetřelci odchod zpět.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_01_24");	//Pak radši tam. Každá minuta se počítá.
-	B_LogEntry(TOPIC_SLEEPERBACK,"Vypadá to, že mých obav potvrzených Netbekem kterému se v noci zdály noční můry, zatímco bývalím nováčkům Bratrstva začaly silné bolesti hlavy, se jen tak nezbavím. Je nutné co nejdříve navštívit chrám.");
+	B_LogEntry(TOPIC_SLEEPERBACK,"Vypadá to, že mých obav potvrzených Netbekem kterému se v noci zdály noční můry, zatímco bývalím novicům Bratrstva začaly silné bolesti hlavy, se jen tak nezbavím. Je nutné co nejdříve navštívit chrám.");
 	SLEEPERINSHRAM = TRUE;
 	AI_StopProcessInfos(self);
 };
@@ -794,14 +794,14 @@ func void DIA_NETBEK_TITANS_Sleeper_Find_info()
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_Find_01_05");	//Existuje ještě další problém.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_Find_01_06");	//Jsem naprosto bezmocný proti uspávacímu kouzlu!
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_Find_01_07");	//Jakmile se k němu přiblížím, upadnu do hlubokého spánku.
-	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Find_01_08");	//Uspávací magie je nebezpečná! Nebude mí potom problém vás roztrhat na kusy.
+	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Find_01_08");	//Uspávací magie je nebezpečná! Nebude mí potom problém tě roztrhat na kusy.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Find_01_09");	//Vykročit si k němu bude šílenost.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_Find_01_10");	//A co mám dělat?
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Find_01_11");	//Je třeba mocný artefakt, který může uchránit před mentálními chapadly!
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_Find_01_12");	//Nevíš o něčem?
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Find_01_13");	//Bohužel ne. Zdá se, že to ví jen ten komu je známa podstata démonů.
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_Find_01_14");	//A co tvůj bůh? Řekl mi, že v žádném případě nepomůže?
-	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Find_01_15");	//Obávám se že ne. Sotva zvládne zasáhnout do tohoto světa.
+	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Find_01_15");	//Obávám se, že ne. Sotva zvládne zasáhnout do tohoto světa.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Find_01_16");	//Jeho dar - je především dar uzdravení a života! Tady je naprosto bezmocný.
 	NeedDemonolog = TRUE;
 	B_LogEntry(TOPIC_SLEEPERBACK,"Budu potřebovat mocný artefakt odolávající kouzlu spánek, ale jaký - zná to pouze osobá zběhlá v umění démonů.");
@@ -850,8 +850,8 @@ func void DIA_NETBEK_TITANS_Sleeper_Dead_Prize()
 	AI_Wait(hero,1);
 	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_01");	//Co se děje?!
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_02");	//Můj bůh ti dal životní sílu!
-	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_03");	//To vám pomůže v budoucnu s větší jistotou čelit nepřátelům a nebezpečí tohoto světa.
-	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_04");	//Děkuji! Víte, dokonce jsem se nějak začal cítit lépe.
+	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_03");	//To ti pomůže v budoucnu s větší jistotou čelit nepřátelům a nebezpečí tohoto světa.
+	AI_Output(other,self,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_04");	//Děkuji! Víš, dokonce jsem se nějak začal cítit lépe.
 	AI_Output(self,other,"DIA_NETBEK_TITANS_Sleeper_Dead_Prize_01_05");	//(usmívá se) Nepochybuji.
 	Info_ClearChoices(DIA_NETBEK_TITANS_Sleeper_Dead);
 };
@@ -904,13 +904,13 @@ func void dia_netbek_leadmesteponedone_info()
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_23");	//Ohniskový kámen.
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_24");	//Tyto kameny mají téměř všechny magické vlastnosti potřebné pro přenos energie z artefaktů do tvé runy.
 		AI_Output(other,self,"DIA_Netbek_LeadMeStepOneDone_01_26");	//Nevíš, kde to najdu?
-		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_27");	//Pokud si vzpomínám, něco takového bylo jednou v Y'Beriona - Bratrstvo, nejvyšší Guru.
+		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_27");	//Pokud si vzpomínám, něco takového bylo jednou u Y'Beriona - Bratrstvo, nejvyšší Guru.
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_29");	//Takže nejspíš je tento kámen stále ponechán v našem starém táboře, v močálech. Zkus se podívat tam na něj!
 		AI_Output(other,self,"DIA_Netbek_LeadMeStepOneDone_01_30");	//Obávám se, že mi to moc nepomůže, protože jsem to donesl mágům Vody.
 		AI_Output(other,self,"DIA_Netbek_LeadMeStepOneDone_01_31");	//V poslední době putovali skrze portál do Jharkendaru.
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_32");	//Bojím se že v tomto případě ti nepomůžu. Zkus se zeptat samotných mágů.
 		AI_Output(other,self,"DIA_Netbek_LeadMeStepOneDone_01_34");	//Jasně. Já něco vymyslím.
-		AI_Output(other,self,"DIA_Netbek_LeadMeStepOneDone_01_35");	//Radši mi pověz, jak přenesu tu energii z artfaktů do run.
+		AI_Output(other,self,"DIA_Netbek_LeadMeStepOneDone_01_35");	//Radši mi pověz, jak přenesu tu energii z artefaktů do run.
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_36");	//Budeš k tomu potřebovat runový stůl.
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_37");	//Připrav artefakty aby směřovali do středu stolu, tam vlož kámen.
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_38");	//Jakmile ho položíš začne vyzařovat světlo.
@@ -934,7 +934,7 @@ func void dia_netbek_leadmesteponedone_info()
 		AI_Output(other,self,"DIA_Netbek_LeadMeStepOneDone_01_54");	//Nevíš, kde to najdu?
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_56");	//Chceš-li být upřímný, ne. Budeš se muset podívat sám.
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_58");	//Dále budeš potřebovat speciální svitek napřenesení moci do meče.
-		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_60");	//Jsem přesvědčen že vám pomůžou mágové Ohně.
+		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_60");	//Jsem přesvědčen že ti pomůžou mágové Ohně.
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_61");	//Jejich síla by měla stačit k vytvoření takového kouzla!
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_62");	//Poté už to bude na tobě!
 		AI_Output(self,other,"DIA_Netbek_LeadMeStepOneDone_01_63");	//Pamatuj, boj se Strážci bude těžký!
@@ -1133,7 +1133,7 @@ instance DIA_NETBEK_CALMYOU(C_Info)
 	condition = dia_netbek_calmyou_condition;
 	information = dia_netbek_calmyou_info;
 	permanent = FALSE;
-	description = "Nemáš pro mě nějakou radu?";
+	description = "Tvůj klid dělá dojem.";
 };
 
 func int dia_netbek_calmyou_condition()
@@ -1153,7 +1153,7 @@ func void dia_netbek_calmyou_info()
 	AI_Output(self,other,"DIA_Netbek_CalmYou_01_06");	//Jeho vědění mi dává sílu odolat nátlaku okolního světa!
 	AI_Output(self,other,"DIA_Netbek_CalmYou_01_07");	//Kromě toho, náš nepřítel je poražen, takže není důvod se tím zabývat.
 	AI_Output(self,other,"DIA_Netbek_CalmYou_01_09");	//Jsem si jistý, že zvládnete i skřety! Zvlášť teď, když ztratili pomoc Strážců.
-	AI_Output(other,self,"DIA_Netbek_CalmYou_01_11");	//Doufám, že máte pravdu.
+	AI_Output(other,self,"DIA_Netbek_CalmYou_01_11");	//Doufám, že máš pravdu.
 };
 
 instance DIA_NETBEK_DRUID(C_Info)
@@ -1163,7 +1163,7 @@ instance DIA_NETBEK_DRUID(C_Info)
 	condition = dia_netbek_DRUID_condition;
 	information = dia_netbek_DRUID_info;
 	permanent = FALSE;
-	description = "Zničil jsem Strážce!";
+	description = "Jsi druid, ne?";
 };
 
 func int dia_netbek_DRUID_condition()
@@ -1179,12 +1179,12 @@ func void dia_netbek_DRUID_info()
 	B_GivePlayerXP(1000);
 	AI_Output(other,self,"DIA_Netbek_DRUID_01_01");	//Jsi druid, ne?
 	AI_Output(self,other,"DIA_Netbek_DRUID_01_02");	//Co myslíš tímto slovem?
-	AI_Output(other,self,"DIA_Netbek_DRUID_01_03");	//No, mluvíte se stromy a používáte své magické schopnosti.
+	AI_Output(other,self,"DIA_Netbek_DRUID_01_03");	//No, mluvíš se stromy a používáš své magické schopnosti.
 	AI_Output(other,self,"DIA_Netbek_DRUID_01_04");	//Pokud je mi známo, je toho schopný jen druid.
 	AI_Output(self,other,"DIA_Netbek_DRUID_01_05");	//No, pokud ano, pak máš pravdu. Jsem druid.
-	AI_Output(other,self,"DIA_Netbek_DRUID_01_06");	//Pak potřebuji vaši pomoc.
+	AI_Output(other,self,"DIA_Netbek_DRUID_01_06");	//Pak potřebuji tvou pomoc.
 	AI_Output(self,other,"DIA_Netbek_DRUID_01_07");	//Dobrý! Jak ti mohu pomoci?
-	AI_Output(other,self,"DIA_Netbek_DRUID_01_08");	//Musím přivést zpět k životu jeden strom. A obávám se, že se mi to bez vás nepovede.
+	AI_Output(other,self,"DIA_Netbek_DRUID_01_08");	//Musím přivést zpět k životu jeden strom. A obávám se, že se mi to bez tebe nepovede.
 	AI_Output(self,other,"DIA_Netbek_DRUID_01_09");	//To je správná věc. Samozřejmě, pomůžu ti v tom. Počkej chvilku...
 	AI_PlayAni(self,"T_PRACTICEMAGIC4");
 	AI_Output(self,other,"DIA_Netbek_DRUID_01_10");	//Tady, tento kořen. S ním můžeš inhalovat mrtvé tělo dřeviny do nového života.
@@ -1194,7 +1194,7 @@ func void dia_netbek_DRUID_info()
 	AI_Output(other,self,"DIA_Netbek_DRUID_01_13");	//Ne, jsem spokojený.
 	AI_Output(self,other,"DIA_Netbek_DRUID_01_14");	//Tak proč ty dotěrné dotazy?
 	AI_Output(other,self,"DIA_Netbek_DRUID_01_15");	//Á, omlouvám se!
-	B_LogEntry(TOPIC_AdanosCrone,"Všechno bylo mnohem jednodušší, Netbeka jsem požádal o pomoc a on mi dal magický kořen, který je schopen velkého stroma navrátit zpět k životu. Jsem ohromen jeho magii, nebo možná přesněji - magii druidů?!");
+	B_LogEntry(TOPIC_AdanosCrone,"Všechno bylo mnohem jednodušší, Netbeka jsem požádal o pomoc a on mi dal magický kořen, který je schopen velký strom navrátit zpět k životu. Jsem ohromen jeho magii, nebo možná přesněji - magii druidů?!");
 	RootIsUp = TRUE;
 };
 

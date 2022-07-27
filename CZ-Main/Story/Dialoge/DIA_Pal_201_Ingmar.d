@@ -663,7 +663,7 @@ func void DIA_Ingmar_CanTeachShield_Info()
 	AI_Output(other,self,"DIA_Ingmar_CanTeachShield_01_00");	//Mám na tebe otázku.
 	AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_01");	//Co tě zajímá?
 	AI_Output(other,self,"DIA_Ingmar_CanTeachShield_01_02");	//Cedric řekl, že mi můžeš dát štít paladina.
-	AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_03");	//Ach, to je... (reptání) Zdá se, že ten tvrdohlavec se uklididní pouze v případě, když my všichni budem chodi se štítem.
+	AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_03");	//Ach, to je... (reptání) Zdá se, že ten tvrdohlavec se uklidní pouze v případě, když my všichni budem chodit se štítem.
 	AI_Output(other,self,"DIA_Ingmar_CanTeachShield_01_04");	//Nesouhlasíš s ním?
 	AI_Output(self,other,"DIA_Ingmar_CanTeachShield_01_05");	//Jsem zastáncem starého dobrého obouručního meče. Není nic lepšího!
 	AI_Output(other,self,"DIA_Ingmar_CanTeachShield_01_06");	//Tak co si myslíš o štítu?

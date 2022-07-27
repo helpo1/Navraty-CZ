@@ -95,13 +95,13 @@ func void dia_orc_8550_urnazul_LostPaladins_info()
 	B_GivePlayerXP(200);
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_LostPaladins_01_01");	//Měl bych na tebe jednu otázku.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_LostPaladins_01_02");	//Ptej se, jestli chceš.
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_LostPaladins_01_03");	//Nezajali vaši vojáci náhodou nedávno nějakého paladina?
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_LostPaladins_01_03");	//Nezajali tví vojáci náhodou nedávno nějakého paladina?
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_LostPaladins_01_04");	//(zamyšleně) Ur-Thrall myslí, že ne. Jinak by o tom vědět.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_LostPaladins_01_05");	//Paladin je velmi dobrý voják a dobře znát válečný plán lidí.
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_LostPaladins_01_06");	//No, stejně by vám moc neřekl.
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_LostPaladins_01_06");	//No, stejně by ti moc neřekl.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_LostPaladins_01_07");	//(smích) Člověk prostě neví, jak bratři umět dostat pravdu z lidí.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_LostPaladins_01_08");	//Pokud by se dostat k bratrům do zajetí, Ur-Thrall by ho donutil mluvit!
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_LostPaladins_01_09");	//Raděj ani nechci vědet jak.
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_LostPaladins_01_09");	//Raději ani nechci vědet jak.
 	B_LogEntry(TOPIC_LostPaladins,"Vůdce skřetů Ur-Thrall neví nic o paladinech. Nebo prostě netuší, že některí z vězňů může být paladin.");
 };
 
@@ -132,7 +132,7 @@ func void dia_orc_8550_urnazul_KnowVenzelOrcs_info()
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_KnowVenzelOrcs_01_06");	//Počítám tedy, že všichni vězni pracují v železném dolu. Můžu se tam nějak dostat?
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_KnowVenzelOrcs_01_07");	//Arrgh... (rozzlobeně) Člověk klást příliš mnoho otázek!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_KnowVenzelOrcs_01_08");	//Už ti nic víc neřeknu! Ur-Thrall člověku nedůvěruje.
-	B_LogEntry(TOPIC_LostPaladins,"Vězni končí buď v železném dolu skřetů, nebo v jejich žaludku. Zůstáva jediné - dostat se do dolu a zjistit jestli je některí z vězňů paladin. Ur-Thrall mi bohužel přetal důverovat a nic víc neřekne. Musím to nějak napravit.");
+	B_LogEntry(TOPIC_LostPaladins,"Vězni končí buď v železném dolu skřetů, nebo v jejich žaludku. Zůstáva jediné - dostat se do dolu a zjistit jestli je některí z vězňů paladin. Ur-Thrall mi bohužel přestal důvěřovat a nic víc neřekne. Musím to nějak napravit.");
 	MustGoInIronMine = TRUE;
 };
 
@@ -197,12 +197,12 @@ func int dia_orc_8550_urnazul_AboutIronMine_condition()
 
 func void dia_orc_8550_urnazul_AboutIronMine_info()
 {
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_01_01");	//Pusťte mě do dolu.
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_01_01");	//Pusť mě do dolu.
 
 	if((MIS_PsicampDemon == LOG_Success) || (DemonPsicampIsDead == TRUE))
 	{
-		AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_01_02");	//Arrgh... (s uznáním) Člověk hodně pomoci Ur-Thrall! Teď mu více důvěrovat.
-		AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_01_04");	//Nejdřív Ur-Thrall chce vědet, proč tam člověk chce jít.
+		AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_01_02");	//Arrgh... (s uznáním) Člověk hodně pomoci Ur-Thrall! Teď mu více důvěřovat.
+		AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_01_04");	//Nejdřív Ur-Thrall chce vědět, proč tam člověk chce jít.
 		AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_01_05");	//Pokud Ur-Thrall souhlasit s člověk, nechá ho jít do železného dolu.
 		Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMine);
 		Info_AddChoice(DIA_Orc_8550_UrNazul_AboutIronMine,"Je sa tam chci porozhlédnout.",DIA_Orc_8550_UrNazul_AboutIronMine_Q1);
@@ -221,14 +221,14 @@ func void DIA_Orc_8550_UrNazul_AboutIronMine_Q1()
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMine_Q1_01_01");	//Je sa tam chci porozhlédnout.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_Q1_01_02");	//Důl je velmi nebezpečné místo! Nebýt jen podívaná!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_Q1_01_03");	//Ur-Thrall myslí, že pro člověka nemá cenu tam jít.
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMine_Q1_01_04");	//Toková starost...
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMine_Q1_01_04");	//Taková škoda...
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMine);
 };
 
 func void DIA_Orc_8550_UrNazul_AboutIronMine_Q2()
 {
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMine_Q2_01_01");	//Zajímá mě železná ruda!
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_Q2_01_02");	//Člověk chcete dolovat železnou rudu skřetů?!
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_Q2_01_02");	//Člověk chce dolovat železnou rudu skřetů?!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_Q2_01_03");	//Pak tě Ur-Thrall nemůže pustit. Ruda být jen pro skřety!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_Q2_01_04");	//Nebo můžeš jít, ale jen jako otrok a zůstat tam navždy. Člověk si to přát?
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMine_Q2_01_05");	//Obávám se, že tato možnost se mi vůbec nezamlouvá.
@@ -270,7 +270,7 @@ func void DIA_Orc_8550_UrNazul_AboutIronMine_W1()
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W1_01_02");	//To těžko! Spáčův chrám postavili skřeti a jen oni znají jeho tajemství.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W1_01_03");	//Lidé nepostavil chrám a neuctívájí Spáče! Nevím o něm nic.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W1_01_04");	//Člověk se snaží oklamat Ur-Thrall?!
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMine_W1_01_05");	//Ale kdepak! To be mě ani nenapadlo.
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMine_W1_01_05");	//Ale kdepak! To by mě ani nenapadlo.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W1_01_06");	//Arrgh... (výhružně)
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMine);
 };
@@ -289,7 +289,7 @@ func void DIA_Orc_8550_UrNazul_AboutIronMine_W2()
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W2_01_08");	//Ale pozor! Bratři šamani uvalili na průchod silné kouzlo.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W2_01_09");	//Skřetům neublíží. Ale jestliže se člověk dotkne, pak okamžitě zemře!
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMine_W2_01_10");	//A proč to udělali?
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W2_01_11");	//Aby zabili vězně kteří by chteli utéct ze železného dolu.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMine_W2_01_11");	//Aby zabili vězně kteří by chtěli utéct ze železného dolu.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMine_W2_01_12");	//Jasně.
 
 	if(RhetorikSkillValue[1] < 100)
@@ -298,7 +298,7 @@ func void DIA_Orc_8550_UrNazul_AboutIronMine_W2()
 		AI_Print("Rétorika + 1");
 	};
 
- 	B_LogEntry(TOPIC_LostPaladins,"Podařilo se mi přesvědčit Ur-Thralla, aby mi otevřel do dolu. Doufám, že najdu něco o Wenzelově oddílu.");
+ 	B_LogEntry(TOPIC_LostPaladins,"Podařilo se mi přesvědčit Ur-Thralla, aby mi otevřel vchod do dolu. Doufám, že najdu něco o Wenzelově oddílu.");
 	CanEnterOrcMine = TRUE;
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMine);
 };
@@ -372,14 +372,14 @@ func void DIA_Orc_8550_UrNazul_AboutIronMineMore_Q1()
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_Q1_01_01");	//Jen sa tam chci porozhlédnout.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_Q1_01_02");	//Důl je velmi nebezpečné místo! Nebýt jen podívaná!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_Q1_01_03");	//Ur-Thrall myslí, že pro člověka nemá cenu tam jít.
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_Q1_01_04");	//Taková starost...
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_Q1_01_04");	//Taková škoda...
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMineMore);
 };
 
 func void DIA_Orc_8550_UrNazul_AboutIronMineMore_Q2()
 {
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_Q2_01_01");	//Zajímá mě železná ruda!
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_Q2_01_02");	//Člověk chcete dolovat železnou rudu skřetů?!
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_Q2_01_02");	//Člověk chce dolovat železnou rudu skřetů?!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_Q2_01_03");	//Pak tě Ur-Thrall nemůže pustit. Ruda být jen pro skřety!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_Q2_01_04");	//Nebo můžeš jít, ale jen jako otrok a zůstat tam navždy. Člověk si to přát?
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_Q2_01_05");	//Obávám se, že tato možnost se mi vůbec nezamlouvá.
@@ -421,7 +421,7 @@ func void DIA_Orc_8550_UrNazul_AboutIronMineMore_W1()
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W1_01_02");	//To těžko! Spáčův chrám postavili skřeti a jen oni znají jeho tajemství.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W1_01_03");	//Lidé nepostavil chrám a neuctívájí Spáče! Nevím o něm nic.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W1_01_04");	//Člověk se snaží oklamat Ur-Thrall?!
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W1_01_05");	//Ale kdepak! To be mě ani nenapadlo.
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W1_01_05");	//Ale kdepak! To by mě ani nenapadlo.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W1_01_06");	//Arrgh... (výhružně)
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMineMore);
 };
@@ -439,7 +439,7 @@ func void DIA_Orc_8550_UrNazul_AboutIronMineMore_W2()
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W2_01_08");	//Ale pozor! Bratři šamani uvalili na průchod silné kouzlo.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W2_01_09");	//Skřetům neublíží. Ale jestliže se člověk dotkne, pak okamžitě zemře!
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W2_01_10");	//A proč to udělali?
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W2_01_11");	//Aby zabili vězně kteří by chteli utéct ze železného dolu.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W2_01_11");	//Aby zabili vězně kteří by chtěli utéct ze železného dolu.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_AboutIronMineMore_W2_01_12");	//Jasně.
 
 	if(RhetorikSkillValue[1] < 100)
@@ -448,7 +448,7 @@ func void DIA_Orc_8550_UrNazul_AboutIronMineMore_W2()
 		AI_Print("Rétorika + 1");
 	};
 
-	B_LogEntry(TOPIC_LostPaladins,"Podařilo se mi přesvědčit Ur-Thralla aby mi otevřel průchod do železného dolu skřetů. Doufám, že zjistím něco o Wenzelovu oddílu.");
+	B_LogEntry(TOPIC_LostPaladins,"Podařilo se mi přesvědčit Ur-Thralla aby mi otevřel průchod do železného dolu skřetů. Doufám, že zjistím něco o Wenzelově oddílu.");
 	CanEnterOrcMine = TRUE;
 	Info_ClearChoices(DIA_Orc_8550_UrNazul_AboutIronMineMore);
 };
@@ -576,7 +576,7 @@ func void dia_orc_8550_urnazul_hello_info()
 		AI_Output(other,self,"DIA_Orc_8550_UrNazul_Hello_Info_18_11");	//Skřeti kouzlem zapečetili vstup, aby ta nestvůra nemohla ven.
 		AI_Output(other,self,"DIA_Orc_8550_UrNazul_Hello_Info_18_12");	//Chci toho démona zničit. Proto jsem tu - abych se zeptal, jak pečeť prolomit.
 		AI_PlayAni(self,"T_GREETGRD");
-		AI_Output(self,other,"DIA_Orc_8550_UrNazul_Complete_Info_18_04");	//Člověk je skvělý válečník. HVstoupit do chrámu Krushak!
+		AI_Output(self,other,"DIA_Orc_8550_UrNazul_Complete_Info_18_04");	//Člověk je skvělý válečník. Vstoupit do chrámu Krushak!
 		AI_Output(self,other,"DIA_Orc_8550_UrNazul_Complete_Info_18_05");	//Ur-Thrall ti děkuje a dá klíčovou magii - člověk otevře vchod do chrámu Krushak.
 		B_GiveInvItems(self,other,itmi_idol_01,1);
 		AI_Output(other,self,"DIA_Orc_8550_UrNazul_LowLevel_01_15");	//Děkuji, vůdce. To jsem chtěl slyšet.
@@ -694,7 +694,7 @@ func void DIA_Orc_8550_UrNazul_Muritan_Info()
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_03");	//(tiše) Člověk neví, ale jeho jed může zabít téměř kohokoliv.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_04");	//Ur-Thrall mít jednoho velmi silného nepřítele, kterého je téměř nemožné zabít. Ale on myslel, že jed téhle příšery ho může přemoci.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_Info_01_06");	//Zdá se mi, že máš spoustu nepřátel, náčelníku. A kdo že to je?
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_07");	//(vážně) Říkat mu Nag-Dumgar. Kdysi byl stejným skřetem jako §Ur-Thrall.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_07");	//(vážně) Říkat mu Nag-Dumgar. Kdysi byl stejným skřetem jako Ur-Thrall.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_Info_01_08");	//Nikdy jsem neslyšel tohoto jméno. Můžeš mi o něm něco říct?
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_09");	//... (zamyšleně) Před mnoha zimy, bratři postavili Spáčův chrám.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_10");	//Nag-Dumgar být vůdcem klanu, jehož šamani přivolat zlého démona.
@@ -708,7 +708,7 @@ func void DIA_Orc_8550_UrNazul_Muritan_Info()
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_18");	//Nag-Dumgar začal přinášet bratry k oběti, říkat, že tak chránit klan před hněvem a prokletím zlého démona.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_Info_01_19");	//A to jak? Nemyslím, že skřetům by se to líbilo.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_20");	//Člověk mít pravdu! Skřeti myslet, že Nag-Dumgar se zbláznit a rozhodli se ho zabít.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_21");	//Když se o tom Nag-Dumgar dovědět, o začal šílet!
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_21");	//Když se o tom Nag-Dumgar dovědět, on začal šílet!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_22");	//On proklel svůj klan a zabít každého, kdo se odvážil stát v cestě.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_Info_01_23");	//Ti bratři, kterím se ještě podařilo přežít, přísahali, že Nag-Dumgar se sám proměnit v zlého démona!
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_Info_01_24");	//A co se stalo pak?
@@ -746,7 +746,7 @@ func void DIA_Orc_8550_UrNazul_Muritan_Yes()
 	MIS_NagDumgar = LOG_Running;
 	Log_CreateTopic(TOPIC_NagDumgar,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_NagDumgar,LOG_Running);
-	B_LogEntry(TOPIC_NagDumgar,"Zeptal jsem se Ur-Thralla proč potřebuje jedovatý tesák Muritana. Vůdce skřetů se domnívá, že může být použit k boji proti Nag-Dumgarovi - kdysi mocnému vůdci skřetího klanu, který postavil Spáčův chrám, a který byl následně přeměněn na zlého démona. Obávám se ale, že ani smrtelný jed bude bezmocný proti starobylému prokletí tohoto skřeta. S největší pravděpodobností, jediný jistý způsob, jak zabít Nag-Dumgara leží v troskách chrámu a dobrovolně jsem se nabýdl ho najít...");
+	B_LogEntry(TOPIC_NagDumgar,"Zeptal jsem se Ur-Thralla proč potřebuje jedovatý tesák Muritana. Vůdce skřetů se domnívá, že může být použit k boji proti Nag-Dumgarovi - kdysi mocnému vůdci skřetího klanu, který postavil Spáčův chrám, a který byl následně přeměněn na zlého démona. Obávám se ale, že ani smrtelný jed bude bezmocný proti starobylému prokletí tohoto skřeta. S největší pravděpodobností, jediný jistý způsob, jak zabít Nag-Dumgara leží v troskách chrámu a dobrovolně jsem se nabídl ho najít...");
 	AI_StopProcessInfos(self);
 };
 
@@ -771,16 +771,16 @@ func int DIA_Orc_8550_UrNazul_XashGor_condition()
 func void DIA_Orc_8550_UrNazul_XashGor_Info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_XashGor_01_01");	//Co víš o nejvyšším šamanovi Hash-Gorovi?
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_XashGor_01_02");	//Hmmm... Být velmi staré jméno... (zamyšleně) Jestli Ur-Thrall pamatovat, Hash-Gor kdysi být velký syn ducha.
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_XashGor_01_01");	//Co víš o nejvyšším šamanovi Xash-Gorovi?
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_XashGor_01_02");	//Hmmm... Být velmi staré jméno... (zamyšleně) Jestli Ur-Thrall pamatovat, Xash-Gor kdysi být velký syn ducha.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_XashGor_01_03");	//To vím i sám. Co ještě mi o něm můžeš říct?
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_XashGor_01_04");	//Ur-Thrall vědet jen velmi málo, Hash-Gor žít mnoho zim zpátky. Ještě předtím, než Ur-Thrall přišel do údolí.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_XashGor_01_04");	//Ur-Thrall vědět jen velmi málo, Xash-Gor žít mnoho zim zpátky. Ještě předtím, než Ur-Thrall přišel do údolí.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_XashGor_01_06");	//A netušíš, kde ho mám hledat?
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_XashGor_01_07");	//Pokud někdo ví, kde Hash-Gor teď, pak jedině ten, kdo žít v té době.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_XashGor_01_08");	//Člověk jistě pochopil, že mezi skřeti takový nikdo není.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_XashGor_01_07");	//Pokud někdo ví, kde Xash-Gor teď, pak jedině ten, kdo žít v té době.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_XashGor_01_08");	//Člověk jistě pochopil, že mezi skřety takový nikdo není.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_XashGor_01_09");	//Jasně.
 	DeadRabOrkovInsert = TRUE;
-	B_LogEntry(TOPIC_NagDumgar,"Jak se dalo čekat, Ur-Thrall o Hash-Gorovi neví nic užitečného. Dle jeho slov mi o něm může říct víc jen ten, kdo žil v jeho době. Jenže mezi skřety už nikdo takový není... možná kdybych hledal mezi mrtvými.");
+	B_LogEntry(TOPIC_NagDumgar,"Jak se dalo čekat, Ur-Thrall o Xash-Gorovi neví nic užitečného. Dle jeho slov mi o něm může říct víc jen ten, kdo žil v jeho době. Jenže mezi skřety už nikdo takový není... možná kdybych hledal mezi mrtvými.");
 };
 
 instance DIA_Orc_8550_UrNazul_Muritan_Dagger(C_Info)
@@ -903,11 +903,11 @@ func int DIA_Orc_8550_UrNazul_Muritan_UrTrallPotion_condition()
 
 func void DIA_Orc_8550_UrNazul_Muritan_UrTrallPotion_Info()
 {
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_UrTrallPotion_01_01");	//A jaký lektvar jsi mi to dal?
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_UrTrallPotion_01_01");	//Jaký lektvar jsi mi to dal?
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_UrTrallPotion_01_02");	//Jedná se o velmi starý a vzácný skřetí lektvar! Ur-Thrall ho střežit po mnoho zim, ale neodvážil se ho napít.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_UrTrallPotion_01_03");	//Ale člověk prokázal, že je hoden ho mít!
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Muritan_UrTrallPotion_01_04");	//Doufám, že se neotrávím.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_UrTrallPotion_01_05");	//Člověk nemusí mit strach. Tento nápoj ho nezabije ale udělať silnějším.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Muritan_UrTrallPotion_01_05");	//Člověk nemusí mit strach. Tento nápoj ho nezabije ale udělat silnějším.
 };
 
 instance DIA_Orc_8550_UrNazul_Sword(C_Info)
@@ -971,16 +971,16 @@ func void DIA_ORC_8550_URNAZUL_AZGALOR_info()
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Hello_Info_18_25");	//Azgalor? Kdo je to?
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_33");	//Azgalor být velmi velký a zlý drak. Žít tam, kde dřívě žil Ur-Thrall.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Hello_Info_18_35");	//Drak?! Chceš, abych pro tebe zabil draka? Odkdy jsou draci a skřeti nepřátelé?
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_42");	//Tento drak je jiný. Arhhhhh... Azgalor být zlo. Nemít silotávní.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_42");	//Tento drak je jiný. Arghhhhh... Azgalor být zlo. Nemít slitování.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_43");	//Před mnoha zimy, Azgalor přivolat démona - velkého, silného démona jménem Kovář Duší.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_44");	//Démon sloužit Azgaloru! Skřeti sloužit démonu! Azgalor slíbit, že pokud bratři dobře sloužit udělá je silnými aby porazili své nepřátele.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_45");	//Ur-Thrall říkal, že sloužit démonu je nemožné. Démon být zlo!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_46");	//Ale bratři neposlouchat Ur-Thrall... Bratři vypili krev démona, aby získali jeho sílu a začali mu sloužit.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_47");	//Bratři pak porazili všechny nepřátele. Démon duše jejich nepřátel donesl rovnou k Azgalorovi!
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_48");	//Ale Azgalor chtel víc a víc duší! Krev démona strašit mysl a duše bratru.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_49");	//Ale bratři nechteli jen bojovat, chteli mír a bohatství kmene. Bratři přestali sloužit Azgalorovi a přišli za mnou, za Ur-Thrallem.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_48");	//Ale Azgalor chtěl víc a víc duší! Krev démona strašit mysl a duše bratrů.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_49");	//Ale bratři nechtěli jen bojovat, chtěli mír a bohatství kmene. Bratři přestali sloužit Azgalorovi a přišli za mnou, za Ur-Thrallem.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_51");	//Azgalor rozkázal démonovi zabít bratry. Všechny skřety, Ur-Thralla a mé bratry!
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_52");	//Démon zabil mnoho bratru a vzal jejich duše. Ur-Thrall se pustil do boje s démonem. Spolu s mým bratrem - Ur-Gromem.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_52");	//Démon zabil mnoho bratrů a vzal jejich duše. Ur-Thrall se pustil do boje s démonem. Spolu s mým bratrem - Ur-Gromem.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_55");	//Bratr a Ur-Thrall šli do údolí, bojovat s démonem...
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_56");	//Ur-Thrall nenávidět Azgalora! Přísahat, že pomstít bratrovu smrt.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Hello_Info_18_57");	//A ty chceš, abych ho pomstil místo tebe?
@@ -994,13 +994,13 @@ func void DIA_ORC_8550_URNAZUL_AZGALOR_info()
 	B_GiveInvItems(self,other,itmi_2_orcportalstone,1);
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_68");	//Člověk teď jít, Ur-Thrall počká zde na srdce Azgalora.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_Hello_Info_18_69");	//No dobře - mám pocit, že se zapotím! Počkej tady skřete - brzy budeteš mít možnost rozervat jeho srdce.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_70");	//Štastný lov, člověče.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_Hello_Info_18_70");	//Šťastný lov, člověče.
 	MIS_URNAZULRAGE = LOG_Running;
 	Log_CreateTopic(TOPIC_URNAZULRAGE,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_URNAZULRAGE,LOG_Running);
-	B_LogEntry(TOPIC_URNAZULRAGE,"Ur-Thrall se mnou podstoupil dohodu. Slíbil jsem mu, že zabiju černého draka Azgalora a tak dokážu, že jsem dost silný na setkání s démonem ve Spáeove chrámu. Kdysi dávno Azgalor vyvolal mocného démona - kováře duší. Slíbil skřetům, že když budou vyvolanému démonu sloužit, porazí jejich nepřátele. Skřeti souhlasili a vypili jeho krev. Démonická esence je ueinila neporazitelnými. Azgalor však použil skřety proti svým vlastním nepřátelum. Skřeti se ve skutečnosti stali jeho otroky.");
-	B_LogEntry_Quiet(TOPIC_URNAZULRAGE,"Unavený z krvavé války, skřeti už nechteli sloužit Azgalorovi a jeho démonovi. Hněv Azgalora byl obrovský - proklel všechny skřety a nařídil démonovi, aby všechny skřety zabil a sebral jejich duše. Ur-Thrall a jeho bratr, Ur-Grom, se vydali démona zabít. Nicméne vítezství stálo Ur-Groma život. Ur-Thrall po me chce Azgalorovo srdce.");
-	B_LogEntry_Quiet(TOPIC_URNAZULRAGE,"Místo, kde se Azgalor zjevuje se nazývá Údolí stínů. Dostanu se tam použitím skřetích teleportu. Ur-Thrall mi dal dva krystaly, které mám položit na pedestaly vedle mříže, aby se otevřela.");
+	B_LogEntry(TOPIC_URNAZULRAGE,"Ur-Thrall se mnou podstoupil dohodu. Slíbil jsem mu, že zabiju černého draka Azgalora a tak dokážu, že jsem dost silný na setkání s démonem ve Spáčově chrámu. Kdysi dávno Azgalor vyvolal mocného démona - kováře duší. Slíbil skřetům, že když budou vyvolanému démonu sloužit, porazí jejich nepřátelé. Skřeti souhlasili a vypili jeho krev. Démonická esence je učinila neporazitelnými. Azgalor však použil skřety proti svým vlastním nepřátelům. Skřeti se ve skutečnosti stali jeho otroky.");
+	B_LogEntry_Quiet(TOPIC_URNAZULRAGE,"Unavený z krvavé války, skřeti už nechtěli sloužit Azgalorovi a jeho démonovi. Hněv Azgalora byl obrovský - proklel všechny skřety a nařídil démonovi, aby všechny skřety zabil a sebral jejich duše. Ur-Thrall a jeho bratr, Ur-Grom, se vydali démona zabít. Nicméně vítězství stálo Ur-Groma život. Ur-Thrall po mě chce Azgalorovo srdce.");
+	B_LogEntry_Quiet(TOPIC_URNAZULRAGE,"Místo, kde se Azgalor zjevuje se nazývá Údolí stínů. Dostanu se tam použitím skřetích teleportů. Ur-Thrall mi dal dva krystaly, které mám položit na pedestaly vedle mříže, aby se otevřela.");
 	KNOWS_AZGOGLOR_SUMMON = FALSE;
 	UrTrallOkShv = TRUE;
 	AI_StopProcessInfos(self);
@@ -1166,8 +1166,8 @@ func void dia_orc_8550_urnazul_blackore_info()
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_BlackOre_01_01");	//Řekni mi, jestli vy skřeti víte, kde hledat černou rudu.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_BlackOre_01_02");	//Člověk potřebovat černou rudu?!
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_BlackOre_01_04");	//Hmmm... (zamyšleně) Kdysi dávno, když Ur-Thrall žít s bratmi daleko odsud - najít spoustu černé rudy a vytvořit silný pancíř, zabíjet všechny nepřátele.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_BlackOre_01_05");	//Člověk se vrátit do údolí, kde žil Ur Thrall, a tam hledat rudu.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_BlackOre_01_04");	//Hmmm... (zamyšleně) Kdysi dávno, když Ur-Thrall žít s bratry daleko odsud - najít spoustu černé rudy a vytvořit silný pancíř, zabíjet všechny nepřátele.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_BlackOre_01_05");	//Člověk se vrátit do údolí, kde žil Ur-Thrall, a tam hledat rudu.
 	B_LogEntry(TOPIC_GUARDIANS,"Darrion měl pravdu. Ur-Thrall mi řekl, kde najít vzácnou černou rudu. Měl bych jít do Údolí stínů a tam ji hledat.");
 };
 
@@ -1197,13 +1197,13 @@ func void dia_orc_8550_urnazul_urhan_info()
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_05");	//Ano, být jedním z mých nejlepších válečníků.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_06");	//Ur-Thrall ho poslat do války s lidmi ve velkém údolí, vzít pevnost.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_07");	//A Hag-Tar již to udělat. Ur-Thrall respektovat Hag-Tar!
-	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_01_08");	//To je všechno pekné, jen zatím nevíš, že ten tvuj generál te chce zabít a sám se stát vudcem.
+	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_01_08");	//To je všechno hezké, jen zatím nevíš, že ten tvůj generál tě chce zabít a sám se stát vůdcem.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_09");	//Co?! Hag-Tar chtít smrt Ur-Thrall?
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_01_10");	//Ano, přesně tak! Chce to udělat aby se stal vůdcem místo tebe.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_11");	//KHATAG BAT NAR!... (výhružně) Jestli člověk lže - člověk zemřít. Pomalu zemřít. Být hodně bolesti.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_01_12");	//Říkám pravdu. Hag-Tar mě vyzval abych tě zabil, a za odměnu slíbil propustit zajaté paladiny.
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_01_16");	//Pokud si nevěříš zeptej se Ur-Shaka, on může potvrdit moje slova.
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_17");	//Ríkat syn ducha a říkat člověk, to značit pravda. Ur-Thrall věřit.
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_17");	//Říkat syn ducha a říkat člověk, to značit pravda. Ur-Thrall věřit.
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_01_22");	//Ale Ur-Thrall nechápe, proč mu to člověk říct?
 	Info_ClearChoices(dia_orc_8550_urnazul_urhan);
 	Info_AddChoice(dia_orc_8550_urnazul_urhan,"Jednoduše nerad zabíjím bez varování!",dia_orc_8550_urnazul_urhan_killyou);
@@ -1218,7 +1218,7 @@ func void dia_orc_8550_urnazul_urhan_killyou()
 {
 	AI_Output(other,self,"DIA_Orc_8550_UrNazul_UrHan_KillYou_01_01");	//Jednoduše nerad zabíjím bez varování!
 	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_KillYou_01_02");	//KHROTOK YABART! (vztekle) Takže se přesto rozhodnout mě výzvat?!
-	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_KillYou_01_06");	//Člověk být hloupý, já rozervat člověk na kusy! Ulu-Mulu nepomůže. Arrrrrrrg!
+	AI_Output(self,other,"DIA_Orc_8550_UrNazul_UrHan_KillYou_01_06");	//Člověk být hloupý, já rozervat člověk na kusy! Ulu-Mulu nepomůže. Arrrrrrrgh!
 	URNAZULFUCKOFF = TRUE;
 	ULUMULUISEQUIP_NO = TRUE;
 	ULUMULUISEQUIP = FALSE;
@@ -1435,7 +1435,7 @@ func void dia_ORC_7550_GORKAR_hifirst_info()
 		AI_Output(other,self,"DIA_Orc_7550_GorKar_HiFirst_01_05");	//To tě tolik překvapilo?
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_06");	//Morra mít pravdu! Gor-Kar nikdy nepotkat člověk, který by rozumět jeho řeči.
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_07");	//Ale ještě víc překvapen, že člověk nosit skřetí zbroj. Gor-Kar nejdřív myslet, že člověk být skřet. Kdo ho vzít Morra?!
-		AI_Output(other,self,"DIA_Orc_7550_GorKar_HiFirst_01_08");	//Dal mi ho Ur-Thrall, vůdce skretího klanu. Slyšel jsi o něm?
+		AI_Output(other,self,"DIA_Orc_7550_GorKar_HiFirst_01_08");	//Dal mi ho Ur-Thrall, vůdce skřetího klanu. Slyšel jsi o něm?
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_09");	//GRAT, GRAT... (přikývne) Gor-Kar znát velký vůdce Ur-Thrall!
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_10");	//On žít hluboko v hoře a být velmi silný válečník.
 		AI_Output(self,other,"DIA_Orc_7550_GorKar_HiFirst_01_11");	//Nicméně, Gor-Kar nechápe, proč by velký vůdce dát člověk taková zbroj.
@@ -1607,13 +1607,13 @@ func void dia_ORC_7550_GORKAR_TrailOrcCamp_info()
 	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_12");	//Morra by měl přinést něco pro bratry, za co budou ochotni naslouchat.
 	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_13");	//Například to, co jim pomoct v boji jejich nepříteli!
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_14");	//Hmmm... narážíš na magickou rudu?
-	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_15");	//Gor-Kar myslet, že pro mnoho kusů magické rudy bratři opravdu nebíjet člověk.
+	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_15");	//Gor-Kar myslet, že pro mnoho kusů magické rudy bratři opravdu nezabíjet člověk.
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_16");	//'Mnoho' je kolik?
 	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_17");	//Gor-Kar počítat, že minimálně sto kusů. Nebo víc!
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_18");	//Ale vždyť to je celá hromada rudy!
-	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_19");	//NUR GAR... (zavrtí hlavou) Mín bratrům nebude stačit! Člověk musí rozhodnout, kolik stát jeho život.
+	AI_Output(self,other,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_19");	//NUR GAR... (zavrtí hlavou) Méně bratrům nebude stačit! Člověk musí rozhodnout, kolik stát jeho život.
 	AI_Output(other,self,"DIA_Orc_7550_GorKar_TrailOrcCamp_01_20");	//Dobře, pochopil jsem.
-	B_LogEntry(TOPIC_MissOldFriend,"V horách, jsem se potkal s skřetího šamana Gor-Kara. Nezaútočil na mně, protože ho zaujala má výzbroj, kterou mi daroval Ur-Thrall. Po rozhovoru s ním jsem se dozvěděl, že o osudu Dariuse by mohl vědět vůdce jeho klanu - Grum Lok. Nicméně, aby se mnou skřeti mluvili, musím přinést co jim rozváže jazyk. Podle Gor-Kara by na to mohlo stačit sto kusů magické rudy. Zřejme si bude muset trochu zohýbat záda v dolu, pokud chci získat pozornost jejich vůdce.");
+	B_LogEntry(TOPIC_MissOldFriend,"V horách, jsem potkal skřetího šamana Gor-Kara. Nezaútočil na mně, protože ho zaujala má výzbroj, kterou mi daroval Ur-Thrall. Po rozhovoru s ním jsem se dozvěděl, že o osudu Dariuse by mohl vědět vůdce jeho klanu - Grum Lok. Nicméně, aby se mnou skřeti mluvili, musím přinést co jim rozváže jazyk. Podle Gor-Kara by na to mohlo stačit sto kusů magické rudy. Zřejme si bude muset trochu rozhýbat záda v dolu, pokud chci získat pozornost jejich vůdce.");
 	GorKarShowMe = TRUE;
 };
 
@@ -1832,7 +1832,7 @@ func void DIA_GorkOrcBoss_Talk_info()
 	MIS_GrumLockProve = LOG_Running;
 	Log_CreateTopic(TOPIC_GrumLockProve,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_GrumLockProve,LOG_Running);
-	B_LogEntry(TOPIC_GrumLockProve,"Mluvil jsem s vůdcem Grum Lokem. Pokud se chci dozvědět něco o osudu Dariuse musím si nejdřív získat jeho důvěru. Požádal mě, abych mu přinesl válečnou kořist - hlavu jednoho ze starších klanu Ledového větru. Jen pak mi Grum Lok řekne co ví o mích lidech.");
+	B_LogEntry(TOPIC_GrumLockProve,"Mluvil jsem s vůdcem Grum Lokem. Pokud se chci dozvědět něco o osudu Dariuse musím si nejdřív získat jeho důvěru. Požádal mě, abych mu přinesl válečnou kořist - hlavu jednoho ze starších klanu Ledového větru. Jen pak mi Grum Lok řekne co ví o mých lidech.");
 };
 
 instance DIA_GorkOrcBoss_TalkGood(C_Info)
@@ -2029,7 +2029,7 @@ func void DIA_GorkOrcBoss_WhatDo_info()
 	MIS_ClansWar = LOG_Running;
 	Log_CreateTopic(TOPIC_ClansWar,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_ClansWar,LOG_Running);
-	B_LogEntry(TOPIC_ClansWar,"Grum Lok mi slíbil štědrou odměnu, když mu pomůžu porazit klan Ledového větru. Problém je v tom, že válečníky nepřátelského klanu chrání magická ruda. Pokud se mi podaří připravit je o tuto výhodu, Grum Lok bude konečně schopen zaútočiť.");
+	B_LogEntry(TOPIC_ClansWar,"Grum Lok mi slíbil štědrou odměnu, když mu pomůžu porazit klan Ledového větru. Problém je v tom, že válečníky nepřátelského klanu chrání magická ruda. Pokud se mi podaří připravit je o tuto výhodu, Grum Lok bude konečně schopen zaútočit.");
 };
 
 instance DIA_GorkOrcBoss_WhatDoDone(C_Info)
@@ -2038,7 +2038,7 @@ instance DIA_GorkOrcBoss_WhatDoDone(C_Info)
 	condition = DIA_GorkOrcBoss_WhatDoDone_condition;
 	information = DIA_GorkOrcBoss_WhatDoDone_info;
 	permanent = FALSE;
-	description = "Váš nepřítel ztratil sílu magické rudy.";
+	description = "Tvůj nepřítel ztratil sílu magické rudy.";
 };
 
 func int DIA_GorkOrcBoss_WhatDoDone_condition()
@@ -2052,7 +2052,7 @@ func int DIA_GorkOrcBoss_WhatDoDone_condition()
 func void DIA_GorkOrcBoss_WhatDoDone_info()
 {
 	B_GivePlayerXP(2500);
-	AI_Output(other,self,"DIA_GorkOrcBoss_WhatDoDone_01_01");	//Tvůj nepřítel brzy ztratí sílu magické rudy.
+	AI_Output(other,self,"DIA_GorkOrcBoss_WhatDoDone_01_01");	//Tvůj nepřítel ztratil sílu magické rudy.
 	AI_Output(self,other,"DIA_GorkOrcBoss_WhatDoDone_01_02");	//Morra být naprosto jistý?!
 	AI_Output(other,self,"DIA_GorkOrcBoss_WhatDoDone_01_03");	//Můžeš poslat své vojáky a podívat se.
 	AI_Output(other,self,"DIA_GorkOrcBoss_WhatDoDone_01_04");	//A bude lepší neztrácet čas, ať ji nenashromáždí znovu!
@@ -2153,18 +2153,18 @@ func int DIA_GorkOrcBoss_FreeDar_condition()
 func void DIA_GorkOrcBoss_FreeDar_info()
 {
 	AI_Output(other,self,"DIA_GorkOrcBoss_FreeDar_01_01");	//Co chceš výměnou za život tvých vězňů?
-	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_02");	//GROK TAR... (zamyšleně) Grum Lok myslí, že život je lidských vézňů být velmi drahé.
+	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_02");	//GROK TAR... (zamyšleně) Grum Lok myslí, že život je lidských vězňů být velmi drahé.
 	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_03");	//Morra by měl dát Grum Lok velmi cennou věc, aby on souhlasil je propustit.
 	AI_Output(other,self,"DIA_GorkOrcBoss_FreeDar_01_04");	//Mám přinést další magickou rudu?
 	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_05");	//Ne. Grum Lok už nepotřebuje.
 	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_06");	//Tentokrát Morra přinést Grum Lok velkou kůži z bílý horský trol.
 	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_07");	//Tato zvěr velmi vzácná a kůže být velmi cenná!
-	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_08");	//Morra ji přinést Grum Lok, a on pak pustit lidské vézně.
+	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_08");	//Morra ji přinést Grum Lok, a on pak pustit lidské vězně.
 	AI_Output(other,self,"DIA_GorkOrcBoss_FreeDar_01_09");	//A kde ten trol žije?
 	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_10");	//Velké zvíře žít v obrovské jeskyni, tam kde být vysoká hora.
 	AI_Output(other,self,"DIA_GorkOrcBoss_FreeDar_01_11");	//Jsme v horách. Můžeš to trochu upřesnit?
 	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_12");	//Grum Lok mluvit o hoře, která být nedaleko od starého tábora lidí.
-	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_13");	//Člověk by měl hledat zvěr tam! hora být velká, Morra ho rychle najít.
+	AI_Output(self,other,"DIA_GorkOrcBoss_FreeDar_01_13");	//Člověk by měl hledat zvěr tam! Hora být velká, Morra ho rychle najít.
 	MIS_FreePrice = LOG_Running;
 	Log_CreateTopic(TOPIC_FreePrice,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_FreePrice,LOG_Running);
@@ -2200,7 +2200,7 @@ func void DIA_GorkOrcBoss_FreeDarius_info()
 	AI_Output(other,self,"DIA_GorkOrcBoss_FreeDarius_01_05");	//Děkuji, náčelníku.
 	MIS_FreePrice = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_FreePrice,LOG_SUCCESS);
-	B_LogEntry(TOPIC_FreePrice,"Přinesl jsem Grum Lokovi kůži bílého trola, a on souhlasil, že nechá Dariuse jít. Starý přítel je teď osvobozen...");
+	B_LogEntry(TOPIC_FreePrice,"Přinesl jsem Grum Lokovi kůži bílého horského trola, a on souhlasil, že nechá Dariuse jít. Starý přítel je teď osvobozen...");
 };
 
 instance DIA_GorkOrcBoss_Perm(C_Info)
@@ -2261,7 +2261,7 @@ func void DIA_GorkOrcBoss_NeedPathDarius_info()
 		AI_Output(self,other,"DIA_GorkOrcBoss_NeedPathDarius_01_03");	//On dát člověku několik válečníků aby vyprovodit Morra dolů z hor.
 		AI_Output(other,self,"DIA_GorkOrcBoss_NeedPathDarius_01_04");	//Děkuju.
 		DariusHasPath = TRUE;
-		B_LogEntry(TOPIC_MissOldFriend,"Vůdce Grum Lok souhlasil, že dá Dariusovi několik vojáků aby ho vyprovodili z hor. Je načase promluvit si Dariusem.");
+		B_LogEntry(TOPIC_MissOldFriend,"Vůdce Grum Lok souhlasil, že dá Dariusovi několik vojáků aby ho vyprovodili z hor. Je načase promluvit si s Dariusem.");
 	}
 	else
 	{
@@ -2300,5 +2300,5 @@ func void DIA_GorkOrcBoss_NeedPathDariusDone_info()
 	AI_Output(self,other,"DIA_GorkOrcBoss_NeedPathDariusDone_01_03");	//On dát člověku několik válečníků aby vyprovodit Morra dolů z hor.
 	AI_Output(other,self,"DIA_GorkOrcBoss_NeedPathDariusDone_01_04");	//Děkuju.
 	DariusHasPath = TRUE;
-	B_LogEntry(TOPIC_MissOldFriend,"Vůdce Grum Lok souhlasil, že dá Dariusovi několik vojáků aby ho vyprovodili z hor. Je načase promluvit si Dariusem.");
+	B_LogEntry(TOPIC_MissOldFriend,"Vůdce Grum Lok souhlasil, že dá Dariusovi několik vojáků aby ho vyprovodili z hor. Je načase promluvit si s Dariusem.");
 };

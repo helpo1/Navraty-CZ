@@ -170,7 +170,7 @@ func void dia_baalparvez_specialjointok_info()
 {
 	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_00");	//Ve jménu Spáče! Měl jsem vidění!
 	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_01");	//Bylo to neuvěřitelné! Viděl jsem, že jsme se setkali s novým bratrem, který nebyl jako všichni před ním.
-	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_02");	//Něco pro nás udělal... V rukou držel meč a sestupoval po širokém schodištir. Tady vize končí.
+	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_02");	//Něco pro nás udělal... V rukou držel meč a sestupoval po širokém schodišti. Tady vize končí.
 	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_03");	//Byl ti podobný. Kdo jsi? Co chceš?
 	AI_Output(other,self,"DIA_BaalParvez_SpecialJointOk_01_04");	//Chci se přidat k Bratrstvu a žádám o souhlas, mistře.
 	AI_Output(self,other,"DIA_BaalParvez_SpecialJointOk_01_05");	//Přeješ si být tedy novicem Bratrstva? Hmm... (vytrvale hledí) Kdo tě ke mně poslal?
@@ -327,7 +327,7 @@ func void DIA_BaalParvez_PrioratStart_info()
 	AI_Output(self,other,"DIA_BaalParvez_PrioratStart_01_01");	//(povzdech)
 	AI_Output(other,self,"DIA_BaalParvez_PrioratStart_01_02");	//Jde o ty ztracené novice. Nevíš o tom něco?
 	AI_Output(self,other,"DIA_BaalParvez_PrioratStart_01_03");	//No jelikož víš o tom co se děje, tak ti zřejmě Baal Namib důvěřuje.
-	AI_Output(self,other,"DIA_BaalParvez_PrioratStart_01_04");	//Chceš li znát odpvěď na svoji otázku, tak ti můžu říc jen tolik, ve městě nejsou.
+	AI_Output(self,other,"DIA_BaalParvez_PrioratStart_01_04");	//Chceš-li znát odpověď na svoji otázku, tak ti můžu říct jen tolik, ve městě nejsou.
 	AI_Output(other,self,"DIA_BaalParvez_PrioratStart_01_05");	//Jseš si jistej?
 	AI_Output(self,other,"DIA_BaalParvez_PrioratStart_01_06");	//Absolutně! Nikdy by neprošli bez povšimnutí kolem městské stráže. A samozřejmě bych o tom něco věděl.
 	AI_Output(self,other,"DIA_BaalParvez_PrioratStart_01_07");	//Jestli mě nevěříš, můžeš se přesvědčit sám.

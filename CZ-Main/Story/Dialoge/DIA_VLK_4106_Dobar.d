@@ -141,7 +141,7 @@ func void DIA_Dobar_NEWS_Info()
 	AI_Output(other,self,"DIA_Dobar_NEWS_15_00");	//Jak to jde?
 	if(Dobar_einmalig == FALSE)
 	{
-		AI_Output(self,other,"DIA_Dobar_NEWS_08_01");	//Kovám zbraně pro paladiny tady na hradě. Od té doby co tu jsme zavření jsem jich udělaal hodně.
+		AI_Output(self,other,"DIA_Dobar_NEWS_08_01");	//Kovám zbraně pro paladiny tady na hradě. Od té doby co tu jsme zavření jsem jich udělal hodně.
 		AI_Output(self,other,"DIA_Dobar_NEWS_08_02");	//A taky jich hodně budeme potřebovat - ti zatracení skřeti se bojí jen ostré oceli.
 		if(Npc_IsDead(Parlaf) == FALSE)
 		{
@@ -188,12 +188,12 @@ func void dia_dobar_armorcanteach_info()
 	{
 		AI_Output(other,self,"DIA_Dobar_ArmorCanTeach_01_05");	//Neříkal jsem ti, že kování rozumím?
 		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_07");	//Aha, ano, nějak se mi to vykouřilo z hlavy... Pak tu není žádný problém, prostě tě naučím co umím. Ale musím tě varovat, že vše má svou cenu - včetně mých lekcí.
-		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_08");	//Připrav se a přijď aaž se budeš chtít učit.
+		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_08");	//Připrav se a přijď až se budeš chtít učit.
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_09");	//Zdá se, že jsi úplný kovář!
-		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_10");	//Dám ti radu, dítě. Nejdříve se nauč kovat a pak se na tebe podíváme...
+		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_10");	//Dám ti radu, chlapče. Nejdříve se nauč kovat a pak se na tebe podíváme...
 		AI_Output(self,other,"DIA_Dobar_ArmorCanTeach_01_11");	//A všechno má svou cenu, včetně mých lekcí.
 	};
 
@@ -212,7 +212,7 @@ func void b_dobar_teacharmor_1()
 		AI_GotoWP(self,"OC_SMITH_ANVIL");
 		AI_AlignToWP(self);
 		AI_UseMob(self,"BSANVIL",5);
-		AI_Output(self,other,"DIA_Dobar_TeachArmor_1_01_02");	//... Na kovadlinu ulož rozhžavenou ocel...
+		AI_Output(self,other,"DIA_Dobar_TeachArmor_1_01_02");	//... Na kovadlinu ulož rozžhavenou ocel...
 		AI_Output(self,other,"DIA_Dobar_TeachArmor_1_01_03");	//... Pak jí dej potřebný tvar a připevni k příslušné části zbroje...
 		AI_UseMob(self,"BSANVIL",-1);
 		B_TurnToNpc(self,other);
@@ -356,7 +356,7 @@ func void DIA_Dobar_WarGoods_Info()
 	AI_Output(other,self,"DIA_Dobar_WarGoods_01_00");	//Nepotřebuješ pomoc?
 	AI_Output(self,other,"DIA_Dobar_WarGoods_01_01");	//Hmm... Teď by se mi skutečně zišla pomocná ruka.
 	AI_Output(self,other,"DIA_Dobar_WarGoods_01_02");	//Naši chlapi někdy musí zastřelit pár skřetů, když se moc přiblíží k beranidlu.
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_03");	//A no to potřebují šipky. Hodně šipek! Ale teď jsme oblíčeni...
+	AI_Output(self,other,"DIA_Dobar_WarGoods_01_03");	//A na to potřebují šipky. Hodně šipek! Ale teď jsme oblíčeni...
 	AI_Output(other,self,"DIA_Dobar_WarGoods_01_04");	//... Takže chceš abych ti je sehnal, správně?
 	AI_Output(self,other,"DIA_Dobar_WarGoods_01_05");	//Nepřerušuj mě! Šipky samotné jsem schopen sehnat, ale...
 	AI_Output(other,self,"DIA_Dobar_WarGoods_01_06");	//... Potřebuješ ocel. Uhádl jsem?
@@ -364,14 +364,14 @@ func void DIA_Dobar_WarGoods_Info()
 	AI_Output(self,other,"DIA_Dobar_WarGoods_01_08");	//Oceli mám hodně! Teď jsem se dokonce naučil tavit zbraně mrtvých paladinů, takže s ocelí nemám problém.
 	AI_Output(self,other,"DIA_Dobar_WarGoods_01_09");	//Potřebuji uhlí. Jeho rezervy se blíží konci a každý den musím něco tavit.
 	AI_Output(other,self,"DIA_Dobar_WarGoods_01_10");	//A kde ho mám sehnat?
-	AI_Output(self,other,"DIA_Dobar_WarGoods_01_11");	//(otráveně) A jak to mám vědět? Ale možná bys mohl skusit staré rudné doly.
+	AI_Output(self,other,"DIA_Dobar_WarGoods_01_11");	//(otráveně) A jak to mám vědět? Ale možná bys mohl zkusit staré rudné doly.
 	AI_Output(self,other,"DIA_Dobar_WarGoods_01_12");	//Tam by měli být velké pece. A na jejich zahřátí bylo třeba ohromné množství uhlí.
-	AI_Output(other,self,"DIA_Dobar_WarGoods_01_13");	//Dorbá, tak já se tam podívám.
+	AI_Output(other,self,"DIA_Dobar_WarGoods_01_13");	//Dobrá, tak já se tam podívám.
 	AI_Output(self,other,"DIA_Dobar_WarGoods_01_14");	//Tak to je lepší...
 	MIS_DobarCoal = LOG_Running;
 	Log_CreateTopic(TOPIC_DobarCoal,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_DobarCoal,LOG_Running);
-	B_LogEntry(TOPIC_DobarCoal,"Dobarovi dochází na hradě uhlí. Mám se kouknout do starých rudných dolů a skusit nějaké najít.");
+	B_LogEntry(TOPIC_DobarCoal,"Dobarovi dochází na hradě uhlí. Mám se kouknout do starých rudných dolů a zkusit nějaké najít.");
 };
 
 instance DIA_Dobar_WarGoods_Done(C_Info)
@@ -381,7 +381,7 @@ instance DIA_Dobar_WarGoods_Done(C_Info)
 	condition = DIA_Dobar_WarGoods_Done_Condition;
 	information = DIA_Dobar_WarGoods_Done_Info;
 	permanent = FALSE;
-	description = "Mám pro tebe velé vrece uhlí.";
+	description = "Mám pro tebe celé vrece uhlí.";
 };
 
 func int DIA_Dobar_WarGoods_Done_Condition()
@@ -396,7 +396,7 @@ func void DIA_Dobar_WarGoods_Done_Info()
 {
 	var int MoreCoal;
 
-	AI_Output(other,self,"DIA_Dobar_WarGoods_Done_01_00");	//Mám pro tebe velé vrece uhlí.
+	AI_Output(other,self,"DIA_Dobar_WarGoods_Done_01_00");	//Mám pro tebe celé vrece uhlí.
 
 	if(Npc_HasItems(other,ITMI_COALBAG) == 1)
 	{
@@ -426,7 +426,7 @@ func void DIA_Dobar_WarGoods_Done_Info()
 		B_GiveInvItems(self,other,ItRw_Bolt,100);
 	};
 
-	AI_Output(self,other,"DIA_Dobar_WarGoods_Done_01_06");	//Hádam ti přijdou vhod.
+	AI_Output(self,other,"DIA_Dobar_WarGoods_Done_01_06");	//Hádám ti přijdou vhod.
 	MIS_DobarCoal = LOG_Success;
 	Log_SetTopicStatus(TOPIC_DobarCoal,LOG_Success);
 	B_LogEntry(TOPIC_DobarCoal,"Dobar byl potěšen uhlím co jsem mu donesl.");
@@ -470,7 +470,7 @@ func void DIA_Dobar_OrcsWeapon_Info()
 	{
 		AI_Output(self,other,"DIA_Dobar_OrcsWeapon_01_09");	//Bez této znalosti ti nepomůžu.
 		AI_Output(other,self,"DIA_Dobar_OrcsWeapon_01_10");	//Aha.
-		AI_Output(self,other,"DIA_Dobar_OrcsWeapon_01_11");	//A ještě jdena věc. Jako poplatek za učení beru pouze magickou rudu.
+		AI_Output(self,other,"DIA_Dobar_OrcsWeapon_01_11");	//A ještě jedna věc. Jako poplatek za učení beru pouze magickou rudu.
 	};
 
 
@@ -510,11 +510,11 @@ func void DIA_Dobar_OrcsWeaponTeach_info()
 		if((hero.lp >= 2) && (Npc_HasItems(other,ItMi_Nugget) >= 10))
 		{
 			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_02");	//Dobře. Jako základ budeš potřebovat jeden ocelový ingot.
-			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_03");	//Je důležité abys měl všechny co natavíš přesně takové veliksoti.
+			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_03");	//Je důležité abys měl všechny co natavíš přesně takové velikosti.
 			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_04");	//Též bys měl vědět, že skřetí ocel je rozličná od té naší. Skřeti si nelámou hlavu její čistotou.
 			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_05");	//A proto na vytvoření ingotu dobré kvality jedna jejich zbraň nestačí.
 			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_06");	//Já zvyčejně udělám jeden ingot z deseti.
-			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_07");	//A nejdůležitěšjí je abys správně odstranil všechny nečistoty!
+			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_07");	//A nejdůležitější je abys správně odstranil všechny nečistoty!
 			AI_Output(self,other,"DIA_Dobar_OrcsWeaponTeach_01_08");	//Tak, to by mělo být všechno.
 			hero.lp = hero.lp - 2;
 			RankPoints = RankPoints + 2;

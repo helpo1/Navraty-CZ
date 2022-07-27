@@ -300,7 +300,7 @@ func int dia_bennet_li_changecourse_condition()
 func void dia_bennet_li_changecourse_info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Bennet_LI_ChangeCourse_01_00");	//Musíme se vrátit na Khorinis.
+	AI_Output(other,self,"DIA_Bennet_LI_ChangeCourse_01_00");	//Nechtěl by ses vrátit na Khorinis?
 	AI_Output(self,other,"DIA_Bennet_LI_ChangeCourse_01_07");	//Samozřejmě, kamaráde! Na pevninu se mi moc nechce.
 	AI_Output(self,other,"DIA_Bennet_LI_ChangeCourse_01_08");	//Rád bych se ještě jednou podíval do Onarovi kovárny.
 	AI_Output(other,self,"DIA_Bennet_LI_ChangeCourse_01_12");	//Chápu.

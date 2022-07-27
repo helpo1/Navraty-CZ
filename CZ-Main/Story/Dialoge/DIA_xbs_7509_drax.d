@@ -89,7 +89,7 @@ func void dia_drax_hallo_info()
 	}
 	else if((other.guild == GIL_NDM) || (other.guild == GIL_KDM))
 	{
-		AI_Output(self,other,"DIA_Drax_Hallo_01_0B");	//Služebníka Beliara si nemůžu s níkým splést...
+		AI_Output(self,other,"DIA_Drax_Hallo_01_0B");	//Služebníka Beliara si nemůžu s nikým splést...
 	}
 	else if((other.guild == GIL_SEK) || (other.guild == GIL_TPL) || (other.guild == GIL_GUR))
 	{
@@ -125,7 +125,7 @@ func void dia_drax_hallo_info()
 			AI_Output(other,self,"DIA_Drax_Hallo_15_11");	//Na, můžeš si ho nechat!
 			B_GiveInvItems(other,self,ITMI_RAVENGOLDRING,1);
 			Npc_RemoveInvItems(self,ITMI_RAVENGOLDRING,1);
-			AI_Output(self,other,"DIA_Drax_Hallo_01_12");	//Aaa, tak ten hajzl to kopil, díky bratře.
+			AI_Output(self,other,"DIA_Drax_Hallo_01_12");	//Aaa, tak ten hajzl to koupil, díky bratře.
 			AI_Output(other,self,"DIA_Drax_RavenRing_15_00");	//Tak a co za ten prsten dostanu?
 			AI_Output(self,other,"DIA_Drax_RavenRing_01_01");	//Myslíš za problémy které jsi s tím měl... (smích) No, proč ne? Pro dobrého člověka všechno.
 			AI_Output(self,other,"DIA_Drax_RavenRing_01_02");	//Samozřejmě, jen Innos ví jak se ti odvděčit - předpokládám že by to mělo stát za to.
@@ -150,7 +150,7 @@ func void dia_drax_hallo_info()
 		MIS_RavenRing = LOG_Running;
 		Log_CreateTopic(TOPIC_RavenRing,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_RavenRing,LOG_Running);
-		B_LogEntry(TOPIC_RavenRing,"Drax mě porosil o Ravenův prsten, jako důkaz jeho smrti.");
+		B_LogEntry(TOPIC_RavenRing,"Drax mě poprosil o Ravenův prsten, jako důkaz jeho smrti.");
 	};
 };
 
@@ -186,7 +186,7 @@ func void dia_drax_ravenring_info()
 	AI_Output(self,other,"DIA_Drax_RavenRing_01_02");	//Něco ti dám.
 	B_GiveInvItems(self,other,ItWr_DexStonePlate3_Addon,1);
 	AI_Output(self,other,"DIA_Drax_RavenRing_01_03");	//Vezmi si tuto tabulku, ty pro ni najdeš využití.
-	AI_Output(self,other,"DIA_Drax_RavenRing_01_04");	//Může ti zvednout sílu, jestli jí porozumíš.
+	AI_Output(self,other,"DIA_Drax_RavenRing_01_04");	//Může ti zvednout obratnost, jestli jí porozumíš.
 	AI_Output(other,self,"DIA_Drax_RavenRing_01_05");	//Díky!
 	DRAXHASRING = TRUE;
 	MIS_RavenRing = LOG_Success;
@@ -353,11 +353,11 @@ func int DIA_Drax_Sail_condition()
 func void DIA_Drax_Sail_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(self,other,"DIA_Drax_Sail_01_01");	//Hej, příteli... (usmívá se) Ratford mě vyprávě, co zamýšlíš?.
+	AI_Output(self,other,"DIA_Drax_Sail_01_01");	//Hej, příteli... (usmívá se) Ratford mě vyprávěl, co zamýšlíš?
 	AI_Output(self,other,"DIA_Drax_Sail_01_02");	//Myslí, že je to nejlepší zpráva od tý doby co jsem se ocitl za bariérou.
 	AI_Output(self,other,"DIA_Drax_Sail_01_03");	//Rád bych se vrátil zpět na pevninu! 
-	AI_Output(self,other,"DIA_Drax_Sail_01_04");	//Říká se, že pro něko mazaného jako jsem já je tam dost práce. 
-	AI_Output(other,self,"DIA_Drax_Sail_01_05");	//Sny se můžou splni. Jen se nesmíš nechat znova chytit!
+	AI_Output(self,other,"DIA_Drax_Sail_01_04");	//Říká se, že pro někoho mazaného jako jsem já je tam dost práce. 
+	AI_Output(other,self,"DIA_Drax_Sail_01_05");	//Sny se můžou splnit. Jen se nesmíš nechat znova chytit!
 	AI_Output(self,other,"DIA_Drax_Sail_01_06");	//To je pravda příteli, to je pravda...
 	AI_StopProcessInfos(self);
 };

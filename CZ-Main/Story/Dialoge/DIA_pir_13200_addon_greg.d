@@ -130,7 +130,7 @@ func int dia_addon_greg_bf_capitan_condition()
 func void dia_addon_greg_bf_capitan_info()
 {
 	B_GivePlayerXP(500);
-	AI_Output(other,self,"DIA_Addon_Greg_BF_Capitan_01_00");	//Takže teď jsi kapitánem královské galéry.?
+	AI_Output(other,self,"DIA_Addon_Greg_BF_Capitan_01_00");	//Takže teď jsi kapitánem královské galéry?
 	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_01");	//(důležitě) Jo! Lord Hagen mi dal tuhle hodnost.
 	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_02");	//Ve skutečnosti neměl moc na výběr. Slíbil nám přece loď.
 	AI_Output(other,self,"DIA_Addon_Greg_BF_Capitan_01_03");	//A očividně svůj slib dodržel.
@@ -142,7 +142,7 @@ func void dia_addon_greg_bf_capitan_info()
 	AI_Output(other,self,"DIA_Addon_Greg_BF_Capitan_01_09");	//Co nejdřív.
 	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_10");	//(rozhodně) Tak to abych šel připravit loď.
 	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_11");	//Ale nezapomeň, že sami tu loď neuřídíme. Budeme potřebovat další lidi.
-	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_12");	//Minimálně tak pět šest lidí ještě užijeme.
+	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_12");	//Minimálně tak pět až šest lidí ještě užijeme.
 	AI_Output(other,self,"DIA_Addon_Greg_BF_Capitan_01_13");	//Dobře, nějaké najdu.
 	AI_Output(self,other,"DIA_Addon_Greg_BF_Capitan_01_14");	//(usmívá se) Takže se sejdem na lodi.
 	B_LogEntry(TOPIC_SALETOBIGLAND,"Greg je teď mým kapitánem. Nicméně, potřebuji sehnat více lidí, abychom se mohli plavit. Podle Grega by mohlo stačit 5-6 lidí.");
@@ -180,7 +180,7 @@ func void dia_addon_greg_bf_travelonbigland_info()
 		B_GivePlayerXP(1000);
 		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_01");	//To vskutku je. (usmívá se) Vše je tak jak má.
 		AI_Output(other,self,"DIA_Addon_Greg_BF_TravelOnBigLand_01_02");	//Nuže, je načase odplout.
-		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_03");	//Jseš si jistej, že to chceš?
+		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_03");	//Jsi si jistý, že to chceš?
 		AI_Output(other,self,"DIA_Addon_Greg_BF_TravelOnBigLand_01_04");	//Ano, čas se krátí.
 		AI_Output(self,other,"DIA_Addon_Greg_BF_TravelOnBigLand_01_05");	//(vážně) Ať je tedy po tvým.
 		AI_TurnToNPC(self,DiegoNW);

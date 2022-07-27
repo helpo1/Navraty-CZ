@@ -227,7 +227,7 @@ func void DIA_Talamon_IgaranzNew_DemonHeart_info()
 	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_04");	//No, dobře. Jednou složil mojí zkoušku, tak může od této chvíle nosit roucho mága Ohně!
 	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_05");	//Zde, předej mu to.
 	B_GiveInvItems(self,other,itar_kdf_m_new,1);
-	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_06");	//Všechno ostaní si musí zařídit u mistra Parlana.
+	AI_Output(self,other,"DIA_Talamon_IgaranzNew_DemonHeart_01_06");	//Všechno ostatní si musí zařídit u mistra Parlana.
 	B_LogEntry(TOPIC_IGARANZ_NEW,"Donesl jsem Talamonovi srdce démona. Nyní můžu tuhle dobrou zprávu sdělit Igarazovi a nakonec mu dát roucho mága Ohně.");
 	IgaranzMakeHappyOk = TRUE;
 };
@@ -314,7 +314,7 @@ func int DIA_Talamon_ScoutSecretLibrary_Condition()
 
 func void DIA_Talamon_ScoutSecretLibrary_Info()
 {
-	AI_Output(other,self,"DIA_Talamon_ScoutSecretLibrary_15_00");	//Byl jsem tam.
+	AI_Output(other,self,"DIA_Talamon_ScoutSecretLibrary_15_00");	//Byl jsem ve sklepě.
 	AI_Output(self,other,"DIA_Talamon_ScoutSecretLibrary_04_01");	//A cos našel?
 	if(Npc_IsDead(SecretLibrarySkeleton))
 	{
@@ -415,7 +415,7 @@ func void dia_talamon_runemagicnotwork_info()
 	AI_Output(other,self,"DIA_Talamon_RuneMagicNotWork_01_00");	//Tvé magické runy - stále fungují?
 	AI_Output(self,other,"DIA_Talamon_RuneMagicNotWork_01_01");	//Momentálně ne... (nechápavě) A ani za svět nedokážu pochopit proč!
 	AI_Output(other,self,"DIA_Talamon_RuneMagicNotWork_01_02");	//A co ostatní?
-	AI_Output(self,other,"DIA_Talamon_RuneMagicNotWork_01_03");	//Pravděpodobně to postihlo všechni! Ostatnim mágům Ohně se také nic nedaří.
+	AI_Output(self,other,"DIA_Talamon_RuneMagicNotWork_01_03");	//Pravděpodobně to postihlo všechni! Ostatním mágům Ohně se také nic nedaří.
 	AI_Output(other,self,"DIA_Talamon_RuneMagicNotWork_01_04");	//Očividně.
 	B_LogEntry(TOPIC_RUNEMAGICNOTWORK,"Runové kameny ostatních mágů Ohně také ztratili svou moc.");
 	FIREMAGERUNESNOT = TRUE;
@@ -446,7 +446,7 @@ func void dia_talamon_teachblrobs_info()
 {
 	TALAMON_TEACH_D_1 = TRUE;
 	AI_Output(other,self,"DIA_Talamon_TeachBlRobs_01_01");	//Můžeš mě něčemu naučit?
-	AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_02");	//Jestli myslíš magii, tak ne, bratře
+	AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_02");	//Jestli myslíš magii, tak ne, bratře.
 	AI_Output(self,other,"DIA_Talamon_TeachBlRobs_01_03");	//Já neučím nováčky našeho řádu. Ale mohu ti říct o starověkém rituálu posvěcení roucha mága Ohně.
 	AI_Output(other,self,"DIA_Talamon_TeachBlRobs_01_04");	//Zajímavé...
 };

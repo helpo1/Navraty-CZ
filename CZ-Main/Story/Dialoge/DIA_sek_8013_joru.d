@@ -184,7 +184,7 @@ func void dia_joru_armorcanteach_info()
 
 func void b_joru_teacharmor_1()
 {
-	AI_Output(self,other,"DIA_Joru_TeachArmor_1_01_01");	//Tak tedy začněme. Zkontroluj si, jestli máš všechen materiál hezky po ruce. Vezmi si kus syrové oceli...
+	AI_Output(self,other,"DIA_Joru_TeachArmor_1_01_01");	//Tak tedy začněme. Zkontroluj si, jestli máš všechen materiál hezky po ruce. Vezmi si kus surové oceli...
 
 	if(!C_BodyStateContains(self,BS_MOBINTERACT_INTERRUPT) && Wld_IsMobAvailable(self,"BSANVIL"))
 	{
@@ -423,7 +423,7 @@ func void DIA_Joru_DoCrossBow_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Joru_DoCrossBow_01_01");	//Víš, jak vyrobit kuši?
-	AI_Output(self,other,"DIA_Joru_DoCrossBow_01_02");	//Kuši? Ne-e. Jdi se raději zeptat nějakého tesaře nebo truhláře.
+	AI_Output(self,other,"DIA_Joru_DoCrossBow_01_02");	//Kuši? Ne. Jdi se raději zeptat nějakého tesaře nebo truhláře.
 	AI_Output(other,self,"DIA_Joru_DoCrossBow_01_05");	//Dobře.
 	CrossBowNeedPlotnik = TRUE;
 	B_LogEntry(TOPIC_TagNorGrHunWeap,"Vyrobit kuši může pouze tesař nebo truhlář.");

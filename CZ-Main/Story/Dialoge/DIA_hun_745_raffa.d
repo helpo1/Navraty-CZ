@@ -138,7 +138,7 @@ func void dia_hun_745_raffa_news_info()
 		MIS_INSLUKER = LOG_Running;
 		Log_CreateTopic(TOPIC_INSLUKER,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_INSLUKER,LOG_Running);
-		B_LogEntry(TOPIC_INSLUKER,"Raffa mi povědel neco o číhavcích. Vypadá to, že když chce nekdo vybrat jejich hnízdo, dokáží být opravdu silní. Během jednoho nedávného lovu to Raffa zkusil na vlastní kůži. Chtěl z hnízda sebrat nějaká vejce, ale objevil se jejich strážce, který ho málem zabil. Pokud se do podobné situace dostanu, měl bych si raději dávat pozor.");
+		B_LogEntry(TOPIC_INSLUKER,"Raffa mi povědel neco o číhavcích. Vypadá to, že když chce někdo vybrat jejich hnízdo, dokáží být opravdu silní. Během jednoho nedávného lovu to Raffa zkusil na vlastní kůži. Chtěl z hnízda sebrat nějaká vejce, ale objevil se jejich strážce, který ho málem zabil. Pokud se do podobné situace dostanu, měl bych si raději dávat pozor.");
 		Wld_InsertNpc(egglurker,"FP_ROAM_NW_HUNTEGGLURKER_01");
 		Wld_InsertItem(itat_lukeregg,"FP_NW_ITEM_EGGLURKER_01");
 	}
@@ -149,8 +149,8 @@ func void dia_hun_745_raffa_news_info()
 		AI_Output(other,self,"DIA_HUN_745_News_01_22");	//To je trochu zvláštní?
 		AI_Output(self,other,"DIA_HUN_745_News_01_23");	//Jo! Duch stínové šelmy, noční lovec! (vzrušeně) Slyšel jsi někdy o něm?
 		AI_Output(other,self,"DIA_HUN_745_News_01_24");	//No. A jaký druh tvora to je?
-		AI_Output(self,other,"DIA_HUN_745_News_01_25");	//Je to skoro legenda - silná jako trol a hbytá jako panter!
-		AI_Output(self,other,"DIA_HUN_745_News_01_26");	//Je zázrak vidět ji. Hlavne proto, že vetšinou pak už neuvidíš nic...
+		AI_Output(self,other,"DIA_HUN_745_News_01_25");	//Je to skoro legenda - silná jako trol a hbitá jako panter!
+		AI_Output(self,other,"DIA_HUN_745_News_01_26");	//Je zázrak vidět ji. Hlavně proto, že většinou pak už neuvidíš nic...
 		AI_Output(self,other,"DIA_HUN_745_News_01_27");	//Zatím ji nikdo neulovil.
 		AI_Output(self,other,"DIA_HUN_745_News_01_28");	//Její hlavní znak je, že loví pouze v noci.
 		AI_Output(self,other,"DIA_HUN_745_News_01_29");	//Kvůli tomu také dostala svou přezdívku!
@@ -164,7 +164,7 @@ func void dia_hun_745_raffa_news_info()
 		MIS_INSSHADOWBEAST = LOG_Running;
 		Log_CreateTopic(TOPIC_INSSHADOWBEAST,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_INSSHADOWBEAST,LOG_Running);
-		B_LogEntry(TOPIC_INSSHADOWBEAST,"Podle Raffy někdo videl za Lobartovou farmou v údolí zvláštní stínovou šelmu. Sám Raffa myslí, že je to přízračná stínová šelma - Lovec Noci! Podle Raffy je prakticky nemožné ji ulovit! Až ji ulovím, mohl bych se ho zeptat na definici slova nemožné...");
+		B_LogEntry(TOPIC_INSSHADOWBEAST,"Podle Raffy někdo viděl za Lobartovou farmou v údolí zvláštní stínovou šelmu. Sám Raffa myslí, že je to přízračná stínová šelma - Noční Lovec! Podle Raffy je prakticky nemožné ji ulovit! Až ji ulovím, mohl bych se ho zeptat na definici slova nemožné...");
 		Wld_InsertNpc(nighthunter,"FP_ROAM_NW_HUNTBLOODBEAST_01");
 	}
 	else
@@ -261,16 +261,16 @@ func void dia_hun_745_raffa_insshadowbeast_info()
 	B_GiveInvItems(other,self,itat_nighthunterfur,1);
 	Npc_RemoveInvItems(self,itat_nighthunterfur,1);
 	AI_Output(self,other,"DIA_HUN_745_InsShadowBeast_01_03");	//Nemožné!... (šok) Tomu nemůžu uvěřit!
-	AI_Output(self,other,"DIA_HUN_745_InsShadowBeast_01_04");	//Porazil jsi Nočního Lovce... Ale jak?! Vžyť to tolik lidí nepřežilo.
-	AI_Output(other,self,"DIA_HUN_745_InsShadowBeast_01_06");	//Tvůj Lovec byl neuvěřitelne silný a rychlý, ale moc mu to nepomohlo!
-	AI_Output(self,other,"DIA_HUN_745_InsShadowBeast_01_07");	//Pak potřebuji ještě jednu vec - nazvat te nejlepším lovcem v tomhle posranym rajónu!
+	AI_Output(self,other,"DIA_HUN_745_InsShadowBeast_01_04");	//Porazil jsi Nočního Lovce... Ale jak?! Vždyť to tolik lidí nepřežilo.
+	AI_Output(other,self,"DIA_HUN_745_InsShadowBeast_01_06");	//Tvůj Lovec byl neuvěřitelně silný a rychlý, ale moc mu to nepomohlo!
+	AI_Output(self,other,"DIA_HUN_745_InsShadowBeast_01_07");	//Pak potřebuji ještě jednu věc - nazvat tě nejlepším lovcem v tomhle posraným rajónu!
 	AI_Output(self,other,"DIA_HUN_745_InsShadowBeast_01_08");	//Ani Falk ji nedokázal ulovit, tvrdil že to nešlo!
 	AI_Output(self,other,"DIA_HUN_745_InsShadowBeast_01_09");	//Gratuluji, chlape. Jsi nejlepší!
 	CreateInvItems(self,ItMi_Gold,500);
 	B_GiveInvItems(self,other,ItMi_Gold,500);
 	MIS_INSSHADOWBEAST = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_INSSHADOWBEAST,LOG_SUCCESS);
-	B_LogEntry(TOPIC_INSSHADOWBEAST,"Raffa byl otřesen mým úspěchem! I když pochyboval o mých slovech, přestal, když jsem mu ukázal kůži a prohlásil me nejvetším lovcem na Khorinisu!");
+	B_LogEntry(TOPIC_INSSHADOWBEAST,"Raffa byl otřesen mým úspěchem! I když pochyboval o mých slovech, přestal, když jsem mu ukázal kůži a prohlásil mě největším lovcem na Khorinisu!");
 };
 
 
@@ -366,7 +366,7 @@ instance DIA_HUN_745_RAFFA_F(C_Info)
 	condition = dia_hun_745_raffa_f_condition;
 	information = dia_hun_745_raffa_f_info;
 	permanent = FALSE;
-	description = "Můžeš mě neco naučit?";
+	description = "Můžeš mě něco naučit?";
 };
 
 
@@ -380,7 +380,7 @@ func int dia_hun_745_raffa_f_condition()
 
 func void dia_hun_745_raffa_f_info()
 {
-	AI_Output(other,self,"DIA_HUN_745_F_01_00");	//Můžeš mě neco naučit?
+	AI_Output(other,self,"DIA_HUN_745_F_01_00");	//Můžeš mě něco naučit?
 	AI_Output(self,other,"DIA_HUN_745_F_01_01");	//No, jako jednomu z nás...
 	AI_Output(self,other,"DIA_HUN_745_F_01_02");	//... ti pomohu s lukem.
 	Log_CreateTopic(TOPIC_HUNTERTEACHERS,LOG_NOTE);
@@ -411,7 +411,7 @@ func void dia_hun_745_raffa_bow_info()
 {
 	AI_Output(other,self,"DIA_HUN_745_Bow_01_00");	//Chci umět lépe střílet.
 	AI_Output(self,other,"DIA_HUN_745_Bow_01_01");	//Dobrá, ale nebude to zadarmo.
-	AI_Output(self,other,"DIA_HUN_745_Bow_01_02");	//Nedívej se tak na mě, potřebuji také neco jíst!
+	AI_Output(self,other,"DIA_HUN_745_Bow_01_02");	//Nedívej se tak na mě, potřebuji také něco jíst!
 	Info_ClearChoices(dia_hun_745_raffa_bow);
 	Info_AddChoice(dia_hun_745_raffa_bow,Dialog_Back,dia_hun_745_raffa_bow_back);
 	Info_AddChoice(dia_hun_745_raffa_bow,b_buildlearnstringforfight(PRINT_LearnBow1,B_GetLearnCostTalent(other,NPC_TALENT_BOW,1)),dia_hun_745_raffa_bow_1);
@@ -438,7 +438,7 @@ func void dia_hun_745_raffa_bow_1()
 		{
 			AI_Output(self,other,"DIA_HUN_745_Bow_1_01_04");	//Jsi dobrý lovec, ale přišel čas naučit se to, co nevíš.
 			AI_Output(self,other,"DIA_HUN_745_Bow_1_01_05");	//Přesnost záleží na tvé obratnosti.
-			AI_Output(self,other,"DIA_HUN_745_Bow_1_01_06");	//A tvá manipulace s lukem na vzdálenosti, na kterou dostřelíš!
+			AI_Output(self,other,"DIA_HUN_745_Bow_1_01_06");	//A tvá manipulace s lukem na vzdálenosti, na kterou dostřelíš.
 			AI_Output(self,other,"DIA_HUN_745_Bow_1_01_07");	//Už jsi velmi dobrý, jdi vyzkoušet co umíš.
 			RAFFATEACHST = TRUE;
 		};
@@ -464,7 +464,7 @@ func void dia_hun_745_raffa_bow_5()
 		{
 			AI_Output(self,other,"DIA_HUN_745_Bow_5_01_04");	//Pokud jsi dobrý lovec, nastal čas se dozvědět něco víc.
 			AI_Output(self,other,"DIA_HUN_745_Bow_5_01_05");	//Aby ses stal dobrým lukostřelcem potřebuješ zručnost. Je důležité pochopit co to obnáší.
-			AI_Output(self,other,"DIA_HUN_745_Bow_5_01_06");	//Zde je dobré vzít si úvahu: míříš okem a natahuješ tětivu, šípem musíš zasáhnout cíl. Ale co je nejdůležiťejší, být vždy ve střehu.
+			AI_Output(self,other,"DIA_HUN_745_Bow_5_01_06");	//Zde je dobré vzít si úvahu: míříš okem a natahuješ tětivu, šípem musíš zasáhnout cíl. Ale co je nejdůležitější, být vždy ve střehu.
 			AI_Output(self,other,"DIA_HUN_745_Bow_5_01_07");	//Tyto techniky ovládáš, jdi si je vyzkoušet.
 			RAFFATEACHST = TRUE;
 		};
@@ -501,7 +501,7 @@ func void dia_hun_745_raffa_bowneed_info()
 	AI_Output(self,other,"DIA_HUN_745_BowNeed_01_01");	//Eh, chlape. Mým lukem.
 	AI_Output(self,other,"DIA_HUN_745_BowNeed_01_03");	//Při posledním lovu se mi zlomil!
 	AI_Output(other,self,"DIA_HUN_745_BowNeed_01_06");	//Proč sis nekoupil nový?!
-	AI_Output(self,other,"DIA_HUN_745_BowNeed_01_07");	//Dlouho jsem nebyl ve měste a bez luku odsud neodejdu!
+	AI_Output(self,other,"DIA_HUN_745_BowNeed_01_07");	//Dlouho jsem nebyl ve městě a bez luku odsud neodejdu!
 	AI_Output(self,other,"DIA_HUN_745_BowNeed_01_08");	//Nemám se jak bránit proti bestiím po cestě a banditům.
 	AI_Output(self,other,"DIA_HUN_745_BowNeed_01_12");	//A luk mi už tolikrát zachránil kůži, zatraceně!
 	AI_Output(other,self,"DIA_HUN_745_BowNeed_01_13");	//Můžu ti nějak pomoci získat nový?
@@ -546,7 +546,7 @@ func void dia_hun_745_raffa_bowdone_info()
 	AI_Output(self,other,"DIA_HUN_745_BowDone_01_01");	//Opravdu?!... Ukaž mi ho!
 	AI_Output(other,self,"DIA_HUN_745_BowDone_01_02");	//Tady.
 	B_GiveInvItems(other,self,ItRw_Bow_M_01,1);
-	AI_Output(self,other,"DIA_HUN_745_BowDone_01_03");	//Výborně! Nyní můžu opet lovit!
+	AI_Output(self,other,"DIA_HUN_745_BowDone_01_03");	//Výborně! Nyní můžu opět lovit!
 	EquipItem(self,ItRw_Bow_M_01);
 	AI_Output(other,self,"DIA_HUN_745_BowDone_01_05");	//Ukážeš mi nějaký trik s lukem?
 	AI_Output(self,other,"DIA_HUN_745_BowDone_01_06");	//Jistě, poslouchej!
@@ -618,7 +618,7 @@ func int dia_hun_745_raffa_tradebow_condition()
 func void dia_hun_745_raffa_tradebow_info()
 {
 	AI_Output(other,self,"DIA_HUN_745_TradeBow_01_00");	//Kde seženu nějaký lepší luk?
-	AI_Output(self,other,"DIA_HUN_745_TradeBow_01_01");	//Náhodou tu nějaké mám, pojď, vybereme ti neco!
+	AI_Output(self,other,"DIA_HUN_745_TradeBow_01_01");	//Náhodou tu nějaké mám, pojď, vybereme ti něco!
 	Log_CreateTopic(TOPIC_HUNTERTRADES,LOG_NOTE);
 	B_LogEntry(TOPIC_HUNTERTRADES,"Raffa prodává luky a šípy.");
 	RAFFACANTRADE = TRUE;
@@ -711,7 +711,7 @@ func void dia_hun_745_raffa_raffatellspecial_info()
 	AI_Output(self,other,"DIA_HUN_745_TellSpecial_01_01");	//Díky, ale podobné najdeš i u ostatních obchodníků...
 	AI_Output(self,other,"DIA_HUN_745_TellSpecial_01_02");	//Zajímavější jsou luky, které jsou z jiných materiálů než dřevo.
 	AI_Output(other,self,"DIA_HUN_745_TellSpecial_01_03");	//Co tím myslíš?
-	AI_Output(self,other,"DIA_HUN_745_TellSpecial_01_04");	//No, třeba luky a kuše, které nejsou podobné těm bežným!
+	AI_Output(self,other,"DIA_HUN_745_TellSpecial_01_04");	//No, třeba luky a kuše, které nejsou podobné těm běžným!
 	AI_Output(self,other,"DIA_HUN_745_TellSpecial_01_05");	//Jestli nějakou takovou zbraň najdeš, určitě ji od tebe koupím.
 	AI_Output(self,other,"DIA_HUN_745_TellSpecial_01_06");	//Samozřejmě za velmi dobrou cenu!
 	MIS_RAFFATELLSPECIAL = LOG_Running;
@@ -799,18 +799,18 @@ func int dia_hun_745_raffa_TrueShot_condition()
 
 func void dia_hun_745_raffa_TrueShot_info()
 {
-	AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_00");	//Potřebuji tbou radu!
+	AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_00");	//Potřebuji tvou radu!
 	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_01");	//Co je to?
 	AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_02");	//Víš, někdy se mi nepodaří způsobit sebemenší poškození.
 	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_03");	//Ach, to je to co... (smích) Nemůžu pokračovat! Už je mi vše jasné.
 	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_04");	//Tohle je velký problém toho, kdo používá výhradně luky.
 	AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_05");	//Nicméně, existuje několik způsobů natažení, ve kterých budou tvoje střely prorážet všechny zbroje i kůže.
-	AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_06");	//A učit mě můžete?
+	AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_06");	//A můžeš mě to naučit?
 
  	if((hero.attribute[ATR_DEXTERITY] >= 125) && (hero.HitChance[NPC_TALENT_BOW] >= 50))
 	{
 		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_07");	//Zajímavé... Můžu ti to ukázat! Ale budeš muset mít nějaké zkušenosti se střelnými zbraňemi.
-		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_08");	//A zlato si taky neodpírávám.
+		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_08");	//A zlato bych také neodmítl.
 		AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_09");	//Chápu.
 		RaffaCanTeachTrueShot = TRUE;
 		B_LogEntry(TOPIC_HUNTERTEACHERS,"Raffa mě může učit speciální techniky lukostřelby.");
@@ -818,10 +818,10 @@ func void dia_hun_745_raffa_TrueShot_info()
 	else
 	{
 		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_10");	//A to proč?... (vzrušeně) 
-		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_11");	//Nechceš dojem muže, který radši bojuje v boji s lukem místo meče.
-		AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_12");	//A cože?!
-		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_13");	//Víš, s takovýma jako ty nebudu ztrácet čas. Nemám ho moc!
-		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_14");	//Lepší je se naučit pořádně ovládat luk, zvýšit svou obratnost. A až pak mluvit!
+		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_11");	//Vypadáš na někoho, kdo raději bojuje mečem než lukem.
+		AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_01_12");	//No a co?
+		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_13");	//Víš, s takovýma jako ty nebudu ztrácet čas. Nemám ho moc.
+		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_01_14");	//Lepší je se naučit pořádně ovládat luk, zvýšit svou obratnost. Pak si promluvíme.
 	};
 };
 
@@ -851,9 +851,9 @@ func void dia_hun_745_raffa_TrueShot_Again_info()
 	if((hero.attribute[ATR_DEXTERITY] >= 125) && (hero.HitChance[NPC_TALENT_BOW] >= 50))
 	{
 		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_Again_01_02");	//Teď je opravdu vidět že přede mnou stojí muž chytrý a ví, jak zacházet s lukem.
-		AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_Again_01_03");	//Takže mě už koněčne ty techniky naučíte?
+		AI_Output(other,self,"DIA_HUN_745_raffa_TrueShot_Again_01_03");	//Takže mě už koněčne tu techniky naučíš?
 		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_Again_01_04");	//Zajímavé... Můžu ti to ukázat! Ale budeš muset mít nějaké zkušenosti se střelnými zbraňemi.
-		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_Again_01_05");	//A zlato si taky neodpírávám.
+		AI_Output(self,other,"DIA_HUN_745_raffa_TrueShot_Again_01_05");	//A zlato bych také neodmítl.
 		RaffaCanTeachTrueShot = TRUE;
 		B_LogEntry(TOPIC_HUNTERTEACHERS,"Raffa mě může učit speciální techniky lukostřelby.");
 	}
@@ -925,7 +925,7 @@ func void dia_hun_745_raffa_TrueShotTeach_info()
 		else
 		{
 			AI_Print(Print_NotEnoughGold);
-			AI_Output(self,other,"DIA_HUN_745_raffa_TrueShotTeach_01_09");	//Je mi líto kámo! Ale nebudu tě učit.
+			AI_Output(self,other,"DIA_HUN_745_raffa_TrueShotTeach_01_09");	//Promiň, kamaráde, ale nebudu tě učit zadarmo.
 		};
 	};
 };

@@ -44,7 +44,7 @@ func void dia_senyak_demon_hello_info()
 	Snd_Play("MFX_FEAR_CAST");
 	Npc_RemoveInvItems(self,ITMI_DRAGONGOLDGORN,1);
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_00");	//... (vrčí) KDO SE OPOVAŽUJE RUŠIT MŮJ KLID?!
-	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_01");	//(zkoumání) Ubohý clovíček, opravdu ses opovažil to udělat?!
+	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_01");	//(zkoumání) Ubohý človíček, opravdu ses opovážil to udělat?!
 	AI_Output(other,self,"DIA_Senyak_Demon_Hello_01_02");	//Ano, to já jsem tě vyvolal!
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_03");	//PROČ JSI TO UDĚLAL?!
 	AI_Output(other,self,"DIA_Senyak_Demon_Hello_01_04");	//To asi neuhádneš, démone?!
@@ -52,9 +52,9 @@ func void dia_senyak_demon_hello_info()
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_06");	//... (smích) TY SES MI ROZHODL POSTAVIT?!
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_07");	//Arrgh!... (vrčí) Ty ses musel zbláznit, když si myslíš, že na to máš dost síly!
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_08");	//VÍŠ KDO JÁ JSEM?!
-	AI_Output(other,self,"DIA_Senyak_Demon_Hello_01_09");	//Jasně, že vím. takže se nemusíš namáhat s představením sebe sama, Senyaku!
+	AI_Output(other,self,"DIA_Senyak_Demon_Hello_01_09");	//Jasně, že vím. Takže se nemusíš namáhat s představením sebe sama, Senyaku!
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_10");	//Arrgh!... (vrčí) I když znáš moje jméno, tvoje činy stále hovoří o tom, že nevíš, kdo před tebou stojí!
-	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_11");	//Vyzvi mě... Nesmrtelné stvoření ­ božské temnoty Beliara a nejmocnějšího démona... Arrgh!... (vrčí)
+	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_11");	//Vyzvi mě... Nesmrtelné stvoření božské temnoty Beliara a nejmocnějšího démona... Arrgh!... (vrčí)
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_12");	//Tohle je sebevražda! Je od tebe pošetilé si myslet, že mě můžeš porazit.
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_13");	//Možná si uvědomíš, že tohle jsou poslední okamžiky tvého života...
 
@@ -71,7 +71,7 @@ func void dia_senyak_demon_hello_info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_22");	//Arrgh!... (vrčí) Jak snadno ti mohu vyrvat srdce ze tvé hrudi a vysát s tebe tvou duši!
+		AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_22");	//Arrgh!... (vrčí) Jak snadno ti mohu vyrvat srdce ze tvé hrudi a vysát z tebe tvou duši!
 	};
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_23");	//Neobávej se! Smrt je méně bolestivá a strašná než se může zdát.
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_01_24");	//Nebudeš mít žádnou možnost zaznamenat, že jsi už dávno zemřel!
@@ -89,7 +89,7 @@ func void dia_senyak_demon_hello_ok()
 {
 	Snd_Play("MYSTERY_04");
 	AI_Output(other,self,"DIA_Senyak_Demon_Hello_Ok_01_00");	//Dost keců! Je čas dát se do práce...
-	AI_Output(self,other,"DIA_Senyak_Demon_Hello_Ok_01_01");	//Chceš tak rychle zemřít? Je to tvoje právo, smrtelníku
+	AI_Output(self,other,"DIA_Senyak_Demon_Hello_Ok_01_01");	//Chceš tak rychle zemřít? Je to tvoje právo, smrtelníku.
 	AI_Output(other,self,"DIA_Senyak_Demon_Hello_Ok_01_02");	//Kdo z nás dvou zemře, to se ještě uvidí!
 	AI_Output(self,other,"DIA_Senyak_Demon_Hello_Ok_01_03");	//Arrgh!... (vrčí)
 	TALKSENYAK = TRUE;

@@ -44,7 +44,7 @@ func void dia_gornabar_hallo_info()
 {
 	B_TurnToNpc(other,self);
 	AI_Output(other,self,"DIA_GorNaBar_Hallo_15_00");	//Hej, já tě znám! Ty jsi byl ve Starém dolu. Ale...
-	AI_Output(other,self,"DIA_GorNaBar_Hallo_15_01");	//Jak jsi jse od tamtud dostal, když ho zaplavila voda...
+	AI_Output(other,self,"DIA_GorNaBar_Hallo_15_01");	//Jak jsi se od tamtud dostal, když ho zaplavila voda...
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_00");	//Á... Ty jsi ten, co tam bojoval s červy.
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_01");	//To je dlouhá historie. Zničen byl jedině vstup... Všechno ostatní v dole zůstalo zachováno.
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_02");	//Všude vládla panika...
@@ -61,12 +61,12 @@ func void dia_gornabar_hallo_info()
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_10B");	//Také ti můžu prodat něco ze svého zboží.
 	AI_Output(other,self,"DIA_GorNaBar_Hallo_15_03");	//Nemáš tu také nějaké svitky v proměnu ve žravou štěnici? V Khorinisu jsem žádné neviděl...
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_11");	//Možná ano... (úsměv)
-	AI_Output(other,self,"DIA_GorNaBar_Hallo_15_04");	//A dá se tu někde stát?
+	AI_Output(other,self,"DIA_GorNaBar_Hallo_15_04");	//A dá se tu někde spát?
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_12");	//Ve stanu kousek za mnou je volná postel.
 	AI_Output(self,other,"DIA_GorNaBar_Hallo_09_13");	//Můžeš ji využít.
 	b_heroknowforestbase();
 	Log_CreateTopic(TOPIC_XBS,LOG_NOTE);
-	B_LogEntry(TOPIC_XBS,"Gor na Bar - Velitel stráží v Lesním táboře. Může mi prodat nějaké zboží.");
+	B_LogEntry(TOPIC_XBS,"Gor na Bar - velitel stráží v Lesním táboře mi může prodat nějaké zboží.");
 	AI_StopProcessInfos(self);
 };
 
@@ -425,7 +425,7 @@ func void dia_gornabar_petzmaster_info()
 		};
 		if(B_GetGreatestPetzCrime(self) == CRIME_ATTACK)
 		{
-			AI_Output(self,other,"DIA_GorNabar_PETZMASTER_10_13");	//Nikdy nemá rád boje v našem táboře - jasné?.
+			AI_Output(self,other,"DIA_GorNabar_PETZMASTER_10_13");	//Nikdy nemá rád boje v našem táboře - jasné?
 			AI_Output(self,other,"DIA_GorNabar_PETZMASTER_10_15");	//Budeš muset zaplatit pokutu!
 			GORNABAR_SCHULDEN = B_GetTotalPetzCounter(self) * 750;
 		};
@@ -455,7 +455,7 @@ func void dia_gornabar_petzmaster_paynow()
 {
 	AI_Output(other,self,"DIA_GorNabar_PETZMASTER_PayNow_15_00");	//Zaplatím!
 	B_GiveInvItems(other,self,ItMi_Gold,GORNABAR_SCHULDEN);
-	AI_Output(self,other,"DIA_GorNabar_PETZMASTER_PayNow_10_01");	//Je dobré to slyšet. A ať se tp neopakuje!
+	AI_Output(self,other,"DIA_GorNabar_PETZMASTER_PayNow_10_01");	//Je dobré to slyšet. A ať se to neopakuje!
 	B_GrantAbsolution(LOC_COAST);
 	GORNABAR_SCHULDEN = 0;
 	GORNABAR_LASTPETZCOUNTER = 0;
@@ -468,7 +468,7 @@ func void dia_gornabar_petzmaster_paylater()
 {
 	AI_Output(other,self,"DIA_GorNabar_PETZMASTER_PayLater_15_00");	//Nemám dost zlata!
 	AI_Output(self,other,"DIA_GorNabar_PETZMASTER_PayLater_10_01");	//Tak přijď až budeš mít.
-	AI_Output(self,other,"DIA_GorNabar_PETZMASTER_PayLater_10_02");	//A mezi tím tu nepůsob další problémy...
+	AI_Output(self,other,"DIA_GorNabar_PETZMASTER_PayLater_10_02");	//A mezi tím tu nezpůsob další problémy...
 	GORNABAR_LASTPETZCOUNTER = B_GetTotalPetzCounter(self);
 	GORNABAR_LASTPETZCRIME = B_GetGreatestPetzCrime(self);
 	AI_StopProcessInfos(self);

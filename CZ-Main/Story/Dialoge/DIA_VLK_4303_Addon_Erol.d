@@ -438,7 +438,7 @@ func void dia_addon_erol_tradeguild_info()
 	else
 	{
 		AI_Output(self,other,"DIA_Addon_Erol_TradeGuild_01_07");	//A zvlášť když si mi prokázal takovou službu, vrátil si mi tabulky.
-		AI_Output(self,other,"DIA_Addon_Erol_TradeGuild_01_08");	//? dluh, jak víš, se má zplácet!
+		AI_Output(self,other,"DIA_Addon_Erol_TradeGuild_01_08");	//Dluh, jak víš, se má zplácet!
 		AI_Output(other,self,"DIA_Addon_Erol_TradeGuild_01_09");	//Co bych měl udělat?
 		AI_Output(self,other,"DIA_Addon_Erol_TradeGuild_01_10");	//Ty - absolutně nic... (směje se) Já se postarám o všechno.
 		AI_Output(self,other,"DIA_Addon_Erol_TradeGuild_01_11");	//Napíšu ti doporučující dopis, pro jednoho mého přítele.
@@ -596,7 +596,7 @@ var int Erol_IsAtHome;
 func void DIA_Addon_Erol_SLD_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Erol_SLD_15_00");	//(udiveně) Takže to je tvoje dům?
-	AI_Output(self,other,"DIA_Addon_Erol_SLD_10_01");	//Jo, proč? Máš s tím nějkaý problém?
+	AI_Output(self,other,"DIA_Addon_Erol_SLD_10_01");	//Jo, proč? Máš s tím nějaký problém?
 	AI_Output(other,self,"DIA_Addon_Erol_SLD_15_02");	//Nemáš problémy se žoldáky?
 	AI_Output(self,other,"DIA_Addon_Erol_SLD_10_03");	//Dokud se nebudu plést do jejich záležitostí, oni si mne také nebudou všímat.
 	AI_Output(self,other,"DIA_Addon_Erol_SLD_10_04");	//A navíc jsou to skvělí zákazníci a platím jim za to, že mi dávají pozor na chatu, když někam vyrazím pryč.
@@ -764,11 +764,11 @@ func void dia_addon_erol_lurker_info()
 		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_08");	//Oni tvrdí, že nic neviděli... prokletí hlupáci!
 		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_09");	//A pak se ještě opovažujou mě žádat o peníze. Gobliní ohon na ně... a ne zlato!
 		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_10");	//Vsadím se, že si trošičku přihnuli jako obvykle a trošku si pospali, prokleté hovada! 
-		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_11");	//Mimochodem si myslím, že se tvor tady stále někde okolo potlouká.
+		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_11");	//Mimochodem si myslím, že se ten tvor tady stále někde okolo potlouká.
 		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_12");	//Sám bych jí nakopnul, ale po příběhu s bandity mě nějak rozbolela noha.
-		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_13");	//Poslyš? zabij tu příšeru, a já ti za to zaplatím!
+		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_13");	//Poslyš, zabij tu příšeru, a já ti za to zaplatím!
 		AI_Output(other,self,"DIA_VLK_4303_Addon_Erol_Lurker_01_14");	//Dobře! Jestli ji někde zmerčím, budiž - zabiju ji pro tebe.
-		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_15");	//Výborně! Jen nezapomeň donést její drápy, musejí mí nějakou magickou sílu. Zdá se, že se ta potvora pohybuje jen tady!
+		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_15");	//Výborně! Jen nezapomeň donést její drápy, musejí mít nějakou magickou sílu. Zdá se, že se ta potvora pohybuje jen tady!
 		AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_Lurker_01_16");	//Je to nutné... Truhla na půlky! (smích) Noční můra!
 		Wld_InsertNpc(lurker_uniq,"NW_LAKE_GREG_TREASURE_01");
 		MIS_RABOGLAV = LOG_Running;
@@ -809,7 +809,7 @@ func int dia_vlk_4303_addon_erol_raboglav_condition()
 func void dia_vlk_4303_addon_erol_raboglav_info()
 {
 	B_GivePlayerXP(150);
-	AI_Output(other,self,"DIA_VLK_4303_Addon_Erol_RABOGLAV_01_00");	//Stou nestvůrou je konec! Vyklubal se z ní nakonec obrovský číhavec.
+	AI_Output(other,self,"DIA_VLK_4303_Addon_Erol_RABOGLAV_01_00");	//S tou nestvůrou je konec! Vyklubal se z ní nakonec obrovský číhavec.
 	AI_Output(other,self,"DIA_VLK_4303_Addon_Erol_RABOGLAV_01_01");	//A tady jsou i ty jeho drápy. To je vše, co jsi žádal.
 	B_GiveInvItems(other,self,ITAT_LEADERLURKER,1);
 	Npc_RemoveInvItems(self,ITAT_LEADERLURKER,1);
@@ -822,7 +822,7 @@ func void dia_vlk_4303_addon_erol_raboglav_info()
 	};
 
 	AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_RABOGLAV_01_02");	//Ohó! S takovýma by se dala i hlava setnout na jedenkrát!
-	AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_RABOGLAV_01_03");	//Myslím, že sis zřejmě musel dát s tím práci... s ním?
+	AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_RABOGLAV_01_03");	//Myslím, že sis zřejmě musel dát s tím práci... pravda?
 	AI_Output(other,self,"DIA_VLK_4303_Addon_Erol_RABOGLAV_01_04");	//Ano, docela to stálo úsilí. Doufám ale, že jsem se nedřel zbytečně.
 	AI_Output(self,other,"DIA_VLK_4303_Addon_Erol_RABOGLAV_01_05");	//Samozřejmně, že ne. Tady, jak jsem slíbil je tvoje odměna.
 	B_GiveInvItems(self,other,ItMi_Gold,300);
@@ -869,7 +869,7 @@ func void dia_addon_erol_recrdt_info()
 	AI_Output(self,other,"DIA_Addon_Erol_RecrDT_10_10");	//Vzpomínáš, jsem stále obchodník. Já umím dobře nabízet zboží a počítat peníze, ale zkušenosti s vedením lidí nemám.
 	AI_Output(other,self,"DIA_Addon_Erol_RecrDT_15_11");	//S lidma si poradím sám.
 	AI_Output(other,self,"DIA_Addon_Erol_RecrDT_15_12");	//Ty, pokud budeš souhlasit, budeš mít na starost finance a obchod: starat se o výplaty a inventarizaci všech věcí. Jednat s dodavateli a přimět je, aby nám poskytli ty nejlepší ceny.
-	AI_Output(self,other,"DIA_Addon_Erol_RecrDT_10_13");	//To je dobré. A co bydlení? Chápu to dobře, že se budu muset vzdát svého domova a bydlet s vám.
+	AI_Output(self,other,"DIA_Addon_Erol_RecrDT_10_13");	//To je dobré. A co bydlení? Chápu to dobře, že se budu muset vzdát svého domova a bydlet s vámi.
 	AI_Output(other,self,"DIA_Addon_Erol_RecrDT_15_14");	//To je pravda. Žít musíš s náma. Ale jídlo bude na můj účet.
 	AI_Output(self,other,"DIA_Addon_Erol_RecrDT_10_15");	//Připouštím - je to velmi vážné rozhodnutí... Musím si to rozmyslet. Přijď zítra, dám ti odpověď!
 	EROLDECISIONDAY = Wld_GetDay();
@@ -904,7 +904,7 @@ func void dia_addon_erol_agrees_recrdt_info()
 	AI_Output(self,other,"DIA_Addon_Erol_Agrees_RecrDT_10_06");	//Když počítám, že ubytování a jídlo je na tebe, 40 zlatých na den by mělo stačit.
 	AI_Output(self,other,"DIA_Addon_Erol_Agrees_RecrDT_10_07");	//Úspory nějaké mám, do šantánu už vzhledem ke svému věku nechodím a většinu času stejně budu trávit tam, tak co.
 	Info_ClearChoices(dia_addon_erol_agrees_recrdt);
-	Info_AddChoice(dia_addon_erol_agrees_recrdt,"Dobře, uvidíme se v tvrzi.",dia_addon_erol_agrees_recrdt_yes);
+	Info_AddChoice(dia_addon_erol_agrees_recrdt,"Dobře, uvidíme se ve tvrzi.",dia_addon_erol_agrees_recrdt_yes);
 	Info_AddChoice(dia_addon_erol_agrees_recrdt,"40 zlatých? Musím o tom popřemýšlet...",dia_addon_erol_agrees_recrdt_no);
 };
 
@@ -1021,7 +1021,7 @@ func void dia_erol_firstceo_moneylate_info()
 	AI_Output(other,self,"DIA_Erol_FirstCEO_MoneyLate_15_00");	//Tady je 5000 zlatých.
 	B_GiveInvItems(other,self,ItMi_Gold,5000);
 	Npc_RemoveInvItems(self,ItMi_Gold,5000);
-	AI_Output(self,other,"DIA_Erol_FirstCEO_MoneyLate_10_01");	//Dobře. S penězi si nyní nemusíme dělat starosti a já můžu začít s parcí.
+	AI_Output(self,other,"DIA_Erol_FirstCEO_MoneyLate_10_01");	//Dobře. S penězi si nyní nemusíme dělat starosti a já můžu začít s prací.
 	AI_Output(self,other,"DIA_Erol_FirstCEO_MoneyLate_10_02");	//Mimo to, já i ostaní potřebujem něco k jídlu.
 	AI_Output(self,other,"DIA_Erol_FirstCEO_MoneyLate_10_03");	//Myslím, že pro začátek by mohlo stačit 50 kusů opečeného masa, 25 kusů čerstvých ryb a 10 chlebů.
 	DT_BUDGET = 5000;
@@ -1325,7 +1325,7 @@ instance DIA_Erol_BUSINESSACTION(C_Info)
 	condition = dia_Erol_businessaction_condition;
 	information = dia_Erol_businessaction_info;
 	permanent = TRUE;
-	description = "Chtěl bych něco udělat...";
+	description = "Chtěl bych něco udělat.";
 };
 
 func int dia_Erol_businessaction_condition()
@@ -2171,7 +2171,7 @@ func void dia_erol_igetthefoutofhere_info()
 	AI_Output(self,other,"DIA_Erol_IGetTheFOutOfHere_10_01");	//To jsou nám noviny... chceš odplout navždy, nebo se máš v úmyslu vrátit?
 	AI_Output(other,self,"DIA_Erol_IGetTheFOutOfHere_15_02");	//Bojím se, že už se do Khorinisu nevrátím. Jestli máš zájem starat se i nadále o tvrz, tak ti jí přenechám.
 	AI_Output(self,other,"DIA_Erol_IGetTheFOutOfHere_10_03");	//Á... dobře, když to říkáš. Díky tvému úsilí jsme se zde dobře zabydleli, tak myslím, že mohu i nadále vést úspěšně tento tábor.
-	AI_Output(self,other,"DIA_Erol_IGetTheFOutOfHere_10_04");	//Teď když se toje tvrz a Onarova farma, staly hlavním pilířem obrany proti skřetům. Můžeme upevnit vztahy s ostatnímy tábory, ve společném úsilí boje proti těmto tvorům.
+	AI_Output(self,other,"DIA_Erol_IGetTheFOutOfHere_10_04");	//Teď když se tvoje tvrz a Onarova farma, staly hlavním pilířem obrany proti skřetům. Můžeme upevnit vztahy s ostatnímy tábory, ve společném úsilí boje proti těmto tvorům.
 	AI_Output(self,other,"DIA_Erol_IGetTheFOutOfHere_10_05");	//Tak si myslím, že můžeš bez obav odplout.
 	AI_Output(self,other,"DIA_Erol_IGetTheFOutOfHere_10_06");	//Udělal jsi pro nás všechno co jsi mohl a teď je řada na nás abychom se snažili. Šťastnou cestu!
 	AI_Output(other,self,"DIA_Erol_IGetTheFOutOfHere_15_07");	//Děkuji!

@@ -302,11 +302,11 @@ func void DIA_Alrik_WannaFight_Info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Alrik_Add_09_04A");	//Myslím, že už dost.
+			AI_Output(self,other,"DIA_Alrik_Add_09_04A");	//Myslím, že už mám dost.
 		};
 		if(Npc_IsDead(edda) == FALSE)
 		{
-			AI_Output(self,other,"DIA_Alrik_Add_09_05");	//Dost na to, abych si našel místo někde ve meste...
+			AI_Output(self,other,"DIA_Alrik_Add_09_05");	//Mám dost peněz na to, abych si našel místo někde ve městě...
 			AI_Output(self,other,"DIA_Alrik_Add_09_06");	//Kdo ví, třeba si otevřu obchod se zbraněmi...
 		}
 		else
@@ -353,7 +353,7 @@ func void DIA_Alrik_WannaFight_Gold()
 {
 	AI_Output(other,self,"DIA_Alrik_WannaFight_Gold_15_00");	//Tady...
 	B_GiveInvItems(other,self,ItMi_Gold,50);
-	AI_Output(self,other,"DIA_Alrik_WannaFight_Gold_09_01");	//(hlasitě) Máme nového vyzivatele!
+	AI_Output(self,other,"DIA_Alrik_WannaFight_Gold_09_01");	//(hlasitě) Máme nového vyzyvatele!
 	AI_Output(self,other,"DIA_Alrik_WannaFight_Gold_09_02");	//Sázky jsou uzavřeny...
 	Npc_RemoveInvItems(self,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
 	AI_Output(self,other,"DIA_Alrik_WannaFight_Gold_09_03");	//Připraven?
@@ -451,7 +451,7 @@ func void DIA_Alrik_AfterFight_Info()
 			else
 			{
 				AI_Output(self,other,"DIA_Alrik_AfterFight_09_04");	//Vybral jsi mi kapsy, když jsem byl v bezvědomí!
-				AI_Output(self,other,"DIA_Alrik_AfterFight_09_05");	//To nebylo pěkné, chlape. Své peníze bys stejne dostal.
+				AI_Output(self,other,"DIA_Alrik_AfterFight_09_05");	//To nebylo pěkné, chlape. Své peníze bys stejně dostal.
 				B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(self,ItMi_Gold));
 			};
 
@@ -472,7 +472,7 @@ func void DIA_Alrik_AfterFight_Info()
 		};
 		if(Alrik_Kaempfe == 1)
 		{
-			AI_Output(self,other,"DIA_Alrik_AfterFight_09_08");	//A ještě neco - nemluv o tom, co se deje za skladištem.
+			AI_Output(self,other,"DIA_Alrik_AfterFight_09_08");	//A ještě něco - nemluv o tom, co se děje za skladištěm.
 			if((other.guild != GIL_MIL) && (other.guild != GIL_PAL))
 			{
 				AI_Output(self,other,"DIA_Alrik_AfterFight_09_09");	//Domobrana by nás hodila do basy. Ti chlapi nemaj rádi sázení na boje.
@@ -497,7 +497,7 @@ func void DIA_Alrik_AfterFight_Info()
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Alrik_AfterFight_09_14");	//Jestli jsi chtěl další boj, vše co bylo třeba bylo vyzvat me!
+				AI_Output(self,other,"DIA_Alrik_AfterFight_09_14");	//Jestli jsi chtěl další boj, vše co bylo třeba bylo vyzvat mě!
 			};
 
 			AI_Output(self,other,"DIA_Alrik_AfterFight_09_15");	//Nechci nic s hajzlem jako jsi ty. Zmiz!
@@ -596,7 +596,7 @@ func void DIA_Alrik_HaveSword_Info()
 	AI_Output(other,self,"DIA_Alrik_HaveSword_15_00");	//Tady je tvůj meč!
 	B_GiveInvItems(other,self,ItMw_AlriksSword_Mis,1);
 	AI_Output(self,other,"DIA_Alrik_HaveSword_09_01");	//Áá! To je o hodně lepší, než ten starej klacek!
-	AI_Output(self,other,"DIA_Alrik_HaveSword_09_02");	//Výborně, můžeš me znovu vyzvat!
+	AI_Output(self,other,"DIA_Alrik_HaveSword_09_02");	//Výborně, můžeš mě znovu vyzvat!
 	MIS_Alrik_Sword = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_AlrikSchwert,LOG_SUCCESS);
 	B_LogEntry(TOPIC_AlrikSchwert,"Vrátil jsem Alrikovi jeho meč.");
@@ -650,7 +650,7 @@ instance DIA_Alrik_Ausbilden(C_Info)
 	condition = DIA_Alrik_Ausbilden_Condition;
 	information = DIA_Alrik_Ausbilden_Info;
 	permanent = TRUE;
-	description = "Můžeš mě neco naučit?";
+	description = "Můžeš mě něco naučit?";
 };
 
 func int DIA_Alrik_Ausbilden_Condition()
@@ -663,7 +663,7 @@ func int DIA_Alrik_Ausbilden_Condition()
 
 func void DIA_Alrik_Ausbilden_Info()
 {
-	AI_Output(other,self,"DIA_Alrik_Ausbilden_15_00");	//Můžeš mě neco naučit?
+	AI_Output(other,self,"DIA_Alrik_Ausbilden_15_00");	//Můžeš mě něco naučit?
 
 	if((Alrik_Kaempfe == 0) && (hero.guild == GIL_NONE))
 	{
@@ -682,7 +682,7 @@ func void DIA_Alrik_Ausbilden_Info()
 		};
 		Alrik_Teach1H = TRUE;
 		Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
-		B_LogEntry(TOPIC_CityTeacher,"Alrik za skladištěm ve meste me může učit jednoručímu boji.");
+		B_LogEntry(TOPIC_CityTeacher,"Alrik za skladištěm ve městě mě může učit jednoručnímu boji.");
 	};
 };
 
@@ -965,14 +965,14 @@ func int DIA_Alrik_Shield_Condition()
 func void DIA_Alrik_Shield_Info()
 {
 	AI_Output(other,self,"DIA_Alrik_Shield_01_00");	//Ty bojuješ se štítem?
-	AI_Output(self,other,"DIA_Alrik_Shield_01_01");	//Samozřejmě! Se štítem nejsi nikdy nekrytý. Je to to moje hlavní opora v boji.
+	AI_Output(self,other,"DIA_Alrik_Shield_01_01");	//Samozřejmě! Se štítem nejsi nikdy nekrytý. Je to moje hlavní opora v boji.
 	AI_Output(other,self,"DIA_Alrik_Shield_01_02");	//A mohl bys mě naučit jak bojovat se štítem?
 
 	if((Alrik_Ok_01 == TRUE) && (Alrik_Ok_02 == TRUE))
 	{
 		AI_Output(self,other,"DIA_Alrik_Shield_01_03");	//Hmm... Proč ne? Vypadáš jako celkem vnímavý student.
 		AI_Output(self,other,"DIA_Alrik_Shield_01_04");	//Ale potřebuješ nějaké zkušenosti s bojem.
-		AI_Output(self,other,"DIA_Alrik_Shield_01_05");	//A samozřejmě nejaké to zlato. Zadarmo to nebude.
+		AI_Output(self,other,"DIA_Alrik_Shield_01_05");	//A samozřejmě nějaké to zlato. Zadarmo to nebude.
 		Alrik_Ok_Final = TRUE;
 	}
 	else if(Alrik_Ok_01 == FALSE)
@@ -1027,7 +1027,7 @@ func void DIA_Alrik_Shield_Teach_Info()
 			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_06");	//Tvůj úder mečem musí být rychlý a krátký. Zaútočit a pak se znovu schovat za štít.
 			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_07");	//Tvůj nepřítel si bude lámat hlavu nad tím jak se dostat cez tvoji obranu.
 			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_08");	//A dříve nebo později udělá chybu, kterou budeš moci využít.
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_09");	//Když se budeš snažit jedného dne se z tebe může stát skutečný majster boje so štítem.
+			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_09");	//Když se budeš snažit jednoho dne se z tebe může stát skutečný mistr boje se štítem.
 			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_10");	//A ještě něco. Vem si tenhle dřevěný štít jako dárek ode mě.
 			B_GiveInvItems(self,other,ItAr_Shield_01,1);
 			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_11");	//Nakonec je to něco, co budeš muset trénovat.
@@ -1058,7 +1058,7 @@ func void DIA_Alrik_Shield_Teach_Info()
 		}
 		else if(Alrik_Ok_02 == FALSE)
 		{
-			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_14");	//Co nevidíš tenhle zatracený klacek v mý ruce?
+			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_14");	//Co nevidíš tenhle zatracený klacek v mé ruce?
 			AI_Output(self,other,"DIA_Alrik_Shield_Teach_01_15");	//Bez normální zbraně tě nic nenaučím!
 		};
 	};
@@ -1086,13 +1086,13 @@ func void DIA_Alrik_Armor_Info()
 {
 	AI_Output(other,self,"DIA_Alrik_Armor_01_00");	//Vidím, že máš pěknou zbroj.
 	AI_Output(self,other,"DIA_Alrik_Armor_01_01");	//Líbí se ti? Vsadím se, že takovou nenajdeš nikde jinde.
-	AI_Output(other,self,"DIA_Alrik_Armor_01_02");	//Rád bych si ji skusil.
+	AI_Output(other,self,"DIA_Alrik_Armor_01_02");	//Rád bych si ji zkusil.
 	AI_Output(self,other,"DIA_Alrik_Armor_01_03");	//Není nic jednoduchšího. Někde bych tady měl mít další kus.
 	AI_Output(self,other,"DIA_Alrik_Armor_01_04");	//Ale musíš zaň zaplatit.
 	AI_Output(other,self,"DIA_Alrik_Armor_01_05");	//A kolik za ni chceš?
 	AI_Output(self,other,"DIA_Alrik_Armor_01_06");	//Hmmm... Myslím, že 500 zlatých by mělo stačit.
 	AI_Output(other,self,"DIA_Alrik_Armor_01_07");	//Proč je tak drahá?
-	AI_Output(self,other,"DIA_Alrik_Armor_01_08");	//Nooo... Vážně ty peníze potřbuji.
+	AI_Output(self,other,"DIA_Alrik_Armor_01_08");	//Nooo... Vážně ty peníze potřebuji.
 	AI_Output(self,other,"DIA_Alrik_Armor_01_09");	//Z jejich pomocí bych konečně byl schopen začít nový život.
 	AI_Output(self,other,"DIA_Alrik_Armor_01_10");	//A současně bych mohl splatit i svoje dluhy.
 	AI_Output(self,other,"DIA_Alrik_Armor_01_11");	//Takže promiň chlape, ale nemohu ti ji prodat lacněji.
@@ -1218,7 +1218,7 @@ instance DIA_Alrik_BackShield(C_Info)
 	condition = DIA_Alrik_BackShield_Condition;
 	information = DIA_Alrik_BackShield_Info;
 	permanent = FALSE;
-	description = "Dej ten štít stranou.";
+	description = "Tady máš svůj štít zpátky.";
 };
 
 func int DIA_Alrik_BackShield_Condition()
@@ -1232,10 +1232,10 @@ func int DIA_Alrik_BackShield_Condition()
 func void DIA_Alrik_BackShield_Info()
 {
 	B_GivePlayerXP(50);
-	AI_Output(other,self,"DIA_Alrik_WannaFight_Gold_15_00");	//Tady jsi...
+	AI_Output(other,self,"DIA_Alrik_WannaFight_Gold_15_00");	//Tady to máš...
 	B_GiveInvItems(other,self,ItAr_Shield_01_Alrik,1);
 	Npc_RemoveInvItems(self,ItAr_Shield_01_Alrik,Npc_HasItems(self,ItAr_Shield_01_Alrik));
-	AI_Output(self,other,"DIA_Rod_GiveItBack_06_01");	//Časem!
+	AI_Output(self,other,"DIA_Rod_GiveItBack_06_01");	//Byl už nejvyšší čas.
 	AI_StopProcessInfos(self);
 	B_SetFightSkills(self,30);
 };

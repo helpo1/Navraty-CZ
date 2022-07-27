@@ -65,7 +65,7 @@ func void DIA_Bosper_NoTalkAtAll_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Bosper_NoTalkAtAll_12_03");	//Řekl jsem, Vypadni!
+		AI_Output(self,other,"DIA_Bosper_NoTalkAtAll_12_03");	//Řekl jsem, vypadni!
 		AI_StopProcessInfos(self);
 	};
 };
@@ -124,7 +124,7 @@ func int DIA_Bosper_IntoOV_Condition()
 func void DIA_Bosper_IntoOV_Info()
 {
 	AI_Output(other,self,"DIA_Bosper_IntoOV_15_00");	//Musím se dostat do horní čtvrti...
-	AI_Output(self,other,"DIA_Bosper_IntoOV_11_01");	//Tam kde žijí paladinové? Zapomeň na to
+	AI_Output(self,other,"DIA_Bosper_IntoOV_11_01");	//Tam kde žijí paladinové? Zapomeň na to.
 	AI_Output(self,other,"DIA_Bosper_IntoOV_11_02");	//Musíš být občanem města, nebo mít respektovanou práci.
 	AI_Output(self,other,"DIA_Bosper_IntoOV_11_03");	//Cizinci, jako jsi ty, se tam nemůžou dostat.
 	if(Torwache_305.aivar[AIV_TalkedToPlayer] == TRUE)
@@ -156,8 +156,8 @@ func int DIA_Bosper_SeekWork_Condition()
 func void DIA_Bosper_SeekWork_Info()
 {
 	AI_Output(other,self,"DIA_Bosper_SeekWork_15_00");	//Hledám práci!
-	AI_Output(self,other,"DIA_Bosper_SeekWork_11_01");	//Mmm... (zamyšleně) dost by se mi hodil nový student.
-	AI_Output(self,other,"DIA_Bosper_SeekWork_11_02");	//Poslední kůži, kterou jsem měl, jsem spotřeboval před dvěma dny.
+	AI_Output(self,other,"DIA_Bosper_SeekWork_11_01");	//Mmm... (zamyšleně) dost by se mi hodil nový učedník.
+	AI_Output(self,other,"DIA_Bosper_SeekWork_11_02");	//Ten poslední to vzdal zrovna předevčírem.
 	AI_Output(self,other,"DIA_Bosper_SeekWork_11_03");	//Víš něco o lovu?
 
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE)
@@ -171,7 +171,7 @@ func void DIA_Bosper_SeekWork_Info()
 		AI_Output(other,self,"DIA_Bosper_SeekWork_15_07");	//Mám ti přinest nějaké kůže, pokud myslíš tohle.
 		AI_Output(self,other,"DIA_Bosper_SeekWork_11_08");	//Přesně tak! Přines mi všechny kůže, které máš k dispozici a dostaneš za to slušně zaplaceno.
 	};
-	B_LogEntry(TOPIC_Lehrling,"Bosper hledá nového studenta. Můžu u něj začít pracovat.");
+	B_LogEntry(TOPIC_Lehrling,"Bosper hledá nového učedníka. Můžu u něj začít pracovat.");
 };
 
 
@@ -219,7 +219,7 @@ func void DIA_Bosper_LEHRLING_Info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_04");	//Ale Harad říká, že vás nikdy neviděl.
+			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_04");	//Ale Harad říká, že tě nikdy neviděl.
 		};
 		if(Thorben.aivar[AIV_TalkedToPlayer] == TRUE)
 		{
@@ -230,7 +230,7 @@ func void DIA_Bosper_LEHRLING_Info()
 			}
 			else
 			{
-				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_06");	//Thorben ti dám dá souhlas jen s požehnáním bohů.
+				AI_Output(self,other,"DIA_Bosper_LEHRLING_11_06");	//Thorben ti dá souhlas jen s požehnáním bohů.
 			};
 		}
 		else
@@ -300,7 +300,7 @@ func void DIA_Bosper_LEHRLING_Info()
 		AI_Output(self,other,"DIA_Bosper_LEHRLING_11_21");	//Předtím, než tě vezmu do učení, musím nejprve pochopit, zda jsi vhodný.
 		if(MIS_Bosper_Bogen == LOG_SUCCESS)
 		{
-			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_22");	// Vrátil jsi mi luk, ale neříká mi to nic o tom, jak jsi dobrý lovec.
+			AI_Output(self,other,"DIA_Bosper_LEHRLING_11_22");	//Vrátil jsi mi luk, ale neříká mi to nic o tom, jak jsi dobrý lovec.
 		};
 		Bosper_HintToJob = TRUE;
 	};
@@ -380,7 +380,7 @@ instance DIA_Bosper_OtherMasters(C_Info)
 	condition = DIA_Bosper_OtherMasters_Condition;
 	information = DIA_Bosper_OtherMasters_Info;
 	permanent = FALSE;
-	description = "Co když chci být studentem jiného mistra?";
+	description = "Co když chci vstoupit do učení k jinému mistrovi?";
 };
 
 func int DIA_Bosper_OtherMasters_Condition()
@@ -393,13 +393,13 @@ func int DIA_Bosper_OtherMasters_Condition()
 
 func void DIA_Bosper_OtherMasters_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_OtherMasters_15_00");	//Co když chci vstoupit do učeníků k jinému mistrovi?
+	AI_Output(other,self,"DIA_Bosper_OtherMasters_15_00");	//Co když chci vstoupit do učení k jinému mistrovi?
 	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_01");	//Blbost!
 	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_02");	//Harad a Matteo už mají učedníky.
 	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_03");	//Alchymista Constantino je samotář, neměl učedníka už dlouhé roky.
 	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_04");	//Thorben je moc chudý, neměl by ti jak platit.
-	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_05");	//Já potřebuju studenta opravdu hodně. A platím skvěle!
-	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_06");	//Ale nezáleží jen na mě, koho student se chceš stát - budeš potřebovat souhlas všech mistrů z dolní čtvrti...
+	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_05");	//Já potřebuju učedníka opravdu hodně. A platím skvěle!
+	AI_Output(self,other,"DIA_Bosper_OtherMasters_11_06");	//Ale nezáleží jen na mě, koho učedníkem se chceš stát - budeš potřebovat souhlas všech mistrů z dolní čtvrti...
 };
 
 instance DIA_Bosper_Bartok(C_Info)
@@ -409,7 +409,7 @@ instance DIA_Bosper_Bartok(C_Info)
 	condition = DIA_Bosper_Bartok_Condition;
 	information = DIA_Bosper_Bartok_Info;
 	permanent = FALSE;
-	description = "A proč váš student opustil svou práci?";
+	description = "Proč to tvůj minulý učedník vzdal?";
 };
 
 func int DIA_Bosper_Bartok_Condition()
@@ -422,7 +422,7 @@ func int DIA_Bosper_Bartok_Condition()
 
 func void DIA_Bosper_Bartok_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_Bartok_15_00");	//A proč váš student opustil svou práci?
+	AI_Output(other,self,"DIA_Bosper_Bartok_15_00");	//Proč to tvůj minulý učedník vzdal?
 	AI_Output(self,other,"DIA_Bosper_Bartok_11_01");	//Jak jsem řekl, lovit je v poslední době nebezpečné.
 	AI_Output(self,other,"DIA_Bosper_Bartok_11_02");	//Pokud tě to opravdu zajímá, můžeš se ho zeptat sám.
 	AI_Output(self,other,"DIA_Bosper_Bartok_11_03");	//Jmenuje se Bartok. Pravděpodobně je někde u Coragonovy hospody.
@@ -451,7 +451,7 @@ var int Bosper_Zustimmung_Once;
 
 func void DIA_Bosper_ZUSTIMMUNG_Info()
 {
-	AI_Output(other,self,"DIA_Bosper_ZUSTIMMUNG_15_00");	//Dostanu tvůj souhlas k práci u jineho mistra?
+	AI_Output(other,self,"DIA_Bosper_ZUSTIMMUNG_15_00");	//Dostanu tvůj souhlas k práci u jiného mistra?
 	if((MIS_Bosper_Bogen == LOG_SUCCESS) || (MIS_Bosper_WolfFurs == LOG_SUCCESS))
 	{
 		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_01");	//(zklamaně) Doufal jsem, že si vybereš za mistra mě.
@@ -470,7 +470,7 @@ func void DIA_Bosper_ZUSTIMMUNG_Info()
 		{
 			B_GivePlayerXP(XP_Zustimmung);
 			Bosper_Zustimmung_Once = TRUE;
-			B_LogEntry(TOPIC_Lehrling,"Bosper mi dá souhlas, pokud se chci stát žákem jiného mistra.");
+			B_LogEntry(TOPIC_Lehrling,"Bosper mi dá souhlas, pokud se chci stát učedníkem jiného mistra.");
 		};
 	}
 	else
@@ -479,7 +479,7 @@ func void DIA_Bosper_ZUSTIMMUNG_Info()
 		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_08");	//Pracuj pro mě, alespoň na chvíli.
 		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_09");	//Takže můžeš pochopit, zda se ti líbí moje řemeslo, nebo ne.
 		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_10");	//A kdo ví... Možná se ti to bude líbit tolik, že zůstaneš u mě.
-		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_11");	//Pokud jsi dost dobrý, aby ses stal mým učedníkem, pak se budete také stýkat s jinými mistry.
+		AI_Output(self,other,"DIA_Bosper_ZUSTIMMUNG_11_11");	//Pokud jsi dost dobrý, aby ses stal mým učedníkem, pak se budeš také stýkat s jinými mistry.
 		Bosper_HintToJob = TRUE;
 	};
 };
@@ -507,7 +507,7 @@ func void DIA_Bosper_Job_Info()
 	AI_Output(other,self,"DIA_Bosper_Job_15_00");	//Co můžu pro tebe udělat?
 	if(PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == FALSE)
 	{
-		AI_Output(self,other,"DIA_Bosper_Job_11_01");	//Naučím tě, jak stáhnout zvířata z kůže. Pak mi je přines, dejme tomu půl tuctu (6) kůží.
+		AI_Output(self,other,"DIA_Bosper_Job_11_01");	//Naučím tě, jak stáhnout zvířata z kůže. Pak mi je přines, dejme tomu půl tuctu vlčich kůží.
 		Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
 		B_LogEntry(TOPIC_CityTeacher,"Bosper mě může naučit, jak stáhnout zvířata z kůže.");
 	}
@@ -516,10 +516,10 @@ func void DIA_Bosper_Job_Info()
 		AI_Output(self,other,"DIA_Bosper_Job_11_02");	//Přines mi půl tuctu vlčich kůží.
 	};
 	AI_Output(self,other,"DIA_Bosper_Job_11_03");	//Pak se rozhodnu zda se hodíš pro toto řemeslo.
-	AI_Output(self,other,"DIA_Bosper_Job_11_04");	//Pokud někde nezemřeš a pokud budeš nosit dobré kůže, nechám tě spát ve svém pokoji, pokud budeš chtít.
+	AI_Output(self,other,"DIA_Bosper_Job_11_04");	//Pokud ti to nepotrvá věčnost a jestli ty kůže budou ve slušném stavu, přijmu tě, když budeš chtít.
 	if(Npc_KnowsInfo(other,DIA_Bosper_OtherMasters))
 	{
-		AI_Output(self,other,"DIA_Bosper_Job_11_05");	//(s povzdechem) Nebo se můžeš stát žákem jiného mistra... Pokud opravdu chceš.
+		AI_Output(self,other,"DIA_Bosper_Job_11_05");	//(s povzdechem) Nebo se můžeš stát učedníkem jiného mistra... Pokud opravdu chceš.
 	};
 	MIS_Bosper_WolfFurs = LOG_Running;
 	Log_CreateTopic(TOPIC_BosperWolf,LOG_MISSION);
@@ -664,7 +664,7 @@ func void DIA_Bosper_Trade_Info()
 
 	if((Player_IsApprentice == APP_Bosper) && (BosperTradeBows == FALSE) && (MIS_Bosper_Bogen == LOG_SUCCESS))
 	{
-		AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_06");	//Protože jsi mi pomohl dostat zpátky můj luk a jsi můj student.
+		AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_06");	//Protože jsi mi pomohl dostat zpátky můj luk a jsi můj učedník.
 		AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_07");	//... to možná ti budu moci prodat nejen šipky a šípy, ale také docela dobré luky.
 		AI_Output(self,other,"DIA_Bosper_BogenSuccess_11_08");	//Samozřejmě, nejsou nic extra, ale jsou vhodné pro lov.
 		BosperTradeBows = TRUE;
@@ -752,7 +752,7 @@ func void DIA_Bosper_BogenRunning_Info()
 	AI_Output(self,other,"DIA_Bosper_BogenRunning_11_08");	//Pokud toho hajzla dostanu...
 	Log_CreateTopic(TOPIC_BosperBogen,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_BosperBogen,LOG_Running);
-	B_LogEntry(TOPIC_BosperBogen,"Bosperovi byl ukraden luk. Zloděj běžel do přístavu a zmizel tam. Domobrana hledala v přístavní čtvrť, ale nic nenalezli, ačkoliv luk stále musí být ve městě.");
+	B_LogEntry(TOPIC_BosperBogen,"Bosperovi byl ukraden luk. Zloděj běžel do přístavu a zmizel tam. Domobrana hledala v přístavní čtvrti, ale nic nenalezli, ačkoliv luk stále musí být ve městě.");
 };
 
 instance DIA_Bosper_BogenSuccess(C_Info)
@@ -837,7 +837,7 @@ instance DIA_Bosper_BOWTEACH1(C_Info)
 	condition = DIA_Bosper_BOWTEACH1_condition;
 	information = DIA_Bosper_BOWTEACH1_info;
 	permanent = TRUE;
-	description = "Nauč mě, vyrábět luky.)";
+	description = "Nauč mě, vyrábět luky.";
 };
 
 func int DIA_Bosper_BOWTEACH1_condition()
@@ -867,7 +867,7 @@ func void DIA_Bosper_BOWTEACH1_info()
 		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_11");	//K tomu však bude třeba také ošetřit různými mazivy, jako je tuk nebo pryskyřice.
 		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_12");	//Co se týče samotného výrobního procesu, je vše jednoduché.
 		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_13");	//Vezmeš si potřebné záznamy, kleště a truhlářský pracovní stůl.
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_14");	//Pak vezměte kousek kůže, řezací nůž a nakrájíme ho na tenké kousky.
+		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_14");	//Pak vezmeš kousek kůže, řezací nůž a nakrájíš ho na tenké kousky.
 		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_15");	//Dále zpracuješ každý z těchto kusů tukem nebo pryskyřicí, propleteš je a vysušíš.
 		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_16");	//Vlastně je to tak, jak je vytvořena tětiva, no, pak na té samé lavici zkompletuješ celý luk.
 		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_17");	//Tvé první luky nebudou určitě žádný skvost, ale pokud budeš trénovat, budeš se zlepšovat.
@@ -884,7 +884,7 @@ func void DIA_Bosper_BOWTEACH1_info()
 	}
 	else if(hero.lp < 1)
 	{
-		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_22");	//Nejste ještě na to připraven! Přijď, až budeš mít zkušenosti.
+		AI_Output(self,other,"DIA_Bosper_BOWTEACH1_01_22");	//Nejsi ještě na to připraven! Přijď, až budeš mít zkušenosti.
 		AI_StopProcessInfos(self);
 	};
 };
@@ -1290,7 +1290,7 @@ func void DIA_Bosper_AlsLehrling_Info()
 	}
 	else if((other.guild == GIL_KDW) && (Bosper_KDWKommentar == FALSE))
 	{
-		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_08");	//Přidal ses ke kruhu mágů Vody. Doufám, že ti nezakázali lovit a nosti mi kůže. Nezapomeneš na mě, viď?
+		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_08");	//Přidal ses ke kruhu mágů Vody. Doufám, že ti nezakázali lovit a nosit mi kůže. Nezapomeneš na mě, viď?
 		AI_Output(self,other,"DIA_Bosper_AlsLehrling_11_09");	//Prosím... dej pozor na ty kůže ano? Jsi mág Vody, ale mokré kůže nemůžu použít. 
 		Bosper_KDWKommentar = TRUE;
 	}
@@ -1489,7 +1489,7 @@ func void DIA_Bosper_SellFur_Info()
 			};
 			if(Npc_HasItems(other,ItAt_TrollBlackFur) > 0)
 			{
-				AI_Output(self,other,"DIA_Bosper_SellFur_11_11");	//Kůže Černého trola! Páni!
+				AI_Output(self,other,"DIA_Bosper_SellFur_11_11");	//Kůže černého trola! Páni!
 				B_GiveInvItems(self,other,ItMi_Gold,Npc_HasItems(other,ItAt_TrollBlackFur) * Value_TrollBlackFur);
 				Npc_RemoveInvItems(other,ItAt_TrollBlackFur,Npc_HasItems(other,ItAt_TrollBlackFur));
 			};
@@ -1606,7 +1606,7 @@ func void dia_bosper_bringarrow_info()
 		Npc_RemoveInvItems(self,itwr_letterfalk_open,1);
 		AI_Output(self,other,"DIA_Bosper_BringArrow_01_13");	//Tak, koukneme se, kdo mi to píše. Ale co je tohle... je otevřený! Pečeť je zlomená!
 		AI_Output(other,self,"DIA_Bosper_BringArrow_01_14");	//Vážně?! Netuším jak se to stalo.
-		AI_Output(self,other,"DIA_Bosper_BringArrow_01_17");	//Nevoď mě za nos, hošánku! (rozzlobeně) Takle se to nestalo!
+		AI_Output(self,other,"DIA_Bosper_BringArrow_01_17");	//Nevoď mě za nos, hošánku! (rozzlobeně) Takhle se to nestalo!
 		AI_Output(self,other,"DIA_Bosper_BringArrow_01_18");	//Lepší bude když mi zmizíš z dohledu než na tobě vyzkouším svůj nový luk.
 		AI_Output(self,other,"DIA_Bosper_BringArrow_01_19");	//Nic ode mě nedostaneš. VEN!
 		B_LogEntry(TOPIC_LETTERFALK,"Bosper mě vyhodil ze dvěří, protože jsi všiml otevřeného dopisu, který byl pro něho a já ho otevřel. Teď se budu muset Falkovi přiznat.");
@@ -1646,7 +1646,7 @@ func void dia_bosper_shadowbow_info()
 	{
 		AI_Output(self,other,"DIA_Bosper_ShadowBow_01_07");	//Samozřejmě jsem nikdy nepochyboval, že dosáhneš toho titulu.
 		AI_Output(self,other,"DIA_Bosper_ShadowBow_01_10");	//Říkal jsem si to hned jak jsem tě uviděl u sebe v obchodě.
-		AI_Output(self,other,"DIA_Bosper_ShadowBow_01_11");	//A jsem velmi rád, že jsem tě vzal jako svého studenta.
+		AI_Output(self,other,"DIA_Bosper_ShadowBow_01_11");	//A jsem velmi rád, že jsem tě vzal jako svého učedníka.
 	};
 	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_14");	//Patrně potřebuješ šípy k takovému luku.
 	AI_Output(self,other,"DIA_Bosper_ShadowBow_01_16");	//Můžu ti je vyrobit.
@@ -1675,9 +1675,9 @@ func int DIA_Bosper_ShadowBowArrowMake_condition()
 
 func void DIA_Bosper_ShadowBowArrowMake_info()
 {
-	AI_Output(other,self,"DIA_Bosper_ShadowBowArrowMake_01_00");	//Můžu se je vyrobit sám?
+	AI_Output(other,self,"DIA_Bosper_ShadowBowArrowMake_01_00");	//Můžu si je vyrobit sám?
 	AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMake_01_01");	//(zamyšleně) Výroba těchto šípů je velké tajemství!
-	AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMake_01_02");	//Ale protože jsi můj student tak tě to naučím.
+	AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMake_01_02");	//Ale protože jsi můj učedník tak tě to naučím.
 	AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMake_01_03");	//Řeknu ti co potřebuješ na kerenické šípy.
 	AI_Output(self,other,"DIA_Bosper_ShadowBowArrowMake_01_04");	//Ale chci za to zaplatit. Zadarmo tě to nenaučím.
 	Log_CreateTopic(TOPIC_TALENTMAKEARROWS,LOG_NOTE);
@@ -1883,7 +1883,7 @@ func void DIA_Bosper_CanBuyGoblinWeapon_Info()
 	AI_Output(other,self,"DIA_Bosper_CanBuyGoblinWeapon_01_08");	//A jak to děláš?
 	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_09");	//Když řeknu všem o tajemstvích mého řemesla všechno, brzy budu bydlet na ulici.
 	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_10");	//Ale můžeš mi dost pomoci. Přines mi gobliní klacky a já ti dám šípy.
-	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_11");	//Samozřejmě dostaneš méně šípů, než udělám z jednoho klacku. Vzhledem kolik práce tomu věnuji, stále to výhodná výměna!
+	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_11");	//Samozřejmě dostaneš méně šípů, než udělám z jednoho klacku. Vzhledem kolik práce tomu věnuji, stále je to výhodná výměna!
 	AI_Output(other,self,"DIA_Bosper_CanBuyGoblinWeapon_01_12");	//A kolik šípů dostanu za jeden klacek?
 	AI_Output(self,other,"DIA_Bosper_CanBuyGoblinWeapon_01_13");	//(zamyšleně) No, řekněme, že ti dám dva šípy. Souhlasíš?
 	AI_Output(other,self,"DIA_Bosper_CanBuyGoblinWeapon_01_14");	//Dobře, souhlasím.

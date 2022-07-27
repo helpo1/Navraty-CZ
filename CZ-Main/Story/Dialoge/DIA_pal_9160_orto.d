@@ -40,7 +40,7 @@ func int dia_pal_9160_orto_matter_condition()
 func void dia_pal_9160_orto_matter_info()
 {
 	AI_Output(self,other,"DIA_Pal_9160_Orto_Matter_01_00");	//Hej, chlape, kde ses tu vzal?
-	AI_Output(other,self,"DIA_Pal_9160_Orto_Matter_01_01");	//Šel jsem přes horský průsmyk. Co, tě překvapilo?
+	AI_Output(other,self,"DIA_Pal_9160_Orto_Matter_01_01");	//Šel jsem přes horský průsmyk. Co tě překvapilo?
 
 	if((other.guild == GIL_SLD) || (other.guild == GIL_DJG))
 	{
@@ -83,7 +83,7 @@ func void dia_pal_9160_orto_who_info()
 	AI_Output(other,self,"DIA_Pal_9160_Orto_Who_01_02");	//Co tady děláš?
 	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_03");	//Cha... Divná otázka ptát se paladina, jestli je ve službě králi spokojený?
 	AI_Output(other,self,"DIA_Pal_9160_Orto_Who_01_04");	//Nemám tušení. Možná mě to povíš?
-	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_05");	//Unikátní osud paladina spočívá v bitvách za Innose a krále. Proto žiju a dýcháma!
+	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_05");	//Unikátní osud paladina spočívá v bitvách za Innose a krále. Proto žiju a dýchám!
 	AI_Output(other,self,"DIA_Pal_9160_Orto_Who_01_06");	//Ale tady není nikdo, kdo by s tebou bojoval.
 	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_07");	//Bohužel máš pravdu... Velmi mě to trápí. A nejen mě.
 	AI_Output(self,other,"DIA_Pal_9160_Orto_Who_01_08");	//Ta nečinnost a nuda je to nejhorší co může být.
@@ -124,7 +124,7 @@ func void DIA_Pal_9160_Orto_Map_info()
 	AI_Output(self,other,"DIA_Pal_9160_Orto_Map_01_07");	//Nicméně u sebe jí nemám, zůstala na lodi.
 	AI_Output(other,self,"DIA_Pal_9160_Orto_Map_01_08");	//No co, měl jsem to vědět dřív!
 	SeaMapIns = TRUE;
-	B_LogEntry(Topic_SylvioCrew,"V paladinské pevnosti jsem jen marnil čas. Ortho nechal svou mapu na lodi! Nyní je třeba důkladně prohledat...");
+	B_LogEntry(Topic_SylvioCrew,"V paladinské pevnosti jsem jen marnil čas. Orto nechal svou mapu na lodi! Nyní je třeba důkladně prohledat...");
 };
 
 instance DIA_PAL_9160_ORTO_FORT(C_Info)
@@ -241,14 +241,14 @@ func void dia_pal_9160_orto_how_info()
 	if(VARUSAGREEDHUNTDONE == FALSE)
 	{
 		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_01");	//Mohlo by být o něco veseleji...
-		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_02");	//Ale nejni...
+		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_02");	//Ale není...
 	}
 	else
 	{
 		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_03");	//Všechno je jednoduše úžasné, příteli!
 		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_04");	//Nikdy mě nenapdalo, že lov je taková zajímavá práce.
 		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_05");	//A je to lepší, než sedět pod borovicí a nudit se.
-		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_06");	//Díky, že jsi přesvědšil Varuse! Jsem ti opravdu vděčný!... (směje se)
+		AI_Output(self,other,"DIA_Pal_9160_Orto_How_01_06");	//Díky, že jsi přesvědčil Varuse! Jsem ti opravdu vděčný!... (směje se)
 	};
 };
 
@@ -356,9 +356,9 @@ func void dia_pal_9160_orto_huntdone_info()
 func void dia_pal_9160_orto_huntdone_teach()
 {
 	AI_Output(other,self,"DIA_Pal_9160_Orto_HuntDone_Teach_01_00");	//Mám zrovna volný čas!
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_Teach_01_01");	//Tak, poslouchej, je to docela jednoduché - když tvůj protivník zaůtočí, využíj sílu jeho útoku ve svůj prospěch.
+	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_Teach_01_01");	//Tak, poslouchej, je to docela jednoduché - když tvůj protivník zaútočí, využíj sílu jeho útoku ve svůj prospěch.
 	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_Teach_01_02");	//Týká se to zejména odrážení útoků. Donuť svého protivníka zaútočit tak abys získal výhodu.
-	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_Teach_01_03");	//Udělej to - a budeš mít vždy navrch! Zapamatůj si to?
+	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_Teach_01_03");	//Udělej to - a budeš mít vždy navrch! Zapamatuješ si to?
 	AI_Output(other,self,"DIA_Pal_9160_Orto_HuntDone_Teach_01_04");	//Ano - děkuji za lekci.
 	AI_Output(self,other,"DIA_Pal_9160_Orto_HuntDone_Teach_01_05");	//Já ti děkuju! (směje se) No a teď - na lov!
 	B_RaiseAttribute_Bonus(other,ATR_STRENGTH,1);

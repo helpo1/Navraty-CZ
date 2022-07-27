@@ -130,7 +130,7 @@ func void dia_pir_6136_abigeil_missweapon_info()
 	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_32");	//A teď přijde nějakej týpek jako ty, kterej se mě bude takhle blbě ptát a já ho nemám čím zabít.
 	AI_Output(other,self,"DIA_PIR_6136_Abigeil_MissWeapon_01_33");	//Chudinko... A proč se nevrátíš pro svůj meč?
 	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_34");	//Protože bez něj se odsud nehnu!... (nervózně)
-	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_35");	//A s jinou zbraní to neumím
+	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_35");	//A s jinou zbraní to neumím.
 	AI_Output(self,other,"DIA_PIR_6136_Abigeil_MissWeapon_01_36");	//A taky se nechci potkat s tou ohnivou bestií...
 	Info_ClearChoices(dia_pir_6136_abigeil_missweapon);
 	Info_AddChoice(dia_pir_6136_abigeil_missweapon,"No, hodně štěstí!",dia_pir_6136_abigeil_missweapon_no);
@@ -307,7 +307,7 @@ func void dia_pir_6136_abigeil_abigeilhelphanna_info()
 	AI_Output(self,other,"DIA_PIR_6136_Abigeil_AbigeilHelpHanna_01_18");	//Šlo by?
 	Info_ClearChoices(dia_pir_6136_abigeil_abigeilhelphanna);
 	Info_AddChoice(dia_pir_6136_abigeil_abigeilhelphanna,"To nepůjde.",dia_pir_6136_abigeil_abigeilhelphanna_no);
-	Info_AddChoice(dia_pir_6136_abigeil_abigeilhelphanna,"Dohodnuto.",dia_pir_6136_abigeil_abigeilhelphanna_yes);
+	Info_AddChoice(dia_pir_6136_abigeil_abigeilhelphanna,"Dohodnuto!",dia_pir_6136_abigeil_abigeilhelphanna_yes);
 };
 
 func void dia_pir_6136_abigeil_abigeilhelphanna_no()

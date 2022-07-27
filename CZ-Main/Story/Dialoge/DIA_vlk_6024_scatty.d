@@ -95,7 +95,7 @@ func void dia_scatty_nw_hi_info()
 	if((SCATTYCHEST == TRUE) && (SCATTYCHESTDONE == FALSE))
 	{
 		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_17");	//Hele, chlape, neznáme se?
-		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_18");	//No jasně! To je ten, který... (naštvane)
+		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_18");	//No jasně! To je ten, který... (naštvaně)
 		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_19");	//... KDE JE SAKRA MOJE ZLATO?!
 		AI_Output(other,self,"DIA_Scatty_NW_Hi_01_20");	//Jaký zlato? Co je s ním?!
 		AI_Output(self,other,"DIA_Scatty_NW_Hi_01_21");	//Idiote! Ptal jsem se - kde je moje zlato?!
@@ -231,7 +231,7 @@ func void dia_scatty_nw_escapefromtown_info()
 {
 	AI_Output(other,self,"DIA_Scatty_NW_EscapeFromTown_01_00");	//Co se stalo?
 	AI_Output(self,other,"DIA_Scatty_NW_EscapeFromTown_01_01");	//Mohlo by to být horší... (pochmurně) Alespoň, že jsem na živu.
-	AI_Output(self,other,"DIA_Scatty_NW_EscapeFromTown_01_03");	//Kdybyste tak mohli vidět, co se posléze stalo ve městě.
+	AI_Output(self,other,"DIA_Scatty_NW_EscapeFromTown_01_03");	//Kdybys tak mohl vidět, co se posléze stalo ve městě.
 	AI_Output(self,other,"DIA_Scatty_NW_EscapeFromTown_01_05");	//A tady to není o nic lepší! Jsme obklíčení skřety a nemyslím si že to jen tak skončí.
 	SCATTYHERE = TRUE;
 };
@@ -281,7 +281,7 @@ func int dia_scatty_nw_oldguardgowar_condition()
 func void dia_scatty_nw_oldguardgowar_info()
 {
 	AI_Output(other,self,"DIA_Scatty_NW_OldGuardGoWar_01_00");	//Pojď! Musíme se odsud dostat!
-	AI_Output(self,other,"DIA_Scatty_NW_OldGuardGoWar_01_01");	//Konečně! Už me nebaví čekat na jednom místě.
+	AI_Output(self,other,"DIA_Scatty_NW_OldGuardGoWar_01_01");	//Konečně! Už mě nebaví čekat na jednom místě.
 	AI_Output(self,other,"DIA_Scatty_NW_OldGuardGoWar_01_02");	//No, tak na co čekáš - jdeme!
 	SCATTYJOINME = TRUE;
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
@@ -340,8 +340,8 @@ func int dia_scatty_nw_wherepeasant_condition()
 func void dia_scatty_nw_wherepeasant_info()
 {
 	AI_Output(other,self,"DIA_Scatty_NW_WherePeasant_01_00");	//Kde jsou všichni rolníci?
-	AI_Output(self,other,"DIA_Scatty_NW_WherePeasant_01_01");	//Nemám tušení. Nejspíše se rozutekli do všech směrů
-	AI_Output(self,other,"DIA_Scatty_NW_WherePeasant_01_02");	//Koneckonců, tady je to příliš nebezpečné než aby zůstali. Tato farma až příliš připomíná město, než aby jí skřeti ignorovali.
+	AI_Output(self,other,"DIA_Scatty_NW_WherePeasant_01_01");	//Nemám tušení. Nejspíše se rozutekli do všech směrů.
+	AI_Output(self,other,"DIA_Scatty_NW_WherePeasant_01_02");	//Koneckonců, tady je to příliš nebezpečné než aby zůstali. Tato farma až příliš připomíná město, než aby ji skřeti ignorovali.
 	AI_Output(other,self,"DIA_Scatty_NW_WherePeasant_01_03");	//Chápu.
 	KNOWWHEREAKIL = TRUE;
 };

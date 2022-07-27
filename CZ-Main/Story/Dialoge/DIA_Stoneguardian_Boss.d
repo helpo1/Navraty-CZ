@@ -44,9 +44,9 @@ func void DIA_Stoneguardian_Boss_Hello_Info()
 {
 	B_GivePlayerXP(500);
 	AI_Output(self,other,"DIA_Stoneguardian_Boss_Hello_01_01");	//KDO SE OPOVAŽUJE RUŠIT MŮJ POSVÁTNÝ KLID?!
-	AI_Output(other,self,"DIA_Stoneguardian_Boss_Hello_01_02");	//Vlasně... já.
-	AI_Output(self,other,"DIA_Stoneguardian_Boss_Hello_01_03");	//Jak zajímavé. A co chcete ode mě, člověče?
-	AI_Output(other,self,"DIA_Stoneguardian_Boss_Hello_01_04");	//Chtěl bych něco vědět o jednom artefaktu, který jste kdysi střežili.
+	AI_Output(other,self,"DIA_Stoneguardian_Boss_Hello_01_02");	//Vlastně... já.
+	AI_Output(self,other,"DIA_Stoneguardian_Boss_Hello_01_03");	//Jak zajímavé. A co chceš ode mě, člověče?
+	AI_Output(other,self,"DIA_Stoneguardian_Boss_Hello_01_04");	//Chtěl bych něco vědět o jednom artefaktu, který jsi kdysi střežil.
 	AI_Output(self,other,"DIA_Stoneguardian_Boss_Hello_01_05");	//CO?! Jak to víš?
 	AI_Output(other,self,"DIA_Stoneguardian_Boss_Hello_01_06");	//Z magického svitku pradávných, kterým jsem tě probudil.
 	AI_Output(self,other,"DIA_Stoneguardian_Boss_Hello_01_07");	//I když jsi byl schopen přečíst text pradávných, tak to ještě neznamená, že jsi hoden vlastnit posvátné znalosti.
@@ -153,7 +153,7 @@ func void DIA_Sleeper_Old_Hello_Battle()
 {
 	AI_Output(other,self,"DIA_Sleeper_Old_Hello_Battle_01_01");	//Jak to tak vidím, chceš se mě pomstít za tu malou roztržku v chrámu.
 	AI_Output(self,other,"DIA_Sleeper_Old_Hello_Battle_01_02");	//Nemá cenu zapírat, toužím po odplatě jako po ničem jiném!
-	AI_Output(self,other,"DIA_Sleeper_Old_Hello_Battle_01_03");	//To co se stalo při našem posledním setkání, byla jen hloupá náhoda... už takoví štěstí mít nebudeš!
+	AI_Output(self,other,"DIA_Sleeper_Old_Hello_Battle_01_03");	//To co se stalo při našem posledním setkání, byla jen hloupá náhoda... už takový štěstí mít nebudeš!
 	AI_Output(other,self,"DIA_Sleeper_Old_Hello_Battle_01_04");	//Tak neztrácejme čas zdvořilostma.
 	AI_Output(other,self,"DIA_Sleeper_Old_Hello_Battle_01_05");	//Nikdo ti neříkal, že se historie často opakuje. Pošlu tě zpátky stejnou dírou jakou jsi na tento svět přišel!
 	AI_Output(self,other,"DIA_Sleeper_Old_Hello_Battle_01_06");	//(zlověstný smích) Tentokrát ne, člověče!
@@ -213,7 +213,7 @@ func void DIA_XranFreg_Hello_Info()
 	AI_Output(self,other,"DIA_XranFreg_Hello_01_05");	//Jestli budu chtít můžu být do výšky se tyčící skálou, nebo malým kamínkem pod tvojí botou.
 	AI_Output(self,other,"DIA_XranFreg_Hello_01_06");	//Ale na mojí moc a sílu to nemá vliv.
 	AI_Output(other,self,"DIA_XranFreg_Hello_01_07");	//Kdo jsi a proč jsi tady?
-	AI_Output(self,other,"DIA_XranFreg_Hello_01_08");	//Strážci mě dali jméno Fregarah, a strážím bránu Egezarta.
+	AI_Output(self,other,"DIA_XranFreg_Hello_01_08");	//Strážci mě dali jméno Fregarah, a střežím bránu Egezarta.
 	AI_Output(other,self,"DIA_XranFreg_Hello_01_09");	//A kdo je Egezart?
 	AI_Output(self,other,"DIA_XranFreg_Hello_01_10");	//Ten kdo se nachází za touto bránou, víc vědět nepotřebuješ.
 	AI_Output(other,self,"DIA_XranFreg_Hello_01_11");	//A jak můžu projít?
@@ -224,6 +224,6 @@ func void DIA_XranFreg_Hello_Info()
 	if(MIS_XRANFREG == LOG_Running)
 	{
 		B_GivePlayerXP(1000);
-		B_LogEntry(TOPIC_XRANFREG,"Potkal jsem kamenného obra o které byla zmínka v záznamech. Po prvdě neudělal na mě dojem, ale vzhled může klamat.");
+		B_LogEntry(TOPIC_XRANFREG,"Potkal jsem kamenného obra o kterém byla zmínka v záznamech. Po pravdě neudělal na mě dojem, ale vzhled může klamat.");
 	};
 };

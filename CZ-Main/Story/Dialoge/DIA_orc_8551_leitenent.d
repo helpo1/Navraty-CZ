@@ -82,7 +82,7 @@ func void dia_orc_8551_leitenent_hello_hram()
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_Hram_18_21");	//Dovnitř tě ale stejně nepustím.
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_Hello_Hram_18_22");	//Ale proč?
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_Hram_18_23");	//Skřeti ti nedůveřovat tolik aby tě Farrok pustil k velkému vůdci!
-	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_Hram_18_24");	//Pokud se člověk přesto pokusí vztoupit do paláce - skřeti ho zabít! Ulu-Mulu nepomůže!
+	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_Hram_18_24");	//Pokud se člověk přesto pokusí vstoupit do paláce - skřeti ho zabít! Ulu-Mulu nepomůže!
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_Hello_Hram_18_25");	//Možná, ale nemohl bys mě přece jen pustit?
 	AI_PlayAni(self,"T_NO");
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_Hram_18_26");	//Ne!
@@ -98,8 +98,8 @@ func void dia_orc_8551_leitenent_hello_hagtar()
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_Hello_HagTar_18_01");	//Mám zprávu od Hag-Tara!
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_Hello_Hram_18_02");	//Tak co? Pustíš mě dovnitř?
-	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_HagTar_18_03");	//Hmm... (přemýšlí) Já znát Hag-Tar - být velký bojivník.
-	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_Hram_18_04");	//Dóbrá, člověk jít dál! Ale opatrně!
+	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_HagTar_18_03");	//Hmm... (přemýšlí) Já znát Hag-Tar - být velký bojovník.
+	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_Hram_18_04");	//Dobrá, člověk jít dál! Ale opatrně!
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_Hello_Hram_18_05");	//Když rozhněvá Ur-Thralla - člověk zemřít. Ulu-Mulu nepomůže!
 
 	if(MIS_HeroOrcJoin == LOG_Running)
@@ -187,8 +187,8 @@ func void dia_orc_8551_leitenent_hellotwo_hagtar()
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_01");	//Mám zprávu od Hag-Tara!
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_02");	//Tak co? Pustíš mě dovnitř?
-	AI_Output(self,other,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_03");	//Hmm... (přemýšlí) Já znát Hag-Tar - být velký bojivník.
-	AI_Output(self,other,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_04");	//Dóbrá, člověk jít dál! Ale opatrně!
+	AI_Output(self,other,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_03");	//Hmm... (přemýšlí) Já znát Hag-Tar - být velký bojovník.
+	AI_Output(self,other,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_04");	//Dobrá, člověk jít dál! Ale opatrně!
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_HelloTwo_HagTar_18_05");	//Když rozhněvá Ur-Thralla - člověk zemřít. Ulu-Mulu nepomůže!
 
 	if(MIS_HeroOrcJoin == LOG_Running)
@@ -256,7 +256,7 @@ func void DIA_Orc_8551_Leitenent_Respect_Info()
 	}
 	else if(ORCRESPECT >= 25)
 	{
-		AI_Output(self,other,"DIA_Orc_8551_Leitenent_Respect_01_07");	//(s politováním) Bratři zatím nevideli člověk dost na to aby vědeli jestli mu mohou důvěřovat.
+		AI_Output(self,other,"DIA_Orc_8551_Leitenent_Respect_01_07");	//(s politováním) Bratři zatím neviděli člověk dost na to aby věděli jestli mu mohou důvěřovat.
 		AI_Output(self,other,"DIA_Orc_8551_Leitenent_Respect_01_08");	//Člověk se musí více projevit!
 	}
 	else
@@ -326,11 +326,11 @@ func void DIA_Orc_8551_Leitenent_DeadHead_Info()
 {
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_DeadHead_01_01");	//A ty sám pro mě nemáš nějakou práci?
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_DeadHead_01_02");	//Člověk chce získat respekt Farrok? (uznale) No dobře, dát mu úkol.
-	AI_Output(self,other,"DIA_Orc_8551_Leitenent_DeadHead_01_03");	//Člověk přinést trofej od nepřítele skřetů. Jedine tak získat uznání.
+	AI_Output(self,other,"DIA_Orc_8551_Leitenent_DeadHead_01_03");	//Člověk přinést trofej od nepřítele skřetů. Jedině tak získat uznání.
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_DeadHead_01_04");	//A co to má být?
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_DeadHead_01_05");	//(zamyšleně) Například hlava válečníka lidí! Nebo ucho...
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_DeadHead_01_06");	//Ale musí být čerstvé... Nenosit pro Farrok shnilý kus masa!
-	AI_Output(other,self,"DIA_Orc_8551_Leitenent_DeadHead_01_07");	//A neco méně krvelačného?
+	AI_Output(other,self,"DIA_Orc_8551_Leitenent_DeadHead_01_07");	//A něco méně krvelačného?
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_DeadHead_01_08");	//Člověk to nedokáže, přesto se ptá.
 	AI_Output(self,other,"DIA_Orc_8551_Leitenent_DeadHead_01_09");	//Rozhodnout sám... jestli chtít respekt Farrok nebo ne!
 	AI_Output(other,self,"DIA_Orc_8551_Leitenent_DeadHead_01_10");	//Budu o tom přemýšlet.

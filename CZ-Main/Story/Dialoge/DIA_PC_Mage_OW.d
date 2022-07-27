@@ -453,7 +453,7 @@ func void dia_miltenow_cassia_info()
 	AI_Output(other,self,"DIA_Milten_Cassia_15_00");	//Asi bys nevěděl, kde je klíč od skladiště paladinů?
 	AI_Output(self,other,"DIA_Milten_Cassia_03_01");	//Jsi snad nějaký zloděj? No, stejně bys toho moc neodnesl.
 	AI_Output(self,other,"DIA_Milten_Cassia_03_02");	//Jednoho krásného dne se Engor šel projít na čerstvý vzduch a ten klíč ztratil - prostě se vrátil bez něj.
-	AI_Output(self,other,"DIA_Milten_Cassia_03_03");	//Myslím, že Garnod dříve nebo později dá ty dveře vyrazit a Engor je bude muset spravit.
+	AI_Output(self,other,"DIA_Milten_Cassia_03_03");	//Myslím, že Garond dříve nebo později dá ty dveře vyrazit a Engor je bude muset spravit.
 	AI_Output(self,other,"DIA_Milten_Cassia_03_04");	//Jo, ještě něco...
 	AI_Output(self,other,"DIA_Milten_Cassia_03_05");	//Jestli ten klíč najdeš, hoď ho do Engorova pokoje.
 	AI_Output(self,other,"DIA_Milten_Cassia_03_06");	//Bude to tak lepší, když ho najde.
@@ -483,7 +483,7 @@ func int DIA_MiltenOW_TeachCircle2_Condition()
 
 func void DIA_MiltenOW_TeachCircle2_Info()
 {
-	AI_Output(other,self,"DIA_Milten_Add_15_00");	//Nauč mě druhý kruh magie!
+	AI_Output(other,self,"DIA_Milten_Add_15_00");	//Nauč mě druhý kruh magie.
 	AI_Output(self,other,"DIA_Milten_Add_03_01");	//Většinou to je privilegium vyhrazené učitelům našeho řádu.
 	AI_Output(self,other,"DIA_Milten_Add_03_02");	//Ale myslím, že v tomto případě můžeme udělat výjimku...
 
@@ -685,10 +685,10 @@ func int DIA_MiltenOW_Baby_Condition()
 func void DIA_MiltenOW_Baby_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Baby_01_00");	//Mám pro tebe zvláštní prosbu.
-	AI_Output(self,other,"DIA_MiltenOW_Baby_01_01");	//Tak mluv, víš pro kamaráda udělám vždy co bude v mích silách.
+	AI_Output(self,other,"DIA_MiltenOW_Baby_01_01");	//Tak mluv, víš pro kamaráda udělám vždy co bude v mých silách.
 	AI_Output(other,self,"DIA_MiltenOW_Baby_01_02");	//Jeden chlápek z hradu... mě požádal, abych tě požádal, abys vyčaroval ženu pro něj a jeho kamarády.
 	AI_Output(other,self,"DIA_MiltenOW_Baby_01_03");	//No víš co tím myslím.
-	AI_Output(self,other,"DIA_MiltenOW_Baby_01_04");	//(zmatený) Po pravdě řečeno bych od tebe nečekal takový zvěrstva.
+	AI_Output(self,other,"DIA_MiltenOW_Baby_01_04");	//(zmatený) Po pravdě řečeno, od tebe bych nečekal takový zvěrstva.
 	AI_Output(other,self,"DIA_MiltenOW_Baby_01_05");	//Takže jim můžeš pomoct?
 	AI_Output(self,other,"DIA_MiltenOW_Baby_01_06");	//No... Já jsem v takových případech... ne příliš zkušený. Ale když se ptáš, zkusím něco vymyslet.
 	AI_Output(other,self,"DIA_MiltenOW_Baby_01_07");	//Vynikající! Jsem si jistý že kluci budou prostě přešťastný. Kdy to bude?
@@ -719,12 +719,12 @@ func int DIA_MiltenOW_Baby_Done_Condition()
 func void DIA_MiltenOW_Baby_Done_Info()
 {
 	AI_Output(other,self,"DIA_MiltenOW_Baby_Done_01_00");	//Všechno připraveno?
-	AI_Output(self,other,"DIA_MiltenOW_Baby_Done_01_01");	//Ano, všechny přípravky jsou dokončeny. Zbývá jen přečíst kouzlo.
+	AI_Output(self,other,"DIA_MiltenOW_Baby_Done_01_01");	//Ano, všechny přípravy jsou dokončeny. Zbývá jen přečíst kouzlo.
 	AI_Output(other,self,"DIA_MiltenOW_Baby_Done_01_02");	//Tak ho přečti.
-	AI_Output(self,other,"DIA_MiltenOW_Baby_Done_01_03");	//Je lepší to udělat takhle protože musím udržovat koncentraci během toho všeho.
-	AI_Output(self,other,"DIA_MiltenOW_Baby_Done_01_04");	//Tady, vem si tenhle svitek, mluví za vše.
+	AI_Output(self,other,"DIA_MiltenOW_Baby_Done_01_03");	//Raději ho přečti ty protože během toho všeho musím udržovat koncentraci.
+	AI_Output(self,other,"DIA_MiltenOW_Baby_Done_01_04");	//Tady, vem si tenhle svitek, všechno je v něm napsáno.
 	B_GiveInvItems(self,other,ItWr_MiltenSummon,1);
-	AI_Output(other,self,"DIA_MiltenOW_Baby_Done_01_05");	//Dobře, pojď sem.
+	AI_Output(other,self,"DIA_MiltenOW_Baby_Done_01_05");	//Dobře, dej ho sem.
 	Info_ClearChoices(DIA_MiltenOW_Baby_Done);
 	Info_AddChoice(DIA_MiltenOW_Baby_Done,"Použít svitek...",DIA_MiltenOW_Baby_Done_Do);
 };
@@ -736,7 +736,7 @@ func void DIA_MiltenOW_Baby_Done_Do()
 	B_HeroUseFakeScroll();
 	MIS_BrutusBaby = LOG_Success;
 	Log_SetTopicStatus(TOPIC_BrutusBaby,LOG_Success);
-	B_LogEntry(TOPIC_BrutusBaby,"Vypadá to že Milten něco zpackal v kouzle. Místo krásných dívek uprostřed obrovského pentagramu se objevil arcidémon. Nicméně je to neškodné.");
+	B_LogEntry(TOPIC_BrutusBaby,"Vypadá to že Milten něco zpackal. Místo krásných dívek uprostřed obrovského pentagramu se objevil arcidémon. Nicméně je neškodný.");
 	MiltenSummon = TRUE;
 	AI_StopProcessInfos(self);
 	Wld_InsertNpc(Demon_Lord_Milten,"OC_MAGE_CENTER");

@@ -403,7 +403,7 @@ func void DIA_Constantino_LostKey_Info()
 	MIS_Constantino_LostKey = LOG_Running;
 	Log_CreateTopic(TOPIC_Constantino_LostKey,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Constantino_LostKey,LOG_Running);
-	B_LogEntry(TOPIC_Constantino_LostKey,"Při cestě z města Constatino ztratil klíč. Je pravda, že neřekl kudy ta cesta vedla.");
+	B_LogEntry(TOPIC_Constantino_LostKey,"Při cestě z města Constantino ztratil klíč. Je pravda, že neřekl kudy ta cesta vedla.");
 };
 
 instance DIA_Constantino_LostKeyDone(C_Info)
@@ -482,7 +482,7 @@ func void DIA_Constantino_HerbsRunning_Info()
 	AI_Output(other,self,"DIA_Constantino_HerbsRunning_15_00");	//Co se týče těch rostlin...
 	AI_Output(self,other,"DIA_Constantino_HerbsRunning_10_01");	//Jestli to nezvládneš sám, nikdy z tebe pořádný alchymista nebude!
 	Info_ClearChoices(DIA_Constantino_HerbsRunning);
-	Info_AddChoice(DIA_Constantino_HerbsRunning,"Uvidím.",DIA_Constantino_HerbsRunning_Running);
+	Info_AddChoice(DIA_Constantino_HerbsRunning,"Aha.",DIA_Constantino_HerbsRunning_Running);
 	if((Npc_HasItems(other,ItPl_Mana_Herb_01) > 0) && (Npc_HasItems(other,ItPl_Mana_Herb_02) > 0) && (Npc_HasItems(other,ItPl_Mana_Herb_03) > 0) && (Npc_HasItems(other,ItPl_Health_Herb_01) > 0) && (Npc_HasItems(other,ItPl_Health_Herb_02) > 0) && (Npc_HasItems(other,ItPl_Health_Herb_03) > 0) && (Npc_HasItems(other,ItPl_Dex_Herb_01) > 0) && (Npc_HasItems(other,ItPl_Strength_Herb_01) > 0) && (Npc_HasItems(other,ItPl_Speed_Herb_01) > 0) && (Npc_HasItems(other,ItPl_Temp_Herb) > 0) && (Npc_HasItems(other,ItPl_Perm_Herb) > 0))
 	{
 		Info_AddChoice(DIA_Constantino_HerbsRunning,"Už jsem sehnal všechny rostliny, které jsem ti měl přinést!",DIA_Constantino_HerbsRunning_Success);
@@ -661,7 +661,7 @@ func void DIA_Constantino_LEHRLING_Yes()
 	AI_Output(other,self,"DIA_Constantino_LEHRLING_Yes_15_00");	//Ano, mistře.
 	AI_Output(self,other,"DIA_Constantino_LEHRLING_Yes_10_01");	//(povzdechne si) No tak dobře! Doufám, že svého rozhodnutí nebudu litovat.
 	AI_Output(self,other,"DIA_Constantino_LEHRLING_Yes_10_02");	//Od téhle chvíle se tedy považuj za mého učedníka.
-	AI_Output(self,other,"DIA_Constantino_LEHRLING_Yes_10_05");	//Tady, vem si tyhle šaty. Aspoň budeš vypadat jako alchymista
+	AI_Output(self,other,"DIA_Constantino_LEHRLING_Yes_10_05");	//Tady, vem si tyhle šaty. Aspoň budeš vypadat jako alchymista.
 	B_GiveInvItems(self,other,itar_alchemy_nov,1);
 	AI_Output(self,other,"DIA_Constantino_LEHRLING_Yes_10_06");	//A je to lepší, než ty cáry co nosíš teď!
 	Player_IsApprentice = APP_Constantino;
@@ -674,7 +674,7 @@ func void DIA_Constantino_LEHRLING_Yes()
 	MIS_Apprentice = LOG_SUCCESS;
 	Log_CreateTopic(Topic_Bonus,LOG_NOTE);
 	B_LogEntry_Quiet(Topic_Bonus,"Constantino mě přijal za učedníka. Teď mám přístup do horní čtvrti města.");
-	AI_Output(self,other,"DIA_Constantino_LEHRLING_Yes_10_03");	//A ještě jedna věc. Když jsi teď můj žák, můžu tě naučit zdarma přípravu jednoho lektvaru, ale jen jednoho!
+	AI_Output(self,other,"DIA_Constantino_LEHRLING_Yes_10_03");	//A ještě jedna věc. Když jsi teď můj učedník, můžu tě naučit zdarma přípravu jednoho lektvaru, ale jen jednoho!
 	AI_Output(self,other,"DIA_Constantino_LEHRLING_Yes_10_04");	//Takže máš na výběr, který z nich to bude?
 	Info_ClearChoices(DIA_Constantino_LEHRLING);
 
@@ -697,11 +697,11 @@ func void dia_constantino_lehrling_heal()
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_01");	//Tak dobrá. Hezky od začátku.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_02");	//Každý lektvar je dělán z rostlin - a každé dosahují různých možností využití.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_03");	//Tohle začínají být trochu složitější formule.
-	AI_Output(self,other,"DIA_Constantino_Alchemy_10_04");	//K přípravě lektvaru u Alchymistické kolony potřebuješ laboratorní lahvičku.
+	AI_Output(self,other,"DIA_Constantino_Alchemy_10_04");	//K přípravě lektvaru u alchymistické kolony potřebuješ laboratorní lahvičku.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_05");	//Musíš znát recept na jeho přípravu a také mít u sebe příslušné ingredience.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_06");	//Můžu tě několik formulí naučit, jestli chceš.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_07");	//Naučím tě lektvary, které obnoví tvou ztracenou výdrž ale také ty, které zvýší tvou sílu trvale.
-	AI_Output(self,other,"DIA_Constantino_Alchemy_10_08");	//Můžu tě to naučit všechno najednou
+	AI_Output(self,other,"DIA_Constantino_Alchemy_10_08");	//Můžu tě to naučit všechno najednou.
 	Constantino_TeachAlchemy = TRUE;
 	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
 	B_LogEntry(TOPIC_CityTeacher,"Constantino mě zasvětí do tajů alchymie.");
@@ -719,11 +719,11 @@ func void dia_constantino_lehrling_mana()
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_01");	//Tak dobrá. Hezky o začátku.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_02");	//Každý lektvar je dělán z rostlin - a každé dosahují různých možností využití.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_03");	//Tohle začínají být trochu složitější formule.
-	AI_Output(self,other,"DIA_Constantino_Alchemy_10_04");	//K přípravě lektvaru u Alchymistické kolony potřebuješ laboratorní lahvičku.
+	AI_Output(self,other,"DIA_Constantino_Alchemy_10_04");	//K přípravě lektvaru u alchymistické kolony potřebuješ laboratorní lahvičku.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_05");	//Musíš znát recept na jeho přípravu a také mít u sebe příslušné ingredience.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_06");	//Můžu tě několik formulí naučit, jestli chceš.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_07");	//Naučím tě lektvary, které obnoví tvou ztracenou výdrž ale také ty, které zvýší tvou sílu trvale.
-	AI_Output(self,other,"DIA_Constantino_Alchemy_10_08");	//Můžu tě to naučit všechno najednou
+	AI_Output(self,other,"DIA_Constantino_Alchemy_10_08");	//Můžu tě to naučit všechno najednou.
 	Constantino_TeachAlchemy = TRUE;
 	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
 	B_LogEntry(TOPIC_CityTeacher,"Constantino mě zasvětí do tajů alchymie.");
@@ -741,11 +741,11 @@ func void dia_constantino_lehrling_speed()
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_01");	//Tak dobrá. Hezky o začátku.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_02");	//Každý lektvar je dělán z rostlin - a každé dosahují různých možností využití.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_03");	//Tohle začínají být trochu složitější formule.
-	AI_Output(self,other,"DIA_Constantino_Alchemy_10_04");	//K přípravě lektvaru u Alchymistické kolony potřebuješ laboratorní lahvičku.
+	AI_Output(self,other,"DIA_Constantino_Alchemy_10_04");	//K přípravě lektvaru u alchymistické kolony potřebuješ laboratorní lahvičku.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_05");	//Musíš znát recept na jeho přípravu a také mít u sebe příslušné ingredience.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_06");	//Můžu tě několik formulí naučit, jestli chceš.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_07");	//Naučím tě lektvary, které obnoví tvou ztracenou výdrž ale také ty, které zvýší tvou sílu trvale.
-	AI_Output(self,other,"DIA_Constantino_Alchemy_10_08");	//Můžu tě to naučit všechno najednou
+	AI_Output(self,other,"DIA_Constantino_Alchemy_10_08");	//Můžu tě to naučit všechno najednou.
 	Constantino_TeachAlchemy = TRUE;
 	Log_CreateTopic(TOPIC_CityTeacher,LOG_NOTE);
 	B_LogEntry(TOPIC_CityTeacher,"Constantino mě zasvětí do tajů alchymie.");
@@ -817,14 +817,14 @@ func void DIA_Constantino_AlsLehrling_Info()
 	else if((other.guild == GIL_KDW) && (Constantino_KDWKommentar == FALSE))
 	{
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_13");	//Kruh následovníků Adana je na Khorinisu velmi úzký. Patří k těm mágům, kteří mají cenné znalosti i v oblasti alchymie.
-		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_14");	//Nezapomeň, že jsi stále mým žákem. Můžeš se stát mágem Vody, ale nezapomínej na hledání hub. 
+		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_14");	//Nezapomeň, že jsi stále mým učedníkem. Můžeš se stát mágem Vody, ale nezapomínej na hledání hub. 
 		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_15");	//A ano, podle pověstí může mág snadno překonat lesní kočky a vyvrácené kořeny, pokud si přidrží plášť nad zemí.
 
 		Constantino_KDWKommentar = TRUE;
 	}
 	else if((Constantino_SEKKommentar == FALSE) && ((other.guild == GIL_TPL) || (other.guild == GIL_GUR) || (other.guild == GIL_SEK)))
 	{
-		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_16");	//Nemůžu uvěřit, že jsi vstoupil do té sekty! Myslel jsem, že můj student pobral trochu rozumu.
+		AI_Output(self,other,"DIA_Constantino_AlsLehrling_10_16");	//Nemůžu uvěřit, že jsi vstoupil do té sekty! Myslel jsem, že můj učedník pobral trochu rozumu.
 
 		if(other.guild == GIL_TPL)
 		{
@@ -1384,7 +1384,7 @@ func void DIA_Constantino_MushroomsRunning_Why()
 		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Why_10_03");	//Tmavé houby jsou plné magické energie a pokaždé, když některou sníš, se ti část její síly usadí v těle.
 		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Why_10_04");	//Sníš-li dostatečný počet těchto hub, tvá magická energie se zvýší.
 		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Why_10_05");	//Kdybych ti to řekl dříve, nejspíš by sis všechny houby křečkoval pro sebe, viď?
-		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Why_10_06");	//A proto jsou ty houby pro mě tak důleřité! Otázky...?
+		AI_Output(self,other,"DIA_Constantino_MushroomsRunning_Why_10_06");	//A proto jsou ty houby pro mě tak důležité! Otázky...?
 		Player_KnowsDunkelpilzBonus = TRUE;
 		Info_ClearChoices(DIA_Constantino_MushroomsRunning);
 	}
@@ -1427,23 +1427,23 @@ func int DIA_Constantino_Alchemy_Condition()
 func void DIA_Constantino_Alchemy_Info()
 {
 	AI_Output(other,self,"DIA_Constantino_Alchemy_15_00");	//Nauč mě alchymistickému umění!
-	AI_Output(self,other,"DIA_Constantino_Alchemy_10_01");	//Tak dobrá. Hezky o začátku.
+	AI_Output(self,other,"DIA_Constantino_Alchemy_10_01");	//Tak dobrá. Hezky od začátku.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_02");	//Každý lektvar je dělán z rostlin - a každé dosahují různých možností využití.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_03");	//Tohle začínají být trochu složitější formule.
-	AI_Output(self,other,"DIA_Constantino_Alchemy_10_04");	//K přípravě lektvaru u Alchymistické kolony potřebuješ laboratorní lahvičku.
+	AI_Output(self,other,"DIA_Constantino_Alchemy_10_04");	//K přípravě lektvaru u alchymistické kolony potřebuješ laboratorní lahvičku.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_05");	//Musíš znát recept na jeho přípravu a také mít u sebe příslušné ingredience.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_06");	//Můžu tě několik formulí naučit, jestli chceš.
 	AI_Output(self,other,"DIA_Constantino_Alchemy_10_07");	//Naučím tě lektvary, které obnoví tvou ztracenou výdrž ale také ty, které zvýší tvou sílu trvale.
-	AI_Output(self,other,"DIA_Constantino_Alchemy_10_08");	//Můžu tě to naučit všechno najednou
+	AI_Output(self,other,"DIA_Constantino_Alchemy_10_08");	//Můžu tě to naučit všechno najednou.
 
 	if((MIS_MyBrew == FALSE) && (MIS_Serpentes_BringSalandril_SLD != LOG_SUCCESS))
 	{
-		AI_Output(self,other,"DIA_Constantino_Alchemy_10_09");	//Ještě tě začnu učit, chci, abys pro mě něco udělal.
+		AI_Output(self,other,"DIA_Constantino_Alchemy_10_09");	//Než tě začnu učit, chci, abys pro mě něco udělal.
 		AI_Output(other,self,"DIA_Constantino_Alchemy_10_10");	//Co přesně?
 		AI_Output(self,other,"DIA_Constantino_Alchemy_10_11");	//Budeš si pro sebe muset připravit jeden jednoduchý lektvar.
 		AI_Output(self,other,"DIA_Constantino_Alchemy_10_12");	//Jeho složení je poměrně jednoduché. Samotný lektvar má však velmi zajímavé účinky. Vezmi si tento recept.
 		B_GiveInvItems(self,other,ItWr_ConstRecept,1);
-		AI_Output(self,other,"DIA_Constantino_Alchemy_10_14");	//Jakmile ho dovaříš, vrať se k mě a začnu tě učit umění alchymie.
+		AI_Output(self,other,"DIA_Constantino_Alchemy_10_14");	//Jakmile ho dovaříš, vrať se ke mě a začnu tě učit umění alchymie.
 		MIS_MyBrew = LOG_Running;
 		Log_CreateTopic(TOPIC_MyBrew,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_MyBrew,LOG_Running);
@@ -1483,12 +1483,12 @@ func void DIA_Constantino_NewRecipes_Info()
 
 	if((MIS_MyBrew == FALSE) && (MIS_Serpentes_BringSalandril_SLD != LOG_SUCCESS))
 	{
-		AI_Output(self,other,"DIA_Constantino_NewRecipes_10_05");	//Ještě tě začnu učit, chci, abys pro mě něco udělal.
+		AI_Output(self,other,"DIA_Constantino_NewRecipes_10_05");	//Než tě začnu učit, chci, abys pro mě něco udělal.
 		AI_Output(other,self,"DIA_Constantino_NewRecipes_10_06");	//Co přesně?
 		AI_Output(self,other,"DIA_Constantino_NewRecipes_10_07");	//Budeš si pro sebe muset připravit jeden jednoduchý lektvar.
 		AI_Output(self,other,"DIA_Constantino_NewRecipes_10_08");	//Jeho složení je poměrně jednoduché. Samotný lektvar má však velmi zajímavé účinky. Vezmi si tento recept.
 		B_GiveInvItems(self,other,ItWr_ConstRecept,1);
-		AI_Output(self,other,"DIA_Constantino_NewRecipes_10_10");	//Jakmile ho dovaříš, vrať se k mě a začnu tě učit umění alchymie.
+		AI_Output(self,other,"DIA_Constantino_NewRecipes_10_10");	//Jakmile ho dovaříš, vrať se ke mě a začnu tě učit umění alchymie.
 		MIS_MyBrew = LOG_Running;
 		Log_CreateTopic(TOPIC_MyBrew,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_MyBrew,LOG_Running);
@@ -1589,7 +1589,7 @@ func void DIA_Constantino_TEACH_Health02()
 	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Health_02))
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_Health02_10_00");	//K přípravě extraktu hojivé síly si musíš opatřit léčivé byliny a luční pohanku.
-		AI_Output(self,other,"DIA_Constantino_TEACH_Health02_10_01");	//A dej si pozor, abys ten extrakt správně povařil
+		AI_Output(self,other,"DIA_Constantino_TEACH_Health02_10_01");	//A dej si pozor, abys ten extrakt správně povařil.
 	};
 	Info_ClearChoices(DIA_Constantino_TEACH);
 };
@@ -1618,7 +1618,7 @@ func void DIA_Constantino_TEACH_Mana01()
 {
 	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Mana_01))
 	{
-		AI_Output(self,other,"DIA_Constantino_TEACH_Mana01_10_00");	//Esence magie je nejjednodušším z magických lektvarů.
+		AI_Output(self,other,"DIA_Constantino_TEACH_Mana01_10_00");	//Esence many je nejjednodušším z magických lektvarů.
 		AI_Output(self,other,"DIA_Constantino_TEACH_Mana01_10_01");	//Natrhej pět ohnivých kopřiv, luční pohanku a vše pomalu povař.
 	};
 	Info_ClearChoices(DIA_Constantino_TEACH);
@@ -1628,8 +1628,8 @@ func void dia_constantino_teach_speed()
 {
 	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Speed))
 	{
-		AI_Output(self,other,"DIA_Constantino_TEACH_Speed_10_00");	//Přípravě lektvaru rychlosti je velmi jednoduchá
-		AI_Output(self,other,"DIA_Constantino_TEACH_Speed_10_01");	//Potřebuješ akorát Chňapavčí býlí a poté ji nechatl lehce povařit.
+		AI_Output(self,other,"DIA_Constantino_TEACH_Speed_10_00");	//Příprava lektvaru rychlosti je velmi jednoduchá.
+		AI_Output(self,other,"DIA_Constantino_TEACH_Speed_10_01");	//Potřebuješ akorát chňapavčí býlí a poté ji nechat lehce povařit.
 	};
 	Info_ClearChoices(DIA_Constantino_TEACH);
 };
@@ -1638,7 +1638,7 @@ func void DIA_Constantino_TEACH_Mana02()
 {
 	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Mana_02))
 	{
-		AI_Output(self,other,"DIA_Constantino_TEACH_Mana02_10_00");	//Jakmile dovedeš připravit esenci magie, s trochou úsilí bys měl dokázat vyrobit i její extrakt.
+		AI_Output(self,other,"DIA_Constantino_TEACH_Mana02_10_00");	//Jakmile dovedeš připravit esenci many, s trochou úsilí bys měl dokázat vyrobit i její extrakt.
 		AI_Output(self,other,"DIA_Constantino_TEACH_Mana02_10_01");	//Při přípravě tohoto elixíru stačí mít trošku citu a nechat ho jemně přejít varem. Jeho ingredience tvoří ohnivé kopřivy a luční pohanka.
 	};
 	Info_ClearChoices(DIA_Constantino_TEACH);
@@ -1649,7 +1649,7 @@ func void DIA_Constantino_TEACH_PermSTR()
 	if(B_TeachPlayerTalentAlchemy(self,other,POTION_Perm_STR))
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_PermSTR_10_00");	//Elixír síly! Výtečný to mok! K jeho namíchání však potřebuješ vzácný dračí kořen a ještě vzácnější královský šťovík.
-		AI_Output(self,other,"DIA_Constantino_TEACH_PermSTR_10_01");	//Při varu pak dávej pozor, aby bublinky nebyly příliš velké a nedočkal ses pak nemilého překvapení!
+		AI_Output(self,other,"DIA_Constantino_TEACH_PermSTR_10_01");	//Při varu pak dávej pozor, aby bublinky nebyly příliš velké a nedočkal ses pak nemilého překvapení.
 	};
 	Info_ClearChoices(DIA_Constantino_TEACH);
 };
@@ -1659,7 +1659,7 @@ func void dia_constantino_teach_stamina()
 	if(B_TeachPlayerTalentAlchemy(self,other,POTION_STAMINA))
 	{
 		AI_Output(self,other,"DIA_Constantino_TEACH_Stamina_10_00");	//Lektvar výdrže! Ten ti pomůže zregenerovat tvoji únavu a vrátit ti sílu.
-		AI_Output(self,other,"DIA_Constantino_TEACH_Stamina_10_02");	//Potstupně lektvar veď k varu až na potřebnou teplotu, a poté ho rychle zchlaď. A to je celé tajemství.
+		AI_Output(self,other,"DIA_Constantino_TEACH_Stamina_10_02");	//Postupně lektvar veď k varu až na potřebnou teplotu, a poté ho rychle zchlaď. A to je celé tajemství.
 	};
 	Info_ClearChoices(DIA_Constantino_TEACH);
 };
@@ -1668,8 +1668,8 @@ func void dia_constantino_teach_perm_stamina()
 {
 	if(B_TeachPlayerTalentAlchemy(self,other,POTION_PERM_STAMINA))
 	{
-		AI_Output(self,other,"DIA_Constantino_TEACH_Perm_Stamina_10_00");	//Elixír výdrže - Velmi užitečný lektvar! Příprava ovšem není tak jednoduchá!
-		AI_Output(self,other,"DIA_Constantino_TEACH_Perm_Stamina_10_02");	//Základní tajemství ve výrobě tohoto lektvaru je, přesné načasování sejmutí vývaru z ohně
+		AI_Output(self,other,"DIA_Constantino_TEACH_Perm_Stamina_10_00");	//Elixír výdrže - velmi užitečný lektvar! Příprava ovšem není tak jednoduchá!
+		AI_Output(self,other,"DIA_Constantino_TEACH_Perm_Stamina_10_02");	//Základní tajemství ve výrobě tohoto lektvaru je přesné načasování sejmutí vývaru z ohně.
 		AI_Output(self,other,"DIA_Constantino_TEACH_Perm_Stamina_10_03");	//Prošvihneš to, a můžeš začít znovu!
 	};
 	Info_ClearChoices(DIA_Constantino_TEACH);
@@ -1701,20 +1701,20 @@ func void dia_constantino_receptfortyon_info()
 	AI_Output(other,self,"DIA_Constantino_ReceptForTyon_01_03");	//Už jsi o něm někdy slyšel?
 	if(Player_IsApprentice == APP_Constantino)
 	{
-		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_04");	//A proč se můj žák zabývá takovými věcmi?
+		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_04");	//A proč se můj učedník zabývá takovými věcmi?
 		AI_Output(other,self,"DIA_Constantino_ReceptForTyon_01_06");	//Jako alchymista - začátečník mám velký zájem o různé zvláštní druhy elixírů. Samozřejmě, jen abych poznal jejich neobvyklé vlastnosti.
 		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_07");	//Ha!... (nadšeně) Tvoje vášeň k poznání tajemství alchymie mě překvapuje...
 		AI_Output(other,self,"DIA_Constantino_ReceptForTyon_01_08");	//Řekneš mi tedy o tomhle lektvaru?
 		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_09");	//No... (zamyslí se) Ano, o tomto elixíru jsem už slyšel. Skutečně má řadu velmi neobvyklých alchymistických vlastností.
 		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_10");	//Ztrátu vědomí - to umí jen tento. Má vlastnost, měnit v lidském těle své skupenství a poté se úplně vytratit z lidského těla.
 		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_11");	//A také je třeba zmínit, že příprava tohoto lektvaru je velmi složitá, a zvládne ji jenom hodně zkušený alchymista.
-		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_12");	//A k tomu všemu, k jeho výrobě je zapotřebí opravdu vzácné byliny
+		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_12");	//A k tomu všemu, k jeho výrobě je zapotřebí opravdu vzácné byliny.
 		AI_Output(other,self,"DIA_Constantino_ReceptForTyon_01_13");	//A ty jeho recept znáš?
 		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_14");	//To rozhodně ne!... říkal jsem, že jsem o tom elixíru pouze slyšel, neříkal jsem, že znám recept na jeho přípravu.
 		AI_Output(other,self,"DIA_Constantino_ReceptForTyon_01_15");	//A kdo by mohl ten recept znát?
 		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_16");	//Zaslechl jsem, že by ten recept mohli mít mágové Ohně!
 		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_17");	//Nicméně, jak asi chápeš, jsou to jen klepy. A mágové se navíc o takový recept nehodlají dělit.
-		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_20");	//Pokud by se ti ale přes všechny trápoty podařilo získat ten recept, by bych potěšen. Rád bych se na něj aspoň jednou v životě podíval
+		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_20");	//Pokud by se ti ale přes všechny trápoty podařilo získat ten recept, byl bych potěšen. Rád bych se na něj aspoň jednou v životě podíval.
 		AI_Output(self,other,"DIA_Constantino_ReceptForTyon_01_21");	//Ale mezi námi, tento rozhovor vůbec neproběhl! Doufám, že vís co tím myslím.
 		KNOWABOUTRECEPTFORTYON = TRUE;
 		CONSTANTINOWANTSRECEPTFORTYON = TRUE;
@@ -1790,14 +1790,14 @@ func void dia_constantino_poisonneed_info()
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_01");	//Hej! Počkej chvíli... (efektně) Ještě bych si rád o něčem promluvil.
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_03");	//Podívej, vidím, že se dobře vyznáš v cestování na různá místa.
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_04");	//A krom toho, není nadarmo si tím získat i pár mincí, nemám pravdu?!
-	AI_Output(other,self,"DIA_Constantino_PoisonNeed_01_05");	//Jistě! Zlato člověk nikdy nedmítne. (skrytě ironicky)
+	AI_Output(other,self,"DIA_Constantino_PoisonNeed_01_05");	//Jistě! Zlato člověk nikdy neodmítne. (skrytě ironicky)
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_06");	//Já si myslím... (usmívá se) Tak potom bych ti mohl nabídnout zajímavou prácičku, co říkáš?
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_07");	//A také si tím u mě zajistíš respekt!
-	AI_Output(other,self,"DIA_Constantino_PoisonNeed_01_08");	//Tak už k věci! Co byste rád?
+	AI_Output(other,self,"DIA_Constantino_PoisonNeed_01_08");	//Tak už k věci! Co bys rád?
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_09");	//Hele, pro můj další experiment potřebuju jednu zvláštní přísadu.
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_10");	//Je to opravdu unikátní ingredience, a proto je taky těžko k sehnání!
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_13");	//No... (potí se) Zní to trochu nezvykle, ale potřebuji, abys mi sehnal nějaký velmi prudký jed!
-	AI_Output(other,self,"DIA_Constantino_PoisonNeed_01_14");	//Chcete někoho otrávit?!
+	AI_Output(other,self,"DIA_Constantino_PoisonNeed_01_14");	//Chceš někoho otrávit?!
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_15");	//U Innose! To ne... (nervózně) To nepřipadá v úvahu!
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_16");	//Prostě. Dostal se mi do rukou recept, který tento typ jedu ke své výrobě vyžaduje.
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_01_17");	//A já ani nemám ponětí, kde bych to měl hledat. Ale jsem si jistý, že ty už určitě budeš vědět.
@@ -1822,7 +1822,7 @@ func void dia_constantino_poisonneed_ok()
 func void dia_constantino_poisonneed_no()
 {
 	AI_Output(other,self,"DIA_Constantino_PoisonNeed_No_01_01");	//Ne, to rozhodně nepůjde!
-	AI_Output(other,self,"DIA_Constantino_PoisonNeed_No_01_02");	//Budete se muset podívat po nějakém jiném bláznovi.
+	AI_Output(other,self,"DIA_Constantino_PoisonNeed_No_01_02");	//Budeš se muset podívat po nějakém jiném bláznovi.
 	AI_Output(self,other,"DIA_Constantino_PoisonNeed_No_01_03");	//Eh... (naštvaně) Dobrá tedy, jak myslíš!
 	AI_StopProcessInfos(self);
 };
@@ -1856,11 +1856,11 @@ func void dia_constantino_poisonneedok_info()
 	B_GiveInvItems(other,self,itpo_bloodflypoison,1);
 	Npc_RemoveInvItems(self,itpo_bloodflypoison,1);
 	AI_Output(self,other,"DIA_Constantino_PoisonNeedOk_01_04");	//Hmmm... (přemýšlí) No výborně! Myslím, že je čas dokončit to... (zamlouvá) no, ten experiment, že ano...
-	AI_Output(self,other,"DIA_Constantino_PoisonNeedOk_01_06");	//Zajisté! tady máš. mělo by to být dost za takovou prácičku.
+	AI_Output(self,other,"DIA_Constantino_PoisonNeedOk_01_06");	//Zajisté! Tady máš. Mělo by to být dost za takovou prácičku.
 	B_GiveInvItems(self,other,ItMi_Gold,300);
 	MIS_POISONNEED = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_POISONNEED,LOG_SUCCESS);
-	B_LogEntry(TOPIC_POISONNEED,"Přinesl jsem Constantinovi jeho jed, který žádal. byl z toho celý nadšený!");
+	B_LogEntry(TOPIC_POISONNEED,"Přinesl jsem Constantinovi jeho jed, který žádal. Byl z toho celý nadšený!");
 	AI_StopProcessInfos(self);
 	KILLHAPPENS = Wld_GetDay();
 };
@@ -1873,7 +1873,7 @@ instance DIA_CONSTANTINO_ABOUTKILLIGNAZ(C_Info)
 	condition = dia_constantino_aboutkillignaz_condition;
 	information = dia_constantino_aboutkillignaz_info;
 	permanent = FALSE;
-	description = "Víte něco o vraždě alchymisty Ignaze?";
+	description = "Víš něco o vraždě alchymisty Ignaze?";
 };
 
 
@@ -1888,16 +1888,16 @@ func int dia_constantino_aboutkillignaz_condition()
 func void dia_constantino_aboutkillignaz_info()
 {
 	B_GivePlayerXP(100);
-	AI_Output(other,self,"DIA_Constantino_AboutKillIgnaz_01_00");	//Víte něco o vraždě alchymisty Ignaze?
+	AI_Output(other,self,"DIA_Constantino_AboutKillIgnaz_01_00");	//Víš něco o vraždě alchymisty Ignaze?
 	AI_Output(self,other,"DIA_Constantino_AboutKillIgnaz_01_01");	//Omlouvám se, ale bohužel nic nevím... A ani nemám představu kdo by to mohl udělat. Proč se vlastně ptáš?!
 	AI_Output(other,self,"DIA_Constantino_AboutKillIgnaz_01_02");	//Já jen, že mi lord Andre sdělil, že toho ubohého starce někdo otrávil.
 	AI_Output(other,self,"DIA_Constantino_AboutKillIgnaz_01_03");	//A všechno tohle mě vede jedním směrem...
 	AI_Output(self,other,"DIA_Constantino_AboutKillIgnaz_01_04");	//Na co narážíš?!
-	AI_Output(other,self,"DIA_Constantino_AboutKillIgnaz_01_05");	//No, nedávno jste mě požádal, abych pro Vás sehnal nějaký velmi silný jed pro své experimenty.
-	AI_Output(self,other,"DIA_Constantino_AboutKillIgnaz_01_07");	//Ale přisáhám u innose... (nervózně) To bych nikdy neudělal!
+	AI_Output(other,self,"DIA_Constantino_AboutKillIgnaz_01_05");	//No, nedávno jsi mě požádal, abych pro tebe sehnal nějaký velmi silný jed pro své experimenty.
+	AI_Output(self,other,"DIA_Constantino_AboutKillIgnaz_01_07");	//Ale přisáhám u Innose... (nervózně) To bych nikdy neudělal!
 	AI_Output(self,other,"DIA_Constantino_AboutKillIgnaz_01_08");	//My jsme byli celkem dobří přátelé a samotného mě to dost rozrušilo.
 	AI_Output(self,other,"DIA_Constantino_AboutKillIgnaz_01_11");	//Nemám s tím nic společného!
-	B_LogEntry(TOPIC_KILLIGNAZ,"Alchymista Constantino nic neví o vraždě. Ale něco tu smrdí. Před několika dni jsem pro něj sháněl silný jed, prý pro svoje experimenty. To je dost silný důkaz...");
+	B_LogEntry(TOPIC_KILLIGNAZ,"Alchymista Constantino nic neví o vraždě. Ale něco tu smrdí. Před několika dny jsem pro něj sháněl silný jed, prý pro svoje experimenty. To je dost silný důkaz...");
 	ASKKILLFIRST = TRUE;
 };
 
@@ -1924,77 +1924,77 @@ func void dia_constantino_foundbottle_info()
 	B_GivePlayerXP(300);
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_01_00");	//Hele podívej, co jsem našel.
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_01_01");	//Eee... (dělá jakoby nic) A co je to?!
-	AI_Output(other,self,"DIA_Constantino_FoundBottle_01_02");	//Myslím, že víte. Řekl bych, že tato lahvička dříva patřila vám hm?!
+	AI_Output(other,self,"DIA_Constantino_FoundBottle_01_02");	//Myslím, že víš. Řekl bych, že tato lahvička dříva patřila tobě hm?!
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_01_03");	//Cože?!... (neklidně) To teda ne! To není moje!
-	AI_Output(other,self,"DIA_Constantino_FoundBottle_01_04");	//Ale já bych řekl že ano. Tato lahvička patřila vám, je od toho jedu a je otevřená, takže ji někdo použil!
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_01_05");	//Ale... (nervózně) Opravdu si myslíte, že jsem otrávil Ignaze?!
-	AI_Output(other,self,"DIA_Constantino_FoundBottle_01_06");	//Je jasné, že jste to byl Vy! A při první příležitosti informuji domobranu...
+	AI_Output(other,self,"DIA_Constantino_FoundBottle_01_04");	//Ale já bych řekl že ano. Tato lahvička patřila tobě, je od toho jedu a je otevřená, takže ji někdo použil!
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_01_05");	//Ale... (nervózně) Opravdu si myslíš, že jsem otrávil Ignaze?!
+	AI_Output(other,self,"DIA_Constantino_FoundBottle_01_06");	//Je jasné, že jsi to byl ty! A při první příležitosti informuji domobranu...
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_01_07");	//Ne! Prosím tě, nedělej to!... (panikaří) byl jsem donucen!
 	Info_ClearChoices(dia_constantino_foundbottle);
 	Info_AddChoice(dia_constantino_foundbottle,"Nahlásím tě lordu Andremu.",dia_constantino_foundbottle_prison);
-	Info_AddChoice(dia_constantino_foundbottle,"A jak to můžete dokázat?",dia_constantino_foundbottle_tellme);
+	Info_AddChoice(dia_constantino_foundbottle,"A jak to můžeš dokázat?",dia_constantino_foundbottle_tellme);
 };
 
 func void dia_constantino_foundbottle_prison()
 {
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_Prison_01_01");	//Nahlásím tě lordu Andremu.
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_Prison_01_02");	//No... (poraženě) Dělej co musíš! Ale věz, že děláš velkou chybu.
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_Prison_01_02");	//No... (poraženě) Dělej, co musíš! Ale věz, že děláš velkou chybu.
 	CONSTANTINOFUCKOFF = TRUE;
-	B_LogEntry(TOPIC_KILLIGNAZ,"Ha! Zdá se, že oním vrahem je Constantino. To on otrávil alchymistu Ignaze. Řekl bych, že je nutné ho nahlásit lordu Andremu.");
+	B_LogEntry(TOPIC_KILLIGNAZ,"Ha! Zdá se, že tím vrahem je Constantino. To on otrávil alchymistu Ignaze. Řekl bych, že je nutné ho nahlásit lordu Andremu.");
 	AI_StopProcessInfos(self);
 };
 
 func void dia_constantino_foundbottle_tellme()
 {
-	AI_Output(other,self,"DIA_Constantino_FoundBottle_TellMe_01_01");	//A jak to můžete dokázat?
+	AI_Output(other,self,"DIA_Constantino_FoundBottle_TellMe_01_01");	//A jak to můžeš dokázat?
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_TellMe_01_02");	//Je to prostě zajímavé, jak se ta věc mohla objevit zničeho nic u domu toho alchymisty.
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_TellMe_01_03");	//Věřte mi! nemám absolutně představu jak! (pot mu teče jak vodopády) Asi mi to musel někdo v noci ukrást
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_TellMe_01_03");	//Věř mi! Nemám absolutně představu jak! (pot mu teče jak vodopády) Asi mi to musel někdo v noci ukrást.
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_TellMe_01_04");	//A pak to hodit před Ignazův dům, aby to na mě hodil!
-	AI_Output(other,self,"DIA_Constantino_FoundBottle_TellMe_01_07");	//Zdá se, že Vaše alibi nejsou moc přesvědčivé.
+	AI_Output(other,self,"DIA_Constantino_FoundBottle_TellMe_01_07");	//Zdá se, že tvé alibi nejsou moc přesvědčivé.
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_TellMe_01_08");	//Ale já opravdu nic nevím! Nevím, kdo to mohl být a ani jak se tam ta lahvička dostala.
 	Info_ClearChoices(dia_constantino_foundbottle);
 	Info_AddChoice(dia_constantino_foundbottle,"Potom mi nedáváš na výběr.",dia_constantino_foundbottle_no);
-	Info_AddChoice(dia_constantino_foundbottle,"Tak se zkustě zamyslet líp!",dia_constantino_foundbottle_yes);
+	Info_AddChoice(dia_constantino_foundbottle,"Tak se zkus zamyslet líp!",dia_constantino_foundbottle_yes);
 };
 
 func void dia_constantino_foundbottle_no()
 {
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_No_01_01");	//Potom mi nedáváš na výběr. Je nezbytné tě předat domobraně!
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_No_01_02");	//No... (poraženě) Dělej co musíš! Ale věz, že děláš velkou chybu.
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_No_01_02");	//No... (poraženě) Dělej, co musíš! Ale věz, že děláš velkou chybu.
 	CONSTANTINOFUCKOFF = TRUE;
-	B_LogEntry(TOPIC_KILLIGNAZ,"Ha! Zdá se, že oním vrahem je Constantino. To on otrávil alchymistu Ignaze. Řekl bych, že je nutné ho nahlásit lordu Andremu.");
+	B_LogEntry(TOPIC_KILLIGNAZ,"Ha! Zdá se, že tím vrahem je Constantino. To on otrávil alchymistu Ignaze. Řekl bych, že je nutné ho nahlásit lordu Andremu.");
 	AI_StopProcessInfos(self);
 };
 
 func void dia_constantino_foundbottle_yes()
 {
-	AI_Output(other,self,"DIA_Constantino_FoundBottle_Yes_01_01");	//Tak zkuste zamyslet! V sázce máte zbytek života!
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_02");	//Věřte mi, zkoušel jsem to... (na pokraji sil) ale už mě nic nenapadá.
-	AI_Output(other,self,"DIA_Constantino_FoundBottle_Yes_01_03");	//Hmmm... No, a nevšiml jste si třeba během několika minulých dní nečeho zvláštního ve vašem okolí?
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_04");	//Ano! počkejte... Vzpomínám se, všiml jsem si jedné zvláštní věci... (víc se zamyslí)
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_06");	//(přemýšlí) je to pár dní, co ke mě přišel zvláštní cizinec
+	AI_Output(other,self,"DIA_Constantino_FoundBottle_Yes_01_01");	//Tak zkus zamyslet! V sázce máš zbytek života!
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_02");	//Věř mi, zkoušel jsem to... (na pokraji sil) ale už mě nic nenapadá.
+	AI_Output(other,self,"DIA_Constantino_FoundBottle_Yes_01_03");	//Hmmm... No, a nevšiml sis třeba během několika minulých dní nečeho zvláštního ve tvém okolí?
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_04");	//Ano! počkej... Vzpomínám se, všiml jsem si jedné zvláštní věci... (víc se zamyslí)
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_06");	//(přemýšlí) Je to pár dní, co ke mě přišel zvláštní cizinec.
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_10");	//Zajímal se o mé vzácné lektvary... Samozřejmě, některé ode mě chtěl odkoupit.
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_12");	//No... (zamyslí se) Chápete, že takového druhy lektvarů si tady v laboratoři neskladuju.
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_12");	//No... (zamyslí se) Chápeš, že takové druhy lektvarů si tady v laboratoři neskladuju.
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_13");	//Je to příliš nebezpečné, protože některé z nich jsou velmi vzácné a drahé. A tento lektvar patřil k nim.
 	AI_Output(self,other,"DIA_Constantino_FoundBottle_Yes_01_14");	//Proto jsem šel do skladu. Ale když jsem se vrátil, už tady ten chlap nebyl...
 	Info_ClearChoices(dia_constantino_foundbottle);
-	Info_AddChoice(dia_constantino_foundbottle,"Nemyslím si, že to jako důkaz nevinny postačí.",dia_constantino_foundbottle_nohelp);
+	Info_AddChoice(dia_constantino_foundbottle,"Nemyslím si, že to jako důkaz neviny postačí.",dia_constantino_foundbottle_nohelp);
 	Info_AddChoice(dia_constantino_foundbottle,"No dobrá, věřím ti.",dia_constantino_foundbottle_yeshelp);
 };
 
 func void dia_constantino_foundbottle_nohelp()
 {
-	AI_Output(other,self,"DIA_Constantino_FoundBottle_NoHelp_01_01");	//Nemyslím si, že to jako důkaz nevinny postačí.
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_NoHelp_01_02");	//No... (poraženě) Potom dělej co musíš! Ale věz, že děláš velkou chybu.
+	AI_Output(other,self,"DIA_Constantino_FoundBottle_NoHelp_01_01");	//Nemyslím si, že to jako důkaz neviny postačí.
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_NoHelp_01_02");	//No... (poraženě) Potom dělej, co musíš! Ale věz, že děláš velkou chybu.
 	CONSTANTINOFUCKOFF = TRUE;
-	B_LogEntry(TOPIC_KILLIGNAZ,"Ha! Zdá se, že oním vrahem je Constantino. To on otrávil alchymistu Ignaze. Řekl bych, že je nutné ho nahlásit lordu Andremu.");
+	B_LogEntry(TOPIC_KILLIGNAZ,"Ha! Zdá se, že tím vrahem je Constantino. To on otrávil alchymistu Ignaze. Řekl bych, že je nutné ho nahlásit lordu Andremu.");
 	AI_StopProcessInfos(self);
 };
 
 func void dia_constantino_foundbottle_yeshelp()
 {
 	AI_Output(other,self,"DIA_Constantino_FoundBottle_YesHelp_01_01");	//No dobrá, věřím ti.
-	AI_Output(self,other,"DIA_Constantino_FoundBottle_YesHelp_01_02");	//U Innose!... (radostně) Díky. A doufám, že ho nakonec chytnete.
+	AI_Output(self,other,"DIA_Constantino_FoundBottle_YesHelp_01_02");	//U Innose!... (radostně) Díky. A doufám, že ho nakonec chytíš.
 	HELPKILLIGNAZ = TRUE;
 	Info_ClearChoices(dia_constantino_foundbottle);
 	B_LogEntry(TOPIC_KILLIGNAZ,"Rozhodl jsem se, že pomůžu Constantinovi. Tento případ je těžce zapeklitý. Ale věřím Constantinovi, že to neudělal, ale měl bych zjistit, kdo byla ta tajemná osoba, co ho navštívila. Možná že si ji někdo z domobrany všimnul.");
@@ -2024,7 +2024,7 @@ func void dia_constantino_MakePoison_info()
 	AI_Output(self,other,"DIA_Constantino_MakePoison_01_02");	//Hmm... (neochotně) Ano. Je to další součást mé práce hned po vaření lektvarů.
 	AI_Output(self,other,"DIA_Constantino_MakePoison_01_03");	//Ale nikomu o tom neříkám a tobě radím to samé.
 	AI_Output(self,other,"DIA_Constantino_MakePoison_01_04");	//Pokud se o tom dozví městská stráž, okamžitě zavře tento obchod!
-	AI_Output(other,self,"DIA_Constantino_MakePoison_01_05");	//Chápu. Nebojíte se, že se někdy otrávíte?
+	AI_Output(other,self,"DIA_Constantino_MakePoison_01_05");	//Chápu. Nebojíš se, že se někdy otrávíš?
 	AI_Output(self,other,"DIA_Constantino_MakePoison_01_06");	//Neboj se... (smích) Vždy když vařím jed, mám u sebe protijed.
 	AI_Output(self,other,"DIA_Constantino_MakePoison_01_07");	//Dělám je také, protože bez nich se v tomto oboru neobejdeš.
 	AI_Output(self,other,"DIA_Constantino_MakePoison_01_08");	//Kromě toho jsem se ze svých experimentů naučil extrahovat některé druhy jedů.
@@ -2059,7 +2059,7 @@ func void dia_constantino_MakePoisonTeachMe_info()
 		AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMe_01_02");	//Hmmm... (zamyšleně) Přeci jen jsi mi pomohl vyřešit problém s Ignazem.
 		AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMe_01_03");	//A byl bych nevděčná svině, kdybych ti za to nepoděkoval.
 		AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMe_01_04");	//Nicméně, mé znalosti budou vyžadovat, abys měl nějaké zkušenosti.
-		AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMe_01_05");	//No... Malý obnos zlatý neuškodí. Alespoň pokryji náklady na tvé učení.
+		AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMe_01_05");	//No... Malý obnos zlata neuškodí. Alespoň pokryji náklady na tvé učení.
 		ConsTeachPoison = TRUE;
 	}
 	else
@@ -2093,7 +2093,7 @@ func void dia_constantino_MakePoisonTeachMeAgain_info()
 	AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMeAgain_01_02");	//Hmmm... (zamyšleně) Přeci jen jsi mi pomohl vyřešit problém s Ignazem.
 	AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMeAgain_01_03");	//A byl bych nevděčná svině, kdybych ti za to nepoděkoval.
 	AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMeAgain_01_04");	//Nicméně, mé znalosti budou vyžadovat, abys měl nějaké zkušenosti.
-	AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMeAgain_01_05");	//No... Malý obnos zlatý neuškodí. Alespoň pokryji náklady na tvé učení.
+	AI_Output(self,other,"DIA_Constantino_MakePoisonTeachMeAgain_01_05");	//No... Malý obnos zlata neuškodí. Alespoň pokryji náklady na tvé učení.
 	ConsTeachPoison = TRUE;
 };
 
@@ -2104,7 +2104,7 @@ instance DIA_CONSTANTINO_TeachPoison(C_Info)
 	condition = dia_constantino_TeachPoison_condition;
 	information = dia_constantino_TeachPoison_info;
 	permanent = TRUE;
-	description = "Nauč mě vařit protjedy.";
+	description = "Nauč mě vařit protijedy.";
 };
 
 func int dia_constantino_TeachPoison_condition()
@@ -2208,7 +2208,7 @@ func void DIA_Constantino_TeachPoison_Resist()
 	};
 	if((hero.lp >= kosten) && (Npc_HasItems(hero,ItMi_Gold) >= money))
 	{
-		AI_Output(self,other,"DIA_Constantino_TeachPoison_Resist_01_03");	//Jed je špatný. Zvlášt pokud se ti dostal do těla.
+		AI_Output(self,other,"DIA_Constantino_TeachPoison_Resist_01_03");	//Jed je špatný. Zvlášť pokud se ti dostal do těla.
 		AI_Output(self,other,"DIA_Constantino_TeachPoison_Resist_01_04");	//Musíš se ujistit, že tvoje tělo jed co nejdříve rozloží.
 		AI_Output(self,other,"DIA_Constantino_TeachPoison_Resist_01_05");	//Musíš být neustále v pohybu a hodně se potit. Pak ti jed neublíží.
 		hero.lp = hero.lp - kosten;
@@ -2305,9 +2305,9 @@ func void DIA_Constantino_MyBrew_Info()
 	AI_Output(other,self,"DIA_Constantino_MyBrew_01_02");	//Ne! A pochybuji, že z toho vzejde něco dobrého.
 	AI_Output(other,self,"DIA_Constantino_MyBrew_01_03");	//Všechny složky receptu jsou naprosto neslučitelné.
 	AI_Output(other,self,"DIA_Constantino_MyBrew_01_04");	//A některé se v alchymii vůbec nepoužívají!
-	AI_Output(self,other,"DIA_Constantino_MyBrew_01_05");	//(uctivě) Vážně jsem si nemyslel, že bych na tu záludnost přišel.
+	AI_Output(self,other,"DIA_Constantino_MyBrew_01_05");	//(uctivě) Vážně jsem si nemyslel, že bys na tu záludnost přišel.
 	AI_Output(self,other,"DIA_Constantino_MyBrew_01_06");	//Možná budeš opravdu dobrý alchymista.
-	AI_Output(self,other,"DIA_Constantino_MyBrew_01_07");	//Dobře, Ukážu ti pravou velikost tohoto umění.
+	AI_Output(self,other,"DIA_Constantino_MyBrew_01_07");	//Dobře, ukážu ti pravou velikost tohoto umění.
 	MIS_MyBrew = LOG_Success;
 	Log_SetTopicStatus(TOPIC_MyBrew,LOG_Success);
 	B_LogEntry(TOPIC_MyBrew,"Řekl jsem Constantinovi všechno, co mi řekl Salandril. Byl překvapen mou předvídavostí a zdálo se, že mě dokonce respektuje. Ale hlavní věcí je, že teď mě naučí umění alchymie.");

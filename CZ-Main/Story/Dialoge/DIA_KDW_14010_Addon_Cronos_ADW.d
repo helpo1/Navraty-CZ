@@ -23,7 +23,7 @@ func void DIA_Addon_Cronos_ADW_EXIT_Info()
 	{
 		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_00");	//Počkej chvilku...
 		AI_Output(other,self,"DIA_Addon_Cronos_EscortToPirate_01_01");	//Co ještě?!
-		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_02");	//Pořemýšlel jsem o tom a už jsem se rozhodl, koho poslat k pirátům.
+		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_02");	//Přemýšlel jsem o tom a už jsem se rozhodl, koho poslat k pirátům.
 		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_03");	//Ale pochybuji, že on sám najde cestu do jejich tábora.
 		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_04");	//Proto tě chci požádat, jestli bys ho nedoprovodil. Ty už cestu znáš.
 		AI_Output(self,other,"DIA_Addon_Cronos_EscortToPirate_01_05");	//Aspoň můžu doufat, že se vrátí v jednom kuse.
@@ -139,12 +139,12 @@ func void DIA_Addon_Cronos_NeedFood_Info()
 	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_13");	//Dohodnuto, určitě budou souhlasit s obchodem s námi. Po tom všem je nepravděpodobné, že by to zlato odmítli. 
 	AI_Output(other,self,"DIA_Addon_Cronos_NeedFood_01_14");	//Dobře! Seženu maso a pokusím se dohodnout s piráty.
 	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_15");	//Chvála Adanovi! Doufám, že teď máme alespoň o jeden problém méně... (povzdechne si) Podívej se, neříkej o tom Saturasovi!
-	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_16");	//Věří, že spolupráce s takovými lidmi - není hodna důstojnoti mágů Vody.
+	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_16");	//Věří, že spolupráce s takovými lidmi - není hodna důstojnosti mágů Vody.
 	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_01_17");	//Ale to neřeší problém, kde já tady seženu jídlo a zásoby.
 	MIS_NeedFood = LOG_Running;
 	Log_CreateTopic(TOPIC_NeedFood,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_NeedFood,LOG_Running);
-	B_LogEntry(TOPIC_NeedFood,"Cronos potřebuje jídlo aby doplnil zásoby mágů Vody. Požádal mě, abych šel na lov a přivesl nejméně padesát kusů čerstvého masa.");
+	B_LogEntry(TOPIC_NeedFood,"Cronos potřebuje jídlo aby doplnil zásoby mágů Vody. Požádal mě, abych šel na lov a přinesl nejméně padesát kusů čerstvého masa.");
 	MIS_PirateDeal = LOG_Running;
 	Log_CreateTopic(TOPIC_PirateDeal,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_PirateDeal,LOG_Running);
@@ -157,7 +157,7 @@ instance DIA_Addon_Cronos_NeedFood_Done(C_Info)
 	nr = 2;
 	condition = DIA_Addon_Cronos_NeedFood_Done_Condition;
 	information = DIA_Addon_Cronos_NeedFood_Done_Info;
-	description = "Máš to maso!";
+	description = "Mám to maso!";
 };
 
 func int DIA_Addon_Cronos_NeedFood_Done_Condition()
@@ -171,7 +171,7 @@ func int DIA_Addon_Cronos_NeedFood_Done_Condition()
 func void DIA_Addon_Cronos_NeedFood_Done_Info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Addon_Cronos_NeedFood_Done_01_00");	//Máš to maso! Jak jsem tě požádal - padesát kusů.
+	AI_Output(other,self,"DIA_Addon_Cronos_NeedFood_Done_01_00");	//Mám to maso! Jak jsi mě požádal - padesát kusů.
 	B_GiveInvItems(other,self,ItFoMuttonRaw,50);
 	Npc_RemoveInvItems(self,ItFoMuttonRaw,50);
 	AI_Output(self,other,"DIA_Addon_Cronos_NeedFood_Done_01_01");	//Výborně! Aspoň teď nebudeme umírat hlady.
@@ -406,10 +406,10 @@ func int DIA_NDW_8161_Nort_Hello_Condition()
 func void DIA_NDW_8161_Nort_Hello_Info()
 {
 	AI_Output(other,self,"DIA_NDW_8161_Nort_Hello_01_00");	//Zdravím! Poslal mně Cronos.
-	AI_Output(self,other,"DIA_NDW_8161_Nort_Hello_01_01");	//Vynikající... (zívání) Pak jste ten, kdo mě má doprovodit do tábora pirátů.
-	AI_Output(other,self,"DIA_NDW_8161_Nort_Hello_01_02");	//Ve skutečnosti jsem zde jen pro.
+	AI_Output(self,other,"DIA_NDW_8161_Nort_Hello_01_01");	//Vynikající... (zívání) Pak jsi ten, kdo mě má doprovodit do tábora pirátů.
+	AI_Output(other,self,"DIA_NDW_8161_Nort_Hello_01_02");	//Vlastně kvůli tomu jsem tady.
 	AI_Output(self,other,"DIA_NDW_8161_Nort_Hello_01_03");	//Pak nebudeme ztrácet čas, příteli! Jdu za tebou.
-	AI_Output(other,self,"DIA_NDW_8161_Nort_Hello_01_04");	//Dobře! hlavně se drž nablízku, aby tě nesežrali nějaké potvory.
+	AI_Output(other,self,"DIA_NDW_8161_Nort_Hello_01_04");	//Dobře! Hlavně se drž nablízku, aby tě nesežrali nějaké potvory.
 	AI_Output(other,self,"DIA_NDW_8161_Nort_Hello_01_05");	//Cronos mě nepochválí, jestli se ti něco stane.
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
 	AI_StopProcessInfos(self);

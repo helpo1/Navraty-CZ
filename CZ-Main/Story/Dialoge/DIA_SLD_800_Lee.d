@@ -254,7 +254,7 @@ func void DIA_Lee_PMSchulden_Info()
 					concattextschulden = ConcatStrings(PRINT_SHULDEN,concatText2);
 					AI_Print(concattextschulden);
 				};
-				AI_Output(self,other,"DIA_Lee_PMSchulden_04_14");	//Takže, co cheš?
+				AI_Output(self,other,"DIA_Lee_PMSchulden_04_14");	//Takže, co chceš?
 			};
 		};
 		if(B_GetGreatestPetzCrime(self) != CRIME_NONE)
@@ -536,7 +536,7 @@ func void DIA_Lee_BreakBarrier_Info()
 	AI_Output(self,other,"DIA_Lee_BreakBarrier_01_04");	//Ale Lares by o tom mohl něco vědět.
 	AI_Output(other,self,"DIA_Lee_BreakBarrier_01_05");	//A co dál?
 	AI_Output(self,other,"DIA_Lee_BreakBarrier_01_06");	//Pak jsme přišli sem na farmu.
-	AI_Output(self,other,"DIA_Lee_BreakBarrier_01_07");	//Krátce před námi navštívila městská domobrana farmu a celou ju převrátila vzhůru nohama při hledání zlata.
+	AI_Output(self,other,"DIA_Lee_BreakBarrier_01_07");	//Krátce před námi navštívila městská domobrana farmu a celou ji převrátila vzhůru nohama při hledání zlata.
 	AI_Output(self,other,"DIA_Lee_BreakBarrier_01_08");	//Ve skutečnosti to byl důvod, proč se Onar vzbouřil králi! Až potom co s námi podepsal smlouvu.
 	AI_Output(self,other,"DIA_Lee_BreakBarrier_01_09");	//Moji muži hlídají farmu před královými muži a my za to dostanem jídlo a nějaké zlato.
 };
@@ -1107,7 +1107,7 @@ func void DIA_Lee_RescueDarius_Info()
 	AI_Output(self,other,"DIA_Lee_RescueDarius_01_20");	//Takže se bil až do konce, jako skutečný válečník.
 	AI_Output(self,other,"DIA_Lee_RescueDarius_01_21");	//Možná nám tenkrát něco uniklo, ale pochop, nebylo moc času.
 	AI_Output(self,other,"DIA_Lee_RescueDarius_01_22");	//Magická bariéra padla a my jsme se nějak museli dostat z toho prokletého údolí.
-	AI_Output(self,other,"DIA_Lee_RescueDarius_01_23");	//Samozřejmě všichni na to už se dávno zapomněli. Ale já ne!
+	AI_Output(self,other,"DIA_Lee_RescueDarius_01_23");	//Samozřejmě všichni na to už dávno zapomněli. Ale já ne!
 	AI_Output(self,other,"DIA_Lee_RescueDarius_01_24");	//Cítím, že ta záležitost pro mě není stále vyřešena a že musím najít svého starého přítele. 
 	AI_Output(self,other,"DIA_Lee_RescueDarius_01_25");	//No, nebo alespoň to, co z něj zbylo.
 	AI_Output(self,other,"DIA_Lee_RescueDarius_01_26");	//To je důvod, proč tě chci požádat o laskavost. Jestli se v nejbližší době dostaneš do Hornického údolí, zkus najít odpověď na mojí otázku.
@@ -1143,7 +1143,7 @@ func void DIA_Lee_RescueDarius_Done_Info()
 	AI_Output(other,self,"DIA_Lee_RescueDarius_Done_01_00");	//Tvůj starý přítel Darius se k vám brzo připojí.
 	AI_Output(self,other,"DIA_Lee_RescueDarius_Done_01_01");	//Už to vím, kamaráde. Přišel před pár dny.
 	AI_Output(other,self,"DIA_Lee_RescueDarius_Done_01_02");	//Vše v pořádku?
-	AI_Output(self,other,"DIA_Lee_RescueDarius_Done_01_03");	//Och, ano! Ale potřebuje trochu času, Aby nasbíral nové síly po těžkém přechodu přes hory.
+	AI_Output(self,other,"DIA_Lee_RescueDarius_Done_01_03");	//Och, ano! Ale potřebuje trochu času, aby nasbíral nové síly po těžkém přechodu přes hory.
 	AI_Output(self,other,"DIA_Lee_RescueDarius_Done_01_04");	//Mimochodem, už mi vyprávěl o tom, jak dokázal tak dlouho přežít. A jak jsi mu pomohl se z této těžké situace dostat.
 	AI_Output(self,other,"DIA_Lee_RescueDarius_Done_01_06");	//Proto, i jménem všech jeho kamarádů, ti děkuju!
 	AI_Output(self,other,"DIA_Lee_RescueDarius_Done_01_07");	//A jako důkaz mé vděčnosti, ti chci něco dát.
@@ -1401,7 +1401,7 @@ func void DIA_Lee_Richter_Info()
 	AI_Output(self,other,"DIA_Lee_Richter_04_05");	//Ale paladinové mě nepustí do horní čtvrti.
 	AI_Output(self,other,"DIA_Lee_Richter_04_06");	//Tak pozorně poslouchej. Půjdeš k soudci a nabídneš mu své služby.
 	AI_Output(self,other,"DIA_Lee_Richter_04_07");	//Snaž se získat si jeho důvěru nějakou špinavou prací.
-	AI_Output(self,other,"DIA_Lee_Richter_04_08");	//Ta svině určtě nějakou mít bude.
+	AI_Output(self,other,"DIA_Lee_Richter_04_08");	//Ta svině určitě nějakou mít bude.
 	AI_Output(self,other,"DIA_Lee_Richter_04_09");	//Přines mi něco, s čím budu moci očernit jeho jméno a on skončí v base.
 	AI_Output(self,other,"DIA_Lee_Richter_04_10");	//Ale nechci ho zabít. To by bylo moc rychlé. Chci aby trpěl, jasné?
 	AI_Output(self,other,"DIA_Lee_Richter_04_11");	//Můžeš to udělat?
@@ -1645,7 +1645,7 @@ func void DIA_Lee_SYLVIO_Info()
 	AI_Output(other,self,"DIA_Lee_SYLVIO_15_00");	//Co se zatím stalo?
 	AI_Output(self,other,"DIA_Lee_SYLVIO_04_01");	//Ten bastard Sylvio slyšel o dracích v údolí a vyburcoval celou farmu.
 	AI_Output(self,other,"DIA_Lee_SYLVIO_04_02");	//Chce chlapy přesvědčit, aby ho následovali do údolí. Slíbil jim slávu, bohatství a Innos ví co ještě.
-	AI_Output(self,other,"DIA_Lee_SYLVIO_04_03");	//Moc z nich se nenadchla myšlenka zemřít kvůli Sylviovu blbému nápadu, ale přesto se našlo pár idiotu co mu na to škočilo.
+	AI_Output(self,other,"DIA_Lee_SYLVIO_04_03");	//Moc z nich nenadchla myšlenka zemřít kvůli Sylviovu blbému nápadu, ale přesto se našlo pár idiotů co mu na to skočilo.
 	AI_Output(self,other,"DIA_Lee_SYLVIO_04_04");	//Vzali si vybavení od Benneta a zmizeli.
 	AI_Output(self,other,"DIA_Lee_SYLVIO_04_05");	//(s úlevou) Nakonec jsem i rád, že Sylvio opustil farmu.
 };
@@ -1867,7 +1867,7 @@ func void DIA_Lee_KAP4_Perm_Info()
 	AI_Output(other,self,"DIA_Lee_KAP4_Perm_15_00");	//Jak se ti daří na farmě?
 	AI_Output(self,other,"DIA_Lee_KAP4_Perm_04_01");	//Od té doby, co Sylvio odešel, je tu lépe.
 	AI_Output(other,self,"DIA_Lee_KAP4_Perm_15_02");	//To nezní špatně.
-	AI_Output(self,other,"DIA_Lee_KAP4_Perm_04_03");	//Bohužel je teď méně lidí na stejné množství práce. Muži si stále více stěžují že musí dělat i za muže co odešli se Silviem.
+	AI_Output(self,other,"DIA_Lee_KAP4_Perm_04_03");	//Bohužel je teď méně lidí na stejné množství práce. Muži si stále více stěžují že musí dělat i za muže co odešli se Sylviem.
 	AI_Output(self,other,"DIA_Lee_KAP4_Perm_04_04");	//Ale neměj starosti. Zvládnu to.
 };
 
@@ -1917,7 +1917,7 @@ func int DIA_Lee_GetShip_Condition()
 
 func void DIA_Lee_GetShip_Info()
 {
-	AI_Output(other,self,"DIA_Lee_GetShip_15_00");	//Máš nápad jak se dostat na loď paladinů?
+	AI_Output(other,self,"DIA_Lee_GetShip_15_00");	//Máš nápad, jak se dostat na loď paladinů?
 	AI_Output(self,other,"DIA_Lee_GetShip_04_01");	//Myslíš, že bych byl ještě tu, kdybych to věděl? Ta je chráněna lépe než dodávky rudy do Starého tábora.
 	AI_Output(other,self,"DIA_Lee_GetShip_15_02");	//Musí být cesta jak se dostat na loď.
 	AI_Output(self,other,"DIA_Lee_GetShip_04_03");	//Jasně. Jen se dostat na palubu.
@@ -1961,7 +1961,7 @@ func void DIA_Lee_GetShip_crew()
 {
 	AI_Output(other,self,"DIA_Lee_GetShip_crew_15_00");	//Koho bych měl vzít do své posádky?
 	AI_Output(self,other,"DIA_Lee_GetShip_crew_04_01");	//To rozhodni ty. Ber lidi, kterým ale můžeš důvěřovat. Na kolik lidí se můžeš spolehnout?
-	AI_Output(self,other,"DIA_Lee_GetShip_crew_04_02");	//Jestli potřebuješ kováře, tak Bennet je nelepší, jakého seženeš.
+	AI_Output(self,other,"DIA_Lee_GetShip_crew_04_02");	//Jestli potřebuješ kováře, tak Bennet je nejlepší, jakého seženeš.
 	B_LogEntry(Topic_Crew,"Lee se domnívá, že bych měl vzít jen lidi, kterým věřím. Jestli budu potřebovat dobrého kováře, mám vzít Benneta.");
 };
 
@@ -2049,7 +2049,7 @@ func void DIA_Lee_KnowWhereEnemy_Info()
 {
 	AI_Output(other,self,"DIA_Lee_KnowWhereEnemy_15_00");	//Půjdeš se mnou?
 	AI_Output(self,other,"DIA_Lee_KnowWhereEnemy_04_01");	//Děláš si legraci? Samozřejmě.
-	AI_Output(self,other,"DIA_Lee_KnowWhereEnemy_04_02");	//Můžu tě na cestě naučit obouruční i jednoruční umění s mečem. To může velmi užitečné.
+	AI_Output(self,other,"DIA_Lee_KnowWhereEnemy_04_02");	//Můžu tě na cestě naučit obouruční i jednoruční umění s mečem. To může být velmi užitečné.
 	Log_CreateTopic(Topic_Crew,LOG_MISSION);
 	Log_SetTopicStatus(Topic_Crew,LOG_Running);
 	B_LogEntry(Topic_Crew,"Lee chce se mnou plout na kontinent. Na cestě mě může učit obouruční i jednoruční umění s mečem.");
@@ -2233,7 +2233,7 @@ func void dia_lee_nw_kapitelorcattack_info()
 	{
 		LEEBATTLETHROUGTH = TRUE;
 		PERMCOUNTBACKNW = PERMCOUNTBACKNW + 1;
-		B_LogEntry(TOPIC_HELPCREW,"Lee se chce probojovat městem. To samé se týká i Larese!");
+		B_LogEntry(TOPIC_HELPCREW,"Lee se chce probojovat městem.");
 	};
 	AI_Output(other,self,"DIA_Lee_NW_KapitelOrcAttack_01_12");	//Dobrá. Snad se brzy setkáme.
 	AI_Output(self,other,"DIA_Lee_NW_KapitelOrcAttack_01_13");	//S tím počítej, příteli!
@@ -2488,7 +2488,7 @@ func void dia_lee_nw_greatgather_info()
 	AI_Output(self,other,"DIA_Lee_NW_GreatGather_01_02");	//Zatím je všude klid.
 	AI_Output(self,other,"DIA_Lee_NW_GreatGather_01_03");	//Myslím ale, že je to klid před bouří. Skřeti něco chystají.
 	AI_Output(self,other,"DIA_Lee_NW_GreatGather_01_04");	//Každý den k nim do tábora chodí další jednotky z města.
-	AI_Output(self,other,"DIA_Lee_NW_GreatGather_01_07");	//Jsem si jistý, že během několika dní zautočí na farmu.
+	AI_Output(self,other,"DIA_Lee_NW_GreatGather_01_07");	//Jsem si jistý, že během několika dní zaútočí na farmu.
 };
 
 
@@ -2623,7 +2623,7 @@ func void DIA_LEE_NW_JOINBATTLE_Yes()
 
 func void DIA_LEE_NW_JOINBATTLE_No()
 {
-	AI_Output(other,self,"DIA_LEE_NW_JOINBATTLE_No_01_01");	//Ne, raději si promluvíme o tvých plánech
+	AI_Output(other,self,"DIA_LEE_NW_JOINBATTLE_No_01_01");	//Ne, raději si promluvíme o tvých plánech.
 	AI_Output(self,other,"DIA_LEE_NW_JOINBATTLE_No_01_02");	//Dobře... (zamyšleně) Teď zapomeň na nadcházející bitvu. S tím si poradíme i bez tvé pomoci.
 	AI_Output(self,other,"DIA_LEE_NW_JOINBATTLE_No_01_03");	//Nyní s tebou musím probrat jeden nemalý problém.
 	AI_Output(self,other,"DIA_LEE_NW_JOINBATTLE_No_01_05");	//Nemysli, že mi hrabe, ale podle mne skřetům pomáhá nějaká neznámá síla.
@@ -2853,7 +2853,7 @@ func void dia_lee_nw_allgreatvictory_info()
 	B_GivePlayerXP(1000);
 	AI_Output(other,self,"DIA_Lee_NW_AllGreatVictory_01_00");	//Skřeti ustupují zpět do Hornického údolí!
 	AI_Output(other,self,"DIA_Lee_NW_AllGreatVictory_01_01");	//Tato část ostrova je kompletně volná.
-	AI_Output(self,other,"DIA_Lee_NW_AllGreatVictory_01_02");	//To myslíš to vážně? To snad nemůže bát pravda!
+	AI_Output(self,other,"DIA_Lee_NW_AllGreatVictory_01_02");	//To myslíš vážně? To snad nemůže být pravda!
 	AI_Output(other,self,"DIA_Lee_NW_AllGreatVictory_01_03");	//Jestli nevěříš, zajdi se podívat do jejich tábora, je kousek od farmy.
 	AI_Output(self,other,"DIA_Lee_NW_AllGreatVictory_01_08");	//Konečně je po všem. Jen tomu ještě nemůžu uvěřit!
 };
@@ -3210,7 +3210,7 @@ func void DIA_Lee_NW_NewLager_info()
 	AI_Output(self,other,"DIA_Lee_NW_NewLager_01_09");	//A tak jsem začal přijímat nové lidi, z těch co k nám přicházeli.
 	AI_Output(self,other,"DIA_Lee_NW_NewLager_01_10");	//Jádro tvořili lidi, co dřív sloužili v armádě pod mým velením. 
 	AI_Output(self,other,"DIA_Lee_NW_NewLager_01_11");	//A právě oni vytvořili základ naší malé žoldácké armády.
-	AI_Output(self,other,"DIA_Lee_NW_NewLager_01_12");	//Takže, časem jsme vytvořily takovou sílu, se kterou ostaní museli počítat, včetně Gomeze.
+	AI_Output(self,other,"DIA_Lee_NW_NewLager_01_12");	//Takže, časem jsme vytvořily takovou sílu, se kterou ostatní museli počítat, včetně Gomeze.
 	AI_Output(self,other,"DIA_Lee_NW_NewLager_01_13");	//Po čase jsme objevili opuštěný důl, v roklině za táborem.
 	AI_Output(self,other,"DIA_Lee_NW_NewLager_01_14");	//Mágové Vody usoudili, že by se dal dobře využít. 
 	AI_Output(self,other,"DIA_Lee_NW_NewLager_01_15");	//To samozřejmě rozčílilo rudobarony, zejména Gomeze.
@@ -3402,7 +3402,7 @@ func void DIA_SLD_853_Bret_You_Info()
 {
 	AI_Output(other,self,"DIA_SLD_853_Bret_You_01_00");		//Jsi žoldák?
 	AI_Output(self,other,"DIA_SLD_853_Bret_You_01_01");		//Hmmm... (nevlídně) Kdysi jsem byl!
-	AI_Output(self,other,"DIA_SLD_853_Bret_You_01_02");		//Do té doby, než mě osud zavedl na toto místo Innosem zapomenuté.
+	AI_Output(self,other,"DIA_SLD_853_Bret_You_01_02");		//Do té doby, než mě osud zavedl na toto Innosem zapomenuté místo.
 	AI_Output(self,other,"DIA_SLD_853_Bret_You_01_03");		//A co tě to vlastně zajímá?
 };
 
@@ -3469,7 +3469,7 @@ func void DIA_SLD_853_Bret_NeedInfo_Info()
 	AI_Output(other,self,"DIA_SLD_853_Bret_NeedInfo_01_08");		//A co samotný Darius?
 	AI_Output(self,other,"DIA_SLD_853_Bret_NeedInfo_01_09");		//Nemám ponětí co se s ním stalo.
 	AI_Output(other,self,"DIA_SLD_853_Bret_NeedInfo_01_10");		//Jakto?
-	AI_Output(self,other,"DIA_SLD_853_Bret_NeedInfo_01_11");		//Poslední, co si pamatuju je, jak mě ohromný horský skřet udeří do hlavy něčím těžkým!
+	AI_Output(self,other,"DIA_SLD_853_Bret_NeedInfo_01_11");		//Poslední, co si pamatuju je, jak mě ohromný horský skřet udeřil do hlavy něčím těžkým!
 	AI_Output(self,other,"DIA_SLD_853_Bret_NeedInfo_01_12");		//Pak jsem se poroučel přímo k zemi.
 	AI_Output(self,other,"DIA_SLD_853_Bret_NeedInfo_01_13");		//Když jsem se probral, všude okolo byla spousta krve a mrtvá těla kamarádů.
 	AI_Output(self,other,"DIA_SLD_853_Bret_NeedInfo_01_14");		//Zřejmě mě měli taky za mrtvého! 
@@ -3613,7 +3613,7 @@ func void DIA_SLD_853_Bret_OrcCamp_Info()
 	AI_Output(self,other,"DIA_SLD_853_Bret_OrcCamp_01_02");		//Já nevím člověče, možná někde tam v horách.
 	AI_Output(self,other,"DIA_SLD_853_Bret_OrcCamp_01_03");		//Ale já bych ti moc nedoporučoval ho hledat! Nemyslím, že tě skřeti přátelsky přivítaj.
 		AI_Output(other,self,"DIA_SLD_853_Bret_OrcCamp_01_04");		//Uklidni se, mám něco co skřeti respektují a nedovolí jim mě napadnout.
-		AI_Output(self,other,"DIA_SLD_853_Bret_OrcCamp_01_05");		//Opravdu! A co toje?
+		AI_Output(self,other,"DIA_SLD_853_Bret_OrcCamp_01_05");		//Opravdu! A co to je?
 		AI_Output(other,self,"DIA_SLD_853_Bret_OrcCamp_01_06");		//Ulu-Mulu, skřetí totem! Skřeti respektují jeho majitele.
 		AI_Output(self,other,"DIA_SLD_853_Bret_OrcCamp_01_07");		//No, možné to je.
 		AI_Output(self,other,"DIA_SLD_853_Bret_OrcCamp_01_08");		//No ale co jsem mohl pozorovat, tak horští skřeti jsou úplně jiní než jejich protějšky v Hornickém údolí.
@@ -3757,13 +3757,13 @@ func void DIA_SLD_852_Darius_WhyKill_Info()
 {
 	AI_Output(other,self,"DIA_SLD_852_Darius_WhyKill_01_00");	//Proč tě skřeti nezabili?
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_01");	//To je dlouhá historie... (s povzdechem)
-	AI_Output(other,self,"DIA_SLD_852_Darius_WhyKill_01_02");	//Rád si ji poslechnu. Zejména proto, že horšťí skřeti jsou mnohem agresivnější než skřeti v Hornickém údolí. Je s podivem, že se tě ani nedotkli.
+	AI_Output(other,self,"DIA_SLD_852_Darius_WhyKill_01_02");	//Rád si ji poslechnu. Zejména proto, že horští skřeti jsou mnohem agresivnější než skřeti v Hornickém údolí. Je s podivem, že se tě ani nedotkli.
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_03");	//No dobře, když na tom trváš.
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_04");	//Když skřeti zaútočili na naše tábořiště, dostal jsem se do těžkého boje.
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_05");	//Moji muži byli hodně vyčerpaní, tak jsme jim nedokázali moc vzdorovat. 
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_06");	//Většina padla v prvních minutách boje.
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_07");	//Bojovali jsme, jak jsme mohli, ale skřetů bylo mnoho. Tak jsme se vzdali.
-	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_08");	//Přeživší skřeti nezabili, ale odvedli sebou do tábora, včetně mě.
+	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_08");	//Přeživší skřeti nás nezabili, ale odvedli sebou do tábora, včetně mě.
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_09");	//Po příchodu do tábora nám vypálili značku, zavřeli nás do klecí a drželi nás tu jako prasata.
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_10");	//Neuplynulo dne, aby nás skřeti nezbili a nevysmívali se nám.
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_11");	//A ještě k tomu jsem se musel dívat na ty opičí ksichty od rána do večera.
@@ -3778,7 +3778,7 @@ func void DIA_SLD_852_Darius_WhyKill_Info()
  	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_20");	//Dlouho něco probírali a pak mě odnesli do svého tábora. Matně si vzpomínám, co se dělo dál... (povzdech)
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_21");	//Ocitl jsem se v táboře Ohnivého kamene - tak se nazývá jejich klan.
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_22");	//Jak se ukázalo, byli ve válce s kmenem, od kterého jsem uprchl.
-	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_23");	//Pak se mě začli vyptávat na všechno, co jsem v táboře viděl, když jsem byl v zajetí. Popsal jsem jim tábor do posledního detailu.
+	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_23");	//Pak se mě začali vyptávat na všechno, co jsem v táboře viděl, když jsem byl v zajetí. Popsal jsem jim tábor do posledního detailu.
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_24");	//Z vděčnosti ušetřili můj život a od té doby žiji zde.
 	AI_Output(self,other,"DIA_SLD_852_Darius_WhyKill_01_25");	//Ale pořád jsem jejich vězeň. A vypadá to, že tady zůstanu navždy.
 	B_LogEntry(TOPIC_MissOldFriend,"Darius mi vyprávěl, jak byl držen v zajetí jiným klanem skřetů a proč klan Ohnivého kamene ušetřil jeho život.");
@@ -3812,7 +3812,7 @@ func void DIA_SLD_852_Darius_Escape_Info()
 	AI_Output(self,other,"DIA_SLD_852_Darius_Escape_01_05");		//Co jsem slyšel, Nový tábor už neexistuje... a nevím kam jinam bych se měl vydat.
 	AI_Output(other,self,"DIA_SLD_852_Darius_Escape_01_06");		//Mohl by ses znovu spojit s Leem a jeho lidma.
 	AI_Output(self,other,"DIA_SLD_852_Darius_Escape_01_07");		//A kde jsou nyní?
-	AI_Output(other,self,"DIA_SLD_852_Darius_Escape_01_08");		//Jeho žoldáci hlídají farmu bohatého statkáře, nedaleko od města Khorinisu.
+	AI_Output(other,self,"DIA_SLD_852_Darius_Escape_01_08");		//Jeho žoldáci hlídají farmu bohatého statkáře, nedaleko od města Khorinis.
 	AI_Output(self,other,"DIA_SLD_852_Darius_Escape_01_09");		//Kamaráde! Ty nemáš nejmenší představu o tom, kde se nyní nacházíme a kam mě posíláš!
 	AI_Output(self,other,"DIA_SLD_852_Darius_Escape_01_10");		//Já nedokážu odsud ujít ani pár kroků abych se neztratil. A ty taky ne...
 	AI_Output(self,other,"DIA_SLD_852_Darius_Escape_01_11");		//Bez dobrého průvodce na to můžeš zapomenout! A skřeti mě stejně nepustí.
@@ -4023,7 +4023,7 @@ func void DIA_SLD_857_Darius_Perm_Info()
 {
 	B_GivePlayerXP(100);	
 	AI_Output(other,self,"DIA_SLD_857_Darius_Perm_01_00");		//Jaká byla cesta přes hory?
-	AI_Output(self,other,"DIA_SLD_857_Darius_Perm_01_01");		//Nebylo to snadné. Setupovali jsme z hor asi dva dny.
+	AI_Output(self,other,"DIA_SLD_857_Darius_Perm_01_01");		//Nebylo to snadné. Sestupovali jsme z hor asi dva dny.
 	AI_Output(self,other,"DIA_SLD_857_Darius_Perm_01_02");		//Popravdě, myslel jsem, že skřeti mě odvedou někam do Hornického údolí.
 	AI_Output(self,other,"DIA_SLD_857_Darius_Perm_01_03");		//Ale z nějakého důvodu mě vzali přímo k průchodu.
 	AI_Output(self,other,"DIA_SLD_857_Darius_Perm_01_04");		//V Hornickém údolí je to nyní velmi nebezpečné. Myslím, že o tom věděli a tak mě odvedli až tam.

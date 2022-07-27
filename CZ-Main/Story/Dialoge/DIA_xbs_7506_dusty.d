@@ -80,9 +80,9 @@ func void dia_dusty_hallo_info()
 	AI_Output(self,other,"DIA_Dusty_Hallo_01_00");	//Myslím, že tě znám.
 	AI_Output(self,other,"DIA_Dusty_Hallo_01_01");	//To ty jsi mě přivedl do tábora v bažinách. Vzpomínáš si?
 	AI_Output(other,self,"DIA_Dusty_Hallo_15_00");	//Hmmm...
-	AI_Output(self,other,"DIA_Dusty_Hallo_01_02");	//Jmenuji se - Dusty! Byl jsem ještě kopáč ve Starém táboře.
+	AI_Output(self,other,"DIA_Dusty_Hallo_01_02");	//Jmenuji se Dusty! Byl jsem ještě kopáč ve Starém táboře.
 	AI_Output(other,self,"DIA_Dusty_Hallo_15_01");	//Asi si vzpomínám. Doufám, že nejsi naštvanej, vyhecoval jsem tě do toho.
-	AI_Output(self,other,"DIA_Dusty_Hallo_01_03");	//No, trošku i vyčítám - dostal jsem se tam, ale časem mě to omrzelo.
+	AI_Output(self,other,"DIA_Dusty_Hallo_01_03");	//Ne. Je to moje vlastní chyba - dostal jsem se tam, ale časem mě to omrzelo.
 	AI_Output(self,other,"DIA_Dusty_Hallo_01_04");	//Aspoň jsem nepropadl jejich hlouposti a naivnosti.
 	AI_Output(self,other,"DIA_Dusty_Hallo_01_05");	//Spíš jsem spal než poslouchal. Potom se to nějak vyhrotilo.
 	b_heroknowforestbase();

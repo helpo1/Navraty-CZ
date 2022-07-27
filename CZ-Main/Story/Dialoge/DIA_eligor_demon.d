@@ -320,7 +320,7 @@ func void DIA_Skeleton_Stefan_How_info()
 	AI_Output(other,self,"DIA_Skeleton_Stefan_How_01_02");	//Netuším. Avšak duchové mezi lidi nepatří. Určitě mi rozumíš.
 	AI_Output(self,other,"DIA_Skeleton_Stefan_How_01_03");	//Rozumím. Ale nemůžu ti pomoct. Promiň.
 	DealStoryDLH = TRUE;
-	B_LogEntry(TOPIC_HauntedLighthouse,"Vypadá to, že znovu potřebuji Xardasovu pomoc Určitě bude vědět, jak kletbu odstranit.");
+	B_LogEntry(TOPIC_HauntedLighthouse,"Vypadá to, že znovu potřebuji Xardasovu pomoc. Určitě bude vědět, jak kletbu odstranit.");
 	AI_StopProcessInfos(self);
 };
 

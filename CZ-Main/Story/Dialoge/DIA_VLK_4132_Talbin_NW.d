@@ -131,7 +131,7 @@ func void DIA_Talbin_NW_HuntCamp_Info()
 	AI_Output(self,other,"DIA_Talbin_NW_HuntCamp_01_13");	//Nekecáš, kámo?
 	AI_Output(other,self,"DIA_Talbin_NW_HuntCamp_01_14");	//Kdepak! Vždyť se jdi přesvědčit sám.
 	AI_Output(self,other,"DIA_Talbin_NW_HuntCamp_01_15");	//Tak to nebudu marnit čas a půjdu se tam kouknout.
-	B_LogEntry(TOPIC_NewHunters,"Talbin zněl docela nadšene. Vypadá to, že jsem odvedl kus dobré práce.");
+	B_LogEntry(TOPIC_NewHunters,"Talbin zněl docela nadšeně. Vypadá to, že jsem odvedl kus dobré práce.");
 	TalbinBecameHunt = TRUE;
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"GoHuntCamp");

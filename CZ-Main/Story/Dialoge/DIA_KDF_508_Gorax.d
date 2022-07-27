@@ -55,7 +55,7 @@ instance DIA_Gorax_PICKPOCKET(C_Info)
 	condition = DIA_Gorax_PICKPOCKET_Condition;
 	information = DIA_Gorax_PICKPOCKET_Info;
 	permanent = TRUE;
-	description = "(Pokusit se ukrást jeho klíč.)";
+	description = "(pokusit se ukrást jeho klíč)";
 };
 
 func int DIA_Gorax_PICKPOCKET_Condition()
@@ -148,7 +148,7 @@ instance DIA_Gorax_GOLD(C_Info)
 	condition = DIA_Gorax_GOLD_Condition;
 	information = DIA_Gorax_GOLD_Info;
 	permanent = TRUE;
-	description = "Přinesl jsem kopu zlata.";
+	description = "Přinesl jsem spoustu zlata.";
 };
 
 
@@ -1043,7 +1043,7 @@ func void dia_gorax_trademewine_deal()
 		B_GiveInvItems(self,other,ItFo_Wine,25);
 		AI_Output(self,other,"DIA_Gorax_TradeMeWine_Deal_01_03");	//A teď mě omluv – je čas na to, abych se vrátil k mým každodenním povinnostem.
 		AI_Output(self,other,"DIA_Gorax_TradeMeWine_Deal_01_05");	//V pořádku, mágu.
-		B_LogEntry(TOPIC_CHURCHDEAL,"Koupil jsem víno u Goraxa. Teď ho musím donést Luterovi.");
+		B_LogEntry(TOPIC_CHURCHDEAL,"Koupil jsem víno u Goraxe. Teď ho musím donést Luterovi.");
 		GORAXSTRADEMEWINE = TRUE;
 		AI_StopProcessInfos(self);
 	}
@@ -1257,7 +1257,7 @@ instance DIA_Gorax_LoaParty(C_Info)
 	condition = DIA_Gorax_LoaParty_Condition;
 	information = DIA_Gorax_LoaParty_Info;
 	permanent = FALSE;
-	description = "Potřebuji nějaké zvláštní víno.";
+	description = "Potřebuji nějaké speciální víno.";
 };
 
 func int DIA_Gorax_LoaParty_Condition()
@@ -1308,14 +1308,14 @@ func void DIA_Gorax_LoaParty_Done_Info()
 	Npc_RemoveInvItems(self,ItMi_Gold,2000);
 	AI_Output(self,other,"DIA_Gorax_LoaParty_Done_01_02");	//Skvěle. Tady, dvě láhve jsou tvoje.
 	B_GiveInvItems(self,other,ItMi_LoaWine,2);
-	AI_Output(other,self,"DIA_Gorax_LoaParty_Done_01_03");	//Doufám že to za to stálo.
+	AI_Output(other,self,"DIA_Gorax_LoaParty_Done_01_03");	//Doufám, že to za to stálo.
 	AI_Output(self,other,"DIA_Gorax_LoaParty_Done_01_04");	//Nepochybuj.
 	B_LogEntry(TOPIC_LoaSecret,"Koupil jsem drahé víno od Goraxe.");
 	LoaPartyWine = TRUE;
 
 	if((LoaPartyWine == TRUE) && (LoaPartyFood == TRUE))
 	{
-		B_LogEntry(TOPIC_LoaSecret,"Nyní se mohu vrátit za Lou a prodiskutovat další záležitosti tykající se oslavy.");
+		B_LogEntry(TOPIC_LoaSecret,"Nyní se mohu vrátit za Loou a prodiskutovat další záležitosti tykající se oslavy.");
 	};
 
 	AI_StopProcessInfos(self);

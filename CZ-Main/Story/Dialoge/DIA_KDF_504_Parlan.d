@@ -496,7 +496,7 @@ func void DIA_Parlan_PETZMASTER_Info()
 
 func void DIA_Parlan_PETZMASTER_PayNow()
 {
-	AI_Output(other,self,"DIA_Parlan_PETZMASTER_PayNow_15_00");	//Chtěl bych zaplatit pokutu!
+	AI_Output(other,self,"DIA_Parlan_PETZMASTER_PayNow_15_00");	//Chtěl bych zaplatit pokutu.
 	B_GiveInvItems(other,self,ItMi_Gold,Parlan_Schulden);
 	AI_Output(self,other,"DIA_Parlan_PETZMASTER_PayNow_05_01");	//Přijímám tvůj dar. Tvé hříchy jsou ti odpuštěny. Nechť ti Innos dodá moudrost, abys je neopakoval.
 	B_GrantAbsolution(LOC_MONASTERY);
@@ -664,7 +664,7 @@ func void DIA_Parlan_NoEnter_Quest()
 	MIS_LemarTheft = LOG_Running;
 	Log_CreateTopic(Topic_LemarTheft,LOG_MISSION);
 	Log_SetTopicStatus(Topic_LemarTheft,LOG_Running);
-	B_LogEntry(Topic_LemarTheft,"Mistr Parlan mě požádal, abych vrátit jednu věc do kláštera. Jeden z mágů ji dal do zástavy lichváři Lehmarovi. A on se rozhodl si ji ponechat. Musím ten problém nějak vyřešit.");
+	B_LogEntry(Topic_LemarTheft,"Mistr Parlan mě požádal, abych vrátil jednu věc do kláštera. Jeden z mágů ji dal do zástavy lichváři Lehmarovi. A on se rozhodl si ji ponechat. Musím ten problém nějak vyřešit.");
 	AI_StopProcessInfos(self);
 };
 
@@ -738,14 +738,14 @@ func void DIA_Parlan_LemarTheft_Info()
 	AI_Output(other,self,"DIA_Parlan_LemarTheft_01_02");	//Samozřejmě, mistře.
 	B_GiveInvItems(other,self,ItMi_ParlanRelic_MIS,1);
 	Npc_RemoveInvItems(self,ItMi_ParlanRelic_MIS,1);
-	AI_Output(self,other,"DIA_Parlan_LemarTheft_01_03");	//Dobrá. Teď se musím ujistil, že nikdy neopustil zdi kláštera.
+	AI_Output(self,other,"DIA_Parlan_LemarTheft_01_03");	//Dobrá. Teď se musím ujistit, že nikdy neopustí zdi kláštera.
 
 	if((hero.guild != GIL_KDF) && (hero.guild != GIL_KDW) && (hero.guild != GIL_NOV) && (hero.guild != GIL_PAL))
 	{
 		AI_Output(self,other,"DIA_Parlan_LemarTheft_01_04");	//Pokud jde o tebe - přijími mé upřímné poděkování.
 		AI_Output(self,other,"DIA_Parlan_LemarTheft_01_05");	//Vidím, že jsem se v tobě nemýlil.
 		AI_Output(self,other,"DIA_Parlan_LemarTheft_01_06");	//Nyní tady můžeš zůstat jestli chceš.
-		AI_Output(self,other,"DIA_Parlan_LemarTheft_01_07");	//Nezapomeňte však, že přístup do určité části kláštera je pro tebe stále uzavřen.
+		AI_Output(self,other,"DIA_Parlan_LemarTheft_01_07");	//Nezapomeň však, že přístup do určité části kláštera je pro tebe stále uzavřen.
 	}
 	else
 	{
@@ -971,7 +971,7 @@ func void DIA_Parlan_WORK_Info()
 		MIS_KlosterArbeit = LOG_Running;
 		B_LogEntry(Topic_Gemeinschaft,"Pokud budu plnit Parlanovy úkoly, dovolí mi studovat rukopisy v knihovně.");
 		AI_Output(self,other,"DIA_Parlan_WORK_01_01");	//Jo, a málem bych zapomněl... (reptání) Potřebuješ roucho novice...
-		AI_Output(other,self,"DIA_Parlan_WORK_01_02");	//A co s ním... je to nějaký problém.?
+		AI_Output(other,self,"DIA_Parlan_WORK_01_02");	//A co s ním... je to nějaký problém?
 		AI_Output(self,other,"DIA_Parlan_WORK_01_03");	//Problém je v tom, že nemáme látku ze které se šili roucha noviců.
 		AI_Output(self,other,"DIA_Parlan_WORK_01_04");	//Dlouhá léta jsme ji kupovali od cechu obchodníků z Khorinisu.
 		AI_Output(self,other,"DIA_Parlan_WORK_01_05");	//Ale kvůli válce se skřety váznou dodávky z pevniny, a naše zásoby se dostali na nulu.
@@ -979,7 +979,7 @@ func void DIA_Parlan_WORK_Info()
 		AI_Output(self,other,"DIA_Parlan_WORK_01_07");	//Dobrá otázka. No, co! Najdi prodejce Erola a zeptej se ho, jestli mu ještě nějaká látka nezbyla.
 		AI_Output(other,self,"DIA_Parlan_WORK_01_08");	//A proč zrovna jeho?
 		AI_Output(self,other,"DIA_Parlan_WORK_01_09");	//Erol býval v cechu obchodníků. Byl jedním z největších obchodníků s látkami kolem Khorinisu.
-		AI_Output(self,other,"DIA_Parlan_WORK_01_10");	//Už jsme skoušeli i jiné obchodníky, ale všechno marný.
+		AI_Output(self,other,"DIA_Parlan_WORK_01_10");	//Už jsme zkoušeli i jiné obchodníky, ale všechno marný.
 		AI_Output(self,other,"DIA_Parlan_WORK_01_11");	//Takže si s ním promluv.
 		Log_CreateTopic(TOPIC_ROBAMATERIAL,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_ROBAMATERIAL,LOG_Running);
@@ -1047,12 +1047,12 @@ func void DIA_Parlan_Stand_Info()
 
 	if(MIS_NeorasPflanzen == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Parlan_Stand_05_01");	//Opatřil jsi ohnivé kopřivy pro Bratra Neorase.
+		AI_Output(self,other,"DIA_Parlan_Stand_05_01");	//Opatřil jsi ohnivé kopřivy pro bratra Neorase.
 		Kloster_Punkte = Kloster_Punkte + 2;
 	};
 	if(MIS_NeorasRezept == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Parlan_Stand_05_02");	//Našel jsi recept Bratra Neorase.
+		AI_Output(self,other,"DIA_Parlan_Stand_05_02");	//Našel jsi recept bratra Neorase.
 		Kloster_Punkte = Kloster_Punkte + 2;
 	};
 	if(MIS_IsgarothWolf == LOG_SUCCESS)
@@ -1067,7 +1067,7 @@ func void DIA_Parlan_Stand_Info()
 	};
 	if(MIS_GoraxEssen == LOG_SUCCESS)
 	{
-		AI_Output(self,other,"DIA_Parlan_Stand_05_05");	//Rozdělil jsi jídlo férově, jak ti Bratr Gorax kázal.
+		AI_Output(self,other,"DIA_Parlan_Stand_05_05");	//Rozdělil jsi jídlo férově, jak ti bratr Gorax kázal.
 		Kloster_Punkte = Kloster_Punkte + 1;
 	}
 	else if(MIS_GoraxEssen == LOG_FAILED)
@@ -1166,7 +1166,7 @@ func void DIA_Parlan_Aufgabe_Info()
 	MIS_ParlanFegen = LOG_Running;
 	Log_CreateTopic(Topic_ParlanFegen,LOG_MISSION);
 	Log_SetTopicStatus(Topic_ParlanFegen,LOG_Running);
-	B_LogEntry(Topic_ParlanFegen,"Mistr Parlan mi udělil úlohy zamést komnaty noviců. Samému mi to bude trvat věčnost.");
+	B_LogEntry(Topic_ParlanFegen,"Mistr Parlan mi udělil úkol zamést komnaty noviců. Samému mi to bude trvat věčnost.");
 };
 
 
@@ -1197,7 +1197,7 @@ func void DIA_Parlan_Fegen_Info()
 	if(NOV_Helfer >= 5)
 	{
 		AI_Output(self,other,"DIA_Parlan_Fegen_05_01");	//Zvládl jsi sehnat čtyři novice, aby ti pomohli. Myslím, že teď se můžou vrátit ke své práci.
-		AI_Output(self,other,"DIA_Parlan_Fegen_05_02");	//Výborně, novici. Splnil jsi úlohu, kterou jsem ti zadal.
+		AI_Output(self,other,"DIA_Parlan_Fegen_05_02");	//Výborně, novici. Splnil jsi úkol, kterou jsem ti zadal.
 		MIS_ParlanFegen = LOG_SUCCESS;
 		B_GivePlayerXP(XP_ParlanFegen);
 		DIA_Parlan_Fegen_permanent = TRUE;
@@ -1507,7 +1507,7 @@ func void DIA_Parlan_CIRCLE3_Info()
 			AI_Output(self,other,"DIA_Parlan_TECH_CIRCLE3_05_01");	//Ano, čas nadešel. Teď vstup do třetího kruhu magie. Čekají tě nová kouzla.
 			AI_Output(self,other,"DIA_Parlan_TECH_CIRCLE3_05_02");	//Budeš je potřebovat, protože Zlo je blízko a může být poraženo jenom sílou Innose.
 			AI_Output(self,other,"DIA_Parlan_TECH_CIRCLE3_05_03");	//Naučil jsem tě všechny kruhy, které můžu. Výš tě bude trénovat Karras.
-			B_LogEntry(Topic_KlosterTeacher,"Bratr Parlan mě naučil první tři kruhy magie. Dál mě bude trénovat Bratr Karras.");
+			B_LogEntry(Topic_KlosterTeacher,"Bratr Parlan mě naučil první tři kruhy magie. Dál mě bude trénovat bratr Karras.");
 		};
 	}
 	else
@@ -1540,7 +1540,7 @@ func void DIA_Parlan_TEACH_Info()
 {
 	var int abletolearn;
 	abletolearn = 0;
-	AI_Output(other,self,"DIA_Parlan_TEACH_15_00");	//Nauč mě!
+	AI_Output(other,self,"DIA_Parlan_TEACH_15_00");	//Nauč mě vytvářet runy.
 	Info_ClearChoices(DIA_Parlan_TEACH);
 	Info_AddChoice(DIA_Parlan_TEACH,Dialog_Back,DIA_Parlan_TEACH_BACK);
 	if((Npc_GetTalentSkill(other,NPC_TALENT_MAGE) >= 2) && (PLAYER_TALENT_RUNES[SPL_InstantFireball] == FALSE))
@@ -1750,7 +1750,7 @@ func void DIA_Parlan_IAmParlan_Info()
 
 func void DIA_Parlan_IAmParlan_MyChoice()
 {
-	AI_Output(other,self,"DIA_Parlan_IAmParlan_MyChoice_15_00");	//Budu dělat, co se mi zlíbí
+	AI_Output(other,self,"DIA_Parlan_IAmParlan_MyChoice_15_00");	//Budu dělat, co se mi zlíbí.
 	AI_Output(self,other,"DIA_Parlan_IAmParlan_MyChoice_05_01");	//Musí být nějaký důvod, proč tě tady tolerujeme, ale všechno má své hranice.
 	AI_Output(self,other,"DIA_Parlan_IAmParlan_MyChoice_05_02");	//Pokud způsobíš problémy, zaplatíš za to. Drž se tedy dál od noviců.
 	Info_ClearChoices(DIA_Parlan_IAmParlan);
@@ -1821,7 +1821,7 @@ func int DIA_Parlan_DontDisturb_Condition()
 func void DIA_Parlan_DontDisturb_Info()
 {
 	AI_Output(self,other,"DIA_Parlan_DontDisturb_05_00");	//(výhružně) Ještě jednou – nech mé novice na pokoji!
-	AI_Output(self,other,"DIA_Parlan_DontDisturb_05_01");	//Mají pozdvihnout svého ducha fyzickou prací a připravit se na život v kláštere.
+	AI_Output(self,other,"DIA_Parlan_DontDisturb_05_01");	//Mají pozdvihnout svého ducha fyzickou prací a připravit se na život v klášteře.
 	AI_Output(self,other,"DIA_Parlan_DontDisturb_05_02");	//Nebudu tolerovat zásahy do jejich práce!
 	Parlan_DontTalkToNovice = LOG_Running;
 };
@@ -1993,7 +1993,7 @@ instance DIA_PARLAN_PICKPOCKET(C_Info)
 	condition = dia_parlan_pickpocket_condition;
 	information = dia_parlan_pickpocket_info;
 	permanent = TRUE;
-	description = "(Pokusit se ukrást klíč.)";
+	description = "(pokusit se ukrást klíč)";
 };
 
 

@@ -164,7 +164,7 @@ func void dia_hun_741_falk_news_info()
 		AI_Output(other,self,"DIA_HUN_741_Falk_News_01_09");	//A co je na tom překvapivého?
 		AI_Output(self,other,"DIA_HUN_741_Falk_News_01_10");	//Jak jako co?!... (udiveně) Jasně, nejaký skřet se tu a tam objeví, ale ne v takovém množství a po zuby ozbrojení!
 		AI_Output(other,self,"DIA_HUN_741_Falk_News_01_12");	//Kde na ty skřety narazili?
-		AI_Output(self,other,"DIA_HUN_741_Falk_News_01_13");	//Barem říkal, že se to stalo nekde poblíž Akilovy farmy. Ale na tvém místě bych tam nechodil.
+		AI_Output(self,other,"DIA_HUN_741_Falk_News_01_13");	//Barem říkal, že se to stalo někde poblíž Akilovy farmy. Ale na tvém místě bych tam nechodil.
 		MIS_INSORCWARRIOR = LOG_Running;
 		Log_CreateTopic(TOPIC_INSORCWARRIOR,LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_INSORCWARRIOR,LOG_Running);
@@ -201,7 +201,7 @@ func void dia_hun_741_falk_news_info()
 		AI_Output(self,other,"DIA_HUN_741_Falk_News_01_35");	//Pokud to tak půjde dál, budou se hemžit všude kolem nás.
 		AI_Output(self,other,"DIA_HUN_741_Falk_News_01_36");	//Nemluvě o skřetech!
 	}
-	else if(Kapitel == 6)
+	else if(Kapitel >= 6)
 	{
 		AI_Output(self,other,"DIA_HUN_741_Falk_News_01_37");	//Všichni jsme dost nervózní. Ta situace se skřety je prostě strašná!
 		AI_Output(self,other,"DIA_HUN_741_Falk_News_01_38");	//Slyšel jsem, že ty příšery útočí na město, nechci vědět, jak to bude vypadat, až udeří jinde.
@@ -410,13 +410,13 @@ func void DIA_HUN_741_Falk_MakeHuntArmor_info()
 	AI_Output(self,other,"DIA_HUN_741_Falk_MakeHuntArmor_01_03");	//... můžu tě naučit vyrábět zbroj z různých kůží ulovených zvířat.
 	AI_Output(self,other,"DIA_HUN_741_Falk_MakeHuntArmor_01_04");	//Jsou o hodně silnější než obvyklá zbroj a ochrání tě při lovu.
 	AI_Output(other,self,"DIA_HUN_741_Falk_MakeHuntArmor_01_05");	//To je zajímavé.
-	AI_Output(self,other,"DIA_HUN_741_Falk_MakeHuntArmor_01_06");	//Ne tak rychle kamaráde (úsměv) Pro začátek si to musíš zasloužit.
+	AI_Output(self,other,"DIA_HUN_741_Falk_MakeHuntArmor_01_06");	//Ne tak rychle kamaráde. (úsměv) Pro začátek si to musíš zasloužit.
 	AI_Output(self,other,"DIA_HUN_741_Falk_MakeHuntArmor_01_07");	//Musím si být úplně jistý, že svoje znalosti předávám lovci a ne nějakému chlápkovi s lukem v ruce.
 	AI_Output(self,other,"DIA_HUN_741_Falk_MakeHuntArmor_01_08");	//Udělejme dohodu... zlato si od tebe brát nebudu.
 	AI_Output(self,other,"DIA_HUN_741_Falk_MakeHuntArmor_01_09");	//Ale pro každou lekci od tebe budu žádat nějakou vzácnou trofej.
 	AI_Output(self,other,"DIA_HUN_741_Falk_MakeHuntArmor_01_10");	//A ta musí být opravdu vzácná. Jestli rozumíš, co tím myslím. Tak souhlasíš?
 	AI_Output(other,self,"DIA_HUN_741_Falk_MakeHuntArmor_01_11");	//Ruku na to!
-	AI_Output(self,other,"DIA_HUN_741_Falk_MakeHuntArmor_01_12");	//Bezvadné (úsměv) Tak tě čekám až se vrátíš a snad ne s prázdnýma rukama.
+	AI_Output(self,other,"DIA_HUN_741_Falk_MakeHuntArmor_01_12");	//Bezvadné. (úsměv) Tak tě čekám až se vrátíš a snad ne s prázdnýma rukama.
 	FalkCanTeachArmor = TRUE;
 	Log_CreateTopic(TOPIC_TalentHuntArmor,LOG_NOTE);
 	B_LogEntry(TOPIC_TalentHuntArmor,"Falk mě může naučit vyrábět zbroje z kůží zvířat. Za každou lekci chce nějakou vzácnou trofej. No, férová cena. Na výrobu těchto zbrojí budu taky potřebovat koželužský stůl a porcovací nůž.");
@@ -825,11 +825,11 @@ func int dia_hun_741_falk_teachabout_condition()
 func void dia_hun_741_falk_teachabout_info()
 {
 	AI_Output(other,self,"DIA_HUN_741_Falk_TeachAbout_01_00");	//Kdo mě tady může něco naučit?
-	AI_Output(self,other,"DIA_HUN_741_Falk_TeachAbout_01_03");	//Niklas tě naučí jak vyrábět šípy a šipky.
-	AI_Output(self,other,"DIA_HUN_741_Falk_TeachAbout_01_05");	//Ostatní - Alfred, Grom, Ghaan, Grimbald - tě naučí jak získat trofeje ze zvířat.
+	AI_Output(self,other,"DIA_HUN_741_Falk_TeachAbout_01_03");	//Niclas tě naučí jak vyrábět šípy a šipky.
+	AI_Output(self,other,"DIA_HUN_741_Falk_TeachAbout_01_05");	//Ostatní - Alfred, Grom, Gaan, Grimbald - tě naučí jak získat trofeje ze zvířat.
 	AI_Output(self,other,"DIA_HUN_741_Falk_TeachAbout_01_06");	//Sbírat lovecké trofeje je nejvýnosnější částí našeho obchodu.
 	AI_Output(self,other,"DIA_HUN_741_Falk_TeachAbout_01_07");	//Naneštěstí, hodně kluků je v současnosti mimo tábor.
-	AI_Output(self,other,"DIA_HUN_741_Falk_TeachAbout_01_08");	//Niklas prodává naše výrobky na místě u majáku. Taky má na starosti zásobování tábora masem.
+	AI_Output(self,other,"DIA_HUN_741_Falk_TeachAbout_01_08");	//Niclas prodává naše výrobky na místě u majáku. Taky má na starosti zásobování tábora masem.
 	AI_Output(self,other,"DIA_HUN_741_Falk_TeachAbout_01_09");	//Gaan loví poblíž průsmyku do Hornického údolí. Vzpomínám si, že stopuje divnou příšeru, která nejspíš není odtud.
 	AI_Output(self,other,"DIA_HUN_741_Falk_TeachAbout_01_10");	//Grom se vyskytuje poblíž farmy Onara. Dal jsem mu těžký úkol, takže je asi stále zaneprázdněný.
 	AI_Output(self,other,"DIA_HUN_741_Falk_TeachAbout_01_11");	//No a Grimbald loví chňapavce na severu poblíž černého trola.
@@ -1065,7 +1065,7 @@ func void dia_hun_741_falk_talkforwhat_info()
 	AI_Output(self,other,"DIA_HUN_741_Falk_TalkForWhat_01_03");	//Každý lov má svoje specifika.
 	AI_Output(self,other,"DIA_HUN_741_Falk_TalkForWhat_01_05");	//Pro začátek potřebuješ vědět, že každé zvíře má svoje zvyky a chování.
 	AI_Output(self,other,"DIA_HUN_741_Falk_TalkForWhat_01_08");	//Například, lovení smečky chňapavců - to je dost odlišné od lovení smečky vlků.
-	AI_Output(self,other,"DIA_HUN_741_Falk_TalkForWhat_01_09");	//Taky musíš vzít v potaz, že rozlišná zvířata útočí a brání se různými způsoby.
+	AI_Output(self,other,"DIA_HUN_741_Falk_TalkForWhat_01_09");	//Taky musíš vzít v potaz, že rozličná zvířata útočí a brání se různými způsoby.
 	AI_Output(self,other,"DIA_HUN_741_Falk_TalkForWhat_01_11");	//Pokud se v tomhle dobře orientuješ, vypořádáš se s jakoukoliv příšerou.
 };
 
@@ -1279,7 +1279,7 @@ func void dia_hun_741_falk_talkabouthunt_firewaran()
 	};
 	AI_Output(other,self,"DIA_HUN_741_TA_FireWaran_01_00");	//Jak lovit ohnivé ještěry?
 	AI_Output(self,other,"DIA_HUN_741_TA_FireWaran_01_01");	//Tato zvířata jsou v těchto krajích vzácná.
-	AI_Output(self,other,"DIA_HUN_741_TA_FireWaran_01_02");	//A nikdo z našich lovců je neloví. Je to příliš nezbezpečné.
+	AI_Output(self,other,"DIA_HUN_741_TA_FireWaran_01_02");	//A nikdo z našich lovců je neloví. Je to příliš nebezpečné.
 	AI_Output(self,other,"DIA_HUN_741_TA_FireWaran_01_06");	//Jejich nejvýraznější znaky jsou výrazně červená barva kůže a velký hřeben na hřbetu.
 	AI_Output(self,other,"DIA_HUN_741_TA_FireWaran_01_08");	//Tyhle potvory tě promění v hořící pochodeň, pokud budeš tak blbý a postavíš se před ně.
 	AI_Output(self,other,"DIA_HUN_741_TA_FireWaran_01_09");	//Sice se můžeš vyhnout jejich drápům a zubům, ale jejich ohnivému dechu je nemožné uniknout.
@@ -1503,8 +1503,8 @@ func void dia_hun_741_falk_fuckoff_info()
 	if((Npc_HasItems(other,itam_benkenob) >= 1) || ((FINDFALKGRANDFATHERSEEK_01 == TRUE) && (FINDFALKGRANDFATHERSEEK_01_DONE == FALSE)) || ((FINDFALKGRANDFATHERSEEK_02 == TRUE) && (FINDFALKGRANDFATHERSEEK_02_DONE == FALSE)) || ((FINDFALKGRANDFATHERSEEK_03 == TRUE) && (FINDFALKGRANDFATHERSEEK_03_DONE == FALSE)) || ((FINDFALKGRANDFATHERSEEK_04 == TRUE) && (FINDFALKGRANDFATHERSEEK_04_DONE == FALSE)) || ((FINDFALKGRANDFATHERSEEK_FINAL == TRUE) && (FINDFALKGRANDFATHERSEEK_FINAL_DONE == FALSE)) || ((FINDFALKGRANDFATHERSEEK_FINALEXT == TRUE) && (FINDFALKGRANDFATHERSEEK_FINALEXT_DONE == FALSE)))
 	{
 		AI_Output(other,self,"DIA_HUN_741_Falk_FuckOff_01_01");	//Počkej! Něco pro tebe mám...
-		AI_Output(self,other,"DIA_HUN_741_Falk_FuckOff_01_02");	//Od takového blba nic nechci!... (naštvaně) Nebo chceš, aby ti to řekl muj meč?!
-		AI_Output(other,self,"DIA_HUN_741_Falk_FuckOff_01_03");	//Uklidni se a vyslechni mě! Mám zprávy o tvém dedečkovi Benovi.
+		AI_Output(self,other,"DIA_HUN_741_Falk_FuckOff_01_02");	//Od takového blba nic nechci!... (naštvaně) Nebo chceš, aby ti to řekl můj meč?!
+		AI_Output(other,self,"DIA_HUN_741_Falk_FuckOff_01_03");	//Uklidni se a vyslechni mě! Mám zprávy o tvém dědečkovi Benovi.
 		AI_Output(self,other,"DIA_HUN_741_Falk_FuckOff_01_04");	//Coo? (mění náladu a uklidňuje se)
 		AI_Output(self,other,"DIA_HUN_741_Falk_FuckOff_01_06");	//Hmm... (zamyšleně) Dobrá! Když už jsi tady.
 		FALKPISSOFF = FALSE;
@@ -1709,7 +1709,7 @@ func void dia_hun_741_falk_falkgrandfather_info()
 	B_GivePlayerXP(50);
 	AI_Output(other,self,"DIA_HUN_741_GF_01_00");	//Našel jsem jednu velmi zajímavou věc. Je možné, že tě bude zajímat.
 	AI_Output(self,other,"DIA_HUN_741_GF_01_01");	//Co je to za věc?!... (se zájmem)
-	AI_Output(other,self,"DIA_HUN_741_GF_01_02");	//Tento starý záznam. Je v ní zmíněno jméno Ben - tak se jmenoval tvuj dedeček. Nebo snad ne?!
+	AI_Output(other,self,"DIA_HUN_741_GF_01_02");	//Tento starý záznam. Je v ní zmíněno jméno Ben - tak se jmenoval tvuj dědeček. Nebo snad ne?!
 	AI_Output(self,other,"DIA_HUN_741_GF_01_03");	//Co?!... (zmateně) Ukaž mi to!
 	B_GiveInvItems(other,self,itwr_falkgrandfather_01,1);
 	B_UseFakeScroll();
@@ -1717,7 +1717,7 @@ func void dia_hun_741_falk_falkgrandfather_info()
 	AI_Output(self,other,"DIA_HUN_741_GF_01_06");	//A kde jsi našel ten starý kus papíru?!
 	AI_Output(other,self,"DIA_HUN_741_GF_01_07");	//Poblíž starých ruin na severu.
 	AI_Output(self,other,"DIA_HUN_741_GF_01_08");	//Vážně?
-	AI_Output(self,other,"DIA_HUN_741_GF_01_09");	//Nevím - muže to být náhoda, ale tam se na lovu před sedmi lety dedeček ztratil.
+	AI_Output(self,other,"DIA_HUN_741_GF_01_09");	//Nevím - může to být náhoda, ale tam se na lovu před sedmi lety dědeček ztratil.
 	AI_Output(self,other,"DIA_HUN_741_GF_01_10");	//(smutně) Tam potom zmizel beze stopy.
 	Info_ClearChoices(dia_hun_741_falk_falkgrandfather);
 	Info_AddChoice(dia_hun_741_falk_falkgrandfather,"Znovu se omlouvám.",dia_hun_741_falk_falkgrandfather_no);
@@ -1732,7 +1732,7 @@ func void dia_hun_741_falk_falkgrandfather_no()
 
 func void dia_hun_741_falk_falkgrandfather_yes()
 {
-	AI_Output(other,self,"DIA_HUN_741_GF_Yes_01_00");	//Mužu ti s tím nějak pomoct?
+	AI_Output(other,self,"DIA_HUN_741_GF_Yes_01_00");	//Můžu ti s tím nějak pomoct?
 	AI_Output(self,other,"DIA_HUN_741_GF_Yes_01_01");	//Ty?... (udiveně) a jak?!
 	AI_Output(other,self,"DIA_HUN_741_GF_Yes_01_02");	//No, například, pomoct ti zjistit, co se stalo tvému dědečkovi.
 	AI_Output(self,other,"DIA_HUN_741_GF_Yes_01_06");	//To bys mi udělal velkou laskavost, kamaráde!
@@ -1814,32 +1814,32 @@ func void dia_hun_741_falk_falkgrandfatherprogress_info()
 			};
 			bonuscount = bonuscount + 500;
 			B_GivePlayerXP(bonuscount);
-			AI_Output(other,self,"DIA_HUN_741_GFProgress_Info_01_04");	//Tady, našel jsem starý amulet - zezadu je vyraženo jméno ' Ben Kenob '.
+			AI_Output(other,self,"DIA_HUN_741_GFProgress_Info_01_04");	//Tady, našel jsem starý amulet - zezadu je vyraženo jméno 'Ben Kenob'.
 			B_GiveInvItems(other,self,itam_benkenob,1);
 			Npc_RemoveInvItems(self,itam_benkenob,1);
 			AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_07");	//Ano, to znám... (velmi zmateně) Tak přece jsme se nepletli!
 			AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_10");	//Řekni mi, kde jsi ho našel?!
 			AI_Output(other,self,"DIA_HUN_741_GFProgress_Info_01_11");	//V žaludku jedné příšery, co jsem zabil - obrovské kudlanky!
-			AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_13");	//Teď je všechno jasné - zřejme si na něm ta svine pochutnala.
+			AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_13");	//Teď je všechno jasné - zřejme si na něm ta svině pochutnala.
 			AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_15");	//Dobrá, už se s tím nic nedá dělat.
 			AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_16");	//Ale díky za tvou pomoc a jak jsem slíbil - přijmi ode mě tuto odměnu.
 			B_GiveInvItems(self,other,ItMi_Gold,1000);
 			MIS_FALKGRANDFATHERSEEK = LOG_SUCCESS;
 			Log_SetTopicStatus(TOPIC_FALKGRANDFATHERSEEK,LOG_SUCCESS);
-   			B_LogEntry(TOPIC_FALKGRANDFATHERSEEK,"Přinesl jsem Falkovi amulet, který jsem našel uvnitř velké kudlanky. Falk mi řekl, že patřil jeho dedečkovi! Zezadu bylo vyraženo jeho jméno. Teď je jasné, že Ben Kenob - Falkuv dedeček, zemřel.");
+   			B_LogEntry(TOPIC_FALKGRANDFATHERSEEK,"Přinesl jsem Falkovi amulet, který jsem našel uvnitř velké kudlanky. Falk mi řekl, že patřil jeho dedečkovi! Zezadu bylo vyraženo jeho jméno. Teď je jasné, že Ben Kenob - Falkův dědeček, zemřel.");
 		}
 		else
 		{
 			if((FINDFALKGRANDFATHERSEEK_02 == TRUE) && (FINDFALKGRANDFATHERSEEK_02_DONE == FALSE) && (Npc_HasItems(other,itwr_galkgrandfather_02) >= 1))
 			{
 				bonuscount = bonuscount + 50;
-				AI_Output(other,self,"DIA_HUN_741_GFProgress_Info_01_20");	//Tady, našel jsem tuto poznámku v jedné jeskyni na severovýchode ostrova.
+				AI_Output(other,self,"DIA_HUN_741_GFProgress_Info_01_20");	//Tady, našel jsem tuto poznámku v jedné jeskyni na severovýchodě ostrova.
 				AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_21");	//Vážně?!... (diví se) Hmm, zajímalo by mě, kde se to tam vzalo?!
 				AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_22");	//Co já vím, tak se tam dá dostat jen lodí.
 				AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_23");	//(starostlivě) Nechej mě podívat se na to.
 				B_GiveInvItems(other,self,itwr_galkgrandfather_02,1);
 				B_UseFakeScroll();
-				AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_26");	//Hmm... (zamyšlene) Celé to je velmi zajímavé. Ješte něco?!
+				AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_26");	//Hmm... (zamyšleně) Celé to je velmi zajímavé. Ještě něco?!
 				FINDFALKGRANDFATHERSEEK_02_DONE = TRUE;
 			};
 			if((FINDFALKGRANDFATHERSEEK_03 == TRUE) && (FINDFALKGRANDFATHERSEEK_03_DONE == FALSE) && (Npc_HasItems(other,itwr_halkgrandfather_03) >= 1))
@@ -1868,7 +1868,7 @@ func void dia_hun_741_falk_falkgrandfatherprogress_info()
 			if((FINDFALKGRANDFATHERSEEK_FINAL == TRUE) && (FINDFALKGRANDFATHERSEEK_FINAL_DONE == FALSE) && (Npc_HasItems(other,itwr_kalkgrandfather_final) >= 1))
 			{
 				bonuscount = bonuscount + 50;
-				AI_Output(other,self,"DIA_HUN_741_GFProgress_Info_01_43");	//Našel jsem tento lístek poblíž bažin na východe údolí.
+				AI_Output(other,self,"DIA_HUN_741_GFProgress_Info_01_43");	//Našel jsem tento lístek poblíž bažin na východě údolí.
 				B_GiveInvItems(other,self,itwr_kalkgrandfather_final,1);
 				B_UseFakeScroll();
 				AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_49");	//Zajímavé. Nějaké další zprávy?
@@ -1878,7 +1878,7 @@ func void dia_hun_741_falk_falkgrandfatherprogress_info()
 			{
 				bonuscount = bonuscount + 50;
 				AI_Output(other,self,"DIA_HUN_741_GFProgress_Info_01_50");	//Tady je poznámka, kterou jsem našel v bažinách - Ben tam šel hledat toho zvláštního tvora.
-				AI_Output(other,self,"DIA_HUN_741_GFProgress_Info_01_51");	//A zdá se, že jeho lov se nevyvíjel úspešně.
+				AI_Output(other,self,"DIA_HUN_741_GFProgress_Info_01_51");	//A zdá se, že jeho lov se nevyvíjel úspěšně.
 				B_GiveInvItems(other,self,itwr_lalkgrandfather_finalext,1);
 				B_UseFakeScroll();
 				AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_54");	//Hmm... Ano. Podle záznamu se zdá, že to tak bylo.
@@ -1895,7 +1895,7 @@ func void dia_hun_741_falk_falkgrandfatherprogress_info()
 	else
 	{
 		AI_Output(other,self,"DIA_HUN_741_GFProgress_Info_01_62");	//Pokusím se.
-		AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_63");	//(smutně) Dobrá, pokud neco zjistíš - informuj mě o tom.
+		AI_Output(self,other,"DIA_HUN_741_GFProgress_Info_01_63");	//(smutně) Dobrá, pokud něco zjistíš - informuj mě o tom.
 	};
 };
 
@@ -1970,26 +1970,26 @@ func void dia_hun_741_falk_canihunterchallange_info()
 			B_GivePlayerXP(500);
 			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_04");	//Zdá se, že tě většina v tomto táboře podporuje.
 			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_05");	//Získal jsi respekt mnoha lovců!
-			AI_Output(other,self,"DIA_HUN_741_Falk_CanIHCh_01_06");	//Znamená to, že teď s tebou mužu soutěžit o titul nejlepšího lovce?
+			AI_Output(other,self,"DIA_HUN_741_Falk_CanIHCh_01_06");	//Znamená to, že teď s tebou můžu soutěžit o titul nejlepšího lovce?
 			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_07");	//Ano, myslím, že máš určitou šanci!
 			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_09");	//Abychom naplnili tvoji výzvu, uspořádám s tebou malou soutěž.
 			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_10");	//A vítěz se bude moci provolat nejlepším lovcem v táboře.
 			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_14");	//Poslouchej mě pozorně...
-			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_15");	//Nekde na ostrově se nachází jedno velmi vzácné zvíře. Lovci mu dali přezdívku - Slokers.
-			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_16");	//Toto stvoření je trochu podobné mrchožroutovi, ale narozdíl od těch hloupých ptáku - je velmi opatrné a extrémne obezřetné!
+			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_15");	//Někde na ostrově se nachází jedno velmi vzácné zvíře. Lovci mu dali přezdívku - Slokers.
+			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_16");	//Toto stvoření je trochu podobné mrchožroutovi, ale narozdíl od těch hloupých ptáku - je velmi opatrné a extrémně obezřetné!
 			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_17");	//Mnozí se ho už pokusili ulovit, ale nikomu se to nepodařilo.
 			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_19");	//To je celé, budeme ho lovit.
-			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_20");	//Je nutné to zvíře vystopovat, zabít a donést staženou kuži jako důkaz.
+			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_20");	//Je nutné to zvíře vystopovat, zabít a donést staženou kůži jako důkaz.
 			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_21");	//Pokud se ti to podaří dřív než mně - tak si zasloužíš náš obdiv... (pochybovačně)
-			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_23");	//Tak neztrácej čas a bež lovit.
+			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_23");	//Tak neztrácej čas a běž lovit.
 			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_24");	//Já vyjdu trochu později - dám ti menší náskok... (směje se)
 			AI_Output(other,self,"DIA_HUN_741_Falk_CanIHCh_01_25");	//Na viděnou.
 			TIMER_HUNTERCHALLANGE = Wld_GetDay();
 			MIS_HUNTERCHALLANGE = LOG_Running;
 			Log_CreateTopic(TOPIC_HUNTERCHALLANGE,LOG_MISSION);
 			Log_SetTopicStatus(TOPIC_HUNTERCHALLANGE,LOG_Running);
-			B_LogEntry(TOPIC_HUNTERCHALLANGE,"Rozhodl jsem se vyzvat Falka k souboji o titul nejlepšího lovce v táboře. Falk mi nabídl soutěž, kde vítěz bere titul nejsilnějšího. Předmětem soutěže je ulovit velmi vychytralé malé zvíře, které lovci nazývají Slokers. Podle popisu Falka, tohle stvoření vypadá jako mrchožrout. Jako důkaz prvenství ulovení tohoto zvířete, bude stačit ukázat falkovi kůži Slokerse.");
-			Log_AddEntry(TOPIC_HUNTERSWORK,"Falk přijal muj požadavek! Teď všechno záleží na mně - zda dokážu, že jsem hoden být označován jako nejlepší lovec.");
+			B_LogEntry(TOPIC_HUNTERCHALLANGE,"Rozhodl jsem se vyzvat Falka k souboji o titul nejlepšího lovce v táboře. Falk mi nabídl soutěž, kde vítěz bere titul nejsilnějšího. Předmětem soutěže je ulovit velmi vychytralé malé zvíře, které lovci nazývají Slokers. Podle popisu Falka, tohle stvoření vypadá jako mrchožrout. Jako důkaz prvenství ulovení tohoto zvířete, bude stačit ukázat Falkovi kůži Slokerse.");
+			Log_AddEntry(TOPIC_HUNTERSWORK,"Falk přijal mou výzvu! Teď všechno záleží na mně - zda dokážu, že jsem hoden být označován jako nejlepší lovec.");
 			Npc_ExchangeRoutine(self,"HuntSlokers");
 			AI_StopProcessInfos(self);
 			ransl = Hlp_Random(7);
@@ -2029,8 +2029,8 @@ func void dia_hun_741_falk_canihunterchallange_info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_31");	//Hmm... (usmívá se) Zdá se, že jsi už získal podporu několika lovcu. To není vubec špatné, kámo!
-			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_32");	//Ale stálo to nestačí na to, abys mě mohl vyzvat.
+			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_31");	//Hmm... (usmívá se) Zdá se, že jsi už získal podporu několika lovců. To není vůbec špatné, kámo!
+			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_32");	//Ale stále to nestačí na to, abys mě mohl vyzvat.
 			AI_Output(self,other,"DIA_HUN_741_Falk_CanIHCh_01_34");	//Ale zdá se, že jsi na dobré cestě...
 		};
 	};
@@ -2095,8 +2095,8 @@ func void dia_hun_741_falk_hunterchallangedone_info()
 	AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_03");	//Ale no tak! (vážně) To nemůže být pravda!
 	B_GiveInvItems(other,self,itat_slokersfur,1);
 	Npc_RemoveInvItems(self,itat_slokersfur,1);
-	AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_05");	//Neuveřitelné! Mé oči tomu nemohou uveřit!... (úplně zmateně) Ale jak se ti to zvíře podařilo vystopovat?!
-	AI_Output(other,self,"DIA_HUN_741_Falk_HChDone_01_06");	//Bylo to docela jednoduché. No, teď už vážne musíš uznat, že já jsem nejlepší lovec v táboře?!
+	AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_05");	//Neuveřitelné! Mé oči tomu nemohou uvěřit!... (úplně zmateně) Ale jak se ti to zvíře podařilo vystopovat?!
+	AI_Output(other,self,"DIA_HUN_741_Falk_HChDone_01_06");	//Bylo to docela jednoduché. No, teď už vážně musíš uznat, že já jsem nejlepší lovec v táboře?!
 	AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_07");	//(povzdech) Jo, nevyšlo mi to. Jsi ten nejlepší, chlape!
 
 	if((hero.attribute[ATR_DEXTERITY] > hero.attribute[ATR_STRENGTH]) && (hero.guild != GIL_KDF) && (hero.guild != GIL_KDW) && (hero.guild != GIL_KDM) && (hero.guild != GIL_NDM) && (hero.guild != GIL_NDW) && (hero.guild != GIL_NOV) && (hero.guild != GIL_GUR))
@@ -2105,7 +2105,7 @@ func void dia_hun_741_falk_hunterchallangedone_info()
 		B_GiveInvItems(self,other,itrw_shadowbow,1);
 		AI_Output(other,self,"DIA_HUN_741_Falk_HChDone_01_10");	//Co je to za luk?!
 		AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_12");	//Řeknu ti - v rukou jsem ještě nedržel lepší zbraň!
-		AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_13");	//Je vyroben ze starých dubu, které rostou jen daleko v hlubokých lesích Myrtany, kdysi jsem ho dostal od mého dědečka Bena.
+		AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_13");	//Je vyroben ze starých dubů, které rostou jen daleko v hlubokých lesích Myrtany, kdysi jsem ho dostal od mého dědečka Bena.
 		AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_15");	//Na střílení z něj jsou potřeba trochu jiné šípy, než na které jsi zvyklý.
 		AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_17");	//Může ti je vyrobit obchodník Bosper!
 		AI_Output(self,other,"DIA_HUN_741_Falk_HChDone_01_18");	//Prostě mu ukaž ten luk a on pochopí.
@@ -2119,7 +2119,7 @@ func void dia_hun_741_falk_hunterchallangedone_info()
 	SAVESPOTHUNTER = TRUE;
 	Log_SetTopicStatus(TOPIC_HUNTERCHALLANGE,LOG_SUCCESS);
 	Log_SetTopicStatus(TOPIC_HUNTERSWORK,LOG_SUCCESS);
-	B_LogEntry(TOPIC_HUNTERCHALLANGE,"Přinesl jsem Falkovi slokersovu kuži. Byl velice překvapen faktem, že se mi to podařilo dřív než jemu. A nakonec mi udělil právo se nazývat nejlepším lovcem!");
+	B_LogEntry(TOPIC_HUNTERCHALLANGE,"Přinesl jsem Falkovi Slokersovu kuži. Byl velice překvapen faktem, že se mi to podařilo dřív než jemu. A nakonec mi udělil právo se nazývat nejlepším lovcem!");
 };
 
 
@@ -2180,7 +2180,7 @@ func void dia_hun_741_falk_gatherarmyanswer_info()
 	if((MIS_BAREMCRAWLERARMOR == LOG_SUCCESS) && !Npc_IsDead(hun_744_barem))
 	{
 		AI_Output(self,other,"DIA_HUN_741_Falk_GatherArmyAnswer_01_05");	//Kromě toho, nemáme solidní zbroj. Kromě Barema, samozřejmě.
-		AI_Output(self,other,"DIA_HUN_741_Falk_GatherArmyAnswer_01_06");	//On si nějak zvládl obstarat skvělou zbroj ze štítů důlních červů
+		AI_Output(self,other,"DIA_HUN_741_Falk_GatherArmyAnswer_01_06");	//On si nějak zvládl obstarat skvělou zbroj ze krunýřů důlních červů.
 		AI_Output(self,other,"DIA_HUN_741_Falk_GatherArmyAnswer_01_08");	//Tyhle hadry, které mám na sobě já a ostatní kluci, nás těžko ochrání před skřetí sekerou.
 		AI_Output(other,self,"DIA_HUN_741_Falk_GatherArmyAnswer_01_09");	//A když seženu ty samé zbroje?
 	}
@@ -2199,7 +2199,7 @@ func void dia_hun_741_falk_gatherarmyanswer_info()
 	Log_CreateTopic(TOPIC_HUNTERSARMOR,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HUNTERSARMOR,LOG_Running);
 	B_LogEntry(TOPIC_HUNTERSARMOR,"Mluvil jsem s Falkem, vůdcem lovců. Vypadá to, že nemá v úmyslu přidat se k vojsku lorda Hagena. Avšak být proti skřetím válečníkům v klasické lovecké zbroji, to je podle Falka hloupost a bláznovství. Jestli můžu pro ně obstarat jakoukoliv silnější zbroj, rádi pomohou paladinům ve válce proti skřetům. Doufám že sada deseti zbrojí bude stačit.");
-	Log_AddEntry(TOPIC_HUNTERSARMOR,"Jak jsem si vzpomněl, žoldák Wolf ví, jak vyrobit zbroj z pancéřů důlních červů. Myslím, že se lovcům opravdu hodí.");
+	Log_AddEntry(TOPIC_HUNTERSARMOR,"Jak jsem si vzpomněl, žoldák Wolf ví, jak vyrobit zbroj z krunýřů důlních červů. Myslím, že se lovcům opravdu hodí.");
 	AI_StopProcessInfos(self);
 };
 

@@ -106,7 +106,7 @@ func void dia_nash_hello_not()
 	AI_Output(other,self,"DIA_Nash_Hello_01_33");	//Nic moc.
 	AI_Output(self,other,"DIA_Nash_Hello_01_34");	//Hmm... Divné. Děcka v táboře jsou z ní celé pryč. Ještě chtějí přidat...
 	AI_Output(other,self,"DIA_Nash_Hello_01_35");	//Tak budu první, co odmítne.
-	AI_Output(self,other,"DIA_Nash_Hello_01_36");	//Škoda, že ti nechutná. Ale jak říkají, kolik lidí -... vždyť víš, jak to de dál.
+	AI_Output(self,other,"DIA_Nash_Hello_01_36");	//Škoda, že ti nechutná. Ale jak říkají, kolik lidí -... vždyť víš, jak to jde dál.
 	AI_StopProcessInfos(self);
 	MEETNASH = TRUE;
 };
@@ -141,7 +141,7 @@ func void dia_nash_hello_valley_info()
 	AI_Output(self,other,"DIA_Nash_Hello_Valley_01_05");	//Hmm... popřemýšlím... (promýšlí)
 	if(NASHREADYTEACH == TRUE)
 	{
-		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_06");	//Pamatuju si, že jeden z lovců, Karrok, mi řekl o divném podzemním komlexu... Jestli je to krypta nebo chrám...
+		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_06");	//Pamatuju si, že jeden z lovců, Karrok, mi řekl o divném podzemním komplexu... Jestli je to krypta nebo chrám...
 		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_07");	//... si nepamatuju... Jenom vím, že říkal, že je to východně od tábora... (přemýšlí) Je to dlouho.
 		AI_Output(other,self,"DIA_Nash_Hello_Valley_01_08");	//Kde je teď Karrok?
 		AI_Output(self,other,"DIA_Nash_Hello_Valley_01_09");	//Bohužel se nevrátil z lovu.
@@ -216,7 +216,7 @@ func void DIA_Nash_Shield_info()
 	AI_Output(other,self,"DIA_Nash_Shield_01_01");	//Vidím, že nosíš štít.
 	AI_Output(self,other,"DIA_Nash_Shield_01_02");	//A to tě překvapuje? Na takovémhle místě může spolehlivý štít zachránit život!
 	AI_Output(self,other,"DIA_Nash_Shield_01_04");	//Pokud tedy víš jak ho používat.
-	AI_Output(other,self,"DIA_Nash_Shield_01_05");	//A můžeš mmne naučit, jak s ním bojovat?
+	AI_Output(other,self,"DIA_Nash_Shield_01_05");	//A můžeš mne naučit, jak s ním bojovat?
 	AI_Output(self,other,"DIA_Nash_Shield_01_06");	//Samozřejmě! Ale k tomu musíš už něco umět...
 	AI_Output(self,other,"DIA_Nash_Shield_01_07");	//Pro zelenáče budou mé lekce zcela zbytečné.
 	AI_Output(self,other,"DIA_Nash_Shield_01_08");	//Navíc budeš muset zaplatit.
@@ -256,11 +256,11 @@ func void DIA_Nash_ShieldDone_info()
 	B_GiveInvItems(other,self,ItFoMuttonRaw,50);
 	Npc_RemoveInvItems(self,ItFoMuttonRaw,50);
 	AI_Output(other,self,"DIA_Nash_ShieldDone_01_02");	//Naučíš mne teď svoje triky.
-	AI_Output(self,other,"DIA_Nash_ShieldDone_01_03");	//Samozřejmě. Záležíjen jestli máš dostatek zkušeností.
+	AI_Output(self,other,"DIA_Nash_ShieldDone_01_03");	//Samozřejmě. Záleží jen jestli máš dostatek zkušeností.
 	AI_Output(self,other,"DIA_Nash_ShieldDone_01_04");	//Řekni až budeš připraven.
 	MIS_MeetNashShield = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_MeetNashShield,LOG_SUCCESS);
-	B_LogEntry(TOPIC_MeetNashShield,"Donesl jsem Nashovi 5é kusů masa. Nyní mne naučí jak správně používat štít.");
+	B_LogEntry(TOPIC_MeetNashShield,"Donesl jsem Nashovi 50 kusů masa. Nyní mne naučí jak správně používat štít.");
 };
 
 instance DIA_Nash_Shield_Teach(C_Info)

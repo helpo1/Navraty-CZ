@@ -190,7 +190,7 @@ func void DIA_Abuyin_Woher_Info()
 {
 	AI_Output(other,self,"DIA_Abuyin_Woher_15_00");	//Kde se dá sehnat jablečný tabák?
 	AI_Output(self,other,"DIA_Abuyin_Woher_13_01");	//Dám ti dvě dávky. Je jen na tvé moudrosti, jak s ním naložíš.
-	AI_Output(self,other,"DIA_Abuyin_Woher_13_02");	//Pokud budeš chtít další, zajdi přímo za Zuridem, mistrem lektvarů. Dělá si svůj vlastní tabák a také ho samozřejmě prodává.
+	AI_Output(self,other,"DIA_Abuyin_Woher_13_02");	//Pokud budeš chtít další, zajdi přímo za Zurisem, mistrem lektvarů. Dělá si svůj vlastní tabák a také ho samozřejmě prodává.
 	B_GiveInvItems(self,other,ItMi_ApfelTabak,2);
 };
 
@@ -311,7 +311,7 @@ func void DIA_Abuyin_Mischung_Super()
 func void DIA_Abuyin_Mischung_MegaSuper()
 {
 	AI_Output(self,other,"DIA_Abuyin_Mischung_MegaSuper_13_00");	//Co je to?
-	AI_Output(other,self,"DIA_Abuyin_Mischung_MegaSuper_13_01");	//Zkus to! Bude se vám to líbit...
+	AI_Output(other,self,"DIA_Abuyin_Mischung_MegaSuper_13_01");	//Zkus to! Bude se ti to líbit...
 	AI_Output(self,other,"DIA_Abuyin_Mischung_MegaSuper_13_02");	//Dobře, pojď sem.
 	B_GiveInvItems(other,self,ItMi_Hasish,1);
 	Npc_RemoveInvItems(self,ItMi_Hasish,1);	

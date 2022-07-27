@@ -50,7 +50,7 @@ func void DIA_Sengrath_Hello_Info()
 		AI_Output(other,self,"DIA_Sengrath_Hello_15_02");	//Ne, váš posel neprošel. Přicházím z rozkazu lorda Hagena.
 	};
 	AI_Output(self,other,"DIA_Sengrath_Hello_03_03");	//(vrčení) Prokletí skřeti.
-	AI_Output(self,other,"DIA_Sengrath_Hello_03_04");	//No, Velitel Garond tě bude chtít vidět. Najdeš ho v té velké budově, která je střežena dvěmi rytíři.
+	AI_Output(self,other,"DIA_Sengrath_Hello_03_04");	//No, velitel Garond tě bude chtít vidět. Najdeš ho v té velké budově, která je střežena dvěmi rytíři.
 };
 
 
@@ -107,7 +107,7 @@ func void DIA_Sengrath_Perm_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Sengrath_Perm_03_02");	//Popros Keroltha. On trénuje boj s mečem.
+		AI_Output(self,other,"DIA_Sengrath_Perm_03_02");	//Popros Kerolotha. On trénuje boj s mečem.
 		Log_CreateTopic(TOPIC_Teacher_OC,LOG_NOTE);
 		B_LogEntry(TOPIC_Teacher_OC,"Keroloth na hradě trénuje v boji s mečem.");
 	};

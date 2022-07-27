@@ -96,7 +96,7 @@ func int DIA_Neoras_Arbeit_Condition()
 
 func void DIA_Neoras_Arbeit_Info()
 {
-	AI_Output(other,self,"DIA_Neoras_Arbeit_15_00");	//Máš pro mě práci?
+	AI_Output(other,self,"DIA_Neoras_Arbeit_15_00");	//Máš pro mě nějaký úkol?
 	AI_Output(self,other,"DIA_Neoras_Arbeit_01_01");	//Ano, potřebuji byliny pro své experimenty. Pěstujeme si je samy, ale momentálně nemáme žádné ohnivé kopřivy.
 	AI_Output(self,other,"DIA_Neoras_Arbeit_01_02");	//Mělo by stačit 7 květů. Přines mi je - ó, ještě něco – chybí mi recept na lektvary.
 	AI_Output(self,other,"DIA_Neoras_Arbeit_01_03");	//Kdybys ho našel, byl bych ti vděčný.
@@ -488,7 +488,7 @@ func void dia_neoras_orcpotion_info()
 	{
 		Info_ClearChoices(dia_neoras_orcpotion);
 		Info_AddChoice(dia_neoras_orcpotion,Dialog_Back,dia_neoras_orcpotion_back);
-		Info_AddChoice(dia_neoras_orcpotion,"Připrav mi lektvar (300 zlatých).",dia_neoras_orcpotion_pay);
+		Info_AddChoice(dia_neoras_orcpotion,"Připrav mi lektvar. (300 zlatých)",dia_neoras_orcpotion_pay);
 	};
 };
 
@@ -971,7 +971,7 @@ func void dia_neoras_receptfortyon_alchimik()
 	{
 		if(KNOWABOUTRECEPTFORTYON == TRUE)
 		{
-			AI_Output(self,other,"DIA_Neoras_ReceptForTyon_Alchimik_01_01");	//Takže hledáš poznání!...
+			AI_Output(self,other,"DIA_Neoras_ReceptForTyon_Alchimik_01_01");	//Takže hledáš poznání...
 			AI_Output(self,other,"DIA_Neoras_ReceptForTyon_Alchimik_01_02");	//Obávám si, že ti s tím nebudu moci pomoct.
 			AI_Output(other,self,"DIA_Neoras_ReceptForTyon_Alchimik_01_03");	//Proč?
 			AI_Output(self,other,"DIA_Neoras_ReceptForTyon_Alchimik_01_04");	//Tyhle dovednosti můžu předat jenom členům našeho rádu. A ty ním nejsi!
@@ -1231,7 +1231,7 @@ instance DIA_neoras_LOKIPOTION(C_Info)
 	condition = DIA_neoras_LOKIPOTION_Condition;
 	information = DIA_neoras_LOKIPOTION_Info;
 	permanent = FALSE;
-	description = "Je to pravda, že jste v poslední době zakoupili od prodejce Zurise vzácné rostliny?";
+	description = "Je to pravda, že jsi v poslední době zakoupili od prodejce Zurise vzácné rostliny?";
 };
 
 
@@ -1245,16 +1245,16 @@ func int DIA_neoras_LOKIPOTION_Condition()
 
 func void DIA_neoras_LOKIPOTION_Info()
 {
-	AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_00");	//Je to pravda, že jste v poslední době zakoupili od prodejce Zurise vzácné rostliny?
+	AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_00");	//Je to pravda, že jsi v poslední době zakoupili od prodejce Zurise vzácné rostliny?
 	AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_01");	//(váhavě) Já u něj často kupují různé druhy přísad pro své experimenty.
 	AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_02");	//Myslím květ kaktusu.
 	AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_03");	//Ach, o tomdle mluvíš. Ano, to byl velký úspěch, když se ukázalo, že má jeden exemplář této nádherné květiny.
 	AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_04");	//Víš, pracoval jsem na magickém elixíru, který vytvoří po pozření, určitou imunitu vůči ohni...
 	AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_05");	//A podle mých výpočtů, jsem naléhavě potřeboval přírodní extrakt z květu této rostliny.
 	AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_06");	//A proč se o to zajímáš?
-	AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_07");	//Také jsem nutně potřeba tuto rostlinu. Ale tadle je dle všeho, jediná na ostrově.
+	AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_07");	//Také nutně potřebuji tuto rostlinu. Ale tadle je dle všeho, jediná na ostrově.
 	AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_08");	//Neprodáš mě ji?
-	AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_09");	//Zapomeňte na to! O peníze nemám zájem.
+	AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_09");	//Zapomeň na to! O peníze nemám zájem.
 
 	if(hero.guild == GIL_PAL)
 	{
@@ -1274,18 +1274,18 @@ func void DIA_neoras_LOKIPOTION_Info()
 		B_GivePlayerXP(750);
 		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_17");	//Teď mě řekni co mám udělat, abys mě ji dal?
 		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_18");	//Nemám v úmyslu ti ji dát i když patříš do našeho řádu.
-		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_19");	//Podívejte se, potřebuju ji ze závažných důvodů.
-		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_20");	//Věřte mi, tvůj elixír není tak důležitý, ve srovnání s tím, jak může být prospěšná, pokud mi ji přenecháš.
+		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_19");	//Podívej se, potřebuju ji ze závažných důvodů.
+		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_20");	//Věř mi, tvůj elixír není tak důležitý, ve srovnání s tím, jak může být prospěšná, pokud mi ji přenecháš.
 		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_21");	//Pečlivě přemýšlej nad tím, co jsem ti řek.
 		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_22");	//Jinak budu nucen požádat o pomoc Pyrokara a další vyšší mágy Ohně.
 		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_23");	//Hmmm... (zamyšleně) No, no, no... Dám ti ji... a jenom tak.
 		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_24");	//Tady ji máš. Doufám, že v budoucnu toho nebudu litovat.
 		B_GiveInvItems(self,other,ItPl_CactusFlower,1);
-		B_LogEntry(TOPIC_PrioratStart,"Využil jsem svého postavení mága Ohně a přesvědčíl Neorase aby mi ji dal. Je čas vrátit se k Baalu Tyonovi.");
+		B_LogEntry(TOPIC_PrioratStart,"Využil jsem svého postavení mága Ohně a přesvědčil Neorase aby mi ji dal. Je čas vrátit se k Baalu Tyonovi.");
 	}
 	else
 	{
-		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_26");	//Ale možná je tu něco jiného, co vás zajímajá víc, než váš elixír?
+		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_26");	//Ale možná je tu něco jiného, co tě zajímá víc, než tvůj elixír?
 		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_27");	//Hmmm... (zamyšleně) Možná, že taková věc ve skutečnosti existuje.
 		AI_Output(other,self,"DIA_neoras_LOKIPOTION_01_28");	//A co to je?
 		AI_Output(self,other,"DIA_neoras_LOKIPOTION_01_29");	//No, například černá ruda, říká se, že má mnohem silnější magické vlastnosti, než ruda co se zde těží na ostrově.
@@ -1327,5 +1327,5 @@ func void DIA_neoras_BringNeorasBlackOre_Info()
 	AI_Output(self,other,"DIA_neoras_BringNeorasBlackOre_01_03");	//No vypadá jako...
 	AI_Output(self,other,"DIA_neoras_BringNeorasBlackOre_01_04");	//Dobře, tady máš rostlinu jak jsme se dohodli.
 	B_GiveInvItems(self,other,ItPl_CactusFlower,1);
-	B_LogEntry(TOPIC_PrioratStart,"Přinesl jsem mágovy Neorasovi černou rudu a on mě na oplátku dal rostlinu.");
+	B_LogEntry(TOPIC_PrioratStart,"Přinesl jsem mágovi Neorasovi černou rudu a on mě na oplátku dal rostlinu.");
 };

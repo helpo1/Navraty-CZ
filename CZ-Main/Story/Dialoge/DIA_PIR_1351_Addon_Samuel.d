@@ -115,7 +115,7 @@ func void DIA_Addon_Samuel_Francis_Info()
 	AI_Output(other,self,"DIA_Addon_Samuel_Francis_15_00");	//Chci si s tebou promluvit o Francisovi.
 	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_01");	//Nezačínej o tom rádoby-kapitánovi!
 	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_02");	//Celý den vysedává na lavičce a cítí se důležitě!
-	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_03");	//Všechny zajíma, kterému čertu jsem dlužni, že kapitán vybral zrovna jeho!
+	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_03");	//Všechny zajíma, kterému čertu jsme dlužni, že kapitán vybral zrovna jeho!
 	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_04");	//Co chceš od toho malého nafoukance?
 };
 
@@ -147,7 +147,7 @@ func void DIA_Addon_Samuel_Versteck_Info()
 	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_06");	//(smích) Francis tě nikdy dobrovolně do chatrče nepustí, aby sis mohl šlohnout Gregovy věci.
 	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_07");	//Jedině, že by...
 	AI_Output(other,self,"DIA_Addon_Samuel_Francis_15_03");	//Ano?
-	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_08");	//... jsi měl něco, co skutečně shaní.
+	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_08");	//... jsi měl něco, co skutečně shání.
 	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_09");	//Vím, že Francis něco ukrývá v opuštěném dole v kaňonu.
 	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_10");	//Měli jsme jednou spolu stráž. Usnul a mluvil o tom ze spaní.
 	AI_Output(self,other,"DIA_Addon_Samuel_Francis_14_11");	//Nemám ponětí, co tam zahrabal, ale pokud je to dostatečně důležité, pak tě dovnitř pustí...
@@ -488,7 +488,7 @@ func int DIA_Addon_Samuel_Rum_Condition()
 
 func void DIA_Addon_Samuel_Rum_Info()
 {
-	AI_Output(other,self,"DIA_Addon_Samuel_Rum_15_00");	//Dej mi rum!
+	AI_Output(other,self,"DIA_Addon_Samuel_Rum_15_00");	//Dej mi rum.
 	if(B_GiveInvItems(other,self,ItMi_Gold,30*InfoManagerSpinnerValue))
 	{
 		if(Samuel_Rum_Varianz == 0)
@@ -803,7 +803,7 @@ func void DIA_Addon_Samuel_RiordanRezept_Trade()
 	AI_Output(self,other,"DIA_Addon_Samuel_RiordanRezept_Trade_01_02");	//Dobře! Ukážu ti to, ale jen pod jednou podmínkou.
 	AI_Output(self,other,"DIA_Addon_Samuel_RiordanRezept_Trade_01_03");	//Polovina peněz, které z toho vyděláš bude moje! Souhlasíš?
 	AI_Output(other,self,"DIA_Addon_Samuel_RiordanRezept_Trade_01_04");	//No, vypadá to, že nemám na výběr. Platí!
-	AI_Output(self,other,"DIA_Addon_Samuel_RiordanRezept_Trade_01_05");	//Tady máš. Jen se nesnaž udělat ze mě blbce, jinak tě ztáhnu z kůže.
+	AI_Output(self,other,"DIA_Addon_Samuel_RiordanRezept_Trade_01_05");	//Tady máš. Jen se nesnaž udělat ze mě blbce, jinak tě stáhnu z kůže.
 	B_GiveInvItems(self,other,ITWr_Addon_Piratentod,1);
 	AI_Output(other,self,"DIA_Addon_Samuel_RiordanRezept_Trade_01_06");	//Pochopil jsem. Teď jen potřebuji nějaký čas. Zisky nemusí jít tak rychle.
 	AI_Output(self,other,"DIA_Addon_Samuel_RiordanRezept_Trade_01_07");	//Samozřejmě.
@@ -887,9 +887,9 @@ func int DIA_PIR_1351_Addon_Samuel_Game_condition()
 func void DIA_PIR_1351_Addon_Samuel_Game_info()
 {
  	AI_Output(other,self,"DIA_PIR_1351_Addon_Samuel_Game_01_00"); //Nehraje někdo z vás kostky?
- 	AI_Output(self,other,"DIA_PIR_1351_Addon_Samuel_Game_01_01"); //No, nech mě hrát. Tak co? Pudeš?
- 	AI_Output(other,self,"DIA_PIR_1351_Addon_Samuel_Game_01_02"); //Nenechej se odmítnout.
- 	AI_Output(self,other,"DIA_PIR_1351_Addon_Samuel_Game_01_03"); //Dobře! Potom teda chci peníze dopředu - a hra!
+ 	AI_Output(self,other,"DIA_PIR_1351_Addon_Samuel_Game_01_01"); //No, řekněme, že hraju. A co ty? Chceš hrát?
+ 	AI_Output(other,self,"DIA_PIR_1351_Addon_Samuel_Game_01_02"); //Neodmítl bych.
+ 	AI_Output(self,other,"DIA_PIR_1351_Addon_Samuel_Game_01_03"); //Dobře! Potom teda chci peníze dopředu - hrajme!
 	SamuelPlayResult = 350;
 	Menu_WriteInt("AST","SysTimer06",0);
 };

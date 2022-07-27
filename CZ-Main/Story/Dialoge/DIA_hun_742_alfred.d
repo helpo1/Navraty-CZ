@@ -201,7 +201,7 @@ func void dia_hun_742_alfred_news_info()
 	}
 	else if(Kapitel == 6)
 	{
-		AI_Output(self,other,"DIA_HUN_742_News_01_23");	//Horší to být nemuže - všechny cesty blokují skřeti.
+		AI_Output(self,other,"DIA_HUN_742_News_01_23");	//Horší to být nemůže - všechny cesty blokují skřeti.
 		AI_Output(self,other,"DIA_HUN_742_News_01_24");	//Jestli to tak půjde i dál, tak to je konec!
 	}
 	else
@@ -273,7 +273,7 @@ func void dia_hun_742_alfred_respect_info()
 	AI_Output(self,other,"DIA_HUN_742_Respect_01_03");	//Nemyslím si, že máš moc šancí vyhrát.
 	AI_Output(other,self,"DIA_HUN_742_Respect_01_04");	//Ale stejne to zkusím.
 	AI_Output(other,self,"DIA_HUN_742_Respect_01_05");	//Pravda, pro začátek musím získat podporu většiny lovců v táboře, abych získal jejich respekt.
-	AI_Output(self,other,"DIA_HUN_742_Respect_01_06");	//Takže i muj, že?!
+	AI_Output(self,other,"DIA_HUN_742_Respect_01_06");	//Takže i můj, že?!
 	AI_Output(other,self,"DIA_HUN_742_Respect_01_07");	//Ano. Bylo by dobré vědět tvůj názor.
 	if(MIS_INSWOLFHIDE == LOG_SUCCESS)
 	{
@@ -281,7 +281,7 @@ func void dia_hun_742_alfred_respect_info()
 		AI_Output(self,other,"DIA_HUN_742_Respect_01_08");	//Hmm... (zamyšlene) Myslím, že si ho zasloužíš!
 		AI_Output(self,other,"DIA_HUN_742_Respect_01_09");	//Sám jsi sejmul ty vlky zabijáky. To znamená hodně.
 		AI_Output(other,self,"DIA_HUN_742_Respect_01_10");	//Takže mám tvůj hlas?
-		AI_Output(self,other,"DIA_HUN_742_Respect_01_11");	//?áš...
+		AI_Output(self,other,"DIA_HUN_742_Respect_01_11");	//Máš...
 		AI_Output(self,other,"DIA_HUN_742_Respect_01_12");	//Přeji ti hodně štěstí.
 		B_LogEntry(TOPIC_HUNTERSWORK,"Alfred myslí, že jsem dobrý lovec a hoden úcty. Podpoří mě, pokud se rozhodnu vyzvat Falka.");
 		ALFRED_RESPECT = TRUE;
@@ -372,7 +372,7 @@ func void dia_hun_742_alfred_teachhunting_info()
 		}
 		else
 		{
-			AI_Output(self,other,"DIA_HUN_742_TeachHunting_01_03");	//Na tvém míste bych se to naueil hned, jak budeš moci.
+			AI_Output(self,other,"DIA_HUN_742_TeachHunting_01_03");	//Na tvém míste bych se to naučil hned, jak budeš moci.
 		};
 		Info_ClearChoices(dia_hun_742_alfred_teachhunting);
 		Info_AddChoice(dia_hun_742_alfred_teachhunting,Dialog_Back,dia_hun_742_alfred_teachhunting_back);
@@ -410,8 +410,8 @@ func void dia_hun_742_alfred_teachhunting_claws()
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Claws))
 	{
 		AI_Output(other,self,"DIA_HUN_742_TeachHunting_Claws_01_00");	//Jak vytáhnu drápy?
-		AI_Output(self,other,"DIA_HUN_742_TeachHunting_Claws_01_01");	//Ve skutečnosti je to velmi jednoduché - pokud víš, co dělat. Jednoduše dráp vykroutíš smerem dozadu. Ale nezkoušej ho vylomit!
-		AI_Output(self,other,"DIA_HUN_742_TeachHunting_Claws_01_02");	//Hodne zvířat má drápy. U eíhavcu jsou ale nejlepší.
+		AI_Output(self,other,"DIA_HUN_742_TeachHunting_Claws_01_01");	//Ve skutečnosti je to velmi jednoduché - pokud víš, co dělat. Jednoduše dráp vykroutíš směrem dozadu. Ale nezkoušej ho vylomit!
+		AI_Output(self,other,"DIA_HUN_742_TeachHunting_Claws_01_02");	//Hodne zvířat má drápy. U číhavců jsou ale nejlepší.
 	};
 	Info_ClearChoices(dia_hun_742_alfred_teachhunting);
 };
@@ -420,8 +420,8 @@ func void dia_hun_742_alfred_teachhunting_fur()
 {
 	if(B_TeachPlayerTalentTakeAnimalTrophy(self,other,TROPHY_Fur))
 	{
-		AI_Output(other,self,"DIA_HUN_742_TeachHunting_Fur_01_00");	//Jak stáhnu kuži?
-		AI_Output(self,other,"DIA_HUN_742_TeachHunting_Fur_01_01");	//Nařízneš u každé koneetiny a hlavy. Pak taháš. Kůže jsou velmi cenné
+		AI_Output(other,self,"DIA_HUN_742_TeachHunting_Fur_01_00");	//Jak stáhnu kůži?
+		AI_Output(self,other,"DIA_HUN_742_TeachHunting_Fur_01_01");	//Nařízneš u každé končetiny a hlavy. Pak taháš. Kůže jsou velmi cenné.
 		AI_Output(self,other,"DIA_HUN_742_TeachHunting_Fur_01_02");	//Z kůži vlků nebo stínové šelmy se vyrábí oděvy a kožichy. Když se na kůži zvířete podíváš pozorně, zjistíš jestli je dobrá nebo ne.
 	};
 	Info_ClearChoices(dia_hun_742_alfred_teachhunting);
@@ -433,7 +433,7 @@ func void dia_hun_742_alfred_teachhunting_teeth()
 	{
 		AI_Output(other,self,"DIA_HUN_742_TeachHunting_Teeth_01_00");	//Jak na zuby?
 		AI_Output(self,other,"DIA_HUN_742_TeachHunting_Teeth_01_01");	//Hlavně je nevylamuj. Dej nůž kolem středu zubu, na základnu a zkus ho vypáčit.
-		AI_Output(self,other,"DIA_HUN_742_TeachHunting_Teeth_01_02");	//Najdeš je u vlku, chaapavcu a stínových šelem.
+		AI_Output(self,other,"DIA_HUN_742_TeachHunting_Teeth_01_02");	//Najdeš je u vlků, chaapavců a stínových šelem.
 	};
 	Info_ClearChoices(dia_hun_742_alfred_teachhunting);
 };
@@ -444,7 +444,7 @@ func void dia_hun_742_alfred_teachhunting_reptileskin()
 	{
 		AI_Output(other,self,"DIA_HUN_742_TeachHunting_ReptileSkin_01_00");	//A když chci kůži plazů?
 		AI_Output(self,other,"DIA_HUN_742_TeachHunting_ReptileSkin_01_01");	//Na to jsou vhodní chňapavci.
-		AI_Output(self,other,"DIA_HUN_742_TeachHunting_ReptileSkin_01_02");	//Musíš ho naříznout po celém obvodu tela, aby se nepotrhala kuže a pak opatrne taháš.	
+		AI_Output(self,other,"DIA_HUN_742_TeachHunting_ReptileSkin_01_02");	//Musíš ho naříznout po celém obvodu těla, aby se nepotrhala kůže a pak opatrně taháš.	
 	};
 	Info_ClearChoices(dia_hun_742_alfred_teachhunting);
 };
@@ -513,7 +513,7 @@ func void dia_hun_742_alfred_drgsnphorn_info()
 	AI_Output(self,other,"DIA_HUN_742_DrgSnpHorn_01_12");	//Jak mám ten úkol udělat?
 	AI_Output(other,self,"DIA_HUN_742_DrgSnpHorn_01_13");	//Možná ti můžu pomoci v tomto nebezpečném lovu?
 	AI_Output(self,other,"DIA_HUN_742_DrgSnpHorn_01_15");	//Opravdu? To od tebe bude hezké.
-	AI_Output(self,other,"DIA_HUN_742_DrgSnpHorn_01_16");	//Pokud mi roh přineseš, podělím se s tebou o odměnu fifty fifty, platí?
+	AI_Output(self,other,"DIA_HUN_742_DrgSnpHorn_01_16");	//Pokud mi roh přineseš, podělím se s tebou o odměnu fifty-fifty, platí?
 	AI_Output(self,other,"DIA_HUN_742_DrgSnpHorn_01_18");	//Výborně. Přijď, jestli ho získáš.
 	MIS_DRGSNPHORN = LOG_Running;
 	Log_CreateTopic(TOPIC_DRGSNPHORN,LOG_MISSION);
@@ -600,7 +600,7 @@ instance DIA_HUN_742_ALFRED_TROPHYEXPLAIN(C_Info)
 	condition = dia_hun_742_alfred_trophyexplain_condition;
 	information = dia_hun_742_alfred_trophyexplain_info;
 	permanent = FALSE;
-	description = "Proe jsou lovecké trofeje tak cenené?";
+	description = "Proč jsou lovecké trofeje tak cenené?";
 };
 
 
@@ -614,8 +614,8 @@ func int dia_hun_742_alfred_trophyexplain_condition()
 
 func void dia_hun_742_alfred_trophyexplain_info()
 {
-	AI_Output(other,self,"DIA_HUN_742_TrophyExplain_01_00");	//Proe jsou lovecké trofeje tak cenené?
-	AI_Output(self,other,"DIA_HUN_742_TrophyExplain_01_01");	//Z mnoha důvodů
+	AI_Output(other,self,"DIA_HUN_742_TrophyExplain_01_00");	//Proč jsou lovecké trofeje tak cenené?
+	AI_Output(self,other,"DIA_HUN_742_TrophyExplain_01_01");	//Z mnoha důvodů.
 	AI_Output(self,other,"DIA_HUN_742_TrophyExplain_01_02");	//Hlavně proto, že se dál zpracovávají v jiné výrobky.
 	AI_Output(self,other,"DIA_HUN_742_TrophyExplain_01_03");	//Oblečení, šperky, zbroje a podobné.
 	AI_Output(self,other,"DIA_HUN_742_TrophyExplain_01_04");	//Nekteří lidé také sbírají zvláštní a cenné trofeje!
@@ -624,7 +624,7 @@ func void dia_hun_742_alfred_trophyexplain_info()
 	AI_Output(self,other,"DIA_HUN_742_TrophyExplain_01_07");	//Jestli budeš nějaké mít, přines mi je.
 	AI_Output(self,other,"DIA_HUN_742_TrophyExplain_01_08");	//O cenu neměj starosti. Dám ti tolik, co ti nedá žádný obchodník.
 	Log_CreateTopic(TOPIC_HUNTERTRADES,LOG_NOTE);
-	B_LogEntry(TOPIC_HUNTERTRADES,"Alfred vykupuje kuže, zuby, rohy a drápy.");
+	B_LogEntry(TOPIC_HUNTERTRADES,"Alfred vykupuje kůže, zuby, rohy a drápy.");
 	ALFREDCANBUY = TRUE;
 };
 
@@ -636,7 +636,7 @@ instance DIA_HUN_742_ALFRED_TROPHYSELL(C_Info)
 	condition = dia_hun_742_alfred_trophysell_condition;
 	information = dia_hun_742_alfred_trophysell_info;
 	permanent = TRUE;
-	description = "Mám pro tebe nejaké trofeje.";
+	description = "Mám pro tebe nějaké trofeje.";
 };
 
 
@@ -669,8 +669,8 @@ func int dia_hun_742_alfred_trophysell_condition()
 
 func void dia_hun_742_alfred_trophysell_info()
 {
-	AI_Output(other,self,"DIA_HUN_742_TrophySell_01_00");	//Mám pro tebe nejaké trofeje.
-	AI_Output(self,other,"DIA_HUN_742_TrophySell_01_01");	//Výborne, tak se na ne podíváme.
+	AI_Output(other,self,"DIA_HUN_742_TrophySell_01_00");	//Mám pro tebe nějaké trofeje.
+	AI_Output(self,other,"DIA_HUN_742_TrophySell_01_01");	//Výborně, tak se na ně podíváme.
 	Info_ClearChoices(dia_hun_742_alfred_trophysell);
 	Info_AddChoice(dia_hun_742_alfred_trophysell,Dialog_Back,dia_hun_742_alfred_trophysell_back);
 	if((Npc_HasItems(other,ItAt_SheepFur) > 0) || (Npc_HasItems(other,ItAt_IceWolfFur) > 0) || (Npc_HasItems(other,ItAt_WolfFur) > 0) || (Npc_HasItems(other,ItAt_OrcDogFur) > 0) || (Npc_HasItems(other,ItAt_WargFur) > 0) || (Npc_HasItems(other,ItAt_ShadowFur) > 0) || (Npc_HasItems(other,ItAt_TrollFur) > 0) || (Npc_HasItems(other,ItAt_TrollBlackFur) > 0) || (Npc_HasItems(other,ItAt_Addon_KeilerFur) > 0) || (Npc_HasItems(other,itat_pumafur) > 0))
@@ -719,7 +719,7 @@ func void dia_hun_742_alfred_trophysell_fur()
 	};
 	if(Npc_HasItems(other,ItAt_Addon_KeilerFur) > 0)
 	{
-		AI_Output(self,other,"DIA_HUN_742_TrophySell_Fur_01_05");	//Áá, kuže dívočáku - to není špatné!
+		AI_Output(self,other,"DIA_HUN_742_TrophySell_Fur_01_05");	//Áá, kůže dívočáků - to není špatné!
 
 		AllCountGold = AllCountGold + (Npc_HasItems(other,ItAt_Addon_KeilerFur) * VALUE_ALFREDKEILERFUR);
 		Npc_RemoveInvItems(other,ItAt_Addon_KeilerFur,Npc_HasItems(other,ItAt_Addon_KeilerFur));
@@ -927,7 +927,7 @@ func void dia_hun_742_alfred_trophysell_claw()
 	};
 	if(Npc_HasItems(other,ItAt_LurkerClaw) > 0)
 	{
-		AI_Output(self,other,"DIA_HUN_742_TrophySell_Claw_01_03");	//Aha! Máš drápy chňapavce. To je velmi dobrá trofej.
+		AI_Output(self,other,"DIA_HUN_742_TrophySell_Claw_01_03");	//Aha! Máš drápy číhavce. To je velmi dobrá trofej.
 		AI_Output(self,other,"DIA_HUN_742_TrophySell_Claw_01_04");	//Moc lidí mezi obyčejnými drápy a drápy číhavce rozdíl nevidí, ale ten rozdíl tam je!
 		AI_Output(self,other,"DIA_HUN_742_TrophySell_Claw_01_06");	//Tyto drápy jsou ostřejší a tvrdší než jiné drápy.
 		AI_Output(self,other,"DIA_HUN_742_TrophySell_Claw_01_07");	//A to znamená, že mají všestranější využití.

@@ -47,14 +47,14 @@ func void dia_vlk_6137_gaspar_hello_info()
 	AI_Output(self,other,"DIA_VLK_6137_Gaspar_Hello_01_03");	//Teď jsem majitel já, a toto je můj hotel.
 	AI_Output(self,other,"DIA_VLK_6137_Gaspar_Hello_01_05");	//Před několika dny zatkla Hannu městská stráž - obvinili jí z krádeže.
 	AI_Output(other,self,"DIA_VLK_6137_Gaspar_Hello_01_06");	//Z čeho že jí obvinili?!
-	AI_Output(self,other,"DIA_VLK_6137_Gaspar_Hello_01_07");	//Z krádeže! Okradla jednoho obchodníka a teď je v base. Přesnš tam, kam patří!
+	AI_Output(self,other,"DIA_VLK_6137_Gaspar_Hello_01_07");	//Z krádeže! Okradla jednoho obchodníka a teď je v base. Přesně tam, kam patří!
 	AI_Output(other,self,"DIA_VLK_6137_Gaspar_Hello_01_08");	//Co? Zbláznil ses kámo? To nemůže být pravda!
 	AI_Output(self,other,"DIA_VLK_6137_Gaspar_Hello_01_09");	//Ale to víš, že může! V její truhle našli věci toho ubohého chlápka.
 	AI_Output(self,other,"DIA_VLK_6137_Gaspar_Hello_01_10");	//Takže díky všem důkazům je očividné, že je vinna.
 	AI_Output(self,other,"DIA_VLK_6137_Gaspar_Hello_01_12");	//Pokud tě zajímají podrobnosti toho případu, tak by sis měl pohovořit se samotným lordem Andrem.
 	AI_Output(self,other,"DIA_VLK_6137_Gaspar_Hello_01_13");	//A už nemám čas s tebou mluvit.
 	KNOWSHANNAINPRISION = TRUE;
-	B_LogEntry(TOPIC_ABIGEILHELPHANNA,"Po mém návratu do Khorinisu se ukázalo, že Hannu zatkli. Je obviněnaz krádeže věcí jednoho obchodníka. Místo ní teď hotel vede osoba jménem Gaspar - hrozný chlap! Musím si promluvit s Andrem a zjistit, co se tu vlastně děje.");
+	B_LogEntry(TOPIC_ABIGEILHELPHANNA,"Po mém návratu do Khorinisu se ukázalo, že Hannu zatkli. Je obviněna z krádeže věcí jednoho obchodníka. Místo ní teď hotel vede osoba jménem Gaspar - hrozný chlap! Musím si promluvit s Andrem a zjistit, co se tu vlastně děje.");
 };
 
 
@@ -65,7 +65,7 @@ instance DIA_VLK_6137_GASPAR_INPRISOIN(C_Info)
 	condition = dia_vlk_6137_gaspar_inprisoin_condition;
 	information = dia_vlk_6137_gaspar_inprisoin_info;
 	permanent = FALSE;
-	description = "Tys tedy svědkem v té věci s Hannou?";
+	description = "Ty jsi tedy svědkem v té věci s Hannou?";
 };
 
 
@@ -130,7 +130,7 @@ func void dia_vlk_6137_gaspar_inprisoinab_info()
 		AI_Output(other,self,"DIA_VLK_6137_Gaspar_InPrisoinAb_01_09");	//A ještě znám jednu osobu, jmenuje se Joe. Mimochodem, taky tě zná.
 		AI_Output(other,self,"DIA_VLK_6137_Gaspar_InPrisoinAb_01_10");	//A ví toho o tobě tolik, že to bude stačit, abys šel bručet.
 		AI_Output(self,other,"DIA_VLK_6137_Gaspar_InPrisoinAb_01_11");	//(bledne) Co?!
-		AI_Output(self,other,"DIA_VLK_6137_Gaspar_InPrisoinAb_01_13");	//Dělej co chceš - mně už je to všcehno jedno.
+		AI_Output(self,other,"DIA_VLK_6137_Gaspar_InPrisoinAb_01_13");	//Dělej, co chceš - mně už je to všechno jedno.
 		GASPARPISSOFF = TRUE;
 	};
 	AI_StopProcessInfos(self);

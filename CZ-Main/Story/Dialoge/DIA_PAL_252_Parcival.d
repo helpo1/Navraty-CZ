@@ -54,7 +54,7 @@ func void DIA_Parcival_Schurfer_Info()
 	AI_Output(self,other,"DIA_Parcival_Schurfer_13_03");	//Marcosova skupina šla směrem ke Starému dolu. Průvodce jim dělal starý kopáč Grimes.
 	AI_Output(self,other,"DIA_Parcival_Schurfer_13_04");	//Další dvě šly spolu.
 	AI_Output(self,other,"DIA_Parcival_Schurfer_13_05");	//Jergan, jeden zvěd, přinesl zprávu o tom, že se utábořili pod jednou obrovskou věží.
-	B_LogEntry(TOPIC_ScoutMine,"Skupinky paladinů vedou Markos, Fajeth a Silvestro. Skupina Markose šla směrem ke starému dolu. Průvodce jim dělá kopáč Grimes. Další dvě skupinky šli spolu k nějaké velké věži.");
+	B_LogEntry(TOPIC_ScoutMine,"Skupinky paladinů vedou Marcos, Fajeth a Silvestro. Skupina Marcose šla směrem ke starému dolu. Průvodce jim dělá kopáč Grimes. Další dvě skupinky šli spolu k nějaké velké věži.");
 };
 
 instance DIA_Parcival_Diego(C_Info)
@@ -162,7 +162,7 @@ func void DIA_Parcival_DRAGONS_Info()
 	AI_Output(other,self,"DIA_Parcival_DRAGONS_15_00");	//Kolik je zde draků?
 	AI_Output(self,other,"DIA_Parcival_DRAGONS_13_01");	//Nevíme kolik přesně, ale více než jeden.
 	AI_Output(self,other,"DIA_Parcival_DRAGONS_13_02");	//Ale to není vše. Jsou tu také stvoření, která drakům slouží.
-	AI_Output(self,other,"DIA_Parcival_DRAGONS_13_03");	//Nemá cenu si něco nalhávat -bez pomoci z venčí jsou naše šance dostat se odsud živý nulové.
+	AI_Output(self,other,"DIA_Parcival_DRAGONS_13_03");	//Nemá cenu si něco nalhávat - bez pomoci z venčí jsou naše šance dostat se odsud živý nulové.
 	AI_StopProcessInfos(self);
 };
 
@@ -210,7 +210,7 @@ func void DIA_Parcival_BRAVE_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Parcival_BRAVE_13_03");	//Hej! Nemáš nic jiného na prácit, než tady se mnou kecat? Vypadni!
+		AI_Output(self,other,"DIA_Parcival_BRAVE_13_03");	//Hej! Nemáš nic jiného na práci, než tady se mnou kecat? Vypadni!
 		B_GivePlayerXP(XP_Ambient);
 	};
 	Parcival_BRAVE_LaberCount = Parcival_BRAVE_LaberCount + 1;
@@ -372,7 +372,7 @@ func void DIA_Parcival_AnyNews_Chance()
 func void DIA_Parcival_AnyNews_Overact()
 {
 	AI_Output(other,self,"DIA_Parcival_AnyNews_Overact_15_00");	//Nemyslíš, že přeháníš?
-	AI_Output(self,other,"DIA_Parcival_AnyNews_Overact_13_01");	//Rozhodně ne. V naší situaci potřebujeme, aby muži měli dobrý příkald. Ne tohle.
+	AI_Output(self,other,"DIA_Parcival_AnyNews_Overact_13_01");	//Rozhodně ne. V naší situaci potřebujeme, aby muži měli dobrý příklad. Ne tohle.
 	AI_Output(self,other,"DIA_Parcival_AnyNews_Overact_13_02");	//Válečníci potřebují objevit plamen Innose ve svém srdci.
 	AI_Output(self,other,"DIA_Parcival_AnyNews_Overact_13_03");	//A místo toho ničí morálku mých lidí.
 };
@@ -453,8 +453,8 @@ func int DIA_Parcival_TalkedGarond_Condition()
 
 func void DIA_Parcival_TalkedGarond_Info()
 {
-	AI_Output(other,self,"DIA_Parcival_TalkedGarond_15_00");	//Garond chce, aby Jan pracoval v kovárně
-	AI_Output(self,other,"DIA_Parcival_TalkedGarond_13_01");	//Hmm... No jestli je to tak, taknic nenamítám.
+	AI_Output(other,self,"DIA_Parcival_TalkedGarond_15_00");	//Garond chce, aby Jan pracoval v kovárně.
+	AI_Output(self,other,"DIA_Parcival_TalkedGarond_13_01");	//Hmm... No jestli je to tak, tak nic nenamítám.
 	AI_Output(self,other,"DIA_Parcival_TalkedGarond_13_02");	//Ale zaručíš se za něj.
 };
 
@@ -662,7 +662,7 @@ instance DIA_Parcival_Kill_Arbaleters(C_Info)
 	condition = DIA_Parcival_Kill_Arbaleters_condition;
 	information = DIA_Parcival_Kill_Arbaleters_info;
 	permanent = FALSE;
-	description = "Máte pro mě nějaké rozkazy?";
+	description = "Máš pro mě nějaké rozkazy?";
 };
 
 func int DIA_Parcival_Kill_Arbaleters_condition()
@@ -675,7 +675,7 @@ func int DIA_Parcival_Kill_Arbaleters_condition()
 
 func void DIA_Parcival_Kill_Arbaleters_info()
 {
-	AI_Output(other,self,"DIA_Parcival_Kill_Arbaleters_01_00");	//Máte pro mě nějaké rozkazy?.
+	AI_Output(other,self,"DIA_Parcival_Kill_Arbaleters_01_00");	//Máš pro mě nějaké rozkazy?
 	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_01");	//(uznale) Podařilo se ti dostat až do hradu. Takže, opravdu za něco stojíš.
 	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_02");	//Ale chci tě předem upozornit, že se jedná o velmi obtížnou a nebezpečnou záležitost!
 	AI_Output(other,self,"DIA_Parcival_Kill_Arbaleters_01_03");	//A já myslel že už mám obtížné věci za sebou.
@@ -683,10 +683,10 @@ func void DIA_Parcival_Kill_Arbaleters_info()
 	AI_Output(other,self,"DIA_Parcival_Kill_Arbaleters_01_05");	//K věci, co to je tentokrát?
 	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_06");	//Potřebuju aby ses postaral o tu skřetí pozorovatelnu.
 	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_07");	//Nedávno tam poslali novou četu válečníků.
-	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_08");	//Nemůžem si dovolit nechat skřety na... pro ně, tak strategicé pozici.
+	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_08");	//Nemůžem si dovolit nechat skřety na... pro ně, tak strategické pozici.
 	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_09");	//Proto musíme stanoviště zničit.
 	AI_Output(other,self,"DIA_Parcival_Kill_Arbaleters_01_10");	//A v čem je problém?
-	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_11");	//Problém je v tom, že Skřeti přijali veškerá bezpečnostní opatření.
+	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_11");	//Problém je v tom, že skřeti přijali veškerá bezpečnostní opatření.
 	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_12");	//Skřetí kušiníci, kteří jsou v obrané skupině - jsou opravdu tvrdým oříškem pro každého kdo by se chtěl přiblížit!
 	AI_Output(self,other,"DIA_Parcival_Kill_Arbaleters_01_13");	//A nemůžu riskovat své muže, kteří zajišťují obranu hradu.
 	AI_Output(other,self,"DIA_Parcival_Kill_Arbaleters_01_14");	//Aha. Proto budu riskovat já.

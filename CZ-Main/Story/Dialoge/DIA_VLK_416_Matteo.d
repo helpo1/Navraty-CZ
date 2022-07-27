@@ -144,7 +144,7 @@ func int DIA_Matteo_SellWhat_Condition()
 func void DIA_MAtteo_SellWhat_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_SellWhat_15_00");	//Co tady prodáváš?
-	AI_Output(self,other,"DIA_Matteo_SellWhat_09_01");	//Mohu ti nabídnout vše, co pořebuješ pro přežití v divočině. Zbraně, pochodně, zásoby... dokonce i zbroj.
+	AI_Output(self,other,"DIA_Matteo_SellWhat_09_01");	//Mohu ti nabídnout vše, co potřebuješ pro přežití v divočině. Zbraně, pochodně, zásoby... dokonce i zbroj.
 	AI_Output(self,other,"DIA_Matteo_SellWhat_09_02");	//Mám tu taky nějaké zvláštní zboží.
 
 	if(Knows_Matteo == FALSE)
@@ -222,7 +222,7 @@ instance DIA_Matteo_LEATHER(C_Info)
 	condition = DIA_Matteo_LEATHER_Condition;
 	information = DIA_Matteo_LEATHER_Info;
 	permanent = TRUE;
-	description = "Koupit měšťanský oděv (250 zlatých)";
+	description = "Koupit měšťanský oděv. (250 zlatých)";
 };
 
 func int DIA_Matteo_LEATHER_Condition()
@@ -845,7 +845,7 @@ func int DIA_Matteo_Jewerly_Form_Condition()
 func void DIA_MAtteo_Jewerly_Form_Info()
 {
 	AI_Output(other,self,"DIA_Matteo_Jewerly_Form_01_00");	//Co přesně ti ukradli?
-	AI_Output(self,other,"DIA_Matteo_Jewerly_Form_01_01");	//Eh... (zlostně) Nejcennější, co jsem měl - zlaté formy na výrobu prstenů a amuletů.
+	AI_Output(self,other,"DIA_Matteo_Jewerly_Form_01_01");	//Eh... (zlostně) nejcennější, co jsem měl - zlaté formy na výrobu prstenů a amuletů.
 	AI_Output(self,other,"DIA_Matteo_Jewerly_Form_01_02");	//Byli to velmi vzácné a drahé věci! Koupil jsem je od obchodníka, který připlul z pevniny.
 	AI_Output(self,other,"DIA_Matteo_Jewerly_Form_01_03");	//Takové už v Khorinisu nenajdeš.
 	AI_Output(self,other,"DIA_Matteo_Jewerly_Form_01_04");	//A bez nich jsem jako bez ruk. Takže jsem musel zkusit jinou možnost.
@@ -921,7 +921,7 @@ func void DIA_MAtteo_Jewerly_Form_Done_Weapon()
 {
 	AI_Output(other,self,"DIA_MAtteo_Jewerly_Form_Done_Weapon_01_01");	//Co tak dobrou zbraň.
 	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Weapon_01_02");	//O tom není pochyb... (věcný) Je důležité, mít po ruce spolehlivý meč nebo palcát. Zejména v dnešní době...
-	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Weapon_01_03");	//Tady, mám tu jeden. Jsem si jistý, že nebudeš zklamáný.
+	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Weapon_01_03");	//Tady, mám tu jeden. Jsem si jistý, že nebudeš zklamán.
 	B_GiveInvItems(self,other,ITMW_1H_MACE_107,1);
 	Info_ClearChoices(DIA_MAtteo_Jewerly_Form_Done);
 };
@@ -929,7 +929,7 @@ func void DIA_MAtteo_Jewerly_Form_Done_Weapon()
 func void DIA_MAtteo_Jewerly_Form_Done_Armor()
 {
 	AI_Output(other,self,"DIA_MAtteo_Jewerly_Form_Done_Armor_01_01");	//Co zbroj?
-	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Armor_01_02");	//Bohužel, nemám zbroj, které tě spolehlivě ochrání před skřety.
+	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Armor_01_02");	//Bohužel, nemám zbroj, která tě spolehlivě ochrání před skřety.
 	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Armor_01_03");	//Takže ti mohu dát jen tyto šaty.
 	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Armor_01_04");	//Ale je to lepší než nic. Ne?
 	AI_Output(other,self,"DIA_MAtteo_Jewerly_Form_Done_Armor_01_05");	//No...
@@ -943,8 +943,8 @@ func void DIA_MAtteo_Jewerly_Form_Done_Teach()
 {
 	AI_Output(other,self,"DIA_MAtteo_Jewerly_Form_Done_Teach_01_01");	//Nauč mě umění klenotníka.
 	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Teach_01_02");	//(překvapeně) Po pravdě, nečakal jsem, že si vybereš tohle.
-	AI_Output(other,self,"DIA_MAtteo_Jewerly_Form_Done_Teach_01_03");	//Tak budeš ma učit?
-	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Teach_01_04");	//Dobře... (souhlasně) Koneckonců, dokázal si, že jsi slušný človek a můžu ti věřit!
+	AI_Output(other,self,"DIA_MAtteo_Jewerly_Form_Done_Teach_01_03");	//Tak budeš mě učit?
+	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Teach_01_04");	//Dobře... (souhlasně) Koneckonců, dokázal si, že jsi slušný člověk a můžu ti věřit!
 	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Teach_01_05");	//Avšak musím tě varovat. Umění klenotníka je poměrně komplikovaná věc.
 	AI_Output(self,other,"DIA_MAtteo_Jewerly_Form_Done_Teach_01_06");	//Potřebuješ nějaké zkušenosti, abys pochopil základy této profese.
 	AI_Output(other,self,"DIA_MAtteo_Jewerly_Form_Done_Teach_01_07");	//Chápu.
@@ -1040,10 +1040,10 @@ func int DIA_Matteo_Jewerly_GiveForm_Condition()
 
 func void DIA_Matteo_Jewerly_GiveForm_Info()
 {
-	AI_Output(other,self,"DIA_Matteo_Jewerly_GiveForm_01_00");	//A kde vezmu nějaku formu na výrobu prstenů?
+	AI_Output(other,self,"DIA_Matteo_Jewerly_GiveForm_01_00");	//A kde vezmu nějakou formu na výrobu prstenů?
 	AI_Output(self,other,"DIA_Matteo_Jewerly_GiveForm_01_01");	//Tady, vem si. Já už ji nepotřebuju.
 	B_GiveInvItems(self,other,ItMi_SteelForm,1);
-	AI_Output(self,other,"DIA_Matteo_Jewerly_GiveForm_01_02");	//Ale nestrať ji!
+	AI_Output(self,other,"DIA_Matteo_Jewerly_GiveForm_01_02");	//Ale neztrať ji!
 	AI_Output(other,self,"DIA_Matteo_Jewerly_GiveForm_01_03");	//Samozřejmě.
 };
 
@@ -1338,7 +1338,7 @@ func void DIA_MAtteo_Jewerly_LoaNeacleDo_Info()
 	Npc_RemoveInvItems(hero,ItMi_StuckGold,1);
 	Npc_RemoveInvItems(hero,ItMi_DarkPearl,5);
 	AI_Output(self,other,"DIA_Matteo_Jewerly_LoaNeacleDo_01_01");	//Uvidíme... Vypadá, že je toho dost.
-	AI_Output(self,other,"DIA_Matteo_Jewerly_LoaNeacleDo_01_02");	//Začnu pracovat okamžite. Myslím, že zítra ráno budu hotový.
+	AI_Output(self,other,"DIA_Matteo_Jewerly_LoaNeacleDo_01_02");	//Začnu pracovat okamžitě. Myslím, že zítra ráno budu hotový.
 	B_LogEntry(TOPIC_LoaRomance,"Přinesl jsem Matteovi potřebný materiál pro výrobu náhrdelníku. Zítra si ho mohu vyzdvihnout.");
 	MakeDarkPearleNeackle = Wld_GetDay();
 };

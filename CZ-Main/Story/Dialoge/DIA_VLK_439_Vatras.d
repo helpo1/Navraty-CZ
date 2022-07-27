@@ -1696,7 +1696,7 @@ func void DIA_Addon_Vatras_MissingPeople_Success()
 	AI_Output(self,other,"DIA_Addon_Vatras_MissingPeople_Success_05_01");	//Co jsi zjistil?
 	AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Success_15_02");	//Byli uneseni a vzati na vzdálené místo na ostrově chlápkem jménem Raven.
 	AI_Output(self,other,"DIA_Addon_Vatras_MissingPeople_Success_05_03");	//A proč sis tím tak jistý?
-	AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Success_15_04");	///Četl jsem jeho rozkazy. Banditi všude okolo pracují pro něj.
+	AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Success_15_04");	//Četl jsem jeho rozkazy. Banditi všude okolo pracují pro něj.
 	if(Npc_HasItems(other,ItWr_RavensKidnapperMission_Addon))
 	{
 		AI_Output(other,self,"DIA_Addon_Vatras_MissingPeople_Success_15_05");	//Tady.
@@ -2295,9 +2295,9 @@ func void DIA_Vatras_GODS_INNOS()
 	AI_Output(self,other,"DIA_Vatras_GODS_INNOS_05_03");	//Jeho kněží jsou mágové Ohně, paladinové jsou jeho válečníky.
 	Info_ClearChoices(DIA_Vatras_GODS);
 	Info_AddChoice(DIA_Vatras_GODS,Dialog_Back,DIA_Vatras_GODS_BACK);
-	Info_AddChoice(DIA_Vatras_GODS,"Pověz mi něco o Innosovi.",DIA_Vatras_GODS_INNOS);
-	Info_AddChoice(DIA_Vatras_GODS,"Vyprávěj o Adanovi.",DIA_Vatras_GODS_ADANOS);
-	Info_AddChoice(DIA_Vatras_GODS,"A Beliar?",DIA_Vatras_GODS_BELIAR);
+	Info_AddChoice(DIA_Vatras_GODS,"Řekni mi o Innosovi.",DIA_Vatras_GODS_INNOS);
+	Info_AddChoice(DIA_Vatras_GODS,"Řekni mi o Adanovi.",DIA_Vatras_GODS_ADANOS);
+	Info_AddChoice(DIA_Vatras_GODS,"Řekni mi o Beliarovi.",DIA_Vatras_GODS_BELIAR);
 };
 
 func void DIA_Vatras_GODS_ADANOS()
@@ -2421,7 +2421,7 @@ func void DIA_Vatras_MISSION_YES()
 	MIS_Vatras_Message = LOG_Running;
 	Log_CreateTopic(TOPIC_Botschaft,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Botschaft,LOG_Running);
-	B_LogEntry(TOPIC_Botschaft,"Vatras mi předal zprávu pro mistra Isgarota, kterého najdu ve svatyni naproti klášteru.");
+	B_LogEntry(TOPIC_Botschaft,"Vatras mi předal zprávu pro mistra Isgarotha, kterého najdu ve svatyni naproti klášteru.");
 	Info_ClearChoices(DIA_Vatras_MISSION);
 	Info_AddChoice(DIA_Vatras_MISSION,"Chci světlo.",DIA_Vatras_MISSION_LIGHT);
 	Info_AddChoice(DIA_Vatras_MISSION,"Malé léčení.",DIA_Vatras_MISSION_HEAL);
@@ -2485,7 +2485,7 @@ func void DIA_Vatras_MESSAGE_SUCCESS_Info()
 	AI_Output(self,other,"DIA_Vatras_Add_05_14");	//Přijmi mé díky. A teď si vezmi svou odměnu.
 	MIS_Vatras_Message = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_Botschaft,LOG_SUCCESS);
-	B_LogEntry(TOPIC_Botschaft,"Řekl jsem Vatrasovi, že jsem doručil jeho zprávu Isgarotovi.");
+	B_LogEntry(TOPIC_Botschaft,"Řekl jsem Vatrasovi, že jsem doručil jeho zprávu Isgarothovi.");
 	B_GivePlayerXP(XP_Vatras_Message);
 	Info_ClearChoices(DIA_Vatras_MESSAGE_SUCCESS);
 	Info_AddChoice(DIA_Vatras_MESSAGE_SUCCESS,"Královský šťovík.",DIA_Vatras_MESSAGE_SUCCESS_Plant);
@@ -3883,7 +3883,7 @@ func int DIA_Addon_Vatras_DarkWeb_Wait_Condition()
 func void DIA_Addon_Vatras_DarkWeb_Wait_Info()
 {
 	B_GivePlayerXP(250);
-	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Wait_01_01");	//Mám magický svitok, který použil Lotharův vrah. Bude to stačit?
+	AI_Output(other,self,"DIA_Addon_Vatras_DarkWeb_Wait_01_01");	//Mám magický svitek, který použil Lotharův vrah. Bude to stačit?
 	B_GiveInvItems(other,self,ItMi_DarkScroll,1);
 	Npc_RemoveInvItems(self,ItMi_DarkScroll,1);
 	AI_Output(self,other,"DIA_Addon_Vatras_DarkWeb_Wait_01_02");	//Už teď z něho cítím jeho magii.

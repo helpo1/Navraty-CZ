@@ -622,7 +622,7 @@ func void DIA_Wolf_BENGAR_Info()
 
 func void DIA_Wolf_BENGAR_geld()
 {
-	AI_Output(other,self,"DIA_Wolf_BENGAR_geld_15_00");	//Tady je zlato
+	AI_Output(other,self,"DIA_Wolf_BENGAR_geld_15_00");	//Tady je zlato.
 
 	if(B_GiveInvItems(other,self,ItMi_Gold,Wolf_BENGAR_geld))
 	{
@@ -689,7 +689,7 @@ func void DIA_Wolf_PERMKAP3_Info()
 	}
 	else
 	{
-		AI_Output(self,other,"DIA_Wolf_PERMKAP3_08_02");	//No jasně! Všude ticho jako v chrámu!.
+		AI_Output(self,other,"DIA_Wolf_PERMKAP3_08_02");	//No jasně! Všude ticho jako v chrámu.
 		if(MIS_ORCGREATWAR == LOG_Running)
 		{
 			AI_Output(self,other,"DIA_Wolf_PERMKAP3_08_04");	//Jen kdyby okolo nebyli skřeti!
@@ -1157,7 +1157,7 @@ func void dia_wolf_nw_kapitelorcattack_nogiverune()
 	B_GivePlayerXP(50);
 	AI_Output(other,self,"DIA_Wolf_NW_KapitelOrcAttack_NoGiveRune_01_01");	//Já také ne.
 	AI_Output(self,other,"DIA_Wolf_NW_KapitelOrcAttack_NoGiveRune_01_02");	//(povzdech) Pokusíme se prosekat městem.
-	AI_Output(self,other,"DIA_Wolf_NW_KapitelOrcAttack_NoGiveRune_01_04");	//Asi je to ejdiná šance na přežití!
+	AI_Output(self,other,"DIA_Wolf_NW_KapitelOrcAttack_NoGiveRune_01_04");	//Asi je to jediná šance na přežití!
 	B_LogEntry(TOPIC_HELPCREW,"Wolf se pokusí dostat z města, ale nemyslím, že má moc velké šance.");
 	WOLFBATTLETHROUGTH = TRUE;
 	PERMCOUNTBACKNW = PERMCOUNTBACKNW + 1;
@@ -1337,7 +1337,7 @@ instance DIA_WOLF_NW_WOLFNOTCAPTUREDPERM(C_Info)
 	condition = dia_wolf_nw_wolfnotcapturedperm_condition;
 	information = dia_wolf_nw_wolfnotcapturedperm_info;
 	permanent = TRUE;
-	description = "Prodej mi to tajmeství.";
+	description = "Prodej mi to tajemství.";
 };
 
 
@@ -1351,7 +1351,7 @@ func int dia_wolf_nw_wolfnotcapturedperm_condition()
 
 func void dia_wolf_nw_wolfnotcapturedperm_info()
 {
-	AI_Output(other,self,"DIA_Wolf_NW_WolfNotCapturedPerm_01_00");	//Prodej mi to tajmeství.
+	AI_Output(other,self,"DIA_Wolf_NW_WolfNotCapturedPerm_01_00");	//Prodej mi to tajemství.
 	AI_Output(self,other,"DIA_Wolf_NW_WolfNotCapturedPerm_01_01");	//Jak sem řekl za 5000, jasné?
 	Info_ClearChoices(dia_wolf_nw_wolfnotcapturedperm);
 	Info_AddChoice(dia_wolf_nw_wolfnotcapturedperm,"Tolik nemám.",dia_wolf_nw_wolfnotcapturedperm_nomoney);
@@ -1546,8 +1546,8 @@ func void dia_wolf_nw_recrdt_info()
 {
 	AI_Output(other,self,"DIA_WOLF_NW_RecrDT_15_00");	//Vzpomínam si, že jsi hledal práci.
 	AI_Output(other,self,"DIA_WOLF_NW_RecrDT_15_01");	//A uspokojí tě zaměstnavatel jako já?
-	AI_Output(self,other,"DIA_WOLF_NW_RecrDT_01_02");	//Všichni platí jedním a tím samým zlatem, otazka ale zní kolik, takže mě je jedno pro koho pracuji. Ale vás ja trochu znám. Má to něco společného s tvým přistěhováním k nám do okolí?
-	AI_Output(other,self,"DIA_WOLF_NW_RecrDT_15_03");	//Přímo. Potřebuji strážce do věže v době mé nepřítomnosti. Co myslíš? 
+	AI_Output(self,other,"DIA_WOLF_NW_RecrDT_01_02");	//Všichni platí jedním a tím samým zlatem, otázka ale zní kolik, takže mě je jedno pro koho pracuji. Ale tebe ja trochu znám. Má to něco společného s tvým přistěhováním k nám do okolí?
+	AI_Output(other,self,"DIA_WOLF_NW_RecrDT_15_03");	//Přesně. Potřebuji strážce do věže v době mé nepřítomnosti. Co myslíš? 
 	AI_Output(self,other,"DIA_WOLF_NW_RecrDT_01_04");	//Fajn. Souhlasím. Ale já potřebuji zaplatit dopředu za pár měsíců.
 	AI_Output(other,self,"DIA_WOLF_NW_RecrDT_01_05");	//Kolik?
 	AI_Output(self,other,"DIA_WOLF_NW_RecrDT_15_06");	//Dva tisíce zlatých mincí!
@@ -1578,7 +1578,7 @@ func void dia_wolf_nw_recrdtfinally_info()
 	B_GiveInvItems(other,self,ItMi_Gold,2000);
 	Npc_RemoveInvItems(self,ItMi_Gold,2000);
 	AI_Output(self,other,"DIA_WOLF_NW_RecrDTFinally_01_01");	//Och, zapnul šéfa! Mě se líbi! Ano šéfe, už běžím!
-	AI_Output(self,other,"DIA_WOLF_NW_RecrDTFinally_01_02");	//Jo, mimochodem... budeš proti, když naverbuju pro ochranu pár bojovníku?
+	AI_Output(self,other,"DIA_WOLF_NW_RecrDTFinally_01_02");	//Jo, mimochodem... budeš proti, když naverbuju pro ochranu pár bojovníků?
 	AI_Output(other,self,"DIA_WOLF_NW_RecrDTFinally_01_03");	//Jasně, že ne. Ochrana navíc ještě nikdy nikomu neublížila. Tedy jen pokud mě nebude stát jako několik dalších Wolfů, a taky jestli ti budou pomahat v práci a ne v pití.
 	AI_Output(other,self,"DIA_WOLF_NW_RecrDTFinally_01_04");	//Aha, ano, heslo k průchodu do tábora je fráze 'dračí poklad'. Nezapomeň!
 	AI_Output(self,other,"DIA_WOLF_NW_RecrDTFinally_01_05");	//Och, tak originální heslo nikdy nezapomenu. Uvidime se v táboře!
@@ -1618,6 +1618,6 @@ func void DIA_Wolf_Bonus_Info()
 {
 	B_RaiseFightTalent_Bonus(other,NPC_TALENT_BOW,1);
 	AI_Output(self,other,"ORG_855_Wolf_TRAIN_Info_09_02");	//Přesnost střelby závisí na tvé obratnosti. Čím větší je tvá obratnost, tím přesněji doletí šíp do cíle.
-	AI_Output(self,other,"ORG_855_Wolf_TRAIN_Info_09_03");	//Tvoje schopnost určuje vzdálenost, vekteré je možné cíl zasahnout. Aby ses stal dobrým střelcem, musíš zlepšovat to a i to.
+	AI_Output(self,other,"ORG_855_Wolf_TRAIN_Info_09_03");	//Tvoje schopnost určuje vzdálenost, ve které je možné cíl zasahnout. Aby ses stal dobrým střelcem, musíš zlepšovat to a i to.
 	AI_StopProcessInfos(self);
 };

@@ -68,7 +68,7 @@ func int dia_dugo_hello_two_condition()
 func void dia_dugo_hello_two_info()
 {
 	AI_Output(other,self,"DIA_Dugo_Hello_Two_01_00");	//Kdo jsi a co je toto za místo?
-	AI_Output(self,other,"DIA_Dugo_Hello_Two_01_01");	//Jmenuji se Dyugo. A všechno, co kolem vidíš, je Údolí stínů...
+	AI_Output(self,other,"DIA_Dugo_Hello_Two_01_01");	//Jmenuji se Dugo. A všechno, co kolem vidíš, je Údolí stínů...
 	AI_Output(self,other,"DIA_Dugo_Hello_Two_01_02");	//A říkám ti to přímo, chlape. Přišel jsi do pekla!
 	AI_Output(self,other,"DIA_Dugo_Hello_Two_01_03");	//Tohle údolí je prokleté! Všude kolem jsou zlí duchové a ještě horší monstra...
 	AI_Output(self,other,"DIA_Dugo_Hello_Two_01_04");	//A v noci je lepší velmi se tu nepotulovat - riskuješ svůj život.
@@ -114,7 +114,7 @@ func void dia_dugo_hello_three_info()
 	AI_Output(self,other,"DIA_Dugo_Hello_Three_01_14");	//Nemůžu ti říct nic víc. Pokud chceš vědět víc, měl by ses zeptat Elvaise.
 	if(MIS_URNAZULRAGE == LOG_Running)
 	{
-		B_LogEntry(TOPIC_URNAZULRAGE,"Teleport při pyramidě mě zavedl do Údolí stínů. Střetl jsem tam lovce jménem Dyugo. Dle jeho slov je tohle místo naprosté peklo!");
+		B_LogEntry(TOPIC_URNAZULRAGE,"Teleport při pyramidě mě zavedl do Údolí stínů. Střetl jsem tam lovce jménem Dugo. Dle jeho slov je tohle místo naprosté peklo!");
 	};
 	DUGOMEET = 2;
 };
@@ -152,7 +152,7 @@ func void dia_dugo_hello_four_info()
 	AI_Output(self,other,"DIA_Dugo_Hello_Four_01_14");	//Ale jaks ty mohl mezi nimi projít?!... (nechápavě)
 	AI_Output(other,self,"DIA_Dugo_Hello_Four_01_15");	//Já má skřetí talisman. Vyrobil mi ho jeden skřet, kterému jsem zachránil život.
 	AI_Output(other,self,"DIA_Dugo_Hello_Four_01_16");	//Pro skřety je to znamení moci a přátelství. Respektují jeho majitele a nic by mu neprovedli.
-	AI_Output(self,other,"DIA_Dugo_Hello_Four_01_17");	//ďábelské monstra
+	AI_Output(self,other,"DIA_Dugo_Hello_Four_01_17");	//Ďábelské monstra.
 	AI_Output(self,other,"DIA_Dugo_Hello_Four_01_18");	//Hmm... Obávám se, že nemáme jinou možnost než se probít.
 	DUGOMEETONE = 1;
 };
@@ -188,7 +188,7 @@ func void dia_dugo_hello_five_info()
 	AI_Output(self,other,"DIA_Dugo_Hello_Five_01_07");	//Můžou tě to naučit!
 	if(MIS_URNAZULRAGE == LOG_Running)
 	{
-		B_LogEntry(TOPIC_URNAZULRAGE,"Dyugo mi poradil promluvit si s Elvaisem, stařešinou tábora. Jak řekl, Elvais mi prozradí víc jako on. Možná mi taky řekne o černém draku. Elvaise můžu najít v jedné ze vzdálenějších jeskyň nalevo od vstupu do tábora.");
+		B_LogEntry(TOPIC_URNAZULRAGE,"Dugo mi poradil promluvit si s Elvaisem, stařešinou tábora. Jak řekl, Elvais mi prozradí víc jako on. Možná mi taky řekne o černém draku. Elvaise můžu najít v jedné ze vzdálenějších jeskyň nalevo od vstupu do tábora.");
 	};
 	DUGOMEETTWO = 1;
 	KNOWABELV = TRUE;
@@ -225,14 +225,14 @@ func void dia_dugo_hello_seven_info()
 	AI_Output(other,self,"DIA_Dugo_Hello_Seven_01_07");	//Záleží na úhlu pohledu. Pro začátek bych tady měl něco urovnat.
 	AI_Output(self,other,"DIA_Dugo_Hello_Seven_01_08");	//A co by to mohlo být, v těchhle Innosem zapomenutých končinách?
 	AI_Output(other,self,"DIA_Dugo_Hello_Seven_01_10");	//Slyšel jsem, že tady žije mocný černý drak. Jmenuje se Azgalor.
-	AI_Output(self,other,"DIA_Dugo_Hello_Seven_01_11");	//O něm jsem už slyšel. Evails o něm mluvil v jedné historce.
+	AI_Output(self,other,"DIA_Dugo_Hello_Seven_01_11");	//O něm jsem už slyšel. Elvais o něm mluvil v jedné historce.
 	AI_Output(self,other,"DIA_Dugo_Hello_Seven_01_12");	//Měl by sis s ním promluvit. Určitě o té kreatůre ví víc než já.
 	AI_Output(self,other,"DIA_Dugo_Hello_Seven_01_14");	//A proč tě sakra zajímá?
 	AI_Output(other,self,"DIA_Dugo_Hello_Seven_01_15");	//Přišel jsem ho zabít.
 	AI_Output(self,other,"DIA_Dugo_Hello_Seven_01_16");	//?!... Tedy, chlape, překvapuješ mě. Je to tvá věc, ale je to nebezpečné!
 	Log_CreateTopic(TOPIC_HUMANINVALLEY,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HUMANINVALLEY,LOG_Running);
-	B_LogEntry(TOPIC_HUMANINVALLEY,"Asi bych mohl pomoct lidem tadý dostat se z tohto pekelného místa. Otázkou zůstáva, jak.");
+	B_LogEntry(TOPIC_HUMANINVALLEY,"Asi bych mohl pomoct lidem tady dostat se z tohoto pekelného místa. Otázkou zůstáva, jak.");
 	DUGOMEETONE = 2;
 };
 

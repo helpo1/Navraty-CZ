@@ -185,7 +185,7 @@ func void DIA_Addon_Morgan_Meat_Info()
 	{
 		AI_Output(self,other,"DIA_Addon_Morgan_Meat_07_05");	//Co, to je vše? Sežvejkal si všechno ostatní? Ach, nevadí...
 	};
-	B_LogEntry(TOPIC_Addon_BringMeat,"Dal jsem Moranovi maso.");
+	B_LogEntry(TOPIC_Addon_BringMeat,"Dal jsem Morganovi maso.");
 	MIS_AlligatorJack_BringMeat = LOG_SUCCESS;
 	B_GivePlayerXP(XP_Addon_AlligatorJAck_BringMeat);
 };
@@ -219,7 +219,7 @@ func void DIA_Addon_Morgan_Job_Info()
 	AI_Output(self,other,"DIA_Addon_Morgan_Job_07_04");	//Mí chlapci se o to starají za mě.
 	if(GregIsBack == FALSE)
 	{
-		AI_Output(self,other,"DIA_Addon_Morgan_Job_07_05");	//Řekl jsem jim, nechci tady vidět jedinou potvoru (zívá) Když se Greg vrátí.
+		AI_Output(self,other,"DIA_Addon_Morgan_Job_07_05");	//Řekl jsem jim, nechci tady vidět jedinou potvoru (zívá) když se Greg vrátí.
 	};
 };
 
@@ -277,7 +277,7 @@ func int DIA_Addon_Morgan_JoinMorgan_Condition()
 func void DIA_Addon_Morgan_JoinMorgan_Info()
 {
 	AI_Output(other,self,"DIA_Addon_Morgan_JoinMorgan_15_00");	//Chci se připojit k tvé skupině.
-	AI_Output(self,other,"DIA_Addon_Morgan_JoinMorgan_07_01");	//(směje se) Moje Skupina? Moje skupina se povaluje okolo na pláži.
+	AI_Output(self,other,"DIA_Addon_Morgan_JoinMorgan_07_01");	//(směje se) Moje skupina? Moje skupina se povaluje okolo na pláži.
 	AI_Output(self,other,"DIA_Addon_Morgan_JoinMorgan_07_03");	//Chlapy nezvednou ani prst dokud se kapitán nevrátí. Můžu ti naslíbovat hodně.
 	AI_Output(self,other,"DIA_Addon_Morgan_JoinMorgan_07_04");	//Ale jestli nám chceš ukázat, co jsi vlastně zač, postaráš se o pláž na severu.
 	AI_Output(self,other,"DIA_Addon_Morgan_JoinMorgan_07_05");	//Je plná číhavců a kdo ví čeho ještě.
@@ -426,7 +426,7 @@ func void DIA_Addon_Morgan_FOUNDTHEM_Now()
 	AI_Output(other,self,"DIA_Addon_Morgan_FOUNDTHEM_15_03");	//Jsou mrtví.
 	AI_Output(self,other,"DIA_Addon_Morgan_FOUNDTHEM_07_08");	//Prsten. Kde je prsten?
 	Info_ClearChoices(DIA_Addon_Morgan_FOUNDTHEM);
-	Info_AddChoice(DIA_Addon_Morgan_FOUNDTHEM,"Tady to je.",DIA_Addon_Morgan_FOUNDTHEM_GiveRing);
+	Info_AddChoice(DIA_Addon_Morgan_FOUNDTHEM,"Tady je.",DIA_Addon_Morgan_FOUNDTHEM_GiveRing);
 	Info_AddChoice(DIA_Addon_Morgan_FOUNDTHEM,"Neměli to u sebe.",DIA_Addon_Morgan_FOUNDTHEM_NoRing);
 };
 

@@ -168,7 +168,7 @@ func int dia_wolf_li_missmygold_condition()
 func void dia_wolf_li_missmygold_info()
 {
 	AI_Output(other,self,"DIA_Wolf_LI_MissMyGold_01_01");	//Mám otázku.
-	AI_Output(other,self,"DIA_Wolf_LI_MissMyGold_01_03");	//Víš něco o tom kam zmizlo mé zlato?
+	AI_Output(other,self,"DIA_Wolf_LI_MissMyGold_01_03");	//Víš něco o tom kam zmizelo mé zlato?
 	AI_Output(self,other,"DIA_Wolf_LI_MissMyGold_01_04");	//Nemám ponětí! Zeptej se ostatních chlapů.
 	B_LogEntry(TOPIC_MISSMYGOLD,"Wolf o mém zlatě nic neví.");
 };

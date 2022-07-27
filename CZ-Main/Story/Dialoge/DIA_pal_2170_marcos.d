@@ -43,7 +43,7 @@ func void dia_pal_2170_marcos_perm_info()
 	AI_Output(self,other,"DIA_PAL_2170_Marcos_Perm_01_01");	//To můžeš vidět na vlastní oči. Upřímně, nečekal jsem že se sem skřeti dostanou tak rychle.
 	AI_Output(other,self,"DIA_PAL_2170_Marcos_Perm_01_02");	//Jo. Nikde to nejde hůř než v Hornickém údolí.
 	AI_Output(self,other,"DIA_PAL_2170_Marcos_Perm_01_03");	//Alespoň jsme v dobře chráněné pevnosti s veterány mnoha bitev kteří jsou zvyklý dívat se smrti do tváře. Innos je toho svědkem!
-	AI_Output(self,other,"DIA_PAL_2170_Marcos_Perm_01_04");	//(bojovně) No, nic! Ještě těm skřetům ukážeme. Nakonec bude vítěztví naše!
+	AI_Output(self,other,"DIA_PAL_2170_Marcos_Perm_01_04");	//(bojovně) No, nic! Ještě těm skřetům ukážeme. Nakonec bude vítězství naše!
 	AI_Output(other,self,"DIA_PAL_2170_Marcos_Perm_01_05");	//No ano, samozřejmě.
 };
 

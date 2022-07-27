@@ -352,7 +352,7 @@ func void DIA_Addon_Saturas_LanceChange_Eremit_Info()
 	B_GivePlayerXP(250);
 	AI_Output(other,self,"DIA_Addon_Saturas_LanceChange_Eremit_01_00");	//Našel jsem vám nového pomocníka.
 	AI_Output(self,other,"DIA_Addon_Saturas_LanceChange_Eremit_01_01");	//A kdo to je?
-	AI_Output(other,self,"DIA_Addon_Saturas_LanceChange_Eremit_01_02");	//Jmenuje se Eremit. Je to poustevník a žíje hluboko v údolí.
+	AI_Output(other,self,"DIA_Addon_Saturas_LanceChange_Eremit_01_02");	//Jmenuje se Eremit. Je to poustevník a žije hluboko v údolí.
 	AI_Output(self,other,"DIA_Addon_Saturas_LanceChange_Eremit_01_03");	//Myslíš si, že pro nás může být užitečný?
 	AI_Output(other,self,"DIA_Addon_Saturas_LanceChange_Eremit_01_04");	//Ovšem! Kromě toho, ví něco o kultuře Stavitelů, také umí číst starodávné tabulky.
 	AI_Output(self,other,"DIA_Addon_Saturas_LanceChange_Eremit_01_05");	//Opravdu? Hmmm... (zamyšleně) No, můj synu. V tom případě souhlasím aby se k nám přidal.
@@ -572,13 +572,13 @@ func void DIA_Addon_Saturas_StonePlateHint_wo()
 	AI_Output(self,other,"DIA_Addon_Saturas_StonePlateHint_wo_14_02");	//Poví ti, kde je máš hledat.
 	Log_CreateTopic(TOPIC_Addon_HousesOfRulers,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_Addon_HousesOfRulers,LOG_Running);
-	B_LogEntry(TOPIC_Addon_HousesOfRulers,"Saturas chce, abych se poohlédl po nějakych užitečných záznamech Stavitelů. Riordian mi poví, kde je mám hledat.");
+	B_LogEntry(TOPIC_Addon_HousesOfRulers,"Saturas chce, abych se poohlédl po nějakých užitečných záznamech Stavitelů. Riordian mi poví, kde je mám hledat.");
 };
 
 func void DIA_Addon_Saturas_StonePlateHint_unter()
 {
 	AI_Output(other,self,"DIA_Addon_Saturas_StonePlateHint_unter_15_00");	//Co když už ta sídla neexistují?
-	AI_Output(self,other,"DIA_Addon_Saturas_StonePlateHint_unter_14_01");	//Jestli je nenajdeš, pak byly zrejmě zničeny spolu s městem.
+	AI_Output(self,other,"DIA_Addon_Saturas_StonePlateHint_unter_14_01");	//Jestli je nenajdeš, pak byly zřejmě zničeny spolu s městem.
 	AI_Output(self,other,"DIA_Addon_Saturas_StonePlateHint_unter_14_02");	//Ale pokud ještě stále existují, budou neocenitelnou pomocí pro naše studia.
 };
 
@@ -707,10 +707,10 @@ func void DIA_Addon_Saturas_RavenInfos_Info()
 	RavenNeuigkeit = 0;
 	if((Thorus.aivar[AIV_TalkedToPlayer] == TRUE) && (DIA_Addon_Saturas_RavenInfos_OneTime1 == FALSE) && (RavenIsInTempel == FALSE))
 	{
-		AI_Output(other,self,"DIA_Addon_Saturas_RavenInfos_15_01");	//Byl jsem v táboře banditú. Raven je jejich vůdce.
+		AI_Output(other,self,"DIA_Addon_Saturas_RavenInfos_15_01");	//Byl jsem v táboře banditů. Raven je jejich vůdce.
 		AI_Output(other,self,"DIA_Addon_Saturas_RavenInfos_15_02");	//Ale na to, abych se dostal blíž k Ravenovi, se budu muset zbavit několika banditů.
 		AI_Output(self,other,"DIA_Addon_Saturas_RavenInfos_14_03");	//Dobře. Hodně štěstí. Ale nezapomeň, že to musíš udělat rychle.
-		AI_Output(self,other,"DIA_Addon_Saturas_RavenInfos_14_04");	//Raven nesmí za žádnych okolností dosáhnout svého cíle.
+		AI_Output(self,other,"DIA_Addon_Saturas_RavenInfos_14_04");	//Raven nesmí za žádných okolností dosáhnout svého cíle.
 		DIA_Addon_Saturas_RavenInfos_OneTime1 = TRUE;
 		RavenNeuigkeit = RavenNeuigkeit + 1;
 	};
@@ -882,7 +882,7 @@ func void DIA_Addon_Saturas_TalkedToGhost_wasistdas()
 	AI_Output(other,self,"DIA_Addon_Saturas_TalkedToGhost_wasistdas_15_00");	//Co je to 'Beliarův dráp'?
 	AI_Output(self,other,"DIA_Addon_Saturas_TalkedToGhost_wasistdas_14_01");	//Je to převtělené zlo. Sestrojil ho sám Beliar.
 	AI_Output(self,other,"DIA_Addon_Saturas_TalkedToGhost_wasistdas_14_02");	//Každý, kdo ho používá, má hroznou zbraň ničení.
-	AI_Output(self,other,"DIA_Addon_Saturas_TalkedToGhost_wasistdas_14_03");	//Čím silnejší je nositel, tím mocnější je i 'Dráp'.
+	AI_Output(self,other,"DIA_Addon_Saturas_TalkedToGhost_wasistdas_14_03");	//Čím silnější je nositel, tím mocnější je i 'Dráp'.
 	AI_Output(self,other,"DIA_Addon_Saturas_TalkedToGhost_wasistdas_14_04");	//Jen ten, kdo má silného ducha a pevnou vůli, může odolat kletbě.
 	AI_Output(self,other,"DIA_Addon_Saturas_TalkedToGhost_wasistdas_14_05");	//Teď je mi už jasné, proč Stavitelé zablokovali tohle údolí.
 	AI_Output(self,other,"DIA_Addon_Saturas_TalkedToGhost_wasistdas_14_06");	//Přinesli tuto ďábelskou zbraň do svého města a oddali se jejímu kouzlu.
@@ -1081,7 +1081,7 @@ func void DIA_Addon_Saturas_BeliarsWeapon_Info()
 	AI_Output(self,other,"DIA_Addon_Saturas_BeliarsWeapon_besser_14_02");	//Buď opatrný. Beliar je nejhorší.
 	AI_Output(self,other,"DIA_Addon_Saturas_BeliarsWeapon_besser_14_03");	//Pokud ho rozzuříš, brzo to pocítíš.
 	AI_Output(self,other,"DIA_Addon_Saturas_BeliarsWeapon_besser_14_04");	//A ještě něco bys měl vědět... (vážně)
-	AI_Output(self,other,"DIA_Addon_Saturas_BeliarsWeapon_besser_14_05");	//Nemůžeš doufat, že ti Beliar dá moc Drápu jenom tak!
+	AI_Output(self,other,"DIA_Addon_Saturas_BeliarsWeapon_besser_14_05");	//Nemůžeš doufat, že ti Beliar dá moc 'Drápu' jenom tak!
 	AI_Output(self,other,"DIA_Addon_Saturas_BeliarsWeapon_besser_14_06");	//Pokud s ním nebudeš v přízni, nebude tě ani poslouchat.
 	AI_Output(self,other,"DIA_Addon_Saturas_BeliarsWeapon_besser_14_07");	//Čili zbraň můžeš použít jenom, když máš jeho přízeň!
 	Log_CreateTopic(TOPIC_Addon_Klaue,LOG_MISSION);
@@ -1145,7 +1145,7 @@ func void DIA_Addon_Saturas_PermENDE_ADDON_Info()
 		AI_Output(self,other,"DIA_Addon_Saturas_PermENDE_ADDON_14_03");	//Díky ti, synu...
 		AI_Output(self,other,"DIA_Addon_Saturas_PermENDE_ADDON_14_04");	//Velmi jsem se v tobě mýlil. Jsi ochránce rovnováhy. O tom není pochyb.
 		AI_Output(self,other,"DIA_Addon_Saturas_PermENDE_ADDON_14_05");	//Bez tvé pomoci a statečnosti by ostrov Khorinis zanikl. Děkujeme ti a budeme oslavovat tvou čest.
-		AI_Output(self,other,"DIA_Addon_Saturas_PermENDE_ADDON_14_06");	//Soustřeď se na své další úlohy, které leží před tebou a udržuj tento svět v rovnováze a míru.
+		AI_Output(self,other,"DIA_Addon_Saturas_PermENDE_ADDON_14_06");	//Soustřeď se na své další úkoly, které leží před tebou a udržuj tento svět v rovnováze a míru.
 		AI_Output(self,other,"DIA_Addon_Saturas_PermENDE_ADDON_14_07");	//Jdi a přijmi svůj osud ochránce. Budeme se za tebe modlit.
 		DIA_Addon_Saturas_PermENDE_ADDON_OneTime = TRUE;
 	};
@@ -1423,7 +1423,7 @@ func void dia_addon_saturas_adw_teachfirstcircle_info()
 		AI_Output(self,other,"DIA_Addon_Saturas_ADW_TeachFirstCircle_01_07");	//Každá runa v sobě obsahuje magickou sílu, kterou můžeš kdykoli využít.
 		AI_Output(self,other,"DIA_Addon_Saturas_ADW_TeachFirstCircle_01_08");	//Jako u svitků, když runu používáš, spotřebuješ svou vlastní magickou energii.
 		AI_Output(self,other,"DIA_Addon_Saturas_ADW_TeachFirstCircle_01_09");	//S každým kruhem se naučíš víc a víc o runách.
-		AI_Output(self,other,"DIA_Addon_Saturas_ADW_TeachFirstCircle_01_10");	//Použíj jejich sílu a poznej sebe.
+		AI_Output(self,other,"DIA_Addon_Saturas_ADW_TeachFirstCircle_01_10");	//Použij jejich sílu a poznej sebe.
 	};
 };
 
@@ -2034,7 +2034,7 @@ func void dia_addon_saturas_orcleaderds_info()
 		OrcCountXP = OrcCountXP + 100;
 		AI_Output(other,self,"DIA_Addon_Saturas_OrcLeaderds_01_07");	//Několik dalších skřetů je už minulostí!
 		AI_Output(other,self,"DIA_Addon_Saturas_OrcLeaderds_01_08");	//V chrámu Strážců smrti jsem narazil na další skupinu, která se vydala na západ. Bylo potřebné jim dát do zubů!
-		AI_Output(other,self,"DIA_Addon_Saturas_OrcLeaderds_01_09");	//Soudím, že je vedl šaman Varrag-Kazorg. Teď je on i se skupinou mrtvev.
+		AI_Output(other,self,"DIA_Addon_Saturas_OrcLeaderds_01_09");	//Soudím, že je vedl šaman Varrag-Kazorg. Teď je on i se skupinou mrtev.
 		AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_10");	//Dobrá práce, synu!
 		ORCSHAMAN2ISDEAD = TRUE;
 	};
@@ -2080,7 +2080,7 @@ func void dia_addon_saturas_orcleaderds_info()
 	{
 		OrcCountXP = OrcCountXP + 500;
 		B_GivePlayerXP(OrcCountXP);
-		AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_31");	//Myslím, že to stačí. Tuto úlohu jsi splnil perfektně!
+		AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_31");	//Myslím, že to stačí. Tento úkol jsi splnil perfektně!
 		AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_32");	//Když jsou jejich vůdci mrtví, skřeti už nepodniknou žádné vážné kroky. A určitě opustí údolí.
 		AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_34");	//... Nevím, co bychom bez tebe dělali. Jsi skutečně vyvolený bohů!
 		MIS_ADW_ORCINVASION = LOG_SUCCESS;
@@ -2146,7 +2146,7 @@ func void dia_addon_saturas_orcleaderds_info()
 			AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_66");	//Taková slova nejsou potřebná. Nezapomínej, že sloužím jenom jedinému bohu! A myslím, že mými činy nebude nadšený.
 			B_GiveInvItems(self,other,ItPo_Perm_Mana,1);
 			AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_67");	//Jsou přirozeně hodny mnohem vícera než tohoto. Ale doufám, že to bude stačit.
-			AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_69");	//A teď pokračuj ve své cestě. Doufám, že to nebude tvůj jediný čin ve jméně světla!
+			AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_69");	//A teď pokračuj ve své cestě. Doufám, že to nebude tvůj jediný čin ve jménu světla!
 			AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_70");	//Sbohem.
 			DIA_Addon_Saturas_ADW_EXIT_Info();
 		};
@@ -2156,7 +2156,7 @@ func void dia_addon_saturas_orcleaderds_info()
 	{
 		B_GivePlayerXP(OrcCountXP);
 		AI_Output(other,self,"DIA_Addon_Saturas_OrcLeaderds_01_71");	//Ještě nic.
-		AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_72");	//Veliká škoda. Doufal jsem, že uslyším příjemnějsí zprávy.
+		AI_Output(self,other,"DIA_Addon_Saturas_OrcLeaderds_01_72");	//Veliká škoda. Doufal jsem, že uslyším příjemnější zprávy.
 	};
 };
 
@@ -2476,7 +2476,7 @@ func void dia_addon_saturas_adw_findriordan_info()
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_FindRiordan_01_05");	//Podle záznamů by tam měl být jeden z artefaktů, které Stavitelé používali při rituálech.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_FindRiordan_01_06");	//Pro náš rituál je taktéž extremně důležitý!
 	Wld_InsertNpc(riordian_zombie,"ADW_CANYON_LIBRARY_RIGHT_13");
-	B_LogEntry(TOPIC_RESTOREHRAM,"Saturas mi řekl, že čekají na návrat Riordiana. Měl přinést nějaký starobylý artefakt z chrámu na severu, který je pro ně důležitý. Stavitelé ho používali na vykonávaní rituálů v Adanově chrámu.");
+	B_LogEntry(TOPIC_RESTOREHRAM,"Saturas mi řekl, že čekají na návrat Riordiana. Měl přinést nějaký starobylý artefakt z chrámu na severu, který je pro ně důležitý. Stavitelé ho používali na provádění rituálů v Adanově chrámu.");
 };
 
 
@@ -2513,7 +2513,7 @@ func void dia_addon_saturas_adw_findriordandone_info()
 	B_GiveInvItems(other,self,itmi_adanosamulet,1);
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_FindRiordanDone_01_11");	//Dobře. Pošlu všechny do Adanova chrámu.
 	READYWATERRITUAL = TRUE;
-	B_LogEntry(TOPIC_RESTOREHRAM,"Saturas byl šokován, když se dozvěděl o smrti Riordiana. Teď nezbývá nic víc, než jít do Adanova chrámu a vykonat posvátný rituál, než zlo, které zničilo Riordiana, nezmocní všech mágů.");
+	B_LogEntry(TOPIC_RESTOREHRAM,"Saturas byl šokován, když se dozvěděl o smrti Riordiana. Teď nezbývá nic víc, než jít do Adanova chrámu a vykonat posvátný rituál, než zlo, které zničilo Riordiana, se nezmocní všech mágů.");
 	AI_StopProcessInfos(self);
 	B_StartOtherRoutine(KDW_14000_Addon_Saturas_ADW,"WaitTempel");
 	B_StartOtherRoutine(KDW_14020_Addon_Nefarius_ADW,"WaitTempel");
@@ -2678,7 +2678,7 @@ func void dia_addon_saturas_adw_RAVENAWAY_info()
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_RAVENAWAY_01_09");	//Takže, kde ho mám hledat?
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_RAVENAWAY_01_10");	//Kdybych to věděl, už bych tě za ním poslal! Potřebuji nějaký čas, abych si všechno promyslel.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_RAVENAWAY_01_12");	//Pak ti možná budu schopen dát odpověď.
-	B_LogEntry(TOPIC_Addon_RavenKDW,"Saturas byl překvapený když se dozvěděl, že mi Raven utekl. Teď potřebuje čas na přemýšlení o našich dalších krocích.");
+	B_LogEntry(TOPIC_Addon_RavenKDW,"Saturas byl překvapený když se dozvěděl, že mi Raven utekl. Teď potřebuje čas na promyšlení o našich dalších krocích.");
 	RavenAwayDone = LOG_SUCCESS;
 	Log_SetTopicStatus(TOPIC_Addon_Kammern,LOG_SUCCESS);
 };
@@ -2885,7 +2885,7 @@ func void dia_addon_saturas_adw_JarCurse_info()
 {
 	B_GivePlayerXP(100);
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_JarCurse_01_01");	//Je všechno v pořádku?
-	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurse_01_02");	//Ne, jak Vidíš. Zdá se, že znesvěcení Adanova chrámu mělo dalekosáhlé důsledky!
+	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurse_01_02");	//Ne, jak vidíš. Zdá se, že znesvěcení Adanova chrámu mělo dalekosáhlé důsledky!
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_JarCurse_01_03");	//Co tím myslíš?
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurse_01_04");	//(rozčileně) Jsi snad slepý? Obrovské armády nemrtvých vtrhly do země!
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurse_01_05");	//Nějaká nám neznámá pradávná moc je přiměla povstat z mrtvých.
@@ -2894,7 +2894,7 @@ func void dia_addon_saturas_adw_JarCurse_info()
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurse_01_08");	//S největší pravděpodobností. Jeho rouhání a znesvěcení starověkých svatyní jistě nezůstalo bez povšimnutí.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_JarCurse_01_09");	//Můžeme se jen modlit, aby to byla jediná katastrofa, která nás v budoucnu čeká.
 	MeetSaturasOkPortal = TRUE;
-	B_LogEntry(TOPIC_JarCurse,"Situace v Jharkendarmu není o moc lepší než Khorinisu. Nějaké neznámé starobylé síly vyvolaly obrovskou armádu nemrtvých. Podle všeho nemrtví prorazili portál do Khorinisu, a to je jen malá část toho, co nás do budoucna čeká.");	
+	B_LogEntry(TOPIC_JarCurse,"Situace v Jharkendaru není o moc lepší než v Khorinisu. Nějaké neznámé starobylé síly vyvolaly obrovskou armádu nemrtvých. Podle všeho nemrtví prorazili portál do Khorinisu, a to je jen malá část toho, co nás do budoucna čeká.");	
 };
 
 instance DIA_ADDON_SATURAS_ADW_JarCurseUndead(C_Info)
@@ -3122,7 +3122,7 @@ instance DIA_ADDON_SATURAS_ADW_CurseAncientDone(C_Info)
 	condition = dia_addon_saturas_adw_CurseAncientDone_condition;
 	information = dia_addon_saturas_adw_CurseAncientDone_info;
 	permanent = FALSE;
-	description = "Pradávní nemrtví, jsou již minulostí!";
+	description = "Pradávní nemrtví jsou již minulostí!";
 };
 
 func int dia_addon_saturas_adw_CurseAncientDone_condition()
@@ -3215,7 +3215,7 @@ func void dia_addon_saturas_adw_SendNorolas_info()
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SendNorolas_01_06");	//Jejich magie v přírodě byla zcela jedinečná. Nedokázali jsme pochopit, odkud berou svou magickou energii, nebo jak dokáží využívat runy.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SendNorolas_01_08");	//Kdyby byly tyto znalosti mágům Vody skrze Adanovu vůli dostupné, tak bychom se stali jejich ochránci.
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_SendNorolas_01_09");	//Opravdu to nebyl Spáč?
-	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SendNorolas_01_10");	//Ano, nejdřív jsme si to myslel taky. Ale pokud je mi známo - Guru, kteří zůstali po pádu bariéry, tuto magii stále používají.
+	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SendNorolas_01_10");	//Ano, nejdřív jsem si to myslel taky. Ale pokud je mi známo - Guru, kteří zůstali po pádu bariéry, tuto magii stále používají.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SendNorolas_01_12");	//Proto musí existovat nějaké jiné vysvětlení.
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_SendNorolas_01_13");	//Proč si o tom s nimi nepromluvíte?
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SendNorolas_01_14");	//Obávám se, že je nepravděpodobné, že by odhalili svá tajemství.
@@ -3303,17 +3303,17 @@ func void DIA_Addon_Saturas_ADW_SwampSecret_info()
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SwampSecret_01_01");	//Je dobré, že jsi tady, synu! Čekám na tebe.
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_SwampSecret_01_02");	//Co se stalo?
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SwampSecret_01_03");	//Před nějakým časem jsi mi přinesl Y'Berionův deník, za což jsem velmi vděčný.
-	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SwampSecret_01_04");	//Ale obávám se, že to nestačí. Není tu žádné vysvětlení toho, jak se Guru naučil používat magii.
+	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SwampSecret_01_04");	//Ale obávám se, že to nestačí. Není tu žádné vysvětlení toho, jak se Guru naučili používat magii.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SwampSecret_01_05");	//Jsme však přesvědčeni, že jejich kouzlo jim nebylo dáno Spáčem.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SwampSecret_01_06");	//Ve svém deníku Y'Berion uvádí, že používal obyčejnou bažinnou trávu pro zvýšení své magické síly.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SwampSecret_01_07");	//Předpokládám, že toto je jediná stopa, která nás může vést k odhalení tohoto tajemství.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SwampSecret_01_08");	//Takže nejprve se musíme naučit trochu více o této rostlině. Věřím, že nám neodmítneš pomoct.
-	AI_Output(other,self,"DIA_Addon_Saturas_ADW_SwampSecret_01_09");	//Samozřejmě, starče, - zkusím ti něco zjistit.
+	AI_Output(other,self,"DIA_Addon_Saturas_ADW_SwampSecret_01_09");	//Samozřejmě, starče - zkusím ti něco zjistit.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SwampSecret_01_10");	//Děkuji synu...
 	MIS_SwampSecret = LOG_Running;
 	Log_CreateTopic(TOPIC_SwampSecret,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_SwampSecret,LOG_Running);
-	B_LogEntry(TOPIC_SwampSecret,"Saturas věří, že bažina je nějak spojena s magií Guru. Možná bych se měl zeptat na někoho, kdo je v alchymii a bylinkařství mnohem lepší než ostatní.");
+	B_LogEntry(TOPIC_SwampSecret,"Saturas věří, že bažina je nějak spojena s magií Guru. Možná bych se měl zeptat na někoho, kdo je v alchymii a bylinkářství mnohem lepší než ostatní.");
 };
 
 instance DIA_Addon_Saturas_ADW_SwampSecret_Done(C_Info)
@@ -3342,7 +3342,7 @@ func void DIA_Addon_Saturas_ADW_SwampSecret_Done_info()
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SwampSecret_Done_01_04");	//Vážně?
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_SwampSecret_Done_01_05");	//Naprosto. Každý stonek trávy nese magickou sílu elementů Země a Kamene.
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_SwampSecret_Done_01_06");	//Toto kouzlo je rozděleno v každé rostlině, která roste na tomto světě.
-	AI_Output(other,self,"DIA_Addon_Saturas_ADW_SwampSecret_Done_01_07");	//Pokud je člověk dostatečně duševně silný, může tuto trávu použít, aby změnil své vědomí a naučit se užívat této magie.
+	AI_Output(other,self,"DIA_Addon_Saturas_ADW_SwampSecret_Done_01_07");	//Pokud je člověk dostatečně duševně silný, může tuto trávu použít, aby změnil své vědomí a naučil se užívat této magie.
 	AI_Output(self,other,"DIA_Addon_Saturas_ADW_SwampSecret_Done_01_08");	//Neuvěřitelné! Neuměl jsem si představit nic takového. Ale jak ses o tom dozvěděl?
 	AI_Output(other,self,"DIA_Addon_Saturas_ADW_SwampSecret_Done_01_09");	//Četl jsem o tom v jedné ze starých tabulek. Tady - můžeš si to vzít.
 	B_GiveInvItems(other,self,ItWr_StonePower,1);

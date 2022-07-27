@@ -242,7 +242,7 @@ instance DIA_Pyrokar_FIRE(C_Info)
 	condition = DIA_Pyrokar_FIRE_Condition;
 	information = DIA_Pyrokar_FIRE_Info;
 	permanent = FALSE;
-	description = "Přál bych si podstoupit zkoušku ohně.";
+	description = "Přál bych si podstoupit Zkoušku Ohně.";
 };
 
 
@@ -256,16 +256,16 @@ func int DIA_Pyrokar_FIRE_Condition()
 
 func void DIA_Pyrokar_FIRE_Info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_FIRE_15_00");	//Přál bych si podstoupit zkoušku ohně.
+	AI_Output(other,self,"DIA_Pyrokar_FIRE_15_00");	//Přál bych si podstoupit Zkoušku Ohně.
 	AI_Output(self,other,"DIA_Pyrokar_FIRE_11_01");	//(překvapeně) Takže o zkoušce víš... a chceš ji podstoupit?
 	AI_Output(other,self,"DIA_Pyrokar_FIRE_15_02");	//Ano, četl jsem Právo ohně, kde je psáno...
-	AI_Output(self,other,"DIA_Pyrokar_FIRE_11_03");	//(přísně přeruší) Známe právo ohně. Také jsme ale viděli mnoho noviců při zkoušce zemřít. Měl by sis to ještě promyslet.
+	AI_Output(self,other,"DIA_Pyrokar_FIRE_11_03");	//(přísně přeruší) Známe Právo ohně. Také jsme ale viděli mnoho noviců při zkoušce zemřít. Měl by sis to ještě promyslet.
 	AI_Output(other,self,"DIA_Pyrokar_FIRE_15_04");	//Není co, už jsem rozhodnut. Chci být zkoušce podroben - a také ji splním.
 	AI_Output(self,other,"DIA_Pyrokar_FIRE_11_05");	//(varujícně) Pokud na tom opravdu trváš, tak tě Rada starších zkoušce podrobí.
-	AI_Output(other,self,"DIA_Pyrokar_FIRE_15_06");	//Trvám na tom, abyste mi zadali Zkoušku ohně.
+	AI_Output(other,self,"DIA_Pyrokar_FIRE_15_06");	//Trvám na tom, abyste mi zadali Zkoušku Ohně.
 	AI_Output(self,other,"DIA_Pyrokar_FIRE_11_07");	//V tom případě - budiž. Až budeš připraven, každý člen Rady starších ti dá úkol, který budeš muset splnit.
 	AI_Output(self,other,"DIA_Pyrokar_FIRE_11_08");	//Nechť Innos opatruje tvoji duši.
-	B_LogEntry(TOPIC_FireContest,"Požádal jsem Pyrokara o podrobení se Zkoušce ohně. Nyní musím splnit tři úkoly, které mi Rada starších zadá.");
+	B_LogEntry(TOPIC_FireContest,"Požádal jsem Pyrokara o podrobení se Zkoušce Ohně. Nyní musím splnit tři úkoly, které mi Rada starších zadá.");
 };
 
 
@@ -1362,7 +1362,7 @@ func void DIA_Pyrokar_AUGEGEHEILT_Info()
 	if(hero.guild == GIL_KDF)
 	{
 		AI_Output(other,self,"DIA_Pyrokar_AUGEGEHEILT_15_02");	//Ano, mistře.
-		AI_Output(self,other,"DIA_Pyrokar_AUGEGEHEILT_11_03");	//Nejednou jsi prokázal, že jsi hoden vstoupit do řad Vyššího řádu ohně.
+		AI_Output(self,other,"DIA_Pyrokar_AUGEGEHEILT_11_03");	//Nejednou jsi prokázal, že jsi hoden vstoupit do řad Vyššího řádu Ohně.
 		AI_Output(self,other,"DIA_Pyrokar_AUGEGEHEILT_11_04");	//A proto tě od této chvíle jmenuji členem Rady. Od teď budeš reprezentovat řád ve světě. Od teď jsi vyšší mág kruhu Ohně.
 		AI_Output(self,other,"DIA_Pyrokar_AUGEGEHEILT_11_05");	//Nos tohle roucho se ctí a přines řádu slávu a bohatství, můj bratře.
 		CreateInvItem(hero,ItMW_Addon_Stab01);
@@ -2655,7 +2655,7 @@ instance DIA_PYROKAR_GUARDIANSEXISTS(C_Info)
 	condition = dia_pyrokar_guardiansexists_condition;
 	information = dia_pyrokar_guardiansexists_info;
 	permanent = FALSE;
-	description = "Stážci existují!";
+	description = "Strážci existují!";
 };
 
 
@@ -2670,7 +2670,7 @@ func int dia_pyrokar_guardiansexists_condition()
 func void dia_pyrokar_guardiansexists_info()
 {
 	B_GivePlayerXP(200);
-	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_00");	//Stážci existují!
+	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_00");	//Strážci existují!
 	AI_Output(other,self,"DIA_Pyrokar_GuardiansExists_01_02");	//Jednoho jsem potkal v Irdorathských síních.
 	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_03");	//(zamyšleně) Hmm... Abych byl upřímný, nevím jestli tomu mám věřit. Ještě nikdo je v našem světě neviděl.
 	AI_Output(self,other,"DIA_Pyrokar_GuardiansExists_01_06");	//A co po tobě chtěl?
@@ -2970,7 +2970,7 @@ func void dia_pyrokar_strangethings_info()
 		AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_09");	//Dobře... ale to není vše.
 		AI_Output(other,self,"DIA_Pyrokar_StrangeThings_01_10");	//Nedávno, když jsem se pokusil zabít skřeta, jako by do mě uhodil blesk. Málem mě to zabilo.
 		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_12");	//Hmm... (zamyšleně) To je velice nepředvídatelné. Ale asi tomu začínám rozumět.
-		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_15");	//Myslím si, že ty sochy, které jsi viděl jsou ve skutečnosti jakési ochrané totemy pro skřety.
+		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_15");	//Myslím si, že ty sochy, které jsi viděl jsou ve skutečnosti jakési ochranné totemy pro skřety.
 		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_16");	//A očividně, když jsou jim skřeti poblíž, tak jsou prakticky neporazitelní.
 		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_17");	//Ale jelikož skřeti nejsou schopni ovládat tak silné magické schopnosti, je zde jen jedna možnost - Pomáhají jim Strážci.
 		AI_Output(self,other,"DIA_Pyrokar_StrangeThings_01_20");	//Teď je naše jediná šance, jak porazit skřety, zbavit je podpory Strážců.
@@ -3666,7 +3666,7 @@ func void dia_pyrokar_beliarcurse_info()
 	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_05");	//Potřebuješ Innosovo požehnání, aby ses toho prokletí zbavil.
 	AI_Output(other,self,"DIA_Pyrokar_BeliarCurse_01_06");	//A ty mi požehnat nemůžeš?
 	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_07");	//(vážně) Ne. Jen samotný Innos tě může zbavit toho prokletí. Já jsem v tomhle ohledu bezmocný.
-	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_08");	//Takže jdi a pomodli se u některého z jeho svatyň.
+	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_08");	//Takže jdi a pomodli se u některé z jeho svatyň.
 	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_09");	//Modli se do té doby, dokud ti Innos nepožehná.
 	AI_Output(self,other,"DIA_Pyrokar_BeliarCurse_01_12");	//Myslím, že se budeš muset modlit mnoho dní a nocí než ti požehná.
 	AI_Output(other,self,"DIA_Pyrokar_BeliarCurse_01_14");	//Dobře, budu se modlit.
@@ -3701,7 +3701,7 @@ func void DIA_Pyrokar_IgaranzNew_info()
 	AI_Output(self,other,"DIA_Pyrokar_IgaranzNew_01_03");	//(zamyšleně) Igaraz? Možná je hodný... no já teď na to nemám čas.
 	AI_Output(self,other,"DIA_Pyrokar_IgaranzNew_01_04");	//Jen ve výjimečných situacích se může opakovat zkouška!
 	AI_Output(self,other,"DIA_Pyrokar_IgaranzNew_01_05");	//V takových případech novic musí přesvědčit čtvrtého člena rady - strážce klášterních sklepení.
-	AI_Output(self,other,"DIA_Pyrokar_IgaranzNew_01_06");	//Jak ty už nejspíš pochopil, mluvím o Talamonovi. K němu se obrať!
+	AI_Output(self,other,"DIA_Pyrokar_IgaranzNew_01_06");	//Jak jsi ty už nejspíš pochopil, mluvím o Talamonovi. K němu se obrať!
 	AI_Output(self,other,"DIA_Pyrokar_IgaranzNew_01_07");	//Teď jdi, víc už mě nevyrušuj takovýma maličkostma.
 	IS_PYROKAR_IGORANZINFO = TRUE;
 	B_LogEntry(TOPIC_IGARANZ_NEW,"Pyrokar souhlasil provést zkoušku pro Igaraze ještě jednou. Ale on je velmi zaneprázdněný a pravidla kláštera ukazují na to, že úkol v takovém případě musí zadat Talamon. Stojí teď za to navštívit staříka.");
@@ -3720,7 +3720,7 @@ instance DIA_PYROKAR_PiratePray(C_Info)
 func int dia_pyrokar_PiratePray_condition()
 {
 	DIA_PYROKAR_PiratePray.description
-		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 60, FALSE), "Potřebuji vaši pomoc.");
+		= ConcatStrings(CZ_SkillCheckCondition(CZ_SKILL_RHE, 60, FALSE), "Potřebuji tvou pomoc.");
 	
 	if(MIS_PiratePray == LOG_Running)
 	{
@@ -3730,7 +3730,7 @@ func int dia_pyrokar_PiratePray_condition()
 
 func void dia_pyrokar_PiratePray_info()
 {
-	AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_00");		//Potřebuji vaši pomoc.
+	AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_00");		//Potřebuji tvou pomoc.
 	AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_01");		//O co tady jde?
 	AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_02");		//O věc velmi choulostivou. Musím se vymodlit za srdce lidí, jejichž zločiny proti Innosovi byly velké.
 	AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_03");		//(zvědavě) A co je to za lidi?
@@ -3742,9 +3742,9 @@ func void dia_pyrokar_PiratePray_info()
 		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_06");		//Jenže lidé tohoto druhu jsou obvykle příliš zatíženi vahou svých zločinů.
 		AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_07");		//Takže se nedá nic dělat?
 		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_08");		//Proč, může, samozřejmě! Ale musíš dát klášteru nějaký velmi velkorysý dar.
-		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_09");		//Aby Innos přijal výkupnou modlitbu za vaše duše.
+		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_09");		//Aby Innos přijal výkupnou modlitbu za jejich duše.
 		AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_10");		//Kolik?
-		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_11");		//To závisí na vaší štědrosti. Ale tento dar musí být nejméně tisíc zlatých!
+		AI_Output(self,other,"DIA_Pyrokar_PiratePray_01_11");		//To závisí na tvé štědrosti. Ale tento dar musí být nejméně tisíc zlatých!
 		AI_Output(other,self,"DIA_Pyrokar_PiratePray_01_12");		//Chápu.
 
 		if(RhetorikSkillValue[1] < 100)
@@ -3879,7 +3879,7 @@ func void dia_pyrokar_DarkOrden_info()
 	B_GivePlayerXP(300);
 	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_01_00");		//Poslal mě lord Hagen.
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_01");		//Nepokračuj ani. Už vím co mi chceš říct.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_01_02");		//Pak potřebuji vaši svatou radu!
+	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_01_02");		//Pak potřebuji tvou svatou radu!
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_03");		//Mám-li být upřímný, vůbec netuším jak bych ti mohl pomoci.
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_04");		//Všechny naše výzkumy kolem toho co se děje, nedávají žádné jednoznačné odpovědi na tvoji otázku.
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_01_05");		//Ale je tu jedna věc, která by tě mohla zajímat.
@@ -3919,7 +3919,7 @@ func void dia_pyrokar_DarkOrdenKnown_info()
 	B_GivePlayerXP(500);
 	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_00");		//Zjistil jsem důvod invaze nemrtvých.
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_01");		//No, to je dobrá zpráva! Řekni mi všechno co víš, můj synu.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_02");		//Dobře, ale nejdřív mi odpovězte na jednu otázku. Jaký ušlechtilý paladin byl pohřben v Khorinisu?
+	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_02");		//Dobře, ale nejdřív mi odpověz na jednu otázku. Jaký ušlechtilý paladin byl pohřben v Khorinisu?
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_03");		//To mě žádaš o těžkou odpověď. Nech mě přemýšlet...
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_04");		//(zamyšleně) V mé paměti... byli tam jen tři - lordové Inubis, Mirat a Ulzar.
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_05");		//Všichni byli členy svatého řádu paladinů! A jejich hroby jsou rozmístěny po ostrově.
@@ -3927,7 +3927,7 @@ func void dia_pyrokar_DarkOrdenKnown_info()
 	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_07");		//Po jejich smrti se tito paladinové staly silnými nemrtvými.
 	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_08");		//Oni na Khorinis sesílají hordy nemrtvých. A jen osvobozením jejich duší, budeme moci zastavit invazi.
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_09");		//Jsi zdravé mysli?! Ó, Innosi! To je špinavé rouhání.
-	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_10");		//Chápu vaše pocity, ale není.
+	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_10");		//Chápu tvé pocity, ale jiná možnost není.
 	AI_Output(other,self,"DIA_Pyrokar_DarkOrdenKnown_01_11");		//Musíme prohledat ty hrobky. Jinak bude příliš pozdě!
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_12");		//(překvapeně) Musím se zbláznit, abych tě nechal něco takového udělat.
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrdenKnown_01_13");		//Ale zdá se, že máš pravdu a my si nemůžeme dovolit riskovat.
@@ -4060,7 +4060,7 @@ func void dia_pyrokar_DarkOrden_SLK_info()
 	AI_Output(self,other,"DIA_Pyrokar_DarkOrden_SLK_01_17");		//Koneckonců, on je hlavou řádu paladinů. A určitě nám může řict více o těch lidech.
 	AI_Output(other,self,"DIA_Pyrokar_DarkOrden_SLK_01_18");		//Dobře, vydám se hned za ním.
 	DO_SendToHagen = TRUE;
-	B_LogEntry(TOPIC_DarkOrden,"Řekl jsem Pyrokarovi, že jsem vyčistil kobky paladinů. Nicméně, podle něj je příliš brzké se radovat. Útoky Nemrtvých se nezastavily, naopak jsou ještě silnější. Vypadá to, že jsme je rozzuřili. Musím si o paladinech promluvit s Hagenem. Možná o nich ví něco, co my ne.");
+	B_LogEntry(TOPIC_DarkOrden,"Řekl jsem Pyrokarovi, že jsem vyčistil kobky paladinů. Nicméně, podle něj je příliš brzké se radovat. Útoky nemrtvých se nezastavily, naopak jsou ještě silnější. Vypadá to, že jsme je rozzuřili. Musím si o paladinech promluvit s Hagenem. Možná o nich ví něco, co my ne.");
 	AI_StopProcessInfos(self);
 
 	if(SBMODE == TRUE)
@@ -4312,5 +4312,5 @@ func void DIA_Pyrokar_Fregarah_RuneDo_Info()
 	AI_Output(self,other,"DIA_Pyrokar_Fregarah_RuneDo_01_03");	//Setkání s NÍM tě může stát život!
 	AI_Output(other,self,"DIA_Pyrokar_Fregarah_RuneDo_01_04");	//Budu o tom přemýšlet. Samozřejmě, díky za runu.
 	AI_Output(self,other,"DIA_Pyrokar_Fregarah_RuneDo_01_05");	//(povzdech) Není za co, můj synu... 
-	B_LogEntry(TOPIC_XRANFREG,"Pyrokar mi dal runu! Nyní zbývá jen najít magickou rudu, použít vedle ní kámen a absorbovat energii. Něco mi říká, že budu muset najít ne zrovna málo...");
+	B_LogEntry(TOPIC_XRANFREG,"Pyrokar mi dal runu! Nyní zbývá jen najít magickou rudu, použít vedle ní kámen a absorbovat energii. Něco mi říká, že ji budu muset najít ne zrovna málo...");
 };

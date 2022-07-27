@@ -219,7 +219,7 @@ func void dia_pal_9158_varus_palcount_info()
 	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_08");	//Hmmm... To ano, ti jsou vážnými protivníky...
 	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_09");	//Nicméně jejich jedinou výhodou před námi je jejich počet.
 	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_10");	//Početnost nezajistí vítězství.
-	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_11");	//V taktice a strategii skřeti nemůžou předčít naše stratégi!
+	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_11");	//V taktice a strategii skřeti nemůžou předčít naší strategii!
 	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_12");	//Věř, že jsem prošel mnoha bitvami a vím, jak oni bojují.
 	AI_Output(self,other,"DIA_Pal_9158_Varus_PalCount_01_13");	//S nimi nebude zase takový problém.
 	AI_Output(other,self,"DIA_Pal_9158_Varus_PalCount_01_14");	//Nebyl bych si tak jistý...
